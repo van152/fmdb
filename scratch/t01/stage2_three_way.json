@@ -1,0 +1,453 @@
+{
+ "task": "stage2 three-way table: table_type <-> entity <-> registration_fn (+ serialization mode)",
+ "date": "2026-11-18 05:2x",
+ "author": "commander",
+ "sources": [
+  "t01c property_map (21 rows)",
+  "t01e E17 (12 unique entities)",
+  "E20 comp chain",
+  "E21 nation chain",
+  "master.json entity_summary",
+  "old TABLE_HINTS"
+ ],
+ "rows": [
+  {
+   "table_type": 0,
+   "entity_xml": "award.xml#awar",
+   "entity_tag": "awar",
+   "field_count": 38,
+   "vtable_offs": [
+    "0x187ae20"
+   ],
+   "regfn_slot6_va": [
+    "0x140e49a90"
+   ],
+   "regfn_block_offs": [
+    "0xe490b0"
+   ],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map",
+    "t01e/E17"
+   ],
+   "old_hint": ""
+  },
+  {
+   "table_type": 1,
+   "entity_xml": "person.xml#pers",
+   "entity_tag": "pers",
+   "field_count": 271,
+   "vtable_offs": [],
+   "regfn_slot6_va": [],
+   "regfn_block_offs": [],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map"
+   ],
+   "old_hint": ""
+  },
+  {
+   "table_type": 2,
+   "entity_xml": "city.xml#city",
+   "entity_tag": "city",
+   "field_count": 15,
+   "vtable_offs": [],
+   "regfn_slot6_va": [],
+   "regfn_block_offs": [],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map"
+   ],
+   "old_hint": ""
+  },
+  {
+   "table_type": 3,
+   "entity_xml": "club.xml#club",
+   "entity_tag": "club",
+   "field_count": 433,
+   "vtable_offs": [
+    "0x187c300",
+    "0x18bf1f0"
+   ],
+   "regfn_slot6_va": [
+    "0x140e88750",
+    "0x140e88750"
+   ],
+   "regfn_block_offs": [
+    "0xe87d74",
+    "0xe87d74"
+   ],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map",
+    "t01e/E17"
+   ],
+   "old_hint": ""
+  },
+  {
+   "table_type": 5,
+   "entity_xml": "continent.xml#cont",
+   "entity_tag": "cont",
+   "field_count": 16,
+   "vtable_offs": [],
+   "regfn_slot6_va": [],
+   "regfn_block_offs": [],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map"
+   ],
+   "old_hint": ""
+  },
+  {
+   "table_type": 6,
+   "entity_xml": "injury.xml#inju",
+   "entity_tag": "inju",
+   "field_count": 27,
+   "vtable_offs": [
+    "0x1881d30"
+   ],
+   "regfn_slot6_va": [
+    "0x141580f40"
+   ],
+   "regfn_block_offs": [
+    "0x1580560"
+   ],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map",
+    "t01e/E17"
+   ],
+   "old_hint": ""
+  },
+  {
+   "table_type": 7,
+   "entity_xml": "media source.xml#mdso",
+   "entity_tag": "mdso",
+   "field_count": 22,
+   "vtable_offs": [
+    "0x18bd300"
+   ],
+   "regfn_slot6_va": [
+    "0x1415472e0"
+   ],
+   "regfn_block_offs": [
+    "0x1546900"
+   ],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map",
+    "t01e/E17"
+   ],
+   "old_hint": ""
+  },
+  {
+   "table_type": 8,
+   "entity_xml": "language.xml#lang",
+   "entity_tag": "lang",
+   "field_count": 12,
+   "vtable_offs": [],
+   "regfn_slot6_va": [],
+   "regfn_block_offs": [],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map"
+   ],
+   "old_hint": "language (candidate, readable names)"
+  },
+  {
+   "table_type": 9,
+   "entity_xml": "nation.xml#nati",
+   "entity_tag": "nati",
+   "field_count": 346,
+   "vtable_offs": [
+    "0x1888ed0",
+    "0x188db40"
+   ],
+   "regfn_slot6_va": [
+    "0x1411f0970",
+    "0x1411f0970"
+   ],
+   "regfn_block_offs": [
+    "0x11eff90",
+    "0x11eff90"
+   ],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map",
+    "t01e/E17"
+   ],
+   "old_hint": ""
+  },
+  {
+   "table_type": 10,
+   "entity_xml": "nation.xml#nati",
+   "entity_tag": "nati",
+   "field_count": 346,
+   "vtable_offs": [
+    "0x1888ed0",
+    "0x188db40"
+   ],
+   "regfn_slot6_va": [
+    "0x1411f0970",
+    "0x1411f0970"
+   ],
+   "regfn_block_offs": [
+    "0x11eff90",
+    "0x11eff90"
+   ],
+   "mode": "count-loop",
+   "sources": [
+    "E21",
+    "t01c/property_map",
+    "t01g"
+   ],
+   "old_hint": "nation (strong candidate; L1 duni anchor; t01g/E21 confirmed entity)",
+   "record_ctor_off": "0x103ebf0",
+   "ctor_vptr_off": "0x18889B8",
+   "reader_off": "0x103fac0",
+   "writer_off": "0x1041460",
+   "alloc": "0x1d8",
+   "note": "RTTI .?AVNATION@db@@; t01e 的 'nati' 双虚表与 t01g 链交叉"
+  },
+  {
+   "table_type": 18,
+   "entity_xml": "derby.xml#drbr",
+   "entity_tag": "drbr",
+   "field_count": 22,
+   "vtable_offs": [
+    "0x1886870"
+   ],
+   "regfn_slot6_va": [
+    "0x140ffd630"
+   ],
+   "regfn_block_offs": [
+    "0xffcc50"
+   ],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map",
+    "t01e/E17"
+   ],
+   "old_hint": ""
+  },
+  {
+   "table_type": 19,
+   "entity_xml": "region.xml#regi",
+   "entity_tag": "regi",
+   "field_count": 6,
+   "vtable_offs": [],
+   "regfn_slot6_va": [],
+   "regfn_block_offs": [],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map"
+   ],
+   "old_hint": ""
+  },
+  {
+   "table_type": 21,
+   "entity_xml": "stadium.xml#stad",
+   "entity_tag": "stad",
+   "field_count": 60,
+   "vtable_offs": [
+    "0x188d1d0"
+   ],
+   "regfn_slot6_va": [
+    "0x141185a20"
+   ],
+   "regfn_block_offs": [
+    "0x1185040"
+   ],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map",
+    "t01e/E17"
+   ],
+   "old_hint": "stadium (high; rdui@+30=行序号误标勘误适用)"
+  },
+  {
+   "table_type": 23,
+   "entity_xml": "stage name.xml#stgn",
+   "entity_tag": "stgn",
+   "field_count": 8,
+   "vtable_offs": [],
+   "regfn_slot6_va": [],
+   "regfn_block_offs": [],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map"
+   ],
+   "old_hint": ""
+  },
+  {
+   "table_type": 24,
+   "entity_xml": "team.xml#team",
+   "entity_tag": "team",
+   "field_count": 25,
+   "vtable_offs": [],
+   "regfn_slot6_va": [],
+   "regfn_block_offs": [],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map"
+   ],
+   "old_hint": ""
+  },
+  {
+   "table_type": 25,
+   "entity_xml": "comp.xml#comp",
+   "entity_tag": "comp",
+   "field_count": 255,
+   "vtable_offs": [
+    "0x187d2b0"
+   ],
+   "regfn_slot6_va": [
+    "0x140ebfa40"
+   ],
+   "regfn_block_offs": [
+    "0xebf060"
+   ],
+   "mode": "straight-line",
+   "sources": [
+    "E20",
+    "t01c/property_map",
+    "t01f"
+   ],
+   "old_hint": "competition (high; E20 收口)",
+   "record_ctor_off": "0xeb5dd5",
+   "ctor_vptr_off": "0x187d2b8",
+   "reader_off": "0xeb7000",
+   "writer_off": "0xeb8920",
+   "alloc": "0x1b0"
+  },
+  {
+   "table_type": 27,
+   "entity_xml": "weather.xml#weat",
+   "entity_tag": "weat",
+   "field_count": 94,
+   "vtable_offs": [
+    "0x18823e0"
+   ],
+   "regfn_slot6_va": [
+    "0x14158d4b0"
+   ],
+   "regfn_block_offs": [
+    "0x158cad0"
+   ],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map",
+    "t01e/E17"
+   ],
+   "old_hint": ""
+  },
+  {
+   "table_type": 35,
+   "entity_xml": "description.xml#dscr",
+   "entity_tag": "dscr",
+   "field_count": 6,
+   "vtable_offs": [],
+   "regfn_slot6_va": [],
+   "regfn_block_offs": [],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map"
+   ],
+   "old_hint": ""
+  },
+  {
+   "table_type": 41,
+   "entity_xml": "currency.xml#curr",
+   "entity_tag": "curr",
+   "field_count": 7,
+   "vtable_offs": [],
+   "regfn_slot6_va": [],
+   "regfn_block_offs": [],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map"
+   ],
+   "old_hint": "currency (high candidate)"
+  },
+  {
+   "table_type": 47,
+   "entity_xml": "local region.xml#lcrg",
+   "entity_tag": "lcrg",
+   "field_count": 11,
+   "vtable_offs": [],
+   "regfn_slot6_va": [],
+   "regfn_block_offs": [],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map"
+   ],
+   "old_hint": ""
+  },
+  {
+   "table_type": 56,
+   "entity_xml": "agreement.xml#agrm",
+   "entity_tag": "agrm",
+   "field_count": 8,
+   "vtable_offs": [],
+   "regfn_slot6_va": [],
+   "regfn_block_offs": [],
+   "mode": "-",
+   "sources": [
+    "t01c/property_map"
+   ],
+   "old_hint": "structural triples"
+  }
+ ],
+ "table_types_without_row": [
+  4,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  20,
+  22,
+  26,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  36,
+  37,
+  38,
+  39,
+  40,
+  42,
+  43,
+  44,
+  45,
+  46,
+  48,
+  49,
+  50,
+  51,
+  52,
+  53,
+  54,
+  55,
+  57,
+  58
+ ],
+ "t01e_tags_not_in_property_map": [
+  "agen",
+  "jour",
+  "offc"
+ ],
+ "notes": [
+  "mode 列:straight-line(comp,E20)/ count-loop(nation,E21);其余实体待 t01h factory 跳表普查分类",
+  "vtable/regfn 来自 t01e 的 slot6 计数口径;E20 已修正为 0-based slot5(字节不变)",
+  "unknown 表共 38 个(0..58 减去 property_map 已覆盖)",
+  "疑点:table_type 9 与 10 的 property_map 实体都是 nation.xml#nati —— 两个表型对应同一实体?可能 t01c 来源行有误或 nation 确有双表(如 client/server 双记录);待 t01h 跳表普查裁决(看 type 9/10 是否都有独立工厂项)",
+  "t01e 独有 tag(agen/jour/offc)是 unknown 表型的候选实体"
+ ]
+}

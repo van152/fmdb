@@ -615,6 +615,28 @@
     "commander_verify": "scripts/t01g_spotcheck.py:初跑 6 FAIL 均为指挥官脚本笔误(file offset 当 VA、0x1046 抄成 0x104),修正后全部通过;无实质不符"
    },
    "consequence": "方法论边界已明:直线累加法适用于 COMP 类直线序列化实体;变长实体(nation 有集合字段)需先恢复行边界或符号化处理循环。stage-2 攻击顺序建议:先直线型实体(可从 factory 跳表 32 项逐一判定),后变长型"
+  },
+  {
+   "id": "E22",
+   "date": "2026-11-18 05:25",
+   "author": "commander",
+   "kind": "artifact",
+   "level": "L2-L3(全部来自已验收工件 E17/E20/E21 的机械合流,无新二进制结论)",
+   "claim": "stage-2 核心工件:三向表 table_type↔entity↔registration_fn(+序列化模式)建成。property_map 21 行全并入 t01e 虚表映射与 E20/E21 已验证链;unknown 表型从项目初估 50 降到 38;t01e 独有 tag(agen/jour/offc)成为 unknown 表型候选实体",
+   "evidence": {
+    "artifacts": [
+     "scratch/t01/stage2_three_way.json",
+     "scratch/t01/stage2_three_way.md",
+     "scripts/t01_stage2_three_way.py"
+    ],
+    "rows": 21,
+    "mode_known": {
+     "10": "count-loop(E21)",
+     "25": "straight-line(E20)"
+    },
+    "open_question": "table_type 9 与 10 的实体都是 nation.xml#nati —— 待 t01h 跳表普查裁决(type 9/10 是否各有独立工厂项)",
+    "stage2_order": "先直线型实体(待 t01h 分类),后变长型(先恢复行边界)"
+   }
   }
  ]
 }
