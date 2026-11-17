@@ -75,6 +75,61 @@
       "claim": "第二簇 0xec0000..0xecb000(file off)散布 ccti/cpcm/cext/dbty/cnam 命中,形态与注册块不同 — 疑似序列化/分发 switch 或静态描述符表",
       "evidence": {"samples": ["ccti@0xec2009", "cpcm@0xec0a9f", "cext@0xec0f60", "dbty@0xec152c", "cnam@0xecb331"]},
       "hypotheses": ["H2: 该簇是 .dat 行读写的 per-field switch(cmp 4CC 后跳转),与 H1 的注册函数分别对应读侧/写侧"]
+    },
+    {
+      "id": "E5",
+      "date": "2026-11-18夜",
+      "author": "commander(GLM 主会话)",
+      "kind": "decode",
+      "level": "L3-static(capstone 5.0.7)",
+      "claim": "helperA(RVA 0x83b5f0)= msvc std::vector<32B元素>::push_back;注册块语义修正",
+      "evidence": {
+        "disasm": "push rbp...; mov r14,rdx; mov r15,rcx; [rcx]=begin/[rcx+8]=end/[rcx+0x10]=cap; mov edx,0x20; call 0x7e4490(分配单元素); call 0x1758a00(搬移旧元素); 尾部更新 begin/end/cap; lock dec [r12+0x40](refcount 释放路径)",
+        "conclusion": "注册块把 {属性对象*, 4CC码} 32B 条目 push 进全局注册表;`add rax,0x38` 遍历的是实体属性描述符数组"
+      },
+      "hypotheses": [
+        "H1修正: 字段的行内偏移/类型在 0x38 步进的属性描述符数组里,其构造器才是金矿;注册函数只是挂名"
+      ]
+    },
+    {
+      "id": "E6",
+      "date": "2026-11-18夜",
+      "author": "commander(GLM 主会话)",
+      "kind": "decode",
+      "level": "L3-static(capstone)",
+      "claim": "0xec0000..0xec6000 存在 XML→运行时对象的字段分发 switch:`cmp esi,<4CC大端>` + `je <handler>`;H2 部分证实(是字段 switch,但属 XML 装载侧,非 .dat 行读写)",
+      "evidence": {
+        "cmp_sample": "cmp esi,0x63637469(='ccti' 大端)→ je RVA 0xec4192;handler: mov rcx,[r12+0x58]; mov rdx,r14; call 0xfe7860",
+        "handler_patterns": [
+          "direct: call helperB(RVA 0x83d4f0) 后 add rax,N → 字段写 obj+N",
+          "delegate: call 专用 setter(ccti→0xfe7860, cnti→0xfcc110)",
+          "complex: 其余"
+        ],
+        "helperB_thunk": "helperB 首指令 jmp 0x377e370(进 .reloc 加壳区)——静态墙;但 direct 模式下其返回值+偏移模式已在 105 个 case 上自洽",
+        "binary_note": "editor.exe 混合形态:注册块/switch 区明文,部分 helper 为壳内 thunk"
+      }
+    },
+    {
+      "id": "E7",
+      "date": "2026-11-18夜",
+      "author": "commander(GLM 主会话)",
+      "kind": "artifact",
+      "level": "L3-static(脚本可复跑)",
+      "claim": "switch case 清单已提取:105 case,54 个匹配 comp schema 码;direct 模式已给出运行时对象偏移",
+      "evidence": {
+        "script": "scratch/t01/t01b_switch_extract.py",
+        "json": "scratch/t01/t01b_switch_cases.json",
+        "direct_offsets": {
+          "cext": 24, "cusn": 24, "dbty": 40, "crep": 40, "cmtc": 40,
+          "cmnl": 104, "cmnw": 104, "cmxl": 104,
+          "sfCi/sfCx/sfMi/sfMx/sfSi/ssCi/ssCx/ssMi/ssMx/syCi/syCx/syMi/syMx/sySi/sySx": 40
+        },
+        "notes": [
+          "运行时对象偏移 ≠ .dat 行偏移(cext 行内 slot 旧候选已证伪,而运行时在 +24);.dat 行映射需 .dat 读写链,是明日主攻",
+          "sf*/ss*/sy* 为 comp 新见的统计配置字段族(阶段一验收可计入)",
+          "switch 内出现 4CC 'comp'(实体名检查);分类质量待修:多数 case 分类为 complex,需按 delegate 细化"
+        ]
+      }
     }
   ]
 }

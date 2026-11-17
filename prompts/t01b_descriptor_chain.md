@@ -3,6 +3,30 @@
 > 交给 pi gpt-6-luna max。你是一个长会话逆向代理,这是本项目当前最重要的单点任务。
 > 全部工作只读,不启动游戏/编辑器/IDA,不 pip install。Python 固定 `py -V:3.12 -I`。
 
+## ⚡ 指挥官夜间进展(2026-11-18,先读这段,避免重复劳动)
+
+你接手时以下工作**已完成**,见 `scratch/t01/LEDGER.json` E5/E6/E7 与 `scratch/t01/t01b_switch_cases.json`:
+
+1. ✅ helperA(RVA 0x83b5f0)已解码 = `std::vector<32B>::push_back`;注册块语义 = 把 {属性对象*, 4CC} 推入全局注册表;`add rax,0x38` 遍历实体属性描述符数组。
+2. ✅ XML→对象字段分发 switch 已定位并粗提取(0xec0000..0xec6000,105 case,54 个 comp 匹配;direct 模式偏移:cext→obj+24,dbty/crep→+40,cmnl/cmxl→+104 等)。
+3. ✅ PE 换算:RVA = fileoff + 0xA00(.rdata 内);VA = 0x140000000 + RVA。
+4. ⚠️ helperB(RVA 0x83d4f0)是 thunk(jmp 进 .reloc 加壳区)——静态墙,别浪费会话去解壳。
+
+**你的任务相应修订**(原第 1-3 步作废,按此执行):
+
+### 新第 1 步:属性描述符数组构造器(最高优先)
+0x38 步进数组里有每个字段的 {类型, 行内偏移?, 序列化器?}。找它的构造/初始化函数:xref 注册函数的调用者;或在 .rdata 搜 0x38 步进数组的基址分配。产出 56B 布局表(带字节证据)。
+
+### 新第 2 步:setter 内部偏移
+switch 的 delegate 型 case 把偏移藏在 setter 里(已知:ccti→0xfe7860、cnti→0xfcc110,switch JSON 里有完整 setter 清单)。反汇编这些 setter,找 `add rax,N` / `mov [rax+N]` 形态,提取字段→运行时偏移。已知 direct 案例(cext→+24 等)用于交叉验证 setter 结果。
+
+### 新第 3 步:运行时偏移 → .dat 行偏移的桥
+运行时布局 ≠ 行布局(例证:cext 运行时 +24,但行内旧候选被证伪)。找 .dat 行加载/写回链:编辑器打开数据库时把行读进对象(找与 switch 同区域 0xec0xxx-0xecbxxx 的读侧 switch),或找 save/pack 路径。判据:能解释 comp 行 +52=ccti/+56=cnti/+64=cpcm/+114=rdui/+118=duni 的已知锚点。
+
+### 交叉验证锚点(不变)
+六大洲 ccti∈0..5、cnti England=139/China PR=55、cpcm parent row=352;client comp 行 127B;详见 DB_TABLES_BIG.md table_25 节。
+
+
 ## 背景(自包含,无外部上下文)
 
 FM24《Football Manager 2024》的安装数据库是 `.dat` 文件(自定义容器+Zstd,无加密),外层已完全解通。剩余瓶颈:**字段语义**——把编辑器 schema 的字段代码(4 字符 ASCII,如 `ccti`=continent reference)映射到数据库行内的字节偏移。
