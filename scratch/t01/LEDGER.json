@@ -37,7 +37,8 @@
       "claim": "0xebf060..0xebf200(file off)是 comp 实体属性注册函数:每 0x30 字节一段注册块,块内写 4CC 后调 helper,属性对象步进 0x38",
       "evidence": {
         "block_asm": "c7 45 f0 <4CC反序> ; 48 89 45 e8 ; 48 8d 7d e8 ; 48 89 f1 ; 48 89 fa ; e8 <helperA> ; 48 8b 4d e8 ; 48 8b 01 ; 48 89 fa ; ff 50 10 ; e8 <helperB> ; 48 83 c0 38",
-        "4cc_sequence": ["PLgn", "cnam", "cnsm", "cl3n", "cnti", "ccti", "cpcm", "crep", "cext"],
+        "4cc_sequence": ["PLgn", "cnam", "csnm", "c3ln", "cnti", "ccti", "cpcm", "crep", "cext"],
+        "erratum": "初版误写 cnsm/cl3n;2026-11-18 由 t01-c 对账 master.json 纠正为 csnm/c3ln(反序方向:ASCII 小端存储,读取时按字节反转)",
         "block_spacing": "0x30(代码)/0x38(对象步进)",
         "helperA": {"off": "0x83abf0", "va": "0x14083b5f0"},
         "helperB": {"off": "0x83caf0", "va": "0x14083d4f0"},
@@ -128,6 +129,23 @@
           "运行时对象偏移 ≠ .dat 行偏移(cext 行内 slot 旧候选已证伪,而运行时在 +24);.dat 行映射需 .dat 读写链,是明日主攻",
           "sf*/ss*/sy* 为 comp 新见的统计配置字段族(阶段一验收可计入)",
           "switch 内出现 4CC 'comp'(实体名检查);分类质量待修:多数 case 分类为 complex,需按 delegate 细化"
+        ]
+      }
+    },
+    {
+      "id": "E8",
+      "date": "2026-11-18晨",
+      "author": "t01-c(glm53-3 子代理,指挥官抽验通过)",
+      "kind": "artifact",
+      "level": "L1(脚本可复跑,字节级一致)",
+      "claim": "schema 词汇表机读化完成:32 实体、2343/3009 为 4 字符码、324 个跨实体冲突码、property_map 21 行",
+      "evidence": {
+        "files": ["scratch/t01/inbox/t01c/vocab.json", "scratch/t01/inbox/t01c/property_map.json", "scratch/t01/inbox/t01c/REPORT.md", "scripts/t01c_build_vocab.py"],
+        "spot_check": "comp.xml#comp 含 cnam/csnm/c3ln/cnti/ccti/cpcm/crep/cext/PLgn/dbty 全部命中(指挥官复核 10/10)",
+        "findings": [
+          "账本 E2 反序笔误纠正:cnsm→csnm、cl3n→c3ln",
+          "master.json field_codes.locations 对 52 个实体码漏记 database 位置(PLgn/Cnti 等);vocab 以 entities 树全量遍历为准",
+          "dbnm 是最通用码(21 实体共用)"
         ]
       }
     }
