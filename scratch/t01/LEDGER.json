@@ -259,6 +259,20 @@
         "purpose": "后续任何 agent 改动/新声明,先跑此护栏防止破坏已验收事实(t03 交付)",
         "negative_also_recorded": "rowreader_probe2.py 在 fm.exe .sdata 搜行偏移窗口 → 9 个候选均为通用拷贝循环,行解析器无硬编码偏移(与 E11 editor 侧结论一致,该搜索线关闭)"
       }
+    },
+    {
+      "id": "E16",
+      "date": "2026-11-18晨",
+      "author": "commander(决策与部署)",
+      "kind": "task-control",
+      "level": "L1",
+      "claim": "gpt-6.2-sol 渠道状态:账号侧未上线(Codex/ChatGPT account 不支持);已部署 sol_watch 守哨(15 分钟探针,上线即自动发射 t01f 突破任务书);指挥官 GLM 额度 09:00 过期,交接文档 HANDOFF.md 就位",
+      "evidence": {
+        "probe": "pi --model gpt-6.2-sol -p → 'The gpt-6.2-sol model is not supported when using Codex with a ChatGPT account'",
+        "watch": "scratch/t01/sol_watch.sh(pi-logs/sol_watch.log;40 次/10 小时上限)",
+        "brief": "prompts/t01f_breakthrough.md(一次性投入纪律:深处做完一条线优于浅尝五条)",
+        "survives_quota_expiry": ["luna r2(pi)", "sol_watch+自动发射(pi)", "全部已提交工件与账本"]
+      }
     }
   ]
 }
