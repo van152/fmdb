@@ -1,1 +1,9 @@
 Warning: No project session found with id 't01j-luna'; creating a new session with that id.
+已完成并通过 `verify.py --selftest`。`basic_people_db.dat` 是直接 Zstd 资源、没有 FMF 目录；解压后恢复 658,011 条按 class 变长记录，行边界与 9 字节尾部封口通过。BASIC_PERSON reader 仅确认 class-4 前缀的部分 L3 对齐，未声称全字段映射完成。
+
+交付文件（均在 `scratch/t01/inbox/t01j/`）：
+- `output.json`
+- `REPORT.md`（38 行）
+- `verify.py`
+
+复验命令：`py -V:3.12 -I -B scratch/t01/inbox/t01j/verify.py --selftest` — PASS.

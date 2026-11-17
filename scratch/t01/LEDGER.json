@@ -702,6 +702,24 @@
     "boundary": "factory type-id 与 archive 表 ID 的同域性在 25/10 之外仍是推定(强相关,未逐 ID 实证);basic_people_db.dat 未恢复框架,不作断言"
    },
    "consequence": "person 家族(最大实体族)行仓库 = basic_people_db.dat 候选 → t01j 已发射侦察;stage-2 的 archive 侧表清单以 server 59 表为准;三向表注记更新(archive 存在性 + 命名空间同域推定)"
+  },
+  {
+   "id": "E25",
+   "date": "2026-11-18 06:35",
+   "author": "commander(luna t01j 交付,指挥官独立全量复核)",
+   "kind": "milestone",
+   "level": "L3-static(指挥官独立解压+658,011 行逐行走查全过 + 5 项静态字节抽验 PASS + luna 自检 PASS)",
+   "claim": "【person 行仓库框架解码】basic_people_db.dat = 直接单帧 Zstd(file+8 起,非 FMF 构型);payload 54,060,043 B;u32 count=658,011;行头 u8 0x11|class_id,类变长行:1/2/3 类 83B、4 类 34B、5 类 22B;类计数 1:166064/2:476158/3:4757/4:9839/5:1193;全行 12B 身份块(ordinal 连续 0..658010 + 重复 u32 ID)+ 9B 尾部,总量封口精确。BASIC_PERSON reader class-4 分支(0xe4f42e: 3c 04 / 75 4c,宽度 1/2/2)与 class-4 行字节精确对齐 —— person 家族 .dat 行框架确立,字段级映射(>=10 字段验收线)为下一步",
+   "evidence": {
+    "artifacts": [
+     "scratch/t01/inbox/t01j/{output.json,REPORT.md,verify.py}",
+     "scripts/t01j_dat_spotcheck.py(指挥官独立走查)"
+    ],
+    "commander_independent": "独立解压(旧库 _stream_decompress)+ 自写行链走查:658011 行全过(头/类长/ordinal/重复ID/封口);5 项样本身份块逐字节;t01j 无一行虚构",
+    "identity_pattern": "与 comp(+114 行序号/+118 重复ID)和 nation 同模式 —— 身份块惯例跨表一致",
+    "reader_alignment": "27 条宽度指令(luna Capstone 复核清单含 3dc0241/3dc027b/3c6e121 等 helper)非单一直线,有 class 分支;class-4 可闭合 1+2+2B"
+   },
+   "consequence": "stage-2 主攻点转移:person 家族行框架已就绪,BASIC_PERSON 类变长字段映射(83B/34B/22B 行内偏移)是第二实体验收线的最短路径;t01k 已发射"
   }
  ]
 }
