@@ -1,0 +1,46 @@
+{
+  "source": "reports/editor_data/世界0.26.1.tree.json",
+  "schema_source": "reports/editor_schema/master.json#/field_codes",
+  "evidence": [
+    {
+      "database_table_type": 10,
+      "db_unique_id": "472446402670",
+      "property_u32": 1315861616,
+      "property_bytes_le_hex": "70746e4e",
+      "property_bytes_le_ascii": "ptnN",
+      "reversed_code_candidate": "Nntp",
+      "schema_field": "Nation Transfer Preferences",
+      "schema_location": "database/database/nation.xml#nati",
+      "client_table_candidate": "table_10.dat",
+      "client_table_header_count": 251,
+      "conclusion": "strong table/entity correlation; numeric table id and DBC table-type enum still lack an independent enum definition"
+    },
+    {
+      "database_table_type": 25,
+      "db_unique_id": "4303389727869417",
+      "property_u32": 1667594356,
+      "property_bytes_le_hex": "74786563",
+      "property_bytes_le_ascii": "txec",
+      "reversed_code_candidate": "cext",
+      "schema_field": "Is Extinct",
+      "schema_location": "database/database/comp.xml#comp",
+      "client_table_candidate": "table_25.dat",
+      "client_table_header_count": 7047,
+      "conclusion": "strong table/entity correlation; numeric table id and DBC table-type enum still lack an independent enum definition"
+    }
+  ],
+  "currency_table_41": {
+    "client_table_header_count": 173,
+    "readable_record_names": ["Albanian Lek", "Algerian Dinar", "Argentinian Peso"],
+    "schema_fields": {
+      "dbnm": "Name/string",
+      "Cnam": "Name/string",
+      "Cexr": "Exchange Rate/real"
+    },
+    "conclusion": "table_41 is a high-confidence currency-shaped candidate, but the table-number-to-entity enum is not recovered"
+  },
+  "unique_id_validation": {
+    "status": "not validated",
+    "reason": "the currency/table_56 decoders do not yet identify a stored field as editor db_unique_id; row-trailer integers are preserved but not equated to DBC IDs"
+  }
+}

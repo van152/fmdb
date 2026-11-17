@@ -1,0 +1,953 @@
+{
+  "source": "Z:\\SteamLibrary\\steamapps\\common\\Football Manager 2024\\data\\database\\db\\2430\\2430_fm",
+  "evidence_level": "L1 (installed game archives, workspace decoder, read-only)",
+  "model_tests": [
+    "row_offset_table(u32/u64)",
+    "row_length_table(u16/u32)",
+    "ordinal_keyed_fixed_stride_rows",
+    "indexed_string_rows",
+    "opaque (fallback with counterexamples)"
+  ],
+  "archives": {
+    "client_db.dat": {
+      "archive": "client_db.dat",
+      "entries": 31,
+      "extras": {
+        "table_extra_3.dat": {
+          "extra_size": 13053908,
+          "header_count": 84259,
+          "main_table_count": 84259,
+          "count_matches_main_table": true,
+          "body_bytes_after_12": 13053896,
+          "fixed_stride_if_body_starts_at_12": [
+            154,
+            false
+          ],
+          "first_64_bytes_hex": "03017461642ef10d23490100000000009b07ffffffff0000000000000a0101ff7f5a01ff7f2104ff7f25ffffffffffffffff00000001000101015a01ff7f5a01",
+          "models": {
+            "row_offset_u32": {
+              "width": 4,
+              "fits": true,
+              "monotonic": false,
+              "first_values": [
+                0,
+                4294903707,
+                65535,
+                0,
+                4278255882,
+                4278278783,
+                4278460799,
+                4294911359
+              ],
+              "counterexample": "first offsets not increasing: ['0x0', '0xffff079b', '0xffff', '0x0']"
+            },
+            "row_offset_u64": {
+              "width": 8,
+              "fits": true,
+              "monotonic": false,
+              "first_values": [
+                18446470961034166272,
+                65535,
+                18375067460433936650,
+                18446503830402376063,
+                281474976710655,
+                97391445765259520,
+                22708223,
+                18446744073709551360
+              ],
+              "counterexample": "first offsets not increasing: ['0xffff079b00000000', '0xffff', '0xff015a7fff01010a', '0xffff257fff04217f']"
+            },
+            "row_length_u32": {
+              "width": 4,
+              "fits": true,
+              "sum": 144658115803400,
+              "body_size": 13053896,
+              "all_lengths_plausible": false,
+              "sum_matches_body": false,
+              "counterexample": "length sum 144658115803400 != body 13053896 (first values [0, 4294903707, 65535, 0, 4278255882, 4278278783])"
+            },
+            "row_length_u16": {
+              "width": 2,
+              "fits": true,
+              "sum": 2212378667,
+              "body_size": 13053896,
+              "all_lengths_plausible": false,
+              "sum_matches_body": false,
+              "counterexample": "length sum 2212378667 != body 13053896 (first values [0, 0, 1947, 65535, 65535, 0])"
+            },
+            "index_string_rows": {
+              "rows_decoded": 0,
+              "bytes_consumed": 0,
+              "consistent_ordinal_and_length_prefix": false,
+              "first_failure": {
+                "row": 0,
+                "offset": 12,
+                "ordinal": 0,
+                "length": 4294903707
+              },
+              "samples": [],
+              "tail_bytes_after_rows": 13053896
+            },
+            "row_offset_at_candidate_offsets": {
+              "candidates_tested": [
+                12,
+                65,
+                2
+              ],
+              "passing_offsets": [],
+              "counterexample": "no candidate header offset yields a monotonic u32 offset array: for every tested offset the first 8 u32 values are not increasing or leave the body"
+            },
+            "ordinal_slot_stride": {
+              "best_strides": [],
+              "slots_cover_file": false,
+              "counterexample": "no stride in 8..1024 has u32(slot) == row ordinal for the first 1000 rows"
+            },
+            "ordinal_sequence_scan": {
+              "rows_with_ordinal_prefix": 84259,
+              "row_count": 84259,
+              "all_rows_tagged": true,
+              "first_positions": [
+                12,
+                63,
+                818,
+                1221,
+                1355,
+                2270,
+                2673,
+                3184
+              ],
+              "row_gaps_first": [
+                51,
+                755,
+                403,
+                134,
+                915,
+                403,
+                511,
+                403
+              ],
+              "variable_row_lengths": true,
+              "counterexample": null
+            },
+            "periodic_u32_runs": {
+              "min_repeats": 8,
+              "longest_runs": [],
+              "any_run": false
+            }
+          },
+          "row_boundaries_recovered": false,
+          "ordinal_scan_is_heuristic": true,
+          "ordinal_scan_min_gap": 51,
+          "model": "ordinal_tagged_variable_rows",
+          "model_evidence": {
+            "row_offset_table": "falsified: no monotonic u32/u64 offset array of `count` entries fits the body",
+            "row_length_table": "falsified: no u16/u32 length array sums to the body size",
+            "ordinal_keyed_rows": "falsified",
+            "index_string_rows": "falsified",
+            "row_offset_table_at_any_probed_offset": "falsified: no monotonic offset array at header offsets 12..64",
+            "ordinal_slot_stride": "falsified",
+            "ordinal_sequence_scan": "supported (heuristic: a complete 0..count-1 increasing u32 run exists, but individual positions can be off by a stray match)",
+            "periodic_u32_runs": "none found",
+            "evidence_level": "L1 (installed archive bytes read with the workspace decoder)"
+          },
+          "extra_entry": "table_extra_3.dat",
+          "main_entry_present": true
+        },
+        "table_extra_9.dat": {
+          "extra_size": 83927,
+          "header_count": 251,
+          "main_table_count": 251,
+          "count_matches_main_table": true,
+          "body_bytes_after_12": 83915,
+          "fixed_stride_if_body_starts_at_12": [
+            334,
+            false
+          ],
+          "first_64_bytes_hex": "03017461642ef10dfb000000000000000b0000004c65732046656e6e6563732d00000000000801018d1eff7fff7f8d1eff7f01ffffffffffffffff0000000100",
+          "models": {
+            "row_offset_u32": {
+              "width": 4,
+              "fits": true,
+              "monotonic": false,
+              "first_values": [
+                0,
+                11,
+                544433484,
+                1852728646,
+                762536805,
+                0,
+                16844800,
+                2147425933
+              ],
+              "counterexample": "first offsets not increasing: ['0x0', '0xb', '0x2073654c', '0x6e6e6546']"
+            },
+            "row_offset_u64": {
+              "width": 8,
+              "fits": true,
+              "monotonic": false,
+              "first_values": [
+                47244640256,
+                7957408943476794700,
+                762536805,
+                9223124152834131968,
+                18375108688354312191,
+                72057594037927935,
+                10160403338131210240,
+                131222994718
+              ],
+              "counterexample": "first offsets not increasing: ['0xb00000000', '0x6e6e65462073654c', '0x2d736365', '0x7fff1e8d01010800']"
+            },
+            "row_length_u32": {
+              "width": 4,
+              "fits": true,
+              "sum": 405033659626,
+              "body_size": 83915,
+              "all_lengths_plausible": false,
+              "sum_matches_body": false,
+              "counterexample": "length sum 405033659626 != body 83915 (first values [0, 11, 544433484, 1852728646, 762536805, 0])"
+            },
+            "row_length_u16": {
+              "width": 2,
+              "fits": true,
+              "sum": 6385041,
+              "body_size": 83915,
+              "all_lengths_plausible": false,
+              "sum_matches_body": false,
+              "counterexample": "length sum 6385041 != body 83915 (first values [0, 0, 11, 0, 25932, 8307])"
+            },
+            "index_string_rows": {
+              "rows_decoded": 1,
+              "bytes_consumed": 19,
+              "consistent_ordinal_and_length_prefix": false,
+              "first_failure": {
+                "row": 1,
+                "offset": 31,
+                "ordinal": 45,
+                "length": 17301504
+              },
+              "samples": [
+                {
+                  "row": 0,
+                  "stored_ordinal": 0,
+                  "length": 11,
+                  "text": "Les Fennecs",
+                  "text_offset": 20
+                }
+              ],
+              "tail_bytes_after_rows": 83896
+            },
+            "row_offset_at_candidate_offsets": {
+              "candidates_tested": [
+                12,
+                65,
+                2
+              ],
+              "passing_offsets": [],
+              "counterexample": "no candidate header offset yields a monotonic u32 offset array: for every tested offset the first 8 u32 values are not increasing or leave the body"
+            },
+            "ordinal_slot_stride": {
+              "best_strides": [],
+              "slots_cover_file": false,
+              "counterexample": "no stride in 8..1024 has u32(slot) == row ordinal for the first 251 rows"
+            },
+            "ordinal_sequence_scan": {
+              "rows_with_ordinal_prefix": 251,
+              "row_count": 251,
+              "all_rows_tagged": true,
+              "first_positions": [
+                12,
+                153,
+                705,
+                1039,
+                1233,
+                1755,
+                2225,
+                2621
+              ],
+              "row_gaps_first": [
+                141,
+                552,
+                334,
+                194,
+                522,
+                470,
+                396,
+                713
+              ],
+              "variable_row_lengths": true,
+              "counterexample": null
+            },
+            "periodic_u32_runs": {
+              "min_repeats": 8,
+              "longest_runs": [],
+              "any_run": false
+            }
+          },
+          "row_boundaries_recovered": false,
+          "ordinal_scan_is_heuristic": true,
+          "ordinal_scan_min_gap": 141,
+          "model": "ordinal_tagged_variable_rows",
+          "model_evidence": {
+            "row_offset_table": "falsified: no monotonic u32/u64 offset array of `count` entries fits the body",
+            "row_length_table": "falsified: no u16/u32 length array sums to the body size",
+            "ordinal_keyed_rows": "falsified",
+            "index_string_rows": "falsified",
+            "row_offset_table_at_any_probed_offset": "falsified: no monotonic offset array at header offsets 12..64",
+            "ordinal_slot_stride": "falsified",
+            "ordinal_sequence_scan": "supported (heuristic: a complete 0..count-1 increasing u32 run exists, but individual positions can be off by a stray match)",
+            "periodic_u32_runs": "none found",
+            "evidence_level": "L1 (installed archive bytes read with the workspace decoder)"
+          },
+          "extra_entry": "table_extra_9.dat",
+          "main_entry_present": true
+        }
+      }
+    },
+    "server_db.dat": {
+      "archive": "server_db.dat",
+      "entries": 77,
+      "extras": {
+        "table_extra_24.dat": {
+          "extra_size": 6929586,
+          "header_count": 84507,
+          "main_table_count": 84507,
+          "count_matches_main_table": true,
+          "body_bytes_after_12": 6929574,
+          "fixed_stride_if_body_starts_at_12": [
+            82,
+            true
+          ],
+          "first_64_bytes_hex": "03017461642ef10d1b4a010000000000ffffffff000000001027000000006c07000100f401f401f40101006c0701006c0701006c0701006c0701006c07000000",
+          "models": {
+            "row_offset_u32": {
+              "width": 4,
+              "fits": true,
+              "monotonic": false,
+              "first_values": [
+                0,
+                4294967295,
+                0,
+                10000,
+                124518400,
+                4093640960,
+                4093768705,
+                1811939585
+              ],
+              "counterexample": "first offsets not increasing: ['0x0', '0xffffffff', '0x0', '0x2710']"
+            },
+            "row_offset_u64": {
+              "width": 8,
+              "fits": true,
+              "monotonic": false,
+              "first_values": [
+                18446744069414584320,
+                42949672960000,
+                17582054044890562560,
+                7782221263996580865,
+                7782221287484555527,
+                7782221287484555527,
+                7,
+                280407341793536
+              ],
+              "counterexample": "first offsets not increasing: ['0xffffffff00000000', '0x271000000000', '0xf4000100076c0000', '0x6c000101f401f401']"
+            },
+            "row_length_u32": {
+              "width": 4,
+              "fits": true,
+              "sum": 102987033297888,
+              "body_size": 6929574,
+              "all_lengths_plausible": false,
+              "sum_matches_body": false,
+              "counterexample": "length sum 102987033297888 != body 6929574 (first values [0, 4294967295, 0, 10000, 124518400, 4093640960])"
+            },
+            "row_length_u16": {
+              "width": 2,
+              "fits": true,
+              "sum": 1569342126,
+              "body_size": 6929574,
+              "all_lengths_plausible": false,
+              "sum_matches_body": false,
+              "counterexample": "length sum 1569342126 != body 6929574 (first values [0, 0, 65535, 65535, 0, 0])"
+            },
+            "ordinal_fixed_stride": {
+              "stride": 82,
+              "start": 0,
+              "ordinals_0_to_count_minus_1": true,
+              "variable_byte_offsets_after_ordinal": [
+                {
+                  "record_offset": 10,
+                  "distinct": 8,
+                  "values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                  ]
+                },
+                {
+                  "record_offset": 11,
+                  "distinct": 8,
+                  "values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                  ]
+                },
+                {
+                  "record_offset": 81,
+                  "distinct": 3,
+                  "values": [
+                    0,
+                    2,
+                    99
+                  ]
+                }
+              ],
+              "counterexample": null
+            },
+            "index_string_rows": {
+              "rows_decoded": 0,
+              "bytes_consumed": 0,
+              "consistent_ordinal_and_length_prefix": false,
+              "first_failure": {
+                "row": 0,
+                "offset": 12,
+                "ordinal": 0,
+                "length": 4294967295
+              },
+              "samples": [],
+              "tail_bytes_after_rows": 6929574
+            },
+            "row_offset_at_candidate_offsets": {
+              "candidates_tested": [
+                12,
+                65,
+                2
+              ],
+              "passing_offsets": [],
+              "counterexample": "no candidate header offset yields a monotonic u32 offset array: for every tested offset the first 8 u32 values are not increasing or leave the body"
+            },
+            "ordinal_slot_stride": {
+              "best_strides": [
+                {
+                  "stride": 82,
+                  "probe_rows": 1000,
+                  "ordinal_matches_all_rows": true,
+                  "bytes_covered": 6929586
+                }
+              ],
+              "slots_cover_file": true,
+              "counterexample": null
+            },
+            "ordinal_sequence_scan": {
+              "rows_with_ordinal_prefix": 84507,
+              "row_count": 84507,
+              "all_rows_tagged": true,
+              "first_positions": [
+                12,
+                94,
+                176,
+                258,
+                340,
+                422,
+                504,
+                552
+              ],
+              "row_gaps_first": [
+                82,
+                82,
+                82,
+                82,
+                82,
+                82,
+                48,
+                22
+              ],
+              "variable_row_lengths": true,
+              "counterexample": null
+            },
+            "periodic_u32_runs": {
+              "min_repeats": 8,
+              "longest_runs": [],
+              "any_run": false
+            }
+          },
+          "model": "ordinal_keyed_fixed_stride_rows",
+          "model_evidence": {
+            "row_offset_table": "falsified: no monotonic u32/u64 offset array of `count` entries fits the body",
+            "row_length_table": "falsified: no u16/u32 length array sums to the body size",
+            "ordinal_keyed_rows": "supported",
+            "index_string_rows": "falsified",
+            "row_offset_table_at_any_probed_offset": "falsified: no monotonic offset array at header offsets 12..64",
+            "ordinal_slot_stride": "supported",
+            "ordinal_sequence_scan": "supported (heuristic: a complete 0..count-1 increasing u32 run exists, but individual positions can be off by a stray match)",
+            "periodic_u32_runs": "none found",
+            "evidence_level": "L1 (installed archive bytes read with the workspace decoder)"
+          },
+          "extra_entry": "table_extra_24.dat",
+          "main_entry_present": true
+        },
+        "table_extra_3.dat": {
+          "extra_size": 35009248,
+          "header_count": 84259,
+          "main_table_count": 84259,
+          "count_matches_main_table": true,
+          "body_bytes_after_12": 35009236,
+          "fixed_stride_if_body_starts_at_12": [
+            415,
+            false
+          ],
+          "first_64_bytes_hex": "03017461642ef10d234901000000000003070000000100000001000000000001006c0701006c0701006c0701006c0701006c0701006c070101006c0701006c07",
+          "models": {
+            "row_offset_u32": {
+              "width": 4,
+              "fits": true,
+              "monotonic": false,
+              "first_values": [
+                0,
+                1795,
+                256,
+                256,
+                16777216,
+                17263616,
+                17263616,
+                17263616
+              ],
+              "counterexample": "first offsets not increasing: ['0x0', '0x703', '0x100', '0x100']"
+            },
+            "row_offset_u64": {
+              "width": 8,
+              "fits": true,
+              "monotonic": false,
+              "first_values": [
+                7709466296320,
+                1099511628032,
+                74146666147479552,
+                74146666147965952,
+                74146666147965952,
+                534802460062477312,
+                534802460169732097,
+                534802460169732097
+              ],
+              "counterexample": "first offsets not increasing: ['0x70300000000', '0x10000000100', '0x1076c0001000000', '0x1076c0001076c00']"
+            },
+            "row_length_u32": {
+              "width": 4,
+              "fits": true,
+              "sum": 115139746838309,
+              "body_size": 35009236,
+              "all_lengths_plausible": false,
+              "sum_matches_body": false,
+              "counterexample": "length sum 115139746838309 != body 35009236 (first values [0, 1795, 256, 256, 16777216, 17263616])"
+            },
+            "row_length_u16": {
+              "width": 2,
+              "fits": true,
+              "sum": 1751646039,
+              "body_size": 35009236,
+              "all_lengths_plausible": false,
+              "sum_matches_body": false,
+              "counterexample": "length sum 1751646039 != body 35009236 (first values [0, 0, 1795, 0, 256, 0])"
+            },
+            "index_string_rows": {
+              "rows_decoded": 0,
+              "bytes_consumed": 0,
+              "consistent_ordinal_and_length_prefix": false,
+              "first_failure": {
+                "row": 0,
+                "offset": 12,
+                "length": 1795,
+                "reason": "text not UTF-8"
+              },
+              "samples": [],
+              "tail_bytes_after_rows": 35009236
+            },
+            "row_offset_at_candidate_offsets": {
+              "candidates_tested": [
+                12,
+                65,
+                2
+              ],
+              "passing_offsets": [],
+              "counterexample": "no candidate header offset yields a monotonic u32 offset array: for every tested offset the first 8 u32 values are not increasing or leave the body"
+            },
+            "ordinal_slot_stride": {
+              "best_strides": [],
+              "slots_cover_file": false,
+              "counterexample": "no stride in 8..1024 has u32(slot) == row ordinal for the first 1000 rows"
+            },
+            "ordinal_sequence_scan": {
+              "rows_with_ordinal_prefix": 84259,
+              "row_count": 84259,
+              "all_rows_tagged": true,
+              "first_positions": [
+                12,
+                21,
+                1403,
+                2124,
+                2468,
+                2789,
+                2807,
+                2995
+              ],
+              "row_gaps_first": [
+                9,
+                1382,
+                721,
+                344,
+                321,
+                18,
+                188,
+                3104
+              ],
+              "variable_row_lengths": true,
+              "counterexample": null
+            },
+            "periodic_u32_runs": {
+              "min_repeats": 8,
+              "longest_runs": [
+                {
+                  "byte_offset": 122352,
+                  "value_hex": "00000000",
+                  "repeats": 12
+                },
+                {
+                  "byte_offset": 536612,
+                  "value_hex": "00000000",
+                  "repeats": 12
+                },
+                {
+                  "byte_offset": 885900,
+                  "value_hex": "00000000",
+                  "repeats": 12
+                },
+                {
+                  "byte_offset": 966836,
+                  "value_hex": "00000000",
+                  "repeats": 12
+                },
+                {
+                  "byte_offset": 1166260,
+                  "value_hex": "00000000",
+                  "repeats": 12
+                },
+                {
+                  "byte_offset": 1267172,
+                  "value_hex": "00000000",
+                  "repeats": 12
+                }
+              ],
+              "any_run": true
+            }
+          },
+          "row_boundaries_recovered": false,
+          "ordinal_scan_is_heuristic": true,
+          "ordinal_scan_min_gap": 9,
+          "ordinal_scan_counterexample": "greedy ordinal positions are not usable row starts: the closest two positions are 9 bytes apart, which is too short for a record, so the scan latched onto a stray u32 holding the expected value inside the previous row",
+          "model": "ordinal_tagged_variable_rows",
+          "model_evidence": {
+            "row_offset_table": "falsified: no monotonic u32/u64 offset array of `count` entries fits the body",
+            "row_length_table": "falsified: no u16/u32 length array sums to the body size",
+            "ordinal_keyed_rows": "falsified",
+            "index_string_rows": "falsified",
+            "row_offset_table_at_any_probed_offset": "falsified: no monotonic offset array at header offsets 12..64",
+            "ordinal_slot_stride": "falsified",
+            "ordinal_sequence_scan": "supported (heuristic: a complete 0..count-1 increasing u32 run exists, but individual positions can be off by a stray match)",
+            "periodic_u32_runs": "6 run(s) of >= 8 identical consecutive u32 values",
+            "evidence_level": "L1 (installed archive bytes read with the workspace decoder)"
+          },
+          "extra_entry": "table_extra_3.dat",
+          "main_entry_present": true
+        },
+        "table_extra_9.dat": {
+          "extra_size": 105228,
+          "header_count": 251,
+          "main_table_count": 251,
+          "count_matches_main_table": true,
+          "body_bytes_after_12": 105216,
+          "fixed_stride_if_body_starts_at_12": [
+            419,
+            false
+          ],
+          "first_64_bytes_hex": "03017461642ef10dfb000000000000000b0000004c65732046656e6e6563732d00000000000801018d1eff7fff7f8d1eff7f01ffffffffffffffff0000000100",
+          "models": {
+            "row_offset_u32": {
+              "width": 4,
+              "fits": true,
+              "monotonic": false,
+              "first_values": [
+                0,
+                11,
+                544433484,
+                1852728646,
+                762536805,
+                0,
+                16844800,
+                2147425933
+              ],
+              "counterexample": "first offsets not increasing: ['0x0', '0xb', '0x2073654c', '0x6e6e6546']"
+            },
+            "row_offset_u64": {
+              "width": 8,
+              "fits": true,
+              "monotonic": false,
+              "first_values": [
+                47244640256,
+                7957408943476794700,
+                762536805,
+                9223124152834131968,
+                18375108688354312191,
+                72057594037927935,
+                10160403338131210240,
+                131222994718
+              ],
+              "counterexample": "first offsets not increasing: ['0xb00000000', '0x6e6e65462073654c', '0x2d736365', '0x7fff1e8d01010800']"
+            },
+            "row_length_u32": {
+              "width": 4,
+              "fits": true,
+              "sum": 400125964456,
+              "body_size": 105216,
+              "all_lengths_plausible": false,
+              "sum_matches_body": false,
+              "counterexample": "length sum 400125964456 != body 105216 (first values [0, 11, 544433484, 1852728646, 762536805, 0])"
+            },
+            "row_length_u16": {
+              "width": 2,
+              "fits": true,
+              "sum": 5902971,
+              "body_size": 105216,
+              "all_lengths_plausible": false,
+              "sum_matches_body": false,
+              "counterexample": "length sum 5902971 != body 105216 (first values [0, 0, 11, 0, 25932, 8307])"
+            },
+            "index_string_rows": {
+              "rows_decoded": 1,
+              "bytes_consumed": 19,
+              "consistent_ordinal_and_length_prefix": false,
+              "first_failure": {
+                "row": 1,
+                "offset": 31,
+                "ordinal": 45,
+                "length": 17301504
+              },
+              "samples": [
+                {
+                  "row": 0,
+                  "stored_ordinal": 0,
+                  "length": 11,
+                  "text": "Les Fennecs",
+                  "text_offset": 20
+                }
+              ],
+              "tail_bytes_after_rows": 105197
+            },
+            "row_offset_at_candidate_offsets": {
+              "candidates_tested": [
+                12,
+                65,
+                2
+              ],
+              "passing_offsets": [],
+              "counterexample": "no candidate header offset yields a monotonic u32 offset array: for every tested offset the first 8 u32 values are not increasing or leave the body"
+            },
+            "ordinal_slot_stride": {
+              "best_strides": [],
+              "slots_cover_file": false,
+              "counterexample": "no stride in 8..1024 has u32(slot) == row ordinal for the first 251 rows"
+            },
+            "ordinal_sequence_scan": {
+              "rows_with_ordinal_prefix": 251,
+              "row_count": 251,
+              "all_rows_tagged": true,
+              "first_positions": [
+                12,
+                153,
+                867,
+                1299,
+                1493,
+                1590,
+                2184,
+                3256
+              ],
+              "row_gaps_first": [
+                141,
+                714,
+                432,
+                194,
+                97,
+                594,
+                1072,
+                799
+              ],
+              "variable_row_lengths": true,
+              "counterexample": null
+            },
+            "periodic_u32_runs": {
+              "min_repeats": 8,
+              "longest_runs": [],
+              "any_run": false
+            }
+          },
+          "row_boundaries_recovered": false,
+          "ordinal_scan_is_heuristic": true,
+          "ordinal_scan_min_gap": 97,
+          "model": "ordinal_tagged_variable_rows",
+          "model_evidence": {
+            "row_offset_table": "falsified: no monotonic u32/u64 offset array of `count` entries fits the body",
+            "row_length_table": "falsified: no u16/u32 length array sums to the body size",
+            "ordinal_keyed_rows": "falsified",
+            "index_string_rows": "falsified",
+            "row_offset_table_at_any_probed_offset": "falsified: no monotonic offset array at header offsets 12..64",
+            "ordinal_slot_stride": "falsified",
+            "ordinal_sequence_scan": "supported (heuristic: a complete 0..count-1 increasing u32 run exists, but individual positions can be off by a stray match)",
+            "periodic_u32_runs": "none found",
+            "evidence_level": "L1 (installed archive bytes read with the workspace decoder)"
+          },
+          "extra_entry": "table_extra_9.dat",
+          "main_entry_present": true
+        }
+      }
+    }
+  },
+  "tables_without_model": [],
+  "save_side": {
+    "path": "reports\\save_decode\\extracted\\1 1-大连人\\1 1-大连人\\game_db.dat",
+    "size": 83432017,
+    "header_32_hex": "03017461642ef10d000042420f00f10d04000000323433304b32e80797940400",
+    "magic": "\u0003\u0001tad.",
+    "nested_fmf_magic_count": 0,
+    "tad_magic_count": 1,
+    "table_name_string_hits": 0,
+    "member_name_string_hits": 0,
+    "verdict": "no name-keyed table directory: extra tables cannot be enumerated by member name on the save side",
+    "ordinal_runs": {
+      "byte_stride_38": {
+        "word_stride_scanned": 19,
+        "run_count": 0,
+        "runs": []
+      },
+      "byte_stride_82": {
+        "word_stride_scanned": 41,
+        "run_count": 136,
+        "runs": [
+          {
+            "view_phase": 0,
+            "word_offset": 7,
+            "word_stride": 41,
+            "run_start_byte": 40220864,
+            "run_elements": 4134,
+            "value_step": 2,
+            "rows_covered": 8268,
+            "ordinal_at_run_start": 33375
+          },
+          {
+            "view_phase": 2,
+            "word_offset": 27,
+            "word_stride": 41,
+            "run_start_byte": 40220946,
+            "run_elements": 4133,
+            "value_step": 2,
+            "rows_covered": 8266,
+            "ordinal_at_run_start": 33376
+          },
+          {
+            "view_phase": 2,
+            "word_offset": 3,
+            "word_stride": 41,
+            "run_start_byte": 41202390,
+            "run_elements": 2656,
+            "value_step": 2,
+            "rows_covered": 5312,
+            "ordinal_at_run_start": 45334
+          },
+          {
+            "view_phase": 0,
+            "word_offset": 24,
+            "word_stride": 41,
+            "run_start_byte": 41202472,
+            "run_elements": 2656,
+            "value_step": 2,
+            "rows_covered": 5312,
+            "ordinal_at_run_start": 45335
+          },
+          {
+            "view_phase": 0,
+            "word_offset": 16,
+            "word_stride": 41,
+            "run_start_byte": 41833840,
+            "run_elements": 2130,
+            "value_step": 2,
+            "rows_covered": 4260,
+            "ordinal_at_run_start": 53034
+          }
+        ]
+      },
+      "byte_stride_127": {
+        "word_stride_scanned": 127,
+        "run_count": 0,
+        "runs": []
+      },
+      "byte_stride_181": {
+        "word_stride_scanned": 181,
+        "run_count": 4,
+        "runs": [
+          {
+            "view_phase": 1,
+            "word_offset": 38,
+            "word_stride": 181,
+            "run_start_byte": 27837953,
+            "run_elements": 5266,
+            "value_step": 4,
+            "rows_covered": 21064,
+            "ordinal_at_run_start": 0
+          },
+          {
+            "view_phase": 2,
+            "word_offset": 83,
+            "word_stride": 181,
+            "run_start_byte": 27838134,
+            "run_elements": 5266,
+            "value_step": 4,
+            "rows_covered": 21064,
+            "ordinal_at_run_start": 1
+          },
+          {
+            "view_phase": 3,
+            "word_offset": 128,
+            "word_stride": 181,
+            "run_start_byte": 27838315,
+            "run_elements": 5266,
+            "value_step": 4,
+            "rows_covered": 21064,
+            "ordinal_at_run_start": 2
+          },
+          {
+            "view_phase": 0,
+            "word_offset": 174,
+            "word_stride": 181,
+            "run_start_byte": 27838496,
+            "run_elements": 5266,
+            "value_step": 4,
+            "rows_covered": 21064,
+            "ordinal_at_run_start": 3
+          }
+        ]
+      },
+      "byte_stride_250": {
+        "word_stride_scanned": 125,
+        "run_count": 0,
+        "runs": []
+      }
+    }
+  }
+}

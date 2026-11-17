@@ -1,0 +1,3749 @@
+{
+  "generated_at": "2026-11-16T01:37:31",
+  "script": "scripts/analyze_extra_tables.py",
+  "evidence_level": "L1 (workspace copies re-read by this script; no game launch)",
+  "archives": {
+    "client_db.dat": {
+      "archive_path": "Z:\\SteamLibrary\\steamapps\\common\\Football Manager 2024\\data\\database\\db\\2430\\2430_fm\\client_db.dat",
+      "extra_tables": [
+        {
+          "archive": "client_db.dat",
+          "table": "name_table_extra_0.dat",
+          "payload_size": 3837439,
+          "tad_header": true,
+          "payload_version": 3569,
+          "header_count": 245981,
+          "body_size": 3837427,
+          "partner_table": null,
+          "partner_count": null,
+          "counts_equal": null,
+          "models": {
+            "row_offset_index": {
+              "model": "row_offset_index",
+              "status": "refuted",
+              "evidence": [],
+              "counterexamples": [
+                "u32[2]=1919050067 exceeds body length 3837427; not a byte offset",
+                "u32[2]=1919050067 > u32[3]=361; offsets must be non-decreasing",
+                "(offset,length) pair[1]=(1919050067, 361) out of body bounds"
+              ],
+              "first_u32_values": [
+                0,
+                5,
+                1919050067,
+                361,
+                2048,
+                1684819712,
+                1667865029,
+                616,
+                1024,
+                1802063104,
+                879,
+                1280,
+                1668631552,
+                291681,
+                393216,
+                1699348480,
+                1919250547,
+                5,
+                8,
+                1902475845,
+                1818585461,
+                6,
+                7,
+                1953720653
+              ],
+              "u32_array_fits_body": true,
+              "first_values_monotonic": false,
+              "first_values_within_body": false,
+              "pair_probe_first": [
+                [
+                  0,
+                  5
+                ],
+                [
+                  1919050067,
+                  361
+                ],
+                [
+                  2048,
+                  1684819712
+                ],
+                [
+                  1667865029,
+                  616
+                ],
+                [
+                  1024,
+                  1802063104
+                ],
+                [
+                  879,
+                  1280
+                ],
+                [
+                  1668631552,
+                  291681
+                ],
+                [
+                  393216,
+                  1699348480
+                ]
+              ]
+            },
+            "fixed_stride_records": {
+              "model": "fixed_stride_records",
+              "status": "unresolved",
+              "evidence": [
+                "body 3837427 does not divide by count 245981 (remainder 147712)"
+              ],
+              "counterexamples": []
+            },
+            "ordinal_keyed_variable_rows": {
+              "model": "ordinal_keyed_variable_rows",
+              "status": "supported",
+              "evidence": [
+                "all 245981 ordinals 0..245980 found in order; row bodies fill every byte between them (0..3837427)"
+              ],
+              "counterexamples": [],
+              "scan_seconds": 0.1,
+              "ordinals_found": 245981,
+              "expected_rows": 245981,
+              "row_count_walked": 245981,
+              "body_bytes": 3837427,
+              "first_row_start": 0,
+              "last_row_start": 3837415,
+              "tail_bytes_after_last_row": 8,
+              "row_length_min": 0,
+              "row_length_max": 34,
+              "row_length_median": 11,
+              "row_length_top": [
+                [
+                  10,
+                  45977
+                ],
+                [
+                  9,
+                  43413
+                ],
+                [
+                  11,
+                  36128
+                ],
+                [
+                  12,
+                  24672
+                ],
+                [
+                  8,
+                  21332
+                ],
+                [
+                  13,
+                  15932
+                ],
+                [
+                  14,
+                  10653
+                ],
+                [
+                  15,
+                  8794
+                ],
+                [
+                  16,
+                  8002
+                ],
+                [
+                  17,
+                  7194
+                ]
+              ],
+              "rows_sampled_for_alias_check": 401,
+              "rows_with_alias_of_own_ordinal": 0,
+              "alias_examples": [],
+              "covers_body": true,
+              "first_u16_top": [
+                [
+                  6,
+                  45977
+                ],
+                [
+                  5,
+                  43413
+                ],
+                [
+                  7,
+                  36128
+                ],
+                [
+                  8,
+                  24672
+                ],
+                [
+                  4,
+                  21332
+                ],
+                [
+                  9,
+                  15932
+                ],
+                [
+                  10,
+                  10653
+                ],
+                [
+                  11,
+                  8794
+                ],
+                [
+                  12,
+                  8002
+                ],
+                [
+                  13,
+                  7194
+                ],
+                [
+                  14,
+                  6170
+                ],
+                [
+                  3,
+                  4911
+                ]
+              ],
+              "first_u32_top": [
+                [
+                  "0x6",
+                  45977
+                ],
+                [
+                  "0x5",
+                  43413
+                ],
+                [
+                  "0x7",
+                  36128
+                ],
+                [
+                  "0x8",
+                  24672
+                ],
+                [
+                  "0x4",
+                  21332
+                ],
+                [
+                  "0x9",
+                  15932
+                ],
+                [
+                  "0xa",
+                  10653
+                ],
+                [
+                  "0xb",
+                  8794
+                ],
+                [
+                  "0xc",
+                  8002
+                ],
+                [
+                  "0xd",
+                  7194
+                ],
+                [
+                  "0xe",
+                  6170
+                ],
+                [
+                  "0x3",
+                  4911
+                ]
+              ]
+            },
+            "length_prefixed_string_pool": {
+              "model": "length_prefixed_string_pool",
+              "status": "supported",
+              "evidence": [
+                "245981 records {u32 id, u32 length, utf8} consume all 3837427 body bytes; ids are exactly 0..245980"
+              ],
+              "counterexamples": [],
+              "records_parsed": 245981,
+              "expected_records": 245981,
+              "bytes_consumed": 3837427,
+              "body_bytes": 3837427,
+              "ids_consecutive_from_zero": true,
+              "sample_strings": [
+                "Sabri",
+                "Oldřich",
+                "Miko",
+                "Lucas",
+                "Jesper",
+                "Ezequiel"
+              ]
+            },
+            "dbc_typed_value_stream": {
+              "model": "dbc_typed_value_stream",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                "no probed row body consumes exactly as a DBC typed-value stream"
+              ],
+              "rows_probed": 200,
+              "rows_parsed_as_typed_stream": 0
+            }
+          },
+          "verdict": {
+            "model": "length_prefixed_string_pool",
+            "status": "supported",
+            "confidence": "high",
+            "evidence_level": "L1",
+            "notes": "row payload is an id-keyed UTF-8 string pool; it stores strings, not row offsets",
+            "refuted_models": [
+              {
+                "model": "row_offset_index",
+                "counterexamples": [
+                  "u32[2]=1919050067 exceeds body length 3837427; not a byte offset",
+                  "u32[2]=1919050067 > u32[3]=361; offsets must be non-decreasing",
+                  "(offset,length) pair[1]=(1919050067, 361) out of body bounds"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "archive": "client_db.dat",
+          "table": "name_table_extra_1.dat",
+          "payload_size": 8713837,
+          "tad_header": true,
+          "payload_version": 3569,
+          "header_count": 542060,
+          "body_size": 8713825,
+          "partner_table": null,
+          "partner_count": null,
+          "counts_equal": null,
+          "models": {
+            "row_offset_index": {
+              "model": "row_offset_index",
+              "status": "refuted",
+              "evidence": [],
+              "counterexamples": [
+                "u32[2]=1634558290 exceeds body length 8713825; not a byte offset",
+                "u32[3]=1851877476 > u32[4]=1; offsets must be non-decreasing",
+                "(offset,length) pair[1]=(1634558290, 1851877476) out of body bounds"
+              ],
+              "first_u32_values": [
+                0,
+                8,
+                1634558290,
+                1851877476,
+                1,
+                8,
+                1701471566,
+                3183701092,
+                2,
+                11,
+                1953720653,
+                1936026465,
+                57569139,
+                100663296,
+                1459617792,
+                1702128737,
+                1138,
+                1792,
+                1919896832,
+                1801678700,
+                5,
+                4,
+                1852334418,
+                6
+              ],
+              "u32_array_fits_body": true,
+              "first_values_monotonic": false,
+              "first_values_within_body": false,
+              "pair_probe_first": [
+                [
+                  0,
+                  8
+                ],
+                [
+                  1634558290,
+                  1851877476
+                ],
+                [
+                  1,
+                  8
+                ],
+                [
+                  1701471566,
+                  3183701092
+                ],
+                [
+                  2,
+                  11
+                ],
+                [
+                  1953720653,
+                  1936026465
+                ],
+                [
+                  57569139,
+                  100663296
+                ],
+                [
+                  1459617792,
+                  1702128737
+                ]
+              ]
+            },
+            "fixed_stride_records": {
+              "model": "fixed_stride_records",
+              "status": "unresolved",
+              "evidence": [
+                "body 8713825 does not divide by count 542060 (remainder 40865)"
+              ],
+              "counterexamples": []
+            },
+            "ordinal_keyed_variable_rows": {
+              "model": "ordinal_keyed_variable_rows",
+              "status": "supported",
+              "evidence": [
+                "all 542060 ordinals 0..542059 found in order; row bodies fill every byte between them (0..8713825)"
+              ],
+              "counterexamples": [],
+              "scan_seconds": 0.24,
+              "ordinals_found": 542060,
+              "expected_rows": 542060,
+              "row_count_walked": 542060,
+              "body_bytes": 8713825,
+              "first_row_start": 0,
+              "last_row_start": 8713811,
+              "tail_bytes_after_last_row": 10,
+              "row_length_min": 0,
+              "row_length_max": 48,
+              "row_length_median": 11,
+              "row_length_top": [
+                [
+                  11,
+                  96690
+                ],
+                [
+                  10,
+                  90849
+                ],
+                [
+                  12,
+                  79353
+                ],
+                [
+                  9,
+                  64173
+                ],
+                [
+                  13,
+                  56181
+                ],
+                [
+                  14,
+                  37957
+                ],
+                [
+                  8,
+                  26442
+                ],
+                [
+                  15,
+                  22534
+                ],
+                [
+                  16,
+                  13730
+                ],
+                [
+                  17,
+                  10162
+                ]
+              ],
+              "rows_sampled_for_alias_check": 401,
+              "rows_with_alias_of_own_ordinal": 0,
+              "alias_examples": [],
+              "covers_body": true,
+              "first_u16_top": [
+                [
+                  7,
+                  96690
+                ],
+                [
+                  6,
+                  90849
+                ],
+                [
+                  8,
+                  79353
+                ],
+                [
+                  5,
+                  64173
+                ],
+                [
+                  9,
+                  56181
+                ],
+                [
+                  10,
+                  37957
+                ],
+                [
+                  4,
+                  26442
+                ],
+                [
+                  11,
+                  22534
+                ],
+                [
+                  12,
+                  13730
+                ],
+                [
+                  13,
+                  10162
+                ],
+                [
+                  14,
+                  8623
+                ],
+                [
+                  15,
+                  7271
+                ]
+              ],
+              "first_u32_top": [
+                [
+                  "0x7",
+                  96690
+                ],
+                [
+                  "0x6",
+                  90849
+                ],
+                [
+                  "0x8",
+                  79353
+                ],
+                [
+                  "0x5",
+                  64173
+                ],
+                [
+                  "0x9",
+                  56181
+                ],
+                [
+                  "0xa",
+                  37957
+                ],
+                [
+                  "0x4",
+                  26442
+                ],
+                [
+                  "0xb",
+                  22534
+                ],
+                [
+                  "0xc",
+                  13730
+                ],
+                [
+                  "0xd",
+                  10162
+                ],
+                [
+                  "0xe",
+                  8623
+                ],
+                [
+                  "0xf",
+                  7271
+                ]
+              ]
+            },
+            "length_prefixed_string_pool": {
+              "model": "length_prefixed_string_pool",
+              "status": "supported",
+              "evidence": [
+                "542060 records {u32 id, u32 length, utf8} consume all 8713825 body bytes; ids are exactly 0..542059"
+              ],
+              "counterexamples": [],
+              "records_parsed": 542060,
+              "expected_records": 542060,
+              "bytes_consumed": 8713825,
+              "body_bytes": 8713825,
+              "ids_consecutive_from_zero": true,
+              "sample_strings": [
+                "Ramadhan",
+                "Nejedlý",
+                "Mistakesson",
+                "Walter",
+                "Morlock",
+                "Rahn"
+              ]
+            },
+            "dbc_typed_value_stream": {
+              "model": "dbc_typed_value_stream",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                "no probed row body consumes exactly as a DBC typed-value stream"
+              ],
+              "rows_probed": 200,
+              "rows_parsed_as_typed_stream": 0
+            }
+          },
+          "verdict": {
+            "model": "length_prefixed_string_pool",
+            "status": "supported",
+            "confidence": "high",
+            "evidence_level": "L1",
+            "notes": "row payload is an id-keyed UTF-8 string pool; it stores strings, not row offsets",
+            "refuted_models": [
+              {
+                "model": "row_offset_index",
+                "counterexamples": [
+                  "u32[2]=1634558290 exceeds body length 8713825; not a byte offset",
+                  "u32[3]=1851877476 > u32[4]=1; offsets must be non-decreasing",
+                  "(offset,length) pair[1]=(1634558290, 1851877476) out of body bounds"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "archive": "client_db.dat",
+          "table": "name_table_extra_2.dat",
+          "payload_size": 1636017,
+          "tad_header": true,
+          "payload_version": 3569,
+          "header_count": 85668,
+          "body_size": 1636005,
+          "partner_table": null,
+          "partner_count": null,
+          "counts_equal": null,
+          "models": {
+            "row_offset_index": {
+              "model": "row_offset_index",
+              "status": "refuted",
+              "evidence": [],
+              "counterexamples": [
+                "u32[2]=1109412420 exceeds body length 1636005; not a byte offset",
+                "u32[3]=1868981877 > u32[4]=23422830; offsets must be non-decreasing",
+                "(offset,length) pair[1]=(1109412420, 1868981877) out of body bounds"
+              ],
+              "first_u32_values": [
+                0,
+                11,
+                1109412420,
+                1868981877,
+                23422830,
+                167772160,
+                1392508928,
+                1702258036,
+                1968316526,
+                609,
+                2304,
+                1701991424,
+                1766662183,
+                223086,
+                458752,
+                1967783936,
+                1953066593,
+                1135,
+                1280,
+                1668631552,
+                356200,
+                196608,
+                1699479552,
+                1647
+              ],
+              "u32_array_fits_body": true,
+              "first_values_monotonic": false,
+              "first_values_within_body": false,
+              "pair_probe_first": [
+                [
+                  0,
+                  11
+                ],
+                [
+                  1109412420,
+                  1868981877
+                ],
+                [
+                  23422830,
+                  167772160
+                ],
+                [
+                  1392508928,
+                  1702258036
+                ],
+                [
+                  1968316526,
+                  609
+                ],
+                [
+                  2304,
+                  1701991424
+                ],
+                [
+                  1766662183,
+                  223086
+                ],
+                [
+                  458752,
+                  1967783936
+                ]
+              ]
+            },
+            "fixed_stride_records": {
+              "model": "fixed_stride_records",
+              "status": "unresolved",
+              "evidence": [
+                "body 1636005 does not divide by count 85668 (remainder 8313)"
+              ],
+              "counterexamples": []
+            },
+            "ordinal_keyed_variable_rows": {
+              "model": "ordinal_keyed_variable_rows",
+              "status": "supported",
+              "evidence": [
+                "all 85668 ordinals 0..85667 found in order; row bodies fill every byte between them (0..1636005)"
+              ],
+              "counterexamples": [],
+              "scan_seconds": 0.03,
+              "ordinals_found": 85668,
+              "expected_rows": 85668,
+              "row_count_walked": 85668,
+              "body_bytes": 1636005,
+              "first_row_start": 0,
+              "last_row_start": 1635993,
+              "tail_bytes_after_last_row": 8,
+              "row_length_min": 0,
+              "row_length_max": 42,
+              "row_length_median": 16,
+              "row_length_top": [
+                [
+                  16,
+                  12008
+                ],
+                [
+                  17,
+                  11226
+                ],
+                [
+                  15,
+                  10186
+                ],
+                [
+                  18,
+                  8289
+                ],
+                [
+                  14,
+                  6855
+                ],
+                [
+                  19,
+                  5343
+                ],
+                [
+                  13,
+                  4833
+                ],
+                [
+                  11,
+                  4753
+                ],
+                [
+                  10,
+                  4435
+                ],
+                [
+                  12,
+                  4376
+                ]
+              ],
+              "rows_sampled_for_alias_check": 401,
+              "rows_with_alias_of_own_ordinal": 0,
+              "alias_examples": [],
+              "covers_body": true,
+              "first_u16_top": [
+                [
+                  12,
+                  12007
+                ],
+                [
+                  13,
+                  11226
+                ],
+                [
+                  11,
+                  10186
+                ],
+                [
+                  14,
+                  8289
+                ],
+                [
+                  10,
+                  6855
+                ],
+                [
+                  15,
+                  5343
+                ],
+                [
+                  9,
+                  4833
+                ],
+                [
+                  7,
+                  4753
+                ],
+                [
+                  6,
+                  4435
+                ],
+                [
+                  8,
+                  4376
+                ],
+                [
+                  5,
+                  3668
+                ],
+                [
+                  16,
+                  2949
+                ]
+              ],
+              "first_u32_top": [
+                [
+                  "0xc",
+                  12007
+                ],
+                [
+                  "0xd",
+                  11226
+                ],
+                [
+                  "0xb",
+                  10186
+                ],
+                [
+                  "0xe",
+                  8289
+                ],
+                [
+                  "0xa",
+                  6855
+                ],
+                [
+                  "0xf",
+                  5343
+                ],
+                [
+                  "0x9",
+                  4833
+                ],
+                [
+                  "0x7",
+                  4753
+                ],
+                [
+                  "0x6",
+                  4435
+                ],
+                [
+                  "0x8",
+                  4376
+                ],
+                [
+                  "0x5",
+                  3668
+                ],
+                [
+                  "0x10",
+                  2949
+                ]
+              ]
+            },
+            "length_prefixed_string_pool": {
+              "model": "length_prefixed_string_pool",
+              "status": "supported",
+              "evidence": [
+                "85668 records {u32 id, u32 length, utf8} consume all 1636005 body bytes; ids are exactly 0..85667"
+              ],
+              "counterexamples": [],
+              "records_parsed": 85668,
+              "expected_records": 85668,
+              "bytes_consumed": 1636005,
+              "body_bytes": 1636005,
+              "ids_consecutive_from_zero": true,
+              "sample_strings": [
+                "DJ Buffonge",
+                "Steven Rua",
+                "Tre' Ming",
+                "Juanito",
+                "Lucho",
+                "Leo"
+              ]
+            },
+            "dbc_typed_value_stream": {
+              "model": "dbc_typed_value_stream",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                "no probed row body consumes exactly as a DBC typed-value stream"
+              ],
+              "rows_probed": 200,
+              "rows_parsed_as_typed_stream": 0
+            }
+          },
+          "verdict": {
+            "model": "length_prefixed_string_pool",
+            "status": "supported",
+            "confidence": "high",
+            "evidence_level": "L1",
+            "notes": "row payload is an id-keyed UTF-8 string pool; it stores strings, not row offsets",
+            "refuted_models": [
+              {
+                "model": "row_offset_index",
+                "counterexamples": [
+                  "u32[2]=1109412420 exceeds body length 1636005; not a byte offset",
+                  "u32[3]=1868981877 > u32[4]=23422830; offsets must be non-decreasing",
+                  "(offset,length) pair[1]=(1109412420, 1868981877) out of body bounds"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "archive": "client_db.dat",
+          "table": "table_extra_3.dat",
+          "payload_size": 13053908,
+          "tad_header": true,
+          "payload_version": 3569,
+          "header_count": 84259,
+          "body_size": 13053896,
+          "partner_table": "table_3.dat",
+          "partner_count": 84259,
+          "counts_equal": true,
+          "models": {
+            "row_offset_index": {
+              "model": "row_offset_index",
+              "status": "refuted",
+              "evidence": [],
+              "counterexamples": [
+                "u32[1]=4294903707 exceeds body length 13053896; not a byte offset",
+                "u32[1]=4294903707 > u32[2]=65535; offsets must be non-decreasing",
+                "(offset,length) pair[0]=(0, 4294903707) out of body bounds"
+              ],
+              "first_u32_values": [
+                0,
+                4294903707,
+                65535,
+                0,
+                4278255882,
+                4278278783,
+                4278460799,
+                4294911359,
+                4294967295,
+                65535,
+                16777472,
+                22675713,
+                22708223,
+                0,
+                4294967040,
+                4294967295,
+                255,
+                16842755,
+                4278278657,
+                1510038143,
+                1,
+                4294967295,
+                4294967295,
+                33554432
+              ],
+              "u32_array_fits_body": true,
+              "first_values_monotonic": false,
+              "first_values_within_body": false,
+              "pair_probe_first": [
+                [
+                  0,
+                  4294903707
+                ],
+                [
+                  65535,
+                  0
+                ],
+                [
+                  4278255882,
+                  4278278783
+                ],
+                [
+                  4278460799,
+                  4294911359
+                ],
+                [
+                  4294967295,
+                  65535
+                ],
+                [
+                  16777472,
+                  22675713
+                ],
+                [
+                  22708223,
+                  0
+                ],
+                [
+                  4294967040,
+                  4294967295
+                ]
+              ]
+            },
+            "fixed_stride_records": {
+              "model": "fixed_stride_records",
+              "status": "unresolved",
+              "evidence": [
+                "body 13053896 does not divide by count 84259 (remainder 78010)"
+              ],
+              "counterexamples": []
+            },
+            "ordinal_keyed_variable_rows": {
+              "model": "ordinal_keyed_variable_rows",
+              "status": "supported_with_boundary_ambiguity",
+              "evidence": [
+                "all 84259 ordinals found in order and row bodies fill the file; 1/402 sampled row bodies also contain their own ordinal as a plain data value, so only the sequential walk is a safe boundary decoder"
+              ],
+              "counterexamples": [],
+              "scan_seconds": 0.05,
+              "ordinals_found": 84259,
+              "expected_rows": 84259,
+              "row_count_walked": 84259,
+              "body_bytes": 13053896,
+              "first_row_start": 0,
+              "last_row_start": 13053871,
+              "tail_bytes_after_last_row": 21,
+              "row_length_min": 4,
+              "row_length_max": 2107,
+              "row_length_median": 75,
+              "row_length_top": [
+                [
+                  21,
+                  29304
+                ],
+                [
+                  75,
+                  13882
+                ],
+                [
+                  291,
+                  7900
+                ],
+                [
+                  48,
+                  5837
+                ],
+                [
+                  183,
+                  4836
+                ],
+                [
+                  102,
+                  2834
+                ],
+                [
+                  129,
+                  2211
+                ],
+                [
+                  507,
+                  2139
+                ],
+                [
+                  156,
+                  1969
+                ],
+                [
+                  399,
+                  1702
+                ]
+              ],
+              "rows_sampled_for_alias_check": 402,
+              "rows_with_alias_of_own_ordinal": 1,
+              "alias_examples": [
+                {
+                  "ordinal": 0,
+                  "row_start": 0,
+                  "extra_positions": [
+                    10,
+                    11,
+                    12
+                  ]
+                }
+              ],
+              "covers_body": true,
+              "first_u16_top": [
+                [
+                  0,
+                  30666
+                ],
+                [
+                  2013,
+                  919
+                ],
+                [
+                  2012,
+                  904
+                ],
+                [
+                  2015,
+                  902
+                ],
+                [
+                  2010,
+                  899
+                ],
+                [
+                  2014,
+                  870
+                ],
+                [
+                  2009,
+                  861
+                ],
+                [
+                  1946,
+                  845
+                ],
+                [
+                  2016,
+                  820
+                ],
+                [
+                  2011,
+                  783
+                ],
+                [
+                  2018,
+                  767
+                ],
+                [
+                  2007,
+                  761
+                ]
+              ],
+              "first_u32_top": [
+                [
+                  "0xffff0000",
+                  30663
+                ],
+                [
+                  "0xffff07dd",
+                  919
+                ],
+                [
+                  "0xffff07dc",
+                  904
+                ],
+                [
+                  "0xffff07df",
+                  902
+                ],
+                [
+                  "0xffff07da",
+                  899
+                ],
+                [
+                  "0xffff07de",
+                  870
+                ],
+                [
+                  "0xffff07d9",
+                  861
+                ],
+                [
+                  "0xffff079a",
+                  845
+                ],
+                [
+                  "0xffff07e0",
+                  820
+                ],
+                [
+                  "0xffff07db",
+                  783
+                ],
+                [
+                  "0xffff07e2",
+                  767
+                ],
+                [
+                  "0xffff07d7",
+                  761
+                ]
+              ]
+            },
+            "length_prefixed_string_pool": {
+              "model": "length_prefixed_string_pool",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                {
+                  "offset": 0,
+                  "id": 0,
+                  "length": 4294903707,
+                  "reason": "length out of bounds"
+                }
+              ],
+              "records_parsed": 0,
+              "expected_records": 84259,
+              "bytes_consumed": 0,
+              "body_bytes": 13053896,
+              "ids_consecutive_from_zero": false,
+              "sample_strings": []
+            },
+            "dbc_typed_value_stream": {
+              "model": "dbc_typed_value_stream",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                "no probed row body consumes exactly as a DBC typed-value stream"
+              ],
+              "rows_probed": 200,
+              "rows_parsed_as_typed_stream": 0
+            }
+          },
+          "verdict": {
+            "model": "ordinal_keyed_variable_rows",
+            "status": "supported_with_boundary_ambiguity",
+            "confidence": "medium",
+            "evidence_level": "L1",
+            "notes": "each row starts with its 0-based u32 ordinal and is followed by a variable-length per-row payload; the internal field serializer remains unresolved",
+            "refuted_models": [
+              {
+                "model": "row_offset_index",
+                "counterexamples": [
+                  "u32[1]=4294903707 exceeds body length 13053896; not a byte offset",
+                  "u32[1]=4294903707 > u32[2]=65535; offsets must be non-decreasing",
+                  "(offset,length) pair[0]=(0, 4294903707) out of body bounds"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "archive": "client_db.dat",
+          "table": "table_extra_9.dat",
+          "payload_size": 83927,
+          "tad_header": true,
+          "payload_version": 3569,
+          "header_count": 251,
+          "body_size": 83915,
+          "partner_table": "table_9.dat",
+          "partner_count": 251,
+          "counts_equal": true,
+          "models": {
+            "row_offset_index": {
+              "model": "row_offset_index",
+              "status": "refuted",
+              "evidence": [],
+              "counterexamples": [
+                "u32[2]=544433484 exceeds body length 83915; not a byte offset",
+                "u32[3]=1852728646 > u32[4]=762536805; offsets must be non-decreasing",
+                "(offset,length) pair[1]=(544433484, 1852728646) out of body bounds"
+              ],
+              "first_u32_values": [
+                0,
+                11,
+                544433484,
+                1852728646,
+                762536805,
+                0,
+                16844800,
+                2147425933,
+                512589823,
+                4278288383,
+                4294967295,
+                16777215,
+                65536,
+                2365653249,
+                2373975838,
+                30,
+                4294901760,
+                4294967295,
+                65535,
+                16777984,
+                2147418369,
+                2147425933,
+                512589823,
+                4294967041
+              ],
+              "u32_array_fits_body": true,
+              "first_values_monotonic": false,
+              "first_values_within_body": false,
+              "pair_probe_first": [
+                [
+                  0,
+                  11
+                ],
+                [
+                  544433484,
+                  1852728646
+                ],
+                [
+                  762536805,
+                  0
+                ],
+                [
+                  16844800,
+                  2147425933
+                ],
+                [
+                  512589823,
+                  4278288383
+                ],
+                [
+                  4294967295,
+                  16777215
+                ],
+                [
+                  65536,
+                  2365653249
+                ],
+                [
+                  2373975838,
+                  30
+                ]
+              ]
+            },
+            "fixed_stride_records": {
+              "model": "fixed_stride_records",
+              "status": "unresolved",
+              "evidence": [
+                "body 83915 does not divide by count 251 (remainder 81)"
+              ],
+              "counterexamples": []
+            },
+            "ordinal_keyed_variable_rows": {
+              "model": "ordinal_keyed_variable_rows",
+              "status": "supported_with_boundary_ambiguity",
+              "evidence": [
+                "all 251 ordinals found in order and row bodies fill the file; 12/249 sampled row bodies also contain their own ordinal as a plain data value, so only the sequential walk is a safe boundary decoder"
+              ],
+              "counterexamples": [],
+              "scan_seconds": 0.0,
+              "ordinals_found": 251,
+              "expected_rows": 251,
+              "row_count_walked": 251,
+              "body_bytes": 83915,
+              "first_row_start": 0,
+              "last_row_start": 83757,
+              "tail_bytes_after_last_row": 154,
+              "row_length_min": 0,
+              "row_length_max": 1173,
+              "row_length_median": 354,
+              "row_length_top": [
+                [
+                  19,
+                  20
+                ],
+                [
+                  73,
+                  7
+                ],
+                [
+                  354,
+                  6
+                ],
+                [
+                  383,
+                  4
+                ],
+                [
+                  83,
+                  4
+                ],
+                [
+                  208,
+                  4
+                ],
+                [
+                  466,
+                  3
+                ],
+                [
+                  485,
+                  3
+                ],
+                [
+                  410,
+                  3
+                ],
+                [
+                  82,
+                  3
+                ]
+              ],
+              "rows_sampled_for_alias_check": 249,
+              "rows_with_alias_of_own_ordinal": 12,
+              "alias_examples": [
+                {
+                  "ordinal": 0,
+                  "row_start": 0,
+                  "extra_positions": [
+                    20,
+                    21,
+                    61,
+                    62
+                  ]
+                },
+                {
+                  "ordinal": 1,
+                  "row_start": 141,
+                  "extra_positions": [
+                    250
+                  ]
+                },
+                {
+                  "ordinal": 4,
+                  "row_start": 1221,
+                  "extra_positions": [
+                    1276,
+                    1553,
+                    1607,
+                    1659
+                  ]
+                },
+                {
+                  "ordinal": 11,
+                  "row_start": 4080,
+                  "extra_positions": [
+                    4434
+                  ]
+                },
+                {
+                  "ordinal": 12,
+                  "row_start": 4438,
+                  "extra_positions": [
+                    4955
+                  ]
+                },
+                {
+                  "ordinal": 14,
+                  "row_start": 6170,
+                  "extra_positions": [
+                    6174
+                  ]
+                }
+              ],
+              "covers_body": true,
+              "first_u16_top": [
+                [
+                  0,
+                  55
+                ],
+                [
+                  14,
+                  19
+                ],
+                [
+                  9,
+                  19
+                ],
+                [
+                  11,
+                  18
+                ],
+                [
+                  15,
+                  16
+                ],
+                [
+                  10,
+                  15
+                ],
+                [
+                  12,
+                  14
+                ],
+                [
+                  13,
+                  13
+                ],
+                [
+                  8,
+                  13
+                ],
+                [
+                  18,
+                  9
+                ],
+                [
+                  17,
+                  9
+                ],
+                [
+                  7,
+                  8
+                ]
+              ],
+              "first_u32_top": [
+                [
+                  "0x0",
+                  52
+                ],
+                [
+                  "0xe",
+                  19
+                ],
+                [
+                  "0x9",
+                  19
+                ],
+                [
+                  "0xb",
+                  18
+                ],
+                [
+                  "0xf",
+                  16
+                ],
+                [
+                  "0xa",
+                  15
+                ],
+                [
+                  "0xc",
+                  14
+                ],
+                [
+                  "0xd",
+                  13
+                ],
+                [
+                  "0x8",
+                  13
+                ],
+                [
+                  "0x12",
+                  9
+                ],
+                [
+                  "0x11",
+                  9
+                ],
+                [
+                  "0x7",
+                  8
+                ]
+              ]
+            },
+            "length_prefixed_string_pool": {
+              "model": "length_prefixed_string_pool",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                {
+                  "offset": 19,
+                  "id": 45,
+                  "length": 17301504,
+                  "reason": "length out of bounds"
+                },
+                "parsed 1 records / consumed 19 of 83915 bytes"
+              ],
+              "records_parsed": 1,
+              "expected_records": 251,
+              "bytes_consumed": 19,
+              "body_bytes": 83915,
+              "ids_consecutive_from_zero": true,
+              "sample_strings": [
+                "Les Fennecs"
+              ]
+            },
+            "dbc_typed_value_stream": {
+              "model": "dbc_typed_value_stream",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                "no probed row body consumes exactly as a DBC typed-value stream"
+              ],
+              "rows_probed": 200,
+              "rows_parsed_as_typed_stream": 0
+            }
+          },
+          "verdict": {
+            "model": "ordinal_keyed_variable_rows",
+            "status": "supported_with_boundary_ambiguity",
+            "confidence": "medium",
+            "evidence_level": "L1",
+            "notes": "each row starts with its 0-based u32 ordinal and is followed by a variable-length per-row payload; the internal field serializer remains unresolved",
+            "refuted_models": [
+              {
+                "model": "row_offset_index",
+                "counterexamples": [
+                  "u32[2]=544433484 exceeds body length 83915; not a byte offset",
+                  "u32[3]=1852728646 > u32[4]=762536805; offsets must be non-decreasing",
+                  "(offset,length) pair[1]=(544433484, 1852728646) out of body bounds"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "extra_9_cross_check": {
+        "model": "ordinal_keyed_nickname_records",
+        "client_rows_with_leading_utf8": 189,
+        "server_rows_with_leading_utf8": 185,
+        "shared_ordinals": 185,
+        "identical_length_and_text": 185,
+        "identical_ratio": "185/185",
+        "evidence_level": "L1",
+        "samples": {
+          "0": "Les Fennecs",
+          "3": "The Zebras",
+          "7": "Tubarões Azuis",
+          "8": "Les Fauves du Bas Oubangui",
+          "9": "Les Sao",
+          "13": "The Walya Antelopes"
+        }
+      }
+    },
+    "server_db.dat": {
+      "archive_path": "Z:\\SteamLibrary\\steamapps\\common\\Football Manager 2024\\data\\database\\db\\2430\\2430_fm\\server_db.dat",
+      "extra_tables": [
+        {
+          "archive": "server_db.dat",
+          "table": "name_table_extra_0.dat",
+          "payload_size": 3837439,
+          "tad_header": true,
+          "payload_version": 3569,
+          "header_count": 245981,
+          "body_size": 3837427,
+          "partner_table": null,
+          "partner_count": null,
+          "counts_equal": null,
+          "models": {
+            "row_offset_index": {
+              "model": "row_offset_index",
+              "status": "refuted",
+              "evidence": [],
+              "counterexamples": [
+                "u32[2]=1919050067 exceeds body length 3837427; not a byte offset",
+                "u32[2]=1919050067 > u32[3]=361; offsets must be non-decreasing",
+                "(offset,length) pair[1]=(1919050067, 361) out of body bounds"
+              ],
+              "first_u32_values": [
+                0,
+                5,
+                1919050067,
+                361,
+                2048,
+                1684819712,
+                1667865029,
+                616,
+                1024,
+                1802063104,
+                879,
+                1280,
+                1668631552,
+                291681,
+                393216,
+                1699348480,
+                1919250547,
+                5,
+                8,
+                1902475845,
+                1818585461,
+                6,
+                7,
+                1953720653
+              ],
+              "u32_array_fits_body": true,
+              "first_values_monotonic": false,
+              "first_values_within_body": false,
+              "pair_probe_first": [
+                [
+                  0,
+                  5
+                ],
+                [
+                  1919050067,
+                  361
+                ],
+                [
+                  2048,
+                  1684819712
+                ],
+                [
+                  1667865029,
+                  616
+                ],
+                [
+                  1024,
+                  1802063104
+                ],
+                [
+                  879,
+                  1280
+                ],
+                [
+                  1668631552,
+                  291681
+                ],
+                [
+                  393216,
+                  1699348480
+                ]
+              ]
+            },
+            "fixed_stride_records": {
+              "model": "fixed_stride_records",
+              "status": "unresolved",
+              "evidence": [
+                "body 3837427 does not divide by count 245981 (remainder 147712)"
+              ],
+              "counterexamples": []
+            },
+            "ordinal_keyed_variable_rows": {
+              "model": "ordinal_keyed_variable_rows",
+              "status": "supported",
+              "evidence": [
+                "all 245981 ordinals 0..245980 found in order; row bodies fill every byte between them (0..3837427)"
+              ],
+              "counterexamples": [],
+              "scan_seconds": 0.1,
+              "ordinals_found": 245981,
+              "expected_rows": 245981,
+              "row_count_walked": 245981,
+              "body_bytes": 3837427,
+              "first_row_start": 0,
+              "last_row_start": 3837415,
+              "tail_bytes_after_last_row": 8,
+              "row_length_min": 0,
+              "row_length_max": 34,
+              "row_length_median": 11,
+              "row_length_top": [
+                [
+                  10,
+                  45977
+                ],
+                [
+                  9,
+                  43413
+                ],
+                [
+                  11,
+                  36128
+                ],
+                [
+                  12,
+                  24672
+                ],
+                [
+                  8,
+                  21332
+                ],
+                [
+                  13,
+                  15932
+                ],
+                [
+                  14,
+                  10653
+                ],
+                [
+                  15,
+                  8794
+                ],
+                [
+                  16,
+                  8002
+                ],
+                [
+                  17,
+                  7194
+                ]
+              ],
+              "rows_sampled_for_alias_check": 401,
+              "rows_with_alias_of_own_ordinal": 0,
+              "alias_examples": [],
+              "covers_body": true,
+              "first_u16_top": [
+                [
+                  6,
+                  45977
+                ],
+                [
+                  5,
+                  43413
+                ],
+                [
+                  7,
+                  36128
+                ],
+                [
+                  8,
+                  24672
+                ],
+                [
+                  4,
+                  21332
+                ],
+                [
+                  9,
+                  15932
+                ],
+                [
+                  10,
+                  10653
+                ],
+                [
+                  11,
+                  8794
+                ],
+                [
+                  12,
+                  8002
+                ],
+                [
+                  13,
+                  7194
+                ],
+                [
+                  14,
+                  6170
+                ],
+                [
+                  3,
+                  4911
+                ]
+              ],
+              "first_u32_top": [
+                [
+                  "0x6",
+                  45977
+                ],
+                [
+                  "0x5",
+                  43413
+                ],
+                [
+                  "0x7",
+                  36128
+                ],
+                [
+                  "0x8",
+                  24672
+                ],
+                [
+                  "0x4",
+                  21332
+                ],
+                [
+                  "0x9",
+                  15932
+                ],
+                [
+                  "0xa",
+                  10653
+                ],
+                [
+                  "0xb",
+                  8794
+                ],
+                [
+                  "0xc",
+                  8002
+                ],
+                [
+                  "0xd",
+                  7194
+                ],
+                [
+                  "0xe",
+                  6170
+                ],
+                [
+                  "0x3",
+                  4911
+                ]
+              ]
+            },
+            "length_prefixed_string_pool": {
+              "model": "length_prefixed_string_pool",
+              "status": "supported",
+              "evidence": [
+                "245981 records {u32 id, u32 length, utf8} consume all 3837427 body bytes; ids are exactly 0..245980"
+              ],
+              "counterexamples": [],
+              "records_parsed": 245981,
+              "expected_records": 245981,
+              "bytes_consumed": 3837427,
+              "body_bytes": 3837427,
+              "ids_consecutive_from_zero": true,
+              "sample_strings": [
+                "Sabri",
+                "Oldřich",
+                "Miko",
+                "Lucas",
+                "Jesper",
+                "Ezequiel"
+              ]
+            },
+            "dbc_typed_value_stream": {
+              "model": "dbc_typed_value_stream",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                "no probed row body consumes exactly as a DBC typed-value stream"
+              ],
+              "rows_probed": 200,
+              "rows_parsed_as_typed_stream": 0
+            }
+          },
+          "verdict": {
+            "model": "length_prefixed_string_pool",
+            "status": "supported",
+            "confidence": "high",
+            "evidence_level": "L1",
+            "notes": "row payload is an id-keyed UTF-8 string pool; it stores strings, not row offsets",
+            "refuted_models": [
+              {
+                "model": "row_offset_index",
+                "counterexamples": [
+                  "u32[2]=1919050067 exceeds body length 3837427; not a byte offset",
+                  "u32[2]=1919050067 > u32[3]=361; offsets must be non-decreasing",
+                  "(offset,length) pair[1]=(1919050067, 361) out of body bounds"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "archive": "server_db.dat",
+          "table": "name_table_extra_1.dat",
+          "payload_size": 8713837,
+          "tad_header": true,
+          "payload_version": 3569,
+          "header_count": 542060,
+          "body_size": 8713825,
+          "partner_table": null,
+          "partner_count": null,
+          "counts_equal": null,
+          "models": {
+            "row_offset_index": {
+              "model": "row_offset_index",
+              "status": "refuted",
+              "evidence": [],
+              "counterexamples": [
+                "u32[2]=1634558290 exceeds body length 8713825; not a byte offset",
+                "u32[3]=1851877476 > u32[4]=1; offsets must be non-decreasing",
+                "(offset,length) pair[1]=(1634558290, 1851877476) out of body bounds"
+              ],
+              "first_u32_values": [
+                0,
+                8,
+                1634558290,
+                1851877476,
+                1,
+                8,
+                1701471566,
+                3183701092,
+                2,
+                11,
+                1953720653,
+                1936026465,
+                57569139,
+                100663296,
+                1459617792,
+                1702128737,
+                1138,
+                1792,
+                1919896832,
+                1801678700,
+                5,
+                4,
+                1852334418,
+                6
+              ],
+              "u32_array_fits_body": true,
+              "first_values_monotonic": false,
+              "first_values_within_body": false,
+              "pair_probe_first": [
+                [
+                  0,
+                  8
+                ],
+                [
+                  1634558290,
+                  1851877476
+                ],
+                [
+                  1,
+                  8
+                ],
+                [
+                  1701471566,
+                  3183701092
+                ],
+                [
+                  2,
+                  11
+                ],
+                [
+                  1953720653,
+                  1936026465
+                ],
+                [
+                  57569139,
+                  100663296
+                ],
+                [
+                  1459617792,
+                  1702128737
+                ]
+              ]
+            },
+            "fixed_stride_records": {
+              "model": "fixed_stride_records",
+              "status": "unresolved",
+              "evidence": [
+                "body 8713825 does not divide by count 542060 (remainder 40865)"
+              ],
+              "counterexamples": []
+            },
+            "ordinal_keyed_variable_rows": {
+              "model": "ordinal_keyed_variable_rows",
+              "status": "supported",
+              "evidence": [
+                "all 542060 ordinals 0..542059 found in order; row bodies fill every byte between them (0..8713825)"
+              ],
+              "counterexamples": [],
+              "scan_seconds": 0.22,
+              "ordinals_found": 542060,
+              "expected_rows": 542060,
+              "row_count_walked": 542060,
+              "body_bytes": 8713825,
+              "first_row_start": 0,
+              "last_row_start": 8713811,
+              "tail_bytes_after_last_row": 10,
+              "row_length_min": 0,
+              "row_length_max": 48,
+              "row_length_median": 11,
+              "row_length_top": [
+                [
+                  11,
+                  96690
+                ],
+                [
+                  10,
+                  90849
+                ],
+                [
+                  12,
+                  79353
+                ],
+                [
+                  9,
+                  64173
+                ],
+                [
+                  13,
+                  56181
+                ],
+                [
+                  14,
+                  37957
+                ],
+                [
+                  8,
+                  26442
+                ],
+                [
+                  15,
+                  22534
+                ],
+                [
+                  16,
+                  13730
+                ],
+                [
+                  17,
+                  10162
+                ]
+              ],
+              "rows_sampled_for_alias_check": 401,
+              "rows_with_alias_of_own_ordinal": 0,
+              "alias_examples": [],
+              "covers_body": true,
+              "first_u16_top": [
+                [
+                  7,
+                  96690
+                ],
+                [
+                  6,
+                  90849
+                ],
+                [
+                  8,
+                  79353
+                ],
+                [
+                  5,
+                  64173
+                ],
+                [
+                  9,
+                  56181
+                ],
+                [
+                  10,
+                  37957
+                ],
+                [
+                  4,
+                  26442
+                ],
+                [
+                  11,
+                  22534
+                ],
+                [
+                  12,
+                  13730
+                ],
+                [
+                  13,
+                  10162
+                ],
+                [
+                  14,
+                  8623
+                ],
+                [
+                  15,
+                  7271
+                ]
+              ],
+              "first_u32_top": [
+                [
+                  "0x7",
+                  96690
+                ],
+                [
+                  "0x6",
+                  90849
+                ],
+                [
+                  "0x8",
+                  79353
+                ],
+                [
+                  "0x5",
+                  64173
+                ],
+                [
+                  "0x9",
+                  56181
+                ],
+                [
+                  "0xa",
+                  37957
+                ],
+                [
+                  "0x4",
+                  26442
+                ],
+                [
+                  "0xb",
+                  22534
+                ],
+                [
+                  "0xc",
+                  13730
+                ],
+                [
+                  "0xd",
+                  10162
+                ],
+                [
+                  "0xe",
+                  8623
+                ],
+                [
+                  "0xf",
+                  7271
+                ]
+              ]
+            },
+            "length_prefixed_string_pool": {
+              "model": "length_prefixed_string_pool",
+              "status": "supported",
+              "evidence": [
+                "542060 records {u32 id, u32 length, utf8} consume all 8713825 body bytes; ids are exactly 0..542059"
+              ],
+              "counterexamples": [],
+              "records_parsed": 542060,
+              "expected_records": 542060,
+              "bytes_consumed": 8713825,
+              "body_bytes": 8713825,
+              "ids_consecutive_from_zero": true,
+              "sample_strings": [
+                "Ramadhan",
+                "Nejedlý",
+                "Mistakesson",
+                "Walter",
+                "Morlock",
+                "Rahn"
+              ]
+            },
+            "dbc_typed_value_stream": {
+              "model": "dbc_typed_value_stream",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                "no probed row body consumes exactly as a DBC typed-value stream"
+              ],
+              "rows_probed": 200,
+              "rows_parsed_as_typed_stream": 0
+            }
+          },
+          "verdict": {
+            "model": "length_prefixed_string_pool",
+            "status": "supported",
+            "confidence": "high",
+            "evidence_level": "L1",
+            "notes": "row payload is an id-keyed UTF-8 string pool; it stores strings, not row offsets",
+            "refuted_models": [
+              {
+                "model": "row_offset_index",
+                "counterexamples": [
+                  "u32[2]=1634558290 exceeds body length 8713825; not a byte offset",
+                  "u32[3]=1851877476 > u32[4]=1; offsets must be non-decreasing",
+                  "(offset,length) pair[1]=(1634558290, 1851877476) out of body bounds"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "archive": "server_db.dat",
+          "table": "name_table_extra_2.dat",
+          "payload_size": 1636017,
+          "tad_header": true,
+          "payload_version": 3569,
+          "header_count": 85668,
+          "body_size": 1636005,
+          "partner_table": null,
+          "partner_count": null,
+          "counts_equal": null,
+          "models": {
+            "row_offset_index": {
+              "model": "row_offset_index",
+              "status": "refuted",
+              "evidence": [],
+              "counterexamples": [
+                "u32[2]=1109412420 exceeds body length 1636005; not a byte offset",
+                "u32[3]=1868981877 > u32[4]=23422830; offsets must be non-decreasing",
+                "(offset,length) pair[1]=(1109412420, 1868981877) out of body bounds"
+              ],
+              "first_u32_values": [
+                0,
+                11,
+                1109412420,
+                1868981877,
+                23422830,
+                167772160,
+                1392508928,
+                1702258036,
+                1968316526,
+                609,
+                2304,
+                1701991424,
+                1766662183,
+                223086,
+                458752,
+                1967783936,
+                1953066593,
+                1135,
+                1280,
+                1668631552,
+                356200,
+                196608,
+                1699479552,
+                1647
+              ],
+              "u32_array_fits_body": true,
+              "first_values_monotonic": false,
+              "first_values_within_body": false,
+              "pair_probe_first": [
+                [
+                  0,
+                  11
+                ],
+                [
+                  1109412420,
+                  1868981877
+                ],
+                [
+                  23422830,
+                  167772160
+                ],
+                [
+                  1392508928,
+                  1702258036
+                ],
+                [
+                  1968316526,
+                  609
+                ],
+                [
+                  2304,
+                  1701991424
+                ],
+                [
+                  1766662183,
+                  223086
+                ],
+                [
+                  458752,
+                  1967783936
+                ]
+              ]
+            },
+            "fixed_stride_records": {
+              "model": "fixed_stride_records",
+              "status": "unresolved",
+              "evidence": [
+                "body 1636005 does not divide by count 85668 (remainder 8313)"
+              ],
+              "counterexamples": []
+            },
+            "ordinal_keyed_variable_rows": {
+              "model": "ordinal_keyed_variable_rows",
+              "status": "supported",
+              "evidence": [
+                "all 85668 ordinals 0..85667 found in order; row bodies fill every byte between them (0..1636005)"
+              ],
+              "counterexamples": [],
+              "scan_seconds": 0.03,
+              "ordinals_found": 85668,
+              "expected_rows": 85668,
+              "row_count_walked": 85668,
+              "body_bytes": 1636005,
+              "first_row_start": 0,
+              "last_row_start": 1635993,
+              "tail_bytes_after_last_row": 8,
+              "row_length_min": 0,
+              "row_length_max": 42,
+              "row_length_median": 16,
+              "row_length_top": [
+                [
+                  16,
+                  12008
+                ],
+                [
+                  17,
+                  11226
+                ],
+                [
+                  15,
+                  10186
+                ],
+                [
+                  18,
+                  8289
+                ],
+                [
+                  14,
+                  6855
+                ],
+                [
+                  19,
+                  5343
+                ],
+                [
+                  13,
+                  4833
+                ],
+                [
+                  11,
+                  4753
+                ],
+                [
+                  10,
+                  4435
+                ],
+                [
+                  12,
+                  4376
+                ]
+              ],
+              "rows_sampled_for_alias_check": 401,
+              "rows_with_alias_of_own_ordinal": 0,
+              "alias_examples": [],
+              "covers_body": true,
+              "first_u16_top": [
+                [
+                  12,
+                  12007
+                ],
+                [
+                  13,
+                  11226
+                ],
+                [
+                  11,
+                  10186
+                ],
+                [
+                  14,
+                  8289
+                ],
+                [
+                  10,
+                  6855
+                ],
+                [
+                  15,
+                  5343
+                ],
+                [
+                  9,
+                  4833
+                ],
+                [
+                  7,
+                  4753
+                ],
+                [
+                  6,
+                  4435
+                ],
+                [
+                  8,
+                  4376
+                ],
+                [
+                  5,
+                  3668
+                ],
+                [
+                  16,
+                  2949
+                ]
+              ],
+              "first_u32_top": [
+                [
+                  "0xc",
+                  12007
+                ],
+                [
+                  "0xd",
+                  11226
+                ],
+                [
+                  "0xb",
+                  10186
+                ],
+                [
+                  "0xe",
+                  8289
+                ],
+                [
+                  "0xa",
+                  6855
+                ],
+                [
+                  "0xf",
+                  5343
+                ],
+                [
+                  "0x9",
+                  4833
+                ],
+                [
+                  "0x7",
+                  4753
+                ],
+                [
+                  "0x6",
+                  4435
+                ],
+                [
+                  "0x8",
+                  4376
+                ],
+                [
+                  "0x5",
+                  3668
+                ],
+                [
+                  "0x10",
+                  2949
+                ]
+              ]
+            },
+            "length_prefixed_string_pool": {
+              "model": "length_prefixed_string_pool",
+              "status": "supported",
+              "evidence": [
+                "85668 records {u32 id, u32 length, utf8} consume all 1636005 body bytes; ids are exactly 0..85667"
+              ],
+              "counterexamples": [],
+              "records_parsed": 85668,
+              "expected_records": 85668,
+              "bytes_consumed": 1636005,
+              "body_bytes": 1636005,
+              "ids_consecutive_from_zero": true,
+              "sample_strings": [
+                "DJ Buffonge",
+                "Steven Rua",
+                "Tre' Ming",
+                "Juanito",
+                "Lucho",
+                "Leo"
+              ]
+            },
+            "dbc_typed_value_stream": {
+              "model": "dbc_typed_value_stream",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                "no probed row body consumes exactly as a DBC typed-value stream"
+              ],
+              "rows_probed": 200,
+              "rows_parsed_as_typed_stream": 0
+            }
+          },
+          "verdict": {
+            "model": "length_prefixed_string_pool",
+            "status": "supported",
+            "confidence": "high",
+            "evidence_level": "L1",
+            "notes": "row payload is an id-keyed UTF-8 string pool; it stores strings, not row offsets",
+            "refuted_models": [
+              {
+                "model": "row_offset_index",
+                "counterexamples": [
+                  "u32[2]=1109412420 exceeds body length 1636005; not a byte offset",
+                  "u32[3]=1868981877 > u32[4]=23422830; offsets must be non-decreasing",
+                  "(offset,length) pair[1]=(1109412420, 1868981877) out of body bounds"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "archive": "server_db.dat",
+          "table": "table_extra_24.dat",
+          "payload_size": 6929586,
+          "tad_header": true,
+          "payload_version": 3569,
+          "header_count": 84507,
+          "body_size": 6929574,
+          "partner_table": "table_24.dat",
+          "partner_count": 84507,
+          "counts_equal": true,
+          "models": {
+            "row_offset_index": {
+              "model": "row_offset_index",
+              "status": "refuted",
+              "evidence": [],
+              "counterexamples": [
+                "u32[1]=4294967295 exceeds body length 6929574; not a byte offset",
+                "u32[1]=4294967295 > u32[2]=0; offsets must be non-decreasing",
+                "(offset,length) pair[0]=(0, 4294967295) out of body bounds"
+              ],
+              "first_u32_values": [
+                0,
+                4294967295,
+                0,
+                10000,
+                124518400,
+                4093640960,
+                4093768705,
+                1811939585,
+                1811939591,
+                1811939591,
+                1811939591,
+                1811939591,
+                7,
+                0,
+                1811939584,
+                65287,
+                0,
+                524288,
+                4294901760,
+                4294967295,
+                65791,
+                4294901760,
+                65535,
+                655360000
+              ],
+              "u32_array_fits_body": true,
+              "first_values_monotonic": false,
+              "first_values_within_body": false,
+              "pair_probe_first": [
+                [
+                  0,
+                  4294967295
+                ],
+                [
+                  0,
+                  10000
+                ],
+                [
+                  124518400,
+                  4093640960
+                ],
+                [
+                  4093768705,
+                  1811939585
+                ],
+                [
+                  1811939591,
+                  1811939591
+                ],
+                [
+                  1811939591,
+                  1811939591
+                ],
+                [
+                  7,
+                  0
+                ],
+                [
+                  1811939584,
+                  65287
+                ]
+              ]
+            },
+            "fixed_stride_records": {
+              "model": "fixed_stride_records",
+              "status": "supported",
+              "evidence": [
+                "body 6929574 bytes = 84507 rows x 82 bytes exactly"
+              ],
+              "counterexamples": [],
+              "stride": 82,
+              "ordinal_at_row_start": "all rows"
+            },
+            "ordinal_keyed_variable_rows": {
+              "model": "ordinal_keyed_variable_rows",
+              "status": "supported_with_boundary_ambiguity",
+              "evidence": [
+                "all 84507 ordinals found in order and row bodies fill the file; 1/401 sampled row bodies also contain their own ordinal as a plain data value, so only the sequential walk is a safe boundary decoder"
+              ],
+              "counterexamples": [],
+              "scan_seconds": 0.04,
+              "ordinals_found": 84507,
+              "expected_rows": 84507,
+              "row_count_walked": 84507,
+              "body_bytes": 6929574,
+              "first_row_start": 0,
+              "last_row_start": 6929492,
+              "tail_bytes_after_last_row": 78,
+              "row_length_min": 2,
+              "row_length_max": 187,
+              "row_length_median": 78,
+              "row_length_top": [
+                [
+                  78,
+                  84483
+                ],
+                [
+                  44,
+                  1
+                ],
+                [
+                  18,
+                  1
+                ],
+                [
+                  172,
+                  1
+                ],
+                [
+                  9,
+                  1
+                ],
+                [
+                  147,
+                  1
+                ],
+                [
+                  57,
+                  1
+                ],
+                [
+                  99,
+                  1
+                ],
+                [
+                  43,
+                  1
+                ],
+                [
+                  113,
+                  1
+                ]
+              ],
+              "rows_sampled_for_alias_check": 401,
+              "rows_with_alias_of_own_ordinal": 1,
+              "alias_examples": [
+                {
+                  "ordinal": 0,
+                  "row_start": 0,
+                  "extra_positions": [
+                    8,
+                    14,
+                    49,
+                    50
+                  ]
+                }
+              ],
+              "covers_body": true,
+              "first_u16_top": [
+                [
+                  65535,
+                  84495
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1900,
+                  3
+                ],
+                [
+                  27648,
+                  1
+                ],
+                [
+                  65280,
+                  1
+                ],
+                [
+                  500,
+                  1
+                ]
+              ],
+              "first_u32_top": [
+                [
+                  "0xffffffff",
+                  84494
+                ],
+                [
+                  "0x0",
+                  4
+                ],
+                [
+                  "0x1076c",
+                  2
+                ],
+                [
+                  "0x76c00",
+                  1
+                ],
+                [
+                  "0xffffff00",
+                  1
+                ],
+                [
+                  "0x76c0000",
+                  1
+                ],
+                [
+                  "0x27100000",
+                  1
+                ],
+                [
+                  "0xff076c",
+                  1
+                ],
+                [
+                  "0x1f401f4",
+                  1
+                ]
+              ]
+            },
+            "length_prefixed_string_pool": {
+              "model": "length_prefixed_string_pool",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                {
+                  "offset": 0,
+                  "id": 0,
+                  "length": 4294967295,
+                  "reason": "length out of bounds"
+                }
+              ],
+              "records_parsed": 0,
+              "expected_records": 84507,
+              "bytes_consumed": 0,
+              "body_bytes": 6929574,
+              "ids_consecutive_from_zero": false,
+              "sample_strings": []
+            },
+            "dbc_typed_value_stream": {
+              "model": "dbc_typed_value_stream",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                "no probed row body consumes exactly as a DBC typed-value stream"
+              ],
+              "rows_probed": 200,
+              "rows_parsed_as_typed_stream": 0
+            }
+          },
+          "verdict": {
+            "model": "fixed_stride_records",
+            "status": "supported",
+            "confidence": "high",
+            "evidence_level": "L1",
+            "notes": "records are fixed-width and keyed by row ordinal; they are per-row auxiliary data",
+            "refuted_models": [
+              {
+                "model": "row_offset_index",
+                "counterexamples": [
+                  "u32[1]=4294967295 exceeds body length 6929574; not a byte offset",
+                  "u32[1]=4294967295 > u32[2]=0; offsets must be non-decreasing",
+                  "(offset,length) pair[0]=(0, 4294967295) out of body bounds"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "archive": "server_db.dat",
+          "table": "table_extra_3.dat",
+          "payload_size": 35009248,
+          "tad_header": true,
+          "payload_version": 3569,
+          "header_count": 84259,
+          "body_size": 35009236,
+          "partner_table": "table_3.dat",
+          "partner_count": 84259,
+          "counts_equal": true,
+          "models": {
+            "row_offset_index": {
+              "model": "row_offset_index",
+              "status": "refuted",
+              "evidence": [],
+              "counterexamples": [
+                "u32[11]=124518401 exceeds body length 35009236; not a byte offset",
+                "u32[1]=1795 > u32[2]=256; offsets must be non-decreasing",
+                "(offset,length) pair[5]=(17263616, 124518401) out of body bounds"
+              ],
+              "first_u32_values": [
+                0,
+                1795,
+                256,
+                256,
+                16777216,
+                17263616,
+                17263616,
+                17263616,
+                17263616,
+                17263616,
+                17263616,
+                124518401,
+                124518401,
+                124518401,
+                124518401,
+                124518401,
+                124518401,
+                65536,
+                16779116,
+                17263616,
+                17263616,
+                0,
+                124518401,
+                124518401
+              ],
+              "u32_array_fits_body": true,
+              "first_values_monotonic": false,
+              "first_values_within_body": false,
+              "pair_probe_first": [
+                [
+                  0,
+                  1795
+                ],
+                [
+                  256,
+                  256
+                ],
+                [
+                  16777216,
+                  17263616
+                ],
+                [
+                  17263616,
+                  17263616
+                ],
+                [
+                  17263616,
+                  17263616
+                ],
+                [
+                  17263616,
+                  124518401
+                ],
+                [
+                  124518401,
+                  124518401
+                ],
+                [
+                  124518401,
+                  124518401
+                ]
+              ]
+            },
+            "fixed_stride_records": {
+              "model": "fixed_stride_records",
+              "status": "unresolved",
+              "evidence": [
+                "body 35009236 does not divide by count 84259 (remainder 41751)"
+              ],
+              "counterexamples": []
+            },
+            "ordinal_keyed_variable_rows": {
+              "model": "ordinal_keyed_variable_rows",
+              "status": "supported_with_boundary_ambiguity",
+              "evidence": [
+                "all 84259 ordinals found in order and row bodies fill the file; 60/402 sampled row bodies also contain their own ordinal as a plain data value, so only the sequential walk is a safe boundary decoder"
+              ],
+              "counterexamples": [],
+              "scan_seconds": 0.08,
+              "ordinals_found": 84259,
+              "expected_rows": 84259,
+              "row_count_walked": 84259,
+              "body_bytes": 35009236,
+              "first_row_start": 0,
+              "last_row_start": 35008998,
+              "tail_bytes_after_last_row": 234,
+              "row_length_min": 1,
+              "row_length_max": 5775,
+              "row_length_median": 327,
+              "row_length_top": [
+                [
+                  234,
+                  16145
+                ],
+                [
+                  271,
+                  6079
+                ],
+                [
+                  325,
+                  4178
+                ],
+                [
+                  288,
+                  2818
+                ],
+                [
+                  261,
+                  1965
+                ],
+                [
+                  298,
+                  1752
+                ],
+                [
+                  433,
+                  1375
+                ],
+                [
+                  611,
+                  1373
+                ],
+                [
+                  396,
+                  1152
+                ],
+                [
+                  352,
+                  1075
+                ]
+              ],
+              "rows_sampled_for_alias_check": 402,
+              "rows_with_alias_of_own_ordinal": 60,
+              "alias_examples": [
+                {
+                  "ordinal": 210,
+                  "row_start": 178446,
+                  "extra_positions": [
+                    178530
+                  ]
+                },
+                {
+                  "ordinal": 1050,
+                  "row_start": 1020606,
+                  "extra_positions": [
+                    1020690
+                  ]
+                },
+                {
+                  "ordinal": 1680,
+                  "row_start": 1521939,
+                  "extra_positions": [
+                    1522023
+                  ]
+                },
+                {
+                  "ordinal": 1890,
+                  "row_start": 1670301,
+                  "extra_positions": [
+                    1670385
+                  ]
+                },
+                {
+                  "ordinal": 2100,
+                  "row_start": 1802975,
+                  "extra_positions": [
+                    1803059
+                  ]
+                },
+                {
+                  "ordinal": 3150,
+                  "row_start": 2304338,
+                  "extra_positions": [
+                    2304422
+                  ]
+                }
+              ],
+              "covers_body": true,
+              "first_u16_top": [
+                [
+                  0,
+                  35645
+                ],
+                [
+                  2,
+                  11503
+                ],
+                [
+                  1,
+                  7843
+                ],
+                [
+                  3,
+                  5911
+                ],
+                [
+                  5,
+                  3174
+                ],
+                [
+                  4,
+                  3009
+                ],
+                [
+                  6,
+                  1336
+                ],
+                [
+                  8,
+                  1020
+                ],
+                [
+                  7,
+                  988
+                ],
+                [
+                  10,
+                  399
+                ],
+                [
+                  9,
+                  313
+                ],
+                [
+                  2565,
+                  303
+                ]
+              ],
+              "first_u32_top": [
+                [
+                  "0x0",
+                  35640
+                ],
+                [
+                  "0x2",
+                  11503
+                ],
+                [
+                  "0x1",
+                  7842
+                ],
+                [
+                  "0x3",
+                  5911
+                ],
+                [
+                  "0x5",
+                  3174
+                ],
+                [
+                  "0x4",
+                  3009
+                ],
+                [
+                  "0x6",
+                  1336
+                ],
+                [
+                  "0x8",
+                  1020
+                ],
+                [
+                  "0x7",
+                  988
+                ],
+                [
+                  "0xa",
+                  399
+                ],
+                [
+                  "0x9",
+                  313
+                ],
+                [
+                  "0xa05",
+                  303
+                ]
+              ]
+            },
+            "length_prefixed_string_pool": {
+              "model": "length_prefixed_string_pool",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                {
+                  "offset": 0,
+                  "id": 0,
+                  "length": 1795,
+                  "reason": "invalid utf-8"
+                }
+              ],
+              "records_parsed": 0,
+              "expected_records": 84259,
+              "bytes_consumed": 0,
+              "body_bytes": 35009236,
+              "ids_consecutive_from_zero": false,
+              "sample_strings": []
+            },
+            "dbc_typed_value_stream": {
+              "model": "dbc_typed_value_stream",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                "no probed row body consumes exactly as a DBC typed-value stream"
+              ],
+              "rows_probed": 200,
+              "rows_parsed_as_typed_stream": 0
+            }
+          },
+          "verdict": {
+            "model": "ordinal_keyed_variable_rows",
+            "status": "supported_with_boundary_ambiguity",
+            "confidence": "medium",
+            "evidence_level": "L1",
+            "notes": "each row starts with its 0-based u32 ordinal and is followed by a variable-length per-row payload; the internal field serializer remains unresolved",
+            "refuted_models": [
+              {
+                "model": "row_offset_index",
+                "counterexamples": [
+                  "u32[11]=124518401 exceeds body length 35009236; not a byte offset",
+                  "u32[1]=1795 > u32[2]=256; offsets must be non-decreasing",
+                  "(offset,length) pair[5]=(17263616, 124518401) out of body bounds"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "archive": "server_db.dat",
+          "table": "table_extra_9.dat",
+          "payload_size": 105228,
+          "tad_header": true,
+          "payload_version": 3569,
+          "header_count": 251,
+          "body_size": 105216,
+          "partner_table": "table_9.dat",
+          "partner_count": 251,
+          "counts_equal": true,
+          "models": {
+            "row_offset_index": {
+              "model": "row_offset_index",
+              "status": "refuted",
+              "evidence": [],
+              "counterexamples": [
+                "u32[2]=544433484 exceeds body length 105216; not a byte offset",
+                "u32[3]=1852728646 > u32[4]=762536805; offsets must be non-decreasing",
+                "(offset,length) pair[1]=(544433484, 1852728646) out of body bounds"
+              ],
+              "first_u32_values": [
+                0,
+                11,
+                544433484,
+                1852728646,
+                762536805,
+                0,
+                16844800,
+                2147425933,
+                512589823,
+                4278288383,
+                4294967295,
+                16777215,
+                65536,
+                2365653249,
+                2373975838,
+                30,
+                4294901760,
+                4294967295,
+                65535,
+                16777984,
+                2147418369,
+                2147425933,
+                512589823,
+                4294967041
+              ],
+              "u32_array_fits_body": true,
+              "first_values_monotonic": false,
+              "first_values_within_body": false,
+              "pair_probe_first": [
+                [
+                  0,
+                  11
+                ],
+                [
+                  544433484,
+                  1852728646
+                ],
+                [
+                  762536805,
+                  0
+                ],
+                [
+                  16844800,
+                  2147425933
+                ],
+                [
+                  512589823,
+                  4278288383
+                ],
+                [
+                  4294967295,
+                  16777215
+                ],
+                [
+                  65536,
+                  2365653249
+                ],
+                [
+                  2373975838,
+                  30
+                ]
+              ]
+            },
+            "fixed_stride_records": {
+              "model": "fixed_stride_records",
+              "status": "unresolved",
+              "evidence": [
+                "body 105216 does not divide by count 251 (remainder 47)"
+              ],
+              "counterexamples": []
+            },
+            "ordinal_keyed_variable_rows": {
+              "model": "ordinal_keyed_variable_rows",
+              "status": "supported_with_boundary_ambiguity",
+              "evidence": [
+                "all 251 ordinals found in order and row bodies fill the file; 17/250 sampled row bodies also contain their own ordinal as a plain data value, so only the sequential walk is a safe boundary decoder"
+              ],
+              "counterexamples": [],
+              "scan_seconds": 0.0,
+              "ordinals_found": 251,
+              "expected_rows": 251,
+              "row_count_walked": 251,
+              "body_bytes": 105216,
+              "first_row_start": 0,
+              "last_row_start": 105036,
+              "tail_bytes_after_last_row": 176,
+              "row_length_min": 20,
+              "row_length_max": 1339,
+              "row_length_median": 440,
+              "row_length_top": [
+                [
+                  41,
+                  17
+                ],
+                [
+                  489,
+                  3
+                ],
+                [
+                  473,
+                  3
+                ],
+                [
+                  160,
+                  3
+                ],
+                [
+                  633,
+                  3
+                ],
+                [
+                  95,
+                  3
+                ],
+                [
+                  553,
+                  2
+                ],
+                [
+                  443,
+                  2
+                ],
+                [
+                  463,
+                  2
+                ],
+                [
+                  495,
+                  2
+                ]
+              ],
+              "rows_sampled_for_alias_check": 250,
+              "rows_with_alias_of_own_ordinal": 17,
+              "alias_examples": [
+                {
+                  "ordinal": 0,
+                  "row_start": 0,
+                  "extra_positions": [
+                    20,
+                    21,
+                    61,
+                    62
+                  ]
+                },
+                {
+                  "ordinal": 1,
+                  "row_start": 141,
+                  "extra_positions": [
+                    336
+                  ]
+                },
+                {
+                  "ordinal": 2,
+                  "row_start": 855,
+                  "extra_positions": [
+                    863
+                  ]
+                },
+                {
+                  "ordinal": 6,
+                  "row_start": 2172,
+                  "extra_positions": [
+                    2720,
+                    2746,
+                    3204
+                  ]
+                },
+                {
+                  "ordinal": 7,
+                  "row_start": 3244,
+                  "extra_positions": [
+                    3960,
+                    4003
+                  ]
+                },
+                {
+                  "ordinal": 10,
+                  "row_start": 4927,
+                  "extra_positions": [
+                    4963
+                  ]
+                }
+              ],
+              "covers_body": true,
+              "first_u16_top": [
+                [
+                  0,
+                  57
+                ],
+                [
+                  9,
+                  19
+                ],
+                [
+                  11,
+                  18
+                ],
+                [
+                  14,
+                  17
+                ],
+                [
+                  10,
+                  15
+                ],
+                [
+                  15,
+                  15
+                ],
+                [
+                  12,
+                  14
+                ],
+                [
+                  13,
+                  13
+                ],
+                [
+                  8,
+                  13
+                ],
+                [
+                  18,
+                  9
+                ],
+                [
+                  17,
+                  9
+                ],
+                [
+                  7,
+                  8
+                ]
+              ],
+              "first_u32_top": [
+                [
+                  "0x0",
+                  54
+                ],
+                [
+                  "0x9",
+                  19
+                ],
+                [
+                  "0xb",
+                  18
+                ],
+                [
+                  "0xe",
+                  17
+                ],
+                [
+                  "0xa",
+                  15
+                ],
+                [
+                  "0xf",
+                  15
+                ],
+                [
+                  "0xc",
+                  14
+                ],
+                [
+                  "0xd",
+                  13
+                ],
+                [
+                  "0x8",
+                  13
+                ],
+                [
+                  "0x12",
+                  9
+                ],
+                [
+                  "0x11",
+                  9
+                ],
+                [
+                  "0x7",
+                  8
+                ]
+              ]
+            },
+            "length_prefixed_string_pool": {
+              "model": "length_prefixed_string_pool",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                {
+                  "offset": 19,
+                  "id": 45,
+                  "length": 17301504,
+                  "reason": "length out of bounds"
+                },
+                "parsed 1 records / consumed 19 of 105216 bytes"
+              ],
+              "records_parsed": 1,
+              "expected_records": 251,
+              "bytes_consumed": 19,
+              "body_bytes": 105216,
+              "ids_consecutive_from_zero": true,
+              "sample_strings": [
+                "Les Fennecs"
+              ]
+            },
+            "dbc_typed_value_stream": {
+              "model": "dbc_typed_value_stream",
+              "status": "unresolved",
+              "evidence": [],
+              "counterexamples": [
+                "no probed row body consumes exactly as a DBC typed-value stream"
+              ],
+              "rows_probed": 200,
+              "rows_parsed_as_typed_stream": 0
+            }
+          },
+          "verdict": {
+            "model": "ordinal_keyed_variable_rows",
+            "status": "supported_with_boundary_ambiguity",
+            "confidence": "medium",
+            "evidence_level": "L1",
+            "notes": "each row starts with its 0-based u32 ordinal and is followed by a variable-length per-row payload; the internal field serializer remains unresolved",
+            "refuted_models": [
+              {
+                "model": "row_offset_index",
+                "counterexamples": [
+                  "u32[2]=544433484 exceeds body length 105216; not a byte offset",
+                  "u32[3]=1852728646 > u32[4]=762536805; offsets must be non-decreasing",
+                  "(offset,length) pair[1]=(544433484, 1852728646) out of body bounds"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "extra_9_cross_check": null
+    }
+  },
+  "server_table_extra_24": {
+    "archive": "server_db.dat",
+    "table": "table_extra_24.dat",
+    "payload_size": 6929586,
+    "header_count": 84507,
+    "body_size": 6929574,
+    "stride": 82,
+    "stride_exact": true,
+    "evidence_level": "L1",
+    "ordinal_equals_row_index": true,
+    "distinct_body_variants": 61,
+    "top_body_variant_share": 0.8364395848864591,
+    "variable_body_offsets": {
+      "10": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "11": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "81": [
+        0,
+        2,
+        99
+      ]
+    },
+    "template_bytes": {
+      "u32_at_4": "0xffffffff",
+      "u32_at_8": "0x0",
+      "u32_at_12": "0x2710"
+    },
+    "verdict": {
+      "model": "fixed_stride_records",
+      "status": "supported",
+      "confidence": "high",
+      "evidence_level": "L1",
+      "notes": "82-byte records keyed by table_24 row ordinal; only bytes +2, +10, +11 and +81 vary, so the payload is a near-constant per-row template, not an offset table",
+      "refuted_models": [
+        {
+          "model": "row_offset_index",
+          "counterexamples": [
+            "record+0 is the row ordinal 0..count-1, so the first u32 column cannot be a byte offset"
+          ]
+        }
+      ]
+    }
+  },
+  "save_game_db": {
+    "model": "save_game_db_inline_extra_9_style_stream",
+    "evidence_level": "L1",
+    "samples": {
+      "1 1- 失​业中 (v02).fm": {
+        "game_db_size": 109530117,
+        "game_db_sha256": "35d1d0598ba0547316e0817e58cc4d704a7a24a3a56d2a9f1905eb2b06a16812",
+        "signatures": {
+          "Les Fennecs": {
+            "count": 1,
+            "offsets": [
+              58258445
+            ]
+          },
+          "Palancas Negras": {
+            "count": 1,
+            "offsets": [
+              58258717
+            ]
+          },
+          "The Zebras": {
+            "count": 1,
+            "offsets": [
+              58259546
+            ]
+          }
+        },
+        "record0": {
+          "string_offset": 58258445,
+          "u32_length_before_string": 11,
+          "u32_count_at_minus_32": 0,
+          "bytes_before_string_hex": "000000000000000000000000001027000010270000d4300000000000fb000000000000000b000000"
+        },
+        "installed_extra_9_row0": {
+          "error": "IndexError: index out of range"
+        }
+      },
+      "1 1- 失​业中 (v03).fm": {
+        "game_db_size": 106968099,
+        "game_db_sha256": "7fb77bd082da0efdf5ba3bf1f683a25c51c338f15abb45760211ea18f5ab5b96",
+        "signatures": {
+          "Les Fennecs": {
+            "count": 1,
+            "offsets": [
+              57807771
+            ]
+          },
+          "Palancas Negras": {
+            "count": 1,
+            "offsets": [
+              57808043
+            ]
+          },
+          "The Zebras": {
+            "count": 1,
+            "offsets": [
+              57808872
+            ]
+          }
+        },
+        "record0": {
+          "string_offset": 57807771,
+          "u32_length_before_string": 11,
+          "u32_count_at_minus_32": 0,
+          "bytes_before_string_hex": "000000000000000000000000001027000010270000d4300000000000fb000000000000000b000000"
+        },
+        "installed_extra_9_row0": {
+          "error": "IndexError: index out of range"
+        }
+      },
+      "1 1- 失​业中.fm": {
+        "game_db_size": 110153142,
+        "game_db_sha256": "329ed0017ac59ec4e47c431e9b3b10a12228cb7f1e11b1c52262560b3cf0f122",
+        "signatures": {
+          "Les Fennecs": {
+            "count": 1,
+            "offsets": [
+              58555794
+            ]
+          },
+          "Palancas Negras": {
+            "count": 1,
+            "offsets": [
+              58556066
+            ]
+          },
+          "The Zebras": {
+            "count": 1,
+            "offsets": [
+              58556895
+            ]
+          }
+        },
+        "record0": {
+          "string_offset": 58555794,
+          "u32_length_before_string": 11,
+          "u32_count_at_minus_32": 0,
+          "bytes_before_string_hex": "000000000000000000000000001027000010270000d4300000000000fb000000000000000b000000"
+        },
+        "installed_extra_9_row0": {
+          "error": "IndexError: index out of range"
+        }
+      },
+      "1 1-大连人.fm": {
+        "game_db_size": 83432017,
+        "game_db_sha256": "9214658821afcac569095580bea9ea87e03f981c3537dc08b01a2f6f41e0a3df",
+        "signatures": {
+          "Les Fennecs": {
+            "count": 1,
+            "offsets": [
+              54984629
+            ]
+          },
+          "Palancas Negras": {
+            "count": 1,
+            "offsets": [
+              54984901
+            ]
+          },
+          "The Zebras": {
+            "count": 1,
+            "offsets": [
+              54985730
+            ]
+          }
+        },
+        "record0": {
+          "string_offset": 54984629,
+          "u32_length_before_string": 11,
+          "u32_count_at_minus_32": 0,
+          "bytes_before_string_hex": "000000000000000000000000001027000010270000d4300000000000fb000000000000000b000000"
+        },
+        "installed_extra_9_row0": {
+          "error": "IndexError: index out of range"
+        }
+      }
+    },
+    "notes": [
+      "Save game_db.dat embeds the nation-nickname payload inline (record 0 begins with a length-prefixed UTF-8 nickname). No per-row offset/length array precedes it; the only u32 before record 0 equals the nation row count 251."
+    ]
+  },
+  "unresolved_tables": []
+}

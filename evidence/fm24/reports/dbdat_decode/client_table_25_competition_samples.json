@@ -1,0 +1,44 @@
+{
+  "source_archive": "client_db.dat",
+  "table_id": 25,
+  "entity_hint": "competition",
+  "payload_version": 3569,
+  "record_count": 7047,
+  "row_header_size": 14,
+  "row_stride": 127,
+  "duni_offset_in_row": 118,
+  "rows_with_repeated_u32_duni": 7047,
+  "schema_cross_check": {
+    "database_table_type": 25,
+    "property_code_example": "cext",
+    "master_schema_entity": "comp.xml#comp",
+    "note": "Entity/type correlation is strong; non-identity row fields are preserved raw, not mapped to all 255 schema fields."
+  },
+  "records": [
+    {
+      "row_index": 245,
+      "db_unique_id": 562348658130804,
+      "dbid_candidate": 130932,
+      "duni_is_repeated_u32": true,
+      "identity_offset_in_row": 118,
+      "raw_hex": "000001ff7f6564ff7f000000000100020000000206060606060606030606060606060606060606060606061201006c0701006c070100000037000000ffffffffffffffff00000000000000000000000000000000ffffffffffffffffffffffffffffffff01e07f01006c0701006c070000fff500000074ff010074ff010000"
+    },
+    {
+      "row_index": 250,
+      "db_unique_id": 563181881786422,
+      "dbid_candidate": 131126,
+      "duni_is_repeated_u32": true,
+      "identity_offset_in_row": 118,
+      "raw_hex": "000001ff7f6564ff7f000000000100010001000206010101010606030101010101010100060606060606062201006c0701006c070100000037000000ffffffffffffffff00009dd40800bd060000000000000000ffffffffffffffffffffffffffffffff01e07f01006c0701006c070000fffa000000360002003600020000"
+    },
+    {
+      "row_index": 600,
+      "db_unique_id": 4303389727869417,
+      "dbid_candidate": 1001961,
+      "duni_is_repeated_u32": true,
+      "identity_offset_in_row": 118,
+      "raw_hex": "0000018468457a840c000000000100640000000206060606060606030606060606060606060606060606060001006c0701006c070100000037000000ffffffffffffffff00000000000000000000000000000000ffffffffffffffffffffffffffffffff01e07f01006c0701006c070000ff58020000e9490f00e9490f0000"
+    }
+  ],
+  "decoder_scope": "Exact fixed-stride identity field and DBID candidates are verified. The remaining competition row bytes are not yet aligned field-by-field to editor_schema/master.json."
+}

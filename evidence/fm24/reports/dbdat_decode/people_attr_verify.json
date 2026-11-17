@@ -1,0 +1,3667 @@
+{
+  "generated_by": "scripts/modding_people_attrs.py --verify",
+  "status": "partial position-slot anchors; PDxx field semantics unresolved",
+  "full_task_acceptance": false,
+  "evidence_levels": {
+    "L1": "current-source row chain, per-variant position census and candidate attribute-window histogram",
+    "L2": "8/8 UID-pinned Natural-20 checks support four field codes from FM Scout rev=24.0; local 24.3.0 patch caveat applies. Twenty named rows are broad candidate-role samples, not exact field anchors.",
+    "L3": "not used",
+    "L4": "not attempted"
+  },
+  "checks": [
+    {
+      "name": "basic_records_658011",
+      "ok": true,
+      "actual": 658011
+    },
+    {
+      "name": "current_row_chain_tiling",
+      "ok": true,
+      "actual": {
+        "rows": 658011,
+        "start": 6,
+        "end": 400443942,
+        "tail": 28
+      }
+    },
+    {
+      "name": "row_ordinals_complete_and_unique_pids",
+      "ok": true,
+      "actual": {
+        "unique_ordinals": 658011,
+        "ordinal_min": 0,
+        "ordinal_max": 658010,
+        "unique_pids": 658011
+      }
+    },
+    {
+      "name": "variant_distribution",
+      "ok": true,
+      "actual": {
+        "1": 166064,
+        "2": 476158,
+        "3": 4757,
+        "4": 9839,
+        "5": 1193
+      }
+    },
+    {
+      "name": "schema_position_count_14",
+      "ok": true,
+      "actual": 14
+    },
+    {
+      "name": "schema_attribute_partition_40_plus_14",
+      "ok": true,
+      "actual": {
+        "core40": 40,
+        "schema_attributes": 54
+      }
+    },
+    {
+      "name": "candidate_position_layout_shape",
+      "ok": true,
+      "actual": {
+        "candidate_order": [
+          {
+            "field": "Pgoa",
+            "offset": 34
+          },
+          {
+            "field": "Pdls",
+            "offset": 36
+          },
+          {
+            "field": "Pdce",
+            "offset": 37
+          },
+          {
+            "field": "Pdrs",
+            "offset": 38
+          },
+          {
+            "field": "Pdmc",
+            "offset": 39
+          },
+          {
+            "field": "Pmls",
+            "offset": 40
+          },
+          {
+            "field": "Pmce",
+            "offset": 41
+          },
+          {
+            "field": "Pmrs",
+            "offset": 42
+          },
+          {
+            "field": "Paml",
+            "offset": 43
+          },
+          {
+            "field": "Pamc",
+            "offset": 44
+          },
+          {
+            "field": "Pamr",
+            "offset": 45
+          },
+          {
+            "field": "Pace",
+            "offset": 46
+          },
+          {
+            "field": "Pwbl",
+            "offset": 47
+          },
+          {
+            "field": "Pwbr",
+            "offset": 48
+          }
+        ],
+        "directly_supported_fields": {
+          "Pgoa": "medium: public goalkeeper roles and high row values; exact numeric page not reverified",
+          "Pdce": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted",
+          "Pdmc": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)",
+          "Pmce": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)",
+          "Pamr": "FM Scout rev=24.0 Natural 20 | AMR (Messi)",
+          "Pace": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        }
+      }
+    },
+    {
+      "name": "variant23_position_shape_and_domain_by_variant",
+      "ok": true,
+      "actual": {
+        "rows": 480915,
+        "marker_1": 480915,
+        "domain_rows": 480915,
+        "by_variant": {
+          "2": {
+            "rows": 476158,
+            "marker_1": 476158,
+            "domain": 476158
+          },
+          "3": {
+            "rows": 4757,
+            "marker_1": 4757,
+            "domain": 4757
+          }
+        }
+      }
+    },
+    {
+      "name": "candidate_role_presence_20_sample",
+      "ok": true,
+      "actual": {
+        "samples_with_role_value_ge_10": 20,
+        "total": 20,
+        "status": "broad candidate fit; not exact slot verification"
+      }
+    },
+    {
+      "name": "variant23_attribute_window_range_census_by_variant",
+      "ok": true,
+      "actual": {
+        "eligible": 480915,
+        "all_0_20": 476529,
+        "rate": 0.9908798852188017,
+        "by_variant": {
+          "2": {
+            "eligible": 476158,
+            "all_0_20": 471802,
+            "rate": 0.9908517760911294
+          },
+          "3": {
+            "eligible": 4757,
+            "all_0_20": 4727,
+            "rate": 0.9936935043094387
+          }
+        }
+      }
+    },
+    {
+      "name": "natural20_anchors_cover_four_supported_fields",
+      "ok": true,
+      "actual": {
+        "covered_fields": [
+          "Pace",
+          "Pamr",
+          "Pdmc",
+          "Pmce"
+        ],
+        "expected_fields": [
+          "Pace",
+          "Pamr",
+          "Pdmc",
+          "Pmce"
+        ]
+      }
+    },
+    {
+      "name": "independent_natural20_position_anchors",
+      "ok": true,
+      "actual": {
+        "matches": 8,
+        "total": 8,
+        "distinct_profiles": 8
+      }
+    }
+  ],
+  "all_requested_checks_pass": true,
+  "position_field_offsets": [
+    {
+      "field": "Pgoa",
+      "offset": 34
+    },
+    {
+      "field": "Pdls",
+      "offset": 36
+    },
+    {
+      "field": "Pdce",
+      "offset": 37
+    },
+    {
+      "field": "Pdrs",
+      "offset": 38
+    },
+    {
+      "field": "Pdmc",
+      "offset": 39
+    },
+    {
+      "field": "Pmls",
+      "offset": 40
+    },
+    {
+      "field": "Pmce",
+      "offset": 41
+    },
+    {
+      "field": "Pmrs",
+      "offset": 42
+    },
+    {
+      "field": "Paml",
+      "offset": 43
+    },
+    {
+      "field": "Pamc",
+      "offset": 44
+    },
+    {
+      "field": "Pamr",
+      "offset": 45
+    },
+    {
+      "field": "Pace",
+      "offset": 46
+    },
+    {
+      "field": "Pwbl",
+      "offset": 47
+    },
+    {
+      "field": "Pwbr",
+      "offset": 48
+    }
+  ],
+  "position_marker": {
+    "offset": 35,
+    "constant": 1,
+    "meaning": "marker/delimiter candidate; purpose unresolved"
+  },
+  "sample_people": [
+    {
+      "name": "Lionel Andrés Messi Cuccittini",
+      "pid": 7458500,
+      "roles": [
+        "AMR",
+        "AMC",
+        "ST"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 63517,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 8,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 12,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 8,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 11,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 19,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 20,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 19,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          15,
+          20,
+          17,
+          10,
+          16,
+          4,
+          14,
+          19,
+          17,
+          7,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16,
+          18,
+          0,
+          5,
+          0,
+          19,
+          20,
+          20,
+          12,
+          20,
+          15,
+          14,
+          9,
+          4,
+          0,
+          0,
+          0,
+          16,
+          18,
+          9,
+          13,
+          15,
+          6,
+          14,
+          9,
+          18,
+          10,
+          16,
+          7,
+          15,
+          18,
+          6,
+          12,
+          14,
+          20,
+          16,
+          13
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "AMR": 20,
+        "AMC": 19,
+        "ST": 19
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Kylian Mbappé Lottin",
+      "pid": 85139014,
+      "roles": [
+        "AML",
+        "AMR",
+        "ST"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 387095,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 1,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 10,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 10,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 19,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 16,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 20,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          12,
+          18,
+          17,
+          8,
+          15,
+          4,
+          17,
+          15,
+          18,
+          4,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          17,
+          15,
+          0,
+          3,
+          0,
+          18,
+          17,
+          10,
+          20,
+          18,
+          13,
+          10,
+          12,
+          3,
+          0,
+          0,
+          0,
+          20,
+          11,
+          11,
+          14,
+          20,
+          8,
+          13,
+          7,
+          14,
+          12,
+          15,
+          6,
+          16,
+          16,
+          7,
+          14,
+          15,
+          18,
+          17,
+          14
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "AML": 19,
+        "AMR": 16,
+        "ST": 20
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Sergio Busquets Burgos",
+      "pid": 1510566,
+      "roles": [
+        "DM",
+        "MC"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 156462,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 8,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 20,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 18,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          11,
+          12,
+          8,
+          11,
+          9,
+          15,
+          10,
+          17,
+          10,
+          15,
+          16,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          19,
+          18,
+          0,
+          17,
+          0,
+          16,
+          16,
+          12,
+          20,
+          9,
+          8,
+          19,
+          15,
+          8,
+          0,
+          0,
+          0,
+          8,
+          8,
+          11,
+          12,
+          9,
+          14,
+          13,
+          13,
+          12,
+          12,
+          15,
+          10,
+          9,
+          14,
+          5,
+          13,
+          15,
+          16,
+          18,
+          18
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "DM": 20,
+        "MC": 18
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "David de Gea Quintana",
+      "pid": 67030171,
+      "roles": [
+        "GK"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 156610,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 20,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10,
+          7,
+          2,
+          0,
+          5,
+          16,
+          16,
+          8,
+          10,
+          14,
+          8,
+          14,
+          13,
+          14,
+          15,
+          19,
+          13,
+          8,
+          9,
+          20,
+          5,
+          0,
+          9,
+          0,
+          0,
+          6,
+          3,
+          10,
+          13,
+          0,
+          13,
+          13,
+          13,
+          15,
+          14,
+          5,
+          12,
+          11,
+          14,
+          5,
+          17,
+          15,
+          3,
+          0,
+          17,
+          16,
+          8,
+          12
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "GK": 20
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Erling Braut Haaland",
+      "pid": 29179241,
+      "roles": [
+        "ST"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 251231,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 20,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          10,
+          14,
+          18,
+          15,
+          13,
+          6,
+          18,
+          13,
+          17,
+          7,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          19,
+          15,
+          0,
+          7,
+          0,
+          16,
+          15,
+          20,
+          11,
+          16,
+          7,
+          14,
+          13,
+          5,
+          0,
+          0,
+          0,
+          17,
+          13,
+          17,
+          14,
+          19,
+          18,
+          13,
+          9,
+          17,
+          15,
+          16,
+          15,
+          16,
+          14,
+          10,
+          10,
+          19,
+          20,
+          18,
+          15
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "ST": 20
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Jude Victor William Bellingham",
+      "pid": 29232937,
+      "roles": [
+        "MC",
+        "AMC"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 413501,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 15,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 10,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 20,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 10,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 12,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 17,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 12,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 10,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          12,
+          17,
+          16,
+          14,
+          13,
+          12,
+          17,
+          17,
+          13,
+          15,
+          16,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16,
+          15,
+          0,
+          12,
+          0,
+          16,
+          17,
+          12,
+          20,
+          18,
+          11,
+          16,
+          18,
+          6,
+          0,
+          0,
+          0,
+          15,
+          11,
+          13,
+          16,
+          14,
+          12,
+          17,
+          12,
+          14,
+          17,
+          16,
+          17,
+          15,
+          16,
+          6,
+          14,
+          16,
+          20,
+          17,
+          14
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "MC": 20,
+        "AMC": 17
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Thibaut Nicolas Marc Courtois",
+      "pid": 18026122,
+      "roles": [
+        "GK"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 474634,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 20,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          0,
+          10,
+          0,
+          10,
+          0,
+          0,
+          0,
+          13,
+          0,
+          0,
+          9,
+          16,
+          20,
+          16,
+          14,
+          16,
+          15,
+          15,
+          16,
+          18,
+          16,
+          19,
+          10,
+          12,
+          20,
+          9,
+          14,
+          0,
+          14,
+          11,
+          0,
+          5,
+          12,
+          6,
+          12,
+          0,
+          14,
+          8,
+          11,
+          18,
+          13,
+          5,
+          14,
+          15,
+          16,
+          8,
+          13,
+          18,
+          5,
+          0,
+          12,
+          16,
+          12,
+          16
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "GK": 20
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Manuel Peter Neuer",
+      "pid": 8718372,
+      "roles": [
+        "GK"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 369888,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 20,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          6,
+          12,
+          7,
+          10,
+          7,
+          9,
+          13,
+          16,
+          13,
+          11,
+          16,
+          14,
+          15,
+          15,
+          14,
+          18,
+          17,
+          13,
+          14,
+          15,
+          16,
+          15,
+          13,
+          13,
+          12,
+          20,
+          12,
+          2,
+          12,
+          12,
+          12,
+          18,
+          20,
+          8,
+          9,
+          8,
+          16,
+          12,
+          10,
+          18,
+          17,
+          4,
+          14,
+          14,
+          16,
+          12,
+          14,
+          17,
+          12,
+          5,
+          19,
+          18,
+          18,
+          13
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "GK": 20
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Joshua Walter Kimmich",
+      "pid": 92039023,
+      "roles": [
+        "DM",
+        "MC",
+        "DR",
+        "WBR"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 369880,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 14,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 16,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 20,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 10,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 18,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 10,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 8,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 10,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 8,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 15,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          16,
+          12,
+          10,
+          10,
+          15,
+          12,
+          12,
+          18,
+          14,
+          13,
+          18,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          14,
+          0,
+          12,
+          0,
+          16,
+          16,
+          12,
+          20,
+          13,
+          15,
+          18,
+          20,
+          14,
+          0,
+          0,
+          0,
+          12,
+          15,
+          11,
+          19,
+          12,
+          10,
+          16,
+          12,
+          13,
+          14,
+          16,
+          15,
+          12,
+          15,
+          4,
+          19,
+          20,
+          20,
+          17,
+          13
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "DM": 20,
+        "MC": 18,
+        "DR": 16,
+        "WBR": 15
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Mohamed Salah Ghaly",
+      "pid": 98028755,
+      "roles": [
+        "AMR",
+        "ST"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 647489,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 10,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 16,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 12,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 20,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 19,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          16,
+          16,
+          16,
+          10,
+          13,
+          7,
+          17,
+          15,
+          17,
+          6,
+          17,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16,
+          16,
+          0,
+          8,
+          0,
+          17,
+          17,
+          20,
+          8,
+          15,
+          11,
+          16,
+          16,
+          6,
+          0,
+          0,
+          0,
+          18,
+          12,
+          15,
+          15,
+          17,
+          8,
+          11,
+          4,
+          17,
+          10,
+          16,
+          11,
+          16,
+          16,
+          3,
+          7,
+          17,
+          18,
+          15,
+          14
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "AMR": 20,
+        "ST": 19
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Andrés Iniesta Luján",
+      "pid": 824041,
+      "roles": [
+        "MC",
+        "AMC"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 157163,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 9,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 10,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 20,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 10,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 12,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 19,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 10,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          12,
+          14,
+          10,
+          4,
+          8,
+          4,
+          13,
+          18,
+          12,
+          6,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          17,
+          16,
+          0,
+          7,
+          0,
+          20,
+          20,
+          13,
+          20,
+          19,
+          13,
+          16,
+          8,
+          6,
+          0,
+          0,
+          0,
+          9,
+          13,
+          6,
+          8,
+          7,
+          5,
+          13,
+          5,
+          11,
+          10,
+          14,
+          8,
+          10,
+          18,
+          13,
+          16,
+          12,
+          14,
+          17,
+          12
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "MC": 20,
+        "AMC": 19
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Sergio Ramos García",
+      "pid": 7458272,
+      "roles": [
+        "DC"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 156470,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 20,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 12,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 8,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 10,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          11,
+          12,
+          11,
+          18,
+          11,
+          15,
+          11,
+          15,
+          17,
+          15,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          12,
+          0,
+          14,
+          0,
+          14,
+          14,
+          10,
+          20,
+          12,
+          9,
+          13,
+          14,
+          12,
+          0,
+          0,
+          0,
+          12,
+          13,
+          14,
+          13,
+          13,
+          15,
+          19,
+          16,
+          14,
+          16,
+          13,
+          17,
+          12,
+          20,
+          9,
+          12,
+          18,
+          20,
+          14,
+          12
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "DC": 20
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Cristiano Ronaldo dos Santos Aveiro",
+      "pid": 735216,
+      "roles": [
+        "AML",
+        "AMR",
+        "ST"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 214380,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 13,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 8,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 12,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 20,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          11,
+          13,
+          18,
+          18,
+          15,
+          3,
+          18,
+          13,
+          20,
+          5,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          17,
+          12,
+          0,
+          4,
+          0,
+          15,
+          17,
+          15,
+          20,
+          17,
+          10,
+          7,
+          7,
+          5,
+          0,
+          0,
+          0,
+          12,
+          13,
+          15,
+          13,
+          13,
+          16,
+          19,
+          12,
+          13,
+          13,
+          13,
+          6,
+          11,
+          17,
+          6,
+          9,
+          20,
+          20,
+          15,
+          10
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "AML": 13,
+        "AMR": 12,
+        "ST": 20
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Phillip Walter Foden",
+      "pid": 28108494,
+      "roles": [
+        "AMC",
+        "AML",
+        "AMR"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 413508,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 19,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 20,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 20,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 17,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 14,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          13,
+          17,
+          14,
+          8,
+          13,
+          8,
+          16,
+          17,
+          12,
+          8,
+          17,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          15,
+          0,
+          10,
+          0,
+          17,
+          17,
+          20,
+          9,
+          16,
+          13,
+          14,
+          16,
+          5,
+          0,
+          0,
+          0,
+          16,
+          13,
+          9,
+          15,
+          16,
+          7,
+          8,
+          6,
+          15,
+          13,
+          15,
+          7,
+          17,
+          16,
+          6,
+          13,
+          14,
+          14,
+          16,
+          15
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "AMC": 20,
+        "AML": 20,
+        "AMR": 17
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Federico Santiago Valverde Dipetta",
+      "pid": 78074594,
+      "roles": [
+        "MC",
+        "DM",
+        "AMR"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 12510,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 6,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 13,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 20,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 16,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 10,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 17,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 10,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          12,
+          12,
+          13,
+          12,
+          17,
+          13,
+          14,
+          15,
+          0,
+          13,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13,
+          12,
+          0,
+          12,
+          0,
+          14,
+          13,
+          12,
+          20,
+          14,
+          13,
+          17,
+          17,
+          10,
+          0,
+          0,
+          0,
+          17,
+          14,
+          14,
+          17,
+          17,
+          12,
+          13,
+          8,
+          15,
+          15,
+          15,
+          12,
+          15,
+          14,
+          6,
+          14,
+          17,
+          15,
+          11,
+          13
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "MC": 20,
+        "DM": 13,
+        "AMR": 17
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Adam Alassane Ousmane Dembélé",
+      "pid": 2000237368,
+      "roles": [
+        "AML",
+        "AMR"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 636574,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 16,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 20,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "AML": 20,
+        "AMR": 0
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Jobe Samuel Patrick Bellingham",
+      "pid": 2000205927,
+      "roles": [
+        "MC",
+        "DM"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 414515,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 15,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 20,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 17,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 15,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          9,
+          13,
+          13,
+          12,
+          10,
+          10,
+          13,
+          14,
+          10,
+          12,
+          12,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          9,
+          0,
+          11,
+          0,
+          14,
+          14,
+          10,
+          20,
+          11,
+          10,
+          12,
+          13,
+          5,
+          0,
+          0,
+          0,
+          14,
+          8,
+          12,
+          11,
+          12,
+          13,
+          10,
+          8,
+          10,
+          14,
+          10,
+          11,
+          11,
+          0,
+          9,
+          10,
+          13,
+          12,
+          15,
+          12
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "MC": 20,
+        "DM": 15
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Harry Edward Kane",
+      "pid": 28049320,
+      "roles": [
+        "AMC",
+        "ST"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 413499,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 12,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 12,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 15,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 10,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 20,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          15,
+          14,
+          19,
+          16,
+          15,
+          8,
+          17,
+          18,
+          20,
+          9,
+          19,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          18,
+          0,
+          8,
+          0,
+          15,
+          17,
+          16,
+          20,
+          12,
+          9,
+          18,
+          16,
+          6,
+          0,
+          0,
+          0,
+          12,
+          11,
+          15,
+          16,
+          14,
+          15,
+          16,
+          8,
+          15,
+          14,
+          17,
+          11,
+          12,
+          14,
+          12,
+          9,
+          16,
+          19,
+          18,
+          15
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "AMC": 15,
+        "ST": 20
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "Rafael Alexandre da Conceição Leão",
+      "pid": 83111483,
+      "roles": [
+        "AML",
+        "ST"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 214374,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 8,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 5,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 20,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 12,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 10,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 15,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          14,
+          17,
+          14,
+          11,
+          13,
+          5,
+          15,
+          14,
+          12,
+          6,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          12,
+          0,
+          6,
+          0,
+          16,
+          14,
+          14,
+          20,
+          18,
+          8,
+          12,
+          10,
+          7,
+          0,
+          0,
+          0,
+          17,
+          7,
+          14,
+          12,
+          17,
+          13,
+          9,
+          7,
+          16,
+          8,
+          11,
+          7,
+          18,
+          14,
+          8,
+          12,
+          16,
+          13,
+          12,
+          10
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "AML": 20,
+        "ST": 15
+      },
+      "candidate_role_presence": true
+    },
+    {
+      "name": "João Félix Sequeira",
+      "pid": 83169822,
+      "roles": [
+        "AMC",
+        "ST"
+      ],
+      "found": true,
+      "variant": 2,
+      "row_index_current": 214406,
+      "position_vector_candidate": [
+        {
+          "candidate_field": "Pgoa",
+          "offset": 34,
+          "value": 0,
+          "direct_support": "medium: public goalkeeper roles and high row values; exact numeric page not reverified"
+        },
+        {
+          "candidate_field": "Pdls",
+          "offset": 36,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdce",
+          "offset": 37,
+          "value": 0,
+          "direct_support": "medium: Sergio Ramos public central-defender role and row value 20; no exact page label asserted"
+        },
+        {
+          "candidate_field": "Pdrs",
+          "offset": 38,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pdmc",
+          "offset": 39,
+          "value": 0,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | DM (Busquets, Kimmich)"
+        },
+        {
+          "candidate_field": "Pmls",
+          "offset": 40,
+          "value": 14,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pmce",
+          "offset": 41,
+          "value": 10,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | MC (Bellingham, Valverde)"
+        },
+        {
+          "candidate_field": "Pmrs",
+          "offset": 42,
+          "value": 10,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Paml",
+          "offset": 43,
+          "value": 19,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamc",
+          "offset": 44,
+          "value": 20,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pamr",
+          "offset": 45,
+          "value": 15,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | AMR (Messi)"
+        },
+        {
+          "candidate_field": "Pace",
+          "offset": 46,
+          "value": 17,
+          "direct_support": "FM Scout rev=24.0 Natural 20 | ST (Mbappé, Haaland, Kane)"
+        },
+        {
+          "candidate_field": "Pwbl",
+          "offset": 47,
+          "value": 0,
+          "direct_support": null
+        },
+        {
+          "candidate_field": "Pwbr",
+          "offset": 48,
+          "value": 0,
+          "direct_support": null
+        }
+      ],
+      "attribute_window_candidate": {
+        "offset": 49,
+        "length": 54,
+        "raw_values": [
+          12,
+          17,
+          13,
+          12,
+          13,
+          4,
+          17,
+          16,
+          14,
+          7,
+          17,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15,
+          14,
+          0,
+          6,
+          0,
+          17,
+          18,
+          14,
+          20,
+          19,
+          11,
+          9,
+          9,
+          4,
+          0,
+          0,
+          0,
+          13,
+          12,
+          9,
+          12,
+          12,
+          9,
+          7,
+          13,
+          13,
+          9,
+          10,
+          11,
+          16,
+          14,
+          9,
+          8,
+          14,
+          13,
+          15,
+          12
+        ],
+        "semantic_field_order": null
+      },
+      "candidate_role_values": {
+        "AMC": 20,
+        "ST": 17
+      },
+      "candidate_role_presence": true
+    }
+  ],
+  "natural20_position_references": [
+    {
+      "name": "Lionel Messi",
+      "pid": 7458500,
+      "field": "Pamr",
+      "offset": 45,
+      "fact": "Natural 20 | AMR",
+      "url": "https://www.fmscout.com/player/7458500/lionel-messi.html?rev=24.0",
+      "actual": 20,
+      "expected": 20,
+      "mapping_offset_matches_field": true,
+      "match": true,
+      "variant": 2,
+      "row_index_current": 63517
+    },
+    {
+      "name": "Kylian Mbappé",
+      "pid": 85139014,
+      "field": "Pace",
+      "offset": 46,
+      "fact": "Natural 20 | ST",
+      "url": "https://www.fmscout.com/player/85139014/kylian-mbapp%C3%A9.html?rev=24.0",
+      "actual": 20,
+      "expected": 20,
+      "mapping_offset_matches_field": true,
+      "match": true,
+      "variant": 2,
+      "row_index_current": 387095
+    },
+    {
+      "name": "Erling Haaland",
+      "pid": 29179241,
+      "field": "Pace",
+      "offset": 46,
+      "fact": "Natural 20 | ST",
+      "url": "https://www.fmscout.com/player/29179241/erling-haaland.html?rev=24.0",
+      "actual": 20,
+      "expected": 20,
+      "mapping_offset_matches_field": true,
+      "match": true,
+      "variant": 2,
+      "row_index_current": 251231
+    },
+    {
+      "name": "Sergio Busquets",
+      "pid": 1510566,
+      "field": "Pdmc",
+      "offset": 39,
+      "fact": "Natural 20 | DM",
+      "url": "https://www.fmscout.com/player/1510566/sergio-busquets.html?rev=24.0",
+      "actual": 20,
+      "expected": 20,
+      "mapping_offset_matches_field": true,
+      "match": true,
+      "variant": 2,
+      "row_index_current": 156462
+    },
+    {
+      "name": "Joshua Kimmich",
+      "pid": 92039023,
+      "field": "Pdmc",
+      "offset": 39,
+      "fact": "Natural 20 | DM",
+      "url": "https://www.fmscout.com/player/92039023/joshua-kimmich.html?rev=24.0",
+      "actual": 20,
+      "expected": 20,
+      "mapping_offset_matches_field": true,
+      "match": true,
+      "variant": 2,
+      "row_index_current": 369880
+    },
+    {
+      "name": "Jude Bellingham",
+      "pid": 29232937,
+      "field": "Pmce",
+      "offset": 41,
+      "fact": "Natural 20 | MC",
+      "url": "https://www.fmscout.com/player/29232937/jude-bellingham.html?rev=24.0",
+      "actual": 20,
+      "expected": 20,
+      "mapping_offset_matches_field": true,
+      "match": true,
+      "variant": 2,
+      "row_index_current": 413501
+    },
+    {
+      "name": "Federico Valverde",
+      "pid": 78074594,
+      "field": "Pmce",
+      "offset": 41,
+      "fact": "Natural 20 | MC",
+      "url": "https://www.fmscout.com/player/78074594/federico-valverde.html?rev=24.0",
+      "actual": 20,
+      "expected": 20,
+      "mapping_offset_matches_field": true,
+      "match": true,
+      "variant": 2,
+      "row_index_current": 12510
+    },
+    {
+      "name": "Harry Kane",
+      "pid": 28049320,
+      "field": "Pace",
+      "offset": 46,
+      "fact": "Natural 20 | ST",
+      "url": "https://www.fmscout.com/player/28049320/harry-kane.html?rev=24.0",
+      "actual": 20,
+      "expected": 20,
+      "mapping_offset_matches_field": true,
+      "match": true,
+      "variant": 2,
+      "row_index_current": 413499
+    }
+  ],
+  "summary": {
+    "named_position_vectors_sampled": 20,
+    "named_position_vector_total": 20,
+    "natural20_exact_field_matches": 8,
+    "natural20_field_checks": 8,
+    "natural20_distinct_profiles": 8,
+    "position_codes_directly_supported": 6,
+    "attribute_fields_semantically_decoded": 0,
+    "attribute_l2_players": 0
+  },
+  "acceptance_boundary": "Only six of 14 position code offsets have independent support (four exact Natural-20 codes plus GK/DC role candidates); the other candidate offsets are not accepted as fully decoded. The 54-byte attribute window has no verified PDxx byte order or raw 1..20 L2 source; variant 1 remains unresolved. Full task acceptance is NOT met; this is the explicit negative-result path."
+}
