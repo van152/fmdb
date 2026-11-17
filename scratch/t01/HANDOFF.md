@@ -14,9 +14,9 @@ git log --oneline | head -12             # 全部进度已提交(t01-exe-slot-ma
 
 | 进程 | 看护方式 | 产出位置 |
 |---|---|---|
-| t01l(luna max,weat/table_27 行偏移 = 第二实体验收线) | `scratch/t01/pi-logs/t01l.log` | `inbox/t01l/` |
+| t01m(luna max,stad/table_21 行偏移 + 旧库 L1 交叉验证) | `scratch/t01/pi-logs/t01m.log` | `inbox/t01m/` |
 
-验收判据:table_27 行 ≥10 字段行偏移 L3 + 5 行抽验 → E27;协议 = safety-scan → 自检 → 指挥官独立字节抽验(模板 `scripts/t01f_spotcheck.py` + `t01j_dat_spotcheck.py`)→ 锚点 7/7 → 账本 → 提交。
+验收判据:table_21 行 ≥10 字段行偏移 L3 且与旧库 L1 锚(stride 38/Scti@+3/行序号@+25/duni@+29)一致或修正有据 → E28;协议 = safety-scan → 自检 → 指挥官独立字节抽验(模板 `scripts/t01l_spotcheck.py`)→ 锚点 7/7 → 账本 → 提交。
 
 **不需要任何人守着;产物落盘即完成。** gpt-6.2-sol 探测状态(2026-11-18 02:0x):账号侧尚不支持("not supported when using Codex with a ChatGPT account"),守哨会自动重试至上线,共 40 次/10 小时。
 
@@ -41,9 +41,9 @@ git log --oneline | head -12             # 全部进度已提交(t01-exe-slot-ma
 
 只读游戏数据与 `D:\tmp2b\fm24` 旧仓;候选不写成结论;负结果保留;claim 带字节证据;新任务书进 `prompts/`;所有结论进 LEDGER(只追加)。
 
-## 状态更新(2026-11-18 07:0x,夜班封盘终版)
+## 状态更新(2026-11-18 07:5x,夜班封盘终版)
 
-- **E20-E26 全部入账**(E26 = BASIC_PERSON 负结果 + getter 全寄存器扫描新知),HEAD=aacbcd2;详见 [MORNING_REPORT.md](MORNING_REPORT.md) v5
+- **E20-E27 全部入账**(E27 = weat 89 字段,第二实体验收线达成),HEAD=a3d24b9;详见 [MORNING_REPORT.md](MORNING_REPORT.md) v5
 - t01e 的 nati 标签已按 E23 COL 字节勘误(NATIONAL_TEAM_CONTAINER/TEAM_CONTAINER,均非 NATION)
-- t01l(weat/table_27)运行中,验收判据见上表
-- stage-2 排序:weat(94,直线,t01l 在跑)→ club(433,mixed 前缀先行)→ stad(60,直线)→ pers(需 W 解析或 L4);变长型先恢复行边界
+- t01m(stad/table_21,旧库 L1 交叉)运行中,验收判据见上表
+- stage-2 已拿下两实体(comp 18 字段/weat 89 字段);方法论三度验证(直线/循环/变长);剩余排序:club(433,mixed 前缀先行)→ pers(需 W 解析)→ 变长型先恢复行边界

@@ -15,7 +15,8 @@
 | 06:10-06:11 | t01i(luna)pers 核心行 | **负结果:主 archive 无 table_1**;新规律:工厂跳表 ≈ archive 表 ID 分发(E24) |
 | 06:15-06:32 | t01j(luna)basic_people_db.dat 侦察 | **正面突破:person 行仓库框架解码** —— 658,011 条类变长记录(83/34/22B),身份块+尾全封口;BASIC_PERSON class-4 分支与行字节精确对齐(E25) |
 | 06:37-06:59 | t01k(luna)BASIC_PERSON 字段映射 | 负结果:全局状态宽度选择器致 W 条件行偏移,仅 Ptyp@row+1 固定;新知:getter 用 cmp edx(全寄存器扫描)、class 字节=Ptyp 值(E26) |
-| 07:02- | t01l(luna)weat/table_27 行偏移 | 运行中 → `inbox/t01l/`(直线型第二站,第二实体验收线冲刺) |
+| 07:02-07:47 | t01l(luna)weat/table_27 行偏移 | **第二实体验收线达成:89 字段 L3**(88 季节+wnam);334 行全量封口;census"直线"修正为固定四季循环(E27) |
+| 07:51- | t01m(luna)stad/table_21 行偏移 | 运行中 → `inbox/t01m/`(旧库 L1 锚交叉验证:stride 38/Scti@+3/行序号@+25/duni@+29) |
 
 ## 项目结构认知(夜班后终版)
 
@@ -37,7 +38,7 @@
 ## 下一班上手顺序
 
 1. `py -V:3.12 -I scripts/t01_anchors.py`(7/7)→ 读本报告 → LEDGER E20-E24
-2. **t01k 已验收(E26)**:BASIC_PERSON 负结果(全局状态宽度选择器)+ 两条工具新知(getter 全寄存器扫描;class 字节=Ptyp);**t01l 运行中**(weat ≥10 字段 → E27),验收协议同前
+2. **t01l 已验收(E27)**:weat 89 字段 L3,第二实体验收线达成(指挥官 28 项静态+334 行独立走查+身份块 334/334 加分发现);**t01m 运行中**(stad ≥10 字段+旧库 L1 交叉 → E28),验收协议同前
 3. stage-2 主攻:三向表排序——**pers(框架已就绪,t01k 字段映射)→ club(433,mixed,前缀先行)→ weat(94,直线)→ stad(60,直线)**;变长型(cont/mdso/nati)先恢复行边界
 4. sol 额度:已耗 1 次,**默认退役,再用需用户批准**
 5. luna 会话可续(t01b/g/h/i/j 各 session 独立在盘上);deepseek 渠道不稳,用前先探
