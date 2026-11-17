@@ -25,7 +25,7 @@ git log --oneline | head -12             # 全部进度已提交(t01-exe-slot-ma
 
 ## 下一班的验收队列(按到达顺序)
 
-1. **t01-e**(若已产出):对照 E11 锚点抽验 → E16 入账 → 若 H3 成立,把"实体↔注册函数全映射"与 `property_map.json`(table_type↔entity)合流,输出三向表 `table_type ↔ entity ↔ registration_fn`(阶段二核心工件)
+1. **t01-e**(若已产出):对照 E11 锚点抽验 → E17 已入账(12/32 实体映射,H3 半证实) → 若 H3 成立,把"实体↔注册函数全映射"与 `property_map.json`(table_type↔entity)合流,输出三向表 `table_type ↔ entity ↔ registration_fn`(阶段二核心工件)
 2. **luna r2**:验收点 = 槽成员是否给出 +0 vtable 之外的新成员(带字节证据)、类型标签清单('cont' 之外)→ E17
 3. **t01f(sol 杀手锏,若已发射)**:验收判据 = comp 行 ≥10 字段行偏移且与 +52/+56/+64/+114/+118 锚点一致 → E18;**这批结果必须跑 `py -V:3.12 -I scripts/t01_anchors.py` 确认无回归**
 4. 用户上轮留下的决策:阶段一验收线"≥10 字段行偏移 L3"是否分两档
@@ -39,3 +39,9 @@ git log --oneline | head -12             # 全部进度已提交(t01-exe-slot-ma
 ## 硬约束提醒(不变)
 
 只读游戏数据与 `D:\tmp2b\fm24` 旧仓;候选不写成结论;负结果保留;claim 带字节证据;新任务书进 `prompts/`;所有结论进 LEDGER(只追加)。
+
+## 状态更新(2026-11-18 02:0x)
+
+- t01-e 已完成验收(E17):12/32 实体映射,H3 半证实(slot6=注册函数是族不变量,槽位数随实体变 43/68/89/243)
+- luna r2 运行中;sol_watch attempt 1 未上线(预期),周期探测继续
+- 下一班可直接从验收队列第 2 项开始
