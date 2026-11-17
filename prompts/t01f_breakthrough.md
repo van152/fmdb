@@ -22,6 +22,9 @@ FM24 编辑器(editor.exe)的运行时对象与游戏数据库 .dat 行之间的
 5. `D:\tmp2b\fm24-db\scratch\t01\inbox\t01a2\fm_sweep.json` —— fm.exe(491MB)全景:50,071 命中在 .sdata,comp 注册块与 editor 逐字节相同(fm off 36605107 ≡ editor off 15462499)
 6. `D:\tmp2b\fm24-db\evidence\fm24\reports\editor_schema\master.json` —— 32 实体/2144 码
 7. `D:\tmp2b\fm24-db\evidence\fm24\reports\dbdat_decode\DB_TABLES_BIG.md` —— table_25 行结构与锚点
+8. `D:\tmp2b\fm24-db\scratch\t01\t01e_vtables.json` —— 虚表↔实体映射 12/32(H3 半证实,槽位数随实体变 43/68/89/243)
+9. `D:\tmp2b\fm24-db\scratch\t01\inbox\t01b\round2\output.json` —— luna r2:0xfe72b0 标签普查(17 标签,122 引用口径)
+10. `D:\tmp2b\fm24-db\scratch\t01\t01f_tag_codec_alignment.json` —— 标签↔codec 对齐:实体标签主轴贯通 .dat/XML 两侧(DBC 记录→工厂→对象→schema 分发;'cont' 为字段类型标签)
 
 关键锚点速查:
 - 注册函数:off 0xebf040(RVA 0xebfa40),序言 `call helperB; add rax,0x38`,slot1=PLgn→slot9=cext
