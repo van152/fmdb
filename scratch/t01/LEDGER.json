@@ -148,6 +148,36 @@
           "dbnm 是最通用码(21 实体共用)"
         ]
       }
+    },
+    {
+      "id": "E9",
+      "date": "2026-11-18晨",
+      "author": "t01-a(glm53-1 子代理,verify_4cc.py 2954/2954 + 357/357 调用目标复验;指挥官复跑 ALL CHECKS PASSED)",
+      "kind": "artifact",
+      "level": "L3-static(全量字节级)",
+      "claim": "editor.exe 4CC 全景扫描完成:175 簇(.rdata 118/.reloc 57)+ 103 个 switch + 2954 命中;22/32 实体码 100% 覆盖",
+      "evidence": {
+        "files": ["scratch/t01/t01a_editor_sweep.json(1.28MB,逐 hit 带 off)", "scratch/t01/t01a_REPORT.md", "scratch/t01/verify_4cc.py"],
+        "key_findings": [
+          "H2 证实:per-field switch 家族(81 f8..ff + 0f 84,步长 0xC)共 103 处;comp 两个 switch:0xec0095..0xec2d35 与 0xecad39..0xecbfc4(合计 205 comp 码);club 家族 0xe82b4c/0xe89c24(含 C2*/C3*/C4*)",
+          ".reloc 段(45.7MB)藏第二套注册子系统:helper 对 0x6cfff0/0x6d1ef0,44 个 dense run,VA=off+0x16B600;city/lang/stgn/player 家族用 Cnam/Lnam/SNna/PCAB 大写码形",
+          "负结果:615 实体码(comp 109/club 192/nation 213/player 86)无字面字节——疑在 .arch 压缩段运行时解压;标记 unknown 不猜",
+          "comp 锚点簇 0xebf060..0xebf9c7 复现:51 块、步长 {0x30:50},cont=0.9412(high);注意该函数仅含 comp 255 码中的 48 个,注册是分段的"
+        ]
+      }
+    },
+    {
+      "id": "E10",
+      "date": "2026-11-18晨",
+      "author": "commander(扩展 t01b_switch_extract.py 至 0xeca000..0xecc000 + 泛化 cmp 全寄存器)",
+      "kind": "artifact",
+      "level": "L3-static(脚本可复跑)",
+      "claim": "switch case 清单扩至 121 case / 67 comp 匹配(新增 cpcm/csnm/c3ln/cfcl/crgt/cuae/cmxw 等)",
+      "evidence": {
+        "script": "scratch/t01/t01b_switch_extract.py",
+        "json": "scratch/t01/t01b_switch_cases.json",
+        "notes": "complex 分类占比仍高;delegate 型(cnam/cnti/ccti/cpcm)需进 setter 内部提偏移——今日与 t01-b luna 分工:它做 setter/构造器,指挥官做 .dat 行读写链之桥"
+      }
     }
   ]
 }

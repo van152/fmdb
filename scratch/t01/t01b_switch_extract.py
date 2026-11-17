@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parents[2]
 EXE = Path(r"D:\tmp2b\fm24\input\editor.exe")
 OUT = ROOT / "scratch" / "t01" / "t01b_switch_cases.json"
 
-REGION_LO, REGION_HI = 0xEC0000, 0xEC6000  # file offsets
+REGIONS = [(0xEC0000, 0xEC6000), (0xECA000, 0xECC000)]  # file offsets
 HELPER_B_RVA = 0x83D4F0
 DELTA = 0xA00  # RVA = fileoff + DELTA within .rdata
 
@@ -39,28 +39,34 @@ def main() -> int:
     data = EXE.read_bytes()
     md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_64)
 
-    # 1) find cmp esi, imm32 followed by je
+    # 1) find cmp r32, imm32 (81 /7) followed by je — all registers, all regions
     cases = []
-    pos = REGION_LO
-    while pos < REGION_HI:
-        i = data.find(b"\x81\xfe", pos)
-        if i < 0 or i >= REGION_HI:
-            break
-        pos = i + 1
-        try:
-            insns = list(md.disasm(data[i:i + 24], rva(i)))
-        except Exception:
-            continue
-        if not insns or insns[0].mnemonic != "cmp" or not insns[0].op_str.startswith("esi, 0x"):
-            continue
-        imm = int(insns[0].op_str.split(",")[1].strip(), 16)
-        je = next((x for x in insns[1:3] if x.mnemonic == "je"), None)
-        if je is None:
-            continue
-        tgt_rva = int(je.op_str, 16)
-        if tgt_rva == 0xEC51FE:  # default/not-handled chain
-            continue
-        cases.append({"code": code_from_imm(imm), "cmp_off": i, "handler_off": tgt_rva - DELTA})
+    for REGION_LO, REGION_HI in REGIONS:
+        pos = REGION_LO
+        while pos < REGION_HI:
+            i = data.find(b"\x81", pos)
+            if i < 0 or i >= REGION_HI:
+                break
+            pos = i + 1
+            if i + 7 > len(data) or not (0xF8 <= data[i + 1] <= 0xFF):
+                continue
+            try:
+                insns = list(md.disasm(data[i:i + 24], rva(i)))
+            except Exception:
+                continue
+            if not insns or insns[0].mnemonic != "cmp":
+                continue
+            op2 = insns[0].op_str.split(",")[1].strip()
+            if not op2.startswith("0x"):
+                continue
+            imm = int(op2, 16)
+            je = next((x for x in insns[1:3] if x.mnemonic == "je"), None)
+            if je is None:
+                continue
+            tgt_rva = int(je.op_str, 16)
+            if tgt_rva == 0xEC51FE:  # default/not-handled chain
+                continue
+            cases.append({"code": code_from_imm(imm), "cmp_off": i, "handler_off": tgt_rva - DELTA})
 
     # 2) dedupe by code (keep first cmp per code)
     seen: dict[str, dict] = {}
