@@ -246,6 +246,19 @@
         ],
         "acceptance": "必达项1(helperA)✓;必达项2(描述符布局)部分(+0 vtable 之外未解);第3步未完成 → 明日续轮"
       }
+    },
+    {
+      "id": "E15",
+      "date": "2026-11-18晨",
+      "author": "commander",
+      "kind": "artifact",
+      "level": "L1(可复跑回归)",
+      "claim": "t01 锚点回归护栏落地:scripts/t01_anchors.py 7/7 PASS(A1 注册块字节/A2 fm≡editor/A3 虚表 slot6/A4 switch 67 comp 码/A5 sweep 锚点/A6 fm 锚点码/A7 勘误落地)",
+      "evidence": {
+        "script": "scripts/t01_anchors.py(--json 可机读)",
+        "purpose": "后续任何 agent 改动/新声明,先跑此护栏防止破坏已验收事实(t03 交付)",
+        "negative_also_recorded": "rowreader_probe2.py 在 fm.exe .sdata 搜行偏移窗口 → 9 个候选均为通用拷贝循环,行解析器无硬编码偏移(与 E11 editor 侧结论一致,该搜索线关闭)"
+      }
     }
   ]
 }
