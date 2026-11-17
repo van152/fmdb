@@ -12,7 +12,8 @@
 | 04:35 | 指挥官四路独立验收 t01f | 静态 49/49、.dat 独立解压 ALL PASS、锚点 7/7 |
 | 04:38-05:08 | t01g(luna)nation 方法论复制 | **负结果:nation=计数循环变长型;7 前缀字段+类全链+duni 锚点复现(E21)** |
 | 05:17-05:55 | t01h(luna)factory 跳表全普查 | **74 项全 census:46 直线/7 循环/7 混合/14 不明;裁决 type9=NATIONAL_TEAM_CONTAINER(E23)** |
-| 06:10 | t01i(luna)pers 核心行发射 | 运行中 → `inbox/t01i/`,产物落盘即完成 |
+| 06:10-06:11 | t01i(luna)pers 核心行 | **负结果:主 archive 无 table_1**;新规律:工厂跳表 ≈ archive 表 ID 分发(E24) |
+| 06:15- | t01j(luna)basic_people_db.dat 侦察 | 运行中 → `inbox/t01j/`(person 行仓库假设验证) |
 
 ## 项目结构认知(夜班后终版)
 
@@ -33,11 +34,11 @@
 
 ## 下一班上手顺序
 
-1. `py -V:3.12 -I scripts/t01_anchors.py`(7/7)→ 读本报告 → LEDGER E20-E23
-2. **t01i 验收**(若已落盘):判据 = table_1 行 ≥10 字段行偏移 + 行框架恢复 + 5 行抽验 → E24;验收协议同前(我的抽验脚本 t01f/t01g_spotcheck.py 可作模板)
-3. stage-2 主攻:三向表排序——**pers(271,直线)→ club(433,mixed,前缀先行)→ weat(94,直线)→ stad(60,直线)**;变长型(cont/mdso/nati)先恢复行边界
+1. `py -V:3.12 -I scripts/t01_anchors.py`(7/7)→ 读本报告 → LEDGER E20-E24
+2. **t01j 验收**(若已落盘):判据 = basic_people_db.dat 目录全枚举 + 至少一张表行框架封口;加分 = BASIC_PERSON 宽度序列对齐 + 5 行抽验 → E25;协议同前
+3. stage-2 主攻:三向表排序——**pers(经 basic_people_db.dat)→ club(433,mixed,前缀先行)→ weat(94,直线)→ stad(60,直线)**;变长型(cont/mdso/nati)先恢复行边界
 4. sol 额度:已耗 1 次,**默认退役,再用需用户批准**
-5. luna 会话可续(t01b/t01g/t01h/t01i 各 session 独立在盘上);deepseek 渠道不稳,用前先探
+5. luna 会话可续(t01b/g/h/i/j 各 session 独立在盘上);deepseek 渠道不稳,用前先探
 
 ## 不变约束
 
