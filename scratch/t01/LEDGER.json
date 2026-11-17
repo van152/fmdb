@@ -305,6 +305,23 @@
         "note": "直调计数差异:指挥官 e8-only 全文件=87,luna 报 122(疑含 e9/其它引用形态);不影响'重引用'定性",
         "next": "17 标签 ↔ codec_tables.json(420 映射)对齐 = wire-type 映射的最后一跳"
       }
+    },
+    {
+      "id": "E19",
+      "date": "2026-11-18晨",
+      "author": "commander",
+      "kind": "artifact",
+      "level": "L3-static(两份机读工件交叉)",
+      "claim": "实体标签主轴贯通:0xfe72b0 工厂 4CC 标签与 DBC codec_tables 共用实体命名空间(9/17 对上,7 个精确同形: Ttea/Nnat/Cclu/city/stad/regi/stgn);标签语义候选覆盖 ~15 个实体",
+      "evidence": {
+        "artifact": "scratch/t01/t01f_tag_codec_alignment.json",
+        "chain": "DBC 记录(实体 4CC 标签)→ 0xfe72b0 工厂 → 实体对象 → schema 驱动字段分发;XML 装载与 DBC 读取共用此注册表",
+        "notes": [
+          "'cont' 是字段类型标签(container),与实体标签混在同一注册表",
+          "consequence: stage-2 的表号↔实体映射,对这 15 个实体可直接经标签↔property_map 闭环;剩余 unknown 表需在壳区找同族标签",
+          "sol(t01f)若上线,应把本工件作为输入"
+        ]
+      }
     }
   ]
 }
