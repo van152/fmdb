@@ -215,6 +215,37 @@
           "独立复现 E2/E8 的 csnm/c3ln 笔误纠正"
         ]
       }
+    },
+    {
+      "id": "E13",
+      "date": "2026-11-18晨",
+      "author": "commander(决定)",
+      "kind": "task-control",
+      "level": "L1",
+      "claim": "取消 t01d(4CC 普查):pi devseek 饱和 + logfare 3 次限流后,其剩余独立价值已被 E9(t01-a 全量 hit/簇)与 E12(t01a2 fm 全景)覆盖",
+      "evidence": {
+        "attempts": "devseek upstream_saturated;logfare unavailable ×3(retry 循环退出)",
+        "coverage_check": "t01d 三个交付点中:per-form 统计与零命中码已由 E9 覆盖(615 码无字面字节),fm 侧由 E12 覆盖",
+        "note": "渠道现状:openai-codex(luna)稳定,deepseek 两渠道时段性不可用——与用户预判一致"
+      }
+    },
+    {
+      "id": "E14",
+      "date": "2026-11-18晨",
+      "author": "t01-b(pi gpt-6-luna max;完成通知待收,初验通过)",
+      "kind": "artifact",
+      "level": "L3-static(带证据 SHA-256 自检)",
+      "claim": "t01-b 第一轮交付:helperA 精化为 registry 插入 helper;descriptor +0=vtable;4CC 不在描述符槽内(证伪 E5 粗解读);ccti setter 链解到 0xfe72b0('cont' 类型标签);.dat 行读写链未及——comp_new_slots=0",
+      "evidence": {
+        "files": ["scratch/t01/inbox/t01b/output.json", "scratch/t01/inbox/t01b/REPORT.md"],
+        "key_points": [
+          "证伪登记:『4CC 是 56B 描述符槽内成员』→ 4CC 写在栈局部并整体入注册容器,描述符槽内未见 4CC(E5 措辞需按此收窄)",
+          "setter_findings: ccti setter 0xfe7860 读输入对象 +0x0c/+0x10,组两 dword 临时,带类型标签 'cont' 转发公共 helper 0xfe72b0",
+          "serialization_link 诚实标注:switch=XML/运行时分发,非 .dat 行读写——H2 语义收窄",
+          "open_questions: 描述符数组构造器仍未定位(helperB thunk 墙,与 E11 一致)"
+        ],
+        "acceptance": "必达项1(helperA)✓;必达项2(描述符布局)部分(+0 vtable 之外未解);第3步未完成 → 明日续轮"
+      }
     }
   ]
 }
