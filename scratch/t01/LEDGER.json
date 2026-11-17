@@ -539,6 +539,82 @@
     ]
    },
    "consequence": "阶段一(comp 行偏移验收线)收口;方法论已固化(序列化器宽度累加法),stage-2 可对 club/nation/person 复制;sol 额度消耗 1 次,不再使用"
+  },
+  {
+   "id": "E21",
+   "date": "2026-11-18 05:15",
+   "author": "commander(luna t01g 交付,指挥官独立验收)",
+   "kind": "negative-result",
+   "level": "L3-static(指挥官独立字节复验全过 + duni 锚点独立复现 + sol/luna 双自检 PASS + 锚点回归 7/7)",
+   "claim": "【负结果分支验收】t01g(luna max, 04:38-05:08)证明 nation 序列化与 COMP 不同:存在计数驱动集合循环(变长记录),直线累加法不能直接复制;但已交付 nation 类全链 L3 + 7 个前缀字段行偏移 + 旧库 duni 锚点字节级复现。此结果与旧库 table_10 opaque(变长序列化器未恢复)的记录互相印证",
+   "evidence": {
+    "artifacts": [
+     "scratch/t01/inbox/t01g/{output.json,REPORT.md,verify.py}"
+    ],
+    "nation_class_chain": {
+     "RTTI": "0x1aacac0 (.?AVNATION@db@@)",
+     "ctor": "off 0x103ebf0(VA 0x14103F5F0,alloc 0x1d8 @0xf48f27)",
+     "vptr": "off 0x18889B8(VA 0x1418893B8)",
+     "factory": "type-10 项 0xf49d60 -> handler 0xf48f27",
+     "type_query": "0x104e4b0: b8 0a 00 00 00 c3 返回 10",
+     "slot19_reader": "off 0x103fac0(vtable 0x1888a50 条目 VA 0x1410404C0)",
+     "slot21_writer": "off 0x1041460(vtable 0x1888a60 条目 VA 0x141041E60)"
+    },
+    "seven_prefix_fields": {
+     "Ngct": [
+      0,
+      1
+     ],
+     "Ncti": [
+      1,
+      4
+     ],
+     "Nrgi": [
+      5,
+      4
+     ],
+     "Ncur": [
+      13,
+      4
+     ],
+     "Nsod": [
+      17,
+      1
+     ],
+     "Necf": [
+      18,
+      1
+     ],
+     "Nygn": [
+      23,
+      1
+     ],
+     "note": "[body row+,宽度];前 25B 宽度序列 1,4,4,4,4,1,1,4,1,1;7 条宽度指令 41 b8 N 逐字节核验",
+     "object_offsets": {
+      "Ngct": "0x1cb",
+      "Ncti": "0xf0",
+      "Nrgi": "0xf8",
+      "Ncur": "0x100",
+      "Nsod": "0x1cc",
+      "Necf": "0x1d0",
+      "Nygn": "0x1cd"
+     }
+    },
+    "negative_evidence": [
+     "param 分支 0x103fae6: 0f 84 c4 0a 00 00",
+     "计数循环 0x1040773: fe c3(inc bl)/ 3a 5c 24 44(cmp bl,[rsp+0x44])/ 7c cc(jl) —— 指挥官逐字节解码确认",
+     "第二循环 + 2B 计数分支(0x103fb2e/0x103fcb1)—— 变长集合证据",
+     "writer slot21 有独立 1B prelude(0x1041478..),body 从 0x1041832 对象 +0x1cb 开始"
+    ],
+    "dat_side": {
+     "duni_anchor": "payload 0x1046 = 6e 00 00 00 6e 00 00 00 = 472446402670(独立解压复现,上下文 e0070000..37000000 逐字节吻合旧库记录)",
+     "candidate_body_prefix": "payload 0x0e 25B 与宽度序列吻合(候选,行边界未恢复)",
+     "table_10": "client_db.dat, 251 行, payload 0x609c, SHA 7e9d740b9ee6"
+    },
+    "switch_correction": "nation getter 窗口 0x1041930..0x1045300(entry 0x1041f30),与 COMP switch 区(0xEC0000..)分离 —— t01b 提取的 switch 区间是实体特异的,stage-2 逐实体找各自 getter 窗;19 个精确 cmp esi,imm32,指挥官独立扫描 7/7 码各命中 1 次",
+    "commander_verify": "scripts/t01g_spotcheck.py:初跑 6 FAIL 均为指挥官脚本笔误(file offset 当 VA、0x1046 抄成 0x104),修正后全部通过;无实质不符"
+   },
+   "consequence": "方法论边界已明:直线累加法适用于 COMP 类直线序列化实体;变长实体(nation 有集合字段)需先恢复行边界或符号化处理循环。stage-2 攻击顺序建议:先直线型实体(可从 factory 跳表 32 项逐一判定),后变长型"
   }
  ]
 }

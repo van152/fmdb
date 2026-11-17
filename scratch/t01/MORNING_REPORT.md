@@ -28,6 +28,7 @@
 | t01-e | glm53 | 12/32 实体虚表↔注册函数映射 |
 | 指挥官 | — | switch 121 case、E19 标签主轴、锚点护栏、t01f 四路验收 |
 | **t01f** | **pi gpt-6.2-sol max** | **18 字段行偏移 + 序列化器方法论 + 3 项修正;阶段一收口** |
+| t01g | pi luna max | 负结果分支:nation 是计数驱动变长序列化(非直线);类全链 + 7 前缀字段 L3 + duni 锚点复现(E21) |
 
 ## 结构认知(终版)
 
@@ -39,9 +40,9 @@
 
 ## 下一班顺序(09:00 后新会话)
 
-1. `py -V:3.12 -I scripts/t01_anchors.py`(7/7)→ 读本报告 + LEDGER E20
-2. **t01g 已在跑**(luna max,方法论复制到 nation):产物 `inbox/t01g/`,验收判据 = nation 行 ≥10 字段行偏移 L3 且与旧库 table_10 锚点一致 → E21
-3. 阶段二:三向表 `table_type ↔ entity ↔ registration_fn`(t01e + property_map 合流)+ 50 unknown 表
+1. `py -V:3.12 -I scripts/t01_anchors.py`(7/7)→ 读本报告 + LEDGER E20/E21
+2. **t01g 已验收(E21,负结果分支)**:nation 是计数驱动**变长**序列化(非 COMP 直线型),7 前缀字段 L3 + 类全链 + duni 锚点复现;nation getter 窗口 0x1041930..0x1045300(**switch 区是实体特异的**,t01b 区间不代表全部实体)
+3. 阶段二攻击顺序(E21 结论):**先直线型实体**(从 factory 跳表 32 项逐一判定,套 t01f 方法),后变长型(nation 类:先恢复行边界);三向表 `table_type ↔ entity ↔ registration_fn` 合流(t01e + property_map)
 4. server 扩展全解析(t01f 已给出 join 方法与众数 71B 起点)
 5. comp 剩余字段(2 组版本化 byte 数组、内联名称模式)可续 sol 会话 —— **但 sol 额度已耗 1 次,默认不再用,除非用户批准**
 

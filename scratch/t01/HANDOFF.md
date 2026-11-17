@@ -14,7 +14,7 @@ git log --oneline | head -12             # 全部进度已提交(t01-exe-slot-ma
 
 | 进程 | 看护方式 | 产出位置 |
 |---|---|---|
-| t01g(luna max,方法论复制到 nation 表行偏移) | `scratch/t01/pi-logs/t01g.log` | `inbox/t01g/` |
+| ~~t01g(luna max)~~ 已完成并验收(E21 负结果分支) | `scratch/t01/pi-logs/t01g.log` | `inbox/t01g/` |
 
 **不需要任何人守着;产物落盘即完成。** gpt-6.2-sol 探测状态(2026-11-18 02:0x):账号侧尚不支持("not supported when using Codex with a ChatGPT account"),守哨会自动重试至上线,共 40 次/10 小时。
 
@@ -43,5 +43,5 @@ git log --oneline | head -12             # 全部进度已提交(t01-exe-slot-ma
 
 - **t01f 已验收(E20)**:阶段一收口;详见 [MORNING_REPORT.md](MORNING_REPORT.md) v4
 - sol_watch 完成退役(03:35 上线自动发射,04:26 退出)
-- t01g(luna max)已发射:方法论复制到 nation(table_10),产物 `inbox/t01g/`,验收判据 ≥10 字段行偏移 + 旧库 table_10 锚点(duni 472446402670 样例)→ E21
-- 下一班从验收队列 t01g 开始
+- **t01g 已验收(E21,05:15)**:nation = 计数驱动变长序列化(负结果分支,与 COMP 直线型不同);7 前缀字段 L3 + 类全链 + duni 锚点复现;getter 窗口实体特异的结论影响 stage-2 战术
+- 下一班从 MORNING_REPORT v4「下一班顺序」第 3 项开始(先直线型实体)
