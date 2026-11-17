@@ -1,327 +1,544 @@
 {
-  "task": "t01-exe-slot-map",
-  "created": "2026-11-18",
-  "goal": "找到 editor.exe 中 table type → schema 字段 → .dat 行内偏移的映射结构;阶段一验收:comp packed 区 ≥10 字段 L3 槽位",
-  "rules": "claim 必须带证据指针(file offset + 字节);验不过降级为 hypothesis;负结果永久保留",
-  "entries": [
-    {
-      "id": "E1",
-      "date": "2026-11-18",
-      "author": "commander(GLM 主会话)",
-      "kind": "probe",
-      "level": "L3-static(文件偏移;VA 已换算)",
-      "claim": "editor.exe 内 comp 实体字段码以 4CC 立即数出现(mov-imm 反序字节);4CC 字段码体系在 editor.exe 直接可检索",
-      "evidence": {
-        "binary": "D:/tmp2b/fm24/input/editor.exe (74,807,296 B)",
-        "probe": "原始字节搜索 ASCII 4CC 及其反序",
-        "hits": {
-          "ccti(反序itcc)": ["0xebf153", "0xec2009", "0xecb640"],
-          "cnti(反序itnc)": "43 hits, 样本 0x27c12/0x2cedd/0x34852",
-          "cpcm(反序mcpc)": ["0xebf183", "0xec0a9f", "0xecaf7d"],
-          "cext(反序txec)": ["0x893012", "0x893112", "0x893142", "0xebf1e3", "0xec0f60", "0xecad47"],
-          "dbty(反序ytbd)": ["0xec152c", "0xecb67b"],
-          "levl(反序lvel)": "55 hits",
-          "PLgn(反序ngLP)": "26 hits",
-          "crep(反序perc)": "63 hits",
-          "cnam(反序manc)": ["0xa7db44", "0xebf093", "0xec0fc5", "0xecb331", "0x1913b05"],
-          "cdbt": "0 hits(enum 名非字段码)"
-        }
-      }
-    },
-    {
-      "id": "E2",
-      "date": "2026-11-18",
-      "author": "commander(GLM 主会话)",
-      "kind": "decode",
-      "level": "L3-static(逐字节指令解码)",
-      "claim": "0xebf060..0xebf200(file off)是 comp 实体属性注册函数:每 0x30 字节一段注册块,块内写 4CC 后调 helper,属性对象步进 0x38",
-      "evidence": {
-        "block_asm": "c7 45 f0 <4CC反序> ; 48 89 45 e8 ; 48 8d 7d e8 ; 48 89 f1 ; 48 89 fa ; e8 <helperA> ; 48 8b 4d e8 ; 48 8b 01 ; 48 89 fa ; ff 50 10 ; e8 <helperB> ; 48 83 c0 38",
-        "4cc_sequence": ["PLgn", "cnam", "csnm", "c3ln", "cnti", "ccti", "cpcm", "crep", "cext"],
-        "erratum": "初版误写 cnsm/cl3n;2026-11-18 由 t01-c 对账 master.json 纠正为 csnm/c3ln(反序方向:ASCII 小端存储,读取时按字节反转)",
-        "block_spacing": "0x30(代码)/0x38(对象步进)",
-        "helperA": {"off": "0x83abf0", "va": "0x14083b5f0"},
-        "helperB": {"off": "0x83caf0", "va": "0x14083d4f0"},
-        "hex_rows": [
-          "0xebf090: c7 45 f0 6d 61 6e 63 48 89 45 e8 48 8d 7d e8 48  (manc=cnam)",
-          "0xebf0c0: c7 45 f0 6d 6e 73 63 ...                          (mnsc=cnsm)",
-          "0xebf150: c7 45 f0 69 74 63 63 ...                          (itcc=ccti)"
-        ]
-      },
-      "hypotheses": [
-        "H1: 4CC 序列 = comp schema 属性数组顺序;56B(0x38)属性对象含序列化槽位信息 → 解码对象布局即得字段→偏移",
-        "证伪条件: 若对象布局不含 offset/serializer 字段,H1 撤销"
-      ]
-    },
-    {
-      "id": "E3",
-      "date": "2026-11-18",
-      "author": "commander(GLM 主会话)",
-      "kind": "pe-facts",
-      "level": "L1(PE 头解析,stdlib)",
-      "claim": "editor.exe PE 布局与 VA 换算公式",
-      "evidence": {
-        "image_base": "0x140000000",
-        "va_formula": ".rdata 段内 VA = fileoff + 0xA00(rptr=0x600, vaddr=0x1000);通用换算用 scratch/t01/probe_pe.py",
-        "sample": "off 0xebf060 → VA 0x140ebfa60;off 0xec2009 → VA 0x140ec2a09",
-        "sections_note": ".code rsize 仅 0x200(vsize 0x93000)且存在 .arch/.xpdata 段 — 疑似加壳/保护;但 0xebf0xx 区域字节解码为一致 x86-64 代码,IDA 库(editor_merge_v2.i64)可交叉核对"
-      }
-    },
-    {
-      "id": "E4",
-      "date": "2026-11-18",
-      "author": "commander(GLM 主会话)",
-      "kind": "observation",
-      "level": "L3-static",
-      "claim": "第二簇 0xec0000..0xecb000(file off)散布 ccti/cpcm/cext/dbty/cnam 命中,形态与注册块不同 — 疑似序列化/分发 switch 或静态描述符表",
-      "evidence": {"samples": ["ccti@0xec2009", "cpcm@0xec0a9f", "cext@0xec0f60", "dbty@0xec152c", "cnam@0xecb331"]},
-      "hypotheses": ["H2: 该簇是 .dat 行读写的 per-field switch(cmp 4CC 后跳转),与 H1 的注册函数分别对应读侧/写侧"]
-    },
-    {
-      "id": "E5",
-      "date": "2026-11-18夜",
-      "author": "commander(GLM 主会话)",
-      "kind": "decode",
-      "level": "L3-static(capstone 5.0.7)",
-      "claim": "helperA(RVA 0x83b5f0)= msvc std::vector<32B元素>::push_back;注册块语义修正",
-      "evidence": {
-        "disasm": "push rbp...; mov r14,rdx; mov r15,rcx; [rcx]=begin/[rcx+8]=end/[rcx+0x10]=cap; mov edx,0x20; call 0x7e4490(分配单元素); call 0x1758a00(搬移旧元素); 尾部更新 begin/end/cap; lock dec [r12+0x40](refcount 释放路径)",
-        "conclusion": "注册块把 {属性对象*, 4CC码} 32B 条目 push 进全局注册表;`add rax,0x38` 遍历的是实体属性描述符数组"
-      },
-      "hypotheses": [
-        "H1修正: 字段的行内偏移/类型在 0x38 步进的属性描述符数组里,其构造器才是金矿;注册函数只是挂名"
-      ]
-    },
-    {
-      "id": "E6",
-      "date": "2026-11-18夜",
-      "author": "commander(GLM 主会话)",
-      "kind": "decode",
-      "level": "L3-static(capstone)",
-      "claim": "0xec0000..0xec6000 存在 XML→运行时对象的字段分发 switch:`cmp esi,<4CC大端>` + `je <handler>`;H2 部分证实(是字段 switch,但属 XML 装载侧,非 .dat 行读写)",
-      "evidence": {
-        "cmp_sample": "cmp esi,0x63637469(='ccti' 大端)→ je RVA 0xec4192;handler: mov rcx,[r12+0x58]; mov rdx,r14; call 0xfe7860",
-        "handler_patterns": [
-          "direct: call helperB(RVA 0x83d4f0) 后 add rax,N → 字段写 obj+N",
-          "delegate: call 专用 setter(ccti→0xfe7860, cnti→0xfcc110)",
-          "complex: 其余"
-        ],
-        "helperB_thunk": "helperB 首指令 jmp 0x377e370(进 .reloc 加壳区)——静态墙;但 direct 模式下其返回值+偏移模式已在 105 个 case 上自洽",
-        "binary_note": "editor.exe 混合形态:注册块/switch 区明文,部分 helper 为壳内 thunk"
-      }
-    },
-    {
-      "id": "E7",
-      "date": "2026-11-18夜",
-      "author": "commander(GLM 主会话)",
-      "kind": "artifact",
-      "level": "L3-static(脚本可复跑)",
-      "claim": "switch case 清单已提取:105 case,54 个匹配 comp schema 码;direct 模式已给出运行时对象偏移",
-      "evidence": {
-        "script": "scratch/t01/t01b_switch_extract.py",
-        "json": "scratch/t01/t01b_switch_cases.json",
-        "direct_offsets": {
-          "cext": 24, "cusn": 24, "dbty": 40, "crep": 40, "cmtc": 40,
-          "cmnl": 104, "cmnw": 104, "cmxl": 104,
-          "sfCi/sfCx/sfMi/sfMx/sfSi/ssCi/ssCx/ssMi/ssMx/syCi/syCx/syMi/syMx/sySi/sySx": 40
-        },
-        "notes": [
-          "运行时对象偏移 ≠ .dat 行偏移(cext 行内 slot 旧候选已证伪,而运行时在 +24);.dat 行映射需 .dat 读写链,是明日主攻",
-          "sf*/ss*/sy* 为 comp 新见的统计配置字段族(阶段一验收可计入)",
-          "switch 内出现 4CC 'comp'(实体名检查);分类质量待修:多数 case 分类为 complex,需按 delegate 细化"
-        ]
-      }
-    },
-    {
-      "id": "E8",
-      "date": "2026-11-18晨",
-      "author": "t01-c(glm53-3 子代理,指挥官抽验通过)",
-      "kind": "artifact",
-      "level": "L1(脚本可复跑,字节级一致)",
-      "claim": "schema 词汇表机读化完成:32 实体、2343/3009 为 4 字符码、324 个跨实体冲突码、property_map 21 行",
-      "evidence": {
-        "files": ["scratch/t01/inbox/t01c/vocab.json", "scratch/t01/inbox/t01c/property_map.json", "scratch/t01/inbox/t01c/REPORT.md", "scripts/t01c_build_vocab.py"],
-        "spot_check": "comp.xml#comp 含 cnam/csnm/c3ln/cnti/ccti/cpcm/crep/cext/PLgn/dbty 全部命中(指挥官复核 10/10)",
-        "findings": [
-          "账本 E2 反序笔误纠正:cnsm→csnm、cl3n→c3ln",
-          "master.json field_codes.locations 对 52 个实体码漏记 database 位置(PLgn/Cnti 等);vocab 以 entities 树全量遍历为准",
-          "dbnm 是最通用码(21 实体共用)"
-        ]
-      }
-    },
-    {
-      "id": "E9",
-      "date": "2026-11-18晨",
-      "author": "t01-a(glm53-1 子代理,verify_4cc.py 2954/2954 + 357/357 调用目标复验;指挥官复跑 ALL CHECKS PASSED)",
-      "kind": "artifact",
-      "level": "L3-static(全量字节级)",
-      "claim": "editor.exe 4CC 全景扫描完成:175 簇(.rdata 118/.reloc 57)+ 103 个 switch + 2954 命中;22/32 实体码 100% 覆盖",
-      "evidence": {
-        "files": ["scratch/t01/t01a_editor_sweep.json(1.28MB,逐 hit 带 off)", "scratch/t01/t01a_REPORT.md", "scratch/t01/verify_4cc.py"],
-        "key_findings": [
-          "H2 证实:per-field switch 家族(81 f8..ff + 0f 84,步长 0xC)共 103 处;comp 两个 switch:0xec0095..0xec2d35 与 0xecad39..0xecbfc4(合计 205 comp 码);club 家族 0xe82b4c/0xe89c24(含 C2*/C3*/C4*)",
-          ".reloc 段(45.7MB)藏第二套注册子系统:helper 对 0x6cfff0/0x6d1ef0,44 个 dense run,VA=off+0x16B600;city/lang/stgn/player 家族用 Cnam/Lnam/SNna/PCAB 大写码形",
-          "负结果:615 实体码(comp 109/club 192/nation 213/player 86)无字面字节——疑在 .arch 压缩段运行时解压;标记 unknown 不猜",
-          "comp 锚点簇 0xebf060..0xebf9c7 复现:51 块、步长 {0x30:50},cont=0.9412(high);注意该函数仅含 comp 255 码中的 48 个,注册是分段的"
-        ]
-      }
-    },
-    {
-      "id": "E10",
-      "date": "2026-11-18晨",
-      "author": "commander(扩展 t01b_switch_extract.py 至 0xeca000..0xecc000 + 泛化 cmp 全寄存器)",
-      "kind": "artifact",
-      "level": "L3-static(脚本可复跑)",
-      "claim": "switch case 清单扩至 121 case / 67 comp 匹配(新增 cpcm/csnm/c3ln/cfcl/crgt/cuae/cmxw 等)",
-      "evidence": {
-        "script": "scratch/t01/t01b_switch_extract.py",
-        "json": "scratch/t01/t01b_switch_cases.json",
-        "notes": "complex 分类占比仍高;delegate 型(cnam/cnti/ccti/cpcm)需进 setter 内部提偏移——今日与 t01-b luna 分工:它做 setter/构造器,指挥官做 .dat 行读写链之桥"
-      }
-    },
-    {
-      "id": "E11",
-      "date": "2026-11-18晨(第二轮)",
-      "author": "commander",
-      "kind": "decode",
-      "level": "L3-static(capstone)",
-      "claim": "comp 注册函数起点与所属虚表锁定;运行时对象=属性槽结构;行读取器无硬编码偏移(支持 schema 驱动架构)",
-      "evidence": {
-        "registration_fn": {"off": "0xebf040", "rva": "0xebfa40", "prologue": "push rbp/rsi/rdi; sub rsp,0x40; mov rsi,rdx; call helperB(0x83d4f0); add rax,0x38 → PLgn 块起"},
-        "slot_model": "属性数组基址=helperB() 返回;元素 k 在 base+k*0x38;元素 0 被跳过(疑身份头);注册按序给槽挂名:slot1=PLgn,slot2=cnam,slot3=csnm,slot4=c3ln,slot5=cnti,slot6=ccti,slot7=cpcm,slot8=crep,slot9=cext",
-        "vtable": "off 0x187d2b0(RVA 0x187dcb0,.debug raw 区)44 项函数指针表,comp 注册在 slot 6(vtable+0x30);邻居为其它类方法(0x140ed14xx/0x140ecb5xx 等)——疑为实体定义类接口,每实体一张子类虚表",
-        "row_reader_negative": "rowreader_probe.py:全 .rdata 搜 comp 行已知偏移(0x34/0x38/0x40)联合 0x72/0x76 身份对的 mov disp8 窗口,仅 3 个候选,均非行解析器 → .dat 读取器不走硬编码偏移,支持 schema 驱动(偏移在描述符数组里)架构",
-        "wall": "helperB 与虚表引用方均为壳内代码(两种 VA 映射的 lea 全扫描均无命中);.reloc 区有明文 dense code(t01-a E9),后续扫描需用 off+0x16B600 映射"
-      },
-      "hypotheses": [
-        "H3: 44 项虚表=实体定义类接口(slot6=注册);其它实体的同类虚表在同区域(.debug raw 0x1758600..0x1a7d000 内找同构 44 项表,slot6 指向 t01-a 175 簇中的注册函数)→ 一次得到实体↔注册函数全映射",
-        "H4: 描述符槽 0x38 内含 {vtable,4CC,行偏移?,类型?};解出槽布局即同时得到运行时偏移与 .dat 行偏移(行读取器 schema 驱动)"
-      ]
-    },
-    {
-      "id": "E12",
-      "date": "2026-11-18晨",
-      "author": "t01-a2(pi hiyo deepseek,指挥官抽验:comp 注册块 fm/editor 逐字节相同)",
-      "kind": "artifact",
-      "level": "L3-static(全量字节级,--selftest/--verify 通过)",
-      "claim": "fm.exe(491MB)与 editor.exe 同字段码体系、同注册块代码、不同布局:54,790 命中(cmp 85%),50,071 落 .sdata(585.7/MB,.arch 噪声底 12.9/MB)",
-      "evidence": {
-        "files": ["scratch/t01/inbox/t01a2/fm_sweep.json", "scratch/t01/inbox/t01a2/REPORT.md", "scripts/t01a2_fm_sweep.py"],
-        "key_findings": [
-          "纠正前轮负结果:fm.exe 存在与 editor 相同的注册块(被重排),comp 注册块 63 码序列逐码相同,指挥官字节级复核 fm@36605107 ≡ editor@15462499",
-          "0x30 步进块 fm 72 / editor 58,38 个序列完全相同",
-          "实体覆盖率(person 93.7%/player 89.9%/club 54.7%/nation 33.8%)",
-          "负结果:master 2144 码中 634(29.6%)在 fm 缺席;无任何实体整体缺席",
-          "独立复现 E2/E8 的 csnm/c3ln 笔误纠正"
-        ]
-      }
-    },
-    {
-      "id": "E13",
-      "date": "2026-11-18晨",
-      "author": "commander(决定)",
-      "kind": "task-control",
-      "level": "L1",
-      "claim": "取消 t01d(4CC 普查):pi devseek 饱和 + logfare 3 次限流后,其剩余独立价值已被 E9(t01-a 全量 hit/簇)与 E12(t01a2 fm 全景)覆盖",
-      "evidence": {
-        "attempts": "devseek upstream_saturated;logfare unavailable ×3(retry 循环退出)",
-        "coverage_check": "t01d 三个交付点中:per-form 统计与零命中码已由 E9 覆盖(615 码无字面字节),fm 侧由 E12 覆盖",
-        "note": "渠道现状:openai-codex(luna)稳定,deepseek 两渠道时段性不可用——与用户预判一致"
-      }
-    },
-    {
-      "id": "E14",
-      "date": "2026-11-18晨",
-      "author": "t01-b(pi gpt-6-luna max;完成通知待收,初验通过)",
-      "kind": "artifact",
-      "level": "L3-static(带证据 SHA-256 自检)",
-      "claim": "t01-b 第一轮交付:helperA 精化为 registry 插入 helper;descriptor +0=vtable;4CC 不在描述符槽内(证伪 E5 粗解读);ccti setter 链解到 0xfe72b0('cont' 类型标签);.dat 行读写链未及——comp_new_slots=0",
-      "evidence": {
-        "files": ["scratch/t01/inbox/t01b/output.json", "scratch/t01/inbox/t01b/REPORT.md"],
-        "key_points": [
-          "证伪登记:『4CC 是 56B 描述符槽内成员』→ 4CC 写在栈局部并整体入注册容器,描述符槽内未见 4CC(E5 措辞需按此收窄)",
-          "setter_findings: ccti setter 0xfe7860 读输入对象 +0x0c/+0x10,组两 dword 临时,带类型标签 'cont' 转发公共 helper 0xfe72b0",
-          "serialization_link 诚实标注:switch=XML/运行时分发,非 .dat 行读写——H2 语义收窄",
-          "open_questions: 描述符数组构造器仍未定位(helperB thunk 墙,与 E11 一致)"
-        ],
-        "acceptance": "必达项1(helperA)✓;必达项2(描述符布局)部分(+0 vtable 之外未解);第3步未完成 → 明日续轮"
-      }
-    },
-    {
-      "id": "E15",
-      "date": "2026-11-18晨",
-      "author": "commander",
-      "kind": "artifact",
-      "level": "L1(可复跑回归)",
-      "claim": "t01 锚点回归护栏落地:scripts/t01_anchors.py 7/7 PASS(A1 注册块字节/A2 fm≡editor/A3 虚表 slot6/A4 switch 67 comp 码/A5 sweep 锚点/A6 fm 锚点码/A7 勘误落地)",
-      "evidence": {
-        "script": "scripts/t01_anchors.py(--json 可机读)",
-        "purpose": "后续任何 agent 改动/新声明,先跑此护栏防止破坏已验收事实(t03 交付)",
-        "negative_also_recorded": "rowreader_probe2.py 在 fm.exe .sdata 搜行偏移窗口 → 9 个候选均为通用拷贝循环,行解析器无硬编码偏移(与 E11 editor 侧结论一致,该搜索线关闭)"
-      }
-    },
-    {
-      "id": "E16",
-      "date": "2026-11-18晨",
-      "author": "commander(决策与部署)",
-      "kind": "task-control",
-      "level": "L1",
-      "claim": "gpt-6.2-sol 渠道状态:账号侧未上线(Codex/ChatGPT account 不支持);已部署 sol_watch 守哨(15 分钟探针,上线即自动发射 t01f 突破任务书);指挥官 GLM 额度 09:00 过期,交接文档 HANDOFF.md 就位",
-      "evidence": {
-        "probe": "pi --model gpt-6.2-sol -p → 'The gpt-6.2-sol model is not supported when using Codex with a ChatGPT account'",
-        "watch": "scratch/t01/sol_watch.sh(pi-logs/sol_watch.log;40 次/10 小时上限)",
-        "brief": "prompts/t01f_breakthrough.md(一次性投入纪律:深处做完一条线优于浅尝五条)",
-        "survives_quota_expiry": ["luna r2(pi)", "sol_watch+自动发射(pi)", "全部已提交工件与账本"]
-      }
-    },
-    {
-      "id": "E17",
-      "date": "2026-11-18晨",
-      "author": "t01-e(glm53-4 子代理;指挥官抽验 awar 注册函数序言字节=comp 同构,首码 AWna ✓)",
-      "kind": "artifact",
-      "level": "L3-static(字节级,slot6 全部验证为注册函数起始)",
-      "claim": "H3 半证实:44 项虚表的 slot6=注册函数是族不变量,但槽位数随实体变化(43/68/89/243);实体匹配 12/32(awar club comp drbr inju mdso nati offc stad weat agen jour),containment 0.75-1.0",
-      "evidence": {
-        "files": ["scratch/t01/t01e_vtables.json", "scratch/t01/t01e_REPORT.md", "scripts/t01e_vtable_enum.py"],
-        "method": "debug 区 595 个指针 run → 63 张主候选(43 指针+null 判据,纠正指挥官的字面 44 项框架——slot43=0);反向全文件指针索引匹配 3 种 prologue 变体 + 48 83 c0 38,过滤 11 个伪引用",
-        "negative": [
-          "46 张 slot6→桩(抽象基类族);13 张→无签名代码",
-          "161/175 注册簇无 slot6 引用(pers/ktfl/nnpl 分段注册,调用者疑在壳区);.reloc 交叉核对 0 命中",
-          "同构 44 项假设证伪"
-        ],
-        "stage2_handoer": "nnpl fn=0xdc6780 有引用但落点非 slot6;pers 762-run 内 slot540;243-run 内部边界待切分"
-      }
-    },
-    {
-      "id": "E18",
-      "date": "2026-11-18晨",
-      "author": "t01-b r2(pi luna max;指挥官抽验:club slot6 字节 ✓,0xfe68b0 直调 87 处确认)",
-      "kind": "artifact",
-      "level": "L3-static(带 manifest 校验)",
-      "claim": "luna 第二轮:跨实体 switch 直方图证实 N=运行时对象偏移而非描述符槽;0xfe72b0 公共 helper 重引用(直调 87,引用口径 122——口径差异注明),邻接 mov edx,imm32 的 21 处含 17 种唯一大端标签('cont'/'Nnat'/'city'/'comp' 等)= wire-type 注册表雏形;构造器各角度仍 0 命中(墙确认)",
-      "evidence": {
-        "files": ["scratch/t01/inbox/t01b/round2/output.json", "scratch/t01/inbox/t01b/round2/REPORT.md"],
-        "spot_check": "club vtable 0x187c330 slot6→VA 0x140e88750,函数头含 prologue+helperB 调用+add rax,0x38(指挥官字节复核);comp 直方图 {0x18:2,0x28:18,0x68:3} vs club {0x08:2,0x18:30,0x28:57,...}",
-        "note": "直调计数差异:指挥官 e8-only 全文件=87,luna 报 122(疑含 e9/其它引用形态);不影响'重引用'定性",
-        "next": "17 标签 ↔ codec_tables.json(420 映射)对齐 = wire-type 映射的最后一跳"
-      }
-    },
-    {
-      "id": "E19",
-      "date": "2026-11-18晨",
-      "author": "commander",
-      "kind": "artifact",
-      "level": "L3-static(两份机读工件交叉)",
-      "claim": "实体标签主轴贯通:0xfe72b0 工厂 4CC 标签与 DBC codec_tables 共用实体命名空间(9/17 对上,7 个精确同形: Ttea/Nnat/Cclu/city/stad/regi/stgn);标签语义候选覆盖 ~15 个实体",
-      "evidence": {
-        "artifact": "scratch/t01/t01f_tag_codec_alignment.json",
-        "chain": "DBC 记录(实体 4CC 标签)→ 0xfe72b0 工厂 → 实体对象 → schema 驱动字段分发;XML 装载与 DBC 读取共用此注册表",
-        "notes": [
-          "'cont' 是字段类型标签(container),与实体标签混在同一注册表",
-          "consequence: stage-2 的表号↔实体映射,对这 15 个实体可直接经标签↔property_map 闭环;剩余 unknown 表需在壳区找同族标签",
-          "sol(t01f)若上线,应把本工件作为输入"
-        ]
-      }
+ "task": "t01-exe-slot-map",
+ "created": "2026-11-18",
+ "goal": "找到 editor.exe 中 table type → schema 字段 → .dat 行内偏移的映射结构;阶段一验收:comp packed 区 ≥10 字段 L3 槽位",
+ "rules": "claim 必须带证据指针(file offset + 字节);验不过降级为 hypothesis;负结果永久保留",
+ "entries": [
+  {
+   "id": "E1",
+   "date": "2026-11-18",
+   "author": "commander(GLM 主会话)",
+   "kind": "probe",
+   "level": "L3-static(文件偏移;VA 已换算)",
+   "claim": "editor.exe 内 comp 实体字段码以 4CC 立即数出现(mov-imm 反序字节);4CC 字段码体系在 editor.exe 直接可检索",
+   "evidence": {
+    "binary": "D:/tmp2b/fm24/input/editor.exe (74,807,296 B)",
+    "probe": "原始字节搜索 ASCII 4CC 及其反序",
+    "hits": {
+     "ccti(反序itcc)": [
+      "0xebf153",
+      "0xec2009",
+      "0xecb640"
+     ],
+     "cnti(反序itnc)": "43 hits, 样本 0x27c12/0x2cedd/0x34852",
+     "cpcm(反序mcpc)": [
+      "0xebf183",
+      "0xec0a9f",
+      "0xecaf7d"
+     ],
+     "cext(反序txec)": [
+      "0x893012",
+      "0x893112",
+      "0x893142",
+      "0xebf1e3",
+      "0xec0f60",
+      "0xecad47"
+     ],
+     "dbty(反序ytbd)": [
+      "0xec152c",
+      "0xecb67b"
+     ],
+     "levl(反序lvel)": "55 hits",
+     "PLgn(反序ngLP)": "26 hits",
+     "crep(反序perc)": "63 hits",
+     "cnam(反序manc)": [
+      "0xa7db44",
+      "0xebf093",
+      "0xec0fc5",
+      "0xecb331",
+      "0x1913b05"
+     ],
+     "cdbt": "0 hits(enum 名非字段码)"
     }
-  ]
+   }
+  },
+  {
+   "id": "E2",
+   "date": "2026-11-18",
+   "author": "commander(GLM 主会话)",
+   "kind": "decode",
+   "level": "L3-static(逐字节指令解码)",
+   "claim": "0xebf060..0xebf200(file off)是 comp 实体属性注册函数:每 0x30 字节一段注册块,块内写 4CC 后调 helper,属性对象步进 0x38",
+   "evidence": {
+    "block_asm": "c7 45 f0 <4CC反序> ; 48 89 45 e8 ; 48 8d 7d e8 ; 48 89 f1 ; 48 89 fa ; e8 <helperA> ; 48 8b 4d e8 ; 48 8b 01 ; 48 89 fa ; ff 50 10 ; e8 <helperB> ; 48 83 c0 38",
+    "4cc_sequence": [
+     "PLgn",
+     "cnam",
+     "csnm",
+     "c3ln",
+     "cnti",
+     "ccti",
+     "cpcm",
+     "crep",
+     "cext"
+    ],
+    "erratum": "初版误写 cnsm/cl3n;2026-11-18 由 t01-c 对账 master.json 纠正为 csnm/c3ln(反序方向:ASCII 小端存储,读取时按字节反转)",
+    "block_spacing": "0x30(代码)/0x38(对象步进)",
+    "helperA": {
+     "off": "0x83abf0",
+     "va": "0x14083b5f0"
+    },
+    "helperB": {
+     "off": "0x83caf0",
+     "va": "0x14083d4f0"
+    },
+    "hex_rows": [
+     "0xebf090: c7 45 f0 6d 61 6e 63 48 89 45 e8 48 8d 7d e8 48  (manc=cnam)",
+     "0xebf0c0: c7 45 f0 6d 6e 73 63 ...                          (mnsc=cnsm)",
+     "0xebf150: c7 45 f0 69 74 63 63 ...                          (itcc=ccti)"
+    ]
+   },
+   "hypotheses": [
+    "H1: 4CC 序列 = comp schema 属性数组顺序;56B(0x38)属性对象含序列化槽位信息 → 解码对象布局即得字段→偏移",
+    "证伪条件: 若对象布局不含 offset/serializer 字段,H1 撤销"
+   ]
+  },
+  {
+   "id": "E3",
+   "date": "2026-11-18",
+   "author": "commander(GLM 主会话)",
+   "kind": "pe-facts",
+   "level": "L1(PE 头解析,stdlib)",
+   "claim": "editor.exe PE 布局与 VA 换算公式",
+   "evidence": {
+    "image_base": "0x140000000",
+    "va_formula": ".rdata 段内 VA = fileoff + 0xA00(rptr=0x600, vaddr=0x1000);通用换算用 scratch/t01/probe_pe.py",
+    "sample": "off 0xebf060 → VA 0x140ebfa60;off 0xec2009 → VA 0x140ec2a09",
+    "sections_note": ".code rsize 仅 0x200(vsize 0x93000)且存在 .arch/.xpdata 段 — 疑似加壳/保护;但 0xebf0xx 区域字节解码为一致 x86-64 代码,IDA 库(editor_merge_v2.i64)可交叉核对"
+   }
+  },
+  {
+   "id": "E4",
+   "date": "2026-11-18",
+   "author": "commander(GLM 主会话)",
+   "kind": "observation",
+   "level": "L3-static",
+   "claim": "第二簇 0xec0000..0xecb000(file off)散布 ccti/cpcm/cext/dbty/cnam 命中,形态与注册块不同 — 疑似序列化/分发 switch 或静态描述符表",
+   "evidence": {
+    "samples": [
+     "ccti@0xec2009",
+     "cpcm@0xec0a9f",
+     "cext@0xec0f60",
+     "dbty@0xec152c",
+     "cnam@0xecb331"
+    ]
+   },
+   "hypotheses": [
+    "H2: 该簇是 .dat 行读写的 per-field switch(cmp 4CC 后跳转),与 H1 的注册函数分别对应读侧/写侧"
+   ]
+  },
+  {
+   "id": "E5",
+   "date": "2026-11-18夜",
+   "author": "commander(GLM 主会话)",
+   "kind": "decode",
+   "level": "L3-static(capstone 5.0.7)",
+   "claim": "helperA(RVA 0x83b5f0)= msvc std::vector<32B元素>::push_back;注册块语义修正",
+   "evidence": {
+    "disasm": "push rbp...; mov r14,rdx; mov r15,rcx; [rcx]=begin/[rcx+8]=end/[rcx+0x10]=cap; mov edx,0x20; call 0x7e4490(分配单元素); call 0x1758a00(搬移旧元素); 尾部更新 begin/end/cap; lock dec [r12+0x40](refcount 释放路径)",
+    "conclusion": "注册块把 {属性对象*, 4CC码} 32B 条目 push 进全局注册表;`add rax,0x38` 遍历的是实体属性描述符数组"
+   },
+   "hypotheses": [
+    "H1修正: 字段的行内偏移/类型在 0x38 步进的属性描述符数组里,其构造器才是金矿;注册函数只是挂名"
+   ]
+  },
+  {
+   "id": "E6",
+   "date": "2026-11-18夜",
+   "author": "commander(GLM 主会话)",
+   "kind": "decode",
+   "level": "L3-static(capstone)",
+   "claim": "0xec0000..0xec6000 存在 XML→运行时对象的字段分发 switch:`cmp esi,<4CC大端>` + `je <handler>`;H2 部分证实(是字段 switch,但属 XML 装载侧,非 .dat 行读写)",
+   "evidence": {
+    "cmp_sample": "cmp esi,0x63637469(='ccti' 大端)→ je RVA 0xec4192;handler: mov rcx,[r12+0x58]; mov rdx,r14; call 0xfe7860",
+    "handler_patterns": [
+     "direct: call helperB(RVA 0x83d4f0) 后 add rax,N → 字段写 obj+N",
+     "delegate: call 专用 setter(ccti→0xfe7860, cnti→0xfcc110)",
+     "complex: 其余"
+    ],
+    "helperB_thunk": "helperB 首指令 jmp 0x377e370(进 .reloc 加壳区)——静态墙;但 direct 模式下其返回值+偏移模式已在 105 个 case 上自洽",
+    "binary_note": "editor.exe 混合形态:注册块/switch 区明文,部分 helper 为壳内 thunk"
+   }
+  },
+  {
+   "id": "E7",
+   "date": "2026-11-18夜",
+   "author": "commander(GLM 主会话)",
+   "kind": "artifact",
+   "level": "L3-static(脚本可复跑)",
+   "claim": "switch case 清单已提取:105 case,54 个匹配 comp schema 码;direct 模式已给出运行时对象偏移",
+   "evidence": {
+    "script": "scratch/t01/t01b_switch_extract.py",
+    "json": "scratch/t01/t01b_switch_cases.json",
+    "direct_offsets": {
+     "cext": 24,
+     "cusn": 24,
+     "dbty": 40,
+     "crep": 40,
+     "cmtc": 40,
+     "cmnl": 104,
+     "cmnw": 104,
+     "cmxl": 104,
+     "sfCi/sfCx/sfMi/sfMx/sfSi/ssCi/ssCx/ssMi/ssMx/syCi/syCx/syMi/syMx/sySi/sySx": 40
+    },
+    "notes": [
+     "运行时对象偏移 ≠ .dat 行偏移(cext 行内 slot 旧候选已证伪,而运行时在 +24);.dat 行映射需 .dat 读写链,是明日主攻",
+     "sf*/ss*/sy* 为 comp 新见的统计配置字段族(阶段一验收可计入)",
+     "switch 内出现 4CC 'comp'(实体名检查);分类质量待修:多数 case 分类为 complex,需按 delegate 细化"
+    ]
+   }
+  },
+  {
+   "id": "E8",
+   "date": "2026-11-18晨",
+   "author": "t01-c(glm53-3 子代理,指挥官抽验通过)",
+   "kind": "artifact",
+   "level": "L1(脚本可复跑,字节级一致)",
+   "claim": "schema 词汇表机读化完成:32 实体、2343/3009 为 4 字符码、324 个跨实体冲突码、property_map 21 行",
+   "evidence": {
+    "files": [
+     "scratch/t01/inbox/t01c/vocab.json",
+     "scratch/t01/inbox/t01c/property_map.json",
+     "scratch/t01/inbox/t01c/REPORT.md",
+     "scripts/t01c_build_vocab.py"
+    ],
+    "spot_check": "comp.xml#comp 含 cnam/csnm/c3ln/cnti/ccti/cpcm/crep/cext/PLgn/dbty 全部命中(指挥官复核 10/10)",
+    "findings": [
+     "账本 E2 反序笔误纠正:cnsm→csnm、cl3n→c3ln",
+     "master.json field_codes.locations 对 52 个实体码漏记 database 位置(PLgn/Cnti 等);vocab 以 entities 树全量遍历为准",
+     "dbnm 是最通用码(21 实体共用)"
+    ]
+   }
+  },
+  {
+   "id": "E9",
+   "date": "2026-11-18晨",
+   "author": "t01-a(glm53-1 子代理,verify_4cc.py 2954/2954 + 357/357 调用目标复验;指挥官复跑 ALL CHECKS PASSED)",
+   "kind": "artifact",
+   "level": "L3-static(全量字节级)",
+   "claim": "editor.exe 4CC 全景扫描完成:175 簇(.rdata 118/.reloc 57)+ 103 个 switch + 2954 命中;22/32 实体码 100% 覆盖",
+   "evidence": {
+    "files": [
+     "scratch/t01/t01a_editor_sweep.json(1.28MB,逐 hit 带 off)",
+     "scratch/t01/t01a_REPORT.md",
+     "scratch/t01/verify_4cc.py"
+    ],
+    "key_findings": [
+     "H2 证实:per-field switch 家族(81 f8..ff + 0f 84,步长 0xC)共 103 处;comp 两个 switch:0xec0095..0xec2d35 与 0xecad39..0xecbfc4(合计 205 comp 码);club 家族 0xe82b4c/0xe89c24(含 C2*/C3*/C4*)",
+     ".reloc 段(45.7MB)藏第二套注册子系统:helper 对 0x6cfff0/0x6d1ef0,44 个 dense run,VA=off+0x16B600;city/lang/stgn/player 家族用 Cnam/Lnam/SNna/PCAB 大写码形",
+     "负结果:615 实体码(comp 109/club 192/nation 213/player 86)无字面字节——疑在 .arch 压缩段运行时解压;标记 unknown 不猜",
+     "comp 锚点簇 0xebf060..0xebf9c7 复现:51 块、步长 {0x30:50},cont=0.9412(high);注意该函数仅含 comp 255 码中的 48 个,注册是分段的"
+    ]
+   }
+  },
+  {
+   "id": "E10",
+   "date": "2026-11-18晨",
+   "author": "commander(扩展 t01b_switch_extract.py 至 0xeca000..0xecc000 + 泛化 cmp 全寄存器)",
+   "kind": "artifact",
+   "level": "L3-static(脚本可复跑)",
+   "claim": "switch case 清单扩至 121 case / 67 comp 匹配(新增 cpcm/csnm/c3ln/cfcl/crgt/cuae/cmxw 等)",
+   "evidence": {
+    "script": "scratch/t01/t01b_switch_extract.py",
+    "json": "scratch/t01/t01b_switch_cases.json",
+    "notes": "complex 分类占比仍高;delegate 型(cnam/cnti/ccti/cpcm)需进 setter 内部提偏移——今日与 t01-b luna 分工:它做 setter/构造器,指挥官做 .dat 行读写链之桥"
+   }
+  },
+  {
+   "id": "E11",
+   "date": "2026-11-18晨(第二轮)",
+   "author": "commander",
+   "kind": "decode",
+   "level": "L3-static(capstone)",
+   "claim": "comp 注册函数起点与所属虚表锁定;运行时对象=属性槽结构;行读取器无硬编码偏移(支持 schema 驱动架构)",
+   "evidence": {
+    "registration_fn": {
+     "off": "0xebf040",
+     "rva": "0xebfa40",
+     "prologue": "push rbp/rsi/rdi; sub rsp,0x40; mov rsi,rdx; call helperB(0x83d4f0); add rax,0x38 → PLgn 块起"
+    },
+    "slot_model": "属性数组基址=helperB() 返回;元素 k 在 base+k*0x38;元素 0 被跳过(疑身份头);注册按序给槽挂名:slot1=PLgn,slot2=cnam,slot3=csnm,slot4=c3ln,slot5=cnti,slot6=ccti,slot7=cpcm,slot8=crep,slot9=cext",
+    "vtable": "off 0x187d2b0(RVA 0x187dcb0,.debug raw 区)44 项函数指针表,comp 注册在 slot 6(vtable+0x30);邻居为其它类方法(0x140ed14xx/0x140ecb5xx 等)——疑为实体定义类接口,每实体一张子类虚表",
+    "row_reader_negative": "rowreader_probe.py:全 .rdata 搜 comp 行已知偏移(0x34/0x38/0x40)联合 0x72/0x76 身份对的 mov disp8 窗口,仅 3 个候选,均非行解析器 → .dat 读取器不走硬编码偏移,支持 schema 驱动(偏移在描述符数组里)架构",
+    "wall": "helperB 与虚表引用方均为壳内代码(两种 VA 映射的 lea 全扫描均无命中);.reloc 区有明文 dense code(t01-a E9),后续扫描需用 off+0x16B600 映射"
+   },
+   "hypotheses": [
+    "H3: 44 项虚表=实体定义类接口(slot6=注册);其它实体的同类虚表在同区域(.debug raw 0x1758600..0x1a7d000 内找同构 44 项表,slot6 指向 t01-a 175 簇中的注册函数)→ 一次得到实体↔注册函数全映射",
+    "H4: 描述符槽 0x38 内含 {vtable,4CC,行偏移?,类型?};解出槽布局即同时得到运行时偏移与 .dat 行偏移(行读取器 schema 驱动)"
+   ]
+  },
+  {
+   "id": "E12",
+   "date": "2026-11-18晨",
+   "author": "t01-a2(pi hiyo deepseek,指挥官抽验:comp 注册块 fm/editor 逐字节相同)",
+   "kind": "artifact",
+   "level": "L3-static(全量字节级,--selftest/--verify 通过)",
+   "claim": "fm.exe(491MB)与 editor.exe 同字段码体系、同注册块代码、不同布局:54,790 命中(cmp 85%),50,071 落 .sdata(585.7/MB,.arch 噪声底 12.9/MB)",
+   "evidence": {
+    "files": [
+     "scratch/t01/inbox/t01a2/fm_sweep.json",
+     "scratch/t01/inbox/t01a2/REPORT.md",
+     "scripts/t01a2_fm_sweep.py"
+    ],
+    "key_findings": [
+     "纠正前轮负结果:fm.exe 存在与 editor 相同的注册块(被重排),comp 注册块 63 码序列逐码相同,指挥官字节级复核 fm@36605107 ≡ editor@15462499",
+     "0x30 步进块 fm 72 / editor 58,38 个序列完全相同",
+     "实体覆盖率(person 93.7%/player 89.9%/club 54.7%/nation 33.8%)",
+     "负结果:master 2144 码中 634(29.6%)在 fm 缺席;无任何实体整体缺席",
+     "独立复现 E2/E8 的 csnm/c3ln 笔误纠正"
+    ]
+   }
+  },
+  {
+   "id": "E13",
+   "date": "2026-11-18晨",
+   "author": "commander(决定)",
+   "kind": "task-control",
+   "level": "L1",
+   "claim": "取消 t01d(4CC 普查):pi devseek 饱和 + logfare 3 次限流后,其剩余独立价值已被 E9(t01-a 全量 hit/簇)与 E12(t01a2 fm 全景)覆盖",
+   "evidence": {
+    "attempts": "devseek upstream_saturated;logfare unavailable ×3(retry 循环退出)",
+    "coverage_check": "t01d 三个交付点中:per-form 统计与零命中码已由 E9 覆盖(615 码无字面字节),fm 侧由 E12 覆盖",
+    "note": "渠道现状:openai-codex(luna)稳定,deepseek 两渠道时段性不可用——与用户预判一致"
+   }
+  },
+  {
+   "id": "E14",
+   "date": "2026-11-18晨",
+   "author": "t01-b(pi gpt-6-luna max;完成通知待收,初验通过)",
+   "kind": "artifact",
+   "level": "L3-static(带证据 SHA-256 自检)",
+   "claim": "t01-b 第一轮交付:helperA 精化为 registry 插入 helper;descriptor +0=vtable;4CC 不在描述符槽内(证伪 E5 粗解读);ccti setter 链解到 0xfe72b0('cont' 类型标签);.dat 行读写链未及——comp_new_slots=0",
+   "evidence": {
+    "files": [
+     "scratch/t01/inbox/t01b/output.json",
+     "scratch/t01/inbox/t01b/REPORT.md"
+    ],
+    "key_points": [
+     "证伪登记:『4CC 是 56B 描述符槽内成员』→ 4CC 写在栈局部并整体入注册容器,描述符槽内未见 4CC(E5 措辞需按此收窄)",
+     "setter_findings: ccti setter 0xfe7860 读输入对象 +0x0c/+0x10,组两 dword 临时,带类型标签 'cont' 转发公共 helper 0xfe72b0",
+     "serialization_link 诚实标注:switch=XML/运行时分发,非 .dat 行读写——H2 语义收窄",
+     "open_questions: 描述符数组构造器仍未定位(helperB thunk 墙,与 E11 一致)"
+    ],
+    "acceptance": "必达项1(helperA)✓;必达项2(描述符布局)部分(+0 vtable 之外未解);第3步未完成 → 明日续轮"
+   }
+  },
+  {
+   "id": "E15",
+   "date": "2026-11-18晨",
+   "author": "commander",
+   "kind": "artifact",
+   "level": "L1(可复跑回归)",
+   "claim": "t01 锚点回归护栏落地:scripts/t01_anchors.py 7/7 PASS(A1 注册块字节/A2 fm≡editor/A3 虚表 slot6/A4 switch 67 comp 码/A5 sweep 锚点/A6 fm 锚点码/A7 勘误落地)",
+   "evidence": {
+    "script": "scripts/t01_anchors.py(--json 可机读)",
+    "purpose": "后续任何 agent 改动/新声明,先跑此护栏防止破坏已验收事实(t03 交付)",
+    "negative_also_recorded": "rowreader_probe2.py 在 fm.exe .sdata 搜行偏移窗口 → 9 个候选均为通用拷贝循环,行解析器无硬编码偏移(与 E11 editor 侧结论一致,该搜索线关闭)"
+   }
+  },
+  {
+   "id": "E16",
+   "date": "2026-11-18晨",
+   "author": "commander(决策与部署)",
+   "kind": "task-control",
+   "level": "L1",
+   "claim": "gpt-6.2-sol 渠道状态:账号侧未上线(Codex/ChatGPT account 不支持);已部署 sol_watch 守哨(15 分钟探针,上线即自动发射 t01f 突破任务书);指挥官 GLM 额度 09:00 过期,交接文档 HANDOFF.md 就位",
+   "evidence": {
+    "probe": "pi --model gpt-6.2-sol -p → 'The gpt-6.2-sol model is not supported when using Codex with a ChatGPT account'",
+    "watch": "scratch/t01/sol_watch.sh(pi-logs/sol_watch.log;40 次/10 小时上限)",
+    "brief": "prompts/t01f_breakthrough.md(一次性投入纪律:深处做完一条线优于浅尝五条)",
+    "survives_quota_expiry": [
+     "luna r2(pi)",
+     "sol_watch+自动发射(pi)",
+     "全部已提交工件与账本"
+    ]
+   }
+  },
+  {
+   "id": "E17",
+   "date": "2026-11-18晨",
+   "author": "t01-e(glm53-4 子代理;指挥官抽验 awar 注册函数序言字节=comp 同构,首码 AWna ✓)",
+   "kind": "artifact",
+   "level": "L3-static(字节级,slot6 全部验证为注册函数起始)",
+   "claim": "H3 半证实:44 项虚表的 slot6=注册函数是族不变量,但槽位数随实体变化(43/68/89/243);实体匹配 12/32(awar club comp drbr inju mdso nati offc stad weat agen jour),containment 0.75-1.0",
+   "evidence": {
+    "files": [
+     "scratch/t01/t01e_vtables.json",
+     "scratch/t01/t01e_REPORT.md",
+     "scripts/t01e_vtable_enum.py"
+    ],
+    "method": "debug 区 595 个指针 run → 63 张主候选(43 指针+null 判据,纠正指挥官的字面 44 项框架——slot43=0);反向全文件指针索引匹配 3 种 prologue 变体 + 48 83 c0 38,过滤 11 个伪引用",
+    "negative": [
+     "46 张 slot6→桩(抽象基类族);13 张→无签名代码",
+     "161/175 注册簇无 slot6 引用(pers/ktfl/nnpl 分段注册,调用者疑在壳区);.reloc 交叉核对 0 命中",
+     "同构 44 项假设证伪"
+    ],
+    "stage2_handoer": "nnpl fn=0xdc6780 有引用但落点非 slot6;pers 762-run 内 slot540;243-run 内部边界待切分"
+   }
+  },
+  {
+   "id": "E18",
+   "date": "2026-11-18晨",
+   "author": "t01-b r2(pi luna max;指挥官抽验:club slot6 字节 ✓,0xfe68b0 直调 87 处确认)",
+   "kind": "artifact",
+   "level": "L3-static(带 manifest 校验)",
+   "claim": "luna 第二轮:跨实体 switch 直方图证实 N=运行时对象偏移而非描述符槽;0xfe72b0 公共 helper 重引用(直调 87,引用口径 122——口径差异注明),邻接 mov edx,imm32 的 21 处含 17 种唯一大端标签('cont'/'Nnat'/'city'/'comp' 等)= wire-type 注册表雏形;构造器各角度仍 0 命中(墙确认)",
+   "evidence": {
+    "files": [
+     "scratch/t01/inbox/t01b/round2/output.json",
+     "scratch/t01/inbox/t01b/round2/REPORT.md"
+    ],
+    "spot_check": "club vtable 0x187c330 slot6→VA 0x140e88750,函数头含 prologue+helperB 调用+add rax,0x38(指挥官字节复核);comp 直方图 {0x18:2,0x28:18,0x68:3} vs club {0x08:2,0x18:30,0x28:57,...}",
+    "note": "直调计数差异:指挥官 e8-only 全文件=87,luna 报 122(疑含 e9/其它引用形态);不影响'重引用'定性",
+    "next": "17 标签 ↔ codec_tables.json(420 映射)对齐 = wire-type 映射的最后一跳"
+   }
+  },
+  {
+   "id": "E19",
+   "date": "2026-11-18晨",
+   "author": "commander",
+   "kind": "artifact",
+   "level": "L3-static(两份机读工件交叉)",
+   "claim": "实体标签主轴贯通:0xfe72b0 工厂 4CC 标签与 DBC codec_tables 共用实体命名空间(9/17 对上,7 个精确同形: Ttea/Nnat/Cclu/city/stad/regi/stgn);标签语义候选覆盖 ~15 个实体",
+   "evidence": {
+    "artifact": "scratch/t01/t01f_tag_codec_alignment.json",
+    "chain": "DBC 记录(实体 4CC 标签)→ 0xfe72b0 工厂 → 实体对象 → schema 驱动字段分发;XML 装载与 DBC 读取共用此注册表",
+    "notes": [
+     "'cont' 是字段类型标签(container),与实体标签混在同一注册表",
+     "consequence: stage-2 的表号↔实体映射,对这 15 个实体可直接经标签↔property_map 闭环;剩余 unknown 表需在壳区找同族标签",
+     "sol(t01f)若上线,应把本工件作为输入"
+    ]
+   }
+  },
+  {
+   "id": "E20",
+   "date": "2026-11-18 04:35",
+   "author": "commander(sol t01f 交付,指挥官四路独立验收)",
+   "kind": "milestone",
+   "level": "L3-static(指挥官独立字节复验 49/49 + .dat 独立解压复验 ALL PASS + 锚点回归 7/7 + sol 自检 7047 行/负对照 PASS)",
+   "claim": "【阶段一验收线达成】t01f(gpt-6.2-sol max, 03:35-04:26)解决行偏移桥:comp 客户端行新增 18 个 L3 字段偏移(验收线 >=10),与 5 个既有锚点全部一致;行偏移的真实存放处 = COMP 序列化器逐字段固定指令顺序 + 显式宽度即时数(静态累加),不在 56B 描述符槽内。同时修正 4 个旧认知:helperB 非墙、槽+0x38 是类型 traits 非 4CC/行偏移数组、0x187d2b0 是 RTTI 指针(真 vptr=0x187d2b8,注册函数=0-based slot5,字节不变)、旧库 rdui@+114 实为行序号(原生 rdui=+122;旧库 table_21 rdui@+30==row_index 同属行序号误标)",
+   "evidence": {
+    "artifacts": [
+     "scratch/t01/inbox/t01f/output.json(228KB)",
+     "scratch/t01/inbox/t01f/REPORT.md",
+     "scratch/t01/inbox/t01f/verify.py(自检,只读,含负对照)",
+     "reports/t01f_comp_row_offsets.md",
+     "reports/t01f_comp_row_offsets.json"
+    ],
+    "commander_verify": [
+     "scripts/t01f_spotcheck.py: 49 PASS/0 FAIL,对 editor.exe 原始字节逐条核验(18 字段访问+流宽度指令、helperB thunk 目标重算=0x14377e370、RTTI/构造器/vtable/槽19/槽21 链)",
+     "scripts/t01f_dat_spotcheck.py: ALL PASS,独立解压 client_db.dat 抽验 row7/250/639 及 North/South 父引用(0x15f0b/0x15f8a=352);行序号扫描 60/60 (+114==row_index);cmnl@r7=1050(1a 04)、+118=0b,0b 复现",
+     "scripts/t01_anchors.py: 7/7 PASS 无回归"
+    ],
+    "row_offset_map_18_new": {
+     "cfcl": [
+      3,
+      2,
+      "0x120"
+     ],
+     "cbcl": [
+      5,
+      2,
+      "0x124"
+     ],
+     "ctcl": [
+      7,
+      2,
+      "0x128"
+     ],
+     "levl": [
+      15,
+      1,
+      "0x1a2"
+     ],
+     "CTty": [
+      18,
+      1,
+      "0x1a5"
+     ],
+     "cmnl": [
+      76,
+      2,
+      "0x154"
+     ],
+     "cmnw": [
+      78,
+      2,
+      "0x156"
+     ],
+     "cmxl": [
+      80,
+      2,
+      "0x158"
+     ],
+     "cmxw": [
+      82,
+      2,
+      "0x15a"
+     ],
+     "cnor": [
+      84,
+      4,
+      "0x80"
+     ],
+     "csou": [
+      88,
+      4,
+      "0x88"
+     ],
+     "cwes": [
+      92,
+      4,
+      "0x90"
+     ],
+     "ceas": [
+      96,
+      4,
+      "0x98"
+     ],
+     "wbcl": [
+      101,
+      2,
+      "0x14c"
+     ],
+     "wbst": [
+      103,
+      4,
+      "0x140"
+     ],
+     "wben": [
+      107,
+      4,
+      "0x144"
+     ],
+     "cuae": [
+      111,
+      1,
+      "0xf7"
+     ],
+     "csso": [
+      112,
+      1,
+      "0xf8"
+     ],
+     "note": "[row+, 宽度, COMP+对象偏移]"
+    },
+    "key_new_facts": [
+     "helperB 非墙:0x83caf0 e9 -> VA 0x14377e370(off 0x3612d70,.reloc 明文);TYPED_TRAITS_MANAGER 单例(全局 0x141b5a490),+0x38 = RAW_TYPED_TRAITS<unsigned int>(51 个注册块全部如此,非字段描述符)",
+     "两对象架构:db::COMP(RTTI 0x1aaccb0,构造器 0xeb5dd5,vptr 0x14187dcb8,sizeof 0x1b0)vs db::DATABASE_TABLE<db::COMP>(RTTI 0x1aad160,vptr 0x14187f6d8);COMP slot19=读主体 off 0xeb7000,slot21=写主体 off 0xeb8920",
+     "行编解码前缀:2B+颜色helper 12B+5B+tag 分支(02->7B,03->15B)+1B+2x4B 日期 = 52 到 ccti;client 布局 row+14!=4 时跳过内联名称;+126 为边界字节非 COMP 成员;server 扩展众数 71B(6340 行),198B 是众数非固定步长;12B 身份块 join 7047/7047 全通过",
+     "ccti 的引用包装 0xfe6e90 ba 74 6e 6f 63 传 cont 给 0xfe68b0:cont=大洲引用标签,非 container 非 wire type(修正 E18 口径)",
+     "旧库 table_21 的 rdui@+30==row_index(48413/48413)与 table_25 的 +114 同为行序号:系统性勘误,旧字节事实全部保留"
+    ],
+    "falsified_in_run": 7,
+    "open_questions": 4,
+    "notes": [
+     "验收协议完整执行:未单信 sol 自检,指挥官两侧(editor.exe 指令流 + client_db.dat 行字节)独立抽验",
+     "helperB 证伪口径:仅此 thunk 已解,不外推壳区全部",
+     "-B 禁 bytecode 运行 sol 脚本;PE SHA-256 先校验后用"
+    ]
+   },
+   "consequence": "阶段一(comp 行偏移验收线)收口;方法论已固化(序列化器宽度累加法),stage-2 可对 club/nation/person 复制;sol 额度消耗 1 次,不再使用"
+  }
+ ]
 }

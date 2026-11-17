@@ -1,0 +1,7 @@
+Warning: No project session found with id 't01f-sol'; creating a new session with that id.
+Warning: Model "gpt-6.2-sol" not found for provider "openai-codex". Using custom model id.
+**t01-f 达标。** 为 `client_db.dat` 的 `table_25` 新增了 **18 个 L3 字段偏移**。7,047 行全部通过结构复验，5 个既有字节锚点一致，原回归护栏 7/7 通过。
+
+行偏移不在 `0x38` 描述符槽内：`helperB()+0x38` 指向共享的 `unsigned int` 类型处理器。实际行偏移由 COMP 序列化器按字段顺序累加传输宽度得到。身份块的位置未变，但旧标签 `rdui@+114` 实际是行序号；原生 `rdui` 对应 `+122`。
+
+交付：[报告](scratch/t01/inbox/t01f/REPORT.md) · [逐字段字节证据](scratch/t01/inbox/t01f/output.json) · [复验脚本](scratch/t01/inbox/t01f/verify.py)。未修改输入，未启动游戏、编辑器或 IDA；L4=0。

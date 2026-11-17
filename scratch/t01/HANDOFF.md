@@ -14,8 +14,7 @@ git log --oneline | head -12             # 全部进度已提交(t01-exe-slot-ma
 
 | 进程 | 看护方式 | 产出位置 |
 |---|---|---|
-| luna r2(t01b 第二轮:槽布局/构造器/类型标签) | `scratch/t01/pi-logs/t01b_round2.log` | `inbox/t01b/round2/` |
-| sol_watch(每 15 分钟探测 gpt-6.2-sol,上线即自动发射 t01f 突破任务) | `scratch/t01/pi-logs/sol_watch.log` | `inbox/t01f/`(上线后) |
+| t01g(luna max,方法论复制到 nation 表行偏移) | `scratch/t01/pi-logs/t01g.log` | `inbox/t01g/` |
 
 **不需要任何人守着;产物落盘即完成。** gpt-6.2-sol 探测状态(2026-11-18 02:0x):账号侧尚不支持("not supported when using Codex with a ChatGPT account"),守哨会自动重试至上线,共 40 次/10 小时。
 
@@ -27,7 +26,7 @@ git log --oneline | head -12             # 全部进度已提交(t01-exe-slot-ma
 
 1. **t01-e**(若已产出):对照 E11 锚点抽验 → E17 已入账(12/32 实体映射,H3 半证实) → 若 H3 成立,把"实体↔注册函数全映射"与 `property_map.json`(table_type↔entity)合流,输出三向表 `table_type ↔ entity ↔ registration_fn`(阶段二核心工件)
 2. **luna r2**:验收点 = 槽成员是否给出 +0 vtable 之外的新成员(带字节证据)、类型标签清单('cont' 之外)→ E17
-3. **t01f(sol 杀手锏,若已发射)**:验收判据 = comp 行 ≥10 字段行偏移且与 +52/+56/+64/+114/+118 锚点一致 → E18;**这批结果必须跑 `py -V:3.12 -I scripts/t01_anchors.py` 确认无回归**
+3. ~~t01f(sol 杀手锏)~~ **已验收(E20,2026-11-18 04:35)**:18 字段行偏移 + 序列化器方法论 + 3 项修正(helperB 非墙 / slot 计数勘误 / rdui=行序号);指挥官四路独立验收全过;sol 额度已耗 1 次,默认不再用
 4. 用户上轮留下的决策:阶段一验收线"≥10 字段行偏移 L3"是否分两档
 
 ## 交接后的优先级
@@ -40,8 +39,9 @@ git log --oneline | head -12             # 全部进度已提交(t01-exe-slot-ma
 
 只读游戏数据与 `D:\tmp2b\fm24` 旧仓;候选不写成结论;负结果保留;claim 带字节证据;新任务书进 `prompts/`;所有结论进 LEDGER(只追加)。
 
-## 状态更新(2026-11-18 02:0x)
+## 状态更新(2026-11-18 04:4x,额度前终版)
 
-- t01-e 已完成验收(E17):12/32 实体映射,H3 半证实(slot6=注册函数是族不变量,槽位数随实体变 43/68/89/243)
-- luna r2 运行中;sol_watch attempt 1 未上线(预期),周期探测继续
-- 下一班可直接从验收队列第 2 项开始
+- **t01f 已验收(E20)**:阶段一收口;详见 [MORNING_REPORT.md](MORNING_REPORT.md) v4
+- sol_watch 完成退役(03:35 上线自动发射,04:26 退出)
+- t01g(luna max)已发射:方法论复制到 nation(table_10),产物 `inbox/t01g/`,验收判据 ≥10 字段行偏移 + 旧库 table_10 锚点(duni 472446402670 样例)→ E21
+- 下一班从验收队列 t01g 开始

@@ -1,0 +1,10 @@
+Warning: No project session found with id 't01b-luna'; creating a new session with that id.
+已完成静态复核，未启动游戏、编辑器或 IDA，也未修改输入文件。
+
+主要结果：helperA 接收描述符指针与 4CC 注册项，容器槽位实际为 8 字节指针；comp/stadium 描述符步进为 56 字节，但其成员布局和 `.dat` 行偏移桥接仍未定位。`comp_new_slots` 为空，未将运行时偏移误报为行偏移。
+
+交付文件：
+- `scratch/t01/inbox/t01b/output.json`
+- `scratch/t01/inbox/t01b/REPORT.md`（52 行）
+
+JSON 校验通过，报告符合 150 行限制。
