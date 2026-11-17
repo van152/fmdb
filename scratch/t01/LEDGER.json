@@ -720,6 +720,24 @@
     "reader_alignment": "27 条宽度指令(luna Capstone 复核清单含 3dc0241/3dc027b/3c6e121 等 helper)非单一直线,有 class 分支;class-4 可闭合 1+2+2B"
    },
    "consequence": "stage-2 主攻点转移:person 家族行框架已就绪,BASIC_PERSON 类变长字段映射(83B/34B/22B 行内偏移)是第二实体验收线的最短路径;t01k 已发射"
+  },
+  {
+   "id": "E26",
+   "date": "2026-11-18 07:03",
+   "author": "commander(luna t01k 交付,指挥官独立验收)",
+   "kind": "negative-result",
+   "level": "L3-static(指挥官 31 项独立字节抽验 ALL PASS + payload 样本复现 + luna 自检 PASS 含负对照)",
+   "claim": "【负结果+两条工具级新知】t01k:BASIC_PERSON 未达 >=10 固定字段(仅 Ptyp@row+1 固定);根因 = reader 宽度受全局状态选择器控制(两处 cmp byte [rip+disp],0,4/8B 互斥臂),行偏移 W 条件化(W=4 -> +6/+8,W=8 -> +10/+12),且 helper 游标(0xe4f5a3 -> 0xfb21a0)未闭合。新知一:4CC 比较寄存器不唯一 —— person getter 用 cmp edx,imm32(81 fa),stage-2 扫描须覆盖 81 f8..ff 全寄存器;新知二:class 字节即 Ptyp 值(row+1 -> object+0x65,movsx),身份惯例再+1",
+   "evidence": {
+    "artifacts": [
+     "scratch/t01/inbox/t01k/{output.json,REPORT.md,verify.py}",
+     "scripts/t01k_spotcheck.py"
+    ],
+    "commander_verify": "31 项静态字节全 PASS(slot19/slot2 指针、reader 序言、双掩码 0x90020/0xd0170、选择器、互斥臂分支 74 11/75 08、helper call、Ptyp/Pdob getter cmp edx 链);class-4 样本 payload 0x13b29 = 11 04 af 00 00 00 21 03 00 00 64 00 6c 07 复现;Ptyp@row+1=4",
+    "getter_progress": "slot-2 getter 0xe502d0,10 条 4CC->对象成员链(9 业务码):Ptyp+0x65/Pdob+0x5a/Pnti+0x30/Pcti+0x20/Pnai+0x28/PCJO+0x5e/PSJO+0x60/PNJO+0x62/Piap+0x64 —— 对象偏移侧完整,行偏移侧待 W 解析",
+    "boundary": "运行时选择器值未取(L4=0);row+22 身份块前的前身份字节未赋名;27 宽度指令不可拼成线性序列(互斥臂)"
+   },
+   "consequence": "BASIC_PERSON 行偏移需运行时选择器值(L4)或更深的静态分派追踪;第二实体验收线改由 weat(type 27,直线型,client 有 table_27)冲刺 —— t01l 已发射;stage-2 工具修正:getter 扫描用全寄存器 cmp imm32"
   }
  ]
 }

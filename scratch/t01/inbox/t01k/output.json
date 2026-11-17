@@ -1,0 +1,319 @@
+{
+  "task": "t01-k BASIC_PERSON variable-class row-field mapping",
+  "acceptance": {
+    "met": true,
+    "outcome": "negative_result_reader_row_dispatch_variant",
+    "negative_result_proven": true,
+    "reason": "class-id alone does not determine the reader cursor: a 4/8-byte read occurs before cmp al,4, and three further 4/8 alternatives depend on global flags; helper consumption was not closed",
+    "rows_full_walked": 658011,
+    "named_getter_to_object_member_links": 10,
+    "named_l3_fixed_row_offsets": 1,
+    "class4_fixed_full_business_layout": false,
+    "class123_fixed_full_business_layout": false,
+    "five_class_samples_checked": 5,
+    "L4": 0
+  },
+  "python": "py -V:3.12 -I -B",
+  "read_only_inputs": true,
+  "sources": {
+    "basic_people_db": {
+      "file": "Z:/SteamLibrary/steamapps/common/Football Manager 2024/data/database/db/2430/2430_fm/basic_people_db.dat",
+      "bytes": 12934775,
+      "sha256": "2ac7da37e7b1df755b76c16cf39c569cb0a1e96509a7557c2ab9acf5d67f48bc"
+    },
+    "decompressed_payload": {
+      "bytes": 54060043,
+      "sha256": "16709b0b5dda358179313c19ef58d0f78bff259cde68a0dcd1bb01c9589d35a5",
+      "offset_domain": "decompressed basic_people_db.dat payload"
+    },
+    "editor": {
+      "file": "D:/tmp2b/fm24/input/editor.exe",
+      "bytes": 74807296,
+      "sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4"
+    },
+    "master": {
+      "file": "evidence/fm24/reports/editor_schema/master.json",
+      "sha256": "7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda",
+      "schema": "person.xml#pers",
+      "codes": 271
+    },
+    "decoder": "D:/tmp2b/fm24/scripts/modding_read_dbdat.py (read-only; in-memory Zstandard decompression)"
+  },
+  "row_frame": {
+    "rows": 658011,
+    "header": {
+      "count_offset": "0x0",
+      "count_bytes": "5b 0a 0a 00",
+      "count": 658011,
+      "first_row_offset": 5
+    },
+    "row_tag_class": "u8 0x11 | u8 class_id",
+    "class_lengths_bytes": {
+      "1": 83,
+      "2": 83,
+      "3": 83,
+      "4": 34,
+      "5": 22
+    },
+    "class_counts": {
+      "1": 166064,
+      "2": 476158,
+      "3": 4757,
+      "4": 9839,
+      "5": 1193
+    },
+    "row_start_formula": "start[0]=5; start[n+1]=start[n]+class_length(class_id[n])",
+    "identity_tail": {
+      "relative_offset": "row_end-12",
+      "bytes_shape": "u32 ordinal | u32 repeated-ID candidate | u32 same-ID candidate",
+      "all_rows_checked": 658011,
+      "ordinal_contiguous": true,
+      "repeated_dwords_equal": true,
+      "semantic_name_assignment": false
+    },
+    "row_chain": {
+      "end_offset_exclusive": 54060034,
+      "trailing_bytes_offset": "0x338e402",
+      "trailing_bytes": "00 00 00 00 01 4c bd 54 77",
+      "closure": "5-byte payload header + sum(class-sized rows) + 9-byte tail = 54,060,043 bytes"
+    }
+  },
+  "reader": {
+    "record": "BASIC_PERSON@db@@",
+    "vptr_file_offset": "0x187b328",
+    "slot19_pointer_file_offset": "0x187b3c0",
+    "reader_file_offset": "0xe4f370",
+    "getter_vtable_slot": 2,
+    "getter_pointer_file_offset": "0x187b338",
+    "getter_file_offset": "0xe502d0",
+    "getter_code_register": "edx (not esi in this method)",
+    "reader_local_width_instruction_count": 23,
+    "census_count_including_four_callee_sites": 27,
+    "width_sequence_note": "The 27-site census is not a sequential row layout. The 23 reader-local sites contain mutually exclusive branches; four additional sites are in callee windows.",
+    "pre_class4_dispatch": {
+      "first_mask_instruction": {
+        "file_offset": "0xe4f3c8",
+        "bytes": "ba 20 00 09 00",
+        "mask": "0x90020"
+      },
+      "bit_test": {
+        "file_offset": "0xe4f3cd",
+        "bytes": "0f a3 ca",
+        "instruction": "bt edx, ecx"
+      },
+      "clear_bit_branch": {
+        "file_offset": "0xe4f3d0",
+        "bytes": "0f 83 ff 00 00 00",
+        "target": "0xe4f4d5"
+      },
+      "class4_bit4": "clear; class 4 takes this pre-read path",
+      "pre_read_destination": {
+        "file_offset": "0xe4f4dc",
+        "bytes": "48 8d 53 30",
+        "object_offset": "0x30"
+      },
+      "width_8_arm": {
+        "file_offset": "0xe4f4f6",
+        "bytes": "41 b8 08 00 00 00",
+        "width": 8
+      },
+      "width_4_arm": {
+        "file_offset": "0xe4f4fe",
+        "bytes": "41 b8 04 00 00 00",
+        "width": 4
+      },
+      "call": {
+        "file_offset": "0xe4f507",
+        "bytes": "ff d0"
+      },
+      "branch_state": "8-byte and 4-byte widths are alternative arms controlled by two global bytes; their runtime values were not established statically"
+    },
+    "class4_dispatch_after_preread": {
+      "second_mask": {
+        "file_offset": "0xe4f3e7",
+        "bytes": "ba 70 01 0d 00",
+        "mask": "0xd0170",
+        "class4_bit4": "set"
+      },
+      "compare": {
+        "file_offset": "0xe4f42e",
+        "bytes": "3c 04",
+        "instruction": "cmp al,4"
+      },
+      "non4_branch": {
+        "file_offset": "0xe4f430",
+        "bytes": "75 4c",
+        "target": "0xe4f47e"
+      },
+      "first_2B": {
+        "destination_instruction": {
+          "file_offset": "0xe4f432",
+          "bytes": "48 8d 53 52",
+          "object_offset": "0x52"
+        },
+        "width_instruction": {
+          "file_offset": "0xe4f43c",
+          "bytes": "41 b8 02 00 00 00",
+          "width": 2
+        },
+        "stream_call": {
+          "file_offset": "0xe4f445",
+          "bytes": "ff 50 28"
+        }
+      },
+      "second_2B": {
+        "destination_instruction": {
+          "file_offset": "0xe4f452",
+          "bytes": "48 8d 53 5a",
+          "object_offset": "0x5a"
+        },
+        "width_instruction": {
+          "file_offset": "0xe4f468",
+          "bytes": "41 b8 02 00 00 00",
+          "width": 2
+        },
+        "stream_call": {
+          "file_offset": "0xe4f471",
+          "bytes": "ff 50 28"
+        }
+      },
+      "row_cursor_formula": "if pre-read width W is 4 or 8, these two reads begin at row+2+W and row+4+W; not row+2 and row+4"
+    },
+    "other_variable_width_arms": [
+      {
+        "destination": "object+0x20",
+        "destination_file_offset": "0xe4f529",
+        "width_8": {"file_offset": "0xe4f542", "bytes": "41 b8 08 00 00 00"},
+        "width_4": {"file_offset": "0xe4f54a", "bytes": "41 b8 04 00 00 00"}
+      },
+      {
+        "destination": "object+0x28",
+        "destination_file_offset": "0xe4f566",
+        "width_8": {"file_offset": "0xe4f57f", "bytes": "41 b8 08 00 00 00"},
+        "width_4": {"file_offset": "0xe4f587", "bytes": "41 b8 04 00 00 00"}
+      }
+    ],
+    "unclosed_helper": {
+      "call_file_offset": "0xe4f5a3",
+      "call_bytes": "e8 f8 2b 16 00",
+      "call_target": "0xfb21a0",
+      "target_bytes": "e9 5b 6b e2 02",
+      "destination_setup": {
+        "file_offset": "0xe4f59c",
+        "bytes": "48 8d 53 38",
+        "object_offset": "0x38"
+      },
+      "status": "helper stream consumption and row-cursor delta not closed; downstream offsets are conditional"
+    }
+  },
+  "getter_to_object_member": {
+    "dispatch_note": "BASIC_PERSON vtable slot 2 resolves to 0xe502d0; its 4CC comparator uses EDX. Every claim is a getter comparison/branch/member-access byte chain.",
+    "fields": {
+      "Ptyp": {"schema_name": "Person Type", "object_offset": "0x65", "compare_file_offset": "0xe50959", "compare_bytes": "81 fa 70 79 74 50", "member_file_offset": "0xe50965", "member_bytes": "0f be 7f 65"},
+      "Pdob": {"schema_name": "Date Of Birth", "object_offset": "0x5a", "compare_file_offset": "0xe506a5", "compare_bytes": "81 fa 62 6f 64 50", "member_file_offset": "0xe51158", "member_bytes": "0f b7 7f 5a"},
+      "Pnti": {"schema_name": "Nation", "object_offset": "0x30", "compare_file_offset": "0xe5094d", "compare_bytes": "81 fa 69 74 6e 50", "member_file_offset": "0xe51679", "member_bytes": "48 8b 47 30"},
+      "Pnai": {"schema_name": "Nation", "object_offset": "0x28", "compare_file_offset": "0xe5079e", "compare_bytes": "81 fa 69 61 6e 50", "member_file_offset": "0xe507aa", "member_bytes": "48 8b 47 28"},
+      "Pcti": {"schema_name": "Club", "object_offset": "0x20", "compare_file_offset": "0xe50534", "compare_bytes": "81 fa 69 74 63 50", "member_file_offset": "0xe50f43", "member_bytes": "48 8b 47 20"},
+      "PCJO": {"schema_name": "Job", "object_offset": "0x5e", "compare_file_offset": "0xe507bc", "compare_bytes": "81 fa 4f 4a 43 50", "member_file_offset": "0xe515dd", "member_bytes": "0f b7 7f 5e"},
+      "PNJO": {"schema_name": "Job", "object_offset": "0x62", "compare_file_offset": "0xe50337", "compare_bytes": "81 fa 4f 4a 4e 50", "member_file_offset": "0xe50343", "member_bytes": "0f b7 7f 62"},
+      "PSJO": {"schema_name": "Secondary Job", "object_offset": "0x60", "compare_file_offset": "0xe509d0", "compare_bytes": "81 fa 4f 4a 53 50", "member_file_offset": "0xe509dc", "member_bytes": "0f b7 7f 60"},
+      "Piap": {"schema_name": "International Apps", "object_offset": "0x64", "compare_file_offset": "0xe50792", "compare_bytes": "81 fa 70 61 69 50", "member_file_offset": "0xe5157e", "member_bytes": "0f b6 7f 64"},
+      "duni": {"schema_name": "Unique ID", "object_offset": "0x0c", "compare_file_offset": "0xe50480", "compare_bytes": "81 fa 69 6e 75 64", "member_file_offset": "0xe50e1a", "member_bytes": "8b 7f 0c", "row_link_status": "identity-tail candidate only; no BASIC_PERSON reader-to-row chain established here; excluded from business-field count"}
+    }
+  },
+  "row_offset_map": {
+    "class_1_2_3": {
+      "row_length": 83,
+      "business_zone": "row+2..row+70 (69 bytes); identity begins row+71",
+      "fixed_l3_fields": {
+        "Ptyp": {
+          "row_offset": 1,
+          "width": 1,
+          "object_offset": "0x65",
+          "reader_width_file_offset": "0xe4f393",
+          "reader_width_bytes": "41 b8 01 00 00 00",
+          "reader_call_file_offset": "0xe4f39f",
+          "reader_call_bytes": "ff 50 28",
+          "getter_member_file_offset": "0xe50965",
+          "getter_member_bytes": "0f be 7f 65",
+          "sample_evidence": "each row's byte at row+1 equals class_id; exact per-class payload offsets and bytes are in samples_by_class"
+        }
+      },
+      "conditional_getter_fields_not_promoted_to_fixed_offsets": {
+        "Pnti": {"object_offset": "0x30", "reader_destination": "0xe4f4dc", "width_arms": [8, 4], "relative_start": "row+2"},
+        "Pcti": {"object_offset": "0x20", "reader_destination": "0xe4f529", "width_arms": [8, 4], "relative_start": "row+2+W1"},
+        "Pnai": {"object_offset": "0x28", "reader_destination": "0xe4f566", "width_arms": [8, 4], "relative_start": "row+2+W1+W2"},
+        "Pdob": {"object_offset": "0x5a", "reader_destination": "0xe4f5b3/0xe4f452", "width": 2, "relative_start": "class1-3: after W1+W2+W3+helper+two 4B fields and five preceding 2B fields; class4: row+4+W0"},
+        "PCJO": {"object_offset": "0x5e", "width": 2, "relative_start": "row cursor depends on W1+W2+W3 and helper at object+0x38"},
+        "PSJO": {"object_offset": "0x60", "width": 2, "relative_start": "row cursor depends on W1+W2+W3 and helper at object+0x38"},
+        "PNJO": {"object_offset": "0x62", "width": 2, "relative_start": "row cursor depends on W1+W2+W3 and helper at object+0x38"},
+        "Piap": {"object_offset": "0x64", "width": 1, "relative_start": "row cursor depends on W1+W2+W3 and helper at object+0x38"}
+      },
+      "status": "one fixed named business-field L3 mapping; the remaining getter/member links have dynamic or unclosed row cursor"
+    },
+    "class_4": {
+      "row_length": 34,
+      "business_zone": "row+2..row+21 (20 bytes); identity begins row+22",
+      "fixed_l3_fields": {
+        "Ptyp": {
+          "row_offset": 1,
+          "width": 1,
+          "object_offset": "0x65",
+          "reader_width_file_offset": "0xe4f393",
+          "reader_width_bytes": "41 b8 01 00 00 00",
+          "getter_member_file_offset": "0xe50965",
+          "getter_member_bytes": "0f be 7f 65"
+        }
+      },
+      "conditional_l3_field": {
+        "Pdob": {
+          "object_offset": "0x5a",
+          "reader_width": 2,
+          "reader_width_file_offset": "0xe4f468",
+          "reader_width_bytes": "41 b8 02 00 00 00",
+          "getter_member_file_offset": "0xe51158",
+          "getter_member_bytes": "0f b7 7f 5a",
+          "row_offset_if_pre_read_width_4": 8,
+          "row_offset_if_pre_read_width_8": 12,
+          "status": "conditional on an unobserved global-controlled earlier 4/8-byte read; not one fixed row offset"
+        }
+      },
+      "unmapped_object_slot": {"object_offset": "0x52", "reader_width": 2, "schema_4cc": null},
+      "status": "reader class-4 branch is not the first branch after class byte; full business span remains partly unassigned"
+    },
+    "class_5": {
+      "row_length": 22,
+      "fixed_l3_fields": {
+        "Ptyp": {
+          "row_offset": 1,
+          "width": 1,
+          "object_offset": "0x65",
+          "reader_width_file_offset": "0xe4f393",
+          "reader_width_bytes": "41 b8 01 00 00 00",
+          "getter_member_file_offset": "0xe50965",
+          "getter_member_bytes": "0f be 7f 65"
+        }
+      },
+      "status": "only the class byte is closed; remaining bytes require the other class mask/helper path"
+    }
+  },
+  "samples_by_class": [
+    {"class_id": 1, "ordinal": 0, "payload_offset": 5, "row_length": 83, "row_hex": "11 01 83 00 00 00 f5 02 00 00 44 98 00 00 d3 c1 62 02 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 00 ff ff ff ff 14 00 64 00 64 00 6e 00 78 00 af 07 06 00 00 00 00 00 05 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00 00 03 00 00 00"},
+    {"class_id": 2, "ordinal": 89, "payload_offset": 7392, "row_length": 83, "row_hex": "11 02 a0 00 00 00 12 03 00 00 37 22 00 00 14 3c 0c 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 20 35 00 00 03 01 00 00 02 00 2b 00 2b 00 30 00 5b 00 b9 07 0b 00 00 00 00 00 00 04 2e 00 00 00 00 00 00 00 00 59 00 00 00 e4 01 00 00 e4 01 00 00"},
+    {"class_id": 3, "ordinal": 1155, "payload_offset": 94939, "row_length": 83, "row_hex": "11 03 a0 00 00 00 12 03 00 00 7f 04 00 00 2d 05 00 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 30 75 00 00 6b 03 00 00 05 00 3c 00 3c 00 32 00 6a 00 ba 07 0b 00 00 00 00 00 00 04 2d 00 00 00 00 00 00 00 00 83 04 00 00 86 1c 00 00 86 1c 00 00"},
+    {"class_id": 4, "ordinal": 972, "payload_offset": 80681, "row_length": 34, "row_hex": "11 04 af 00 00 00 21 03 00 00 64 00 6c 07 00 00 00 00 00 00 00 00 cc 03 00 00 d2 14 00 00 d2 14 00 00"},
+    {"class_id": 5, "ordinal": 656818, "payload_offset": 54033788, "row_length": 22, "row_hex": "11 05 00 00 00 00 00 00 00 00 b2 05 0a 00 a4 b8 54 77 a4 b8 54 77"}
+  ],
+  "negative_controls": {
+    "class4_mask0x90020_bit4_is_clear": true,
+    "class4_mask0xd0170_bit4_is_set": true,
+    "pre_class4_read_before_cmp_al4": true,
+    "pre_class4_widths_4_and_8_are_mutually_exclusive": true,
+    "naive_class4_1_plus_2_plus_2_at_row_offsets_1_2_4_refuted": true,
+    "duni_semantics_or_row_link_promoted": false,
+    "all_rows_have_ordinal_and_equal_duplicate_id_dwords": true,
+    "synthetic_bad_tag_rejected": true,
+    "synthetic_bad_identity_rejected": true
+  },
+  "L4": 0
+}
