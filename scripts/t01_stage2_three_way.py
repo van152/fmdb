@@ -128,7 +128,9 @@ out = {
         "vtable/regfn 来自 t01e 的 slot6 计数口径;E20 已修正为 0-based slot5(字节不变)",
         "unknown 表共 %d 个(0..58 减去 property_map 已覆盖)" % len(unknown),
         "t01e 独有 tag(agen/jour/offc)是 unknown 表型的候选实体;E23:agen/offc/jour 与 type-1 person-family 仅候选关联",
-        "11 个 null-return 型(11/13/15/16/17/20/28/40/53/54/55)无专属工厂项 —— 可能非持久化表",
+        "11 个 null-return 型(11/13/15/16/17/20/28/40/53/54/55)无专属工厂项 —— E24:恰好全部不在 archive(server 59 表),即 archive 里真没有这些表",
+        "E24 命名空间规律:工厂专属 63 型 - archive 59 表 = {1,4,14,44};server 表 ID 0..73 与工厂跳表同域(25/10 已双侧实证,余推定);client 20 表 ⊂ server 59 表",
+        "E24:BASIC_PERSON(factory type 1)的行不在主 archive —— basic_people_db.dat 为唯一在库候选(t01j 侦察中)",
     ],
 }
 json.dump(out, open(ROOT / "scratch/t01/stage2_three_way.json", "w", encoding="utf-8"),
