@@ -1,0 +1,80 @@
+{
+  "task": "t01-exe-slot-map",
+  "created": "2026-11-18",
+  "goal": "找到 editor.exe 中 table type → schema 字段 → .dat 行内偏移的映射结构;阶段一验收:comp packed 区 ≥10 字段 L3 槽位",
+  "rules": "claim 必须带证据指针(file offset + 字节);验不过降级为 hypothesis;负结果永久保留",
+  "entries": [
+    {
+      "id": "E1",
+      "date": "2026-11-18",
+      "author": "commander(GLM 主会话)",
+      "kind": "probe",
+      "level": "L3-static(文件偏移;VA 已换算)",
+      "claim": "editor.exe 内 comp 实体字段码以 4CC 立即数出现(mov-imm 反序字节);4CC 字段码体系在 editor.exe 直接可检索",
+      "evidence": {
+        "binary": "D:/tmp2b/fm24/input/editor.exe (74,807,296 B)",
+        "probe": "原始字节搜索 ASCII 4CC 及其反序",
+        "hits": {
+          "ccti(反序itcc)": ["0xebf153", "0xec2009", "0xecb640"],
+          "cnti(反序itnc)": "43 hits, 样本 0x27c12/0x2cedd/0x34852",
+          "cpcm(反序mcpc)": ["0xebf183", "0xec0a9f", "0xecaf7d"],
+          "cext(反序txec)": ["0x893012", "0x893112", "0x893142", "0xebf1e3", "0xec0f60", "0xecad47"],
+          "dbty(反序ytbd)": ["0xec152c", "0xecb67b"],
+          "levl(反序lvel)": "55 hits",
+          "PLgn(反序ngLP)": "26 hits",
+          "crep(反序perc)": "63 hits",
+          "cnam(反序manc)": ["0xa7db44", "0xebf093", "0xec0fc5", "0xecb331", "0x1913b05"],
+          "cdbt": "0 hits(enum 名非字段码)"
+        }
+      }
+    },
+    {
+      "id": "E2",
+      "date": "2026-11-18",
+      "author": "commander(GLM 主会话)",
+      "kind": "decode",
+      "level": "L3-static(逐字节指令解码)",
+      "claim": "0xebf060..0xebf200(file off)是 comp 实体属性注册函数:每 0x30 字节一段注册块,块内写 4CC 后调 helper,属性对象步进 0x38",
+      "evidence": {
+        "block_asm": "c7 45 f0 <4CC反序> ; 48 89 45 e8 ; 48 8d 7d e8 ; 48 89 f1 ; 48 89 fa ; e8 <helperA> ; 48 8b 4d e8 ; 48 8b 01 ; 48 89 fa ; ff 50 10 ; e8 <helperB> ; 48 83 c0 38",
+        "4cc_sequence": ["PLgn", "cnam", "cnsm", "cl3n", "cnti", "ccti", "cpcm", "crep", "cext"],
+        "block_spacing": "0x30(代码)/0x38(对象步进)",
+        "helperA": {"off": "0x83abf0", "va": "0x14083b5f0"},
+        "helperB": {"off": "0x83caf0", "va": "0x14083d4f0"},
+        "hex_rows": [
+          "0xebf090: c7 45 f0 6d 61 6e 63 48 89 45 e8 48 8d 7d e8 48  (manc=cnam)",
+          "0xebf0c0: c7 45 f0 6d 6e 73 63 ...                          (mnsc=cnsm)",
+          "0xebf150: c7 45 f0 69 74 63 63 ...                          (itcc=ccti)"
+        ]
+      },
+      "hypotheses": [
+        "H1: 4CC 序列 = comp schema 属性数组顺序;56B(0x38)属性对象含序列化槽位信息 → 解码对象布局即得字段→偏移",
+        "证伪条件: 若对象布局不含 offset/serializer 字段,H1 撤销"
+      ]
+    },
+    {
+      "id": "E3",
+      "date": "2026-11-18",
+      "author": "commander(GLM 主会话)",
+      "kind": "pe-facts",
+      "level": "L1(PE 头解析,stdlib)",
+      "claim": "editor.exe PE 布局与 VA 换算公式",
+      "evidence": {
+        "image_base": "0x140000000",
+        "va_formula": ".rdata 段内 VA = fileoff + 0xA00(rptr=0x600, vaddr=0x1000);通用换算用 scratch/t01/probe_pe.py",
+        "sample": "off 0xebf060 → VA 0x140ebfa60;off 0xec2009 → VA 0x140ec2a09",
+        "sections_note": ".code rsize 仅 0x200(vsize 0x93000)且存在 .arch/.xpdata 段 — 疑似加壳/保护;但 0xebf0xx 区域字节解码为一致 x86-64 代码,IDA 库(editor_merge_v2.i64)可交叉核对"
+      }
+    },
+    {
+      "id": "E4",
+      "date": "2026-11-18",
+      "author": "commander(GLM 主会话)",
+      "kind": "observation",
+      "level": "L3-static",
+      "claim": "第二簇 0xec0000..0xecb000(file off)散布 ccti/cpcm/cext/dbty/cnam 命中,形态与注册块不同 — 疑似序列化/分发 switch 或静态描述符表",
+      "evidence": {"samples": ["ccti@0xec2009", "cpcm@0xec0a9f", "cext@0xec0f60", "dbty@0xec152c", "cnam@0xecb331"]},
+      "hypotheses": ["H2: 该簇是 .dat 行读写的 per-field switch(cmp 4CC 后跳转),与 H1 的注册函数分别对应读侧/写侧"]
+    }
+  ]
+}
