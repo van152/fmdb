@@ -178,6 +178,43 @@
         "json": "scratch/t01/t01b_switch_cases.json",
         "notes": "complex 分类占比仍高;delegate 型(cnam/cnti/ccti/cpcm)需进 setter 内部提偏移——今日与 t01-b luna 分工:它做 setter/构造器,指挥官做 .dat 行读写链之桥"
       }
+    },
+    {
+      "id": "E11",
+      "date": "2026-11-18晨(第二轮)",
+      "author": "commander",
+      "kind": "decode",
+      "level": "L3-static(capstone)",
+      "claim": "comp 注册函数起点与所属虚表锁定;运行时对象=属性槽结构;行读取器无硬编码偏移(支持 schema 驱动架构)",
+      "evidence": {
+        "registration_fn": {"off": "0xebf040", "rva": "0xebfa40", "prologue": "push rbp/rsi/rdi; sub rsp,0x40; mov rsi,rdx; call helperB(0x83d4f0); add rax,0x38 → PLgn 块起"},
+        "slot_model": "属性数组基址=helperB() 返回;元素 k 在 base+k*0x38;元素 0 被跳过(疑身份头);注册按序给槽挂名:slot1=PLgn,slot2=cnam,slot3=csnm,slot4=c3ln,slot5=cnti,slot6=ccti,slot7=cpcm,slot8=crep,slot9=cext",
+        "vtable": "off 0x187d2b0(RVA 0x187dcb0,.debug raw 区)44 项函数指针表,comp 注册在 slot 6(vtable+0x30);邻居为其它类方法(0x140ed14xx/0x140ecb5xx 等)——疑为实体定义类接口,每实体一张子类虚表",
+        "row_reader_negative": "rowreader_probe.py:全 .rdata 搜 comp 行已知偏移(0x34/0x38/0x40)联合 0x72/0x76 身份对的 mov disp8 窗口,仅 3 个候选,均非行解析器 → .dat 读取器不走硬编码偏移,支持 schema 驱动(偏移在描述符数组里)架构",
+        "wall": "helperB 与虚表引用方均为壳内代码(两种 VA 映射的 lea 全扫描均无命中);.reloc 区有明文 dense code(t01-a E9),后续扫描需用 off+0x16B600 映射"
+      },
+      "hypotheses": [
+        "H3: 44 项虚表=实体定义类接口(slot6=注册);其它实体的同类虚表在同区域(.debug raw 0x1758600..0x1a7d000 内找同构 44 项表,slot6 指向 t01-a 175 簇中的注册函数)→ 一次得到实体↔注册函数全映射",
+        "H4: 描述符槽 0x38 内含 {vtable,4CC,行偏移?,类型?};解出槽布局即同时得到运行时偏移与 .dat 行偏移(行读取器 schema 驱动)"
+      ]
+    },
+    {
+      "id": "E12",
+      "date": "2026-11-18晨",
+      "author": "t01-a2(pi hiyo deepseek,指挥官抽验:comp 注册块 fm/editor 逐字节相同)",
+      "kind": "artifact",
+      "level": "L3-static(全量字节级,--selftest/--verify 通过)",
+      "claim": "fm.exe(491MB)与 editor.exe 同字段码体系、同注册块代码、不同布局:54,790 命中(cmp 85%),50,071 落 .sdata(585.7/MB,.arch 噪声底 12.9/MB)",
+      "evidence": {
+        "files": ["scratch/t01/inbox/t01a2/fm_sweep.json", "scratch/t01/inbox/t01a2/REPORT.md", "scripts/t01a2_fm_sweep.py"],
+        "key_findings": [
+          "纠正前轮负结果:fm.exe 存在与 editor 相同的注册块(被重排),comp 注册块 63 码序列逐码相同,指挥官字节级复核 fm@36605107 ≡ editor@15462499",
+          "0x30 步进块 fm 72 / editor 58,38 个序列完全相同",
+          "实体覆盖率(person 93.7%/player 89.9%/club 54.7%/nation 33.8%)",
+          "负结果:master 2144 码中 634(29.6%)在 fm 缺席;无任何实体整体缺席",
+          "独立复现 E2/E8 的 csnm/c3ln 笔误纠正"
+        ]
+      }
     }
   ]
 }
