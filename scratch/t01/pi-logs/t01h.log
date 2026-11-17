@@ -1,1 +1,13 @@
 Warning: No project session found with id 't01h-luna'; creating a new session with that id.
+普查完成，产物均在 `scratch/t01/inbox/t01h/`。
+
+- 跳表覆盖 type-id 0–73，共 74 项、60 个不同 handler。
+- COMP（type 25）复现为 `straight-line`；NATION（type 10）复现为 `count-loop`。`--selftest` 通过。
+- master 实体中 18 个有精确 RTTI 对应、29 个有直接或候选关联；`CntF`、`alnm`、`dscr` 尚未关联。报告保留了 t01e 对 `nati` 的标签与 COL/RTTI 字节不一致记录。
+
+交付文件：
+- `scratch/t01/inbox/t01h/output.json`
+- `scratch/t01/inbox/t01h/REPORT.md`（32 行）
+- `scratch/t01/inbox/t01h/verify.py`
+
+复验：`py -V:3.12 -I -B scratch/t01/inbox/t01h/verify.py --selftest` PASS。

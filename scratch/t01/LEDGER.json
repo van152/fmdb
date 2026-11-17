@@ -637,6 +637,31 @@
     "open_question": "table_type 9 与 10 的实体都是 nation.xml#nati —— 待 t01h 跳表普查裁决(type 9/10 是否各有独立工厂项)",
     "stage2_order": "先直线型实体(待 t01h 分类),后变长型(先恢复行边界)"
    }
+  },
+  {
+   "id": "E23",
+   "date": "2026-11-18 06:00",
+   "author": "commander(luna t01h 交付,指挥官独立验收)",
+   "kind": "milestone",
+   "level": "L3-static(74 项 handler 与指挥官独立枚举逐字节一致 + 双负对照复现 + 6 项静态字节抽验 PASS + luna 自检 PASS)",
+   "claim": "【stage-2 战术普查完成】factory 跳表 74 项(0..73)全 census:dispatch cmp ecx,0x49 @0xf48b38;60 个不同 handler;11 个 null-return 型(11/13/15/16/17/20/28/40/53/54/55);序列化模式 46 straight-line / 7 count-loop / 7 mixed / 14 unclear。E20/E21 双负对照复现(comp=直线,nation=计数循环)。裁决 E22 疑点:type 9=NATIONAL_TEAM_CONTAINER(slot7=9),type 10=NATION;t01e(E17)的 nati 双虚表标签勘误 —— 0x1888ed0→NATIONAL_TEAM_CONTAINER、0x188db40→TEAM_CONTAINER(slot7=-1),真 NATION vptr=0x18889b8",
+   "evidence": {
+    "artifacts": [
+     "scratch/t01/inbox/t01h/{output.json(1.2MB,74项),REPORT.md,verify.py}",
+     "scratch/t01/t01h_jump_table_anchor.json(指挥官独立锚)",
+     "scratch/t01/t01h_rtti_names.json(275 个 db@@ 类名)"
+    ],
+    "commander_verify": [
+     "74 项 handler 逐项 == 独立枚举(base+rel32 编码,负对照 type-10/25 命中)",
+     "default types == [11,13,15,16,17,20,28,40,53,54,55]",
+     "dispatch 0xf48b38: 83 f9 49;lea 基址 0xf48b45;type9 slot7 0x10730d0: b8 09..c3;NATION COL 0x18889b0;TEAM_CONTAINER slot7 返回 -1 —— 全部字节 PASS",
+     "mode tally 46/7/7/14 == 报告;60 distinct handlers == 报告"
+    ],
+    "entity_mapping": "18/32 精确 RTTI 映射(agrm/awar/city/club/comp/cont/curr/drbr/inju/lang/lcrg/mdso/nati/regi/stad/stgn/team/weat),候选后 29/32,未关联:CntF/alnm/dscr",
+    "universe_fact": "63 个专属记录类 > 32 editor 实体:多出的是 container/history/EXTERN_* 系统表;types 59..73 超出旧库 59 表普查",
+    "erratum": "E17 的 t01e nati 标签按 COL 字节裁决保留为负结果(不删 t01e 数据,标注不符)"
+   },
+   "consequence": "stage-2 攻击排序就绪:46 个 straight-line 型可直接套 t01f 方法(宽度累加),优先做 property_map 已映射且 field_count 大的(club=433/pers=271);7 count-loop + 7 mixed 需先恢复行边界;11 null-return 型无专属工厂(可能非持久化表)"
   }
  ]
 }

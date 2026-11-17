@@ -57,6 +57,21 @@ def field_count_for(xml: str):
     return None
 
 rows = []
+# t01h census integration (E23): mode + record class per type id
+census = {}
+t01h_path = ROOT / "scratch/t01/inbox/t01h/output.json"
+if t01h_path.exists():
+    t01h = json.load(open(t01h_path, encoding="utf-8"))
+    for e in t01h["census"]:
+        classes = [c.get("name") for c in e.get("constructor_classes", []) if isinstance(c, dict)]
+        census[e["type_id"]] = {
+            "status": e["status"],
+            "mode": next((r.get("mode") for r in e.get("reader", {}).get("slot19_readers", [])
+                          if isinstance(r, dict)), e.get("reader", {}).get("mode", "-")),
+            "record_classes": classes,
+            "handler": e["handler"]["file_offset"],
+        }
+
 for r in pm["rows"]:
     xml = r["entity"]
     tag = xml.split("#")[-1]
@@ -73,6 +88,14 @@ for r in pm["rows"]:
         "sources": ["t01c/property_map"],
         "old_hint": OLD_HINTS.get(r["table_type"], ""),
     }
+    ch = census.get(r["table_type"])
+    if ch:
+        row["census_status"] = ch["status"]
+        row["record_classes"] = ch["record_classes"]
+        row["factory_handler"] = ch["handler"]
+        if row["mode"] == "-":
+            row["mode"] = ch["mode"]
+        row["sources"].append("t01h/E23")
     if r["table_type"] in commander:
         c = commander[r["table_type"]]
         row.update({k: v for k, v in c.items() if k not in ("entity_tag", "sources")})
@@ -100,11 +123,12 @@ out = {
     "table_types_without_row": unknown,
     "t01e_tags_not_in_property_map": t01e_only,
     "notes": [
-        "mode 列:straight-line(comp,E20)/ count-loop(nation,E21);其余实体待 t01h factory 跳表普查分类",
+        "mode 列来自 t01h census(E23):46 straight-line / 7 count-loop / 7 mixed / 14 unclear(全 74 项)",
+        "E23 裁决:table_type 9 = NATIONAL_TEAM_CONTAINER(slot7=9),type 10 = NATION;t01e 的 nati 双虚表标签勘误(0x1888ed0/0x188db40 均 非 NATION)",
         "vtable/regfn 来自 t01e 的 slot6 计数口径;E20 已修正为 0-based slot5(字节不变)",
         "unknown 表共 %d 个(0..58 减去 property_map 已覆盖)" % len(unknown),
-        "疑点:table_type 9 与 10 的 property_map 实体都是 nation.xml#nati —— 两个表型对应同一实体?可能 t01c 来源行有误或 nation 确有双表(如 client/server 双记录);待 t01h 跳表普查裁决(看 type 9/10 是否都有独立工厂项)",
-        "t01e 独有 tag(agen/jour/offc)是 unknown 表型的候选实体",
+        "t01e 独有 tag(agen/jour/offc)是 unknown 表型的候选实体;E23:agen/offc/jour 与 type-1 person-family 仅候选关联",
+        "11 个 null-return 型(11/13/15/16/17/20/28/40/53/54/55)无专属工厂项 —— 可能非持久化表",
     ],
 }
 json.dump(out, open(ROOT / "scratch/t01/stage2_three_way.json", "w", encoding="utf-8"),
@@ -121,7 +145,8 @@ for r in out["rows"]:
         r["mode"], "+".join(r["sources"])))
 md += ["", f"无属性映射的表型(0..58):{unknown}", "",
        f"t01e 已映射但 property_map 缺的 tag:{t01e_only}", "",
-       "已知模式:comp=直线(E20)、nation=计数循环(E21);其余待 t01h 普查(E22)"]
+       "模式分布(E23,全 74 项):46 straight-line / 7 count-loop / 7 mixed / 14 unclear;11 null-return 型无专属工厂",
+       "stage-2 排序:straight-line 已映射实体直接套 t01f 方法(pers 271 字段最高价值);mixed/count-loop 先恢复行边界(club 前缀可先行)"]
 (ROOT / "scratch/t01/stage2_three_way.md").write_text("\n".join(md), encoding="utf-8")
 
 print(f"rows: {len(out['rows'])}, unknown table types: {len(unknown)}, t01e-only tags: {t01e_only}")
