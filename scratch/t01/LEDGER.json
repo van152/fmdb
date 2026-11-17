@@ -291,6 +291,20 @@
         ],
         "stage2_handoer": "nnpl fn=0xdc6780 有引用但落点非 slot6;pers 762-run 内 slot540;243-run 内部边界待切分"
       }
+    },
+    {
+      "id": "E18",
+      "date": "2026-11-18晨",
+      "author": "t01-b r2(pi luna max;指挥官抽验:club slot6 字节 ✓,0xfe68b0 直调 87 处确认)",
+      "kind": "artifact",
+      "level": "L3-static(带 manifest 校验)",
+      "claim": "luna 第二轮:跨实体 switch 直方图证实 N=运行时对象偏移而非描述符槽;0xfe72b0 公共 helper 重引用(直调 87,引用口径 122——口径差异注明),邻接 mov edx,imm32 的 21 处含 17 种唯一大端标签('cont'/'Nnat'/'city'/'comp' 等)= wire-type 注册表雏形;构造器各角度仍 0 命中(墙确认)",
+      "evidence": {
+        "files": ["scratch/t01/inbox/t01b/round2/output.json", "scratch/t01/inbox/t01b/round2/REPORT.md"],
+        "spot_check": "club vtable 0x187c330 slot6→VA 0x140e88750,函数头含 prologue+helperB 调用+add rax,0x38(指挥官字节复核);comp 直方图 {0x18:2,0x28:18,0x68:3} vs club {0x08:2,0x18:30,0x28:57,...}",
+        "note": "直调计数差异:指挥官 e8-only 全文件=87,luna 报 122(疑含 e9/其它引用形态);不影响'重引用'定性",
+        "next": "17 标签 ↔ codec_tables.json(420 映射)对齐 = wire-type 映射的最后一跳"
+      }
     }
   ]
 }
