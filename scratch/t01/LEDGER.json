@@ -738,6 +738,28 @@
     "boundary": "运行时选择器值未取(L4=0);row+22 身份块前的前身份字节未赋名;27 宽度指令不可拼成线性序列(互斥臂)"
    },
    "consequence": "BASIC_PERSON 行偏移需运行时选择器值(L4)或更深的静态分派追踪;第二实体验收线改由 weat(type 27,直线型,client 有 table_27)冲刺 —— t01l 已发射;stage-2 工具修正:getter 扫描用全寄存器 cmp imm32"
+  },
+  {
+   "id": "E27",
+   "date": "2026-11-18 07:50",
+   "author": "commander(luna t01l 交付,指挥官独立验收)",
+   "kind": "milestone",
+   "level": "L3-static(指挥官 28 项静态字节抽验 PASS + 334 行独立全量走查封口 + 身份块 334/334 扫描 PASS + luna 自检 PASS 含负对照)",
+   "claim": "【第二实体验收线达成】t01l:weat(table_27)89 个 L3 字段映射(88 个季节字段=4 季×22 + wnam),334 行全量走查封口(payload 43,345B,行跨度=112+name_len,33 种跨度);行框架 = u32 name_len + UTF-8 名称 + 3B + 4×23B 季节块 + 12B 尾块 + 边界标记。census 的 straight-line 描述被修正:实为固定 4 季循环(对象块步长 24B,无全局状态选择器,确定性)—— 方法论经验:循环无害,只要分支确定",
+   "evidence": {
+    "artifacts": [
+     "scratch/t01/inbox/t01l/{output.json(373KB),REPORT.md,verify.py}",
+     "scripts/t01l_spotcheck.py(指挥官独立走查)"
+    ],
+    "commander_verify": [
+     "28 项静态字节 PASS:RTTI/type query/alloc/slot19/四季循环 3 指令/w0sd+wnam getter cmp edx/w0p1 范围链(减法算术→index1→rel32 表→handler→内部码 pre1)/reader sink/日期比较",
+     "334 行独立走查:行起公式、边界标记、UTF-8 名称(首行 English Coastal 等 4 样本)",
+     "指挥官加分发现:12B 尾块=身份块(ordinal+重复ID)在 334/334 行成立 —— t01l 未赋名,身份惯例已在 4 张表证实(comp/nation/basic_people/weather)"
+    ],
+    "boundary": "wire 偏移 ≠ 内存终值:季节 helper 对降水/风/温度组求和,非 100 会改写对象值(1,336 组中雨76/风67/温468 组非 100);日期仅 4 wire word 全等的 12 行被覆写为常量。旧库 L1 锚/负对照未重做(此表旧库无解码)",
+    "getter_refinement": "16 条 81 f8..ff 全寄存器 cmp 命中(EDX 为主),无 3d(EAX)命中;12 组向量 getter 用 4CC 范围减法+rel32 跳表选季节/子字段"
+   },
+   "consequence": "两实体验收线达成(comp 18 字段 + weat 89 字段);方法论三度验证(直线 comp / 循环 weat / 变长 nation 负结果+框架);t01m(stad,旧库 L1 锚交叉)已发射 —— 若成则首次双源(L1 旧库 vs L3 二进制)字段级互证"
   }
  ]
 }
