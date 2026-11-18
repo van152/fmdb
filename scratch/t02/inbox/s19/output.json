@@ -1,0 +1,56 @@
+{
+ "type_id": 19,
+ "entity": "regi",
+ "status": "in_progress",
+ "row_framework": {
+  "count": 28,
+  "client": {
+   "archive": "client_db.dat",
+   "archive_sha256": "5ce7cd91da1031436a55ad47dac04bac446cb0cad807e9c9b24f4885d9b5ecc1",
+   "member": "client_db/table_19.dat",
+   "member_archive_file_offset": "0xb939f4",
+   "member_archive_offset_bytes": "28 b5 2f fd 04 60 b5 11 00 d6 6a 79 3f c0 5a 4d",
+   "payload_bytes": 1282,
+   "payload_sha256": "c6a5ac4aa4199a67e8704a31392f06f6ad070f43d167c9b29b4107c6a30a1944",
+   "header": {
+    "payload_offset": "0x0",
+    "bytes": "03 01 74 61 64 2e f1 0d 1c 00 00 00 00 00",
+    "header_bytes": 14
+   },
+   "footer": {
+    "payload_offset": "0x4fa",
+    "bytes": "00 00 00 00 01 1d 00 00 00",
+    "footer_bytes": 9
+   },
+   "stride": 45,
+   "rows_offset": "0xe",
+   "closure": "14 + 28*45 + 9 = 1282"
+  },
+  "server": {
+   "archive": "server_db.dat",
+   "archive_sha256": "99eed00bd26582648c0d3ff51b5c8e37a35b68c296a074e8fb476d1b3ca4a662",
+   "member": "server_db/table_19.dat",
+   "member_archive_file_offset": "0xf15263",
+   "member_archive_offset_bytes": "28 b5 2f fd 04 60 b5 11 00 46 eb 79 3f c0 5a 4d",
+   "payload_bytes": 1310,
+   "payload_sha256": "05b73738dd216e512674d044db7c21f2f150028849fe6ac70e2897fa5124c4ce",
+   "header": {
+    "payload_offset": "0x0",
+    "bytes": "03 01 74 61 64 2e f1 0d 1c 00 00 00 00 00",
+    "header_bytes": 14
+   },
+   "footer": {
+    "payload_offset": "0x516",
+    "bytes": "00 00 00 00 01 1d 00 00 00",
+    "footer_bytes": 9
+   },
+   "stride": 46,
+   "rows_offset": "0xe",
+   "closure": "14 + 28*46 + 9 = 1310"
+  },
+  "relation": "server[0:32]==client[0:32] and server[33:46]==client[32:45]; server row has one extra constant byte 0x04 at row+32"
+ },
+ "row_offset_map": [],
+ "samples": [],
+ "unclosed": []
+}

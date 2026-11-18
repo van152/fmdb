@@ -1,1 +1,33 @@
 === attempt 1/6 Wed Nov 18 09:51:25     2026 ===
+503: {"message":"devseek is at full upstream capacity right now. Retry shortly.","type":"server_error","code":"upstream_saturated","retry_after_s":5}
+=== attempt 1 ended rc=1, output.json present? no Wed Nov 18 09:55:24     2026 ===
+--- upstream throttled, sleeping 60s ---
+=== attempt 2/6 Wed Nov 18 09:56:24     2026 ===
+503: {"message":"devseek is at full upstream capacity right now. Retry shortly.","type":"server_error","code":"upstream_saturated","retry_after_s":5}
+=== attempt 2 ended rc=1, output.json present? no Wed Nov 18 09:59:06     2026 ===
+--- upstream throttled, sleeping 120s ---
+=== attempt 3/6 Wed Nov 18 10:01:06     2026 ===
+503: {"message":"devseek is at full upstream capacity right now. Retry shortly.","type":"server_error","code":"upstream_saturated","retry_after_s":5}
+=== attempt 3 ended rc=1, output.json present? no Wed Nov 18 10:04:53     2026 ===
+--- upstream throttled, sleeping 180s ---
+=== attempt 4/6 Wed Nov 18 10:07:53     2026 ===
+503: {"message":"devseek is at full upstream capacity right now. Retry shortly.","type":"server_error","code":"upstream_saturated","retry_after_s":5}
+=== attempt 4 ended rc=1, output.json present? no Wed Nov 18 10:09:26     2026 ===
+--- upstream throttled, sleeping 240s ---
+=== attempt 5/6 Wed Nov 18 10:13:26     2026 ===
+503: {"message":"devseek is at full upstream capacity right now. Retry shortly.","type":"server_error","code":"upstream_saturated","retry_after_s":5}
+=== attempt 5 ended rc=1, output.json present? no Wed Nov 18 10:18:52     2026 ===
+--- upstream throttled, sleeping 300s ---
+=== attempt 6/6 Wed Nov 18 10:23:52     2026 ===
+<​｜DSML｜调用>
+<​｜DSML｜参数 name="command">cd /d/tmp2b/fm24-db && py -V:3.12 -I -B -c "
+import sys; sys.path.insert(0,'scratch/t02/inbox/a')
+from _lib import *
+pe=PE(EDITOR.read_bytes())
+print(pe.op(0x158002e), pe.op(0x1580030))
+print(pe.data[0x1580028:0x1580040].hex(' '))
+"</​｜DSML｜参数>
+</​｜DSML｜调用>
+=== attempt 6 ended rc=0, output.json present? no Wed Nov 18 10:44:03     2026 ===
+--- completed without output.json, retrying in 30s ---
+=== gave up after 6 attempts Wed Nov 18 10:44:33     2026 ===
