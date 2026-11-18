@@ -943,6 +943,26 @@
     ]
    },
    "consequence": "全解析路线校准:通用映射器能加速但不能替代人工,预期从\"一次突破全实体\"下调为\"每实体半自动 + 指挥官抽验\"。脚本保留为工具,后续可用于给新实体铺底(列出传输点/宽度/候选偏移)。下一轮按半自动流程攻 club 字段(最高价值空位)。"
+  },
+  {
+   "id": "E36",
+   "date": "2026-11-18 18:3x",
+   "author": "commander(luna t04 交付,指挥官独立验收)",
+   "kind": "negative-result",
+   "level": "L3-static+L1(字节链 8/8 + 行数据抽验 SHA/字节吻合 + 锚点 7/7;1 字段闭合,目标 30 未达)",
+   "claim": "【club 字段级半自动尝试:1 字段闭合,确认 mixed 实体硬骨头】t04(luna)用 field_mapper 74 事件底稿 + club 84,259 行框架攻 club 433 字段,仅闭合 1 个 L3 字段 Cccn@row+8/4B(对象成员+0xf0),另有 Cdof/Cprs/Ctsi 三个 getter-sink 成员对齐但游标多候选([0,1,20,21]/[0,20]/[1,2])未闭合,不计数。指挥官独立验收:字节链 8/8 PASS(getter cmp/member + reader dest/width/call + 分支/helper),行数据抽验 payload SHA db8ea78cbb8fcc79 吻合、row69709@0x570ec7 的 row+8=85 00 00 00(0x85=133 引用 ordinal);锚点 7/7。卡点实证:CLUB reader 首 20B 后分支分裂(0xe5a801 je 使 6B transfer 留 [0,20] 两候选),0xe5a952 helper 后从栈槽取动态宽度(0xe5a95d mov rdx,[rbp+0x18]),下游候选不升级;LEAGUE_BODY_CLUB reader 0x43beba0 有 33 事件、count-loop 未展开,RTTI 到 row class 的 partition 未证实;431 个 4CC code 中观察到 150 比较值,与 reader sink 成员直接相同的仅 4 个。",
+   "evidence": {
+    "artifacts": [
+     "scratch/t02/inbox/club_fields/{output.json,REPORT.md}",
+     "scratch/t02/field_mapper/club_substrate.json"
+    ],
+    "commander_verify": [
+     "字节链 8/8:Cccn getter 0xe8b7bf cmp 81 fb 6e 63 63 43 / 0xe8b7cb member [+0xf0];reader 0xe5a864 dest / 0xe5a86e width4 / 0xe5a877 call;分支 0xe5a801 / width6 0xe5a921 / helper 0xe5a952 全部逐字节一致;EXE SHA b82ebe8e032f2017",
+     "行数据:solve.py load_raw 得 club payload 6,932,082B SHA db8ea78cbb8fcc79(与报告吻合);row69709 原字节 85 00 00 00 ff ff ff ff 85 00 00 00 85 00 00 00,row+8=85 00 00 00",
+     "锚点 t01_anchors.py 7/7 PASS"
+    ]
+   },
+   "consequence": "club 字段级确认是 mixed 双 reader + 动态宽度 + count-loop 的硬骨头,半自动底稿对它也只能闭合首段直线字段。与 E35 合起来,全解析的硬上限已探明:直线型实体(46)可用半自动快速推进,mixed/循环型大实体(club/nation-全字段/player)仍需逐字段人工 + 数据抽验,不能指望脚本或单次 AI 任务批量拿下。战略:继续用已验证的\"人工法+AI 渠道+指挥官抽验\"逐实体稳步推进,不追一键突破。"
   }
  ]
 }
