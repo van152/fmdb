@@ -894,6 +894,30 @@
     ]
    },
    "consequence": "client 侧已解表增至 11 张(9 之前 + club 框架 + fw7/fw22 框架),club 字段级 L3 仍是空位待补。nati 转派 luna(t02g2,带 logfare 落盘 payload)在跑。sol 额度本轮未再消耗。下一优先级:nati 行边界(t02g2)、club 字段级 getter 对齐、fw9 重派。"
+  },
+  {
+   "id": "E34",
+   "date": "2026-11-18 17:0x",
+   "author": "commander(luna t02g2 交付,指挥官独立验收)",
+   "kind": "milestone",
+   "level": "L3-static+L1(指挥官独立字节抽验 13/13 + 自写行链走查 251/251 封口 + verify.py PASS + 锚点 7/7)",
+   "claim": "【nation 变长行边界攻克,t01-g 负结果转正】t02g2(luna 接手,logfare 限流失败后转派)恢复 nati(type10)client 变长行边界:行跨度 50–1199B(44 种),由四个计数段顺序递推——A(row+24 signed i8,每项5B)、B(row+25+5A,i32,每项28B)、C(i32,每项28B)、D(i32,每项12B);identity_start=row+37+5A+28(B+C)+12D,row_len=50+5A+28B+28C+12D。client 251/251 行精确封口:14 + 24710 + 8 = 24732(count A/B/C/D 合计 492/214/63/162,最大 7/40/21/2),全行 identity ordinal=0..250 + 后两 u32 相等 + 1B marker=0 全通过;duni 锚点复现行55 identity@payload+0x1042 = 37 00 00 00 6e 00 00 00 6e 00 00 00,题给 0x1046 正落 ID 字段。L3 静态证据:reader slot19=0x103fac0,四段循环/宽度/helper thunk 全部给出 file offset+原字节。另继承 t01-g 已验收的 7 个前缀字段(Ngct/Ncti/Nrgi/Ncur/Nsod/Necf/Nygn,带 reader/getter L3 链)。诚实边界:server(422345B)未套用 client 公式,reader 另一路径(2B count/4B item)未命名,conditional tail 未赋名。",
+   "evidence": {
+    "artifacts": [
+     "scratch/t02/inbox/nati/OUTBOX/{framework.json,REPORT.md,verify.py}",
+     "scratch/t02/inbox/nati/{client_db_t10.bin,server_db_t10.bin,framework_final.json,REPORT.md,verify_final.py}"
+    ],
+    "commander_verify": [
+     "独立字节抽验 13/13:A/B/C/D 四段 count-width/循环/零检查/比较指令 + item helper + client-path 分支全部逐字节一致;EXE SHA b82ebe8e032f2017 吻合",
+     "自写行链走查(不复用 verify.py):从 offset14 递推四段计数,251 行全过,end=0x6094(24724)+8B footer=24732;count totals [492,214,63,162];span 50..1199/44 种;row55 identity ID=110(0x6e)与 duni 锚点吻合;ordinal/marker/dup-ID 全行断言通过",
+     "verify.py --selftest PASS(与指挥官独立走查结果逐项一致);锚点 t01_anchors.py 7/7 PASS"
+    ],
+    "note": [
+     "转派原因:logfare 5 次全 throttling(负结果已入 E33),但落盘 payload bin(SHA 7e9d740b9ee6 吻合 E21 旧库记录),luna 据此直接恢复行边界,无重复解压工作。",
+     "产物写进 nati/OUTBOX/ 子目录(占位符当字面路径),指挥官已复制 framework_final.json/REPORT.md/verify_final.py 到规范位置。"
+    ]
+   },
+   "consequence": "nation 从\"负结果/变长不可解\"转为框架 complete;client 侧已解表增至 12 张。方法论再验证:计数循环变长型(A/B/C/D 四段)可解,此前 t01-g 的\"直线累加法不适用\"结论保留但边界收窄。剩余:server nati 框架、club 字段级 L3=0、fw9(type9)、46 个直线型批量复制。"
   }
  ]
 }

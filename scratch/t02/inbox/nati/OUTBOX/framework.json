@@ -1,1 +1,260 @@
-{"type_id":10,"entity":"nati","status":"in_progress"}
+{
+  "type_id": 10,
+  "entity": "nati",
+  "status": "recovered",
+  "sources": {
+    "client_payload": {
+      "path": "scratch/t02/inbox/nati/client_db_t10.bin",
+      "size_bytes": 24732,
+      "sha256": "7e9d740b9ee6900965d8616a136ea4bc54a0f7207f9727eac72badfb727f6c34",
+      "header_hex": "03 01 74 61 64 2e f1 0d fb 00 00 00 00 00",
+      "row_count": 251,
+      "body_start_payload_offset": 14,
+      "footer_start_payload_offset": 24724,
+      "footer_hex": "00 00 00 01 ec 7a e4 04"
+    },
+    "server_payload": {
+      "path": "scratch/t02/inbox/nati/server_db_t10.bin",
+      "size_bytes": 422345,
+      "sha256": "19337841e40d012863cb3aeca72141ec3b059419b8d87e54a6f380e8974b047f",
+      "header_hex": "03 01 74 61 64 2e f1 0d fb 00 00 00 00 00",
+      "row_count": 251,
+      "use": "header/hash recorded only; client closure claim is not extrapolated to server payload"
+    },
+    "reader_binary": {
+      "path": "D:/tmp2b/fm24/input/editor.exe",
+      "sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4",
+      "reader_file_offset": "0x103fac0",
+      "reader_va": "0x1410404c0",
+      "evidence_basis": "read-only static instruction bytes; no game/editor/IDA execution"
+    },
+    "prior_field_chain": "scratch/t01/inbox/t01g/output.json#row_offset_map"
+  },
+  "row_frame": {
+    "offset_domain": "decompressed client_db/table_10.dat member bytes",
+    "row_offsets_are_relative_to": "each row body start",
+    "prefix_bytes": 25,
+    "counts": [
+      {
+        "name": "A",
+        "count_type": "signed int8",
+        "count_offset": "row+24",
+        "items_start": "row+25",
+        "item_wire_bytes": 5,
+        "item_wire_layout": ["4-byte transfer", "1-byte transfer"]
+      },
+      {
+        "name": "B",
+        "count_type": "signed int32 little-endian",
+        "count_offset": "row+25+5*A",
+        "items_start": "count_offset+4",
+        "item_wire_bytes": 28,
+        "item_wire_layout": ["five 4-byte transfers", "two nested 4-byte transfers"]
+      },
+      {
+        "name": "C",
+        "count_type": "signed int32 little-endian",
+        "count_offset": "row+29+5*A+28*B",
+        "items_start": "count_offset+4",
+        "item_wire_bytes": 28,
+        "item_wire_layout": ["same 28-byte item reader as collection B"]
+      },
+      {
+        "name": "D",
+        "count_type": "signed int32 little-endian",
+        "count_offset": "row+33+5*A+28*(B+C)",
+        "items_start": "count_offset+4",
+        "item_wire_bytes": 12,
+        "item_wire_layout": ["three 4-byte transfers"]
+      }
+    ],
+    "identity_start": "row+37+5*A+28*(B+C)+12*D",
+    "identity_length": 12,
+    "identity_layout": ["ordinal u32le", "ID u32le", "same ID u32le"],
+    "boundary_marker": "one zero byte immediately after identity",
+    "row_span_including_marker": "50+5*A+28*B+28*C+12*D",
+    "next_row_start": "current row start + row_span_including_marker",
+    "algorithm": [
+      "At row start read the 25-byte prefix; A is the signed byte at row+24.",
+      "Consume A items of 5 bytes; read B as signed i32le; consume B items of 28 bytes.",
+      "Read C as signed i32le; consume C items of 28 bytes.",
+      "Read D as signed i32le; consume D items of 12 bytes.",
+      "Validate the next 12 bytes as ordinal|ID|same-ID and the following byte as 00; advance 13 bytes."
+    ],
+    "reader_path_note": "This grammar matches the client payload and the ordinary reader path. The separate arg8!=0 16-bit-count path is not assigned to client/server by this report.",
+    "conditional_tail_note": "The reader has a conditional scalar block after collection D; no such bytes remain before the verified identity block in any client row."
+  },
+  "reader_static_evidence": {
+    "count_A_read_width": {"file": "editor.exe", "file_offset": "0x104070e", "bytes": "41 b8 01 00 00 00"},
+    "count_A_stream_call": {"file": "editor.exe", "file_offset": "0x1040717", "bytes": "ff 50 28"},
+    "count_A_use": {"file": "editor.exe", "file_offset": "0x1040728", "bytes": "48 0f be 54 24 44"},
+    "item_A_call": {"file": "editor.exe", "file_offset": "0x104075b", "bytes": "e8 f0 f3 01 00", "target_va": "0x141060550"},
+    "item_A_helper_thunk": {"file": "editor.exe", "file_offset": "0x105fb50", "bytes": "e9 ab 27 e9 02", "target_va": "0x143ef2d00"},
+    "item_A_helper_widths": [
+      {"file": "editor.exe", "file_offset": "0x3d87713", "bytes": "41 b8 04 00 00 00"},
+      {"file": "editor.exe", "file_offset": "0x3d87736", "bytes": "41 b8 01 00 00 00"}
+    ],
+    "item_A_stream_calls": [
+      {"file": "editor.exe", "file_offset": "0x3d8771f", "bytes": "ff 50 28"},
+      {"file": "editor.exe", "file_offset": "0x3d87742", "bytes": "ff 50 28"}
+    ],
+    "count_B_read_width": {"file": "editor.exe", "file_offset": "0x10407a7", "bytes": "41 b8 04 00 00 00"},
+    "count_B_stream_call": {"file": "editor.exe", "file_offset": "0x10407b0", "bytes": "ff 50 28"},
+    "item_B_call": {"file": "editor.exe", "file_offset": "0x1040829", "bytes": "e8 72 ec 58 00", "target_va": "0x1415cfea0"},
+    "count_C_read_width": {"file": "editor.exe", "file_offset": "0x1040863", "bytes": "41 b8 04 00 00 00"},
+    "count_C_stream_call": {"file": "editor.exe", "file_offset": "0x104086c", "bytes": "ff 50 28"},
+    "item_C_call": {"file": "editor.exe", "file_offset": "0x10408eb", "bytes": "e8 b0 eb 58 00", "target_va": "0x1415cfea0"},
+    "item_BC_helper_thunk": {"file": "editor.exe", "file_offset": "0x15cf4a0", "bytes": "e9 eb b1 02 03", "target_va": "0x1445fb090"},
+    "item_BC_reader_va": "0x1445fb090",
+    "item_BC_reader_file_offset": "0x448fa90",
+    "item_BC_fixed_widths": [
+      {"file": "editor.exe", "file_offset": "0x448faa3", "bytes": "41 b8 04 00 00 00"},
+      {"file": "editor.exe", "file_offset": "0x448fac6", "bytes": "41 b8 04 00 00 00"},
+      {"file": "editor.exe", "file_offset": "0x448fae2", "bytes": "41 b8 04 00 00 00"},
+      {"file": "editor.exe", "file_offset": "0x448fafe", "bytes": "41 b8 04 00 00 00"},
+      {"file": "editor.exe", "file_offset": "0x448fb1a", "bytes": "41 b8 04 00 00 00"}
+    ],
+    "item_BC_stream_calls": [
+      {"file": "editor.exe", "file_offset": "0x448faaf", "bytes": "ff 50 28"},
+      {"file": "editor.exe", "file_offset": "0x448facf", "bytes": "ff 50 28"},
+      {"file": "editor.exe", "file_offset": "0x448faeb", "bytes": "ff 50 28"},
+      {"file": "editor.exe", "file_offset": "0x448fb07", "bytes": "ff 50 28"},
+      {"file": "editor.exe", "file_offset": "0x448fb23", "bytes": "ff 50 28"}
+    ],
+    "item_BC_nested_transfers": [
+      {"file": "editor.exe", "file_offset": "0x448fb33", "bytes": "e8 48 d8 7b fc", "target_va": "0x140db8980"},
+      {"file": "editor.exe", "file_offset": "0x448fb4d", "bytes": "e9 2e d8 7b fc", "target_va": "0x140db8980"},
+      {"file": "editor.exe", "file_offset": "0x39dd7c8", "bytes": "41 b8 04 00 00 00", "target_va": "0x143b48db0"},
+      {"file": "editor.exe", "file_offset": "0x39dd7d4", "bytes": "ff 57 28", "target_va": "0x143b48db0"}
+    ],
+    "count_D_read_width": {"file": "editor.exe", "file_offset": "0x104091e", "bytes": "41 b8 04 00 00 00"},
+    "count_D_stream_call": {"file": "editor.exe", "file_offset": "0x1040927", "bytes": "ff 50 28"},
+    "item_D_call": {"file": "editor.exe", "file_offset": "0x10409a7", "bytes": "e8 04 f2 01 00", "target_va": "0x1410605b0"},
+    "item_D_helper_thunk": {"file": "editor.exe", "file_offset": "0x105fbb0", "bytes": "e9 4b 33 e9 02", "target_va": "0x143ef3900"},
+    "item_D_helper_va": "0x143ef3900",
+    "item_D_helper_file_offset": "0x3d88300",
+    "item_D_widths": [
+      {"file": "editor.exe", "file_offset": "0x3d88314", "bytes": "41 b8 04 00 00 00"},
+      {"file": "editor.exe", "file_offset": "0x3d8833c", "bytes": "41 b8 04 00 00 00"},
+      {"file": "editor.exe", "file_offset": "0x3d88380", "bytes": "41 b8 04 00 00 00"}
+    ],
+    "item_D_stream_calls": [
+      {"file": "editor.exe", "file_offset": "0x3d88320", "bytes": "ff 50 28"},
+      {"file": "editor.exe", "file_offset": "0x3d88345", "bytes": "ff 50 28"},
+      {"file": "editor.exe", "file_offset": "0x3d8838c", "bytes": "ff 50 28"}
+    ],
+    "identity_boundary_check": {"file": "client_db_t10.bin", "payload_offset": "row identity+12", "bytes": "00"}
+  },
+  "identity_validation": {
+    "rows_checked": 251,
+    "ordinal_matches_row_index": true,
+    "duplicate_ids_match": true,
+    "marker_zero_after_identity": true,
+    "duni_anchor": {
+      "payload_offset": "0x1046",
+      "bytes": "6e 00 00 00 6e 00 00 00",
+      "row_index": 55,
+      "identity_payload_offset": "0x1042",
+      "ordinal_bytes": "37 00 00 00",
+      "ID": 110,
+      "duplicate_ID": 110
+    }
+  },
+  "verification": {
+    "row_count": 251,
+    "sum_row_spans_including_markers": 24710,
+    "closure_equation": "14 + 24710 + 8 = 24732",
+    "closure_passed": true,
+    "collection_totals_A_B_C_D": [492, 214, 63, 162],
+    "collection_maxima_A_B_C_D": [7, 40, 21, 2],
+    "row_span_summary": {"distinct": 44, "min": 50, "max": 1199},
+    "longest_row": {"index": 143, "payload_start": "0x2efb", "span": 1199},
+    "boundary_samples": [
+      {"index": 0, "payload_start": "0x0e", "span": 65, "counts_A_B_C_D": [3, 0, 0, 0]},
+      {"index": 1, "payload_start": "0x4f", "span": 77, "counts_A_B_C_D": [3, 0, 0, 1]},
+      {"index": 11, "payload_start": "0x310", "span": 93, "counts_A_B_C_D": [3, 0, 1, 0]},
+      {"index": 55, "payload_start": "0xfc4", "span": 139, "counts_A_B_C_D": [1, 0, 3, 0]},
+      {"index": 143, "payload_start": "0x2efb", "span": 1199, "counts_A_B_C_D": [1, 40, 0, 2]},
+      {"index": 250, "payload_start": "0x6058", "span": 60, "counts_A_B_C_D": [2, 0, 0, 0]}
+    ],
+    "footer_start_payload_offset": "0x6094",
+    "footer_hex": "00 00 00 01 ec 7a e4 04"
+  },
+  "field_offsets": [
+    {
+      "code": "Ngct",
+      "schema_name": "Gain Nationality Type",
+      "row_offset": 0,
+      "width": 1,
+      "reader_destination": {"file": "editor.exe", "file_offset": "0x10405b4", "bytes": "49 8d 97 cb 01 00 00"},
+      "reader_width": {"file": "editor.exe", "file_offset": "0x10405be", "bytes": "41 b8 01 00 00 00"},
+      "getter_compare": {"file": "editor.exe", "file_offset": "0x1042385", "bytes": "81 fe 74 63 67 4e"},
+      "getter_member": {"file": "editor.exe", "file_offset": "0x1042a47", "bytes": "41 0f be b4 24 cb 01 00 00"}
+    },
+    {
+      "code": "Ncti",
+      "schema_name": "Continent",
+      "row_offset": 1,
+      "width": 4,
+      "reader_destination": {"file": "editor.exe", "file_offset": "0x10405d8", "bytes": "49 8d 97 f0 00 00 00"},
+      "reader_width": {"file": "editor.exe", "file_offset": "0x10405e2", "bytes": "41 b8 04 00 00 00"},
+      "getter_compare": {"file": "editor.exe", "file_offset": "0x104218a", "bytes": "81 fe 69 74 63 4e"},
+      "getter_member": {"file": "editor.exe", "file_offset": "0x1042ed7", "bytes": "49 8b 8c 24 f0 00 00 00"}
+    },
+    {
+      "code": "Nrgi",
+      "schema_name": "Region",
+      "row_offset": 5,
+      "width": 4,
+      "reader_destination": {"file": "editor.exe", "file_offset": "0x10405fc", "bytes": "49 8d 97 f8 00 00 00"},
+      "reader_width": {"file": "editor.exe", "file_offset": "0x1040606", "bytes": "41 b8 04 00 00 00"},
+      "getter_compare": {"file": "editor.exe", "file_offset": "0x10424e5", "bytes": "81 fe 69 67 72 4e"},
+      "getter_member": {"file": "editor.exe", "file_offset": "0x10424f1", "bytes": "49 8b 8c 24 f8 00 00 00"}
+    },
+    {
+      "code": "Ncur",
+      "schema_name": "Currency",
+      "row_offset": 13,
+      "width": 4,
+      "reader_destination": {"file": "editor.exe", "file_offset": "0x1040644", "bytes": "49 8d 97 00 01 00 00"},
+      "reader_width": {"file": "editor.exe", "file_offset": "0x104064e", "bytes": "41 b8 04 00 00 00"},
+      "getter_compare": {"file": "editor.exe", "file_offset": "0x1042196", "bytes": "81 fe 72 75 63 4e"},
+      "getter_member": {"file": "editor.exe", "file_offset": "0x1042c7d", "bytes": "49 8b 8c 24 00 01 00 00"}
+    },
+    {
+      "code": "Nsod",
+      "schema_name": "State Of Development",
+      "row_offset": 17,
+      "width": 1,
+      "reader_destination": {"file": "editor.exe", "file_offset": "0x1040668", "bytes": "49 8d 97 cc 01 00 00"},
+      "reader_width": {"file": "editor.exe", "file_offset": "0x1040672", "bytes": "41 b8 01 00 00 00"},
+      "getter_compare": {"file": "editor.exe", "file_offset": "0x1042268", "bytes": "81 fe 64 6f 73 4e"},
+      "getter_member": {"file": "editor.exe", "file_offset": "0x1042e6f", "bytes": "41 0f be b4 24 cc 01 00 00"}
+    },
+    {
+      "code": "Necf",
+      "schema_name": "Economic Factor",
+      "row_offset": 18,
+      "width": 1,
+      "reader_destination": {"file": "editor.exe", "file_offset": "0x104068c", "bytes": "49 8d 97 d0 01 00 00"},
+      "reader_width": {"file": "editor.exe", "file_offset": "0x1040696", "bytes": "41 b8 01 00 00 00"},
+      "getter_compare": {"file": "editor.exe", "file_offset": "0x10421a2", "bytes": "81 fe 66 63 65 4e"},
+      "getter_member": {"file": "editor.exe", "file_offset": "0x10421ae", "bytes": "41 0f be b4 24 d0 01 00 00"}
+    },
+    {
+      "code": "Nygn",
+      "schema_name": "Years To Gain Nationality",
+      "row_offset": 23,
+      "width": 1,
+      "reader_destination": {"file": "editor.exe", "file_offset": "0x10406d4", "bytes": "49 8d 97 cd 01 00 00"},
+      "reader_width": {"file": "editor.exe", "file_offset": "0x10406de", "bytes": "41 b8 01 00 00 00"},
+      "getter_compare": {"file": "editor.exe", "file_offset": "0x1042078", "bytes": "81 fe 6e 67 79 4e"},
+      "getter_member": {"file": "editor.exe", "file_offset": "0x1042aaf", "bytes": "41 0f be b4 24 cd 01 00 00"}
+    }
+  ],
+  "unmapped_prefix_slots": [
+    {"row_offset": 9, "width": 4, "status": "opaque; no schema field assigned"},
+    {"row_offset": 19, "width": 4, "status": "opaque; no schema field assigned"}
+  ],
+  "verification_script": "scratch/t02/inbox/nati/OUTBOX/verify.py"
+}
