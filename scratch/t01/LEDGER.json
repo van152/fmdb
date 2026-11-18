@@ -820,6 +820,33 @@
     "identity_convention": "现已 7 张表证实:comp/nation/basic_people/weather/stadium/regi/curr/city 全为 ordinal|ID|重复ID + 1B 标记"
    },
    "consequence": "任务分配定式确立:devseek 只接\"单表行框架\"任务(≤5min),字段对齐与语义由指挥官做;这样两者产出可交叉验证,且断流时只损失框架(可重跑)而非全部工作"
+  },
+  {
+   "id": "E31",
+   "date": "2026-11-18 16:1x",
+   "author": "commander(补账:把 E30 后已完成未入账的 t02 表汇总)",
+   "kind": "artifact",
+   "level": "L3-static(全部指挥官手解 + devseek 框架交叉;逐表 closure 精确封口,已在各自 git commit 验收)",
+   "claim": "【t02 进度补账】E30(11:45)之后至 14:36 已完成并入 git 但未写进 LEDGER 的 9 张表:regi(type19,9字段)/curr(41,6)/city(2,12)/stgn(23,3)/inju(6,5)/lang(8,5)/drbr(18,10)/awar(0,9)/cont(5,9),共 68 个 L2-L3 行框架/字段映射。另有 club(type3)部分解码 69,705/84,259 行(82.7%,scripts/t02_club.py 可复跑)、lcrg(type47)部分(前8行46B)+发现 devseek fw47 stride=44 结论错误。此条仅为账本与 HEAD 对齐,不新增二进制结论。",
+   "evidence": {
+    "artifacts": [
+     "scratch/t02/{regi,curr,city,stgn,inju,lang,drbr,awar,cont}_reference.json",
+     "scratch/t02/club_partial.json",
+     "scratch/t02/lcrg_partial.json"
+    ],
+    "commits": [
+     "0bfb91d E29 regi",
+     "06d6cdd curr/city",
+     "dfe53bd stgn+inju",
+     "2911036 lang",
+     "ff28dd5 drbr",
+     "552bf15 awar/cont/club-partial",
+     "cfa64c1 lcrg-partial+fw47-erratum"
+    ],
+    "closure_check": "9/9 status=complete;city exact 2420621/awar exact 272987/regi server exact 1310/stgn exact 3914/inju exact 1862/cont exact 260;变长表 curr/city/lang/drbr 走查全封口",
+    "note": "截至本条,LEDGER 与 git HEAD 对齐;在跑的四路任务(t02c/p/f/g)结果到齐后另记 E32+"
+   },
+   "consequence": "账本 debt 清零,指挥官可在后台任务期间保持真相源一致。"
   }
  ]
 }
