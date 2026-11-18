@@ -1,0 +1,591 @@
+{
+ "note": "code 来自 exe 的 `cmp edx,<4CC>; je <getter>` 分发链, 由 getter 内 [reg+OFF] 与 reader 的 lea rdx,[obj+OFF] 同 OFF 连接。confidence=readpair 表示两侧指令均已核对。",
+ "exe_sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4",
+ "results": [
+  {
+   "type_id": 2,
+   "entity": "city",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 6,
+   "entity": "inju",
+   "reader_body": "0x157fe70",
+   "dispatch": 38,
+   "codes": [
+    "DELE",
+    "Ibim",
+    "Ibin",
+    "Ibis",
+    "Ibph",
+    "Ibsp",
+    "Icdo",
+    "Icdp",
+    "Icms",
+    "Iexd",
+    "Igpr",
+    "Imio",
+    "Imip",
+    "Imnd",
+    "Iocr",
+    "Irec",
+    "icl`",
+    "icla",
+    "inSr"
+   ],
+   "named_count": 10,
+   "archives": {
+    "client": {
+     "business_width": 3,
+     "fields": [
+      {
+       "idx": 0,
+       "row_off": 0,
+       "width": 1,
+       "object_off": 76,
+       "code": "icla",
+       "confidence": "readpair"
+      },
+      {
+       "idx": 1,
+       "row_off": 1,
+       "width": 1,
+       "object_off": 77,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 2,
+       "row_off": 2,
+       "width": 1,
+       "object_off": 74,
+       "code": null,
+       "confidence": "layout_only"
+      }
+     ]
+    },
+    "server": {
+     "business_width": 27,
+     "fields": [
+      {
+       "idx": 0,
+       "row_off": 0,
+       "width": 1,
+       "object_off": 76,
+       "code": "icla",
+       "confidence": "readpair"
+      },
+      {
+       "idx": 1,
+       "row_off": 1,
+       "width": 1,
+       "object_off": 77,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 2,
+       "row_off": 2,
+       "width": 1,
+       "object_off": 74,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 3,
+       "row_off": 3,
+       "width": 2,
+       "object_off": 52,
+       "code": "Imnd",
+       "confidence": "readpair"
+      },
+      {
+       "idx": 4,
+       "row_off": 5,
+       "width": 2,
+       "object_off": 54,
+       "code": "Imio",
+       "confidence": "readpair"
+      },
+      {
+       "idx": 5,
+       "row_off": 7,
+       "width": 1,
+       "object_off": 88,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 6,
+       "row_off": 8,
+       "width": 1,
+       "object_off": 89,
+       "code": "Irec",
+       "confidence": "readpair"
+      },
+      {
+       "idx": 7,
+       "row_off": 9,
+       "width": 1,
+       "object_off": 92,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 8,
+       "row_off": 10,
+       "width": 1,
+       "object_off": 93,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 9,
+       "row_off": 11,
+       "width": 1,
+       "object_off": 90,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 10,
+       "row_off": 12,
+       "width": 1,
+       "object_off": 91,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 11,
+       "row_off": 13,
+       "width": 4,
+       "object_off": 48,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 12,
+       "row_off": 17,
+       "width": 1,
+       "object_off": 80,
+       "code": "Imip",
+       "confidence": "readpair"
+      },
+      {
+       "idx": 13,
+       "row_off": 18,
+       "width": 2,
+       "object_off": null,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 14,
+       "row_off": 20,
+       "width": 1,
+       "object_off": 81,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 15,
+       "row_off": 21,
+       "width": 1,
+       "object_off": 82,
+       "code": "Icms",
+       "confidence": "readpair"
+      },
+      {
+       "idx": 16,
+       "row_off": 22,
+       "width": 1,
+       "object_off": 83,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 17,
+       "row_off": 23,
+       "width": 1,
+       "object_off": 84,
+       "code": "inSr",
+       "confidence": "readpair"
+      },
+      {
+       "idx": 18,
+       "row_off": 24,
+       "width": 1,
+       "object_off": null,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 19,
+       "row_off": 25,
+       "width": 1,
+       "object_off": 86,
+       "code": "Icdp",
+       "confidence": "readpair"
+      },
+      {
+       "idx": 20,
+       "row_off": 26,
+       "width": 1,
+       "object_off": 87,
+       "code": "Icdo",
+       "confidence": "readpair"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "type_id": 19,
+   "entity": "regi",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 21,
+   "entity": "stad",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 22,
+   "entity": "?",
+   "reader_body": "0x1537800",
+   "dispatch": 34,
+   "codes": [
+    "Salt",
+    "ScYK",
+    "ScYL",
+    "Scam",
+    "Sceb",
+    "Scpl",
+    "Scpm",
+    "Slea",
+    "Slmd",
+    "Snev",
+    "Snew",
+    "Snmn",
+    "Snxa",
+    "Sold",
+    "Sst`",
+    "Ssta",
+    "Stks"
+   ],
+   "named_count": 3,
+   "archives": {
+    "server": {
+     "business_width": 66,
+     "fields": [
+      {
+       "idx": 0,
+       "row_off": 0,
+       "width": 4,
+       "object_off": 24,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 1,
+       "row_off": 4,
+       "width": 4,
+       "object_off": 32,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 2,
+       "row_off": 8,
+       "width": 4,
+       "object_off": 40,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 3,
+       "row_off": 12,
+       "width": 4,
+       "object_off": 60,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 4,
+       "row_off": 16,
+       "width": 1,
+       "object_off": 100,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 5,
+       "row_off": 17,
+       "width": 4,
+       "object_off": 72,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 6,
+       "row_off": 21,
+       "width": 1,
+       "object_off": 101,
+       "code": "Snmn",
+       "confidence": "readpair"
+      },
+      {
+       "idx": 7,
+       "row_off": 22,
+       "width": 4,
+       "object_off": 64,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 8,
+       "row_off": 26,
+       "width": 4,
+       "object_off": 80,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 9,
+       "row_off": 30,
+       "width": 4,
+       "object_off": 84,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 10,
+       "row_off": 34,
+       "width": 4,
+       "object_off": 88,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 11,
+       "row_off": 38,
+       "width": 4,
+       "object_off": 92,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 12,
+       "row_off": 42,
+       "width": 1,
+       "object_off": 102,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 13,
+       "row_off": 43,
+       "width": 4,
+       "object_off": 96,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 14,
+       "row_off": 47,
+       "width": 1,
+       "object_off": 105,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 15,
+       "row_off": 48,
+       "width": 1,
+       "object_off": 103,
+       "code": null,
+       "confidence": "layout_only"
+      },
+      {
+       "idx": 16,
+       "row_off": 49,
+       "width": 1,
+       "object_off": 104,
+       "code": "ScYK",
+       "confidence": "readpair"
+      },
+      {
+       "idx": 17,
+       "row_off": 50,
+       "width": 4,
+       "object_off": 68,
+       "code": "Sceb",
+       "confidence": "readpair"
+      },
+      {
+       "idx": 18,
+       "row_off": 54,
+       "width": 12,
+       "object_off": null,
+       "code": null,
+       "confidence": "layout_only"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "type_id": 23,
+   "entity": "stgn",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 30,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 31,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 34,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 35,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 37,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 42,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 43,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 46,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 47,
+   "entity": "lcrg",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 49,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 50,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 51,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 58,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 60,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 61,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 62,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 63,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 64,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 66,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  },
+  {
+   "type_id": 70,
+   "entity": "?",
+   "dispatch": 0,
+   "named": [],
+   "note": "no 4CC dispatch chain found"
+  }
+ ]
+}

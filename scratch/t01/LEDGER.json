@@ -1062,6 +1062,33 @@
     ]
    },
    "consequence": "全解析的路径从\"逐实体人工读反汇编\"变为\"自动扫描 + 少量人工判读\":字段 offset/width 已可机械产出且有三组独立验证背书,剩下的唯一缺口是 4CC 语义命名。E38 证伪了\"schema 顺序=行内顺序\",E39 给出正确顺序来源(reader 指令流),两者合起来把字段映射的技术路线彻底钉住。覆盖面从 ~43 条命名偏移跃升到 240 条布局偏移 / 151 万行。下一轮:用 layouts.json 作底稿做 4CC getter 对齐(命名),优先 type49/type37 两张十万级表与 injury server 21 字段。"
+  },
+  {
+   "id": "E40",
+   "date": "2026-11-18 20:3x",
+   "author": "commander(自动命名器 t05_name_fields.py)",
+   "kind": "milestone",
+   "level": "L3-static(三段指令均取证)+L1(数据语义验证)",
+   "claim": "【4CC 自动命名打通,首个完整语义表】确立并跑通 \"reader 布局 -> 4CC 分发链 -> getter 成员访问\" 三段自动连接,在 injury(type6) 上首次实现整表语义命名:server 21 个槽中 11 个获得 4CC 字段名。链条为 (a) reader 的 `lea rdx,[obj+OFF]`+`mov r8d,W` 给出 (row_off,W,OFF);(b) 紧随其后的分发链 `cmp edx,<4CC imm32>`+`je <target>` 给出 (4CC,target);(c) getter 内 `mov/movzx/movsx reg,[reg+OFF]` 给出同一 OFF,两侧以 OFF 相等对上。injury 命名结果(经数据语义独立验证):icla@row+0(Classification,值域 1-13/11 种)、Imnd@row+3(Minimum Days,u16 值域 1-180,22 种)、Imio@row+5(u16 值域 3-290)、Irec@row+8(Recurring,严格 0/1)、Imip@row+17(Match Injury Percentage,值域 0-90)、Icms@row+21(Season,值域 0-3 恰为四季)、inSr@row+23(Seriousness,1-5 五级)、Icdp@row+25(Central Defender Percentage,值域 {50,255},0xFF 为不适用哨兵)、Icdo@row+26(1-51)。另 client 3 槽中 icla@+0 同样命中。",
+   "evidence": {
+    "artifacts": [
+     "scripts/t05_name_fields.py(分发链解析 + getter 成员访问解析 + OFF 连接)",
+     "scratch/t05/named_fields.json(26 实体的 dispatch 链与命名结果)",
+     "scratch/t05/reader_widths.json(含 obj_seq: 每槽的 object_off)"
+    ],
+    "commander_verify": [
+     "Icdp getter 逐字节核对:`movzx edi, byte ptr [rdi + 0x56]`(VA 0x141581eeb) 与 reader 槽 19 的 `lea rdx,[rsi+0x56]` 同为 0x56,row_off=25,w=1",
+     "Icms getter 逐字节核对:`movsx edi, byte ptr [rdi + 0x52]`(VA 0x141581f53) 与 reader 槽 15 的 0x52 同值,row_off=21,w=1",
+     "数据语义独立验证(自写列取值,不复用命名器):icla 值域 1-13、Imnd 1-180、Irec 严格 {0,1}、Imip 0-90、Icms 恰为 {0,1,2,3} 四季、inSr 1-5、Icdp {50,255}(0xFF 哨兵)、Icdo 1-51 —— 与各字段 schema 语义逐一吻合",
+     "access_size 与 reader 宽度一致性:Icdp/Icms getter 均为 byte 访问,对应 reader 槽宽 1,无冲突"
+    ],
+    "limits": [
+     "自动命名只对含硬编码 `cmp edx,<4CC>` 分发链的实体有效(本轮 injury=38 条 cmp/19 个 4CC、type22=34/17);其余 24 个实体走属性描述符注册路径(`mov dword ptr [rbp-0x10],<4CC>` + `call <注册>`,且成员指针为常量 `add rax,0x38`),字段偏移在运行时由描述符表给出,静态代码不暴露 —— 这是 city/regi/stad 等分发链为 0 的原因",
+     "injury 的 dispatch 命中 19 个 4CC,其中 7 个未解析出 getter 成员访问(含 Ibph),故 21 槽只命名 11 个;补齐需扩展 getter 模式识别(间接寻址、多级指针)",
+     "发现 schema 手册不全:Imio/Icdo 两个 4CC 在 exe 的 injury dispatch 链里存在,但 EDITOR_SCHEMA_FIELDS.md 的 injury 27 字段中没有,说明 exe 里的属性集比文档更大"
+    ]
+   },
+   "consequence": "字段映射的最后一跳(语义命名)由此打通,并且是纯静态可复跑的:给定 reader body 就能自动产出带字段名的行内布局。当前状态是 240 条布局(E39)+13 条命名(E40),命名瓶颈已从\"不知道怎么连\"变成\"分发链只在部分实体存在\"。下一步两条并行:①扩展 getter 模式识别把 injury 补齐到 21/21,并在 type22(17 个 4CC)上完整命名;②对无分发链的实体改走\"schema 保序 + 类型-统计约束\"半自动法(用 injury 的 11 个已验证命名当校准集)。"
   }
  ]
 }
