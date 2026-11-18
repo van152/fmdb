@@ -1,0 +1,4755 @@
+{
+ "status": "complete",
+ "source": "scratch/t12/out/naming_result.json",
+ "schema_map": "scratch/t11/out/schema_map.json",
+ "layout": "scratch/t05/layouts.json",
+ "totals": {
+  "slots": 240,
+  "named": 132,
+  "dist": {
+   "unresolved": 108,
+   "readpair": 37,
+   "ref_only": 8,
+   "chain_unique": 68,
+   "chain_ambiguous": 9,
+   "schema_fixed": 2,
+   "ref_pair": 3,
+   "full_shape_unique": 5
+  }
+ },
+ "review_overrides": [
+  {
+   "type_id": 23,
+   "archive": "client",
+   "idx": 0,
+   "withdrawn_field": "SNsn",
+   "reason": "t23 row+0 在 278 行里全为 0; SNsn 的 schema 类型是 string, 而 reader 槽仅 1 字节; t11 已据数据侧证否并降级, t12 的单射唯一性不足以推翻数据"
+  },
+  {
+   "type_id": 23,
+   "archive": "server",
+   "idx": 0,
+   "withdrawn_field": "SNsn",
+   "reason": "同上(client/server 同槽): 278 行全 0, 字符串型字段不可能落在 1 字节槽"
+  }
+ ],
+ "per_type": [
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "slots": 18,
+   "named": 12
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "slots": 24,
+   "named": 18
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "slots": 17,
+   "named": 12
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "slots": 19,
+   "named": 16
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "slots": 19,
+   "named": 17
+  },
+  {
+   "type_id": 23,
+   "schema_entity": "stage name",
+   "slots": 2,
+   "named": 0
+  },
+  {
+   "type_id": 30,
+   "schema_entity": "player",
+   "slots": 9,
+   "named": 6
+  },
+  {
+   "type_id": 31,
+   "schema_entity": "club",
+   "slots": 3,
+   "named": 0
+  },
+  {
+   "type_id": 34,
+   "schema_entity": "club",
+   "slots": 11,
+   "named": 5
+  },
+  {
+   "type_id": 35,
+   "schema_entity": "club",
+   "slots": 4,
+   "named": 0
+  },
+  {
+   "type_id": 37,
+   "schema_entity": "club",
+   "slots": 14,
+   "named": 11
+  },
+  {
+   "type_id": 42,
+   "schema_entity": "club",
+   "slots": 5,
+   "named": 0
+  },
+  {
+   "type_id": 43,
+   "schema_entity": "club",
+   "slots": 6,
+   "named": 3
+  },
+  {
+   "type_id": 46,
+   "schema_entity": "club",
+   "slots": 5,
+   "named": 0
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "slots": 18,
+   "named": 2
+  },
+  {
+   "type_id": 49,
+   "schema_entity": "person",
+   "slots": 9,
+   "named": 7
+  },
+  {
+   "type_id": 50,
+   "schema_entity": "club",
+   "slots": 4,
+   "named": 0
+  },
+  {
+   "type_id": 51,
+   "schema_entity": "nation",
+   "slots": 3,
+   "named": 0
+  },
+  {
+   "type_id": 58,
+   "schema_entity": "person",
+   "slots": 9,
+   "named": 4
+  },
+  {
+   "type_id": 60,
+   "schema_entity": "nation",
+   "slots": 3,
+   "named": 0
+  },
+  {
+   "type_id": 61,
+   "schema_entity": null,
+   "slots": 3,
+   "named": 0
+  },
+  {
+   "type_id": 62,
+   "schema_entity": "club",
+   "slots": 11,
+   "named": 7
+  },
+  {
+   "type_id": 63,
+   "schema_entity": null,
+   "slots": 3,
+   "named": 0
+  },
+  {
+   "type_id": 64,
+   "schema_entity": "team kit",
+   "slots": 4,
+   "named": 0
+  },
+  {
+   "type_id": 66,
+   "schema_entity": "club",
+   "slots": 5,
+   "named": 3
+  },
+  {
+   "type_id": 70,
+   "schema_entity": "club",
+   "slots": 12,
+   "named": 9
+  }
+ ],
+ "slots": [
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "client",
+   "idx": 0,
+   "row_off": 0,
+   "width": 1,
+   "object_off": 83,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": "chain_0162 内唯一直接窄访问 Icon @+0x53/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "client",
+   "idx": 1,
+   "row_off": 1,
+   "width": 8,
+   "object_off": 72,
+   "field": "Clat+Clon",
+   "codes": [
+    "Clat",
+    "Clon"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0xe55152",
+    "access_va": "0x140e55d62",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movss xmm6, dword ptr [rdi + 0x48]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "client",
+   "idx": 2,
+   "row_off": 9,
+   "width": 1,
+   "object_off": 84,
+   "field": "Catt",
+   "codes": [
+    "Catt"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0xe55219",
+    "access_va": "0x140e55c25",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "jne fall-through内 movsx edi, byte ptr [rdi + 0x54]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "client",
+   "idx": 3,
+   "row_off": 10,
+   "width": 4,
+   "object_off": 32,
+   "field": "Cnti",
+   "codes": [
+    "Cnti"
+   ],
+   "confidence": "ref_only",
+   "level": "L3 引用字段(值域与行数据双证)",
+   "evidence": {
+    "file_off": "0xe55187",
+    "access_va": "0x140e55dc4",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "reader obj_seq 连接 row+10，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x20。"
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "client",
+   "idx": 4,
+   "row_off": 14,
+   "width": 4,
+   "object_off": 40,
+   "field": "Cwea",
+   "codes": [
+    "Cwea"
+   ],
+   "confidence": "ref_only",
+   "level": "L3 引用字段(值域与行数据双证)",
+   "evidence": {
+    "file_off": "0xe55193",
+    "access_va": "0x140e55de1",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "reader obj_seq 连接 row+14，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x28。"
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "client",
+   "idx": 5,
+   "row_off": 18,
+   "width": 3,
+   "object_off": 80,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "client",
+   "idx": 6,
+   "row_off": 21,
+   "width": 4,
+   "object_off": 48,
+   "field": "Clgi",
+   "codes": [
+    "Clgi"
+   ],
+   "confidence": "ref_only",
+   "level": "L3 引用字段(值域与行数据双证)",
+   "evidence": {
+    "file_off": "0xe5515e",
+    "access_va": "0x140e55b6a",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "reader obj_seq 连接 row+21，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x30。"
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "client",
+   "idx": 7,
+   "row_off": 25,
+   "width": 4,
+   "object_off": 56,
+   "field": "Clri",
+   "codes": [
+    "Clri"
+   ],
+   "confidence": "ref_only",
+   "level": "L3 引用字段(值域与行数据双证)",
+   "evidence": {
+    "file_off": "0xe550a3",
+    "access_va": "0x140e55ce6",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "reader obj_seq 连接 row+25，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x38。"
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "client",
+   "idx": 8,
+   "row_off": 29,
+   "width": 1,
+   "object_off": 85,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": "chain_0162 内唯一直接窄访问 Igpr @+0x55/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 1,
+   "object_off": 83,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": "chain_0162 内唯一直接窄访问 Icon @+0x53/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 1,
+   "width": 8,
+   "object_off": 72,
+   "field": "Clat+Clon",
+   "codes": [
+    "Clat",
+    "Clon"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0xe55152",
+    "access_va": "0x140e55d62",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movss xmm6, dword ptr [rdi + 0x48]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 9,
+   "width": 1,
+   "object_off": 84,
+   "field": "Catt",
+   "codes": [
+    "Catt"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0xe55219",
+    "access_va": "0x140e55c25",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "jne fall-through内 movsx edi, byte ptr [rdi + 0x54]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 10,
+   "width": 4,
+   "object_off": 32,
+   "field": "Cnti",
+   "codes": [
+    "Cnti"
+   ],
+   "confidence": "ref_only",
+   "level": "L3 引用字段(值域与行数据双证)",
+   "evidence": {
+    "file_off": "0xe55187",
+    "access_va": "0x140e55dc4",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "reader obj_seq 连接 row+10，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x20。"
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "server",
+   "idx": 4,
+   "row_off": 14,
+   "width": 4,
+   "object_off": 40,
+   "field": "Cwea",
+   "codes": [
+    "Cwea"
+   ],
+   "confidence": "ref_only",
+   "level": "L3 引用字段(值域与行数据双证)",
+   "evidence": {
+    "file_off": "0xe55193",
+    "access_va": "0x140e55de1",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "reader obj_seq 连接 row+14，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x28。"
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "server",
+   "idx": 5,
+   "row_off": 18,
+   "width": 3,
+   "object_off": 80,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "server",
+   "idx": 6,
+   "row_off": 21,
+   "width": 4,
+   "object_off": 48,
+   "field": "Clgi",
+   "codes": [
+    "Clgi"
+   ],
+   "confidence": "ref_only",
+   "level": "L3 引用字段(值域与行数据双证)",
+   "evidence": {
+    "file_off": "0xe5515e",
+    "access_va": "0x140e55b6a",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "reader obj_seq 连接 row+21，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x30。"
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "server",
+   "idx": 7,
+   "row_off": 25,
+   "width": 4,
+   "object_off": 56,
+   "field": "Clri",
+   "codes": [
+    "Clri"
+   ],
+   "confidence": "ref_only",
+   "level": "L3 引用字段(值域与行数据双证)",
+   "evidence": {
+    "file_off": "0xe550a3",
+    "access_va": "0x140e55ce6",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "reader obj_seq 连接 row+25，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x38。"
+  },
+  {
+   "type_id": 2,
+   "schema_entity": "city",
+   "archive": "server",
+   "idx": 8,
+   "row_off": 29,
+   "width": 1,
+   "object_off": 85,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": "chain_0162 内唯一直接窄访问 Igpr @+0x55/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "client",
+   "idx": 0,
+   "row_off": 0,
+   "width": 1,
+   "object_off": 76,
+   "field": "icla",
+   "codes": [
+    "icla"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x158101b",
+    "access_va": "0x141581fb2",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movsx edi, byte ptr [rdi + 0x4c]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "client",
+   "idx": 1,
+   "row_off": 1,
+   "width": 1,
+   "object_off": 77,
+   "field": "iscl",
+   "codes": [
+    "iscl"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1581033",
+    "access_va": "0x141581a3f",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "jne fall-through内 movsx edi, byte ptr [rdi + 0x4d]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "client",
+   "idx": 2,
+   "row_off": 2,
+   "width": 1,
+   "object_off": 74,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 1,
+   "object_off": 76,
+   "field": "icla",
+   "codes": [
+    "icla"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x158101b",
+    "access_va": "0x141581fb2",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movsx edi, byte ptr [rdi + 0x4c]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 1,
+   "width": 1,
+   "object_off": 77,
+   "field": "iscl",
+   "codes": [
+    "iscl"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1581033",
+    "access_va": "0x141581a3f",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "jne fall-through内 movsx edi, byte ptr [rdi + 0x4d]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 2,
+   "width": 1,
+   "object_off": 74,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 3,
+   "width": 2,
+   "object_off": 52,
+   "field": "Imnd",
+   "codes": [
+    "Imnd"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1580f01",
+    "access_va": "0x141581e8c",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movsx edi, word ptr [rdi + 0x34]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 4,
+   "row_off": 5,
+   "width": 2,
+   "object_off": 54,
+   "field": "Iexd",
+   "codes": [
+    "Iexd"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1580c93",
+    "access_va": "0x141581b15",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movsx edi, word ptr [rdi + 0x36]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 5,
+   "row_off": 7,
+   "width": 1,
+   "object_off": 88,
+   "field": "Iiar",
+   "codes": [
+    "Iiar"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1580cab",
+    "access_va": "0x1415816b7",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "jne fall-through内 movsx edi, byte ptr [rdi + 0x58]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 6,
+   "row_off": 8,
+   "width": 1,
+   "object_off": 89,
+   "field": "Irec",
+   "codes": [
+    "Irec"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1580dc9",
+    "access_va": "0x141581d04",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movzx ebx, byte ptr [rdi + 0x59]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 7,
+   "row_off": 9,
+   "width": 1,
+   "object_off": 92,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 8,
+   "row_off": 10,
+   "width": 1,
+   "object_off": 93,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 9,
+   "row_off": 11,
+   "width": 1,
+   "object_off": 90,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 10,
+   "row_off": 12,
+   "width": 1,
+   "object_off": 91,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 11,
+   "row_off": 13,
+   "width": 4,
+   "object_off": 48,
+   "field": "Iocr",
+   "codes": [
+    "Iocr"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1580dbd",
+    "access_va": "0x141581ca2",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movss xmm6, dword ptr [rdi + 0x30]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 12,
+   "row_off": 17,
+   "width": 1,
+   "object_off": 80,
+   "field": "Imip",
+   "codes": [
+    "Imip"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1580ef5",
+    "access_va": "0x141581e2d",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movsx edi, byte ptr [rdi + 0x50]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 13,
+   "row_off": 18,
+   "width": 2,
+   "object_off": 78,
+   "field": "Icau",
+   "codes": [
+    "Icau"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1580d46",
+    "access_va": "0x141581752",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "jne fall-through内 movsx edi, word ptr [rdi + 0x4e]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 14,
+   "row_off": 20,
+   "width": 1,
+   "object_off": 81,
+   "field": "Iagr",
+   "codes": [
+    "Iagr"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x15810aa",
+    "access_va": "0x141581ab6",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "jne fall-through内 movsx edi, byte ptr [rdi + 0x51]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 15,
+   "row_off": 21,
+   "width": 1,
+   "object_off": 82,
+   "field": "Icms",
+   "codes": [
+    "Icms"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1580fa4",
+    "access_va": "0x141581f53",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movsx edi, byte ptr [rdi + 0x52]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 16,
+   "row_off": 22,
+   "width": 1,
+   "object_off": 83,
+   "field": "Icon",
+   "codes": [
+    "Icon"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1580fb0",
+    "access_va": "0x1415819bc",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "jne fall-through内 movzx ebx, byte ptr [rdi + 0x53]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 17,
+   "row_off": 23,
+   "width": 1,
+   "object_off": 84,
+   "field": "inSr",
+   "codes": [
+    "inSr"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1581027",
+    "access_va": "0x141582011",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movsx edi, byte ptr [rdi + 0x54]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 18,
+   "row_off": 24,
+   "width": 1,
+   "object_off": 85,
+   "field": "Igpr",
+   "codes": [
+    "Igpr"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1580c9f",
+    "access_va": "0x141581b74",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movzx edi, byte ptr [rdi + 0x55]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 19,
+   "row_off": 25,
+   "width": 1,
+   "object_off": 86,
+   "field": "Icdp",
+   "codes": [
+    "Icdp"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1580f98",
+    "access_va": "0x141581eeb",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movzx edi, byte ptr [rdi + 0x56]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 6,
+   "schema_entity": "injury",
+   "archive": "server",
+   "idx": 20,
+   "row_off": 26,
+   "width": 1,
+   "object_off": 87,
+   "field": "Ibin+Ibis+Ibph+Ibsp+Ibpg",
+   "codes": [
+    "Ibin",
+    "Ibis",
+    "Ibph",
+    "Ibsp",
+    "Ibpg"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1580e6c",
+    "access_va": "0x141581d63",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movzx ebx, byte ptr [rdi + 0x57]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "client",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 40,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "client",
+   "idx": 1,
+   "row_off": 4,
+   "width": 4,
+   "object_off": 44,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "client",
+   "idx": 2,
+   "row_off": 8,
+   "width": 4,
+   "object_off": 48,
+   "field": "Slea",
+   "codes": [
+    "Slea"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x15386ff",
+    "access_va": "0x14153977e",
+    "instruction": "mov dword ptr [rsi + 0x30], eax",
+    "chain_id": "chain_0147"
+   },
+   "why": "chain_0147 内唯一直接窄访问 Slea @+0x30/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "client",
+   "idx": 3,
+   "row_off": 12,
+   "width": 4,
+   "object_off": 52,
+   "field": "Ssta",
+   "codes": [
+    "Ssta"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x153873f",
+    "access_va": "0x14153978d",
+    "instruction": "mov dword ptr [rsi + 0x34], eax",
+    "chain_id": "chain_0147"
+   },
+   "why": "chain_0147 内唯一直接窄访问 Ssta @+0x34/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "client",
+   "idx": 4,
+   "row_off": 16,
+   "width": 4,
+   "object_off": 56,
+   "field": "Slmd",
+   "codes": [
+    "Slmd"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x15387cb",
+    "access_va": "0x14153979c",
+    "instruction": "mov dword ptr [rsi + 0x38], eax",
+    "chain_id": "chain_0147"
+   },
+   "why": "chain_0147 内唯一直接窄访问 Slmd @+0x38/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "client",
+   "idx": 5,
+   "row_off": 20,
+   "width": 4,
+   "object_off": 60,
+   "field": "Scap",
+   "codes": [
+    "Scap"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x153865b",
+    "access_va": "0x141539087",
+    "instruction": "mov dword ptr [rsi + 0x3c], eax",
+    "chain_id": "chain_0147"
+   },
+   "why": "chain_0147 内唯一直接窄访问 Scap @+0x3c/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "client",
+   "idx": 6,
+   "row_off": 24,
+   "width": 4,
+   "object_off": 64,
+   "field": "Sscp",
+   "codes": [
+    "Sscp"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x15385f7",
+    "access_va": "0x141539023",
+    "instruction": "mov dword ptr [rsi + 0x40], eax",
+    "chain_id": "chain_0147"
+   },
+   "why": "chain_0147 内唯一直接窄访问 Sscp @+0x40/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "client",
+   "idx": 7,
+   "row_off": 28,
+   "width": 4,
+   "object_off": 68,
+   "field": "Sceb",
+   "codes": [
+    "Sceb"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1538813",
+    "access_va": "0x141539577",
+    "instruction": "mov dword ptr [rsi + 0x44], eax",
+    "chain_id": "chain_0147"
+   },
+   "why": "chain_0147 内唯一直接窄访问 Sceb @+0x44/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 40,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 4,
+   "object_off": 44,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 8,
+   "width": 4,
+   "object_off": 48,
+   "field": "Slea",
+   "codes": [
+    "Slea"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x15386ff",
+    "access_va": "0x14153977e",
+    "instruction": "mov dword ptr [rsi + 0x30], eax",
+    "chain_id": "chain_0147"
+   },
+   "why": "chain_0147 内唯一直接窄访问 Slea @+0x30/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 12,
+   "width": 4,
+   "object_off": 52,
+   "field": "Ssta",
+   "codes": [
+    "Ssta"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x153873f",
+    "access_va": "0x14153978d",
+    "instruction": "mov dword ptr [rsi + 0x34], eax",
+    "chain_id": "chain_0147"
+   },
+   "why": "chain_0147 内唯一直接窄访问 Ssta @+0x34/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 4,
+   "row_off": 16,
+   "width": 4,
+   "object_off": 56,
+   "field": "Slmd",
+   "codes": [
+    "Slmd"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x15387cb",
+    "access_va": "0x14153979c",
+    "instruction": "mov dword ptr [rsi + 0x38], eax",
+    "chain_id": "chain_0147"
+   },
+   "why": "chain_0147 内唯一直接窄访问 Slmd @+0x38/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 5,
+   "row_off": 20,
+   "width": 4,
+   "object_off": 60,
+   "field": "Scap",
+   "codes": [
+    "Scap"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x153865b",
+    "access_va": "0x141539087",
+    "instruction": "mov dword ptr [rsi + 0x3c], eax",
+    "chain_id": "chain_0147"
+   },
+   "why": "chain_0147 内唯一直接窄访问 Scap @+0x3c/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 6,
+   "row_off": 24,
+   "width": 4,
+   "object_off": 64,
+   "field": "Sscp",
+   "codes": [
+    "Sscp"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x15385f7",
+    "access_va": "0x141539023",
+    "instruction": "mov dword ptr [rsi + 0x40], eax",
+    "chain_id": "chain_0147"
+   },
+   "why": "chain_0147 内唯一直接窄访问 Sscp @+0x40/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 7,
+   "row_off": 28,
+   "width": 4,
+   "object_off": 68,
+   "field": "Sceb",
+   "codes": [
+    "Sceb"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1538813",
+    "access_va": "0x141539577",
+    "instruction": "mov dword ptr [rsi + 0x44], eax",
+    "chain_id": "chain_0147"
+   },
+   "why": "chain_0147 内唯一直接窄访问 Sceb @+0x44/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 19,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 8,
+   "row_off": 32,
+   "width": 1,
+   "object_off": 73,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 0,
+   "row_off": 0,
+   "width": 2,
+   "object_off": 142,
+   "field": "Spwd|SwIM",
+   "codes": [
+    "Spwd",
+    "SwIM"
+   ],
+   "confidence": "chain_ambiguous",
+   "level": "",
+   "evidence": {
+    "file_off": "0x11866cf",
+    "access_va": "0x1411870db",
+    "instruction": "movzx eax, word ptr [rdi + 0x8e]",
+    "chain_id": "chain_0104"
+   },
+   "why": "chain_0104 的精确槽位 +0x8e/2B 有多个结构候选；仍保留全部码，不强行裁决。"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 1,
+   "row_off": 2,
+   "width": 1,
+   "object_off": 157,
+   "field": "Spty",
+   "codes": [
+    "Spty"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1186603",
+    "access_va": "0x14118700f",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "jne fall-through内 movzx eax, byte ptr [rdi + 0x9d]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 2,
+   "row_off": 3,
+   "width": 1,
+   "object_off": 159,
+   "field": "Sste",
+   "codes": [
+    "Sste"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1186b0d",
+    "access_va": "0x141187fa4",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movsx esi, byte ptr [rdi + 0x9f]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 3,
+   "row_off": 4,
+   "width": 1,
+   "object_off": 160,
+   "field": "Senv",
+   "codes": [
+    "Senv"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1186514",
+    "access_va": "0x141187a5b",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movsx esi, byte ptr [rdi + 0xa0]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 4,
+   "row_off": 5,
+   "width": 1,
+   "object_off": 155,
+   "field": "Sdah+Sitg+Sext",
+   "codes": [
+    "Sdah",
+    "Sitg",
+    "Sext"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x118971a",
+    "access_va": "0x14118a66b",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movzx ecx, byte ptr [rsi + 0x9b]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 5,
+   "row_off": 6,
+   "width": 1,
+   "object_off": 161,
+   "field": "Sunt",
+   "codes": [
+    "Sunt"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x118698a",
+    "access_va": "0x141187e85",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movsx esi, byte ptr [rdi + 0xa1]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 6,
+   "row_off": 7,
+   "width": 1,
+   "object_off": 162,
+   "field": "Su21",
+   "codes": [
+    "Su21"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x118638c",
+    "access_va": "0x1411879ac",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movsx esi, byte ptr [rdi + 0xa2]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 7,
+   "row_off": 8,
+   "width": 1,
+   "object_off": 163,
+   "field": "Su19",
+   "codes": [
+    "Su19"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1186b19",
+    "access_va": "0x141187525",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "jne fall-through内 movsx esi, byte ptr [rdi + 0xa3]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 8,
+   "row_off": 9,
+   "width": 1,
+   "object_off": 164,
+   "field": "Soty",
+   "codes": [
+    "Soty"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x118679c",
+    "access_va": "0x1411871a8",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "jne fall-through内 movsx esi, byte ptr [rdi + 0xa4]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 9,
+   "row_off": 10,
+   "width": 1,
+   "object_off": 165,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": "chain_0104 内唯一直接窄访问 Snft @+0xa5/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 10,
+   "row_off": 11,
+   "width": 2,
+   "object_off": 144,
+   "field": "Smnl",
+   "codes": [
+    "Smnl"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x118691c",
+    "access_va": "0x141187dfb",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movsx eax, word ptr [rdi + 0x90]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 11,
+   "row_off": 13,
+   "width": 2,
+   "object_off": 146,
+   "field": "Smnw",
+   "codes": [
+    "Smnw"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1186928",
+    "access_va": "0x141187334",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "jne fall-through内 movsx eax, word ptr [rdi + 0x92]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 12,
+   "row_off": 15,
+   "width": 2,
+   "object_off": 148,
+   "field": "Smxl",
+   "codes": [
+    "Smxl"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1186655",
+    "access_va": "0x141187b45",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movsx eax, word ptr [rdi + 0x94]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 13,
+   "row_off": 17,
+   "width": 2,
+   "object_off": 150,
+   "field": "Smxw",
+   "codes": [
+    "Smxw"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1186661",
+    "access_va": "0x14118706d",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "jne fall-through内 movsx eax, word ptr [rdi + 0x96]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 14,
+   "row_off": 19,
+   "width": 1,
+   "object_off": 156,
+   "field": "Sdtr",
+   "codes": [
+    "Sdtr"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x11867e8",
+    "access_va": "0x141187cfe",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "je 目标块内 movsx esi, byte ptr [rdi + 0x9c]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 15,
+   "row_off": 20,
+   "width": 1,
+   "object_off": 79,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 16,
+   "row_off": 21,
+   "width": 1,
+   "object_off": 158,
+   "field": "Sprr",
+   "codes": [
+    "Sprr"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x11868d8",
+    "access_va": "0x1411872e4",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "jne fall-through内 movsx esi, byte ptr [rdi + 0x9e]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 17,
+   "row_off": 22,
+   "width": 2,
+   "object_off": 166,
+   "field": "Scov",
+   "codes": [
+    "Scov"
+   ],
+   "confidence": "schema_fixed",
+   "level": "L3+约束(链内多码, 由 schema 字段集合定为唯一合法者)",
+   "evidence": {
+    "file_off": "0x118628f",
+    "access_va": "0x141186ca0",
+    "instruction": "movzx esi, word ptr [rdi + 0xa6]",
+    "chain_id": "chain_0104"
+   },
+   "why": "chain_0104 的精确槽位 +0xa6/2B 有多个结构候选； schema/type-compatible=['Wucf']，仍保留全部码，不强行裁决。"
+  },
+  {
+   "type_id": 21,
+   "schema_entity": "stadium",
+   "archive": "client",
+   "idx": 18,
+   "row_off": 24,
+   "width": 1,
+   "object_off": 168,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 4,
+   "object_off": 32,
+   "field": "Sold",
+   "codes": [
+    "Sold"
+   ],
+   "confidence": "ref_pair",
+   "level": "L3 引用字段(取指针+空检查, 宽度取 reader)",
+   "evidence": {
+    "file_off": "0x1538f2d",
+    "access_va": "0x141539da6",
+    "instruction": "mov rcx, qword ptr [rbx + 0x20]",
+    "chain_id": null
+   },
+   "why": "Sold ref_ptr cmp 在 0x1538f2d，对象偏移 +0x20；reader row+4/w4。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 8,
+   "width": 4,
+   "object_off": 40,
+   "field": "Snew",
+   "codes": [
+    "Snew"
+   ],
+   "confidence": "ref_pair",
+   "level": "L3 引用字段(取指针+空检查, 宽度取 reader)",
+   "evidence": {
+    "file_off": "0x153905b",
+    "access_va": "0x141539e87",
+    "instruction": "mov rcx, qword ptr [rbx + 0x28]",
+    "chain_id": null
+   },
+   "why": "Snew ref_ptr cmp 在 0x153905b，对象偏移 +0x28；reader row+8/w4。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 12,
+   "width": 4,
+   "object_off": 60,
+   "field": "Scap",
+   "codes": [
+    "Scap"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1538fdc",
+    "access_va": "0x1415399e8",
+    "instruction": "mov edi, dword ptr [rbx + 0x3c]",
+    "chain_id": "chain_0148"
+   },
+   "why": "chain_0148 内唯一直接窄访问 Scap @+0x3c/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 4,
+   "row_off": 16,
+   "width": 1,
+   "object_off": 100,
+   "field": "Styp",
+   "codes": [
+    "Styp"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1539196",
+    "access_va": "0x141539ba2",
+    "instruction": "movsx edi, byte ptr [rbx + 0x64]",
+    "chain_id": "chain_0148"
+   },
+   "why": "chain_0148 内唯一直接窄访问 Styp @+0x64/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 5,
+   "row_off": 17,
+   "width": 4,
+   "object_off": 72,
+   "field": "Salt",
+   "codes": [
+    "Salt"
+   ],
+   "confidence": "ref_pair",
+   "level": "L3 引用字段(取指针+空检查, 宽度取 reader)",
+   "evidence": {
+    "file_off": "0x153920a",
+    "access_va": "0x14153a10d",
+    "instruction": "mov rcx, qword ptr [rbx + 0x48]",
+    "chain_id": null
+   },
+   "why": "Salt ref_ptr cmp 在 0x153920a，对象偏移 +0x48；reader row+17/w4。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 6,
+   "row_off": 21,
+   "width": 1,
+   "object_off": 101,
+   "field": "Scpm",
+   "codes": [
+    "Scpm"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x15390f2",
+    "access_va": "0x141539f0b",
+    "instruction": "movzx ebx, byte ptr [rbx + 0x65]",
+    "chain_id": "chain_0148"
+   },
+   "why": "chain_0148 内唯一直接窄访问 Scpm @+0x65/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 7,
+   "row_off": 22,
+   "width": 4,
+   "object_off": 64,
+   "field": "Sscp",
+   "codes": [
+    "Sscp"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1538f39",
+    "access_va": "0x141539945",
+    "instruction": "mov edi, dword ptr [rbx + 0x40]",
+    "chain_id": "chain_0148"
+   },
+   "why": "chain_0148 内唯一直接窄访问 Sscp @+0x40/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 8,
+   "row_off": 26,
+   "width": 4,
+   "object_off": 80,
+   "field": "Snxa",
+   "codes": [
+    "Snxa"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1538f21",
+    "access_va": "0x141539d3f",
+    "instruction": "mov edi, dword ptr [rbx + 0x50]",
+    "chain_id": "chain_0148"
+   },
+   "why": "chain_0148 内唯一直接窄访问 Snxa @+0x50/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 9,
+   "row_off": 30,
+   "width": 4,
+   "object_off": 84,
+   "field": "Snmn",
+   "codes": [
+    "Snmn"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1539067",
+    "access_va": "0x141539ea4",
+    "instruction": "mov edi, dword ptr [rbx + 0x54]",
+    "chain_id": "chain_0148"
+   },
+   "why": "chain_0148 内唯一直接窄访问 Snmn @+0x54/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 10,
+   "row_off": 34,
+   "width": 4,
+   "object_off": 88,
+   "field": "Snmx",
+   "codes": [
+    "Snmx"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1539073",
+    "access_va": "0x141539a7f",
+    "instruction": "mov edi, dword ptr [rbx + 0x58]",
+    "chain_id": "chain_0148"
+   },
+   "why": "chain_0148 内唯一直接窄访问 Snmx @+0x58/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 11,
+   "row_off": 38,
+   "width": 4,
+   "object_off": 92,
+   "field": "Stks",
+   "codes": [
+    "Stks"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x153918a",
+    "access_va": "0x14153a0a6",
+    "instruction": "mov edi, dword ptr [rbx + 0x5c]",
+    "chain_id": "chain_0148"
+   },
+   "why": "chain_0148 内唯一直接窄访问 Stks @+0x5c/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 12,
+   "row_off": 42,
+   "width": 1,
+   "object_off": 102,
+   "field": "Slhm",
+   "codes": [
+    "Slhm"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x153910a",
+    "access_va": "0x141539b16",
+    "instruction": "movsx edi, byte ptr [rbx + 0x66]",
+    "chain_id": "chain_0148"
+   },
+   "why": "chain_0148 内唯一直接窄访问 Slhm @+0x66/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 13,
+   "row_off": 43,
+   "width": 4,
+   "object_off": 96,
+   "field": "Scam",
+   "codes": [
+    "Scam"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1538fd0",
+    "access_va": "0x141539e20",
+    "instruction": "mov edi, dword ptr [rbx + 0x60]",
+    "chain_id": "chain_0148"
+   },
+   "why": "chain_0148 内唯一直接窄访问 Scam @+0x60/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 14,
+   "row_off": 47,
+   "width": 1,
+   "object_off": 105,
+   "field": "Scns",
+   "codes": [
+    "Scns"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x15392cb",
+    "access_va": "0x141539cd7",
+    "instruction": "movsx edi, byte ptr [rbx + 0x69]",
+    "chain_id": "chain_0148"
+   },
+   "why": "chain_0148 内唯一直接窄访问 Scns @+0x69/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 15,
+   "row_off": 48,
+   "width": 1,
+   "object_off": 103,
+   "field": "ScTL",
+   "codes": [
+    "ScTL"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1539216",
+    "access_va": "0x141539c22",
+    "instruction": "movsx edi, byte ptr [rbx + 0x67]",
+    "chain_id": "chain_0148"
+   },
+   "why": "chain_0148 内唯一直接窄访问 ScTL @+0x67/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 16,
+   "row_off": 49,
+   "width": 1,
+   "object_off": 104,
+   "field": "ScYL",
+   "codes": [
+    "ScYL"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1538fc4",
+    "access_va": "0x141539db8",
+    "instruction": "movsx edi, byte ptr [rbx + 0x68]",
+    "chain_id": "chain_0148"
+   },
+   "why": "chain_0148 内唯一直接窄访问 ScYL @+0x68/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 17,
+   "row_off": 50,
+   "width": 4,
+   "object_off": 68,
+   "field": "Sceb",
+   "codes": [
+    "Sceb"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x15392bf",
+    "access_va": "0x14153a1d3",
+    "instruction": "mov edi, dword ptr [rbx + 0x44]",
+    "chain_id": "chain_0148"
+   },
+   "why": "chain_0148 内唯一直接窄访问 Sceb @+0x44/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 22,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 18,
+   "row_off": 54,
+   "width": 12,
+   "object_off": null,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 23,
+   "schema_entity": "stage name",
+   "archive": "client",
+   "idx": 0,
+   "row_off": 0,
+   "width": 1,
+   "object_off": 59,
+   "field": null,
+   "codes": [
+    "SNsn"
+   ],
+   "confidence": "unresolved",
+   "level": "已由指挥官复核降级",
+   "evidence": {
+    "file_off": "0x43e67da",
+    "access_va": "0x144551e65",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "唯一完整单射分配: stage name.SNsn -> object_off 59, reader width 1。",
+   "schema_field": "SNsn"
+  },
+  {
+   "type_id": 23,
+   "schema_entity": "stage name",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 1,
+   "object_off": 59,
+   "field": null,
+   "codes": [
+    "SNsn"
+   ],
+   "confidence": "unresolved",
+   "level": "已由指挥官复核降级",
+   "evidence": {
+    "file_off": "0x43e67da",
+    "access_va": "0x144551e65",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "唯一完整单射分配: stage name.SNsn -> object_off 59, reader width 1。",
+   "schema_field": "SNsn"
+  },
+  {
+   "type_id": 30,
+   "schema_entity": "player",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 30,
+   "schema_entity": "player",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 4,
+   "object_off": 32,
+   "field": "inju",
+   "codes": [
+    "inju"
+   ],
+   "confidence": "full_shape_unique",
+   "level": "L3 形态完整唯一(五类形态穷举后唯一)",
+   "evidence": {
+    "file_off": "0x1197d6f",
+    "access_va": "0x141198993",
+    "instruction": "mov rcx, qword ptr [rdi + 0x20]",
+    "chain_id": null
+   },
+   "why": "新抽取 full-shape 证据唯一命中 player.inju -> object_off=32, reader_width=4；未改 row_off/width。"
+  },
+  {
+   "type_id": 30,
+   "schema_entity": "player",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 8,
+   "width": 4,
+   "object_off": 40,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 30,
+   "schema_entity": "player",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 12,
+   "width": 4,
+   "object_off": 44,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 30,
+   "schema_entity": "player",
+   "archive": "server",
+   "idx": 4,
+   "row_off": 16,
+   "width": 1,
+   "object_off": 48,
+   "field": "futu",
+   "codes": [
+    "futu"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1197c81",
+    "access_va": "0x14119868d",
+    "instruction": "movzx ebx, byte ptr [rdi + 0x30]",
+    "chain_id": "chain_0111"
+   },
+   "why": "chain_0111 内唯一直接窄访问 futu @+0x30/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 30,
+   "schema_entity": "player",
+   "archive": "server",
+   "idx": 5,
+   "row_off": 17,
+   "width": 1,
+   "object_off": 49,
+   "field": "perm",
+   "codes": [
+    "perm"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1197d7b",
+    "access_va": "0x141198787",
+    "instruction": "movzx ebx, byte ptr [rdi + 0x31]",
+    "chain_id": "chain_0111"
+   },
+   "why": "chain_0111 内唯一直接窄访问 perm @+0x31/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 30,
+   "schema_entity": "player",
+   "archive": "server",
+   "idx": 6,
+   "row_off": 18,
+   "width": 1,
+   "object_off": 50,
+   "field": "seve",
+   "codes": [
+    "seve"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1197d04",
+    "access_va": "0x141198710",
+    "instruction": "movsx edi, byte ptr [rdi + 0x32]",
+    "chain_id": "chain_0111"
+   },
+   "why": "chain_0111 内唯一直接窄访问 seve @+0x32/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 30,
+   "schema_entity": "player",
+   "archive": "server",
+   "idx": 7,
+   "row_off": 19,
+   "width": 1,
+   "object_off": 51,
+   "field": "side",
+   "codes": [
+    "side"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1197de6",
+    "access_va": "0x1411989b0",
+    "instruction": "movzx edi, byte ptr [rdi + 0x33]",
+    "chain_id": "chain_0111"
+   },
+   "why": "chain_0111 内唯一直接窄访问 side @+0x33/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 30,
+   "schema_entity": "player",
+   "archive": "server",
+   "idx": 8,
+   "row_off": 20,
+   "width": 1,
+   "object_off": 52,
+   "field": "pret",
+   "codes": [
+    "pret"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1197cf8",
+    "access_va": "0x141198934",
+    "instruction": "movzx ebx, byte ptr [rdi + 0x34]",
+    "chain_id": "chain_0111"
+   },
+   "why": "chain_0111 内唯一直接窄访问 pret @+0x34/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 31,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 31,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 2,
+   "object_off": 32,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 31,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 6,
+   "width": 2,
+   "object_off": 34,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 34,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 34,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 4,
+   "object_off": 32,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 34,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 8,
+   "width": 2,
+   "object_off": 72,
+   "field": "mstn|styr",
+   "codes": [
+    "mstn",
+    "styr"
+   ],
+   "confidence": "chain_ambiguous",
+   "level": "",
+   "evidence": {
+    "file_off": "0x156f87d",
+    "access_va": "0x141570380",
+    "instruction": "movzx edi, word ptr [rcx + 0x48]",
+    "chain_id": "chain_0159"
+   },
+   "why": "chain_0159 的精确槽位 +0x48/2B 有多个结构候选； schema/type-compatible=['styr']，仍保留全部码，不强行裁决。"
+  },
+  {
+   "type_id": 34,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 10,
+   "width": 2,
+   "object_off": 74,
+   "field": "edyr",
+   "codes": [
+    "edyr"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x156f941",
+    "access_va": "0x14157048c",
+    "instruction": "movzx edi, word ptr [rcx + 0x4a]",
+    "chain_id": "chain_0159"
+   },
+   "why": "chain_0159 内唯一直接窄访问 edyr @+0x4a/2B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 34,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 4,
+   "row_off": 12,
+   "width": 4,
+   "object_off": 48,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 34,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 5,
+   "row_off": 16,
+   "width": 4,
+   "object_off": 56,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 34,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 6,
+   "row_off": 20,
+   "width": 1,
+   "object_off": 76,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 34,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 7,
+   "row_off": 21,
+   "width": 1,
+   "object_off": 77,
+   "field": "dbrt",
+   "codes": [
+    "dbrt"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x156f8d2",
+    "access_va": "0x1415702de",
+    "instruction": "movsx edx, byte ptr [rcx + 0x4d]",
+    "chain_id": "chain_0159"
+   },
+   "why": "chain_0159 内唯一直接窄访问 dbrt @+0x4d/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 34,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 8,
+   "row_off": 22,
+   "width": 4,
+   "object_off": 40,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 34,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 9,
+   "row_off": 26,
+   "width": 1,
+   "object_off": 78,
+   "field": "posi",
+   "codes": [
+    "posi"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x156f913",
+    "access_va": "0x141570427",
+    "instruction": "movsx edi, byte ptr [rcx + 0x4e]",
+    "chain_id": "chain_0159"
+   },
+   "why": "chain_0159 内唯一直接窄访问 posi @+0x4e/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 34,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 10,
+   "row_off": 27,
+   "width": 4,
+   "object_off": 64,
+   "field": "tcop",
+   "codes": [
+    "tcop"
+   ],
+   "confidence": "full_shape_unique",
+   "level": "L3 形态完整唯一(五类形态穷举后唯一)",
+   "evidence": {
+    "file_off": "0x156f889",
+    "access_va": "0x1415703df",
+    "instruction": "mov rcx, qword ptr [rcx + 0x40]",
+    "chain_id": null
+   },
+   "why": "新抽取 full-shape 证据唯一命中 club.tcop -> object_off=64, reader_width=4；未改 row_off/width。"
+  },
+  {
+   "type_id": 35,
+   "schema_entity": "club",
+   "archive": "client",
+   "idx": 0,
+   "row_off": 0,
+   "width": 1,
+   "object_off": 32,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 35,
+   "schema_entity": "club",
+   "archive": "client",
+   "idx": 1,
+   "row_off": 1,
+   "width": 1,
+   "object_off": 33,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 35,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 1,
+   "object_off": 32,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 35,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 1,
+   "width": 1,
+   "object_off": 33,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 37,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 37,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 4,
+   "object_off": 32,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 37,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 8,
+   "width": 4,
+   "object_off": 40,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 37,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 12,
+   "width": 2,
+   "object_off": 54,
+   "field": "year",
+   "codes": [
+    "year"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119ea09",
+    "access_va": "0x14119f415",
+    "instruction": "movzx edi, word ptr [rcx + 0x36]",
+    "chain_id": "chain_0115"
+   },
+   "why": "chain_0115 内唯一直接窄访问 year @+0x36/2B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 37,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 4,
+   "row_off": 14,
+   "width": 1,
+   "object_off": 57,
+   "field": "posi",
+   "codes": [
+    "posi"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119e9f1",
+    "access_va": "0x14119f698",
+    "instruction": "movsx edi, byte ptr [rcx + 0x39]",
+    "chain_id": "chain_0115"
+   },
+   "why": "chain_0115 内唯一直接窄访问 posi @+0x39/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 37,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 5,
+   "row_off": 15,
+   "width": 1,
+   "object_off": 58,
+   "field": "play",
+   "codes": [
+    "play"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119e8e5",
+    "access_va": "0x14119f560",
+    "instruction": "movsx edi, byte ptr [rcx + 0x3a]",
+    "chain_id": "chain_0115"
+   },
+   "why": "chain_0115 内唯一直接窄访问 play @+0x3a/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 37,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 6,
+   "row_off": 16,
+   "width": 1,
+   "object_off": 59,
+   "field": "wins",
+   "codes": [
+    "wins"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119e9fd",
+    "access_va": "0x14119f700",
+    "instruction": "movsx edi, byte ptr [rcx + 0x3b]",
+    "chain_id": "chain_0115"
+   },
+   "why": "chain_0115 内唯一直接窄访问 wins @+0x3b/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 37,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 7,
+   "row_off": 17,
+   "width": 1,
+   "object_off": 60,
+   "field": "draw",
+   "codes": [
+    "draw"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119e84d",
+    "access_va": "0x14119f491",
+    "instruction": "movsx edi, byte ptr [rcx + 0x3c]",
+    "chain_id": "chain_0115"
+   },
+   "why": "chain_0115 内唯一直接窄访问 draw @+0x3c/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 37,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 8,
+   "row_off": 18,
+   "width": 1,
+   "object_off": 61,
+   "field": "lost",
+   "codes": [
+    "lost"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119e971",
+    "access_va": "0x14119f630",
+    "instruction": "movsx edi, byte ptr [rcx + 0x3d]",
+    "chain_id": "chain_0115"
+   },
+   "why": "chain_0115 内唯一直接窄访问 lost @+0x3d/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 37,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 9,
+   "row_off": 19,
+   "width": 2,
+   "object_off": 48,
+   "field": "gfor",
+   "codes": [
+    "gfor"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119e965",
+    "access_va": "0x14119f5c8",
+    "instruction": "movsx edi, word ptr [rcx + 0x30]",
+    "chain_id": "chain_0115"
+   },
+   "why": "chain_0115 内唯一直接窄访问 gfor @+0x30/2B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 37,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 10,
+   "row_off": 21,
+   "width": 2,
+   "object_off": 50,
+   "field": "gaga",
+   "codes": [
+    "gaga"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119e859",
+    "access_va": "0x14119f265",
+    "instruction": "movsx edi, word ptr [rcx + 0x32]",
+    "chain_id": "chain_0115"
+   },
+   "why": "chain_0115 内唯一直接窄访问 gaga @+0x32/2B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 37,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 11,
+   "row_off": 23,
+   "width": 2,
+   "object_off": 52,
+   "field": "poin",
+   "codes": [
+    "poin"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119e8f1",
+    "access_va": "0x14119f2fd",
+    "instruction": "movsx edi, word ptr [rcx + 0x34]",
+    "chain_id": "chain_0115"
+   },
+   "why": "chain_0115 内唯一直接窄访问 poin @+0x34/2B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 37,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 12,
+   "row_off": 25,
+   "width": 1,
+   "object_off": 56,
+   "field": "orde",
+   "codes": [
+    "orde"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119e8d9",
+    "access_va": "0x14119f4f9",
+    "instruction": "movsx edi, byte ptr [rcx + 0x38]",
+    "chain_id": "chain_0115"
+   },
+   "why": "chain_0115 内唯一直接窄访问 orde @+0x38/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 37,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 13,
+   "row_off": 26,
+   "width": 1,
+   "object_off": 62,
+   "field": "mxtm",
+   "codes": [
+    "mxtm"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119e97d",
+    "access_va": "0x14119f389",
+    "instruction": "movsx edi, byte ptr [rcx + 0x3e]",
+    "chain_id": "chain_0115"
+   },
+   "why": "chain_0115 内唯一直接窄访问 mxtm @+0x3e/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 42,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 1,
+   "object_off": 39,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 42,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 1,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 42,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 5,
+   "width": 4,
+   "object_off": 28,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 42,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 9,
+   "width": 2,
+   "object_off": 32,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 42,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 4,
+   "row_off": 11,
+   "width": 2,
+   "object_off": 34,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 43,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 8,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 43,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 8,
+   "width": 8,
+   "object_off": 32,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 43,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 16,
+   "width": 8,
+   "object_off": 40,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 43,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 24,
+   "width": 4,
+   "object_off": 48,
+   "field": "mths",
+   "codes": [
+    "mths"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x153c9ec",
+    "access_va": "0x14153d49b",
+    "instruction": "mov esi, dword ptr [rdi + 0x30]",
+    "chain_id": "chain_0149"
+   },
+   "why": "chain_0149 内唯一直接窄访问 mths @+0x30/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 43,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 4,
+   "row_off": 28,
+   "width": 4,
+   "object_off": 52,
+   "field": "cash|play",
+   "codes": [
+    "cash",
+    "play"
+   ],
+   "confidence": "chain_ambiguous",
+   "level": "",
+   "evidence": {
+    "file_off": "0x153c9b0",
+    "access_va": "0x14153d421",
+    "instruction": "mov esi, dword ptr [rdi + 0x34]",
+    "chain_id": "chain_0149"
+   },
+   "why": "chain_0149 的精确槽位 +0x34/4B 有多个结构候选；仍保留全部码，不强行裁决。"
+  },
+  {
+   "type_id": 43,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 5,
+   "row_off": 32,
+   "width": 1,
+   "object_off": 56,
+   "field": "pyiv",
+   "codes": [
+    "pyiv"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x153c9f8",
+    "access_va": "0x14153d4f9",
+    "instruction": "movsx esi, byte ptr [rdi + 0x38]",
+    "chain_id": "chain_0149"
+   },
+   "why": "chain_0149 内唯一直接窄访问 pyiv @+0x38/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 46,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 46,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 4,
+   "object_off": 28,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 46,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 8,
+   "width": 1,
+   "object_off": 32,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 46,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 9,
+   "width": 1,
+   "object_off": 33,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 46,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 4,
+   "row_off": 10,
+   "width": 2,
+   "object_off": 34,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 0,
+   "row_off": 0,
+   "width": 1,
+   "object_off": 86,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": "chain_0162 内唯一直接窄访问 Icdp @+0x56/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 1,
+   "row_off": 1,
+   "width": 2,
+   "object_off": 70,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 2,
+   "row_off": 3,
+   "width": 4,
+   "object_off": 72,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 3,
+   "row_off": 7,
+   "width": 1,
+   "object_off": 80,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": "chain_0162 内唯一直接窄访问 Imip @+0x50/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 4,
+   "row_off": 8,
+   "width": 4,
+   "object_off": 104,
+   "field": "Lwea",
+   "codes": [
+    "Lwea"
+   ],
+   "confidence": "full_shape_unique",
+   "level": "L3 形态完整唯一(五类形态穷举后唯一)",
+   "evidence": {
+    "file_off": "0x14590e9",
+    "access_va": "0x141459af5",
+    "instruction": "mov rcx, qword ptr [r12 + 0x68]",
+    "chain_id": null
+   },
+   "why": "新抽取 full-shape 证据唯一命中 local region.Lwea -> object_off=104, reader_width=4；未改 row_off/width。"
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 5,
+   "row_off": 12,
+   "width": 1,
+   "object_off": 41,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 6,
+   "row_off": 13,
+   "width": 4,
+   "object_off": 48,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": "chain_0162 内唯一直接窄访问 Iocr @+0x30/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 7,
+   "row_off": 17,
+   "width": 4,
+   "object_off": 112,
+   "field": "Lpop",
+   "codes": [
+    "Lpop"
+   ],
+   "confidence": "readpair",
+   "level": "L3 双侧指令直证(4CC getter 与 reader 槽同偏移)",
+   "evidence": {
+    "file_off": "0x1458fcd",
+    "access_va": "0x1414599d9",
+    "instruction": null,
+    "chain_id": null
+   },
+   "why": "jne fall-through内 mov esi, dword ptr [r12 + 0x70]; reader obj_seq 全局偏移/宽度命中"
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 8,
+   "row_off": 21,
+   "width": 1,
+   "object_off": 72,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 9,
+   "row_off": 22,
+   "width": 1,
+   "object_off": 73,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 10,
+   "row_off": 23,
+   "width": 1,
+   "object_off": 74,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 11,
+   "row_off": 24,
+   "width": 1,
+   "object_off": 75,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 12,
+   "row_off": 25,
+   "width": 1,
+   "object_off": 76,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": "chain_0162 的精确槽位 +0x4c/1B 有多个结构候选；仍保留全部码，不强行裁决。"
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 13,
+   "row_off": 26,
+   "width": 1,
+   "object_off": 77,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": "chain_0162 内唯一直接窄访问 iscl @+0x4d/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 14,
+   "row_off": 27,
+   "width": 1,
+   "object_off": 78,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 15,
+   "row_off": 28,
+   "width": 1,
+   "object_off": 79,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 16,
+   "row_off": 29,
+   "width": 1,
+   "object_off": 80,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": "chain_0162 内唯一直接窄访问 Imip @+0x50/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 47,
+   "schema_entity": "local region",
+   "archive": "client",
+   "idx": 17,
+   "row_off": 30,
+   "width": 1,
+   "object_off": 81,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": "chain_0162 内唯一直接窄访问 Iagr @+0x51/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 49,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 1,
+   "object_off": 39,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 49,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 1,
+   "width": 2,
+   "object_off": 36,
+   "field": "date|year",
+   "codes": [
+    "date",
+    "year"
+   ],
+   "confidence": "chain_ambiguous",
+   "level": "",
+   "evidence": {
+    "file_off": "0x1456087",
+    "access_va": "0x141456c5c",
+    "instruction": "movzx eax, word ptr [rbx + 0x24]",
+    "chain_id": "chain_0136"
+   },
+   "why": "chain_0136 的精确槽位 +0x24/2B 有多个结构候选；仍保留全部码，不强行裁决。"
+  },
+  {
+   "type_id": 49,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 3,
+   "width": 2,
+   "object_off": 38,
+   "field": "date|year",
+   "codes": [
+    "date",
+    "year"
+   ],
+   "confidence": "chain_ambiguous",
+   "level": "",
+   "evidence": {
+    "file_off": "0x1456087",
+    "access_va": "0x141456c6b",
+    "instruction": "movzx edi, word ptr [rbx + 0x26]",
+    "chain_id": "chain_0136"
+   },
+   "why": "chain_0136 的精确槽位 +0x26/2B 有多个结构候选；仍保留全部码，不强行裁决。"
+  },
+  {
+   "type_id": 49,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 5,
+   "width": 4,
+   "object_off": 24,
+   "field": "divi",
+   "codes": [
+    "divi"
+   ],
+   "confidence": "full_shape_unique",
+   "level": "L3 形态完整唯一(五类形态穷举后唯一)",
+   "evidence": {
+    "file_off": "0x119e841",
+    "access_va": "0x14119f474",
+    "instruction": "mov rcx, qword ptr [rcx + 0x18]",
+    "chain_id": null
+   },
+   "why": "新抽取 full-shape 证据唯一命中 person.divi -> object_off=24, reader_width=4；未改 row_off/width。"
+  },
+  {
+   "type_id": 49,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 4,
+   "row_off": 9,
+   "width": 4,
+   "object_off": 28,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 49,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 5,
+   "row_off": 13,
+   "width": 4,
+   "object_off": 32,
+   "field": "comp",
+   "codes": [
+    "comp"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1456124",
+    "access_va": "0x141456b30",
+    "instruction": "mov edx, dword ptr [rbx + 0x20]",
+    "chain_id": "chain_0136"
+   },
+   "why": "chain_0136 内唯一直接窄访问 comp @+0x20/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 49,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 6,
+   "row_off": 17,
+   "width": 4,
+   "object_off": 40,
+   "field": "otea",
+   "codes": [
+    "otea"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x14561f1",
+    "access_va": "0x141456bfd",
+    "instruction": "mov edi, dword ptr [rbx + 0x28]",
+    "chain_id": "chain_0136"
+   },
+   "why": "chain_0136 内唯一直接窄访问 otea @+0x28/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 49,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 7,
+   "row_off": 21,
+   "width": 1,
+   "object_off": 44,
+   "field": "plac",
+   "codes": [
+    "plac"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x145616b",
+    "access_va": "0x141456da2",
+    "instruction": "movsx edi, byte ptr [rbx + 0x2c]",
+    "chain_id": "chain_0136"
+   },
+   "why": "chain_0136 内唯一直接窄访问 plac @+0x2c/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 49,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 8,
+   "row_off": 22,
+   "width": 1,
+   "object_off": 45,
+   "field": "ajob",
+   "codes": [
+    "ajob"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1456118",
+    "access_va": "0x141456d3b",
+    "instruction": "movzx edi, byte ptr [rbx + 0x2d]",
+    "chain_id": "chain_0136"
+   },
+   "why": "chain_0136 内唯一直接窄访问 ajob @+0x2d/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 50,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 50,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 4,
+   "object_off": 28,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 50,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 8,
+   "width": 1,
+   "object_off": 36,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 50,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 9,
+   "width": 4,
+   "object_off": 32,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 51,
+   "schema_entity": "nation",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 51,
+   "schema_entity": "nation",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 4,
+   "object_off": 28,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 51,
+   "schema_entity": "nation",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 8,
+   "width": 2,
+   "object_off": 32,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 58,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 24,
+   "field": "divi",
+   "codes": [
+    "divi"
+   ],
+   "confidence": "full_shape_unique",
+   "level": "L3 形态完整唯一(五类形态穷举后唯一)",
+   "evidence": {
+    "file_off": "0x119e841",
+    "access_va": "0x14119f474",
+    "instruction": "mov rcx, qword ptr [rcx + 0x18]",
+    "chain_id": null
+   },
+   "why": "新抽取 full-shape 证据唯一命中 person.divi -> object_off=24, reader_width=4；未改 row_off/width。"
+  },
+  {
+   "type_id": 58,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 4,
+   "object_off": 28,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 58,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 8,
+   "width": 4,
+   "object_off": 32,
+   "field": "team",
+   "codes": [
+    "team"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1543ebe",
+    "access_va": "0x141544e0e",
+    "instruction": "movsxd rdi, dword ptr [rdi + 0x20]",
+    "chain_id": "chain_0153"
+   },
+   "why": "chain_0153 内唯一直接窄访问 team @+0x20/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 58,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 12,
+   "width": 4,
+   "object_off": 36,
+   "field": "team",
+   "codes": [
+    "team"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1543ebe",
+    "access_va": "0x141544e07",
+    "instruction": "mov eax, dword ptr [rdi + 0x24]",
+    "chain_id": "chain_0153"
+   },
+   "why": "chain_0153 内唯一直接窄访问 team @+0x24/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 58,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 4,
+   "row_off": 16,
+   "width": 4,
+   "object_off": 40,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": "chain_0153 内唯一直接窄访问 otht @+0x28/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 58,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 5,
+   "row_off": 20,
+   "width": 4,
+   "object_off": 44,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": "chain_0153 内唯一直接窄访问 otht @+0x2c/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 58,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 6,
+   "row_off": 24,
+   "width": 2,
+   "object_off": 48,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 58,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 7,
+   "row_off": 26,
+   "width": 2,
+   "object_off": 50,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 58,
+   "schema_entity": "person",
+   "archive": "server",
+   "idx": 8,
+   "row_off": 28,
+   "width": 4,
+   "object_off": 52,
+   "field": "comp",
+   "codes": [
+    "comp"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1543cf7",
+    "access_va": "0x141544703",
+    "instruction": "mov eax, dword ptr [rdi + 0x34]",
+    "chain_id": "chain_0153"
+   },
+   "why": "chain_0153 内唯一直接窄访问 comp @+0x34/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 60,
+   "schema_entity": "nation",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 60,
+   "schema_entity": "nation",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 4,
+   "object_off": 28,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 60,
+   "schema_entity": "nation",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 8,
+   "width": 2,
+   "object_off": 32,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 61,
+   "schema_entity": null,
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 61,
+   "schema_entity": null,
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 1,
+   "object_off": 28,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 61,
+   "schema_entity": null,
+   "archive": "server",
+   "idx": 2,
+   "row_off": 5,
+   "width": 2,
+   "object_off": 30,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 62,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 1,
+   "object_off": 68,
+   "field": "Ttyp",
+   "codes": [
+    "Ttyp"
+   ],
+   "confidence": "schema_fixed",
+   "level": "L3+约束(链内多码, 由 schema 字段集合定为唯一合法者)",
+   "evidence": {
+    "file_off": "0x119c881",
+    "access_va": "0x14119d5ab",
+    "instruction": "movsx edi, byte ptr [rcx + 0x44]",
+    "chain_id": "chain_0114"
+   },
+   "why": "chain_0114 的精确槽位 +0x44/1B 有多个结构候选； schema/type-compatible=['Ttyp']，仍保留全部码，不强行裁决。"
+  },
+  {
+   "type_id": 62,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 1,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 62,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 5,
+   "width": 4,
+   "object_off": 32,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 62,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 9,
+   "width": 4,
+   "object_off": 48,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 62,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 4,
+   "row_off": 13,
+   "width": 4,
+   "object_off": 56,
+   "field": "Catd",
+   "codes": [
+    "Catd"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119c72a",
+    "access_va": "0x14119d488",
+    "instruction": "mov edi, dword ptr [rcx + 0x38]",
+    "chain_id": "chain_0114"
+   },
+   "why": "chain_0114 内唯一直接窄访问 Catd @+0x38/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 62,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 5,
+   "row_off": 17,
+   "width": 4,
+   "object_off": 60,
+   "field": "Cmxa",
+   "codes": [
+    "Cmxa"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119c80b",
+    "access_va": "0x14119d217",
+    "instruction": "mov edi, dword ptr [rcx + 0x3c]",
+    "chain_id": "chain_0114"
+   },
+   "why": "chain_0114 内唯一直接窄访问 Cmxa @+0x3c/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 62,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 6,
+   "row_off": 21,
+   "width": 4,
+   "object_off": 64,
+   "field": "Cmna",
+   "codes": [
+    "Cmna"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119c7ff",
+    "access_va": "0x14119d54d",
+    "instruction": "mov edi, dword ptr [rcx + 0x40]",
+    "chain_id": "chain_0114"
+   },
+   "why": "chain_0114 内唯一直接窄访问 Cmna @+0x40/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 62,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 7,
+   "row_off": 25,
+   "width": 1,
+   "object_off": 69,
+   "field": "Twhm",
+   "codes": [
+    "Twhm"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119c88d",
+    "access_va": "0x14119d299",
+    "instruction": "movsx edi, byte ptr [rcx + 0x45]",
+    "chain_id": "chain_0114"
+   },
+   "why": "chain_0114 内唯一直接窄访问 Twhm @+0x45/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 62,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 8,
+   "row_off": 26,
+   "width": 1,
+   "object_off": 70,
+   "field": "Tmhm",
+   "codes": [
+    "Tmhm"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x119c777",
+    "access_va": "0x14119d4e6",
+    "instruction": "movsx edi, byte ptr [rcx + 0x46]",
+    "chain_id": "chain_0114"
+   },
+   "why": "chain_0114 内唯一直接窄访问 Tmhm @+0x46/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 62,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 9,
+   "row_off": 27,
+   "width": 1,
+   "object_off": 71,
+   "field": "tmno|tmnv",
+   "codes": [
+    "tmno",
+    "tmnv"
+   ],
+   "confidence": "chain_ambiguous",
+   "level": "",
+   "evidence": {
+    "file_off": "0x119ca0c",
+    "access_va": "0x14119d6c6",
+    "instruction": "movzx ebx, byte ptr [rcx + 0x47]",
+    "chain_id": "chain_0114"
+   },
+   "why": "chain_0114 的精确槽位 +0x47/1B 有多个结构候选；仍保留全部码，不强行裁决。"
+  },
+  {
+   "type_id": 62,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 10,
+   "row_off": 28,
+   "width": 1,
+   "object_off": 72,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 63,
+   "schema_entity": null,
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 63,
+   "schema_entity": null,
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 1,
+   "object_off": 28,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 63,
+   "schema_entity": null,
+   "archive": "server",
+   "idx": 2,
+   "row_off": 5,
+   "width": 2,
+   "object_off": 30,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 64,
+   "schema_entity": "team kit",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 64,
+   "schema_entity": "team kit",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 2,
+   "object_off": 32,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 64,
+   "schema_entity": "team kit",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 6,
+   "width": 1,
+   "object_off": 34,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 64,
+   "schema_entity": "team kit",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 7,
+   "width": 1,
+   "object_off": 35,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 66,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 66,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 4,
+   "object_off": 28,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 66,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 8,
+   "width": 1,
+   "object_off": 32,
+   "field": "maxa|nati|rati",
+   "codes": [
+    "maxa",
+    "nati",
+    "rati"
+   ],
+   "confidence": "chain_ambiguous",
+   "level": "",
+   "evidence": {
+    "file_off": "0xea6787",
+    "access_va": "0x140ea71e9",
+    "instruction": "mov byte ptr [rsi + 0x20], al",
+    "chain_id": "chain_0083"
+   },
+   "why": "chain_0083 的精确槽位 +0x20/1B 有多个结构候选； schema/type-compatible=['maxa', 'rati']，仍保留全部码，不强行裁决。"
+  },
+  {
+   "type_id": 66,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 9,
+   "width": 1,
+   "object_off": 33,
+   "field": "maxa|mina|rati",
+   "codes": [
+    "maxa",
+    "mina",
+    "rati"
+   ],
+   "confidence": "chain_ambiguous",
+   "level": "",
+   "evidence": {
+    "file_off": "0xea6787",
+    "access_va": "0x140ea719e",
+    "instruction": "mov byte ptr [rsi + 0x21], al",
+    "chain_id": "chain_0083"
+   },
+   "why": "chain_0083 的精确槽位 +0x21/1B 有多个结构候选；仍保留全部码，不强行裁决。"
+  },
+  {
+   "type_id": 66,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 4,
+   "row_off": 10,
+   "width": 1,
+   "object_off": 34,
+   "field": "maxa|rati",
+   "codes": [
+    "maxa",
+    "rati"
+   ],
+   "confidence": "chain_ambiguous",
+   "level": "",
+   "evidence": {
+    "file_off": "0xea6787",
+    "access_va": "0x140ea7159",
+    "instruction": "mov byte ptr [rsi + 0x22], al",
+    "chain_id": "chain_0083"
+   },
+   "why": "chain_0083 的精确槽位 +0x22/1B 有多个结构候选；仍保留全部码，不强行裁决。"
+  },
+  {
+   "type_id": 70,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": 24,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 70,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 1,
+   "row_off": 4,
+   "width": 4,
+   "object_off": 32,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 70,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 2,
+   "row_off": 8,
+   "width": 4,
+   "object_off": 40,
+   "field": "comp",
+   "codes": [
+    "comp"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1454f8f",
+    "access_va": "0x141455c0c",
+    "instruction": "mov edx, dword ptr [rdi + 0x28]",
+    "chain_id": "chain_0135"
+   },
+   "why": "chain_0135 内唯一直接窄访问 comp @+0x28/4B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 70,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 3,
+   "row_off": 12,
+   "width": 4,
+   "object_off": 44,
+   "field": null,
+   "codes": [],
+   "confidence": "unresolved",
+   "level": "",
+   "evidence": {},
+   "why": ""
+  },
+  {
+   "type_id": 70,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 4,
+   "row_off": 16,
+   "width": 2,
+   "object_off": 48,
+   "field": "wrcl",
+   "codes": [
+    "wrcl"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1454efc",
+    "access_va": "0x141455bad",
+    "instruction": "movsx edi, word ptr [rdi + 0x30]",
+    "chain_id": "chain_0135"
+   },
+   "why": "chain_0135 内唯一直接窄访问 wrcl @+0x30/2B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 70,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 5,
+   "row_off": 18,
+   "width": 2,
+   "object_off": 50,
+   "field": "styr",
+   "codes": [
+    "styr"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1454ef0",
+    "access_va": "0x141455b2d",
+    "instruction": "movzx ebx, word ptr [rdi + 0x32]",
+    "chain_id": "chain_0135"
+   },
+   "why": "chain_0135 内唯一直接窄访问 styr @+0x32/2B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 70,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 6,
+   "row_off": 20,
+   "width": 2,
+   "object_off": 52,
+   "field": "enyr",
+   "codes": [
+    "enyr"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1454f9b",
+    "access_va": "0x1414559a7",
+    "instruction": "movzx ebx, word ptr [rdi + 0x34]",
+    "chain_id": "chain_0135"
+   },
+   "why": "chain_0135 内唯一直接窄访问 enyr @+0x34/2B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 70,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 7,
+   "row_off": 22,
+   "width": 1,
+   "object_off": 54,
+   "field": "type",
+   "codes": [
+    "type"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1454f08",
+    "access_va": "0x141455914",
+    "instruction": "movzx ebx, byte ptr [rdi + 0x36]",
+    "chain_id": "chain_0135"
+   },
+   "why": "chain_0135 内唯一直接窄访问 type @+0x36/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 70,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 8,
+   "row_off": 23,
+   "width": 1,
+   "object_off": 55,
+   "field": "levl",
+   "codes": [
+    "levl"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1454e51",
+    "access_va": "0x141455ace",
+    "instruction": "movsx edi, byte ptr [rdi + 0x37]",
+    "chain_id": "chain_0135"
+   },
+   "why": "chain_0135 内唯一直接窄访问 levl @+0x37/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 70,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 9,
+   "row_off": 24,
+   "width": 1,
+   "object_off": 56,
+   "field": "mage",
+   "codes": [
+    "mage"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1454e5d",
+    "access_va": "0x141455869",
+    "instruction": "movsx ebx, byte ptr [rdi + 0x38]",
+    "chain_id": "chain_0135"
+   },
+   "why": "chain_0135 内唯一直接窄访问 mage @+0x38/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 70,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 10,
+   "row_off": 25,
+   "width": 1,
+   "object_off": 57,
+   "field": "mlen",
+   "codes": [
+    "mlen"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x145501c",
+    "access_va": "0x141455c47",
+    "instruction": "movsx ebx, byte ptr [rdi + 0x39]",
+    "chain_id": "chain_0135"
+   },
+   "why": "chain_0135 内唯一直接窄访问 mlen @+0x39/1B；reader (object_off,width) 精确命中。"
+  },
+  {
+   "type_id": 70,
+   "schema_entity": "club",
+   "archive": "server",
+   "idx": 11,
+   "row_off": 26,
+   "width": 1,
+   "object_off": 58,
+   "field": "isog",
+   "codes": [
+    "isog"
+   ],
+   "confidence": "chain_unique",
+   "level": "L3 链内唯一(分发链内该偏移只有这一个码)",
+   "evidence": {
+    "file_off": "0x1454e45",
+    "access_va": "0x141455a6f",
+    "instruction": "movzx ebx, byte ptr [rdi + 0x3a]",
+    "chain_id": "chain_0135"
+   },
+   "why": "chain_0135 内唯一直接窄访问 isog @+0x3a/1B；reader (object_off,width) 精确命中。"
+  }
+ ]
+}
