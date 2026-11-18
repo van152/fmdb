@@ -760,6 +760,27 @@
     "getter_refinement": "16 条 81 f8..ff 全寄存器 cmp 命中(EDX 为主),无 3d(EAX)命中;12 组向量 getter 用 4CC 范围减法+rel32 跳表选季节/子字段"
    },
    "consequence": "两实体验收线达成(comp 18 字段 + weat 89 字段);方法论三度验证(直线 comp / 循环 weat / 变长 nation 负结果+框架);t01m(stad,旧库 L1 锚交叉)已发射 —— 若成则首次双源(L1 旧库 vs L3 二进制)字段级互证"
+  },
+  {
+   "id": "E28",
+   "date": "2026-11-18 08:35",
+   "author": "commander(luna t01m 交付,指挥官独立验收)",
+   "kind": "milestone",
+   "level": "L3-static+L1(指挥官 31 项独立抽验 ALL PASS:20 静态字节 + 11 数据项含旧库 L1 锚全复核;luna 自检 PASS)",
+   "claim": "【第三实体验收线达成 + 首次 L1↔L3 双源互证】t01m:stad(table_21)16 个确定 L3 字段(12 server 前缀 + 4 common/client 尾:Scti/Sptc/Slat/Slon),另 2 个诚实条件候选(Spln/Spwd fallback,不计入);client 48,413 行 stride 38、server 48,413 行 stride 181,server[143:181]==client[0:38] 全表成立 —— 与旧库 L1 逐项一致。四组城市锚复现(Anfield→1061 Liverpool 等);旧库 +25/+29 锚经 E20 勘误正确处理(行序号/dup-u32,不冒称 reader 字段)。修正 t01h:77 宽度是 8 个扫描窗口合计,reader 本体 34 宽度点/74B",
+   "evidence": {
+    "artifacts": [
+     "scratch/t01/inbox/t01m/{output.json(154KB),REPORT.md,verify.py}",
+     "scripts/t01m_spotcheck.py"
+    ],
+    "commander_verify": [
+     "20 项静态字节 PASS(reader 分支结构 test bpl/je/ret/flag gate;Scpy/Sscy/Secy/Scti/Slat/Slon getter cmp edx 链+reader dest/width/call 三元组;helper 链)",
+     "11 项数据 PASS(双 archive payload 封口 1,839,716/8,762,775;4 城市锚;41 行 server≡client 抽样;行序号 50 行;dup-u32 50 行;Slat/Slon float 范围)"
+    ],
+    "dual_source": "旧库 L1(stride/identity/Scti/城市锚)与本次 L3(reader/getter 字节链)首次字段级互证 —— 方法论可信度闭环",
+    "census_correction": "t01h 77 宽度口径修正(reader 本体 34 点);getter 扫描全寄存器(16 条 81 fb 命中,EDX 为主)"
+   },
+   "consequence": "三实体验收线达成(comp 18 / weat 89 / stad 16 = 123 个 L3 行偏移字段);方法论四场景验证(直线/确定循环/类变长/server 扩展);stage-2 剩余:club(433,mixed)→ pers(W 条件)→ 变长型(行边界)→ 46 直线型逐个复制"
   }
  ]
 }
