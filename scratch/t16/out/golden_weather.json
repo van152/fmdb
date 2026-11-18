@@ -1,0 +1,19 @@
+{
+  "entity": "weather",
+  "status": "fail",
+  "expected_l3_fields": 89,
+  "schema_target_fields_found": 89,
+  "available_baseline_artifacts": [],
+  "codes_with_any_t12_instance": 7,
+  "sample_codes_with_instances": [
+    "wnam",
+    "w0sd",
+    "w0dn",
+    "w2sd",
+    "w2dn",
+    "w3sd",
+    "w3dn"
+  ],
+  "failure": "E27 89-field offset artifact is absent from this workspace; seasonal 4CCs are not enough to infer row offsets.",
+  "source": "scratch/t05/schema_inventory.json, scratch/t12/out/codes_full.json, workspace artifact check"
+}

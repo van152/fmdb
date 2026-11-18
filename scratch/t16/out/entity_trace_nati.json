@@ -1,0 +1,97 @@
+{
+  "classes": [
+    {
+      "table_type": 10,
+      "class": "NATION",
+      "status": "ok",
+      "handler_off": "0xf48f27",
+      "vtable_va": "0x1418893b8",
+      "vtable_assignment_found": true,
+      "visited": [
+        {
+          "file_off": "0xf48f27",
+          "depth": 0,
+          "instructions": 6
+        },
+        {
+          "file_off": "0xf71620",
+          "depth": 1,
+          "instructions": 1
+        },
+        {
+          "file_off": "0x103ebf0",
+          "depth": 1,
+          "instructions": 145
+        },
+        {
+          "file_off": "0x1758010",
+          "depth": 2,
+          "instructions": 1
+        },
+        {
+          "file_off": "0x7e3a90",
+          "depth": 2,
+          "instructions": 1
+        },
+        {
+          "file_off": "0xfc5660",
+          "depth": 2,
+          "instructions": 13
+        }
+      ],
+      "reader_va": "0x1410404c0",
+      "reader_off": "0x103fac0",
+      "serializer_functions": [
+        {
+          "function_off": "0x103fac0",
+          "depth": 0,
+          "events": [
+            {
+              "width": 4,
+              "object_off": 280,
+              "inst_off": "0x103fb05",
+              "call_off": "0x103fb0e",
+              "branch_depth": 1,
+              "instruction": "mov r8d, 4"
+            },
+            {
+              "width": 2,
+              "object_off": null,
+              "inst_off": "0x103fb2e",
+              "call_off": "0x103fb37",
+              "branch_depth": 2,
+              "instruction": "mov r8d, 2"
+            }
+          ],
+          "event_count": 2,
+          "branch_count": 11
+        }
+      ]
+    }
+  ],
+  "accesses": [
+    {
+      "width": 4,
+      "object_off": 280,
+      "inst_off": "0x103fb05",
+      "call_off": "0x103fb0e",
+      "branch_depth": 1,
+      "instruction": "mov r8d, 4",
+      "table_type": 10,
+      "class": "NATION",
+      "row_offset_candidate": 0
+    },
+    {
+      "width": 2,
+      "object_off": null,
+      "inst_off": "0x103fb2e",
+      "call_off": "0x103fb37",
+      "branch_depth": 2,
+      "instruction": "mov r8d, 2",
+      "table_type": 10,
+      "class": "NATION",
+      "row_offset_candidate": 4
+    }
+  ],
+  "other_branch_accesses": []
+}

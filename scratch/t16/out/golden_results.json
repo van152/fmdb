@@ -1,0 +1,300 @@
+{
+  "status": "partial_golden_gate_failed",
+  "golden": {
+    "city": {
+      "entity": "city",
+      "status": "fail",
+      "baseline_status": "pass",
+      "required_reference_fields": [
+        "Clgi",
+        "Clri",
+        "Cnti",
+        "Cwea"
+      ],
+      "named_reference_fields": [
+        "Clgi",
+        "Clri",
+        "Cnti",
+        "Cwea"
+      ],
+      "engine_named_reference_fields": [],
+      "engine_fields_named": 1,
+      "engine_conflicts": [],
+      "expected_min_named": 3,
+      "table_type": 2,
+      "row_count": 56293,
+      "row_count_expected": 56293,
+      "source": "reports/t12_field_names.json + scratch/t14/out/stage2_map.json + fresh t16 reader walk",
+      "note": "Gate requires fresh t16 mapping; inherited E55 names alone do not pass."
+    },
+    "weather": {
+      "entity": "weather",
+      "status": "fail",
+      "expected_l3_fields": 89,
+      "schema_target_fields_found": 89,
+      "available_baseline_artifacts": [],
+      "codes_with_any_t12_instance": 7,
+      "sample_codes_with_instances": [
+        "wnam",
+        "w0sd",
+        "w0dn",
+        "w2sd",
+        "w2dn",
+        "w3sd",
+        "w3dn"
+      ],
+      "failure": "E27 89-field offset artifact is absent from this workspace; seasonal 4CCs are not enough to infer row offsets.",
+      "source": "scratch/t05/schema_inventory.json, scratch/t12/out/codes_full.json, workspace artifact check"
+    },
+    "comp": {
+      "entity": "comp",
+      "status": "fail",
+      "baseline_status": "pass",
+      "expected_fields": 18,
+      "rechecked_fields": 18,
+      "matched_fields": 18,
+      "engine_reproduced_fields": 0,
+      "engine_matched_codes": [],
+      "engine_fields_named": 0,
+      "engine_conflicts": [
+        {
+          "field": "duni",
+          "reason": "duplicate_schema_code",
+          "candidate_count": 0,
+          "candidates": []
+        },
+        {
+          "field": "duni",
+          "reason": "duplicate_schema_code",
+          "candidate_count": 0,
+          "candidates": []
+        },
+        {
+          "field": "RsL0",
+          "reason": "duplicate_schema_code",
+          "candidate_count": 0,
+          "candidates": []
+        },
+        {
+          "field": "RsL0",
+          "reason": "duplicate_schema_code",
+          "candidate_count": 0,
+          "candidates": []
+        },
+        {
+          "field": "COPc",
+          "reason": "duplicate_schema_code",
+          "candidate_count": 0,
+          "candidates": []
+        },
+        {
+          "field": "COPc",
+          "reason": "duplicate_schema_code",
+          "candidate_count": 0,
+          "candidates": []
+        },
+        {
+          "field": "CTty",
+          "reason": "fresh_walk_conflicts_with_frozen_golden",
+          "expected": {
+            "offset": 18,
+            "width": 1
+          },
+          "observed": {
+            "offset": 6,
+            "width": 1,
+            "inst_off": "0xeb711a"
+          }
+        }
+      ],
+      "failures": [],
+      "fields": [
+        {
+          "field": "cfcl",
+          "row_offset": 3,
+          "width": 2,
+          "object_offset": 288,
+          "inst_off": "0x4330d19",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "cbcl",
+          "row_offset": 5,
+          "width": 2,
+          "object_offset": 292,
+          "inst_off": "0x4330d5e",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "ctcl",
+          "row_offset": 7,
+          "width": 2,
+          "object_offset": 296,
+          "inst_off": "0x4330da4",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "levl",
+          "row_offset": 15,
+          "width": 1,
+          "object_offset": 418,
+          "inst_off": "0xeb70ab",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "CTty",
+          "row_offset": 18,
+          "width": 1,
+          "object_offset": 421,
+          "inst_off": "0xeb711a",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "cmnl",
+          "row_offset": 76,
+          "width": 2,
+          "object_offset": 340,
+          "inst_off": "0xeb7a74",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "cmnw",
+          "row_offset": 78,
+          "width": 2,
+          "object_offset": 342,
+          "inst_off": "0xeb7a9a",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "cmxl",
+          "row_offset": 80,
+          "width": 2,
+          "object_offset": 344,
+          "inst_off": "0xeb7ac2",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "cmxw",
+          "row_offset": 82,
+          "width": 2,
+          "object_offset": 346,
+          "inst_off": "0xeb7aea",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "cnor",
+          "row_offset": 84,
+          "width": 4,
+          "object_offset": 128,
+          "inst_off": "0xeb7bd0",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "csou",
+          "row_offset": 88,
+          "width": 4,
+          "object_offset": 136,
+          "inst_off": "0xeb7bf6",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "cwes",
+          "row_offset": 92,
+          "width": 4,
+          "object_offset": 144,
+          "inst_off": "0xeb7c19",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "ceas",
+          "row_offset": 96,
+          "width": 4,
+          "object_offset": 152,
+          "inst_off": "0xeb7c3c",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "wbcl",
+          "row_offset": 101,
+          "width": 2,
+          "object_offset": 332,
+          "inst_off": "0x3502604",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "wbst",
+          "row_offset": 103,
+          "width": 4,
+          "object_offset": 320,
+          "inst_off": "0x39dd7c8",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "wben",
+          "row_offset": 107,
+          "width": 4,
+          "object_offset": 324,
+          "inst_off": "0x39dd7c8",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "cuae",
+          "row_offset": 111,
+          "width": 1,
+          "object_offset": 247,
+          "inst_off": "0xeb7cf5",
+          "instruction_bytes_verified": true
+        },
+        {
+          "field": "csso",
+          "row_offset": 112,
+          "width": 1,
+          "object_offset": 248,
+          "inst_off": "0xeb7d18",
+          "instruction_bytes_verified": true
+        }
+      ],
+      "source": "reports/t01f_comp_row_offsets.json (E20 baseline) + editor.exe bytes + fresh t16 reader walk",
+      "note": "E20 baseline byte checks are separate from fresh t16 serializer-walk reproduction."
+    }
+  },
+  "entities": [
+    {
+      "entity": "city",
+      "fields_total": 15,
+      "fields_named": 7,
+      "fields_unnamed": 8,
+      "conflicts": 0,
+      "evidence_grade": "L3_inherited_and_t16_walk_not_closed",
+      "status": "partial_golden_gate_failed"
+    },
+    {
+      "entity": "comp",
+      "fields_total": 255,
+      "fields_named": 18,
+      "fields_unnamed": 237,
+      "conflicts": 0,
+      "evidence_grade": "L3_inherited_E20_and_t16_walk_not_closed",
+      "status": "partial_golden_gate_failed"
+    },
+    {
+      "entity": "weather",
+      "fields_total": 94,
+      "fields_named": 0,
+      "fields_unnamed": 94,
+      "conflicts": 0,
+      "evidence_grade": "none_E27_reference_missing",
+      "status": "partial_missing_E27_baseline"
+    },
+    {
+      "entity": "nation",
+      "fields_total": 346,
+      "fields_named": 7,
+      "fields_unnamed": 339,
+      "conflicts": 0,
+      "evidence_grade": "L3_inherited_t01g_and_t16_walk_not_closed",
+      "status": "partial_golden_gate_failed"
+    }
+  ],
+  "batch_gate": "blocked: all three goldens must pass before batch release"
+}
