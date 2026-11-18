@@ -1,0 +1,20 @@
+{
+  "status": "blocked_waiting_16",
+  "preconditions": [
+    {
+      "path": "scratch/t14/out/stage2_map.json",
+      "exists": true,
+      "actual_status": "complete",
+      "required": "complete_",
+      "pass": true
+    },
+    {
+      "path": "scratch/t16/out/ledger.json",
+      "exists": true,
+      "actual_status": "partial_golden_gate_failed",
+      "required": "complete_",
+      "pass": false
+    }
+  ],
+  "blocked_reason": "t16 ledger exists but does not satisfy the required complete_ status; no t17 merge or regression was run."
+}
