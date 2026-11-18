@@ -1,0 +1,35 @@
+{
+  "entity": "nation",
+  "entity_tag": "nati",
+  "fields_total": 441,
+  "top_level_fields": 346,
+  "nested_fields": 95,
+  "fields_named": 0,
+  "fields_unnamed": 441,
+  "offset_space": "dat_row",
+  "source_status": "complete_ledger_partial_coverage_g1_below_95pct",
+  "status": "complete_row_coordinate_conversion_with_unclosed_fields",
+  "conflicts": [],
+  "walk_summary": {
+    "classes_walked": 1,
+    "serializer_functions": 1,
+    "conditional_jump_count": 11,
+    "class_branches": [
+      {
+        "table_type": 10,
+        "class": "NATION",
+        "status": "ok",
+        "serializer_functions": 1,
+        "conditional_jump_count": 11
+      }
+    ]
+  },
+  "scope_note": "",
+  "storage": "sharded",
+  "shards": [
+    "fields_nati.part001.json",
+    "fields_nati.part002.json",
+    "fields_nati.part003.json"
+  ],
+  "shard_limit_fields": 200
+}
