@@ -4,7 +4,7 @@
 
 ## 前置条件
 
-`scratch/t14/out/stage2_map.json` 必须已存在(t14 交付)。先校验它 `"status"` 是 complete_,否则直接落盘 `"status":"blocked_waiting_t14"` 收工,不要自己抢跑 t14 的活。
+`scratch/t14/out/stage2_map.json` 必须已存在(t14 交付)。校验它顶层 `"status"` 是 `"complete"` 或 `"complete_"` 前缀(两种都算通过,t14 实际交付值为 `"complete"`),否则落盘 `"status":"blocked_waiting_t14"` 收工。通过后即可开工,不要抢跑 t14 的活。
 
 ## 一句话目标
 
