@@ -85,7 +85,11 @@ def render_md(cat):
     a("| type | 实体 | 状态 | 等级 | 来源 | 角色/证据摘要 |")
     a("|---:|---|---|---|---|---|")
     for r in cat["rows"]:
-        ev = (r.get("role", "") or (r["anchors"][0] if r["anchors"] else "") or r.get("note", ""))
+        ev = " / ".join(x for x in (
+            r.get("role", ""),
+            (r["anchors"][0] if r["anchors"] else ""),
+            r.get("note", ""),
+        ) if x)
         ev = str(ev).replace("|", "/").replace("\n", " ")[:88]
         a(f"| {r['table_type']} | `{r['entity']}` | {r['status']} | {r['level']} | {r['source']} | {ev} |")
     a("")

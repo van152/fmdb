@@ -70,7 +70,9 @@ def main() -> int:
                  anchors=[], note="7 行与 continent(7) 相同但无字段码; 行数吻合只是候选, 不足以定案"),
         49: dict(entity="person", level="A", tier="subtable", role="人员任职/对阵履历",
                  anchors=["ajob=Job(df=1,person)", "otea=Opposition(df=1,person)", "plac=Type(df=1,person)"],
-                 note="792149 行; 3 个唯一码全属 person, 是典型履历子表; t11 投给 club 系投票污染, 已推翻"),
+                 note="792149 行; 3 个唯一码全属 person, 是典型履历子表; t11 投给 club 系投票污染, 已推翻"
+                      " [E58补注: t49=792149 > person主库658011(E25/E32封口,E58/t13e), 多20.4%; "
+                      "归属由df=1三码维持, 但'履历'语义与行数张力待解]"),
         50: dict(entity=None, level="negative", tier=None, role="零字段表",
                  anchors=[], note="45 行, 零字段; t11 投 club 无证据"),
         51: dict(entity=None, level="negative", tier=None, role="零字段表",

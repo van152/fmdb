@@ -1574,6 +1574,33 @@
     ]
    },
    "consequence": "阶段二主体收口: 45 表已归纳, 交付 reports/stage2_table_identity.{md,json}。剩余 11 negative + 3 candidate 为当前边界; 14 张不在 archive 的表保留 E24 负结果。阶段一(comp 18 L3/要求10)已达标, 阶段三不设全解线; 三阶段均无强制未完成线。"
+  },
+  {
+   "id": "E58",
+   "date": "2026-11-18 23:45",
+   "author": "commander(t13e devseek 基数清单验收 + t49 行数张力发现)",
+   "kind": "milestone+errata-minor",
+   "level": "L1(26 实体基数, 17high/7mid/2low)+L2(交叉复算)+L0(非计数锚点)",
+   "claim": "【devseek 第三次交付: 基数清单 26 条, 并抓出 t49 与主库的行数张力】t13e(devseek)在判定'零产出、不等'之后 30 分钟内真交付 baselines.json(24KB)+baselines.md(12KB)+build.py(可复跑), status=partial 但内容完整: 26 条实体基数带出处与交叉验证(award3545/city56293/club84259/comp7047/cont7/inju115/nati251/stad48413/weat334/lcrg2488), 17 high / 7 mid / 2 low, 0 数字冲突; 另附 34 未识别表、5 负身份表、5 个非计数锚点(六大洲0..5 / England=139 / parent row352 / Bernabéu81044 / city Cnti=139)。**关键交叉**: t13d 用的是过期 club 基数(3000-6000), t13e 正确给出 84259(E33/E37 双复算), 再次确认 E56 对 t22/t34 的裁决不受 t13d 失配影响。**新发现的行数张力**: person 主库 basic_people_db=658011(E25 u32 count+E32 独立解压走查, high), 但 E56 判为 person 任职履历子表的 t49=792149, 多 134138 行(20.4%)。这不推翻 t49 归属(ajob/otea/plac 三个 df=1 码是硬证据), 但'静态任职履历'语义与行数比例不自洽 —— otea=Opposition 更像比赛出场记录。t13e 自己把 t49 标 mid 并注'行边界闭合与 entity 名字不是同一层证据', 判断审慎。已在 adjudicate.py 源码加入 E58 补注(非手改 JSON, 避免重跑覆盖), 并让 stage2_report.py 把 note 带入汇总表。**工程教训**: 我曾手工给 JSON 加注后被 adjudicate.py 重跑冲掉 —— 可复跑脚本的产出不可手工修改, 注记必须写回源码。devseek 战绩更新为 3 次有效(t13d/t13e + 早期一次)/ 多次超时, '旁路+不卡主线'策略已连续两次拿到有效交叉产出。",
+   "evidence": {
+    "artifacts": [
+     "scratch/t13e/out/baselines.json+baselines.md+build.py",
+     "scratch/cmd/stage2_t13_recheck.json(devseek_t13e_baselines 节)",
+     "scratch/cmd/adjudicate.py(t49 note 源码补注)",
+     "reports/stage2_table_identity.{md,json}(重生成, note 带入)"
+    ],
+    "commander_verify": [
+     "26 条基数 reliability: high17/mid7/low2; source_conflicts=[]; baselines 全表可逐条查出处",
+     "club=84259 与 E33/E37 一致, 证 t13d 的 3000-6000 过期",
+     "person 主库 658011(E25/E32 high) vs t49 792149(mid) -> 差 20.4%, 已标注不推翻归属",
+     "3 个 name_conflicts: t18 city副名 vs RTTI db::DERBY(1567) / t24 team行边界open / t9 nation companion"
+    ],
+    "known_defects": [
+     "t49 语义(任职履历 vs 比赛出场)未定, 仅标注张力; 需数据侧看 otea 列分布才能裁决",
+     "t13e status=partial(任务书允许), 26 条非全部 79 张表; 34 unidentified 表仍无基数"
+    ]
+   },
+   "consequence": "阶段二交付更新: reports/stage2_table_identity.{md,json} 已把 t49 张力带入 note 列。devseek 连续两次(t13d/t13e)有效交付, 证明旁路任务投放方式成立。剩余边界: t49 语义待数据侧判; 34 unidentified 表无基数。"
   }
  ]
 }
