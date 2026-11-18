@@ -1492,6 +1492,33 @@
     ]
    },
    "consequence": "club 停在此处, 不再投 agent 追。阶段三若要继续, 起点是'定位 club 类自己的 dispatch 函数'而不是继续扩全局码表。平表成果(134/240, 0 违规)与 club 现状一并固化为正式交付物 reports/: 机读 json + 说明 md, 供后续接手。"
+  },
+  {
+   "id": "E55",
+   "date": "2026-11-18 22:20",
+   "author": "commander(t12 复核 + 交付物固化)",
+   "kind": "verify+milestone",
+   "level": "L1+L2(t19/t23 的数据侧判定)+L3(命名证据链保留)",
+   "claim": "【最终口径 132/240；t12 的 134 里有 2 槽该撤回；4 处跨实体撞车经查无一是错】复核动作三条。(1) 撤回：t12 把 t23（2 槽，client+server）命名为 SNsn，依据是『唯一完整单射分配』。但该表 row+0 在全部 278 行里恒为 0，而 SNsn 的 schema 类型是 string、reader 槽只有 1 字节 —— t11 已据数据侧证否过同一命名。单射唯一性不能推翻数据，故撤回 2 槽，口径由 134 改为 132/240。(2) 跨实体撞车核查：全表扫『同码同偏移被多个 type_id 认领』共 4 处 —— (Scap,60)/(Sscp,64)/(Sceb,68) 被 t19 与 t22 同时认领，以及 (divi,24) 被 t49 与 t58 认领。前三处不是错：t19 的 server 表 28 行，在 off16 上取值到 67,333、off20 到 32,462，正是容量量级，与 Scap（容量）/Sscp（坐席数）语义吻合；所以 t19 与 t22 是同一个类被两张表部分序列化，共享同一批属性码是应有之事。divi@24 在 t49/t58 都是 person 系表，同名同偏移同样成立。(3) 固化交付：新增 scripts/t12_catalog.py（带 --help/--selftest），把 240 槽连同证据地址、置信等级、schema 归属、复核撤回记录一起写成 reports/t12_field_names.json 与同名 .md，成对产出。台账对外口径统一为：240 槽中 132 槽已命名（55%），schema 违规 0，其余 108 槽是『当前证据不足』而非空字段。",
+   "evidence": {
+    "artifacts": [
+     "reports/t12_field_names.json(240 槽机读全表, 含 review_overrides)",
+     "reports/t12_field_names.md(人读版: 证据分级 + 逐实体覆盖 + 已命名全表 + 已知边界)",
+     "scripts/t12_catalog.py(--selftest 检查 slots==240 / named>=129 / 无 resolved 槽带 unresolved 置信)"
+    ],
+    "commander_verify": [
+     "t12 verify.py: instances=4278, 立即数/指令文本/分支 三类不一致均为 0; ScYK 2/2; injury 13/13; city 6/6; schema-illegal=0; t07 45/45",
+     "t23 数据复核: table_23 server 278 行, row+0 的 Counter = {0: 278}, 非零行数 0",
+     "t19 数据复核: table_19 server 28 行, off16 max 67333 / off20 max 32462 / off24 与 off28 全为 0xFFFFFFFF 哨兵",
+     "跨实体撞车扫描: 4 处, 明细见 claim, 无一处构成冲突",
+     "目录生成器 selftest PASS; 生成结果 named=132"
+    ],
+    "known_defects": [
+     "132 中含 11 个 chain_ambiguous 槽(stad 的 Spwd|SwIM、Scov 等保留多码未裁决), 它们是候选不是结论",
+     "t19 与 t22 共享类的判断只有数据量级支持, 未做类级 RTTI/构造函数核对"
+    ]
+   },
+   "consequence": "对外与后续接手统一使用 reports/t12_field_names.{json,md} 与 132/240 口径。t12 阶段收尾完成: 平表路线在 4CC 上已榨到尽头(剩余 108 槽里 39 槽方法不可达、其余为打包字节/schema 多义), club 路线按 E54 转向类作用域抽取。"
   }
  ]
 }
