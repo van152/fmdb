@@ -1,0 +1,209 @@
+{
+  "task": "t05b ordered schema-reader alignment fixtures",
+  "status": "FAIL",
+  "fixture_count": 5,
+  "pass_count": 0,
+  "fail_count": 5,
+  "blocked_count": 5,
+  "algorithm_unit_test": {
+    "status": "PASS",
+    "solution_count": 1,
+    "checks": [
+      "ordered transfer consumption",
+      "optional field omission",
+      "frame prefix/suffix",
+      "anchor offset",
+      "row-width closure",
+      "reference sample scoring"
+    ]
+  },
+  "fixtures": [
+    {
+      "fixture": "award",
+      "schema_field_count": 38,
+      "schema_scalar_count": 37,
+      "anchors_recovered_by_ordered_dp": 0,
+      "anchor_count": 2,
+      "frame_anchor_count": 2,
+      "frame_anchors_recovered": 2,
+      "row_width": 77,
+      "row_closure": {
+        "header": 14,
+        "rows": 3545,
+        "stride": 77,
+        "body_bytes": null,
+        "footer": 8,
+        "member_length": 272987,
+        "exact": true
+      },
+      "business_region": {
+        "prefix_width": 0,
+        "suffix_width": 13,
+        "available_bytes": 64,
+        "reader_width_sequence_available": false
+      },
+      "identity_frame_anchors_consistent": true,
+      "ordered_schema_alignment_feasible_from_anchors": true,
+      "schema_order_conflicts": [],
+      "type_width_conflicts": [],
+      "prompt_width_conflicts": [],
+      "reader_width_sequence_available": false,
+      "status": "FAIL",
+      "blocked_reason": "No complete per-field reader-width sequence is available in the fixture inputs.",
+      "limitation": "The row closure and frame anchors are checked separately; the ordered DP needs the actual per-field reader widths and cannot claim recovery from copied expected offsets."
+    },
+    {
+      "fixture": "city",
+      "schema_field_count": 15,
+      "schema_scalar_count": 15,
+      "anchors_recovered_by_ordered_dp": 0,
+      "anchor_count": 5,
+      "frame_anchor_count": 2,
+      "frame_anchors_recovered": 2,
+      "row_width": 43,
+      "row_closure": {
+        "header": 14,
+        "rows": 56293,
+        "stride": 43,
+        "body_bytes": null,
+        "footer": 8,
+        "member_length": 2420621,
+        "exact": true
+      },
+      "business_region": {
+        "prefix_width": 1,
+        "suffix_width": 13,
+        "available_bytes": 29,
+        "reader_width_sequence_available": false
+      },
+      "identity_frame_anchors_consistent": true,
+      "ordered_schema_alignment_feasible_from_anchors": false,
+      "schema_order_conflicts": [
+        {
+          "before": "Cnti",
+          "before_schema_index": 6,
+          "before_offset": 10,
+          "after": "Clat",
+          "after_schema_index": 11,
+          "after_offset": 1,
+          "reason": "business anchor offsets reverse schema field order"
+        }
+      ],
+      "type_width_conflicts": [],
+      "prompt_width_conflicts": [
+        {
+          "field": "Cnti",
+          "prompt_width": 1,
+          "supported_width": 4,
+          "evidence": "scratch/t02/city_reference.json: row sample has 83 00 00 00 at +10 and reader mov r8d,4"
+        }
+      ],
+      "reader_width_sequence_available": false,
+      "status": "FAIL",
+      "blocked_reason": "No complete per-field reader-width sequence is available in the fixture inputs.",
+      "limitation": "The row closure and frame anchors are checked separately; the ordered DP needs the actual per-field reader widths and cannot claim recovery from copied expected offsets."
+    },
+    {
+      "fixture": "stadium",
+      "schema_field_count": 60,
+      "schema_scalar_count": 58,
+      "anchors_recovered_by_ordered_dp": 0,
+      "anchor_count": 5,
+      "frame_anchor_count": 2,
+      "frame_anchors_recovered": 2,
+      "row_width": 38,
+      "row_closure": {
+        "header": 14,
+        "rows": 48413,
+        "stride": 38,
+        "body_bytes": null,
+        "footer": 8,
+        "member_length": 1839716,
+        "exact": true
+      },
+      "business_region": {
+        "prefix_width": 3,
+        "suffix_width": 13,
+        "available_bytes": 22,
+        "reader_width_sequence_available": false
+      },
+      "identity_frame_anchors_consistent": true,
+      "ordered_schema_alignment_feasible_from_anchors": true,
+      "schema_order_conflicts": [],
+      "type_width_conflicts": [],
+      "prompt_width_conflicts": [],
+      "reader_width_sequence_available": false,
+      "status": "FAIL",
+      "blocked_reason": "No complete per-field reader-width sequence is available in the fixture inputs.",
+      "limitation": "The row closure and frame anchors are checked separately; the ordered DP needs the actual per-field reader widths and cannot claim recovery from copied expected offsets."
+    },
+    {
+      "fixture": "injury",
+      "schema_field_count": 27,
+      "schema_scalar_count": 27,
+      "anchors_recovered_by_ordered_dp": 0,
+      "anchor_count": 2,
+      "frame_anchor_count": 2,
+      "frame_anchors_recovered": 2,
+      "row_width": 16,
+      "row_closure": {
+        "header": 14,
+        "rows": 115,
+        "stride": 16,
+        "body_bytes": null,
+        "footer": 8,
+        "member_length": 1862,
+        "exact": true
+      },
+      "business_region": {
+        "prefix_width": 0,
+        "suffix_width": 13,
+        "available_bytes": 3,
+        "reader_width_sequence_available": false
+      },
+      "identity_frame_anchors_consistent": true,
+      "ordered_schema_alignment_feasible_from_anchors": true,
+      "schema_order_conflicts": [],
+      "type_width_conflicts": [],
+      "prompt_width_conflicts": [],
+      "reader_width_sequence_available": false,
+      "status": "FAIL",
+      "blocked_reason": "No complete per-field reader-width sequence is available in the fixture inputs.",
+      "limitation": "The row closure and frame anchors are checked separately; the ordered DP needs the actual per-field reader widths and cannot claim recovery from copied expected offsets."
+    },
+    {
+      "fixture": "language",
+      "schema_field_count": 12,
+      "schema_scalar_count": 12,
+      "anchors_recovered_by_ordered_dp": 0,
+      "anchor_count": 1,
+      "frame_anchor_count": 1,
+      "frame_anchors_recovered": 1,
+      "row_width": null,
+      "row_closure": {
+        "header": 14,
+        "rows": 126,
+        "stride": null,
+        "body_bytes": 5226,
+        "footer": 8,
+        "member_length": 5248,
+        "exact": true
+      },
+      "business_region": {
+        "prefix_width": 0,
+        "suffix_width": 30,
+        "available_bytes": null,
+        "reader_width_sequence_available": false
+      },
+      "identity_frame_anchors_consistent": true,
+      "ordered_schema_alignment_feasible_from_anchors": true,
+      "schema_order_conflicts": [],
+      "type_width_conflicts": [],
+      "prompt_width_conflicts": [],
+      "reader_width_sequence_available": false,
+      "status": "FAIL",
+      "blocked_reason": "No complete per-field reader-width sequence is available in the fixture inputs.",
+      "limitation": "The row closure and frame anchors are checked separately; the ordered DP needs the actual per-field reader widths and cannot claim recovery from copied expected offsets."
+    }
+  ]
+}
