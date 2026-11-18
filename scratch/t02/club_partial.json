@@ -1,0 +1,130 @@
+{
+ "type_id": 3,
+ "entity": "club",
+ "rtti": [
+  ".?AVCLUB@db@@",
+  ".?AVLEAGUE_BODY_CLUB@db@@"
+ ],
+ "status": "partial",
+ "source": "commander hand-decode",
+ "row_framework": {
+  "archive": "client_db.dat",
+  "member": "client_db/table_3.dat",
+  "count": 84259,
+  "payload_len": 6932082,
+  "variable": true,
+  "verified_rows": 69705,
+  "verified_bytes": 5704657,
+  "note": "前 69,705 行(82.7%)结构一致并逐行验证;第 69,705 行起出现字段宽度变体(第5字段 4B 而非 5B),对应第二类 LEAGUE_BODY_CLUB"
+ },
+ "row_offset_map": [
+  {
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": "?",
+   "reader": "0xe5a7dc lea rdx,[r14+0xd8]",
+   "semantic": "db_id (u32), e.g. 126"
+  },
+  {
+   "idx": 1,
+   "row_off": 4,
+   "width": 4,
+   "object_off": "?",
+   "semantic": "parent_ref (u32, FFFFFFFF = none)"
+  },
+  {
+   "idx": 2,
+   "row_off": 8,
+   "width": 4,
+   "object_off": "?",
+   "semantic": "db_id repeat #1"
+  },
+  {
+   "idx": 3,
+   "row_off": 12,
+   "width": 4,
+   "object_off": "?",
+   "semantic": "db_id repeat #2"
+  },
+  {
+   "idx": 4,
+   "row_off": 16,
+   "width": "4-or-5",
+   "object_off": "?",
+   "reader": "0xe5a811 mov r8d,4",
+   "semantic": "VARIABLE-WIDTH id block: 5B (u32 + trailing 00) in main branch, 4B in second branch (E23 mixed 的两个类)"
+  },
+  {
+   "idx": 5,
+   "row_off": "21 or 20",
+   "width": 4,
+   "object_off": "?",
+   "semantic": "group code (512 / 0)"
+  },
+  {
+   "idx": 6,
+   "width": 1,
+   "semantic": "flag1"
+  },
+  {
+   "idx": 7,
+   "width": "4+var",
+   "object_off": "?",
+   "semantic": "full name (u32 len + UTF-8)"
+  },
+  {
+   "idx": 8,
+   "width": "4+var",
+   "object_off": "?",
+   "semantic": "short name (u32 len + UTF-8)"
+  },
+  {
+   "idx": 9,
+   "width": 3,
+   "semantic": "flag2 block"
+  },
+  {
+   "idx": 10,
+   "width": 12,
+   "semantic": "identity ordinal|ID|重复ID (69,705/69,705 verified)"
+  },
+  {
+   "idx": 11,
+   "width": 1,
+   "semantic": "boundary marker 0x00"
+  }
+ ],
+ "identity_block": {
+  "verified": "69705/69705 ordinal==row_index, ID pair equal"
+ },
+ "samples": [
+  {
+   "row": 0,
+   "db_id": 126,
+   "full": "Klubi i Futbollit Albpetrol Patos",
+   "short": "KF Albpetrol"
+  },
+  {
+   "row": 1,
+   "db_id": 126,
+   "full": "Klubi i Futbollit Apolonia Fier",
+   "short": "KF Apolonia"
+  },
+  {
+   "row": 2,
+   "db_id": 126,
+   "full": "Klubi Sportiv Besa Kavajë",
+   "short": "KS Besa"
+  }
+ ],
+ "unclosed": [
+  "第 5 字段的可变宽度规则(何时 5B/4B)",
+  "14,554 行变体的完整结构",
+  "全部 433 个 schema 码与行偏移的对应(grepper 侧未做)",
+  "obj 偏移(reader 显示 +0xd8 起但行内对应关系待逐条核)"
+ ],
+ "artifacts": [
+  "scripts/t02_club.py (可复现解析器, --selftest 通过)"
+ ]
+}

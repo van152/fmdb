@@ -1,0 +1,121 @@
+{
+ "type_id": 0,
+ "entity": "awar",
+ "rtti": ".?AVAWARD@db@@",
+ "status": "complete",
+ "source": "commander hand-decode(devseek fw0 框架交叉:count 3545, stride 77, closure 精确)",
+ "row_framework": {
+  "archive": "client_db.dat & server_db.dat(两者 272,987B)",
+  "member": "client_db/table_0.dat",
+  "count": 3545,
+  "stride": 77,
+  "row_start": 14,
+  "payload_len": 272987,
+  "closure": "14 + 3545*77 + 8 = 272,987 (exact)"
+ },
+ "row_offset_map": [
+  {
+   "idx": 0,
+   "row_off": 0,
+   "width": 2,
+   "object_off": "0x7e(部分)",
+   "reader": "0xe483c5 lea rdx,[rcx+0x7e] / mov r8d,1 | 0xe483e5 lea rdx,[rbx+0x7f] / mov r8d,1",
+   "semantic": "2 个 1B flag(reader 分两次读 +0x7e/+0x7f;行内 row+0/+1)"
+  },
+  {
+   "idx": 1,
+   "row_off": 2,
+   "width": 1,
+   "object_off": "0x80",
+   "reader": "0xe48405 lea rdx,[rbx+0x80] / 0xe4840f mov r8d,1",
+   "semantic": "1B enum(0x01/0x07 观测值)"
+  },
+  {
+   "idx": 2,
+   "row_off": 3,
+   "width": 12,
+   "object_off": "0x18",
+   "reader": "0xe48425 lea rcx,[rbx+0x18] / 0xe4842c call 0x150ec50",
+   "semantic": "colour block 12B(row0: 01ff7f0000ff7f0000000001 = marker+fg+bg+pad)"
+  },
+  {
+   "idx": 3,
+   "row_off": 15,
+   "width": 2,
+   "object_off": "0x7c",
+   "reader": "0xe4843c lea rdx,[rbx+0x7c] / 0xe48443 mov r8d,2",
+   "semantic": "u16(0x0014/0x0011)"
+  },
+  {
+   "idx": 4,
+   "row_off": 17,
+   "width": 1,
+   "object_off": "0x81",
+   "reader": "0xe4847f lea rdx,[rbx+0x81] / mov r8d,1",
+   "semantic": "1B(0x25 constant)"
+  },
+  {
+   "idx": 5,
+   "row_off": 18,
+   "width": 1,
+   "object_off": "0x82",
+   "reader": "0xe48489 lea rdx,[rbx+0x82] / mov r8d,1",
+   "semantic": "1B(0x06/0x05/0x05)"
+  },
+  {
+   "idx": 6,
+   "row_off": 19,
+   "width": 45,
+   "object_off": "other",
+   "reader": "reader 后续指令(见 t01h width_instructions,共 115 条)",
+   "semantic": "剩余字段区(含日期、引用、名称等;未逐条完成)"
+  },
+  {
+   "idx": 7,
+   "row_off": 64,
+   "width": 12,
+   "object_off": null,
+   "reader": null,
+   "semantic": "identity ordinal|ID|重复ID (3545/3545 verified)"
+  },
+  {
+   "idx": 8,
+   "row_off": 76,
+   "width": 1,
+   "object_off": null,
+   "reader": null,
+   "semantic": "boundary marker 0x00"
+  }
+ ],
+ "identity_block": {
+  "row_off": "64..75",
+  "verified": "3545/3545 ordinal==row_index, ID pair equal (e.g. row0 ID=102406)"
+ },
+ "samples": [
+  {
+   "row": 0,
+   "colour": "01 ff7f 0000 ff7f 0000 0000 01",
+   "u16_15": 20,
+   "bytes_17_18": "25 06"
+  },
+  {
+   "row": 1,
+   "colour": "01 ff7f c96e ff7f 0000 0000 01",
+   "u16_15": 20,
+   "bytes_17_18": "25 05"
+  },
+  {
+   "row": 2,
+   "colour": "01 ff7f c96e ff7f 0000 0000 01",
+   "u16_15": 17,
+   "bytes_17_18": "25 05"
+  }
+ ],
+ "verified_fields": 6,
+ "total_row_bytes": 77,
+ "unclosed": [
+  "row+19..63 的 45B 字段区(reader 有 115 条宽度指令,未逐条走完)",
+  "各字段的业务语义(需 getter 4CC 对齐)"
+ ],
+ "note": "devseek fw0 给出 stride 77/count 3545/closure 精确,与手解完全一致;前 6 个字段已用 reader 指令逐条对齐"
+}
