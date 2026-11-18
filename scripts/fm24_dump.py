@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import pathlib
 import runpy
 import struct
@@ -28,8 +29,11 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 UPSTREAM = pathlib.Path(r"D:\tmp2b\fm24")
+# 本地镜像优先(scratch/data,由司令部一次性拷贝),未设置则回落 Z: 游戏库。
+# 用法: FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I ...
 DB_DIR = pathlib.Path(
-    r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm"
+    os.environ.get("FM24_DB_DIR")
+    or r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm"
 )
 MAGIC = bytes.fromhex("28b52ffd")
 READER_VERIFY = ROOT / "scratch/t01/inbox/t01k/verify.py"

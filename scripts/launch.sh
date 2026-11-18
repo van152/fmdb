@@ -18,7 +18,8 @@ esac
 
 for i in $(seq 1 "$MAX"); do
   echo "=== attempt $i/$MAX $(date) provider=$PROVIDER model=$MODEL ===" >> "$LOG"; : > "$ATT"
-  timeout "$TMO" pi --provider "$PROVIDER" --model "$MODEL" $EXTRA --approve -p \
+  # -k 30: 超时后 SIGTERM 再给 30s,仍不退就 SIGKILL(node 子进程会无视 SIGTERM 僵死,t13e 首跑实证)
+  timeout -k 30 "$TMO" pi --provider "$PROVIDER" --model "$MODEL" $EXTRA --approve -p \
     -n "$TASK" --session-dir scratch/t02/pi-sessions --session-id "${TASK}-${PROVIDER}" \
     -p "$(cat "$PROMPT")
 
@@ -30,15 +31,15 @@ for i in $(seq 1 "$MAX"); do
 - 完成后打印交付清单。" \
     >> "$ATT" 2>&1
   RC=$?; cat "$ATT" >> "$LOG"
-  # 成功判据(宽):status 不再是 in_progress(允许 complete_*/partial_* 等带限定词的诚实标注)
-  # 或 outbox 有 ≥2 个实质文件且含 status 字段 —— 模型常把结论写成 status:"complete_<caveat>",
-  # 旧判据只认 complete/partial 精确字符串,会把已交付的任务误判为失败(t02p-pw 就是这个 bug)。
-  if grep -rqE '"status"[[:space:]]*:[[:space:]]*"(complete|partial)[^"]*"|DONE type=' "$OUTBOX" 2>/dev/null; then
+  # 成功判据(严格):status 明确不是"进行中/骨架"
+  if grep -rqE '"status"[[:space:]]*:[[:space:]]*"(complete|partial|recovered|done|negative|blocked)[^"]*"|DONE type=' "$OUTBOX" 2>/dev/null; then
     echo "=== DONE $TASK attempt=$i rc=$RC $(date) ===" >> "$LOG"; exit 0
   fi
-  NF=$(find "$OUTBOX" -maxdepth 1 -type f -size +1k 2>/dev/null | wc -l)
-  if [ "$NF" -ge 2 ] && grep -rq '"status"' "$OUTBOX" 2>/dev/null; then
-    echo "=== DONE(heuristic: $NF substantial files) $TASK attempt=$i rc=$RC $(date) ===" >> "$LOG"; exit 0
+  # 启发式(收紧):只数 json/md(排除 .bin/.npy 等大二进制),且不能残留 in_progress/pending/skeleton
+  NF=$(find "$OUTBOX" -maxdepth 2 -type f \( -name '*.json' -o -name '*.md' \) -size +1k 2>/dev/null | wc -l)
+  if [ "$NF" -ge 2 ] && grep -rq '"status"' "$OUTBOX" 2>/dev/null \
+     && ! grep -rqE '"status"[[:space:]]*:[[:space:]]*"(in_progress|pending|skeleton)' "$OUTBOX" 2>/dev/null; then
+    echo "=== DONE(heuristic: $NF json/md files) $TASK attempt=$i rc=$RC $(date) ===" >> "$LOG"; exit 0
   fi
   echo "=== attempt $i rc=$RC $(date) ===" >> "$LOG"
   if grep -qiE "upstream_saturated|temporarily unavailable|503|throttling|upstream model failed|rate.limit|overloaded" "$ATT"; then
