@@ -75,7 +75,7 @@ callee 追到(深度 2):32→STARTING_FUTURE_TRANSFER(callee VA 0x140f734b0)、3
 - 类名 → entity_tag:去 STARTING_ 前缀、与 schema XML tag 对齐(已验证 8 例);CLUB 家族→club、PERSON 家族→pers;拿不准标 candidate,列出证据与反证。
 - 数量接近本身不是锚(t13 报告里 6 条拒绝理由继续有效);E42 值域法边界继续有效。
 - 6 张 negative 裁决预期:26=COMP_HISTORY_RECORD、32=STARTING_FUTURE_TRANSFER、38=STARTING_BAN、39=STARTING_AVERAGE_POINTS 应能升 resolved(D 锚 + t15 的 C 类佐证可选);29/36 若深追仍无类名,保留 negative 并写清追到哪一层。**不许把 candidate 写成 resolved。**
-- E56 的 12 张候选表(22,30,31,34,37,42,43,46,49,50,51,58)若 D 锚与 `scratch/t01/stage2_candidate_adjudication.json` 一致,升级为 resolved 并注明双源;冲突则保守保留 candidate。
+- E56 的 12 张候选表(22,30,31,34,37,42,43,46,49,50,51,58)若 D 锚与 `scratch/cmd/stage2_candidate_adjudication.json` 一致,升级为 resolved 并注明双源;冲突则保守保留 candidate。已知三处精确吻合可直接引用:t30 E56"player伤病" ↔ STARTING_INJURY;t37 E56"club战绩" ↔ STARTING_TEAM_LEAGUE_HISTORY;t49 E56"person履历" ↔ STARTING_PERSON_HISTORY。注意 E59(23:55 撤回 t30/t49 循环论证交叉项):t30/t49 尚无独立数据侧确认,D 锚 + E56 A 级(df=1 唯一码)双源即可定案,不需要数据侧。
 
 ## 纪律
 
