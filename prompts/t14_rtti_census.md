@@ -81,6 +81,7 @@ callee 追到(深度 2):32→STARTING_FUTURE_TRANSFER(callee VA 0x140f734b0)、3
 
 - **只写** `scratch/t14/out/`;只读调用 scripts/ 与 scratch/t05..t13。**允许新增** `scripts/t14_*.py`(带 --help/--selftest,退出码 0/1/2),不许改任何既有脚本。
 - 不联网、不启动游戏/编辑器/IDA。editor.exe/fm.exe 只读。
+- **大文件分批落盘**:census.json/stage2_map.json 若超 50KB,按表分片(`census_<NN>.json`)+ 顶层索引;单次工具写盘 ≤400 行;exe 反汇编输出只许脚本抽样,不许大段贴进对话。
 - 40 分钟内做不完就分批落盘,`"status":"partial_<限定词>"`,宁可 partial 不要烂尾。
 
 ## 交付(写 scratch/t14/out/)

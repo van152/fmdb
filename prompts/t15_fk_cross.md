@@ -53,6 +53,7 @@ py -V:3.12 -I -B scripts/fm24_dump.py --archive server --table 26 --csv scratch/
 
 - 只写 `scratch/t15/out/`;其他目录只读;不联网、不启动游戏/编辑器。
 - py -V:3.12 -I;分析脚本放 `scratch/t15/out/`(须 --help/--selftest,退出码 0/1/2)。
+- **输出预算纪律(模型 output 上限 64K)**:单次工具写盘 ≤300 行;`fk.json` 若会超 50KB,按表拆成 `fk_<NN>.json` 分片,顶层只留汇总索引;CSV/日志**只许脚本分析,不许 cat 进对话**(250K 输入够宽裕,但没必要烧)。
 - 每张表 dump 限时;卡住就跳过并记录。整体 25 分钟做不完就落盘标 `"status":"partial"`。
 
 ## 交付(scratch/t15/out/)
