@@ -1382,6 +1382,32 @@
     ]
    },
    "consequence": "基线正式改为 129（0 违规）。t12 已按此发射：形态完整抽取（read/ref_ptr/write/path_descend/remote 五类），目标 club ≥420/483、平表 ≥129 且目标 ≥150、违规仍为 0，并给 11 个小表加『schema 非通用字段数 ∈ [槽数, 槽数×3]』的硬约束。"
+  },
+  {
+   "id": "E51",
+   "date": "2026-11-18 21:40",
+   "author": "commander(t09 委托 devseek 两次均失败, 指挥官自做数据侧验证)",
+   "kind": "verify+negative",
+   "level": "L2(.dat 真实列数据, 全量 56,293 / 48,413 / 115 / 2,488 行)",
+   "claim": "【数据侧验证: city 坐标 100% 复现, injury 五个强特征全过, stad 四个尺寸字段站不住】t09 委托 devseek 两次尝试均失败(一次 mid-stream 失败、一次 45 分钟超时零产出), 故由指挥官直接做。方法: 用 scripts/fm24_dump.py 全量导出并按 row_off 切列, 不依赖任何命名结果。(1) **city Clat/Clon 完全通过**: row+1 起的两个 f32 在 56,293 行里 100% 落在 [-90,90]×[-180,180], 实测 lat[-54.8, 78.2] / lon[-180.0, 179.6], 与 E30/E42 的人工结论逐位吻合 —— 同时证明 row_off 是相对 raw_hex 起点、基址为 0。(2) **injury 强特征全过**: Irec@row+8 严格 {0:70, 1:45}; Icdp@row+25 严格 {255:113, 50:2}; icla@row+0 取值 1–13 共 11 个; Imnd@row+3 值域 1–180、Iexd@row+5 值域 3–290, 与 E40 声明的区间一致。但 **Iexd 的语义被数据否定**: 若 Iexd 是'在 Imnd 之上追加的天数', 应有 Imnd<=Iexd, 实测仅 96/115 (83.5%), 反例 (Imnd=170, Iexd=20) —— 名字来自 4CC 无误, 但'extra days'这一解释不成立, 需改述为与最小天数独立的另一个天数。(3) **stad 四个尺寸字段未被数据支持**: Smnw@row+13 恒等于 1、Smxl@row+15 恒等于 1900、Smxw@row+17 取值 0–65535 且 24,437 个不同值; Smnl<=Smxl 48413/48413 (100%) 但 Smnw<=Smxw 仅 32960/48413 (68.1%); 更关键的是**全行 37 个切法里没有任何一列的取值落在足球场米制区间**(80–130 或 40–90), 所以要么这四个名字对应的不是球场尺寸, 要么这四个槽在行内的位置需要重判。(4) **lcrg Lpop 存疑但不判错**: row+17/w4 取值几乎全是 256 的倍数(0 有 2126 行, 另有 256 / 25600 / 8,323,072), 不像人口; 但 lcrg 是变长表, 导出基址可能与定长表不同, 故只标记 inconclusive。",
+   "evidence": {
+    "artifacts": [
+     "scratch/cmd/t2s.csv(56,293 行) / t21c.csv(48,413) / t6s.csv(115) / t47c.csv(2,488)"
+    ],
+    "commander_verify": [
+     "city: base0 f32 对 56293/56293 在范围内, lat[-54.8,78.2] lon[-180.0,179.6] —— 与 E42 人工值一致",
+     "injury: Counter(Irec)={0:70,1:45}; Counter(Icdp)={255:113,50:2}; icla distinct=11 range 1-13",
+     "injury: Imnd range 1-180, Iexd range 3-290; Imnd<=Iexd 96/115, 反例 (170,20)",
+     "stad: Smnw 恒 1; Smxl 恒 1900; Smxw min0 max65535 distinct 24437; Smnw<=Smxw 68.1%",
+     "stad: 全行扫描 80-130 / 40-90 区间占比 >50% 的列数 = 0",
+     "lcrg: Lpop@17 max 8323072 (=0x7F0000), 2126 行为 0, 大量 256 倍数"
+    ],
+    "known_defects": [
+     "未做 base 偏移的穷举求解(仅验了 base0 与 base13 两种), stad 的基址歧义未闭合",
+     "lcrg 变长表的导出基址未核实, Lpop 的存疑无法排除导出偏移问题"
+    ]
+   },
+   "consequence": "命名台账需区分'名字(from 4CC)'与'语义解释(from 数据)'两层: injury 的 Iexd 解释要改写, stad 的 Smnl/Smnw/Smxl/Smxw 四个槽标 data-unverified 并列入待重判, lcrg 的 Lpop 标 inconclusive。这些不改变 4CC 映射本身的可信度, 但会改变对外表述的措辞。t12 的验收不因此放宽。"
   }
  ]
 }
