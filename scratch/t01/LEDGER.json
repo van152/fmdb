@@ -1519,6 +1519,31 @@
     ]
    },
    "consequence": "对外与后续接手统一使用 reports/t12_field_names.{json,md} 与 132/240 口径。t12 阶段收尾完成: 平表路线在 4CC 上已榨到尽头(剩余 108 槽里 39 槽方法不可达、其余为打包字节/schema 多义), club 路线按 E54 转向类作用域抽取。"
+  },
+  {
+   "id": "E56",
+   "date": "2026-11-18 23:14",
+   "author": "commander(阶段二 12 张已有候选表的锚点裁决)",
+   "kind": "milestone+negative",
+   "level": "L3-static(df=1 唯一码)+L1(行数与独立基数)+L2(字段语义)",
+   "claim": "【阶段二: 12 张已有候选表裁决完成, 4 resolved / 3 candidate / 5 negative, 6 张推翻投票】按'投票只排序、独立锚点才裁决'的原则, 对 t11 已给候选的 12 张 archive 表逐张判定。A 类锚点 = 4CC 码在 schema 中 df=1 且语义自洽; B 类 = 行数/语义组合; C 类单独不定案。结果: t22(club 球场迁建, Salt/Scam/Scpm/Slhm 四个 df=1 码)、t30(player 伤病状态, futu/inju/pret/seve 四个 df=1 码)、t37(club 战绩, draw/gfor/gaga/poin/wins 五个 df=1 码, 465712 行为俱乐部×赛事)、t49(person 任职履历, ajob/otea/plac 三个 df=1 码, 792149 行) 四张 resolved; t34(club 赛事史)与 t43(club 转会分期)只有 B 类标 candidate; t58 只有跨表码标 candidate; t31/t42/t46/t50/t51 五张**零命名字段、无任何 A 类证据**, t11 把它们投给 club/nation 纯属投票, 全部推翻并标 negative。**关键纠错**: t49 的 t11 投票最终版已是 person, 但我早期看到的是中间版本(club); 以最终 schema_map 为准。另一个方法论确认: t9 与 t10 都是 nati(251 行), 证明同一实体可有多张表, 故 t19 与 t22 共享 S 码不构成冲突。裁决过程发现 t34 的 6 个码全是 club+nation 共有(df=2), 原本标 A 级不自洽, 已降为 B/candidate —— 自检加入'A 级必须有 df=1 码'的硬断言。",
+   "evidence": {
+    "artifacts": [
+     "scratch/cmd/stage2_candidate_adjudication.json",
+     "scratch/cmd/adjudicate.py(可复跑, 含自检)"
+    ],
+    "commander_verify": [
+     "12 张行数: t22=449 t30=72473 t31=37283 t34=7115 t37=465712 t42=17721 t43=535 t46=7 t49=792149 t50=45 t51=59 t58=8",
+     "已定 21 表的基数参照: club=84259, city=56293, nati=251(两表), stad=48413, comp=7047, inju=115, lcrg=2488, cont=7",
+     "A 级四表的 df=1 码逐条可查: t22 12个 / t30 4个 / t37 8个 / t49 3个",
+     "自检: 12 行全覆盖 + 'A 级必须有 df1_codes' 断言 PASS"
+    ],
+    "known_defects": [
+     "t31/t42/t46/t50/t51 标 negative 是'当前零证据', 不等于这些表没有实体身份; 仍需 t13 的独立锚点路线",
+     "B 类语义锚带主观成分(t34/t43), 需 t13d 的数据侧诊断或后续读器证据补强"
+    ]
+   },
+   "consequence": "阶段二 12 张已有候选表收敛为 4 resolved / 3 candidate / 5 negative。剩余主线是 luna 的 t13(10 张空白表找锚点)与 devseek 的 t13d/t13e 旁路交叉检查。"
   }
  ]
 }
