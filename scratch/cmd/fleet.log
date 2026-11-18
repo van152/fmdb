@@ -1,0 +1,46 @@
+[fleet 11-19 00:14:44] fleet start; deadline 09:00; now 00:14
+[fleet 11-19 00:14:44] L1 start t14 (luna)
+[fleet 11-19 00:14:44] D1 start t15 (devseek)
+[fleet 11-19 00:45:01] L1 t14 delivered -> commit
+[fleet 11-19 00:45:01] L1 t14 commit skipped
+[fleet 11-19 00:45:01] L1 start t16 (luna)
+[fleet 11-19 00:45:36] L1 t16 FAILED/incomplete - lane stops
+[fleet 11-19 01:23:06] D1 t15 FAILED/incomplete
+[fleet 11-19 01:23:06] D1 start t15b (devseek)
+[fleet 11-19 02:20:03] D1 t15b delivered
+[fleet 11-19 02:20:03] D1 end
+[fleet 11-19 02:20:04] fleet lanes finished: luna=1 devseek=0 at 02:20:04
+[wave2 11-19 02:22:21] wave2 start; deadline 09:00; now 02:22
+[wave2 11-19 02:22:21] L2 start t16 (luna)
+[wave2 11-19 02:22:21] D2 start t15c (devseek)
+[wave2 11-19 02:54:30] D2 t15c delivered -> commit
+[wave2 11-19 02:54:31] D2 end
+[wave2 11-19 02:54:49] L2 t16 delivered -> commit
+[wave2 11-19 02:54:50] L2 start t17 (luna)
+[wave2 11-19 02:55:48] L2 t17 delivered
+[wave2 11-19 02:55:48] L2 end
+[wave2 11-19 02:55:49] wave2 lanes finished: luna=0 devseek=0 at 02:55:48
+[wave3 11-19 02:58:40] wave3 start; deadline 09:00; now 02:58
+[wave3 11-19 02:58:40] L3 start t17c (luna) — 回归套件优先
+[wave3 11-19 02:58:40] D3 start t15d (devseek)
+[wave3 11-19 03:11:18] L3 t17c delivered
+[wave3 11-19 03:11:18] L3 start t16b (luna)
+[wave3 11-19 03:35:46] L3 t16b delivered
+[wave3 11-19 03:35:46] L3 end
+[wave3 11-19 03:48:57] D3 t15d FAILED/incomplete
+[wave3 11-19 03:48:57] D3 end
+[wave3 11-19 03:48:57] wave3 lanes finished: luna=0 devseek=0 at 03:48:57
+[wave4 11-19 03:53:53] wave4 start; deadline 09:00; now 03:53
+[wave4 11-19 03:53:53] L4 start t18 (luna) — 偏移桥
+[wave4 11-19 03:53:53] D4 start t15e (devseek)
+[wave4 11-19 04:02:50] D4 t15e delivered
+[wave4 11-19 04:02:50] D4 end
+[wave4 11-19 04:11:18] L4 t18 delivered
+[wave4 11-19 04:11:18] L4 end
+[wave4 11-19 04:11:19] wave4 lanes finished: luna=0 devseek=0 at 04:11:19
+[wave5 11-19 04:12:40] L5 start t19 (luna) — club/nation cursor
+[wave5 11-19 04:36:51] L5 t19 delivered
+[wave5 11-19 04:36:52] wave5 finished at 04:36:51
+[wave6 11-19 04:37:48] L6 start t20 (luna) — t22 子表 cursor
+[wave6 11-19 05:05:24] L6 t20 delivered
+[wave6 11-19 05:05:24] wave6 finished at 05:05:24
