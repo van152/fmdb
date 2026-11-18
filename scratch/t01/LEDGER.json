@@ -1030,6 +1030,38 @@
     ]
    },
    "consequence": "字段映射的技术路线被裁决清楚:任何以 schema XML 顺序做保序累加的方法必败(本轮实证),唯一可靠顺序来源是 editor.exe reader 指令流(E20 法)。这解释了 E35(自动映射器 39.7%)与 E36(club 1/433)的失败根因,不是工程不足而是前提错误。下一轮方向:改走 reader 指令流解 server 版小表(injury 22 字段最优试验田,因为它字段少、定长、boolean/enum 类型清晰、且有 108k 行身份已验)。"
+  },
+  {
+   "id": "E39",
+   "date": "2026-11-18 20:0x",
+   "author": "commander(自主:修 PE 映射基础设施 + 批量扫描 reader 宽度序列)",
+   "kind": "milestone",
+   "level": "L3-static(逐条 mov r8d,N + call [rax+0x28] 指令地址为证)+L1(closure 与既有已解字段双交叉验证)",
+   "claim": "【字段布局方法决定性验证 + 26 实体 240 条自动布局】确立 \"行内偏移 = reader 序列化指令流宽度累加\" 的可执行形式并通过三组独立交叉验证:(1) regi(type19) 自动布局 [4,4,4,4,4,4,4,4]=偏移 0,4,8,12,16,20,24,28 与 E29 人工解出的 9 字段逐一精确吻合,server 多出的 +1B@32 正是已记录的 boundary marker;(2) city(type2) 自动布局偏移 0,1,9,10,14,18,21,25,29 与 E30 人工解出的 12 个业务字段逐一吻合(唯一差异:reader 用一次 mov r8d,8 合并写 Clat+Clon 两个相邻 f32,故 9 槽 vs 10 字段);(3) injury(type6) client 3B/3 字段、server 27B/21 字段,且每个字段宽度与独立列画像的字节扩展规律吻合(2B 字段高字节恒 0、4B 字段高位按值域扩展)。产出 scratch/t05/layouts.json:26 个实体、240 条字段布局、覆盖 1,510,024 行数据,其中 19 个实体此前表身份与结构全空白(type22/30/31/34/37/42/43/46/49/50/51/58/60/61/62/63/64/66/70),含两张十万级大表 type49(792,149 行/9 字段)与 type37(465,712 行/14 字段)。所有布局满足硬闭包 sum(widths) == 业务区宽度 == stride-13。",
+   "evidence": {
+    "artifacts": [
+     "scripts/t05_pe.py(PE 地址映射:file_offset<->RVA<->VA + thunk 链解析 + code-like 判定)",
+     "scripts/t05_reader_widths.py(批量扫描 74 实体 reader 宽度序列 + 滑动窗口闭包搜索)",
+     "scripts/t05_layouts.py(布局导出器,带 assert 闭包)",
+     "scratch/t05/reader_widths.json / scratch/t05/layouts.json(240 条布局,含 reader body 地址与 thunk 链)"
+    ],
+    "commander_verify": [
+     "regi 交叉验证:自动布局 8 槽 [0,4,8,12,16,20,24,28] vs regi_reference.json 的 idx0-7 完全一致;server 第 9 槽 @32 w1 = 既有 \"boundary marker(always 0x00)\"",
+     "city 交叉验证:自动布局偏移序列 [0,1,9,10,14,18,21,25,29] vs city_reference.json 的 12 字段(0/1/5/9/10/14/18/21/25/29)逐一对上,差异仅在 idx1 宽度 8 而非 4+4",
+     "injury 交叉验证:server 21 槽累计 27B,逐槽宽度与该偏移列画像一致(如 @3 w2 因 off4 恒 0、@13 w4 因 off14/15/16 呈 u32 扩展)",
+     "闭包硬约束:导出器内 assert sum(widths)==business_width,26 实体 × 各 archive 全部通过"
+    ],
+    "engineering_fixes": [
+     "根因:editor.exe 段布局非标准(代码在 .rdata/.reloc 内),且 file_offset 与 RVA 各段偏移不同(.rdata delta=0xA00,.reloc delta=0x16B600)。此前直接 \"target - delta\" 猜测导致 46 个实体的 thunk 跟进全部失败(扫描出 0 个宽度点);改用 PE 段表精确换算后,命中实体从 4 个跃升到 26 个",
+     "另一处根因:disasm 的 base 必须传 VA 而非 file_offset,否则 capstone 解析出的 jmp 目标全部错位",
+     "census 只存前 8 条 width_instructions(width_count 报 49 但列表仅 8 条),故必须自行完整扫描,不能依赖 census 的截断列表"
+    ],
+    "open_items": [
+     "lcrg(type47) 自动布局给 31B/18 字段,而 E33 实测行长为 41+5k(业务区 28+5k);31 与 28 差 3,该 3B 归属待查(不阻塞主结论)",
+     "48 个实体仍未命中:其中 12 个无 slot19 reader 入口;其余多为 count-loop/mixed 模式,宽度序列含 backedge 或寄存器宽度,需 CFG 抽象解释展开循环"
+    ]
+   },
+   "consequence": "全解析的路径从\"逐实体人工读反汇编\"变为\"自动扫描 + 少量人工判读\":字段 offset/width 已可机械产出且有三组独立验证背书,剩下的唯一缺口是 4CC 语义命名。E38 证伪了\"schema 顺序=行内顺序\",E39 给出正确顺序来源(reader 指令流),两者合起来把字段映射的技术路线彻底钉住。覆盖面从 ~43 条命名偏移跃升到 240 条布局偏移 / 151 万行。下一轮:用 layouts.json 作底稿做 4CC getter 对齐(命名),优先 type49/type37 两张十万级表与 injury server 21 字段。"
   }
  ]
 }
