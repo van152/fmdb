@@ -1,0 +1,2134 @@
+{
+  "status": "complete",
+  "method": "COVERAGE server table list is the fixed 59-row skeleton. Resolved identities require an A/B/D anchor; E56 candidates require a matching independent D class-family mapping. C-only and count-similarity-only mappings are not promoted.",
+  "summary": {
+    "server_tables": 59,
+    "resolved": 54,
+    "candidate": 3,
+    "negative": 0,
+    "empty": 2
+  },
+  "tables": [
+    {
+      "table_type": 0,
+      "archive": "server",
+      "count": 3545,
+      "entity": "awar",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=awar; sources=['t01c/property_map', 't01h/E23', 't01e/E17']",
+          "details": {
+            "factory_handler": "0xf48c54",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23",
+              "t01e/E17"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: AWARD (depth 0)",
+          "details": {
+            "handler_off": "0xf48c54",
+            "inst_off": "0xf48c6b",
+            "vtable_va": "0x14187b828",
+            "col_off": "0x187af80",
+            "class_name": "AWARD",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 0 is independently decoded from its jump-table rel32 entry to handler_off 0xf48c54; BFS depth 0 reaches a vtable assignment at 0xf48c6b, whose preceding COL/TD chain names AWARD. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 2,
+      "archive": "server",
+      "count": 56293,
+      "entity": "city",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=city; sources=['t01c/property_map', 't01h/E23']",
+          "details": {
+            "factory_handler": "0xf48d44",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: CITY (depth 0)",
+          "details": {
+            "handler_off": "0xf48d44",
+            "inst_off": "0xf48d5b",
+            "vtable_va": "0x14187c7b8",
+            "col_off": "0x187bf10",
+            "class_name": "CITY",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 2 is independently decoded from its jump-table rel32 entry to handler_off 0xf48d44; BFS depth 0 reaches a vtable assignment at 0xf48d5b, whose preceding COL/TD chain names CITY. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 3,
+      "archive": "server",
+      "count": 84259,
+      "entity": "club",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=club; sources=['t01c/property_map', 't01h/E23', 't01e/E17']",
+          "details": {
+            "factory_handler": "0xf48daf",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23",
+              "t01e/E17"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: LEAGUE_BODY_CLUB (depth 0)",
+          "details": {
+            "handler_off": "0xf48daf",
+            "inst_off": "0xf48dc8",
+            "vtable_va": "0x1418bfbf8",
+            "col_off": "0x18bf410",
+            "class_name": "LEAGUE_BODY_CLUB",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 3 is independently decoded from its jump-table rel32 entry to handler_off 0xf48daf; BFS depth 0 reaches a vtable assignment at 0xf48dc8, whose preceding COL/TD chain names LEAGUE_BODY_CLUB. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 5,
+      "archive": "server",
+      "count": 7,
+      "entity": "cont",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=cont; sources=['t01c/property_map', 't01h/E23']",
+          "details": {
+            "factory_handler": "0xf48e18",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: CONTINENT (depth 2)",
+          "details": {
+            "handler_off": "0xf48e18",
+            "inst_off": "0x3b47d47",
+            "vtable_va": "0x14187e128",
+            "col_off": "0x187d880",
+            "class_name": "CONTINENT",
+            "depth": 2,
+            "fm_cross": "td-only",
+            "independence": "table_type 5 is independently decoded from its jump-table rel32 entry to handler_off 0xf48e18; BFS depth 2 reaches a vtable assignment at 0x3b47d47, whose preceding COL/TD chain names CONTINENT. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 6,
+      "archive": "server",
+      "count": 115,
+      "entity": "inju",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=inju; sources=['t01c/property_map', 't01h/E23', 't01e/E17']",
+          "details": {
+            "factory_handler": "0xf48e32",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23",
+              "t01e/E17"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: INJURY (depth 2)",
+          "details": {
+            "handler_off": "0xf48e32",
+            "inst_off": "0x3bcf9e2",
+            "vtable_va": "0x141882738",
+            "col_off": "0x1881e90",
+            "class_name": "INJURY",
+            "depth": 2,
+            "fm_cross": "td-only",
+            "independence": "table_type 6 is independently decoded from its jump-table rel32 entry to handler_off 0xf48e32; BFS depth 2 reaches a vtable assignment at 0x3bcf9e2, whose preceding COL/TD chain names INJURY. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 7,
+      "archive": "server",
+      "count": 208,
+      "entity": "mdso",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=mdso; sources=['t01c/property_map', 't01h/E23', 't01e/E17']",
+          "details": {
+            "factory_handler": "0xf48ea6",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23",
+              "t01e/E17"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: MEDIA_SOURCE (depth 2)",
+          "details": {
+            "handler_off": "0xf48ea6",
+            "inst_off": "0x437a0a5",
+            "vtable_va": "0x1418bdd08",
+            "col_off": "0x18bd470",
+            "class_name": "MEDIA_SOURCE",
+            "depth": 2,
+            "fm_cross": "td-only",
+            "independence": "table_type 7 is independently decoded from its jump-table rel32 entry to handler_off 0xf48ea6; BFS depth 2 reaches a vtable assignment at 0x437a0a5, whose preceding COL/TD chain names MEDIA_SOURCE. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 8,
+      "archive": "server",
+      "count": 126,
+      "entity": "lang",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=lang; sources=['t01c/property_map', 't01h/E23']",
+          "details": {
+            "factory_handler": "0xf48ebb",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: LANGUAGE (depth 0)",
+          "details": {
+            "handler_off": "0xf48ebb",
+            "inst_off": "0xf48ed2",
+            "vtable_va": "0x141888db8",
+            "col_off": "0x1888510",
+            "class_name": "LANGUAGE",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 8 is independently decoded from its jump-table rel32 entry to handler_off 0xf48ebb; BFS depth 0 reaches a vtable assignment at 0xf48ed2, whose preceding COL/TD chain names LANGUAGE. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 9,
+      "archive": "server",
+      "count": 251,
+      "entity": "nati",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=nati; sources=['t01c/property_map', 't01h/E23', 't01e/E17']",
+          "details": {
+            "factory_handler": "0xf48f12",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23",
+              "t01e/E17"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: NATIONAL_TEAM_CONTAINER (depth 1)",
+          "details": {
+            "handler_off": "0xf48f12",
+            "inst_off": "0x1059a4f",
+            "vtable_va": "0x1418898d8",
+            "col_off": "0x1889100",
+            "class_name": "NATIONAL_TEAM_CONTAINER",
+            "depth": 1,
+            "fm_cross": "td-only",
+            "independence": "table_type 9 is independently decoded from its jump-table rel32 entry to handler_off 0xf48f12; BFS depth 1 reaches a vtable assignment at 0x1059a4f, whose preceding COL/TD chain names NATIONAL_TEAM_CONTAINER. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 10,
+      "archive": "server",
+      "count": 251,
+      "entity": "nati",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=nati; sources=['E21', 't01c/property_map', 't01g', 't01h/E23']",
+          "details": {
+            "factory_handler": "0xf48f27",
+            "sources": [
+              "E21",
+              "t01c/property_map",
+              "t01g",
+              "t01h/E23"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: NATION (depth 1)",
+          "details": {
+            "handler_off": "0xf48f27",
+            "inst_off": "0x103ec17",
+            "vtable_va": "0x1418893b8",
+            "col_off": "0x1888bb0",
+            "class_name": "NATION",
+            "depth": 1,
+            "fm_cross": "td-only",
+            "independence": "table_type 10 is independently decoded from its jump-table rel32 entry to handler_off 0xf48f27; BFS depth 1 reaches a vtable assignment at 0x103ec17, whose preceding COL/TD chain names NATION. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 12,
+      "archive": "server",
+      "count": 28597,
+      "entity": "awar",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t13/out/anchors.json",
+          "claim": "type 12 reader 的 object_off=128 与 award 专属字段 AHp1 对齐；chain_0106 的读取指令直接访问该成员，AHp1 在 schema_inventory 中 df=1 且语义为 award 字段。",
+          "details": {
+            "evidence": {
+              "file_off": "0x118e2a3",
+              "instruction": "mov edi, dword ptr [rdi + 0x80]",
+              "code": "AHp1",
+              "code_site_file_off": "0x118dd9b",
+              "access_va": "0x14118eca3",
+              "object_off": 128,
+              "reader_file_off": "0x118d300",
+              "chain_id": "chain_0106",
+              "schema_entity": "award",
+              "schema_df": 1,
+              "source_file": "scratch/t05/reader_widths.json; scratch/t08/out/chains.json; scratch/t12/out/codes_full.json; scratch/t05/schema_inventory.json"
+            },
+            "independence": "表号 12 直接取自 reader_widths.type_id；member offset 与 reader 序列及 4CC 访问指令逐项相合，不依赖行数相似、其他表投票或先验命名。"
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_AWARD_HISTORY (depth 2)",
+          "details": {
+            "handler_off": "0xf48f41",
+            "inst_off": "0x3e4b302",
+            "vtable_va": "0x14188dd98",
+            "col_off": "0x188d4f0",
+            "class_name": "STARTING_AWARD_HISTORY",
+            "depth": 2,
+            "fm_cross": "td-only",
+            "independence": "table_type 12 is independently decoded from its jump-table rel32 entry to handler_off 0xf48f41; BFS depth 2 reaches a vtable assignment at 0x3e4b302, whose preceding COL/TD chain names STARTING_AWARD_HISTORY. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 18,
+      "archive": "server",
+      "count": 1567,
+      "entity": "drbr",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=drbr; sources=['t01c/property_map', 't01h/E23', 't01e/E17']",
+          "details": {
+            "factory_handler": "0xf48f77",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23",
+              "t01e/E17"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: DERBY (depth 0)",
+          "details": {
+            "handler_off": "0xf48f77",
+            "inst_off": "0xf48f8e",
+            "vtable_va": "0x141887278",
+            "col_off": "0x18869d0",
+            "class_name": "DERBY",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 18 is independently decoded from its jump-table rel32 entry to handler_off 0xf48f77; BFS depth 0 reaches a vtable assignment at 0xf48f8e, whose preceding COL/TD chain names DERBY. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 19,
+      "archive": "server",
+      "count": 28,
+      "entity": "regi",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=regi; sources=['t01c/property_map', 't01h/E23']",
+          "details": {
+            "factory_handler": "0xf4901b",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: REGION (depth 0)",
+          "details": {
+            "handler_off": "0xf4901b",
+            "inst_off": "0xf49032",
+            "vtable_va": "0x1418bf628",
+            "col_off": "0x18bed80",
+            "class_name": "REGION",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 19 is independently decoded from its jump-table rel32 entry to handler_off 0xf4901b; BFS depth 0 reaches a vtable assignment at 0xf49032, whose preceding COL/TD chain names REGION. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 21,
+      "archive": "server",
+      "count": 48413,
+      "entity": "stad",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=stad; sources=['t01c/property_map', 't01h/E23', 't01e/E17']",
+          "details": {
+            "factory_handler": "0xf49078",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23",
+              "t01e/E17"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STADIUM (depth 2)",
+          "details": {
+            "handler_off": "0xf49078",
+            "inst_off": "0x3e42754",
+            "vtable_va": "0x14188dbd8",
+            "col_off": "0x188d330",
+            "class_name": "STADIUM",
+            "depth": 2,
+            "fm_cross": "td-only",
+            "independence": "table_type 21 is independently decoded from its jump-table rel32 entry to handler_off 0xf49078; BFS depth 2 reaches a vtable assignment at 0x3e42754, whose preceding COL/TD chain names STADIUM. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 22,
+      "archive": "server",
+      "count": 449,
+      "entity": null,
+      "status": "candidate",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/cmd/stage2_candidate_adjudication.json",
+          "claim": "E56 resolved adjudication: club 的球场/迁建属性集; 449 行, 不是 stadium 主表(48413); 字段语义全为 club 拥有的球场计划, 与 t19(28 行)共享 S 码属同一类不同表",
+          "details": {
+            "anchors": [
+              "Salt=Alternative Stadium(df=1,club)",
+              "Scam=Stadium Rental Cash Amount(df=1,club)",
+              "Scpm=Is Potential Move(df=1,club)",
+              "Slhm=Likelihood of Stadium Move(df=1,club)"
+            ],
+            "codes": [
+              "Salt",
+              "ScTL",
+              "ScYL",
+              "Scam",
+              "Scap",
+              "Sceb",
+              "Scns",
+              "Scpm",
+              "Slhm",
+              "Snew",
+              "Snmn",
+              "Snmx",
+              "Snxa",
+              "Sold",
+              "Sscp",
+              "Stks",
+              "Styp"
+            ],
+            "df1_codes": [
+              "Salt",
+              "ScTL",
+              "ScYL",
+              "Scam",
+              "Sceb",
+              "Scpm",
+              "Slhm",
+              "Snmn",
+              "Snmx",
+              "Snxa",
+              "Stks",
+              "Styp"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STADIUM_CHANGE (depth 2)",
+          "details": {
+            "handler_off": "0xf49092",
+            "inst_off": "0x43696d2",
+            "vtable_va": "0x1418bd5a8",
+            "col_off": "0x18bcd00",
+            "class_name": "STADIUM_CHANGE",
+            "depth": 2,
+            "fm_cross": "td-only",
+            "independence": "table_type 22 is independently decoded from its jump-table rel32 entry to handler_off 0xf49092; BFS depth 2 reaches a vtable assignment at 0x43696d2, whose preceding COL/TD chain names STADIUM_CHANGE. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": [
+        {
+          "source": "scratch/t14/out/census.json",
+          "claim": "D class STADIUM_CHANGE maps to stad, conflicting with independent entity club"
+        }
+      ]
+    },
+    {
+      "table_type": 23,
+      "archive": "server",
+      "count": 278,
+      "entity": "stgn",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=stgn; sources=['t01c/property_map', 't01h/E23']",
+          "details": {
+            "factory_handler": "0xf490ac",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STAGE_NAME (depth 0)",
+          "details": {
+            "handler_off": "0xf490ac",
+            "inst_off": "0xf490c3",
+            "vtable_va": "0x1418828f8",
+            "col_off": "0x1882050",
+            "class_name": "STAGE_NAME",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 23 is independently decoded from its jump-table rel32 entry to handler_off 0xf490ac; BFS depth 0 reaches a vtable assignment at 0xf490c3, whose preceding COL/TD chain names STAGE_NAME. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 24,
+      "archive": "server",
+      "count": 84507,
+      "entity": "team",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=team; sources=['t01c/property_map', 't01h/E23']",
+          "details": {
+            "factory_handler": "0xf490f9",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: NATIONAL_TEAM (depth 2)",
+          "details": {
+            "handler_off": "0xf490f9",
+            "inst_off": "0x3d7afdb",
+            "vtable_va": "0x141889618",
+            "col_off": "0x1888db0",
+            "class_name": "NATIONAL_TEAM",
+            "depth": 2,
+            "fm_cross": "td-only",
+            "independence": "table_type 24 is independently decoded from its jump-table rel32 entry to handler_off 0xf490f9; BFS depth 2 reaches a vtable assignment at 0x3d7afdb, whose preceding COL/TD chain names NATIONAL_TEAM. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 25,
+      "archive": "server",
+      "count": 7047,
+      "entity": "comp",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=comp; sources=['E20', 't01c/property_map', 't01f', 't01h/E23']",
+          "details": {
+            "factory_handler": "0xf49129",
+            "sources": [
+              "E20",
+              "t01c/property_map",
+              "t01f",
+              "t01h/E23"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: COMP (depth 1)",
+          "details": {
+            "handler_off": "0xf49129",
+            "inst_off": "0xeb5dd5",
+            "vtable_va": "0x14187dcb8",
+            "col_off": "0x187d410",
+            "class_name": "COMP",
+            "depth": 1,
+            "fm_cross": "td-only",
+            "independence": "table_type 25 is independently decoded from its jump-table rel32 entry to handler_off 0xf49129; BFS depth 1 reaches a vtable assignment at 0xeb5dd5, whose preceding COL/TD chain names COMP. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 26,
+      "archive": "server",
+      "count": 90128,
+      "entity": "comp",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: COMP_HISTORY_RECORD (depth 0)",
+          "details": {
+            "handler_off": "0xf49143",
+            "inst_off": "0xf4915f",
+            "vtable_va": "0x1418be248",
+            "col_off": "0x18bd9a0",
+            "class_name": "COMP_HISTORY_RECORD",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 26 is independently decoded from its jump-table rel32 entry to handler_off 0xf49143; BFS depth 0 reaches a vtable assignment at 0xf4915f, whose preceding COL/TD chain names COMP_HISTORY_RECORD. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": [
+        {
+          "source": "scratch/t13/out/anchors.json",
+          "claim": "Historical negative preserved verbatim; new D evidence is a later independent adjudication.",
+          "original": {
+            "why_unresolved": "负结果：scratch/t05/reader_widths.json 中 type 26 的 seq=[12]、obj_seq=[null]，没有可关联到 schema 字段的成员偏移；scratch/t08/out/chains.json 的邻近链未提供与该 reader 相连的唯一 df=1 字段码。闭合行数据虽可读，当前未找到独立 A/B/C 锚点；不以候选硬定实体。",
+            "rejected": [
+              {
+                "entity": "club",
+                "why": "与独立已知 club 基数 84,259（server table_3）相差 5,869 / 6.97%；reader 只有 12-byte opaque call、没有 object_off，邻近 4CC 链也无与该 reader 成员相连的唯一 schema 码。数量接近不足以作锚。"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "table_type": 27,
+      "archive": "server",
+      "count": 334,
+      "entity": "weat",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=weat; sources=['t01c/property_map', 't01h/E23', 't01e/E17']",
+          "details": {
+            "factory_handler": "0xf491dd",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23",
+              "t01e/E17"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: WEATHER (depth 0)",
+          "details": {
+            "handler_off": "0xf491dd",
+            "inst_off": "0xf49258",
+            "vtable_va": "0x141882de8",
+            "col_off": "0x1882540",
+            "class_name": "WEATHER",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 27 is independently decoded from its jump-table rel32 entry to handler_off 0xf491dd; BFS depth 0 reaches a vtable assignment at 0xf49258, whose preceding COL/TD chain names WEATHER. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 29,
+      "archive": "server",
+      "count": 13278,
+      "entity": "pers",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_LOAN (depth 2)",
+          "details": {
+            "handler_off": "0xf492de",
+            "inst_off": "0x3bd9d52",
+            "vtable_va": "0x141883108",
+            "col_off": "0x1885b50",
+            "class_name": "STARTING_LOAN",
+            "depth": 2,
+            "fm_cross": "td-only",
+            "independence": "table_type 29 is independently decoded from its jump-table rel32 entry to handler_off 0xf492de; BFS depth 2 reaches a vtable assignment at 0x3bd9d52, whose preceding COL/TD chain names STARTING_LOAN. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": [
+        {
+          "source": "scratch/t13/out/anchors.json",
+          "claim": "Historical negative preserved verbatim; new D evidence is a later independent adjudication.",
+          "original": {
+            "why_unresolved": "负结果：type 29 的 reader_widths 只有一个 12-byte call 且无 object_off；邻近 player 码簇仅是位置候选，不能按邻近投票定案。现有工件没有独立的 4CC、独立基数或已验证 ID 域锚点。",
+            "rejected": [
+              {
+                "entity": "player",
+                "why": "reader 附近可见 player 字段码簇，但 type 29 reader 的 obj_seq=[null]，不能证明这些码属于本表 reader；最近候选链距离不构成成员映射。与 comp 7,047 行相差 6,231 / 88.42%，也不支持基数锚。"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "table_type": 30,
+      "archive": "server",
+      "count": 72473,
+      "entity": "play",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/cmd/stage2_candidate_adjudication.json",
+          "claim": "E56 resolved adjudication: 球员伤病/未来状态记录; 72473 行 >> injury 主表 115, 故是 player 侧的伤病实例/状态表而非 injury 表",
+          "details": {
+            "anchors": [
+              "futu=Future(df=1,player)",
+              "inju=Injury(df=1,player)",
+              "pret=Prevents Training(df=1,player)",
+              "seve=Severity(df=1,player)"
+            ],
+            "codes": [
+              "futu",
+              "inju",
+              "perm",
+              "pret",
+              "seve",
+              "side"
+            ],
+            "df1_codes": [
+              "futu",
+              "inju",
+              "pret",
+              "seve"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_INJURY (depth 0)",
+          "details": {
+            "handler_off": "0xf4935f",
+            "inst_off": "0xf49384",
+            "vtable_va": "0x141883268",
+            "col_off": "0x18829c0",
+            "class_name": "STARTING_INJURY",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 30 is independently decoded from its jump-table rel32 entry to handler_off 0xf4935f; BFS depth 0 reaches a vtable assignment at 0xf49384, whose preceding COL/TD chain names STARTING_INJURY. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        },
+        {
+          "kind": "A",
+          "source": "scratch/cmd/stage2_candidate_adjudication.json (E56)",
+          "claim": "Dual-source agreement: E56 entity adjudication agrees with the D RTTI class-family mapping.",
+          "details": {
+            "table_type": 30,
+            "e56_status": "resolved"
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 31,
+      "archive": "server",
+      "count": 37283,
+      "entity": "play",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_CONFIDENCE (depth 0)",
+          "details": {
+            "handler_off": "0xf493b5",
+            "inst_off": "0xf493e2",
+            "vtable_va": "0x141883428",
+            "col_off": "0x1882b80",
+            "class_name": "STARTING_CONFIDENCE",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 31 is independently decoded from its jump-table rel32 entry to handler_off 0xf493b5; BFS depth 0 reaches a vtable assignment at 0xf493e2, whose preceding COL/TD chain names STARTING_CONFIDENCE. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 32,
+      "archive": "server",
+      "count": 315,
+      "entity": "pers",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_FUTURE_TRANSFER (depth 1)",
+          "details": {
+            "handler_off": "0xf493f1",
+            "inst_off": "0xf72ad5",
+            "vtable_va": "0x141883d28",
+            "col_off": "0x1885af0",
+            "class_name": "STARTING_FUTURE_TRANSFER",
+            "depth": 1,
+            "fm_cross": "td-only",
+            "independence": "table_type 32 is independently decoded from its jump-table rel32 entry to handler_off 0xf493f1; BFS depth 1 reaches a vtable assignment at 0xf72ad5, whose preceding COL/TD chain names STARTING_FUTURE_TRANSFER. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": [
+        {
+          "source": "scratch/t13/out/anchors.json",
+          "claim": "Historical negative preserved verbatim; new D evidence is a later independent adjudication.",
+          "original": {
+            "why_unresolved": "负结果：type 32 为变长 count-loop 行，reader_widths 的 obj_seq=[null]；邻近链中没有能与本 reader 直接关联的唯一 df=1 schema 字段。weather 334 对 315 的差异不能单独定案，未找到其他独立锚点。",
+            "rejected": [
+              {
+                "entity": "weather",
+                "why": "独立已知 weather 为 334 行（scratch/t05/COVERAGE.json，client table_27）；差 19 / 5.69%。该差距只是数量线索，未达到可独立定案的基数吻合，且 reader 无可关联到该表的唯一 schema 4CC。"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "table_type": 33,
+      "archive": "server",
+      "count": 32409,
+      "entity": "club",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t13/out/anchors.json",
+          "claim": "type 33 reader 的 object_off=68 与 schema 中仅属于 club 的 CMWE（Maximum Wage Allowed）成员对齐；reader 邻接链 chain_0145 的指令读取 [rbx+0x44]，CMWE 跨实体 df=1。",
+          "details": {
+            "evidence": {
+              "file_off": "0x1535b5d",
+              "instruction": "mov edi, dword ptr [rbx + 0x44]",
+              "code": "CMWE",
+              "code_site_file_off": "0x1535735",
+              "access_va": "0x14153655d",
+              "object_off": 68,
+              "reader_file_off": "0x15350f0",
+              "chain_id": "chain_0145",
+              "schema_entity": "club",
+              "schema_df": 1,
+              "source_file": "scratch/t05/reader_widths.json; scratch/t08/out/chains.json; scratch/t12/out/codes_full.json; scratch/t05/schema_inventory.json"
+            },
+            "independence": "type 33 自己的 reader 序列含 object_off=68，且有独立静态指令/唯一 schema 码直接命名 club 字段；不借用 type 3 的行数或其他类型的归属判断。"
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_CLUB_DEBT (depth 2)",
+          "details": {
+            "handler_off": "0xf4941b",
+            "inst_off": "0x3bdb232",
+            "vtable_va": "0x1418835e8",
+            "col_off": "0x1882d40",
+            "class_name": "STARTING_CLUB_DEBT",
+            "depth": 2,
+            "fm_cross": "td-only",
+            "independence": "table_type 33 is independently decoded from its jump-table rel32 entry to handler_off 0xf4941b; BFS depth 2 reaches a vtable assignment at 0x3bdb232, whose preceding COL/TD chain names STARTING_CLUB_DEBT. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 34,
+      "archive": "server",
+      "count": 7115,
+      "entity": "club",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "B",
+          "source": "scratch/cmd/stage2_candidate_adjudication.json",
+          "claim": "E56 candidate adjudication: 俱乐部赛事历史(起止年/对手/结果); 6 个码全部 club+nation 共有, 无 df=1 码, 故只有 B 类语义锚: tcop/mstn/edyr/styr 四码共同构成赛事历程; 7115 行与 club 主表 84259 不同, 是子表。不能算 resolved",
+          "details": {
+            "anchors": [
+              "tcop=Opposition(df=2,club+nation)",
+              "mstn=Last Stage(df=2,club+nation)",
+              "edyr=End Year + styr=Start Year(df>=2,club+nation)"
+            ],
+            "codes": [
+              "dbrt",
+              "edyr",
+              "mstn",
+              "posi",
+              "styr",
+              "tcop"
+            ],
+            "df1_codes": []
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_TEAM_CUP_HISTORY (depth 0)",
+          "details": {
+            "handler_off": "0xf4949c",
+            "inst_off": "0xf494b8",
+            "vtable_va": "0x1418be628",
+            "col_off": "0x18bdd80",
+            "class_name": "STARTING_TEAM_CUP_HISTORY",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 34 is independently decoded from its jump-table rel32 entry to handler_off 0xf4949c; BFS depth 0 reaches a vtable assignment at 0xf494b8, whose preceding COL/TD chain names STARTING_TEAM_CUP_HISTORY. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        },
+        {
+          "kind": "B",
+          "source": "scratch/cmd/stage2_candidate_adjudication.json (E56)",
+          "claim": "Dual-source agreement: E56 entity adjudication agrees with the D RTTI class-family mapping.",
+          "details": {
+            "table_type": 34,
+            "e56_status": "candidate"
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 35,
+      "archive": "server",
+      "count": 890,
+      "entity": null,
+      "status": "candidate",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=dscr; sources=['t01c/property_map', 't01h/E23']",
+          "details": {
+            "factory_handler": "0xf49508",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: PLAYER_TYPE (depth 0)",
+          "details": {
+            "handler_off": "0xf49508",
+            "inst_off": "0xf49530",
+            "vtable_va": "0x141885128",
+            "col_off": "0x1884880",
+            "class_name": "PLAYER_TYPE",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 35 is independently decoded from its jump-table rel32 entry to handler_off 0xf49508; BFS depth 0 reaches a vtable assignment at 0xf49530, whose preceding COL/TD chain names PLAYER_TYPE. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": [
+        {
+          "source": "scratch/t14/out/census.json",
+          "claim": "D class PLAYER_TYPE maps to play, conflicting with independent entity dscr"
+        }
+      ]
+    },
+    {
+      "table_type": 36,
+      "archive": "server",
+      "count": 6535,
+      "entity": "pers",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_MANAGER_HOF_RECORD (depth 2)",
+          "details": {
+            "handler_off": "0xf49543",
+            "inst_off": "0x43c17c5",
+            "vtable_va": "0x1418bfe88",
+            "col_off": "0x18bf5e0",
+            "class_name": "STARTING_MANAGER_HOF_RECORD",
+            "depth": 2,
+            "fm_cross": "td-only",
+            "independence": "table_type 36 is independently decoded from its jump-table rel32 entry to handler_off 0xf49543; BFS depth 2 reaches a vtable assignment at 0x43c17c5, whose preceding COL/TD chain names STARTING_MANAGER_HOF_RECORD. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": [
+        {
+          "source": "scratch/t13/out/anchors.json",
+          "claim": "Historical negative preserved verbatim; new D evidence is a later independent adjudication.",
+          "original": {
+            "why_unresolved": "负结果：type 36 的行边界已闭合，但 reader_widths 只有 object_off 24、64 两个无语义的 4-byte 访问；周边 injury/player 码簇未出现与该 reader 成员可复核的唯一字段锚。comp 基数差 7.27%，不作硬配。",
+            "rejected": [
+              {
+                "entity": "comp",
+                "why": "独立已知 comp 为 7,047 行（scratch/t05/COVERAGE.json，server table_25）；差 512 / 7.27%。type 36 reader 仅有两个 4-byte calls，无法据此识别实体；差值本身不是 B 锚。"
+              },
+              {
+                "entity": "injury/person",
+                "why": "样本中的可读姓名或日期外观没有 schema 唯一码/已验证 ID 空间配合，语义不足以排除其它实体。"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "table_type": 37,
+      "archive": "server",
+      "count": 465712,
+      "entity": "club",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/cmd/stage2_candidate_adjudication.json",
+          "claim": "E56 resolved adjudication: 俱乐部战绩/积分榜记录; 465712 行 = 俱乐部×赛季/赛事条目; 不是 club 主表(84259)",
+          "details": {
+            "anchors": [
+              "draw=Games Drawn(df=1,club)",
+              "gfor=Goals For(df=1,club)",
+              "gaga=Goals Against(df=1,club)",
+              "poin=Points(df=1,club)",
+              "wins=Games Won(df=1,club)"
+            ],
+            "codes": [
+              "draw",
+              "gaga",
+              "gfor",
+              "lost",
+              "mxtm",
+              "orde",
+              "play",
+              "poin",
+              "posi",
+              "wins",
+              "year"
+            ],
+            "df1_codes": [
+              "draw",
+              "gaga",
+              "gfor",
+              "lost",
+              "mxtm",
+              "orde",
+              "poin",
+              "wins"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_TEAM_LEAGUE_HISTORY (depth 0)",
+          "details": {
+            "handler_off": "0xf49558",
+            "inst_off": "0xf49574",
+            "vtable_va": "0x14188e118",
+            "col_off": "0x188d870",
+            "class_name": "STARTING_TEAM_LEAGUE_HISTORY",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 37 is independently decoded from its jump-table rel32 entry to handler_off 0xf49558; BFS depth 0 reaches a vtable assignment at 0xf49574, whose preceding COL/TD chain names STARTING_TEAM_LEAGUE_HISTORY. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        },
+        {
+          "kind": "A",
+          "source": "scratch/cmd/stage2_candidate_adjudication.json (E56)",
+          "claim": "Dual-source agreement: E56 entity adjudication agrees with the D RTTI class-family mapping.",
+          "details": {
+            "table_type": 37,
+            "e56_status": "resolved"
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 38,
+      "archive": "server",
+      "count": 5241,
+      "entity": "pers",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_BAN (depth 0)",
+          "details": {
+            "handler_off": "0xf495af",
+            "inst_off": "0xf495dc",
+            "vtable_va": "0x141877848",
+            "col_off": "0x1877190",
+            "class_name": "STARTING_BAN",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 38 is independently decoded from its jump-table rel32 entry to handler_off 0xf495af; BFS depth 0 reaches a vtable assignment at 0xf495dc, whose preceding COL/TD chain names STARTING_BAN. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": [
+        {
+          "source": "scratch/t13/out/anchors.json",
+          "claim": "Historical negative preserved verbatim; new D evidence is a later independent adjudication.",
+          "original": {
+            "why_unresolved": "负结果：type 38 的 7 个 reader object_off 只能给出结构位置；最近链候选码经 schema_inventory 去重后均不是唯一实体码，值域也未形成有语义来源且哨兵/fill 同时吻合的 C 锚。",
+            "rejected": [
+              {
+                "entity": "language",
+                "why": "独立已知 language 为 126 行（scratch/t05/COVERAGE.json，server table_8）；本表多 5,115 / 4,059.52%，不吻合。邻近 4CC 码均跨实体共享，不能作 A 锚。"
+              },
+              {
+                "entity": "club/comp/player",
+                "why": "邻近链中的 club、comp、nati、endt、type 均跨实体出现；没有 df=1 码与本表 reader 成员形成独立对应。"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "table_type": 39,
+      "archive": "server",
+      "count": 117,
+      "entity": "team",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_AVERAGE_POINTS (depth 1)",
+          "details": {
+            "handler_off": "0xf49608",
+            "inst_off": "0xf726f5",
+            "vtable_va": "0x1418837a8",
+            "col_off": "0x18855a0",
+            "class_name": "STARTING_AVERAGE_POINTS",
+            "depth": 1,
+            "fm_cross": "td-only",
+            "independence": "table_type 39 is independently decoded from its jump-table rel32 entry to handler_off 0xf49608; BFS depth 1 reaches a vtable assignment at 0xf726f5, whose preceding COL/TD chain names STARTING_AVERAGE_POINTS. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": [
+        {
+          "source": "scratch/t13/out/anchors.json",
+          "claim": "Historical negative preserved verbatim; new D evidence is a later independent adjudication.",
+          "original": {
+            "why_unresolved": "负结果：117 行与 injury 的 115 行接近但不相等；type 39 的混合 reader 有 null object_off，邻近链接的代码簇未建立到本表的唯一 schema 字段关系。没有独立值域锚，保留 injury 为已拒绝的数量候选。",
+            "rejected": [
+              {
+                "entity": "injury",
+                "why": "独立已知 injury 为 115 行（scratch/t05/COVERAGE.json，client table_6）；差 2 / 1.74%。仅有数量接近，reader 成员码不提供 injury 专属 4CC，故不当作 B 锚。"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "table_type": 41,
+      "archive": "server",
+      "count": 173,
+      "entity": "curr",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=curr; sources=['t01c/property_map', 't01h/E23']",
+          "details": {
+            "factory_handler": "0xf49622",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: CURRENCY_RECORD (depth 2)",
+          "details": {
+            "handler_off": "0xf49622",
+            "inst_off": "0x43c3425",
+            "vtable_va": "0x1418c0048",
+            "col_off": "0x18bf7a0",
+            "class_name": "CURRENCY_RECORD",
+            "depth": 2,
+            "fm_cross": "td-only",
+            "independence": "table_type 41 is independently decoded from its jump-table rel32 entry to handler_off 0xf49622; BFS depth 2 reaches a vtable assignment at 0x43c3425, whose preceding COL/TD chain names CURRENCY_RECORD. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 42,
+      "archive": "server",
+      "count": 17721,
+      "entity": "pers",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_RETIREMENT (depth 0)",
+          "details": {
+            "handler_off": "0xf49637",
+            "inst_off": "0xf49653",
+            "vtable_va": "0x141883908",
+            "col_off": "0x1885c10",
+            "class_name": "STARTING_RETIREMENT",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 42 is independently decoded from its jump-table rel32 entry to handler_off 0xf49637; BFS depth 0 reaches a vtable assignment at 0xf49653, whose preceding COL/TD chain names STARTING_RETIREMENT. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 43,
+      "archive": "server",
+      "count": 535,
+      "entity": "club",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "B",
+          "source": "scratch/cmd/stage2_candidate_adjudication.json",
+          "claim": "E56 candidate adjudication: 转会付款分期; 535 行; 两个唯一码均为财务分期语义, 但与 club 主表的连接仅有码证据, 无行数独立核对",
+          "details": {
+            "anchors": [
+              "mths=Number Months(df=1,club)",
+              "pyiv=Payment Interval(df=1,club)"
+            ],
+            "codes": [
+              "cash",
+              "mths",
+              "play",
+              "pyiv"
+            ],
+            "df1_codes": [
+              "mths",
+              "pyiv"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_MONTHLY_INSTALLMENT (depth 0)",
+          "details": {
+            "handler_off": "0xf49675",
+            "inst_off": "0xf496a2",
+            "vtable_va": "0x141883a68",
+            "col_off": "0x18859c0",
+            "class_name": "STARTING_MONTHLY_INSTALLMENT",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 43 is independently decoded from its jump-table rel32 entry to handler_off 0xf49675; BFS depth 0 reaches a vtable assignment at 0xf496a2, whose preceding COL/TD chain names STARTING_MONTHLY_INSTALLMENT. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        },
+        {
+          "kind": "B",
+          "source": "scratch/cmd/stage2_candidate_adjudication.json (E56)",
+          "claim": "Dual-source agreement: E56 entity adjudication agrees with the D RTTI class-family mapping.",
+          "details": {
+            "table_type": 43,
+            "e56_status": "candidate"
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 45,
+      "archive": "server",
+      "count": 84477,
+      "entity": "pers",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t13/out/anchors.json",
+          "claim": "type 45 reader 的 object_off=86 与 person 专属 schema 字段 gols（Goals）对齐；chain_0153 的读取指令访问 [rdi+0x56]，gols 在 schema_inventory 中 df=1。",
+          "details": {
+            "evidence": {
+              "file_off": "0x1543e38",
+              "instruction": "movsx ebx, word ptr [rdi + 0x56]",
+              "code": "gols",
+              "code_site_file_off": "0x1543e2c",
+              "access_va": "0x141544838",
+              "object_off": 86,
+              "reader_file_off": "0x1543730",
+              "chain_id": "chain_0153",
+              "schema_entity": "person",
+              "schema_df": 1,
+              "source_file": "scratch/t05/reader_widths.json; scratch/t08/out/chains.json; scratch/t12/out/codes_full.json; scratch/t05/schema_inventory.json"
+            },
+            "independence": "type 45 的 reader 自身包含 object_off=86；唯一字段码 gols 的 schema 归属和 Goals 语义独立于数量比较。chain 中其它共享字段不参与裁决。"
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_RECORD (depth 0)",
+          "details": {
+            "handler_off": "0xf48ba6",
+            "inst_off": "0xf48bee",
+            "vtable_va": "0x14187df38",
+            "col_off": "0x187d690",
+            "class_name": "STARTING_RECORD",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 45 is independently decoded from its jump-table rel32 entry to handler_off 0xf48ba6; BFS depth 0 reaches a vtable assignment at 0xf48bee, whose preceding COL/TD chain names STARTING_RECORD. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote. This handler is shared by table types [45, 48]; D establishes the shared constructor class, not a unique separation between those aliases."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 46,
+      "archive": "server",
+      "count": 7,
+      "entity": "pers",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_DRAFT_TRANSFER (depth 0)",
+          "details": {
+            "handler_off": "0xf496e7",
+            "inst_off": "0xf49703",
+            "vtable_va": "0x141883e88",
+            "col_off": "0x18856c0",
+            "class_name": "STARTING_DRAFT_TRANSFER",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 46 is independently decoded from its jump-table rel32 entry to handler_off 0xf496e7; BFS depth 0 reaches a vtable assignment at 0xf49703, whose preceding COL/TD chain names STARTING_DRAFT_TRANSFER. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 47,
+      "archive": "server",
+      "count": 2488,
+      "entity": "lcrg",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=lcrg; sources=['t01c/property_map', 't01h/E23']",
+          "details": {
+            "factory_handler": "0xf4973f",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: LOCAL_REGION (depth 2)",
+          "details": {
+            "handler_off": "0xf4973f",
+            "inst_off": "0x421c9a5",
+            "vtable_va": "0x1418b6e58",
+            "col_off": "0x18b65b0",
+            "class_name": "LOCAL_REGION",
+            "depth": 2,
+            "fm_cross": "td-only",
+            "independence": "table_type 47 is independently decoded from its jump-table rel32 entry to handler_off 0xf4973f; BFS depth 2 reaches a vtable assignment at 0x421c9a5, whose preceding COL/TD chain names LOCAL_REGION. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 48,
+      "archive": "server",
+      "count": 5210,
+      "entity": "pers",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t13/out/anchors.json",
+          "claim": "type 48 reader 序列也明确含 object_off=86；其链内 gols 读取指令映射到 schema 中 df=1 的 person 字段。该结论逐表核验，不由 type 45 的归属推导。",
+          "details": {
+            "evidence": {
+              "file_off": "0x1543e38",
+              "instruction": "movsx ebx, word ptr [rdi + 0x56]",
+              "code": "gols",
+              "code_site_file_off": "0x1543e2c",
+              "access_va": "0x141544838",
+              "object_off": 86,
+              "reader_file_off": "0x1543730",
+              "chain_id": "chain_0153",
+              "schema_entity": "person",
+              "schema_df": 1,
+              "source_file": "scratch/t05/reader_widths.json; scratch/t08/out/chains.json; scratch/t12/out/codes_full.json; scratch/t05/schema_inventory.json"
+            },
+            "independence": "以 type 48 自身的 reader_widths 记录验证 object_off=86，再独立复核唯一 schema 码 gols；虽与 type 45 复用 reader/链，不据此宣称两表相同，只判定本表实体类。"
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_RECORD (depth 0)",
+          "details": {
+            "handler_off": "0xf48ba6",
+            "inst_off": "0xf48bee",
+            "vtable_va": "0x14187df38",
+            "col_off": "0x187d690",
+            "class_name": "STARTING_RECORD",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 48 is independently decoded from its jump-table rel32 entry to handler_off 0xf48ba6; BFS depth 0 reaches a vtable assignment at 0xf48bee, whose preceding COL/TD chain names STARTING_RECORD. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote. This handler is shared by table types [45, 48]; D establishes the shared constructor class, not a unique separation between those aliases."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 49,
+      "archive": "server",
+      "count": 792149,
+      "entity": "pers",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/cmd/stage2_candidate_adjudication.json",
+          "claim": "E56 resolved adjudication: 人员任职/对阵履历; 792149 行; 3 个唯一码全属 person, 是典型履历子表; t11 投给 club 系投票污染, 已推翻 [E58补注: t49=792149 > person主库658011(E25/E32封口,E58/t13e), 多20.4%; 归属由df=1三码维持, 但'履历'语义与行数张力待解]",
+          "details": {
+            "anchors": [
+              "ajob=Job(df=1,person)",
+              "otea=Opposition(df=1,person)",
+              "plac=Type(df=1,person)"
+            ],
+            "codes": [
+              "ajob",
+              "comp",
+              "date",
+              "divi",
+              "otea",
+              "plac",
+              "year"
+            ],
+            "df1_codes": [
+              "ajob",
+              "otea",
+              "plac"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_PERSON_HISTORY (depth 0)",
+          "details": {
+            "handler_off": "0xf49754",
+            "inst_off": "0xf49770",
+            "vtable_va": "0x1418b6c88",
+            "col_off": "0x18b63e0",
+            "class_name": "STARTING_PERSON_HISTORY",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 49 is independently decoded from its jump-table rel32 entry to handler_off 0xf49754; BFS depth 0 reaches a vtable assignment at 0xf49770, whose preceding COL/TD chain names STARTING_PERSON_HISTORY. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        },
+        {
+          "kind": "A",
+          "source": "scratch/cmd/stage2_candidate_adjudication.json (E56)",
+          "claim": "Dual-source agreement: E56 entity adjudication agrees with the D RTTI class-family mapping.",
+          "details": {
+            "table_type": 49,
+            "e56_status": "resolved"
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 50,
+      "archive": "server",
+      "count": 45,
+      "entity": "club",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_MLS_TRADED_SLOT (depth 0)",
+          "details": {
+            "handler_off": "0xf497a6",
+            "inst_off": "0xf497cb",
+            "vtable_va": "0x141883fe8",
+            "col_off": "0x1885960",
+            "class_name": "STARTING_MLS_TRADED_SLOT",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 50 is independently decoded from its jump-table rel32 entry to handler_off 0xf497a6; BFS depth 0 reaches a vtable assignment at 0xf497cb, whose preceding COL/TD chain names STARTING_MLS_TRADED_SLOT. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 51,
+      "archive": "server",
+      "count": 59,
+      "entity": "club",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_MLS_GENERAL_ALLOCATION_MONEY (depth 0)",
+          "details": {
+            "handler_off": "0xf497ed",
+            "inst_off": "0xf49809",
+            "vtable_va": "0x141884148",
+            "col_off": "0x18858a0",
+            "class_name": "STARTING_MLS_GENERAL_ALLOCATION_MONEY",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 51 is independently decoded from its jump-table rel32 entry to handler_off 0xf497ed; BFS depth 0 reaches a vtable assignment at 0xf49809, whose preceding COL/TD chain names STARTING_MLS_GENERAL_ALLOCATION_MONEY. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 52,
+      "archive": "server",
+      "count": 0,
+      "entity": null,
+      "status": "empty",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t05/COVERAGE.json; scratch/t05/server_bounds/boundaries.json",
+          "claim": "table_52 has zero rows; boundary closure='14 + 0 + 8 == 22', payload_len=22"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 56,
+      "archive": "server",
+      "count": 6,
+      "entity": "agrm",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t01/stage2_three_way.json",
+          "claim": "E22/table-type cross-map entity_tag=agrm; sources=['t01c/property_map', 't01h/E23']",
+          "details": {
+            "factory_handler": "0xf49860",
+            "sources": [
+              "t01c/property_map",
+              "t01h/E23"
+            ]
+          }
+        },
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: AGREEMENT (depth 0)",
+          "details": {
+            "handler_off": "0xf49860",
+            "inst_off": "0xf49880",
+            "vtable_va": "0x141882ab8",
+            "col_off": "0x1882210",
+            "class_name": "AGREEMENT",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 56 is independently decoded from its jump-table rel32 entry to handler_off 0xf49860; BFS depth 0 reaches a vtable assignment at 0xf49880, whose preceding COL/TD chain names AGREEMENT. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 57,
+      "archive": "server",
+      "count": 0,
+      "entity": null,
+      "status": "empty",
+      "evidence": [
+        {
+          "kind": "A",
+          "source": "scratch/t05/COVERAGE.json; scratch/t05/server_bounds/boundaries.json",
+          "claim": "table_57 has zero rows; boundary closure='14 + 0 + 8 == 22', payload_len=22"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 58,
+      "archive": "server",
+      "count": 8,
+      "entity": null,
+      "status": "candidate",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_WEEKLY_WAGE_CONTRIBUTION (depth 0)",
+          "details": {
+            "handler_off": "0xf49904",
+            "inst_off": "0xf49921",
+            "vtable_va": "0x141883bc8",
+            "col_off": "0x1885c70",
+            "class_name": "STARTING_WEEKLY_WAGE_CONTRIBUTION",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 58 is independently decoded from its jump-table rel32 entry to handler_off 0xf49904; BFS depth 0 reaches a vtable assignment at 0xf49921, whose preceding COL/TD chain names STARTING_WEEKLY_WAGE_CONTRIBUTION. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": [
+        {
+          "source": "scratch/cmd/stage2_candidate_adjudication.json",
+          "claim": "E56 leaves person/club open; weekly-wage class does not independently identify its owning entity."
+        }
+      ]
+    },
+    {
+      "table_type": 59,
+      "archive": "server",
+      "count": 9079,
+      "entity": "play",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_MEDIA_EXPECTATIONS (depth 0)",
+          "details": {
+            "handler_off": "0xf49950",
+            "inst_off": "0xf4996c",
+            "vtable_va": "0x141882fa8",
+            "col_off": "0x1885840",
+            "class_name": "STARTING_MEDIA_EXPECTATIONS",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 59 is independently decoded from its jump-table rel32 entry to handler_off 0xf49950; BFS depth 0 reaches a vtable assignment at 0xf4996c, whose preceding COL/TD chain names STARTING_MEDIA_EXPECTATIONS. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 60,
+      "archive": "server",
+      "count": 59,
+      "entity": "club",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_MLS_TARGETED_ALLOCATION_MONEY (depth 0)",
+          "details": {
+            "handler_off": "0xf499b5",
+            "inst_off": "0xf499d1",
+            "vtable_va": "0x1418842a8",
+            "col_off": "0x1885900",
+            "class_name": "STARTING_MLS_TARGETED_ALLOCATION_MONEY",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 60 is independently decoded from its jump-table rel32 entry to handler_off 0xf499b5; BFS depth 0 reaches a vtable assignment at 0xf499d1, whose preceding COL/TD chain names STARTING_MLS_TARGETED_ALLOCATION_MONEY. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 61,
+      "archive": "server",
+      "count": 16,
+      "entity": "club",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_ITALIAN_SERIE_A_CLUB_THAT_FREED_UP_NON_EU_SLOT (depth 0)",
+          "details": {
+            "handler_off": "0xf499ef",
+            "inst_off": "0xf49a0b",
+            "vtable_va": "0x141884408",
+            "col_off": "0x1885780",
+            "class_name": "STARTING_ITALIAN_SERIE_A_CLUB_THAT_FREED_UP_NON_EU_SLOT",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 61 is independently decoded from its jump-table rel32 entry to handler_off 0xf499ef; BFS depth 0 reaches a vtable assignment at 0xf49a0b, whose preceding COL/TD chain names STARTING_ITALIAN_SERIE_A_CLUB_THAT_FREED_UP_NON_EU_SLOT. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 62,
+      "archive": "server",
+      "count": 37214,
+      "entity": "club",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_RESERVE_TEAM (depth 0)",
+          "details": {
+            "handler_off": "0xf49a2b",
+            "inst_off": "0xf49a58",
+            "vtable_va": "0x141884988",
+            "col_off": "0x18840e0",
+            "class_name": "STARTING_RESERVE_TEAM",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 62 is independently decoded from its jump-table rel32 entry to handler_off 0xf49a2b; BFS depth 0 reaches a vtable assignment at 0xf49a58, whose preceding COL/TD chain names STARTING_RESERVE_TEAM. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 63,
+      "archive": "server",
+      "count": 2,
+      "entity": "club",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_ITALIAN_SERIE_A_CLUB_NON_EU_SLOTS_NUMBER (depth 0)",
+          "details": {
+            "handler_off": "0xf49a9e",
+            "inst_off": "0xf49aba",
+            "vtable_va": "0x141884568",
+            "col_off": "0x1885720",
+            "class_name": "STARTING_ITALIAN_SERIE_A_CLUB_NON_EU_SLOTS_NUMBER",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 63 is independently decoded from its jump-table rel32 entry to handler_off 0xf49a9e; BFS depth 0 reaches a vtable assignment at 0xf49aba, whose preceding COL/TD chain names STARTING_ITALIAN_SERIE_A_CLUB_NON_EU_SLOTS_NUMBER. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 64,
+      "archive": "server",
+      "count": 6946,
+      "entity": "club",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_CLUB_STAFF_JOB_STATUS (depth 0)",
+          "details": {
+            "handler_off": "0xf49ada",
+            "inst_off": "0xf49afa",
+            "vtable_va": "0x141884b48",
+            "col_off": "0x1885600",
+            "class_name": "STARTING_CLUB_STAFF_JOB_STATUS",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 64 is independently decoded from its jump-table rel32 entry to handler_off 0xf49ada; BFS depth 0 reaches a vtable assignment at 0xf49afa, whose preceding COL/TD chain names STARTING_CLUB_STAFF_JOB_STATUS. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 65,
+      "archive": "server",
+      "count": 1417,
+      "entity": "pers",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_NEWGEN_PARAMETER (depth 0)",
+          "details": {
+            "handler_off": "0xf48b55",
+            "inst_off": "0xf48b90",
+            "vtable_va": "0x141884ca8",
+            "col_off": "0x1885a20",
+            "class_name": "STARTING_NEWGEN_PARAMETER",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 65 is independently decoded from its jump-table rel32 entry to handler_off 0xf48b55; BFS depth 0 reaches a vtable assignment at 0xf48b90, whose preceding COL/TD chain names STARTING_NEWGEN_PARAMETER. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote. This handler is shared by table types [65, 67, 68, 69]; D establishes the shared constructor class, not a unique separation between those aliases."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 66,
+      "archive": "server",
+      "count": 753,
+      "entity": "club",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_CLUB_TRANSFER_PREFERENCE (depth 0)",
+          "details": {
+            "handler_off": "0xf49b18",
+            "inst_off": "0xf49b3c",
+            "vtable_va": "0x141884e08",
+            "col_off": "0x1885660",
+            "class_name": "STARTING_CLUB_TRANSFER_PREFERENCE",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 66 is independently decoded from its jump-table rel32 entry to handler_off 0xf49b18; BFS depth 0 reaches a vtable assignment at 0xf49b3c, whose preceding COL/TD chain names STARTING_CLUB_TRANSFER_PREFERENCE. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 67,
+      "archive": "server",
+      "count": 6826,
+      "entity": "pers",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_NEWGEN_PARAMETER (depth 0)",
+          "details": {
+            "handler_off": "0xf48b55",
+            "inst_off": "0xf48b90",
+            "vtable_va": "0x141884ca8",
+            "col_off": "0x1885a20",
+            "class_name": "STARTING_NEWGEN_PARAMETER",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 67 is independently decoded from its jump-table rel32 entry to handler_off 0xf48b55; BFS depth 0 reaches a vtable assignment at 0xf48b90, whose preceding COL/TD chain names STARTING_NEWGEN_PARAMETER. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote. This handler is shared by table types [65, 67, 68, 69]; D establishes the shared constructor class, not a unique separation between those aliases."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 68,
+      "archive": "server",
+      "count": 138,
+      "entity": "pers",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_NEWGEN_PARAMETER (depth 0)",
+          "details": {
+            "handler_off": "0xf48b55",
+            "inst_off": "0xf48b90",
+            "vtable_va": "0x141884ca8",
+            "col_off": "0x1885a20",
+            "class_name": "STARTING_NEWGEN_PARAMETER",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 68 is independently decoded from its jump-table rel32 entry to handler_off 0xf48b55; BFS depth 0 reaches a vtable assignment at 0xf48b90, whose preceding COL/TD chain names STARTING_NEWGEN_PARAMETER. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote. This handler is shared by table types [65, 67, 68, 69]; D establishes the shared constructor class, not a unique separation between those aliases."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 69,
+      "archive": "server",
+      "count": 230,
+      "entity": "pers",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_NEWGEN_PARAMETER (depth 0)",
+          "details": {
+            "handler_off": "0xf48b55",
+            "inst_off": "0xf48b90",
+            "vtable_va": "0x141884ca8",
+            "col_off": "0x1885a20",
+            "class_name": "STARTING_NEWGEN_PARAMETER",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 69 is independently decoded from its jump-table rel32 entry to handler_off 0xf48b55; BFS depth 0 reaches a vtable assignment at 0xf48b90, whose preceding COL/TD chain names STARTING_NEWGEN_PARAMETER. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote. This handler is shared by table types [65, 67, 68, 69]; D establishes the shared constructor class, not a unique separation between those aliases."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 70,
+      "archive": "server",
+      "count": 10075,
+      "entity": "club",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_VISION_OBJECTIVE (depth 0)",
+          "details": {
+            "handler_off": "0xf49b59",
+            "inst_off": "0xf49b86",
+            "vtable_va": "0x141884f68",
+            "col_off": "0x18846c0",
+            "class_name": "STARTING_VISION_OBJECTIVE",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 70 is independently decoded from its jump-table rel32 entry to handler_off 0xf49b59; BFS depth 0 reaches a vtable assignment at 0xf49b86, whose preceding COL/TD chain names STARTING_VISION_OBJECTIVE. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 71,
+      "archive": "server",
+      "count": 616665,
+      "entity": "pers",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_PAST_TRANSFER (depth 2)",
+          "details": {
+            "handler_off": "0xf49bbf",
+            "inst_off": "0x3e596a9",
+            "vtable_va": "0x14188df58",
+            "col_off": "0x188d6b0",
+            "class_name": "STARTING_PAST_TRANSFER",
+            "depth": 2,
+            "fm_cross": "td-only",
+            "independence": "table_type 71 is independently decoded from its jump-table rel32 entry to handler_off 0xf49bbf; BFS depth 2 reaches a vtable assignment at 0x3e596a9, whose preceding COL/TD chain names STARTING_PAST_TRANSFER. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 72,
+      "archive": "server",
+      "count": 138,
+      "entity": "pers",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_PAST_TRADE (depth 2)",
+          "details": {
+            "handler_off": "0xf49bdb",
+            "inst_off": "0x4373195",
+            "vtable_va": "0x1418bdb48",
+            "col_off": "0x18bd2a0",
+            "class_name": "STARTING_PAST_TRADE",
+            "depth": 2,
+            "fm_cross": "td-only",
+            "independence": "table_type 72 is independently decoded from its jump-table rel32 entry to handler_off 0xf49bdb; BFS depth 2 reaches a vtable assignment at 0x4373195, whose preceding COL/TD chain names STARTING_PAST_TRADE. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "table_type": 73,
+      "archive": "server",
+      "count": 1,
+      "entity": "play",
+      "status": "resolved",
+      "evidence": [
+        {
+          "kind": "D",
+          "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+          "claim": "RTTI construction anchor: STARTING_ITALIAN_SERIE_A_NON_EU_PLAYER_SIGNED_FOR_RESTRICTED_SLOT (depth 0)",
+          "details": {
+            "handler_off": "0xf49bf5",
+            "inst_off": "0xf49c1a",
+            "vtable_va": "0x1418846c8",
+            "col_off": "0x18857e0",
+            "class_name": "STARTING_ITALIAN_SERIE_A_NON_EU_PLAYER_SIGNED_FOR_RESTRICTED_SLOT",
+            "depth": 0,
+            "fm_cross": "td-only",
+            "independence": "table_type 73 is independently decoded from its jump-table rel32 entry to handler_off 0xf49bf5; BFS depth 0 reaches a vtable assignment at 0xf49c1a, whose preceding COL/TD chain names STARTING_ITALIAN_SERIE_A_NON_EU_PLAYER_SIGNED_FOR_RESTRICTED_SLOT. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+          }
+        }
+      ],
+      "conflicts": []
+    }
+  ]
+}
