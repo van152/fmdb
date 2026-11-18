@@ -64,6 +64,16 @@ def scan_reader(md, raw: bytes, start: int, size: int = SCAN_BYTES, max_hops: in
             except ValueError:
                 v = None
             items.append(("W", ins.address, v))
+        elif m == "lea" and o.startswith("rdx,"):
+            # 对象内偏移: lea rdx, [reg + OFF]
+            off = None
+            if "+" in o:
+                tail = o.split("+")[-1].rstrip("]")
+                try:
+                    off = int(tail, 0)
+                except ValueError:
+                    off = None
+            items.append(("O", ins.address, off))
         elif m == "call" and "0x28]" in o:
             items.append(("C", ins.address, None))
         elif m in BRANCH_MNEMONICS:
@@ -73,21 +83,28 @@ def scan_reader(md, raw: bytes, start: int, size: int = SCAN_BYTES, max_hops: in
 
     calls: list[dict] = []
     cur_w: int | None = None
+    cur_obj: int | None = None
     seq: list[int | None] = []
+    obj_seq: list[int | None] = []
     barriers: list[int] = []
     pending_barrier = False
     for kind, addr, val in items:
         if kind == "W":
             cur_w = val
+        elif kind == "O":
+            cur_obj = val
         elif kind in ("B", "R"):
             pending_barrier = True
             cur_w = None
+            cur_obj = None
         elif kind == "C":
             seq.append(cur_w)
-            calls.append({"call_va": hex(addr), "width": cur_w})
+            obj_seq.append(cur_obj)
+            calls.append({"call_va": hex(addr), "width": cur_w, "object_off": cur_obj})
             barriers.append(1 if pending_barrier else 0)
             pending_barrier = False
             cur_w = None
+            cur_obj = None
 
     segments: list[list[int | None]] = []
     cur_seg: list[int | None] = []
@@ -99,7 +116,7 @@ def scan_reader(md, raw: bytes, start: int, size: int = SCAN_BYTES, max_hops: in
     if cur_seg:
         segments.append(cur_seg)
 
-    return {"calls": calls, "seq": seq, "segments": segments,
+    return {"calls": calls, "seq": seq, "obj_seq": obj_seq, "segments": segments,
             "body": hex(cur), "thunk_chain": [hex(x) for x in chain]}
 
 
@@ -209,6 +226,7 @@ def main() -> int:
             "thunk_chain": sc.get("thunk_chain"),
             "calls": len(sc["calls"]),
             "seq": sc["seq"],
+            "obj_seq": sc.get("obj_seq"),
             "segments": sums,
             "budgets": b,
             "hits": hits,
