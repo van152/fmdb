@@ -9,10 +9,10 @@
 
 | 任务 | 渠道 | 目标 | outbox | 日志 | 预算 |
 |---|---|---|---|---|---|
-| t02c-club | gpt-6-luna(稳定) | club 第 69,705→84,259 行变体段 + ≥10 字段 | `inbox/club_v2/` | `pi-logs/t02c-club.log` | 3×25min |
-| t02p-pw | gpt-6.2-sol(最强,额度少) | ~~BASIC_PERSON W 选择器静态溯源~~ ✅ **已交付入账 E32** | `inbox/pw/` | `pi-logs/t02p-pw.log` | ~~2×25min~~ 实耗 23min |
-| t02f-b3 | devseek(便宜,断流) | t7/t9/t22 三张 client 表行框架 | `inbox/batch3/` | `pi-logs/t02f-b3.log` | 6×15min |
-| t02g-nati | logfare(1M,曾限流) | nati(t10)变长行边界 + 251 行封口 | `inbox/nati/` | `pi-logs/nati.log` | 5×15min |
+| t02c-club | gpt-6-luna(稳定) | ~~club 变体段~~ ✅ **框架全解入账 E33**(84,259 行封口;字段 L3=0 未做) | `inbox/club_v2/` | `pi-logs/t02c-club.log` | 实耗 20min(冗余轮已 kill) |
+| t02p-pw | gpt-6.2-sol(最强,额度少) | ~~BASIC_PERSON W 选择器~~ ✅ **已交付入账 E32** | `inbox/pw/` | `pi-logs/t02p-pw.log` | 实耗 23min |
+| t02f-b3 | devseek(便宜,断流) | ~~t7/t9/t22 批量框架~~ ⚠️ **2/3 入账 E33**(fw7/fw22 ✓,fw9 仍骨架) | `inbox/batch3/` | `pi-logs/t02f-b3.log` | 2 轮超时 |
+| t02g-nati | logfare→**转派 luna** | logfare 5 次限流失败(负结果入 E33)→ luna 接手在跑 | `inbox/nati/` | `pi-logs/t02g{,-natir}.log` | t02g2 2×25min |
 
 发射时间 16:05:39,四进程已确认在跑(ps 可见)。任务书在 `prompts/t02{c,p,f,g}_*.md`。
 
@@ -25,7 +25,10 @@
 
 ## 验收记录
 
-- **t02f-b3(devseek)fw7/fw22 部分验收(16:3x,待 fw9)**:旧库 reader 独立核对 header_count/size 与 devseek 完全一致(T7=208/36824、T22=449/5859),closure 算术自洽、identity 全量(T22 449/449、T7 208/208)。待 fw9 落盘后一并入 LEDGER E33。fw9 旧库 header_count=251,devseek 仍在解。
+- **调度轮全部收口 → E33 已入账(16:4x)**:
+  - club(luna):84,259/84,259 行全走通、footer 0x69c66a 精确封口;solve.py --selftest 独立复跑 PASS;**推翻旧"4B 变体"结论**(实为 84,256 标准+3 特殊空记录)。字段级 L3=0,诚实标注未闭合。
+  - devseek:fw7(208 变长)/fw22(449×13)complete,旧库 header 独立核对一致;fw9 超时仅骨架(2/3)。
+  - logfare:5 次全 throttling 限流负结果;落盘 nati payload bin(SHA 与 E21 吻合),已转派 luna。
 - **t02p-pw(sol)→ E32 已入账(16:3x)**:后台 exit 1 是**发射器判据 bug**,非模型失败——sol 首轮即交付 W=8 + 15 字段,但把 status 写成 `complete_file_layout_runtime_selector_open`(带限定词的诚实标注),launch.sh 只认精确 `complete/partial` 故误判。已修判据(放宽为 `complete*|partial*` + ≥2 实质文件)。指挥官独立验收:字节 11/11、658,011 行独立走查全封口、锚点 7/7。
 
 ## 验收队列(按到达顺序,指挥官独占)
