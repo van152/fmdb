@@ -799,6 +799,27 @@
     "channel_assessment": "devseek(deepseek-v4.1-flash-free)在 devseek provider 上 4 次尝试全部 upstream_saturated(503);单次存活 2-14 min;产出质量高但无法完成多步任务"
    },
    "consequence": "任务分配改为:单实体极简任务 + 强制先落盘骨架 + 指挥官补字段侧;或指挥官直接解码(regi 全程约 15 分钟,比 devseek 快且不断流)"
+  },
+  {
+   "id": "E30",
+   "date": "2026-11-18 11:45",
+   "author": "commander(devseek fw41 + 指挥官 curr/city 直解)",
+   "kind": "artifact",
+   "level": "L3-static(指挥官独立核验 + devseek 框架交叉)",
+   "claim": "【devseek 正确用法确立 + curr/city 两表解码完成】devseek 在\"5 分钟粒度、单一目标(只求行框架)\"任务上成功(第 3 轮,7 分钟);其 curr 框架输出与指挥官手解逐项一致且更细(给出 row_len_formula、81 种行长分布、双 archive byte-identical)。curr(type 41):变长行 4 字符串+f32 当前汇率+计数历史序列(7B 项)+13B 尾,173/173 封口,6 个 L3 字段(obj+0x18..0x40)。city(type 2):定长 43B,56293 行,经纬度 f32@+1/+5 全量合法(-32.16..54.41 / -174.35..137.03),身份块 stride-13 抽样 113/113,reader 链 10 字段",
+   "evidence": {
+    "artifacts": [
+     "scratch/t02/curr_reference.json",
+     "scratch/t02/city_reference.json",
+     "scratch/t02/inbox/fw41/framework.json"
+    ],
+    "devseek_success": "fw41:attempt 3/6 成功,用时 7 分钟,输出 row_len_formula + 81 种行长 + byte-identical 判断;与我手解 100% 吻合",
+    "devseek_failure_mode": "任务>5 分钟粒度必被 upstream_saturated 掐断(s19:5 次全败,t02a:5 次全败);session 累积 >500KB 后陷入\"重发现同一框架\"循环",
+    "curr_fields": "4 strings(obj+0x18/0x20/0x28/0x30) + current_rate f32(obj+0x38) + history array(obj+0x40);reader 0x43c5800",
+    "city_fields": "lat f32@row+1 / lon f32@row+5(obj+0x48,8B 合并读) + 8 个其余字段(obj+0x20/0x28/0x30/0x38/0x48/0x50/0x53/0x54);reader 0x3aa5550",
+    "identity_convention": "现已 7 张表证实:comp/nation/basic_people/weather/stadium/regi/curr/city 全为 ordinal|ID|重复ID + 1B 标记"
+   },
+   "consequence": "任务分配定式确立:devseek 只接\"单表行框架\"任务(≤5min),字段对齐与语义由指挥官做;这样两者产出可交叉验证,且断流时只损失框架(可重跑)而非全部工作"
   }
  ]
 }

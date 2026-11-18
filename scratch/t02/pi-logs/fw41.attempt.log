@@ -1,0 +1,13 @@
+`scratch/t02/inbox/fw41/framework.json` 已生成，status 为 complete。
+
+**结论：table 41 的两边都是变长行，没有定长 stride。**
+
+- 两边 payload 头都是 `03 01 74 61 64 2e f1 0d ad 00 00 00 00 00`，count=173（0xad）写在 payload+8；行从 payload+0xe 开始；末尾 8 字节是 `00 00 00 01 d6 83 2f 05`。
+- 变长行公式：`4*(4+len(s_i)) + 4 + 4 + 7*n_hist + 13` = 4 个 UTF-8 字符串（各带 u32 长度前缀）+ f32 当前汇率 + u32 历史条数 + 每条 7 字节 + 13 字节行尾。
+- 闭合（closure）：`14 + sum(row_len) + 8 == 74352`，sum=74330，尾部正好 8 字节。两边都成立。
+- 行长的跨度是 118..871，173 行里有 81 种不同的行长，所以 `payload_len` 不是整数 stride 的倍数（74330/173 = 429.65），定长公式在此表不成立。
+- relation：client 与 server 的 payload **逐字节完全相同**（74352/74352），所以 server 没有独立 stride。
+
+复验：`py -V:3.12 -I -B scratch/t02/inbox/fw41/probe.py --selftest` → PASS（`--help` 可用；只读 `Z:` 库与旧解码器，未启动游戏/编辑器/IDA，未装依赖）。
+
+DONE type=41 client_stride=variable server_stride=variable

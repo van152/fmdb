@@ -50,7 +50,311 @@
   },
   "relation": "server[0:32]==client[0:32] and server[33:46]==client[32:45]; server row has one extra constant byte 0x04 at row+32"
  },
- "row_offset_map": [],
+ "row_offset_map": [
+  {
+   "field": "rdui",
+   "row_offset_client": 32,
+   "row_offset_server": 33,
+   "width": 4,
+   "type": "integer",
+   "evidence_level": "L1",
+   "status": "confirmed",
+   "evidence": {
+    "client_bytes_row2": "02 00 00 00",
+    "server_bytes_row2": "02 00 00 00",
+    "full_table": "28/28 rows: client row+32 == 0-based row ordinal (0..27); server row+33 identical",
+    "old_anchor": "methodology rule: rdui==row ordinal (L1, same as t01m table_21 FIELDS: rdui@+25)"
+   }
+  },
+  {
+   "field": "duni",
+   "row_offset_client": 36,
+   "row_offset_server": 37,
+   "width": 8,
+   "type": "unique_id (repeated-u32 pair)",
+   "evidence_level": "L1",
+   "status": "confirmed",
+   "evidence": {
+    "client_bytes_row2": "03 00 00 00 03 00 00 00",
+    "server_bytes_row2": "03 00 00 00 03 00 00 00",
+    "full_table": "28/28 repeated (hi==lo) and 28/28 unique; values 1..29 skipping 11",
+    "cross_check": "L2: this value set == the row-key set of lang_update_db/*_19.dat (28 of 28 keys, see lang_layer_keys)"
+   }
+  },
+  {
+   "field": "NDBC",
+   "row_offset_client": 24,
+   "row_offset_server": 24,
+   "width": 4,
+   "type": "integer",
+   "evidence_level": "L1",
+   "status": "candidate",
+   "evidence": {
+    "bytes_all_rows": "ff ff ff ff (28/28)",
+    "reason": "constant -1 sentinel in a schema slot whose field type is read-only integer; no varying value to correlate, so slot assignment stays candidate"
+   }
+  },
+  {
+   "field": "FDBC",
+   "row_offset_client": 28,
+   "row_offset_server": 28,
+   "width": 4,
+   "type": "integer",
+   "evidence_level": "L1",
+   "status": "candidate",
+   "evidence": {
+    "bytes_all_rows": "ff ff ff ff (28/28)",
+    "reason": "same as NDBC; the two -1 counters are adjacent and both read-only integers"
+   }
+  },
+  {
+   "field": "Rnam_or_dbnm_pool0",
+   "row_offset_client": 0,
+   "row_offset_server": 0,
+   "width": 8,
+   "type": "string pool descriptor (u32 start, u32 count) into name_table_0",
+   "evidence_level": "L1",
+   "status": "candidate",
+   "evidence": {
+    "pair_slots": [
+     0,
+     12
+    ],
+    "full_table": "24/24 non-null rows: start[i]+count[i] == start[i+1] exactly (contiguous chain); last row ends at 245981 == name_table_0 row count",
+    "sample_row2": "bf 2d 00 00 (11711) | 6f 1b 00 00 (7023)"
+   }
+  },
+  {
+   "field": "Rnam_or_dbnm_pool1",
+   "row_offset_client": 4,
+   "row_offset_server": 4,
+   "width": 8,
+   "type": "string pool descriptor (u32 start, u32 count) into name_table_1",
+   "evidence_level": "L1",
+   "status": "candidate",
+   "evidence": {
+    "pair_slots": [
+     4,
+     16
+    ],
+    "full_table": "24/24 non-null rows contiguous; last ends at 542060 == name_table_1 row count",
+    "sample_row2": "e9 1a 00 00 (6889) | 0a 1b 00 00 (6922)"
+   }
+  },
+  {
+   "field": "Rnam_or_dbnm_pool2",
+   "row_offset_client": 8,
+   "row_offset_server": 8,
+   "width": 8,
+   "type": "string pool descriptor (u32 start, u32 count) into name_table_2",
+   "evidence_level": "L1",
+   "status": "candidate",
+   "evidence": {
+    "pair_slots": [
+     8,
+     20
+    ],
+    "full_table": "24/24 non-null rows contiguous; starts at 0 and last ends at 85668 == name_table_2 row count (whole table covered)",
+    "sample_row2": "00 00 00 00 (0) | b5 00 00 00 (181)"
+   }
+  }
+ ],
  "samples": [],
- "unclosed": []
+ "unclosed": [],
+ "reader": {
+  "type_id": 19,
+  "slot19_entry_file_offset": "0x157be30",
+  "slot19_unwrapped_file_offset": "0x43b6f90",
+  "thunk_chain": [
+   "0x157be30",
+   "0x43b6f90"
+  ],
+  "mode": "straight-line, 9 width points, 9 stream calls, one bpl-gated byte at the end",
+  "vtable": {
+   "vptr_file_offset": "0x18bec28",
+   "slots": {
+    "0": "0x157c400",
+    "2": "0x157c0f0",
+    "3": "0x157c240"
+   }
+  },
+  "row_reads": [
+   {
+    "seq": 1,
+    "dest_lea": {
+     "file_offset": "0x43b6fae",
+     "bytes": "48 8d 51 28",
+     "instruction": "lea rdx,[rcx+0x28]"
+    },
+    "width": {
+     "file_offset": "0x43b6fb5",
+     "bytes": "41 b8 04 00 00 00",
+     "width": 4
+    },
+    "call": {
+     "file_offset": "0x43b6fbe",
+     "bytes": "ff 50 28"
+    }
+   },
+   {
+    "seq": 2,
+    "dest_lea": {
+     "file_offset": "0x43b6fce",
+     "bytes": "48 8d 53 2c",
+     "instruction": "lea rdx,[rbx+0x2c]"
+    },
+    "width": {
+     "file_offset": "0x43b6fd5",
+     "bytes": "41 b8 04 00 00 00",
+     "width": 4
+    },
+    "call": {
+     "file_offset": "0x43b6fde",
+     "bytes": "ff 50 28"
+    }
+   },
+   {
+    "seq": 3,
+    "dest_lea": {
+     "file_offset": "0x43b6fee",
+     "bytes": "48 8d 53 30",
+     "instruction": "lea rdx,[rbx+0x30]"
+    },
+    "width": {
+     "file_offset": "0x43b6ff5",
+     "bytes": "41 b8 04 00 00 00",
+     "width": 4
+    },
+    "call": {
+     "file_offset": "0x43b6ffe",
+     "bytes": "ff 50 28"
+    }
+   },
+   {
+    "seq": 4,
+    "dest_lea": {
+     "file_offset": "0x43b700e",
+     "bytes": "48 8d 53 34",
+     "instruction": "lea rdx,[rbx+0x34]"
+    },
+    "width": {
+     "file_offset": "0x43b7015",
+     "bytes": "41 b8 04 00 00 00",
+     "width": 4
+    },
+    "call": {
+     "file_offset": "0x43b701e",
+     "bytes": "ff 50 28"
+    }
+   },
+   {
+    "seq": 5,
+    "dest_lea": {
+     "file_offset": "0x43b702a",
+     "bytes": "48 8d 53 38",
+     "instruction": "lea rdx,[rbx+0x38]"
+    },
+    "width": {
+     "file_offset": "0x43b7031",
+     "bytes": "41 b8 04 00 00 00",
+     "width": 4
+    },
+    "call": {
+     "file_offset": "0x43b703a",
+     "bytes": "ff 50 28"
+    }
+   },
+   {
+    "seq": 6,
+    "dest_lea": {
+     "file_offset": "0x43b7046",
+     "bytes": "48 8d 53 3c",
+     "instruction": "lea rdx,[rbx+0x3c]"
+    },
+    "width": {
+     "file_offset": "0x43b704d",
+     "bytes": "41 b8 04 00 00 00",
+     "width": 4
+    },
+    "call": {
+     "file_offset": "0x43b7056",
+     "bytes": "ff 50 28"
+    }
+   },
+   {
+    "seq": 7,
+    "dest_lea": {
+     "file_offset": "0x43b7062",
+     "bytes": "48 8d 53 40",
+     "instruction": "lea rdx,[rbx+0x40]"
+    },
+    "width": {
+     "file_offset": "0x43b7069",
+     "bytes": "41 b8 04 00 00 00",
+     "width": 4
+    },
+    "call": {
+     "file_offset": "0x43b7072",
+     "bytes": "ff 50 28"
+    }
+   },
+   {
+    "seq": 8,
+    "dest_lea": {
+     "file_offset": "0x43b707e",
+     "bytes": "48 8d 53 44",
+     "instruction": "lea rdx,[rbx+0x44]"
+    },
+    "width": {
+     "file_offset": "0x43b7085",
+     "bytes": "41 b8 04 00 00 00",
+     "width": 4
+    },
+    "call": {
+     "file_offset": "0x43b708e",
+     "bytes": "ff 50 28"
+    }
+   },
+   {
+    "seq": 9,
+    "dest_lea": {
+     "file_offset": "0x43b70ac",
+     "bytes": "48 8d 53 49",
+     "instruction": "lea rdx,[rbx+0x49]"
+    },
+    "width": {
+     "file_offset": "0x43b70b3",
+     "bytes": "41 b8 01 00 00 00",
+     "width": 1
+    },
+    "call": {
+     "file_offset": "0x43b70bc",
+     "bytes": "ff 50 28"
+    },
+    "gate": {
+     "test": {
+      "file_offset": "0x43b70a4",
+      "bytes": "40 84 ed",
+      "instruction": "test bpl,bpl"
+     },
+     "branch": {
+      "file_offset": "0x43b70a7",
+      "bytes": "74 1c",
+      "instruction": "je 0x1445226c5"
+     }
+    }
+   }
+  ],
+  "tail_tailcall": {
+   "file_offset": "0x43b70d1..0x43b70db",
+   "instruction": "jmp 0x140faed40 -> thunk 0xfae340 -> 0x143dcb6f0",
+   "meaning": "common base serializer reading obj+8 as 12B identity (mov r8d,0xc at 0x3c6010d)"
+  },
+  "object_size_bytes": 80,
+  "allocation_evidence": {
+   "file_offset": "0x3bd263c",
+   "bytes": "ba 50 00 00 00",
+   "instruction": "mov edx,0x50 (80 bytes = 8*4 data + 12 identity + padding)"
+  }
+ }
 }

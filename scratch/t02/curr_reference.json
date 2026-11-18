@@ -1,0 +1,97 @@
+{
+ "type_id": 41,
+ "entity": "curr",
+ "status": "complete",
+ "source": "commander hand-decode (devseek fw41 仅写出骨架后停摆)",
+ "row_framework": {
+  "archive": "client_db.dat & server_db.dat(两 archive 该表内容一致,均 74,352B)",
+  "member": "client_db/table_41.dat",
+  "count": 173,
+  "row_start": "0xe",
+  "variable_length": true,
+  "row_shape": "u32 n1 + UTF8(name) + u32 n2 + UTF8(code1) + u32 n3 + UTF8(code2) + u32 n4 + UTF8(code3) + f32 current_rate + u32 hist_count + hist_count*(u8 kind + u16 year + f32 rate) + 12B identity + u8 marker",
+  "closure": "14 + sum(row_lens) + 8 == 74352(173 行全走查通过,剩余精确 8B)"
+ },
+ "row_offset_map": [
+  {
+   "idx": 0,
+   "semantic": "currency full name (string, u32 length-prefixed)",
+   "object_off": "0x18",
+   "reader": "0x43c5814 lea r8,[rsi+0x18] / 0x43c581d call 0x6a9510"
+  },
+  {
+   "idx": 1,
+   "semantic": "currency symbol/code 1",
+   "object_off": "0x20",
+   "reader": "0x43c582c lea r8,[rsi+0x20]"
+  },
+  {
+   "idx": 2,
+   "semantic": "currency symbol/code 2",
+   "object_off": "0x28",
+   "reader": "0x43c5844 lea r8,[rsi+0x28]"
+  },
+  {
+   "idx": 3,
+   "semantic": "currency symbol/code 3",
+   "object_off": "0x30",
+   "reader": "0x43c585c lea r8,[rsi+0x30]"
+  },
+  {
+   "idx": 4,
+   "semantic": "current exchange rate (f32)",
+   "object_off": "0x38",
+   "reader": "0x43c5874 lea rdx,[rsi+0x38] / 0x43c587c mov r8d,4 / call [rax+0x28]"
+  },
+  {
+   "idx": 5,
+   "semantic": "exchange-rate history array (count-prefixed, 7B entries)",
+   "object_off": "0x40",
+   "reader": "0x43c588e lea r8,[rsi+0x40] / 0x43c589a call 0x1414b70"
+  }
+ ],
+ "identity_block": {
+  "row_tail": "12B + 1B marker",
+  "ordinal": "173/173 equals row index",
+  "marker": "173/173 == 0x00",
+  "second_dword": "real DB record id (not ordinal+1): row171=87000021, row172=87000022"
+ },
+ "samples": [
+  {
+   "row": 0,
+   "strings": [
+    "Albanian Lek",
+    "Lek",
+    "",
+    "Lek"
+   ],
+   "current_rate": 125.2415771484375,
+   "history_count": 31,
+   "identity": [
+    0,
+    2,
+    2
+   ]
+  },
+  {
+   "row": 172,
+   "strings": [
+    "Guatemalan Quetzal",
+    "Quetzal",
+    "",
+    "Quetzal"
+   ],
+   "current_rate": 9.83,
+   "history_count": 63,
+   "identity": [
+    172,
+    87000022,
+    87000022
+   ]
+  }
+ ],
+ "crosscheck": "旧库 _decode_currency_table 独立解出同样的 4 字符串 + current_rate + history(years/kinds),本次 L3 二进制 reader 链(6 个字段,obj+0x18..0x40)与 L1 数据解码互证",
+ "unclosed": [
+  "部分行(如 row28 Finnish Markka)历史序列含重复条目对 —— 语义待定(可能双版本),位置与宽度已确定"
+ ]
+}

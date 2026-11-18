@@ -1,0 +1,100 @@
+{
+ "type_id": 41,
+ "status": "complete",
+ "client": {
+  "member": "client_db/table_41.dat",
+  "count": 173,
+  "stride": null,
+  "rows_offset": "0xe",
+  "payload_len": 74352,
+  "header": "03 01 74 61 64 2e f1 0d ad 00 00 00 00 00",
+  "footer": "00 00 00 01 d6 83 2f 05",
+  "footer_info": {
+   "offset": "0x12268",
+   "bytes": "00 00 00 01 d6 83 2f 05"
+  },
+  "variable": true,
+  "payload_sha256": "9963118f3d37929131613b8c1ab096636ae02dd7d6908a04a9af4aeab857e803",
+  "row_end": 74344,
+  "footer_len": 8,
+  "row_len_min": 118,
+  "row_len_max": 871,
+  "row_len_distinct": 81,
+  "row_len_sample_first10": [
+   272,
+   497,
+   352,
+   502,
+   526,
+   499,
+   455,
+   421,
+   500,
+   548
+  ],
+  "history_counts_first10": [
+   31,
+   63,
+   42,
+   63,
+   66,
+   63,
+   57,
+   52,
+   63,
+   70
+  ],
+  "row_len_formula": "4*(4+len(s)) + 4 + 4 + 7*n_hist + 13 [4 UTF-8 strings, f32 rate, u32 hist count, 7B items, 13B trailer]",
+  "closure": "14 + sum(row_len_i) + 8 == 74352 (sum=74330, trailing=8)",
+  "closure_ok": true
+ },
+ "server": {
+  "member": "server_db/table_41.dat",
+  "count": 173,
+  "stride": null,
+  "rows_offset": "0xe",
+  "payload_len": 74352,
+  "header": "03 01 74 61 64 2e f1 0d ad 00 00 00 00 00",
+  "footer": "00 00 00 01 d6 83 2f 05",
+  "footer_info": {
+   "offset": "0x12268",
+   "bytes": "00 00 00 01 d6 83 2f 05"
+  },
+  "variable": true,
+  "payload_sha256": "9963118f3d37929131613b8c1ab096636ae02dd7d6908a04a9af4aeab857e803",
+  "row_end": 74344,
+  "footer_len": 8,
+  "row_len_min": 118,
+  "row_len_max": 871,
+  "row_len_distinct": 81,
+  "row_len_sample_first10": [
+   272,
+   497,
+   352,
+   502,
+   526,
+   499,
+   455,
+   421,
+   500,
+   548
+  ],
+  "history_counts_first10": [
+   31,
+   63,
+   42,
+   63,
+   66,
+   63,
+   57,
+   52,
+   63,
+   70
+  ],
+  "row_len_formula": "4*(4+len(s)) + 4 + 4 + 7*n_hist + 13 [4 UTF-8 strings, f32 rate, u32 hist count, 7B items, 13B trailer]",
+  "closure": "14 + sum(row_len_i) + 8 == 74352 (sum=74330, trailing=8)",
+  "closure_ok": true
+ },
+ "relation": "payloads byte-identical=True; common prefix 74352 of 74352/74352 bytes",
+ "payload_identical": true
+}
