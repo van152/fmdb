@@ -42,9 +42,13 @@ def member(mod, archive: str, tid: int):
 
 def split_rows(raw: bytes, count: int) -> dict:
     """Row boundary rule for table_24: each row starts with u32 row_index,
-    then u32 pair equality at +4/+8, and a shape byte at +12."""
+    then a u32 duplicate at +4/+8, then a shape byte at +12.
+
+    Several positions can carry the same index, so candidate chains are built
+    from every candidate start for row 0 and the one that covers all rows is kept.
+    """
     n = len(raw)
-    cand = []
+    cand = {}
     for p in range(HDR, n - 13):
         v = raw[p] | raw[p + 1] << 8 | raw[p + 2] << 16 | raw[p + 3] << 24
         if v >= count:
@@ -53,16 +57,25 @@ def split_rows(raw: bytes, count: int) -> dict:
             continue
         if raw[p + 12] not in (0x00, 0x01, 0x0A, 0x0B):
             continue
-        cand.append((p, v))
-    starts, expect = [], 0
-    for p, v in cand:                     # greedy in position order
-        if v == expect:
-            starts.append(p)
-            expect += 1
-    if expect != count:
-        return {"ok": False, "reason": f"found {expect} of {count} row starts"}
-    if len(starts) != count:
-        return {"ok": False, "reason": f"{len(starts)} starts for count={count}"}
+        cand.setdefault(v, []).append(p)
+
+    best = None
+    for first in cand.get(0, []):
+        starts, expected, cur = [first], 1, first
+        while expected < count:
+            nxt = [p for p in cand.get(expected, []) if p > cur]
+            if not nxt:
+                break
+            cur = nxt[0]
+            starts.append(cur)
+            expected += 1
+        if expected == count and (best is None or len(starts) > len(best)):
+            best = starts
+    if best is None or len(best) != count:
+        got = len(best) if best else 0
+        return {"ok": False,
+                "reason": f"found {got} of {count} row starts"}
+    starts = best
 
     lens = [starts[i + 1] - starts[i] for i in range(count - 1)]
     tail_len = n - starts[-1]
@@ -70,6 +83,7 @@ def split_rows(raw: bytes, count: int) -> dict:
     for i in range(count):
         L = lens[i] if i < count - 1 else tail_len
         shapes.setdefault(raw[starts[i] + 12], []).append(L)
+    runner_len = lens[:-1] if len(lens) > 1 else []
     summary = {
         hex(t): {"rows": len(v), "len_min": min(v), "len_max": max(v),
                  "len_distinct": len(set(v)),
@@ -82,6 +96,10 @@ def split_rows(raw: bytes, count: int) -> dict:
         "prefix_len": starts[0] - HDR,
         "prefix_hex": raw[HDR:starts[0]].hex(" "),
         "row_len_sum": n - starts[0],
+        "runner_rows": count - 1,
+        "runner_len_min": min(runner_len) if runner_len else None,
+        "runner_len_max": max(runner_len) if runner_len else None,
+        "terminator_len": tail_len,
         "shape_byte_summary": summary,
         "row_len_ctr": {"min": min(lens), "max": max(lens)},
     }
@@ -185,7 +203,9 @@ def main() -> int:
         sv = res["server"]
         ok = (res["status"] == "complete" and sv["closure_ok"]
               and sv["count"] == 84507 and sv["rows"]["row0_offset"] == 136
-              and sv["rows"]["prefix_len"] == 122)
+              and sv["rows"]["prefix_len"] == 122
+              and sv["rows"]["shape_byte_summary"].get("0xa", {}).get("rows") == 84255
+              and sv["rows"]["terminator_len"] == 21)
         print("selftest", "PASS" if ok else "FAIL")
         return 0 if ok else 1
     return 0 if res["status"] == "complete" else 1

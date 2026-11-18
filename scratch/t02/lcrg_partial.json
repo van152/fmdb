@@ -1,0 +1,82 @@
+{
+ "type_id": 47,
+ "entity": "lcrg",
+ "rtti": ".?AVLOCAL_REGION@db@@",
+ "status": "partial",
+ "source": "commander hand-decode(devseek fw47 报 stride 44 有误 — closure 与身份块均不成立)",
+ "row_framework": {
+  "archive": "client_db.dat",
+  "member": "client_db/table_47.dat",
+  "count": 2488,
+  "payload_len": 109505,
+  "variable": true,
+  "verified": "前 8 行确定性 46B/行(以 8b000000 开头,含 u32 ID + 3B 尾),第 9 行起出现变长段(6144B)",
+  "devseek_error": "fw47 报 stride=44 closure 14+2488*44+8==109505 为假(实际 109,472 ≠ 109,505),身份块 2488/2488 全部错位"
+ },
+ "row_offset_map": [
+  {
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "semantic": "u32 db_id (0x8b=139 constant in first rows — 可能不是 ID 而是行标记)"
+  },
+  {
+   "idx": 1,
+   "row_off": 4,
+   "width": 4,
+   "semantic": "second u32 (row0: 7ec18300)"
+  },
+  {
+   "idx": 2,
+   "row_off": 8,
+   "width": 16,
+   "semantic": "16B zero"
+  },
+  {
+   "idx": 3,
+   "row_off": 24,
+   "width": 6,
+   "semantic": "0001 0007 0000 (6B)"
+  },
+  {
+   "idx": 4,
+   "row_off": 30,
+   "width": 4,
+   "semantic": "00000064 (100, constant)"
+  },
+  {
+   "idx": 5,
+   "row_off": 34,
+   "width": 8,
+   "semantic": "ffffffff 00000000"
+  },
+  {
+   "idx": 6,
+   "row_off": 42,
+   "width": 2,
+   "semantic": "a463 / d663 ... (2B)"
+  },
+  {
+   "idx": 7,
+   "row_off": 44,
+   "width": 2,
+   "semantic": "重复 2B(与 +42 同值)"
+  }
+ ],
+ "unclosed": [
+  "变长段(第 9 行起)的结构",
+  "身份块位置(不符合 ordinal|ID|ID 惯例)",
+  "2488 行无法用固定 stride 封口"
+ ],
+ "samples": [
+  {
+   "row": 0,
+   "hex": "8b0000007ec18300000000000000000000000000000001000700000064ffffffff00000000a4630200a463020000"
+  },
+  {
+   "row": 1,
+   "hex": "8b000000e7b350005a0000000000000000000000000001000700000064ffffffff01000000d6630200d663020000"
+  }
+ ],
+ "note": "devseek 在 lcrg 上给出错误结论(stride 44),这是第 2 个框架失败案例(第 1 个是 drbr)。devseek 的框架输出必须逐项验证 closure 与身份块。"
+}
