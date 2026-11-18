@@ -1,0 +1,28 @@
+{
+ "id": "E50",
+ "date": "2026-11-18 21:30",
+ "author": "commander(t11 验收)",
+ "kind": "milestone+negative",
+ "level": "L3-static(84 条 VA 指令复核 + 3 条 ref_ptr 锚点逐字一致)+L1(schema 集合运算)",
+ "claim": "【基线改为 129/240：t11 用 14 个错名换来 0 违规，这个交换是对的】t11 交付 status=complete_schema_constrained_ref_ptr：命名 129（chain_unique 68 / ambiguous 11 / readpair 37 / ref_only 8 / ref_pair 3 / schema_fixed 2 / unresolved 111），schema 违规 0，rejected 18 个码，emptied 14 槽，rescued 2 槽，ref_ptr 新增 3 槽。它自己的 verify.py 如实报了两条未达标：计数 129 < 我设的 138、小表数据侧证伪 0/2——不掩饰，这点可信。**关键连带发现（指挥官复核得出）**：t08 的 138 里有 7 个名字是 injury 的字段漏进 lcrg——t47 被配到 injury 的 chain_0162，icla/iscl/Iocr/Imip/Iagr/Icdp 这些 injury 码被当成 lcrg 字段，t11 逐条否决并在 rejected 里保留了完整证据链（含 file_off/instruction）。我上一轮的 schema 检查之所以只报 9 个违规而漏掉这 7 个，是因为我自己也把 t47 映射成了 injury（覆盖率 75% 的陷阱），恰好把它们当成合规。教训：归属判定一旦错，违规检查就系统性失效——这正是 E47 里稀有码加权投票要解决的问题。另外 Lpop 被正确保留（t07 的 45 名零回归包含它），DELE 被正确否决。小表分析失败的直接原因已定位：t11 把 t31（3 槽）/ t35（2 槽）映射到 club（570 个字段），搜索空间等于没约束。",
+ "evidence": {
+  "artifacts": [
+   "scratch/t11/out/naming_result.json(129/240, 含 rejected 字段)",
+   "scratch/t11/out/schema_map.json(归属投票明细)",
+   "scratch/t11/out/small_tables.json(11 表逐表结论 + 2 个数据侧尝试)",
+   "scratch/t11/out/verify.py + build.py + REPORT.md"
+  ],
+  "commander_verify": [
+   "verify.py 输出: schema-illegal=0; t07=45/45; injury=13/13; city=6/6; VA instructions=84/84; ref_ptr=3/3; named=129/240; 并如实 FAIL 两条(129<138、小表 0/2)",
+   "ref_ptr 三锚点与指挥官给的完全一致: Sold 0x1538f2d->obj32, Snew 0x153905b->obj40, Salt 0x153920a->obj72, instruction 均为 mov rcx,qword ptr [rbx+0xXX] + test",
+   "t47 的 rejected 逐条可核: Icdp @0x1580f98 movzx [rdi+0x56]; Iocr @0x1580dbd movss [rdi+0x30]; icla @0x158101b movsx [rdi+0x4c] —— 全是 injury 链的访问",
+   "Lpop 保留在 t47 client row+17/w4, confidence=readpair"
+  ],
+  "known_defects": [
+   "小表 schema 归属未加字段数约束, t31/t35 被映射到 club(570 字段), 导致单射分配无意义",
+   "小表数据侧证伪只做了 2 张(t23/t31)且都判 not_supported, 未覆盖 11 张",
+   "129 这个数字低于 t08 的 138, 但 138 含 14 个错名 —— 两者不可直接比较, 对外汇报必须说明口径"
+  ]
+ },
+ "consequence": "基线正式改为 129（0 违规）。t12 已按此发射：形态完整抽取（read/ref_ptr/write/path_descend/remote 五类），目标 club ≥420/483、平表 ≥129 且目标 ≥150、违规仍为 0，并给 11 个小表加『schema 非通用字段数 ∈ [槽数, 槽数×3]』的硬约束。"
+}
