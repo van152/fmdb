@@ -1224,6 +1224,33 @@
     ]
    },
    "consequence": "据此派三路并行:t08(luna)链分组索引 —— 以'相邻 cmp 间距聚合 + je 目标可达性'成链,链↔reader 用偏移集合交集(>=3 精确命中)配对,链内唯一化定槽,验收为 t07 的 45 零回归 + type22>=14/19 + 总数>=62/240;t09(devseek)数据侧对抗验证 —— 不看 exe,用 .dat 真实列数据给 41 条命名声明出 supported/weak/contradicted 判决,并给 195 个未解析槽出形状签名;t10(devseek)club 链普查 —— 换方向从名字侧反推 433 字段的 object 层偏移结构,判据为无重叠率>=95% 且对齐率>=90%,负结果亦可接受。"
+  },
+  {
+   "id": "E45",
+   "date": "2026-11-18 22:0x",
+   "author": "commander(独立反汇编 Sold/Salt, 修正 E44 的缺陷归因)",
+   "kind": "errata+method",
+   "level": "L3-static(Sold/Salt/Clat/Cnti 的 cmp 立即数与 je 目标块逐条指令为证)",
+   "claim": "【勘误 E44:'Sold/Salt 缺席是漏编码' 的判断错了, 真因是 ref 字段被整批丢弃】Sold 与 Salt 在二进制里用的是**标准编码**: 0x1538f2d `81 fa 64 6c 6f 53` = cmp edx,'Sold' + 0x1538f33 je 0x141539da6; 0x153920a cmp edx,'Salt' + je 0x14153a10d。它们进不了 t07 的表, 是因为 getter 体是 `mov rcx, qword ptr [rbx + 0x20]; test rcx, rcx; jne ...` —— t07 的'只收窄读'规则把 qword 载入一律当内部指针噪声, 于是**连码带偏移整个丢弃**, 而不是记为 ref 类。这个模式其实是引用字段的正面证据: obj+0x20 = 32 正好对上 type22 reader 的 row+4/w4, obj+0x48 = 72 对上 row+17/w4, 与 t05 的链内命名一致。指挥官另做全库形态分类(.rdata 内 14,171 处可打印 4CC 分支): narrow 568 处/495 码, **ref_ptr(`mov r64,[reg+OFF]; test; j*`)281 处/244 码**, 其余 13,183 处为 else 分支/写路径。244 个 ref 码中 241 个形如真字段名, 其中 **162 个完全不在 t07 表内** —— 说明这不是两个码的偶发遗漏, 而是系统性盲区。副产物: 同一分类顺手纠出 t07 的实例错配 —— Snew 在链内实例为 obj+40(0x153905b), 而 t07 表记 166。据此定规则修正: 引用字段的宽度必须取自 reader(通常 4B id), 访问侧 qword 只用来定 object_off, 不可用其 8B 宽度; 且 ref 码必须入表并标 kind=ref_ptr, 不许静默丢弃。",
+   "evidence": {
+    "artifacts": [
+     "scratch/cmd/ref_ptr_codes.json(ref_ptr 244 码 / narrow 495 码, 含 object_off 与 file_off)",
+     "scratch/cmd/ref_chain_prefix.json(链分组与实体配对独立参照)"
+    ],
+    "commander_verify": [
+     "Sold: 0x1538f2d cmp edx,0x536f6c64; 0x1538f33 je 0x141539da6; 目标块首指令 mov rcx,[rbx+0x20] + test rcx,rcx",
+     "Salt: 0x153920a cmp edx,0x53616c74; je 0x14153a10d; 目标块 mov rcx,[rbx+0x48] + test",
+     "偏移对齐: Sold obj+32 vs reader row+4/w4; Salt obj+72 vs reader row+17/w4 —— 两处均精确命中",
+     "对照: Clat narrow@obj72 与 t07 一致; Cnti ref_ptr@obj32 与 city 的 ref_only 结论一致",
+     "形态统计: .rdata 14,171 处可打印 4CC 分支 -> narrow 568 / ref_ptr 281 / 其他 13,183; 去重后 495 窄读码 + 244 引用码",
+     "缺失量化: 241 个形如字段名的 ref 码中 162 个不在 t07 表内"
+    ],
+    "known_defects": [
+     "本次形态分类只跟随首条跳转, else 分支(jne fall-through 写路径)未展开, 故 Scap/Styp/Slon 等未被识别 —— 这类需要读 fall-through 而非 target",
+     "162 这个数是'像字段名的 ref 码缺表'的上界, 未逐个验证其是否真属某个实体链"
+    ]
+   },
+   "consequence": "1) 命名器与链分组必须把 ref_ptr 作为独立形态入库, 宽度取 reader; 这条直接影响 t08 能否拿到 type22 的 Sold/Salt 与 city 的 4 个 ref 字段。2) 162 个缺失 ref 码构成阶段三的现成入口 —— 其中大量 C 前缀码疑属 club, 与 t10 的链普查可交叉验证。3) t09 的数据侧验证将对 Clat/Cnti 这类已命名 ref 字段给出独立判决, 可与本条互证。"
   }
  ]
 }
