@@ -1544,6 +1544,36 @@
     ]
    },
    "consequence": "阶段二 12 张已有候选表收敛为 4 resolved / 3 candidate / 5 negative。剩余主线是 luna 的 t13(10 张空白表找锚点)与 devseek 的 t13d/t13e 旁路交叉检查。"
+  },
+  {
+   "id": "E57",
+   "date": "2026-11-18 23:35",
+   "author": "commander(t13 luna 验收 + devseek t13d 交叉 + 阶段二汇总)",
+   "kind": "milestone",
+   "level": "L3-static(4锚8项指令/立即数逐条反汇编)+L2(值域/基数)+L1(布局闭合)",
+   "claim": "【阶段二收敛: 45 张表归纳完成, 29 resolved / 3 candidate / 11 negative / 2 empty】t13(luna)交 10 空白表+2空表: 4 张 A 锚 resolved(t12=awar/t33=club/t45=person/t48=person)、6 negative、2 empty(52/57 闭合式 14+0+8==22), 验收 4/4 压线达成。指挥官独立复核不依赖其解析器:(1) 4 个 A 锚的 file_off 指令逐条反汇编 + 4 个 cmp 站点立即数 big-endian 解码, 8/8 全一致(mov edi,[rdi+0x80]=AHp1@128 / mov edi,[rbx+0x44]=CMWE@68 / movsx ebx,[rdi+0x56]=gols@86 ×2);(2) schema df 全=1: AHp1→award, CMWE→club, gols→person; reader obj_seq 含对应偏移;(3) t12 的 23 偏移里 12 个落在 award 专属码簇(128/132/136/140/144/148/152/154-158) —— 全批最干净锚。**簇级补强**: t45/t48 单看是 gols 一码, 但 obj84=apps/gams、obj86=gols、obj88=fsgs/fsgt/ogls 三个连续槽全是 person 进球统计且宽度=2, 属簇级自洽, A 级维持; t33 的 chain_0145 虽混合(club47:person10), 但 9 个 C 前缀 club 专属码占 reader 18 偏移中的 9 个, A 级维持。关键边界: t45/t48 共用 reader 0x1543730, 且 chain_0153 在 t08 被 t58 认作 primary(score5) —— 属共用 getter 区, 不是冲突, 但'单码唯一'的说法要打折扣; t12 28,597 行与已知 award 表 3,545 行差 706%, resolved 仅指实体类别、行集不同待解释。devseek t13d 旁路真交付(导 4 表共 73MB+, 其中 t49 全量 792,149 行): 独立数据侧判 t30→player(72473 in 70-76k)、t49→person(792149 in 760-820k) 均 fit=true, 与 E56 裁决吻合; t22/t34 的 fit=false 是其基数表过期(club 写 3000-6000, 实际 84259), 不影响 E56。这是 devseek 首次有效产出, 证明'旁路+不卡主线'的投放方式可行。t13e 仍在跑, 不阻塞。",
+   "evidence": {
+    "artifacts": [
+     "scratch/t13/out/anchors.json + verify.py(VERIFY PASS, 12表全覆盖+2空表)",
+     "scratch/t13d/out/audit.json + t22/t30/t34/t49.csv(devseek 首次有效交付)",
+     "scratch/cmd/stage2_t13_recheck.json(指挥官独立复核)",
+     "reports/stage2_table_identity.{json,md}(45表总清单, --selftest PASS)",
+     "scripts/stage2_report.py(可复跑)"
+    ],
+    "commander_verify": [
+     "4锚反汇编: instruction文本4/4一致; cmp立即数 big-endian 解码 4/4 等于声明码",
+     "df=1 三码: AHp1=First Placed Position(award) / CMWE=Maximum Wage Allowed(club) / gols=Goals(person)",
+     "t12 chain_0106 code vote: award 12/13; reader 命中 award 码偏移 12 个",
+     "t45/t48 共用 reader 0x1543730 且 obj_seq 完全相同; chain_0153 亦被 t58 认领 -> 共用getter区",
+     "阶段二汇总: 45 行, resolved29/candidate3/negative11/empty2; not_in_archive 保留 E24 负结果"
+    ],
+    "known_defects": [
+     "t12 行集差异(28597 vs 3545)未解释; resolved 仅指类身份",
+     "t45/t48 具体到哪张子表(赛季统计 vs 主表)未区分; 84,477 行与 club 84,259 仅差0.26%仍需数据侧排除",
+     "11 negative 中 t26/t29/t32/t36/t38/t39 多为 opaque 12-byte call reader, 无 object_off, 4CC 路线不可达"
+    ]
+   },
+   "consequence": "阶段二主体收口: 45 表已归纳, 交付 reports/stage2_table_identity.{md,json}。剩余 11 negative + 3 candidate 为当前边界; 14 张不在 archive 的表保留 E24 负结果。阶段一(comp 18 L3/要求10)已达标, 阶段三不设全解线; 三阶段均无强制未完成线。"
   }
  ]
 }

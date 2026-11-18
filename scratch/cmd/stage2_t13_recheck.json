@@ -1,0 +1,41 @@
+{
+ "status": "verified",
+ "source": "scratch/t13/out/anchors.json",
+ "commander_recheck": {
+  "static_ok": true,
+  "detail": "4 个 A 锚的 file_off 指令逐条反汇编 + 4 个 cmp 站点立即数 big-endian 解码, 8/8 全一致",
+  "schema_df_ok": true,
+  "df": "AHp1=award/CMWE=club/gols=person, 全 df=1",
+  "reader_offsets_ok": true,
+  "downgrades": [],
+  "upgrades": [
+   {
+    "table": [
+     45,
+     48
+    ],
+    "from": "A(单码gols)",
+    "to": "A(簇级)",
+    "reason": "obj84=apps/gams, obj86=gols, obj88=fsgs/fsgt/ogls 三连续槽全为person进球统计,w=2自洽"
+   },
+   {
+    "table": 33,
+    "note": "chain_0145 混合(club47:person10), 但C前缀专属码簇(CMWE/Ctbu/Crmb/Csry/Ctrl/Cpll/Csrp/Ctbt/Ccfa)占reader 9/18偏移, A级维持"
+   }
+  ],
+  "caveats": [
+   "t12 的 28,597 行与已知 award 表 3,545 行差 706%, 类身份有A锚但行集不同, resolved仅指实体类别",
+   "t45/t48 共用 reader 0x1543730, chain_0153 同时被 t08 配给 t58(score5); 属共用getter区, 不构成冲突但需标注",
+   "t13 报的 4 resolved 全是静态L3; 6 negative 保留原样不硬凑"
+  ]
+ },
+ "devseek_t13d_crosscheck": {
+  "fit_true": [
+   "t30->player(72473 in 70-76k)",
+   "t49->person(792149 in 760-820k)"
+  ],
+  "fit_false_explained": [
+   "t22/t34 用过期基数(club 3000-6000), 实际club主表84259, 不影响E56裁决"
+  ]
+ }
+}
