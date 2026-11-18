@@ -1138,6 +1138,37 @@
     ]
    },
    "consequence": "字段命名从\"单表 11 个\"推进到\"两表 30 个明确命名 + 6 个位组字段\",且首次拿到位打包的硬证据——这解释了此前所有\"字节/字段 < 1\"的现象(award 37 字段装 64B、club 386 标量装 82B),意味着宽度累加模型需要补一层位级拆分。下一步:①把手写 dispatch 链的搜索从\"reader 邻近窗口\"改为\"全 .rdata 扫描\",看能否为 city/regi 等找到另一套链;②对确认位打包的字节做逐位字段分配(用 4CC 候选数 + 位使用率匹配)。"
+  },
+  {
+   "id": "E42",
+   "date": "2026-11-18 21:0x",
+   "author": "commander(t06 交付 + 指挥官独立验证 + 引用匹配器)",
+   "kind": "milestone+method-limit",
+   "level": "L1(值域统计)+L2(引用关系推断),新增命名均经指挥官独立复算",
+   "claim": "【city 三个引用字段定名 + 值域对齐法的适用边界被实证】t06 交付 240 槽分配(20 high / 220 unresolved,诚实不硬凑),其中 city 拿到 5 个 high:Clat+Clon 合并槽(r+1,w8)、Cnti(r+10)、Cwea(r+14)、Clgi(r+21)、Clri(r+25);后三个是**新增命名**,此前 city_reference 里只是 \"candidate\"。指挥官独立复算确认:off14 非哨兵 max=333 对齐 type27(weather) count=334;off25 max=2476 对齐 type47(lcrg) count=2488;off21 非哨兵 max=112 对齐 type8(language) count=126 且 81.73% 为 0xFFFFFFFF 哨兵。据此把\"4B 槽值域 ⊆ 目标表 [0,count)\"写成批量探测器 t05_ref_match,在全库跑出 25 个无歧义引用候选(10 实体)。**但同时实证该方法不能单独定案**:city 的 Clgi 被自动匹配到 table_6(injury, count=115, fill=0.974) 而非正确的 language(126, fill=0.889)——因为 fill 越接近 1 反而越偏向小表,值域本身无法区分\"引用了全表的一部分\"与\"引用了另一张小表\"。故引用字段的最终定名必须有语义来源(4CC 代码或 schema 字段名),值域只能做校验与候选生成。",
+   "evidence": {
+    "artifacts": [
+     "scratch/t06/out/{assignments.json(240 槽),REPORT.md(77KB 逐槽证据),verify.py}",
+     "scratch/t06/out/profile_*.json(38 份列画像,含 city 的 nation/language/localregion/weather 四种引用假设画像)",
+     "scripts/t05_ref_match.py + scratch/t05/ref_matches.json(25 个引用候选)"
+    ],
+    "commander_verify": [
+     "t06 自检复跑 verify.py --selftest:PASS,退出码 0,校验项为 \"layout slots unchanged; city/regi/injury calibration exact; all high type/data checks passed\"",
+     "city Cwea 独立复算:off14 distinct=321, 非哨兵 max=333;type27 count=334 —— 值域完全落在 [0,334)",
+     "city Clri 独立复算:off25 distinct=2330, 非哨兵 max=2476, 哨兵率 8.35%;type47(lcrg) count=2488 —— 落在 [0,2488)",
+     "city Clgi 独立复算:off21 distinct=61, 非哨兵 max=112, 哨兵率 81.73%;language count=126 —— 落在 [0,126)",
+     "regi 交叉:6 个 4B 槽值域分别精确落在 table_37/71/26/12/30/62 的 [0,count) 内(inside=1.0),而 idx6/idx7 恒为 0xFFFFFFFF 与 E29 记录一致,说明填充位与引用位被正确区分"
+    ],
+    "false_positive_demo": [
+     "Clgi 反例:自动匹配给 table_6(injury) 而非 table_8(language),因 112/115=0.974 > 112/126=0.889。证明\"fill 越接近 1 越可信\"的直觉是错的——小表更容易被\"填满\"",
+     "因此 t05_ref_match 的 confidence 只到 ref_match(候选)级,不可直接当 L3 命名采纳"
+    ],
+    "limits": [
+     "t06 只产出 20 high / 240 槽(8.3%):剩下 220 槽没有数据证据能唯一定名,主因是多数实体缺 schema 字段集(type22/30/31/34/37/42/43/46/49/50/51/58/60/61/62/63/64/66/70 共 19 个实体连表身份都未知)",
+     "city 的 Catt/Cinh/Calt 相关槽 t06 判为证据不足而保留 unresolved —— 这是对的,未发现反例"
+    ]
+   },
+   "consequence": "语义命名累计达 33 条(injury 13+位组 5、球场表 type22 17、city 5、regi 1,去重后按字段计约 33),且新增的 city 三例都有精确的值域背书。更重要的是把两条路线的适用条件钉死:①4CC 分发链 -> 可给出确定命名,但只存在于手写优化的实体(injury/type22);②值域对齐 -> 可生成候选但不可定名,必须配语义。这决定了下一步该做什么:优先为 19 个身份未知的实体找 4CC(它们若属于某个已知家族,dispatch 链可能在别处),而不是继续在值域统计上加码。"
   }
  ]
 }
