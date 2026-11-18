@@ -261,6 +261,13 @@ def main() -> int:
     up_small = (load_json(UPSTREAM / "reports/dbdat_decode/db_tables_small.json") or {}).get("tables") or {}
     up_big = (load_json(UPSTREAM / "reports/dbdat_decode/db_tables_big.json") or {}).get("tables") or {}
     up_server = (load_json(UPSTREAM / "reports/dbdat_decode/server_tables_census.json") or {}).get("entries") or []
+    # 本仓 t05a 独立复算的 server 边界(优先级高于上游普查)
+    t05a = load_json(ROOT / "scratch/t05/server_bounds/boundaries.json") or {}
+    t05a_map = {}
+    for t in t05a.get("tables", []):
+        tid = t.get("table_id")
+        if isinstance(tid, int):
+            t05a_map[tid] = t
 
     upstream: dict[tuple[str, int], dict] = {}
     for k, it in (up_small.items() if isinstance(up_small, dict) else []):
@@ -304,6 +311,18 @@ def main() -> int:
             "entity_tier": em.get("tier") if isinstance(em, dict) else None,
             "model": it.get("row_model"),
         }
+    # 本仓 t05a 复算结果覆盖上游判定
+    for tid, t in t05a_map.items():
+        row = upstream.get(("server", tid), {})
+        verified = bool(t.get("verified"))
+        row.update({
+            "boundary": "closed" if verified else "open",
+            "equation": str(t.get("closure") or "")[:120],
+            "fmdb_t05a": "verified" if verified else str(t.get("model") or "unresolved"),
+            "count": t.get("count", row.get("count")),
+            "payload": t.get("payload_len", row.get("payload")),
+        })
+        upstream[("server", tid)] = row
 
     named, offsets, named_src = collect_named_fields()
 

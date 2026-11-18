@@ -963,6 +963,43 @@
     ]
    },
    "consequence": "club 字段级确认是 mixed 双 reader + 动态宽度 + count-loop 的硬骨头,半自动底稿对它也只能闭合首段直线字段。与 E35 合起来,全解析的硬上限已探明:直线型实体(46)可用半自动快速推进,mixed/循环型大实体(club/nation-全字段/player)仍需逐字段人工 + 数据抽验,不能指望脚本或单次 AI 任务批量拿下。战略:继续用已验证的\"人工法+AI 渠道+指挥官抽验\"逐实体稳步推进,不追一键突破。"
+  },
+  {
+   "id": "E37",
+   "date": "2026-11-18 19:2x",
+   "author": "commander + t05a(gpt-6-luna) 交付,指挥官独立复现",
+   "kind": "milestone",
+   "level": "L1(逐表 closure 精确算术 + 每行身份;38 定长表由指挥官自写导出器独立复算;变长表由 t05a verify.py 从原始字节重解,指挥官独立复现 2/3)",
+   "claim": "【行边界全覆盖 78/79】server_db 59 张数值主表:t05a 独立复算得 58 张 verified(38 定长 + 2 empty + 18 变长),仅 table_24(team) 诚实负结果。加上 client 20/20(含本仓独立攻下的 table_47),全库 79 张数值表有 78 张给出精确封口等式。同时确认一个跨表通用行文法:变长表行尾为 13B 身份尾 `u32 rdui(==行号) | u32 duni | u32 duni(同值) | u8 marker(00 或 0c)`,与该表 body 长度无关。",
+   "evidence": {
+    "artifacts": [
+     "scratch/t05/server_bounds/boundaries.json (59 表,68KB,含每表 model/closure/identity/negative_reason)",
+     "scratch/t05/server_bounds/verify.py (28KB,--selftest 通过;默认模式从 archive 重解全部 59 表)",
+     "scratch/t05/server_bounds/common.py",
+     "scratch/t05/COVERAGE.json / COVERAGE.md (全库进度矩阵)",
+     "scripts/fm24_dump.py (指挥官自写导出器,selftest 49 定长 + lcrg 变长 PASS)",
+     "scripts/t05_lcrg.py (table_47 双约束闭合)",
+     "scripts/t05_schema.py + scratch/t05/schema_inventory.json (32 实体 2144 字段机读化)",
+     "scripts/t05_profile.py + profile_{award,city,stadium,injury}.json (字节列画像)"
+    ],
+    "commander_independent": [
+     "定长: 自写 fm24_dump.py 用与 t05a 无关的代码路径重新解压 + 走查,49 张定长表 closure 精确(含 server 38 张),table_34 因成员解析不匹配标 SKIP 而非通过",
+     "变长独立复现: 自写 walker(尾锚 rdui==行号 + duni 同值 + marker∈{00,0c},取最短行长)复现 server table_3 = 84,259 行、终点 16,595,304 + 8 == 16,595,312;server table_72 = 138 行、终点 9,392 + 8 == 9,400。两者与该代理结论完全一致",
+     "未复现项: server table_10(251 行/422,345B) 我的简化 walker 在第 129 行卡住(代理用倒序走通),不构成否证,列为待复核",
+     "footer 交叉核对: server table_3/10/71/72 尾部均为 `00 00 00 01 <u32 max_id>` 标准 8B footer,t05a 的 last_row_end+8 等式与之一致",
+     "payload 完整性: t05a 报告 58 个 census SHA-256 全匹配;table_21 的 census SHA 缺失,已记录本次计算值(如实标注,不冒充验证)"
+    ],
+    "errata": [
+     "【上游假阳性】D:/tmp2b/fm24 的 client table_47 被判为 `exact fixed stride 25+2488*44+8=109505`。实测按 44B 切分 rdui==行号 仅 3/2488、重复尾 u32 仅 576/2488 —— 纯算术巧合。真解为 14+Σ(41+5k)+8=109505(2488 行,rdui/duni 均 2488/2488),见 scripts/t05_lcrg.py",
+     "【本仓旧结论升级】scratch/t02/lcrg_partial.json 的『第 9 行起变长、无法封口』不成立;变长可行,尾锚+行号约束即精确封口",
+     "【方法学】上游 b46 把『14+N×stride+8 整除』记作 exact fixed stride 是不够的;必须加身份槽验证,否则会把 lcrg 这类变长表误判为定长"
+    ],
+    "gap": {
+     "server_table_24": "team,84,507 行/8,819,030 B,均值 104.36 B 非整数。t05a 正序到第 529 行失去尾锚、倒序找不到 ordinal 84505,未猜 stride。已另派 t05c2(devseek,45min 预算)专攻,强假设为 82B 定长标量区 + 行尾内联字符串(table_extra_24 精确满足 12+82*84507)",
+     "field_mapping": "行边界完成不等于字段完成。当前已描述行内偏移 102 个(按实体去重,其中 43 个有 schema 字段码),占 32 实体 1,968 个顶层标量的 5.2%"
+    }
+   },
+   "consequence": "『全解析』的第一层(行边界)基本收口:78/79。可 dump 表达 49 定长 + lcrg,导出器与 schema 机读清单、列画像器均已就位。剩余工作重心转向字段语义:club(386 标量)/comp(240)/nation(317)/person 家族(533)是主要缺口。"
   }
  ]
 }
