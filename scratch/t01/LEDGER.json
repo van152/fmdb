@@ -781,6 +781,24 @@
     "census_correction": "t01h 77 宽度口径修正(reader 本体 34 点);getter 扫描全寄存器(16 条 81 fb 命中,EDX 为主)"
    },
    "consequence": "三实体验收线达成(comp 18 / weat 89 / stad 16 = 123 个 L3 行偏移字段);方法论四场景验证(直线/确定循环/类变长/server 扩展);stage-2 剩余:club(433,mixed)→ pers(W 条件)→ 变长型(行边界)→ 46 直线型逐个复制"
+  },
+  {
+   "id": "E29",
+   "date": "2026-11-18 10:55",
+   "author": "commander",
+   "kind": "finding",
+   "level": "L3-static(指挥官独立 19 项核验,含 devseek 框架交叉)",
+   "claim": "【devseek 渠道评估 + regi 解码完成】regi(type 19)全解:client stride 45/server 46、count 28、8 个 4B 业务字段(row+0/4/8/12/16/20/24/28 -> obj+0x28..0x44)、12B 身份块(ordinal+dup-ID 28/28)、col6/col7 恒 FFFFFFFF、server row+32 多一常量 0x04。Rnam 名称经 slot25([rax+0xc8])从字符串池取,不在行内。devseek 渠道评估:框架侧质量高(精确到 footer/SHA/关系式),但单次 2-14 分钟必被上游 upstream_saturated 掐断,且 session 累积后陷入\"重发现同一框架\"死循环;有效产出止于写骨架",
+   "evidence": {
+    "artifacts": [
+     "scratch/t02/regi_reference.json",
+     "scratch/t02/inbox/s19/output.json(devseek 框架部分)"
+    ],
+    "commander_verify": "19 项:双 payload 长度/SHA、closure 14+n*stride+8、ordinal 28/28、dup-ID 28/28、marker 28/28、col6/7 常量 28/28、server 关系 28x3、8 条 reader lea 逐字节",
+    "devseek_defect": "closure 报 +9 应为 +8(其自身 footer 记 9B 但算术用 8,自相矛盾笔误)",
+    "channel_assessment": "devseek(deepseek-v4.1-flash-free)在 devseek provider 上 4 次尝试全部 upstream_saturated(503);单次存活 2-14 min;产出质量高但无法完成多步任务"
+   },
+   "consequence": "任务分配改为:单实体极简任务 + 强制先落盘骨架 + 指挥官补字段侧;或指挥官直接解码(regi 全程约 15 分钟,比 devseek 快且不断流)"
   }
  ]
 }
