@@ -12,7 +12,7 @@
 | t02c-club | gpt-6-luna(稳定) | ~~club 变体段~~ ✅ **框架全解入账 E33**(84,259 行封口;字段 L3=0 未做) | `inbox/club_v2/` | `pi-logs/t02c-club.log` | 实耗 20min(冗余轮已 kill) |
 | t02p-pw | gpt-6.2-sol(最强,额度少) | ~~BASIC_PERSON W 选择器~~ ✅ **已交付入账 E32** | `inbox/pw/` | `pi-logs/t02p-pw.log` | 实耗 23min |
 | t02f-b3 | devseek(便宜,断流) | ~~t7/t9/t22 批量框架~~ ⚠️ **2/3 入账 E33**(fw7/fw22 ✓,fw9 仍骨架) | `inbox/batch3/` | `pi-logs/t02f-b3.log` | 2 轮超时 |
-| t02g-nati | logfare→**转派 luna** | logfare 5 次限流失败(负结果入 E33)→ luna 接手在跑 | `inbox/nati/` | `pi-logs/t02g{,-natir}.log` | t02g2 2×25min |
+| t02g-nati | logfare→**转派 luna** | ~~logfare 限流失败~~ → ✅ **nati 行边界攻克入账 E34**(251行封口+四段计数) | `inbox/nati/` | `pi-logs/t02g{,-natir}.log` | t02g2 实耗 25min |
 
 发射时间 16:05:39,四进程已确认在跑(ps 可见)。任务书在 `prompts/t02{c,p,f,g}_*.md`。
 
@@ -25,6 +25,7 @@
 
 ## 验收记录
 
+- **nati 转派 → E34 已入账(17:0x)**:luna 接手恢复四段计数行边界,client 251/251 封口(14+24710+8=24732);指挥官字节抽验 13/13 + 自写行链走查逐项一致 + 锚点 7/7。logfare 原路负结果保留在 E33。
 - **调度轮全部收口 → E33 已入账(16:4x)**:
   - club(luna):84,259/84,259 行全走通、footer 0x69c66a 精确封口;solve.py --selftest 独立复跑 PASS;**推翻旧"4B 变体"结论**(实为 84,256 标准+3 特殊空记录)。字段级 L3=0,诚实标注未闭合。
   - devseek:fw7(208 变长)/fw22(449×13)complete,旧库 header 独立核对一致;fw9 超时仅骨架(2/3)。
