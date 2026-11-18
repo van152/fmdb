@@ -1089,6 +1089,55 @@
     ]
    },
    "consequence": "字段映射的最后一跳(语义命名)由此打通,并且是纯静态可复跑的:给定 reader body 就能自动产出带字段名的行内布局。当前状态是 240 条布局(E39)+13 条命名(E40),命名瓶颈已从\"不知道怎么连\"变成\"分发链只在部分实体存在\"。下一步两条并行:①扩展 getter 模式识别把 injury 补齐到 21/21,并在 type22(17 个 4CC)上完整命名;②对无分发链的实体改走\"schema 保序 + 类型-统计约束\"半自动法(用 injury 的 11 个已验证命名当校准集)。"
+  },
+  {
+   "id": "E41",
+   "date": "2026-11-18 20:5x",
+   "author": "commander(命名器升级: setter 链 + movss + 分段边界 + 位打包)",
+   "kind": "milestone",
+   "level": "L3-static(每条命名均有 cmp 4CC 与成员访问双向指令地址)+L1(数据分布验证)",
+   "claim": "【命名器升级:injury 覆盖 18/21 槽,type22 球场表 17/19 槽】三个工程修正把一个表的命名能力推广到两张表,并发现位打包这一此前未知的行内结构。(1) **setter 链**:exe 里除 getter 外还有 `cmp edx,<4CC>; jne skip; ...; mov [rsi+OFF],reg` 的写入链,同样给出字段偏移,此前只认 getter 导致漏解;(2) **movss 支持**:real 字段用 `movss xmm,[rdi+OFF]` 读取,Iocr 的 getter 为 `movss xmm6, dword ptr [rdi+0x30]`,与 reader 槽 row+13/w4 的 obj 0x30 精确对上;(3) **分段边界**:同一函数内 getter 密集排列,必须用\"下一个 `cmp <reg>,<4CC>`\"作硬边界,否则会串到相邻字段(未分段时 6 个不同 4CC 全被错解为同一偏移 0x57)。最终 injury 得到 13 个明确命名 + 1 个 5-boolean 位组 + 1 个双义位组,占 21 槽的 18 槽;type22(球场家族,4CC 均为 S 前缀)得到 17/19 槽命名。",
+   "evidence": {
+    "artifacts": [
+     "scripts/t05_name_fields.py(find_code_offsets: 双链+分段+movss+bitfield 分组)",
+     "scratch/t05/named_fields.json(26 实体命名结果,含 kind/access_va/object_off/位组候选)"
+    ],
+    "injury_named": [
+     "row+0 w1 obj0x4c = icla + DELE(双义位组,DELE 疑为 Deleted 标志)",
+     "row+1 w1 obj0x4d = iscl(Sub-Classification)",
+     "row+3 w2 obj0x34 = Imnd(Minimum Days,值域 1-180)",
+     "row+5 w2 obj0x36 = Iexd(Extra Days,值域 3-290)",
+     "row+7 w1 obj0x58 = Iiar(Inactive Ratio)",
+     "row+8 w1 obj0x59 = Irec(Recurring,严格 0/1)",
+     "row+13 w4 obj0x30 = Iocr(Occurrence Ratio,real;getter movss [rdi+0x30])",
+     "row+17 w1 obj0x50 = Imip(Match Injury Percentage,0-90)",
+     "row+20 w1 obj0x51 = Iagr(Age Rule)",
+     "row+21 w1 obj0x52 = Icms(Season,恰为 {0,1,2,3})",
+     "row+22 w1 obj0x53 = Icon(Contagious)",
+     "row+23 w1 obj0x54 = inSr(Seriousness,1-5)",
+     "row+25 w1 obj0x56 = Icdp(Central Defender Percentage,{50,255})",
+     "row+26 w1 obj0x57 = 位组 {Ibin,Ibis,Ibpg,Ibph,Ibsp}(5 个 boolean 打包)"
+    ],
+    "type22_named": [
+     "17/19 槽命名,4CC 全为 S 前缀(球场家族):Sold/Snew/Scap(容量)/Styp(类型)/Salt/Scpm/Sscp/Snxa/Snmn/Snmx/Stks/Slhm/Scam/Scns/ScTL/ScYL/Sceb",
+     "未命名 2 槽:row+0 w4 obj0x18(疑 NBA/基类字段)、row+54 w12 obj=None(身份尾前 12B,疑 3 个 u32 引用)"
+    ],
+    "bitfield_proof": [
+     "server table_6 off26 单字节 6 位独立使用率:bit0=0.83 bit1=0.44 bit2=0.26 bit3=0.03 bit4=0.14 bit5=0.38,对应 6 个 boolean",
+     "client table_6 off2 仅 bit0=0.23 —— 说明 client 版只保留 1 个 boolean,server 版才展开全部位",
+     "这是\"多 4CC 共享同一 1 字节偏移\"的正确解释,不是解析错误"
+    ],
+    "verify": [
+     "Iocr getter 逐字节核对:0x141581ca2 `movss xmm6, dword ptr [rdi + 0x30]`,offset 0x30 == reader 槽 row+13 的 obj 0x30",
+     "Icms setter 逐字节核对:0x141582aaf `mov byte ptr [rsi + 0x52], al`,offset 0x52 == reader 槽 row+21 的 obj 0x52",
+     "Icms/Icdp getter 交叉:0x141581f53 `movsx edi,[rdi+0x52]` / 0x141581eeb `movzx edi,[rdi+0x56]` 与 setter 侧同偏移"
+    ],
+    "limits": [
+     "city/regi/stad/stgn/lcrg 等 24 实体仍 dispatch=0:它们的属性走描述符注册路径(`mov [rbp-X],<4CC>; call <注册>`),成员指针在注册代码里是常量 `add rax,0x38`,真实偏移由运行时描述符表给出,静态代码不暴露",
+     "injury 尚有 8 槽无归属(obj 0x4a,0x5a,0x5b,0x5c,0x5d 及 2 个寄存器宽度槽),对应 schema 的 Inam/Isnm 等字符串字段(经 duni 关联 lang 表,不占行内)与未文档化属性"
+    ]
+   },
+   "consequence": "字段命名从\"单表 11 个\"推进到\"两表 30 个明确命名 + 6 个位组字段\",且首次拿到位打包的硬证据——这解释了此前所有\"字节/字段 < 1\"的现象(award 37 字段装 64B、club 386 标量装 82B),意味着宽度累加模型需要补一层位级拆分。下一步:①把手写 dispatch 链的搜索从\"reader 邻近窗口\"改为\"全 .rdata 扫描\",看能否为 city/regi 等找到另一套链;②对确认位打包的字节做逐位字段分配(用 4CC 候选数 + 位使用率匹配)。"
   }
  ]
 }

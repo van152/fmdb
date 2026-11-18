@@ -31,9 +31,15 @@ GETTER_BODY_BYTES = 72
 
 ACCESS_SIZE = {"byte": 1, "word": 2, "dword": 4, "qword": 8}
 
-# movzx/movsx/mov reg, [reg + OFF]
-RE_MEM = re.compile(r"^(?:mov|movzx|movsx|movsxd)\s+([a-z0-9]+),\s*(byte|word|dword|qword)?\s*ptr\s*\[([a-z0-9]+)\s*\+\s*(0x[0-9a-f]+)\]$")
-RE_JE = re.compile(r"^j(?:e|z)\s+(0x[0-9a-f]+)$")
+# 行缓冲成员访问:  getter `mov reg,[rdi+OFF]` / setter `mov [rsi+OFF],reg`
+RE_MEM = re.compile(r"^(?:mov|movzx|movsx|movsxd|movss|movsd)\s+([a-z0-9]+),\s*(byte|word|dword|qword)?\s*ptr\s*\[([a-z0-9]+)\s*\+\s*(0x[0-9a-f]+)\]$")
+RE_MEM_ST = re.compile(r"^mov\s+(byte|word|dword|qword)?\s*ptr\s*\[([a-z0-9]+)\s*\+\s*(0x[0-9a-f]+)\],\s*([a-z0-9]+)$")
+RE_JE = re.compile(r"^j(?:e|z|ne|nz)\s+(0x[0-9a-f]+)$")
+
+# 行缓冲/对象指针允许的寄存器(reader 里是 rsi/rdi/rcx/rbx)
+BUF_REGS = {"rsi", "rdi", "rcx", "rbx", "rdx", "r12", "r13", "r14", "r15"}
+# 合理的字段偏移范围(排除 0x8/0x10/0x28 这类容器或虚表偏移)
+OFF_MIN, OFF_MAX = 0x20, 0x200
 
 
 def is_4cc(v: int) -> bool:
@@ -46,15 +52,42 @@ def code4cc(v: int) -> str:
     return v.to_bytes(4, "little", signed=False)[::-1].decode("latin1")
 
 
-def parse_dispatch(md, raw: bytes, pe, body_off: int, window: int = DISPATCH_WINDOW):
-    """在 reader body 之后找 `cmp <reg>, <4CC>; je <target>` 链。"""
+def _mem_access(x):
+    """从一条指令里抽出行缓冲成员访问 (OFF, size, kind)。"""
+    text = x.mnemonic + " " + x.op_str
+    m = RE_MEM.match(text)
+    if m and m.group(3) in BUF_REGS:
+        off = int(m.group(4), 16)
+        if OFF_MIN <= off <= OFF_MAX:
+            return off, ACCESS_SIZE.get(m.group(2) or "dword", 4), "read"
+    m = RE_MEM_ST.match(text)
+    if m and m.group(2) in BUF_REGS:
+        off = int(m.group(3), 16)
+        if OFF_MIN <= off <= OFF_MAX:
+            return off, ACCESS_SIZE.get(m.group(1) or "dword", 4), "write"
+    return None
+
+
+def find_code_offsets(md, raw: bytes, pe, body_off: int,
+                      window: int = DISPATCH_WINDOW):
+    """在 reader body 之后找 4CC 分发/写入链, 返回 [{code, object_off, access_size, kind, ...}]。
+
+    exe 里存在两条形态:
+      getter: cmp edx,<4CC>; je  <tgt>   ... tgt: mov reg,[rdi+OFF]
+      setter: cmp edx,<4CC>; jne <skip>  ...      mov [rsi+OFF],reg
+
+    关键纪律: **下一个 `cmp <reg>,<4CC>` 是本段的硬边界**。
+    早期版本用"向后扫 N 条"会在 getter 密集区串到相邻字段(实测 6 个不同 4CC
+    全被解析成同一偏移 0x57), 故必须按段切分。
+    """
     base_va = pe.f2va(body_off)
     if base_va is None:
         return []
-    start = body_off
     end = min(body_off + window, len(raw))
-    ins = list(md.disasm(raw[start:end], base_va))
-    out = []
+    ins = list(md.disasm(raw[body_off:end], base_va))
+
+    # 先定位所有 4CC cmp, 作为段边界
+    bounds: list[tuple[int, str, int]] = []      # (index, code, imm)
     for i, x in enumerate(ins):
         if x.mnemonic != "cmp":
             continue
@@ -63,16 +96,56 @@ def parse_dispatch(md, raw: bytes, pe, body_off: int, window: int = DISPATCH_WIN
         if not m:
             continue
         val = int(m.group(2), 16)
-        if not (0 <= val <= 0xFFFFFFFF) or not is_4cc(val):
-            continue
-        # 向后 1-3 条内找 je
-        for k in range(i + 1, min(i + 4, len(ins))):
-            jm = RE_JE.match(ins[k].mnemonic + " " + ins[k].op_str)
-            if jm:
-                out.append({"code": code4cc(val), "cmp_va": hex(x.address),
-                            "target_va": jm.group(1)})
-                break
+        if 0 <= val <= 0xFFFFFFFF and is_4cc(val):
+            bounds.append((i, code4cc(val), val))
+
+    # 同一个 4CC 可能因二分查找/双链出现多次, 保留每次都参与匹配(去重留最优)
+    out: list[dict] = []
+    for k, (i, code, _imm) in enumerate(bounds):
+        seg_end = bounds[k + 1][0] if k + 1 < len(bounds) else min(i + 20, len(ins))
+        write_hit = read_hit = None
+        for j in range(i + 1, seg_end):
+            acc = _mem_access(ins[j])
+            if not acc:
+                continue
+            off, size, kind = acc
+            if kind == "write" and write_hit is None:
+                write_hit = (off, size, hex(ins[j].address))
+            elif kind == "read" and read_hit is None:
+                read_hit = (off, size, hex(ins[j].address))
+        # je/jne 目标块: 只取该块内第一条访问
+        tgt_hit = None
+        for j in range(i + 1, min(i + 3, len(ins))):
+            jm = RE_JE.match(ins[j].mnemonic + " " + ins[j].op_str)
+            if not jm:
+                continue
+            tgt_va = int(jm.group(1), 16)
+            tgt_off = pe.va2f(tgt_va)
+            if tgt_off is None:
+                continue
+            for y in md.disasm(raw[tgt_off:tgt_off + GETTER_BODY_BYTES], tgt_va):
+                acc = _mem_access(y)
+                if acc:
+                    tgt_hit = (acc[0], acc[1], acc[2], hex(y.address))
+                    break
+                if y.mnemonic in ("ret", "jmp"):
+                    break
+            break
+        # 优先级: 目标块直读 > 段内 write > 段内 read
+        if tgt_hit:
+            out.append({"code": code, "cmp_va": hex(ins[i].address),
+                        "object_off": tgt_hit[0], "access_size": tgt_hit[1],
+                        "kind": tgt_hit[2], "access_va": tgt_hit[3]})
+        elif write_hit:
+            out.append({"code": code, "cmp_va": hex(ins[i].address),
+                        "object_off": write_hit[0], "access_size": write_hit[1],
+                        "kind": "write", "access_va": write_hit[2]})
+        elif read_hit:
+            out.append({"code": code, "cmp_va": hex(ins[i].address),
+                        "object_off": read_hit[0], "access_size": read_hit[1],
+                        "kind": "read", "access_va": read_hit[2]})
     return out
+
 
 
 def parse_getter(md, raw: bytes, pe, target_va: int):
@@ -82,7 +155,7 @@ def parse_getter(md, raw: bytes, pe, target_va: int):
         return None
     ins = list(md.disasm(raw[off:off + GETTER_BODY_BYTES], target_va))
     for x in ins:
-        if x.mnemonic not in ("mov", "movzx", "movsx", "movsxd"):
+        if x.mnemonic not in ("mov", "movzx", "movsx", "movsxd", "movss", "movsd"):
             continue
         m = RE_MEM.match(x.mnemonic + " " + x.op_str)
         if not m:
@@ -120,6 +193,7 @@ def main() -> int:
 
     results = []
     for L in lay["layouts"]:
+        bitfield_offsets: set[int] = set()
         tid = L["type_id"]
         if args.type is not None and tid != args.type:
             continue
@@ -127,21 +201,27 @@ def main() -> int:
         if not body:
             continue
         body_off = int(body, 16)
-        disp = parse_dispatch(md, pe.raw, pe, body_off)
-        if not disp:
+        found = find_code_offsets(md, pe.raw, pe, body_off)
+        if not found:
             results.append({"type_id": tid, "entity": L["entity"], "dispatch": 0,
                             "named": [], "note": "no 4CC dispatch chain found"})
             continue
 
-        # 4CC -> object_off
-        code2off = {}
-        for d in disp:
-            g = parse_getter(md, pe.raw, pe, int(d["target_va"], 16))
-            if g:
-                code2off.setdefault(d["code"], g)
-        obj2code = {}
-        for code, g in code2off.items():
-            obj2code.setdefault(g["object_off"], code)
+        # 同一 4CC 可能多处出现: 优先 read(语义直读), 其次 write
+        code2off: dict[str, dict] = {}
+        for f in sorted(found, key=lambda z: 0 if z["kind"] == "read" else 1):
+            code2off.setdefault(f["code"], f)
+        obj2code: dict[int, str] = {}
+        grouped: dict[int, list[str]] = {}
+        for code, f in code2off.items():
+            obj2code.setdefault(f["object_off"], code)
+            grouped.setdefault(f["object_off"], []).append(code)
+
+        # 位打包: 多个 4CC 共享同一 1 字节偏移 -> 该字节是 bitfield, 需按位拆分
+        for off, codes in list(grouped.items()):
+            sizes = {code2off[c]["access_size"] for c in codes}
+            if len(codes) > 1 and sizes == {1}:
+                bitfield_offsets.add(off)
 
         # 用 reader 的 obj_seq 连接
         obj_seq, hits = objmap.get(tid, ([], []))
@@ -155,18 +235,25 @@ def main() -> int:
                 gi = start_i + f["idx"]
                 oo = obj_seq[gi] if gi < len(obj_seq) else None
                 code = obj2code.get(oo) if isinstance(oo, int) else None
+                is_bit = isinstance(oo, int) and oo in bitfield_offsets
                 named.append({
                     "idx": f["idx"], "row_off": f["row_off"], "width": f["width"],
-                    "object_off": oo, "code": code,
-                    "confidence": "readpair" if code else "layout_only",
+                    "object_off": oo,
+                    "code": None if is_bit else code,
+                    "bitfield_candidates": sorted(grouped.get(oo, [])) if is_bit else None,
+                    "confidence": ("bitfield_group" if is_bit
+                                   else ("readpair" if code else "layout_only")),
                 })
             archives[arch] = {"business_width": v["business_width"], "fields": named}
 
         n_named = sum(1 for a in archives.values() for f in a["fields"] if f["code"])
+        n_bit = sum(1 for a in archives.values() for f in a["fields"]
+                    if f.get("confidence") == "bitfield_group")
         results.append({"type_id": tid, "entity": L["entity"],
-                        "reader_body": body, "dispatch": len(disp),
+                        "reader_body": body, "dispatch": len(found),
                         "codes": sorted(code2off.keys()),
-                        "named_count": n_named, "archives": archives})
+                        "named_count": n_named, "bitfield_slots": n_bit,
+                        "archives": archives})
 
     Path(args.out).write_text(json.dumps({
         "note": "code 来自 exe 的 `cmp edx,<4CC>; je <getter>` 分发链, 由 getter 内 [reg+OFF] 与 "
@@ -185,12 +272,14 @@ def main() -> int:
             for arch, a in (r.get("archives") or {}).items():
                 print(f"  [{arch}] {a['business_width']}B")
                 for f in a["fields"]:
-                    print(f"    row+{f['row_off']:<3} w={f['width']}  obj={f['object_off']}  "
-                          f"{f['code'] or '?'}")
+                    tag = f['code'] or ('|'.join(f.get('bitfield_candidates') or []) + ' [bitfield]'
+                                        if f.get('confidence') == 'bitfield_group' else '?')
+                    print(f"    row+{f['row_off']:<3} w={f['width']}  obj={f['object_off']}  {tag}")
             print()
         else:
             print(f"{r['type_id']:>4} {str(r['entity']):<12} dispatch={r.get('dispatch', 0):>3} "
-                  f"codes={len(r.get('codes') or []):>3} named={r.get('named_count', 0):>3}")
+                  f"codes={len(r.get('codes') or []):>3} named={r.get('named_count', 0):>3} "
+                  f"bitfield={r.get('bitfield_slots', 0):>2}")
     print()
     print(f"写出 {args.out}")
     return 0
