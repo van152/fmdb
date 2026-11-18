@@ -53,7 +53,9 @@ FORMS = [
     ("cmp_eax", re.compile(rb"\x3d"), re.compile(rb"\x3d" + ALNUM4), 1, "cmp"),
 ]
 
-# 锚点自检:(code, file_offset, expected_form)
+# 锚点自检:(code, imm32 文件偏移, expected_form)
+# 注:锚点偏移指向 imm32 起始(B+1 位置),不是操作码起点。
+#   0xebf093 处字节 = 6d 61 6e 63,其前 3 字节 c7 45 f0 = mov [rbp-0x10], imm32
 ANCHORS = [("cnam", 0xEBF093, "mov_rbp_d8"), ("ccti", 0xEBF153, "mov_rbp_d8")]
 
 
@@ -110,8 +112,9 @@ def scan(buf, sections, want_offsets=True):
             if e is None:
                 e = per_code[code] = {"offsets": []}
             e[form] = e.get(form, 0) + 1
+            imm_off_abs = start + imm_off      # 记录 imm32 起始偏移(与锚点口径一致)
             if want_offsets and len(e["offsets"]) < SAMPLE_CAP:
-                e["offsets"].append(start)
+                e["offsets"].append(imm_off_abs)
             tot[code] = tot.get(code, 0) + 1
             w = start & ~(WINDOW - 1)
             density[w] = density.get(w, 0) + 1
@@ -119,7 +122,7 @@ def scan(buf, sections, want_offsets=True):
             sec_hits[s] = sec_hits.get(s, 0) + 1
             per_sec_form[(s, form)] = per_sec_form.get((s, form), 0) + 1
             if want_offsets:
-                all_offsets.append((start, code, form))
+                all_offsets.append((imm_off_abs, code, form))
         per_form[form] = {
             "raw_opcode_occurrences": n_raw,
             "hits_alnum4cc": n_hit,
@@ -169,16 +172,17 @@ def entity_coverage(entities, per_code):
 
 # ---------------------------------------------------------------- verify
 def read_back(path, offset, form):
-    """按形态在 offset 处回读原始字节,验证反序码可复现。"""
+    """按形态回读原始字节,验证反序码可复现。offset = imm32 起始偏移。"""
     names = {f[0]: f for f in FORMS}
     form_name, _raw, _alnum, imm_off, _fam = names[form]
+    opcode_off = offset - imm_off            # 操作码起点
     with open(path, "rb") as f:
-        f.seek(offset)
-        head = f.read(imm_off + 4)
-        f.seek(offset + imm_off)
+        f.seek(opcode_off)
+        head = f.read(imm_off)               # 操作码 + 位移
         imm = f.read(4)
-    return {"offset": offset, "form": form_name, "raw_bytes": head.hex(" "),
-            "imm_bytes": imm.hex(" "), "code": imm[::-1].decode("ascii", "replace")}
+    return {"offset": offset, "opcode_offset": opcode_off, "form": form_name,
+            "opcode_bytes": head.hex(" "), "imm_bytes": imm.hex(" "),
+            "code": imm[::-1].decode("ascii", "replace")}
 
 
 def cmd_verify(args):
@@ -197,8 +201,8 @@ def cmd_verify(args):
         rb = read_back(args.exe, off, form)
         good = (rb["code"] == code)
         ok = ok and good
-        print(f"[verify] {code} @ {hex(off)} {form}: {rb['raw_bytes']} -> {rb['code']} "
-              f"{'OK' if good else 'MISMATCH'}", flush=True)
+        print(f"[verify] {code} @ {hex(off)} {form}: op={rb['opcode_bytes']} imm={rb['imm_bytes']} "
+              f"-> {rb['code']} {'OK' if good else 'MISMATCH'}", flush=True)
     return 0 if ok else 1
 
 
@@ -268,7 +272,7 @@ def cmd_selftest(args):
     if os.path.exists(args.exe):
         for code, off, form in ANCHORS:
             rb = read_back(args.exe, off, form)
-            chk(rb["code"] == code, f"锚点 {code}@{hex(off)} 回读 = {rb['code']} ({rb['raw_bytes']})")
+            chk(rb["code"] == code, f"锚点 {code}@{hex(off)} 回读 = {rb['code']} ({rb['opcode_bytes']} | {rb['imm_bytes']})")
     else:
         print("  skip   锚点回读(exe 不存在)")
     print("[selftest]", "PASS" if ok else "FAIL")
