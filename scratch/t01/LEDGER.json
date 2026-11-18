@@ -1195,6 +1195,35 @@
     "delegated": "t07-4cc(luna,已发射):目标是把全局表做到可信,验收线为 injury 13/13 + city 6/6 双校准集 100% 复现,且不得修改任何 row_off/width。任务书已把 city 的已知锚点(Clri cmp@0xe550a3、je@0xe552e6)与 injury 的 13 条 4CC/offset 对照表写死,避免它重新摸索。"
    },
    "consequence": "\"4CC 只有手写优化实体才有\"的判断被推翻,改为\"4CC 全局存在,只是位置不固定\"。这意味着剩下的 24 个实体(含 stad/lcrg 与 19 个身份未知表)都有可能命名——前提是全局表能过滤掉 8954 个候选里的 ASCII 巧合。若能达成,命名覆盖面将从 33 条跃升到数百条量级。"
+  },
+  {
+   "id": "E44",
+   "date": "2026-11-18 21:4x",
+   "author": "commander(t07 验收 + 独立对比 t05)",
+   "kind": "milestone+negative",
+   "level": "L3-static(全局 4CC 表,2103 条候选均带 file_off/access_va)+L1(240 槽布局对齐)",
+   "claim": "【全局 4CC 表建成,但暴露'全局偏移匹配'的方法缺陷】t07 交付:70.1MB 可执行段内 18,031 处经指令边界二次确认的 cmp、8,399 个 4CC 候选,过滤后产 4cc_table.json = 1,477 码 / 2,103 条带证据候选(每条含 file_off、access_va、object_off、size、why);naming_result.json 覆盖 26 实体 240 槽,命名 45 个(readpair 37 / ref_only 8 / unresolved 195),分布为 injury 18/24、stad 14/19、city 12/18、lcrg 1/18,其余 22 实体 0。双校准集 100% 复现:injury 13/13、city 6/6(指挥官独立执行 verify.py,PASS)。city 新增 Catt@row+9/w1(readpair,语义空白)。**指挥官独立对比发现关键缺陷**:把 t07 的 naming_result 与 t05 的 named_fields 逐槽比对,得 AGREE 0 / CONFLICT 0 / only05 17 —— 二者交集只有 type22,而 t07 在 type22 上是 0/19。t07 没有推翻 t05,而是**完全没连上**:它用 object_off 做全局唯一匹配,但全局表里同偏移被多码占用是常态(实测 off40=Sbdy/Sbld、off96=Scam/Slat/Smnk、off100=Slon/Styp、off101=Scpl/Scpm、off64=Shwn/Sscp),故 type22 的 19 槽全判 unresolved。另有实例抓错:全局表记 Snew@166,而链内读数与 t05 一致为 40。结论:全局表是**检索工具**,不是**定名依据**;定名必须先把 cmp 点按'同一条分发链'聚组,用整链偏移集合与 reader 配对,链内唯一化。这意味着 t07 的 45 相对 t05 的 28 是'+17 同时丢 17',不能当作净进步计入基线。",
+   "evidence": {
+    "artifacts": [
+     "scratch/t07/out/4cc_table.json(1477 码 / 2103 候选)",
+     "scratch/t07/out/naming_result.json(26 实体 / 240 槽 / 45 命名)",
+     "scratch/t07/out/build.py + verify.py(均带 --selftest,可复跑)",
+     "scratch/t07/out/REPORT.md"
+    ],
+    "commander_verify": [
+     "py -V:3.12 -I scratch/t07/out/verify.py -> 'injury 13/13; city 6/6; entities 26/26' PASS",
+     "独立聚合 naming_result:total slots 240,confidence={unresolved:195, readpair:37, ref_only:8},命名 45",
+     "逐槽比对 t05/named_fields.json vs t07/naming_result.json:AGREE 0 / CONFLICT 0 / only05 17(全在 type22)",
+     "type22 撞车实证:reader obj_off 集合 {24,32,40,60,100,72,101,64,80,84,88,92,102,96,105,103,104,68};全局表中落入该集合的 S 码有 23 个,其中 off40/64/96/100/101 各被 2-3 个码共享",
+     "Snew 偏移冲突:全局表 166 vs 链内 40(t05 与新读数一致为 40)"
+    ],
+    "known_defects": [
+     "全局 object_off 匹配无唯一性保证,必须引入链归属约束",
+     "Sold/Salt 两个已确认存在的码完全缺席 4cc_table.json,说明 cmp 扫描漏了一种编码(疑为寄存器间接比较或跳转表派发)",
+     "t07 REPORT 指出任务书 city 示例把前一分支标为 Clat 与 cmp immediate 不符;以 cmp 立即数为准"
+    ]
+   },
+   "consequence": "据此派三路并行:t08(luna)链分组索引 —— 以'相邻 cmp 间距聚合 + je 目标可达性'成链,链↔reader 用偏移集合交集(>=3 精确命中)配对,链内唯一化定槽,验收为 t07 的 45 零回归 + type22>=14/19 + 总数>=62/240;t09(devseek)数据侧对抗验证 —— 不看 exe,用 .dat 真实列数据给 41 条命名声明出 supported/weak/contradicted 判决,并给 195 个未解析槽出形状签名;t10(devseek)club 链普查 —— 换方向从名字侧反推 433 字段的 object 层偏移结构,判据为无重叠率>=95% 且对齐率>=90%,负结果亦可接受。"
   }
  ]
 }
