@@ -1251,6 +1251,59 @@
     ]
    },
    "consequence": "1) 命名器与链分组必须把 ref_ptr 作为独立形态入库, 宽度取 reader; 这条直接影响 t08 能否拿到 type22 的 Sold/Salt 与 city 的 4 个 ref 字段。2) 162 个缺失 ref 码构成阶段三的现成入口 —— 其中大量 C 前缀码疑属 club, 与 t10 的链普查可交叉验证。3) t09 的数据侧验证将对 Clat/Cnti 这类已命名 ref 字段给出独立判决, 可与本条互证。"
+  },
+  {
+   "id": "E46",
+   "date": "2026-11-18 22:3x",
+   "author": "commander(t08 验收 + 独立反汇编复核)",
+   "kind": "milestone",
+   "level": "L3-static(84 条访问记录在声明 VA 处的真实指令逐条核对)+L1(布局闭合)",
+   "claim": "【链分组打通,命名 45 -> 138/240】t08 交付:从 t07 的 2,103 条候选聚出 587 个初始簇,保留 226 条 n_codes>=5 的链;链与实体按 (object_off,width) 精确命中 >=3 配对,26 个 reader 中 15 个拿到主链(矩阵里 >=3 分的 reader-chain 关系共 115 个);命名 138/240,新增 93 槽,分布 regi 12、type22 14、t37 11、t70 9、lcrg 8(+7)、t62 7、t49 6、t30 5、t58 5、t34 4、t43 3、t66 3、stad +3、city +4;confidence = chain_unique 81 / chain_ambiguous 12 / readpair 37 / ref_only 8 / unresolved 102。type22 独立复现 14/19,与 t05 的 17 个参照逐槽对比:**14 个重叠全部同名、0 冲突**,未复现的 3 个恰是 Sold/Snew/Salt(全为 ref_ptr 形态,见 E45)。指挥官独立复核(不依赖 t08 解析器):(1) 84 条访问记录在其声明 access_va 处反汇编,真实指令文本、内存偏移、宽度与声明**全部吻合**(0 例外),且距 cmp 站点最远 1663 字节,同处一个分发区;(2) 抽 67 个 cmp 站点重新解析立即数,与声明的码一一相符;(3) 逐槽比对 t05/t07,45 名零回归成立。结论:链分组是正确机制,`object_off` 单独不可定名、必须加链归属约束这一判断被证实。",
+   "evidence": {
+    "artifacts": [
+     "scratch/t08/out/chains.json(226 条链 / 587 簇 / 361 个被丢弃短簇)",
+     "scratch/t08/out/pairing.json(26 reader x 226 链矩阵, 含 top3)",
+     "scratch/t08/out/naming_result.json(138/240)",
+     "scratch/t08/out/verify.py + build.py + REPORT.md + MISSING_CODES.md"
+    ],
+    "commander_verify": [
+     "verify.py -> 't07 preserved 45/45; injury 13/13; city 6/6; type22 14/19; total 138/240; chain_unique reverse-check 81' PASS",
+     "84 条访问记录:在 access_va 处 capstone 反汇编, instruction 文本 + [reg+OFF] + 宽度 三者与声明完全一致",
+     "67 个 cmp 站点:立即数 big-endian 解码后与声明码一致",
+     "t05 vs t08 在 type22:14 个重叠槽全部同名; 未复现 Sold(obj32)/Snew(obj40)/Salt(obj72)",
+     "t70 命名样例(comp/wrcl/styr/enyr/type/levl/mage/mlen/isog)与竞赛表语义自洽"
+    ],
+    "known_defects": [
+     "11 个实体仍 0 命名(t23/31/35/42/46/50/51/60/61/63/64, 约 39 槽), 因'精确命中>=3'门槛对 1-5 槽的小表数学上不可达 —— 指挥官另证: 改用覆盖率判据会把 DELE/year/play 这类伪码放进来, 门槛不是唯一问题, 名字来源才是",
+     "t08 对 11 个零命名实体给出的原因分类多为'配对分数不足', 未触及'小表需要名字优先而非链优先'这一层"
+    ]
+   },
+   "consequence": "据此派 t11(luna): 接入 schema 字段码约束(清 9 个违规)、补 ref_ptr 形态(拿回 Sold/Snew/Salt)、并对 11 个小表改用'名字优先+单射分配'路线, 验收为违规归零且总数 >=138、目标 >=150。"
+  },
+  {
+   "id": "E47",
+   "date": "2026-11-18 22:4x",
+   "author": "commander(schema 交叉校验)",
+   "kind": "method+negative",
+   "level": "L1(138 个命名码与 schema 字段集的集合运算)+L2(字段码为 FM schema 声明事实)",
+   "claim": "【schema 字段码是命名的硬约束, 一次就抓出 9 个错, 占 6.5%】用 scratch/t05/schema_inventory.json 的 entities[*].fields[*].code 作为合法名字集合, 对 t08 的 138 个命名做交叉校验:先剔除 5 个全实体通用码(duni/rdui/NDBC/FDBC/dbnm, 出现在 >=10 个实体里, 无区分力), 再按去重码求归属, 得 9 个违规——city 的 Icon/Igpr(实属 injury)、stad 的 Snft/Wucf、lcrg 的 DELE/Lpop、t58 的 otht、t62 的 Todo/Ttea。归属推断同时给出强证据:injury 100%、t22->club 100%(14/14, 说明它是 club 的球场子记录, 不是独立球场表)、t19/t37/t43 均 100% club、t30 100% player、t34/t66 100% nation、t49/t70 100% person。**方法论陷阱已实证**:不能用简单覆盖率定归属——所有 schema 共享那 5 个通用码, 会让 t47 被误判成 injury(75%), 而它的真归属是 local region(字段 Lpop = 人口);必须用稀有码加权(df 越小权重越高)。另一条负结果:对小表改用'覆盖率>=80%'替代'命中>=3'会把伪码放进来(1 槽表的 100% 覆盖率毫无意义, DELE/year/play 这类英文词截断会被当成字段名), 故门槛不是小表的真问题, 名字来源才是。",
+   "evidence": {
+    "artifacts": [
+     "scratch/cmd/ref_ptr_codes.json",
+     "scratch/cmd/ref_chain_prefix.json"
+    ],
+    "commander_verify": [
+     "schema 实体 32 个, 字段码总数见 entities[*].fields[*].code; 通用码恰为 5 个(出现在 >=10 实体)",
+     "违规 9 条: t2 Icon/Igpr, t21 Snft/Wucf, t47 DELE/Lpop, t58 otht, t62 Todo/Ttea",
+     "t22 在 club 覆盖 14/14, 在 stadium 仅 3/76 —— 归属为 club 子记录",
+     "覆盖率判据反例: t23(1 槽) 用覆盖率 100% 会采纳 DELE; t35 会采纳 year/play",
+     "t47 覆盖率误判: injury 6/8(75%) vs local region 1/13 —— 通用码污染导致"
+    ],
+    "known_defects": [
+     "归属映射目前只靠码集合投票, 未与表行数/reader 宽度等独立量交叉, 同一 schema 被多个 type_id 认领时(t19/t22/t37/t43/t62 都->club)尚未区分是子表还是变体"
+    ]
+   },
+   "consequence": "schema 约束成为命名器的硬过滤器, 并写入 t11 验收(违规必须归零, 且不许靠删名把总数做小)。'稀有码加权投票'替代覆盖率, 作为归属判定的标准做法记入方法库。"
   }
  ]
 }
