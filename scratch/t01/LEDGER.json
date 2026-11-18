@@ -1601,6 +1601,32 @@
     ]
    },
    "consequence": "阶段二交付更新: reports/stage2_table_identity.{md,json} 已把 t49 张力带入 note 列。devseek 连续两次(t13d/t13e)有效交付, 证明旁路任务投放方式成立。剩余边界: t49 语义待数据侧判; 34 unidentified 表无基数。"
+  },
+  {
+   "id": "E59",
+   "date": "2026-11-18 23:55",
+   "author": "commander(t13d 终版延迟到达后的重新验收)",
+   "kind": "errata-minor",
+   "level": "L2(数据侧值域/ID域交叉)+L1(基数口径)",
+   "claim": "【撤回 E57 的一处交叉证据: t30/t49 的'fit=true'是循环论证】t13d 完成通知延迟到达, 终版 audit.json(23:45, 19225B→21462B)与初版不同(与 t11 同样的延迟追加现象), 新增 quick_audit.md + _audit.py。**终版自我修正了基数**: 初版用过期 club 3000-6000 致 t22/t34 fit=false, 终版改用正确 club84259 / nation251。终版结论三要点:(1) **t22 数据侧反而支持 E56**: 449/84259=0.53% 不支持 club 主表, 但 c0 的 362 个非哨兵值全部落在 [86,82403] ⊂ club ID 域、行内无姓名文本 -> '按 club 引用+日期'的子表, 与 E56 的 club 球场/迁建子表一致(注意: 值落 club 域只说明'引用 club', 不等于'本表实体是 club', 这是 t13d 自己点出的最易误读处); (2) t34 判'无法判断'(相对 club 差12倍/nation 差28倍, c3/c4 ⊆ [0,251) 但仅81/54不同值 -> 每行引用一国而非每国一行), 与 E56 的 candidate 一致; (3) **关键撤回**: 我在 E57 写的't30→player、t49→person 均 fit=true, 与 E56 吻合'不成立 —— t13d 终版 caveat 自承 player 7万/person 79万的量级口径**直接取自本表行数**, 不是独立基数, 量级吻合不构成确认, 属循环论证。仓内可复核的独立基线仅 club84259(server table_3)与 nation251(table_10)。t30/t49 的归属维持 E56 的 A 级(靠 df=1 唯一码 ajob/otea/plac、futu/inju/pret/seve), 但数据侧不构成独立确认 —— 这条不影响结论, 只影响'证据强度'的表述。已把两路 devseek 的终版结论写进 stage2_report.py 的 md/json 输出(新增'数据侧交叉'与'实体基数清单'两段)。",
+   "evidence": {
+    "artifacts": [
+     "scratch/t13d/out/audit.json(终版23:45)+quick_audit.md+_audit.py",
+     "scratch/cmd/stage2_t13_recheck.json(devseek_t13d_crosscheck 已重写)",
+     "reports/stage2_table_identity.{md,json}(新增两段落, --selftest PASS)"
+    ],
+    "commander_verify": [
+     "t13d 终版 caveat 原文: '四条量级吻合都不是独立基数: player/person 的 7万/79万直接取自本表行数的量级'",
+     "t22 c0 domain_refs: domain=club, domain_size=84259, 362非哨兵值 ⊂ [86,82403]",
+     "t34 magnitude_detail: club ratio=0.084, nation ratio=28.347, 均判不吻合",
+     "独立基线确认: club=84259(server table_3), nation=251(table_10) 有仓内出处; player/person 无"
+    ],
+    "known_defects": [
+     "撤回的不是归属结论而是'独立数据侧确认'的表述; t30/t49 的 A 级现在只靠静态 df=1 码, 无第二证据层",
+     "延迟通知导致的终版覆盖问题已第二次出现(t11/t13d), 后续对 exit0 通知必须查文件时间戳再验收"
+    ]
+   },
+   "consequence": "阶段二稳定性不受影响: 45 表 29resolved/3candidate/11negative/2empty 不变; 撤回的只是 E57 中'数据侧确认 t30/t49'这一证据强度表述。今后口径: 量级近似(本表行数 vs 本表量级)不算独立锚点, 必须有仓内可复核的独立基数(如 club84259/nation251)或多实体 df=1 唯一码。"
   }
  ]
 }

@@ -69,3 +69,21 @@
 - t12 的 28,597 行与已知 award 表 3,545 行差 706%, 类身份有A锚但行集不同, resolved仅指实体类别
 - t45/t48 共用 reader 0x1543730, chain_0153 同时被 t08 配给 t58(score5); 属共用getter区, 不构成冲突但需标注
 - t13 报的 4 resolved 全是静态L3; 6 negative 保留原样不硬凑
+
+## 数据侧交叉（devseek t13d，终版）
+
+- t22：结论: 数据侧不支持club主表(449/84259=0.53%), 但c0的362个非哨兵值全部落在[86,82403]⊂club ID域且无姓名文本 -> '按club引用+日期'的子表, 与E56的club球场/迁建子表裁决一致(非推翻)
+- t34：结论: 相对club差12倍/相对nation差28倍均不吻合, c3/c4值域⊆[0,251)但仅81/54不同值 -> '7115行各自引用一国'而非'每国一行'; 判无法判断, 与E56的candidate一致
+- **撤回的交叉项**：初版报t30->player/t49->person fit=true; 但终版caveat自承'player7万/person79万的量级口径直接取自本表行数, 不是独立基数, 量级吻合不构成确认' -> 循环论证
+  处理：E57里'交叉验证t30/t49'的表述撤回; t30/t49 仍维持E56的A级(靠df=1唯一码), 数据侧不构成独立确认
+  仓内可复核的独立基线只有：仓内仅club84259(server table_3)与nation251(table_10)是可复核独立基线
+- 易误读处：c0/t22、c1/t34 的值落在club ID域只说明'引用了该实体', 不等于'本表实体是club' —— 本次诊断最易误读处
+
+## 实体基数清单（devseek t13e）
+
+26 条基数，可靠度 {'high': 17, 'mid': 7, 'low': 2}，数字冲突 0；award3545/city56293/club84259/comp7047/cont7/inju115/nati251/stad48413/weat334/lang126/lcrg2488。
+- **张力**：person 主库 basic_people_db=658011(E25/E32双重封口 high), 但t49任职履历子表=792149, 多134138行(20.4%)
+  处理：t49 归属维持resolved但note加注行数张力; 不推翻(码证据是硬的)
+- 名字冲突：table18: COVERAGE='city secondary-name' vs RTTI db::DERBY(1567行) - t13取名勿混
+- 名字冲突：table24: team=84507行但行边界open, 不可用82B定长假设(E37均值104.36B)
+- 名字冲突：table9: nation name/key companion 251行, 与table10同为nati

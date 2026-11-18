@@ -69,6 +69,8 @@ def build():
         not_in_archive=absent,
         rows=[rows[k] for k in sorted(rows)],
         commander_recheck=recheck["commander_recheck"],
+        devseek_t13d=recheck.get("devseek_t13d_crosscheck", {}),
+        devseek_t13e=recheck.get("devseek_t13e_baselines", {}),
     )
 
 def render_md(cat):
@@ -113,6 +115,33 @@ def render_md(cat):
     for x in c.get("caveats", []):
         a(f"- {x}")
     a("")
+
+    td = cat.get("devseek_t13d", {})
+    if td:
+        a("## 数据侧交叉（devseek t13d，终版）")
+        a("")
+        a(f"- t22：{td.get('t22', '')}")
+        a(f"- t34：{td.get('t34', '')}")
+        dn = td.get("t30_t49_DOWNGRADED", {})
+        if dn:
+            a(f"- **撤回的交叉项**：{dn.get('issue', '')}")
+            a(f"  处理：{dn.get('action', '')}")
+            a(f"  仓内可复核的独立基线只有：{dn.get('independent_baselines', '')}")
+        a(f"- 易误读处：{td.get('method_note', '')}")
+        a("")
+
+    te = cat.get("devseek_t13e", {})
+    if te:
+        a("## 实体基数清单（devseek t13e）")
+        a("")
+        a(f"26 条基数，可靠度 {te.get('reliability', '')}，数字冲突 0；{te.get('key_values', '')}。")
+        nf = te.get("new_finding", {})
+        if nf:
+            a(f"- **张力**：{nf.get('issue', '')}")
+            a(f"  处理：{nf.get('action', '')}")
+        for nc in te.get("name_conflicts", []):
+            a(f"- 名字冲突：{nc}")
+        a("")
     return "\n".join(o)
 
 def main(argv=None):

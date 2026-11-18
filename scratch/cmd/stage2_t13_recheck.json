@@ -30,13 +30,16 @@
   ]
  },
  "devseek_t13d_crosscheck": {
-  "fit_true": [
-   "t30->player(72473 in 70-76k)",
-   "t49->person(792149 in 760-820k)"
-  ],
-  "fit_false_explained": [
-   "t22/t34 用过期基数(club 3000-6000), 实际club主表84259, 不影响E56裁决"
-  ]
+  "artifact": "scratch/t13d/out/audit.json(终版23:45, 21462B)+quick_audit.md(新增)+_audit.py",
+  "revision": "初版用过期club基数3000-6000致t22/t34 fit=false; 终版已改用正确club84259/nation251",
+  "t22": "结论: 数据侧不支持club主表(449/84259=0.53%), 但c0的362个非哨兵值全部落在[86,82403]⊂club ID域且无姓名文本 -> '按club引用+日期'的子表, 与E56的club球场/迁建子表裁决一致(非推翻)",
+  "t34": "结论: 相对club差12倍/相对nation差28倍均不吻合, c3/c4值域⊆[0,251)但仅81/54不同值 -> '7115行各自引用一国'而非'每国一行'; 判无法判断, 与E56的candidate一致",
+  "t30_t49_DOWNGRADED": {
+   "issue": "初版报t30->player/t49->person fit=true; 但终版caveat自承'player7万/person79万的量级口径直接取自本表行数, 不是独立基数, 量级吻合不构成确认' -> 循环论证",
+   "action": "E57里'交叉验证t30/t49'的表述撤回; t30/t49 仍维持E56的A级(靠df=1唯一码), 数据侧不构成独立确认",
+   "independent_baselines": "仓内仅club84259(server table_3)与nation251(table_10)是可复核独立基线"
+  },
+  "method_note": "c0/t22、c1/t34 的值落在club ID域只说明'引用了该实体', 不等于'本表实体是club' —— 本次诊断最易误读处"
  },
  "devseek_t13e_baselines": {
   "artifact": "scratch/t13e/out/baselines.json+mdd+build.py(真实交付, status=partial)",
