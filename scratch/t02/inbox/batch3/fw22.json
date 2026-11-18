@@ -1,0 +1,47 @@
+{
+ "type_id": 22,
+ "status": "complete",
+ "member": "client_db.dat/table_22.dat",
+ "header": "03 01 74 61 64 2e f1 0d",
+ "header_ok": true,
+ "count": 449,
+ "count_offset": "payload+8 (u32le)",
+ "payload_len": 5859,
+ "rows_offset": "0xe",
+ "variable": false,
+ "stride": 13,
+ "row_shape": "<u32 ordinal> <u32 id> <u32 dup_id> <u8 0x00>   (13 bytes, fixed)",
+ "row_len_formula": "row_len = 13 (constant)",
+ "closure": "14 + 449*13 + 8 == 5859",
+ "closure_check": "14 + 5837 + 8 = 5859 == 5859",
+ "closure_ok": true,
+ "rows_verified": "449/449 walked at stride 13, zero remainder",
+ "identity_block": {
+  "layout": "row[0:4]=ordinal, row[4:8]=id, row[8:12]=dup_id, row[12]=0x00",
+  "ordinal_eq_row_index": "449/449",
+  "id_eq_ordinal_plus_1": "449/449",
+  "dup_id_eq_id": "449/449",
+  "trailer_byte_zero": "449/449",
+  "sample_rows": [
+   "00 00 00 00 01 00 00 00 01 00 00 00 00",
+   "01 00 00 00 02 00 00 00 02 00 00 00 00",
+   "02 00 00 00 03 00 00 00 03 00 00 00 00"
+  ]
+ },
+ "footer": "00 00 00 01 c1 01 00 00",
+ "note": "footer last 4 bytes = 0x1c1 = 449 = count; rows are a pure identity/enum table (no payload columns beyond id).",
+ "server": {
+  "member": "server_db.dat/table_22.dat",
+  "count": 449,
+  "stride": 79,
+  "payload_len": 35493,
+  "closure": "14 + 449*79 + 8 == 35493",
+  "closure_ok": true,
+  "relation": "same count, client row is a 13B prefix-family identity block; server widens stride to 79 (0..12 identity, 13..78 server-only payload)"
+ },
+ "evidence": {
+  "level": "L1",
+  "method": "self-decoded payload from game install archive (read-only), exact closure + 449/449 identity block",
+  "archive_root": "Z:\\SteamLibrary\\steamapps\\common\\Football Manager 2024\\data\\database\\db\\2430\\2430_fm"
+ }
+}

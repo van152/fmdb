@@ -869,6 +869,31 @@
     ]
    },
    "consequence": "person 家族从\"仅 Ptyp@row+1\"跃升到 15 个命名行偏移字段;W=8 对当前文件坐实,但 exe 运行时不变性保留为未闭合(负结果保留)。sol 本轮额度已耗 1 次(累计 2),再用需用户批准。t02 下一优先级:club 变体段(luna 在跑)/批量框架(devseek)/nati(logfare)结果到齐后逐一验收。"
+  },
+  {
+   "id": "E33",
+   "date": "2026-11-18 16:4x",
+   "author": "commander(调度轮收口:luna/devseek/logfare 三路,指挥官独立验收)",
+   "kind": "artifact",
+   "level": "L1+L3-static(行框架级;独立复跑/旧库 header 交叉;字段级多数未闭合)",
+   "claim": "【调度轮收口:club 框架勘误 + 两张 client 表框架 + 两渠道负结果】三路后台任务(luna/devseek/logfare)结果汇总,指挥官独立验收后入账:(1) club(type3,luna t02c):行框架完全解出——84,259/84,259 行全走通、footer 0x69c66a=00 00 00 01 e3 c0 3a 77 精确封口,推翻旧 club_partial 的\"69705 行起 4B 变体、14554 行未解\"结论:实为 84,256 行标准 5B 布局 + 3 行特殊空记录(row69706-69708,55B,db_id 全 FFFFFFFF/名称空/身份块 ordinal+重复ID 正常);solve.py --selftest 独立复跑 84259/84259 PASS;但字段级 L3=0(被指挥官中止在 getter 对齐前),诚实记为框架 complete/字段未闭合。(2) devseek(t02f):fw7(type7,208 行变长,client/server 双 closure)、fw22(type22,449×13 定长,身份块 449/449)complete;fw9(type9)超时仅骨架,2/3 交付。旧库 reader 独立核对 T7=count208/size36824、T22=count449/size5859 全吻合。(3) logfare(t02g):5 次全 temporarily-unavailable/throttling 限流失败,framework 空骨架;但落盘了 nati 解压 payload(client_db_t10.bin 24732B SHA 7e9d740b9ee6=旧库记录吻合 / server_db_t10.bin 422345B),已转派 luna(t02g2)接手。",
+   "evidence": {
+    "artifacts": [
+     "scratch/t02/inbox/club_v2/{output.json,solve.py,finalize.py}",
+     "scratch/t02/inbox/batch3/{fw7.json,fw22.json,fw9.json(骨架)}",
+     "scratch/t02/inbox/nati/{client_db_t10.bin,server_db_t10.bin,explore*.py}"
+    ],
+    "commander_verify": [
+     "club: solve.py --selftest 独立复跑 walked 84259/84259,widths{5:84256,unparsed_body:3},next_offset=0x69c66a,footer_exact=True;旧库 reader 独立确认 table_3 size=6932082/count=84259;3 行 unparsed_body 字节全 dump,身份块 ordinal 0x104a..0x104c + 重复ID 正常,判定为特殊空记录非解析失败",
+     "devseek: 旧库 reader record_count_header/size 与 fw7(208/36824)/fw22(449/5859)完全一致;fw22 stride13 identity 449/449(ordinal==row_index,id==ordinal+1,dup==id,尾字节0)",
+     "logfare: framework.json 仍 67B 空骨架无 DONE;5 次 attempt 全 temporarily-unavailable/throttling;落盘 bin 经验证头 magic+count251+长度24732+SHA 7e9d740b9ee6 与 E21 旧库记录吻合"
+    ],
+    "errata": [
+     "club 旧结论(club_partial.json)\"69705 行起第5字段 4B 变体、14554 行未解\"被推翻:实际只有 3 行 block_width 非标准,且是特殊空记录;solve.py 全量走查证据在案。旧数据保留不删,标注不符。",
+     "launch.sh 成功判据在 E32 放宽后,fw7/fw22 的 complete 标记触发 devseek exit 0,但 fw9 仍骨架(2/3);判据需区分\"部分完成\"与\"全部完成\"——本轮按部分验收。"
+    ]
+   },
+   "consequence": "client 侧已解表增至 11 张(9 之前 + club 框架 + fw7/fw22 框架),club 字段级 L3 仍是空位待补。nati 转派 luna(t02g2,带 logfare 落盘 payload)在跑。sol 额度本轮未再消耗。下一优先级:nati 行边界(t02g2)、club 字段级 getter 对齐、fw9 重派。"
   }
  ]
 }

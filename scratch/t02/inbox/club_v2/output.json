@@ -1,0 +1,814 @@
+{
+  "type_id": 3,
+  "entity": "club",
+  "status": "in_progress",
+  "variants": [
+    {
+      "id": "byte-framing-parser",
+      "rows": 84256,
+      "interpretation": "the generic framing parser consumes row+16..20 as a 5-byte aggregate; semantic ID-block width is class-dependent and separately recorded in class_partition",
+      "ordinal_ranges_included": [
+        [
+          0,
+          69705
+        ],
+        [
+          69709,
+          84258
+        ]
+      ],
+      "rule_status": "observed layout, not class discriminator",
+      "sample_rows_before_transition": [
+        {
+          "row": 69702,
+          "member_offset": "0x570cfe",
+          "row_length": 85,
+          "parsed_block_width": 5,
+          "identity_relative_offset": null,
+          "marker": 0,
+          "full_name": "FC Lachen/Altendorf",
+          "short_name": "Lachen/Altendorf",
+          "bytes_hex": "ac 00 00 00 ff ff ff ff ac 00 00 00 ac 00 00 00 09 ca 00 00 00 00 00 00 00 00 13 00 00 00 46 43 20 4c 61 63 68 65 6e 2f 41 6c 74 65 6e 64 6f 72 66 10 00 00 00 4c 61 63 68 65 6e 2f 41 6c 74 65 6e 64 6f 72 66 00 00 00 46 10 01 00 83 1b d8 05 83 1b d8 05 00"
+        },
+        {
+          "row": 69703,
+          "member_offset": "0x570d53",
+          "row_length": 67,
+          "parsed_block_width": 5,
+          "identity_relative_offset": null,
+          "marker": 0,
+          "full_name": "FC Piamont",
+          "short_name": "Piamont",
+          "bytes_hex": "ac 00 00 00 ff ff ff ff ac 00 00 00 ac 00 00 00 ff ff ff ff 00 00 00 00 00 00 0a 00 00 00 46 43 20 50 69 61 6d 6f 6e 74 07 00 00 00 50 69 61 6d 6f 6e 74 00 00 00 47 10 01 00 84 1b d8 05 84 1b d8 05 00"
+        },
+        {
+          "row": 69704,
+          "member_offset": "0x570d96",
+          "row_length": 67,
+          "parsed_block_width": 5,
+          "identity_relative_offset": null,
+          "marker": 0,
+          "full_name": "FC Embrach",
+          "short_name": "Embrach",
+          "bytes_hex": "ac 00 00 00 ff ff ff ff ac 00 00 00 ac 00 00 00 ff ff ff ff 00 00 00 00 00 00 0a 00 00 00 46 43 20 45 6d 62 72 61 63 68 07 00 00 00 45 6d 62 72 61 63 68 00 00 00 48 10 01 00 55 1c d8 05 55 1c d8 05 00"
+        }
+      ],
+      "transition_row": {
+        "row": 69705,
+        "member_offset": "0x570dd9",
+        "row_length": 73,
+        "parsed_block_width": 5,
+        "identity_relative_offset": null,
+        "marker": 12,
+        "full_name": "FC Neftenbach",
+        "short_name": "Neftenbach",
+        "bytes_hex": "ac 00 00 00 ff ff ff ff ac 00 00 00 ac 00 00 00 ff ff ff ff 00 00 00 00 00 00 0d 00 00 00 46 43 20 4e 65 66 74 65 6e 62 61 63 68 0a 00 00 00 4e 65 66 74 65 6e 62 61 63 68 00 00 00 49 10 01 00 31 45 d8 05 31 45 d8 05 0c"
+      },
+      "sample_rows_after_transition": [
+        {
+          "row": 69709,
+          "member_offset": "0x570ec7",
+          "row_length": 79,
+          "parsed_block_width": 5,
+          "identity_relative_offset": null,
+          "marker": 0,
+          "full_name": "NK Rudar Kamengrad",
+          "short_name": "Rudar (Kam)",
+          "bytes_hex": "85 00 00 00 ff ff ff ff 85 00 00 00 85 00 00 00 57 db 00 00 00 00 00 00 00 00 12 00 00 00 4e 4b 20 52 75 64 61 72 20 4b 61 6d 65 6e 67 72 61 64 0b 00 00 00 52 75 64 61 72 20 28 4b 61 6d 29 00 00 00 4d 10 01 00 0d a1 35 77 0d a1 35 77 00"
+        },
+        {
+          "row": 69710,
+          "member_offset": "0x570f16",
+          "row_length": 84,
+          "parsed_block_width": 5,
+          "identity_relative_offset": null,
+          "marker": 0,
+          "full_name": "FK Omladinac 75 Bihać",
+          "short_name": "Omladinac 75",
+          "bytes_hex": "85 00 00 00 ff ff ff ff 85 00 00 00 85 00 00 00 86 2a 00 00 00 00 00 00 00 00 16 00 00 00 46 4b 20 4f 6d 6c 61 64 69 6e 61 63 20 37 35 20 42 69 68 61 c4 87 0c 00 00 00 4f 6d 6c 61 64 69 6e 61 63 20 37 35 00 00 00 4e 10 01 00 0e a1 35 77 0e a1 35 77 00"
+        },
+        {
+          "row": 69711,
+          "member_offset": "0x570f6a",
+          "row_length": 65,
+          "parsed_block_width": 5,
+          "identity_relative_offset": null,
+          "marker": 0,
+          "full_name": "NK Ključ",
+          "short_name": "Ključ",
+          "bytes_hex": "85 00 00 00 ff ff ff ff 85 00 00 00 85 00 00 00 06 ce 00 00 00 00 00 00 00 00 09 00 00 00 4e 4b 20 4b 6c 6a 75 c4 8d 06 00 00 00 4b 6c 6a 75 c4 8d 00 00 00 4f 10 01 00 0f a1 35 77 0f a1 35 77 00"
+        }
+      ],
+      "width4_negative_example": {
+        "row": 69709,
+        "member_offset": "0x570ee0",
+        "row_relative_offset": 25,
+        "bytes_hex": "00 12 00 00",
+        "u32_le": 4608,
+        "result": "would be implausible full-name length under the same schema (the valid 5-byte parse has length 18 at row+26)"
+      }
+    },
+    {
+      "id": "compact-identity-framed-body",
+      "rows": 3,
+      "ordinal_range": [
+        69706,
+        69708
+      ],
+      "rule_status": "body not decoded; only identity suffix framing established",
+      "identity_relative_offset": 42,
+      "row_span_bytes": 55,
+      "samples": [
+        {
+          "row": 69706,
+          "member_offset": "0x570e22",
+          "row_length": 55,
+          "parsed_block_width": null,
+          "identity_relative_offset": 42,
+          "marker": 12,
+          "full_name": null,
+          "short_name": null,
+          "bytes_hex": "ff ff ff ff 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 4a 10 01 00 00 94 35 77 00 94 35 77 0c"
+        },
+        {
+          "row": 69707,
+          "member_offset": "0x570e59",
+          "row_length": 55,
+          "parsed_block_width": null,
+          "identity_relative_offset": 42,
+          "marker": 12,
+          "full_name": null,
+          "short_name": null,
+          "bytes_hex": "ff ff ff ff 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 4b 10 01 00 01 94 35 77 01 94 35 77 0c"
+        },
+        {
+          "row": 69708,
+          "member_offset": "0x570e90",
+          "row_length": 55,
+          "parsed_block_width": null,
+          "identity_relative_offset": 42,
+          "marker": 0,
+          "full_name": null,
+          "short_name": null,
+          "bytes_hex": "ff ff ff ff 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 4c 10 01 00 02 94 35 77 02 94 35 77 00"
+        }
+      ]
+    }
+  ],
+  "row_offset_map": [
+    {
+      "idx": 0,
+      "field": "db_id (u32)",
+      "row_offset": 0,
+      "width": 4,
+      "class_specific_following_byte": null,
+      "offset_formula": "fixed row offset",
+      "mapping_level": "L1_structural_only",
+      "schema_4cc": null,
+      "object_offset": null,
+      "evidence": {
+        "member_offset": "0xe",
+        "row_relative_offset": 0,
+        "width": 4,
+        "bytes_hex": "7e 00 00 00"
+      }
+    },
+    {
+      "idx": 1,
+      "field": "parent_ref (u32; FFFFFFFF observed as none candidate)",
+      "row_offset": 4,
+      "width": 4,
+      "class_specific_following_byte": null,
+      "offset_formula": "fixed row offset",
+      "mapping_level": "L1_structural_only",
+      "schema_4cc": null,
+      "object_offset": null,
+      "evidence": {
+        "member_offset": "0x12",
+        "row_relative_offset": 4,
+        "width": 4,
+        "bytes_hex": "ff ff ff ff"
+      }
+    },
+    {
+      "idx": 2,
+      "field": "duplicate u32 #1",
+      "row_offset": 8,
+      "width": 4,
+      "class_specific_following_byte": null,
+      "offset_formula": "fixed row offset",
+      "mapping_level": "L1_structural_only",
+      "schema_4cc": null,
+      "object_offset": null,
+      "evidence": {
+        "member_offset": "0x16",
+        "row_relative_offset": 8,
+        "width": 4,
+        "bytes_hex": "7e 00 00 00"
+      }
+    },
+    {
+      "idx": 3,
+      "field": "duplicate u32 #2",
+      "row_offset": 12,
+      "width": 4,
+      "class_specific_following_byte": null,
+      "offset_formula": "fixed row offset",
+      "mapping_level": "L1_structural_only",
+      "schema_4cc": null,
+      "object_offset": null,
+      "evidence": {
+        "member_offset": "0x1a",
+        "row_relative_offset": 12,
+        "width": 4,
+        "bytes_hex": "7e 00 00 00"
+      }
+    },
+    {
+      "idx": 4,
+      "field": "class-dependent ID block (5B CLUB / 4B LEAGUE_BODY_CLUB)",
+      "row_offset": 16,
+      "width": {
+        "CLUB": 5,
+        "LEAGUE_BODY_CLUB": 4
+      },
+      "class_specific_following_byte": null,
+      "offset_formula": "row+16; width selected by class",
+      "mapping_level": "L1_structural_only",
+      "schema_4cc": null,
+      "object_offset": null,
+      "evidence": {
+        "member_offset": "0x1e",
+        "row_relative_offset": 16,
+        "width": 5,
+        "bytes_hex": "bf 1d 00 00 00"
+      }
+    },
+    {
+      "idx": 5,
+      "field": "group/status u32 candidate",
+      "row_offset": {
+        "CLUB": 21,
+        "LEAGUE_BODY_CLUB": 20
+      },
+      "width": 4,
+      "class_specific_following_byte": null,
+      "offset_formula": "row+21 CLUB / row+20 LEAGUE_BODY_CLUB",
+      "mapping_level": "L1_structural_only",
+      "schema_4cc": null,
+      "object_offset": null,
+      "evidence": {
+        "member_offset": "0x23",
+        "row_relative_offset": 21,
+        "width": 4,
+        "bytes_hex": "02 00 00 00"
+      }
+    },
+    {
+      "idx": 6,
+      "field": "one-byte flag candidate",
+      "row_offset": {
+        "CLUB": 25,
+        "LEAGUE_BODY_CLUB": 24
+      },
+      "width": 1,
+      "class_specific_following_byte": "LEAGUE_BODY_CLUB row+25 is retained as unassigned byte so the name length remains at +26",
+      "offset_formula": "row+25 CLUB / row+24 LEAGUE_BODY_CLUB",
+      "mapping_level": "L1_structural_only",
+      "schema_4cc": null,
+      "object_offset": null,
+      "evidence": {
+        "member_offset": "0x27",
+        "row_relative_offset": 25,
+        "width": 1,
+        "bytes_hex": "00"
+      }
+    },
+    {
+      "idx": 7,
+      "field": "full-name byte length (u32)",
+      "row_offset": 26,
+      "width": 4,
+      "class_specific_following_byte": null,
+      "offset_formula": "fixed row offset",
+      "mapping_level": "L1_structural_only",
+      "schema_4cc": null,
+      "object_offset": null,
+      "evidence": {
+        "member_offset": "0x28",
+        "row_relative_offset": 26,
+        "width": 4,
+        "bytes_hex": "21 00 00 00"
+      }
+    },
+    {
+      "idx": 8,
+      "field": "short-name byte length (u32)",
+      "row_offset": 63,
+      "width": 4,
+      "class_specific_following_byte": null,
+      "offset_formula": "row+30+full_name_len",
+      "mapping_level": "L1_structural_only",
+      "schema_4cc": null,
+      "object_offset": null,
+      "evidence": {
+        "member_offset": "0x4d",
+        "row_relative_offset": 63,
+        "width": 4,
+        "bytes_hex": "0c 00 00 00"
+      }
+    },
+    {
+      "idx": 9,
+      "field": "three-byte block (semantic unresolved)",
+      "row_offset": 79,
+      "width": 3,
+      "class_specific_following_byte": null,
+      "offset_formula": "row+34+full_name_len+short_name_len",
+      "mapping_level": "L1_structural_only",
+      "schema_4cc": null,
+      "object_offset": null,
+      "evidence": {
+        "member_offset": "0x5d",
+        "row_relative_offset": 79,
+        "width": 3,
+        "bytes_hex": "00 00 00"
+      }
+    },
+    {
+      "idx": 10,
+      "field": "ordinal|ID|repeated-ID (12B)",
+      "row_offset": 82,
+      "width": 12,
+      "class_specific_following_byte": null,
+      "offset_formula": "row_end-13",
+      "mapping_level": "L1_structural_only",
+      "schema_4cc": null,
+      "object_offset": null,
+      "evidence": {
+        "member_offset": "0x60",
+        "row_relative_offset": 82,
+        "width": 12,
+        "bytes_hex": "00 00 00 00 39 00 00 00 39 00 00 00"
+      }
+    },
+    {
+      "idx": 11,
+      "field": "row trailer byte (value varies in three boundary rows)",
+      "row_offset": 94,
+      "width": 1,
+      "class_specific_following_byte": null,
+      "offset_formula": "row_end-1",
+      "mapping_level": "L1_structural_only",
+      "schema_4cc": null,
+      "object_offset": null,
+      "evidence": {
+        "member_offset": "0x6c",
+        "row_relative_offset": 94,
+        "width": 1,
+        "bytes_hex": "00"
+      }
+    },
+    {
+      "idx": 12,
+      "field": "unassigned one-byte position after LEAGUE_BODY_CLUB flag candidate",
+      "row_offset": 25,
+      "width": 1,
+      "offset_formula": "row+25 (LEAGUE_BODY_CLUB layout only)",
+      "mapping_level": "L1_unassigned_byte",
+      "schema_4cc": null,
+      "object_offset": null,
+      "evidence": {
+        "member_offset": "0x570ee0",
+        "row_relative_offset": 25,
+        "width": 1,
+        "bytes_hex": "00",
+        "sample_row": 69709
+      }
+    }
+  ],
+  "unclosed": [
+    {
+      "issue": "class-to-row discriminator / 5B-vs-4B field identity",
+      "evidence": "The parsed suffix rows 69709..84258 validate using the 5-byte aggregate layout; a width-4 retry at row 69709 shifts the length word to 0x1200 (4608). The class-specific readers show 4-byte transfers, but their destination offsets are not aligned to row fields yet.",
+      "status": "unresolved; do not infer class from ordinal, marker, flag, or name order"
+    },
+    {
+      "issue": "three compact records body semantics",
+      "rows": [
+        69706,
+        69707,
+        69708
+      ],
+      "evidence": "55-byte spans, identity at row+42, marker bytes 0x0c/0x0c/0x00; standard field parser fails",
+      "status": "identity framing only; body fields unparsed"
+    },
+    {
+      "issue": "4CC getter-to-reader alignment",
+      "evidence": "No getter 4CC has yet been aligned to the slot19 reader destination and payload offset in this run.",
+      "status": "0 L3 field mappings; threshold 10 not met"
+    }
+  ],
+  "count": 84259,
+  "walked_rows": 84259,
+  "next_member_offset": "0x69759c",
+  "partial_width_counts": {
+    "5": 83997,
+    "unparsed_body": 3
+  },
+  "partial_row_length_counts": {
+    "54": 2,
+    "55": 3,
+    "56": 56,
+    "57": 5,
+    "58": 160,
+    "59": 122,
+    "60": 338,
+    "61": 274,
+    "62": 679,
+    "63": 607,
+    "64": 1151,
+    "65": 1063,
+    "66": 1556,
+    "67": 1411,
+    "68": 2137,
+    "69": 1700,
+    "70": 2521,
+    "71": 2010,
+    "72": 2909,
+    "73": 2093,
+    "74": 3238,
+    "75": 2215,
+    "76": 3455,
+    "77": 2370,
+    "78": 3489,
+    "79": 2381,
+    "80": 3506,
+    "81": 2272,
+    "82": 3373,
+    "83": 2265,
+    "84": 3264,
+    "85": 1966,
+    "86": 2880,
+    "87": 1796,
+    "88": 2402,
+    "89": 1560,
+    "90": 2190,
+    "91": 1325,
+    "92": 1856,
+    "93": 1158,
+    "94": 1492,
+    "95": 964,
+    "96": 1218,
+    "97": 872,
+    "98": 1067,
+    "99": 704,
+    "100": 922,
+    "101": 609,
+    "102": 713,
+    "103": 513,
+    "104": 617,
+    "105": 389,
+    "106": 490,
+    "107": 349,
+    "108": 447,
+    "109": 317,
+    "110": 374,
+    "111": 240,
+    "112": 327,
+    "113": 230,
+    "114": 283,
+    "115": 172,
+    "116": 201,
+    "117": 125,
+    "118": 145,
+    "119": 99,
+    "120": 77,
+    "121": 66,
+    "122": 56,
+    "123": 43,
+    "124": 32,
+    "125": 30,
+    "126": 13,
+    "127": 7,
+    "128": 8,
+    "130": 6,
+    "131": 1,
+    "132": 6,
+    "134": 3,
+    "136": 2,
+    "138": 3,
+    "140": 3,
+    "142": 1,
+    "146": 2,
+    "152": 1,
+    "154": 1,
+    "156": 2
+  },
+  "member_length": 6932082,
+  "member_sha256": "db8ea78cbb8fcc7973525b04f55ca1b2c9dafda1e096dfa15c1affcdcc4fab9f",
+  "row_body_end_member_offset": "0x69c66a",
+  "footer_offset": "0x69c66a",
+  "footer_hex": "00 00 00 01 e3 c0 3a 77",
+  "footer_exact": true,
+  "width_counts": {
+    "5": 84256,
+    "unparsed_body": 3
+  },
+  "row_length_distribution": {
+    "54": 2,
+    "55": 3,
+    "56": 56,
+    "57": 5,
+    "58": 160,
+    "59": 122,
+    "60": 339,
+    "61": 275,
+    "62": 682,
+    "63": 608,
+    "64": 1152,
+    "65": 1072,
+    "66": 1560,
+    "67": 1419,
+    "68": 2139,
+    "69": 1710,
+    "70": 2532,
+    "71": 2022,
+    "72": 2920,
+    "73": 2103,
+    "74": 3245,
+    "75": 2223,
+    "76": 3464,
+    "77": 2382,
+    "78": 3501,
+    "79": 2393,
+    "80": 3518,
+    "81": 2283,
+    "82": 3382,
+    "83": 2268,
+    "84": 3272,
+    "85": 1970,
+    "86": 2888,
+    "87": 1800,
+    "88": 2408,
+    "89": 1564,
+    "90": 2193,
+    "91": 1331,
+    "92": 1859,
+    "93": 1160,
+    "94": 1495,
+    "95": 966,
+    "96": 1223,
+    "97": 874,
+    "98": 1067,
+    "99": 706,
+    "100": 924,
+    "101": 613,
+    "102": 715,
+    "103": 514,
+    "104": 618,
+    "105": 390,
+    "106": 491,
+    "107": 350,
+    "108": 448,
+    "109": 318,
+    "110": 374,
+    "111": 241,
+    "112": 327,
+    "113": 230,
+    "114": 284,
+    "115": 172,
+    "116": 201,
+    "117": 125,
+    "118": 145,
+    "119": 99,
+    "120": 78,
+    "121": 66,
+    "122": 56,
+    "123": 43,
+    "124": 32,
+    "125": 30,
+    "126": 13,
+    "127": 7,
+    "128": 8,
+    "130": 6,
+    "131": 1,
+    "132": 6,
+    "134": 3,
+    "136": 2,
+    "138": 3,
+    "140": 3,
+    "142": 1,
+    "146": 2,
+    "152": 1,
+    "154": 1,
+    "156": 2
+  },
+  "marker_counts": {
+    "0": 84256,
+    "12": 3
+  },
+  "identity_prefix_length_counts": {
+    "42": 3,
+    "standard_fields": 84256
+  },
+  "variant_samples": {
+    "4": [],
+    "5": [
+      {
+        "row": 0,
+        "member_offset": "0xe",
+        "row_length": 95,
+        "block_width": 5,
+        "identity_relative_offset": null,
+        "db_id": 126,
+        "full_name": "Klubi i Futbollit Albpetrol Patos",
+        "short_name": "KF Albpetrol",
+        "bytes_hex": "7e 00 00 00 ff ff ff ff 7e 00 00 00 7e 00 00 00 bf 1d 00 00 00 02 00 00 00 00 21 00 00 00 4b 6c 75 62 69 20 69 20 46 75 74 62 6f 6c 6c 69 74 20 41 6c 62 70 65 74 72 6f 6c 20 50 61 74 6f 73 0c 00 00 00 4b 46 20 41 6c 62 70 65 74 72 6f 6c 00 00 00 00 00 00 00 39 00 00 00 39 00 00 00 00"
+      },
+      {
+        "row": 1,
+        "member_offset": "0x6d",
+        "row_length": 92,
+        "block_width": 5,
+        "identity_relative_offset": null,
+        "db_id": 126,
+        "full_name": "Klubi i Futbollit Apolonia Fier",
+        "short_name": "KF Apolonia",
+        "bytes_hex": "7e 00 00 00 ff ff ff ff 7e 00 00 00 7e 00 00 00 c7 1d 00 00 00 02 00 00 00 00 1f 00 00 00 4b 6c 75 62 69 20 69 20 46 75 74 62 6f 6c 6c 69 74 20 41 70 6f 6c 6f 6e 69 61 20 46 69 65 72 0b 00 00 00 4b 46 20 41 70 6f 6c 6f 6e 69 61 00 00 00 01 00 00 00 3a 00 00 00 3a 00 00 00 00"
+      },
+      {
+        "row": 2,
+        "member_offset": "0xc9",
+        "row_length": 83,
+        "block_width": 5,
+        "identity_relative_offset": null,
+        "db_id": 126,
+        "full_name": "Klubi Sportiv Besa Kavajë",
+        "short_name": "KS Besa",
+        "bytes_hex": "7e 00 00 00 ff ff ff ff 7e 00 00 00 7e 00 00 00 c4 1d 00 00 00 02 00 00 00 00 1a 00 00 00 4b 6c 75 62 69 20 53 70 6f 72 74 69 76 20 42 65 73 61 20 4b 61 76 61 6a c3 ab 07 00 00 00 4b 53 20 42 65 73 61 00 00 00 02 00 00 00 3b 00 00 00 3b 00 00 00 00"
+      }
+    ],
+    "unparsed_body": [
+      {
+        "row": 69706,
+        "member_offset": "0x570e22",
+        "row_length": 55,
+        "block_width": null,
+        "identity_relative_offset": 42,
+        "db_id": null,
+        "full_name": null,
+        "short_name": null,
+        "bytes_hex": "ff ff ff ff 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 4a 10 01 00 00 94 35 77 00 94 35 77 0c"
+      },
+      {
+        "row": 69707,
+        "member_offset": "0x570e59",
+        "row_length": 55,
+        "block_width": null,
+        "identity_relative_offset": 42,
+        "db_id": null,
+        "full_name": null,
+        "short_name": null,
+        "bytes_hex": "ff ff ff ff 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 4b 10 01 00 01 94 35 77 01 94 35 77 0c"
+      },
+      {
+        "row": 69708,
+        "member_offset": "0x570e90",
+        "row_length": 55,
+        "block_width": null,
+        "identity_relative_offset": 42,
+        "db_id": null,
+        "full_name": null,
+        "short_name": null,
+        "bytes_hex": "ff ff ff ff 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 4c 10 01 00 02 94 35 77 02 94 35 77 00"
+      }
+    ]
+  },
+  "ambiguous_rows": [],
+  "class_partition": {
+    "rule": "ordinal 0..69704 = CLUB (ID block 5B); ordinal 69705..84258 = LEAGUE_BODY_CLUB (ID block 4B)",
+    "rows": {
+      "CLUB": 69705,
+      "LEAGUE_BODY_CLUB": 14554
+    },
+    "class_byte_or_flag_found": false,
+    "basis": "the task's accepted contiguous class split plus type_id=3 dual-RTTI/slot19 evidence in scratch/t01/inbox/t01h/output.json; no per-row class byte is claimed",
+    "CLUB_samples": [
+      {
+        "row": 0,
+        "member_offset": "0xe",
+        "row_length": 95,
+        "parsed_block_width": 5,
+        "identity_relative_offset": null,
+        "marker": 0,
+        "full_name": "Klubi i Futbollit Albpetrol Patos",
+        "short_name": "KF Albpetrol",
+        "bytes_hex": "7e 00 00 00 ff ff ff ff 7e 00 00 00 7e 00 00 00 bf 1d 00 00 00 02 00 00 00 00 21 00 00 00 4b 6c 75 62 69 20 69 20 46 75 74 62 6f 6c 6c 69 74 20 41 6c 62 70 65 74 72 6f 6c 20 50 61 74 6f 73 0c 00 00 00 4b 46 20 41 6c 62 70 65 74 72 6f 6c 00 00 00 00 00 00 00 39 00 00 00 39 00 00 00 00"
+      },
+      {
+        "row": 1,
+        "member_offset": "0x6d",
+        "row_length": 92,
+        "parsed_block_width": 5,
+        "identity_relative_offset": null,
+        "marker": 0,
+        "full_name": "Klubi i Futbollit Apolonia Fier",
+        "short_name": "KF Apolonia",
+        "bytes_hex": "7e 00 00 00 ff ff ff ff 7e 00 00 00 7e 00 00 00 c7 1d 00 00 00 02 00 00 00 00 1f 00 00 00 4b 6c 75 62 69 20 69 20 46 75 74 62 6f 6c 6c 69 74 20 41 70 6f 6c 6f 6e 69 61 20 46 69 65 72 0b 00 00 00 4b 46 20 41 70 6f 6c 6f 6e 69 61 00 00 00 01 00 00 00 3a 00 00 00 3a 00 00 00 00"
+      },
+      {
+        "row": 2,
+        "member_offset": "0xc9",
+        "row_length": 83,
+        "parsed_block_width": 5,
+        "identity_relative_offset": null,
+        "marker": 0,
+        "full_name": "Klubi Sportiv Besa Kavajë",
+        "short_name": "KS Besa",
+        "bytes_hex": "7e 00 00 00 ff ff ff ff 7e 00 00 00 7e 00 00 00 c4 1d 00 00 00 02 00 00 00 00 1a 00 00 00 4b 6c 75 62 69 20 53 70 6f 72 74 69 76 20 42 65 73 61 20 4b 61 76 61 6a c3 ab 07 00 00 00 4b 53 20 42 65 73 61 00 00 00 02 00 00 00 3b 00 00 00 3b 00 00 00 00"
+      }
+    ],
+    "LEAGUE_BODY_CLUB_samples": [
+      {
+        "row": 69705,
+        "member_offset": "0x570dd9",
+        "row_length": 73,
+        "parsed_block_width": 5,
+        "identity_relative_offset": null,
+        "marker": 12,
+        "full_name": "FC Neftenbach",
+        "short_name": "Neftenbach",
+        "bytes_hex": "ac 00 00 00 ff ff ff ff ac 00 00 00 ac 00 00 00 ff ff ff ff 00 00 00 00 00 00 0d 00 00 00 46 43 20 4e 65 66 74 65 6e 62 61 63 68 0a 00 00 00 4e 65 66 74 65 6e 62 61 63 68 00 00 00 49 10 01 00 31 45 d8 05 31 45 d8 05 0c"
+      },
+      {
+        "row": 69709,
+        "member_offset": "0x570ec7",
+        "row_length": 79,
+        "parsed_block_width": 5,
+        "identity_relative_offset": null,
+        "marker": 0,
+        "full_name": "NK Rudar Kamengrad",
+        "short_name": "Rudar (Kam)",
+        "bytes_hex": "85 00 00 00 ff ff ff ff 85 00 00 00 85 00 00 00 57 db 00 00 00 00 00 00 00 00 12 00 00 00 4e 4b 20 52 75 64 61 72 20 4b 61 6d 65 6e 67 72 61 64 0b 00 00 00 52 75 64 61 72 20 28 4b 61 6d 29 00 00 00 4d 10 01 00 0d a1 35 77 0d a1 35 77 00"
+      },
+      {
+        "row": 69710,
+        "member_offset": "0x570f16",
+        "row_length": 84,
+        "parsed_block_width": 5,
+        "identity_relative_offset": null,
+        "marker": 0,
+        "full_name": "FK Omladinac 75 Bihać",
+        "short_name": "Omladinac 75",
+        "bytes_hex": "85 00 00 00 ff ff ff ff 85 00 00 00 85 00 00 00 86 2a 00 00 00 00 00 00 00 00 16 00 00 00 46 4b 20 4f 6d 6c 61 64 69 6e 61 63 20 37 35 20 42 69 68 61 c4 87 0c 00 00 00 4f 6d 6c 61 64 69 6e 61 63 20 37 35 00 00 00 4e 10 01 00 0e a1 35 77 0e a1 35 77 00"
+      }
+    ],
+    "compact_rows_inside_LEAGUE_BODY_CLUB_segment": [
+      69706,
+      69707,
+      69708
+    ],
+    "semantic_widths_vs_byte_walker": "class field widths are 5B/4B; the framing walker consumes the adjacent +20 byte as part of a 5-byte aggregate to keep subsequent boundaries. For LEAGUE_BODY_CLUB the schema split is 4B block plus separate row+20 byte; row+25 remains unassigned pending full schema decode.",
+    "width4_candidate_successes_note": "zero refers only to retrying the entire main-class parser with the ID block changed to 4B and no class-specific adjacent-byte handling; it does not negate the accepted class-specific 4B field width"
+  },
+  "semantic_field_width_counts": {
+    "CLUB_ID_block_5B": 69705,
+    "LEAGUE_BODY_CLUB_ID_block_4B": 14554,
+    "class-specific_body_unparsed": 3
+  },
+  "standard_layout_rows": 84256,
+  "width4_candidate_successes": 0,
+  "class_reader_evidence": [
+    {
+      "class": ".?AVCLUB@db@@",
+      "source": "editor.exe (SHA-256 b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4)",
+      "slot19_entry_file_offset": "0xe5a7a0",
+      "width_instruction_file_offset": "0xe5a811",
+      "width_instruction_bytes": "41 b8 04 00 00 00",
+      "nearby_destination_file_offset": "0xe5a807",
+      "nearby_destination_bytes": "49 8d be e0 00 00 00",
+      "note": "proves one 4-byte transfer to object+0xe0, not a row-level class selector"
+    },
+    {
+      "class": ".?AVLEAGUE_BODY_CLUB@db@@",
+      "source": "editor.exe (SHA-256 b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4)",
+      "slot19_thunk_file_offset": "0x157cff0",
+      "unwrapped_reader_file_offset": "0x43beba0",
+      "transfer4_file_offset": "0x43bebe6",
+      "transfer4_bytes": "41 b8 04 00 00 00",
+      "destination4_file_offset": "0x43bebdc",
+      "destination4_bytes": "48 8d 91 70 01 00 00",
+      "transfer1_file_offset": "0x43bec05",
+      "transfer1_bytes": "41 b8 01 00 00 00",
+      "destination1_file_offset": "0x43bebfb",
+      "destination1_bytes": "48 8d 93 78 01 00 00",
+      "note": "reader has separate 4-byte and 1-byte transfers to object+0x170/+0x178; not yet aligned to table row fields"
+    }
+  ],
+  "field_mapping_progress": {
+    "structural_entries": 13,
+    "schema_4cc_to_object_to_row_L3": 0,
+    "target": 10
+  }
+}
