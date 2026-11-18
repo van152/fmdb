@@ -30,9 +30,15 @@ for i in $(seq 1 "$MAX"); do
 - 完成后打印交付清单。" \
     >> "$ATT" 2>&1
   RC=$?; cat "$ATT" >> "$LOG"
-  # 成功判据:outbox 里有 complete/partial 标记,或明确 DONE
-  if grep -rqE '"status"[[:space:]]*:[[:space:]]*"(complete|partial)"|DONE type=' "$OUTBOX" 2>/dev/null; then
+  # 成功判据(宽):status 不再是 in_progress(允许 complete_*/partial_* 等带限定词的诚实标注)
+  # 或 outbox 有 ≥2 个实质文件且含 status 字段 —— 模型常把结论写成 status:"complete_<caveat>",
+  # 旧判据只认 complete/partial 精确字符串,会把已交付的任务误判为失败(t02p-pw 就是这个 bug)。
+  if grep -rqE '"status"[[:space:]]*:[[:space:]]*"(complete|partial)[^"]*"|DONE type=' "$OUTBOX" 2>/dev/null; then
     echo "=== DONE $TASK attempt=$i rc=$RC $(date) ===" >> "$LOG"; exit 0
+  fi
+  NF=$(find "$OUTBOX" -maxdepth 1 -type f -size +1k 2>/dev/null | wc -l)
+  if [ "$NF" -ge 2 ] && grep -rq '"status"' "$OUTBOX" 2>/dev/null; then
+    echo "=== DONE(heuristic: $NF substantial files) $TASK attempt=$i rc=$RC $(date) ===" >> "$LOG"; exit 0
   fi
   echo "=== attempt $i rc=$RC $(date) ===" >> "$LOG"
   if grep -qiE "upstream_saturated|temporarily unavailable|503|throttling|upstream model failed|rate.limit|overloaded" "$ATT"; then

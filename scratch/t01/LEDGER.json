@@ -847,6 +847,28 @@
     "note": "截至本条,LEDGER 与 git HEAD 对齐;在跑的四路任务(t02c/p/f/g)结果到齐后另记 E32+"
    },
    "consequence": "账本 debt 清零,指挥官可在后台任务期间保持真相源一致。"
+  },
+  {
+   "id": "E32",
+   "date": "2026-11-18 16:3x",
+   "author": "commander(sol t02p-pw 交付,指挥官独立验收)",
+   "kind": "milestone",
+   "level": "L3-static+L1(指挥官独立字节抽验 11/11 PASS + 独立解压走查 658,011 行封口 + 自检 -I -B PASS + 锚点 7/7)",
+   "claim": "【person 家族最大卡点攻克】t02p-pw(gpt-6.2-sol)解决 BASIC_PERSON 宽度选择器 W:当前 basic_people_db.dat 的 W=8(16 组合仅全 8 达到 class1/2/3=83B、class4=34B),锁定 15 个不同 schema 码的 L3 行偏移(10 个 pers:9 业务+Ptyp+身份 duni;另 5 个 player 业务码 PWRP/PCRP/PHRP/PCAB/PPAB),达到 person 验收线。闭合 obj+0x38 helper(e4f5a3→fb21a0→3c6e100,.reloc off+0x16B600)与 20B 基类后缀 helper(e4f4c0→1083b40→3dc0220)。诚实负结果:不能证明 W=8 是 editor.exe 静态常量——标志 A/B 在 .sbss 零填充,A 置零经 CRT init(e4f4d5→VA 0x141b60353,写点 fc646d),B 有置1/清0路径(3c28b4e/423005f);A 变非零路径未闭合。class4 两 2B 槽定在 row+10/+12,后者=Pdob 年份。",
+   "evidence": {
+    "artifacts": [
+     "scratch/t02/inbox/pw/{output.json(343KB),REPORT.md,verify.py,selector_scan.py,data_stats.py}"
+    ],
+    "commander_verify": [
+     "独立字节抽验 11/11:0xf49d3c 跳表/0x866e0 type值/0x1aac700 RTTI/0xe4f4d5+0xe4f4ed 选择器/0xe4f4f6 W8/0xe4f4fe W4/0xfc646d A置零/0xe4f5a3 helper call/0xe51158 Pdob getter/0xe4fe98 writer tag 全部逐字节一致;EXE SHA b82ebe8e032f2017 吻合",
+     "独立走查(自写,不复用 sol 脚本):旧库 _stream_decompress 解压 payload 54,060,043B,head 5b0a0a00 count=658011,按 W=8 行链(tag+class + class1/2/3=83/class4=34/class5=22)走满 658,011 行,类计数 {1:166064,2:476158,3:4757,4:9839,5:1193} 与 sol 完全一致,结束 0x338e4002+9B 尾精确封口",
+     "自检 verify.py --selftest 需 -I -B 两 flag(初跑仅 -I 报 Check failed,非交付问题);锚点 t01_anchors.py 7/7 PASS"
+    ],
+    "errata": [
+     "发射器 scripts/launch.sh 成功判据 bug:只认 status 精确等于 complete/partial,sol 写的是 complete_file_layout_runtime_selector_open(带限定词)→ 误判失败并多跑一轮;已放宽判据为 complete*|partial* + ≥2 实质文件启发式。此为 t02p-pw 后台任务 exit 1 的真正原因,非模型失败。"
+    ]
+   },
+   "consequence": "person 家族从\"仅 Ptyp@row+1\"跃升到 15 个命名行偏移字段;W=8 对当前文件坐实,但 exe 运行时不变性保留为未闭合(负结果保留)。sol 本轮额度已耗 1 次(累计 2),再用需用户批准。t02 下一优先级:club 变体段(luna 在跑)/批量框架(devseek)/nati(logfare)结果到齐后逐一验收。"
   }
  ]
 }
