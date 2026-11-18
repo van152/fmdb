@@ -918,6 +918,31 @@
     ]
    },
    "consequence": "nation 从\"负结果/变长不可解\"转为框架 complete;client 侧已解表增至 12 张。方法论再验证:计数循环变长型(A/B/C/D 四段)可解,此前 t01-g 的\"直线累加法不适用\"结论保留但边界收窄。剩余:server nati 框架、club 字段级 L3=0、fw9(type9)、46 个直线型批量复制。"
+  },
+  {
+   "id": "E35",
+   "date": "2026-11-18 18:1x",
+   "author": "commander(luna t03 交付,指挥官独立复跑 + 诊断)",
+   "kind": "negative-result",
+   "level": "L3-static(脚本可复跑,逐字段字节证据;验收未达标,负结果保留)",
+   "claim": "【自动化映射器首个负结果 —— 全解析路线校准】t03(luna)写通用 field_mapper.py,独立复跑 7 夹具平均吻合 39.74%、仅 2/7 达 80%(且两夹具同为 type10 重复),验收未达标,退出码 1 诚实返回。关键诊断:卡点不是\"扫不到宽度\"——脚本从 COMP 读主体扫出 55 个 transfer_events(比人工 28 更多),前 7 个游标正确(row 0/1/14/15/16/17/18),但从 0xeb7174 起 row_offset_candidates 变空,即 CFG 抽象解释在分支/helper 处 cursor 断裂为 None 后未从其它路径恢复;加上循环 backedge 不展开、4CC getter 对齐只闭合 3/26。结论:宽度累加机械化可行(已证),但\"每实体全自动\"假设过于乐观——真实 reader 的多数字段藏在分支/循环/helper 里,需人工判断。脚本仍有价值:它能列出全部传输点+宽度+候选偏移(55 个),把最枯燥的游标追踪自动化,留下\"配 4CC 语义\"给人/AI。",
+   "evidence": {
+    "artifacts": [
+     "scratch/t02/field_mapper/out/{field_mapper.py,fixtures_result.json,REPORT.md}",
+     "scratch/t02/field_mapper/{fixtures.json,DIAGNOSIS.md}",
+     "scripts/build_fixtures.py"
+    ],
+    "commander_verify": [
+     "独立复跑 field_mapper.py --selfcheck:mean=39.74%,>=80% 夹具 2/7,modes passed=count-loop(仅首轮前缀);数字与 luna 报告完全一致",
+     "COMP 深度诊断:analysis.transfer_events=55(>人工 28);前 7 事件 row 候选 [0,1,14,15,16,17,18] 正确,事件 0xeb7174 起 row_offset_candidates=[];unclosed_reason=\"counted/backedge loops analyzed only once; branch-dependent cursor alternatives excluded\"",
+     "哨兵:capstone 手扫 comp 0xeb7000.. 得 28 宽度点:28 流调用完美配对 —— 证明机械配对本身可行,失败在 CFG 游标传播"
+    ],
+    "decision": [
+     "不再把\"全自动映射器\"当作全解析前置依赖。改用半自动:脚本产候选偏移表,AI 渠道(便宜的 devseek/luna)做 4CC 语义对齐与游标修补。",
+     "club/comp/player 等大实体仍按 t01f 人工方法逐个攻;46 直线型中\"前几个直线字段\"可脚本快速拿,其余仍需人工。"
+    ]
+   },
+   "consequence": "全解析路线校准:通用映射器能加速但不能替代人工,预期从\"一次突破全实体\"下调为\"每实体半自动 + 指挥官抽验\"。脚本保留为工具,后续可用于给新实体铺底(列出传输点/宽度/候选偏移)。下一轮按半自动流程攻 club 字段(最高价值空位)。"
   }
  ]
 }
