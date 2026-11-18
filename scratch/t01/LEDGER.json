@@ -1198,7 +1198,7 @@
   },
   {
    "id": "E44",
-   "date": "2026-11-18 21:4x",
+   "date": "2026-11-18 20:35",
    "author": "commander(t07 验收 + 独立对比 t05)",
    "kind": "milestone+negative",
    "level": "L3-static(全局 4CC 表,2103 条候选均带 file_off/access_va)+L1(240 槽布局对齐)",
@@ -1227,7 +1227,7 @@
   },
   {
    "id": "E45",
-   "date": "2026-11-18 22:0x",
+   "date": "2026-11-18 20:40",
    "author": "commander(独立反汇编 Sold/Salt, 修正 E44 的缺陷归因)",
    "kind": "errata+method",
    "level": "L3-static(Sold/Salt/Clat/Cnti 的 cmp 立即数与 je 目标块逐条指令为证)",
@@ -1254,7 +1254,7 @@
   },
   {
    "id": "E46",
-   "date": "2026-11-18 22:3x",
+   "date": "2026-11-18 21:00",
    "author": "commander(t08 验收 + 独立反汇编复核)",
    "kind": "milestone",
    "level": "L3-static(84 条访问记录在声明 VA 处的真实指令逐条核对)+L1(布局闭合)",
@@ -1282,7 +1282,7 @@
   },
   {
    "id": "E47",
-   "date": "2026-11-18 22:4x",
+   "date": "2026-11-18 21:02",
    "author": "commander(schema 交叉校验)",
    "kind": "method+negative",
    "level": "L1(138 个命名码与 schema 字段集的集合运算)+L2(字段码为 FM schema 声明事实)",
@@ -1304,6 +1304,56 @@
     ]
    },
    "consequence": "schema 约束成为命名器的硬过滤器, 并写入 t11 验收(违规必须归零, 且不许靠删名把总数做小)。'稀有码加权投票'替代覆盖率, 作为归属判定的标准做法记入方法库。"
+  },
+  {
+   "id": "E48",
+   "date": "2026-11-18 21:15",
+   "author": "commander(t10 委托 devseek 超时未交付, 指挥官自算)",
+   "kind": "negative+feasibility",
+   "level": "L2(schema 字段码为声明事实)+L3-static(码在 exe 中的字节存在性)",
+   "claim": "【club 不能靠链绕过 reader; 阶段三的瓶颈是抽取完整度, 不是布局算法】对 club(声明 433 字段, 含子字段共 672 条, 去重 575 个字段码)做可行性普查:(1) **字节存在性**: 按立即数反序(4CC 在机器码里是 code[::-1])在 editor.exe 里搜, 483/575 存在, 92 个完全不存在(疑在 fm.exe 或非 cmp 派发);(2) **偏移可得性**: 114 个码恰有 1 个候选 offset, 29 个 2 个, 14 个 3 个, 9 个 4 个, 2 个 5 个, 而 **407 个码一个 offset 都没有** —— 即名字->偏移目前只覆盖 29%;(3) **链分组对 club 不成立**: 按 club 码覆盖率排所有 226 条链, 最高仅 chain_0148 覆盖 20 个(链共 25 码), 其后 chain_0078 20/23、chain_0147 18/23、chain_0122 15/17 —— 575 个码散落在数十条短链里, **不存在一条 club 主链**。这与 injury/stad 的单链形态根本不同, 也解释了 E36 说的'mixed 双 reader'。结论: '用 4CC 链反推 433 字段的 object 结构' 不可行; 真正的瓶颈是**抽取完整度** —— 483 个存在的码里只有 302 个被解析出形态, 181 个'在但没抽出来', 它们正是 ref_ptr/写路径/else 分支这几种形态。阶段三应先补抽取, 再用'码同一性 + 全局结构一致性(不重叠+对齐)'求解, 而不是链配对。",
+   "evidence": {
+    "artifacts": [
+     "scratch/cmd/club_code_gap.json(unparsed 181 / absent 92 的分码清单)"
+    ],
+    "commander_verify": [
+     "club: declared_fields=433, fields=672, distinct codes=575",
+     "反序字节存在性: present 483, absent 92(absent 样例 CssP/CBWo/CHSo —— 全是批量属性码, 疑走数组/字符串表)",
+     "候选 offset 分布: {0:407, 1:114, 2:29, 3:14, 4:9, 5:2}",
+     "链覆盖: 最高 chain_0148=20/25, 且 club 码占该链 80%; 无链覆盖 >20 个 club 码",
+     "unparsed 样例: Csnm/Cl3n/Cedp/Cccn/CLat/CLon/lpRP/hpRP/CNtp 等 181 个"
+    ],
+    "known_defects": [
+     "本次只做普查, 未对 181 个 unparsed 码逐个补形态, 因此'补抽取能补回多少'仍是估计",
+     "92 个 absent 未去 fm.exe 核对, 不能断言它们不存在于游戏整体"
+    ]
+   },
+   "consequence": "阶段三改路线: 先做形态完整的 4CC 抽取(窄读/ref_ptr/写路径/else 分支四类), 目标把 club 的 483 个存在码从 302 提到 >=420; 再做'码同一性 + 结构一致性'求解, 而不是链配对。这条同时惠及 26 实体的剩余 102 个未命名槽。"
+  },
+  {
+   "id": "E49",
+   "date": "2026-11-18 21:27",
+   "author": "commander(反汇编 club 的 Cnam/Cccn/Csnm/Cncl 派发链)",
+   "kind": "method+structure",
+   "level": "L3-static(逐条指令地址为证)",
+   "claim": "【club 是二级派发：先下沉子对象再跳公共访问器 —— 所以它没有主链，也不该按平表处理】反汇编 club 的 4CC 处理体，形态与 26 实体的平表完全不同。三种实测样本：(1) Cccn：0xe846d0 `cmp ebx,0x4363636e`；0xe846d6 `jne 0x140e859c3`；0xe846dc `add rdi, 0xf0`；0xe846e3 `jmp 0x140e8554f` —— 先下沉 0xf0 字节到子对象，再跳到共用处理器；(2) Cnam：0xe550af cmp edx; jne; 之后 `add rdi,0x18` + `call 0x14083d4f0` —— 下沉 0x18 后调用通用取数；(3) Csnm / Cncl：`cmp ebx,imm; je <远程目标>` 之后紧跟另一个 cmp，无本地访问 —— 与 (1)(2) 同族，目标块也是下沉+跳转。这解释了 E48 的三个异常：为何链覆盖最多只 20 个 club 码（575 个码分散在数十个二级派发体里）、为何 92 个码在二进制里找不到（它们可能只作为字符串表/批量属性出现）、为何 181 个码在但没抽出偏移（偏移在 `add rdi,IMM` 里，而不是 `[reg+OFF]` 访问里）。另一个工艺细节：比较寄存器不固定 —— 实测有 edx/ebx/eax/r8d 四种，故扫描不能写死 `81 FA`，必须按 imm32 反序字节搜索再回验指令边界。结论：阶段三的正确形态是 名字→偏移路径（patch），单点偏移只对顶层字段成立；320 个平表槽与 club 属不同机制，方法不可平移。",
+   "evidence": {
+    "artifacts": [
+     "scratch/cmd/club_code_gap.json"
+    ],
+    "commander_verify": [
+     "Cccn @0xe846d0 cmp ebx,0x4363636e / jne / add rdi,0xf0 / jmp 0x140e8554f",
+     "Cnam @0xe550af cmp edx,0x436e616d / jne / add rdi,0x18 / call 0x14083d4f0",
+     "Cl3n @0xe588a0 cmp eax,0x436c336e 后接 cmp r8d,0x436c6873 —— 同时出现 eax 与 r8d 两个比较寄存器",
+     "Csnm @0xe83e03 cmp ebx,0x43736e6d / je 0x140e85db1(远程)，本地无访问",
+     "Cncl @0xe83781 cmp ebx,0x436e636c / je；另有 @0xe8b501 同码不同址(多实例)"
+    ],
+    "known_defects": [
+     "下沉后的公共访问器(0x140e8554f / 0x14083d4f0)尚未逐条解析，因此偏移路径的后半段(子对象内偏移)还没拿到",
+     "未验证 `add rdi,IMM` 的 IMM 是否等价于该字段在父对象中的偏移，也可能只是子对象的固定位置"
+    ]
+   },
+   "consequence": "阶段三改按路径表推进：抽取器需新增第 5 类形态 path_descend(add/lea rdi,[rdi+IMM] + jmp/call)，并与公共访问器解析配合；平表那套单偏移+链配对不适用于 club。t12 任务书据此设计。"
   }
  ]
 }
