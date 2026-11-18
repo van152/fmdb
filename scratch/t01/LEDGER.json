@@ -1408,6 +1408,33 @@
     ]
    },
    "consequence": "命名台账需区分'名字(from 4CC)'与'语义解释(from 数据)'两层: injury 的 Iexd 解释要改写, stad 的 Smnl/Smnw/Smxl/Smxw 四个槽标 data-unverified 并列入待重判, lcrg 的 Lpop 标 inconclusive。这些不改变 4CC 映射本身的可信度, 但会改变对外表述的措辞。t12 的验收不因此放宽。"
+  },
+  {
+   "id": "E52",
+   "date": "2026-11-18 21:36",
+   "author": "commander(t11 终稿复核: 含对 E47 的自我勘误)",
+   "kind": "errata+negative",
+   "level": "L1(schema 集合运算)+L3-static(14 个被拒码的访问证据)+L2(小表数据侧诊断)",
+   "claim": "【勘误 E47: 我列的 9 个违规里有 1 个是错的; 真违规集是 8 个非法码 + t47 混入的 6 个 injury 码】E47 把 Lpop 列为 t47 的违规码, 这是错的 —— 按 schema_inventory 的 local region 字段表, Lpop 是合法码, 而且它是 t47 唯一的独立语义锚点。错因与 E50 同源: 我的归属映射把 t47 判成了 injury, 于是把 injury 的码当合规、把 local region 的码当违规, 恰好整反。t11 的终稿给出正确账目: 合法拒绝 18 个码实例 / 14 种不同码, 清空 14 槽, 由唯一合规候选救回 2 槽, 最终 129 名 0 违规, 且把每个被拒码的 file_off/instruction 全部留在 rejected 字段里。**更值得记的是 t11 反过来纠正了我的方法**: 我要求用稀有码加权投票(df 越小权重越高)定归属, 但按此算 t47 的原始票数是 injury 6 : local region 1 —— 因为被污染的链里有 6 个 injury-only 码, 而 local region 只有 Lpop 一个。t11 没有盲从投票, 而是用'Lpop 是 local region 唯一字段锚点 + 原 layout 标记 lcrg'这个独立证据推翻了投票结果, 并在报告里明确写'不能声称 1/df 投票本身选出了 local region'。结论: 稀有码投票在链被污染时会输给污染源, **归属判定必须有独立于该链的锚点**(一个只属于目标 schema 且数据侧站得住的字段名), 投票只能做排序不能做裁决。\n\n【11 个零命名小表: 9 张歧义、2 张空交集, 没有一张拿到唯一解】t11 对全部 32 个 schema 做了穷举单射分配: t35 有 26 个完整解、t31 有 68 个部分解(t42 同 68)、t46 有 196 个、t50 有 82 个、t51/t60 各 9 个、t64 有 8 个 —— 全部属于'多解'而非'唯一解'; t61/t63 的 reader 偏移 {24,28,30} 与**全体候选偏移集合的交集为空**, 连候选都没有; t23 出现过唯一解(SNsn), 但其 schema 类型是 string、reader 槽只有 1B、导出 278 行该列全为 0, 数据侧直接否定。共性是: 这些小表的首槽(object 24、28)**根本没有 4CC 候选**。这说明它们不是按 4CC 属性派发的表, 39 个槽在 4CC 路线上不可达, 不是'门槛问题'。",
+   "evidence": {
+    "artifacts": [
+     "scratch/t11/out/REPORT.md(违规清理账逐条 + 小表逐表结论)",
+     "scratch/t11/out/small_tables.json(90KB, 含 32 个 schema 的穷举结果与解空间大小)",
+     "scratch/t11/out/schema_map.json(逐码 df/权重/落选实体)"
+    ],
+    "commander_verify": [
+     "verify.py: schema-illegal=0; t07=45/45; injury=13/13; city=6/6; VA instructions=84/84; ref_ptr=3/3; named=129/240",
+     "t47 rejected 逐条可核: Icdp@0x1580f98 movzx[rdi+0x56]; Iocr@0x1580dbd movss[rdi+0x30]; icla@0x158101b movsx[rdi+0x4c] —— 均为 injury 链访问",
+     "Lpop 保留于 t47 client row+17/w4, confidence=readpair",
+     "小表解空间: t35=26, t31=68(部分), t42=68(部分), t46=196, t50=82, t51=9, t60=9, t64=8, t61=0, t63=0",
+     "t61/t63: reader offsets {24,28,30} ∩ 全体候选 offsets = 空"
+    ],
+    "known_defects": [
+     "t11 自己标注 status=complete_with_explicit_acceptance_gaps, 两条验收线(命名>=138、小表 2 个唯一解)确实未达",
+     "小表的 schema 归属仍多靠投票, 除 t23 外没有独立锚点验证, 因此'歧义'结论本身也可能建在错归属上"
+    ]
+   },
+   "consequence": "台账对 240 槽的上限预期下调: 4CC 路线的可及面约在 129 + (t12 新增形态带来的增量), 剩余约 100 槽里含 39 个'无 4CC 派发'的小表槽, 这部分应显式记为'方法不可达'而不是'待办'。归属判定方法改写为: 独立锚点优先, 稀有码投票只做排序。"
   }
  ]
 }
