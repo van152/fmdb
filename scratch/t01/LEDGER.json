@@ -1000,6 +1000,36 @@
     }
    },
    "consequence": "『全解析』的第一层(行边界)基本收口:78/79。可 dump 表达 49 定长 + lcrg,导出器与 schema 机读清单、列画像器均已就位。剩余工作重心转向字段语义:club(386 标量)/comp(240)/nation(317)/person 家族(533)是主要缺口。"
+  },
+  {
+   "id": "E38",
+   "date": "2026-11-18 19:3x",
+   "author": "commander(t05b2-align 交付 + 指挥官独立裁决)",
+   "kind": "milestone+negative",
+   "level": "L1(108,366 行逐行身份复算)+L2(业务区宽度推导)+结构性负结果",
+   "claim": "【字段映射阶段A达成,阶段B证伪保序假设】t05b2 对齐器在四夹具上做到:业务区宽度精确(award 64B / city 30B / stadium 25B / injury 3B)、锚点全命中(award 3/3、city 6/6、stadium 6/6、injury 3/3)、108,366 行逐行身份复算全过(award 3545、city 56293、stadium 48413、injury 115,均 rdui==行号 + duni 双 u32 相等)。但业务字段命名新增 = 0:所有非锚点字段仍 unresolved,它明确拒绝把 DP 假设冒充结论。指挥官据此做结构性裁决:(1) 行内字段顺序 ≠ schema XML 顺序 —— injury server 业务区 27B 中有 7 个纯 0/1 列,位置 2,6,8,9,10,11,22;而 schema 保序推导的 boolean 位置是 9,10,17,18,19,20,21,完全不符;(2) client 业务区是 server 业务区的真前缀 —— injury client 3B 与 server 前 3B 逐列统计一致(off0 11 种/off1 45 种/off2 0-1),证明同一 reader、client 只是跳过尾部字段;(3) server table_6 身份尾定在 off27(rdui 115/115)、off31(duni_lo==duni_hi 115/115)、off39(marker 全 0),业务区 27B 恰好容纳 22 个非字符串字段(去掉 dbnm/Inam/Isnm 三个 string —— 上游 L2 已证 injury 的 duni 值即 language 表记录 ID,ID 133 = Plantar Fasciitis,故名称不经行内存储)。",
+   "evidence": {
+    "artifacts": [
+     "scratch/t05/club_align2/{fixtures_result.json(170KB),align.py,club_fields.json,REPORT.md}",
+     "scratch/t05/fixtures_truth.json(四夹具机读真值)",
+     "scratch/t05/profile_srv6_injury.json(server table_6 27B 业务区列画像)"
+    ],
+    "commander_verify": [
+     "自检复跑 align.py --selftest:PASS(四夹具 anchors 3/3,6/6,6/6,3/3;closure=True;business_width=64/30/25/3)",
+     "独立核对身份尾(自写,不复用其代码):server table_6 rdui@27 == 行号 115/115;duni_lo==duni_hi@31 115/115;marker@39 取值集 {0}",
+     "独立布尔列扫描:业务区 0..26 中 distinct_u8==2 的列 = [2,6,8,9,10,11,22] 恰好 7 个,与 schema 的 7 个 boolean(Irec/Icon/Ibph/Ibsp/Ibin/Ibis/Ibpg)数量吻合但位置与保序推导不符",
+     "client/server 前缀一致性:client table_6 off0(11 种)/off1(45 种)/off2(0-1) 与 server off0/off1/off2 逐列同值域,证实 client 为真前缀"
+    ],
+    "errata": [
+     "t05b(上一版对齐器)报的 \"city Cnti 锚点冲突\" 不存在:off11/12/13 在 56,293 行恒 0,故 u8@10 与 u32@10 同时成立;已由 t05_fixtures_truth.py 实测四城市(Liverpool/Manchester 139、Madrid 170、München 145)证伪该阻塞",
+     "上游 db_tables_small.json table_6 的 negative_result 与本仓一致(业务列未命名),故本轮无重复劳动;但它未记录\"行内顺序≠schema 顺序\"这一点"
+    ],
+    "structural_findings": [
+     "injury 业务区 = 22 非字符串字段 + 填充(off4/off12 恒 0x00,off24/25 高比例 0xFF) —— 即\"1 字节/字段\"紧凑布局可行,不需要位打包解释全部",
+     "跨表:变长行尾 13B 身份尾在 server 定长表同样成立(injury off27/31/39),验证 E37 的全局惯例"
+    ]
+   },
+   "consequence": "字段映射的技术路线被裁决清楚:任何以 schema XML 顺序做保序累加的方法必败(本轮实证),唯一可靠顺序来源是 editor.exe reader 指令流(E20 法)。这解释了 E35(自动映射器 39.7%)与 E36(club 1/433)的失败根因,不是工程不足而是前提错误。下一轮方向:改走 reader 指令流解 server 版小表(injury 22 字段最优试验田,因为它字段少、定长、boolean/enum 类型清晰、且有 108k 行身份已验)。"
   }
  ]
 }

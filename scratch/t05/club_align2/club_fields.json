@@ -1,0 +1,29 @@
+{
+  "status": "partial",
+  "entity": "club",
+  "scope": "optional phase B; no new broad alignment search claimed",
+  "row_framework": {
+    "source": "scratch/t02/inbox/club_v2/output.json",
+    "count": 84259,
+    "closed": true,
+    "note": "The 5-byte block is a framing aggregate, not a per-field semantic map."
+  },
+  "named_field_count": 1,
+  "fields": [
+    {
+      "field": "Cccn",
+      "schema_name": "Continental Cup Nation",
+      "schema_type": "database_record_unique_id",
+      "offset": 8,
+      "width": 4,
+      "confidence": "L3",
+      "evidence": "Existing scratch/t02/inbox/club_fields/output.json: getter-to-reader sink maps the same object member; reader transfer is 4 bytes and unique row-cursor candidate is +8.",
+      "note": "Carried forward as supplied evidence; this t05b2 run did not independently reproduce the executable analysis."
+    }
+  ],
+  "list_segment_inference": {
+    "status": "not_attempted",
+    "note": "The club framing framework and schema list declarations do not by themselves establish list counts/item widths. No list width is guessed."
+  },
+  "unresolved": "The remaining 385 scalar fields and list layouts are not mapped by this optional stage-B pass."
+}
