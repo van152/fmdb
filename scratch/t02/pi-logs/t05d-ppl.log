@@ -1,0 +1,28 @@
+=== attempt 1/6 Wed Nov 18 18:49:26     2026 provider=devseek model=deepseek-v4.1-flash-free ===
+Warning: No project session found with id 't05d-ppl-devseek'; creating a new session with that id.
+Warning: Invalid settings file C:\Users\oak\.pi\agent\settings.json: Lock file is already being held
+=== attempt 1 rc=124 Wed Nov 18 19:09:26     2026 ===
+=== attempt 2/6 Wed Nov 18 19:09:41     2026 provider=devseek model=deepseek-v4.1-flash-free ===
+=== attempt 2 rc=124 Wed Nov 18 19:29:42     2026 ===
+=== attempt 3/6 Wed Nov 18 19:29:57     2026 provider=devseek model=deepseek-v4.1-flash-free ===
+
+
+<​｜DSML｜ calls>
+<​｜DSML｜ invoke name="bash">
+<​｜DSML｜ parameter name="command" string="true">cd "D:/tmp2b/fm24-db/scratch/t05/people" && py -V:3.12 -I -B -c "
+import struct
+raw=open(r'D:\tmp2b\fm24\input\editor.exe','rb').read()
+for o in (0xe5094d,0xe50959,0xe5031f,0xe50528,0xe50534,0xe50480,0xe506a5,0xe50792,0xe507bc,0xe4fa00):
+    b=raw[o:o+10]
+    print(hex(o), b.hex(' '))
+"<​/｜DSML｜ parameter>
+<​/｜DSML｜ invoke>
+<​/｜DSML｜ calls>
+=== attempt 3 rc=0 Wed Nov 18 19:41:01     2026 ===
+--- throttled, sleep 135s ---
+=== attempt 4/6 Wed Nov 18 19:43:16     2026 provider=devseek model=deepseek-v4.1-flash-free ===
+=== attempt 4 rc=124 Wed Nov 18 20:03:17     2026 ===
+=== attempt 5/6 Wed Nov 18 20:03:32     2026 provider=devseek model=deepseek-v4.1-flash-free ===
+=== attempt 5 rc=124 Wed Nov 18 20:23:33     2026 ===
+=== attempt 6/6 Wed Nov 18 20:23:48     2026 provider=devseek model=deepseek-v4.1-flash-free ===
+=== DONE t05d-ppl attempt=6 rc=124 Wed Nov 18 20:43:48     2026 ===

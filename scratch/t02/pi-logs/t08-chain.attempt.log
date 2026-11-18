@@ -1,0 +1,9 @@
+Warning: No project session found with id 't08-chain-openai-codex'; creating a new session with that id.
+已完成，产物位于 `scratch/t08/out/`。
+
+- `verify.py` **PASS**：t07 命名 45/45 保留；injury 13/13、city 6/6；type22 **14/19**；总命名 **138/240**；布局宽度闭合及链内唯一性检查通过。
+- 建成 226 条链，配对矩阵覆盖 26 个 reader。
+- **未达到标题中的 150+ 目标**，但超过任务书硬验收线 62。type22 对照 t05 复现 14/17，未复现 Sold、Snew、Salt。
+- `MISSING_CODES.md` 记录：Sold/Salt 是标准 `cmp imm32`，漏在后续窄访问证据过滤；Snew 的链内路径位于 `+40`，但为 qword 访问，未冒充 4-byte 精确命中。
+
+交付文件：`chains.json`、`pairing.json`、`naming_result.json`、`MISSING_CODES.md`、`verify.py`、`REPORT.md`、`build.py`。
