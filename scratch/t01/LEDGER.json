@@ -1169,6 +1169,32 @@
     ]
    },
    "consequence": "语义命名累计达 33 条(injury 13+位组 5、球场表 type22 17、city 5、regi 1,去重后按字段计约 33),且新增的 city 三例都有精确的值域背书。更重要的是把两条路线的适用条件钉死:①4CC 分发链 -> 可给出确定命名,但只存在于手写优化的实体(injury/type22);②值域对齐 -> 可生成候选但不可定名,必须配语义。这决定了下一步该做什么:优先为 19 个身份未知的实体找 4CC(它们若属于某个已知家族,dispatch 链可能在别处),而不是继续在值域统计上加码。"
+  },
+  {
+   "id": "E43",
+   "date": "2026-11-18 21:2x",
+   "author": "commander(修正 E41 的邻接假设)",
+   "kind": "errata+tool",
+   "level": "L3-static(city 4CC 链的逐条指令地址为证)",
+   "claim": "【勘误 E41:\"dispatch 链紧邻 reader\" 只对手写优化实体成立】E41 的命名器把 4CC 链的搜索范围限定在 reader body 之后 0x6000 字节,据此认为 city/regi/stad 等 24 个实体\"没有 dispatch 链\"。实测证伪:city(type2) 的 4CC 链确实存在,但在 file offset 0xe55098-0xe550c0 一带,而它的 reader body 在 0x3aa5550 —— 相距约 0x2C 万字节。逐条指令证据:0xe550a3 `cmp edx, 0x436c7269`(Clri) + 0xe550a9 `je 0xe552e6`;0xe550af `cmp edx, 0x436e616d`(Cnam) + 0xe550b5 `jne 0xe5545d`(走 setter fall-through);0xe5509c 的 je 指向 0xe55284 `movss xmm6, dword ptr [rdi + 0x4c]`(Clat 的 getter 体)。因此正确做法是**全局扫描**而非邻近窗口。据此写出 scripts/t05_4cc_global.py:用 `cmp reg,imm32` 的机器码(81 FA/FB/F9/F8/FE/FF/FD/FC、3D)做字节搜索,在 70.1MB 可执行段里定位到 18,837 处 cmp 候选、8,954 个不同 4CC,比 capstone 全扫快约两个数量级。",
+   "evidence": {
+    "artifacts": [
+     "scripts/t05_4cc_global.py(全局 4CC 扫描器,初版)",
+     "prompts/t07_global_4cc.md(t07 任务书,含 city/injury 双校准集)"
+    ],
+    "commander_verify": [
+     "city 4CC 链逐条核对:0xe550a3 cmp edx,'Clri' / 0xe550a9 je 0xe552e6;0xe550af cmp edx,'Cnam' / 0xe550b5 jne 0xe5545d;0xe5509c je 0xe55284 且 0xe55284 = movss xmm6,[rdi+0x4c]",
+     "reader body 距离核对:city reader=0x3aa5550,4CC 链=0xe55098,差值 0x2C4F4B8 —— 远超 0x6000 窗口",
+     "字节搜索规模:4 个可执行段合计 70.1MB,命中 cmp 候选 18837 处 / 8954 个不同 4CC(含大量 ASCII 巧合,需过滤)"
+    ],
+    "known_defects": [
+     "size 判错:Clri 目前得到 off=0x38 size=8,但按 city 布局应为 4 字节。根因是\"跟随 je 目标后取第一条 mem access\"会抓到 `mov rax,[rdi+0x38]` 这类对象内部指针取用。判据应限定为窄读/窄写(movzx/movsx/movss 或 mov byte/word/dword ptr [reg+OFF],reg)",
+     "disasm 的 base 必须传 VA:本轮已修一次(传 file_offset 会让 je 目标算成 file-offset 形式,再经 va2f 错位)",
+     "同一 4CC 常有 3-4 处出现(不同属性系统),需按证据强度打分而非取首个"
+    ],
+    "delegated": "t07-4cc(luna,已发射):目标是把全局表做到可信,验收线为 injury 13/13 + city 6/6 双校准集 100% 复现,且不得修改任何 row_off/width。任务书已把 city 的已知锚点(Clri cmp@0xe550a3、je@0xe552e6)与 injury 的 13 条 4CC/offset 对照表写死,避免它重新摸索。"
+   },
+   "consequence": "\"4CC 只有手写优化实体才有\"的判断被推翻,改为\"4CC 全局存在,只是位置不固定\"。这意味着剩下的 24 个实体(含 stad/lcrg 与 19 个身份未知表)都有可能命名——前提是全局表能过滤掉 8954 个候选里的 ASCII 巧合。若能达成,命名覆盖面将从 33 条跃升到数百条量级。"
   }
  ]
 }
