@@ -1,8 +1,14 @@
-# t17 — blocked by prerequisite
+# t17c · 全量历史锚点回归
 
-Status: `blocked_waiting_16`.
+状态：`complete_regression`；通过 **10/10**（100.0%），失败 **0**。
 
-- `scratch/t14/out/stage2_map.json` exists with status `complete`.
-- `scratch/t16/out/ledger.json` exists, but its status is `partial_golden_gate_failed`, not the required `complete_` status.
+## Fail 清单
 
-Per the task precondition, processing stopped. No merged entity ledgers, historical-anchor regression, or editability-support assessment was generated. The prerequisite status is recorded in `regression.json` without modifying the source outputs.
+- 无。
+
+## 晨裁建议
+
+- 本轮是 t16 状态独立的历史锚点回归，不把 t16 ledger 状态作为前置条件。
+- 若晨裁后续发现差异，只对照 `regression.json` 对应项的原始 stdout、源快照与实际数值；失败原文已保留，不在本验收任务中修复。
+- D9 属值域/基数交叉（C 类佐证），不要升级为 L2/L3 实体确认；t13/t14 静态证据与表内语义分开审。
+- 检查输出仅写入 `scratch/t17/out/`；未写外部数据或历史证据库。
