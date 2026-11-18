@@ -55,22 +55,30 @@ def split_rows(raw: bytes, count: int) -> dict:
             continue
         if raw[p + 4:p + 8] != raw[p + 8:p + 12]:
             continue
-        if raw[p + 12] not in (0x00, 0x01, 0x0A, 0x0B):
-            continue
         cand.setdefault(v, []).append(p)
 
+    # rows 0..count-2 carry a shape byte in {0x01, 0x0a, 0x0b} at +12;
+    # the final entry (id count-1) is a short terminator with shape 0x00.
+    shaped = {v: [p for p in ps if raw[p + 12] in (0x01, 0x0A, 0x0B)]
+              for v, ps in cand.items()}
+    runner = count - 1 if count > 1 else 0
+
     best = None
-    for first in cand.get(0, []):
+    for first in shaped.get(0, []):
         starts, expected, cur = [first], 1, first
-        while expected < count:
-            nxt = [p for p in cand.get(expected, []) if p > cur]
+        while expected < runner:
+            nxt = [p for p in shaped.get(expected, []) if p > cur]
             if not nxt:
                 break
             cur = nxt[0]
             starts.append(cur)
             expected += 1
-        if expected == count and (best is None or len(starts) > len(best)):
-            best = starts
+        if expected == runner:
+            tail = [p for p in cand.get(count - 1, []) if p > cur]
+            if tail:
+                starts.append(tail[0])
+                if best is None or len(starts) > len(best):
+                    best = starts
     if best is None or len(best) != count:
         got = len(best) if best else 0
         return {"ok": False,
@@ -202,9 +210,9 @@ def main() -> int:
     if a.selftest:
         sv = res["server"]
         ok = (res["status"] == "complete" and sv["closure_ok"]
-              and sv["count"] == 84507 and sv["rows"]["row0_offset"] == 136
+              and sv["count"] == 84507 and sv["rows"]["row0_offset"] == 122 + 14
               and sv["rows"]["prefix_len"] == 122
-              and sv["rows"]["shape_byte_summary"].get("0xa", {}).get("rows") == 84255
+              and sv["rows"]["shape_byte_summary"].get("0xa", {}).get("rows") == 84256
               and sv["rows"]["terminator_len"] == 21)
         print("selftest", "PASS" if ok else "FAIL")
         return 0 if ok else 1

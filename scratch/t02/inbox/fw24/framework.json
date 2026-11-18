@@ -19,51 +19,35 @@
   "variable": true,
   "rows": {
    "ok": true,
-   "row0_offset": 31,
-   "prefix_len": 17,
-   "prefix_hex": "01 00 6c 07 01 00 6c 07 01 00 6c 07 1a 01 00 6c 07",
-   "row_len_sum": 8818999,
+   "row0_offset": 136,
+   "prefix_len": 122,
+   "prefix_hex": "01 00 6c 07 01 00 6c 07 01 00 6c 07 1a 01 00 6c 07 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 00 00 00 00 da 16 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 ff ff ff ff 00 00 32 a6 05 00 ed f1 00 00 00 00 00 00 ff ff ff ff ff 00 00 01 00 ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "row_len_sum": 8818894,
    "runner_rows": 84506,
-   "runner_len_min": 43,
+   "runner_len_min": 86,
    "runner_len_max": 666,
    "terminator_len": 21,
    "shape_byte_summary": {
-    "0x0": {
-     "rows": 53,
-     "len_min": 21,
-     "len_max": 227,
-     "len_distinct": 7,
+    "0xb": {
+     "rows": 250,
+     "len_min": 135,
+     "len_max": 135,
+     "len_distinct": 1,
      "len_top": [
       [
-       47,
+       250,
        135
-      ],
-      [
-       1,
-       227
-      ],
-      [
-       1,
-       226
-      ],
-      [
-       1,
-       144
-      ],
-      [
-       1,
-       128
       ]
      ]
     },
     "0xa": {
-     "rows": 84254,
-     "len_min": 44,
+     "rows": 84256,
+     "len_min": 86,
      "len_max": 666,
-     "len_distinct": 270,
+     "len_distinct": 269,
      "len_top": [
       [
-       53631,
+       53633,
        86
       ],
       [
@@ -84,25 +68,25 @@
       ]
      ]
     },
-    "0xb": {
-     "rows": 200,
-     "len_min": 135,
-     "len_max": 135,
+    "0x0": {
+     "rows": 1,
+     "len_min": 21,
+     "len_max": 21,
      "len_distinct": 1,
      "len_top": [
       [
-       200,
-       135
+       1,
+       21
       ]
      ]
     }
    },
    "row_len_ctr": {
-    "min": 43,
+    "min": 86,
     "max": 666
    }
   },
-  "closure": "14 + 17(prefix) + 8818999(sum of 84507 variable rows) == 8819030",
+  "closure": "14 + 122(prefix) + 8818894(sum of 84507 variable rows) == 8819030",
   "closure_ok": true
  },
  "relation": "client member absent (server-only table): no cross-side comparison possible"
