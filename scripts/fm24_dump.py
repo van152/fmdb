@@ -92,6 +92,21 @@ def load_payload(codec, archive: str, tid: int) -> bytes:
     return codec["_stream_decompress"](db[hit:], 256 * 1024 * 1024)
 
 
+# 上游大表报告(b47)里给出、但不在小表 census 的定长规格
+EXTRA_FIXED: dict[tuple[str, int], dict] = {
+    # city: client/server payload 字节相同, 56,293 × 43 B
+    ("client", 2): {"model": "fixed", "header": 14, "stride": 43, "footer": 8,
+                    "count": 56293, "payload": 2420621},
+    ("server", 2): {"model": "fixed", "header": 14, "stride": 43, "footer": 8,
+                    "count": 56293, "payload": 2420621},
+    # stadium: client 38 B / server 181 B, 均 48,413 行
+    ("client", 21): {"model": "fixed", "header": 14, "stride": 38, "footer": 8,
+                     "count": 48413, "payload": 1839716},
+    ("server", 21): {"model": "fixed", "header": 14, "stride": 181, "footer": 8,
+                     "count": 48413, "payload": 8762775},
+}
+
+
 def fixed_specs() -> dict[tuple[str, int], dict]:
     """从上游普查装载定长规格。"""
     out: dict[tuple[str, int], dict] = {}
@@ -128,6 +143,7 @@ def fixed_specs() -> dict[tuple[str, int], dict]:
                 "payload": it.get("payload_size"),
                 "identity_verified": st != "arithmetic_candidate",
             }
+    out.update({k: dict(v) for k, v in EXTRA_FIXED.items()})
     return out
 
 
