@@ -1,0 +1,14 @@
+=== attempt 1/3 Thu Nov 19 12:48:30     2026 provider=openai-codex model=gpt-6.2-sol ===
+Warning: No project session found with id 't27-stadium-cursor-openai-codex'; creating a new session with that id.
+t27 已闭合 **server table_22 的 449 行 cursor**，`club.Cstc` 新增 **14 个 L3 字段（0 → 14/28）**。client 也有 table_22，但每行只有 1 B selector 和 12 B identity，不含业务字段。
+
+定位了 t20 漏扫的三次 4 B helper 读取，正好对应 `+12/+16/+50` 的日期画像，旧错配未复活。原 23 条分支及尾部另 5 条均已归类。12 B identity 在两个 archive 的 449 行逐字节一致；slot 0 确认为引用形态，但无 Cstc getter，不命名。6 个未晋级代码与未展开的 callback／析构路径均保留为 partial。
+
+**验证通过**：t27 独立复算及自检、t20 回归（PASS partial）、t01 锚点 **7/7**。
+
+**交付清单**
+- [`cursor_t22.json`](scratch/t27/out/cursor_t22.json) 及 CFG、指令、传输、逐行轨迹分片
+- [`fields_t22.json`](scratch/t27/out/fields_t22.json) 及 3 份字段台账分片
+- [`replication.md`](scratch/t27/out/replication.md)、[`scout.json`](scratch/t27/out/scout.json)：复用模板与 38 个子表父码侦察；Cafl/Cvfl 的独立表号仍为 `unknown`
+- [`verify.py`](scratch/t27/out/verify.py)、[`REPORT.md`](scratch/t27/out/REPORT.md)、[`scripts/t27_stadium_cursor.py`](scripts/t27_stadium_cursor.py)
+=== DONE t27-stadium-cursor attempt=1 rc=0 Thu Nov 19 13:06:58     2026 ===
