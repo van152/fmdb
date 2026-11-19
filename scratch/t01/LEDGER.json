@@ -2174,6 +2174,34 @@
     "scratch/cmd/t61_spot.py"
    ],
    "consequence": "negative result banked: the held census is NOT an enum_source gap — promotion requires new static getter-slot evidence per field; t61 becomes the canonical held-domain reference for future folds"
+  },
+  {
+   "id": "E102",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t67 comp table_25 data-side crosswalk (reader-independent, t50 paradigm transfer)",
+    "level": "L2 target, L3=0, L4=0",
+    "assertions": [
+     "four-alignment scan + ordinal-layer non-overlap DP recover exactly one path per side under standard constraints (12B identity, UID nonzero/strictly increasing)",
+     "cross-archive equality: UID set sha256 eee2ed7d identical client/server (7,047), identity bytes equal, footer equal 00000000|01|4ec43a77",
+     "selector histograms {0:7047} both; byte-level grammar yields 1 client + 25 server templates, sequence exactly matches t59 field_slots",
+     "29 sensitivity controls per side reproduce t59 table incl. both_relaxed client >=1,000,000 (cap) / server 4",
+     "t01f fixtures reclosed: continents {0..5}, parent 352 UID 150990, England 139/China 55 anchors"
+    ],
+    "notes": "REPORT wording nit: payload SHAs labeled \"Footer bytes\"; crosswalk.json content correct (footer_hex fields present). Boundary respected: no reports/ changes",
+    "spot": "commander inline spot 0 FAIL + worker verify PASS + anchors 7/7"
+   },
+   "evidence": [
+    "scratch/t67/out/crosswalk.json",
+    "scratch/t67/out/sensitivity.json",
+    "scratch/t67/out/REPORT.md",
+    "scratch/t67/out/verify.py",
+    "scripts/t67_comp_data_crosswalk.py"
+   ],
+   "consequence": "comp row framing now has reader-independent data-side proof at L2, mirroring E91 for nation; club crosswalk (t68) follows same method"
   }
  ]
 }
