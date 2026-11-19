@@ -2076,6 +2076,40 @@
     "scratch/cmd/t58_spot.py"
    ],
    "consequence": "public schema advances v7->v8: club main-row layer (13 new L3 incl. Cext/Cedp/Cncl/CIns/Ctsi + duni/Cnti/Cbni/Cccn/Ccty/CASt/Csot/CnCV) now citable; per-table identity-width self-proof rule added to coverage policy"
+  },
+  {
+   "id": "E99",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "scope": "comp table_25 main-row census (t59, reader-CFG batch method per t55/t57)",
+    "framing": [
+     "dual-archive closure client 13+894,969+9 / server 13+1,533,950+9; 7,047+7,047 rows",
+     "native identity 12B (dsha ordinal | duni uid | saved rdui==duni), footer 9B 00000000|01|4ec43a77; sensitivity table preserved",
+     "client legacy body fixed 127B rows @14+ordinal*127; server conditional templates 77-82 sites, union 82 observed + 2 static-untriggered"
+    ],
+    "reader": [
+     "COMP factory case 25 dual object forms (db::COMP 0x14187dcb8 vs DATABASE_TABLE<COMP> 0x14187f6d8), not merged",
+     "true slot19 0x187d350->0xeb7000, main extent 0xeb7000..0xeb7e42: 837 reachable instructions / 114 conditional branches; t01 A3 slot6 note corrected to real slot5 registrar 0x140ebfa40"
+    ],
+    "fields": [
+     "255 XML occurrences -> 49 L3 (48 distinct 4CC, duni x2; 26 new 4CCs incl. LAUC + cext/cusn/culn bit projections + 22 cnst contract-status projections Pcsp..Pcsy/Pcjm..Pcsc), 10 held with first counterexamples, 196 unmapped; L4=0",
+     "818 wire-vs-XML order inversions preserved; reference domains ccti->t5, cnti->t10, cpcm->t25 self, cnor/csou/cwes/ceas->t2, all 0 violations, wrong-UID controls recorded",
+     "wbst/wben calendar-verified 1900-2023/1900-2024; levl getter excludes 100 (+1); crep server-only i16 [0,200]"
+    ],
+    "status": "partial_schema_join; held/unmapped records preserved verbatim in field_map.json; no reports/ fold (BASELINE/schema fold deferred to commander)"
+   },
+   "evidence": [
+    "scratch/t59/out/field_slots.json",
+    "scratch/t59/out/field_map.json",
+    "scratch/t59/out/REPORT.md",
+    "scratch/t59/validation.log",
+    "scripts/t59_compmain_fields.py",
+    "scratch/cmd/t59_spot.py"
+   ],
+   "consequence": "comp joins nation/club as third census-verified main row; 26 new comp 4CCs citable at L3; schema v9 fold (comp_main_row_fields) left for next shift"
   }
  ]
 }
