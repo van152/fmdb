@@ -1787,6 +1787,16 @@
    "claim": "CNtp/table66 STARTING_CLUB_TRANSFER_PREFERENCE server 753x24B 全闭合(13+753*24+9=18094,SHA 3ddd47bb)。2 L3:nati(scalar_i32_nation_identity@body4,key_basis=nation对象+0xc首UID lane,非ordinal非Cmti式pair;constructor_default -1)/rati(i8_enum@body8,值集{0..5},零哨兵走特殊getter arm)。2 held:mina/maxa(u8@body9/10,静态movzx sink已绑但required年龄域[14,44]/[15,45]遇零值冲突:mina436零/maxa395零,0未证sentinel(getter zero-extend装箱保留 raw0);双零389/双非零311(均min<=max)/raw min>max6行=max-only-zero,首例row57(18,0))。body@0另4B为父club UID(非schema字段)。identity lane0 ordinal 0..752。footer 0000000001f1020000 末u32=753。client无table66。",
    "evidence": "scratch/t34/out/{cursor_cntp.json,fields_cntp.json,instructions.part001-005,branches.part001-002,verify.py,REPORT.md};scripts/t34_cntp_cursor.py;commander scratch/cmd/t34_spot.py 13/13(闭合/SHA/row1@42=1651/mina436零nz[14,32]/maxa395零nz[17,45]/双零389/双非零311/min>max6/identity/rati{0..5}/footer753);verify PASS;builder selftest PASS;anchors 7/7。nati ordinal假说独立域检验602 miss(row1@42=1651对应nation ordinal实189),用t25闭合client table10(251 nation)核ordinal域0..250,server table10复核251同序唯一三元组(不声称独立解析server nation行布局)。slot21 writer 0x4358a6e直写4B成员,slot20 AL=true;ret无ordinal fixup。",
    "consequence": "club子表L3累计39(Cstc14+Clhs8+CSrs10+Cmti5+CNtp2)。子表复制法第5次成功。nati证明引用模型多样:CNtp单lane nation identity vs Cmti成对record-key,逐reader read site判定不预设。mina/maxa诚实held(静态sink绑定!=值域通过),为required域含零字段树立held先例。下一sol t36 Cdbt(table33,5字段cash/sour/stdt/endt/inrt,32409x79)。"
+  },
+  {
+   "id": "E72",
+   "date": "2026-11-19",
+   "author": "commander(verify luna t35)",
+   "kind": "acceptance_negative",
+   "level": "L2",
+   "claim": "t35 Cafl/Cvfl数据侧发现 partial_no_semantic_candidate(诚实负结果)。扫t14全74 RTTI类型+stage2 45身份,12语义词(AFFILIAT/CLUB_LINK/FEEDER/FARM/SATELLITE/SISTER/SUBSIDIARY/PARTNER等),正向候选0,club近义near-miss6(无affiliation/link类名)。Cafl/Cvfl仍unknown,copy_ready全unknown+空item候选,29/19 schema字段保留为schema-only非数据列名。视图假说no_data_vote:数据不能支持/反驳一集合两视图。关键负证据:RTTI无命中不证明子表不存在,可能嵌club父记录或用无语义RTTI。父表上下文:client table3=club父表(LEAGUE_BODY_CLUB,stage2 club.xml#club),28帧多帧成员选+34真实帧payload6932082 SHA db8ea78c,header count84259,变长stride54..156(87 span,84256标准5B聚合行+3 identity-only紧凑行);server table3 payload16595312仅元信息未walk。luna verify.py缺失(交付不完整,commander spot为闸);另发现fm24_dump.py --table3 footer_offset hex转int既有bug,luna未改脚本用独立walker绕过。",
+   "evidence": "scratch/t35/out/{cafl_cvfl_discovery.json,REPORT.md,profiles/(semantic_candidate_scan.json,parent_table3_context.json)};commander scratch/cmd/t35_spot.py 11/11(负结果完整性/copy_ready unknown/schema29+19/scan0候选74类型/near-miss6/no_data_vote/client table3多帧28选1匹配6932082+SHA/header84259/club父表);anchors 7/7。",
+   "consequence": "Cafl/Cvfl(48嵌套字段)数据侧RTTI搜索撞墙,转sol静态发现:沿t27已知club +0x118/+0x120 collection(Cafl thunk0x141532ab0 R8D=0/Cvfl 0x141532c60 R8B=1)追writer/子reader找独立archive或嵌入父记录证据。列为sol-tier硬任务排队(Cdbt t36后)。负结果按AGENTS.md原样保留不删改。client table3多帧(28)再证E66多帧普遍性。fm24_dump footer_offset hex bug待修。"
   }
  ]
 }
