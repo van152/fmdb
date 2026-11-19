@@ -183,7 +183,7 @@ def walk_club_block(raw: bytes):
     """club: 84,259 行 5B block 标准布局;3 行特例(55B)。详见 club_v2/output.json。"""
     out = json.loads((ROOT / "scratch/t02/inbox/club_v2/output.json").read_text(encoding="utf-8"))
     n = int(out["count"])
-    footer_at = int(out["footer_offset"]) if out.get("footer_offset") else len(raw) - 8
+    footer_at = int(out["footer_offset"], 0) if out.get("footer_offset") else len(raw) - 8
     pos, i = 14, 0
     while i < n:
         # 标准布局: 名称/身份在行内,行尾 duni(4)+duni(4)+00(1)

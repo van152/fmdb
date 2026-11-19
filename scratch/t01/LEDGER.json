@@ -1827,6 +1827,16 @@
    "claim": "t33 profile batch II 7/7表完成。t12 STARTING_AWARD_HISTORY 28597变长(封口14+3739548+8=3739570)/t39 STARTING_AVERAGE_POINTS 117x42固定/t45 STARTING_RECORD 84477变长(7608748)/t48 STARTING_RECORD 5210变长(446049)/t58 STARTING_WEEKLY_WAGE_CONTRIBUTION 8x45固定(382)/t59 STARTING_MEDIA_EXPECTATIONS 9079变长(224880)/t73 STARTING_ITALIAN_SERIE_A_NON_EU_PLAYER_SIGNE 1x23固定(45)。固定表双约定(14+n*s+8 vs 13+n*s+9)试+逐行尾锚(ordinal|id|id|marker)选;变长tail-13帧前向走查ordinal==行号+相邻u32相等+末字节0x00/0x0C。帧歧义诚实记录:t12多解34/28597(max5候选长)/t45 1/t48 2/t59 1。parent连接全candidate/unknown L3=0:t12->AWsh/t39->csap/t45,t48->Plhs/Pnph/Pacl/t58->Cwcl/t59->Csme。devseek attempt1 rc124超时,attempt2自修verify从41PASS11FAIL至52PASS0FAIL(中间态快照非profile错)。",
    "evidence": "scratch/t33/out/{profiles/7表.profile.json+.rows.jsonl,subtable_candidates.json,REPORT.md,verify.py(52/0 PASS),PROGRESS.md};scripts/t33_profile_batch.py;commander scratch/cmd/t33_spot.py 7/7(多帧payload size+SHA/固定封口算术/rows hash/行数==count)。t73单帧首帧592528c3匹配;我帧walker越成员边界into后续archive成员但size+SHA匹配选对帧有效。",
    "consequence": "nation/person侧子表备料(Plhs/Pnph/Pacl/AWsh/csap/Cwcl/Csme候选)。devseek自修verify至全过(完成度高)。帧歧义记录为变长表walk树立诚实先例。sol额度受限期间luna/devseek数据侧备料主线。下一luna t37 nation侧广度inventory。"
+  },
+  {
+   "id": "E76",
+   "date": "2026-11-19",
+   "author": "commander",
+   "kind": "infrastructure_fix",
+   "level": "L1",
+   "claim": "修两基础设施bug。(1)scripts/fm24_dump.py:186 footer_offset hex字符串转int:club_v2/output.json footer_offset=0x69c66a(hex),原int(x)无base失败(luna t35 E72阻塞),改int(x,0)自动识别0x前缀。回归:client table3 dump现PASS(原失败),selftest 49PASS/0FAIL/1SKIP,client21 PASS,anchors7/7。0x69c66a=6932074=payload6932082-8正确。(2)scratch/t29/out/verify.py ROOT=HERE.parents[3](解析tmp2b)改parents[2](fm24-db),MANIFEST路径解析修好;但暴露第二defect:verify用full_rows_file/full_rows_sha256键而inventory用rows_file/rows_jsonl_sha256,key名不匹配仍FAIL。t29b inventory已由commander t29b_spot.py 9/9独立验收(E70),luna verify多重defect不深追改写其产品,spot为闸。server34 selftest SKIP是E66多帧load_payload首帧限制(独立增强项,非本bug,未改load_payload避风险)。",
+   "evidence": "scripts/fm24_dump.py:186 int(out[footer_offset],0);scratch/t29/out/verify.py:14 ROOT parents[2];回归DUMP_RC=0(client3)/ST_RC=0(49/0/1)/D21_RC=0/anchors7/7。",
+   "consequence": "fm24_dump client table3阻塞移除,后续club父表dump可用。t29b verify ROOT修但key mismatch留defect(spot supersede)。load_payload多帧增强(选真实帧而非首帧)列为后续基础设施改进,可解server34 SKIP及E66普遍性。"
   }
  ]
 }

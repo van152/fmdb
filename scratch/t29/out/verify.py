@@ -13,7 +13,7 @@ import sys
 from typing import Any
 
 HERE = pathlib.Path(__file__).resolve().parent
-ROOT = HERE.parents[3]
+ROOT = HERE.parents[2]
 INVENTORY = HERE / "subtable_inventory.json"
 
 class VerifyFailure(Exception):
