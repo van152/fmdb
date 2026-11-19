@@ -1,0 +1,10 @@
+COMMAND: py -V:3.12 -I -B scratch/t54/out/consolidate_v6.py --help
+usage: consolidate_v6.py [-h] (--selftest | --build)
+
+Merge t53 E93/L2 TCrs dual-wire evidence into schema v6 without changing v5
+protected blocks.
+
+options:
+  -h, --help  show this help message and exit
+  --selftest  validate pinned sources and merge invariants without writing
+  --build     write the v6 public schema pair and t54 outputs

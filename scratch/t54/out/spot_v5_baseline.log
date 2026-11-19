@@ -1,0 +1,7 @@
+COMMAND: py -V:3.12 -I -B scratch/t52/out/verify.py --check
+t52 independent verification PASS (146 check groups/items)
+v4 protected sections: byte-exact source snapshots and structural equality verified
+nation fields: t47 7 L3/2 held; t49 17 L3/13 held; t51 6 L3/5 held
+t50: E91 accepts L2 data-side profile only; L3 field attribution stays zero and sidecar remains unassigned
+t49/t50: absolute identity-tail starts cross-walk 251/251 per archive; full spans conflict; NO WINNER
+t51 cross-walk: all three 251-row source pairs match; L4=0

@@ -1,0 +1,10 @@
+COMMAND: py -V:3.12 -I -B scratch/t54/out/verify.py --help
+usage: verify.py [-h] (--selftest | --check)
+
+Independently verify t54 v6 against the frozen v5 pair, t53 artifacts, E91/E93
+L2 provenance, protected blocks, and EOF closures.
+
+options:
+  -h, --help  show this help message and exit
+  --selftest  run isolated verifier selftests
+  --check     verify the public v6 pair and its frozen sources

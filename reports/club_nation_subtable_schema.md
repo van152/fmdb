@@ -407,7 +407,7 @@ t51 independently reproduces t49's table_9 client/server row records and t47's t
 
 ### Provenance
 
-Editor binary SHA-256 for t47/t49/t51: `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`. Ledger entries: E87 (t47 L3), E89 (t49 L3), E90 (t51 L3), and E91 (t50 L2 only). E89/E90/E91 are dated `2026-11-20`, one day after the run date `2026-11-19`; the dates are recorded as present in the ledger, without independent timestamp validation.
+Editor binary SHA-256 for t47/t49/t51: `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`. Ledger entries: E87 (t47 L3), E89 (t49 L3), E90 (t51 L3), E91 (t50 L2 only), and E92 (t52 fix1 L2). E89-E92 are dated `2026-11-20`, one day after the run date `2026-11-19`; the dates are recorded as present in the ledger, without independent timestamp validation.
 
 | Task | Source artifact | SHA-256 |
 |---|---|---|
@@ -447,4 +447,69 @@ Editor binary SHA-256 for t47/t49/t51: `b82ebe8e032f20171e813c02f53084dc0ac2c43b
 | t50 acceptance | `scripts/t50_nation_t9_profile.py` | `659de87f7799ee81242ac75f036068fd910c8fdcbf78ff231cdf438261de7b80` |
 | t50 acceptance | `scratch/cmd/t50_spot.py` | `aa5ee28b5421cdee0afc36079738cbd400288b1c8305a043ca75549da6efff16` |
 
-Acceptance ledger snapshot SHA-256: `99e0161366c76e5ff1d924d6dd581b0aa1b37787b8021e02a5d29dafa089198d`. L4 remains 0.
+Acceptance ledger snapshot SHA-256: `1ff0c2d2893300ac74fdd1c16103f5d8445c0ab718fd6df25b47154991f5b340`. L4 remains 0.
+
+## t53 Incremental Addendum
+
+This addendum records the E93-accepted TCrs adjudication at L2. It adds wire/backing scope and cursor closure only; no PUn* schema field is promoted to L3. All preceding v5 Markdown bytes are retained as the exact prefix.
+
+### TCrs Dual Closure
+
+The main TCrs vector is read from `table_9.dat` at `this+0x188`; the getter vector `[this+0xb0]+0x48` is backed by the typed suffix of `table_extra_9.dat`, after the t50 name-block portion. These are distinct vector destinations; the no-alias statement is bounded to examined routes.
+
+- Main server presence: 166 absent / 85 present; 85 nonempty vectors, 2,219 items, all version 2 and tag 3; PUnP is -1 for all 2,219 main items.
+- Getter suffix server presence: 179 absent / 72 present; 39 present zero-count vectors, 33 nonempty vectors, 76 items, all version 2 and tag 3.
+- Main EOF closures: client `13 + 31934 + 9 = 31956`; server `13 + 307542 + 9 = 307564`.
+- Getter-suffix EOF closures: client `12 + sum(spans=83915) = 83927`; server `12 + sum(spans=105216) = 105228`. No separate extra_9 footer is asserted.
+
+### table_extra_9 and t50
+
+`table_extra_9.dat` is no longer recorded as wholly unbound: t53 verifies its typed suffix as the TCrs getter backing. The name-block portion remains under t50's L2 name-table profile. The six pre-existing t49 slot19/member-mode rejection records and their original failure details remain unchanged.
+
+The v5 t9 framing adjudication remains **NO WINNER**. t53 appends a separate within-block result: server row 2 starts at `@875` after row 1's version-2/count-0 bytes (t50 also retained `@867`); for row 82, the sequential reader consumes 94 bytes beyond the earlier `@39439` candidate and reaches the next block at `@39533`. The t50 source's two candidate columns remain retained.
+
+### Held and Negative
+
+All four fields remain held; L3 field promotions = 0. The aggregate held count remains 20 (unchanged from v5).
+
+| Field | Grade | Preserved domain result |
+|---|---|---|
+| `PUnI` | `held` | no scoped enum_ref |
+| `PUnT` | `held` | no scoped enum_ref; 0xff is signed -1 and getter missing |
+| `PUnP` | `held` | main all -1; auxiliary raw UID/id branch (state +9=0), ordinal test rejected; UID probe is contrast, not promotion |
+| `PUnJ` | `held` | scoped ftjn exists but live raw values outside domain; zero is getter-missing, separately recorded |
+
+The bounded nation negative-record count is 15: seven existing records plus eight individually retained t53 trial groups. The no-alias assertion limit is recorded as a held scope boundary, not a ninth failed trial.
+
+- `main_client`: mode 0: closed (251 rows); mode 1: first failure @28 (invalid count); full source record retained verbatim in `nation_t9_wire.t53_crs_adjudication.wrong_mode_trial_groups`.
+- `extra_as_slot19_client`: mode 0: first failure @1189 (invalid count); mode 1: first failure @28 (invalid count); full source record retained verbatim in `nation_t9_wire.t53_crs_adjudication.wrong_mode_trial_groups`.
+- `extra_named_client`: mode 0: closed (251 rows); mode 1: first failure @991 (invalid count); full source record retained verbatim in `nation_t9_wire.t53_crs_adjudication.wrong_mode_trial_groups`.
+- `extra_named_without_object_name_arm_client`: first failure @18 (invalid count); full source record retained verbatim in `nation_t9_wire.t53_crs_adjudication.wrong_mode_trial_groups`.
+- `main_server`: mode 0: first failure @59 (identity after reader); mode 1: closed (251 rows); full source record retained verbatim in `nation_t9_wire.t53_crs_adjudication.wrong_mode_trial_groups`.
+- `extra_as_slot19_server`: mode 0: first failure @1189 (invalid count); mode 1: first failure @28 (invalid count); full source record retained verbatim in `nation_t9_wire.t53_crs_adjudication.wrong_mode_trial_groups`.
+- `extra_named_server`: mode 0: first failure @262 (ordinal mismatch); mode 1: closed (251 rows); full source record retained verbatim in `nation_t9_wire.t53_crs_adjudication.wrong_mode_trial_groups`.
+- `extra_named_without_object_name_arm_server`: first failure @18 (invalid count); full source record retained verbatim in `nation_t9_wire.t53_crs_adjudication.wrong_mode_trial_groups`.
+
+### EDfx and EDsc
+
+EDfx is narrowed to the editor-only generated-output path that was traced; whether its upstream inputs are persisted is outside this conclusion. EDsc remains `negative_strengthened_no_verified_call_chain`; this is not an absence-of-persistence claim.
+
+### Provenance
+
+E93 is recorded as an `acceptance` / `L2` entry. The t53 discovery sections, field ledgers, REPORT, and DONE are preserved verbatim in the JSON addendum; source hashes and sizes are recorded below. L3 fields = 0; L4 = 0.
+
+| t53 source artifact | SHA-256 | Bytes |
+|---|---|---:|
+| `scratch/t53/out/discovery_crs_wire.json` | `6383063973c0b16ebd06f304b7aec4f3b46649324f93345b8e1cd879a07e66a5` | 67200 |
+| `scratch/t53/out/cursor_crs_main_client.json` | `52e043f612a95efca28b04ef87c04eecc580e8711cfe7a7088c4616cc4326cac` | 54765 |
+| `scratch/t53/out/cursor_crs_main_server.json` | `99fd9ad8cc53ce3c2c1911487ef4300b1847b622a0bb3d5d95768ef28f90c49d` | 246114 |
+| `scratch/t53/out/cursor_crs_extra_client.json` | `5fb9fcffe735063dc12f575e5b69b5f5bf534990e2d20bd8daca7afd9082f3d9` | 63897 |
+| `scratch/t53/out/cursor_crs_extra_server.json` | `b00c6fd0f6fe3732f9aa6045a338fc037d00545591478aa3c4807e924dd8cdea` | 79734 |
+| `scratch/t53/out/fields_PUnI.json` | `b0ecbba661c1633fcd7ce937a26b920cf23d0418301f450f953c24b862702b6e` | 142584 |
+| `scratch/t53/out/fields_PUnT.json` | `589bc4bf61bc2bf26c5d3b160adc7a34a885b6f9601a054bf2a385fc9040ff31` | 139011 |
+| `scratch/t53/out/fields_PUnP.json` | `994e4a11e01e10c7735275dca81fc44beac05d47a5a9bca83f9d782c8d5af37c` | 337200 |
+| `scratch/t53/out/fields_PUnJ.json` | `17124f10abaa07d83c76d097c7bc2dcfeaac7d03bfd176c9599b0a16a3a2dd4f` | 179301 |
+| `scratch/t53/out/REPORT.md` | `e4c07bed43d2d2c569f1aaa9ec9acd607a9cad315390c3d8762c0ebb7c5eddac` | 11478 |
+| `scratch/t53/out/DONE.md` | `46b6a65aef2a91fd38027e8ce39cd0c90ba410ab8af95339fba46f0885f5ab79` | 1408 |
+
+Ledger snapshot SHA-256: `1ff0c2d2893300ac74fdd1c16103f5d8445c0ab718fd6df25b47154991f5b340`. L4 remains 0.
