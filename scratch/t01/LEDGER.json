@@ -1837,6 +1837,16 @@
    "claim": "修两基础设施bug。(1)scripts/fm24_dump.py:186 footer_offset hex字符串转int:club_v2/output.json footer_offset=0x69c66a(hex),原int(x)无base失败(luna t35 E72阻塞),改int(x,0)自动识别0x前缀。回归:client table3 dump现PASS(原失败),selftest 49PASS/0FAIL/1SKIP,client21 PASS,anchors7/7。0x69c66a=6932074=payload6932082-8正确。(2)scratch/t29/out/verify.py ROOT=HERE.parents[3](解析tmp2b)改parents[2](fm24-db),MANIFEST路径解析修好;但暴露第二defect:verify用full_rows_file/full_rows_sha256键而inventory用rows_file/rows_jsonl_sha256,key名不匹配仍FAIL。t29b inventory已由commander t29b_spot.py 9/9独立验收(E70),luna verify多重defect不深追改写其产品,spot为闸。server34 selftest SKIP是E66多帧load_payload首帧限制(独立增强项,非本bug,未改load_payload避风险)。",
    "evidence": "scripts/fm24_dump.py:186 int(out[footer_offset],0);scratch/t29/out/verify.py:14 ROOT parents[2];回归DUMP_RC=0(client3)/ST_RC=0(49/0/1)/D21_RC=0/anchors7/7。",
    "consequence": "fm24_dump client table3阻塞移除,后续club父表dump可用。t29b verify ROOT修但key mismatch留defect(spot supersede)。load_payload多帧增强(选真实帧而非首帧)列为后续基础设施改进,可解server34 SKIP及E66普遍性。"
+  },
+  {
+   "id": "E77",
+   "date": "2026-11-19",
+   "author": "commander(verify luna t37)",
+   "kind": "acceptance_partial",
+   "level": "L2",
+   "claim": "t37 nation侧广度inventory partial_nation_parent_identity_coverage。冻结nation.xml 346字段29 list父码(20有item/9零item),luna诚实校正供基线25(17item+8zero)->冻结29,补EDfx/Tchl/EDsc/AXML不静默丢弃。24 unknown/4 existing_t28_closed(Nagr/Nefr/Nlns/Nnfr,client table10 inline,Nagr162x12)/1 low_candidate。7 L2候选item字段/65列匹配/new_L3=0/L4=0。**关键:Tchl->server table34 STARTING_TEAM_CUP_HISTORY为club/nation共享表低置信候选,nation与club Tchl item签名完全匹配,t29俱乐部侧关联+stage2 entity仍candidate;table34封口14+7115*44+8=313082 SHA a07b2bb7**。25 unknown/partial父码待sol静态发现。",
+   "evidence": "scratch/t37/out/{nation_subtable_inventory.json,REPORT.md,profiles/table_server_34.profile.json};commander scratch/cmd/t37_spot.py 12/12(29父码20+9/confidence24-4-1/t28四父码/Tchl shared/table34多帧313082+SHA/封口/profile存在);anchors7/7。**基础设施洞察:entry packed_size=真实帧压缩size,stub首帧 precedes(hit-off=9,frame1 stub12B),off+packed_size界定截断真实第二帧(BOUNDED frame2=287410 eof=False);UNBOUNDED size+SHA匹配得313082 a07b2bb7 eof=True。多帧选帧须无界匹配或按next member offset界定,不能用off+packed_size**。此修正t38 brief指导(devseek selftest要求server34=313082将自纠)。",
+   "consequence": "nation侧备料完成(补club t29b)。Tchl club/nation共享证实,t39 sol任务书已含排他blocker,须沿factory case34+getter 4CC+entity_tag判定共享语义不妄断独占。packed_size截断洞察为t38多帧加载器关键修正(已记,devseek selftest自纠)。25 nation unknown父码+club 29 unknown待sol额度恢复后静态发现。luna verify.py收尾中(如t35模式)。"
   }
  ]
 }
