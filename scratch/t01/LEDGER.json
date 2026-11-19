@@ -1887,6 +1887,16 @@
    "claim": "t42 schema v2 reports/club_nation_subtable_schema.{json,md}:7表51 L3/15 held/4 negative/L4=0。并t39 Tchl table34(7 L3 tchc/mstn/sstn/dbrt/posi/cquf/tcop + 2 held styr/edyr,club独占L3=0,7084 owner→table24 selector11)。补master.json冻结SHA 7d57477e+MANIFEST匹配(闭E79缺口)。v1六表44 L3/13 held/2 Cstc非业务槽/4 negative verbatim保留(scratch/t42/out/*.v1.json)。schema_version=2。",
    "evidence": "scratch/t42/out/{consolidate_v2.py,verify.py,REPORT.md,DONE.md,club_nation_subtable_schema.v1.json};commander spot scratch/cmd/t42_spot.py 21/21(7表/51L3计数自洽/Tchl字段对照t39/v1六表fields verbatim/master SHA),builder --selftest PASS(7表51L3/15held/4neg/2Cstc/L4=0/v1 verbatim/master SHA matched),verifier --selftest PASS,t01_anchors 7/7。",
    "consequence": "首份完整可用club子表语义schema达成51 L3(闭合E79两处待补)。club子表L3台账与schema快照一致=51。nation侧仍0新L3(t37 partial上下文)。子表复制法8次证实(含t41首次变长,待E82验收)。"
+  },
+  {
+   "id": "E82",
+   "date": "2026-11-19",
+   "author": "commander(verify sol t41)",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": "t41 Csme/server table59 STARTING_MEDIA_EXPECTATIONS **首次变长stride cursor闭合**(第8次方法复制):13+6567*22+2512*32+9=224880(SHA7eee0ecc),9079行,client无table59。变长由wire+6 u32 count决定(row_len=22+10n,count0跳过vector/count1消费10B item),mode0/1均闭无identity-only分支。reader 0x15831a0..0x1583580(VA0x141583ba0..0x141583f80)直接slot19非thunk,260指令49块29分支0 extent外边,identity内联0x1583500。**Melf条件L3**(wire+19+10j,1B,仅0<=j<n,2512值1..33符XMLmax127,无0/ff哨兵);**Msid held**(双lane sink wire+11+10j静态绑定,但6567行无entry+2512 entry全(-1,-1)无live引用,首反例row2@68)。club独占L3=0(9079 owner全Team:8941 sel10/138 sel11),L4=0。",
+   "evidence": "scratch/t41/out/{cursor_csme,fields_csme}.json+instructions.part001-008+branches.part001-002+verify.py+REPORT.md;scripts/t41_csme_cursor.py;commander独立spot scratch/cmd/t41_spot.py 26/26(变长逐行walk闭合/count分布6567+2512/identity唯一/Melf域1..33/Msid全-1/tag0x01/outer0..4含114零/owner9079distinct/footer9079/row0+row2反例),builder+verifier --selftest PASS,t01_anchors 7/7。",
+   "consequence": "club子表L3台账累计52(含Csme Melf条件L3);schema v2快照51待并Csme→v3。**变长cursor法首次证实**(row_len由wire count决定+identity尾锚定),为后续变长表铺路。t33假尾反例保留(19+25应22+22,row-block SHA不变),原产物未改。Msid需含非空Msid合法档或授权交叉证据验live编码。外层byte(0..4)未命名不入台账。"
   }
  ]
 }
