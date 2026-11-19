@@ -1647,6 +1647,16 @@
    "claim": "【t24 验收通过 — club 行 cursor 闭合,阶段三主力卡点打通】sol(gpt-6.2-sol)17min 交付 complete_observed_client_row_cursor_partial_off_path_CFG。指挥官三重独立核验:(1) 自写 walker 仅用 t19 公式(不依赖 t24 builder)全量走通 84259 行,24 项数据侧抽验全绿——selector{0:84256,12:3}、compact ordinal[69706-69708]、wire footer 0x69c669 九字节 00000000|01|e3c03a77、identity 首 u32==ordinal 84256/84256、uid 配对相等、duni 全唯一、Cnti@0∈nation空间(max249)、Ccty@16∈city空间(max56290)、compact 模型 4B+1B+5×sentinel+identity(uid 2000000000+i)。(2) t24 独立 verifier 全量 PASS(重读 532 指令)。(3) 指挥官静态重读 8 关键 site 字节+VA 8/8 吻合,selector cmp bl,0xc @0xf48daf 现场确认。锚点 7/7。【三大硬结论】a. class selector 字节化:factory case3 BL==0x0c 选 LEAGUE_BODY_CLUB derived,其余 0x00 走 CLUB;ordinal 连续分段假设证伪。b. Cccn 翻案:row+8 实为 Cbni(Based Nation obj+0xe8),Cccn(Continental Cup Nation obj+0xf0)在 row+12(第四次 u32 transfer);解释了 55868 行 Cnti==Cbni 与 84157 行 Cbni==Cccn——E60 对 Cccn@row+8 的降级维持,新 Cccn@row+12 晋级。c. footer 归属修正:旧 trailer 实为下条 selector,9B wire footer;t21 的 0x69c66a 仍是对账点。【10 个主行 L3】Cnti/Cbni/Cccn/Ccty/Csot/CASt/CnCV/Csnm/PLgn/duni;239 嵌套 occurrence 单独记账不赋主行偏移。【诚实边界】153 条 off-path 分支未证死代码、扩展模式参数上游未解、不外推 server/旧版本、无 L4。",
    "evidence": "scratch/t24/out/{REPORT.md,cursor.json,fields_club.json,verify.py}; scratch/cmd/t24_spot.py(指挥官 24 项全绿); scripts/t24_club_cursor.py; 静态 8/8 重读",
    "consequence": "club 主行 cursor 正典=t24;Cccn@row+12 可作锚点;子表 239 字段待后续接力;minor erratum:t23 verify 的 row0 name_length=95 实为 row_length(50+33+12),名字 33B,无数据影响"
+  },
+  {
+   "id": "E62",
+   "date": "2026-11-19 12:55",
+   "author": "commander(t25 独立验收)",
+   "kind": "acceptance-partial",
+   "level": "L1(schema 分类独立复算+数据侧闭合)",
+   "claim": "【t25 验收为诚实 partial — schema 分类正确,变量尾未绑定】luna 交付 complete_schema_flag_classification + partial cursor。指挥官独立对照冻结 master.json(SHA 7d57477e 吻合 MANIFEST)复算:is_client_field=true(字符串)21 个 direct + 28 个嵌套继承 client 父 = 49 client-scoped;392 unmarked;6 language-marked(Nnam/Nsnm/TCnn/TCht/N3ln/Nnty);active 441=346 顶层+95 嵌套。全部与 t25 一致。【价值】(1) 把 nation client 真实分母从 441 重定为 49(21 direct+28 nested),392 未标记不得当 server-only;(2) 数据侧 251 行 cursor 复验闭合(14+24710+8=24732,A/B/C/D=492/214/63/162);(3) 7 前缀字段全行复确认。【未达成】变量尾 reader calls 24-39 与计数循环体未绑定到线坐标,字段晋级停在 7 前缀+Ncpi,核心放量未完成——这是分支感知静态 cursor 问题,需 sol 手法(t24/t27)。【边界】data-side cursor 非完整 static call-to-wire trace;不赋 arg8!=0/server;Ncpi 注释字段单列。",
+   "evidence": "scratch/t25/out/{schema_split.json,cursor_nation.json,fields_nation*.json,REPORT.md}; scripts/t25_{nation_fields,verify}.py; 指挥官 master.json 独立复算 21/28/49/392/6/441 全吻合",
+   "consequence": "nation client 分母=49;变量尾绑定派 sol t28(t27 后);392 unmarked 保留待独立锚点;7 前缀+Ncpi 维持 L3"
   }
  ]
 }

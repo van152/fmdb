@@ -1,0 +1,602 @@
+{
+ "status": "partial_client_field_mapping_prefix_only",
+ "schema_source": "evidence/fm24/reports/editor_schema/master.json#entities.nation.xml[0]",
+ "schema_sha256": "7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda",
+ "schema_field_count": 441,
+ "mapping_summary": {
+  "active_schema_fields_mapped": 7,
+  "mapped_direct_client_marked": 2,
+  "schema_confirmed_client_scope_including_nested_items": 49,
+  "schema_confirmed_client_fields_mapped": 2,
+  "schema_confirmed_client_mapping_rate": "2/49 (4.1%)",
+  "mapped_but_schema_flag_unknown": 5,
+  "unmapped_active_schema_fields": 434,
+  "commented_out_supplemental_fields": 1
+ },
+ "mapping_evidence": {
+  "source": "scratch/t01/inbox/t01g/output.json#row_offset_map",
+  "source_sha256": "e0bcdaff585098a07a4313cf4a60b38596556cae991e8b910491bd7f25008e83",
+  "level": "L3 reader destination+width and getter 4CC/member chain; row coordinates are cross-checked against all 251 client rows",
+  "exe_sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4",
+  "fields": {
+   "Ngct": {
+    "row_offset": 0,
+    "width": 1,
+    "object_offset": "0x1cb",
+    "reader": {
+     "destination": {
+      "file": "editor.exe",
+      "file_offset": "0x10405b4",
+      "va": "0x141040fb4",
+      "bytes": "49 8d 97 cb 01 00 00",
+      "instruction": "lea rdx, [r15 + 0x1cb]"
+     },
+     "width_instruction": {
+      "file": "editor.exe",
+      "file_offset": "0x10405be",
+      "va": "0x141040fbe",
+      "bytes": "41 b8 01 00 00 00",
+      "instruction": "mov r8d, 1"
+     },
+     "stream_vcall": {
+      "file": "editor.exe",
+      "file_offset": "0x10405c7",
+      "va": "0x141040fc7",
+      "bytes": "ff 50 28",
+      "instruction": "call qword ptr [rax + 0x28]"
+     }
+    },
+    "getter": {
+     "compare": {
+      "file": "editor.exe",
+      "file_offset": "0x1042385",
+      "va": "0x141042d85",
+      "bytes": "81 fe 74 63 67 4e",
+      "instruction": "cmp esi, 0x4e676374"
+     },
+     "branch": {
+      "file": "editor.exe",
+      "file_offset": "0x104238b",
+      "va": "0x141042d8b",
+      "bytes": "0f 84 b6 06 00 00",
+      "instruction": "je 0x141043447"
+     },
+     "edge_semantics": "equality target",
+     "member_access": {
+      "file": "editor.exe",
+      "file_offset": "0x1042a47",
+      "va": "0x141043447",
+      "bytes": "41 0f be b4 24 cb 01 00 00",
+      "instruction": "movsx esi, byte ptr [r12 + 0x1cb]"
+     }
+    },
+    "client_data_check": {
+     "row_offset": 0,
+     "width": 1,
+     "object_offset": "0x1cb",
+     "rows_checked": 251,
+     "unique_values": 2,
+     "minimum": 1,
+     "maximum": 2,
+     "null_0xffffffff_count": 0,
+     "sample_first_12": [
+      1,
+      1,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+     ],
+     "all_rows_decoded": true
+    }
+   },
+   "Ncti": {
+    "row_offset": 1,
+    "width": 4,
+    "object_offset": "0xf0",
+    "reader": {
+     "destination": {
+      "file": "editor.exe",
+      "file_offset": "0x10405d8",
+      "va": "0x141040fd8",
+      "bytes": "49 8d 97 f0 00 00 00",
+      "instruction": "lea rdx, [r15 + 0xf0]"
+     },
+     "width_instruction": {
+      "file": "editor.exe",
+      "file_offset": "0x10405e2",
+      "va": "0x141040fe2",
+      "bytes": "41 b8 04 00 00 00",
+      "instruction": "mov r8d, 4"
+     },
+     "stream_vcall": {
+      "file": "editor.exe",
+      "file_offset": "0x10405eb",
+      "va": "0x141040feb",
+      "bytes": "ff 50 28",
+      "instruction": "call qword ptr [rax + 0x28]"
+     }
+    },
+    "getter": {
+     "compare": {
+      "file": "editor.exe",
+      "file_offset": "0x104218a",
+      "va": "0x141042b8a",
+      "bytes": "81 fe 69 74 63 4e",
+      "instruction": "cmp esi, 0x4e637469"
+     },
+     "branch": {
+      "file": "editor.exe",
+      "file_offset": "0x1042190",
+      "va": "0x141042b90",
+      "bytes": "0f 84 41 0d 00 00",
+      "instruction": "je 0x1410438d7"
+     },
+     "edge_semantics": "equality target",
+     "member_access": {
+      "file": "editor.exe",
+      "file_offset": "0x1042ed7",
+      "va": "0x1410438d7",
+      "bytes": "49 8b 8c 24 f0 00 00 00",
+      "instruction": "mov rcx, qword ptr [r12 + 0xf0]"
+     }
+    },
+    "client_data_check": {
+     "row_offset": 1,
+     "width": 4,
+     "object_offset": "0xf0",
+     "rows_checked": 251,
+     "unique_values": 7,
+     "minimum": 0,
+     "maximum": 4294967295,
+     "null_0xffffffff_count": 23,
+     "sample_first_12": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "all_rows_decoded": true
+    }
+   },
+   "Nrgi": {
+    "row_offset": 5,
+    "width": 4,
+    "object_offset": "0xf8",
+    "reader": {
+     "destination": {
+      "file": "editor.exe",
+      "file_offset": "0x10405fc",
+      "va": "0x141040ffc",
+      "bytes": "49 8d 97 f8 00 00 00",
+      "instruction": "lea rdx, [r15 + 0xf8]"
+     },
+     "width_instruction": {
+      "file": "editor.exe",
+      "file_offset": "0x1040606",
+      "va": "0x141041006",
+      "bytes": "41 b8 04 00 00 00",
+      "instruction": "mov r8d, 4"
+     },
+     "stream_vcall": {
+      "file": "editor.exe",
+      "file_offset": "0x104060f",
+      "va": "0x14104100f",
+      "bytes": "ff 50 28",
+      "instruction": "call qword ptr [rax + 0x28]"
+     }
+    },
+    "getter": {
+     "compare": {
+      "file": "editor.exe",
+      "file_offset": "0x10424e5",
+      "va": "0x141042ee5",
+      "bytes": "81 fe 69 67 72 4e",
+      "instruction": "cmp esi, 0x4e726769"
+     },
+     "branch": {
+      "file": "editor.exe",
+      "file_offset": "0x10424eb",
+      "va": "0x141042eeb",
+      "bytes": "0f 85 ba 01 00 00",
+      "instruction": "jne 0x1410430ab"
+     },
+     "edge_semantics": "equality falls through; jne is default edge",
+     "member_access": {
+      "file": "editor.exe",
+      "file_offset": "0x10424f1",
+      "va": "0x141042ef1",
+      "bytes": "49 8b 8c 24 f8 00 00 00",
+      "instruction": "mov rcx, qword ptr [r12 + 0xf8]"
+     }
+    },
+    "client_data_check": {
+     "row_offset": 5,
+     "width": 4,
+     "object_offset": "0xf8",
+     "rows_checked": 251,
+     "unique_values": 25,
+     "minimum": 2,
+     "maximum": 4294967295,
+     "null_0xffffffff_count": 17,
+     "sample_first_12": [
+      7,
+      20,
+      17,
+      20,
+      17,
+      19,
+      18,
+      17,
+      18,
+      18,
+      19,
+      7
+     ],
+     "all_rows_decoded": true
+    }
+   },
+   "Ncur": {
+    "row_offset": 13,
+    "width": 4,
+    "object_offset": "0x100",
+    "reader": {
+     "destination": {
+      "file": "editor.exe",
+      "file_offset": "0x1040644",
+      "va": "0x141041044",
+      "bytes": "49 8d 97 00 01 00 00",
+      "instruction": "lea rdx, [r15 + 0x100]"
+     },
+     "width_instruction": {
+      "file": "editor.exe",
+      "file_offset": "0x104064e",
+      "va": "0x14104104e",
+      "bytes": "41 b8 04 00 00 00",
+      "instruction": "mov r8d, 4"
+     },
+     "stream_vcall": {
+      "file": "editor.exe",
+      "file_offset": "0x1040657",
+      "va": "0x141041057",
+      "bytes": "ff 50 28",
+      "instruction": "call qword ptr [rax + 0x28]"
+     }
+    },
+    "getter": {
+     "compare": {
+      "file": "editor.exe",
+      "file_offset": "0x1042196",
+      "va": "0x141042b96",
+      "bytes": "81 fe 72 75 63 4e",
+      "instruction": "cmp esi, 0x4e637572"
+     },
+     "branch": {
+      "file": "editor.exe",
+      "file_offset": "0x104219c",
+      "va": "0x141042b9c",
+      "bytes": "0f 84 db 0a 00 00",
+      "instruction": "je 0x14104367d"
+     },
+     "edge_semantics": "equality target",
+     "member_access": {
+      "file": "editor.exe",
+      "file_offset": "0x1042c7d",
+      "va": "0x14104367d",
+      "bytes": "49 8b 8c 24 00 01 00 00",
+      "instruction": "mov rcx, qword ptr [r12 + 0x100]"
+     }
+    },
+    "client_data_check": {
+     "row_offset": 13,
+     "width": 4,
+     "object_offset": "0x100",
+     "rows_checked": 251,
+     "unique_values": 148,
+     "minimum": 0,
+     "maximum": 4294967295,
+     "null_0xffffffff_count": 22,
+     "sample_first_12": [
+      1,
+      122,
+      97,
+      124,
+      97,
+      125,
+      98,
+      126,
+      98,
+      98,
+      130,
+      24
+     ],
+     "all_rows_decoded": true
+    }
+   },
+   "Nsod": {
+    "row_offset": 17,
+    "width": 1,
+    "object_offset": "0x1cc",
+    "reader": {
+     "destination": {
+      "file": "editor.exe",
+      "file_offset": "0x1040668",
+      "va": "0x141041068",
+      "bytes": "49 8d 97 cc 01 00 00",
+      "instruction": "lea rdx, [r15 + 0x1cc]"
+     },
+     "width_instruction": {
+      "file": "editor.exe",
+      "file_offset": "0x1040672",
+      "va": "0x141041072",
+      "bytes": "41 b8 01 00 00 00",
+      "instruction": "mov r8d, 1"
+     },
+     "stream_vcall": {
+      "file": "editor.exe",
+      "file_offset": "0x104067b",
+      "va": "0x14104107b",
+      "bytes": "ff 50 28",
+      "instruction": "call qword ptr [rax + 0x28]"
+     }
+    },
+    "getter": {
+     "compare": {
+      "file": "editor.exe",
+      "file_offset": "0x1042268",
+      "va": "0x141042c68",
+      "bytes": "81 fe 64 6f 73 4e",
+      "instruction": "cmp esi, 0x4e736f64"
+     },
+     "branch": {
+      "file": "editor.exe",
+      "file_offset": "0x104226e",
+      "va": "0x141042c6e",
+      "bytes": "0f 84 fb 0b 00 00",
+      "instruction": "je 0x14104386f"
+     },
+     "edge_semantics": "equality target",
+     "member_access": {
+      "file": "editor.exe",
+      "file_offset": "0x1042e6f",
+      "va": "0x14104386f",
+      "bytes": "41 0f be b4 24 cc 01 00 00",
+      "instruction": "movsx esi, byte ptr [r12 + 0x1cc]"
+     }
+    },
+    "client_data_check": {
+     "row_offset": 17,
+     "width": 1,
+     "object_offset": "0x1cc",
+     "rows_checked": 251,
+     "unique_values": 4,
+     "minimum": 0,
+     "maximum": 3,
+     "null_0xffffffff_count": 0,
+     "sample_first_12": [
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      2
+     ],
+     "all_rows_decoded": true
+    }
+   },
+   "Necf": {
+    "row_offset": 18,
+    "width": 1,
+    "object_offset": "0x1d0",
+    "reader": {
+     "destination": {
+      "file": "editor.exe",
+      "file_offset": "0x104068c",
+      "va": "0x14104108c",
+      "bytes": "49 8d 97 d0 01 00 00",
+      "instruction": "lea rdx, [r15 + 0x1d0]"
+     },
+     "width_instruction": {
+      "file": "editor.exe",
+      "file_offset": "0x1040696",
+      "va": "0x141041096",
+      "bytes": "41 b8 01 00 00 00",
+      "instruction": "mov r8d, 1"
+     },
+     "stream_vcall": {
+      "file": "editor.exe",
+      "file_offset": "0x104069f",
+      "va": "0x14104109f",
+      "bytes": "ff 50 28",
+      "instruction": "call qword ptr [rax + 0x28]"
+     }
+    },
+    "getter": {
+     "compare": {
+      "file": "editor.exe",
+      "file_offset": "0x10421a2",
+      "va": "0x141042ba2",
+      "bytes": "81 fe 66 63 65 4e",
+      "instruction": "cmp esi, 0x4e656366"
+     },
+     "branch": {
+      "file": "editor.exe",
+      "file_offset": "0x10421a8",
+      "va": "0x141042ba8",
+      "bytes": "0f 85 fd 04 00 00",
+      "instruction": "jne 0x1410430ab"
+     },
+     "edge_semantics": "equality falls through; jne is default edge",
+     "member_access": {
+      "file": "editor.exe",
+      "file_offset": "0x10421ae",
+      "va": "0x141042bae",
+      "bytes": "41 0f be b4 24 d0 01 00 00",
+      "instruction": "movsx esi, byte ptr [r12 + 0x1d0]"
+     }
+    },
+    "client_data_check": {
+     "row_offset": 18,
+     "width": 1,
+     "object_offset": "0x1d0",
+     "rows_checked": 251,
+     "unique_values": 21,
+     "minimum": 0,
+     "maximum": 20,
+     "null_0xffffffff_count": 0,
+     "sample_first_12": [
+      13,
+      10,
+      5,
+      12,
+      5,
+      2,
+      8,
+      4,
+      1,
+      4,
+      3,
+      13
+     ],
+     "all_rows_decoded": true
+    }
+   },
+   "Nygn": {
+    "row_offset": 23,
+    "width": 1,
+    "object_offset": "0x1cd",
+    "reader": {
+     "destination": {
+      "file": "editor.exe",
+      "file_offset": "0x10406d4",
+      "va": "0x1410410d4",
+      "bytes": "49 8d 97 cd 01 00 00",
+      "instruction": "lea rdx, [r15 + 0x1cd]"
+     },
+     "width_instruction": {
+      "file": "editor.exe",
+      "file_offset": "0x10406de",
+      "va": "0x1410410de",
+      "bytes": "41 b8 01 00 00 00",
+      "instruction": "mov r8d, 1"
+     },
+     "stream_vcall": {
+      "file": "editor.exe",
+      "file_offset": "0x10406e7",
+      "va": "0x1410410e7",
+      "bytes": "ff 50 28",
+      "instruction": "call qword ptr [rax + 0x28]"
+     }
+    },
+    "getter": {
+     "compare": {
+      "file": "editor.exe",
+      "file_offset": "0x1042078",
+      "va": "0x141042a78",
+      "bytes": "81 fe 6e 67 79 4e",
+      "instruction": "cmp esi, 0x4e79676e"
+     },
+     "branch": {
+      "file": "editor.exe",
+      "file_offset": "0x104207e",
+      "va": "0x141042a7e",
+      "bytes": "0f 84 2b 0a 00 00",
+      "instruction": "je 0x1410434af"
+     },
+     "edge_semantics": "equality target",
+     "member_access": {
+      "file": "editor.exe",
+      "file_offset": "0x1042aaf",
+      "va": "0x1410434af",
+      "bytes": "41 0f be b4 24 cd 01 00 00",
+      "instruction": "movsx esi, byte ptr [r12 + 0x1cd]"
+     }
+    },
+    "client_data_check": {
+     "row_offset": 23,
+     "width": 1,
+     "object_offset": "0x1cd",
+     "rows_checked": 251,
+     "unique_values": 13,
+     "minimum": -1,
+     "maximum": 20,
+     "null_0xffffffff_count": 0,
+     "sample_first_12": [
+      7,
+      10,
+      0,
+      0,
+      10,
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      10
+     ],
+     "all_rows_decoded": true
+    }
+   }
+  }
+ },
+ "shards": [
+  {
+   "path": "fields_nation_000.json",
+   "count": 100,
+   "sha256": "ba942b972d58cda0e90987fc5fa2f333735568d7ded995e94df6ef15fd08225b",
+   "schema_index_start": 0,
+   "schema_index_end_exclusive": 100
+  },
+  {
+   "path": "fields_nation_001.json",
+   "count": 100,
+   "sha256": "190542a9eb6a96d09d70c3e92359e6573a6837e0b7efdde4b89833758316f742",
+   "schema_index_start": 100,
+   "schema_index_end_exclusive": 200
+  },
+  {
+   "path": "fields_nation_002.json",
+   "count": 100,
+   "sha256": "c9dbfbc2969ea8d1c1a392a3b5d38c0c200ad02f516adf1492f6d712e9cf0a18",
+   "schema_index_start": 200,
+   "schema_index_end_exclusive": 300
+  },
+  {
+   "path": "fields_nation_003.json",
+   "count": 100,
+   "sha256": "f1a8f0b23a64143fefc16a66a72f7fcc774cbb715caa9a284f667d88c9572abd",
+   "schema_index_start": 300,
+   "schema_index_end_exclusive": 400
+  },
+  {
+   "path": "fields_nation_004.json",
+   "count": 41,
+   "sha256": "96724a26ce577cc92720268ae76c69df9770afebb74ec6d74c3d3b1fdb88ad05",
+   "schema_index_start": 400,
+   "schema_index_end_exclusive": 441
+  }
+ ],
+ "supplemental_path": "fields_nation_supplemental.json",
+ "unresolved_scope": "schema flags are classification only; no row coordinates inferred for the other fields"
+}
