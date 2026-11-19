@@ -1817,6 +1817,16 @@
    "claim": "E72更正:t35 luna已于15:12:31 rc=0正常完成attempt1(非超时),自行修好verify.py(用正确parents[2]),现运行PASS(74类型+45stage2 0候选/client table3 rows84259 lengths87 closure14+6932060+8=6932082/row-length+marker+raw lane+per-bit统计独立复现/Cafl-Cvfl unknown无晋级)。E72所记verify.py缺失+raw_prefix_u32_lanes mismatch是luna收尾中间态快照,已被最终PASS超越。核心负结果(No semantic candidate/no_data_vote)不变,commander spot 11/11独立确认。",
    "evidence": "scratch/t35/out/verify.py(parents[2],PASS V_RC=0);pi-logs/t35-caflcvfl.log DONE attempt1 rc=0 15:12:31;commander t35_spot.py 11/11。",
    "consequence": "t35负结果接受稳固,luna verify最终可用。E72原文按append-only保留不删改,本条更正快照时序误判。luna完成度高(自行调试verify至PASS)。"
+  },
+  {
+   "id": "E75",
+   "date": "2026-11-19",
+   "author": "commander(verify devseek t33)",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": "t33 profile batch II 7/7表完成。t12 STARTING_AWARD_HISTORY 28597变长(封口14+3739548+8=3739570)/t39 STARTING_AVERAGE_POINTS 117x42固定/t45 STARTING_RECORD 84477变长(7608748)/t48 STARTING_RECORD 5210变长(446049)/t58 STARTING_WEEKLY_WAGE_CONTRIBUTION 8x45固定(382)/t59 STARTING_MEDIA_EXPECTATIONS 9079变长(224880)/t73 STARTING_ITALIAN_SERIE_A_NON_EU_PLAYER_SIGNE 1x23固定(45)。固定表双约定(14+n*s+8 vs 13+n*s+9)试+逐行尾锚(ordinal|id|id|marker)选;变长tail-13帧前向走查ordinal==行号+相邻u32相等+末字节0x00/0x0C。帧歧义诚实记录:t12多解34/28597(max5候选长)/t45 1/t48 2/t59 1。parent连接全candidate/unknown L3=0:t12->AWsh/t39->csap/t45,t48->Plhs/Pnph/Pacl/t58->Cwcl/t59->Csme。devseek attempt1 rc124超时,attempt2自修verify从41PASS11FAIL至52PASS0FAIL(中间态快照非profile错)。",
+   "evidence": "scratch/t33/out/{profiles/7表.profile.json+.rows.jsonl,subtable_candidates.json,REPORT.md,verify.py(52/0 PASS),PROGRESS.md};scripts/t33_profile_batch.py;commander scratch/cmd/t33_spot.py 7/7(多帧payload size+SHA/固定封口算术/rows hash/行数==count)。t73单帧首帧592528c3匹配;我帧walker越成员边界into后续archive成员但size+SHA匹配选对帧有效。",
+   "consequence": "nation/person侧子表备料(Plhs/Pnph/Pacl/AWsh/csap/Cwcl/Csme候选)。devseek自修verify至全过(完成度高)。帧歧义记录为变长表walk树立诚实先例。sol额度受限期间luna/devseek数据侧备料主线。下一luna t37 nation侧广度inventory。"
   }
  ]
 }

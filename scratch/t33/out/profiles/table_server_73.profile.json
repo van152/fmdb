@@ -1,0 +1,3716 @@
+{
+ "status": "complete_data_profile",
+ "table_type": 73,
+ "archive": "server",
+ "rtti_class": "STARTING_ITALIAN_SERIE_A_NON_EU_PLAYER_SIGNED_FOR_RESTRICTED_SLOT",
+ "entity_tag": "play",
+ "t14_adjudication": "resolved",
+ "stage2_status": "resolved",
+ "stage2_entity": "play",
+ "identity_basis": {
+  "t14_primary_class": "STARTING_ITALIAN_SERIE_A_NON_EU_PLAYER_SIGNED_FOR_RESTRICTED_SLOT",
+  "t14_adjudication": "resolved",
+  "t14_entity_tag": "play",
+  "handler_off": "0xf49bf5",
+  "vtable_va": "0x1418846c8",
+  "stage2_entity": "play",
+  "stage2_status": "resolved",
+  "stage2_conflicts": [],
+  "reader_va": null,
+  "note": "identity from t14 RTTI census / stage2 map only; no reader_va inferred"
+ },
+ "payload": {
+  "archive": "server",
+  "member": "server_db/table_73.dat",
+  "packed_offset": 38661571,
+  "packed_size": 53,
+  "payload_size": 45,
+  "payload_sha256": "592528c36b85b775b0245116a5a6237c9406acbb220208c1abdf8b7ecf72e22e"
+ },
+ "row_closure": {
+  "status": "complete_arithmetic_closure_L1",
+  "model": "fixed",
+  "count": 1,
+  "stride": 23,
+  "row_start": 14,
+  "footer_bytes": 8,
+  "row_end_exclusive": 37,
+  "payload_bytes": 45,
+  "equation": "14 + 1 * 23 + 8 = 45",
+  "rows_sha256": "c1c3b24b708240e9405eca58b337b39438b665c799a79fc93c810df03be47fcb",
+  "conventions_tried": [
+   {
+    "header": 14,
+    "footer": 8,
+    "stride": 23,
+    "equation": "14 + 1 * 23 + 8 = 45",
+    "rdui_tail_hits": 1,
+    "id_pair_hits": 1
+   }
+  ],
+  "identity": {
+   "tail13_hits": 1,
+   "id_pair_hits": 1,
+   "rows": 1,
+   "grammar": "ordinal|id|id|marker at row_end-13"
+  },
+  "row_len": null,
+  "marker_counts": null,
+  "frame_ambiguity": null,
+  "basis": "payload size/count/stride closure plus per-row tail identity; stride is arithmetic + framing evidence, not a schema serializer proof"
+ },
+ "full_rows_file": "profiles/table_server_73.rows.jsonl",
+ "full_rows_sha256": "f35d3bbfe30eed640fd8ea99325657d4a1bc17f28217e6e3b30b26b927d67c24",
+ "profile_method": {
+  "all_offsets": true,
+  "primitive_widths": [
+   1,
+   2,
+   4,
+   8
+  ],
+  "offset_frames": [
+   "row_start"
+  ],
+  "four_byte_metrics": [
+   "u32 domain",
+   "sentinel",
+   "packed day/year",
+   "signed i32/cash-range",
+   "float32 reinterpretation"
+  ],
+  "limits": "value domains are diagnostics; they never identify fields on their own"
+ },
+ "columns": {
+  "row_start": [
+   {
+    "offset": 0,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 99,
+    "max_unsigned": 99,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 99,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     99
+    ]
+   },
+   {
+    "offset": 1,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 231,
+    "max_unsigned": 231,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 231,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     231
+    ]
+   },
+   {
+    "offset": 2,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 212,
+    "max_unsigned": 212,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 212,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     212
+    ]
+   },
+   {
+    "offset": 3,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 4,
+    "max_unsigned": 4,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 4,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     4
+    ]
+   },
+   {
+    "offset": 4,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 142,
+    "max_unsigned": 142,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 142,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     142
+    ]
+   },
+   {
+    "offset": 5,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 4,
+    "max_unsigned": 4,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 4,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     4
+    ]
+   },
+   {
+    "offset": 6,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 7,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 8,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 231,
+    "max_unsigned": 231,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 231,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     231
+    ]
+   },
+   {
+    "offset": 9,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 7,
+    "max_unsigned": 7,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 7,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     7
+    ]
+   },
+   {
+    "offset": 10,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 11,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 12,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 13,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 14,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 1,
+    "max_unsigned": 1,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 1,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     1
+    ]
+   },
+   {
+    "offset": 15,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 16,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 17,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 18,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 1,
+    "max_unsigned": 1,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 1,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     1
+    ]
+   },
+   {
+    "offset": 19,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 20,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 21,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 22,
+    "width": 1,
+    "interpretation": "u8",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 0,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 59235,
+    "max_unsigned": 59235,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 59235,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     59235
+    ]
+   },
+   {
+    "offset": 1,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 54503,
+    "max_unsigned": 54503,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 54503,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     54503
+    ]
+   },
+   {
+    "offset": 2,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 1236,
+    "max_unsigned": 1236,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 1236,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     1236
+    ]
+   },
+   {
+    "offset": 3,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 36356,
+    "max_unsigned": 36356,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 36356,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     36356
+    ]
+   },
+   {
+    "offset": 4,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 1166,
+    "max_unsigned": 1166,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 1166,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     1166
+    ]
+   },
+   {
+    "offset": 5,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 4,
+    "max_unsigned": 4,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 4,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     4
+    ]
+   },
+   {
+    "offset": 6,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 7,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 59136,
+    "max_unsigned": 59136,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 59136,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     59136
+    ]
+   },
+   {
+    "offset": 8,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 2023,
+    "max_unsigned": 2023,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 2023,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     2023
+    ]
+   },
+   {
+    "offset": 9,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 7,
+    "max_unsigned": 7,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 7,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     7
+    ]
+   },
+   {
+    "offset": 10,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 11,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 12,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 13,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 256,
+    "max_unsigned": 256,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 256,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     256
+    ]
+   },
+   {
+    "offset": 14,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 1,
+    "max_unsigned": 1,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 1,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     1
+    ]
+   },
+   {
+    "offset": 15,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 16,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 17,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 256,
+    "max_unsigned": 256,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 256,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     256
+    ]
+   },
+   {
+    "offset": 18,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 1,
+    "max_unsigned": 1,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 1,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     1
+    ]
+   },
+   {
+    "offset": 19,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 20,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 21,
+    "width": 2,
+    "interpretation": "u16",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ]
+   },
+   {
+    "offset": 0,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 81061731,
+    "max_unsigned": 81061731,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 81061731,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     81061731
+    ],
+    "signed_i32": {
+     "min": 81061731,
+     "max": 81061731,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "competition": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "person": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "nation": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stadium": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stage_name": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "team": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "media_source": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "city": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "region": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 1,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 0,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 5.005345561607275e-36,
+     "max_finite": 5.005345561607275e-36,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 1,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 2382681319,
+    "max_unsigned": 2382681319,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 2382681319,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     2382681319
+    ],
+    "signed_i32": {
+     "min": -1912285977,
+     "max": -1912285977,
+     "within_abs_1e9_count": 0,
+     "within_abs_1e9_rate_nonzero_nonnull": 0.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "competition": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "person": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "nation": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stadium": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stage_name": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "team": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "media_source": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "city": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "region": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 1,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 1,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": -1.6372764919947956e-30,
+     "max_finite": -1.6372764919947956e-30,
+     "first_finite_samples": [
+      -0.0
+     ]
+    }
+   },
+   {
+    "offset": 2,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 76416212,
+    "max_unsigned": 76416212,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 76416212,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     76416212
+    ],
+    "signed_i32": {
+     "min": 76416212,
+     "max": 76416212,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "competition": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "person": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "nation": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stadium": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stage_name": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "team": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "media_source": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "city": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "region": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 1,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 2,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 3.338847349590184e-36,
+     "max_finite": 3.338847349590184e-36,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 3,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 298500,
+    "max_unsigned": 298500,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 298500,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     298500
+    ],
+    "signed_i32": {
+     "min": 298500,
+     "max": 298500,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "competition": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "person": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "nation": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stadium": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stage_name": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "team": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "media_source": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "city": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "region": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 1,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 3,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 4.182875916009579e-40,
+     "max_finite": 4.182875916009579e-40,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 4,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 1166,
+    "max_unsigned": 1166,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 1166,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     1166
+    ],
+    "signed_i32": {
+     "min": 1166,
+     "max": 1166,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "competition": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "person": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "nation": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stadium": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "stage_name": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "team": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "media_source": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "city": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "region": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 0,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 4,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 1.6339140094027367e-42,
+     "max_finite": 1.6339140094027367e-42,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 5,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 3875536900,
+    "max_unsigned": 3875536900,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 3875536900,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     3875536900
+    ],
+    "signed_i32": {
+     "min": -419430396,
+     "max": -419430396,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "competition": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "person": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "nation": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stadium": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stage_name": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "team": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "media_source": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "city": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "region": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 1,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 5,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": -6.044631980376907e+23,
+     "max_finite": -6.044631980376907e+23,
+     "first_finite_samples": [
+      -6.044631980376907e+23
+     ]
+    }
+   },
+   {
+    "offset": 6,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 132579328,
+    "max_unsigned": 132579328,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 132579328,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     132579328
+    ],
+    "signed_i32": {
+     "min": 132579328,
+     "max": 132579328,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "competition": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "person": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "nation": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stadium": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stage_name": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "team": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "media_source": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "city": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "region": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 1,
+     "valid_count": 1,
+     "valid_ratio_nonblank": 1.0,
+     "year_min": 2023,
+     "year_max": 2023,
+     "year_distinct": 1,
+     "day_max": 0,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 6,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 3.4757016965113397e-34,
+     "max_finite": 3.4757016965113397e-34,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 7,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 517888,
+    "max_unsigned": 517888,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 517888,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     517888
+    ],
+    "signed_i32": {
+     "min": 517888,
+     "max": 517888,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "competition": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "person": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "nation": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stadium": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stage_name": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "team": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "media_source": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "city": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "region": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 1,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 7,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 7.257156590922509e-40,
+     "max_finite": 7.257156590922509e-40,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 8,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 2023,
+    "max_unsigned": 2023,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 2023,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     2023
+    ],
+    "signed_i32": {
+     "min": 2023,
+     "max": 2023,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "competition": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "person": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "nation": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stadium": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "stage_name": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "team": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "media_source": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "city": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "region": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 0,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 8,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 2.834826793329105e-42,
+     "max_finite": 2.834826793329105e-42,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 9,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 7,
+    "max_unsigned": 7,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 7,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     7
+    ],
+    "signed_i32": {
+     "min": 7,
+     "max": 7,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "competition": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "person": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "nation": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "stadium": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "stage_name": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "team": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "media_source": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "city": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "region": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 0,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 9,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 9.80908925027372e-45,
+     "max_finite": 9.80908925027372e-45,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 10,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ],
+    "signed_i32": {
+     "min": 0,
+     "max": 0,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "competition": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "person": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "nation": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "stadium": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "stage_name": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "team": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "media_source": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "city": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "region": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 0,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 10,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 0.0,
+     "max_finite": 0.0,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 11,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 16777216,
+    "max_unsigned": 16777216,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 16777216,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     16777216
+    ],
+    "signed_i32": {
+     "min": 16777216,
+     "max": 16777216,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "competition": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "person": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "nation": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stadium": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stage_name": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "team": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "media_source": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "city": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "region": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 1,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 11,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 2.350988701644575e-38,
+     "max_finite": 2.350988701644575e-38,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 12,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 65536,
+    "max_unsigned": 65536,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 65536,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     65536
+    ],
+    "signed_i32": {
+     "min": 65536,
+     "max": 65536,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "competition": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "person": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "nation": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stadium": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stage_name": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "team": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "media_source": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "city": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "region": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 1,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 12,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 9.183549615799121e-41,
+     "max_finite": 9.183549615799121e-41,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 13,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 256,
+    "max_unsigned": 256,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 256,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     256
+    ],
+    "signed_i32": {
+     "min": 256,
+     "max": 256,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "competition": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "person": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "nation": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stadium": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "stage_name": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "team": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "media_source": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "city": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "region": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 0,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 13,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 3.587324068671532e-43,
+     "max_finite": 3.587324068671532e-43,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 14,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 1,
+    "max_unsigned": 1,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 1,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     1
+    ],
+    "signed_i32": {
+     "min": 1,
+     "max": 1,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "competition": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "person": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "nation": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "stadium": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "stage_name": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "team": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "media_source": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "city": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "region": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 0,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 14,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 1.401298464324817e-45,
+     "max_finite": 1.401298464324817e-45,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 15,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 16777216,
+    "max_unsigned": 16777216,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 16777216,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     16777216
+    ],
+    "signed_i32": {
+     "min": 16777216,
+     "max": 16777216,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "competition": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "person": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "nation": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stadium": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stage_name": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "team": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "media_source": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "city": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "region": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 1,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 15,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 2.350988701644575e-38,
+     "max_finite": 2.350988701644575e-38,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 16,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 65536,
+    "max_unsigned": 65536,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 65536,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     65536
+    ],
+    "signed_i32": {
+     "min": 65536,
+     "max": 65536,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "competition": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "person": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "nation": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stadium": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stage_name": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "team": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "media_source": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "city": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "region": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 1,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 16,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 9.183549615799121e-41,
+     "max_finite": 9.183549615799121e-41,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 17,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 256,
+    "max_unsigned": 256,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 256,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     256
+    ],
+    "signed_i32": {
+     "min": 256,
+     "max": 256,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "competition": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "person": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "nation": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "stadium": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "stage_name": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "team": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "media_source": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     },
+     "city": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "region": {
+      "in_range_count": 0,
+      "denominator_nonnull": 1,
+      "ratio": 0.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 0,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 17,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 3.587324068671532e-43,
+     "max_finite": 3.587324068671532e-43,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 18,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 1,
+    "max_unsigned": 1,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 1,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     1
+    ],
+    "signed_i32": {
+     "min": 1,
+     "max": 1,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "competition": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "person": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "nation": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "stadium": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "stage_name": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "team": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "media_source": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "city": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "region": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 0,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 18,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 1.401298464324817e-45,
+     "max_finite": 1.401298464324817e-45,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 19,
+    "width": 4,
+    "interpretation": "u32",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 0,
+    "max_unsigned": 0,
+    "zero_count": 1,
+    "zero_rate": 1.0,
+    "sentinel_value": "0xFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 0,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     0
+    ],
+    "signed_i32": {
+     "min": 0,
+     "max": 0,
+     "within_abs_1e9_count": 1,
+     "within_abs_1e9_rate_nonzero_nonnull": 1.0
+    },
+    "reference_domains": {
+     "club": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "competition": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "person": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "nation": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "stadium": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "stage_name": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "team": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "media_source": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "city": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     },
+     "region": {
+      "in_range_count": 1,
+      "denominator_nonnull": 1,
+      "ratio": 1.0
+     }
+    },
+    "packed_day_year": {
+     "nonblank_count": 0,
+     "valid_count": 0,
+     "valid_ratio_nonblank": 0.0,
+     "year_min": null,
+     "year_max": null,
+     "year_distinct": 0,
+     "day_max": null,
+     "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+    },
+    "float32": {
+     "offset": 19,
+     "width": 4,
+     "count": 1,
+     "finite_count": 1,
+     "finite_ratio": 1.0,
+     "min_finite": 0.0,
+     "max_finite": 0.0,
+     "first_finite_samples": [
+      0.0
+     ]
+    }
+   },
+   {
+    "offset": 0,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 5008012928867,
+    "max_unsigned": 5008012928867,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 5008012928867,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     5008012928867
+    ]
+   },
+   {
+    "offset": 1,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 16645304242323903719,
+    "max_unsigned": 16645304242323903719,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 16645304242323903719,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     16645304242323903719
+    ]
+   },
+   {
+    "offset": 2,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 569423877962073300,
+    "max_unsigned": 569423877962073300,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 569423877962073300,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     569423877962073300
+    ]
+   },
+   {
+    "offset": 3,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 2224312023289348,
+    "max_unsigned": 2224312023289348,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 2224312023289348,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     2224312023289348
+    ]
+   },
+   {
+    "offset": 4,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 8688718840974,
+    "max_unsigned": 8688718840974,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 8688718840974,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     8688718840974
+    ]
+   },
+   {
+    "offset": 5,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 33940307972,
+    "max_unsigned": 33940307972,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 33940307972,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     33940307972
+    ]
+   },
+   {
+    "offset": 6,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 132579328,
+    "max_unsigned": 132579328,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 132579328,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     132579328
+    ]
+   },
+   {
+    "offset": 7,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 72057594038445824,
+    "max_unsigned": 72057594038445824,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 72057594038445824,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     72057594038445824
+    ]
+   },
+   {
+    "offset": 8,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 281474976712679,
+    "max_unsigned": 281474976712679,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 281474976712679,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     281474976712679
+    ]
+   },
+   {
+    "offset": 9,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 1099511627783,
+    "max_unsigned": 1099511627783,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 1099511627783,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     1099511627783
+    ]
+   },
+   {
+    "offset": 10,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 4294967296,
+    "max_unsigned": 4294967296,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 4294967296,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     4294967296
+    ]
+   },
+   {
+    "offset": 11,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 72057594054705152,
+    "max_unsigned": 72057594054705152,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 72057594054705152,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     72057594054705152
+    ]
+   },
+   {
+    "offset": 12,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 281474976776192,
+    "max_unsigned": 281474976776192,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 281474976776192,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     281474976776192
+    ]
+   },
+   {
+    "offset": 13,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 1099511628032,
+    "max_unsigned": 1099511628032,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 1099511628032,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     1099511628032
+    ]
+   },
+   {
+    "offset": 14,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 4294967297,
+    "max_unsigned": 4294967297,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 4294967297,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     4294967297
+    ]
+   },
+   {
+    "offset": 15,
+    "width": 8,
+    "interpretation": "u64",
+    "offset_frame": "row_start",
+    "count": 1,
+    "coverage": 1.0,
+    "distinct": 1,
+    "min_unsigned": 16777216,
+    "max_unsigned": 16777216,
+    "zero_count": 0,
+    "zero_rate": 0.0,
+    "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+    "sentinel_count": 0,
+    "sentinel_rate": 0.0,
+    "top_values": [
+     {
+      "value": 16777216,
+      "count": 1
+     }
+    ],
+    "small_value_set": [
+     16777216
+    ]
+   }
+  ],
+  "row_end": []
+ },
+ "structural_notes": {},
+ "schema_parent_candidates": {}
+}

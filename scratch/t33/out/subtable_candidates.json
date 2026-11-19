@@ -1,0 +1,3412 @@
+{
+ "status": "batch_ii_data_side_profiles",
+ "task": "t33 club/team subtable data-side profiling batch II; candidates only, no L3",
+ "generated_on": "2026-11-19",
+ "provenance": {
+  "master_sha256": "7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda",
+  "server_archive_sha256": "99eed00bd26582648c0d3ff51b5c8e37a35b68c296a074e8fb476d1b3ca4a662",
+  "server_census": "evidence/fm24/reports/dbdat_decode/server_tables_census.json",
+  "t14_census": "scratch/t14/out/census.json",
+  "stage2_map": "scratch/t14/out/stage2_map.json",
+  "t29_inventory": "scratch/t29/out/subtable_inventory.json",
+  "data_root": "scratch/data",
+  "manifest_snapshot": "evidence/MANIFEST.json",
+  "e66_frame_scan": "no member needed a frame-offset retry"
+ },
+ "summary": {
+  "tables_profiled": 7,
+  "confidence": {
+   "candidate": 3,
+   "unknown": 4
+  },
+  "L3_claims": 0,
+  "L4_claims": 0,
+  "row_models": {
+   "12": "variable",
+   "39": "fixed",
+   "45": "variable",
+   "48": "variable",
+   "58": "fixed",
+   "59": "variable",
+   "73": "fixed"
+  }
+ },
+ "tables": [
+  {
+   "table_type": 12,
+   "archive": "server",
+   "rtti_class": "STARTING_AWARD_HISTORY",
+   "entity_tag": "awar",
+   "t14_adjudication": "resolved",
+   "stage2_status": "resolved",
+   "count": 28597,
+   "stride": null,
+   "row_model": "variable",
+   "parents": [
+    {
+     "parent_4cc": "AWsh",
+     "schema_path": "award.xml#awar.AWsh",
+     "schema_list_name": "History",
+     "item_field_count": 27,
+     "item_fields_with_column_candidate": 5,
+     "item_fields": [
+      {
+       "field": "AHp1",
+       "name": "First Placed Position",
+       "schema_type": "enum",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 33,
+       "matches": [
+        {
+         "column": "u8@row_start+21",
+         "offset": 21,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 18,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+5",
+         "offset": 5,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+24",
+         "offset": 24,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999965,
+         "coverage": 1.0,
+         "distinct": 48,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+26",
+         "offset": 26,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999965,
+         "coverage": 1.0,
+         "distinct": 48,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+28",
+         "offset": 28,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999965,
+         "coverage": 1.0,
+         "distinct": 48,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+25",
+         "offset": 25,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999965,
+         "coverage": 1.0,
+         "distinct": 35,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      },
+      {
+       "field": "AHp2",
+       "name": "Second Placed Position",
+       "schema_type": "enum",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 33,
+       "matches": [
+        {
+         "column": "u8@row_start+21",
+         "offset": 21,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 18,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+5",
+         "offset": 5,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+24",
+         "offset": 24,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999965,
+         "coverage": 1.0,
+         "distinct": 48,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+26",
+         "offset": 26,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999965,
+         "coverage": 1.0,
+         "distinct": 48,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+28",
+         "offset": 28,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999965,
+         "coverage": 1.0,
+         "distinct": 48,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+25",
+         "offset": 25,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999965,
+         "coverage": 1.0,
+         "distinct": 35,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      },
+      {
+       "field": "AHp3",
+       "name": "Third Placed Position",
+       "schema_type": "enum",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 33,
+       "matches": [
+        {
+         "column": "u8@row_start+21",
+         "offset": 21,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 18,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+5",
+         "offset": 5,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+24",
+         "offset": 24,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999965,
+         "coverage": 1.0,
+         "distinct": 48,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+26",
+         "offset": 26,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999965,
+         "coverage": 1.0,
+         "distinct": 48,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+28",
+         "offset": 28,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999965,
+         "coverage": 1.0,
+         "distinct": 48,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+25",
+         "offset": 25,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999965,
+         "coverage": 1.0,
+         "distinct": 35,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      },
+      {
+       "field": "AHnd",
+       "name": "No Data For Year",
+       "schema_type": "boolean",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 3,
+       "matches": [
+        {
+         "column": "u8@row_start+2",
+         "offset": 2,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.983425,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u16@row_start+2",
+         "offset": 2,
+         "offset_frame": "row_start",
+         "width": 2,
+         "fit_score": 0.983425,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+3",
+         "offset": 3,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.983425,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "Ahnt",
+       "name": "Did Not Take Place",
+       "schema_type": "boolean",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 3,
+       "matches": [
+        {
+         "column": "u8@row_start+2",
+         "offset": 2,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.983425,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u16@row_start+2",
+         "offset": 2,
+         "offset_frame": "row_start",
+         "width": 2,
+         "fit_score": 0.983425,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+3",
+         "offset": 3,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.983425,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      }
+     ],
+     "link_status": "candidate",
+     "confidence": "candidate",
+     "judged_confidence": "candidate"
+    }
+   ],
+   "rejected_parents": [
+    {
+     "parent_4cc": "Cafl",
+     "reason": "Cafl is club.Current Affiliations (club ref + booleans + fees); table 12 is RTTI-tagged awar and its rows carry award-history strings/positions",
+     "claim_status": "rejected"
+    },
+    {
+     "parent_4cc": "Calt",
+     "reason": "Calt is club.Alternative Stadiums (competition+stadium refs+dates); no stadium-domain column exists in table 12",
+     "claim_status": "rejected"
+    }
+   ],
+   "profile_file": "profiles/table_server_12.profile.json",
+   "confidence": "candidate",
+   "blockers": [
+    "variable rows 31..203 B do not expose one fixed slot per AWsh item",
+    "no reader join from table 12 to award.AWsh collection",
+    "no reader/collection join was performed; RTTI class + data shape are not a join",
+    "no L3/L4 evidence in this task (L4=0 by instruction)"
+   ],
+   "confidence_basis": "rows carry length-prefixed person-name strings plus u32 id pairs and packed dates, matching an award-history item (AH1n/First Placed Name etc.), but only a subset of the 26 AWsh items is reachable",
+   "profile_sha256": "7cec2e3b4caf3d7512484bcfc6c6c93b2eaec2b1b839a508405d737e39a9632c",
+   "rows_sha256": "ba55a89deb901bc7fc2d8d23eeac13f80436bbbbdfb17788d4ba1d5141dfda5b"
+  },
+  {
+   "table_type": 39,
+   "archive": "server",
+   "rtti_class": "STARTING_AVERAGE_POINTS",
+   "entity_tag": "team",
+   "t14_adjudication": "resolved",
+   "stage2_status": "resolved",
+   "count": 117,
+   "stride": 42,
+   "row_model": "fixed",
+   "parents": [
+    {
+     "parent_4cc": "csap",
+     "schema_path": "comp.xml#comp.csap",
+     "schema_list_name": "Average Points",
+     "item_field_count": 7,
+     "item_fields_with_column_candidate": 1,
+     "item_fields": [
+      {
+       "field": "team",
+       "name": "Team",
+       "schema_type": "database_record_unique_id",
+       "database_table_type": "team",
+       "claim_status": "candidate",
+       "matches_considered": 7,
+       "matches": [
+        {
+         "column": "u32@row_start+0",
+         "offset": 0,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 117,
+         "basis": "team ID-domain compatibility [0,84507); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+28",
+         "offset": 28,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 117,
+         "basis": "team ID-domain compatibility [0,84507); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+29",
+         "offset": 29,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 117,
+         "basis": "team ID-domain compatibility [0,84507); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+32",
+         "offset": 32,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 117,
+         "basis": "team ID-domain compatibility [0,84507); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+33",
+         "offset": 33,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 117,
+         "basis": "team ID-domain compatibility [0,84507); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+36",
+         "offset": 36,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 117,
+         "basis": "team ID-domain compatibility [0,84507); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      }
+     ],
+     "link_status": "candidate",
+     "confidence": "unknown",
+     "judged_confidence": "unknown"
+    }
+   ],
+   "rejected_parents": [
+    {
+     "parent_4cc": "CPsL",
+     "reason": "CPsL is club.Player Partnerships (2 person fields); table 39 is RTTI-tagged team and its row carries a team-domain id, so a player-pair list cannot be the item type",
+     "claim_status": "rejected"
+    }
+   ],
+   "profile_file": "profiles/table_server_39.profile.json",
+   "confidence": "unknown",
+   "blockers": [
+    "constant u32 at +4/+8 in every row is unexplained",
+    "csap item needs 6 numeric slots; only 3 u16 slots admit the integer filter",
+    "csap lives on comp.xml, table_39 entity is team: ownership direction (comp->team vs team->comp) is unresolved",
+    "no reader/collection join was performed; RTTI class + data shape are not a join",
+    "no L3/L4 evidence in this task (L4=0 by instruction)"
+   ],
+   "confidence_basis": "entity team is resolved by RTTI+stage2, but the 42-byte row shows the same u32 at +4 and +8 in all 117 rows and only 3 u16 value slots, which does not line up with team+6 integer csap items",
+   "profile_sha256": "ec2e783102feb58a19e07df1c686d16bad154b12a40c5af588bd5a97118548b0",
+   "rows_sha256": "1647286698dc389e73e6a17d0ed3f97aea5a4821f89b4f28e633df19e86fdd1d"
+  },
+  {
+   "table_type": 45,
+   "archive": "server",
+   "rtti_class": "STARTING_RECORD",
+   "entity_tag": null,
+   "t14_adjudication": "candidate",
+   "stage2_status": "resolved",
+   "count": 84477,
+   "stride": null,
+   "row_model": "variable",
+   "parents": [
+    {
+     "parent_4cc": "Plhs",
+     "schema_path": "person.xml#pers.Plhs",
+     "schema_list_name": "Playing History",
+     "item_field_count": 14,
+     "item_fields_with_column_candidate": 10,
+     "item_fields": [
+      {
+       "field": "yror",
+       "name": "Order",
+       "schema_type": "integer",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 12,
+       "matches": [
+        {
+         "column": "u8@row_end-34",
+         "offset": -34,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,10]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-30",
+         "offset": -30,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,10]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-36",
+         "offset": -36,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "numeric range compatible with schema [0,10]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-32",
+         "offset": -32,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "numeric range compatible with schema [0,10]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-28",
+         "offset": -28,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "numeric range compatible with schema [0,10]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-38",
+         "offset": -38,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,10]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      },
+      {
+       "field": "join",
+       "name": "Date Joined",
+       "schema_type": "date",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 3,
+       "matches": [
+        {
+         "column": "u32@row_end-35",
+         "offset": -35,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.999716,
+         "coverage": 1.0,
+         "distinct": 5342,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-39",
+         "offset": -39,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.998106,
+         "coverage": 1.0,
+         "distinct": 12216,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-31",
+         "offset": -31,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.998011,
+         "coverage": 1.0,
+         "distinct": 9830,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "leav",
+       "name": "Date Left",
+       "schema_type": "date",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 3,
+       "matches": [
+        {
+         "column": "u32@row_end-35",
+         "offset": -35,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.999716,
+         "coverage": 1.0,
+         "distinct": 5342,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-39",
+         "offset": -39,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.998106,
+         "coverage": 1.0,
+         "distinct": 12216,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-31",
+         "offset": -31,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.998011,
+         "coverage": 1.0,
+         "distinct": 9830,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "onln",
+       "name": "On Loan",
+       "schema_type": "boolean",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 4,
+       "matches": [
+        {
+         "column": "u8@row_start+38",
+         "offset": 38,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u16@row_start+38",
+         "offset": 38,
+         "offset_frame": "row_start",
+         "width": 2,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+39",
+         "offset": 39,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u16@row_start+39",
+         "offset": 39,
+         "offset_frame": "row_start",
+         "width": 2,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "trib",
+       "name": "Tribunal Fee",
+       "schema_type": "boolean",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 4,
+       "matches": [
+        {
+         "column": "u8@row_start+38",
+         "offset": 38,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u16@row_start+38",
+         "offset": 38,
+         "offset_frame": "row_start",
+         "width": 2,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+39",
+         "offset": 39,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u16@row_start+39",
+         "offset": 39,
+         "offset_frame": "row_start",
+         "width": 2,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "ytht",
+       "name": "Youth Team",
+       "schema_type": "boolean",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 4,
+       "matches": [
+        {
+         "column": "u8@row_start+38",
+         "offset": 38,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u16@row_start+38",
+         "offset": 38,
+         "offset_frame": "row_start",
+         "width": 2,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+39",
+         "offset": 39,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u16@row_start+39",
+         "offset": 39,
+         "offset_frame": "row_start",
+         "width": 2,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "apps",
+       "name": "Apps",
+       "schema_type": "integer",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 5,
+       "matches": [
+        {
+         "column": "u8@row_start+3",
+         "offset": 3,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 7,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-38",
+         "offset": -38,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-34",
+         "offset": -34,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-30",
+         "offset": -30,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-14",
+         "offset": -14,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "gols",
+       "name": "Goals",
+       "schema_type": "integer",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 5,
+       "matches": [
+        {
+         "column": "u8@row_start+3",
+         "offset": 3,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 7,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-38",
+         "offset": -38,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-34",
+         "offset": -34,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-30",
+         "offset": -30,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-14",
+         "offset": -14,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "cash",
+       "name": "Transfer Fee",
+       "schema_type": "cash",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 20,
+       "matches": [
+        {
+         "column": "u32@row_end-14",
+         "offset": -14,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 84477,
+         "basis": "all values inside schema cash range [-1000000000,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+1",
+         "offset": 1,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 15494,
+         "basis": "all values inside schema cash range [-1000000000,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-39",
+         "offset": -39,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 12216,
+         "basis": "all values inside schema cash range [-1000000000,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-31",
+         "offset": -31,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 9830,
+         "basis": "all values inside schema cash range [-1000000000,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-37",
+         "offset": -37,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 5896,
+         "basis": "all values inside schema cash range [-1000000000,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-23",
+         "offset": -23,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 5377,
+         "basis": "all values inside schema cash range [-1000000000,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      },
+      {
+       "field": "info",
+       "name": "Other",
+       "schema_type": "enum",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 29,
+       "matches": [
+        {
+         "column": "u8@row_start+3",
+         "offset": 3,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 7,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-38",
+         "offset": -38,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-34",
+         "offset": -34,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-30",
+         "offset": -30,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-14",
+         "offset": -14,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-36",
+         "offset": -36,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      }
+     ],
+     "link_status": "candidate",
+     "confidence": "unknown",
+     "judged_confidence": "unknown"
+    },
+    {
+     "parent_4cc": "Pnph",
+     "schema_path": "person.xml#pers.Pnph",
+     "schema_list_name": "Non Playing History",
+     "item_field_count": 4,
+     "item_fields_with_column_candidate": 3,
+     "item_fields": [
+      {
+       "field": "join",
+       "name": "Date Joined",
+       "schema_type": "date",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 3,
+       "matches": [
+        {
+         "column": "u32@row_end-35",
+         "offset": -35,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.999716,
+         "coverage": 1.0,
+         "distinct": 5342,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-39",
+         "offset": -39,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.998106,
+         "coverage": 1.0,
+         "distinct": 12216,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-31",
+         "offset": -31,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.998011,
+         "coverage": 1.0,
+         "distinct": 9830,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "left",
+       "name": "Date Left",
+       "schema_type": "date",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 3,
+       "matches": [
+        {
+         "column": "u32@row_end-35",
+         "offset": -35,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.999716,
+         "coverage": 1.0,
+         "distinct": 5342,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-39",
+         "offset": -39,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.998106,
+         "coverage": 1.0,
+         "distinct": 12216,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-31",
+         "offset": -31,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.998011,
+         "coverage": 1.0,
+         "distinct": 9830,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "tjob",
+       "name": "Job",
+       "schema_type": "enum",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 29,
+       "matches": [
+        {
+         "column": "u8@row_start+3",
+         "offset": 3,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 7,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-38",
+         "offset": -38,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-34",
+         "offset": -34,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-30",
+         "offset": -30,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-14",
+         "offset": -14,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-36",
+         "offset": -36,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      }
+     ],
+     "link_status": "rejected_for_this_table",
+     "confidence": "unknown",
+     "judged_confidence": "unknown"
+    },
+    {
+     "parent_4cc": "Pacl",
+     "schema_path": "person.xml#pers.Pacl",
+     "schema_list_name": "Achievements",
+     "item_field_count": 8,
+     "item_fields_with_column_candidate": 4,
+     "item_fields": [
+      {
+       "field": "plac",
+       "name": "Type",
+       "schema_type": "enum",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 29,
+       "matches": [
+        {
+         "column": "u8@row_start+3",
+         "offset": 3,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 7,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-38",
+         "offset": -38,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-34",
+         "offset": -34,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-30",
+         "offset": -30,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-14",
+         "offset": -14,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-36",
+         "offset": -36,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      },
+      {
+       "field": "wgps",
+       "name": "In Penalty Shootout?",
+       "schema_type": "boolean",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 4,
+       "matches": [
+        {
+         "column": "u8@row_start+38",
+         "offset": 38,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u16@row_start+38",
+         "offset": 38,
+         "offset_frame": "row_start",
+         "width": 2,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+39",
+         "offset": 39,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u16@row_start+39",
+         "offset": 39,
+         "offset_frame": "row_start",
+         "width": 2,
+         "fit_score": 0.999988,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "date",
+       "name": "Date",
+       "schema_type": "date",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 3,
+       "matches": [
+        {
+         "column": "u32@row_end-35",
+         "offset": -35,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.999716,
+         "coverage": 1.0,
+         "distinct": 5342,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-39",
+         "offset": -39,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.998106,
+         "coverage": 1.0,
+         "distinct": 12216,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-31",
+         "offset": -31,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.998011,
+         "coverage": 1.0,
+         "distinct": 9830,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "ajob",
+       "name": "Job",
+       "schema_type": "enum",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 29,
+       "matches": [
+        {
+         "column": "u8@row_start+3",
+         "offset": 3,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 7,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-38",
+         "offset": -38,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-34",
+         "offset": -34,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-30",
+         "offset": -30,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-14",
+         "offset": -14,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-36",
+         "offset": -36,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      }
+     ],
+     "link_status": "rejected_for_this_table",
+     "confidence": "unknown",
+     "judged_confidence": "unknown"
+    }
+   ],
+   "rejected_parents": [],
+   "profile_file": "profiles/table_server_45.profile.json",
+   "confidence": "unknown",
+   "blockers": [
+    "t14 adjudication for table 45 is `candidate`, entity_tag null",
+    "three schema lists (Plhs/Pnph/Pacl) remain compatible",
+    "row body is variable (80..122 B) and contains an unexplained person-name string copy",
+    "no reader/collection join was performed; RTTI class + data shape are not a join",
+    "no L3/L4 evidence in this task (L4=0 by instruction)"
+   ],
+   "confidence_basis": "person names + packed dates + a repeated u32 pair appear in every row, consistent with a per-person career record; entity pers is only the stage2 adjudication (t14 keeps the entity tag null)",
+   "profile_sha256": "0dbccc9c10e99d1127a933aaa2509ec6af113bd9b519d0633c151dd5bc493625",
+   "rows_sha256": "601a061c05eae23ba3cfc5288f1e34d3336c7fd39260b4481a0fd092196bd64f"
+  },
+  {
+   "table_type": 48,
+   "archive": "server",
+   "rtti_class": "STARTING_RECORD",
+   "entity_tag": null,
+   "t14_adjudication": "candidate",
+   "stage2_status": "resolved",
+   "count": 5210,
+   "stride": null,
+   "row_model": "variable",
+   "parents": [
+    {
+     "parent_4cc": "Plhs",
+     "schema_path": "person.xml#pers.Plhs",
+     "schema_list_name": "Playing History",
+     "item_field_count": 14,
+     "item_fields_with_column_candidate": 10,
+     "item_fields": [
+      {
+       "field": "yror",
+       "name": "Order",
+       "schema_type": "integer",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 7,
+       "matches": [
+        {
+         "column": "u8@row_end-38",
+         "offset": -38,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,10]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-30",
+         "offset": -30,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "numeric range compatible with schema [0,10]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-34",
+         "offset": -34,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 0.999808,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,10]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-36",
+         "offset": -36,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 0.999808,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "numeric range compatible with schema [0,10]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-32",
+         "offset": -32,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 0.999808,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "numeric range compatible with schema [0,10]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-28",
+         "offset": -28,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 0.999808,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "numeric range compatible with schema [0,10]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "join",
+       "name": "Date Joined",
+       "schema_type": "date",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 3,
+       "matches": [
+        {
+         "column": "u32@row_end-35",
+         "offset": -35,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.999232,
+         "coverage": 1.0,
+         "distinct": 1087,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-31",
+         "offset": -31,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.998656,
+         "coverage": 1.0,
+         "distinct": 1504,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-39",
+         "offset": -39,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.996737,
+         "coverage": 1.0,
+         "distinct": 2867,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "leav",
+       "name": "Date Left",
+       "schema_type": "date",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 3,
+       "matches": [
+        {
+         "column": "u32@row_end-35",
+         "offset": -35,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.999232,
+         "coverage": 1.0,
+         "distinct": 1087,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-31",
+         "offset": -31,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.998656,
+         "coverage": 1.0,
+         "distinct": 1504,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-39",
+         "offset": -39,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.996737,
+         "coverage": 1.0,
+         "distinct": 2867,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "onln",
+       "name": "On Loan",
+       "schema_type": "boolean",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 2,
+       "matches": [
+        {
+         "column": "u8@row_end-30",
+         "offset": -30,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-14",
+         "offset": -14,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 0.999808,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "trib",
+       "name": "Tribunal Fee",
+       "schema_type": "boolean",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 2,
+       "matches": [
+        {
+         "column": "u8@row_end-30",
+         "offset": -30,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-14",
+         "offset": -14,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 0.999808,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "ytht",
+       "name": "Youth Team",
+       "schema_type": "boolean",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 2,
+       "matches": [
+        {
+         "column": "u8@row_end-30",
+         "offset": -30,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-14",
+         "offset": -14,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 0.999808,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "apps",
+       "name": "Apps",
+       "schema_type": "integer",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 7,
+       "matches": [
+        {
+         "column": "u8@row_start+3",
+         "offset": 3,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-38",
+         "offset": -38,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-34",
+         "offset": -34,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+37",
+         "offset": 37,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.966603,
+         "coverage": 1.0,
+         "distinct": 29,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u16@row_start+37",
+         "offset": 37,
+         "offset_frame": "row_start",
+         "width": 2,
+         "fit_score": 0.966603,
+         "coverage": 1.0,
+         "distinct": 29,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+37",
+         "offset": 37,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 0.966603,
+         "coverage": 1.0,
+         "distinct": 29,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "gols",
+       "name": "Goals",
+       "schema_type": "integer",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 7,
+       "matches": [
+        {
+         "column": "u8@row_start+3",
+         "offset": 3,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-38",
+         "offset": -38,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-34",
+         "offset": -34,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+37",
+         "offset": 37,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 0.966603,
+         "coverage": 1.0,
+         "distinct": 29,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u16@row_start+37",
+         "offset": 37,
+         "offset_frame": "row_start",
+         "width": 2,
+         "fit_score": 0.966603,
+         "coverage": 1.0,
+         "distinct": 29,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+37",
+         "offset": 37,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 0.966603,
+         "coverage": 1.0,
+         "distinct": 29,
+         "basis": "numeric range compatible with schema [0,200]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "cash",
+       "name": "Transfer Fee",
+       "schema_type": "cash",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 24,
+       "matches": [
+        {
+         "column": "u32@row_end-15",
+         "offset": -15,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 5210,
+         "basis": "all values inside schema cash range [-1000000000,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-14",
+         "offset": -14,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 5210,
+         "basis": "all values inside schema cash range [-1000000000,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-39",
+         "offset": -39,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2867,
+         "basis": "all values inside schema cash range [-1000000000,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+1",
+         "offset": 1,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2400,
+         "basis": "all values inside schema cash range [-1000000000,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-41",
+         "offset": -41,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2112,
+         "basis": "all values inside schema cash range [-1000000000,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-35",
+         "offset": -35,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 1087,
+         "basis": "all values inside schema cash range [-1000000000,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      },
+      {
+       "field": "info",
+       "name": "Other",
+       "schema_type": "enum",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 31,
+       "matches": [
+        {
+         "column": "u8@row_end-42",
+         "offset": -42,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 60,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+44",
+         "offset": 44,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 51,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-41",
+         "offset": -41,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 49,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-40",
+         "offset": -40,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 39,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+42",
+         "offset": 42,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 35,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+4",
+         "offset": 4,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 32,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      }
+     ],
+     "link_status": "candidate",
+     "confidence": "unknown",
+     "judged_confidence": "unknown"
+    },
+    {
+     "parent_4cc": "Pnph",
+     "schema_path": "person.xml#pers.Pnph",
+     "schema_list_name": "Non Playing History",
+     "item_field_count": 4,
+     "item_fields_with_column_candidate": 3,
+     "item_fields": [
+      {
+       "field": "join",
+       "name": "Date Joined",
+       "schema_type": "date",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 3,
+       "matches": [
+        {
+         "column": "u32@row_end-35",
+         "offset": -35,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.999232,
+         "coverage": 1.0,
+         "distinct": 1087,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-31",
+         "offset": -31,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.998656,
+         "coverage": 1.0,
+         "distinct": 1504,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-39",
+         "offset": -39,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.996737,
+         "coverage": 1.0,
+         "distinct": 2867,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "left",
+       "name": "Date Left",
+       "schema_type": "date",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 3,
+       "matches": [
+        {
+         "column": "u32@row_end-35",
+         "offset": -35,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.999232,
+         "coverage": 1.0,
+         "distinct": 1087,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-31",
+         "offset": -31,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.998656,
+         "coverage": 1.0,
+         "distinct": 1504,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-39",
+         "offset": -39,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.996737,
+         "coverage": 1.0,
+         "distinct": 2867,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "tjob",
+       "name": "Job",
+       "schema_type": "enum",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 31,
+       "matches": [
+        {
+         "column": "u8@row_end-42",
+         "offset": -42,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 60,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+44",
+         "offset": 44,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 51,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-41",
+         "offset": -41,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 49,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-40",
+         "offset": -40,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 39,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+42",
+         "offset": 42,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 35,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+4",
+         "offset": 4,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 32,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      }
+     ],
+     "link_status": "candidate",
+     "confidence": "unknown",
+     "judged_confidence": "unknown"
+    },
+    {
+     "parent_4cc": "Pacl",
+     "schema_path": "person.xml#pers.Pacl",
+     "schema_list_name": "Achievements",
+     "item_field_count": 8,
+     "item_fields_with_column_candidate": 4,
+     "item_fields": [
+      {
+       "field": "plac",
+       "name": "Type",
+       "schema_type": "enum",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 31,
+       "matches": [
+        {
+         "column": "u8@row_end-42",
+         "offset": -42,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 60,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+44",
+         "offset": 44,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 51,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-41",
+         "offset": -41,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 49,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-40",
+         "offset": -40,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 39,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+42",
+         "offset": 42,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 35,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+4",
+         "offset": 4,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 32,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      },
+      {
+       "field": "wgps",
+       "name": "In Penalty Shootout?",
+       "schema_type": "boolean",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 2,
+       "matches": [
+        {
+         "column": "u8@row_end-30",
+         "offset": -30,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-14",
+         "offset": -14,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 0.999808,
+         "coverage": 1.0,
+         "distinct": 2,
+         "basis": "boolean-like 0/1 value set",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "date",
+       "name": "Date",
+       "schema_type": "date",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 3,
+       "matches": [
+        {
+         "column": "u32@row_end-35",
+         "offset": -35,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.999232,
+         "coverage": 1.0,
+         "distinct": 1087,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-31",
+         "offset": -31,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.998656,
+         "coverage": 1.0,
+         "distinct": 1504,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_end-39",
+         "offset": -39,
+         "offset_frame": "row_end",
+         "width": 4,
+         "fit_score": 0.996737,
+         "coverage": 1.0,
+         "distinct": 2867,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "ajob",
+       "name": "Job",
+       "schema_type": "enum",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 31,
+       "matches": [
+        {
+         "column": "u8@row_end-42",
+         "offset": -42,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 60,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+44",
+         "offset": 44,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 51,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-41",
+         "offset": -41,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 49,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-40",
+         "offset": -40,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 39,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+42",
+         "offset": 42,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 35,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+4",
+         "offset": 4,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 32,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      }
+     ],
+     "link_status": "rejected_for_this_table",
+     "confidence": "unknown",
+     "judged_confidence": "unknown"
+    }
+   ],
+   "rejected_parents": [],
+   "profile_file": "profiles/table_server_48.profile.json",
+   "confidence": "unknown",
+   "blockers": [
+    "identical RTTI identity to table 45 forbids a unique list claim",
+    "rows 79..130 B, u32 pairs + u16 year + person-name string",
+    "no reader join; entity resolution rests on the older stage2 note",
+    "no reader/collection join was performed; RTTI class + data shape are not a join",
+    "no L3/L4 evidence in this task (L4=0 by instruction)"
+   ],
+   "confidence_basis": "same RTTI class/handler/vtable as table 45, so the two tables are the same C++ type; which schema list each one instantiates is undetermined",
+   "profile_sha256": "db219602c9a299ecaed73c52780cea4b23d84ce1168f06f08c82cb1276e3e470",
+   "rows_sha256": "eca0240ffaf66d62a903387b9796cd47159f525b402275c31fb5167163a3d512"
+  },
+  {
+   "table_type": 58,
+   "archive": "server",
+   "rtti_class": "STARTING_WEEKLY_WAGE_CONTRIBUTION",
+   "entity_tag": "club",
+   "t14_adjudication": "resolved",
+   "stage2_status": "candidate",
+   "count": 8,
+   "stride": 45,
+   "row_model": "fixed",
+   "parents": [
+    {
+     "parent_4cc": "Cwcl",
+     "schema_path": "club.xml#club.Cwcl",
+     "schema_list_name": "Wage Contributions",
+     "item_field_count": 5,
+     "item_fields_with_column_candidate": 5,
+     "item_fields": [
+      {
+       "field": "icom",
+       "name": "Direction",
+       "schema_type": "enum",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 53,
+       "matches": [
+        {
+         "column": "u8@row_start+0",
+         "offset": 0,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+1",
+         "offset": 1,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+4",
+         "offset": 4,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+5",
+         "offset": 5,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u16@row_start+8",
+         "offset": 8,
+         "offset_frame": "row_start",
+         "width": 2,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+8",
+         "offset": 8,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "small finite value set compatible with enum storage",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      },
+      {
+       "field": "play",
+       "name": "Player",
+       "schema_type": "database_record_unique_id",
+       "database_table_type": "person",
+       "claim_status": "candidate",
+       "matches_considered": 15,
+       "matches": [
+        {
+         "column": "u32@row_start+7",
+         "offset": 7,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "person ID-domain compatibility [0,792149); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+8",
+         "offset": 8,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "person ID-domain compatibility [0,792149); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+11",
+         "offset": 11,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "person ID-domain compatibility [0,792149); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+12",
+         "offset": 12,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "person ID-domain compatibility [0,792149); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+15",
+         "offset": 15,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "person ID-domain compatibility [0,792149); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+16",
+         "offset": 16,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "person ID-domain compatibility [0,792149); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      },
+      {
+       "field": "club",
+       "name": "Club",
+       "schema_type": "database_record_unique_id",
+       "database_table_type": "club",
+       "claim_status": "candidate",
+       "matches_considered": 8,
+       "matches": [
+        {
+         "column": "u32@row_start+8",
+         "offset": 8,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "club ID-domain compatibility [0,84259); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+12",
+         "offset": 12,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "club ID-domain compatibility [0,84259); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+16",
+         "offset": 16,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "club ID-domain compatibility [0,84259); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+20",
+         "offset": 20,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "club ID-domain compatibility [0,84259); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+28",
+         "offset": 28,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "club ID-domain compatibility [0,84259); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+31",
+         "offset": 31,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "club ID-domain compatibility [0,84259); domain fit is not field identity",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      },
+      {
+       "field": "wage",
+       "name": "Wage",
+       "schema_type": "cash",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 30,
+       "matches": [
+        {
+         "column": "u32@row_start+0",
+         "offset": 0,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "all values inside schema cash range [0,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+4",
+         "offset": 4,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "all values inside schema cash range [0,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+6",
+         "offset": 6,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "all values inside schema cash range [0,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+7",
+         "offset": 7,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "all values inside schema cash range [0,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+8",
+         "offset": 8,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "all values inside schema cash range [0,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u32@row_start+10",
+         "offset": 10,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 8,
+         "basis": "all values inside schema cash range [0,1000000000]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      },
+      {
+       "field": "wend",
+       "name": "Contributions Paid Till",
+       "schema_type": "date",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 1,
+       "matches": [
+        {
+         "column": "u32@row_start+24",
+         "offset": 24,
+         "offset_frame": "row_start",
+         "width": 4,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 4,
+         "basis": "packed day/year profile matches date semantics",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": false,
+       "blocker": null
+      }
+     ],
+     "link_status": "candidate",
+     "confidence": "candidate",
+     "judged_confidence": "candidate"
+    }
+   ],
+   "rejected_parents": [],
+   "profile_file": "profiles/table_server_58.profile.json",
+   "confidence": "candidate",
+   "blockers": [
+    "5-field item list (icom/play/club/wage/wend) is not reproducible from the 45-byte row with a single admissible layout",
+    "only 8 rows: too few to separate sender/player/club id columns",
+    "no reader/collection join was performed; RTTI class + data shape are not a join",
+    "no L3/L4 evidence in this task (L4=0 by instruction)"
+   ],
+   "confidence_basis": "row framing (45 B, 8 rows) is consistent with a small per-club contribution list, but two u32 pairs + u16 year + u32 value do not reproduce the 5-field Cwcl item list; no reader join",
+   "profile_sha256": "057e58a65bd74c9901015c1a8e686831605d2cb4cf71e75931a96e6300e4c398",
+   "rows_sha256": "cd7997c03ed5cfffdd950d25619ad2abb70cbbf55b7ad0ff5ad96fbb2988e356"
+  },
+  {
+   "table_type": 59,
+   "archive": "server",
+   "rtti_class": "STARTING_MEDIA_EXPECTATIONS",
+   "entity_tag": "play",
+   "t14_adjudication": "resolved",
+   "stage2_status": "resolved",
+   "count": 9079,
+   "stride": null,
+   "row_model": "variable",
+   "parents": [
+    {
+     "parent_4cc": "Csme",
+     "schema_path": "club.xml#club.Csme",
+     "schema_list_name": "Starting Media Expectations",
+     "item_field_count": 2,
+     "item_fields_with_column_candidate": 1,
+     "item_fields": [
+      {
+       "field": "Melf",
+       "name": "Predicted League Finish",
+       "schema_type": "integer",
+       "database_table_type": null,
+       "claim_status": "candidate",
+       "matches_considered": 25,
+       "matches": [
+        {
+         "column": "u8@row_end-18",
+         "offset": -18,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 6,
+         "basis": "numeric range compatible with schema [None,127]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u16@row_end-18",
+         "offset": -18,
+         "offset_frame": "row_end",
+         "width": 2,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 6,
+         "basis": "numeric range compatible with schema [None,127]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+4",
+         "offset": 4,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 5,
+         "basis": "numeric range compatible with schema [None,127]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_end-15",
+         "offset": -15,
+         "offset_frame": "row_end",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [None,127]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+12",
+         "offset": 12,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [None,127]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        },
+        {
+         "column": "u8@row_start+16",
+         "offset": 16,
+         "offset_frame": "row_start",
+         "width": 1,
+         "fit_score": 1.0,
+         "coverage": 1.0,
+         "distinct": 3,
+         "basis": "numeric range compatible with schema [None,127]",
+         "evidence_level": "L2_candidate",
+         "claim_status": "candidate"
+        }
+       ],
+       "ambiguous": true,
+       "blocker": null
+      }
+     ],
+     "link_status": "candidate",
+     "confidence": "candidate",
+     "judged_confidence": "candidate"
+    }
+   ],
+   "rejected_parents": [],
+   "profile_file": "profiles/table_server_59.profile.json",
+   "confidence": "candidate",
+   "blockers": [
+    "tail id pair in every row equals 0x01000000, not a plausible media_source id; column semantics stay unresolved",
+    "row body length varies 19/22/25/32 so no single 2-field layout holds for all rows",
+    "no reader/collection join was performed; RTTI class + data shape are not a join",
+    "no L3/L4 evidence in this task (L4=0 by instruction)"
+   ],
+   "confidence_basis": "9,079 short rows (19..32 B) of small integers match the 2-field Csme item (media source id + predicted finish <= 127)",
+   "profile_sha256": "3c4ee8efdb057ad21b020d67a6d08c174ffe42309bb2d3fc28e0fea11922ecf9",
+   "rows_sha256": "94b77a7e6863b4ecf15239de7ed1b637620acbba0c88941e53da24031048728a"
+  },
+  {
+   "table_type": 73,
+   "archive": "server",
+   "rtti_class": "STARTING_ITALIAN_SERIE_A_NON_EU_PLAYER_SIGNED_FOR_RESTRICTED_SLOT",
+   "entity_tag": "play",
+   "t14_adjudication": "resolved",
+   "stage2_status": "resolved",
+   "count": 1,
+   "stride": 23,
+   "row_model": "fixed",
+   "parents": [],
+   "rejected_parents": [],
+   "profile_file": "profiles/table_server_73.profile.json",
+   "confidence": "unknown",
+   "blockers": [
+    "no schema list node in the frozen master.json",
+    "count=1: every column statistic is degenerate",
+    "u32 at +0 (80,864,099) is outside the person reference domain",
+    "no reader/collection join was performed; RTTI class + data shape are not a join",
+    "no L3/L4 evidence in this task (L4=0 by instruction)",
+    "no schema list node in the frozen master.json matches this class"
+   ],
+   "confidence_basis": "single 23-byte row; u16 year 2023 and one u32 in the club id domain, which fits the Italian non-EU slot event, but the frozen master.json exposes no matching schema list and one row cannot support a column map",
+   "profile_sha256": "b1f07143cb789cd411d10ba3bb356b81e48ab36216acb9b4122e748275c4f5f6",
+   "rows_sha256": "c1c3b24b708240e9405eca58b337b39438b665c799a79fc93c810df03be47fcb"
+  }
+ ]
+}
