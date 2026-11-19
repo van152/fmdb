@@ -1777,6 +1777,16 @@
    "claim": "t29b club子表广度inventory partial接受。38父码:3 high(CSrs62/Clhs37/Cstc22,均sol已闭)/6 candidate(Cdbt33/Cmti43/CNtp66/Tchl34/Csme59/CAmb70语义不匹配)/29 unknown(table_type=str unknown)。13表画像payload_size+SHA全核实(多帧感知含t34=313082真实第二帧),count*stride界、rows_jsonl hash全过。34 L2 item字段候选,25带profile列hint。CAmb->table70 STARTING_VISION_OBJECTIVE语义不匹配诚实标candidate_semantic。luna rc=124超时,REPORT.md/DONE.md未及写;verify.py有ROOT=HERE.parents[3]bug(解析到tmp2b非fm24-db,应parents[2]),保留为证不篡改,以commander独立spot为验收闸。",
    "evidence": "scratch/t29/out/subtable_inventory.json(status partial_parent_identity_coverage)+profiles/13表+build_inventory.py+verify.py(buggy);commander scratch/cmd/t29b_spot.py 9/9(多帧pick_frame按size+SHA选帧/unknown编码/high链接/sol闭合t37=465712x40,t62=37214x42交叉一致)。",
    "consequence": "为t27方法复制提供候选靶清单。已派sol t34 CNtp(table66,4字段nati/rati/mina/maxa,753x24)。下一sol候选Cdbt33(5字段32409x79)/Tchl34(9字段7115x44需club/nation排他)/Csme59。29 unknown父码需后续table discovery(含Cafl/Cvfl双视图歧义)。luna verify.py路径bug待修(不阻断inventory使用)。"
+  },
+  {
+   "id": "E71",
+   "date": "2026-11-19",
+   "author": "commander(verify sol t34)",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": "CNtp/table66 STARTING_CLUB_TRANSFER_PREFERENCE server 753x24B 全闭合(13+753*24+9=18094,SHA 3ddd47bb)。2 L3:nati(scalar_i32_nation_identity@body4,key_basis=nation对象+0xc首UID lane,非ordinal非Cmti式pair;constructor_default -1)/rati(i8_enum@body8,值集{0..5},零哨兵走特殊getter arm)。2 held:mina/maxa(u8@body9/10,静态movzx sink已绑但required年龄域[14,44]/[15,45]遇零值冲突:mina436零/maxa395零,0未证sentinel(getter zero-extend装箱保留 raw0);双零389/双非零311(均min<=max)/raw min>max6行=max-only-zero,首例row57(18,0))。body@0另4B为父club UID(非schema字段)。identity lane0 ordinal 0..752。footer 0000000001f1020000 末u32=753。client无table66。",
+   "evidence": "scratch/t34/out/{cursor_cntp.json,fields_cntp.json,instructions.part001-005,branches.part001-002,verify.py,REPORT.md};scripts/t34_cntp_cursor.py;commander scratch/cmd/t34_spot.py 13/13(闭合/SHA/row1@42=1651/mina436零nz[14,32]/maxa395零nz[17,45]/双零389/双非零311/min>max6/identity/rati{0..5}/footer753);verify PASS;builder selftest PASS;anchors 7/7。nati ordinal假说独立域检验602 miss(row1@42=1651对应nation ordinal实189),用t25闭合client table10(251 nation)核ordinal域0..250,server table10复核251同序唯一三元组(不声称独立解析server nation行布局)。slot21 writer 0x4358a6e直写4B成员,slot20 AL=true;ret无ordinal fixup。",
+   "consequence": "club子表L3累计39(Cstc14+Clhs8+CSrs10+Cmti5+CNtp2)。子表复制法第5次成功。nati证明引用模型多样:CNtp单lane nation identity vs Cmti成对record-key,逐reader read site判定不预设。mina/maxa诚实held(静态sink绑定!=值域通过),为required域含零字段树立held先例。下一sol t36 Cdbt(table33,5字段cash/sour/stdt/endt/inrt,32409x79)。"
   }
  ]
 }
