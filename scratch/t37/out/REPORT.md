@@ -67,6 +67,10 @@ Offsets are row-relative diagnostics, not field assignments. Full all-row column
 - `cquf` (database_record_unique_id, competition): +0/w4 (1.000), +12/w4 (1.000), +16/w4 (1.000), +22/w4 (1.000), +31/w4 (0.990), +4/w4 (0.982), +27/w4 (0.977).
 - `tcop` (database_record_unique_id, team): +0/w4 (1.000), +4/w4 (1.000), +12/w4 (1.000), +16/w4 (1.000), +22/w4 (1.000), +27/w4 (1.000), +31/w4 (1.000), +11/w4 (0.978).
 
+## T33 Batch-II Cross-Check
+
+All seven existing t33 profiles were consumed. None of their declared candidate parent codes exactly overlaps a nation list parent. Table 58 (`STARTING_WEEKLY_WAGE_CONTRIBUTION`, 8 rows x 45 bytes) was checked against `NWGv` by name only; t33's candidate is club-side `Cwcl`, so the nation link remains unassigned. Source profile hashes are in inventory provenance.
+
 ## Unknowns and Blockers
 
 - All non-t28 parents other than Tchl lack an independent parent-to-table join in the consumed evidence. Unknown values stay `unknown`; semantic names, numeric shape and counts are not used as standalone identity proof.

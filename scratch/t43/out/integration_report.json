@@ -2835,38 +2835,100 @@
    ]
   },
   "t39_spot": {
-   "rc": 3221225794,
-   "match": null,
+   "rc": 0,
+   "match": [
+    "26",
+    "0"
+   ],
    "uses": "own pick_frame",
    "expect": "26/26",
-   "tail": []
+   "tail": [
+    "PASS identity unique 7115",
+    "PASS footer vector count 0 ",
+    "PASS footer byte 01 ",
+    "PASS footer last u32 == max identity 98041869 vs 98041869",
+    "PASS owner row0 @18 = 50 50",
+    "PASS posi row1 @84 = -1 ",
+    "PASS styr row28 @1254 = 0 ",
+    "--- 26 PASS / 0 FAIL ---"
+   ]
   },
   "t34_spot": {
-   "rc": 3221225794,
-   "match": null,
+   "rc": 0,
+   "match": [
+    "13",
+    "13"
+   ],
    "uses": "load_payload",
    "expect": null,
-   "tail": []
+   "tail": [
+    "[OK] both_zero_389: 389",
+    "[OK] both_nonzero_311: 311",
+    "[OK] min_gt_max_6: 6 (sol row57 (18,0))",
+    "[OK] identity_lane0_ordinal: bad=0",
+    "[OK] rati_i8_enum_finite: distinct=6 vals=[0, 1, 2, 3, 4, 5]",
+    "[OK] footer_9B: hex=0000000001f1020000 last_u32=753",
+    "",
+    "=== t34 spot: 13/13 ==="
+   ]
   },
   "t36_spot": {
-   "rc": 3221225794,
-   "match": null,
+   "rc": 0,
+   "match": [
+    "9",
+    "9"
+   ],
    "uses": "load_payload",
    "expect": null,
-   "tail": []
+   "tail": [
+    "[OK] sour_i8_enum_finite: distinct=18 vals=[-3, -2, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]",
+    "[OK] stdt_packed_day_year: bad=0/32409 row0=(1, 0, 1900)",
+    "[OK] endt_packed_day_year: bad=0/32409 row0=(1, 0, 1900)",
+    "[OK] inrt_float32_finite_nonneg: bad=0 specials(-99/-1)=1317 max=25.0000",
+    "[OK] identity_lane0_ordinal: bad=0",
+    "[OK] footer_9B: hex=0000000001997e0000 last_u32=32409",
+    "",
+    "=== t36 spot: 9/9 ==="
+   ]
   },
   "t43 verify": {
-   "rc": 3221225794,
-   "match": null,
-   "tail": []
+   "rc": 0,
+   "match": [
+    "19",
+    "0"
+   ],
+   "tail": [
+    "[PASS] 119 sampled: legacy coordinate wrong on all (-25B, inside previous member): wrong_coord=119/119",
+    "[PASS] 119 sampled: legacy payload bytes differ (majority): legacy_sha_differs=77/119 identical=42 (全部为 12B 空 stub 模板相同:legacy 取到前一成员的 stub,字节偶然相等 —— 长度/SHA 判据在此类条目上失效,必须靠成员边界)",
+    "[PASS] 119 sampled: sha256(packed region) == entry packed sha: ok=119/119",
+    "[PASS] negative server#34 legacy = 12B stub (preserved): legacy_len=12 sha=600175712b2f553a delta=-25B",
+    "[PASS] negative server#34 fixed = 313082 (a07b2bb7...): len=313082 sha=a07b2bb76fb8796b",
+    "[PASS] lang_update sample via load_payload(path form) == independent: n=6 details=[('8_6.dat', 61), ('8_19.dat', 12), ('8_35.dat', 12), ('8_7.dat', 68), ('8_18.dat', 1121), ('8person_names.dat', 12)]",
+    "[PASS] five anchors (t38) independent recompute: {\"server#34\": 313082, \"client#3\": 6932082, \"server#73\": 45, \"server#66\": 18094, \"server#43\": 24632}",
+    "--- t43 verify: 19 PASS / 0 FAIL ---"
+   ]
   }
  },
  "t38_selftest_accounting": {
   "why_count_changes": "t38 selftest 的 PASS 数 = len(lines)-len(fails),而旧法差异的提示行 `DIFF[EXPECTED(E66-family)] server#34: legacy=12B vs mf=313082B` 也算一行。修复后该差异消失 -> 少 1 行:PASS 25->24,FAIL 仍 0。属正向证据。",
   "accepted_baseline": "25 PASS / 0 FAIL (含 1 条 server#34 legacy-vs-mf 差异行)",
   "after_fix_expected": "24 PASS / 0 FAIL (差异行消失;server 34 已不再是特例)",
-  "head_version_run": {
-   "error": ""
+  "same_script_head_version_both_states": {
+   "git_blob": "a67eba2c3942223e",
+   "script": "scripts/t38_multiframe.py",
+   "after_fix": {
+    "rc": 0,
+    "summary": "--- t38 multiframe selftest: 24 PASS / 0 FAIL ---",
+    "diff_lines": []
+   },
+   "before_fix": {
+    "rc": 0,
+    "summary": "--- t38 multiframe selftest: 25 PASS / 0 FAIL ---",
+    "diff_lines": [
+     "DIFF[EXPECTED(E66-family)] server#34: legacy=12B vs mf=313082B"
+    ]
+   },
+   "delta": "同一份 HEAD 版 t38 脚本、唯一变量是 fm24_dump.load_payload:修复前 25 PASS/0 FAIL(含 1 条 DIFF 提示行),修复后 24 PASS/0 FAIL(差异行消失),FAIL 始终 0。少的那 1 条就是 server#34 legacy-vs-mf 差异行本身。"
   },
   "working_tree_run": [
    "32",

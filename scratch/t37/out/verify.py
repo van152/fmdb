@@ -243,6 +243,12 @@ def verify_inventory() -> tuple[int, int]:
     require(summary["candidate_table_types"] == [34] and summary["candidate_table_count"] == 1,
             "candidate table summary mismatch")
     require(summary["new_L3_claims"] == 0 and summary["L4"] == 0, "t37 evidence-grade policy violated")
+    reviews = inventory.get("t33_profile_reviews", [])
+    require(len(reviews) == 7, "t33 batch-II profile review count mismatch")
+    require(all(not row["nation_parent_code_intersection"] for row in reviews), "t33 exact nation-parent overlap was not resolved")
+    table58 = next((row for row in reviews if row["table_type"] == 58), None)
+    require(table58 is not None and table58["review_status"] == "partial_semantic_only_not_assigned",
+            "table58 weekly-wage near-match must remain unassigned")
 
     # Source evidence hashes are checked independently of the build script.
     for rel, expected in inventory["provenance"]["source_hashes"].items():

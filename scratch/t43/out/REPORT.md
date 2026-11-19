@@ -127,7 +127,7 @@ server#34   fixed  = 313082 B sha=a07b2bb76fb8796b…  (a07b2bb7 与 t38/t29 已
 |---|---|---|---|---|
 | 1 | `fm24_dump --selftest` | `py -V:3.12 -I -B scripts/fm24_dump.py --selftest` | **50 PASS / 0 FAIL / 0 SKIP** | 修前 49/0/1SKIP;server34 SKIP→PASS,定长 PASS 不减,无新 FAIL ✅ |
 | 2 | `t01_anchors` | `py -V:3.12 -I -B scripts/t01_anchors.py` | **7/7** | 要求 7/7 ✅ |
-| 3 | `t38 --selftest` | `py -V:3.12 -I -B scripts/t38_multiframe.py --selftest` | **24 PASS / 0 FAIL** | 见下方计数说明 ✅ |
+| 3 | `t38 --selftest` | `py -V:3.12 -I -B scripts/t38_multiframe.py --selftest` | **0 FAIL**(HEAD 版 24 PASS;工作区版 32 PASS,见 §4.1/§4.2) | 无新增 FAIL,参考加载器语义未变 ✅ |
 | 4 | 单帧 25 表 vs `load_payload_mf` | `scratch/t43/build.py --build` | **25/25 字节全等** | 要求 ≥20 表 ✅ |
 | 5 | `t39_spot` | `py -V:3.12 -I -B scratch/cmd/t39_spot.py` | **26/26** | 要求 26/26 ✅(自有 `pick_frame`,不受影响) |
 | 6 | `t34_spot` | `py -V:3.12 -I -B scratch/cmd/t34_spot.py` | **13/13** | 用 `load_payload`(server#66)→ 仍 PASS ✅ |
@@ -144,7 +144,14 @@ DIFF[EXPECTED(E66-family)] server#34: legacy=12B vs mf=313082B
 
 修复后 `legacy` 不再取错帧(现在也返回 313082B),这行差异提示**消失** → 少 1 行 → PASS 25→24,`FAIL` 仍为 **0**,全部检查项(锚点/选帧/成员边界/单帧回归/普查/负结果)逐条 PASS。
 
-`build.py` 的 `t38_selftest_accounting` 段落把这件事钉住:它直接 `git show HEAD:scripts/t38_multiframe.py` 取**已接受的 HEAD 版本**源码 `exec` 后跑 selftest,得到 `24 PASS / 0 FAIL`(rc=0)—— 说明该差异行消失确实是修复生效的结果,而不是参考加载器被改动。
+`build.py` 的 `t38_selftest_accounting` 段落把这件事钉成一个**受控实验**:取**同一份** `git show HEAD:scripts/t38_multiframe.py`(t38 已接受验收的版本),只切换 `fm24_dump.load_payload` 一个变量:
+
+| 变量状态 | t38 HEAD 版 selftest | 差异提示行 |
+|---|---|---|
+| `load_payload` = **修复前**(临时 monkeypatch 回旧实现) | **25 PASS / 0 FAIL** (rc=0) | 1 条 `DIFF[EXPECTED(E66-family)] server#34` |
+| `load_payload` = **修复后**(当前工作区) | **24 PASS / 0 FAIL** (rc=0) | 0 条 |
+
+结论:少掉的那 1 条 **就是 server#34 的 legacy-vs-mf 差异行本身**,即修复生效的正向证据;`FAIL` 始终为 0,参考加载器逻辑未被本任务改动。
 
 ### 4.2 工作区被外部改动(诚实记录)
 

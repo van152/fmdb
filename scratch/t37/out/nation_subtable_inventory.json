@@ -16,10 +16,19 @@
       "scratch/t28/out/fields_nation_client.json": "daa4a1be8965b572d5f6f1af668f7dbdb4f8e2538f07024a0039bdafefeaba1e",
       "scratch/t29/out/subtable_inventory.json": "8fac6332b8861600b77cad119bacc2a7fea54d465b67ff24c1a0ee110239c424",
       "scratch/t29/out/profiles/table_server_34.profile.json": "54e62bbb093caafd9ce8a2d934f352b614804c3ea6d257568f37e8c0790edee5",
-      "scratch/t29/out/profiles/table_server_34.rows.jsonl": "4b00372475a0e37abada9c9cfeee0e0f00f1cea562248f23376079fde8c46f2b"
+      "scratch/t29/out/profiles/table_server_34.rows.jsonl": "4b00372475a0e37abada9c9cfeee0e0f00f1cea562248f23376079fde8c46f2b",
+      "scratch/t33/out/subtable_candidates.json": "ef888ae8a55e2af4ec3cfc12f0684d7c5da14fc869e953accfa3a1fd9f6eae8d",
+      "scratch/t33/out/profiles/table_server_12.profile.json": "7cec2e3b4caf3d7512484bcfc6c6c93b2eaec2b1b839a508405d737e39a9632c",
+      "scratch/t33/out/profiles/table_server_39.profile.json": "ec2e783102feb58a19e07df1c686d16bad154b12a40c5af588bd5a97118548b0",
+      "scratch/t33/out/profiles/table_server_45.profile.json": "0dbccc9c10e99d1127a933aaa2509ec6af113bd9b519d0633c151dd5bc493625",
+      "scratch/t33/out/profiles/table_server_48.profile.json": "db219602c9a299ecaed73c52780cea4b23d84ce1168f06f08c82cb1276e3e470",
+      "scratch/t33/out/profiles/table_server_58.profile.json": "057e58a65bd74c9901015c1a8e686831605d2cb4cf71e75931a96e6300e4c398",
+      "scratch/t33/out/profiles/table_server_59.profile.json": "3c4ee8efdb057ad21b020d67a6d08c174ffe42309bb2d3fc28e0fea11922ecf9",
+      "scratch/t33/out/profiles/table_server_73.profile.json": "b1f07143cb789cd411d10ba3bb356b81e48ab36216acb9b4122e748275c4f5f6"
     },
     "profile_basis": "Existing complete t29 server table34 full-row dump; t37 independently recomputed row closure and all primitive-width column statistics.",
     "t28_basis": "Existing accepted t28 client table10 evidence only; four linked parents are not redumped or re-promoted.",
+    "t33_basis": "All seven t33 batch-II candidate/profile pairs were consumed; exact parent-code intersection with nation.xml is empty. Table58 is retained as a weekly-wage near-name non-assignment, not a nation mapping.",
     "multi_frame_note": "Use the existing table_server_34 profile/rows; its recorded packed_offset is the +34-byte zstd-frame origin, not the +9-byte empty stub.",
     "evidence_policy": "RTTI and table34 schema/value compatibility produce a low-confidence candidate only; no field-to-offset conclusion and no new L3/L4 claims."
   },
@@ -5418,6 +5427,136 @@
         "Frozen schema list_item_fields is empty; row shape may be ref-only, embedded, shared, or otherwise unresolved.",
         "No independent child-table identity or count/stride link is established by the consumed evidence."
       ]
+    }
+  ],
+  "t33_profile_reviews": [
+    {
+      "table_type": 12,
+      "archive": "server",
+      "rtti_class": "STARTING_AWARD_HISTORY",
+      "count": 28597,
+      "stride": null,
+      "profile_status": "complete_data_profile",
+      "profile_file": "scratch/t33/out/profiles/table_server_12.profile.json",
+      "profile_sha256": "7cec2e3b4caf3d7512484bcfc6c6c93b2eaec2b1b839a508405d737e39a9632c",
+      "rows_file": "scratch/t33/out/profiles/table_server_12.rows.jsonl",
+      "rows_sha256": "b233e433a3f2a644a748d7f22ad057eb675244b12c969009a83e7d456a0ec3a8",
+      "declared_parent_codes": [
+        "AWsh"
+      ],
+      "nation_parent_code_intersection": [],
+      "review_status": "negative_no_exact_nation_parent_code",
+      "note": "Existing t33 candidate parents do not establish a nation list-parent link; profile retained as a non-assignment cross-check."
+    },
+    {
+      "table_type": 39,
+      "archive": "server",
+      "rtti_class": "STARTING_AVERAGE_POINTS",
+      "count": 117,
+      "stride": 42,
+      "profile_status": "complete_data_profile",
+      "profile_file": "scratch/t33/out/profiles/table_server_39.profile.json",
+      "profile_sha256": "ec2e783102feb58a19e07df1c686d16bad154b12a40c5af588bd5a97118548b0",
+      "rows_file": "scratch/t33/out/profiles/table_server_39.rows.jsonl",
+      "rows_sha256": "d4f112e2e1022565bd297833302e7c38a4a75d8a8a19668ef67015ded5bfbf62",
+      "declared_parent_codes": [
+        "csap"
+      ],
+      "nation_parent_code_intersection": [],
+      "review_status": "negative_no_exact_nation_parent_code",
+      "note": "Existing t33 candidate parents do not establish a nation list-parent link; profile retained as a non-assignment cross-check."
+    },
+    {
+      "table_type": 45,
+      "archive": "server",
+      "rtti_class": "STARTING_RECORD",
+      "count": 84477,
+      "stride": null,
+      "profile_status": "complete_data_profile",
+      "profile_file": "scratch/t33/out/profiles/table_server_45.profile.json",
+      "profile_sha256": "0dbccc9c10e99d1127a933aaa2509ec6af113bd9b519d0633c151dd5bc493625",
+      "rows_file": "scratch/t33/out/profiles/table_server_45.rows.jsonl",
+      "rows_sha256": "1ef37f0b9ca70617c9eeaac54d3eb7e3b1d4adbaace5e18d2c023cbb72459dab",
+      "declared_parent_codes": [
+        "Plhs",
+        "Pnph",
+        "Pacl"
+      ],
+      "nation_parent_code_intersection": [],
+      "review_status": "negative_no_exact_nation_parent_code",
+      "note": "Existing t33 candidate parents do not establish a nation list-parent link; profile retained as a non-assignment cross-check."
+    },
+    {
+      "table_type": 48,
+      "archive": "server",
+      "rtti_class": "STARTING_RECORD",
+      "count": 5210,
+      "stride": null,
+      "profile_status": "complete_data_profile",
+      "profile_file": "scratch/t33/out/profiles/table_server_48.profile.json",
+      "profile_sha256": "db219602c9a299ecaed73c52780cea4b23d84ce1168f06f08c82cb1276e3e470",
+      "rows_file": "scratch/t33/out/profiles/table_server_48.rows.jsonl",
+      "rows_sha256": "2aaebb9b8b996b57db0f6a20d064dc53ef222a0d01e929ddec0dbebb07949864",
+      "declared_parent_codes": [
+        "Plhs",
+        "Pnph",
+        "Pacl"
+      ],
+      "nation_parent_code_intersection": [],
+      "review_status": "negative_no_exact_nation_parent_code",
+      "note": "Existing t33 candidate parents do not establish a nation list-parent link; profile retained as a non-assignment cross-check."
+    },
+    {
+      "table_type": 58,
+      "archive": "server",
+      "rtti_class": "STARTING_WEEKLY_WAGE_CONTRIBUTION",
+      "count": 8,
+      "stride": 45,
+      "profile_status": "complete_data_profile",
+      "profile_file": "scratch/t33/out/profiles/table_server_58.profile.json",
+      "profile_sha256": "057e58a65bd74c9901015c1a8e686831605d2cb4cf71e75931a96e6300e4c398",
+      "rows_file": "scratch/t33/out/profiles/table_server_58.rows.jsonl",
+      "rows_sha256": "b28e4054e34892491d2249b038b60111c94a4e74b802c829f591ba08c47d1754",
+      "declared_parent_codes": [
+        "Cwcl"
+      ],
+      "nation_parent_code_intersection": [],
+      "review_status": "partial_semantic_only_not_assigned",
+      "note": "STARTING_WEEKLY_WAGE_CONTRIBUTION is a near-name check against nation NWGv, but t33 only carries the club-side Cwcl candidate; no nation parent/read-sink join, so table58 is not assigned."
+    },
+    {
+      "table_type": 59,
+      "archive": "server",
+      "rtti_class": "STARTING_MEDIA_EXPECTATIONS",
+      "count": 9079,
+      "stride": null,
+      "profile_status": "complete_data_profile",
+      "profile_file": "scratch/t33/out/profiles/table_server_59.profile.json",
+      "profile_sha256": "3c4ee8efdb057ad21b020d67a6d08c174ffe42309bb2d3fc28e0fea11922ecf9",
+      "rows_file": "scratch/t33/out/profiles/table_server_59.rows.jsonl",
+      "rows_sha256": "b06e7e468f6d9e1c3cb8b8b36533b667ae87a74b2338fe8c24e91f7a34abcc49",
+      "declared_parent_codes": [
+        "Csme"
+      ],
+      "nation_parent_code_intersection": [],
+      "review_status": "negative_no_exact_nation_parent_code",
+      "note": "Existing t33 candidate parents do not establish a nation list-parent link; profile retained as a non-assignment cross-check."
+    },
+    {
+      "table_type": 73,
+      "archive": "server",
+      "rtti_class": "STARTING_ITALIAN_SERIE_A_NON_EU_PLAYER_SIGNED_FOR_RESTRICTED_SLOT",
+      "count": 1,
+      "stride": 23,
+      "profile_status": "complete_data_profile",
+      "profile_file": "scratch/t33/out/profiles/table_server_73.profile.json",
+      "profile_sha256": "b1f07143cb789cd411d10ba3bb356b81e48ab36216acb9b4122e748275c4f5f6",
+      "rows_file": "scratch/t33/out/profiles/table_server_73.rows.jsonl",
+      "rows_sha256": "f35d3bbfe30eed640fd8ea99325657d4a1bc17f28217e6e3b30b26b927d67c24",
+      "declared_parent_codes": [],
+      "nation_parent_code_intersection": [],
+      "review_status": "negative_no_exact_nation_parent_code",
+      "note": "Existing t33 candidate parents do not establish a nation list-parent link; profile retained as a non-assignment cross-check."
     }
   ],
   "rtti_name_probes": [
