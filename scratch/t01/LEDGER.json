@@ -1667,6 +1667,25 @@
    "claim": "【t27 验收通过 — 子表 cursor 方法模板证实,Cstc 0→14 L3】sol 18min 交付。指挥官独立核验 33 项全绿:自写 walker 走 server table_22 449×79B(13+449×79+9=35493,footer 9B 00000000|01|c1010000@35484,selector 全 00,identity=(i,i+1,i+1))+ client 449×13B(仅 selector+12B identity,5859B);三日期槽 +12/+16/+50 packed(day,year) 精确吻合 t13d(2000-2030/2017-2030/1900-2030);14 晋级字段全 449 行满足各自 schema 类型规则(date/ref/bool/integer);Scpm@+29 raw{0:390,2:36,4:23} bit2 解码;Salt@+25 live208 落 stadium ordinal 域;静态重读 6/6 字节+VA 吻合(3 个漏算 4B 读 call 0x140db8980 @0x1537888/89c/9d0、width12 mov r8d,0xc @0x1537aa8、数据分支 jb @0x1537acc)。t20 verify 仍 PASS,锚点 7/7。【破 t20 卡点关键】t20 的 23 分支只数到首个 ret;全可达 210 指令/35 块/28 条件分支,找到 3 个 helper 中介漏算 4B 读(对象+0x30/34/38)补足 66B 属性块(54B 直读+12B bulk);12B bulk=identity 非业务。【14 L3】Slea/Scap/Salt/Scpm/Sscp/Snxa/Snmn/Snmx/Stks/Slmd/Slhm/ScTL/ScYL/Sceb。【6 保留】Styp@+24/Scns@+59 enum 越界、Scam@+55 超界、Sold/Snew/Ssta 坐标-only 不分摊命名;slot0 引用形态 club 域吻合但无 scoped 4CC 不命名。t20 负例原文保留。【方法可复制】replication.md+scout.json:Cafl/Cvfl 共享 club-object 区间线索,独立表号仍 unknown(交 luna t29)。",
    "evidence": "scratch/t27/out/{REPORT.md,cursor_t22.json,fields_t22*.json,verify.py,replication.md,scout.json}; scratch/cmd/t27_spot.py(33 项全绿); scripts/t27_stadium_cursor.py",
    "consequence": "子表 branch-resolved 方法正典=t27;t22 Cstc 14 L3 可作锚点;方法复制 Cafl/Cvfl 等待 t29 定子表号;nation 变量尾派 sol t28"
+  },
+  {
+   "id": "E64",
+   "date": "2026-11-19 13:35",
+   "author": "commander(t28 独立验收)",
+   "kind": "acceptance",
+   "level": "L1(全量自走 client 251 行/931 item)+L3(静态字节重读 40/40)",
+   "claim": "【t28 验收通过 — nation client 变量尾 reader→wire 闭合,+23 L3,累计 25/49】sol 交付。指挥官独立核验 19 项全绿(自写 walker 自推 count,不信任 t25 逐行值):client table_10 payload 24732,251 行,物理闭合 13+24710+9=24732,footer 9B 00000000|01|ec7ae404(末 u32 常量非行数,与 t22 约定异);全 251 行 identity=(i,rid,rid),row55=(55,110,110)@0x1042;集合 A492/B214/C63/D162=931 item;A→Nlns(lang u32@0/perc u8@4,perc 492 值全 1-100 落 schema 0-100),B→Nefr/C→Nnfr(28B=5×4B+2×4B date thunk,非 20/24B;B/C 同宽不能互区,靠 getter selector 0/1 选对象+0xa8/+0x90),D→Nagr(12B,NGed 162/162 默认 1900-001);B/C 六日期列 554 值位拆分高16年/低9日/中7位全 0,年 1900-2027 日 1-214;字段台账 25 L3+6 candidate+18 unresolved;PE SHA 吻合,1912 指令分片,静态抽样 40/40 字节+VA 吻合。其独立 verifier PASS,selftest OK,锚点 7/7,builder --help rc=0。【分母】direct 6/21,nested 19/28;4 list 父+19 子字段晋级。arg8!=0 路径不归属 client/server(强制走 D 后 43B 块在 row0 即读假 identity 反例);t01g negative 保留;Ncpi 归 t22 不计分母;392 unmarked 不新归属。",
+   "evidence": [
+    "scratch/t28/out/cursor_nation_tail.json",
+    "scratch/t28/out/fields_nation_client.json",
+    "scratch/t28/out/verify.py(PASS)",
+    "scratch/t28/out/instructions.part001-015.json(1912)",
+    "scratch/t28/out/branches.part001-002.json(184 条件)",
+    "scratch/cmd/t28_spot.py(指挥官 19/19)",
+    "scripts/t28_nation_tail.py(selftest OK)",
+    "scratch/t25/out/cursor_nation.json(数据帧对账)"
+   ],
+   "consequence": "nation client 49 分母中 25 L3 闭合;剩余 direct 15(6 语言标记 candidate 无行内绑定+ttcl/tbcl/6 Tko/Tkg/Ntxr 未解)+nested 9(Ntxr 子字段)未解,需独立锚点另案。子表/变量尾 branch-aware 方法第二次证实(t27 子表→t28 变长集合)。sol 空闲→派 t30 Clhs 子表 cursor(待 t29 画像)。nation server table_10 文法仍开放。"
   }
  ]
 }
