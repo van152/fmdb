@@ -1957,6 +1957,16 @@
    "claim": "t48 schema v4 接受(Cafl/Cvfl 并 CLUB_LINK 共享 auxiliary)。v3 八表 verbatim 保留;club_L3_occurrences 94(52 v3+26 Cafl+16 Cvfl),club_L3_unique_wire_fields 59(52+7 CLUB_LINK 物理 wire 单元),held_fields 21(16+3 Cafl+2 Cvfl,unique held 坐标 3:type/yfee/msls),negative_regressions 4 verbatim,L4=0。dual accounting:affl/ismc 共 endpoint lane 不加槽,20 bool 共一个 u32 wire word 计 1,Cvfl.clfr runtime-only 无 wire slot 排除。CLUB_LINK closure 12+9261x47+0=435279,payload SHA 89333280/row_block 17a167f0/compressed 894f1efb/packed 63944 全吻合 E84。t46 nation 数据侧已并(server t10 251 行 SHA 19337841,A_B_C_D grammar open,L3=0)。nation Ntxr(t47 E87 7 L3)尚未并(v4 scope 早于 t47)→v5 待办。",
    "evidence": "reports/club_nation_subtable_schema.json+.md(v4,340 行 md 含 dual accounting+CLUB_LINK+Cafl/Cvfl occurrence 表); scratch/t48/out/consolidate_v4.py(--selftest PASS)+verify.py(VERIFY PASS rc0)+club_nation_subtable_schema.v3.json(SHA 81efb123); scratch/cmd/t48_spot.py 43/43(独立重解码 club_links.dat 验 payload/compressed/row_block SHA+count@8=9261+closure,v3 tables verbatim 比对,dual accounting 算术,t44 grades,negatives,t46 status)。anchors 7/7。",
    "consequence": "club schema 升 v4:8 numbered 表+CLUB_LINK 共享 auxiliary(Cafl/Cvfl 两视图),94 scoped L3 occurrences/59 unique wire fields。luna 于收尾停止前已完成 v4 实质,REPORT/DONE 由指挥官补写。下一 v5 应并 t47 Ntxr 7 L3+t49 t9 wire 验收结果。L4=0。"
+  },
+  {
+   "id": "E89",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": "t49(sol) t9 NATIONAL_TEAM_CONTAINER 双档 wire 验收(partial,sidecar open):table_9.dat client mode0/server mode1 各 251 行闭合(wire13 client 13+31934+9=31956 行长58-461B,server 13+307542+9=307564 行长383-36514B;双档 251 selector=0,identity 后置 ordinal=行/重复 lane 相等/唯一,首行 (0,5,5) client@264 server@1099;footer 00000000|01|ec7ae404 末 lane=最大 identity 82082540)。8 parent 中 7 至少一档有真实 item:Nntp/Nctp/Nrtp item bytes 跨档一致(1136/640/254),nati→t10/cont→t5/regi→t19 全 join,pers→people_db 658011 ordinal 2658/2658(raw 当公开 UID 仅 138 hit,首 miss @284=43016);NTRv/NWGv/NSps valu i32 count20=114/114/18 行共 2280/2280/360,client mode bypass;Nfmp perm 位 0/1=927/1731 同 byte 与 side mask 0x07(@291=0c 例)。17 L3(item 相对偏移)+13 held(同名枚举 probe 无 scoped enum_ref;repu 合成索引;NCro comp/crep 无实档项)。table_extra_9.dat 双档均被 slot19 modern 路径拒绝(6 拒绝记录),sidecar reader 未绑,未分配任何 parent 字节;NCro 251 行 gate=0 无 live item。mina/maxa 判定为年龄 i8(14-44/15-45 冻结域),纠正 brief 的 cash i32 假设,不外推。L4=0。",
+   "evidence": "scratch/t49/out/(discovery_t9_wire.json+cursor_t9_client/server.json+fields_*.json x8+instructions 17+branches 3+verify.py+REPORT.md+DONE.md);builder scripts/t49_nation_t9.py --selftest rc0;独立 verify rc0(251+251/6 拒绝/L3=17/held=13/sidecar open);anchors 7/7;指挥官独立 spot scratch/cmd/t49_spot.py 99/99(独立 codec 重解码 4 payload SHA 全吻合,双档闭包/selector/identity/footer 原字节复核,跨档 item bytes 相等 Nntp1136+Nctp640+Nrtp254,nati/cont/regi 首 lane∈[0,250],NCro 全 gate=0,Nfmp @284=43016/@291=0c/perm 927+1731,grade 和 17+13,t37 8af89c72/t47 2c0a5b53 原样)。",
+   "consequence": "t9 主表双档闭合,t9 item 层 17 L3/13 held;mode 绑定 client0/server1 沿袭 t46/t10 口径;sidecar(table_extra_9.dat)保持 open 负例(不得以表头/候选前缀分配);NCro 无 live 样本待真实数据。schema v5(t52)据此并 nation_t9_wire 节;6 unknown parent 归 t51。L4=0。"
   }
  ]
 }

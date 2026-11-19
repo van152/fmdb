@@ -1,1 +1,10 @@
-Warning: No project session found with id 't49-natt9-openai-codex'; creating a new session with that id.
+**t49 部分验收通过。** `table_9.dat` 绑定 slot 19 `0x105cb10`：client mode 0、server mode 1，各 **251/251 行**闭合，identity 与 footer 均通过。8 个 parent 中，7 个有实档 item；`NCro` 在 server 的 251 行中均为 gate=0，未晋级。字段合计 **17 L3、13 held、L4=0**。
+
+`table_extra_9.dat` 双档均拒绝 slot 19 的两种读法。首反例已保存，正向 reader/mode 与行界仍未确定；未将任何 parent 分配给 sidecar。部分 CFG 谓词仍待归因。t37/t47 基线与负例原样保留。
+
+独立 `verify.py`、builder 和 verifier 的 `--help` / `--selftest` 均通过；`t01_anchors.py` **7/7**。
+
+**交付清单**
+- `scratch/t49/out/`：`discovery_t9_wire.json`、`cursor_t9_{client,server}.json`、8 份 `fields_*.json`、`instructions.part*.json`、`branches.part*.json`、`verify.py`、`REPORT.md`、`DONE.md`
+- Builder：`scripts/t49_nation_t9.py`
+test` 均通过；`t01_anchors.py` **7/7**。t37/t47 基线与负结果未改。

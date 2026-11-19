@@ -1,0 +1,172 @@
+04330ce0 push     rsi
+04330ce1 push     rdi
+04330ce2 push     rbx
+04330ce3 sub      rsp, 0x30
+04330ce7 mov      rsi, rdx
+04330cea mov      rdi, rcx
+04330ced mov      rbx, qword ptr [rdx]
+04330cf0 mov      rax, qword ptr [rbx]
+04330cf3 lea      rdx, [rsp + 0x2f]
+04330cf8 mov      r8d, 1
+04330cfe mov      rcx, rbx
+04330d01 call     qword ptr [rax + 0x28]
+04330d04 cmp      dword ptr [rbx + 0x10], 0
+04330d08 jne      0x14449c486 => 4330e86
+04330d0e mov      rbx, qword ptr [rsi]
+04330d11 mov      rax, qword ptr [rbx]
+04330d14 lea      rdx, [rsp + 0x24]
+04330d19 mov      r8d, 2
+04330d1f mov      rcx, rbx
+04330d22 call     qword ptr [rax + 0x28]
+04330d25 cmp      dword ptr [rbx + 0x10], 0
+04330d29 jne      0x14449c486 => 4330e86
+04330d2f movzx    eax, word ptr [rsp + 0x24]
+04330d34 mov      ecx, eax
+04330d36 shr      ecx, 7
+04330d39 and      cl, 0xf8
+04330d3c mov      byte ptr [rdi + 2], cl
+04330d3f mov      ecx, eax
+04330d41 shr      ecx, 2
+04330d44 and      cl, 0xf8
+04330d47 mov      byte ptr [rdi + 1], cl
+04330d4a shl      al, 3
+04330d4d mov      byte ptr [rdi], al
+04330d4f mov      byte ptr [rdi + 3], 0xff
+04330d53 mov      rbx, qword ptr [rsi]
+04330d56 mov      rax, qword ptr [rbx]
+04330d59 lea      rdx, [rsp + 0x26]
+04330d5e mov      r8d, 2
+04330d64 mov      rcx, rbx
+04330d67 call     qword ptr [rax + 0x28]
+04330d6a cmp      dword ptr [rbx + 0x10], 0
+04330d6e jne      0x14449c486 => 4330e86
+04330d74 movzx    eax, word ptr [rsp + 0x26]
+04330d79 mov      ecx, eax
+04330d7b shr      ecx, 7
+04330d7e and      cl, 0xf8
+04330d81 mov      byte ptr [rdi + 6], cl
+04330d84 mov      ecx, eax
+04330d86 shr      ecx, 2
+04330d89 and      cl, 0xf8
+04330d8c mov      byte ptr [rdi + 5], cl
+04330d8f shl      al, 3
+04330d92 mov      byte ptr [rdi + 4], al
+04330d95 mov      byte ptr [rdi + 7], 0xff
+04330d99 mov      rbx, qword ptr [rsi]
+04330d9c mov      rax, qword ptr [rbx]
+04330d9f lea      rdx, [rsp + 0x28]
+04330da4 mov      r8d, 2
+04330daa mov      rcx, rbx
+04330dad call     qword ptr [rax + 0x28]
+04330db0 cmp      dword ptr [rbx + 0x10], 0
+04330db4 jne      0x14449c486 => 4330e86
+04330dba movzx    eax, word ptr [rsp + 0x28]
+04330dbf mov      ecx, eax
+04330dc1 shr      ecx, 7
+04330dc4 and      cl, 0xf8
+04330dc7 mov      byte ptr [rdi + 0xa], cl
+04330dca mov      ecx, eax
+04330dcc shr      ecx, 2
+04330dcf and      cl, 0xf8
+04330dd2 mov      byte ptr [rdi + 9], cl
+04330dd5 shl      al, 3
+04330dd8 mov      byte ptr [rdi + 8], al
+04330ddb mov      byte ptr [rdi + 0xb], 0xff
+04330ddf mov      rbx, qword ptr [rsi]
+04330de2 mov      rax, qword ptr [rbx]
+04330de5 lea      rdx, [rsp + 0x2a]
+04330dea mov      r8d, 2
+04330df0 mov      rcx, rbx
+04330df3 call     qword ptr [rax + 0x28]
+04330df6 cmp      dword ptr [rbx + 0x10], 0
+04330dfa jne      0x14449c486 => 4330e86
+04330e00 movzx    eax, word ptr [rsp + 0x2a]
+04330e05 mov      ecx, eax
+04330e07 shr      ecx, 7
+04330e0a and      cl, 0xf8
+04330e0d mov      byte ptr [rdi + 0xe], cl
+04330e10 mov      ecx, eax
+04330e12 shr      ecx, 2
+04330e15 and      cl, 0xf8
+04330e18 mov      byte ptr [rdi + 0xd], cl
+04330e1b shl      al, 3
+04330e1e mov      byte ptr [rdi + 0xc], al
+04330e21 mov      byte ptr [rdi + 0xf], 0xff
+04330e25 mov      rbx, qword ptr [rsi]
+04330e28 mov      rax, qword ptr [rbx]
+04330e2b lea      rdx, [rsp + 0x2c]
+04330e30 mov      r8d, 2
+04330e36 mov      rcx, rbx
+04330e39 call     qword ptr [rax + 0x28]
+04330e3c cmp      dword ptr [rbx + 0x10], 0
+04330e40 jne      0x14449c486 => 4330e86
+04330e42 movzx    eax, word ptr [rsp + 0x2c]
+04330e47 mov      ecx, eax
+04330e49 shr      ecx, 7
+04330e4c and      cl, 0xf8
+04330e4f mov      byte ptr [rdi + 0x12], cl
+04330e52 mov      ecx, eax
+04330e54 shr      ecx, 2
+04330e57 and      cl, 0xf8
+04330e5a mov      byte ptr [rdi + 0x11], cl
+04330e5d shl      al, 3
+04330e60 mov      byte ptr [rdi + 0x10], al
+04330e63 mov      byte ptr [rdi + 0x13], 0xff
+04330e67 mov      rbx, qword ptr [rsi]
+04330e6a add      rdi, 0x14
+04330e6e mov      rax, qword ptr [rbx]
+04330e71 mov      r8d, 1
+04330e77 mov      rcx, rbx
+04330e7a mov      rdx, rdi
+04330e7d call     qword ptr [rax + 0x28]
+04330e80 cmp      dword ptr [rbx + 0x10], 0
+04330e84 je       0x14449c490 => 4330e90
+04330e86 xor      eax, eax
+04330e88 add      rsp, 0x30
+04330e8c pop      rbx
+04330e8d pop      rdi
+04330e8e pop      rsi
+04330e8f ret      
+04330e90 mov      rax, qword ptr [rsi]
+04330e93 cmp      dword ptr [rax + 0x10], 0
+04330e97 sete     al
+04330e9a jmp      0x14449c488 => 4330e88
+03b48440 push     rsi
+03b48441 push     rdi
+03b48442 push     rbx
+03b48443 sub      rsp, 0x30
+03b48447 mov      rdi, rdx
+03b4844a mov      rsi, rcx
+03b4844d mov      byte ptr [rsp + 0x27], 0
+03b48452 mov      rax, qword ptr [rcx]
+03b48455 mov      rbx, qword ptr [rax]
+03b48458 mov      rax, qword ptr [rbx]
+03b4845b lea      rdx, [rsp + 0x27]
+03b48460 mov      r8d, 1
+03b48466 mov      rcx, rbx
+03b48469 call     qword ptr [rax + 0x28]
+03b4846c cmp      dword ptr [rbx + 0x10], 0
+03b48470 je       0x143cb3a76 => 3b48476
+03b48472 xor      eax, eax
+03b48474 jmp      0x143cb3ab1 => 3b484b1
+03b48476 cmp      byte ptr [rsp + 0x27], 0
+03b4847b je       0x143cb3aaf => 3b484af
+03b4847d mov      ecx, 0x18
+03b48482 call     0x14007a910 => 79f10
+03b48487 mov      rbx, rax
+03b4848a mov      rcx, rax
+03b4848d call     0x1407c9510 => 7c8b10
+03b48492 mov      qword ptr [rdi], rbx
+03b48495 mov      rax, qword ptr [rsi]
+03b48498 mov      rcx, qword ptr [rax]
+03b4849b lea      rdx, [rsp + 0x28]
+03b484a0 mov      r8, rbx
+03b484a3 call     0x140839480 => 838a80
+03b484a8 cmp      dword ptr [rsp + 0x28], 0
+03b484ad jne      0x143cb3a72 => 3b48472
+03b484af mov      al, 1
+03b484b1 add      rsp, 0x30
+03b484b5 pop      rbx
+03b484b6 pop      rdi
+03b484b7 pop      rsi
+03b484b8 ret      
