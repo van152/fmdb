@@ -1,0 +1,2793 @@
+[
+  {
+    "site": 17038054,
+    "function": 17038016,
+    "predicate": 17038052,
+    "predicate_instruction": "test al, al",
+    "taken": 17040816,
+    "fallthrough": 17038060,
+    "classification": "runtime-external",
+    "reason": "caller mode or runtime length guard, not row selector/item tag",
+    "first_counterexample": {
+      "wrong_mode": "row 0 A invalid count -90 @38"
+    }
+  },
+  {
+    "site": 17038101,
+    "function": 17038016,
+    "predicate": 17038097,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17038107,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 14,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17038142,
+    "function": 17038016,
+    "predicate": 17038138,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17038148,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 18,
+      "width": 2,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17038189,
+    "function": 17038016,
+    "predicate": 17038186,
+    "predicate_instruction": "cmp rcx, rbx",
+    "taken": 17038432,
+    "fallthrough": 17038195,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038198,
+    "function": 17038016,
+    "predicate": 17038195,
+    "predicate_instruction": "test ax, ax",
+    "taken": 17042393,
+    "fallthrough": 17038204,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038269,
+    "function": 17038016,
+    "predicate": 17038266,
+    "predicate_instruction": "test rsi, rsi",
+    "taken": 17038396,
+    "fallthrough": 17038271,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038292,
+    "function": 17038016,
+    "predicate": 17038288,
+    "predicate_instruction": "cmp rcx, -1",
+    "taken": 17038305,
+    "fallthrough": 17038294,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038309,
+    "function": 17038016,
+    "predicate": 17038305,
+    "predicate_instruction": "cmp byte ptr [rax + 0x34], 0",
+    "taken": 17038381,
+    "fallthrough": 17038311,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038329,
+    "function": 17038016,
+    "predicate": 17038326,
+    "predicate_instruction": "cmp rdx, rcx",
+    "taken": 17038381,
+    "fallthrough": 17038331,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038338,
+    "function": 17038016,
+    "predicate": 17038335,
+    "predicate_instruction": "test rbp, rbp",
+    "taken": 17038381,
+    "fallthrough": 17038340,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038363,
+    "function": 17038016,
+    "predicate": 17038359,
+    "predicate_instruction": "cmp byte ptr [rbp + 0x48], 0",
+    "taken": 17041734,
+    "fallthrough": 17038369,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038435,
+    "function": 17038016,
+    "predicate": 17038432,
+    "predicate_instruction": "test ax, ax",
+    "taken": 17038933,
+    "fallthrough": 17038441,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038491,
+    "function": 17038016,
+    "predicate": 17038488,
+    "predicate_instruction": "cmp r14d, eax",
+    "taken": 17038933,
+    "fallthrough": 17038497,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038532,
+    "function": 17038016,
+    "predicate": 17038528,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17038538,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038552,
+    "function": 17038016,
+    "predicate": 17038545,
+    "predicate_instruction": "cmp rdi, qword ptr [r15 + 0x138]",
+    "taken": 17038464,
+    "fallthrough": 17038554,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038688,
+    "function": 17038016,
+    "predicate": 17038685,
+    "predicate_instruction": "cmp r13, rdi",
+    "taken": 17038718,
+    "fallthrough": 17038690,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038736,
+    "function": 17038016,
+    "predicate": 17038725,
+    "predicate_instruction": "test rdi, rdi",
+    "taken": 17038864,
+    "fallthrough": 17038738,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038759,
+    "function": 17038016,
+    "predicate": 17038755,
+    "predicate_instruction": "cmp rcx, -1",
+    "taken": 17038769,
+    "fallthrough": 17038761,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038765,
+    "function": 17038016,
+    "predicate": 17038761,
+    "predicate_instruction": "cmp byte ptr [rax + 0x34], 0",
+    "taken": 17038786,
+    "fallthrough": 17038767,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038784,
+    "function": 17038016,
+    "predicate": 17038780,
+    "predicate_instruction": "cmp byte ptr [rax + 0x34], 0",
+    "taken": 17038849,
+    "fallthrough": 17038786,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038804,
+    "function": 17038016,
+    "predicate": 17038801,
+    "predicate_instruction": "cmp rdx, rcx",
+    "taken": 17038849,
+    "fallthrough": 17038806,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038813,
+    "function": 17038016,
+    "predicate": 17038810,
+    "predicate_instruction": "test rbx, rbx",
+    "taken": 17038849,
+    "fallthrough": 17038815,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038838,
+    "function": 17038016,
+    "predicate": 17038834,
+    "predicate_instruction": "cmp byte ptr [rbx + 0x48], 0",
+    "taken": 17038911,
+    "fallthrough": 17038840,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038915,
+    "function": 17038016,
+    "predicate": 17038913,
+    "predicate_instruction": "test al, al",
+    "taken": 17038864,
+    "fallthrough": 17038917,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038921,
+    "function": 17038016,
+    "predicate": 17038917,
+    "predicate_instruction": "cmp byte ptr [rbx + 0x61], 0",
+    "taken": 17038864,
+    "fallthrough": 17038923,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17038969,
+    "function": 17038016,
+    "predicate": 17038965,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17038975,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 20,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17039006,
+    "function": 17038016,
+    "predicate": 17039003,
+    "predicate_instruction": "cmp rcx, rdi",
+    "taken": 17039144,
+    "fallthrough": 17039012,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039014,
+    "function": 17038016,
+    "predicate": 17039012,
+    "predicate_instruction": "test eax, eax",
+    "taken": 17042398,
+    "fallthrough": 17039020,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039085,
+    "function": 17038016,
+    "predicate": 17039082,
+    "predicate_instruction": "test rdx, rdx",
+    "taken": 17039109,
+    "fallthrough": 17039087,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039146,
+    "function": 17038016,
+    "predicate": 17039144,
+    "predicate_instruction": "test eax, eax",
+    "taken": 17039619,
+    "fallthrough": 17039152,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039192,
+    "function": 17038016,
+    "predicate": 17039187,
+    "predicate_instruction": "cmp r14d, dword ptr [rsp + 0x48]",
+    "taken": 17039619,
+    "fallthrough": 17039198,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039232,
+    "function": 17038016,
+    "predicate": 17039228,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17039238,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039252,
+    "function": 17038016,
+    "predicate": 17039245,
+    "predicate_instruction": "cmp rdi, qword ptr [r15 + 0x168]",
+    "taken": 17039170,
+    "fallthrough": 17039254,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039385,
+    "function": 17038016,
+    "predicate": 17039382,
+    "predicate_instruction": "cmp rbx, rdi",
+    "taken": 17039415,
+    "fallthrough": 17039387,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039425,
+    "function": 17038016,
+    "predicate": 17039422,
+    "predicate_instruction": "test rsi, rsi",
+    "taken": 17039545,
+    "fallthrough": 17039427,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039448,
+    "function": 17038016,
+    "predicate": 17039444,
+    "predicate_instruction": "cmp rcx, -1",
+    "taken": 17039461,
+    "fallthrough": 17039450,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039465,
+    "function": 17038016,
+    "predicate": 17039461,
+    "predicate_instruction": "cmp byte ptr [rax + 0x34], 0",
+    "taken": 17039530,
+    "fallthrough": 17039467,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039485,
+    "function": 17038016,
+    "predicate": 17039482,
+    "predicate_instruction": "cmp rdx, rcx",
+    "taken": 17039530,
+    "fallthrough": 17039487,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039494,
+    "function": 17038016,
+    "predicate": 17039491,
+    "predicate_instruction": "test rdi, rdi",
+    "taken": 17039530,
+    "fallthrough": 17039496,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039519,
+    "function": 17038016,
+    "predicate": 17039515,
+    "predicate_instruction": "cmp byte ptr [rdi + 0x48], 0",
+    "taken": 17039597,
+    "fallthrough": 17039521,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039601,
+    "function": 17038016,
+    "predicate": 17039599,
+    "predicate_instruction": "test al, al",
+    "taken": 17039545,
+    "fallthrough": 17039603,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039607,
+    "function": 17038016,
+    "predicate": 17039603,
+    "predicate_instruction": "cmp byte ptr [rdi + 0x61], 0",
+    "taken": 17039545,
+    "fallthrough": 17039609,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039654,
+    "function": 17038016,
+    "predicate": 17039650,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17039660,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 24,
+      "width": 2,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17039684,
+    "function": 17038016,
+    "predicate": 17039678,
+    "predicate_instruction": "cmp word ptr [rsp + 0x4c], 0",
+    "taken": 17040201,
+    "fallthrough": 17039690,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039718,
+    "function": 17038016,
+    "predicate": 17039716,
+    "predicate_instruction": "cmp edi, eax",
+    "taken": 17040201,
+    "fallthrough": 17039724,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039755,
+    "function": 17038016,
+    "predicate": 17039749,
+    "predicate_instruction": "cmp eax, dword ptr [rcx + 4]",
+    "taken": 17040093,
+    "fallthrough": 17039761,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039844,
+    "function": 17038016,
+    "predicate": 17039842,
+    "predicate_instruction": "test al, al",
+    "taken": 17041712,
+    "fallthrough": 17039850,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039865,
+    "function": 17038016,
+    "predicate": 17039861,
+    "predicate_instruction": "cmp r14, qword ptr [rsi + 0x10]",
+    "taken": 17039701,
+    "fallthrough": 17039871,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17039993,
+    "function": 17038016,
+    "predicate": 17039990,
+    "predicate_instruction": "cmp rbp, r14",
+    "taken": 17040020,
+    "fallthrough": 17039995,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17040033,
+    "function": 17038016,
+    "predicate": 17040023,
+    "predicate_instruction": "test rdx, rdx",
+    "taken": 17040054,
+    "fallthrough": 17040035,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17040112,
+    "function": 17038016,
+    "predicate": 17040105,
+    "predicate_instruction": "cmp dword ptr [rip + 0xb1e518], -1",
+    "taken": 17039761,
+    "fallthrough": 17040118,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17040231,
+    "function": 17038016,
+    "predicate": 17040227,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17040237,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 26,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17040267,
+    "function": 17038016,
+    "predicate": 17040263,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17040273,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 30,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17040303,
+    "function": 17038016,
+    "predicate": 17040299,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17040309,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 34,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17040339,
+    "function": 17038016,
+    "predicate": 17040335,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17040345,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 38,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17040375,
+    "function": 17038016,
+    "predicate": 17040371,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17040381,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 42,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17040411,
+    "function": 17038016,
+    "predicate": 17040407,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17040417,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 46,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17040489,
+    "function": 17038016,
+    "predicate": 17040485,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17040495,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 50,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17040517,
+    "function": 17038016,
+    "predicate": 17040512,
+    "predicate_instruction": "cmp dword ptr [rsp + 0x44], 0",
+    "taken": 17040564,
+    "fallthrough": 17040519,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": {
+      "row": 31,
+      "absolute": 17819,
+      "count": 0
+    }
+  },
+  {
+    "site": 17040539,
+    "function": 17038016,
+    "predicate": 17040537,
+    "predicate_instruction": "test al, al",
+    "taken": 17041712,
+    "fallthrough": 17040545,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17040562,
+    "function": 17038016,
+    "predicate": 17040558,
+    "predicate_instruction": "cmp ebx, dword ptr [rsp + 0x44]",
+    "taken": 17040526,
+    "fallthrough": 17040564,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": {
+      "row": 0,
+      "count": 8,
+      "taken": 7,
+      "fallthrough": 1
+    }
+  },
+  {
+    "site": 17040600,
+    "function": 17038016,
+    "predicate": 17040596,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17040606,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 254,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17040611,
+    "function": 17038016,
+    "predicate": 17040606,
+    "predicate_instruction": "cmp dword ptr [rsp + 0x7c], 0",
+    "taken": 17040766,
+    "fallthrough": 17040617,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17040689,
+    "function": 17038016,
+    "predicate": 17040684,
+    "predicate_instruction": "cmp dword ptr [r15 + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17040695,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 258,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17040710,
+    "function": 17038016,
+    "predicate": 17040708,
+    "predicate_instruction": "test al, al",
+    "taken": 17041712,
+    "fallthrough": 17040716,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 262,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17040731,
+    "function": 17038016,
+    "predicate": 17040729,
+    "predicate_instruction": "test al, al",
+    "taken": 17041712,
+    "fallthrough": 17040737,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 266,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17040764,
+    "function": 17038016,
+    "predicate": 17040761,
+    "predicate_instruction": "cmp rbx, rax",
+    "taken": 17040649,
+    "fallthrough": 17040766,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17040796,
+    "function": 17038016,
+    "predicate": 17040791,
+    "predicate_instruction": "cmp dword ptr [rsp + 0x70], 0",
+    "taken": 17041712,
+    "fallthrough": 17040802,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17040846,
+    "function": 17038016,
+    "predicate": 17040842,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17040852,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 538,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17040882,
+    "function": 17038016,
+    "predicate": 17040878,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17040888,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 539,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17040918,
+    "function": 17038016,
+    "predicate": 17040914,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17040924,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 543,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17040954,
+    "function": 17038016,
+    "predicate": 17040950,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17040960,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 547,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17040990,
+    "function": 17038016,
+    "predicate": 17040986,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17040996,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 551,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17041026,
+    "function": 17038016,
+    "predicate": 17041022,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17041032,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 555,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17041062,
+    "function": 17038016,
+    "predicate": 17041058,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17041068,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 556,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17041098,
+    "function": 17038016,
+    "predicate": 17041094,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17041104,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 557,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17041134,
+    "function": 17038016,
+    "predicate": 17041130,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17041140,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 561,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17041182,
+    "function": 17038016,
+    "predicate": 17041178,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17041188,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 562,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17041211,
+    "function": 17038016,
+    "predicate": 17041206,
+    "predicate_instruction": "cmp byte ptr [rsp + 0x44], 0",
+    "taken": 17041275,
+    "fallthrough": 17041213,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17041250,
+    "function": 17038016,
+    "predicate": 17041248,
+    "predicate_instruction": "test al, al",
+    "taken": 17041712,
+    "fallthrough": 17041256,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17041273,
+    "function": 17038016,
+    "predicate": 17041269,
+    "predicate_instruction": "cmp bl, byte ptr [rsp + 0x44]",
+    "taken": 17041223,
+    "fallthrough": 17041275,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17041293,
+    "function": 17038016,
+    "predicate": 17041289,
+    "predicate_instruction": "cmp rcx, 0x10",
+    "taken": 17041299,
+    "fallthrough": 17041295,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17041335,
+    "function": 17038016,
+    "predicate": 17041331,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17041341,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 578,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17041366,
+    "function": 17038016,
+    "predicate": 17041361,
+    "predicate_instruction": "cmp dword ptr [rsp + 0x70], 0",
+    "taken": 17041481,
+    "fallthrough": 17041368,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17041456,
+    "function": 17038016,
+    "predicate": 17041454,
+    "predicate_instruction": "test al, al",
+    "taken": 17041712,
+    "fallthrough": 17041462,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17041479,
+    "function": 17038016,
+    "predicate": 17041475,
+    "predicate_instruction": "cmp ebx, dword ptr [rsp + 0x70]",
+    "taken": 17041385,
+    "fallthrough": 17041481,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17041523,
+    "function": 17038016,
+    "predicate": 17041519,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17041529,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 582,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17041560,
+    "function": 17038016,
+    "predicate": 17041552,
+    "predicate_instruction": "cmp dword ptr [rsp + 0x80], 0",
+    "taken": 17041674,
+    "fallthrough": 17041562,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17041650,
+    "function": 17038016,
+    "predicate": 17041648,
+    "predicate_instruction": "test al, al",
+    "taken": 17041712,
+    "fallthrough": 17041652,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17041672,
+    "function": 17038016,
+    "predicate": 17041665,
+    "predicate_instruction": "cmp ebx, dword ptr [rsp + 0x80]",
+    "taken": 17041579,
+    "fallthrough": 17041674,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17041710,
+    "function": 17038016,
+    "predicate": 17041706,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041767,
+    "fallthrough": 17041712,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 586,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17041738,
+    "function": 17038016,
+    "predicate": 17041736,
+    "predicate_instruction": "test al, al",
+    "taken": 17038396,
+    "fallthrough": 17041744,
+    "classification": "dead",
+    "reason": "taken requires zeroed AL to be nonzero, or null stream is subsequently dereferenced (effective-path exclusion)",
+    "first_counterexample": null
+  },
+  {
+    "site": 17041748,
+    "function": 17038016,
+    "predicate": 17041744,
+    "predicate_instruction": "cmp byte ptr [rbp + 0x61], 0",
+    "taken": 17038396,
+    "fallthrough": 17041754,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17041792,
+    "function": 17038016,
+    "predicate": 17041787,
+    "predicate_instruction": "cmp dword ptr [rsp + 0x48], 0",
+    "taken": 17041867,
+    "fallthrough": 17041794,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17041838,
+    "function": 17038016,
+    "predicate": 17041836,
+    "predicate_instruction": "test al, al",
+    "taken": 17041712,
+    "fallthrough": 17041840,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17041865,
+    "function": 17038016,
+    "predicate": 17041862,
+    "predicate_instruction": "cmp rdi, rax",
+    "taken": 17041811,
+    "fallthrough": 17041867,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17041875,
+    "function": 17038016,
+    "predicate": 17041867,
+    "predicate_instruction": "cmp byte ptr [rsp + 0x120], 0",
+    "taken": 17042313,
+    "fallthrough": 17041881,
+    "classification": "runtime-external",
+    "reason": "caller mode or runtime length guard, not row selector/item tag",
+    "first_counterexample": {
+      "wrong_mode": "row 0 extra_158 invalid count 1507845 @7188"
+    }
+  },
+  {
+    "site": 17041911,
+    "function": 17038016,
+    "predicate": 17041907,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17041917,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 590,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17041947,
+    "function": 17038016,
+    "predicate": 17041943,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17041953,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 594,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17041983,
+    "function": 17038016,
+    "predicate": 17041979,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17041989,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 598,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17042019,
+    "function": 17038016,
+    "predicate": 17042015,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17042025,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 602,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17042055,
+    "function": 17038016,
+    "predicate": 17042051,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17042061,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 606,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17042091,
+    "function": 17038016,
+    "predicate": 17042087,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17042097,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 610,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17042127,
+    "function": 17038016,
+    "predicate": 17042123,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17042133,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 614,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17042163,
+    "function": 17038016,
+    "predicate": 17042159,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17042169,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 618,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17042199,
+    "function": 17038016,
+    "predicate": 17042195,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17042205,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 622,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17042235,
+    "function": 17038016,
+    "predicate": 17042231,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17042241,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 626,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17042271,
+    "function": 17038016,
+    "predicate": 17042267,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17042277,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 630,
+      "width": 2,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 17042307,
+    "function": 17038016,
+    "predicate": 17042303,
+    "predicate_instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "taken": 17041712,
+    "fallthrough": 17042313,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 632,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 69257498,
+    "function": 69257456,
+    "predicate": 69257494,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 69257774,
+    "fallthrough": 69257504,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 54,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 69257530,
+    "function": 69257456,
+    "predicate": 69257526,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 69257774,
+    "fallthrough": 69257536,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "negative": "row 0 @55 width=4 site=0x420c933"
+    }
+  },
+  {
+    "site": 69257562,
+    "function": 69257456,
+    "predicate": 69257558,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 69257774,
+    "fallthrough": 69257568,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 59,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 69257594,
+    "function": 69257456,
+    "predicate": 69257590,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 69257774,
+    "fallthrough": 69257600,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 63,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 69257626,
+    "function": 69257456,
+    "predicate": 69257622,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 69257774,
+    "fallthrough": 69257632,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 67,
+      "width": 2,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 69257661,
+    "function": 69257456,
+    "predicate": 69257657,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 69257774,
+    "fallthrough": 69257663,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 69,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 69257689,
+    "function": 69257456,
+    "predicate": 69257685,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 69257774,
+    "fallthrough": 69257691,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 70,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 69257716,
+    "function": 69257456,
+    "predicate": 69257712,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 69257774,
+    "fallthrough": 69257718,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 71,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 69257744,
+    "function": 69257456,
+    "predicate": 69257740,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 69257774,
+    "fallthrough": 69257746,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 75,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 69257772,
+    "function": 69257456,
+    "predicate": 69257768,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 69257786,
+    "fallthrough": 69257774,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 76,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 69257791,
+    "function": 69257456,
+    "predicate": 69257786,
+    "predicate_instruction": "cmp byte ptr [rsp + 0x27], 2",
+    "taken": 69257824,
+    "fallthrough": 69257793,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": {
+      "at": 54,
+      "raw_tag": 2,
+      "synthetic_tag": 1,
+      "new_length": 23,
+      "new_footer_at": 422334
+    }
+  },
+  {
+    "site": 69257822,
+    "function": 69257456,
+    "predicate": 69257818,
+    "predicate_instruction": "cmp dword ptr [rdi + 0x10], 0",
+    "taken": 69257774,
+    "fallthrough": 69257824,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 77,
+      "width": 2,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 69257830,
+    "function": 69257456,
+    "predicate": 69257826,
+    "predicate_instruction": "cmp byte ptr [r14], 0",
+    "taken": 69257776,
+    "fallthrough": 69257832,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": {
+      "row": 0,
+      "item": 0,
+      "absolute": 69,
+      "mutation": "zero person-type input makes stored byte 1; consumes same bytes"
+    }
+  },
+  {
+    "site": 56297525,
+    "function": 56297456,
+    "predicate": 56297518,
+    "predicate_instruction": "cmp qword ptr [rip - 0x1c7462d], rdx",
+    "taken": 56297667,
+    "fallthrough": 56297531,
+    "classification": "runtime-external",
+    "reason": "caller mode or runtime length guard, not row selector/item tag",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297535,
+    "function": 56297456,
+    "predicate": 56297531,
+    "predicate_instruction": "cmp dword ptr [rdi + 0x10], 0",
+    "taken": 56297684,
+    "fallthrough": 56297541,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297543,
+    "function": 56297456,
+    "predicate": 56297541,
+    "predicate_instruction": "test edx, edx",
+    "taken": 56297684,
+    "fallthrough": 56297549,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297637,
+    "function": 56297456,
+    "predicate": 56297634,
+    "predicate_instruction": "cmp rax, rbx",
+    "taken": 56297765,
+    "fallthrough": 56297639,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297650,
+    "function": 56297456,
+    "predicate": 56297646,
+    "predicate_instruction": "cmove rcx, rax",
+    "taken": 56297662,
+    "fallthrough": 56297652,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297655,
+    "function": 56297456,
+    "predicate": 56297652,
+    "predicate_instruction": "lock dec dword ptr [rcx]",
+    "taken": 56297662,
+    "fallthrough": 56297657,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297694,
+    "function": 56297456,
+    "predicate": 56297691,
+    "predicate_instruction": "cmp r14, rax",
+    "taken": 56297988,
+    "fallthrough": 56297700,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297732,
+    "function": 56297456,
+    "predicate": 56297728,
+    "predicate_instruction": "cmove rbx, rdx",
+    "taken": 56297851,
+    "fallthrough": 56297734,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297737,
+    "function": 56297456,
+    "predicate": 56297734,
+    "predicate_instruction": "test rax, rax",
+    "taken": 56297749,
+    "fallthrough": 56297739,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297742,
+    "function": 56297456,
+    "predicate": 56297739,
+    "predicate_instruction": "lock dec dword ptr [rcx]",
+    "taken": 56297749,
+    "fallthrough": 56297744,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297770,
+    "function": 56297456,
+    "predicate": 56297765,
+    "predicate_instruction": "lock dec dword ptr [r12]",
+    "taken": 56297780,
+    "fallthrough": 56297772,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297790,
+    "function": 56297456,
+    "predicate": 56297787,
+    "predicate_instruction": "test rbx, rbx",
+    "taken": 56297973,
+    "fallthrough": 56297796,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297801,
+    "function": 56297456,
+    "predicate": 56297796,
+    "predicate_instruction": "cmp qword ptr [rbx + 8], 0",
+    "taken": 56297973,
+    "fallthrough": 56297807,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297822,
+    "function": 56297456,
+    "predicate": 56297819,
+    "predicate_instruction": "cmp r15, rax",
+    "taken": 56297873,
+    "fallthrough": 56297824,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297854,
+    "function": 56297456,
+    "predicate": 56297851,
+    "predicate_instruction": "test rax, rax",
+    "taken": 56297866,
+    "fallthrough": 56297856,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297859,
+    "function": 56297456,
+    "predicate": 56297856,
+    "predicate_instruction": "lock dec dword ptr [rcx]",
+    "taken": 56297866,
+    "fallthrough": 56297861,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297891,
+    "function": 56297456,
+    "predicate": 56297888,
+    "predicate_instruction": "cmp rax, r14",
+    "taken": 56297946,
+    "fallthrough": 56297893,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297896,
+    "function": 56297456,
+    "predicate": 56297893,
+    "predicate_instruction": "test rcx, rcx",
+    "taken": 56297902,
+    "fallthrough": 56297898,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297912,
+    "function": 56297456,
+    "predicate": 56297909,
+    "predicate_instruction": "cmp rax, rcx",
+    "taken": 56297924,
+    "fallthrough": 56297914,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297920,
+    "function": 56297456,
+    "predicate": 56297917,
+    "predicate_instruction": "test rax, rax",
+    "taken": 56297951,
+    "fallthrough": 56297922,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297927,
+    "function": 56297456,
+    "predicate": 56297924,
+    "predicate_instruction": "test rcx, rcx",
+    "taken": 56297973,
+    "fallthrough": 56297929,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297933,
+    "function": 56297456,
+    "predicate": 56297929,
+    "predicate_instruction": "lock dec dword ptr [rcx - 4]",
+    "taken": 56297973,
+    "fallthrough": 56297935,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297949,
+    "function": 56297456,
+    "predicate": 56297946,
+    "predicate_instruction": "test rcx, rcx",
+    "taken": 56297973,
+    "fallthrough": 56297951,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297955,
+    "function": 56297456,
+    "predicate": 56297951,
+    "predicate_instruction": "lock dec dword ptr [rcx - 4]",
+    "taken": 56297966,
+    "fallthrough": 56297957,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 56297978,
+    "function": 56297456,
+    "predicate": 56297973,
+    "predicate_instruction": "lock dec dword ptr [r12]",
+    "taken": 56297988,
+    "fallthrough": 56297980,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 71891128,
+    "function": 71891088,
+    "predicate": 71891124,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 71891337,
+    "fallthrough": 71891134,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 162,
+      "absolute": 278811,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 71891155,
+    "function": 71891088,
+    "predicate": 71891150,
+    "predicate_instruction": "cmp dword ptr [rsp + 0x28], 0",
+    "taken": 71891337,
+    "fallthrough": 71891161,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 71891183,
+    "function": 71891088,
+    "predicate": 71891178,
+    "predicate_instruction": "cmp dword ptr [rsp + 0x28], 0",
+    "taken": 71891337,
+    "fallthrough": 71891189,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 71891211,
+    "function": 71891088,
+    "predicate": 71891206,
+    "predicate_instruction": "cmp dword ptr [rsp + 0x28], 0",
+    "taken": 71891337,
+    "fallthrough": 71891213,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 71891235,
+    "function": 71891088,
+    "predicate": 71891230,
+    "predicate_instruction": "cmp dword ptr [rsp + 0x28], 0",
+    "taken": 71891337,
+    "fallthrough": 71891237,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 71891251,
+    "function": 71891088,
+    "predicate": 71891249,
+    "predicate_instruction": "test al, al",
+    "taken": 71891337,
+    "fallthrough": 71891253,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 162,
+      "absolute": 278844,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 71891279,
+    "function": 71891088,
+    "predicate": 71891275,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 71891337,
+    "fallthrough": 71891281,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 162,
+      "absolute": 278848,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 71891307,
+    "function": 71891088,
+    "predicate": 71891303,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 71891337,
+    "fallthrough": 71891309,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 162,
+      "absolute": 278852,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 71891335,
+    "function": 71891088,
+    "predicate": 71891331,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 71891347,
+    "fallthrough": 71891337,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 162,
+      "absolute": 278856,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 60676028,
+    "function": 60676016,
+    "predicate": 60676025,
+    "predicate_instruction": "test rsi, rsi",
+    "taken": 60676055,
+    "fallthrough": 60676030,
+    "classification": "dead",
+    "reason": "taken requires zeroed AL to be nonzero, or null stream is subsequently dereferenced (effective-path exclusion)",
+    "first_counterexample": null
+  },
+  {
+    "site": 60676062,
+    "function": 60676016,
+    "predicate": 60676058,
+    "predicate_instruction": "lock dec dword ptr [rsi + 8]",
+    "taken": 60676077,
+    "fallthrough": 60676064,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 64441968,
+    "function": 64441904,
+    "predicate": 64441961,
+    "predicate_instruction": "cmp qword ptr [rip - 0x2438c68], rsi",
+    "taken": 64442320,
+    "fallthrough": 64441974,
+    "classification": "runtime-external",
+    "reason": "caller mode or runtime length guard, not row selector/item tag",
+    "first_counterexample": null
+  },
+  {
+    "site": 64441991,
+    "function": 64441904,
+    "predicate": 64441988,
+    "predicate_instruction": "cmp rax, rsi",
+    "taken": 64442222,
+    "fallthrough": 64441997,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 64442047,
+    "function": 64441904,
+    "predicate": 64442044,
+    "predicate_instruction": "test rbp, rbp",
+    "taken": 64442198,
+    "fallthrough": 64442053,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 64442071,
+    "function": 64441904,
+    "predicate": 64442067,
+    "predicate_instruction": "cmp rcx, -1",
+    "taken": 64442081,
+    "fallthrough": 64442073,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 64442077,
+    "function": 64441904,
+    "predicate": 64442073,
+    "predicate_instruction": "cmp byte ptr [rax + 0x34], 0",
+    "taken": 64442098,
+    "fallthrough": 64442079,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 64442096,
+    "function": 64441904,
+    "predicate": 64442092,
+    "predicate_instruction": "cmp byte ptr [rax + 0x34], 0",
+    "taken": 64442183,
+    "fallthrough": 64442098,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 64442116,
+    "function": 64441904,
+    "predicate": 64442113,
+    "predicate_instruction": "cmp rdx, rcx",
+    "taken": 64442183,
+    "fallthrough": 64442118,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 64442125,
+    "function": 64441904,
+    "predicate": 64442122,
+    "predicate_instruction": "test rcx, rcx",
+    "taken": 64442183,
+    "fallthrough": 64442127,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 64442165,
+    "function": 64441904,
+    "predicate": 64442161,
+    "predicate_instruction": "cmp byte ptr [rcx + 0x48], 0",
+    "taken": 64442347,
+    "fallthrough": 64442171,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 64442224,
+    "function": 64441904,
+    "predicate": 64442222,
+    "predicate_instruction": "test esi, esi",
+    "taken": 64442309,
+    "fallthrough": 64442226,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 64442275,
+    "function": 64441904,
+    "predicate": 64442273,
+    "predicate_instruction": "test al, al",
+    "taken": 64442320,
+    "fallthrough": 64442277,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 64442284,
+    "function": 64441904,
+    "predicate": 64442280,
+    "predicate_instruction": "cmp dword ptr [rax + 0x10], 0",
+    "taken": 64442309,
+    "fallthrough": 64442286,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 64442307,
+    "function": 64441904,
+    "predicate": 64442304,
+    "predicate_instruction": "cmp rbp, rax",
+    "taken": 64442240,
+    "fallthrough": 64442309,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 64442351,
+    "function": 64441904,
+    "predicate": 64442349,
+    "predicate_instruction": "test al, al",
+    "taken": 64442198,
+    "fallthrough": 64442357,
+    "classification": "dead",
+    "reason": "taken requires zeroed AL to be nonzero, or null stream is subsequently dereferenced (effective-path exclusion)",
+    "first_counterexample": null
+  },
+  {
+    "site": 64442361,
+    "function": 64441904,
+    "predicate": 64442357,
+    "predicate_instruction": "cmp byte ptr [rcx + 0x61], 0",
+    "taken": 64442198,
+    "fallthrough": 64442367,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 64659768,
+    "function": 64659728,
+    "predicate": 64659764,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 64659945,
+    "fallthrough": 64659774,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 52,
+      "absolute": 33627,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 64659799,
+    "function": 64659728,
+    "predicate": 64659795,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 64659945,
+    "fallthrough": 64659805,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 52,
+      "absolute": 33628,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 64659831,
+    "function": 64659728,
+    "predicate": 64659827,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 64659945,
+    "fallthrough": 64659833,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 52,
+      "absolute": 33632,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 64659859,
+    "function": 64659728,
+    "predicate": 64659855,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 64659945,
+    "fallthrough": 64659861,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 52,
+      "absolute": 33636,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 64659887,
+    "function": 64659728,
+    "predicate": 64659883,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 64659945,
+    "fallthrough": 64659889,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 52,
+      "absolute": 33637,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 64659915,
+    "function": 64659728,
+    "predicate": 64659911,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 64659945,
+    "fallthrough": 64659917,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 52,
+      "absolute": 33638,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 64659943,
+    "function": 64659728,
+    "predicate": 64659939,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 64659955,
+    "fallthrough": 64659945,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 52,
+      "absolute": 33639,
+      "width": 1,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 63308032,
+    "function": 63308016,
+    "predicate": 63308029,
+    "predicate_instruction": "test rsi, rsi",
+    "taken": 63308062,
+    "fallthrough": 63308034,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 63308081,
+    "function": 63308016,
+    "predicate": 63308074,
+    "predicate_instruction": "cmp r8d, 0x989681",
+    "taken": 63308091,
+    "fallthrough": 63308083,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 63308094,
+    "function": 63308016,
+    "predicate": 63308091,
+    "predicate_instruction": "test rcx, rcx",
+    "taken": 63308108,
+    "fallthrough": 63308096,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 63308111,
+    "function": 63308016,
+    "predicate": 63308108,
+    "predicate_instruction": "test rsi, rsi",
+    "taken": 63308132,
+    "fallthrough": 63308113,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 63308117,
+    "function": 63308016,
+    "predicate": 63308113,
+    "predicate_instruction": "lock dec dword ptr [rsi + 8]",
+    "taken": 63308132,
+    "fallthrough": 63308119,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 64517926,
+    "function": 64517888,
+    "predicate": 64517922,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 64517932,
+    "fallthrough": 64517928,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 0,
+      "absolute": 563,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 71891638,
+    "function": 71891600,
+    "predicate": 71891634,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 71891794,
+    "fallthrough": 71891644,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 11,
+      "absolute": 7850,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 71891670,
+    "function": 71891600,
+    "predicate": 71891666,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 71891794,
+    "fallthrough": 71891672,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 11,
+      "absolute": 7854,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 71891698,
+    "function": 71891600,
+    "predicate": 71891694,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 71891794,
+    "fallthrough": 71891700,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 11,
+      "absolute": 7858,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 71891726,
+    "function": 71891600,
+    "predicate": 71891722,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 71891794,
+    "fallthrough": 71891728,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 11,
+      "absolute": 7862,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 71891754,
+    "function": 71891600,
+    "predicate": 71891750,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 71891794,
+    "fallthrough": 71891756,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 11,
+      "absolute": 7866,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 71891770,
+    "function": 71891600,
+    "predicate": 71891768,
+    "predicate_instruction": "test al, al",
+    "taken": 71891794,
+    "fallthrough": 71891772,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 64520999,
+    "function": 64520960,
+    "predicate": 64520995,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 64521058,
+    "fallthrough": 64521001,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": {
+      "row": 1,
+      "absolute": 1552,
+      "width": 4,
+      "mutation": "truncate one byte before end of indicated first transfer"
+    }
+  },
+  {
+    "site": 64521007,
+    "function": 64520960,
+    "predicate": 64521004,
+    "predicate_instruction": "test rbx, rbx",
+    "taken": 64521032,
+    "fallthrough": 64521009,
+    "classification": "dead",
+    "reason": "taken requires zeroed AL to be nonzero, or null stream is subsequently dereferenced (effective-path exclusion)",
+    "first_counterexample": null
+  },
+  {
+    "site": 64521039,
+    "function": 64520960,
+    "predicate": 64521035,
+    "predicate_instruction": "lock dec dword ptr [rbx + 8]",
+    "taken": 64521054,
+    "fallthrough": 64521041,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 64521056,
+    "function": 64520960,
+    "predicate": 64521054,
+    "predicate_instruction": "test ebp, ebp",
+    "taken": 64521069,
+    "fallthrough": 64521058,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 64521075,
+    "function": 64520960,
+    "predicate": 64521072,
+    "predicate_instruction": "test rdi, rdi",
+    "taken": 64521103,
+    "fallthrough": 64521077,
+    "classification": "dead",
+    "reason": "taken requires zeroed AL to be nonzero, or null stream is subsequently dereferenced (effective-path exclusion)",
+    "first_counterexample": null
+  },
+  {
+    "site": 64521110,
+    "function": 64520960,
+    "predicate": 64521106,
+    "predicate_instruction": "lock dec dword ptr [rdi + 8]",
+    "taken": 64521125,
+    "fallthrough": 64521112,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17160367,
+    "function": 17156880,
+    "predicate": 17160365,
+    "predicate_instruction": "cmp edi, eax",
+    "taken": 17160248,
+    "fallthrough": 17160369,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17160397,
+    "function": 17156880,
+    "predicate": 17160393,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 17161836,
+    "fallthrough": 17160403,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17160408,
+    "function": 17156880,
+    "predicate": 17160403,
+    "predicate_instruction": "cmp byte ptr [rsp + 0x6f], 0",
+    "taken": 17160583,
+    "fallthrough": 17160414,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17160424,
+    "function": 17156880,
+    "predicate": 17160421,
+    "predicate_instruction": "test rbp, rbp",
+    "taken": 17160456,
+    "fallthrough": 17160426,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17160519,
+    "function": 17156880,
+    "predicate": 17160511,
+    "predicate_instruction": "cmp qword ptr [rip + 0xa5f129], 0",
+    "taken": 17160533,
+    "fallthrough": 17160521,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17160577,
+    "function": 17156880,
+    "predicate": 17160575,
+    "predicate_instruction": "test al, al",
+    "taken": 17161836,
+    "fallthrough": 17160583,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17160611,
+    "function": 17156880,
+    "predicate": 17160607,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 17161836,
+    "fallthrough": 17160617,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17160644,
+    "function": 17156880,
+    "predicate": 17160638,
+    "predicate_instruction": "cmp word ptr [rsp + 0x6c], 0",
+    "taken": 17160761,
+    "fallthrough": 17160646,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17160672,
+    "function": 17156880,
+    "predicate": 17160670,
+    "predicate_instruction": "cmp edi, eax",
+    "taken": 17160761,
+    "fallthrough": 17160674,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17160738,
+    "function": 17156880,
+    "predicate": 17160736,
+    "predicate_instruction": "test al, al",
+    "taken": 17161836,
+    "fallthrough": 17160744,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17160749,
+    "function": 17156880,
+    "predicate": 17160744,
+    "predicate_instruction": "cmp qword ptr [rbp], 0",
+    "taken": 17160650,
+    "fallthrough": 17160751,
+    "classification": "context-lifecycle",
+    "reason": "memory/reference/allocation or callback state; no alternate supported wire layout inferred",
+    "first_counterexample": null
+  },
+  {
+    "site": 17162859,
+    "function": 17156880,
+    "predicate": 17162855,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 17161836,
+    "fallthrough": 17162865,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17162893,
+    "function": 17156880,
+    "predicate": 17162888,
+    "predicate_instruction": "cmp byte ptr [rsp + 0x47], 0",
+    "taken": 17162964,
+    "fallthrough": 17162895,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17162937,
+    "function": 17156880,
+    "predicate": 17162935,
+    "predicate_instruction": "test al, al",
+    "taken": 17161836,
+    "fallthrough": 17162943,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17162962,
+    "function": 17156880,
+    "predicate": 17162958,
+    "predicate_instruction": "cmp bl, byte ptr [rsp + 0x47]",
+    "taken": 17162902,
+    "fallthrough": 17162964,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17162992,
+    "function": 17156880,
+    "predicate": 17162988,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 17161836,
+    "fallthrough": 17162998,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17163026,
+    "function": 17156880,
+    "predicate": 17163021,
+    "predicate_instruction": "cmp byte ptr [rsp + 0x47], 0",
+    "taken": 17163092,
+    "fallthrough": 17163028,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17163065,
+    "function": 17156880,
+    "predicate": 17163063,
+    "predicate_instruction": "test al, al",
+    "taken": 17161836,
+    "fallthrough": 17163071,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17163090,
+    "function": 17156880,
+    "predicate": 17163086,
+    "predicate_instruction": "cmp bl, byte ptr [rsp + 0x47]",
+    "taken": 17163035,
+    "fallthrough": 17163092,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17163120,
+    "function": 17156880,
+    "predicate": 17163116,
+    "predicate_instruction": "cmp dword ptr [rbx + 0x10], 0",
+    "taken": 17161836,
+    "fallthrough": 17163126,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  },
+  {
+    "site": 17163154,
+    "function": 17156880,
+    "predicate": 17163149,
+    "predicate_instruction": "cmp byte ptr [rsp + 0x47], 0",
+    "taken": 17163220,
+    "fallthrough": 17163156,
+    "classification": "wire_data",
+    "reason": "fresh stream count/item tag or computed directly from read data",
+    "first_counterexample": null
+  },
+  {
+    "site": 17163193,
+    "function": 17156880,
+    "predicate": 17163191,
+    "predicate_instruction": "test al, al",
+    "taken": 17161836,
+    "fallthrough": 17163199,
+    "classification": "IO-result",
+    "reason": "stream status or call result; failure does not define an alternate valid record",
+    "first_counterexample": null
+  }
+]

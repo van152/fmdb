@@ -1937,6 +1937,16 @@
    "claim": "t43 把 E80 data_base 修复最小化集成进共享加载器 scripts/fm24_dump.py 的 load_payload(仅此一函数 +40/-5,AST 逐节点核对其余函数/常量零变化,签名不变,不 import t38)。data_base 从 codec _archive_layout 动态取(非硬编码34,verify AST regex \b34\b  absent);成员区=[base+offset,+packed_size),区内逐帧解压按 len==entry.size 唯一选帧,无吻合帧 raise(不回落首帧/不静默截断)。fm24_dump --selftest 49/0/1SKIP→50 PASS/0 FAIL/0 SKIP(server34 SKIP→PASS)。79 数字表 fm24_dump==t38 load_payload_mf==独立 size-select 解码逐字节全等(79/79),全 len==size。119 受影响条目(server2/lang_update117,判定式 前一成员 packed_size<data_base)修后全 len==size/单帧/leftover0/sha256(packed区)==entry.sha256;旧法坐标 119/119 错 -25B(落前一成员内)。方法论发现:42 个 lang_update 条目旧法返回字节巧合相同的 12B stub(entry.size==12==前成员 stub 模板),len/payload-SHA 自检在此类条目假阳,仅成员边界判据可识;verify 把 legacy坐标错119/119 与 legacy字节不同77/119 分立。负例 server34 legacy=12B(600175712b2f553a,-25B)保留不删,fixed=313082/a07b2bb7。t38 selftest 25→24 PASS 是正向证据(旧法 DIFF 提示行消失,FAIL 仍0,build.py git show HEAD exec 钉死)。data_base=34 结构含义仍候选(未 L3 exe 静态确认),仅操作性偏移。L4=0。",
    "evidence": "scripts/fm24_dump.py load_payload fix(mtime17:15稳定);scratch/t43/out/{integration_report.json,verify.py,verify_result.json,REPORT.md}+scratch/t43/build.py;verify.py --selftest 19 PASS/0 FAIL(自解析FMF头base=start+9+u64(start+17)/自写DirReader/自写选帧/subprocess调fm24_dump不持引用/对照t33t29落盘证据);scratch/cmd/t43_spot.py 13/13(79表三重解码逐字节全等+119 affected+canonical server34/59/10/client10+selftest50/0/0+anchors7/7);t39_spot26/26 t34_spot13/13 t36_spot9/9。交付哨兵 DONE.md 因 devseek 三次 attempt 超时(rc=124)未写,commander 据完整已验交付自写 DONE.accepted.md。",
    "consequence": "共享加载器 load_payload 缺陷家族(119条目)闭合,与已接受参考加载器 load_payload_mf 全等,无回归;后续所有用 fm24_dump.load_payload 的任务(t34/t36等)受益。t38_multiframe.py 工作树被另一会话纯增 +145行(check#10/#11 无界选帧对照 decode_frames_unbounded/boundary_spanning_proof,client3 bounded1/unbounded28 size_hits1,client23 歧义),非 t43 改动,HEAD24/工作树32 均0FAIL,另案 reconcile 提交。data_base 结构含义待 L3。L4=0,未启动游戏/编辑器/IDA。"
+  },
+  {
+   "id": "E87",
+   "date": "2026-11-19",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": "t47 nation 未知 item-bearing parent 静态发现接受(partial)。Ntxr 税则 cursor_closed 双档(server mode1/client mode0),1899 税项全 tag2/25B,7 L3(lowa/uppa/capa/year/perc/fram/leve)+2 held(ppty/txty 无 enum 域)。另 8 parent(Nntp/Nctp/Nrtp/NTRv/NWGv/NSps/Nfmp/NCro)inline 静态 reader 链到 t9 NATIONAL_TEAM_CONTAINER(owner9),仅静态发现非 wire 验收,不发布 t9 item L3 坐标。6 unknown partial 原样保留(Nftb/EDfx/EDsc/Nrvn/Calt/TCrs)。无新独立子表(全内嵌 t9/t10)。repu 三件共 helper 非 backing array(20x 循环反例)。t37 baseline 字节未改。",
+   "evidence": "scratch/t47/out/discovery_nation_unknown.json+cursor_nation_tax.json+fields_nation_tax.json+REPORT.md+verify.py; scripts/t47_nation_unknown.py; scratch/cmd/t47_spot.py 71/71(独立重解码 payload+重推 row framing/identity/footer 闭合+提取全 1899 税项验 wire 偏移/域/grades/held 首反例+t37 baseline SHA)。editor b82ebe8e/master 7d57477e。closure server 13+422323+9=422345/client 13+24710+9=24732。builder --selftest rc0+verify rc0+anchors 7/7。",
+   "consequence": "nation Ntxr 闭(7 L3);nation unknown 15→9 连(1 闭)/6 unknown;t9 transfer/repu/Nfmp/NCro 静态链就绪待下一 wave wire 验收;schema v4(t48)应并 Ntxr 7 L3+nation 静态发现 status。L4=0。"
   }
  ]
 }
