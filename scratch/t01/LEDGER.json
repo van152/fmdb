@@ -1738,6 +1738,25 @@
     "scratch/t29/out/profiles/table_server_62.profile.json(消费 t29)"
    ],
    "consequence": "club 子表 cursor 方法第四次证实,首个 10/10 全晋级(0 held)子表。club 子表已闭:Cstc 14(t27)+Clhs 8(t30)+CSrs 10(t31)=32 L3。sol 空闲→派 t32 Cmti 月供子表(table43/6 字段/535×46)。复制管线剩余 clean 目标:Cdbt(33,5)/CNtp(66,4)/Tchl(34,9 需排他 club/nation);MLS/Italian 小表(50/51/60/61/63)待 t29b inventory 定 entity 归属。"
+  },
+  {
+   "id": "E68",
+   "date": "2026-11-19 14:35",
+   "author": "commander(t26 独立验收,census)",
+   "kind": "acceptance",
+   "level": "L1(全文法自走)+L2(basic_people_db 跨文件 duni 逐条对齐)",
+   "claim": "【t26 验收通过 — people_db.dat 全文法 census 闭合,658011 记录存在性证实(body 字段布局诚实未解)】devseek 四次 attempt 均 rc=124 超时,launcher 判 gave up(rc=1),但产出实质 complete_grammar_census 交付(无 DONE.md 致误判)。指挥官独立核验 18 项全绿(自实现 compact/basic_people 文法复算,不 import devseek 结果):people_db payload 400443970B,SHA 21686a98…,头部 u32@2=658011;compact class-5 文法 1193 行(key 集合连续[656818,658010],行序非 ordinal 序),首处硬断裂@55750(下一段首 key=354399,属 unknown 表族);basic_people_db 54060043B/658011 行按 class 宽{1:83,2:83,3:83,4:34,5:22}闭合 walk_end=54060034 walk_bad=null,class 分布{1:166064,2:476158,3:4757,4:9839,5:1193};compact 1193=class-5 1193,按 key 跨文件 duni 1193/1193 全等(互补视图非超集);trailer 签名法 658011 个规范位置(trailer_pos.npy distinct 658011,key 域[0,658010]),抽样 40/40 trailer(key2,duni,duni)@q 与 basic_people[key].duni 全等→658011 key 100% 覆盖。【裁决】命题 people_db 承载 658011 条完整 person 记录=supported(有保留):记录存在性成立,但 name→trailer 间 body(约 400-770B)字段含义全未定;覆盖率依赖 basic_people 校验有同源循环风险,独立锚点 t15c person_duni.npy 646979 distinct 100% 出现;文法 B 186108 是下界(只认拉丁大写名)。people_db 行序非 ordinal(corr -0.064)。【bonus】hit_cross.json:non_pl_hist_id.dat 1493086 元素/dt 77098632B/stride24 全除尽/pl_hist_id.dat 1031162 元素/dt 198695332B/stride44 全除尽,单调非减数组语义(L1 candidate)。walk_people/hit_cross selftest OK,锚点 7/7。",
+   "evidence": [
+    "scratch/t26/out/people_walk.md(complete_grammar_census)",
+    "scratch/t26/out/people_walk.json",
+    "scratch/t26/out/hit_cross.json",
+    "scratch/t26/out/people_rowsig{,2}.json",
+    "scratch/t26/walk_people.py(selftest OK)",
+    "scratch/t26/hit_cross.py(selftest OK)",
+    "scratch/cmd/t26_spot.py(指挥官 18/18)",
+    "scratch/t26/trailer_pos.npy+trailer_key.npy(658011,派生缓存不入仓)"
+   ],
+   "consequence": "Stage2 people/hist 表边界文法 census 完成:people_db 658011 记录三变体文法定位+100% key 覆盖,basic_people_db 658011 行 class 闭合。开放硬活:people_db body 字段布局(变长记录列级切分,trailer 间距 q[i]-q[i-1] 作记录长,固定尾标 b600e207/01006c07 是否列分隔符待验)→sol 级任务,排队待 subtable 管线后。断裂点 55750 后段表按 unknown 处理(对照 t15 fk.json 51 表)。hist_id stride24/44 数组语义待绑定 dt payload 列。devseek 超时但产出可用,launcher 启发式对无 DONE.md 的长任务误判 gave up——后续长任务宜显式写 DONE 或提高 TMO。大缓存 pkl/npy(~800MB)加 .gitignore 排除。"
   }
  ]
 }

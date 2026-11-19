@@ -1,0 +1,191 @@
+{
+ "task": "t26-B",
+ "array_semantics_non_pl": {
+  "id_file": "non_pl_hist_id.dat",
+  "elements": 1493086,
+  "dt_payload_len": 77098632,
+  "dt_first_u32": 603,
+  "values_min": 0,
+  "values_max": 77098608,
+  "monotone_nondecreasing": true,
+  "adjacent_duplicate_pairs": 265881,
+  "distinct": 1227205,
+  "divisor_candidates": {
+   "24": {
+    "all_divisible": true,
+    "max_plus_stride": 77098632,
+    "equals_payload_len": true,
+    "max_plus_stride_le_len": true
+   }
+  },
+  "stride_from_payload": {
+   "first_dup_pairs": [
+    1832,
+    3488,
+    3728,
+    3800,
+    4544
+   ],
+   "gaps": [
+    1656,
+    240,
+    72,
+    744,
+    504,
+    3456,
+    2256,
+    144
+   ],
+   "gcd_of_gaps": 2
+  }
+ },
+ "array_semantics_pl": {
+  "id_file": "pl_hist_id.dat",
+  "elements": 1031162,
+  "dt_payload_len": 198695332,
+  "dt_first_u32": 130090945,
+  "values_min": 0,
+  "values_max": 198695288,
+  "monotone_nondecreasing": true,
+  "adjacent_duplicate_pairs": 46936,
+  "distinct": 984226,
+  "divisor_candidates": {
+   "22": {
+    "all_divisible": true,
+    "max_plus_stride": 198695310,
+    "equals_payload_len": false,
+    "max_plus_stride_le_len": true
+   },
+   "44": {
+    "all_divisible": true,
+    "max_plus_stride": 198695332,
+    "equals_payload_len": true,
+    "max_plus_stride_le_len": true
+   }
+  },
+  "stride_from_payload": {
+   "first_dup_pairs": [
+    18,
+    32,
+    62,
+    72,
+    74
+   ],
+   "gaps": [
+    14,
+    30,
+    10,
+    2,
+    2,
+    30,
+    10,
+    2
+   ],
+   "gcd_of_gaps": 2
+  }
+ },
+ "space_verdict": {
+  "claim": "pl/non_pl_hist_id.dat 的 u32 数组是 dt payload 的**字节偏移**",
+  "evidence": [
+   "所有值都能被单一常量整除(见 divisor_candidates 中 all_divisible=True 的项)",
+   "数组单调不减,且 max + 行宽 == dt payload 长度",
+   "相邻重复对 = 同一偏移连写两次(与 dt 行内 duni|duni 双写同一手法)"
+  ],
+  "consequence": "该数组**不承载 duni/人员身份**,与 person duni 求交在语义上不成立;任务书第 2 步的'未命中集 ∩ 两个 ID 数组'只能作为**负结果**记录。"
+ },
+ "miss_arrays": {
+  "_miss.npy": {
+   "n": 65596,
+   "min": 18,
+   "max": 2000342690,
+   "distinct": 65596,
+   "identical_to_first": true
+  },
+  "t49_duni_missing.npy": {
+   "n": 65596,
+   "min": 18,
+   "max": 2000342690,
+   "distinct": 65596,
+   "identical_to_first": true
+  }
+ },
+ "person_duni": {
+  "n": 646979,
+  "distinct": 646979,
+  "min": 3,
+  "max": 2002040995
+ },
+ "cross": {
+  "_miss.npy": {
+   "non_pl": {
+    "overlap_values": 1043,
+    "overlap_distinct": 1043,
+    "pct": 1.59,
+    "interpretation": "值域巧合,不是身份命中(id 数组是字节偏移,未命中集是 duni,两者空间不可比)",
+    "range_overlap": [
+     18,
+     77098608
+    ]
+   },
+   "pl": {
+    "overlap_values": 219,
+    "overlap_distinct": 219,
+    "pct": 0.334,
+    "interpretation": "值域巧合,不是身份命中(id 数组是字节偏移,未命中集是 duni,两者空间不可比)",
+    "range_overlap": [
+     18,
+     198695288
+    ]
+   }
+  },
+  "t49_duni_missing.npy": {
+   "non_pl": {
+    "overlap_values": 1043,
+    "overlap_distinct": 1043,
+    "pct": 1.59,
+    "interpretation": "值域巧合,不是身份命中(id 数组是字节偏移,未命中集是 duni,两者空间不可比)",
+    "range_overlap": [
+     18,
+     77098608
+    ]
+   },
+   "pl": {
+    "overlap_values": 219,
+    "overlap_distinct": 219,
+    "pct": 0.334,
+    "interpretation": "值域巧合,不是身份命中(id 数组是字节偏移,未命中集是 duni,两者空间不可比)",
+    "range_overlap": [
+     18,
+     198695288
+    ]
+   }
+  }
+ },
+ "row_count_check": {
+  "non_pl": {
+   "stride": 24,
+   "rows_from_payload": 3212443,
+   "id_array_elements": 1493086,
+   "rows_implied_by_array_max": 3212443,
+   "ratio_to_165461": 19.415
+  },
+  "pl": {
+   "stride": 44,
+   "rows_from_payload": 4515803,
+   "id_array_elements": 1031162,
+   "rows_implied_by_array_max": 4515803,
+   "ratio_to_165461": 27.292
+  }
+ },
+ "verdict": {
+  "question": "165,461 未命中引用能否由 non_pl_hist / pl_hist 的 ID 数组解释",
+  "answer": "negative_no_semantic_overlap",
+  "why": [
+   "两侧不在同一空间:id 数组 = dt payload 字节偏移,未命中集 = person duni",
+   "非零交集只是数值区间重叠的产物,不能当身份命中",
+   "行数上 non_pl_hist_dt 有 3,212,443 行、pl_hist_dt 有 4,515,803 行,量级都远大于 165,461,无法用'行数相等'作旁证"
+  ],
+  "what_would_settle_it": "解 non_pl_hist_dt.dat 的行内 person 引用列,把该列与未命中集直接求交(需先定列偏移)",
+  "retained_negative": "本次求交的数值结果全部保留在 cross 字段,不因结论为负而删除"
+ }
+}

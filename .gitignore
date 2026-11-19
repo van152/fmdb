@@ -13,3 +13,7 @@ aux
 
 # Z: 游戏库本地镜像(司令部一次性拷贝,大数据不入库)
 scratch/data/
+
+# 子代理派生大缓存(pkl/npy 中间产物,可由脚本复算,不入仓)
+scratch/**/*.pkl
+scratch/**/*.npy
