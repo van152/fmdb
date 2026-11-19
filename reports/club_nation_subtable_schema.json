@@ -1,7 +1,7 @@
 {
   "schema_id": "fm24.club_nation_subtable_schema",
-  "schema_version": 2,
-  "generated_by": "t42",
+  "schema_version": 3,
+  "generated_by": "t45",
   "evidence_grade_policy": "Only accepted source-ledger L3 rows are in fields. Held rows, exclusions, and negative regressions remain separate. L4=0.",
   "binary_provenance": {
     "binary": "editor.exe",
@@ -16,9 +16,9 @@
     "external_binary_read": false
   },
   "coverage": {
-    "club_tables": 7,
-    "club_L3_fields": 51,
-    "held_fields": 15,
+    "club_tables": 8,
+    "club_L3_fields": 52,
+    "held_fields": 16,
     "negative_regressions": 4,
     "L4": 0,
     "nation_side": {
@@ -46,14 +46,15 @@
         "new_L3_claims": 0,
         "L4": 0
       },
-      "conclusion": "The t37 nation inventory remains partial with zero new nation-exclusive L3 claims. Accepted shared Tchl/table 34 fields are recorded separately and are not promoted as nation-only or club-only claims."
+      "conclusion": "The t37 nation inventory remains partial with zero new nation-exclusive L3 claims. Accepted shared Tchl/table 34 fields remain separate from club-only claims; Csme/table 59 Melf is item-conditional and club-exclusive L3 remains zero."
     },
-    "cross_archive_offset_inference": "not performed; accepted business-field sink evidence remains server-side. Cstc client table 22 carries identity only; the other six client table entries, including shared Tchl table 34, are absent. Tchl table ordinals retain separate t39 target-domain witnesses."
+    "cross_archive_offset_inference": "not performed; accepted business-field sink evidence remains server-side. Cstc client table 22 carries identity only; client table entries for the other seven tables, including Tchl/table 34 and Csme/table 59, are absent. Tchl ordinal targets and Csme item-indexed coordinates remain separately scoped."
   },
   "inventory_reconciliation": {
     "club_inventory": "scratch/t29/out/subtable_inventory.json is context only. Where t29 lists Cmti/CNtp/Cdbt item candidates at candidate/L2, the accepted t32/t34/t36 L3 ledgers take precedence for this consolidation.",
     "nation_inventory": "t37 is partial and reports zero new L3 claims; no nation child fields are promoted here.",
-    "tchl_shared_scope": "t39 E78 establishes shared club/nation dispatch and table24 selector11 NATIONAL_TEAM ownership for all 7,084 nonempty owners; club-exclusive L3=0. The entity_tag label is not used as an exclusivity test."
+    "tchl_shared_scope": "t39 E78 establishes shared club/nation dispatch and table24 selector11 NATIONAL_TEAM ownership for all 7,084 nonempty owners; club-exclusive L3=0. The entity_tag label is not used as an exclusivity test.",
+    "csme_scope": "t41 E82 accepts Csme/table 59 Melf as an item-conditional L3 field. All 9,079 owner ordinals resolve within the table24 Team family (selectors 10 and 11); the selector-11 witness prevents a club-exclusive claim, so club-exclusive L3=0."
   },
   "source_artifacts": [
     {
@@ -395,6 +396,96 @@
       "path": "scratch/t01/LEDGER.json",
       "sha256": "af00443d990c36d17171b3a7c4fdecf3f63686306bc3b6f74c5a75549612108d",
       "bytes": 179535
+    },
+    {
+      "path": "scratch/t24/out/subtables.part001.json",
+      "sha256": "6ba93636161d924ebf2648cb4be254d864b773bc30b28bd9c4fdf3349a44b829",
+      "bytes": 18218
+    },
+    {
+      "path": "scratch/t41/out/fields_csme.json",
+      "sha256": "f08c5ca7d0b51779f4708ae77c3a4bc15b37e5d6633879ca1ca78654d5ba1a50",
+      "bytes": 7004
+    },
+    {
+      "path": "scratch/t41/out/cursor_csme.json",
+      "sha256": "967cca2843388b00bb2335e5d67de7cb6a6074fbe3fe444851b5808770cc8306",
+      "bytes": 27091
+    },
+    {
+      "path": "scratch/t41/out/REPORT.md",
+      "sha256": "2013d798716f4f740e0009d4b051e86caac256f4105fe444cbffdcfb579ba3bf",
+      "bytes": 10993
+    },
+    {
+      "path": "scratch/t41/out/instructions.part001.json",
+      "sha256": "6dc495f393dd8d4c3370fb171b6a2544f49640faed8d0d1c52a84e9091de6a59",
+      "bytes": 15032
+    },
+    {
+      "path": "scratch/t41/out/instructions.part002.json",
+      "sha256": "81bc5d477c11cf1ec7400376dbf1ede5dc1b74d465498794bbb31d8e6513f47f",
+      "bytes": 15352
+    },
+    {
+      "path": "scratch/t41/out/instructions.part003.json",
+      "sha256": "bd5e97b77380f1a8778a31a68bdcada4f6e011aa27a4df5bd48ae9f2797d5aa0",
+      "bytes": 15360
+    },
+    {
+      "path": "scratch/t41/out/instructions.part004.json",
+      "sha256": "3e9e903d0bfaa3453230192f027e3b63578ebc3db0142f8d39a6aae0e62cc4ed",
+      "bytes": 15499
+    },
+    {
+      "path": "scratch/t41/out/instructions.part005.json",
+      "sha256": "cbe84c936ef617f71bc310d8dc626576bdbd6818fbf6fb1d40962b51acc1a89a",
+      "bytes": 15500
+    },
+    {
+      "path": "scratch/t41/out/instructions.part006.json",
+      "sha256": "92b1cf51326fc1e7d5cf5f9f53e89f3e06f35f9c0ab358eddf50db4a384b689e",
+      "bytes": 15260
+    },
+    {
+      "path": "scratch/t41/out/instructions.part007.json",
+      "sha256": "9ecb7facebd594dacd70932f0e9641b9f6259d10fd5454ed18cb2404e7e78c53",
+      "bytes": 15341
+    },
+    {
+      "path": "scratch/t41/out/instructions.part008.json",
+      "sha256": "840d0e5bfff4ffe11cdbd664657995b731a596ac82976d7bf5bf37578675f43f",
+      "bytes": 6981
+    },
+    {
+      "path": "scratch/t41/out/branches.part001.json",
+      "sha256": "645a2b28856286895d8fd283d06f9286f00dc400baebaa150c532e76d1fd47a4",
+      "bytes": 10488
+    },
+    {
+      "path": "scratch/t41/out/branches.part002.json",
+      "sha256": "42817fbfec105774d1fd8849c94a43ec57e61e79f2ebb23be6afadfa7b97098e",
+      "bytes": 7146
+    },
+    {
+      "path": "scratch/t33/out/profiles/table_server_59.profile.json",
+      "sha256": "3c4ee8efdb057ad21b020d67a6d08c174ffe42309bb2d3fc28e0fea11922ecf9",
+      "bytes": 185577
+    },
+    {
+      "path": "scratch/t33/out/profiles/table_server_59.rows.jsonl",
+      "sha256": "b06e7e468f6d9e1c3cb8b8b36533b667ae87a74b2338fe8c24e91f7a34abcc49",
+      "bytes": 907381
+    },
+    {
+      "path": "scratch/t33/out/REPORT.md",
+      "sha256": "07572015f6f2455bd0787e7d0303ef3782eee386e40829e2b723963ada23e7e5",
+      "bytes": 10038
+    },
+    {
+      "path": "scratch/t45/out/LEDGER.E82.json",
+      "sha256": "20fb4a99a955b800a49078ede30700221ca7a9b32fd98db49b8a2fed981af749",
+      "bytes": 182398
     }
   ],
   "tables": [
@@ -19205,6 +19296,886 @@
         "shared_dispatch_and_owner_scope": "t39 REPORT.md; 7,084 nonempty owner ordinals resolve to table24 selector11 NATIONAL_TEAM; 31 owners are null; club-exclusive L3=0.",
         "target_domains": "t39 fields_tchl.json; ordinal target witnesses for table types 23, 24, and 25 are retained under reference_domains.ordinal_target_domains."
       }
+    },
+    {
+      "entity": "club_editor_team_owned",
+      "parent_xml": "club.xml",
+      "parent_code": "Csme",
+      "table_type": 59,
+      "rtti_class": "STARTING_MEDIA_EXPECTATIONS",
+      "source_task": "t41",
+      "schema_scope": [
+        "club.xml",
+        "Csme"
+      ],
+      "source_ledger_summary": {
+        "status": "accepted_by_E82",
+        "fields_named": 2,
+        "L3": 1,
+        "held": 1,
+        "club_exclusive_L3": 0,
+        "L4": 0,
+        "offset_origin": "Melf is item-indexed; row_offset/wire_offset denote j=0 only and exist only when count n > 0."
+      },
+      "server_payload": {
+        "archive": "server",
+        "present": true,
+        "path": "server_db/table_59.dat",
+        "row_count": 9079,
+        "stride_bytes": null,
+        "stride_histogram_bytes": {
+          "22": 6567,
+          "32": 2512
+        },
+        "payload_len": 224880,
+        "payload_sha256": "7eee0ecc59ee306aefc52eb7a7f7095d439748f3e06ac9d36d3ddc1568c8b1a7",
+        "header_hex": "03017461642ef10d7723000000",
+        "header_record_count": 9079,
+        "row_stream_prefix_bytes": 13,
+        "selector_bytes_per_row": 1,
+        "row_body_length_formula": "21 + 10*n",
+        "row_length_formula": "22 + 10*n",
+        "count_wire_offset": 6,
+        "wire_footer_start": 224871,
+        "footer_hex": "000000000177230000",
+        "footer_bytes": 9,
+        "closure_formula": "13 + 6567 * 22 + 2512 * 32 + 9 = 224880",
+        "closure_ok": true,
+        "legacy_row_origin": 14,
+        "wire_row_origin": 13,
+        "legacy_footer_start": 224872,
+        "legacy_footer_hex": "0000000177230000",
+        "archive_member_offset": 38661625,
+        "archive_member_packed_size": 62202,
+        "selected_frame_offset": 38661659,
+        "selected_frame_packed_size": 62202
+      },
+      "client_observation": {
+        "archive": "client",
+        "present": false,
+        "directory_entry_count": 31,
+        "table_entry_absent": true
+      },
+      "coordinate_policy": "t41 coordinates are item-indexed. For Melf, row_offset 18 / wire_offset 19 is j=0 only; the byte coordinate is legacy 18+10*j / wire 19+10*j for 0 <= j < n. The observed rows have n=0 or 1, so only count=1 rows contain Melf; no default is inferred for count=0 rows.",
+      "reader_extent": {
+        "start_file_offset": "0x15831a0",
+        "end_file_offset_exclusive": "0x1583580",
+        "start_VA": "0x141583ba0",
+        "end_VA_exclusive": "0x141583f80",
+        "extent_source": "PE RUNTIME_FUNCTION, direct slot 19; inline identity tail"
+      },
+      "owner_scope": {
+        "source_record": {
+          "object_offset": 48,
+          "legacy_offset": 0,
+          "wire_offset": 1,
+          "width": 4,
+          "type": "i32 ordinal to team/table24; -1 writer null",
+          "matches": 9079,
+          "distinct": 9079,
+          "minus_one_count": 0,
+          "selector_histogram": {
+            "10": 8941,
+            "11": 138
+          },
+          "first_by_selector": {
+            "10": {
+              "row": 40,
+              "offset": 974,
+              "bytes": "33000000",
+              "value": 51,
+              "target_selector": 10,
+              "target_selector_offset": 6898,
+              "target_identity_offset": 7016,
+              "target_identity": [
+                51,
+                57,
+                57
+              ]
+            },
+            "11": {
+              "row": 0,
+              "offset": 14,
+              "bytes": "00000000",
+              "value": 0,
+              "target_selector": 11,
+              "target_selector_offset": 13,
+              "target_identity_offset": 136,
+              "target_identity": [
+                0,
+                5,
+                5
+              ]
+            }
+          },
+          "field_not_in_schema": true,
+          "scope_counterexample": {
+            "row": 0,
+            "offset": 14,
+            "bytes": "00000000",
+            "value": 0,
+            "target_selector": 11,
+            "target_selector_offset": 13,
+            "target_identity_offset": 136,
+            "target_identity": [
+              0,
+              5,
+              5
+            ]
+          }
+        },
+        "target_table_type": 24,
+        "owner_rows": 9079,
+        "distinct_owner_ordinals": 9079,
+        "selector_histogram": {
+          "10": 8941,
+          "11": 138
+        },
+        "selector_classes": {
+          "10": "TEAM",
+          "11": "NATIONAL_TEAM"
+        },
+        "club_exclusive_L3": 0,
+        "exclusivity_basis": "All owner ordinals resolve in the table24 Team family; selectors 10/11 include TEAM and NATIONAL_TEAM. The row-0 selector-11 witness disproves club exclusivity.",
+        "first_non_club_exclusive_witness": {
+          "row": 0,
+          "offset": 14,
+          "bytes": "00000000",
+          "value": 0,
+          "target_selector": 11,
+          "target_selector_offset": 13,
+          "target_identity_offset": 136,
+          "target_identity": [
+            0,
+            5,
+            5
+          ]
+        },
+        "scope_caveat": "not club-exclusive: actual owners include selector 11; play label is not a PLAYER pointer or dispatch proof"
+      },
+      "source_acceptance": {
+        "ledger_path": "scratch/t45/out/LEDGER.E82.json",
+        "entry_id": "E82",
+        "level": "L3",
+        "kind": "acceptance",
+        "claim": "t41 Csme/server table59 STARTING_MEDIA_EXPECTATIONS **首次变长stride cursor闭合**(第8次方法复制):13+6567*22+2512*32+9=224880(SHA7eee0ecc),9079行,client无table59。变长由wire+6 u32 count决定(row_len=22+10n,count0跳过vector/count1消费10B item),mode0/1均闭无identity-only分支。reader 0x15831a0..0x1583580(VA0x141583ba0..0x141583f80)直接slot19非thunk,260指令49块29分支0 extent外边,identity内联0x1583500。**Melf条件L3**(wire+19+10j,1B,仅0<=j<n,2512值1..33符XMLmax127,无0/ff哨兵);**Msid held**(双lane sink wire+11+10j静态绑定,但6567行无entry+2512 entry全(-1,-1)无live引用,首反例row2@68)。club独占L3=0(9079 owner全Team:8941 sel10/138 sel11),L4=0。"
+      },
+      "fields": [
+        {
+          "code": "Melf",
+          "name": "Predicted League Finish",
+          "status": "L3",
+          "grade": "L3_table59_conditional_named_coordinate",
+          "row_offset": 18,
+          "wire_offset": 19,
+          "coordinates": [
+            {
+              "row_offset": "18+10*j",
+              "wire_offset": "19+10*j",
+              "width_bytes": 1,
+              "index": "j",
+              "count": "n",
+              "condition": "0 <= j < count"
+            }
+          ],
+          "candidate_coordinates": [],
+          "coordinate_note": "t41 row_offset=18 and wire_offset=19 identify item j=0 only; the conditional coordinate is legacy 18+10*j / wire 19+10*j for 0 <= j < n, where n is the u32 count at wire+6. In the observed payload n is 0 or 1, so Melf is present only on count=1 rows (2,512 rows). A count=0 row has no Melf value; the XML default is not asserted as a stored row value.",
+          "width_bytes": 1,
+          "interpretation": "u8 zero-extended; no native -1 sentinel and no zero rewrite; absence is count=0, not an integer zero",
+          "schema": {
+            "field": "Melf",
+            "name": "Predicted League Finish",
+            "type": "integer",
+            "raw_name": "Predicted League Finish[COMMENT: editor; information on what league position a media source expects a club to finish in; feature 4089]",
+            "max_value": "127",
+            "default_value": "1",
+            "idx": 175
+          },
+          "domain": {
+            "xml_max": 127,
+            "xml_default": 1,
+            "native_signed": false
+          },
+          "profile": {
+            "rows": 9079,
+            "no_entry_rows": 6567,
+            "entries": 2512,
+            "histogram": {
+              "1": 207,
+              "2": 180,
+              "3": 180,
+              "4": 157,
+              "5": 162,
+              "6": 158,
+              "7": 153,
+              "8": 149,
+              "9": 148,
+              "10": 174,
+              "11": 136,
+              "12": 132,
+              "13": 105,
+              "14": 106,
+              "15": 75,
+              "16": 86,
+              "17": 49,
+              "18": 47,
+              "19": 26,
+              "20": 28,
+              "21": 13,
+              "22": 11,
+              "23": 8,
+              "24": 9,
+              "25": 1,
+              "26": 2,
+              "27": 3,
+              "28": 2,
+              "29": 2,
+              "31": 1,
+              "32": 1,
+              "33": 1
+            },
+            "min": 1,
+            "max": 33,
+            "zero_count": 0,
+            "minus_one_count": 0,
+            "raw_ff_count": 0,
+            "bit_mask": null,
+            "first_value": {
+              "row": 2,
+              "entry": 0,
+              "entry_offset": 67,
+              "hex": "01ffffffffffffffff04",
+              "pair_offset": 68,
+              "finish_offset": 76,
+              "pair": [
+                -1,
+                -1
+              ],
+              "finish": 4,
+              "outer_offset": 62,
+              "outer_byte": 2
+            },
+            "first_domain_conflict": null,
+            "violations": 0,
+            "interpretation": "u8 zero-extended; no native -1 sentinel and no zero rewrite; absence is count=0, not an integer zero"
+          },
+          "held_reason": null,
+          "provenance": {
+            "task": "t41",
+            "field_ledger": "scratch/t41/out/fields_csme.json",
+            "source_files": [
+              "scratch/t24/out/subtables.part001.json",
+              "scratch/t41/out/fields_csme.json",
+              "scratch/t41/out/cursor_csme.json",
+              "scratch/t41/out/REPORT.md",
+              "scratch/t41/out/instructions.part001.json",
+              "scratch/t41/out/instructions.part002.json",
+              "scratch/t41/out/instructions.part003.json",
+              "scratch/t41/out/instructions.part004.json",
+              "scratch/t41/out/instructions.part005.json",
+              "scratch/t41/out/instructions.part006.json",
+              "scratch/t41/out/instructions.part007.json",
+              "scratch/t41/out/instructions.part008.json",
+              "scratch/t41/out/branches.part001.json",
+              "scratch/t41/out/branches.part002.json",
+              "scratch/t33/out/profiles/table_server_59.profile.json",
+              "scratch/t33/out/profiles/table_server_59.rows.jsonl",
+              "scratch/t33/out/REPORT.md",
+              "scratch/t45/out/LEDGER.E82.json"
+            ],
+            "source_record_sha256": "e21c500ce597a53b90ae00f2ec6b1bde60ae52967133d97fb5612d6f8347c63a",
+            "binary": "editor.exe",
+            "binary_sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4",
+            "reader_extent": {
+              "start_file_offset": "0x15831a0",
+              "end_file_offset_exclusive": "0x1583580",
+              "start_VA": "0x141583ba0",
+              "end_VA_exclusive": "0x141583f80",
+              "extent_source": "PE RUNTIME_FUNCTION, direct slot 19; inline identity tail"
+            },
+            "reader_transfer_sites": [
+              {
+                "role": "row_reader_transfer",
+                "file_offset": "0x1583317",
+                "VA": "0x141583d17",
+                "width_bytes": 1,
+                "legacy_offset": "18+10*j",
+                "wire_offset": "19+10*j",
+                "index": "j",
+                "condition": "0 <= j < count",
+                "instruction": "call qword ptr [rax + 0x28]"
+              }
+            ],
+            "getter_accesses": [
+              {
+                "role": "field_dispatch_compare",
+                "file_offset": "0x4381577",
+                "VA": "0x1444ecb77",
+                "instruction": "cmp edx, 0x4d656c66"
+              },
+              {
+                "role": "getter_member_load",
+                "file_offset": "0x4381596",
+                "VA": "0x1444ecb96",
+                "instruction": "movzx edi, byte ptr [rcx + 8]"
+              }
+            ],
+            "writer_sites": [
+              {
+                "file_offset": "0x43d2fb2",
+                "VA": "0x14453e5b2",
+                "instruction": "call qword ptr [rax + 0x28]"
+              }
+            ],
+            "source_record": {
+              "code": "Melf",
+              "schema": {
+                "field": "Melf",
+                "name": "Predicted League Finish",
+                "type": "integer",
+                "raw_name": "Predicted League Finish[COMMENT: editor; information on what league position a media source expects a club to finish in; feature 4089]",
+                "max_value": "127",
+                "default_value": "1"
+              },
+              "occurrence": [
+                "club.xml",
+                "Csme",
+                175
+              ],
+              "getter": {
+                "compare": 70784375,
+                "member_load": 70784406,
+                "member_offsets": [
+                  8
+                ],
+                "extension": "movzx"
+              },
+              "sink": {
+                "site": 22557463,
+                "width": 1,
+                "legacy": "18+10*j",
+                "wire": "19+10*j",
+                "when": "0 <= j < count",
+                "writer_site": 71118770
+              },
+              "row_offset": 18,
+              "wire_offset": 19,
+              "offset_semantics": "first entry only, not a scalar present on every outer row",
+              "grade": "L3_table59_conditional_named_coordinate",
+              "profile": {
+                "rows": 9079,
+                "no_entry_rows": 6567,
+                "entries": 2512,
+                "histogram": {
+                  "1": 207,
+                  "2": 180,
+                  "3": 180,
+                  "4": 157,
+                  "5": 162,
+                  "6": 158,
+                  "7": 153,
+                  "8": 149,
+                  "9": 148,
+                  "10": 174,
+                  "11": 136,
+                  "12": 132,
+                  "13": 105,
+                  "14": 106,
+                  "15": 75,
+                  "16": 86,
+                  "17": 49,
+                  "18": 47,
+                  "19": 26,
+                  "20": 28,
+                  "21": 13,
+                  "22": 11,
+                  "23": 8,
+                  "24": 9,
+                  "25": 1,
+                  "26": 2,
+                  "27": 3,
+                  "28": 2,
+                  "29": 2,
+                  "31": 1,
+                  "32": 1,
+                  "33": 1
+                },
+                "min": 1,
+                "max": 33,
+                "zero_count": 0,
+                "minus_one_count": 0,
+                "raw_ff_count": 0,
+                "bit_mask": null,
+                "first_value": {
+                  "row": 2,
+                  "entry": 0,
+                  "entry_offset": 67,
+                  "hex": "01ffffffffffffffff04",
+                  "pair_offset": 68,
+                  "finish_offset": 76,
+                  "pair": [
+                    -1,
+                    -1
+                  ],
+                  "finish": 4,
+                  "outer_offset": 62,
+                  "outer_byte": 2
+                },
+                "first_domain_conflict": null,
+                "violations": 0,
+                "interpretation": "u8 zero-extended; no native -1 sentinel and no zero rewrite; absence is count=0, not an integer zero"
+              },
+              "negative_outer_byte_alias": {
+                "row": 2,
+                "entry": 0,
+                "entry_offset": 67,
+                "hex": "01ffffffffffffffff04",
+                "pair_offset": 68,
+                "finish_offset": 76,
+                "pair": [
+                  -1,
+                  -1
+                ],
+                "finish": 4,
+                "outer_offset": 62,
+                "outer_byte": 2
+              },
+              "domain": {
+                "xml_max": 127,
+                "xml_default": 1,
+                "native_signed": false
+              }
+            }
+          }
+        }
+      ],
+      "held_fields": [
+        {
+          "code": "Msid",
+          "name": "Media Source",
+          "status": "held",
+          "grade": "held_no_live_media_reference",
+          "row_offset": null,
+          "wire_offset": null,
+          "coordinates": [],
+          "candidate_coordinates": [
+            {
+              "row_offset": "10+10*j",
+              "wire_offset": "11+10*j",
+              "width_bytes": 8,
+              "index": "j",
+              "count": "n",
+              "condition": "0 <= j < count",
+              "disposition": "held; static sink binding only"
+            }
+          ],
+          "coordinate_note": "Static binding only: candidate legacy 10+10*j / wire 11+10*j, width 8, for 0 <= j < n. The coordinate is not promoted because every materialized pair is null and no live media-source reference is available.",
+          "width_bytes": 8,
+          "interpretation": "tagged two-lane identity pair; live target resolution not observed",
+          "schema": {
+            "field": "Msid",
+            "name": "Media Source",
+            "type": "database_record_unique_id",
+            "raw_name": "Media Source",
+            "is_optional": "true",
+            "database_table_type": "media_source",
+            "idx": 174
+          },
+          "domain": null,
+          "profile": {
+            "rows": 9079,
+            "no_entry_rows": 6567,
+            "entries": 2512,
+            "raw_pairs": {
+              "-1,-1": 2512
+            },
+            "null_pairs": 2512,
+            "zero_lane_count": 0,
+            "normalized_copy_count": 0,
+            "live": 0,
+            "ordinal_matches": 0,
+            "uid_matches": 0,
+            "first_null": {
+              "row": 2,
+              "entry": 0,
+              "entry_offset": 67,
+              "hex": "01ffffffffffffffff04",
+              "pair_offset": 68,
+              "finish_offset": 76,
+              "pair": [
+                -1,
+                -1
+              ],
+              "finish": 4,
+              "outer_offset": 62,
+              "outer_byte": 2
+            },
+            "first_not_a_live_ordinal": {
+              "row": 2,
+              "entry": 0,
+              "entry_offset": 67,
+              "hex": "01ffffffffffffffff04",
+              "pair_offset": 68,
+              "finish_offset": 76,
+              "pair": [
+                -1,
+                -1
+              ],
+              "finish": 4,
+              "outer_offset": 62,
+              "outer_byte": 2
+            },
+            "first_domain_conflict": null,
+            "rejected_outer_owner_as_media_ordinal": {
+              "matches": 99,
+              "misses": 8980,
+              "first_miss": {
+                "row": 99,
+                "offset": 2662,
+                "bytes": "d0000000",
+                "value": 208,
+                "target_selector": 10,
+                "target_selector_offset": 35713,
+                "target_identity_offset": 36007,
+                "target_identity": [
+                  208,
+                  232,
+                  232
+                ]
+              }
+            }
+          },
+          "held_reason": "All materialized entries are null. No populated reference to adjudicate against actual media_source keys; no scalar ordinal coordinate.",
+          "provenance": {
+            "task": "t41",
+            "field_ledger": "scratch/t41/out/fields_csme.json",
+            "source_files": [
+              "scratch/t24/out/subtables.part001.json",
+              "scratch/t41/out/fields_csme.json",
+              "scratch/t41/out/cursor_csme.json",
+              "scratch/t41/out/REPORT.md",
+              "scratch/t41/out/instructions.part001.json",
+              "scratch/t41/out/instructions.part002.json",
+              "scratch/t41/out/instructions.part003.json",
+              "scratch/t41/out/instructions.part004.json",
+              "scratch/t41/out/instructions.part005.json",
+              "scratch/t41/out/instructions.part006.json",
+              "scratch/t41/out/instructions.part007.json",
+              "scratch/t41/out/instructions.part008.json",
+              "scratch/t41/out/branches.part001.json",
+              "scratch/t41/out/branches.part002.json",
+              "scratch/t33/out/profiles/table_server_59.profile.json",
+              "scratch/t33/out/profiles/table_server_59.rows.jsonl",
+              "scratch/t33/out/REPORT.md",
+              "scratch/t45/out/LEDGER.E82.json"
+            ],
+            "source_record_sha256": "6bbad4949c8c28ea5e66bf2bcfd0b9bf8087146d5abf577e8e69ce27328b274f",
+            "binary": "editor.exe",
+            "binary_sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4",
+            "reader_extent": {
+              "start_file_offset": "0x15831a0",
+              "end_file_offset_exclusive": "0x1583580",
+              "start_VA": "0x141583ba0",
+              "end_VA_exclusive": "0x141583f80",
+              "extent_source": "PE RUNTIME_FUNCTION, direct slot 19; inline identity tail"
+            },
+            "reader_transfer_sites": [
+              {
+                "role": "row_reader_transfer",
+                "file_offset": "0x15832d2",
+                "VA": "0x141583cd2",
+                "width_bytes": 8,
+                "legacy_offset": "10+10*j",
+                "wire_offset": "11+10*j",
+                "index": "j",
+                "condition": "0 <= j < count",
+                "instruction": "call qword ptr [rax + 0x28]"
+              }
+            ],
+            "getter_accesses": [
+              {
+                "role": "field_dispatch_compare",
+                "file_offset": "0x438157f",
+                "VA": "0x1444ecb7f",
+                "instruction": "cmp edx, 0x4d736964"
+              },
+              {
+                "role": "tagged_box_helper_call",
+                "file_offset": "0x438158f",
+                "VA": "0x1444ecb8f",
+                "instruction": "call 0x140fe72b0"
+              },
+              {
+                "role": "tagged_pair_lane_load",
+                "file_offset": "0xfe68e4",
+                "VA": "0x140fe72e4",
+                "instruction": "mov eax, dword ptr [rbx + 4]"
+              },
+              {
+                "role": "tagged_pair_lane_load",
+                "file_offset": "0xfe68eb",
+                "VA": "0x140fe72eb",
+                "instruction": "movsxd rbx, dword ptr [rbx]"
+              }
+            ],
+            "writer_sites": [
+              {
+                "file_offset": "0x43d2f7a",
+                "VA": "0x14453e57a",
+                "instruction": "call qword ptr [rax + 0x28]"
+              },
+              {
+                "file_offset": "0x43d2f96",
+                "VA": "0x14453e596",
+                "instruction": "call qword ptr [rax + 0x28]"
+              }
+            ],
+            "source_record": {
+              "code": "Msid",
+              "schema": {
+                "field": "Msid",
+                "name": "Media Source",
+                "type": "database_record_unique_id",
+                "raw_name": "Media Source",
+                "is_optional": "true",
+                "database_table_type": "media_source"
+              },
+              "occurrence": [
+                "club.xml",
+                "Csme",
+                174
+              ],
+              "getter": {
+                "compare": 70784383,
+                "box_call": 70784399,
+                "tag": "MedS",
+                "member_offsets": [
+                  0,
+                  4
+                ],
+                "negative_guard": 16672973,
+                "lane_loads": [
+                  16672996,
+                  16673003
+                ]
+              },
+              "static_binding": "verified 8 B tagged identity-pair sink (not the outer team ordinal)",
+              "candidate_sink": {
+                "site": 22557394,
+                "width": 8,
+                "legacy": "10+10*j",
+                "wire": "11+10*j",
+                "when": "0 <= j < count"
+              },
+              "grade": "held_no_live_media_reference",
+              "row_offset": null,
+              "wire_offset": null,
+              "reason": "All materialized entries are null. No populated reference to adjudicate against actual media_source keys; no scalar ordinal coordinate.",
+              "profile": {
+                "rows": 9079,
+                "no_entry_rows": 6567,
+                "entries": 2512,
+                "raw_pairs": {
+                  "-1,-1": 2512
+                },
+                "null_pairs": 2512,
+                "zero_lane_count": 0,
+                "normalized_copy_count": 0,
+                "live": 0,
+                "ordinal_matches": 0,
+                "uid_matches": 0,
+                "first_null": {
+                  "row": 2,
+                  "entry": 0,
+                  "entry_offset": 67,
+                  "hex": "01ffffffffffffffff04",
+                  "pair_offset": 68,
+                  "finish_offset": 76,
+                  "pair": [
+                    -1,
+                    -1
+                  ],
+                  "finish": 4,
+                  "outer_offset": 62,
+                  "outer_byte": 2
+                },
+                "first_not_a_live_ordinal": {
+                  "row": 2,
+                  "entry": 0,
+                  "entry_offset": 67,
+                  "hex": "01ffffffffffffffff04",
+                  "pair_offset": 68,
+                  "finish_offset": 76,
+                  "pair": [
+                    -1,
+                    -1
+                  ],
+                  "finish": 4,
+                  "outer_offset": 62,
+                  "outer_byte": 2
+                },
+                "first_domain_conflict": null,
+                "rejected_outer_owner_as_media_ordinal": {
+                  "matches": 99,
+                  "misses": 8980,
+                  "first_miss": {
+                    "row": 99,
+                    "offset": 2662,
+                    "bytes": "d0000000",
+                    "value": 208,
+                    "target_selector": 10,
+                    "target_selector_offset": 35713,
+                    "target_identity_offset": 36007,
+                    "target_identity": [
+                      208,
+                      232,
+                      232
+                    ]
+                  }
+                }
+              },
+              "write_sites": [
+                71118714,
+                71118742
+              ],
+              "live_contract": "Getter boxes both signed lanes with MedS; generic setter helper packs target +0xc/+0x10 or null. Do not assert an observed UID/ordinal join."
+            }
+          }
+        }
+      ],
+      "unscoped_evidence": {
+        "outer_non_schema_byte": {
+          "object_offset": 56,
+          "legacy_offset": 4,
+          "wire_offset": 5,
+          "unsigned_histogram": {
+            "0": 114,
+            "1": 1827,
+            "2": 2313,
+            "3": 2596,
+            "4": 2229
+          },
+          "zero_count": 114,
+          "mask": null,
+          "note": "Unscoped 1 B sink, not Melf: first inner row has outer 2 vs inner 4; no 4CC evidence for an empty-vector fallback."
+        },
+        "inner_tag": {
+          "entries": 2512,
+          "histogram": {
+            "1": 2512
+          },
+          "sink": "rsp+0x47, discarded",
+          "tested_mask": null,
+          "boolean_claim": false
+        }
+      },
+      "supplemental_evidence": {
+        "historical_t33_differential": {
+          "path": "scratch/t33/out/profiles/table_server_59.profile.json",
+          "sha256": "3c4ee8efdb057ad21b020d67a6d08c174ffe42309bb2d3fc28e0fea11922ecf9",
+          "rows_file": "scratch/t33/out/profiles/table_server_59.rows.jsonl",
+          "rows_file_sha256": "b06e7e468f6d9e1c3cb8b8b36533b667ae87a74b2338fe8c24e91f7a34abcc49",
+          "row_block_sha256": "94b77a7e6863b4ecf15239de7ed1b637620acbba0c88941e53da24031048728a",
+          "matching_rows": 9077,
+          "differences": [
+            {
+              "row": 0,
+              "t33": {
+                "row": 0,
+                "offset": 14,
+                "len": 19,
+                "raw_hex": "00000000030000000000000000010000000100"
+              },
+              "native": {
+                "offset": 14,
+                "len": 22,
+                "bytes": "00000000030000000000000000010000000100000000",
+                "identity": [
+                  0,
+                  1,
+                  1
+                ]
+              },
+              "t33_tail": [
+                0,
+                16777216,
+                16777216
+              ],
+              "marker": 0
+            },
+            {
+              "row": 1,
+              "t33": {
+                "row": 1,
+                "offset": 33,
+                "len": 25,
+                "raw_hex": "00000001000000010000000001000000020000000200000000"
+              },
+              "native": {
+                "offset": 36,
+                "len": 22,
+                "bytes": "01000000010000000001000000020000000200000000",
+                "identity": [
+                  1,
+                  2,
+                  2
+                ]
+              },
+              "t33_tail": [
+                1,
+                2,
+                2
+              ],
+              "marker": 0
+            }
+          ],
+          "t33_stride_histogram": {
+            "19": 1,
+            "22": 6565,
+            "25": 1,
+            "32": 2512
+          },
+          "t33_ambiguity": {
+            "rows_with_multiple_valid_lengths": 1,
+            "max_candidate_lengths": 5,
+            "rule": "first (shortest) valid frame length is used"
+          },
+          "historical_negative": {
+            "path": "scratch/t33/out/REPORT.md",
+            "sha256": "07572015f6f2455bd0787e7d0303ef3782eee386e40829e2b723963ada23e7e5",
+            "quote": "tail id pair in every row equals 0x01000000, not a plausible media_source id; column semantics stay unresolved",
+            "clarification": "The universal-pair wording in the old report does not match the actual JSONL. Do not rewrite it. The false row 0 pair is 0x01000000; true row 0 pair is (1,1)."
+          }
+        },
+        "historical_t33_negative": {
+          "path": "scratch/t33/out/REPORT.md",
+          "sha256": "07572015f6f2455bd0787e7d0303ef3782eee386e40829e2b723963ada23e7e5",
+          "quote": "tail id pair in every row equals 0x01000000, not a plausible media_source id; column semantics stay unresolved",
+          "clarification": "The universal-pair wording in the old report does not match the actual JSONL. Do not rewrite it. The false row 0 pair is 0x01000000; true row 0 pair is (1,1)."
+        },
+        "t33_negative_clarification": "The universal-pair wording in the old report does not match the actual JSONL. Do not rewrite it. The false row 0 pair is 0x01000000; true row 0 pair is (1,1).",
+        "scope_note": "The t41 report retains the t33 false-tail negative; it is not added to the four original t20 negative regressions."
+      },
+      "source_artifacts": [
+        "scratch/t24/out/subtables.part001.json",
+        "scratch/t41/out/fields_csme.json",
+        "scratch/t41/out/cursor_csme.json",
+        "scratch/t41/out/REPORT.md",
+        "scratch/t41/out/instructions.part001.json",
+        "scratch/t41/out/instructions.part002.json",
+        "scratch/t41/out/instructions.part003.json",
+        "scratch/t41/out/instructions.part004.json",
+        "scratch/t41/out/instructions.part005.json",
+        "scratch/t41/out/instructions.part006.json",
+        "scratch/t41/out/instructions.part007.json",
+        "scratch/t41/out/instructions.part008.json",
+        "scratch/t41/out/branches.part001.json",
+        "scratch/t41/out/branches.part002.json",
+        "scratch/t33/out/profiles/table_server_59.profile.json",
+        "scratch/t33/out/profiles/table_server_59.rows.jsonl",
+        "scratch/t33/out/REPORT.md",
+        "scratch/t45/out/LEDGER.E82.json"
+      ]
     }
   ],
   "negative_regressions": [
@@ -19242,7 +20213,8 @@
     "acceptance_ledger": {
       "path": "scratch/t01/LEDGER.json",
       "v1_acceptance_entry": "E79",
-      "tchl_acceptance_entry": "E78"
+      "tchl_acceptance_entry": "E78",
+      "csme_acceptance_entry": "E82"
     }
   }
 }
