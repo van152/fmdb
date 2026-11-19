@@ -616,3 +616,41 @@ wire 顺序≠XML 顺序，后续映射不得按 XML 序号对齐。共 72 对�
 主行层单列：occurrences 433、aligned 18、L3 13、held 11、skipped_separate_member 10、unmapped 399、new L3 5、wire/XML inversions 72、L4=0。既有 `club_L3_occurrences=94`、`club_L3_unique_wire_fields=59`、`held_fields=21` 等子表层计数不动。
 E97 acceptance：kind `acceptance` / level `L3` / canonical claim SHA-256 `ba5a1079403dd970b30c9304a90c37d5a66f3d28163ee2cf2588fd355129ff32`；t56/E96：canonical claim SHA-256 `8fa14c406df939da7d1024eccdb2ed26e876071f9efef64270a998b9eb74cc92`。条目级守卫扩至 E87/E89/E90/E91/E92/E93/E94/E95/E96/E97；不钉 live ledger 全文件哈希。
 t57 的独立 verifier、builder selftest、本文档前缀、v7 快照 SHA、保护节和 t01 anchors 均在 t58 输出日志中记录。
+
+
+## t60 — COMP `table_25` 主行普查增量（E99 / L3）
+
+本节只追加到 v8 Markdown；此前 v8 全文作为逐字节前缀保留。t59 的 partial schema join 保持 partial，held 与 unmapped 不升级为结论。
+
+- 双档各 7,047 行：client `13 + 894,969 + 9 = 894,991`，定宽 127 B；server `13 + 1,533,950 + 9 = 1,533,972`。
+- 原生 identity 为 **12 B**：`dsha ordinal | duni UID | saved rdui UID`；实档 saved `rdui` 与 `duni` 相等。footer 为 **9 B** `00000000014ec43a77`（`00000000 | 01 | 4ec43a77`）。
+- 行框口径第三例：comp identity 12 B + footer 9 B；与 nation identity 13 B、club identity 12 B 并列。每张表独立自证，不能照抄另一张表宽度；既有口径不改。
+- COMP 真 slot 19 reader：file offset `0xeb7000..0xeb7e42`，837 条可达指令、114 条条件分支、0 条 extent 外边。factory case 25 的 `db::COMP` (`0x14187dcb8`) 与 `DATABASE_TABLE<COMP>` (`0x14187f6d8`) 是不同对象形态，不合并。
+- 外层位置：82 个实档观测位置，另有 `obj_a8`、`obj_e0` 两个静态存在但全档未触发的位置；`field_slots.json` 共 84 条记录。client 51 个位置；server 25 个条件模板，每模板 77–82 个位置。
+- `comp.xml#comp` 顶层 255 个 occurrence：aligned 54；L3 49、held 10、unmapped 196；L4=0。新 4CC 共 26 个：`LAUC, cext, cusn, culn, Pcsp, Pcsk, Pcsf, Pcsr, Pcsb, Pcsh, Pcsy, Pcjm, Pcja, Pcjc, Pcji, Pcjg, Pcsc, Pcjy, Pcdf, Pctd, Pchd, Pcda, Pcss, Pcdr, Pcjs, Pcjp`。
+- 818 对 wire/XML 次序倒置。首例原样：`duni`/`cfcl`，XML `[1, 12]`、执行序号 `[81, 4]`。字段不能按 XML 序号对齐。
+- 引用域全零违例：`ccti`→t5 `6,981/66/0`；`cnti`→t10 `6,769/278/0`；`cpcm`→t25 自引 `3,506/3,541/0`；`cnor/csou/cwes/ceas`→t2 各为 `680/6,367/0`、`671/6,376/0`、`642/6,405/0`、`641/6,406/0`（live/null/miss）。
+
+### Held 与 Unmapped
+
+十条 held 的 source records 与首反例保留在 v9 JSON；以下反例对象直接序列化自 t59 台账，未改写：
+
+| 字段 | 首反例（source record） |
+|---|---|
+| `rdui` | `{"at":136,"raw":"01000000","reason":"no live getter/domain witness","row":0,"value":null}` |
+| `cnam` | `{"at":28,"raw":"00","reason":"inline name selector never equals 4; even that reader arm transfers only COMP+0x48/+0x40, not +0x50","row":0,"value":0}` |
+| `csnm` | `{"at":28,"raw":"00","reason":"inline name selector never equals 4; even that reader arm transfers only COMP+0x48/+0x40, not +0x50","row":0,"value":0}` |
+| `c3ln` | `{"at":28,"raw":"00","reason":"inline name selector never equals 4; even that reader arm transfers only COMP+0x48/+0x40, not +0x50","row":0,"value":0}` |
+| `PLgn` | `{"at":141,"raw":"00","reason":"no scoped enum_ref; do not infer labels","row":0,"value":null}` |
+| `VARt` | `{"at":null,"raw":null,"reason":"getter enters rules/context path; no same COMP wire member proved","static_site":15467708}` |
+| `HKEt` | `{"at":null,"raw":null,"reason":"getter enters rules/context path; no same COMP wire member proved","static_site":15468692}` |
+| `CpRp` | `{"at":90,"raw":"64","reason":"getter first tests context; raw byte is not unconditional editor value","row":0,"value":null}` |
+| `CTty` | `{"at":32,"raw":"05","reason":"no scoped enum_ref; do not infer labels","row":0,"value":null}` |
+| `dbty` | `{"at":102218,"raw":"1e","reason":"not in scoped enum cdbt","row":394,"value":30}` |
+
+196 条 unmapped occurrence 的完整原始对象逐条保存在 `comp_main_row_fields.source_records.field_map.fields`；未映射不代表字段不存在。code 顺序索引：`DBvw`, `EFBR`, `NDBC`, `FDBC`, `dbnm`, `dAPw`, `VARv`, `VARm`, `VARs`, `VARd`, `HKEv`, `HKEm`, `HKEs`, `HKEd`, `WpBn`, `IsAC`, `HsAR`, `NoBR`, `cmtc`, `nytc`, `ctms`, `CTMS`, `sfCi`, `sfCx`, `ssCi`, `ssCx`, `syCi`, `syCx`, `sfMi`, `sfMx`, `ssMi`, `ssMx`, `syMi`, `syMx`, `sfSi`, `sfSx`, `sySi`, `sySx`, `Pfq0`, `Pob0`, `Pat0`, `Pmn0`, `Pmx0`, `Pfq1`, `Pob1`, `Pat1`, `Pmn1`, `Pmx1`, `Pfq2`, `Pob2`, `Pat2`, `Pmn2`, `Pmx2`, `Pfq3`, `Pob3`, `Pat3`, `Pmn3`, `Pmx3`, `Pfq4`, `Pob4`, `Pat4`, `Pmn4`, `Pmx4`, `Pfq5`, `Pob5`, `Pat5`, `Pmn5`, `Pmx5`, `cntm`, `CNTM`, `otms`, `OTMS`, `nsod`, `NSOD`, `rgts`, `crgt`, `RsL0`, `RsL0`, `RsL1`, `RsL2`, `RsL3`, `RsL4`, `RsL5`, `CRtm`, `CBWc`, `CBWo`, `CBWf`, `CBWa`, `CBWd`, `CHSc`, `CHSo`, `CHSf`, `CHSa`, `CHSd`, `CGMp`, `CGMn`, `CGMg`, `CGMc`, `CGMo`, `CGMd`, `CWRc`, `CWRg`, `CWRs`, `CWRe`, `CLRc`, `CLRg`, `CLRs`, `CLRe`, `CWLc`, `CWLg`, `CWLs`, `CWLe`, `CWWc`, `CWWg`, `CWWs`, `CWWe`, `CWSc`, `CWSg`, `CWSs`, `CWSe`, `CWCc`, `CWCg`, `CWCs`, `CWCe`, `CHAc`, `CHAa`, `CHAo`, `CHAd`, `CLAc`, `CLAa`, `CLAo`, `CLAd`, `CAAc`, `CAAa`, `CAAd`, `HCAa`, `HCAd`, `LCAa`, `LCAd`, `CMAp`, `CMAn`, `CMAa`, `CMGp`, `CMGn`, `CMGg`, `CMCp`, `CMCn`, `CMCc`, `CMCs`, `CMCd`, `CHGp`, `CHGn`, `CHGt`, `CHGg`, `CHGs`, `CHGe`, `CYPp`, `CYPn`, `CYPc`, `CYPd`, `CYPm`, `CYPo`, `COPp`, `COPn`, `COPc`, `COPd`, `COPm`, `COPo`, `CYSp`, `CYSn`, `CYSc`, `CYSd`, `CYSm`, `CYSo`, `COPc`, `COSp`, `COSc`, `COSn`, `COSd`, `COSm`, `COSo`, `CFGp`, `CFGn`, `CFGc`, `CFGo`, `CFGd`, `CFGs`, `CtRq`, `Cgcc`, `AdHR`, `Ctoa`, `Ctua`, `chst`, `AdLe`, `csap`, `AXML`
+
+### Provenance
+
+E99 为 acceptance/L3，canonical claim SHA-256 `e13990af22d739ba1f6a61e9adc2211febb051821845a48358e30306d452b16b`；v8 基线 E98 SHA-256 `57a2384c170c3effc159a98012b866ab174849da8849269abc118b8e7fe4f150`。ledger 守卫逐条覆盖 E84–E99，仅校验 id、kind、level 与 canonical claim SHA，不钉全文件。
+Coverage 新增 `comp_main_row_*` 项；既有 club/nation 计数及 tables、negative regressions、v3 baseline、club auxiliary、club/nation 主行节保持不变。

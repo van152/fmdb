@@ -2110,6 +2110,33 @@
     "scratch/cmd/t59_spot.py"
    ],
    "consequence": "comp joins nation/club as third census-verified main row; 26 new comp 4CCs citable at L3; schema v9 fold (comp_main_row_fields) left for next shift"
+  },
+  {
+   "id": "E100",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "schema": "club_nation_subtable_schema v9",
+    "fold": "t59 comp table_25 main-row census merged into comp_main_row_fields",
+    "assertions": [
+     "dual payload 894,991 / 1,533,972 bytes, 7,047+7,047 rows, client fixed 127B, server conditional templates 1+25",
+     "identity 12B (dsha|duni|saved rdui) + footer 9B 00000000|01|4ec43a77; per-table width policy note added to coverage",
+     "COMP reader slot19 0xeb7000 837/114; factory case25 dual vtables 0x14187dcb8 / 0x14187f6d8 recorded unmerged",
+     "255 occurrences -> L3:49 held:10 unmapped:196, aligned 54, 26 new 4CCs, 818 inversions (first duni/cfcl), 82 observed + 2 static-untriggered sites",
+     "protected v8 sections incl. club_main_row_fields verbatim; club 94/13/5-new and nation counts unchanged; L4=0"
+    ],
+    "guards": "entry-level E84-E99 full span (E86/E88 now included) canonical claim SHA re-computed vs LEDGER; E100 excluded",
+    "spot": "commander t60_spot.py 0 FAIL + worker spot_*.log PASS + t01 anchors 7/7"
+   },
+   "evidence": [
+    "reports/club_nation_subtable_schema.json#703df30e",
+    "scratch/t60/out/club_nation_subtable_schema.v8.json#76da94d4",
+    "scratch/t60/out/REPORT.md",
+    "scratch/cmd/t60_spot.py"
+   ],
+   "consequence": "public schema advances v8->v9: all three censused main rows (nation/club/comp) now carry full field layers; comp joins citable schema"
   }
  ]
 }
