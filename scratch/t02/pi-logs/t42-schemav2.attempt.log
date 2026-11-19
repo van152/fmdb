@@ -1,0 +1,16 @@
+Warning: No project session found with id 't42-schemav2-hiyo-key2'; creating a new session with that id.
+已完成 t42 v2，当前分支为 `t42-schema-v2`。
+
+**交付清单**
+- `reports/club_nation_subtable_schema.json`、`reports/club_nation_subtable_schema.md`：schema v2，7 表、51 L3、15 held、4 条 negative，L4=0。
+- `scratch/t42/out/consolidate_v2.py`、`scratch/t42/out/verify.py`：builder 自检通过；独立 verifier 不导入 builder。
+- `scratch/t42/out/REPORT.md`、`scratch/t42/out/DONE.md`。
+- `scratch/t42/out/club_nation_subtable_schema.v1.json`、`.md`：v1 基线快照。
+
+Tchl 已按共享 club/nation 范围并入；7,084 个非空 owner 均指向 table 24 selector 11 `NATIONAL_TEAM`，31 个为空，club-exclusive L3 保持 0。`styr`、`edyr` 仍为 held。master.json SHA-256 与 MANIFEST 条目匹配。六张 v1 表、44 个旧 L3、13 个旧 held、4 条 negative 和两个 Cstc 非业务槽均与快照结构相等。
+
+**验证**
+- builder `--selftest`：PASS。
+- 独立 `verify.py`：PASS，7 表 / 51 L3 / 15 held / L4=0。
+- `scripts/t01_anchors.py`：7/7 PASS。
+- 未访问 Z:，未启动游戏、编辑器或 IDA，未联网；已有的其他工作区改动未触碰。

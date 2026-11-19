@@ -1,0 +1,16 @@
+=== attempt 1/2 Thu Nov 19 17:18:27     2026 provider=openai-codex model=gpt-6.2-sol ===
+Warning: No project session found with id 't44-caflcvfl-openai-codex'; creating a new session with that id.
+**t44 已闭合：Cafl 和 Cvfl 共用同一 `CLUB_LINK` 集合。** 磁盘来源是具名辅助成员 `server_db/club_links.dat`，不走数字 table factory，也不嵌在 `table_3.dat` 行内。Server 全部 **9,261 行 × 47 B** 精确闭合；client 无此成员。
+
+`Cvfl` 从同一集合复制非空项，并在运行时计算 `clfr`；生成副本时不按验证成功筛选。`clfr` 没有磁盘槽位。
+
+字段晋级：Cafl **26/29 L3**，Cvfl **16/19 L3**（按各自 schema occurrence 计），L4=0。`type=21`、`yfee=-1` 和全为空的 `msls` 保留 held。t35 原始负例未改动，SHA 已复核。
+
+**交付清单**
+- `scratch/t44/out/`：`discovery_cafl_cvfl.json`、`cursor_club_links.json`、`fields_cafl_cvfl.json`
+- `scratch/t44/out/`：`instructions.part001–007.json`、`branches.part001–003.json`
+- `scratch/t44/out/`：`verify.py`、`REPORT.md`、`DONE.md`
+- `scripts/t44_cafl_cvfl.py`
+
+Builder、独立 verifier 及两者的 `--help`、`--selftest` 均通过；`t01_anchors.py` **7/7**。
+=== DONE(heuristic: 14 json/md files) t44-caflcvfl attempt=1 rc=0 Thu Nov 19 17:44:31     2026 ===

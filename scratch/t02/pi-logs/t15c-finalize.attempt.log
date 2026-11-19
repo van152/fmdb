@@ -1,0 +1,37 @@
+t15c 收尾完成。
+
+## 交付清单
+
+| 文件 | 大小 | 内容 |
+|---|---|---|
+| `scratch/t15/out/fk.json` | 11.8 KB | `status: complete_finalized`,10 张表 + `people_diff` 块 |
+| `scratch/t15/out/fk.md` | 7.8 KB | 逐表 3-5 行 + 判定汇总表 |
+| `scratch/t15/out/people_diff.md` | 6.3 KB | 可检验结论 6 条 + 假设 4 条 |
+
+未覆盖任何既有 scan/prof/walk/CSV/npy 文件，未重跑 dump，未碰 `scripts/`。
+
+## 判定结果(3 corroborates / 7 inconclusive / 0 contradicts)
+
+- **t30 STARTING_INJURY — corroborates**:`@4` 值域 0..114、distinct 115 = injury 基数 **100% 覆盖**；`@0` 上界 656,816 贴 person 空间。
+- **t38 STARTING_BAN — corroborates**:`@0` 上界 656,681、4,993 distinct / 5,241 行(1.05 禁赛/人)。
+- **t49 STARTING_PERSON_HISTORY — corroborates**:`@4` 与 person duni 精确相交 **626,688 行(79.12%)**，随机基线约 0.015%。
+- **t26 / t29 / t39 / t45 / t48** — inconclusive，缺的是真值列或可读身份，不是没扫。
+- **t32 / t36** — 按任务书第 4 条降级：prof 早停(bad_len=0xFFFFFF / 0xFF0000)，只有约 60.6 / 86.1 B/row 的**推论**均值；`scan_gen` 的 word 命中率在 person/club/comp 三空间同阶，无鉴别力。
+
+## 两处现场冲突已裁决
+
+1. **t48 边界**：`walk_t48.json`(严签名 `u32@p-17==1`)在 stuck_at=178 早停；`prof_t48`/`more.json` 用 80 B 头方案走完 5,210 行且闭包 `14+Σ+8=446,049`。**以后者为准**，前者是签名过严。
+2. **t26 的 ×12.8**：90,128/7,047 = 12.79 只是整表恒等式；`@1` 实际只引用 4,162 个 comp(59.1% 基数)，21.65 行/comp —— 第 2 层不成立，已在 fk.json/fk.md 里写明，没有把恒等式当证据。
+
+## 悬案 134,138 的落点
+
+`165,461(未命中行) − 31,323 = 134,138`。**31,323 无实体含义**，相减得不出实体数。
+
+新数字(仅用现场 npy 做集合运算):
+- basic_people_db 的 658,011 = **646,979 有 duni + 11,032 无 duni**；后者序数聚在两端(低段缺 9,839、尾段缺 1,193)。
+- 65,596 个缺失 distinct 中 **64,349(98.1%)既不在 pl_hist_id.dat 也不在 non_pl_hist_id.dat**；反向看，11,032 个无 duni 者 t49 只引用了 **75 个** —— 这条路解释不了缺口。
+- 缺失值 **98.1% ≥ 16.7M**，只有 5,852 个 <658,011；相邻差为 1 的仅 12.0%(稀疏编号)。
+- 高位 tag 分布两边共享 {0..5, 119}，tag 119 是 2e9 基址块(duni 侧 249,601 个值只填 2.03M 跨度的 12%)→ 同一 ID 生成器，不是巧合交集。
+- `miss>>24` 掩码后能救回 15,688(23.9%)缺失值，原始值命中 0 —— 方向支持"高位是类型 tag"，但不足以定案(记为 H4)。
+
+E59 不循环性已在 `people_diff.md` 顶部显式检查并加注：658,011 来自 basic_people_db 独立计数，792,149 是 t49 自身行数；凡用 t49 行数当分母处均标 `[t49自身]`。

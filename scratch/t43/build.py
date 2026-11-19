@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import io
 import json
 import os
 import pathlib
@@ -88,12 +89,31 @@ def parse_count(out: dict, pattern: str) -> dict:
     return {"rc": out["rc"], "match": list(m.groups()) if m else None}
 
 
+def legacy_load_payload_impl():
+    """修复前的 load_payload(从 entry.offset 起扫 64B 取首帧 —— 漏 data_base)。"""
+    import fm24_dump
+
+    def legacy(codec, archive: str, tid: int) -> bytes:
+        fn = f"{archive}_db.dat"
+        p = fm24_dump.DB_DIR / fn
+        ents = codec["list_tables"](p, fn)
+        e = codec["_resolve_table"](tid, ents, fn)
+        off = e["offset"]
+        db = p.read_bytes()
+        hit = next((off + d for d in range(64) if db[off + d : off + d + 4] == fm24_dump.MAGIC), None)
+        if hit is None:
+            raise RuntimeError(f"{fn} table_{tid}: zstd frame not found")
+        return codec["_stream_decompress"](db[hit:], 256 * 1024 * 1024)
+
+    return legacy
+
+
 def head_selftest(script: str = "scripts/t38_multiframe.py") -> dict:
-    """跑 git HEAD 版本的 t38 selftest(不写文件、不是当前工作区副本)。
+    """跑 git HEAD 版本的 t38 selftest 两次:修复后 / 修复前(monkeypatch)。
 
     用于把「修复后 t38 PASS 计数为何从 25 变 24」钉死:那 1 条是记录旧法差异的
     信息行 `DIFF[EXPECTED(E66-family)] server#34: legacy=12B vs mf=313082B`,
-    它被算进 `len(lines)-len(fails)`。修复后差异消失 → 少 1 行,PASS 从 25 变 24,
+    它被算进 `len(lines)-len(fails)`。修复后差异消失 → 少 1 行,PASS 25->24,
     FAIL 仍为 0。这是修复生效的**正向证据**,不是回归。
     """
     src = None
@@ -108,16 +128,50 @@ def head_selftest(script: str = "scripts/t38_multiframe.py") -> dict:
                 "git_show_stdout_len": len(r.stdout or ""), "cwd": str(ROOT),
                 "attempts": 3,
                 "note": "git show 失败;HEAD 版本 selftest 未跑(不影响主证据)"}
+
+    import fm24_dump
+
     env_backup = os.environ.get("FM24_DB_DIR")
     os.environ["FM24_DB_DIR"] = str(DB_DIR)
     path = ROOT / script
-    g = {"__name__": "t38_head", "__file__": str(path)}
+    fixed_impl = fm24_dump.load_payload
+    blob = hashlib.sha256(src.stdout.encode()).hexdigest()[:16]
+    out: dict = {"git_blob": blob, "script": script}
     try:
-        exec(compile(src.stdout, str(path), "exec"), g)
-        rc = g["run_selftest"](verbose=False)
-        return {"rc": rc, "git_blob": hashlib.sha256(src.stdout.encode()).hexdigest()[:16],
-                "note": "HEAD 版本 + 修复后 fm24_dump:legacy 差异行消失 -> PASS 25->24,FAIL 0"}
+        def _run() -> tuple[int, str, str]:
+            g = {"__name__": "t38_head", "__file__": str(path)}
+            exec(compile(src.stdout, str(path), "exec"), g)
+            buf = io.StringIO()
+            real = sys.stdout
+            sys.stdout = buf
+            try:
+                rc = g["run_selftest"](verbose=False)
+            finally:
+                sys.stdout = real
+            txt = buf.getvalue()
+            m = re.search(r"--- t38 multiframe selftest: (\d+) PASS / (\d+) FAIL ---", txt)
+            diff = [l.strip() for l in txt.splitlines() if "DIFF[" in l]
+            return rc, (m.group(0) if m else txt[-120:]), diff
+
+        # 修复后(当前工作区实现)
+        rc1, line1, diff1 = _run()
+        out["after_fix"] = {"rc": rc1, "summary": line1, "diff_lines": diff1}
+
+        # 修复前(临时换回 legacy 实现,跑完立即还原)
+        fm24_dump.load_payload = legacy_load_payload_impl()
+        try:
+            rc0, line0, diff0 = _run()
+        finally:
+            fm24_dump.load_payload = fixed_impl
+        out["before_fix"] = {"rc": rc0, "summary": line0, "diff_lines": diff0}
+        out["delta"] = (
+            "同一份 HEAD 版 t38 脚本、唯一变量是 fm24_dump.load_payload:"
+            "修复前 25 PASS/0 FAIL(含 1 条 DIFF 提示行),修复后 24 PASS/0 FAIL(差异行消失),"
+            "FAIL 始终 0。少的那 1 条就是 server#34 legacy-vs-mf 差异行本身。"
+        )
+        return out
     finally:
+        fm24_dump.load_payload = fixed_impl
         if env_backup is None:
             os.environ.pop("FM24_DB_DIR", None)
         else:
@@ -270,7 +324,7 @@ def main() -> int:
             ),
             "accepted_baseline": "25 PASS / 0 FAIL (含 1 条 server#34 legacy-vs-mf 差异行)",
             "after_fix_expected": "24 PASS / 0 FAIL (差异行消失;server 34 已不再是特例)",
-            "head_version_run": head_selftest(),
+            "same_script_head_version_both_states": head_selftest(),
             "working_tree_run": regressions.get("t38_multiframe --selftest", {}).get("match"),
             "working_tree_externally_modified": (
                 "本任务期间 `scripts/t38_multiframe.py` 被另一会话追加了 145 行(check #10/#11:"

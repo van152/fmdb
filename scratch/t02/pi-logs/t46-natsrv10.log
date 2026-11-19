@@ -1,0 +1,10 @@
+=== attempt 1/3 Thu Nov 19 17:38:00     2026 provider=hiyo-key2 model=gpt-6-luna ===
+Warning: No project session found with id 't46-natsrv10-hiyo-key2'; creating a new session with that id.
+t46 已完成，范围保持在 server `table_10` 数据侧画像；**内部 count 位置、符号性和 item 宽度仍未确认**，因此结果标为 partial，L3/L4 均为 0。
+
+已唯一绑定 251 行并闭合 payload：`14 + 422,323 + 8 = 422,345`。行长为 141–30,993 B。画像覆盖 1,106 个行首/行尾列；朴素 shortest-tail walker 的误边界和 row 88 停滞负例也已保留。完整 A/B/C/D 差分见报告，server 分段语义仍标为 unknown。
+
+交付物：[profile](D:/tmp2b/fm24-db/scratch/t46/out/profiles/table_server_10.profile.json)、[rows](D:/tmp2b/fm24-db/scratch/t46/out/profiles/table_server_10.rows.jsonl)、[grammar diff](D:/tmp2b/fm24-db/scratch/t46/out/grammar_diff_client_server.json)、[REPORT.md](D:/tmp2b/fm24-db/scratch/t46/out/REPORT.md)、[DONE.md](D:/tmp2b/fm24-db/scratch/t46/out/DONE.md)、[独立 verifier](D:/tmp2b/fm24-db/scratch/t46/out/verify.py) 和[构建脚本](D:/tmp2b/fm24-db/scripts/t46_nation_server10.py)。
+
+验证通过：独立 verifier 重算全部 1,106 列统计；脚本与 verifier 自检通过；`t01_anchors.py` 为 7/7。
+=== DONE t46-natsrv10 attempt=1 rc=0 Thu Nov 19 17:59:51     2026 ===

@@ -1,0 +1,8 @@
+Warning: No project session found with id 't45-schemav3-hiyo-key2'; creating a new session with that id.
+已完成并提交 t45 schema v3。
+
+- 将 t41 E82 的 Csme/table 59 作为第八表并入 [schema JSON](<D:/tmp2b/fm24-db/reports/club_nation_subtable_schema.json>) 和 [Markdown 报告](<D:/tmp2b/fm24-db/reports/club_nation_subtable_schema.md>)。总计 52 个 L3、16 个 held、保留原有 4 条 negative regression，L4=0。
+- Csme payload 闭合为 `13 + 6567×22 + 2512×32 + 9 = 224880`。Melf 仅在 count=1 的 2,512 行有值；count=0 不推断默认值。Msid 仍 held，club-exclusive L3 保持 0。
+- Builder、独立 verifier、v2 快照、E82 ledger 快照及验收记录位于 `scratch/t45/out/`。
+
+验证通过：builder `--help`/`--selftest`、独立 verifier `--help`/`--selftest`，以及 `t01_anchors.py`（7/7）。提交为 `6344d06`（`feat(t45): consolidate Csme schema v3`）；其他预存工作区改动未纳入提交。

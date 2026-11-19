@@ -1,0 +1,11 @@
+=== attempt 1/3 Thu Nov 19 03:53:53     2026 provider=openai-codex model=gpt-6-luna ===
+Warning: No project session found with id 't18-offset-bridge-openai-codex'; creating a new session with that id.
+t18 已完成，交付位于 `scratch/t18/out/`。
+
+- 黄金行侧一致率：**113/113（100%）**；comp、weather、city 均通过 stride 校验。
+- 求证确认对象偏移与行偏移不能直接比较，Δ 不恒定。comp 的稀疏 t16 walk 直接累加仅 **2/8** 个可比锚点命中；完整的 E20 cursor layout 才能封口。
+- 已生成 20 个实体台账；club 命名率维持 **14/672（2.08%）**，本任务未新增命名。
+- 非黄金实体的 stride 标为 `fail`、一致率为 `null`，表示尚未验证，不代表测得 0%。
+
+交付包括 `bridge.json`、`golden_row_checks.json`、`REPORT.md`、`verify.py` 及分片台账；新增脚本为 `scripts/t18_build.py`、`scripts/t18_verify.py`。验证脚本的 `--help`、`--selftest` 和完整验证均通过。旧 G1 **12/237（5.06%）** 保留为原口径，未冒充为全局修复结果。
+=== DONE t18-offset-bridge attempt=1 rc=0 Thu Nov 19 04:11:16     2026 ===

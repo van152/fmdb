@@ -1,0 +1,19 @@
+=== attempt 1/2 Thu Nov 19 14:44:48     2026 provider=hiyo-key2 model=gpt-6-luna ===
+Warning: No project session found with id 't35-caflcvfl-hiyo-key2'; creating a new session with that id.
+## 结果
+
+**状态：`partial_no_semantic_candidate`。** 扫描了 t14 的 74 个类型和当前 stage2 文件的 45 条记录，未找到 affiliation/link 语义候选。需注意：该 stage2 文件与 t29 provenance 中的哈希一致，实际统计为 **29 resolved、3 candidate、11 negative、2 empty**，不是 54 条 resolved。
+
+`client table_type 3` 已作为 club **父表上下文**复算：84,259 行、变长，84,256 条标准行和 3 条 identity-only 紧凑行；封口为 `14 + 6,932,060 + 8 = 6,932,082`。它不是 Cafl/Cvfl 子表候选。Cafl/Cvfl 的表号、归档、行封口及 item 列仍 unknown，因此目前无法用数据判定“一集合两视图”或“两张独立表”；视图假说结论为 `no_data_vote`。日期、金额、引用、枚举和布尔 bitmask 均未被臆测命名。
+
+## 交付与验证
+
+- 报告：[REPORT.md](/D:/tmp2b/fm24-db/scratch/t35/out/REPORT.md)
+- 主结果：[cafl_cvfl_discovery.json](/D:/tmp2b/fm24-db/scratch/t35/out/cafl_cvfl_discovery.json)
+- 画像：`scratch/t35/out/profiles/`
+- 独立复算：[verify.py](/D:/tmp2b/fm24-db/scratch/t35/out/verify.py)
+- 完成标记：[DONE.md](/D:/tmp2b/fm24-db/scratch/t35/out/DONE.md)
+- 可复跑脚本：[t35_cafl_cvfl.py](/D:/tmp2b/fm24-db/scripts/t35_cafl_cvfl.py)
+
+脚本自检、独立 verifier 均通过；`t01_anchors.py` 为 **7/7**。直接运行现有 `fm24_dump.py` 时遇到 `footer_offset` 十六进制字符串转整数错误；未修改该脚本，client 父表封口由独立 walker 验证。
+=== DONE t35-caflcvfl attempt=1 rc=0 Thu Nov 19 15:12:31     2026 ===

@@ -1,0 +1,13 @@
+Warning: No project session found with id 't37-nation-hiyo-key2'; creating a new session with that id.
+**t37 交付状态：partial**。核对了原有 t37 产物并保留其核心结果；新增 t33 七份 profile 的交叉核对。`DONE.accepted.md` 未改动。
+
+- 冻结 schema 实际包含 **29 个 list 父码**：20 个有 item 字段、9 个无 item 字段。任务基线漏列 `EDfx`、`Tchl`、`EDsc`、`AXML`，已一并纳入。
+- `Tchl` 保留为 server table 34（`STARTING_TEAM_CUP_HISTORY`）的**低置信共享 schema 候选**：7,115 行、stride 44，封口为 `14 + 7115 * 44 + 8 = 313082`。9 个 item 字段中有 7 个找到兼容列，共 65 个候选坐标；均为统计候选，不是字段定位。缺少 nation collection 到 table 34 的直接连接证据。
+- `Nagr`、`Nefr`、`Nnfr`、`Nlns` 标记为 `linked_by_t28`，沿用已有证据，没有重复画像。
+- **15 个有 item 字段但未定子表**：`TCrs(4)`、`Nrvn(2)`、`Nntp(6)`、`Nctp(5)`、`Nrtp(5)`、`NTRv(2)`、`NWGv(2)`、`NSps(2)`、`NCro(2)`、`Ntxr(9)`、`Nfmp(6)`、`Nftb(7)`、`Calt(2)`、`EDfx(7)`、`EDsc(6)`。缺少父集合到 table/reader 的直接连接；`Nntp`、`Ntxr`、`Nfmp` 的对应精确 RTTI 类名未在 t14 主类中找到。table 58 的 weekly-wage 近似名未挂到 `NWGv`。
+- **9 个零 item 父码**：`Nchi`、`Nphi`、`Tko1`、`Tkg1`、`Tko2`、`Tkg2`、`Tko3`、`Tkg3`、`AXML`。只记录 schema 现状；ref-only、嵌入或共享存储仍未判定。
+- 未新增 L3 或 L4 结论。
+
+文件：`scripts/t37_nation_inventory.py`；`scratch/t37/out/nation_subtable_inventory.json`、`profiles/table_server_34.profile.json`、`REPORT.md`、`verify.py`、`DONE.md`。
+
+**验收**：生成器和 verifier 的 `--help`、`--selftest` 均通过；独立 verifier 通过，复算 7,115 行封口及 65 个候选列统计，并核对 29 个父码、t28 链接和 schema manifest pin；`t01_anchors.py` **7/7 PASS**。

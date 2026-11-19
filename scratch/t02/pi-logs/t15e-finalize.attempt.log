@@ -1,0 +1,33 @@
+Warning: No project session found with id 't15e-finalize-devseek'; creating a new session with that id.
+交付完成。**只写了两个文件，未重跑任何导出。**
+
+## 交付清单
+
+| 文件 | 内容 | 规模 |
+|---|---|---|
+| `scratch/t15d/out/dspot.json` | 12 表逐条 `{table_type, rtti_class, verdict, evidence}` + 顶层 `status: "complete_spot_check"` + `counts` / `reference_bases` / `artefact_gaps` | 105 行 |
+| `scratch/t15d/out/dspot.md` | 人读表:总表 + 逐表说明 + fk_hits 一致性 + 产物缺口 + 边界声明 | 64 行 |
+
+## 判读结果（12 张：plausible 8 / implausible 0 / silent 4）
+
+**plausible**
+- 34 CUP_HISTORY — comp 域 0.9956(d_lo=89)，起止年 0..2023
+- 37 LEAGUE_HISTORY — comp 0..7044 全落 7,047；team 51..84,481 全落 84,507（最强锚点，465,712 行）
+- 42 RETIREMENT — person duni 100%，d=16,756，lift=3,092
+- 43 MONTHLY_INSTALLMENT — person 533/533(lift 3,176)；月数 2..84；金额 1,041..3,861,111
+- 51 MLS_GAM — 金额 1,520,812..2,241,197（仅 3 值，样本薄）
+- 58 WEEKLY_WAGE_CONTRIBUTION — person 8/8(lift 226.5)；周薪样 603..38,800（仅 8 行）
+- 62 RESERVE_TEAM — u32@1 全 ≤84,258 压在 club 上界（与 team 84,507 不可区分，已注明）
+- 64 CLUB_STAFF_JOB_STATUS — club 11..82,188（753 个）+ job_type 枚举，最干净
+
+**silent（缺判别性数据，未补跑）**
+- 46 DRAFT_TRANSFER — 7 行，引用列 1,907..72,052,048 不落任何 ID 空间
+- 50 MLS_TRADED_SLOT — low16 判据在 club 基准 >65,535 时失效；无金额列
+- 66 TRANSFER_PREFERENCE — person duni 仅 7.7% 行；无 0..20 偏好档
+- 70 VISION_OBJECTIVE — person duni 1.19%/5.36%(lift 79/356)，@0..@12 全为复合值
+
+## 两点须知
+1. `prof/p34.json`、`prof/p37.json` 缺失，`prof/e34.txt` 是 `dspot.py` 的 closure 回溯（`closure fail t34: 12 != 313082`），`prof/e37.txt` 不存在——34/37 改由 `measure.json` + `grid/t34.txt`/`grid/t37.txt` 的等价数值支撑，已在 `artefact_gaps` 与 md 中留档。
+2. `idset/` 是空目录（club/team 真实集合未落盘），因此 62/64 只能用值域上界判据，已在 evidence 中标明"不可区分 team/club"。
+
+未做任何实体裁决升降（E42 边界生效）；无 `implausible`——没有一张表出现类名要求的引用/金额/日期列与画像**明确矛盾**。
