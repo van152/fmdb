@@ -2137,6 +2137,43 @@
     "scratch/cmd/t60_spot.py"
    ],
    "consequence": "public schema advances v8->v9: all three censused main rows (nation/club/comp) now carry full field layers; comp joins citable schema"
+  },
+  {
+   "id": "E101",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "scope": "t61 held scoped enum_ref batch re-check across nation/club/comp (73 held records)",
+    "result": "ALL 73 held records REMAIN held; 0 promotions; L4=0",
+    "breakdown": [
+     "nation 31 (main 4 no_enum_source, main_other 3 no_enum_source [Nftb parent/EDsc/Npop], subtable 24: 20 no_enum_source + 3 no_persisted_enum_samples + 1 enum_domain_conflict)",
+     "club 32 (main 11 no_enum_source, numbered subtables 14 no_enum_source, Tchl 2, CLUB_LINK auxiliary 5)",
+     "comp 10 (8 no_enum_source, 1 defined-no-wire-samples VARt, 1 enum_domain_conflict dbty)"
+    ],
+    "explicit_enum_ref_outcomes": [
+     "dbty/cdbt 39 pairs: server 7,047 i8 strict-gate 178 misses (-1x163 getter-suppressed + 15 business violations, first row 394 @102218:1e) — original counterexample preserved",
+     "TCrs/PUnJ/ftjn 32 pairs: t9 server 2,219 items 425 miss (first row1/item7 @1827:6400=100); extra_9 getter 76 items 2 miss (0 and 109) — two vectors not merged",
+     "repu trio crrp: getter generates UI index, no independent persisted field — no histogram fabricated",
+     "VARt/VART 1-5: getter enters rules/context, not proven same-COMP wire slot"
+    ],
+    "diagnostics": [
+     "Ngct {1:122,2:129}x2, Nsod {0:21,1:54,2:100,3:76}x2 recorded as diagnostics without enum provenance",
+     "Necf 28 zeros / Nygn 26 minus-ones reproduced verbatim; Csnm 537 over-25-cp rows reproduced"
+    ],
+    "guards": "fix1: entry-level E94/E97/E98/E99 claim-SHA pins after t60 v9 build race (was whole-file pin of intermediate 8a3d9595)",
+    "spot": "commander t61_spot.py 0 FAIL: 5 first-counterexample bytes re-verified in own decodes (srv_comp 102218=1e, nat cli 8628=00, srv 99394=00, t9 1827=6400, extra_9 55950=6d00); inventory 73/31-32-10 split; promoted empty; reports/ untouched"
+   },
+   "evidence": [
+    "scratch/t61/out/enum_inventory.json",
+    "scratch/t61/out/promoted.json",
+    "scratch/t61/out/REPORT.md",
+    "scratch/t61/out/verify.py",
+    "scripts/t61_enum_ref_sweep.py",
+    "scratch/cmd/t61_spot.py"
+   ],
+   "consequence": "negative result banked: the held census is NOT an enum_source gap — promotion requires new static getter-slot evidence per field; t61 becomes the canonical held-domain reference for future folds"
   }
  ]
 }
