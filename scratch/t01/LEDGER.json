@@ -1857,6 +1857,16 @@
    "claim": "t39 Tchl/server table34 STARTING_TEAM_CUP_HISTORY 静态cursor闭合 13+7115*44+9=313082(SHA a07b2bb7),client无table34。7/9表级L3(tchc/mstn/sstn/dbrt双槽/posi/cquf/tcop),styr/edyr held(u16年整数,零值161/21与冻结XML[1900,2100]域冲突,首反例row28@1254/row2695@118604)。club/nation共用编辑分发:7084非空owner全指table24 selector11 NATIONAL_TEAM,31空(-1),club独占L3=0,L4=0。identity尾wire+32(lane0=ordinal,lane1==lane2非零全表唯一),footer末u32 98041869==max identity(非header count)。",
    "evidence": "scratch/t39/out/{cursor_tchl,fields_tchl}.json+instructions.part001-008+branches.part001-002+verify.py+REPORT.md;scripts/t39_tchl_cursor.py;真reader 0x43a6890..0x43a6a6f(VA 0x144511e90..0x14451206f),slot19 leaf thunk 0x156efd0,identity内联0x43a69f8;commander独立spot scratch/cmd/t39_spot.py 26/26 PASS(不import builder/verifier),verifier --selftest rc=0,builder --selftest PASS,t01_anchors 7/7。",
    "consequence": "club子表L3累计51(Cstc14+Clhs8+CSrs10+Cmti5+CNtp2+Cdbt5+Tchl7)。子表复制法第7次证实。**多帧关键修正:entry[\"sha256\"](server34=f24ac3f4)是成员/压缩SHA,非解压payload SHA(a07b2bb7);权威选帧子=entry[\"size\"]==313082,payload SHA另行计算验证。t38 loader须按size选帧而非entry sha。** sol额度已恢复(t36撞限15:02后~1h重置)。"
+  },
+  {
+   "id": "E79",
+   "date": "2026-11-19",
+   "author": "commander(verify luna t40)",
+   "kind": "acceptance_with_note",
+   "level": "L3",
+   "claim": "t40 把6份club子表台账consolidate成首份可用语义schema reports/club_nation_subtable_schema.{json,md}:6表(Cstc22/Clhs37/CSrs62/Cmti43/CNtp66/Cdbt33),44 L3字段(43 named_row_coordinate+1 contextual),13 held,4 negative regressions,L4=0。每字段全provenance(code/row_offset/wire_offset/width/interpretation/schema.idx/source_task VA),server payload count/stride/SHA+closure算术自洽,nation侧仅保留t37 partial上下文(0新L3)。",
+   "evidence": "scratch/t40/out/{consolidate.py,verify.py,REPORT.md,DONE.md};commander独立spot scratch/cmd/t40_spot.py 22/23(结构/计数自洽/provenance/字段完备全PASS),builder --selftest PASS(6表44L3/13held/4neg/L4=0),verifier --selftest PASS,t01_anchors 7/7。",
+   "consequence": "**小缺口(不阻断):schema未显式引master.json冻结SHA 7d57477e(brief要求),但已引editor.exe b82ebe8e/MANIFEST/IDA_PROVENANCE SHA+每字段schema.idx,复现性部分覆盖。** t39 Tchl 7 L3未并入(brief列6台账先于t39接受)→待schema v2补master.json SHA引用+并t39(共51 L3)。club子表L3台账累计51(含t39),本schema快照44。"
   }
  ]
 }
