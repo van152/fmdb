@@ -1947,6 +1947,16 @@
    "claim": "t47 nation 未知 item-bearing parent 静态发现接受(partial)。Ntxr 税则 cursor_closed 双档(server mode1/client mode0),1899 税项全 tag2/25B,7 L3(lowa/uppa/capa/year/perc/fram/leve)+2 held(ppty/txty 无 enum 域)。另 8 parent(Nntp/Nctp/Nrtp/NTRv/NWGv/NSps/Nfmp/NCro)inline 静态 reader 链到 t9 NATIONAL_TEAM_CONTAINER(owner9),仅静态发现非 wire 验收,不发布 t9 item L3 坐标。6 unknown partial 原样保留(Nftb/EDfx/EDsc/Nrvn/Calt/TCrs)。无新独立子表(全内嵌 t9/t10)。repu 三件共 helper 非 backing array(20x 循环反例)。t37 baseline 字节未改。",
    "evidence": "scratch/t47/out/discovery_nation_unknown.json+cursor_nation_tax.json+fields_nation_tax.json+REPORT.md+verify.py; scripts/t47_nation_unknown.py; scratch/cmd/t47_spot.py 71/71(独立重解码 payload+重推 row framing/identity/footer 闭合+提取全 1899 税项验 wire 偏移/域/grades/held 首反例+t37 baseline SHA)。editor b82ebe8e/master 7d57477e。closure server 13+422323+9=422345/client 13+24710+9=24732。builder --selftest rc0+verify rc0+anchors 7/7。",
    "consequence": "nation Ntxr 闭(7 L3);nation unknown 15→9 连(1 闭)/6 unknown;t9 transfer/repu/Nfmp/NCro 静态链就绪待下一 wave wire 验收;schema v4(t48)应并 Ntxr 7 L3+nation 静态发现 status。L4=0。"
+  },
+  {
+   "id": "E88",
+   "date": "2026-11-19",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": "t48 schema v4 接受(Cafl/Cvfl 并 CLUB_LINK 共享 auxiliary)。v3 八表 verbatim 保留;club_L3_occurrences 94(52 v3+26 Cafl+16 Cvfl),club_L3_unique_wire_fields 59(52+7 CLUB_LINK 物理 wire 单元),held_fields 21(16+3 Cafl+2 Cvfl,unique held 坐标 3:type/yfee/msls),negative_regressions 4 verbatim,L4=0。dual accounting:affl/ismc 共 endpoint lane 不加槽,20 bool 共一个 u32 wire word 计 1,Cvfl.clfr runtime-only 无 wire slot 排除。CLUB_LINK closure 12+9261x47+0=435279,payload SHA 89333280/row_block 17a167f0/compressed 894f1efb/packed 63944 全吻合 E84。t46 nation 数据侧已并(server t10 251 行 SHA 19337841,A_B_C_D grammar open,L3=0)。nation Ntxr(t47 E87 7 L3)尚未并(v4 scope 早于 t47)→v5 待办。",
+   "evidence": "reports/club_nation_subtable_schema.json+.md(v4,340 行 md 含 dual accounting+CLUB_LINK+Cafl/Cvfl occurrence 表); scratch/t48/out/consolidate_v4.py(--selftest PASS)+verify.py(VERIFY PASS rc0)+club_nation_subtable_schema.v3.json(SHA 81efb123); scratch/cmd/t48_spot.py 43/43(独立重解码 club_links.dat 验 payload/compressed/row_block SHA+count@8=9261+closure,v3 tables verbatim 比对,dual accounting 算术,t44 grades,negatives,t46 status)。anchors 7/7。",
+   "consequence": "club schema 升 v4:8 numbered 表+CLUB_LINK 共享 auxiliary(Cafl/Cvfl 两视图),94 scoped L3 occurrences/59 unique wire fields。luna 于收尾停止前已完成 v4 实质,REPORT/DONE 由指挥官补写。下一 v5 应并 t47 Ntxr 7 L3+t49 t9 wire 验收结果。L4=0。"
   }
  ]
 }
