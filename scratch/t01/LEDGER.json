@@ -1877,6 +1877,16 @@
    "claim": "t38 多帧/成员感知payload加载器 scripts/t38_multiframe.py:load_payload_mf(codec,archive,tid)。**勘误E66/E77:460条目实测全单帧**,唯一帧len恒==entry.size;所谓\"多帧/stub首帧\"实为坐标系bug。真因:fm24_dump.load_payload漏加FMF data_base=34,成员绝对起点=data_base+offset;E66的12B是前一成员non_player_bans.dat(25B tad空stub)的payload,非本成员stub。判定式[前一成员packed_size<data_base]预测==实测symmetric_diff=0,命中119条目(含lang_update 117此前未暴露)。entry.sha256经460/460证实为压缩区SHA(非解压payload SHA),用作成员定界自证。选帧=len==size唯一命中,无匹配/末成员截断raise FrameError不回落。",
    "evidence": "scratch/t38/out/{multiframe_report.json(460条目全集+5锚点+回归+E77归因),REPORT.md,verify.py,DONE.md};scripts/t38_multiframe.py+t38_build.py;builder --selftest 25/0,独立verify --selftest 34/34(不import加载器,复算anchors5/regression20/members460/defect119/data_base[34,34,34]/E77 delta-25B),commander spot scratch/cmd/t38_spot.py 16/16(raw字节验成员边界+压缩区SHA f24ac3f4+legacy stub@+9+anchors+regression),t01_anchors 7/7。anchors:server34=313082/a07b2bb7,client3=6932082/db8ea78c,server73=45,server66=18094,server43=24632。",
    "consequence": "基础设施重大澄清:容器层\"多帧\"问题不存在,实为data_base坐标bug。data_base=34结构含义未L3 exe确认(操作性事实,候选不写结论)。未改fm24_dump.py(集成由指挥官定,REPORT§7给最小修复点)→待E81集成评估。单帧回归20/20(19与legacy同,1异server34由bug解释)。"
+  },
+  {
+   "id": "E81",
+   "date": "2026-11-19",
+   "author": "commander(verify luna t42)",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": "t42 schema v2 reports/club_nation_subtable_schema.{json,md}:7表51 L3/15 held/4 negative/L4=0。并t39 Tchl table34(7 L3 tchc/mstn/sstn/dbrt/posi/cquf/tcop + 2 held styr/edyr,club独占L3=0,7084 owner→table24 selector11)。补master.json冻结SHA 7d57477e+MANIFEST匹配(闭E79缺口)。v1六表44 L3/13 held/2 Cstc非业务槽/4 negative verbatim保留(scratch/t42/out/*.v1.json)。schema_version=2。",
+   "evidence": "scratch/t42/out/{consolidate_v2.py,verify.py,REPORT.md,DONE.md,club_nation_subtable_schema.v1.json};commander spot scratch/cmd/t42_spot.py 21/21(7表/51L3计数自洽/Tchl字段对照t39/v1六表fields verbatim/master SHA),builder --selftest PASS(7表51L3/15held/4neg/2Cstc/L4=0/v1 verbatim/master SHA matched),verifier --selftest PASS,t01_anchors 7/7。",
+   "consequence": "首份完整可用club子表语义schema达成51 L3(闭合E79两处待补)。club子表L3台账与schema快照一致=51。nation侧仍0新L3(t37 partial上下文)。子表复制法8次证实(含t41首次变长,待E82验收)。"
   }
  ]
 }
