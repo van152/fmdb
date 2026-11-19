@@ -1847,6 +1847,16 @@
    "claim": "t37 nation侧广度inventory partial_nation_parent_identity_coverage。冻结nation.xml 346字段29 list父码(20有item/9零item),luna诚实校正供基线25(17item+8zero)->冻结29,补EDfx/Tchl/EDsc/AXML不静默丢弃。24 unknown/4 existing_t28_closed(Nagr/Nefr/Nlns/Nnfr,client table10 inline,Nagr162x12)/1 low_candidate。7 L2候选item字段/65列匹配/new_L3=0/L4=0。**关键:Tchl->server table34 STARTING_TEAM_CUP_HISTORY为club/nation共享表低置信候选,nation与club Tchl item签名完全匹配,t29俱乐部侧关联+stage2 entity仍candidate;table34封口14+7115*44+8=313082 SHA a07b2bb7**。25 unknown/partial父码待sol静态发现。",
    "evidence": "scratch/t37/out/{nation_subtable_inventory.json,REPORT.md,profiles/table_server_34.profile.json};commander scratch/cmd/t37_spot.py 12/12(29父码20+9/confidence24-4-1/t28四父码/Tchl shared/table34多帧313082+SHA/封口/profile存在);anchors7/7。**基础设施洞察:entry packed_size=真实帧压缩size,stub首帧 precedes(hit-off=9,frame1 stub12B),off+packed_size界定截断真实第二帧(BOUNDED frame2=287410 eof=False);UNBOUNDED size+SHA匹配得313082 a07b2bb7 eof=True。多帧选帧须无界匹配或按next member offset界定,不能用off+packed_size**。此修正t38 brief指导(devseek selftest要求server34=313082将自纠)。",
    "consequence": "nation侧备料完成(补club t29b)。Tchl club/nation共享证实,t39 sol任务书已含排他blocker,须沿factory case34+getter 4CC+entity_tag判定共享语义不妄断独占。packed_size截断洞察为t38多帧加载器关键修正(已记,devseek selftest自纠)。25 nation unknown父码+club 29 unknown待sol额度恢复后静态发现。luna verify.py收尾中(如t35模式)。"
+  },
+  {
+   "id": "E78",
+   "date": "2026-11-19",
+   "author": "commander(verify sol t39)",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": "t39 Tchl/server table34 STARTING_TEAM_CUP_HISTORY 静态cursor闭合 13+7115*44+9=313082(SHA a07b2bb7),client无table34。7/9表级L3(tchc/mstn/sstn/dbrt双槽/posi/cquf/tcop),styr/edyr held(u16年整数,零值161/21与冻结XML[1900,2100]域冲突,首反例row28@1254/row2695@118604)。club/nation共用编辑分发:7084非空owner全指table24 selector11 NATIONAL_TEAM,31空(-1),club独占L3=0,L4=0。identity尾wire+32(lane0=ordinal,lane1==lane2非零全表唯一),footer末u32 98041869==max identity(非header count)。",
+   "evidence": "scratch/t39/out/{cursor_tchl,fields_tchl}.json+instructions.part001-008+branches.part001-002+verify.py+REPORT.md;scripts/t39_tchl_cursor.py;真reader 0x43a6890..0x43a6a6f(VA 0x144511e90..0x14451206f),slot19 leaf thunk 0x156efd0,identity内联0x43a69f8;commander独立spot scratch/cmd/t39_spot.py 26/26 PASS(不import builder/verifier),verifier --selftest rc=0,builder --selftest PASS,t01_anchors 7/7。",
+   "consequence": "club子表L3累计51(Cstc14+Clhs8+CSrs10+Cmti5+CNtp2+Cdbt5+Tchl7)。子表复制法第7次证实。**多帧关键修正:entry[\"sha256\"](server34=f24ac3f4)是成员/压缩SHA,非解压payload SHA(a07b2bb7);权威选帧子=entry[\"size\"]==313082,payload SHA另行计算验证。t38 loader须按size选帧而非entry sha。** sol额度已恢复(t36撞限15:02后~1h重置)。"
   }
  ]
 }
