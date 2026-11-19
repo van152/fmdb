@@ -84,16 +84,51 @@ def _reader():
 
 
 def load_payload(codec, archive: str, tid: int) -> bytes:
+    """取成员的 payload:成员区 = [data_base+offset, +packed_size);以 len == size 选帧。
+
+    t38/E80 修复:目录条目 `offset` 相对 FMF `data_base`(实测三归档均 34,此处动态取,
+    不硬编码),旧法漏加 34B 使起点前移,当前一成员 packed_size < 34 时误取前一成员的
+    payload(460 条目中 119 个受影响,含 server table_34 的 12B 空 stub)。
+    帧枚举严格限制在成员区内,不越界;无长度吻合的帧一律 raise(不回落首帧)。
+    结构含义:data_base 仅作操作性偏移使用,非 L3 结论。
+    """
     fn = f"{archive}_db.dat"
     p = DB_DIR / fn
     ents = codec["list_tables"](p, fn)
     e = codec["_resolve_table"](tid, ents, fn)
-    off = e["offset"]
     db = p.read_bytes()
-    hit = next((off + d for d in range(64) if db[off + d: off + d + 4] == MAGIC), None)
-    if hit is None:
-        raise RuntimeError(f"{fn} table_{tid}: zstd frame not found")
-    return codec["_stream_decompress"](db[hit:], 256 * 1024 * 1024)
+    base = int(codec["_archive_layout"](db)["data_base"])
+    start = base + int(e["offset"])
+    end = start + int(e["packed_size"])
+    size = int(e["size"])
+    if not (0 <= start < end <= len(db)):
+        raise RuntimeError(f"{fn} table_{tid}: member [{start},{end}) outside archive ({len(db)}B)")
+    # 成员内允许 ≤64B 前缀(实测 460/460 无前缀,帧在成员 +0);起点绝不出成员区。
+    d = next((d for d in range(min(64, end - start)) if db[start + d: start + d + 4] == MAGIC), None)
+    if d is None:
+        raise RuntimeError(f"{fn} table_{tid}: zstd frame not found in member [{start},{end})")
+    zstd = codec["_zstd_module"]()
+    dctx = zstd.ZstdDecompressor()
+    pos = start + d
+    limit = 256 * 1024 * 1024
+    while pos + 4 <= end and db[pos: pos + 4] == MAGIC:
+        obj = dctx.decompressobj()
+        try:
+            out = obj.decompress(db[pos:end])
+        except Exception as exc:  # 帧损坏:不静默截断
+            raise RuntimeError(f"{fn} table_{tid}: zstd decode failed at member+{pos - start}: {exc}") from exc
+        if len(out) > limit:
+            raise RuntimeError(f"{fn} table_{tid}: payload exceeds {limit}B at member+{pos - start}")
+        if len(out) == size:
+            return out
+        consumed = (end - pos) - len(obj.unused_data)
+        if not obj.eof or consumed <= 0:
+            break  # 区间截断/无进展:不再猜下一帧
+        pos += consumed
+    raise RuntimeError(
+        f"{fn} table_{tid}: no zstd frame with decompressed length == size ({size}) "
+        f"in member [{start},{end}) (不回落首帧)"
+    )
 
 
 # 上游大表报告(b47)里给出、但不在小表 census 的定长规格
