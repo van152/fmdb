@@ -161,6 +161,46 @@ def build() -> dict:
     # E77 复现与归因(坐标系 vs packed_size 语义)
     e77 = mf.e77_repro(codec, "server", 34, cache)
 
+    # E77 推荐的无界 size+SHA 方法:逐表验证何时失效(E77 方案缺陷证据)
+    unbounded_study = []
+    for arch in ARCHIVES:
+        info = mf.archive_info(codec, arch, cache)
+        for entry in info["entries"]:
+            tid = mf.entry_table_id(entry)
+            if tid is None:
+                continue
+            pr = mf.boundary_spanning_proof(codec, arch, tid, cache)
+            rec = {
+                "archive": arch,
+                "table_id": tid,
+                "size": int(entry["size"]),
+                "packed_size": int(entry["packed_size"]),
+                "bounded_frame_count": pr["bounded_frame_count"],
+                "unbounded_frame_count": pr["unbounded_frame_count"],
+                "bounded_size_hits": pr["bounded_size_hits"],
+                "unbounded_size_hits": pr["unbounded_size_hits"],
+                "first_size_hit_is_frame_0": pr["first_size_hit_is_frame_0"],
+                "bounded_and_unbounded_same_payload": pr["same_payload"],
+                "unbounded_method_ambiguous": pr["unbounded_size_hits"] > 1,
+            }
+            if rec["unbounded_method_ambiguous"]:
+                # 记下撞长对手的所属成员,作为可复查证据
+                start = info["data_base"] + int(entry["offset"])
+                uf = mf.decode_frames_unbounded(info["data"], start)
+                rival = []
+                ents = sorted(info["entries"], key=lambda x: x["offset"])
+                for f in uf:
+                    if f["length"] != int(entry["size"]):
+                        continue
+                    at = start + f["member_offset"]
+                    owner = next((x["path"] for x in ents
+                                  if info["data_base"] + int(x["offset"]) == at), None)
+                    rival.append({"member_offset": f["member_offset"],
+                                  "payload_sha256": f["sha256"],
+                                  "owner_member": owner})
+                rec["size_collisions"] = rival
+            unbounded_study.append(rec)
+
     # 单帧回归:mf vs legacy
     legacy = mf._legacy_load_payload()
     t33_keys = {
@@ -203,6 +243,20 @@ def build() -> dict:
         "archives": archives,
         "anchor_selection": anchors,
         "e77_investigation": e77,
+        "unbounded_method_study": {
+            "method": "E77 推荐:db[data_base+offset:] 无界逐帧、按 len==size 且 SHA 选帧",
+            "verdict": "在 4 张表上不唯一,会静默选错;默认路径不采用",
+            "ambiguous_table_count": sum(1 for r in unbounded_study if r["unbounded_method_ambiguous"]),
+            "ambiguous_tables": [
+                f'{r["archive"]}#{r["table_id"]}' for r in unbounded_study
+                if r["unbounded_method_ambiguous"]
+            ],
+            "why_sha_cannot_disambiguate": (
+                "entry.sha256 是成员压缩区 SHA-256,不是 payload SHA;"
+                "因此 E77 说“先查 sha256 是否为 payload SHA”不成立,无法用它淘汰撞长帧。"
+            ),
+            "rows": unbounded_study,
+        },
         "single_frame_regression": reg,
         "regression_summary": {
             "targets": len(reg),

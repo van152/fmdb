@@ -379,6 +379,45 @@ def run_selftest(verbose: bool = False) -> int:
        f"delta={j77['e77_coordinate_delta_from_correct']}B vs recomputed "
        f"{bounded_start - (base34 + off34)}B")
 
+    # ---------- D3 E77 推荐的无界方法:独立验证它何时歧义 ----------
+    def unbounded(arch: str, tid: int):
+        a2 = load_archive(cc, arch)
+        e2 = cc["_resolve_table"](tid, a2["tables"], f"{arch}_db.dat")
+        s2 = a2["base"] + int(e2["offset"])
+        fr, _ = frames_in(a2["data"][s2:], strict=False)
+        owners = sorted(a2["entries"], key=lambda x: x["offset"])
+        hits = [
+            (f["member_offset"], f["sha256"],
+             next((o["path"] for o in owners
+                   if a2["base"] + int(o["offset"]) == s2 + f["member_offset"]), None))
+            for f in fr if f["length"] == int(e2["size"])
+        ]
+        return len(fr), hits, int(e2["packed_size"]), int(e2["size"])
+
+    amb = []
+    for arch in ("server", "client", "lang_update"):
+        a3 = load_archive(cc, arch)
+        for p, row in rec[arch]["rows"].items():
+            tid = row["table_id"]
+            if tid is None:
+                continue
+            n_unb, hits, _pk, _sz = unbounded(arch, tid)
+            if len(hits) > 1:
+                amb.append((arch, tid, n_unb, [(h[2], h[1][:8]) for h in hits]))
+    rep_amb = set(doc["unbounded_method_study"]["ambiguous_tables"])
+    got_amb = {f"{a}#{t}" for a, t, _, _ in amb}
+    ck("unbounded ambiguity reproduced", got_amb == rep_amb,
+       f"recomputed={sorted(got_amb)} reported={sorted(rep_amb)}")
+    ck("bounded path needs no disambiguation",
+       doc["unbounded_method_study"]["ambiguous_table_count"] == len(amb) and len(amb) > 0,
+       f"{len(amb)} tables size-ambiguous under unbounded scan; bounded always unique")
+    # server#51 是最危险的一例:撞击帧来自**另一个表**,内容不同
+    r51 = next((x for x in amb if x[0] == "server" and x[1] == 51), None)
+    ck("server#51 collision is cross-table with different payload",
+       r51 is not None and len({h[1] for h in r51[3]}) == 2
+       and any("table_60" in (h[0] or "") for h in r51[3]),
+       f"hits={r51[3]}" if r51 else "not found")
+
     # ---------- E 报告自洽 ----------
     ck("report anchor count 5", len(doc["anchor_selection"]) == 5, str(len(doc["anchor_selection"])))
     ck("report regression 20", doc["regression_summary"]["targets"] == 20

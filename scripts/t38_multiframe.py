@@ -176,6 +176,95 @@ def next_member_start(info: dict, entry: dict) -> int | None:
     return None
 
 
+def decode_frames_unbounded(db: bytes, start: int) -> list[dict]:
+    """从 start 向文件末尾逐帧解压,**不设上界**(E77 指定的选帧方式)。
+
+    会越过成员边界、把后续成员的帧也解出来。后果:若两成员 payload 同长且同 SHA
+    则无法区分。本仓实测无此情形,但该方法对边界错误无自保护——仅供对照/取证,
+    不是默认路径。默认仍是 `inspect_entry` 的 packed_size 有界选帧。
+    """
+    zstd = _zstd()
+    dctx = zstd.ZstdDecompressor()
+    frames: list[dict] = []
+    data = db[start:]
+    pos = 0
+    while data[:4] == MAGIC:
+        obj = dctx.decompressobj()
+        chunk = obj.decompress(data)
+        frames.append(
+            {
+                "member_offset": pos,
+                "length": len(chunk),
+                "sha256": hashlib.sha256(chunk).hexdigest(),
+                "eof": bool(obj.eof),
+                "data": chunk,
+            }
+        )
+        if not obj.eof:
+            break
+        consumed = len(data) - len(obj.unused_data)
+        if consumed <= 0:
+            break
+        pos += consumed
+        data = obj.unused_data
+        if not data:
+            break
+    return frames
+
+
+def pick_frame_unbounded(codec, archive: str, tid: int, cache: dict | None = None) -> bytes:
+    """E77 指定的「无界 size+SHA 匹配」选帧。
+
+    在 `data_base+offset` 起一直走到文件末尾,取 `len == entry["size"]` 且
+    SHA 匹配(`entry.sha256` 是 packed SHA,故 SHA 校验用**首个 size 命中**的
+    唯一性来保证)的帧。仅作对照路径,默认请用 `load_payload_mf`。
+    """
+    info = archive_info(codec, archive, cache)
+    base = info["data_base"]
+    entry = codec["_resolve_table"](tid, info["tables"], f"{archive}_db.dat")
+    start = base + int(entry["offset"])
+    frames = decode_frames_unbounded(info["data"], start)
+    hits = [f for f in frames if f["length"] == int(entry["size"])]
+    if len(hits) != 1:
+        raise FrameError(
+            f"{archive}#{tid}: unbounded scan found {len(hits)} frames with length "
+            f"{entry['size']} (scanned {len(frames)} frames across member boundaries)"
+        )
+    return hits[0]["data"]
+
+
+def boundary_spanning_proof(codec, archive: str, tid: int, cache: dict | None = None) -> dict:
+    """证明「成员边界 == 帧边界」:有界选帧与无界 size+SHA 选帧一致。
+
+    若 `packed_size` 真的只覆盖真实帧而不覆盖整成员(即E77 的假设),
+    则无界扫描会看到比有界更多的帧——本函数把两边帧数与首个 size 命中位置全部记录。
+    """
+    info = archive_info(codec, archive, cache)
+    base = info["data_base"]
+    db = info["data"]
+    entry = codec["_resolve_table"](tid, info["tables"], f"{archive}_db.dat")
+    start = base + int(entry["offset"])
+    size = int(entry["size"])
+    uframes = decode_frames_unbounded(db, start)
+    bframes, _, _ = decode_frames(db[start:start + int(entry["packed_size"])])
+    uhits = [i for i, f in enumerate(uframes) if f["length"] == size]
+    bhits = [i for i, f in enumerate(bframes) if f["length"] == size]
+    return {
+        "archive": archive,
+        "table_id": tid,
+        "bounded_frame_count": len(bframes),
+        "unbounded_frame_count": len(uframes),
+        "bounded_size_hits": len(bhits),
+        "unbounded_size_hits": len(uhits),
+        "unbounded_extra_frames_from_later_members": len(uframes) - len(bframes),
+        "first_size_hit_is_frame_0": (bhits[:1] == [0] and uhits[:1] == [0]),
+        "same_payload": (
+            len(bhits) == 1 and len(uhits) == 1
+            and bframes[bhits[0]]["sha256"] == uframes[uhits[0]]["sha256"]
+        ),
+    }
+
+
 def _header_fields(raw: bytes) -> tuple[int | None, int | None]:
     """payload 头里的 version(+6..8) 与 record_count(+8..12),非 tad. 则 None。"""
     if len(raw) < 12 or raw[:6] != DAT_MAGIC:
@@ -648,6 +737,62 @@ def run_selftest(verbose: bool = False) -> int:
     ck("legacy-bug predicate", pred_ok,
        f"entries whose predecessor packed_size < data_base are exactly the ones legacy mis-reads; "
        f"count={bad_prev} predicted==observed={pred_ok}")
+
+    # --- 10 无界 size+SHA 选帧对照(E77 指定方法):记录它何时会选错
+    #     无界方法会越过成员边界;当后续成员的 payload 与目标同长时,size-only
+    #     选帧不再唯一,且 entry.sha256 是 packed SHA **无法消歧**。这是 E77
+    #     方案的真实缺陷,必须落盘而不是假装等价。
+    collisions = []      # bounded 路径失败的条目(应永远为空)
+    bounded_bad = []     # 无界 size-only 不唯一的条目
+    verified = 0
+    extra_total = 0
+    for arch in ("server", "client", "lang_update"):
+        info = archive_info(codec, arch, cache)
+        for entry in info["entries"]:
+            tid = entry_table_id(entry)
+            if tid is None:
+                continue
+            verified += 1
+            pr = boundary_spanning_proof(codec, arch, tid, cache)
+            extra_total += pr["unbounded_extra_frames_from_later_members"]
+            if not (pr["bounded_frame_count"] == 1 and pr["bounded_size_hits"] == 1
+                    and pr["first_size_hit_is_frame_0"]):
+                bounded_bad.append((arch, tid, pr))
+            if pr["unbounded_size_hits"] > 1:
+                collisions.append(
+                    {
+                        "archive": arch,
+                        "table_id": tid,
+                        "bounded_frames": pr["bounded_frame_count"],
+                        "unbounded_frames": pr["unbounded_frame_count"],
+                        "unbounded_size_hits": pr["unbounded_size_hits"],
+                        "same_payload_sha": pr["same_payload"],
+                    }
+                )
+    ck("bounded selection unique everywhere", not bounded_bad,
+       f"tables={verified} bounded_path_failures={len(bounded_bad)}")
+    ck("unbounded method collisions documented", not bounded_bad,
+       f"unbounded_size_ambiguous_tables={len(collisions)} "
+       f"[{', '.join(c['archive'] + '#' + str(c['table_id']) for c in collisions)}] "
+       f"extra_frames_beyond_member={extra_total}")
+    for c in collisions:
+        lines.append(
+            f"       E77-AMBIGUOUS {c['archive']}#{c['table_id']}: bounded={c['bounded_frames']} "
+            f"unbounded={c['unbounded_frames']} size_hits={c['unbounded_size_hits']} "
+            f"same_payload={c['same_payload_sha']}")
+
+    # --- 11 「28 帧 / 3 帧」的构成:无界扫描数的是后续成员,不是同成员多帧
+    proof34 = boundary_spanning_proof(codec, "server", 34, cache)
+    proof3 = boundary_spanning_proof(codec, "client", 3, cache)
+    ck("client3 28 frames are later members",
+       proof3["bounded_frame_count"] == 1 and proof3["unbounded_frame_count"] == 28
+       and proof3["unbounded_size_hits"] == 1,
+       f"bounded={proof3['bounded_frame_count']} unbounded={proof3['unbounded_frame_count']} "
+       f"size_hits={proof3['unbounded_size_hits']} extra={proof3['unbounded_extra_frames_from_later_members']}")
+    ck("server34 has no stub first frame",
+       proof34["bounded_frame_count"] == 1 and proof34["first_size_hit_is_frame_0"],
+       f"bounded={proof34['bounded_frame_count']} unbounded={proof34['unbounded_frame_count']} "
+       f"size_hits={proof34['unbounded_size_hits']}")
 
     print("\n".join(lines) if verbose or len(lines) <= 400 else "\n".join(lines[:400]))
     print(f"--- t38 multiframe selftest: {len(lines) - len(fails)} PASS / {len(fails)} FAIL ---")
