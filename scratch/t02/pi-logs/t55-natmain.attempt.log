@@ -1,0 +1,11 @@
+**t55 外层槽位普查完成，字段命名仍为 partial。** Server 枚举 40 个位置，client 执行**t55 槽位普查完成，字段命名仍为 partial。** Slot 19 CFG 覆盖 992 条可达指令。Server 按读取顺序记录 40 个顶层消费站，client 执行其中 15 个；两档各 251 行闭合，逐行边界和 identity 与 t47 一致。站点数含 selector、集合和 identity，不等于字段数。
+
+冻结 XML 有 **15/346** 项连到槽位，**5 项通过 L3**：`Ncti`、`Nrgi`、`Ncur`、`Nnsi`、`Nndn`。其中前三项沿用既有静态绑定并补验双档实表域。`Ngct`、`Nsod` 缺 scoped enum 域，`Necf`、`Nygn` 有域冲突，均保留 held 和首反例。已对齐子集有 46 对顺序倒置，未按 XML 顺序硬配。L4=0。
+
+**t46 A/B/C/D 已解释**为 `Nlns/Nefr/Nnfr/Nagr`。四段在双档的 count 和消费字节逐行一致，绝对位置不同；t46 原文和负例未改。
+
+独立 `verify.py`、builder 及两者的 `--help` / `--selftest` 均通过；`t01_anchors.py` **7/7**。Capital、England/China、parent 352、Ntxr 7 L3、TCrs 4 held 回归均一致。
+
+**交付清单**
+- `scratch/t55/out/`：`field_slots.json`、`field_map.json`、`abc_closure.json`、`instructions.part001.json`–`instructions.part003.json`、`branches.part001.json`、`verify.py`、`REPORT.md`、`DONE.md`
+- Builder：`scripts/t55_natmain_fields.py`

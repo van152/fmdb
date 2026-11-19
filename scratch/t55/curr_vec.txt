@@ -1,0 +1,264 @@
+CFG 157f770, size 263, end 157fb4c, ext 0
+157f770 push    r15                                      
+157f772 push    r14                                      
+157f774 push    r13                                      
+157f776 push    r12                                      
+157f778 push    rsi                                      
+157f779 push    rdi                                      
+157f77a push    rbp                                      
+157f77b push    rbx                                      
+157f77c sub     rsp, 0x48                                
+157f780 mov     r13, r8                                  
+157f783 mov     rbx, rdx                                 
+157f786 mov     rsi, rcx                                 
+157f789 mov     dword ptr [rsp + 0x24], 0                
+157f791 mov     rcx, qword ptr [rdx]                     
+157f794 mov     rax, qword ptr [rcx]                     
+157f797 lea     rdx, [rsp + 0x24]                        
+157f79c mov     r8d, 4                                   
+157f7a2 call    qword ptr [rax + 0x28]                   
+157f7a5 mov     ebp, dword ptr [rsp + 0x24]              
+157f7a9 cmp     qword ptr [rip + 0x527658], rbp          
+157f7b0 jbe     0x14158050b                              -> 157fb0b
+157f7b6 mov     qword ptr [rsp + 0x38], rsi              
+157f7bb mov     r15, qword ptr [r13]                     
+157f7bf mov     rax, qword ptr [r13 + 0x10]              
+157f7c3 sub     rax, r15                                 
+157f7c6 sar     rax, 3                                   
+157f7ca cmp     rax, rbp                                 
+157f7cd mov     qword ptr [rsp + 0x30], r13              
+157f7d2 jae     0x1415802ba                              -> 157f8ba
+157f7d8 mov     rdi, r13                                 
+157f7db mov     r13, qword ptr [r13 + 8]                 
+157f7df mov     rcx, qword ptr [rip + 0x53d28a]          
+157f7e6 lea     rdx, [rbp*8]                             
+157f7ee call    0x1407e4490                              -> 7e3a90
+157f7f3 mov     r12, rax                                 
+157f7f6 mov     rdx, qword ptr [rdi]                     
+157f7f9 mov     r8, qword ptr [rdi + 8]                  
+157f7fd sub     r8, rdx                                  
+157f800 mov     rcx, rax                                 
+157f803 call    0x141758a00                              -> 1758000
+157f808 mov     rsi, qword ptr [rdi]                     
+157f80b test    rsi, rsi                                 
+157f80e je      0x14158029e                              -> 157f89e
+157f814 mov     rcx, qword ptr [rdi + 0x10]              
+157f818 sub     rcx, rsi                                 
+157f81b mov     rax, qword ptr [rip + 0x53d24e]          
+157f822 cmp     rcx, -1                                  
+157f826 je      0x141580230                              -> 157f830
+157f828 cmp     byte ptr [rax + 0x34], 0                 
+157f82c jne     0x141580241                              -> 157f841
+157f82e jmp     0x14158028a                              -> 157f88a
+157f830 mov     ecx, dword ptr [rax + 0x30]              
+157f833 mov     rdx, rsi                                 
+157f836 sub     rdx, rcx                                 
+157f839 mov     ecx, dword ptr [rdx]                     
+157f83b cmp     byte ptr [rax + 0x34], 0                 
+157f83f je      0x14158028a                              -> 157f88a
+157f841 mov     r8, qword ptr [rax + 0x18]               
+157f845 mov     rdx, qword ptr [rax + 0x20]              
+157f849 sub     rdx, r8                                  
+157f84c sar     rdx, 3                                   
+157f850 cmp     rdx, rcx                                 
+157f853 jbe     0x14158028a                              -> 157f88a
+157f855 mov     r14, qword ptr [r8 + rcx*8]              
+157f859 test    r14, r14                                 
+157f85c je      0x14158028a                              -> 157f88a
+157f85e mov     eax, dword ptr [r14 + 0x78]              
+157f862 sub     rsi, rax                                 
+157f865 lea     rcx, [r14 + 0x20]                        
+157f869 mov     rdx, rsi                                 
+157f86c call    qword ptr [rip + 0x3c7366]               
+157f872 cmp     byte ptr [r14 + 0x48], 0                 
+157f877 je      0x141580525                              -> 157fb25
+157f87d lock dec dword ptr [r14 + 0x40]                   
+157f882 setne   al                                       
+157f885 jmp     0x141580527                              -> 157fb27
+157f88a mov     eax, dword ptr [rax + 0x30]              
+157f88d sub     rsi, rax                                 
+157f890 mov     rcx, rsi                                 
+157f893 call    qword ptr [rip + 0x3c86f7]               
+157f899 mov     rdi, qword ptr [rsp + 0x30]              
+157f89e sub     r13, r15                                 
+157f8a1 mov     qword ptr [rdi], r12                     
+157f8a4 add     r13, r12                                 
+157f8a7 mov     qword ptr [rdi + 8], r13                 
+157f8ab lea     rax, [r12 + rbp*8]                       
+157f8af mov     qword ptr [rdi + 0x10], rax              
+157f8b3 mov     ebp, dword ptr [rsp + 0x24]              
+157f8b7 mov     r13, rdi                                 
+157f8ba test    ebp, ebp                                 
+157f8bc je      0x1415804f7                              -> 157faf7
+157f8c2 lea     r14, [rsp + 0x2c]                        
+157f8c7 xor     r12d, r12d                               
+157f8ca lea     r15, [rsp + 0x23]                        
+157f8cf lea     rdi, [rsp + 0x28]                        
+157f8d4 mov     qword ptr [rsp + 0x40], rbx              
+157f8d9 jmp     0x1415802fe                              -> 157f8fe
+157f8e0 mov     rax, qword ptr [rsp + 0x28]              
+157f8e5 mov     qword ptr [rbp], rax                     
+157f8e9 add     qword ptr [r13 + 8], 8                   
+157f8ee inc     r12                                      
+157f8f1 mov     eax, dword ptr [rsp + 0x24]              
+157f8f5 cmp     r12, rax                                 
+157f8f8 jae     0x1415804f7                              -> 157faf7
+157f8fe mov     word ptr [rsp + 0x28], 0                 
+157f905 mov     dword ptr [rsp + 0x2c], 0                
+157f90d mov     byte ptr [rsp + 0x23], 0                 
+157f912 mov     rsi, qword ptr [rbx]                     
+157f915 mov     rax, qword ptr [rsi]                     
+157f918 mov     r8d, 1                                   
+157f91e mov     rcx, rsi                                 
+157f921 mov     rdx, r15                                 
+157f924 call    qword ptr [rax + 0x28]                   
+157f927 cmp     dword ptr [rsi + 0x10], 0                
+157f92b jne     0x141580506                              -> 157fb06
+157f931 mov     rsi, qword ptr [rbx]                     
+157f934 mov     rax, qword ptr [rsi]                     
+157f937 mov     r8d, 2                                   
+157f93d mov     rcx, rsi                                 
+157f940 mov     rdx, rdi                                 
+157f943 call    qword ptr [rax + 0x28]                   
+157f946 cmp     dword ptr [rsi + 0x10], 0                
+157f94a jne     0x141580506                              -> 157fb06
+157f950 mov     rsi, qword ptr [rbx]                     
+157f953 mov     rax, qword ptr [rsi]                     
+157f956 mov     r8d, 4                                   
+157f95c mov     rcx, rsi                                 
+157f95f mov     rdx, r14                                 
+157f962 call    qword ptr [rax + 0x28]                   
+157f965 cmp     dword ptr [rsi + 0x10], 0                
+157f969 jne     0x141580506                              -> 157fb06
+157f96f mov     rax, qword ptr [rbx]                     
+157f972 cmp     dword ptr [rax + 0x10], 0                
+157f976 jne     0x1415804f7                              -> 157faf7
+157f97c mov     rbp, qword ptr [r13 + 8]                 
+157f980 cmp     rbp, qword ptr [r13 + 0x10]              
+157f984 jne     0x1415802e0                              -> 157f8e0
+157f98a mov     r14, rbp                                 
+157f98d sub     r14, qword ptr [r13]                     
+157f991 mov     rax, r14                                 
+157f994 sar     rax, 3                                   
+157f998 lea     rdi, [rax + 1]                           
+157f99c mov     r15, rax                                 
+157f99f shr     r15, 1                                   
+157f9a2 movabs  rdx, 0x1fffffffffffffff                  
+157f9ac mov     rcx, rdx                                 
+157f9af sub     rcx, r15                                 
+157f9b2 add     r15, rax                                 
+157f9b5 cmp     r15, rdi                                 
+157f9b8 mov     rbx, rdi                                 
+157f9bb cmovbe  r15, rdi                                 
+157f9bf cmp     rax, rcx                                 
+157f9c2 cmova   r15, rdx                                 
+157f9c6 mov     rcx, qword ptr [rip + 0x53d0a3]          
+157f9cd lea     rdx, [r15*8]                             
+157f9d5 call    0x1407e4490                              -> 7e3a90
+157f9da mov     rsi, rax                                 
+157f9dd mov     rax, qword ptr [rsp + 0x28]              
+157f9e2 mov     qword ptr [rsi + r14], rax               
+157f9e6 mov     rdx, qword ptr [r13]                     
+157f9ea mov     rax, qword ptr [rsp + 0x30]              
+157f9ef mov     r13, qword ptr [rax + 8]                 
+157f9f3 mov     r8, rbp                                  
+157f9f6 sub     r8, rdx                                  
+157f9f9 mov     rcx, rsi                                 
+157f9fc call    0x141758a00                              -> 1758000
+157fa01 cmp     r13, rbp                                 
+157fa04 mov     r13, qword ptr [rsp + 0x30]              
+157fa09 je      0x141580424                              -> 157fa24
+157fa0b add     r14, rsi                                 
+157fa0e add     r14, 8                                   
+157fa12 mov     r8, qword ptr [r13 + 8]                  
+157fa16 sub     r8, rbp                                  
+157fa19 mov     rcx, r14                                 
+157fa1c mov     rdx, rbp                                 
+157fa1f call    0x141758a00                              -> 1758000
+157fa24 mov     rbp, qword ptr [r13]                     
+157fa28 test    rbp, rbp                                 
+157fa2b je      0x1415804b3                              -> 157fab3
+157fa31 mov     rcx, qword ptr [r13 + 0x10]              
+157fa35 sub     rcx, rbp                                 
+157fa38 mov     rax, qword ptr [rip + 0x53d031]          
+157fa3f cmp     rcx, -1                                  
+157fa43 je      0x14158044d                              -> 157fa4d
+157fa45 cmp     byte ptr [rax + 0x34], 0                 
+157fa49 jne     0x14158045e                              -> 157fa5e
+157fa4b jmp     0x1415804a4                              -> 157faa4
+157fa4d mov     ecx, dword ptr [rax + 0x30]              
+157fa50 mov     rdx, rbp                                 
+157fa53 sub     rdx, rcx                                 
+157fa56 mov     ecx, dword ptr [rdx]                     
+157fa58 cmp     byte ptr [rax + 0x34], 0                 
+157fa5c je      0x1415804a4                              -> 157faa4
+157fa5e mov     r8, qword ptr [rax + 0x18]               
+157fa62 mov     rdx, qword ptr [rax + 0x20]              
+157fa66 sub     rdx, r8                                  
+157fa69 sar     rdx, 3                                   
+157fa6d cmp     rdx, rcx                                 
+157fa70 jbe     0x1415804a4                              -> 157faa4
+157fa72 mov     r14, qword ptr [r8 + rcx*8]              
+157fa76 test    r14, r14                                 
+157fa79 je      0x1415804a4                              -> 157faa4
+157fa7b mov     eax, dword ptr [r14 + 0x78]              
+157fa7f sub     rbp, rax                                 
+157fa82 lea     rcx, [r14 + 0x20]                        
+157fa86 mov     rdx, rbp                                 
+157fa89 call    qword ptr [rip + 0x3c7149]               
+157fa8f cmp     byte ptr [r14 + 0x48], 0                 
+157fa94 je      0x1415804e0                              -> 157fae0
+157fa96 lock dec dword ptr [r14 + 0x40]                   
+157fa9b setne   al                                       
+157fa9e test    al, al                                   
+157faa0 je      0x1415804e6                              -> 157fae6
+157faa2 jmp     0x1415804b3                              -> 157fab3
+157faa4 mov     eax, dword ptr [rax + 0x30]              
+157faa7 sub     rbp, rax                                 
+157faaa mov     rcx, rbp                                 
+157faad call    qword ptr [rip + 0x3c84dd]               
+157fab3 mov     qword ptr [r13], rsi                     
+157fab7 lea     rax, [rsi + rbx*8]                       
+157fabb mov     qword ptr [r13 + 8], rax                 
+157fabf lea     rax, [rsi + r15*8]                       
+157fac3 mov     qword ptr [r13 + 0x10], rax              
+157fac7 lea     r14, [rsp + 0x2c]                        
+157facc mov     rbx, qword ptr [rsp + 0x40]              
+157fad1 lea     r15, [rsp + 0x23]                        
+157fad6 lea     rdi, [rsp + 0x28]                        
+157fadb jmp     0x1415802ee                              -> 157f8ee
+157fae0 xor     eax, eax                                 
+157fae2 test    al, al                                   
+157fae4 jne     0x1415804b3                              -> 157fab3
+157fae6 cmp     byte ptr [r14 + 0x61], 0                 
+157faeb je      0x1415804b3                              -> 157fab3
+157faed mov     rcx, r14                                 
+157faf0 call    0x1412d33c0                              -> 12d29c0
+157faf5 jmp     0x1415804b3                              -> 157fab3
+157faf7 mov     rax, qword ptr [rbx]                     
+157fafa mov     eax, dword ptr [rax + 0x10]              
+157fafd mov     rsi, qword ptr [rsp + 0x38]              
+157fb02 mov     dword ptr [rsi], eax                     
+157fb04 jmp     0x141580511                              -> 157fb11
+157fb06 mov     rsi, qword ptr [rsp + 0x38]              
+157fb0b mov     dword ptr [rsi], 1                       
+157fb11 mov     rax, rsi                                 
+157fb14 add     rsp, 0x48                                
+157fb18 pop     rbx                                      
+157fb19 pop     rbp                                      
+157fb1a pop     rdi                                      
+157fb1b pop     rsi                                      
+157fb1c pop     r12                                      
+157fb1e pop     r13                                      
+157fb20 pop     r14                                      
+157fb22 pop     r15                                      
+157fb24 ret                                              
+157fb25 xor     eax, eax                                 
+157fb27 test    al, al                                   
+157fb29 mov     rdi, qword ptr [rsp + 0x30]              
+157fb2e jne     0x14158029e                              -> 157f89e
+157fb34 cmp     byte ptr [r14 + 0x61], 0                 
+157fb39 je      0x14158029e                              -> 157f89e
+157fb3f mov     rcx, r14                                 
+157fb42 call    0x1412d33c0                              -> 12d29c0
+157fb47 jmp     0x14158029e                              -> 157f89e
