@@ -1719,6 +1719,25 @@
     "指挥官独立 13/13 封口核验(含 t34 多帧修正)"
    ],
    "consequence": "club 子表复制管线备料充足:13 子表 RTTI+count+stride 数据侧确认。sol t31 CSrs 后,下一批可攻 Cdbt(33,5 字段)/Cmti(43,6)/CNtp(66,4)/Tchl(34,9,需排他 club/nation)。luna 空闲→派 t29b 聚焦 inventory 综合(读已有画像+census+schema,不重 dump,短任务)。load_payload 多帧局限记入工具 caveat。Cafl/Cvfl 仍 unknown(双视图歧义)。"
+  },
+  {
+   "id": "E67",
+   "date": "2026-11-19 14:20",
+   "author": "commander(t31 独立验收)",
+   "kind": "acceptance",
+   "level": "L1(全量自走 server 37214 行)+L3(静态字节重读 40/40)",
+   "claim": "【t31 验收通过 — CSrs 预备队子表 cursor 闭合,10/10 全晋级 L3,0 held】sol 交付。指挥官独立核验 20 项全绿(自写 walker 全表 37214 行+逐字段按 domain 重推):client 无 table62;server payload 1563010,SHA 978066bc…,wire 闭合 13+37214×42+9=1563010(legacy 14+×42+8);全 selector=0,identity@legacy+29=(i,uid,uid),37214 UID 各异非零;footer 9B 00000000|01|5e910000,末 u32=37214 本档同时=max UID 与行数(数值不能区分,诚实注明,驱动循环的是头部独立 count)。10 字段全 37214 行零域越界:Ttyp@0 i8 enum Rsty 9 live codes[1,9,10,11,12,15,18,36,37](-1 optional);Tdvi@5 u32 competition ordinal[0,7046] 7292 live/29922 sentinel;Tsti@9 u32 stadium ordinal[0,48412] 6903 live/30311 sentinel;tmno@27 bit0x04 bool 23792 true;tmnv@27 bit0x02 bool 451 true(同字节双掩码);Twhm@25/Tmhm@26 i8 weekday category live1-7/0 sentinel(Twhm 33197),不指派星期名;Catd@13/Cmna@21/Cmxa@17 i32[0,1000000]。Tdvi/Tsti writer 取目标+8 ordinal null 写 FFFFFFFF,fixup 转指针,getter 装箱 comp/stad,对照 client table25(7047)/table21(48413)实际 ordinal 集。静态:slot19 0x14119c960/file 0x119bf60 leaf thunk→真 reader 0x3e5d730/VA 0x143fc8d30(113 指令/13 块/11 条件,11 transfer 29B)+identity tail 0x3c600f0(43 指令),611 指令分片,抽样 40/40 字节+VA 吻合;无 caller mode 条件(不需 t30 式 fork)。PE/master SHA 对照 MANIFEST。verifier PASS,selftest OK,锚点 7/7,builder help rc=0。",
+   "evidence": [
+    "scratch/t31/out/cursor_csrs.json",
+    "scratch/t31/out/fields_csrs.json(10 L3)",
+    "scratch/t31/out/verify.py(PASS)",
+    "scratch/t31/out/instructions.part001-006.json(611)",
+    "scratch/t31/out/branches.part001-002.json",
+    "scratch/cmd/t31_spot.py(指挥官 20/20)",
+    "scripts/t31_csrs_cursor.py(selftest PASS)",
+    "scratch/t29/out/profiles/table_server_62.profile.json(消费 t29)"
+   ],
+   "consequence": "club 子表 cursor 方法第四次证实,首个 10/10 全晋级(0 held)子表。club 子表已闭:Cstc 14(t27)+Clhs 8(t30)+CSrs 10(t31)=32 L3。sol 空闲→派 t32 Cmti 月供子表(table43/6 字段/535×46)。复制管线剩余 clean 目标:Cdbt(33,5)/CNtp(66,4)/Tchl(34,9 需排他 club/nation);MLS/Italian 小表(50/51/60/61/63)待 t29b inventory 定 entity 归属。"
   }
  ]
 }
