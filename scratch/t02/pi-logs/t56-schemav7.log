@@ -1,0 +1,16 @@
+=== attempt 1/3 Fri Nov 20 04:03:21     2026 provider=hiyo-key2 model=gpt-6-luna ===
+Warning: No project session found with id 't56-schemav7-hiyo-key2'; creating a new session with that id.
+**t56 已完成**，公共 schema 已从 v6 增量升至 v7：
+
+- 更新 `reports/club_nation_subtable_schema.json` 和 `.md`。Nation 计数为 **L3 35、unique 35、held 25、negative 15**；t55 范围为 346 个顶层字段、15 个 XML 对齐、5 个 L3、L4=0。
+- 新增 `nation_main_row_fields`，保留完整 t55 field map、槽位记录及 A/B/C/D 收口证据。Markdown 是 v6 原文的逐字节前缀，并追加 t55 内容。
+- `tables`、负例、club 计数、`nation_data_side_status`、`nation_static_side`、`nation_t9_wire` 等保护内容均通过逐值校验；未改 `BASELINE.md`，也未改 `scratch/t47–t55` 文件。
+- Ledger 使用条目级守卫：t55/E94 为 L3，v6 基线/E95 为 L2；没有钉 live ledger 的全文件哈希。
+
+验证结果：t55 verifier 通过；t56 独立 verifier 通过；spot 检查 **33/33**；anchors **7/7**；各脚本 `--help` 和 `--selftest` 通过。日志及 v5/v6/v7 快照在 `scratch/t56/out/`。
+
+注意：按 t55 原始台账保留了 `EDsc=held`、`TCrs=no_main_wire_slot`、`EDfx=no_wire_slot`，没有采用摘要中对 `EDsc` 的错标。
+
+v7 JSON SHA-256：`d93a5070489c737e5d70fa2b8ffb135f9d4135d70df7ae4b6e2d27a4379ded10`  
+v7 Markdown SHA-256：`f84d265c2ca067794bd98f8ddb15cda026dc2b63bd185bd3db0eab43bd6b83bc`
+=== DONE t56-schemav7 attempt=1 rc=0 Fri Nov 20 04:24:45     2026 ===

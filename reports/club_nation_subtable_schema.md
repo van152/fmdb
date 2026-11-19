@@ -513,3 +513,43 @@ E93 is recorded as an `acceptance` / `L2` entry. The t53 discovery sections, fie
 | `scratch/t53/out/DONE.md` | `46b6a65aef2a91fd38027e8ce39cd0c90ba410ab8af95339fba46f0885f5ab79` | 1408 |
 
 Ledger snapshot SHA-256: `1ff0c2d2893300ac74fdd1c16103f5d8445c0ab718fd6df25b47154991f5b340`. L4 remains 0.
+
+
+## t56 — t55 Nation `table_10` 主行槽位增量（E94 / L3）
+
+本节为 v6 Markdown 的追加内容；此前 v6 全文保持为逐字节前缀。它记录顶层冻结 `nation.xml#nation` 的主行候选，不改写旧 t46 文本、负例、`nation_data_side_status` 或 `nation_t9_wire`。完整 346 项原台账、40 槽坐标和 A/B/C/D 证据以 SHA 固定在 v7 JSON 的 `nation_main_row_fields.source_records`。
+
+- 外层 reader：server 40 / client 15 个位置；CFG `0x103fac0..0x1040be4` 可达 992 指令、无 extent 外边；两档各 251 行。
+- 字段分母：346；唯一 XML 对齐 15（4.34%）；L3 5，L4 0。
+- wire 顺序≠XML 顺序，后续映射不得按 XML 序号对齐。46 个倒置对的首例是 wire pos 1 `Nnsi` / XML 21，先于 wire pos 15 `Ncti` / XML 16。
+
+| Wire pos | 字段 / XML index | 站点 / 对象位移 | L3 域证据 |
+|---:|---|---|---|
+| 1 | `Nnsi` / 21 | `0x103fb0e` / `+0x118` | table_21 Stadium 208/0/43 hit/miss/null; client bypass |
+| 15 | `Ncti` / 16 | `0x10405eb` / `+0xf0` | table_5 Continent 228/0/23 hit/miss/null; client 228/0/23 |
+| 16 | `Nrgi` / 17 | `0x104060f` / `+0xf8` | table_19 Region 234/0/17 hit/miss/null; client 234/0/17 |
+| 18 | `Ncur` / 20 | `0x1040657` / `+0x100` | table_41 Currency 229/0/22 hit/miss/null; client 229/0/22 |
+| 37 | `Nndn` / 29 | `0x1040b58` / `+0x1c8` | server u16 mask `0x0200`: `239` false / `12` true; client bypass |
+
+### 等级与保留边界
+
+`grade_counts` 原样：L3 5、held 5、linked_parent_held 1、no_main_wire_slot 1、no_wire_slot 1、prior_collection 5、prior_identity 1、unmapped 327（合计 346）。完整 held/unmapped occurrence 和首反例均保留于嵌入的 t55 `field_map.json`；Npop 是不在活动 schema 的 supplemental，不计入 346。
+- held：`Necf, Nygn, Ngct, Nsod, EDsc`；linked_parent_held：`Nftb`；prior_collection：`Nagr, Nefr, Nnfr, Nlns, Ntxr`；prior_identity：`duni`。
+- no_main_wire_slot：`TCrs`；no_wire_slot：`EDfx`。台账原标签是 `EDsc=held`、`TCrs=no_main_wire_slot`、`EDfx=no_wire_slot`，不互换。
+- `Necf` / `Nygn` 因 schema 域冲突及首反例 held；`Ngct` / `Nsod` 缺 scoped `enum_ref`；不把候选晋级。
+
+### t46 A/B/C/D 收口
+
+解释沿用 t55 的 `abc_closure.json`（SHA-256 `8fbce6d9ebc32d2d950d45c4c7fb35ca88d8095e26f8f045c564b06f45388153`）；t46 原始负例和 v6 中的开放状态文字不改写。公式：after mode-1 prelude if present: 24B common prefix; A=1+5a, B=4+28b, C=4+28c, D=4+12d; then mode-1 43B and identity。
+| 段 / 字段 | 位置 / 对象位移 | stride | 首行 count 绝对位置 client/server | 两档 items | 双档 count 分布相同 |
+|---|---|---:|---:|---:|---|
+| A / `Nlns` | pos 23 / `+0x48` | 5 B | 38 / 562 | 492 / 492 | yes |
+| B / `Nefr` | pos 24 / `+0xa8` | 28 B | 54 / 578 | 214 / 214 | yes |
+| C / `Nnfr` | pos 25 / `+0x90` | 28 B | 58 / 582 | 63 / 63 | yes |
+| D / `Nagr` | pos 26 / `+0xc0` | 12 B | 62 / 586 | 162 / 162 | yes |
+
+t55 的独立 verifier 对两档各 251 行逐行核验 count-width + item-stride 消费跨度、相邻段边界和 A/B/C/D 原始消费字节相同。表中的 count 分布也逐档一致。该闭合只解释四个已识别集合，不为其余未命名标量赋义。
+
+### 来源与 ledger
+
+t55 acceptance `E94`：kind `acceptance` / level `L3` / canonical claim SHA-256 `358243779bba359656ecae6804cea9cea26b1739ffce5bf96a2599d735263c89`。v6 基线 acceptance `E95`：kind `acceptance` / level `L2` / canonical claim SHA-256 `2632aaae869ee3a5c1020d82e409f1f26ad429d077f06f078d5f7f1058f43eb1`。守卫只钉条目 ID、claim SHA、kind、level，不钉 live ledger 全文件哈希。
