@@ -1,0 +1,4115 @@
+{
+  "status": "complete_schema_df_voted",
+  "method": "df(code)=number of schema entities containing code; each non-universal observed code gives 1/df to each owning entity; zero-named tables use offset+reader-width candidates",
+  "universal_codes": [
+    "FDBC",
+    "NDBC",
+    "dbnm",
+    "duni",
+    "rdui"
+  ],
+  "entities": [
+    {
+      "type_id": 2,
+      "schema_entity": "city",
+      "source": "t08_field_codes",
+      "decision_rule": "known_type_or_layout_schema_anchor",
+      "original_layout_entity": "city",
+      "code_votes": [
+        {
+          "code": "Catt",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "city"
+          ]
+        },
+        {
+          "code": "Clat",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "city"
+          ]
+        },
+        {
+          "code": "Clgi",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "city"
+          ]
+        },
+        {
+          "code": "Clon",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "city"
+          ]
+        },
+        {
+          "code": "Clri",
+          "df": 4,
+          "weight": 0.25,
+          "entities": [
+            "city",
+            "club",
+            "comp",
+            "team"
+          ]
+        },
+        {
+          "code": "Cnti",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "city",
+            "club",
+            "team"
+          ]
+        },
+        {
+          "code": "Cwea",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "city"
+          ]
+        },
+        {
+          "code": "Icon",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Igpr",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "city",
+          "score": 5.58333333
+        },
+        {
+          "entity": "injury",
+          "score": 2.0
+        },
+        {
+          "entity": "club",
+          "score": 0.58333333
+        },
+        {
+          "entity": "team",
+          "score": 0.58333333
+        },
+        {
+          "entity": "comp",
+          "score": 0.25
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "injury",
+          "score": 2.0
+        },
+        {
+          "entity": "club",
+          "score": 0.58333333
+        },
+        {
+          "entity": "team",
+          "score": 0.58333333
+        },
+        {
+          "entity": "comp",
+          "score": 0.25
+        }
+      ]
+    },
+    {
+      "type_id": 6,
+      "schema_entity": "injury",
+      "source": "t08_field_codes",
+      "decision_rule": "known_type_or_layout_schema_anchor",
+      "original_layout_entity": "inju",
+      "code_votes": [
+        {
+          "code": "Iagr",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Ibin",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Ibis",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Ibpg",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Ibph",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Ibsp",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Icau",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Icdp",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Icms",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Icon",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Iexd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Igpr",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Iiar",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Imip",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Imnd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Iocr",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Irec",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "icla",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "inSr",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "iscl",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "injury",
+          "score": 20.0
+        }
+      ],
+      "losing_entities": []
+    },
+    {
+      "type_id": 19,
+      "schema_entity": "club",
+      "source": "t08_field_codes",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "regi",
+      "code_votes": [
+        {
+          "code": "Scap",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "stadium"
+          ]
+        },
+        {
+          "code": "Sceb",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Slea",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Slmd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Sscp",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "stadium"
+          ]
+        },
+        {
+          "code": "Ssta",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "stadium"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "club",
+          "score": 4.5
+        },
+        {
+          "entity": "stadium",
+          "score": 1.5
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "stadium",
+          "score": 1.5
+        }
+      ]
+    },
+    {
+      "type_id": 21,
+      "schema_entity": "stadium",
+      "source": "t08_field_codes",
+      "decision_rule": "known_type_or_layout_schema_anchor",
+      "original_layout_entity": "stad",
+      "code_votes": [
+        {
+          "code": "Scov",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Sdah",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Sdtr",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Senv",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Sext",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Sitg",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Smnl",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Smnw",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Smxl",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Smxw",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Snft",
+          "df": 0,
+          "weight": 0.0,
+          "entities": []
+        },
+        {
+          "code": "Soty",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Sprr",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Spty",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Spwd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Sste",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Su19",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Su21",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Sunt",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "SwIM",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Wucf",
+          "df": 0,
+          "weight": 0.0,
+          "entities": []
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "stadium",
+          "score": 19.0
+        }
+      ],
+      "losing_entities": []
+    },
+    {
+      "type_id": 22,
+      "schema_entity": "club",
+      "source": "t08_field_codes",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "ScTL",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "ScYL",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Scam",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Scap",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "stadium"
+          ]
+        },
+        {
+          "code": "Sceb",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Scns",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "stadium"
+          ]
+        },
+        {
+          "code": "Scpm",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Slhm",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Snmn",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Snmx",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Snxa",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Sscp",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "stadium"
+          ]
+        },
+        {
+          "code": "Stks",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Styp",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "club",
+          "score": 12.5
+        },
+        {
+          "entity": "stadium",
+          "score": 1.5
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "stadium",
+          "score": 1.5
+        }
+      ]
+    },
+    {
+      "type_id": 23,
+      "schema_entity": "stage name",
+      "source": "offset_width_candidates_for_zero_named_table",
+      "decision_rule": "known_type_or_layout_schema_anchor",
+      "original_layout_entity": "stgn",
+      "code_votes": [
+        {
+          "code": "Cadm",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Cpfa",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Linf",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "language"
+          ]
+        },
+        {
+          "code": "NDsp",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "non player"
+          ]
+        },
+        {
+          "code": "SNsn",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stage name"
+          ]
+        },
+        {
+          "code": "wins",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "club",
+          "score": 3.0
+        },
+        {
+          "entity": "language",
+          "score": 1.0
+        },
+        {
+          "entity": "non player",
+          "score": 1.0
+        },
+        {
+          "entity": "stage name",
+          "score": 1.0
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "club",
+          "score": 3.0
+        },
+        {
+          "entity": "language",
+          "score": 1.0
+        },
+        {
+          "entity": "non player",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "type_id": 30,
+      "schema_entity": "player",
+      "source": "t08_field_codes",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "futu",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "player"
+          ]
+        },
+        {
+          "code": "perm",
+          "df": 4,
+          "weight": 0.25,
+          "entities": [
+            "club",
+            "nation",
+            "person",
+            "player"
+          ]
+        },
+        {
+          "code": "pret",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "player"
+          ]
+        },
+        {
+          "code": "seve",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "player"
+          ]
+        },
+        {
+          "code": "side",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "nation",
+            "player"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "player",
+          "score": 3.75
+        },
+        {
+          "entity": "nation",
+          "score": 0.75
+        },
+        {
+          "entity": "club",
+          "score": 0.25
+        },
+        {
+          "entity": "person",
+          "score": 0.25
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "nation",
+          "score": 0.75
+        },
+        {
+          "entity": "club",
+          "score": 0.25
+        },
+        {
+          "entity": "person",
+          "score": 0.25
+        }
+      ]
+    },
+    {
+      "type_id": 31,
+      "schema_entity": "club",
+      "source": "offset_width_candidates_for_zero_named_table",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "AWtc",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "award"
+          ]
+        },
+        {
+          "code": "Cnti",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "city",
+            "club",
+            "team"
+          ]
+        },
+        {
+          "code": "EDap",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "person"
+          ]
+        },
+        {
+          "code": "NbPd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "nation"
+          ]
+        },
+        {
+          "code": "PDoo",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "player"
+          ]
+        },
+        {
+          "code": "cate",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "cmid",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "comp",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "nation",
+            "person",
+            "player",
+            "team kit"
+          ]
+        },
+        {
+          "code": "date",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "person"
+          ]
+        },
+        {
+          "code": "endt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "maxa",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "nati",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "player"
+          ]
+        },
+        {
+          "code": "perc",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "rati",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "stdt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "stid",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "team",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "comp",
+            "person"
+          ]
+        },
+        {
+          "code": "w0sd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "weather"
+          ]
+        },
+        {
+          "code": "year",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "team kit"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "club",
+          "score": 5.43333333
+        },
+        {
+          "entity": "nation",
+          "score": 5.1
+        },
+        {
+          "entity": "person",
+          "score": 2.43333333
+        },
+        {
+          "entity": "player",
+          "score": 2.06666667
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "comp",
+          "score": 0.9
+        },
+        {
+          "entity": "team kit",
+          "score": 0.4
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.33333333
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "nation",
+          "score": 5.1
+        },
+        {
+          "entity": "person",
+          "score": 2.43333333
+        },
+        {
+          "entity": "player",
+          "score": 2.06666667
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "comp",
+          "score": 0.9
+        },
+        {
+          "entity": "team kit",
+          "score": 0.4
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.33333333
+        }
+      ]
+    },
+    {
+      "type_id": 34,
+      "schema_entity": "club",
+      "source": "t08_field_codes",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "dbrt",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "edyr",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "mstn",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "posi",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "styr",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "person"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "club",
+          "score": 2.16666667
+        },
+        {
+          "entity": "nation",
+          "score": 2.16666667
+        },
+        {
+          "entity": "person",
+          "score": 0.33333333
+        },
+        {
+          "entity": "player",
+          "score": 0.33333333
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "nation",
+          "score": 2.16666667
+        },
+        {
+          "entity": "person",
+          "score": 0.33333333
+        },
+        {
+          "entity": "player",
+          "score": 0.33333333
+        }
+      ]
+    },
+    {
+      "type_id": 35,
+      "schema_entity": "club",
+      "source": "offset_width_candidates_for_zero_named_table",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "AWtc",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "award"
+          ]
+        },
+        {
+          "code": "Cnti",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "city",
+            "club",
+            "team"
+          ]
+        },
+        {
+          "code": "EDap",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "person"
+          ]
+        },
+        {
+          "code": "NDwd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "non player"
+          ]
+        },
+        {
+          "code": "NbPd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "nation"
+          ]
+        },
+        {
+          "code": "comp",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "nation",
+            "person",
+            "player",
+            "team kit"
+          ]
+        },
+        {
+          "code": "date",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "person"
+          ]
+        },
+        {
+          "code": "endt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "mina",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "nati",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "player"
+          ]
+        },
+        {
+          "code": "perc",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "play",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "rati",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "stdt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "team",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "comp",
+            "person"
+          ]
+        },
+        {
+          "code": "w0sd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "weather"
+          ]
+        },
+        {
+          "code": "year",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "team kit"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "club",
+          "score": 4.43333333
+        },
+        {
+          "entity": "nation",
+          "score": 4.1
+        },
+        {
+          "entity": "person",
+          "score": 2.43333333
+        },
+        {
+          "entity": "player",
+          "score": 1.06666667
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "non player",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "comp",
+          "score": 0.9
+        },
+        {
+          "entity": "team kit",
+          "score": 0.4
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.33333333
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "nation",
+          "score": 4.1
+        },
+        {
+          "entity": "person",
+          "score": 2.43333333
+        },
+        {
+          "entity": "player",
+          "score": 1.06666667
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "non player",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "comp",
+          "score": 0.9
+        },
+        {
+          "entity": "team kit",
+          "score": 0.4
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.33333333
+        }
+      ]
+    },
+    {
+      "type_id": 37,
+      "schema_entity": "club",
+      "source": "t08_field_codes",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "draw",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "gaga",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "gfor",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "lost",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "mxtm",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "orde",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "play",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "poin",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "posi",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "wins",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "year",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "team kit"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "club",
+          "score": 9.53333333
+        },
+        {
+          "entity": "nation",
+          "score": 0.53333333
+        },
+        {
+          "entity": "player",
+          "score": 0.33333333
+        },
+        {
+          "entity": "comp",
+          "score": 0.2
+        },
+        {
+          "entity": "person",
+          "score": 0.2
+        },
+        {
+          "entity": "team kit",
+          "score": 0.2
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "nation",
+          "score": 0.53333333
+        },
+        {
+          "entity": "player",
+          "score": 0.33333333
+        },
+        {
+          "entity": "comp",
+          "score": 0.2
+        },
+        {
+          "entity": "person",
+          "score": 0.2
+        },
+        {
+          "entity": "team kit",
+          "score": 0.2
+        }
+      ]
+    },
+    {
+      "type_id": 42,
+      "schema_entity": "club",
+      "source": "offset_width_candidates_for_zero_named_table",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "AWtc",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "award"
+          ]
+        },
+        {
+          "code": "Cnti",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "city",
+            "club",
+            "team"
+          ]
+        },
+        {
+          "code": "EDap",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "person"
+          ]
+        },
+        {
+          "code": "NbPd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "nation"
+          ]
+        },
+        {
+          "code": "PDoo",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "player"
+          ]
+        },
+        {
+          "code": "cate",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "cmid",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "comp",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "nation",
+            "person",
+            "player",
+            "team kit"
+          ]
+        },
+        {
+          "code": "date",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "person"
+          ]
+        },
+        {
+          "code": "endt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "maxa",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "nati",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "player"
+          ]
+        },
+        {
+          "code": "perc",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "rati",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "stdt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "stid",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "team",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "comp",
+            "person"
+          ]
+        },
+        {
+          "code": "w0sd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "weather"
+          ]
+        },
+        {
+          "code": "year",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "team kit"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "club",
+          "score": 5.43333333
+        },
+        {
+          "entity": "nation",
+          "score": 5.1
+        },
+        {
+          "entity": "person",
+          "score": 2.43333333
+        },
+        {
+          "entity": "player",
+          "score": 2.06666667
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "comp",
+          "score": 0.9
+        },
+        {
+          "entity": "team kit",
+          "score": 0.4
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.33333333
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "nation",
+          "score": 5.1
+        },
+        {
+          "entity": "person",
+          "score": 2.43333333
+        },
+        {
+          "entity": "player",
+          "score": 2.06666667
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "comp",
+          "score": 0.9
+        },
+        {
+          "entity": "team kit",
+          "score": 0.4
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.33333333
+        }
+      ]
+    },
+    {
+      "type_id": 43,
+      "schema_entity": "club",
+      "source": "t08_field_codes",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "cash",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "person"
+          ]
+        },
+        {
+          "code": "mths",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "play",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "pyiv",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "club",
+          "score": 3.5
+        },
+        {
+          "entity": "person",
+          "score": 0.5
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "person",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "type_id": 46,
+      "schema_entity": "club",
+      "source": "offset_width_candidates_for_zero_named_table",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "AWtc",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "award"
+          ]
+        },
+        {
+          "code": "Cnti",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "city",
+            "club",
+            "team"
+          ]
+        },
+        {
+          "code": "EDap",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "person"
+          ]
+        },
+        {
+          "code": "NDwd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "non player"
+          ]
+        },
+        {
+          "code": "NbPd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "nation"
+          ]
+        },
+        {
+          "code": "PDoo",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "player"
+          ]
+        },
+        {
+          "code": "cate",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "cmid",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "comp",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "nation",
+            "person",
+            "player",
+            "team kit"
+          ]
+        },
+        {
+          "code": "date",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "person"
+          ]
+        },
+        {
+          "code": "endt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "maxa",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "mina",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "nati",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "player"
+          ]
+        },
+        {
+          "code": "perc",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "play",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "rati",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "stdt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "stid",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "team",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "comp",
+            "person"
+          ]
+        },
+        {
+          "code": "w0sd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "weather"
+          ]
+        },
+        {
+          "code": "year",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "team kit"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "club",
+          "score": 6.93333333
+        },
+        {
+          "entity": "nation",
+          "score": 5.6
+        },
+        {
+          "entity": "person",
+          "score": 2.43333333
+        },
+        {
+          "entity": "player",
+          "score": 2.06666667
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "non player",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "comp",
+          "score": 0.9
+        },
+        {
+          "entity": "team kit",
+          "score": 0.4
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.33333333
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "nation",
+          "score": 5.6
+        },
+        {
+          "entity": "person",
+          "score": 2.43333333
+        },
+        {
+          "entity": "player",
+          "score": 2.06666667
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "non player",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "comp",
+          "score": 0.9
+        },
+        {
+          "entity": "team kit",
+          "score": 0.4
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.33333333
+        }
+      ]
+    },
+    {
+      "type_id": 47,
+      "schema_entity": "local region",
+      "source": "t08_field_codes",
+      "decision_rule": "Lpop_unique_schema_anchor_overrides_cross_chain_vote",
+      "original_layout_entity": "lcrg",
+      "code_votes": [
+        {
+          "code": "DELE",
+          "df": 0,
+          "weight": 0.0,
+          "entities": []
+        },
+        {
+          "code": "Iagr",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Icdp",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Imip",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Iocr",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "Lpop",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "local region"
+          ]
+        },
+        {
+          "code": "icla",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        },
+        {
+          "code": "iscl",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "injury"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "injury",
+          "score": 6.0
+        },
+        {
+          "entity": "local region",
+          "score": 1.0
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "injury",
+          "score": 6.0
+        }
+      ]
+    },
+    {
+      "type_id": 49,
+      "schema_entity": "person",
+      "source": "t08_field_codes",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "ajob",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "person"
+          ]
+        },
+        {
+          "code": "comp",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "nation",
+            "person",
+            "player",
+            "team kit"
+          ]
+        },
+        {
+          "code": "date",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "person"
+          ]
+        },
+        {
+          "code": "otea",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "person"
+          ]
+        },
+        {
+          "code": "plac",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "person"
+          ]
+        },
+        {
+          "code": "year",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "team kit"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "person",
+          "score": 3.73333333
+        },
+        {
+          "entity": "club",
+          "score": 0.73333333
+        },
+        {
+          "entity": "nation",
+          "score": 0.73333333
+        },
+        {
+          "entity": "team kit",
+          "score": 0.4
+        },
+        {
+          "entity": "comp",
+          "score": 0.2
+        },
+        {
+          "entity": "player",
+          "score": 0.2
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "club",
+          "score": 0.73333333
+        },
+        {
+          "entity": "nation",
+          "score": 0.73333333
+        },
+        {
+          "entity": "team kit",
+          "score": 0.4
+        },
+        {
+          "entity": "comp",
+          "score": 0.2
+        },
+        {
+          "entity": "player",
+          "score": 0.2
+        }
+      ]
+    },
+    {
+      "type_id": 50,
+      "schema_entity": "club",
+      "source": "offset_width_candidates_for_zero_named_table",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "AWtc",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "award"
+          ]
+        },
+        {
+          "code": "Cnti",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "city",
+            "club",
+            "team"
+          ]
+        },
+        {
+          "code": "EDap",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "person"
+          ]
+        },
+        {
+          "code": "NbFt",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "nation"
+          ]
+        },
+        {
+          "code": "NbPd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "nation"
+          ]
+        },
+        {
+          "code": "PDrf",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "player"
+          ]
+        },
+        {
+          "code": "PFns",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "person"
+          ]
+        },
+        {
+          "code": "Pcti",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "person"
+          ]
+        },
+        {
+          "code": "Sold",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Sprl",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "stadium"
+          ]
+        },
+        {
+          "code": "Tdvi",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "team"
+          ]
+        },
+        {
+          "code": "bost",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "team kit"
+          ]
+        },
+        {
+          "code": "comp",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "nation",
+            "person",
+            "player",
+            "team kit"
+          ]
+        },
+        {
+          "code": "date",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "person"
+          ]
+        },
+        {
+          "code": "endt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "heig",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "nation"
+          ]
+        },
+        {
+          "code": "igno",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "inju",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "player"
+          ]
+        },
+        {
+          "code": "kits",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "team kit"
+          ]
+        },
+        {
+          "code": "ktal",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "team kit"
+          ]
+        },
+        {
+          "code": "nati",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "player"
+          ]
+        },
+        {
+          "code": "perc",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "pla1",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "comp"
+          ]
+        },
+        {
+          "code": "rati",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "stdt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "team",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "comp",
+            "person"
+          ]
+        },
+        {
+          "code": "type",
+          "df": 4,
+          "weight": 0.25,
+          "entities": [
+            "alternative names",
+            "club",
+            "person",
+            "player"
+          ]
+        },
+        {
+          "code": "w0sd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "weather"
+          ]
+        },
+        {
+          "code": "year",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "team kit"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "club",
+          "score": 5.68333333
+        },
+        {
+          "entity": "nation",
+          "score": 5.6
+        },
+        {
+          "entity": "person",
+          "score": 4.68333333
+        },
+        {
+          "entity": "team kit",
+          "score": 3.4
+        },
+        {
+          "entity": "player",
+          "score": 3.31666667
+        },
+        {
+          "entity": "comp",
+          "score": 1.9
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "stadium",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "team",
+          "score": 0.83333333
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "alternative names",
+          "score": 0.25
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "nation",
+          "score": 5.6
+        },
+        {
+          "entity": "person",
+          "score": 4.68333333
+        },
+        {
+          "entity": "team kit",
+          "score": 3.4
+        },
+        {
+          "entity": "player",
+          "score": 3.31666667
+        },
+        {
+          "entity": "comp",
+          "score": 1.9
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "stadium",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "team",
+          "score": 0.83333333
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "alternative names",
+          "score": 0.25
+        }
+      ]
+    },
+    {
+      "type_id": 51,
+      "schema_entity": "nation",
+      "source": "offset_width_candidates_for_zero_named_table",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "AWtc",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "award"
+          ]
+        },
+        {
+          "code": "Cnti",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "city",
+            "club",
+            "team"
+          ]
+        },
+        {
+          "code": "EDap",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "person"
+          ]
+        },
+        {
+          "code": "NbPd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "nation"
+          ]
+        },
+        {
+          "code": "comp",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "nation",
+            "person",
+            "player",
+            "team kit"
+          ]
+        },
+        {
+          "code": "date",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "person"
+          ]
+        },
+        {
+          "code": "endt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "nati",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "player"
+          ]
+        },
+        {
+          "code": "perc",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "rati",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "stdt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "team",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "comp",
+            "person"
+          ]
+        },
+        {
+          "code": "w0sd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "weather"
+          ]
+        },
+        {
+          "code": "year",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "team kit"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "nation",
+          "score": 3.6
+        },
+        {
+          "entity": "club",
+          "score": 2.93333333
+        },
+        {
+          "entity": "person",
+          "score": 2.43333333
+        },
+        {
+          "entity": "player",
+          "score": 1.06666667
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "comp",
+          "score": 0.9
+        },
+        {
+          "entity": "team kit",
+          "score": 0.4
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.33333333
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "club",
+          "score": 2.93333333
+        },
+        {
+          "entity": "person",
+          "score": 2.43333333
+        },
+        {
+          "entity": "player",
+          "score": 1.06666667
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "comp",
+          "score": 0.9
+        },
+        {
+          "entity": "team kit",
+          "score": 0.4
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.33333333
+        }
+      ]
+    },
+    {
+      "type_id": 58,
+      "schema_entity": "person",
+      "source": "t08_field_codes",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "comp",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "nation",
+            "person",
+            "player",
+            "team kit"
+          ]
+        },
+        {
+          "code": "otht",
+          "df": 0,
+          "weight": 0.0,
+          "entities": []
+        },
+        {
+          "code": "team",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "comp",
+            "person"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "person",
+          "score": 0.7
+        },
+        {
+          "entity": "comp",
+          "score": 0.5
+        },
+        {
+          "entity": "club",
+          "score": 0.2
+        },
+        {
+          "entity": "nation",
+          "score": 0.2
+        },
+        {
+          "entity": "player",
+          "score": 0.2
+        },
+        {
+          "entity": "team kit",
+          "score": 0.2
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "comp",
+          "score": 0.5
+        },
+        {
+          "entity": "club",
+          "score": 0.2
+        },
+        {
+          "entity": "nation",
+          "score": 0.2
+        },
+        {
+          "entity": "player",
+          "score": 0.2
+        },
+        {
+          "entity": "team kit",
+          "score": 0.2
+        }
+      ]
+    },
+    {
+      "type_id": 60,
+      "schema_entity": "nation",
+      "source": "offset_width_candidates_for_zero_named_table",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "AWtc",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "award"
+          ]
+        },
+        {
+          "code": "Cnti",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "city",
+            "club",
+            "team"
+          ]
+        },
+        {
+          "code": "EDap",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "person"
+          ]
+        },
+        {
+          "code": "NbPd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "nation"
+          ]
+        },
+        {
+          "code": "comp",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "nation",
+            "person",
+            "player",
+            "team kit"
+          ]
+        },
+        {
+          "code": "date",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "person"
+          ]
+        },
+        {
+          "code": "endt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "nati",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "player"
+          ]
+        },
+        {
+          "code": "perc",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "rati",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "stdt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "team",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "comp",
+            "person"
+          ]
+        },
+        {
+          "code": "w0sd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "weather"
+          ]
+        },
+        {
+          "code": "year",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "team kit"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "nation",
+          "score": 3.6
+        },
+        {
+          "entity": "club",
+          "score": 2.93333333
+        },
+        {
+          "entity": "person",
+          "score": 2.43333333
+        },
+        {
+          "entity": "player",
+          "score": 1.06666667
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "comp",
+          "score": 0.9
+        },
+        {
+          "entity": "team kit",
+          "score": 0.4
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.33333333
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "club",
+          "score": 2.93333333
+        },
+        {
+          "entity": "person",
+          "score": 2.43333333
+        },
+        {
+          "entity": "player",
+          "score": 1.06666667
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "comp",
+          "score": 0.9
+        },
+        {
+          "entity": "team kit",
+          "score": 0.4
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.33333333
+        }
+      ]
+    },
+    {
+      "type_id": 61,
+      "schema_entity": null,
+      "source": "offset_width_candidates_for_zero_named_table",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [],
+      "entity_scores": [],
+      "losing_entities": []
+    },
+    {
+      "type_id": 62,
+      "schema_entity": "club",
+      "source": "t08_field_codes",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "Catd",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "Cmna",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "Cmxa",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "Tmhm",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "Todo",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "comp",
+            "team"
+          ]
+        },
+        {
+          "code": "Ttea",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "comp",
+            "person"
+          ]
+        },
+        {
+          "code": "Ttyp",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "comp",
+            "team"
+          ]
+        },
+        {
+          "code": "Twhm",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "tmno",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "tmnv",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "club",
+          "score": 5.83333333
+        },
+        {
+          "entity": "nation",
+          "score": 1.5
+        },
+        {
+          "entity": "comp",
+          "score": 1.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.83333333
+        },
+        {
+          "entity": "person",
+          "score": 0.5
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "nation",
+          "score": 1.5
+        },
+        {
+          "entity": "comp",
+          "score": 1.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.83333333
+        },
+        {
+          "entity": "person",
+          "score": 0.5
+        }
+      ]
+    },
+    {
+      "type_id": 63,
+      "schema_entity": null,
+      "source": "offset_width_candidates_for_zero_named_table",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [],
+      "entity_scores": [],
+      "losing_entities": []
+    },
+    {
+      "type_id": 64,
+      "schema_entity": "team kit",
+      "source": "offset_width_candidates_for_zero_named_table",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "AWtc",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "award"
+          ]
+        },
+        {
+          "code": "Cnti",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "city",
+            "club",
+            "team"
+          ]
+        },
+        {
+          "code": "EDap",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "person"
+          ]
+        },
+        {
+          "code": "NDgs",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "non player"
+          ]
+        },
+        {
+          "code": "NbPd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "nation"
+          ]
+        },
+        {
+          "code": "PDoo",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "player"
+          ]
+        },
+        {
+          "code": "bost",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "team kit"
+          ]
+        },
+        {
+          "code": "cate",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "club"
+          ]
+        },
+        {
+          "code": "cmid",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "comp",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "nation",
+            "person",
+            "player",
+            "team kit"
+          ]
+        },
+        {
+          "code": "date",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "person"
+          ]
+        },
+        {
+          "code": "endt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "kits",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "team kit"
+          ]
+        },
+        {
+          "code": "ksbg",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "team kit"
+          ]
+        },
+        {
+          "code": "ksou",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "team kit"
+          ]
+        },
+        {
+          "code": "ktal",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "team kit"
+          ]
+        },
+        {
+          "code": "ktpr",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "team kit"
+          ]
+        },
+        {
+          "code": "maxa",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "nati",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "player"
+          ]
+        },
+        {
+          "code": "nmcl",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "team kit"
+          ]
+        },
+        {
+          "code": "nmoc",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "team kit"
+          ]
+        },
+        {
+          "code": "perc",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "rati",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "stdt",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "player"
+          ]
+        },
+        {
+          "code": "stid",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "team",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "comp",
+            "person"
+          ]
+        },
+        {
+          "code": "w0sd",
+          "df": 1,
+          "weight": 1.0,
+          "entities": [
+            "weather"
+          ]
+        },
+        {
+          "code": "year",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "team kit"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "team kit",
+          "score": 8.4
+        },
+        {
+          "entity": "club",
+          "score": 5.43333333
+        },
+        {
+          "entity": "nation",
+          "score": 5.1
+        },
+        {
+          "entity": "person",
+          "score": 2.43333333
+        },
+        {
+          "entity": "player",
+          "score": 2.06666667
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "non player",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "comp",
+          "score": 0.9
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.33333333
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "club",
+          "score": 5.43333333
+        },
+        {
+          "entity": "nation",
+          "score": 5.1
+        },
+        {
+          "entity": "person",
+          "score": 2.43333333
+        },
+        {
+          "entity": "player",
+          "score": 2.06666667
+        },
+        {
+          "entity": "award",
+          "score": 1.0
+        },
+        {
+          "entity": "non player",
+          "score": 1.0
+        },
+        {
+          "entity": "weather",
+          "score": 1.0
+        },
+        {
+          "entity": "comp",
+          "score": 0.9
+        },
+        {
+          "entity": "city",
+          "score": 0.33333333
+        },
+        {
+          "entity": "team",
+          "score": 0.33333333
+        }
+      ]
+    },
+    {
+      "type_id": 66,
+      "schema_entity": "club",
+      "source": "t08_field_codes",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "maxa",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "mina",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        },
+        {
+          "code": "nati",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "comp",
+            "nation",
+            "person",
+            "player"
+          ]
+        },
+        {
+          "code": "rati",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "nation"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "club",
+          "score": 1.7
+        },
+        {
+          "entity": "nation",
+          "score": 1.7
+        },
+        {
+          "entity": "comp",
+          "score": 0.2
+        },
+        {
+          "entity": "person",
+          "score": 0.2
+        },
+        {
+          "entity": "player",
+          "score": 0.2
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "nation",
+          "score": 1.7
+        },
+        {
+          "entity": "comp",
+          "score": 0.2
+        },
+        {
+          "entity": "person",
+          "score": 0.2
+        },
+        {
+          "entity": "player",
+          "score": 0.2
+        }
+      ]
+    },
+    {
+      "type_id": 70,
+      "schema_entity": "club",
+      "source": "t08_field_codes",
+      "decision_rule": "inverse_schema_df_vote",
+      "original_layout_entity": "?",
+      "code_votes": [
+        {
+          "code": "comp",
+          "df": 5,
+          "weight": 0.2,
+          "entities": [
+            "club",
+            "nation",
+            "person",
+            "player",
+            "team kit"
+          ]
+        },
+        {
+          "code": "enyr",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "person"
+          ]
+        },
+        {
+          "code": "isog",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "person"
+          ]
+        },
+        {
+          "code": "levl",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "comp",
+            "person"
+          ]
+        },
+        {
+          "code": "mage",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "person"
+          ]
+        },
+        {
+          "code": "mlen",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "person"
+          ]
+        },
+        {
+          "code": "styr",
+          "df": 3,
+          "weight": 0.3333333333333333,
+          "entities": [
+            "club",
+            "nation",
+            "person"
+          ]
+        },
+        {
+          "code": "type",
+          "df": 4,
+          "weight": 0.25,
+          "entities": [
+            "alternative names",
+            "club",
+            "person",
+            "player"
+          ]
+        },
+        {
+          "code": "wrcl",
+          "df": 2,
+          "weight": 0.5,
+          "entities": [
+            "club",
+            "person"
+          ]
+        }
+      ],
+      "entity_scores": [
+        {
+          "entity": "club",
+          "score": 3.61666667
+        },
+        {
+          "entity": "person",
+          "score": 3.61666667
+        },
+        {
+          "entity": "nation",
+          "score": 0.53333333
+        },
+        {
+          "entity": "player",
+          "score": 0.45
+        },
+        {
+          "entity": "comp",
+          "score": 0.33333333
+        },
+        {
+          "entity": "alternative names",
+          "score": 0.25
+        },
+        {
+          "entity": "team kit",
+          "score": 0.2
+        }
+      ],
+      "losing_entities": [
+        {
+          "entity": "person",
+          "score": 3.61666667
+        },
+        {
+          "entity": "nation",
+          "score": 0.53333333
+        },
+        {
+          "entity": "player",
+          "score": 0.45
+        },
+        {
+          "entity": "comp",
+          "score": 0.33333333
+        },
+        {
+          "entity": "alternative names",
+          "score": 0.25
+        },
+        {
+          "entity": "team kit",
+          "score": 0.2
+        }
+      ]
+    }
+  ]
+}
