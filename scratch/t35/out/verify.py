@@ -164,6 +164,7 @@ def walk(raw: bytes) -> dict:
         bit_profile.append({
             "row_relative_byte_offset": byte_index, "rows": standard5,
             "bits": [{"bit": bit, "set_count": counts[bit], "clear_count": standard5 - counts[bit]} for bit in range(8)],
+            "semantic_assignment": "none; 5-byte aggregate in parent-table framing, not Cafl/Cvfl item booleans",
         })
     return {
         "count": n, "payload_bytes": len(raw), "payload_sha256": digest(raw),
@@ -177,7 +178,7 @@ def walk(raw: bytes) -> dict:
             {"raw_u32_lane": i, "rows": len(v), "unique_values": len(set(v)),
              "minimum": min(v), "maximum": max(v),
              "values_in_club_ordinal_domain_0_84259": sum(0 <= x < 84259 for x in v),
-             "sample_first_12": v[:12]} for i, v in enumerate(lanes)
+             "sample_first_12": v[:12], "semantic_assignment": "none; parent-table structure only"} for i, v in enumerate(lanes)
         ],
         "aggregate5_byte_bit_counts": bit_profile, "row_samples": samples,
     }

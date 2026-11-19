@@ -1,0 +1,645 @@
+{0: '0xfb39f0', 1: '0x7ea8d0', 2: '0x15356f0', 3: '0x1536380', 4: '0xba0', 5: '0xbb0', 6: '0xbb0', 7: '0x866f0', 8: '0xdd2110', 9: '0x842b00', 10: '0xbb0', 11: '0xfe3080', 12: '0xbb0', 13: '0xbb0', 14: '0xbe0', 15: '0xba0', 16: '0xba0', 17: '0xfe6580', 18: '0xfe6790', 19: '0x15350f0', 20: '0x1535390', 21: '0x1535410', 22: '0xdd2130', 23: '0xdd2140', 24: '0xbb0', 25: '0xfe7fa0'}
+extent 0x15356f0 0x1535f98 544 []
+0015356f0 push     rbp                                              
+0015356f1 push     rsi                                              
+0015356f2 push     rdi                                              
+0015356f3 push     rbx                                              
+0015356f4 sub      rsp, 0x58                                        
+0015356f8 lea      rbp, [rsp + 0x50]                                
+0015356fd movaps   xmmword ptr [rbp - 0x10], xmm6                   
+001535701 mov      qword ptr [rbp - 0x18], 0xfffffffffffffffe       
+001535709 mov      rsi, r8                                          
+00153570c mov      rbx, rcx                                         
+00153570f xor      edi, edi                                         
+001535711 cmp      edx, 0x63617367                                  
+001535717 jg       0x1415361ac                                      0x15357ac
+00153571d cmp      edx, 0x4373726f                                  
+001535723 jg       0x14153623a                                      0x153583a
+001535729 cmp      edx, 0x43706c6b                                  
+00153572f jg       0x14153633f                                      0x153593f
+001535735 cmp      edx, 0x434d5745                                  
+00153573b je       0x14153655d                                      0x1535b5d
+001535741 cmp      edx, 0x43636661                                  
+001535747 jne      0x1415368d5                                      0x1535ed5
+00153574d movsx    edi, byte ptr [rbx + 0x60]                       
+001535751 call     0x14083d4f0                                      0x83caf0
+001535756 add      rax, 0x28                                        
+00153575a mov      dword ptr [rbp - 0x20], edi                      
+00153575d mov      qword ptr [rbp - 0x28], rax                      
+001535761 lea      rcx, [rbp - 0x28]                                
+001535765 cmp      rcx, rsi                                         
+001535768 je       0x14153619a                                      0x153579a
+00153576a mov      rcx, qword ptr [rsi]                             
+00153576d mov      rax, qword ptr [rcx]                             
+001535770 mov      rdx, rsi                                         
+001535773 call     qword ptr [rax + 0x10]                           
+001535776 mov      rax, qword ptr [rbp - 0x28]                      
+00153577a mov      rcx, qword ptr [rbp - 0x20]                      
+00153577e mov      qword ptr [rsi + 8], rcx                         
+001535782 mov      qword ptr [rsi], rax                             
+001535785 call     0x14083d4f0                                      0x83caf0
+00153578a add      rax, 8                                           
+00153578e mov      qword ptr [rbp - 0x20], 0                        
+001535796 mov      qword ptr [rbp - 0x28], rax                      
+00153579a mov      rbx, qword ptr [rax]                             
+00153579d lea      rdx, [rbp - 0x28]                                
+0015357a1 mov      rcx, rax                                         
+0015357a4 call     qword ptr [rbx + 0x10]                           
+0015357a7 jmp      0x1415368d2                                      0x1535ed2
+0015357ac cmp      edx, 0x696e7273                                  
+0015357b2 jg       0x1415362bc                                      0x15358bc
+0015357b8 cmp      edx, 0x636f6d6f                                  
+0015357be jg       0x1415363bd                                      0x15359bd
+0015357c4 cmp      edx, 0x63617368                                  
+0015357ca je       0x1415365c4                                      0x1535bc4
+0015357d0 cmp      edx, 0x636e7261                                  
+0015357d6 jne      0x1415368d5                                      0x1535ed5
+0015357dc mov      edi, dword ptr [rbx + 0x4c]                      
+0015357df call     0x14083d4f0                                      0x83caf0
+0015357e4 add      rax, 0x28                                        
+0015357e8 mov      dword ptr [rbp - 0x20], edi                      
+0015357eb mov      qword ptr [rbp - 0x28], rax                      
+0015357ef lea      rcx, [rbp - 0x28]                                
+0015357f3 cmp      rcx, rsi                                         
+0015357f6 je       0x141536228                                      0x1535828
+0015357f8 mov      rcx, qword ptr [rsi]                             
+0015357fb mov      rax, qword ptr [rcx]                             
+0015357fe mov      rdx, rsi                                         
+001535801 call     qword ptr [rax + 0x10]                           
+001535804 mov      rax, qword ptr [rbp - 0x28]                      
+001535808 mov      rcx, qword ptr [rbp - 0x20]                      
+00153580c mov      qword ptr [rsi + 8], rcx                         
+001535810 mov      qword ptr [rsi], rax                             
+001535813 call     0x14083d4f0                                      0x83caf0
+001535818 add      rax, 8                                           
+00153581c mov      qword ptr [rbp - 0x20], 0                        
+001535824 mov      qword ptr [rbp - 0x28], rax                      
+001535828 mov      rbx, qword ptr [rax]                             
+00153582b lea      rdx, [rbp - 0x28]                                
+00153582f mov      rcx, rax                                         
+001535832 call     qword ptr [rbx + 0x10]                           
+001535835 jmp      0x1415368d2                                      0x1535ed2
+00153583a cmp      edx, 0x43746274                                  
+001535840 jg       0x141536470                                      0x1535a70
+001535846 cmp      edx, 0x43737270                                  
+00153584c je       0x141536622                                      0x1535c22
+001535852 cmp      edx, 0x43737279                                  
+001535858 jne      0x1415368d5                                      0x1535ed5
+00153585e mov      edi, dword ptr [rbx + 0x50]                      
+001535861 call     0x14083d4f0                                      0x83caf0
+001535866 add      rax, 0x28                                        
+00153586a mov      dword ptr [rbp - 0x20], edi                      
+00153586d mov      qword ptr [rbp - 0x28], rax                      
+001535871 lea      rcx, [rbp - 0x28]                                
+001535875 cmp      rcx, rsi                                         
+001535878 je       0x1415362aa                                      0x15358aa
+00153587a mov      rcx, qword ptr [rsi]                             
+00153587d mov      rax, qword ptr [rcx]                             
+001535880 mov      rdx, rsi                                         
+001535883 call     qword ptr [rax + 0x10]                           
+001535886 mov      rax, qword ptr [rbp - 0x28]                      
+00153588a mov      rcx, qword ptr [rbp - 0x20]                      
+00153588e mov      qword ptr [rsi + 8], rcx                         
+001535892 mov      qword ptr [rsi], rax                             
+001535895 call     0x14083d4f0                                      0x83caf0
+00153589a add      rax, 8                                           
+00153589e mov      qword ptr [rbp - 0x20], 0                        
+0015358a6 mov      qword ptr [rbp - 0x28], rax                      
+0015358aa mov      rbx, qword ptr [rax]                             
+0015358ad lea      rdx, [rbp - 0x28]                                
+0015358b1 mov      rcx, rax                                         
+0015358b4 call     qword ptr [rbx + 0x10]                           
+0015358b7 jmp      0x1415368d2                                      0x1535ed2
+0015358bc cmp      edx, 0x73746473                                  
+0015358c2 jg       0x1415364e6                                      0x1535ae6
+0015358c8 cmp      edx, 0x696e7274                                  
+0015358ce je       0x141536681                                      0x1535c81
+0015358d4 cmp      edx, 0x736f7572                                  
+0015358da jne      0x1415368d5                                      0x1535ed5
+0015358e0 movsx    edi, byte ptr [rbx + 0x5e]                       
+0015358e4 call     0x14083d4f0                                      0x83caf0
+0015358e9 add      rax, 0x28                                        
+0015358ed mov      dword ptr [rbp - 0x20], edi                      
+0015358f0 mov      qword ptr [rbp - 0x28], rax                      
+0015358f4 lea      rcx, [rbp - 0x28]                                
+0015358f8 cmp      rcx, rsi                                         
+0015358fb je       0x14153632d                                      0x153592d
+0015358fd mov      rcx, qword ptr [rsi]                             
+001535900 mov      rax, qword ptr [rcx]                             
+001535903 mov      rdx, rsi                                         
+001535906 call     qword ptr [rax + 0x10]                           
+001535909 mov      rax, qword ptr [rbp - 0x28]                      
+00153590d mov      rcx, qword ptr [rbp - 0x20]                      
+001535911 mov      qword ptr [rsi + 8], rcx                         
+001535915 mov      qword ptr [rsi], rax                             
+001535918 call     0x14083d4f0                                      0x83caf0
+00153591d add      rax, 8                                           
+001535921 mov      qword ptr [rbp - 0x20], 0                        
+001535929 mov      qword ptr [rbp - 0x28], rax                      
+00153592d mov      rbx, qword ptr [rax]                             
+001535930 lea      rdx, [rbp - 0x28]                                
+001535934 mov      rcx, rax                                         
+001535937 call     qword ptr [rbx + 0x10]                           
+00153593a jmp      0x1415368d2                                      0x1535ed2
+00153593f cmp      edx, 0x43706c6c                                  
+001535945 je       0x1415366f8                                      0x1535cf8
+00153594b cmp      edx, 0x43726d62                                  
+001535951 jne      0x1415368d5                                      0x1535ed5
+001535957 mov      edi, dword ptr [rbx + 0x30]                      
+00153595a test     edi, edi                                         
+00153595c je       0x14153687d                                      0x1535e7d
+001535962 call     0x14083d4f0                                      0x83caf0
+001535967 add      rax, 0x28                                        
+00153596b mov      dword ptr [rbp - 0x20], edi                      
+00153596e mov      qword ptr [rbp - 0x28], rax                      
+001535972 lea      rcx, [rbp - 0x28]                                
+001535976 cmp      rcx, rsi                                         
+001535979 je       0x1415363ab                                      0x15359ab
+00153597b mov      rcx, qword ptr [rsi]                             
+00153597e mov      rax, qword ptr [rcx]                             
+001535981 mov      rdx, rsi                                         
+001535984 call     qword ptr [rax + 0x10]                           
+001535987 mov      rax, qword ptr [rbp - 0x28]                      
+00153598b mov      rcx, qword ptr [rbp - 0x20]                      
+00153598f mov      qword ptr [rsi + 8], rcx                         
+001535993 mov      qword ptr [rsi], rax                             
+001535996 call     0x14083d4f0                                      0x83caf0
+00153599b add      rax, 8                                           
+00153599f mov      qword ptr [rbp - 0x20], 0                        
+0015359a7 mov      qword ptr [rbp - 0x28], rax                      
+0015359ab mov      rbx, qword ptr [rax]                             
+0015359ae lea      rdx, [rbp - 0x28]                                
+0015359b2 mov      rcx, rax                                         
+0015359b5 call     qword ptr [rbx + 0x10]                           
+0015359b8 jmp      0x1415368d2                                      0x1535ed2
+0015359bd cmp      edx, 0x636f6d70                                  
+0015359c3 je       0x141536756                                      0x1535d56
+0015359c9 cmp      edx, 0x656e6474                                  
+0015359cf jne      0x1415368d5                                      0x1535ed5
+0015359d5 mov      eax, dword ptr [rip + 0x6264f5]                  
+0015359db mov      ecx, dword ptr [rip + 0x58f97f]                  
+0015359e1 mov      rdx, qword ptr gs:[0x58]                         
+0015359ea mov      rcx, qword ptr [rdx + rcx*8]                     
+0015359ee cmp      eax, dword ptr [rcx + 4]                         
+0015359f4 jg       0x141536914                                      0x1535f14
+0015359fa movzx    eax, word ptr [rbx + 0x3c]                       
+0015359fe mov      ecx, eax                                         
+001535a00 and      ecx, 0x1ff                                       
+001535a06 shl      ecx, 8                                           
+001535a09 movzx    edx, word ptr [rbx + 0x3e]                       
+001535a0d shr      eax, 9                                           
+001535a10 shl      edx, 0x11                                        
+001535a13 or       edx, eax                                         
+001535a15 or       edx, ecx                                         
+001535a17 mov      dword ptr [rbp - 0x20], edx                      
+001535a1a lea      rcx, [rip + 0x62647f]                            
+001535a21 mov      qword ptr [rbp - 0x28], rcx                      
+001535a25 lea      rax, [rbp - 0x28]                                
+001535a29 cmp      rax, rsi                                         
+001535a2c je       0x141536461                                      0x1535a61
+001535a2e mov      rcx, qword ptr [rsi]                             
+001535a31 mov      rax, qword ptr [rcx]                             
+001535a34 mov      rdx, rsi                                         
+001535a37 call     qword ptr [rax + 0x10]                           
+001535a3a mov      rax, qword ptr [rbp - 0x28]                      
+001535a3e mov      rcx, qword ptr [rbp - 0x20]                      
+001535a42 mov      qword ptr [rsi + 8], rcx                         
+001535a46 mov      qword ptr [rsi], rax                             
+001535a49 call     0x14083d4f0                                      0x83caf0
+001535a4e mov      rcx, rax                                         
+001535a51 add      rcx, 8                                           
+001535a55 mov      qword ptr [rbp - 0x20], 0                        
+001535a5d mov      qword ptr [rbp - 0x28], rcx                      
+001535a61 mov      rax, qword ptr [rcx]                             
+001535a64 lea      rdx, [rbp - 0x28]                                
+001535a68 call     qword ptr [rax + 0x10]                           
+001535a6b jmp      0x1415368d2                                      0x1535ed2
+001535a70 cmp      edx, 0x43746275                                  
+001535a76 je       0x141536773                                      0x1535d73
+001535a7c cmp      edx, 0x4374726c                                  
+001535a82 jne      0x1415368d5                                      0x1535ed5
+001535a88 mov      edi, dword ptr [rbx + 0x54]                      
+001535a8b call     0x14083d4f0                                      0x83caf0
+001535a90 add      rax, 0x28                                        
+001535a94 mov      dword ptr [rbp - 0x20], edi                      
+001535a97 mov      qword ptr [rbp - 0x28], rax                      
+001535a9b lea      rcx, [rbp - 0x28]                                
+001535a9f cmp      rcx, rsi                                         
+001535aa2 je       0x1415364d4                                      0x1535ad4
+001535aa4 mov      rcx, qword ptr [rsi]                             
+001535aa7 mov      rax, qword ptr [rcx]                             
+001535aaa mov      rdx, rsi                                         
+001535aad call     qword ptr [rax + 0x10]                           
+001535ab0 mov      rax, qword ptr [rbp - 0x28]                      
+001535ab4 mov      rcx, qword ptr [rbp - 0x20]                      
+001535ab8 mov      qword ptr [rsi + 8], rcx                         
+001535abc mov      qword ptr [rsi], rax                             
+001535abf call     0x14083d4f0                                      0x83caf0
+001535ac4 add      rax, 8                                           
+001535ac8 mov      qword ptr [rbp - 0x20], 0                        
+001535ad0 mov      qword ptr [rbp - 0x28], rax                      
+001535ad4 mov      rbx, qword ptr [rax]                             
+001535ad7 lea      rdx, [rbp - 0x28]                                
+001535adb mov      rcx, rax                                         
+001535ade call     qword ptr [rbx + 0x10]                           
+001535ae1 jmp      0x1415368d2                                      0x1535ed2
+001535ae6 cmp      edx, 0x73746474                                  
+001535aec je       0x1415367da                                      0x1535dda
+001535af2 cmp      edx, 0x79656172                                  
+001535af8 jne      0x1415368d5                                      0x1535ed5
+001535afe movzx    edi, word ptr [rbx + 0x3a]                       
+001535b02 call     0x14083d4f0                                      0x83caf0
+001535b07 add      rax, 0x28                                        
+001535b0b mov      dword ptr [rbp - 0x20], edi                      
+001535b0e mov      qword ptr [rbp - 0x28], rax                      
+001535b12 lea      rcx, [rbp - 0x28]                                
+001535b16 cmp      rcx, rsi                                         
+001535b19 je       0x14153654b                                      0x1535b4b
+001535b1b mov      rcx, qword ptr [rsi]                             
+001535b1e mov      rax, qword ptr [rcx]                             
+001535b21 mov      rdx, rsi                                         
+001535b24 call     qword ptr [rax + 0x10]                           
+001535b27 mov      rax, qword ptr [rbp - 0x28]                      
+001535b2b mov      rcx, qword ptr [rbp - 0x20]                      
+001535b2f mov      qword ptr [rsi + 8], rcx                         
+001535b33 mov      qword ptr [rsi], rax                             
+001535b36 call     0x14083d4f0                                      0x83caf0
+001535b3b add      rax, 8                                           
+001535b3f mov      qword ptr [rbp - 0x20], 0                        
+001535b47 mov      qword ptr [rbp - 0x28], rax                      
+001535b4b mov      rbx, qword ptr [rax]                             
+001535b4e lea      rdx, [rbp - 0x28]                                
+001535b52 mov      rcx, rax                                         
+001535b55 call     qword ptr [rbx + 0x10]                           
+001535b58 jmp      0x1415368d2                                      0x1535ed2
+001535b5d mov      edi, dword ptr [rbx + 0x44]                      
+001535b60 cmp      edi, -1                                          
+001535b63 je       0x14153687d                                      0x1535e7d
+001535b69 call     0x14083d4f0                                      0x83caf0
+001535b6e add      rax, 0x28                                        
+001535b72 mov      dword ptr [rbp - 0x20], edi                      
+001535b75 mov      qword ptr [rbp - 0x28], rax                      
+001535b79 lea      rcx, [rbp - 0x28]                                
+001535b7d cmp      rcx, rsi                                         
+001535b80 je       0x1415365b2                                      0x1535bb2
+001535b82 mov      rcx, qword ptr [rsi]                             
+001535b85 mov      rax, qword ptr [rcx]                             
+001535b88 mov      rdx, rsi                                         
+001535b8b call     qword ptr [rax + 0x10]                           
+001535b8e mov      rax, qword ptr [rbp - 0x28]                      
+001535b92 mov      rcx, qword ptr [rbp - 0x20]                      
+001535b96 mov      qword ptr [rsi + 8], rcx                         
+001535b9a mov      qword ptr [rsi], rax                             
+001535b9d call     0x14083d4f0                                      0x83caf0
+001535ba2 add      rax, 8                                           
+001535ba6 mov      qword ptr [rbp - 0x20], 0                        
+001535bae mov      qword ptr [rbp - 0x28], rax                      
+001535bb2 mov      rbx, qword ptr [rax]                             
+001535bb5 lea      rdx, [rbp - 0x28]                                
+001535bb9 mov      rcx, rax                                         
+001535bbc call     qword ptr [rbx + 0x10]                           
+001535bbf jmp      0x1415368d2                                      0x1535ed2
+001535bc4 mov      edi, dword ptr [rbx + 0x28]                      
+001535bc7 call     0x14083d4f0                                      0x83caf0
+001535bcc add      rax, 0x28                                        
+001535bd0 mov      dword ptr [rbp - 0x20], edi                      
+001535bd3 mov      qword ptr [rbp - 0x28], rax                      
+001535bd7 lea      rcx, [rbp - 0x28]                                
+001535bdb cmp      rcx, rsi                                         
+001535bde je       0x141536610                                      0x1535c10
+001535be0 mov      rcx, qword ptr [rsi]                             
+001535be3 mov      rax, qword ptr [rcx]                             
+001535be6 mov      rdx, rsi                                         
+001535be9 call     qword ptr [rax + 0x10]                           
+001535bec mov      rax, qword ptr [rbp - 0x28]                      
+001535bf0 mov      rcx, qword ptr [rbp - 0x20]                      
+001535bf4 mov      qword ptr [rsi + 8], rcx                         
+001535bf8 mov      qword ptr [rsi], rax                             
+001535bfb call     0x14083d4f0                                      0x83caf0
+001535c00 add      rax, 8                                           
+001535c04 mov      qword ptr [rbp - 0x20], 0                        
+001535c0c mov      qword ptr [rbp - 0x28], rax                      
+001535c10 mov      rbx, qword ptr [rax]                             
+001535c13 lea      rdx, [rbp - 0x28]                                
+001535c17 mov      rcx, rax                                         
+001535c1a call     qword ptr [rbx + 0x10]                           
+001535c1d jmp      0x1415368d2                                      0x1535ed2
+001535c22 movsx    edi, byte ptr [rbx + 0x5f]                       
+001535c26 call     0x14083d4f0                                      0x83caf0
+001535c2b add      rax, 0x28                                        
+001535c2f mov      dword ptr [rbp - 0x20], edi                      
+001535c32 mov      qword ptr [rbp - 0x28], rax                      
+001535c36 lea      rcx, [rbp - 0x28]                                
+001535c3a cmp      rcx, rsi                                         
+001535c3d je       0x14153666f                                      0x1535c6f
+001535c3f mov      rcx, qword ptr [rsi]                             
+001535c42 mov      rax, qword ptr [rcx]                             
+001535c45 mov      rdx, rsi                                         
+001535c48 call     qword ptr [rax + 0x10]                           
+001535c4b mov      rax, qword ptr [rbp - 0x28]                      
+001535c4f mov      rcx, qword ptr [rbp - 0x20]                      
+001535c53 mov      qword ptr [rsi + 8], rcx                         
+001535c57 mov      qword ptr [rsi], rax                             
+001535c5a call     0x14083d4f0                                      0x83caf0
+001535c5f add      rax, 8                                           
+001535c63 mov      qword ptr [rbp - 0x20], 0                        
+001535c6b mov      qword ptr [rbp - 0x28], rax                      
+001535c6f mov      rbx, qword ptr [rax]                             
+001535c72 lea      rdx, [rbp - 0x28]                                
+001535c76 mov      rcx, rax                                         
+001535c79 call     qword ptr [rbx + 0x10]                           
+001535c7c jmp      0x1415368d2                                      0x1535ed2
+001535c81 movss    xmm6, dword ptr [rbx + 0x40]                     
+001535c86 ucomiss  xmm6, dword ptr [rip + 0x386f0b]                 
+001535c8d jne      0x141536872                                      0x1535e72
+001535c93 jp       0x141536872                                      0x1535e72
+001535c99 call     0x14083d4f0                                      0x83caf0
+001535c9e add      rax, 0x68                                        
+001535ca2 mov      dword ptr [rbp - 0x20], 0                        
+001535ca9 mov      qword ptr [rbp - 0x28], rax                      
+001535cad lea      rcx, [rbp - 0x28]                                
+001535cb1 cmp      rcx, rsi                                         
+001535cb4 je       0x1415366e6                                      0x1535ce6
+001535cb6 mov      rcx, qword ptr [rsi]                             
+001535cb9 mov      rax, qword ptr [rcx]                             
+001535cbc mov      rdx, rsi                                         
+001535cbf call     qword ptr [rax + 0x10]                           
+001535cc2 mov      rax, qword ptr [rbp - 0x28]                      
+001535cc6 mov      rcx, qword ptr [rbp - 0x20]                      
+001535cca mov      qword ptr [rsi + 8], rcx                         
+001535cce mov      qword ptr [rsi], rax                             
+001535cd1 call     0x14083d4f0                                      0x83caf0
+001535cd6 add      rax, 8                                           
+001535cda mov      qword ptr [rbp - 0x20], 0                        
+001535ce2 mov      qword ptr [rbp - 0x28], rax                      
+001535ce6 mov      rbx, qword ptr [rax]                             
+001535ce9 lea      rdx, [rbp - 0x28]                                
+001535ced mov      rcx, rax                                         
+001535cf0 call     qword ptr [rbx + 0x10]                           
+001535cf3 jmp      0x1415368d2                                      0x1535ed2
+001535cf8 mov      edi, dword ptr [rbx + 0x58]                      
+001535cfb call     0x14083d4f0                                      0x83caf0
+001535d00 add      rax, 0x28                                        
+001535d04 mov      dword ptr [rbp - 0x20], edi                      
+001535d07 mov      qword ptr [rbp - 0x28], rax                      
+001535d0b lea      rcx, [rbp - 0x28]                                
+001535d0f cmp      rcx, rsi                                         
+001535d12 je       0x141536744                                      0x1535d44
+001535d14 mov      rcx, qword ptr [rsi]                             
+001535d17 mov      rax, qword ptr [rcx]                             
+001535d1a mov      rdx, rsi                                         
+001535d1d call     qword ptr [rax + 0x10]                           
+001535d20 mov      rax, qword ptr [rbp - 0x28]                      
+001535d24 mov      rcx, qword ptr [rbp - 0x20]                      
+001535d28 mov      qword ptr [rsi + 8], rcx                         
+001535d2c mov      qword ptr [rsi], rax                             
+001535d2f call     0x14083d4f0                                      0x83caf0
+001535d34 add      rax, 8                                           
+001535d38 mov      qword ptr [rbp - 0x20], 0                        
+001535d40 mov      qword ptr [rbp - 0x28], rax                      
+001535d44 mov      rbx, qword ptr [rax]                             
+001535d47 lea      rdx, [rbp - 0x28]                                
+001535d4b mov      rcx, rax                                         
+001535d4e call     qword ptr [rbx + 0x10]                           
+001535d51 jmp      0x1415368d2                                      0x1535ed2
+001535d56 mov      rcx, qword ptr [rbx + 0x20]                      
+001535d5a test     rcx, rcx                                         
+001535d5d je       0x1415368b1                                      0x1535eb1
+001535d63 mov      eax, dword ptr [rcx + 0xc]                       
+001535d66 mov      ecx, dword ptr [rcx + 0x10]                      
+001535d69 test     ecx, ecx                                         
+001535d6b cmove    ecx, eax                                         
+001535d6e jmp      0x1415368bb                                      0x1535ebb
+001535d73 mov      edi, dword ptr [rbx + 0x2c]                      
+001535d76 cmp      edi, -1                                          
+001535d79 je       0x14153687d                                      0x1535e7d
+001535d7f call     0x14083d4f0                                      0x83caf0
+001535d84 add      rax, 0x28                                        
+001535d88 mov      dword ptr [rbp - 0x20], edi                      
+001535d8b mov      qword ptr [rbp - 0x28], rax                      
+001535d8f lea      rcx, [rbp - 0x28]                                
+001535d93 cmp      rcx, rsi                                         
+001535d96 je       0x1415367c8                                      0x1535dc8
+001535d98 mov      rcx, qword ptr [rsi]                             
+001535d9b mov      rax, qword ptr [rcx]                             
+001535d9e mov      rdx, rsi                                         
+001535da1 call     qword ptr [rax + 0x10]                           
+001535da4 mov      rax, qword ptr [rbp - 0x28]                      
+001535da8 mov      rcx, qword ptr [rbp - 0x20]                      
+001535dac mov      qword ptr [rsi + 8], rcx                         
+001535db0 mov      qword ptr [rsi], rax                             
+001535db3 call     0x14083d4f0                                      0x83caf0
+001535db8 add      rax, 8                                           
+001535dbc mov      qword ptr [rbp - 0x20], 0                        
+001535dc4 mov      qword ptr [rbp - 0x28], rax                      
+001535dc8 mov      rbx, qword ptr [rax]                             
+001535dcb lea      rdx, [rbp - 0x28]                                
+001535dcf mov      rcx, rax                                         
+001535dd2 call     qword ptr [rbx + 0x10]                           
+001535dd5 jmp      0x1415368d2                                      0x1535ed2
+001535dda mov      eax, dword ptr [rip + 0x6260f0]                  
+001535de0 mov      ecx, dword ptr [rip + 0x58f57a]                  
+001535de6 mov      rdx, qword ptr gs:[0x58]                         
+001535def mov      rcx, qword ptr [rdx + rcx*8]                     
+001535df3 cmp      eax, dword ptr [rcx + 4]                         
+001535df9 jg       0x141536956                                      0x1535f56
+001535dff movzx    eax, word ptr [rbx + 0x38]                       
+001535e03 mov      ecx, eax                                         
+001535e05 and      ecx, 0x1ff                                       
+001535e0b shl      ecx, 8                                           
+001535e0e movzx    edx, word ptr [rbx + 0x3a]                       
+001535e12 shr      eax, 9                                           
+001535e15 shl      edx, 0x11                                        
+001535e18 or       edx, eax                                         
+001535e1a or       edx, ecx                                         
+001535e1c mov      dword ptr [rbp - 0x20], edx                      
+001535e1f lea      rcx, [rip + 0x62607a]                            
+001535e26 mov      qword ptr [rbp - 0x28], rcx                      
+001535e2a lea      rax, [rbp - 0x28]                                
+001535e2e cmp      rax, rsi                                         
+001535e31 je       0x141536866                                      0x1535e66
+001535e33 mov      rcx, qword ptr [rsi]                             
+001535e36 mov      rax, qword ptr [rcx]                             
+001535e39 mov      rdx, rsi                                         
+001535e3c call     qword ptr [rax + 0x10]                           
+001535e3f mov      rax, qword ptr [rbp - 0x28]                      
+001535e43 mov      rcx, qword ptr [rbp - 0x20]                      
+001535e47 mov      qword ptr [rsi + 8], rcx                         
+001535e4b mov      qword ptr [rsi], rax                             
+001535e4e call     0x14083d4f0                                      0x83caf0
+001535e53 mov      rcx, rax                                         
+001535e56 add      rcx, 8                                           
+001535e5a mov      qword ptr [rbp - 0x20], 0                        
+001535e62 mov      qword ptr [rbp - 0x28], rcx                      
+001535e66 mov      rax, qword ptr [rcx]                             
+001535e69 lea      rdx, [rbp - 0x28]                                
+001535e6d call     qword ptr [rax + 0x10]                           
+001535e70 jmp      0x1415368d2                                      0x1535ed2
+001535e72 ucomiss  xmm6, dword ptr [rip + 0x222787]                 
+001535e79 jne      0x1415368e4                                      0x1535ee4
+001535e7b jp       0x1415368e4                                      0x1535ee4
+001535e7d mov      dil, 1                                           
+001535e80 lea      rax, [rip + 0x623c19]                            
+001535e87 cmp      rsi, rax                                         
+001535e8a je       0x1415368d5                                      0x1535ed5
+001535e8c mov      rcx, qword ptr [rsi]                             
+001535e8f mov      rax, qword ptr [rcx]                             
+001535e92 mov      rdx, rsi                                         
+001535e95 call     qword ptr [rax + 0x10]                           
+001535e98 lea      rdx, [rip + 0x623c01]                            
+001535e9f mov      rcx, qword ptr [rip + 0x623bfa]                  
+001535ea6 mov      rax, qword ptr [rcx]                             
+001535ea9 mov      r8, rsi                                          
+001535eac call     qword ptr [rax + 0x18]                           
+001535eaf jmp      0x1415368d5                                      0x1535ed5
+001535eb1 mov      eax, 0xffffffff                                  
+001535eb6 mov      ecx, 0xffffffff                                  
+001535ebb mov      dword ptr [rbp - 0x28], eax                      
+001535ebe mov      dword ptr [rbp - 0x24], ecx                      
+001535ec1 lea      rcx, [rbp - 0x28]                                
+001535ec5 mov      edx, 0x636f6d70                                  
+001535eca mov      r8, rsi                                          
+001535ecd call     0x140fe72b0                                      0xfe68b0
+001535ed2 mov      dil, 1                                           
+001535ed5 mov      eax, edi                                         
+001535ed7 movaps   xmm6, xmmword ptr [rbp - 0x10]                   
+001535edb add      rsp, 0x58                                        
+001535edf pop      rbx                                              
+001535ee0 pop      rdi                                              
+001535ee1 pop      rsi                                              
+001535ee2 pop      rbp                                              
+001535ee3 ret                                                       
+001535ee4 call     0x14083d4f0                                      0x83caf0
+001535ee9 add      rax, 0x68                                        
+001535eed movss    dword ptr [rbp - 0x20], xmm6                     
+001535ef2 mov      qword ptr [rbp - 0x28], rax                      
+001535ef6 lea      rdi, [rbp - 0x28]                                
+001535efa mov      rcx, rsi                                         
+001535efd mov      rdx, rdi                                         
+001535f00 call     0x14083dfa0                                      0x83d5a0
+001535f05 mov      rcx, qword ptr [rbp - 0x28]                      
+001535f09 mov      rax, qword ptr [rcx]                             
+001535f0c mov      rdx, rdi                                         
+001535f0f call     qword ptr [rax + 0x10]                           
+001535f12 jmp      0x1415368d2                                      0x1535ed2
+001535f14 lea      rcx, [rip + 0x625fb5]                            
+001535f1b call     0x141750e08                                      0x1750408
+001535f20 cmp      dword ptr [rip + 0x625fa9], -1                   
+001535f27 jne      0x1415363fa                                      0x15359fa
+001535f2d lea      rcx, [rip + 0x625f6c]                            
+001535f34 call     0x140dbc9b0                                      0xdbbfb0
+001535f39 lea      rcx, [rip - 0x779f30]                            
+001535f40 call     0x141751048                                      0x1750648
+001535f45 lea      rcx, [rip + 0x625f84]                            
+001535f4c call     0x141750ea0                                      0x17504a0
+001535f51 jmp      0x1415363fa                                      0x15359fa
+001535f56 lea      rcx, [rip + 0x625f73]                            
+001535f5d call     0x141750e08                                      0x1750408
+001535f62 cmp      dword ptr [rip + 0x625f67], -1                   
+001535f69 jne      0x1415367ff                                      0x1535dff
+001535f6f lea      rcx, [rip + 0x625f2a]                            
+001535f76 call     0x140dbc9b0                                      0xdbbfb0
+001535f7b lea      rcx, [rip - 0x779f72]                            
+001535f82 call     0x141751048                                      0x1750648
+001535f87 lea      rcx, [rip + 0x625f42]                            
+001535f8e call     0x141750ea0                                      0x17504a0
+001535f93 jmp      0x1415367ff                                      0x1535dff
+001535390 jmp      0x1444d3400                                      0x4367e00
+001535395 push     rsp                                              
+001535396 jmp      0x142763341                                      0x25f7d41
+00153539b mov      al, 0xcf                                         
+00153539d insb     byte ptr [rdi], dx                               
+00153539e idiv     cl                                               
+000f4948f mov      rcx, rax                                         
+000f49492 call     0x140f72e30                                      0xf72430
+000f49497 jmp      0x140f4a6a9                                      0xf49ca9
+000f4949c mov      ecx, 0x50                                        
+000f494a1 call     0x140f72f70                                      0xf72570
+003bdb270 movabs   rcx, 0xffffffff00000000                          
+003bdb27a mov      qword ptr [rax + 0x40], rcx                      
+003bdb27e mov      dword ptr [rax + 0x48], 0xffffffff               
+003bdb285 mov      qword ptr [rax + 0x4c], 0                        
+003bdb28d mov      qword ptr [rax + 0x54], 0                        
+003bdb295 mov      word ptr [rax + 0x5c], 0xffff                    
+003bdb29b mov      dword ptr [rax + 0x5e], 1                        
+003bdb2a2 ret                                                       
+003bdb2a3 xor      r9, r9                                           
+003bdb2a6 sub      r9, qword ptr [rsp]                              
+003bdb2aa mov      qword ptr [rsp], rbp                             
+003bdb2ae lea      rbp, [rip - 0x585e4a0]                           
+003bdb2b5 neg      r9                                               
+003bdb2b8 sub      rbp, -0x1ea27d9                                  
+003bdb2bf lea      rbp, [rbp + 0x3b274b7]                           
+000db7f80 jmp      0x143b48db0                                      0x39dd7b0
+extent 0x39dd7b0 0x39dd7f9 26 []
+0039dd7b0 push     rsi                                              
+0039dd7b1 push     rdi                                              
+0039dd7b2 sub      rsp, 0x28                                        
+0039dd7b6 mov      rsi, qword ptr [rdx]                             
+0039dd7b9 test     rsi, rsi                                         
+0039dd7bc je       0x143b48dd7                                      0x39dd7d7
+0039dd7be mov      rax, rcx                                         
+0039dd7c1 lock inc dword ptr [rsi + 8]                              
+0039dd7c5 mov      rdi, qword ptr [rsi]                             
+0039dd7c8 mov      r8d, 4                                           
+0039dd7ce mov      rcx, rsi                                         
+0039dd7d1 mov      rdx, rax                                         
+0039dd7d4 call     qword ptr [rdi + 0x28]                           
+0039dd7d7 mov      edi, dword ptr [rsi + 0x10]                      
+0039dd7da lock dec dword ptr [rsi + 8]                              
+0039dd7de jne      0x143b48ded                                      0x39dd7ed
+0039dd7e0 mov      rax, qword ptr [rsi]                             
+0039dd7e3 mov      rcx, rsi                                         
+0039dd7e6 mov      edx, 1                                           
+0039dd7eb call     qword ptr [rax]                                  
+0039dd7ed test     edi, edi                                         
+0039dd7ef sete     al                                               
+0039dd7f2 add      rsp, 0x28                                        
+0039dd7f6 pop      rdi                                              
+0039dd7f7 pop      rsi                                              
+0039dd7f8 ret                                                       
+000fae340 jmp      0x143dcb6f0                                      0x3c600f0
+extent 0x3c600f0 0x3c6016e 43 []
+003c600f0 push     rsi                                              
+003c600f1 push     rdi                                              
+003c600f2 push     rbx                                              
+003c600f3 sub      rsp, 0x20                                        
+003c600f7 mov      rdi, rcx                                         
+003c600fa mov      rsi, qword ptr [rdx]                             
+003c600fd test     rsi, rsi                                         
+003c60100 je       0x143dcb71e                                      0x3c6011e
+003c60102 lock inc dword ptr [rsi + 8]                              
+003c60106 lea      rbx, [rdi + 8]                                   
+003c6010a mov      rax, qword ptr [rsi]                             
+003c6010d mov      r8d, 0xc                                         
+003c60113 mov      rcx, rsi                                         
+003c60116 mov      rdx, rbx                                         
+003c60119 call     qword ptr [rax + 0x28]                           
+003c6011c jmp      0x143dcb722                                      0x3c60122
+003c6011e lea      rbx, [rdi + 8]                                   
+003c60122 mov      rcx, qword ptr [rsp + 0x78]                      
+003c60127 mov      r8d, dword ptr [rbx]                             
+003c6012a cmp      r8d, 0x989681                                    
+003c60131 jb       0x143dcb73b                                      0x3c6013b
+003c60133 mov      r8d, dword ptr [rsp + 0x68]                      
+003c60138 mov      dword ptr [rbx], r8d                             
+003c6013b test     rcx, rcx                                         
+003c6013e je       0x143dcb74c                                      0x3c6014c
+003c60140 mov      rax, qword ptr [rcx]                             
+003c60143 mov      rdx, rdi                                         
+003c60146 mov      r9b, 1                                           
+003c60149 call     qword ptr [rax + 0x18]                           
+003c6014c test     rsi, rsi                                         
+003c6014f je       0x143dcb764                                      0x3c60164
+003c60151 lock dec dword ptr [rsi + 8]                              
+003c60155 jne      0x143dcb764                                      0x3c60164
+003c60157 mov      rax, qword ptr [rsi]                             
+003c6015a mov      rcx, rsi                                         
+003c6015d mov      edx, 1                                           
+003c60162 call     qword ptr [rax]                                  
+003c60164 mov      al, 1                                            
+003c60166 add      rsp, 0x20                                        
+003c6016a pop      rbx                                              
+003c6016b pop      rdi                                              
+003c6016c pop      rsi                                              
+003c6016d ret                                                       

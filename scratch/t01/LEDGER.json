@@ -1797,6 +1797,26 @@
    "claim": "t35 Cafl/Cvfl数据侧发现 partial_no_semantic_candidate(诚实负结果)。扫t14全74 RTTI类型+stage2 45身份,12语义词(AFFILIAT/CLUB_LINK/FEEDER/FARM/SATELLITE/SISTER/SUBSIDIARY/PARTNER等),正向候选0,club近义near-miss6(无affiliation/link类名)。Cafl/Cvfl仍unknown,copy_ready全unknown+空item候选,29/19 schema字段保留为schema-only非数据列名。视图假说no_data_vote:数据不能支持/反驳一集合两视图。关键负证据:RTTI无命中不证明子表不存在,可能嵌club父记录或用无语义RTTI。父表上下文:client table3=club父表(LEAGUE_BODY_CLUB,stage2 club.xml#club),28帧多帧成员选+34真实帧payload6932082 SHA db8ea78c,header count84259,变长stride54..156(87 span,84256标准5B聚合行+3 identity-only紧凑行);server table3 payload16595312仅元信息未walk。luna verify.py缺失(交付不完整,commander spot为闸);另发现fm24_dump.py --table3 footer_offset hex转int既有bug,luna未改脚本用独立walker绕过。",
    "evidence": "scratch/t35/out/{cafl_cvfl_discovery.json,REPORT.md,profiles/(semantic_candidate_scan.json,parent_table3_context.json)};commander scratch/cmd/t35_spot.py 11/11(负结果完整性/copy_ready unknown/schema29+19/scan0候选74类型/near-miss6/no_data_vote/client table3多帧28选1匹配6932082+SHA/header84259/club父表);anchors 7/7。",
    "consequence": "Cafl/Cvfl(48嵌套字段)数据侧RTTI搜索撞墙,转sol静态发现:沿t27已知club +0x118/+0x120 collection(Cafl thunk0x141532ab0 R8D=0/Cvfl 0x141532c60 R8B=1)追writer/子reader找独立archive或嵌入父记录证据。列为sol-tier硬任务排队(Cdbt t36后)。负结果按AGENTS.md原样保留不删改。client table3多帧(28)再证E66多帧普遍性。fm24_dump footer_offset hex bug待修。"
+  },
+  {
+   "id": "E73",
+   "date": "2026-11-19",
+   "author": "commander(verify sol t36)",
+   "kind": "acceptance_partial_core_complete",
+   "level": "L3",
+   "claim": "Cdbt/table33 STARTING_CLUB_DEBT server 32409x79B 全闭合(13+32409*(1+66+12)+9=2560333,SHA b2bf8e2f)。5/5全L3(第二个全晋级继CSrs):cash@body4 i32_le[-1e9,1e9]实测[-316157504,685123648]含负债务/sour@14 i8_enum 18值{-3,-2,0..15}(R8D零臂排除[-5,-3,0])/stdt@19 packed_u16_day_year(low9 day,mid7零,high16 year;全32409有效,row0 day1year1900)/endt@23 packed同/inrt@27 ieee754_binary32_le(real=float32证实;1317行special float-99.0->boxed0,余有限非负max25.0)。properties66B含22 transfers但仅5为schema字段,余父club UID@0+上下文成员。identity@66 lane0 ordinal。footer 0000000001997e0000末u32=32409。sol openai-codex撞usage limit(rc=1,15:02)截断在cursor+fields完成后,REPORT/verify.py/DONE.md未写;核心cursor complete_observed_row_cursor+5L3 fields+instructions×7+branches×2已落盘。",
+   "evidence": "scratch/t36/out/{cursor_cdbt.json,fields_cdbt.json,instructions.part001-007,branches.part001-002};commander scratch/cmd/t36_spot.py 9/9(闭合/SHA/cash域/sour18enum/stdt+endt packed全有效/inrt float32 1317special-99.0余非负max25/identity/footer32409);anchors 7/7。sol verify.py缺失,commander spot为闸。inrt special是float值-99.0(raw0xC2C60000)非raw bits-99,我spot初误用bits已修。",
+   "consequence": "club子表L3累计44(Cstc14+Clhs8+CSrs10+Cmti5+CNtp2+Cdbt5)。子表复制法第6次成功(5/5全晋级第2次)。**sol openai-codex usage limit reached,新sol静态任务暂停待额度恢复**。L3静态cursor线受阻;剩余子表Tchl34/Csme59/Cafl-Cvfl静态需sol。fleet转向luna/devseek数据侧或luna试简单子表静态。inrt float32+packed date+负cash域为债务类子表模板。"
+  },
+  {
+   "id": "E74",
+   "date": "2026-11-19",
+   "author": "commander",
+   "kind": "correction",
+   "level": "L2",
+   "claim": "E72更正:t35 luna已于15:12:31 rc=0正常完成attempt1(非超时),自行修好verify.py(用正确parents[2]),现运行PASS(74类型+45stage2 0候选/client table3 rows84259 lengths87 closure14+6932060+8=6932082/row-length+marker+raw lane+per-bit统计独立复现/Cafl-Cvfl unknown无晋级)。E72所记verify.py缺失+raw_prefix_u32_lanes mismatch是luna收尾中间态快照,已被最终PASS超越。核心负结果(No semantic candidate/no_data_vote)不变,commander spot 11/11独立确认。",
+   "evidence": "scratch/t35/out/verify.py(parents[2],PASS V_RC=0);pi-logs/t35-caflcvfl.log DONE attempt1 rc=0 15:12:31;commander t35_spot.py 11/11。",
+   "consequence": "t35负结果接受稳固,luna verify最终可用。E72原文按append-only保留不删改,本条更正快照时序误判。luna完成度高(自行调试verify至PASS)。"
   }
  ]
 }
