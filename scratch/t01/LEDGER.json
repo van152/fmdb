@@ -1907,6 +1907,16 @@
    "claim": "t45 schema v3 reports/club_nation_subtable_schema.{json,md}:8表52 L3/16 held/4 negative/L4=0。并t41 Csme table59(Melf条件L3 wire+19+10j仅0<=j<n+Msid held no_live_media_reference,变长closure 13+6567*22+2512*32+9=224880,club独占L3=0)。v2七表51 L3 byte-exact verbatim保留(scratch/t45/out/*.v2.json)。schema_version=3,master.json SHA引。",
    "evidence": "scratch/t45/out/{consolidate_v3.py,verify.py,REPORT.md,DONE.md,club_nation_subtable_schema.v2.json,LEDGER.E82.json};commander spot scratch/cmd/t45_spot.py 21/21(8表/52L3计数自洽/Csme Melf L3+Msid held/变长closure/v2七表fields verbatim/master SHA),builder+verifier --selftest PASS(8表52L3/16held/4neg/L4=0),t01_anchors 7/7。",
    "consequence": "schema快照与club子表L3台账一致=52。首份完整可用语义schema持续当前。待t44 Cafl/Cvfl发现结果再增量。nation侧仍0新L3。"
+  },
+  {
+   "id": "E84",
+   "date": "2026-11-19",
+   "author": "commander(verify sol t44)",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": "t44 Cafl/Cvfl 共用 CLUB_LINK 具名辅助成员 server_db/club_links.dat(无数字 table_type/entry RTTI/vptr/slot19/factory case)。Server 9261x47B POD 全闭合 12+9261*47+0=435279(8B header+u32 count@8,无 per-row selector/identity tail/footer);client 无成员。Cafl 26/29 L3,Cvfl 16/19 L3(共享 occurrence 不重复计独立 wire 槽),L4=0。affl 双 i32 端点 +0/+9 各 9261/9261 命中 club/t3 实际 84259 ordinal 域(row0 A=1270->UID1688,B=11272->UID4212156;UID 否证 row misses A5751/B8560);ismc 由 viewer club==A 派生非 bit。stdt/endt +13/+17 packed date(年1900..2024/1900..2042,默认1900day1 6909/8902);fri%/pwgp +35/+42 i8(-1 unset 7715/131,live[0,100],pwgp raw0 8776);20 bool 共 u32@row+5..8(bit1frly..28bttr,flag_counts 32 元)。held:type=21(609,CAfT枚举缺21)/yfee=-1(8984)/msls全-1;clfr Cvfl wrapper+8 runtime-only(枚举0..6,副本生成不按校验成功过滤)。彻底解 t35 负例(74RTTI/45stage2零命中一致),t35 原 JSON SHA 35a7553f 不变。",
+   "evidence": "scratch/t44/out/{discovery_cafl_cvfl,cursor_club_links,fields_cafl_cvfl}.json+REPORT.md+DONE.md+instructions.part001-007+branches.part001-003+verify.py;scripts/t44_cafl_cvfl.py builder;scratch/cmd/t44_spot.py 44/44(独立重建 club 域84259+affl UID否证+bitmap+date+held+grades+t35 SHA);verify.py full PASS(9261行/84259 identity/49分支);builder+verify --selftest PASS;t01_anchors 7/7。payload SHA 8933328064,packed SHA 894f1efb,row-block 17a167f0,key-map 42c81780。master SHA 7d57477e,editor SHA b82ebe8e。",
+   "consequence": "club 子表 L3 台账新增 Cafl/Cvfl 共享 CLUB_LINK 源(42 occurrence);collection-trace 发现法首次解出无 factory case 的具名辅助 POD 成员(t35 负例->闭合)。schema v4 待合并(共享源两视图,affl/ismc 派生,clfr runtime-only 不入 wire 槽)。剩余:type21枚举/yfee-1域/msls活样本/实机clfr/未命名lane。L4=0,未启动游戏/编辑器/IDA。"
   }
  ]
 }
