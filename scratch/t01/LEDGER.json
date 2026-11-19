@@ -1917,6 +1917,16 @@
    "claim": "t44 Cafl/Cvfl 共用 CLUB_LINK 具名辅助成员 server_db/club_links.dat(无数字 table_type/entry RTTI/vptr/slot19/factory case)。Server 9261x47B POD 全闭合 12+9261*47+0=435279(8B header+u32 count@8,无 per-row selector/identity tail/footer);client 无成员。Cafl 26/29 L3,Cvfl 16/19 L3(共享 occurrence 不重复计独立 wire 槽),L4=0。affl 双 i32 端点 +0/+9 各 9261/9261 命中 club/t3 实际 84259 ordinal 域(row0 A=1270->UID1688,B=11272->UID4212156;UID 否证 row misses A5751/B8560);ismc 由 viewer club==A 派生非 bit。stdt/endt +13/+17 packed date(年1900..2024/1900..2042,默认1900day1 6909/8902);fri%/pwgp +35/+42 i8(-1 unset 7715/131,live[0,100],pwgp raw0 8776);20 bool 共 u32@row+5..8(bit1frly..28bttr,flag_counts 32 元)。held:type=21(609,CAfT枚举缺21)/yfee=-1(8984)/msls全-1;clfr Cvfl wrapper+8 runtime-only(枚举0..6,副本生成不按校验成功过滤)。彻底解 t35 负例(74RTTI/45stage2零命中一致),t35 原 JSON SHA 35a7553f 不变。",
    "evidence": "scratch/t44/out/{discovery_cafl_cvfl,cursor_club_links,fields_cafl_cvfl}.json+REPORT.md+DONE.md+instructions.part001-007+branches.part001-003+verify.py;scripts/t44_cafl_cvfl.py builder;scratch/cmd/t44_spot.py 44/44(独立重建 club 域84259+affl UID否证+bitmap+date+held+grades+t35 SHA);verify.py full PASS(9261行/84259 identity/49分支);builder+verify --selftest PASS;t01_anchors 7/7。payload SHA 8933328064,packed SHA 894f1efb,row-block 17a167f0,key-map 42c81780。master SHA 7d57477e,editor SHA b82ebe8e。",
    "consequence": "club 子表 L3 台账新增 Cafl/Cvfl 共享 CLUB_LINK 源(42 occurrence);collection-trace 发现法首次解出无 factory case 的具名辅助 POD 成员(t35 负例->闭合)。schema v4 待合并(共享源两视图,affl/ismc 派生,clfr runtime-only 不入 wire 槽)。剩余:type21枚举/yfee-1域/msls活样本/实机clfr/未命名lane。L4=0,未启动游戏/编辑器/IDA。"
+  },
+  {
+   "id": "E85",
+   "date": "2026-11-19",
+   "author": "commander(verify luna t46)",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": "t46 nation server table_10 数据侧 profile(L1/L2,无 L3)。server 422345B SHA 19337841,251 变长 identity-framed 行(span141..30993,195 distinct),闭合 14+422323+8=422345,row-block SHA 4162770e。identity tail ordinal|nation_row_id|repeated|00 @row_end-13,251/251 跨配 client t25 witness(L2,从 client payload 独立重建)。client table_10 24732B SHA 7e9d740b 与 t25 一致(仅比较,未重 dump)。whole-row grammar different(row0 client65 vs server632);A/B/C/D server count 位置/符号/item 宽度全 unknown,同偏移 probe 仅否证拷 client count(A+24 server-90 vs client3),不赋 server 语义。naive shortest-tail walk row88/body+62440 失败负例保留;交付 walk 用 t25 精确 row ID 独立见证。column portrait 候选仅诊断(bool-like30/packed-day-year4/nation-ordinal4/nation-ID2/cash79),非字段赋值。L3=0,L4=0。为 sol grammar 静态备数据侧。",
+   "evidence": "scratch/t46/out/{REPORT.md,DONE.md,grammar_diff_client_server.json,profiles/table_server_10.profile.json,profiles/table_server_10.rows.jsonl};scripts/t46_nation_server10.py builder --selftest 2/2;scratch/cmd/t46_spot.py 23/23(独立重算 closure/SHA/identity+client witness 跨配+grammar 断言);t01_anchors 7/7。交付缺口:REPORT 引用 scratch/t46/out/verify.py 但未交付,commander spot 代独立门。",
+   "consequence": "nation server table_10 行框架/闭合/identity 已 L1/L2 闭合,内部 list grammar 仍 open(A/B/C/D unknown),待 sol 静态 reader 攻坚(t47 nation 未知 parent 发现并行)。不晋级任何 server-only 字段;t37 Nagr 仍 client_inline。L4=0,未启动游戏/编辑器/IDA。"
   }
  ]
 }
