@@ -35,3 +35,17 @@ club(433)+ nation(346)+ person(271)+ comp(255)+ player(179)五个实体占 2,144
 1. 纯字节统计在 packed 区已证伪殆尽(table_25 全偏移 u16/u32 探测、club 颜色四源扫描、summary 逐槽)——边际收益归零。
 2. 下一个杠杆 = **editor.exe 内的字段槽位映射结构**(编辑器必须知道每个字段在行内哪里才能显示/编辑)。
 3. 既有 L2 锚点是将来验证 L3 映射的测试夹具:六大洲 0..5、England=139、parent=352、Liverpool 坐标、Bernabéu 81,044、俱乐部成立年等。
+
+## 增量(2026-11-20 夜班,E89–E95,指挥官夜班记录)
+
+上表为 2026-11-18 冻结快照(`baseline_coverage.py --check` 所钉数字不变)。以下为快照之后已验收的增量,口径见 `scratch/t01/LEDGER.json` E89–E95 与 `reports/club_nation_subtable_schema.json`(现 v6,v7 fold E94 进行中):
+
+| 层 | 增量 |
+|---|---|
+| 行边界 | t9/table_extra_9/t10 双档(client/server)全闭合:wire13 变长游标 + 13B identity tail + footer,DP 唯一铺法(E89/E91/E93);t46 A/B/C_D 未解段收口为 Nlns/Nefr/Nnfr/Nagr(E94);extra_9 形态=名称块(ordinal\|name_len\|name)+TCrs getter 类型化后缀(E91/E93) |
+| 字段语义 | club 子表层:schema v6 = 8 numbered 表 + CLUB_LINK,94 L3 occurrences/59 unique wire/21 held/4 negative(v4–v6);nation 层:Ntxr 7 + t9 parent 17 + Nrvn/Nftb 6 + 主行 5 = **30+5 L3**(t55 的 5 个待 v7 并),held 20+5 类,negative 15;**nation 表身份下 named 0→5/346** |
+| 方法 | 三重闸门(frozen 唯一 occurrence→getter 4CC 精确分发→同位移 sink)+目标实表 ordinal join+条目级 ledger 守卫,已跨 t47/t49/t51/t53/t55 五次复用;wire 顺序≠XML 顺序(46 倒置,E94) |
+| 表身份 | t9=NATIONAL_TEAM_CONTAINER(owner)、t41=currency(L3 join 229/22 复核)、t19=region、t5=continent 经引用闭合;extra_9=nation 名称表(L1) |
+| 仍开 | EDfx 上游持久化来源、EDsc 调用链、held 枚举域(scoped enum_ref)、327 个 nation 主行未映射字段、club/comp 主行批量字段 |
+
+更新命令不变:`py -V:3.12 -I scripts/baseline_coverage.py --check`(快照数字仍应 OK)。
