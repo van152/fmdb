@@ -455,7 +455,7 @@ def build_grammar_diff(client_cursor: dict[str, Any], server_rows: list[dict[str
             if len(server_rows) > 162 else None,
             "internal_count_positions": "unknown",
             "item_widths": "unknown",
-            "negative_result": "Generic shortest tail-13 walking without the t25 ID witness stops at row 88/body+62440; that false/underconstrained parse is retained as a rejected approach, not used for the delivered row set.",
+            "negative_result": "Generic shortest tail-13 walking without the t25 ID witness includes false internal frames and stops at row 88; full per-row naive choices and the first false-boundary counterexamples are retained below.",
         },
     }
 
@@ -527,13 +527,7 @@ def make_profile(server_meta: dict[str, Any], records: list[dict[str, Any]],
             },
             "footer_bytes": FOOTER_BYTES,
             "footer_hex": server_meta["footer_hex"],
-            "generic_walker_negative": {
-                "method": "shortest tail13 ordinal|id|id|marker search without client ID witness",
-                "first_failure_row": 88,
-                "body_offset": 62440,
-                "prefix_hex": server_meta["generic_walker_failure_prefix_hex"],
-                "disposition": "retained counterexample; not used to frame delivered rows",
-            },
+            "generic_walker_negative": server_meta["generic_walker_negative"],
         },
         "columns": columns,
         "column_candidates": candidates,
@@ -619,6 +613,7 @@ def build() -> dict[str, Any]:
         raise T46Error(f"server record_count_header={server_count}, t25 identity rows={len(t25['rows'])}")
     body = server[14:-FOOTER_BYTES]
     records = bind_rows_by_identity(body, t25["rows"])
+    generic_walker = naive_tail13_walk(body, records)
     if len(records) != server_count:
         raise T46Error("server framed row count differs from payload header")
 
@@ -649,7 +644,7 @@ def build() -> dict[str, Any]:
             "header_hex": server[:14].hex(),
         },
         "footer_hex": server[-FOOTER_BYTES:].hex(),
-        "generic_walker_failure_prefix_hex": body[62440:62440 + 32].hex(),
+        "generic_walker_negative": generic_walker,
     }
     profile = make_profile(server_meta, records, t25, split, inventory, columns, column_candidates, rows_path)
     profile_path = PROFILE_DIR / "table_server_10.profile.json"
@@ -688,7 +683,7 @@ def make_report(profile: dict[str, Any], diff: dict[str, Any]) -> str:
         f"- Server rows bound: {c['count']}; spans {lens['min']}..{lens['max']} B, mean {lens['mean']} B, {lens['distinct']} distinct lengths.",
         f"- Identity tail: `{c['identity']['grammar']}`; all {c['identity']['tail13_hits']} rows uniquely match t25 ordinal/row-ID witnesses and marker `00`.",
         f"- L1 arithmetic closure: `{c['equation']}`. Concatenated row SHA-256 `{c['rows_sha256']}`.",
-        "- The first 88 rows also satisfy a naive shortest-tail walk, but it stops at row 88/body+62440. That negative result is retained. The delivered walk uses each exact t25-observed row ID as an independent identity witness; it does not use client lengths or counts.", "",
+        f"- Rejected shortest-tail walk: {profile['server_structure']['generic_walker_negative']['rows_walked_before_failure']} rows selected before failing at row {profile['server_structure']['generic_walker_negative']['first_failure_row']}/body+{profile['server_structure']['generic_walker_negative']['first_failure_body_offset']}; false shortest boundaries include {[(r['row'], r['chosen_shortest_len'], r['identity_anchored_len']) for r in profile['server_structure']['generic_walker_negative']['false_shortest_candidates'][:4]]}. The delivered walk instead uses unique t25-observed row-ID witnesses and no client lengths/counts.", "",
         "## Grammar Differential", "",
         f"- Whole-row grammar: different. First counterexample is row 0: client span {diff['overall_row_grammar']['client_first_row_span']} B versus server span {diff['overall_row_grammar']['server_first_row_span']} B.",
         "- A/B/C/D server segment mapping: unknown. No internal server count positions, count signedness, or item widths were accepted. Same-offset probes are recorded in `grammar_diff_client_server.json`; they falsify copying some client count slots but do not assign server semantics.",
@@ -736,6 +731,8 @@ def selftest() -> int:
     rows = bind_rows_by_identity(sample, fixture)
     assert [r["len"] for r in rows] == [13, 13]
     assert rows[1]["identity"]["repeated_id"] == 6
+    naive = naive_tail13_walk(sample, rows, max_span=13)
+    assert naive["rows_walked_before_failure"] == 2 and not naive["false_shortest_candidates"]
     try:
         bind_rows_by_identity(sample[:-1], fixture)
     except T46Error:

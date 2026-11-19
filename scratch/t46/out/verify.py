@@ -170,6 +170,45 @@ def derive_candidates(columns: dict[str, list[dict[str, Any]]]) -> dict[str, lis
     return result
 
 
+def naive_tail13_walk(body: bytes, anchored_lengths: list[int], max_span: int = 4096) -> dict[str, Any]:
+    """Recompute the rejected shortest-tail walk, including false selections."""
+    pos = 0
+    walked = []
+    failure_row = None
+    failure_candidates = None
+    for ordinal, anchored_len in enumerate(anchored_lengths):
+        candidates = []
+        limit = min(max_span, len(body) - pos)
+        for span in range(13, limit + 1):
+            tail = pos + span - 13
+            got_ordinal, first_id, repeated_id = struct.unpack_from("<III", body, tail)
+            if got_ordinal == ordinal and first_id == repeated_id and body[tail + 12] in (0, 12):
+                candidates.append(span)
+        if not candidates:
+            failure_row = ordinal
+            failure_candidates = 0
+            break
+        chosen = min(candidates)
+        walked.append({
+            "row": ordinal, "candidate_count": len(candidates),
+            "chosen_shortest_len": chosen, "identity_anchored_len": anchored_len,
+            "delta_shortest_minus_anchored": chosen - anchored_len,
+            "is_false_boundary": chosen != anchored_len,
+        })
+        pos += chosen
+    false_hits = [item for item in walked if item["is_false_boundary"]]
+    return {
+        "rule": "ordinal==row index; repeated IDs equal; marker in {0x00,0x0C}; choose shortest span in [13,4096]",
+        "rows_walked_before_failure": len(walked), "walked_rows": walked,
+        "false_shortest_candidates": false_hits,
+        "first_failure_row": failure_row,
+        "first_failure_body_offset": pos if failure_row is not None else None,
+        "failure_search_max_span": max_span, "failure_candidate_count": failure_candidates,
+        "failure_prefix_hex": body[pos:pos + 32].hex() if failure_row is not None else None,
+        "disposition": "rejected: shortest identity-tail candidates include false internal frames; never used for delivered row boundaries",
+    }
+
+
 def verify_columns(profile: dict[str, Any], raw_rows: list[bytes], cursor: dict[str, Any]) -> int:
     ordinals = {int(row["ordinal"]) for row in cursor["rows"]}
     ids = {int(row["row_id"]) for row in cursor["rows"]}
@@ -290,6 +329,18 @@ def verify() -> dict[str, Any]:
         concatenated.update(raw)
         pos = end
     require(pos == len(body), f"rows end at {pos}, body ends at {len(body)}")
+    negative = naive_tail13_walk(body, [len(row) for row in raw_rows])
+    require(profile["server_structure"]["generic_walker_negative"] == negative,
+            "retained naive-walker negative result mismatch")
+    require(negative["first_failure_row"] == 88 and negative["first_failure_body_offset"] == 62440,
+            "expected naive-walker failure witness changed")
+    first_false = {item["row"]: item for item in negative["false_shortest_candidates"]}
+    require(first_false.get(0, {}).get("chosen_shortest_len") == 629
+            and first_false.get(0, {}).get("identity_anchored_len") == 632,
+            "row 0 false-shortest witness changed")
+    require(first_false.get(2, {}).get("chosen_shortest_len") == 53
+            and first_false.get(2, {}).get("identity_anchored_len") == 513,
+            "row 2 false-shortest witness changed")
     closure = profile["row_closure"]
     require(closure["rows_sha256"] == concatenated.hexdigest(), "concatenated row SHA mismatch")
     require(closure["equation"] == f"14 + sum(row_lens={len(body)}) + 8 = {len(server)}",

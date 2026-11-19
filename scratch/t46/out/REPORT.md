@@ -13,7 +13,7 @@ Status: `partial_data_profile_server_internal_grammar_open`. No L3 or L4 claims.
 - Server rows bound: 251; spans 141..30993 B, mean 1682.562 B, 195 distinct lengths.
 - Identity tail: `ordinal|nation_row_id|repeated_nation_row_id|zero_marker at row_end-13`; all 251 rows uniquely match t25 ordinal/row-ID witnesses and marker `00`.
 - L1 arithmetic closure: `14 + sum(row_lens=422323) + 8 = 422345`. Concatenated row SHA-256 `4162770e55007a453c8ac55381458d28b414a0b5ba3836d6365a0887558ea45b`.
-- The first 88 rows also satisfy a naive shortest-tail walk, but it stops at row 88/body+62440. That negative result is retained. The delivered walk uses each exact t25-observed row ID as an independent identity witness; it does not use client lengths or counts.
+- Rejected shortest-tail walk: 88 rows selected before failing at row 88/body+62440; false shortest boundaries include [(0, 629, 632), (1, 977, 974), (2, 53, 513), (3, 1057, 597)]. The delivered walk instead uses unique t25-observed row-ID witnesses and no client lengths/counts.
 
 ## Grammar Differential
 
