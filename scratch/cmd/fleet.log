@@ -73,3 +73,13 @@
 [solburn 11-20 06:22:26] t66-compsub launcher rc=1
 [solburn 11-20 06:22:26] QUOTA DRAIN #2 detected (blocked at t66-compsub); waiting for window reset, then resume same session
 [day1 06:23:43] t61 enum_ref sweep accepted E101 (0 promotions, negative banked; fix1 entry-level guards)
+[solburn 11-20 06:37:26] t66-compsub LAUNCH provider=openai-codex model=gpt-6.2-sol prompt=prompts/t66_comp_subtable_discovery.md timeout=3600
+[solburn 11-20 06:39:29] t66-compsub launcher rc=1
+[solburn 11-20 06:39:29] QUOTA DRAIN #3 detected (blocked at t66-compsub); waiting for window reset, then resume same session
+[solburn 11-20 06:39:29] THREE WINDOWS DRAINED — user directive satisfied; dispatcher stops (task t66-compsub stays queued for next window)
+[solburn 11-20 06:39:29] sol burn runner EXIT (windows drained: 3; queue left: 7 tasks)
+[solburn2 11-20 06:43:10] sol burn runner v2 START (episode-based; SUCCESS_SEEN baseline=0: v1 already counted the 06:05 drain as window 1)
+[solburn2 11-20 06:43:10] t66-compsub LAUNCH provider=openai-codex model=gpt-6.2-sol prompt=prompts/t66_comp_subtable_discovery.md timeout=3600
+[solburn2 11-20 06:45:13] t66-compsub launcher rc=1
+[solburn2 11-20 06:45:13] still blocked from previous (already-counted) drain; not counted; retry in 15 min
+[day1 06:46:32] t67 comp data crosswalk accepted E102 (L2, 0 FAIL)
