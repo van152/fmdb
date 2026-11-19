@@ -1767,6 +1767,16 @@
    "claim": "Cmti/table43 STARTING_MONTHLY_INSTALLMENT server 535x46B 全闭合(13+535*46+9=24632,SHA 79812670)。5 L3:play(person record-key i32 pair@body0)/club(contextual record-key pair@body8或16,按当前俱乐部选对手方)/mths(i32@24,[1,100]实测[2,84])/cash(i32@28,[0,1e9]实测[1041,3861111])/pyiv(i8@32)。1 held:icom(contextual_enum 视角派生无独立wire sink)。关键:引用是成对record identity key(双i32 lane,第二lane零则复制第一;key_basis=目标记录+0xc/+0x10非ordinal+8),sol拒绝ordinal假说并保留三引用槽反例。identity lane0 ordinal 0..534。footer 000000000117020000 末u32=535(maxUID==count歧义)。client无table43。",
    "evidence": "scratch/t32/out/{cursor_cmti.json,fields_cmti.json,instructions.part001-008,branches.part001-002,verify.py,REPORT.md};scripts/t32_cmti_cursor.py;commander scratch/cmd/t32_spot.py 9/9(闭合/SHA/3pair第二lane全非零1605/1605/mths/cash/pyiv域/identity ordinal/footer);verify PASS;builder selftest PASS;anchors 7/7。factory 0xf48b30 rel32 0xf49d38[43]->0xf49675;slot19 VA0x14153d0a0 leaf thunk->属性reader 0x4370860..0x43709c6(6读宽8,8,8,4,4,1)->identity tail 0x3c600f0..0x3c6016e(12B@0x3c60119)。getter 0xe58339调0x1523b10按当前club identity pair过滤+0x20或+0x28。",
    "consequence": "club子表L3累计37(Cstc14 t27+Clhs8 t30+CSrs10 t31+Cmti5 t32)。子表复制法第4次成功。record-key i32 pair模型(非ordinal)为后续含引用子表(Cdbt/CNtp/Tchl)提供新模板。icom held诚实保留。下一sol目标CNtp table66。"
+  },
+  {
+   "id": "E70",
+   "date": "2026-11-19",
+   "author": "commander(verify luna t29b)",
+   "kind": "acceptance_partial",
+   "level": "L2",
+   "claim": "t29b club子表广度inventory partial接受。38父码:3 high(CSrs62/Clhs37/Cstc22,均sol已闭)/6 candidate(Cdbt33/Cmti43/CNtp66/Tchl34/Csme59/CAmb70语义不匹配)/29 unknown(table_type=str unknown)。13表画像payload_size+SHA全核实(多帧感知含t34=313082真实第二帧),count*stride界、rows_jsonl hash全过。34 L2 item字段候选,25带profile列hint。CAmb->table70 STARTING_VISION_OBJECTIVE语义不匹配诚实标candidate_semantic。luna rc=124超时,REPORT.md/DONE.md未及写;verify.py有ROOT=HERE.parents[3]bug(解析到tmp2b非fm24-db,应parents[2]),保留为证不篡改,以commander独立spot为验收闸。",
+   "evidence": "scratch/t29/out/subtable_inventory.json(status partial_parent_identity_coverage)+profiles/13表+build_inventory.py+verify.py(buggy);commander scratch/cmd/t29b_spot.py 9/9(多帧pick_frame按size+SHA选帧/unknown编码/high链接/sol闭合t37=465712x40,t62=37214x42交叉一致)。",
+   "consequence": "为t27方法复制提供候选靶清单。已派sol t34 CNtp(table66,4字段nati/rati/mina/maxa,753x24)。下一sol候选Cdbt33(5字段32409x79)/Tchl34(9字段7115x44需club/nation排他)/Csme59。29 unknown父码需后续table discovery(含Cafl/Cvfl双视图歧义)。luna verify.py路径bug待修(不阻断inventory使用)。"
   }
  ]
 }
