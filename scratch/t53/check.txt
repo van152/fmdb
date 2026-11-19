@@ -1,0 +1,111 @@
+010608a0 add     byte ptr [rax], al                                      
+010608a2 mov     rax, qword ptr [rbx]                                    
+010608a5 mov     r8d, 4                                                  
+010608ab mov     rcx, rbx                                                
+010608ae call    qword ptr [rax + 0x28]                                  
+010608b1 cmp     dword ptr [rbx + 0x10], 0                               
+010608b5 jne     0x14106092b                                             105ff2b
+010608bb cmp     qword ptr [r14 + 0x188], 0                              
+010608c3 setne   byte ptr [rsp + 0x30]                                   
+010608c8 mov     rbx, qword ptr [rsi]                                    
+010608cb mov     rax, qword ptr [rbx]                                    
+010608ce lea     rdx, [rsp + 0x30]                                       
+010608d3 mov     r8d, 1                                                  
+010608d9 mov     rcx, rbx                                                
+010608dc call    qword ptr [rax + 0x28]                                  
+010608df cmp     dword ptr [rbx + 0x10], 0                               
+010608e3 jne     0x14106092b                                             105ff2b
+010608e9 mov     rcx, qword ptr [r14 + 0x188]                            
+010608f0 test    rcx, rcx                                                
+010608f3 je      0x141061305                                             1060905
+010608f5 mov     rdx, rsi                                                
+010608f8 call    0x14155bd90                                             155b390
+010608fd test    al, al                                                  
+010608ff je      0x14106092b                                             105ff2b
+01060905 mov     rbx, qword ptr [rsi]                                    
+01060908 mov     rax, qword ptr [r14 + 0x168]                            
+0106090f test    rax, rax                                                
+01060912 je      0x141061319                                             1060919
+01060914 mov     eax, dword ptr [rax + 8]                                
+01060917 jmp     0x14106131e                                             106091e
+01060919 mov     eax, 0xffffffff                                         
+0106091e mov     dword ptr [rsp + 0x30], eax                             
+01060922 mov     rax, qword ptr [rbx]                                    
+01060925 lea     rdx, [rsp + 0x30]                                       
+0106092a mov     r8d, 4                                                  
+01060930 mov     rcx, rbx                                                
+01060933 call    qword ptr [rax + 0x28]                                  
+01060936 cmp     dword ptr [rbx + 0x10], 0                               
+0106093a jne     0x14106092b                                             105ff2b
+0105a880 leave                                                           
+0105a881 je      0x14105b288                                             105a888
+0105a883 call    0x141750cfc                                             17502fc
+0105a888 mov     r15, qword ptr [r14 + 0x188]                            
+0105a88f test    r15, r15                                                
+0105a892 je      0x14105b396                                             105a996
+0105a898 mov     rsi, qword ptr [r15]                                    
+0105a89b mov     rbx, qword ptr [r15 + 8]                                
+0105a89f cmp     rsi, rbx                                                
+0105a8a2 je      0x14105b2e7                                             105a8e7
+0105a8a4 mov     rdi, rsi                                                
+0105a8a7 jmp     0x14105b2b9                                             105a8b9
+0105a8a9 nop     dword ptr [rax]                                         
+0105a8b0 add     rdi, 8                                                  
+0105a8b4 cmp     rdi, rbx                                                
+0105a8b7 je      0x14105b2c8                                             105a8c8
+0105a8b9 mov     rcx, qword ptr [rdi]                                    
+0105a8bc test    rcx, rcx                                                
+0105a8bf je      0x14105b2b0                                             105a8b0
+0105a8c1 call    0x140ed14e0                                             ed0ae0
+0105a8c6 jmp     0x14105b2b0                                             105a8b0
+0105a8c8 mov     rdi, qword ptr [r15 + 8]                                
+0105a8cc sub     rdi, rbx                                                
+0105a8cf mov     rcx, rsi                                                
+0105a8d2 mov     rdx, rbx                                                
+0105a8d5 mov     r8, rdi                                                 
+0105a8d8 call    0x141758a00                                             1758000
+0105a8dd add     rdi, rsi                                                
+0105a8e0 mov     qword ptr [r15 + 8], rdi                                
+011d3ed0 fisttp  word ptr [rax + 0x39]                                   
+011d4280 ror     byte ptr [rbx + rcx*4 - 0x43], 0xa0                     
+011d4285 add     byte ptr [rax], al                                      
+011d4287 add     byte ptr [rax - 0x73], cl                               
+011d428a mov     ch, 0xb0                                                
+011d428c add     byte ptr [rax], al                                      
+011d428e add     byte ptr [rdi], cl                                      
+011d4290 mov     ss, word ptr [rdi + 0x45000001]                         
+011d4296 xor     ebp, ebp                                                
+011d4298 movabs  r14, 0x76c0001076c0001                                  
+011d42a2 lea     r12, [rbp + 0xa8]                                       
+011d42a9 jmp     0x1411d4cc4                                             11d42c4
+011d42ab mov     qword ptr [rdi], rbx                                    
+011d42ae add     qword ptr [r15 + 0x20], 8                               
+011d42b3 inc     r13d                                                    
+011d42b6 cmp     r13w, word ptr [rbp + 0x80]                             
+011d42be jge     0x1411d4e2c                                             11d442c
+011d42c4 mov     ecx, 0x14                                               
+011d42c9 call    0x1411d5c20                                             11d5220
+011d42ce mov     rbx, rax                                                
+011d42d1 mov     qword ptr [rax + 0xc], r14                              
+011d42d5 mov     word ptr [rax], 0xff03                                  
+011d42da mov     qword ptr [rax + 4], 0xffffffffffffffff                 
+011d42e2 mov     byte ptr [rax + 2], 0xff                                
+011d42e6 mov     r8, qword ptr [rbp + 0xb8]                              
+011d42ed test    r8, r8                                                  
+011d42f0 je      0x1411d4d0b                                             11d430b
+011d42f2 mov     rcx, qword ptr [rbp + 0xa8]                             
+011d42f9 test    rcx, rcx                                                
+011d42fc je      0x1411d4d0b                                             11d430b
+011d42fe mov     rdx, qword ptr [rbp + 0xb0]                             
+011d4305 mov     rax, qword ptr [rcx]                                    
+011d4308 call    qword ptr [rax + 0x28]                                  
+011d430b mov     qword ptr [rsi + 0x10], 0                               
+011d4313 mov     qword ptr [rsi + 8], 0                                  
+011d431b mov     qword ptr [rsi], 0                                      
+011d4322 mov     rcx, rbx                                                
+011d4325 mov     rdx, r12                                                
+011d4328 call    0x1411d5cd0                                             11d52d0
+011d432d test    al, al                                                  
+011d432f je      0x1411d4a6f                                             11d406f
+011d4335 mov     rdi, qword ptr [r15 + 0x20]                             
+011d4339 cmp     rdi, qword ptr [r15 + 0x28]                             

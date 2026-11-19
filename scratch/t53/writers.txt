@@ -1,0 +1,138 @@
+CFG 3ea5150 0x3ea5243 78 []
+03ea5150 push    rsi                                                     
+03ea5151 push    rdi                                                     
+03ea5152 push    rbp                                                     
+03ea5153 push    rbx                                                     
+03ea5154 sub     rsp, 0x28                                               
+03ea5158 mov     rsi, rdx                                                
+03ea515b mov     rdi, rcx                                                
+03ea515e mov     rbx, qword ptr [rdx]                                    
+03ea5161 mov     rax, qword ptr [rbx]                                    
+03ea5164 lea     rdx, [rsp + 0x27]                                       
+03ea5169 mov     r8d, 1                                                  
+03ea516f mov     rcx, rbx                                                
+03ea5172 call    qword ptr [rax + 0x28]                                  
+03ea5175 cmp     dword ptr [rbx + 0x10], 0                               
+03ea5179 jne     0x144010838                                             3ea5238
+03ea517f mov     rbx, qword ptr [rsi]                                    
+03ea5182 test    rbx, rbx                                                
+03ea5185 je      0x14401079e                                             3ea519e
+03ea5187 lea     rdx, [rdi + 4]                                          
+03ea518b lock inc dword ptr [rbx + 8]                                     
+03ea518f mov     rax, qword ptr [rbx]                                    
+03ea5192 mov     r8d, 8                                                  
+03ea5198 mov     rcx, rbx                                                
+03ea519b call    qword ptr [rax + 0x28]                                  
+03ea519e cmp     dword ptr [rdi + 8], 0                                  
+03ea51a2 jne     0x1440107aa                                             3ea51aa
+03ea51a4 mov     eax, dword ptr [rdi + 4]                                
+03ea51a7 mov     dword ptr [rdi + 8], eax                                
+03ea51aa mov     ebp, dword ptr [rbx + 0x10]                             
+03ea51ad lock dec dword ptr [rbx + 8]                                     
+03ea51b1 jne     0x1440107c0                                             3ea51c0
+03ea51b3 mov     rax, qword ptr [rbx]                                    
+03ea51b6 mov     rcx, rbx                                                
+03ea51b9 mov     edx, 1                                                  
+03ea51be call    qword ptr [rax]                                         
+03ea51c0 test    ebp, ebp                                                
+03ea51c2 jne     0x144010838                                             3ea5238
+03ea51c4 mov     rbx, qword ptr [rsi]                                    
+03ea51c7 mov     rax, qword ptr [rbx]                                    
+03ea51ca mov     r8d, 1                                                  
+03ea51d0 mov     rcx, rbx                                                
+03ea51d3 mov     rdx, rdi                                                
+03ea51d6 call    qword ptr [rax + 0x28]                                  
+03ea51d9 cmp     dword ptr [rbx + 0x10], 0                               
+03ea51dd jne     0x144010838                                             3ea5238
+03ea51df mov     rbx, qword ptr [rsi]                                    
+03ea51e2 lea     rdx, [rdi + 1]                                          
+03ea51e6 mov     rax, qword ptr [rbx]                                    
+03ea51e9 mov     r8d, 1                                                  
+03ea51ef mov     rcx, rbx                                                
+03ea51f2 call    qword ptr [rax + 0x28]                                  
+03ea51f5 cmp     dword ptr [rbx + 0x10], 0                               
+03ea51f9 jne     0x144010838                                             3ea5238
+03ea51fb mov     rbx, qword ptr [rsi]                                    
+03ea51fe lea     rdx, [rdi + 2]                                          
+03ea5202 mov     rax, qword ptr [rbx]                                    
+03ea5205 mov     r8d, 1                                                  
+03ea520b mov     rcx, rbx                                                
+03ea520e call    qword ptr [rax + 0x28]                                  
+03ea5211 cmp     dword ptr [rbx + 0x10], 0                               
+03ea5215 jne     0x144010838                                             3ea5238
+03ea5217 lea     rcx, [rdi + 0xc]                                        
+03ea521b mov     rdx, rsi                                                
+03ea521e call    0x140db8980                                             db7f80
+03ea5223 test    al, al                                                  
+03ea5225 je      0x144010838                                             3ea5238
+03ea5227 add     rdi, 0x10                                               
+03ea522b mov     rcx, rdi                                                
+03ea522e mov     rdx, rsi                                                
+03ea5231 call    0x140db8980                                             db7f80
+03ea5236 jmp     0x14401083a                                             3ea523a
+03ea5238 xor     eax, eax                                                
+03ea523a add     rsp, 0x28                                               
+03ea523e pop     rbx                                                     
+03ea523f pop     rbp                                                     
+03ea5240 pop     rdi                                                     
+03ea5241 pop     rsi                                                     
+03ea5242 ret                                                             
+CFG 43873b0 0x438746a 58 []
+043873b0 push    rsi                                                     
+043873b1 push    rdi                                                     
+043873b2 push    rbx                                                     
+043873b3 sub     rsp, 0x30                                               
+043873b7 mov     rsi, rdx                                                
+043873ba mov     rdi, rcx                                                
+043873bd mov     rbx, qword ptr [rdx]                                    
+043873c0 mov     dword ptr [rsp + 0x28], 2                               
+043873c8 mov     rax, qword ptr [rbx]                                    
+043873cb lea     rdx, [rsp + 0x28]                                       
+043873d0 mov     r8d, 4                                                  
+043873d6 mov     rcx, rbx                                                
+043873d9 call    qword ptr [rax + 0x28]                                  
+043873dc cmp     dword ptr [rbx + 0x10], 0                               
+043873e0 je      0x1444f29e6                                             43873e6
+043873e2 xor     eax, eax                                                
+043873e4 jmp     0x1444f2a62                                             4387462
+043873e6 mov     rax, qword ptr [rdi + 8]                                
+043873ea sub     rax, qword ptr [rdi]                                    
+043873ed shr     rax, 3                                                  
+043873f1 mov     dword ptr [rsp + 0x2c], eax                             
+043873f5 mov     rcx, qword ptr [rsi]                                    
+043873f8 mov     rax, qword ptr [rcx]                                    
+043873fb lea     rdx, [rsp + 0x2c]                                       
+04387400 mov     r8d, 4                                                  
+04387406 call    qword ptr [rax + 0x28]                                  
+04387409 mov     rax, qword ptr [rsi]                                    
+0438740c mov     eax, dword ptr [rax + 0x10]                             
+0438740f test    eax, eax                                                
+04387411 jne     0x1444f2a5d                                             438745d
+04387413 mov     rbx, qword ptr [rdi]                                    
+04387416 mov     rdi, qword ptr [rdi + 8]                                
+0438741a cmp     rbx, rdi                                                
+0438741d je      0x1444f2a5d                                             438745d
+0438741f add     rbx, 8                                                  
+04387423 nop     word ptr cs:[rax + rax]                                 
+04387430 mov     rcx, qword ptr [rbx - 8]                                
+04387434 mov     rdx, rsi                                                
+04387437 call    0x14155aac0                                             155a0c0
+0438743c test    al, al                                                  
+0438743e je      0x1444f2a58                                             4387458
+04387440 mov     rax, qword ptr [rsi]                                    
+04387443 mov     eax, dword ptr [rax + 0x10]                             
+04387446 test    eax, eax                                                
+04387448 jne     0x1444f2a5d                                             438745d
+0438744a lea     rcx, [rbx + 8]                                          
+0438744e cmp     rbx, rdi                                                
+04387451 mov     rbx, rcx                                                
+04387454 jne     0x1444f2a30                                             4387430
+04387456 jmp     0x1444f2a5d                                             438745d
+04387458 mov     eax, 1                                                  
+0438745d test    eax, eax                                                
+0438745f sete    al                                                      
+04387462 add     rsp, 0x30                                               
+04387466 pop     rbx                                                     
+04387467 pop     rdi                                                     
+04387468 pop     rsi                                                     
+04387469 ret                                                             

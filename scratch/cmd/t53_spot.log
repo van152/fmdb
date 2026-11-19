@@ -1,0 +1,37 @@
+[PASS] status dual_wire_closed_fields_held_EDsc_partial
+[PASS] L3_fields=0 L4=0 (got 0/0)
+[PASS] TCrs adjudication: main=t9 +0x188, getter backing=extra_9, distinct slots
+[PASS] no-alias claim scoped to examined routes
+[PASS] 8 wrong-mode trials recorded (main/slot19/named/no-name-arm x 2 sides)
+[PASS] t53 main client 251 rows
+[PASS] t53 main client row boundaries + hashes IDENTICAL to accepted t49 cursor
+[PASS] t53 main server 251 rows
+[PASS] t53 main server row boundaries + hashes IDENTICAL to accepted t49 cursor
+[PASS] main server presence 166/85 (got 166/85)
+[PASS] main all vectors version==2
+[PASS] main all vectors inside accepted t49 row bodies (end <= identity_at)
+[PASS] main server items 2219 (got 2219)
+[PASS] main all items tag==3 (raw u16 check)
+[PASS] main PUnP (+2 i32) all == -1 (2219/2219, no live join claimed)
+[PASS] main row1 @1726 presence=1, count=25, span [1735,2035) raw
+[PASS] PUnJ records ftjn scoped domain + main hit count 1794/2219
+[PASS] extra server 251 rows
+[PASS] extra server blocks tile [12,105228) EOF-closed (12+¦²spans==payload_len, no footer)
+[PASS] extra server presence 179/72 (got 179/72)
+[PASS] extra server 72 vectors, 39 zero-count (got 72)
+[PASS] extra server items 76 (got 76)
+[PASS] extra all items tag==3
+[PASS] extra status octet: 75x02 / 1x08 (got 75/1)
+[PASS] extra row6 item0 @3244 raw bytes match report sample
+[PASS] extra row6 item0 PUnI raw == 170 (report getter source)
+[PASS] extra row6 name block present (b'Les Lions Indomptabl')
+[PASS] extra client 251 rows
+[PASS] extra client blocks tile [12,83927) EOF-closed (12+¦²spans==payload_len, no footer)
+[PASS] PUnP records sidecar ordinal 12/76 vs UID 74/76 split (held basis)
+[PASS] all 4 PUn* fields grade held (no promotion)
+[PASS] EDfx section present
+[PASS] EDfx scoped editor-only output-path conclusion recorded
+[PASS] EDsc honest unresolved (not claimed non-persisted)
+[PASS] t37/t47/t49/t50/t51/reports untouched ()
+
+=== t53 spot: 35/35 ===
