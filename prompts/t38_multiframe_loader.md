@@ -9,6 +9,8 @@
 - `offset` = 成员起点;首 zstd MAGIC(28b52ffd)在 offset 起 64B 内(参 load_payload)。
 - `sha256` / `record_count_header` / `payload_version` 可作辅助校验(先查 sha256 是否为 payload SHA)。
 
+> **指挥官修正(E77,server34 实测)**:`packed_size` 是**真实帧**的压缩 size,**不是整个成员区**。多帧成员常有空 stub 首帧 precedes 真实帧(server34:hit-off=9,frame1 stub 12B,frame2 真实 313082B 压缩 size=89082=packed_size)。**用 `db[hit:off+packed_size]` 界定会截断真实第二帧**(实测 BOUNDED frame2=287410 eof=False,UNBOUNDED frame2=313082 a07b2bb7 eof=True)。正确做法:**无界 `db[hit:]` 逐帧解压,按 len==entry["size"] 且 SHA 匹配选帧**(后续成员帧不匹配无害),或按 **next member offset** 界定成员区。你的 --selftest 要求 server34→313082 会暴露此截断,务必用无界 size+SHA 匹配。
+
 ## 必读
 - scripts/fm24_dump.py(load_payload/_reader/DB_DIR/MAGIC;**只读不改**)
 - scratch/t29/out/subtable_inventory.json(t34 packed_offset/payload_size 313082/SHA a07b2bb7 先例,E66)
