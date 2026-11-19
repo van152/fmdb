@@ -49,3 +49,17 @@ club(433)+ nation(346)+ person(271)+ comp(255)+ player(179)五个实体占 2,144
 | 仍开 | EDfx 上游持久化来源、EDsc 调用链、held 枚举域(scoped enum_ref)、327 个 nation 主行未映射字段、club/comp 主行批量字段 |
 
 更新命令不变:`py -V:3.12 -I scripts/baseline_coverage.py --check`(快照数字仍应 OK)。
+
+## 增量(2026-11-20 夜班二段,E96–E99,指挥官夜班记录)
+
+接上节。快照数字不动(`baseline_coverage.py --check` 仍 OK);以下为 E95 之后已验收增量,口径见 `scratch/t01/LEDGER.json` E96–E99 与 `reports/club_nation_subtable_schema.json`(**现 v8**,E98):
+
+| 层 | 增量 |
+|---|---|
+| club 主行 | t57(E97):table_3 双档封口 client 6,932,082 / server 16,595,312 B,84,259×2 行;**identity 12B**(ordinal\|UID\|UID,修正旧 13B 假设,69705 敏感性反例保留);主 reader slot19 0xe5a7a0 extent 1,412 指令/167 分支,34 逻辑位置;433 occurrence → **13 L3**(Cext/Cedp/Cncl/CIns/Ctsi 新增 + duni/Cnti/Cbni/Cccn/Ccty/CASt/Csot/CnCV)/11 held/10 skipped/399 unmapped;**72 对倒置**;E60 Cccn negative 原文保留+真绑定 +0xf0 注记 |
+| comp 主行 | t59(E99):table_25 双档封口 client 13+894,969+9 / server 13+1,533,950+9,7,047×2 行;identity **12B**(dsha\|duni\|saved rdui==duni)+ footer 9B 00000000\|01\|4ec43a77;client 定宽 127B/server 条件模板 77–82 站点,联合 82 观测+2 静态未触发;COMP 真 slot19 0xeb7000 extent 837 指令/114 分支;255 occurrence → **49 L3(48 个 4CC,26 个新 4CC**:LAUC、cext/cusn/culn bit 投影、22 个 cnst 契约状态投影 Pcsp..Pcsy/Pcjm..Pcsc)**/10 held/196 unmapped;818 对倒置;引用域 ccti→t5、cnti→t10、cpcm→t25 自引、cnor/csou/cwes/ceas→t2 全零违例;wbst/wben 历法校验、levl getter 排 100、crep server-only |
+| 表身份 | **三张主表行框全部自证闭合**(nation 13B / club 12B / comp 12B+9B footer——per-table identity 宽度必须按表自证,不得照抄,已写入 schema 口径);COMP 工厂 case25 双对象形态(db::COMP 与 DATABASE_TABLE<COMP>)不合并 |
+| 语义覆盖 | nation 主行 5/346、club 主行 13/433、comp 主行 49/255 全部过三重闸门+全档域检验;schema v8 为合并基线(comp v9 fold 待下一班) |
+| 仍开 | held 枚举域(scoped enum_ref)批量补、EDfx 上游/EDsc 调用链、club 399+comp 196+nation 327 未映射主行字段、comp 82 站点中未对齐的投影、merge-to-main(仍按 HANDOFF 搁置) |
+
+更新命令不变:`py -V:3.12 -I scripts/baseline_coverage.py --check`(快照数字仍应 OK)。
