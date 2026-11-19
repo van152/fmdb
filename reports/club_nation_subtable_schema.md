@@ -553,3 +553,66 @@ t55 的独立 verifier 对两档各 251 行逐行核验 count-width + item-strid
 ### 来源与 ledger
 
 t55 acceptance `E94`：kind `acceptance` / level `L3` / canonical claim SHA-256 `358243779bba359656ecae6804cea9cea26b1739ffce5bf96a2599d735263c89`。v6 基线 acceptance `E95`：kind `acceptance` / level `L2` / canonical claim SHA-256 `2632aaae869ee3a5c1020d82e409f1f26ad429d077f06f078d5f7f1058f43eb1`。守卫只钉条目 ID、claim SHA、kind、level，不钉 live ledger 全文件哈希。
+
+
+## t58 — t57 Club `table_3` 主行槽位增量（E97 / L3）
+
+本节为 v7 Markdown 的追加内容；此前 v7 全文保持为逐字节前缀。新增内容只建立 Club 主行层，不改写 8 张既有表、负回归、`v3_baseline`、`club_auxiliary_sources` 或任何 `nation_*` 节。
+
+- 双档各 84,259 行、34 个逻辑位置；client `13 + 6,932,060 + 9 = 6,932,082`，server `13 + 16,595,290 + 9 = 16,595,312`。行宽 client 54–156 B、server 81–2618 B。
+- payload SHA：client `db8ea78cbb8fcc7973525b04f55ca1b2c9dafda1e096dfa15c1affcdcc4fab9f`；server `77ebce41936acd17ac798def913c456aa78db77a9acf01f6f440d4b9867716bc`。
+- CLUB 主 reader 为 vtable slot 19，file offset `0xe5a7a0` / VA `0x140e5b1a0`；PE extent 可达 1,412 指令、167 条条件、0 条 extent 外边。
+- 原生 identity tail 是 **12 B** `ordinal | UID | UID`，两档 footer 均 `0000000001e3c03a77`；selector 为 0 的 84,256 行、selector 12 的 3 行。identity 宽度按表自证，不从 nation 的 13 B 口径复制。任何表的 identity-tail/footer 宽度均须逐表自证，不照抄其他表。
+- 强制 13 B / 末 byte==0 的旧假设在 ordinal **69705** 断开：client `@5705237`、server `@14067615`，raw `491001003145d8053145d8050c`；末 `0c` 是下一条 selector。12 B / footer 9 的唯一闭合保留。
+
+### 主行字段台账
+
+433 个 `club.xml#club` 顶层 occurrence 中，唯一 XML 对齐 18 项；grade_counts 原样：L3 13、held 11、skipped_separate_member 10、unmapped 399。L4=0。
+wire 顺序≠XML 顺序，后续映射不得按 XML 序号对齐。共 72 对倒置，首例是 wire pos 3 `Cext` / XML 13 先于 wire pos 10 `Cnam` / XML 6；完整倒置和 433 项原始记录在 v8 JSON 的 `club_main_row_fields.source_records` 中逐条保留。
+
+| Wire pos | 字段 / XML index | 槽位 | 全档域证据 |
+|---:|---|---|---|
+| 33 | `duni` / 0 | `identity` / `+0x8` | client:domain=pass; server:domain=pass |
+| 3 | `Cext` / 13 | `ref_d8` / `+0xd8` | client:hit=55928,miss=0,null=28331; server:hit=55928,miss=0,null=28331 |
+| 31 | `Cedp` / 15 | `base48` / `+0x48` | client=bypassed; server:decoded={'0': 84231, '1': 28} |
+| 3 | `Cnti` / 16 | `ref_d8` / `+0xd8` | client:hit=55928,miss=0,null=28331; server:hit=55928,miss=0,null=28331 |
+| 5 | `Cbni` / 17 | `ref_e8` / `+0xe8` | client:hit=84256,miss=0,null=3; server:hit=84256,miss=0,null=3 |
+| 6 | `Cccn` / 18 | `ref_f0` / `+0xf0` | client:hit=84256,miss=0,null=3; server:hit=84256,miss=0,null=3 |
+| 31 | `Cncl` / 21 | `base48` / `+0x48` | client=bypassed; server:hit=3021,miss=0,null=81238 |
+| 7 | `Ccty` / 22 | `ref_f8` / `+0xf8` | client:hit=74079,miss=0,null=10180; server:hit=74079,miss=0,null=10180 |
+| 8 | `CIns` / 32 | `flags160` / `+0x160` | client:decoded={'0': 82974, '1': 1285}; server:decoded={'0': 82974, '1': 1285} |
+| 8 | `CASt` / 33 | `flags160` / `+0x160` | client:decoded={'0': 84249, '1': 10}; server:decoded={'0': 84249, '1': 10} |
+| 8 | `Csot` / 56 | `flags160` / `+0x160` | client:decoded={'0': 79474, '1': 4785}; server:decoded={'0': 79474, '1': 4785} |
+| 23 | `Ctsi` / 58 | `stad140` / `+0x140` | client=bypassed; server:hit=9403,miss=0,null=74856 |
+| 8 | `CnCV` / 328 | `flags160` / `+0x160` | client:decoded={'0': 83936, '1': 323}; server:decoded={'0': 83936, '1': 323} |
+
+新增 L3：`Cext, Cedp, Cncl, CIns, Ctsi`。13 个主行 L3 的完整静态链、getter、slot profile 与 raw first/last 记录均从 t57 原台账嵌入，未把共享物理槽拆成额外字段。
+- `Cext` 与 `Cnti` 共用 position 3；`CIns`、`CASt`、`Csot`、`CnCV` 共用 flags position 8；`Cncl`、`Cedp` 共用 base48 position 31。
+- `Cccn` 的 E60 `old row+8` negative 原文逐字保留如下；真绑定是 `+0xf0` 第四次 u32 transfer，`+0xe8` 第三次为 `Cbni`。
+> 【晨裁六项 + wave7 发射】(1) Cccn@row+8 正式降级为 low-confidence candidate:t21 全表独立走查 row+0==row+8 在 55868/84259 行成立,t21b CFG 审计未找到 per-row class discriminator,旧 E36 L3 口径撤回,保持 unpromoted;(2) t22 Ncpi 验收通过并已入 reports/(L3,仅 client 2430  scope,231/231 连接+六国语言对照);(3) t23 对账验收通过:client nation 文法 closed,t19 partial 台账与 g2/Ncpi 无矛盾,server table_10 文法开放;(4) 台账晋升口径:t18 行坐标版 fields_*.json 为唯一正典工作台账,reports/ 晋升推迟到 wave7 命名放量产出验证增量后一次性做,避免 8% 命名率台账二次搬运;(5) L4 仍=0,用户未对启动游戏/编辑器给具体授权;(6) sol 额度:用户本轮明示 gpt-6.2-sol 用于最难任务,覆盖旧台账再用需批注记。wave7 三路:t24 club 全 cursor(sol)/t25 nation client 字段放量(luna)/t26 hist+people 档案普查(devseek)。
+- `Ctsi` 是 Training Ground 的 position 23 / `+0x140`，不是 `Csti`；server 9,403 live、74,856 null。`Ccty` 两档均为 74,079 live / 10,180 null、0 miss。
+
+### Held 与未映射边界
+
+候选不写成结论。以下 11 个 held occurrence 的 reason 与首反例来自 t57 `field_map.json`，未改写；399 个 unmapped occurrence 也完整嵌入 JSON，不能解释为 absence。
+| 字段 | reason | 首反例 |
+|---|---|---|
+| `Cnam` | localized getter route is not equated to the backing string | `{"absolute":44,"archive":"client","raw":"4b6c756269206920467574626f6c6c697420416c62706574726f6c205061746f73","row":0,"value":33}` |
+| `Csnm` | stored text exceeds XML max_length in Unicode code points | `{"absolute":107960,"archive":"client","raw":"4643205370617274616b2d4b5055205a61706f72697a687a686961","row":1428,"value":27}` |
+| `PLgn` | no scoped enum_ref; case/control bytes are not labels | `{"absolute":95,"archive":"client","raw":"00","row":0,"value":0}` |
+| `CLat` | exact getter e8afb8 boxes zero via e8dc81; Liverpool city/stadium coordinates are not Club coordinates | `{"anchor":"Liverpool","club_uid":676,"note":"L2 city/stadium/name is not same-object proof","row":460}` |
+| `CLon` | exact getter e8afc4 boxes zero via e8afd9; no direct coordinate sink | `{"anchor":"Liverpool","club_uid":676,"note":"L2 city/stadium/name is not same-object proof","row":460}` |
+| `Cyfn` | getter e8e6a9/e8e6b1 reads +0x100 -> +0xd8 (extra record), fixture only | `{"absolute":170477,"archive":"client extra_3","club":"Arsenal","external_year":1886,"note":null,"row":387,"year":1886}` |
+| `Cprs` | no scoped enum_ref; case/control bytes are not labels | `{"absolute":93,"archive":"server","raw":"02","row":0,"value":2}` |
+| `Crep` | getter e8ea2e/e8ea47 uses first team and default 1500; no same-object Club reputation lane | `{"anchor":"Liverpool","club_uid":676,"note":"L2 city/stadium/name is not same-object proof","row":460}` |
+| `Csti` | prior one-row positive and six negative direct probes do not establish Club main stadium | `{"anchor":"Liverpool","club_uid":676,"note":"L2 city/stadium/name is not same-object proof","row":460}` |
+| `Cdvi` | getter e8b945 uses first team then +0x30/+0x50; no same-object Club competition lane | `{"base":"first Team pointer obtained from CLUB+0x18 at e8b945/e8b955","getter_site":15251809,"operand":"qword ptr [rax + 0x30]"}` |
+| `Cdof` | person target not in this task; no target census or naming promotion | `{"absolute":96,"archive":"server","raw":"ffffffff","row":0,"value":4294967295}` |
+
+首反例重点包括 `Csnm` XML max 25 下每档 537 条越界、`CLat/CLon` getter 装箱 0 不能贴成 Club 坐标、`Csti` 证据不足，以及 `Cyfn` getter 指向 `extra + 0xd8` 而非主行。`Cnam` backing text 与本地化 getter 不等同；`PLgn`、`Cprs`、`Cdof` 不因 raw/control byte 取得语义。
+
+### Coverage 与 provenance
+
+主行层单列：occurrences 433、aligned 18、L3 13、held 11、skipped_separate_member 10、unmapped 399、new L3 5、wire/XML inversions 72、L4=0。既有 `club_L3_occurrences=94`、`club_L3_unique_wire_fields=59`、`held_fields=21` 等子表层计数不动。
+E97 acceptance：kind `acceptance` / level `L3` / canonical claim SHA-256 `ba5a1079403dd970b30c9304a90c37d5a66f3d28163ee2cf2588fd355129ff32`；t56/E96：canonical claim SHA-256 `8fa14c406df939da7d1024eccdb2ed26e876071f9efef64270a998b9eb74cc92`。条目级守卫扩至 E87/E89/E90/E91/E92/E93/E94/E95/E96/E97；不钉 live ledger 全文件哈希。
+t57 的独立 verifier、builder selftest、本文档前缀、v7 快照 SHA、保护节和 t01 anchors 均在 t58 输出日志中记录。

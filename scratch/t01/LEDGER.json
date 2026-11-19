@@ -1977,6 +1977,105 @@
    "claim": "t51(sol) nation 6 unknown parent 静态反查(partial):Nrvn 绑 t9 主表(table_type9,owner NATIONAL_TEAM_CONTAINER/NATION slot2 view)server 194 非空行 720 项 (kind,tag)=(2,6),nati=item+0 i32 L3(720/720 t10 ordinal join;UID join 仅 274,首 miss row7 @8234=162 留反例)、leve=item+12 i8 L3(5..100,XML 0..100);Calt 绑 t9(owner 证实)server 251 全零 count,cmid/stid held,28B item 传输;Nftb 绑 t10 server 仅 row162 count7,item=tag1+4x(len+str)+packed date+4xi32,len 46-54,NpFn/NpSn/NbCn+NbPd(date (year<<17)|((w0&511)<<8)|(w0>>9),首 @278844=2700b607) L3=4,NbPi/NbPn/NbFt 引用 held(ordinal 闸门 2/6、0/7、club 数值域重叠不过闸门);debug_only≠不持久化(t47 setter-only 观点被证伪);TCrs 追到 getter 集合 [+0xb0]+0x48+池 VA+0x11d3200 填充路径,table_extra_9.dat 仅候选未绑,反例 t9 主 reader 0x105dd63 同 item reader 但 0x105dd56 写 this+0x188(presence 166/85);EDfx 证 UI 分发路径(table type10 gate)不赋 archive backing;EDsc unresolved 原样。L3=6/held=5/L4=0。",
    "evidence": "scratch/t51/out/(discovery_unknown2.json+cursor_table_{9,10}_{client,server}.json+fields_{Nrvn,Calt,Nftb}.json+instructions 6+branches 1+verify.py+REPORT.md+DONE.md);builder scripts/t51_nation_unknown2.py --selftest rc0;独立 verify rc0;anchors 7/7;指挥官独立 spot scratch/cmd/t51_spot.py 58/58(独立重解码 6 payload SHA 全吻合,t9 双档+t10 双档 row 边界+逐行 wire SHA 与已接受 t49/t47 cursor 完全一致(cross-walk),Nrvn 720 项 kind/tag/ordinal/leve 原字节复核,Nftb row162 @278809=0700+date 原字节+Calt 251 零 count @1097,t37/t47/t49/reports worktree 无改动)。",
    "consequence": "nation unknown 15→12 连(Ntxr1+t9 的 8+本次 Nrvn/Calt/Nftb 3),unknown 余 EDfx/EDsc/TCrs(TCrs 候选 sidecar);schema v5 并 Nrvn 2+Nftb 4 L3;Nftb 引用编码 UID vs ordinal 问题留 held,为 person/club 引用编码口径提供新反例;EDfx 上游持久化来源与 EDsc 调用链仍未闭。L4=0。"
+  },
+  {
+   "id": "E91",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": "t50(logfare,devseek 饱和 3 败后改道)t9/table_extra_9 数据侧独立画像(L1+L2,L3=0/L4=0):4 成员单帧解码 anchors 七项与 t47 archive 记录逐字节一致;table_9 行界由 13B identity tail(ordinal|row_id|row_id|00)闭合 client 13+31935+8=31956/server 13+307543+8=307564,DP 计数在 row_id≠0∧严格递增下唯一铺法=1(非首解);identity census ordinal 0..250/重复 lane 相等/marker 0/row_id 唯一递增/末行 row_id==footer u32 82082540 双档一致;敏感性:footer=8 由数据钉死,header 11..15 数据不可判(候选),允许 row_id=0 server 炸出 362 宽解(负例保留),放弃递增 client6/server24;extra_9 仅块首闭合 ordinal|name_len|name 251 块连续(server block0=(0,11,\"Les Fennecs\")),块内文法未解,client 1/server 4 铺法;无独立 footer 负例保留。身份尾绝对起点与已接受 t49 cursor identity_at 全 251 行一致(spot cross-walk),body 起点 +1 偏移=marker/selector 归属数据不可判,已如实记录。",
+   "evidence": "scratch/t50/out/(profile_t9.json+profiles/*.rows.jsonl x4+grammar_diff_t9.json+verify.py+REPORT.md+DONE.md);builder scripts/t50_nation_t9_profile.py --selftest/--build rc0;独立 verify --check 15 组 rc0;anchors 7/7;指挥官独立 spot scratch/cmd/t50_spot.py 45/45(独立重解码 4 payload SHA 跨 E89/E90 吻合,251 行 tiling+census+row_id 原字节抽查,身份尾位置 cross-walk vs t49,extra_9 块结构原字节,362/50331648 负例在场)。",
+   "consequence": "t9 主表行界获数据侧独立 L2 交叉验证(三方一致:t49 静态 wire/t50 数据 DP/t51 复用复walk);extra_9 判明为 nation 名称表形态(ordinal|name_len|name)——TCrs sidecar 假设的负向证据,转入 t53 处置;footer 8B vs 9B 与 header 13 切分的归属歧义以敏感性表存档,后续任何表勿以数据单方判定 header。L4=0。"
+  },
+  {
+   "id": "E92",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": "t52(luna) schema v4→v5 增量合并:8 numbered 表+CLUB_LINK+4 negative+club 计数 94/59/21/4+L4=0 verbatim 不动;新增 nation_static_side(t47 Ntxr 7 L3/2 held,item_count_server 1899,t51 followup)+nation_t9_wire(t49 17 L3/13 held,sidecar 未绑 target_parent_assignment=[],6 拒绝)t50_L2_cross_validation(L1/L2,L3=0,adjudication=NO WINNER:身份尾起点 cross-walk 251/251 一致而全行跨度冲突 0/251——marker/selector 归属歧义,不裁决)+t51(Nrvn 2/Nftb 4 L3,Calt/TCrs/EDfx/EDsc 状态保留)。nation 计数 30 L3 occurrences/30 unique/20 held/7 negative。provenance 引用 E87/E89/E90/E91(含 ledger claim SHA 钉扎)。fix1:builder L822 旧守卫(None)与 build 引用 E91 自相矛盾(指挥官 E91 落账竞态),对齐为 E91@L2-only+零字段归因双条件后 selftest/verify/spot/anchors 全过。",
+   "evidence": "reports/club_nation_subtable_schema.json+.md(v5);scratch/t52/out/(consolidate_v5.py+verify.py+v4 快照 JSON/MD+REPORT/DONE+fix1 节);scripts/t52_spot_v5.py;指挥官独立 spot 13/13(保护节对 v4 快照 verbatim,club 计数不动,nation 30/30/20/7 算术,Ntxr/t9 grades,t50 E91@L2-only,markdown 前缀完整);builder --selftest PASS,verify --check rc0,spot --check rc0,anchors 7/7。",
+   "consequence": "公共 schema 升 v5:club v4 全保留,nation 侧 30 L3/20 held/7 negative 入账;t9 行界 t49/t51/t50 三方描述(身份尾一致/跨度归属歧义)以 NO WINNER 存档,后续表勿以数据单方判定 header/尾字节归属;fix1 后 t50 以 E91@L2-only 引用入 provenance。L4=0。"
+  },
+  {
+   "id": "E93",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": "t53(sol,03:04 被限额截断,指挥官补 DONE)TCrs 双闭合裁决:主档=t9 this+0x188(server 166/85 presence 行,85 非空段 2,219 项逐项 EOF 闭合,全 tag3/version2/PUnP=-1,client mode0 全跳过);getter 槽 [this+0xb0]+0x48 绑 table_extra_9.dat 类型化后缀(t50 名称块之后的 extension 段,selector 9 records+presence+向量,server 179/72、33 非空 76 项,12+Σspans=105228/client 83927 双档 EOF 闭合,无 footer)——t50 的 4 候选铺法歧义由本 reader 逐块消费自然消解,t50 文件原样未动。两向量 distinct_slots=true,共享 item reader/池不共享已证向量,无别名断言限于已查路线。PUnI/PUnT/PUnP/PUnJ 全 held(无 scoped enum_ref;PUnP sidecar ordinal 12/76 vs UID 74/76 混合编码;PUnJ 有 ftjn 但 live 冲突 row129 @55950=109),L3_fields=0/L4=0。EDfx 收窄为 editor-only 输出路径结论(上游输入不在结论内);EDsc 保持未找到调用链。错 mode 首例 8 组 trials 留档。",
+   "evidence": "scratch/t53/out/(discovery_crs_wire.json+cursor_crs_{main,extra}_{client,server}.json+fields_PUn*.json x4+instructions 16+branches+verify.py+REPORT.md);builder scripts/t53_crs_wire.py(26,814B,--selftest OK);独立 verify PASS(4x251;2219 main+76 getter;PE/joins/held/negatives OK);anchors 7/7;指挥官独立 spot scratch/cmd/t53_spot.py 35/35(main 双档行界+row SHA 与 t49 已接受 cursor 全等;presence/version/tag/PUnP/状态位 75x02+1x08/row6 @3244 原字节 0300838e5200aa0005000200;extra 双档 12+Σspans EOF 闭合;t50/t37/t47/t49/t51/reports 无改动)。DONE.md 指挥官补写(E88 先例)。",
+   "consequence": "TCrs 持久化归属裁决落定:主档 +0x188 与 getter 后缀(extra_9)两向量并存,extra_9 形态=名称块+类型化后缀(修正 v5 的 sidecar 未绑记法);t50 块内歧义消解口径可入 v6;4 字段 held 等枚举域/编码证据;EDfx 上游与 EDsc 仍开。schema v6 待并 t53。L4=0。"
+  },
+  {
+   "id": "E94",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": "t55(sol) nation table_10 主行槽位普查(partial):现代双档外层序列闭合(server 40/client 15 个位置,251+251 行,992 指令/109 分支 CFG,0 extent 外边);346 顶层字段中 15 个对齐候选槽(4.34%),**5 L3**:Nnsi(0x103fb0e/+0x118,server t21 Stadium 208/0/43)、Ncti(+0xf0,两档 t5 Continent 228/0/23)、Nrgi(+0xf8,t19 Region 234/0/17)、Ncur(+0x100,t41 Currency 229/0/22)、Nndn(+0x1c8,u16 0x0200 掩码 239 假/12 真);4 located held(Necf 域 [1,20] 有 28 个 0、Nygn [0,100] 有 26 个 -1,首反例留档;Ngct/Nsod 无 scoped enum_ref;Npop 不在活动 schema);327 unmapped 如实。**46 对顺序倒置**记录(首例 wire pos1 Nnsi 先于 pos15 Ncti,XML 21>16)——不按 XML 顺序硬配。t46 A/B/C/D 集合级解释:A=Nlns(1+5a)、B=Nefr(4+28b)、C=Nnfr(4+28c)、D=Nagr(4+12d),count site/对象位移/item stride 逐段给出,双档 count/消费逐行一致;原 t46 文字与负例未改。回归全过(Ncpi/t22 六 holdout、Eng139/Chi55、parent352、Ntxr 7 L3、TCrs 4 held)。L4=0。",
+   "evidence": "scratch/t55/out/(field_slots.json+field_map.json+abc_closure.json+instructions 3+branches+verify.py+REPORT/DONE);builder scripts/t55_natmain_fields.py --selftest PASS;独立 verify PASS(992 指令;40/15 位置;251+251;15/346 对齐;L3=5/L4=0);anchors 7/7;指挥官 spot:grade_counts 和 346、L3 id 集、46 倒置+首反例、A/B/C/D 双档 251 行与 item 总数 492/214/63/162、t46 SHA 钉扎、保护路径未动(reports/ 的 M 状态来自并行 t54 v6 fold,非本任务)。",
+   "consequence": "nation 主行外层序列结构性闭合:t10 reader 40 站点普查成为后续字段攻坚的骨架;nation 命名字段 0→5(+held 10 类),t46 A_B_C_D open 状态收口为 Nlns/Nefr/Nnfr/Nagr;46 倒置确立 wire 顺序≠XML 顺序的口径(后续映射不得按 XML 序号对齐);club/comp 侧同法可复制。schema v7 待并 t55。L4=0。"
+  },
+  {
+   "id": "E95",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": "t54(luna) schema v5→v6 增量合并:保护节(tables/negative_regressions/v3_baseline/club_auxiliary_sources/nation_data_side_status)与 club 计数 94/59/21/4/L4=0 verbatim 不动;新增 nation_t9_wire.t53_crs_adjudication(E93@L2-only 引用,claim SHA 钉扎):TCrs 主档=t9 this+0x188(166/85,2219 项)、getter back=table_extra_9 类型化后缀(179/72,76 项,12+Σspans=105228/client 83927),distinct_vector_slots=true,8 个 negative trial 组单列(nation_negative_records 15=t49 6+t51 观测+新增,t50 7 项另行 verbatim),no-alias 限界入 held scope;v5 的 table_extra_9 未绑表述按裁决加注改写,t50 NO WINNER 与身份尾 cross-walk 记录保留。nation 计数 30/30/20/15。",
+   "evidence": "reports/club_nation_subtable_schema.json+.md(v6);scratch/t54/out/(consolidate_v6.py+verify.py+v5 快照 JSON/MD+REPORT/DONE+fix1 节);builder --selftest PASS(保护节/守卫/闭合复验);独立 verify --check rc0(fix1 后 ledger 守卫改条目级:E87/E89/E90/E91/E92/E93 逐条 claim SHA,E94 排除);anchors 7/7;指挥官 spot 12/12(保护节 vs v5 快照 verbatim,club 计数,nation 30/30/20/15,t53 数字 2219/76/105228,E93@L2,8 trials,md 链完整)。",
+   "consequence": "公共 schema 升 v6:TCrs 双闭合与 extra_9 类型化后缀归属入账;ledger 守卫确立条目级钉扎口径(后续 fold 复用,免全文件竞态);nation 侧 30 L3/20 held/15 negative;v7 待并 t55(E94 的 5 L3 主行字段)。L4=0。"
+  },
+  {
+   "id": "E96",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": "t56(luna) schema v6→v7 增量合并:保护节与 club 计数 94/59/21/4/L4=0 verbatim 不动;新增 nation_main_row_fields(t55/E94):外层序列闭合(server 40/client 15 位置,992 指令 CFG),346 顶层字段 15 对齐(4.34%),5 L3(Nnsi→t21 208/0/43、Ncti→t5 228/0/23、Nrgi→t19 234/0/17、Ncur→t41 229/0/22、Nndn 0x0200 掩码 239/12)并入 total L3 30→35(unique ids 追加,无重叠);held +5(Necf/Nygn 域冲突首反例、Ngct/Nsod 无 scoped enum_ref、Npop 不在活动 schema)→25;EDsc no_main_wire_slot、Nftb linked_parent_held、prior_collection 5/prior_identity 1/unmapped 327 如实;46 对 wire↔XML 顺序倒置入 policy(不得按 XML 序号对齐);t46 A/B/C/D=Nlns/Nefr/Nnfr/Nagr 收口引用(原文不动)。provenance t55→E94@L3,条目级守卫扩至 E87–E95。",
+   "evidence": "reports/club_nation_subtable_schema.json+.md(v7);scratch/t56/out/(consolidate_v7.py+verify.py+v6 快照+REPORT/DONE);builder --selftest PASS;独立 verify --check PASS(entry-level E87–E95 守卫;5 L3;35/35/25;ABC;md 前缀);anchors 7/7;指挥官 spot:v7、保护节 verbatim(v6 快照)、club 计数、35/35、t55 L3 id 集、46 倒置、E94@L3、md 链。",
+   "consequence": "公共 schema 升 v7:nation 主行字段层入账(L3 35/346≈1.4% 主行口径),wire≠XML 顺序口径确立;club/comp 主行普查(t57/t59)可直接复用该骨架。L4=0。"
+  },
+  {
+   "id": "E97",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": "t57(sol) club table_3 主行槽位普查(partial):双档行框闭合 client/server 各 84,259 行(client 13+6,932,060+9=6,932,082 行宽54-156B;server 13+16,595,290+9=16,595,312 行宽81-2618B;identity 12B ordinal|UID|UID 非零严格递增唯一,footer 00000000|01|e3c03a77;**纠正 13B 假设:club 原生 identity 为 12B**,13B 在 ordinal 69705 断开,首反例 client @5705237 raw 491001003145d8053145d8050c 末字节 0c 为下一条 selector;敏感性全表:12B 判据下 footer 7/8/9/10/12 铺法 0/0/1/0/0)。CLUB 主 reader=slot19 0xe5a7a0 extent 1,412 指令/167 分支(factory case3 0xf49d44→0xf48daf),34 逻辑位置,client 每行 14 事件/server 普通 32 compact 31;84,256 条 selector0+3 条 selector12。433 顶层 occurrence:18 对齐(13 L3 + 11 held + 10 skipped_separate_member)…**13 L3**(新增 Cext/Cedp/Cncl/CIns/Ctsi,另 duni/Cnti/Cbni/Cccn/Ccty/CASt/Csot/CnCV;Ccty 74,079 live/10,180 null 0 miss),**72 对倒置**(首例 Cext pos3/xml13 vs Cnam pos10/xml6),399 unmapped。held:Csnm 537 越界首例、CLat/CLon 非 club 坐标、Csti 证据不足、Cyfn=extra+0xd8 非主行等;E60 Cccn negative 原文保留,真绑定 +0xf0 第四次 u32。t01 夹具(Liverpool/Bernabéu/成立年)回归一致不误报。L4=0。",
+   "evidence": "scratch/t57/out/(field_slots.json 92K 34 slots+framing_sensitivity+field_map.json+instructions 9+branches 3+verify.py+REPORT/DONE);builder scripts/t57_clubmain_fields.py --selftest PASS;独立 verify PASS(84259+84259 行;3443 PE 指令/407 分支;72 倒置;L4=0);anchors 7/7;指挥官独立 spot 11/12(独立解码双档 payload SHA/尺寸/shell/count@8=84259/footer 原字节、69705 反例原字节、grade 和 433、13 L3 含 5 新 id、72 倒置首例、保护路径净;1 项 FAIL 为 spot 阈值误设,复核 field_slots 92K/34 slots 结构完整)。",
+   "consequence": "club 主行外层序列闭合:433 字段骨架就绪(13 L3/346→club 口径 named 9→22 主行+nation 35);**行框口径修正**:identity tail 宽度按表自证(nation 13B/club 12B),后续任何表不得照抄;wire≠XML 倒置在 club 亦成立(72 对);schema v8 待并 t57;comp table_25(255 字段)同法待发。L4=0。"
+  },
+  {
+   "id": "E98",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "schema": "club_nation_subtable_schema v8",
+    "fold": "t57 club table_3 main-row census merged into club_main_row_fields",
+    "assertions": [
+     "dual-archive row frames closed client 6,932,082 / server 16,595,312 bytes with 84,259+84,259 rows",
+     "native identity tail 12B (ordinal|UID|UID) + footer e3c03a77 self-proven per-table, 13B sensitivity negative 69705 preserved",
+     "CLUB main reader slot19 0xe5a7a0 extent 1412 instructions / 167 branches; 34 logical positions",
+     "433 occurrences -> grade_counts L3:13 held:11 skipped_separate_member:10 unmapped:399; L4=0",
+     "72 wire-vs-XML order inversions preserved (first: wire pos3 Cext/xml13 vs pos10 Cnam/xml6); E60 Cccn negative verbatim + true-binding +0xf0 note"
+    ],
+    "protected_sections": "v7 tables/negative_regressions/v3_baseline/club_auxiliary_sources/nation_* verbatim; club sub-table counts unchanged (94/59/21); generated_by t56->t58 only",
+    "guards": "entry-level E84,E85,E87,E89-E97 canonical claim SHA re-computed vs LEDGER; E98 excluded",
+    "spot": "commander t58_spot.py 0 FAIL + worker spot_*.log all PASS + t01 anchors 7/7"
+   },
+   "evidence": [
+    "reports/club_nation_subtable_schema.json#76da94d4",
+    "reports/club_nation_subtable_schema.md#5067502e",
+    "scratch/t58/out/club_nation_subtable_schema.v7.json#d93a5070",
+    "scratch/t58/out/REPORT.md",
+    "scratch/cmd/t58_spot.py"
+   ],
+   "consequence": "public schema advances v7->v8: club main-row layer (13 new L3 incl. Cext/Cedp/Cncl/CIns/Ctsi + duni/Cnti/Cbni/Cccn/Ccty/CASt/Csot/CnCV) now citable; per-table identity-width self-proof rule added to coverage policy"
   }
  ]
 }
