@@ -19,13 +19,27 @@ V4_MD = OUT_DIR / "club_nation_subtable_schema.v4.md"
 V4_JSON_SHA256 = "7567606c8082f53296caf9c07088489614c364d214e25ba3d4f6390e17d25932"
 V4_MD_SHA256 = "ee47e88a4f7d82ecb996022dc7465975eff51bb153869f99adb987dc46ee3c0c"
 EDITOR_SHA256 = "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4"
-LEDGER_SHA256 = "99e0161366c76e5ff1d924d6dd581b0aa1b37787b8021e02a5d29dafa089198d"
-LEDGER_BYTES = 197568
+LEDGER_SNAPSHOT = OUT_DIR / "ledger_snapshot.json"
 PRIOR_V5_SHA256 = {
-    "reports/club_nation_subtable_schema.json": "f30e1fcd4f18968a3c3ddef3bbab639a33ea295673716ea2d110416164f4fcc1",
-    "reports/club_nation_subtable_schema.md": "1beaa653e08e00d8aa11a054aaf7907959710a856a7e41c413ba91e119f48747",
-    "scratch/t52/out/REPORT.md": "d83475e992672cd782428caa734065a3dd7a616f2e898799c00299b8d78aa5b0",
-    "scratch/t52/out/DONE.md": "357d8ff01cdaab31d6e560a67269358fb6519d7ceb66d2d173212e2e0b2fa952",
+    "reports/club_nation_subtable_schema.json": (
+        "f30e1fcd4f18968a3c3ddef3bbab639a33ea295673716ea2d110416164f4fcc1",
+        "ca8a0ba370a851eb525836da1afd0be9a87388eb01cb7d81386c43daa11a9030",
+        "939638cbbec9a0b21631f96b91892c8310e27ad2c017d199234c50d3017f6088",
+    ),
+    "reports/club_nation_subtable_schema.md": (
+        "1beaa653e08e00d8aa11a054aaf7907959710a856a7e41c413ba91e119f48747",
+        "f2f343fb01cdd066b182f7449f6fa04ef4a1fb6f789cfd3772b124fb2e32212c",
+        "4b4ba12bb6bdd1a7d6a23ba1ef3db477668f016aef901e95067da9346994a50b",
+    ),
+    "scratch/t52/out/REPORT.md": (
+        "d83475e992672cd782428caa734065a3dd7a616f2e898799c00299b8d78aa5b0",
+        "64e1d4816f95da49c05a2873b63cc80c85f129d6247e65021661ef7f3806f8a2",
+    ),
+    "scratch/t52/out/DONE.md": (
+        "357d8ff01cdaab31d6e560a67269358fb6519d7ceb66d2d173212e2e0b2fa952",
+        "04ad40194d7191daed44bff1ac80787e1c7432cfec95d249dce84642b6ead7ad",
+        "78f98dcfaf7138ded1bd54d32ae4bace702211525c066ff797accc83fcae62ba",
+    ),
 }
 
 T47_DISCOVERY = "scratch/t47/out/discovery_nation_unknown.json"
@@ -92,7 +106,6 @@ EXPECTED_SOURCE_SHA256 = {
     "scratch/t51/out/fields_Nrvn.json": "c663f14aed3a1cceccff3adfad55b7f0a23a15b63e3f58c0a8db0273e1191537",
     "scratch/t51/out/fields_Nftb.json": "69f83b15f3143e2305846967d36d6afc340b6626222527a04232fc90da1fa7b0",
     "scratch/t51/out/fields_Calt.json": "91a3ad1da9f738038660288071732c4e90f6590485c6e3def2ce40e5789e89d2",
-    LEDGER: LEDGER_SHA256,
 }
 
 T9_PARENTS = ("Nntp", "Nctp", "Nrtp", "NTRv", "NWGv", "NSps", "Nfmp", "NCro")
@@ -237,7 +250,8 @@ def source_data() -> dict[str, Any]:
         "t9_server": read_json("scratch/t51/out/cursor_table_9_server.json"),
         "t10_server": read_json("scratch/t51/out/cursor_table_10_server.json"),
     }
-    ledger = read_json(LEDGER)
+    ledger_raw = rel(LEDGER).read_bytes()
+    ledger = json.loads(ledger_raw.decode("utf-8"))
     ledger_entries = {entry.get("id"): entry for entry in ledger.get("entries", [])}
     for entry_id in ("E87", "E89", "E90"):
         entry = ledger_entries.get(entry_id)
@@ -247,9 +261,9 @@ def source_data() -> dict[str, Any]:
     e91 = ledger_entries.get("E91")
     require(e91 is not None and (e91.get("kind"), e91.get("level")) == ("acceptance", "L2"),
             "t50 L2 acceptance ledger entry E91 missing or incorrectly graded")
-    require((sha256_file(rel(LEDGER)), rel(LEDGER).stat().st_size) == (LEDGER_SHA256, LEDGER_BYTES),
-            "LEDGER snapshot changed from the verified E91 source")
-
+    e92 = ledger_entries.get("E92")
+    require(e92 is not None and (e92.get("kind"), e92.get("level")) == ("acceptance", "L2"),
+            "t52 fix1 acceptance ledger entry E92 missing or incorrectly graded")
     require(t47_discovery.get("status") == "partial_static_discovery" and
             (len(t47_discovery.get("parents", {})), t47_discovery.get("new_L3"),
              t47_discovery.get("unknown_links"), t47_discovery.get("closed_parents"),
@@ -385,8 +399,8 @@ def source_data() -> dict[str, Any]:
         "t50_rows": t50_rows, "t50_framing_conflict": t50_conflict,
         "t50_identity_tail_crosswalk": t50_identity_tail_crosswalk,
         "t51_discovery": t51_discovery, "t51_fields": t51_fields, "t51_cursors": t51_cursors,
-        "ledger_entries": {key: ledger_entries[key] for key in ("E87", "E89", "E90", "E91")},
-        "ledger_sha256": sha256_file(rel(LEDGER)), "ledger_bytes": rel(LEDGER).stat().st_size,
+        "ledger_entries": {key: ledger_entries[key] for key in ("E87", "E89", "E90", "E91", "E92")},
+        "ledger_raw": ledger_raw, "ledger_sha256": sha256_bytes(ledger_raw), "ledger_bytes": len(ledger_raw),
         "artifacts": artifacts, "acceptance_artifacts": acceptance_artifacts,
         "crosswalk": crosswalk, "rejected_trials": rejected_trials,
     }
@@ -674,9 +688,11 @@ def build_schema(baseline: dict[str, Any], data: dict[str, Any]) -> dict[str, An
                      "acceptance_ledger_entry": "E90", "editor_exe_sha256": EDITOR_SHA256,
                      "payload_sha256": payloads51, "source_artifacts": data["artifacts"]["t51"],
                      "ledger_claim_sha256": canonical_sha256(data["ledger_entries"]["E90"]["claim"])}
-    provenance["t52_ledger_snapshot"] = {"path": LEDGER, "sha256": data["ledger_sha256"],
-                                         "bytes": data["ledger_bytes"], "entries_used": ["E87", "E89", "E90", "E91"],
-                                         "t50_acceptance_entry": "E91", "t50_acceptance_level": "L2"}
+    provenance["t52_ledger_snapshot"] = {"path": "scratch/t52/out/ledger_snapshot.json",
+                                         "live_source_path": LEDGER, "sha256": data["ledger_sha256"],
+                                         "bytes": data["ledger_bytes"], "entries_used": ["E87", "E89", "E90", "E91", "E92"],
+                                         "t50_acceptance_entry": "E91", "t50_acceptance_level": "L2",
+                                         "t52_acceptance_entry": "E92", "t52_acceptance_level": "L2"}
     return schema
 
 
@@ -731,7 +747,7 @@ def render_markdown(v4_markdown: str, schema: dict[str, Any]) -> str:
         "### t51 Cross-Walk", "",
         "t51 independently reproduces t49's table_9 client/server row records and t47's table_10 server row records (251/251 in each pair, including identities and per-row wire SHA-256). This establishes those source-pair matches only; it does not adjudicate the t50 candidate framing.", "",
         "### Provenance", "",
-        f"Editor binary SHA-256 for t47/t49/t51: `{EDITOR_SHA256}`. Ledger entries: E87 (t47 L3), E89 (t49 L3), E90 (t51 L3), and E91 (t50 L2 only). E89/E90/E91 are dated `2026-11-20`, one day after the run date `2026-11-19`; the dates are recorded as present in the ledger, without independent timestamp validation.", "",
+        f"Editor binary SHA-256 for t47/t49/t51: `{EDITOR_SHA256}`. Ledger entries: E87 (t47 L3), E89 (t49 L3), E90 (t51 L3), E91 (t50 L2 only), and E92 (t52 fix1 L2). E89-E92 are dated `2026-11-20`, one day after the run date `2026-11-19`; the dates are recorded as present in the ledger, without independent timestamp validation.", "",
         "| Task | Source artifact | SHA-256 |", "|---|---|---|",
     ]
     for task in ("t47", "t49", "t50", "t51"):
@@ -762,6 +778,7 @@ def render_report(schema: dict[str, Any]) -> str:
         "## Deliverables", "",
         "- `reports/club_nation_subtable_schema.json` and `.md`: v5 pair.",
         "- `scratch/t52/out/club_nation_subtable_schema.v4.json` and `.md`: byte-exact v4 baseline snapshots.",
+        "- `scratch/t52/out/ledger_snapshot.json`: exact ledger bytes used for the t52 provenance snapshot.",
         "- `scratch/t52/out/consolidate_v5.py`: deterministic builder with `--help` and `--selftest`.",
         "- `scratch/t52/out/verify.py`: independent verifier; it does not import the builder or fm24_dump.",
         "- `scripts/t52_spot_v5.py`: independent 20+ item spot check with `--help` and `--selftest`.",
@@ -820,7 +837,7 @@ def render_done(schema: dict[str, Any], verified: bool | None = None) -> str:
         "## fix1", "",
         "Root cause: the builder began emitting E91 provenance before the schema validator was updated, so build and validation disagreed about the t50 acceptance entry.",
         "Fix: validation now requires live E91 to be an `acceptance`/`L2` entry with the t50 ledger scope note, while separately rejecting any t50 attribution in field-grade structures. t50 remains L3=0.",
-        "Runtime results are recorded in the appended `spot_*.log` entries marked `t52-fix1`.", "",
+        "E92 records the t52 fix1 acceptance at L2; E91 remains the t50 L2-only entry. Runtime results are recorded in the appended `spot_*.log` entries marked `t52-fix1`.", "",
     ])
 
 
@@ -888,7 +905,7 @@ def build_all() -> tuple[dict[str, Any], str, str, str, bytes, bytes, dict[str, 
 
 
 def write_outputs(schema: dict[str, Any], markdown: str, report: str, done: str,
-                  baseline_json: bytes, baseline_md: bytes) -> None:
+                  baseline_json: bytes, baseline_md: bytes, data: dict[str, Any]) -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     if V4_JSON.exists():
         require(sha256_file(V4_JSON) == V4_JSON_SHA256, "existing v4 JSON snapshot hash mismatch")
@@ -905,7 +922,14 @@ def write_outputs(schema: dict[str, Any], markdown: str, report: str, done: str,
         PUBLIC_MD: markdown.encode("utf-8"),
         OUT_DIR / "REPORT.md": report.encode("utf-8"),
         OUT_DIR / "DONE.md": done.encode("utf-8"),
+        LEDGER_SNAPSHOT: data["ledger_raw"],
     }
+    previous_ledger_sha = None
+    if PUBLIC_JSON.exists():
+        try:
+            previous_ledger_sha = read_json(PUBLIC_JSON).get("incremental_provenance", {}).get("t52_ledger_snapshot", {}).get("sha256")
+        except (OSError, json.JSONDecodeError, AttributeError):
+            previous_ledger_sha = None
     for path, content in expected.items():
         if path.exists():
             current = path.read_bytes()
@@ -917,7 +941,10 @@ def write_outputs(schema: dict[str, Any], markdown: str, report: str, done: str,
             elif path == OUT_DIR / "DONE.md":
                 allowed.add(render_done(schema, verified=False).encode("utf-8"))
             previous_hash = PRIOR_V5_SHA256.get(path.relative_to(ROOT).as_posix())
-            recognized_previous = previous_hash is not None and sha256_bytes(current) == previous_hash
+            previous_hashes = previous_hash if isinstance(previous_hash, tuple) else (previous_hash,)
+            recognized_previous = previous_hash is not None and sha256_bytes(current) in previous_hashes
+            if path == LEDGER_SNAPSHOT:
+                recognized_previous = previous_ledger_sha is not None and sha256_bytes(current) == previous_ledger_sha
             require(current in allowed or recognized_previous, f"refusing to overwrite unexpected file: {path}")
         path.write_bytes(content)
         print(f"WROTE {path.relative_to(ROOT)}")
@@ -936,11 +963,11 @@ def main(argv: list[str] | None = None) -> int:
     modes.add_argument("--build", action="store_true", help="write the v5 schema pair and t52 reports")
     args = parser.parse_args(argv)
     try:
-        schema, markdown, report, done, baseline_json, baseline_md, _ = build_all()
+        schema, markdown, report, done, baseline_json, baseline_md, data = build_all()
         if args.selftest:
             print("SELFTEST PASS: protected v4 blocks unchanged; Ntxr 7 L3/2 held; t9 17 L3/13 held; t51 6 L3/5 held; E91 accepts t50 at L2 only with zero L3/L4 field attribution; identity-tail starts cross-walk 251/251 while full spans conflict, no winner; nation totals 30/30/20/7; L4=0")
             return 0
-        write_outputs(schema, markdown, report, done, baseline_json, baseline_md)
+        write_outputs(schema, markdown, report, done, baseline_json, baseline_md, data)
         print("t52 schema v5 build complete")
         return 0
     except CheckFailure as exc:

@@ -1,0 +1,8 @@
+Warning: No project session found with id 't58-schemav8-hiyo-key2'; creating a new session with that id.
+t58 增量已完成，公共 schema 已升至 v8：[`club_nation_subtable_schema.json`](D:/tmp2b/fm24-db/reports/club_nation_subtable_schema.json) 和 [`club_nation_subtable_schema.md`](D:/tmp2b/fm24-db/reports/club_nation_subtable_schema.md)。
+
+新增 Club 主行层完整嵌入 t57 `field_slots` / `field_map`，包括 34 个位置、双档各 84,259 行、12 B identity、reader 1,412 指令 / 167 条条件、13 L3、11 held、10 skipped、399 unmapped、72 对倒置及 L4=0。旧子表计数保持为 `club_L3_occurrences=94`、`club_L3_unique_wire_fields=59`、`held_fields=21`；受保护节和 v7 Markdown 前缀均通过核验。E60 原始 negative 已逐字保留，并注明 `Cccn` 真绑定为 `+0xf0`；coverage 也新增了 identity/footer 宽度须逐表自证的规则。
+
+独立 verifier、builder selftest 均通过；t01 anchors 为 **7/7**。交付脚本、报告、快照和 `spot_*.log` 在 [`scratch/t58/out`](D:/tmp2b/fm24-db/scratch/t58/out)。公共 JSON SHA-256：`76da94d4376613a9e649a32d3bfc415f19596d4c7fb1c7c861d60b5951770cbf`；Markdown SHA-256：`5067502eadd489fac0e9842c6ece45e8402ff656e43d41e721522714308737f6`。
+
+未修改 `scratch/t47–t57`，未提交 Git commit。完成检查时工作区分支显示为 `t59-compmain`；公共 v8 文件与 t58 快照的哈希一致。

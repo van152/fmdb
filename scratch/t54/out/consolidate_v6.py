@@ -748,9 +748,15 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     try:
         if args.selftest:
-            schema, _, _, _, _, _, _ = build_all()
+            schema, markdown, report, done, _, _, _ = build_all()
+            expected_json = (json.dumps(schema, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
             require(schema["coverage"]["nation_negative_records"] == 15, "selftest nation negative total")
-            print("SELFTEST PASS: v5 SHA pinned; protected blocks unchanged; E87/E89/E90/E91/E92/E93 entry-level guards; E94 excluded; TCrs dual EOF closure; 8 negative trial groups; 4 fields held; L4=0")
+            require(PUBLIC_JSON.read_bytes() == expected_json and PUBLIC_MD.read_bytes() == markdown.encode("utf-8"),
+                    "selftest would change the public v6 pair")
+            require((OUT_DIR / "REPORT.md").read_text(encoding="utf-8") == report and
+                    (OUT_DIR / "DONE.md").read_text(encoding="utf-8") == done,
+                    "selftest report/DONE output mismatch")
+            print("SELFTEST PASS: public v6 pair unchanged; scratch report/DONE exact; v5 protected blocks; E87/E89/E90/E91/E92/E93 entry-level guards; E94 excluded; TCrs dual EOF closure; 8 negative trial groups; 4 fields held; L4=0")
             return 0
         schema, markdown, report, done, data, v5_json_raw, v5_md_raw = build_all()
         write_outputs(schema, markdown, report, done, data, v5_json_raw, v5_md_raw)

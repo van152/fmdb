@@ -16,4 +16,4 @@ L4=0. No game/editor/IDA process was launched; no network access was used.
 
 Root cause: the builder began emitting E91 provenance before the schema validator was updated, so build and validation disagreed about the t50 acceptance entry.
 Fix: validation now requires live E91 to be an `acceptance`/`L2` entry with the t50 ledger scope note, while separately rejecting any t50 attribution in field-grade structures. t50 remains L3=0.
-Runtime results are recorded in the appended `spot_*.log` entries marked `t52-fix1`.
+E92 records the t52 fix1 acceptance at L2; E91 remains the t50 L2-only entry. Runtime results are recorded in the appended `spot_*.log` entries marked `t52-fix1`.

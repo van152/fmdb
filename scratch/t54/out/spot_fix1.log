@@ -1,0 +1,20 @@
+t54 fix1: entry-scoped ledger guard
+Root cause: E94 was added after the t54 build, changing the live LEDGER from the historical 93-entry snapshot to 94 entries.
+Fix: validate only E87/E89/E90/E91/E92/E93 by ID, canonical claim SHA-256, kind, and level; E94 is excluded. ledger_snapshot.json and its digest/size remain historical only.
+
+COMMAND: py -V:3.12 -I -B scratch/t54/out/consolidate_v6.py --selftest
+SELFTEST PASS: public v6 pair unchanged; scratch report/DONE exact; v5 protected blocks; E87/E89/E90/E91/E92/E93 entry-level guards; E94 excluded; TCrs dual EOF closure; 8 negative trial groups; 4 fields held; L4=0
+
+COMMAND: py -V:3.12 -I -B scratch/t54/out/verify.py --check
+t54 independent verification PASS (104 checks/groups)
+ledger guard: E87/E89/E90/E91/E92/E93 entry-level only; E94 excluded
+
+COMMAND: FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scripts/t01_anchors.py
+7/7 checks passed
+
+ENTRY-SCOPED PASS
+E94 excluded
+
+Public v6 pair unchanged (selftest read-back):
+JSON SHA-256 02751ef7c79c60dfcf14bfbad5fe10e2077f15ed753d12e9ebfa1dfbbc010f44
+Markdown SHA-256 a8d6509b090cd16ed7bf3d89c37638e23da120cbcfcc9e80424bd01a82234ac6

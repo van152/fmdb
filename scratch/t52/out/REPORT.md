@@ -18,6 +18,7 @@ Status: complete, with t50/t49 framing conflict recorded and left unresolved.
 
 - `reports/club_nation_subtable_schema.json` and `.md`: v5 pair.
 - `scratch/t52/out/club_nation_subtable_schema.v4.json` and `.md`: byte-exact v4 baseline snapshots.
+- `scratch/t52/out/ledger_snapshot.json`: exact ledger bytes used for the t52 provenance snapshot.
 - `scratch/t52/out/consolidate_v5.py`: deterministic builder with `--help` and `--selftest`.
 - `scratch/t52/out/verify.py`: independent verifier; it does not import the builder or fm24_dump.
 - `scripts/t52_spot_v5.py`: independent 20+ item spot check with `--help` and `--selftest`.

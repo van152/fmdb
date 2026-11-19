@@ -10,3 +10,7 @@
 - [x] Builder, verifier, spot script, and t01 anchors passed; see `spot_*.log`.
 
 No game/editor/IDA was launched; no network or Z: access was used.
+
+## fix1
+- Root cause: commander recorded E94 (t55 acceptance) after the t54 build, so the 93-entry full-ledger hash/size no longer matched the 94-entry live ledger.
+- Fix: builder and verifier now pin only E87/E89/E90/E91/E92/E93 by ID, canonical claim SHA-256, kind, and level; the full-file snapshot remains historical and is not compared with the live ledger.

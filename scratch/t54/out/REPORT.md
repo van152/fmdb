@@ -28,3 +28,7 @@ Coverage check: 30 L3 / 30 unique / 20 held / 15 negative; t53 groups=8.
 ## Audit
 
 v5 JSON SHA-256 `03967c9157fe0ca46d741e5bd74f9cd4d8df592045ca2dd6c38827f99eb36184`; v5 Markdown SHA-256 `4e40595cb7734df534c4ab145b96855fada9da38f711454f27d3cfedf5e6c009`. E93 claim SHA-256 `a889360cc8ac6a2eca46190000b28d8dcadee8a79705c2f30283f90b1542e30c`. Verification commands and results are in `spot_*.log`.
+
+## fix1
+- Root cause: commander recorded E94 (t55 acceptance) after the t54 build, so the 93-entry full-ledger hash/size no longer matched the 94-entry live ledger.
+- Fix: builder and verifier now pin only E87/E89/E90/E91/E92/E93 by ID, canonical claim SHA-256, kind, and level; the full-file snapshot remains historical and is not compared with the live ledger.

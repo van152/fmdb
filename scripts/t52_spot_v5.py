@@ -139,7 +139,8 @@ def verify_spots() -> tuple[int, int, list[str]]:
             t50_diff["table_9"]["identical_row_count"] == 0, "t50 client/server identity/body comparison")
     require(t50_diff["cross_table"]["t9_ids_equal_t10_ids"]["client"] and
             t50_diff["cross_table"]["t9_ids_equal_t10_ids"]["server"], "t50 t9/t10 identity ladder")
-    require(t50_node["adjudication"].startswith("NO WINNER"), "t49/t50 framing stays unresolved")
+    require(t50_node["adjudication"] == "NO WINNER. Preserve both framings as source-specific alternatives. The t49 E89 accepted field ledger remains unchanged; t50 is an L1/L2 candidate profile, not the winning cursor and not a field-grade promotion.",
+            "t49/t50 NO WINNER record changed")
     ledger = root_json("scratch/t01/LEDGER.json")
     e91 = [entry for entry in ledger["entries"] if entry.get("id") == "E91"]
     task50 = schema["incremental_provenance"]["tasks"]["t50"]
@@ -193,7 +194,10 @@ def verify_spots() -> tuple[int, int, list[str]]:
                 f"t50 {side}: candidate row lengths remain distinct from t49")
         tail_matches = [r["offset"] + r["identity"]["tail_offset_in_row"] == q["identity_at"]
                         for q, r in zip(old, new)]
-        require(len(tail_matches) == 251 and all(tail_matches),
+        stored_tail = schema["nation_t9_wire"]["t50_identity_tail_crosswalk"][side]
+        require(len(tail_matches) == 251 and all(tail_matches) and
+                stored_tail["rows_compared"] == 251 and
+                stored_tail["absolute_identity_tail_starts_match"] == 251,
                 f"t50 {side}: absolute identity-tail starts differ from t49")
         samples.append(f"t50/{side}: identity-tail starts 251/251; marker/selector boundary unresolved")
     require(schema["coverage"]["nation_L3_occurrences"] == 30 and

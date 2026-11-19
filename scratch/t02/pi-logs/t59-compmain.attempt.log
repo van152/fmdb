@@ -1,0 +1,11 @@
+Warning: No project session found with id 't59-compmain-openai-codex'; creating a new session with that id.
+`t59` 已完成 COMP `table_25` 双档行框和 reader CFG 普查；字段映射为 **partial**。
+
+- Client、server 各 **7,047 行**，独立身份普查与 reader 游标逐行一致。原生行框为 **13 B header + 行数据 + 9 B footer**，行尾 identity 为 **12 B**。
+- 共 **82 个实档外层槽位**，另有 2 个未触发的可选 payload。255 个 XML 顶层项中，**49 项通过 L3（26 个新 4CC）**、10 held、196 unmapped；L4=0。
+- t01f 全部槽位和游标夹具、六洲、England/China PR、parent 352 均复洽。全档 builder、独立 verifier、两者 `--help` / `--selftest` 均通过；`t01_anchors.py` **7/7**。
+
+**交付清单**
+- `scratch/t59/out/`：`field_slots.json`、`field_map.json`、`instructions.part01.json`–`part07.json`、`branches.part01.json`–`part03.json`、`verify.py`、`REPORT.md`、`DONE.md`
+- `scripts/t59_compmain_fields.py`
+- `scratch/t59/validation.log`

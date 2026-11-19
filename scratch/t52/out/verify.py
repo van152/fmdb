@@ -18,8 +18,8 @@ V5_JSON = ROOT / "reports" / "club_nation_subtable_schema.json"
 V5_MD = ROOT / "reports" / "club_nation_subtable_schema.md"
 V4_JSON_SHA256 = "7567606c8082f53296caf9c07088489614c364d214e25ba3d4f6390e17d25932"
 V4_MD_SHA256 = "ee47e88a4f7d82ecb996022dc7465975eff51bb153869f99adb987dc46ee3c0c"
-LEDGER_SHA256 = "99e0161366c76e5ff1d924d6dd581b0aa1b37787b8021e02a5d29dafa089198d"
-LEDGER_BYTES = 197568
+LEDGER_SNAPSHOT = OUT / "ledger_snapshot.json"
+LEDGER_SOURCE = "scratch/t01/LEDGER.json"
 
 ARTIFACTS = {
     "t47": ["scratch/t47/out/discovery_nation_unknown.json", "scratch/t47/out/fields_nation_tax.json",
@@ -74,7 +74,6 @@ EXPECTED_SHA256 = {
     "scratch/t51/out/fields_Nrvn.json": "c663f14aed3a1cceccff3adfad55b7f0a23a15b63e3f58c0a8db0273e1191537",
     "scratch/t51/out/fields_Nftb.json": "69f83b15f3143e2305846967d36d6afc340b6626222527a04232fc90da1fa7b0",
     "scratch/t51/out/fields_Calt.json": "91a3ad1da9f738038660288071732c4e90f6590485c6e3def2ce40e5789e89d2",
-    "scratch/t01/LEDGER.json": LEDGER_SHA256,
 }
 
 PROTECTED_KEYS = ("tables", "negative_regressions", "v3_baseline", "club_auxiliary_sources", "nation_data_side_status")
@@ -138,23 +137,35 @@ def verify_artifact_hashes(schema: dict[str, Any]) -> int:
         require(digest == EXPECTED_SHA256[path] and evidence_paths[path]["sha256"] == digest and
                 evidence_paths[path]["bytes"] == len(raw), f"t50 acceptance evidence hash/size mismatch: {path}")
         checks += 1
-    ledger_raw = (ROOT / "scratch/t01/LEDGER.json").read_bytes()
-    require(sha256_bytes(ledger_raw) == LEDGER_SHA256 and len(ledger_raw) == LEDGER_BYTES,
-            "LEDGER snapshot source SHA/size mismatch")
-    ledger = json.loads(ledger_raw.decode("utf-8"))
-    e91_items = [entry for entry in ledger["entries"] if entry.get("id") == "E91"]
-    require(len(e91_items) == 1 and (e91_items[0].get("kind"), e91_items[0].get("level")) == ("acceptance", "L2"),
-            "live E91 is not an acceptance/L2 entry")
     ledger_prov = schema["incremental_provenance"]
-    require(ledger_prov["t52_ledger_snapshot"]["sha256"] == LEDGER_SHA256 and
-            ledger_prov["t52_ledger_snapshot"]["bytes"] == LEDGER_BYTES and
-            ledger_prov["t52_ledger_snapshot"]["entries_used"] == ["E87", "E89", "E90", "E91"],
-            "v5 ledger provenance snapshot mismatch")
-    e91_record = ledger_prov["acceptance_ledger_entries"]["E91"]
-    require(e91_record["kind"] == "acceptance" and e91_record["level"] == "L2" and
-            e91_record["claim_sha256"] == canonical_sha256(e91_items[0]["claim"]),
-            "v5 E91 acceptance provenance mismatch")
-    return checks + 2
+    snapshot_meta = ledger_prov["t52_ledger_snapshot"]
+    snapshot_raw = LEDGER_SNAPSHOT.read_bytes()
+    require(snapshot_meta["path"] == "scratch/t52/out/ledger_snapshot.json" and
+            snapshot_meta["live_source_path"] == LEDGER_SOURCE and
+            sha256_bytes(snapshot_raw) == snapshot_meta["sha256"] and
+            len(snapshot_raw) == snapshot_meta["bytes"],
+            "t52 frozen ledger snapshot SHA/size mismatch")
+    snapshot = json.loads(snapshot_raw.decode("utf-8"))
+    live = read_root_json(LEDGER_SOURCE)
+    used_ids = ["E87", "E89", "E90", "E91", "E92"]
+    require(snapshot_meta["entries_used"] == used_ids and
+            snapshot_meta["t50_acceptance_entry"] == "E91" and snapshot_meta["t50_acceptance_level"] == "L2" and
+            snapshot_meta["t52_acceptance_entry"] == "E92" and snapshot_meta["t52_acceptance_level"] == "L2",
+            "v5 ledger provenance snapshot scope mismatch")
+    snapshot_entries = {entry.get("id"): entry for entry in snapshot.get("entries", [])}
+    live_entries = {entry.get("id"): entry for entry in live.get("entries", [])}
+    for entry_id in used_ids:
+        require(entry_id in snapshot_entries and live_entries.get(entry_id) == snapshot_entries[entry_id],
+                f"live ledger entry changed or is missing: {entry_id}")
+        expected_level = "L2" if entry_id in ("E91", "E92") else "L3"
+        require((snapshot_entries[entry_id].get("kind"), snapshot_entries[entry_id].get("level")) ==
+                ("acceptance", expected_level), f"ledger entry grade mismatch: {entry_id}")
+        record = ledger_prov["acceptance_ledger_entries"][entry_id]
+        require(record["kind"] == "acceptance" and record["level"] == expected_level and
+                record["claim_sha256"] == canonical_sha256(snapshot_entries[entry_id]["claim"]),
+                f"v5 ledger acceptance provenance mismatch: {entry_id}")
+        checks += 1
+    return checks + 1
 
 
 def verify_field_ledgers(schema: dict[str, Any]) -> int:
@@ -367,14 +378,14 @@ def verify_all() -> int:
     print(f"t52 independent verification PASS ({checks} check groups/items)")
     print("v4 protected sections: byte-exact source snapshots and structural equality verified")
     print("nation fields: t47 7 L3/2 held; t49 17 L3/13 held; t51 6 L3/5 held")
-    print("t50: L1/L2 only, report/profile/diff preserved, no field or parent assignment")
-    print("t49/t50: candidate framing conflict reproduced for client and server; no winner")
+    print("t50: E91 accepts L2 data-side profile only; L3 field attribution stays zero and sidecar remains unassigned")
+    print("t49/t50: absolute identity-tail starts cross-walk 251/251 per archive; full spans conflict; NO WINNER")
     print("t51 cross-walk: all three 251-row source pairs match; L4=0")
     return checks
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Independently verify the t52 v5 merge, source hashes, protected v4 blocks, field grades, and unresolved t49/t50 framing conflict.")
+    parser = argparse.ArgumentParser(description="Independently verify t52-fix1 E91 provenance, source hashes, protected v4 blocks, field grades, and the unchanged t49/t50 NO WINNER record.")
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--selftest", action="store_true", help="run isolated verifier selftests")
     group.add_argument("--check", action="store_true", help="verify the v5 schema against frozen baseline and source artifacts")
