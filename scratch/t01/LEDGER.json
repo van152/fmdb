@@ -1705,6 +1705,20 @@
     "scratch/t29/out/profiles/table_server_37.profile.json(消费 t29 画像不重 dump)"
    ],
    "consequence": "club 子表 cursor 方法第三次证实(t27 定长 stadium→t28 变长 nation 集合→t30 定长 league history 46 万行)。Clhs 8/12 L3,4 held 待域冲突解释(历史原始值 vs UI 限值)。sol 空闲→派 t31 CSrs 预备队子表(table62/10 字段)。t29 已画像 13 子表(33/34/37/43/50/51/60/61/62/63/64/66/70),复制管线备料充足。Cafl/Cvfl 双视图歧义仍另案。"
+  },
+  {
+   "id": "E66",
+   "date": "2026-11-19 14:05",
+   "author": "commander(t29 独立验收,partial)",
+   "kind": "acceptance_partial",
+   "level": "L1(全量自走 13 子表封口)+L2(RTTI/身份对照 t14 census+stage2)",
+   "claim": "【t29 partial 验收 — club 子表广度数据侧侦察,13 子表画像全独立核验通过】luna attempt1 超时(rc=124)前产出 13 个 complete_data_profile,launcher 因 profile 含 status 字段判 DONE 退出(L35 启发式)。指挥官独立重 dump 核验 13/13 封口+count+首列统计:server t33 Cdbt STARTING_CLUB_DEBT 32409×79/t34 Tchl STARTING_TEAM_CUP_HISTORY 7115×44/t37 Clhs 465712×40(t30 已 L3)/t43 Cmti STARTING_MONTHLY_INSTALLMENT 535×46/t50 MLS_TRADED_SLOT 45×26/t51 MLS_GENERAL_ALLOCATION_MONEY 59×23/t60 MLS_TARGETED_ALLOCATION_MONEY 59×23/t61 ITALIAN_SERIE_A_FREED_NON_EU_SLOT 16×20/t62 CSrs STARTING_RESERVE_TEAM 37214×42(t31 进行中)/t63 ITALIAN_NON_EU_SLOTS_NUMBER 2×20/t64 CLUB_STAFF_JOB_STATUS 6946×21/t66 CNtp CLUB_TRANSFER_PREFERENCE 753×24/t70 VISION_OBJECTIVE 10075×40。【关键工具 caveat】fm24_dump.load_payload 对多 zstd 帧成员取首帧:table34 有 +9 空 stub(count=0,12B)与 +34 真 payload 两帧,load_payload 误取空帧;指挥官改用 +34 帧独立核验 SHA a07b2bb7…/313082B/7115 行/14+7115×44+8 封口全吻合,证 t29 正确而 load_payload 有此局限。后续子表任务遇空 payload 须查多帧。【未完成】subtable_inventory.json 综合(parent_4cc↔table 配对)+REPORT 未写(luna 超时),verify.py 因缺 inventory 报错;13 画像本身已交付且核验通过。",
+   "evidence": [
+    "scratch/t29/out/profiles/table_server_{33,34,37,43,50,51,60,61,62,63,64,66,70}.profile.json+.rows.jsonl",
+    "scratch/t29/out/verify.py(需 inventory)",
+    "指挥官独立 13/13 封口核验(含 t34 多帧修正)"
+   ],
+   "consequence": "club 子表复制管线备料充足:13 子表 RTTI+count+stride 数据侧确认。sol t31 CSrs 后,下一批可攻 Cdbt(33,5 字段)/Cmti(43,6)/CNtp(66,4)/Tchl(34,9,需排他 club/nation)。luna 空闲→派 t29b 聚焦 inventory 综合(读已有画像+census+schema,不重 dump,短任务)。load_payload 多帧局限记入工具 caveat。Cafl/Cvfl 仍 unknown(双视图歧义)。"
   }
  ]
 }
