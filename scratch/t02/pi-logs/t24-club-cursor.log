@@ -1,0 +1,17 @@
+=== attempt 1/3 Thu Nov 19 12:21:39     2026 provider=openai-codex model=gpt-6.2-sol ===
+Warning: No project session found with id 't24-club-cursor-openai-codex'; creating a new session with that id.
+t24 已闭合 client table_3 的 **84,259 行**：84,256 行走 `CLUB`，3 个 55 B compact 行走 `LEAGUE_BODY_CLUB`。类选择由每行前缀字节驱动，不使用 ordinal。
+
+**封口修正**：t21 的 `0x69c66a` 对账点仍成立；按实际读取顺序，行流结束于 `0x69c669`，其后是 9 B footer。旧框架把 footer 首字节计入了最后一行。
+
+**新增 10 个主行 L3 字段**。`Cccn@row+8` 仍不成立；新证据定位到标准行 `row+12`、compact 行 `row+17`。未走的 CFG 分支及客户端扩展模式参数的上游来源仍未解，不外推到 server 或旧版本。
+
+独立 verifier 全量通过，重读 532 条指令证据；`--selftest` 通过，t01 锚点回归 **7/7**。
+
+**交付清单**
+- `scratch/t24/out/cursor.json`：逐行轨迹、分支分类和 selector 证据，含分片索引。
+- `scratch/t24/out/fields_club.json`：字段晋级台账和子表引用，含分片索引。
+- `scratch/t24/out/verify.py`：独立复算。
+- `scratch/t24/out/REPORT.md`：结论、证据范围和未解项。
+- `scripts/t24_club_cursor.py`：生成器。
+=== DONE t24-club-cursor attempt=1 rc=0 Thu Nov 19 12:38:32     2026 ===
