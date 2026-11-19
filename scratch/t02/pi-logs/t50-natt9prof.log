@@ -1,1 +1,49 @@
 === attempt 1/3 Fri Nov 20 02:17:56     2026 provider=logfare model=deepseek-v4.1-flash-1017 ===
+Warning: No project session found with id 't50-natt9prof-logfare'; creating a new session with that id.
+I have the data-side picture. Now I'll write the builder.
+
+
+=== attempt 1 rc=0 Fri Nov 20 02:28:41     2026 ===
+=== attempt 2/3 Fri Nov 20 02:28:56     2026 provider=logfare model=deepseek-v4.1-flash-1017 ===
+t50 完成。全部验收通过。
+
+## 交付清单 `scratch/t50/out/`
+
+| 文件 | 内容 |
+|---|---|
+| `profile_t9.json` | 4 成员 anchors + tad shell + count@8 + closure 判定 + **framing 敏感性表** + identity census + 长度直方图 + 样本 |
+| `profiles/table_client_9.rows.jsonl` | 251 行 |
+| `profiles/table_server_9.rows.jsonl` | 251 行 |
+| `profiles/table_client_extra_9.rows.jsonl` | 251 块 |
+| `profiles/table_server_extra_9.rows.jsonl` | 251 块 |
+| `grammar_diff_t9.json` | 双档对比 + 同偏移探针 + t9↔t10 跨表对照 |
+| `verify.py` | 独立验证器(不 import builder/t49),`--selftest`/`--check` |
+| `REPORT.md` / `DONE.md` | 报告 / 完成说明 |
+
+**Builder**: `scripts/t50_nation_t9_profile.py`(`--help`/`--selftest`/`--build`)
+
+## 核心结果
+
+1. **4 个成员都独立解码**:均为单帧 zstd、帧长==declared size、tad shell + count@8==251 全部成立;`table_extra_10.dat` 两档均缺失。anchors 与 t47 archive 记录七项逐字节一致(仅对照,未采其静态结论)。
+2. **`table_9` 由 identity 尾闭合**:client `13+31935+8=31956`、server `13+307543+8=307564`。闭合唯一性通过 **DP 全分区计数**得出(不是挑首个解):规则为"row_id 非零 + 严格递增"时 **1 条**。
+3. **identity census 全过**:ordinal 0..250、repeated lane 相等、marker 全 0、row_id 唯一递增、末行 row_id == footer `u32@-4`=82082540,两档逐行一致。
+4. **`table_extra_9` 只做到块首(诚实 partial)**:块形 `ordinal|name_len|name`,251 块连续铺满;client 1 条 / server 4 条铺法;块内文法**未解**,无独立 footer。
+
+## 关键发现(供 t49 对撞)
+
+- **t9 与 t10 共享完全相同的 251 条 row_id 阶梯,但行跨度不同** —— 共享的是 identity 阶梯,不是行体。
+- **header 13 字节切分不能由数据自证**(header 11..15 等价闭合),已列为候选不写结论。
+- 8 vs 9 字节 footer 共用同一字节(末行 marker 即 9 字节读法的 count0 首字节),如实记录不当作已解。
+
+## 负结果(原样保留)
+
+- t9 identity 判定式套到 `extra_9`:4 变体全 **0**,row 1 即死(首反例已入档)。
+- 允许 row_id=0 时 server **362** 条宽解;放宽递增则 client 6 / server 24。
+- `extra_9` 无独立 footer;server 2 处块内歧义。
+
+## 验收
+
+`builder --selftest` PASS · `--build` exit 0 · `verify --selftest` PASS · `verify --check` PASS(15 组)· `t01_anchors.py` **7/7**。
+
+边界全部遵守:未读 exe/IDA、未追 reader/VA、未命名语义字段、未做 ordinal join、L3=0/L4=0、未碰 t49/t37/t47、未读写 `Z:`、只写 `scratch/t50/` 与 `scripts/t50_*.py`。
+=== DONE t50-natt9prof attempt=2 rc=0 Fri Nov 20 02:37:56     2026 ===
