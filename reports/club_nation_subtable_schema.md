@@ -338,3 +338,113 @@ Whole-row grammar differs (row 0: client 65 B, server 632 B). Server A/B/C/D cou
 
 t44 E84: reader VA `0x141529c10`, master.json SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`, editor.exe SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`, payload SHA-256 `8933328064b13a9d8dc153dd5b455970a7c28ada1e24f4ecc9df35735f42f3d2`.
 t46 E85: data-side profile has no accepted reader VA; client/server payload SHA-256 values are `7e9d740b9ee6900965d8616a136ea4bc54a0f7207f9727eac72badfb727f6c34` / `19337841e40d012863cb3aeca72141ec3b059419b8d87e54a6f380e8974b047f`. The shared master/editor hashes are retained as provenance anchors; t46 did not analyze the executable.
+
+## t52 Incremental Addendum
+
+This addendum appends accepted nation evidence to the t48 v4 report. Earlier v4 sections are retained verbatim as historical baseline text; this section supersedes only the earlier t48 statement that t47 static discovery remained open. The t46 `nation_data_side_status` and all v4 club records remain unchanged.
+
+### Coverage
+
+- Club counters remain unchanged: 94 scoped L3 occurrences, 59 unique wire fields, 21 held occurrences, and 4 original negative regressions.
+- Nation accepted L3 occurrences / unique scoped wire fields / held occurrences: 30 / 30 / 20.
+- Bounded nation negative records: 7 (six t49 rejected member/mode trials, four of them against table_extra_9, plus one t51 EDfx UI-path/backing-unbound observation). t50's seven numbered report findings are separately counted, not added to this total.
+- L4: 0.
+
+### Nation Static Side
+
+t47 E87 maps 15 item-bearing parent targets: 9 reader-linked (Nntp, Nctp, Nrtp, NTRv, NWGv, NSps, Ntxr, Nfmp, NCro) and 6 unknown/partial (Nftb, EDfx, EDsc, Nrvn, Calt, TCrs). Its owner-fixup equation is `NATION+0x108+8*container[0xb9] = container`; slot 2 uses index 0 only on resolver success and non-null target, not for every archive nation row.
+
+Ntxr closes 1899 server items, all tag 2 and 25 B. Server mode is 1; client mode is 0 and bypasses the item list. Server payload: 422345 B, `13 + 422323 + 9 = 422345`, SHA-256 `19337841e40d012863cb3aeca72141ec3b059419b8d87e54a6f380e8974b047f`. Client payload: 24732 B, `13 + 24710 + 9 = 24732`, SHA-256 `7e9d740b9ee6900965d8616a136ea4bc54a0f7207f9727eac72badfb727f6c34`.
+
+Ntxr offsets are item-relative, not nation-row offsets; the parent-row coordinate varies with the dynamic count/current cursor. Full source field records are retained in JSON.
+
+| Field | Grade | Item-relative offset | Width | Source disposition |
+|---|---|---:|---:|---|
+| `lowa` | `L3` | +1 | 4 B | scoped 4CC/getter/sink and all live values within XML numeric domain |
+| `uppa` | `L3` | +5 | 4 B | scoped 4CC/getter/sink and all live values within XML numeric domain |
+| `capa` | `L3` | +9 | 4 B | scoped 4CC/getter/sink and all live values within XML numeric domain |
+| `perc` | `L3` | +17 | 4 B | scoped 4CC/getter/sink and all live values within XML numeric domain |
+| `year` | `L3` | +13 | 2 B | scoped 4CC/getter/sink and all live values within XML numeric domain |
+| `ppty` | `held` | candidate +15 | 1 B | XML enum has no enum_ref; direct boxing proven, enum domain not independently closed |
+| `txty` | `held` | candidate +16 | 1 B | XML enum has no enum_ref; direct boxing proven, enum domain not independently closed |
+| `fram` | `L3` | +21 | 1 B | scoped 4CC/getter/sink and all live values within XML numeric domain |
+| `leve` | `L3` | +22 | 1 B | scoped 4CC/getter/sink and all live values within XML numeric domain |
+
+t51 E90 follows three prior unknowns to archive/owner evidence: Nrvn to table_9 (720 items, `nati` and `leve` L3); Nftb to table_10 row 162 (7 items, `NpFn`, `NpSn`, `NbCn`, `NbPd` L3; `NbPi`, `NbPn`, `NbFt` held); Calt to table_9 (251 zero counts, `cmid` and `stid` held). TCrs remains a partial table_extra_9 candidate without binding; EDfx proves a UI path but no archive backing; EDsc remains unresolved. None of these statuses proves absent persistence.
+
+### Nation t9 Wire
+
+t49 E89 accepts `table_9.dat` under client mode 0 and server mode 1, 251 rows each, with 17 L3 and 13 held field claims. Client closure: `13 + 31934 + 9 = 31956`; payload SHA-256 `784810f0946a25d2cbb015917934c692c82059e6ba4ad21a0f88c0b7c95fabec`. Server closure: `13 + 307542 + 9 = 307564`; payload SHA-256 `6c2d8a0606de2665ecdda657e0d667bca78bd0e0f0860917d2b95d49a927875f`.
+
+| Parent | L3 / held | Field grades and accepted item-relative coordinates |
+|---|---:|---|
+| `Nntp` | 3 / 3 | `nati` L3 +0/4B; `rati` held candidate +5/1B; no explicit scoped enum_ref; same-name enum probe is not a scoped domain proof; `mina` L3 +6/1B; `maxa` L3 +7/1B; `affl` held candidate +8/1B; no explicit scoped enum_ref; same-name enum probe is not a scoped domain proof; `sckn` held candidate +4/1B; no explicit scoped enum_ref; same-name enum probe is not a scoped domain proof |
+| `Nctp` | 4 / 1 | `cont` L3 +0/4B; `rati` L3 +4/1B; `mina` L3 +5/1B; `maxa` L3 +6/1B; `affl` held candidate +7/1B; no explicit scoped enum_ref; same-name enum probe is not a scoped domain proof |
+| `Nrtp` | 4 / 1 | `regi` L3 +0/4B; `rati` L3 +4/1B; `mina` L3 +5/1B; `maxa` L3 +6/1B; `affl` held candidate +7/1B; no explicit scoped enum_ref; same-name enum probe is not a scoped domain proof |
+| `NTRv` | 1 / 1 | `repu` held UI index synthesized at 4496fdb, no persisted slot; crrp enum_id is not a byte lane; `valu` L3 +0/4B |
+| `NWGv` | 1 / 1 | `repu` held UI index synthesized at 4496fdb, no persisted slot; crrp enum_id is not a byte lane; `valu` L3 +0/4B |
+| `NSps` | 1 / 1 | `repu` held UI index synthesized at 4496fdb, no persisted slot; crrp enum_id is not a byte lane; `valu` L3 +0/4B |
+| `Nfmp` | 3 / 3 | `pers` L3 +0/4B; `desc` held candidate +4/2B; raw/getter domain conflicts with frozen same-name enum probe; no relabeling; `heig` held candidate +6/1B; raw/getter domain conflicts with frozen same-name enum probe; no relabeling; `side` held candidate +7/1B; no explicit scoped enum_ref; same-name enum probe is not a scoped domain proof; `perm` L3 +7/1B mask 0x08; `rtng` L3 +8/1B |
+| `NCro` | 0 / 2 | `comp` held candidate +1/4B; no live wire items (gate absent); `crep` held candidate +5/4B; no live wire items (gate absent) |
+
+`table_extra_9.dat` remains unbound: no reader, mode, or target-parent assignment. t49 records six rejected member/mode trials overall, four against table_extra_9 across both archives and modes. E91 accepts the t50 L2 data-side shape as nation name-table blocks (`ordinal|name_len|name`), negative evidence against the TCrs sidecar hypothesis; the block-internal grammar remains unresolved and no target parent is assigned.
+
+### t50 Data-Side Comparison
+
+t50 supplied an L1/L2 data-side profile accepted by E91 (L3=0, L4=0; no semantic fields named and no target ordinals joined). It confirms 251 t9 identity tails and row-ID ladders agree between client/server, and absolute identity-tail starts match t49 on all 251 rows per archive; the t9/t10 identity ladders also agree. This is not a t9 schema-field, reader, mode, or parent-binding claim.
+
+**Framing conflict, unresolved; no winner.** t49 and its t51 replay use a 13-byte header plus a 9-byte wire footer (`0000000001ec7ae404`): client `13 + 31934 + 9 = 31956`, server `13 + 307542 + 9 = 307564`. t50 independently supplies an L2 candidate 13-byte header plus an 8-byte footer (`00000001ec7ae404`): client `13 + 31935 + 8 = 31956`, server `13 + 307543 + 8 = 307564`. The full row spans match on 0/251 rows: row 0 starts at the same offset but is one byte longer in t50; rows 1-250 start one byte later in t50, retain the same lengths, and carry the same identity tuples. Despite that, the absolute identity-tail start agrees on all 251 rows per archive. The remaining one-byte boundary is the marker/next-selector ownership question; no t50 raw row hash equals the t49 wire-row hash. t50 also reports headers 11-15 all close once, so the 13-byte header split is not data-determined. The t50 report's 8-vs-9 caveat is preserved verbatim in the v5 JSON source record.
+
+The t49 accepted field locators and held records are preserved exactly. E91 accepts t50 as L2 data-side evidence only, not as the winning cursor; it neither overwrites t49 nor promotes any field to L3. t51 confirms its own t9 row records match t49, while t50 confirms the shared identity-tail starts but does not resolve the full row framing.
+
+t50 `table_extra_9.dat`: 251 client blocks have one candidate walk; server has four walks with two internal ambiguities (rows 2 and 82). E91 records an L2 nation-name-table block shape (`ordinal|name_len|name`) and negative evidence against the TCrs sidecar hypothesis. Internal grammar is still unknown, no independent footer is separable, all four unchanged t9 identity-predicate variants die at row 1 on each archive, and the sidecar remains unassigned.
+
+t50's seven numbered negative/unresolved findings, DONE sentinel, full profile, and grammar diff are retained in `nation_t9_wire.t50_L2_cross_validation.source_records_verbatim`; `scratch/t50/out/DONE.md` and all source outputs are SHA-256 recorded. `table_extra_10.dat` is absent in both archives per that report.
+
+### t51 Cross-Walk
+
+t51 independently reproduces t49's table_9 client/server row records and t47's table_10 server row records (251/251 in each pair, including identities and per-row wire SHA-256). This establishes those source-pair matches only; it does not adjudicate the t50 candidate framing.
+
+### Provenance
+
+Editor binary SHA-256 for t47/t49/t51: `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`. Ledger entries: E87 (t47 L3), E89 (t49 L3), E90 (t51 L3), and E91 (t50 L2 only). E89/E90/E91 are dated `2026-11-20`, one day after the run date `2026-11-19`; the dates are recorded as present in the ledger, without independent timestamp validation.
+
+| Task | Source artifact | SHA-256 |
+|---|---|---|
+| t47 | `scratch/t47/out/discovery_nation_unknown.json` | `2c0a5b535fd280c1c1c46825b5e1b8ea7206ff5d5be40d13c7ed8d241b05b5d3` |
+| t47 | `scratch/t47/out/fields_nation_tax.json` | `b7b57595a3b8e4d60458f14f1e923b660e751304fdab1feff7c85b035a4af9b7` |
+| t47 | `scratch/t47/out/cursor_nation_tax.json` | `42b3e88db86c725221a23cd7b2bdd6e3d4c1b089d758ed844a56f84e103f2ea9` |
+| t47 | `scratch/t47/out/REPORT.md` | `c0742c66ad5ed0819b222983c046c1b7ec83db02fdcbe67bd7063ea0eab563f8` |
+| t49 | `scratch/t49/out/discovery_t9_wire.json` | `f3b9f06535bbdca2876f86caaf3f0c592969028281600b0e678c3912f6f50b9a` |
+| t49 | `scratch/t49/out/REPORT.md` | `0c0b1129c1edb5758d49403351950238383b5369d089097c9bfb8b0fe6d23974` |
+| t49 | `scratch/t49/out/cursor_t9_client.json` | `82a733f8157b1518d38dadafcc33249a34fa3d563ec2a37c4d60740bf1f6b004` |
+| t49 | `scratch/t49/out/cursor_t9_server.json` | `ccf78eba3d1d845b530550987b093b120ca20dd9e4a079da3970ca590259e69b` |
+| t49 | `scratch/t49/out/fields_Nntp.json` | `21a342822440328f3c9515d2208556306455262a486d3708d0d56771237de22a` |
+| t49 | `scratch/t49/out/fields_Nctp.json` | `75f983bfa703bdde1cab4b642404ea07f2251d806d6e67aa230d78331f682562` |
+| t49 | `scratch/t49/out/fields_Nrtp.json` | `d93a94262d035fe5e5f4938125b7879b9d5f80b8fad232fa1302dc6e5b9e5e22` |
+| t49 | `scratch/t49/out/fields_NTRv.json` | `c4afdc411be456f418dd854e407a491738d235d73777c78055fdff53c4c6c15a` |
+| t49 | `scratch/t49/out/fields_NWGv.json` | `681db4ba1d42c480b86fa587cab1c8b459e8ea5e15890828e189061b6f5896ae` |
+| t49 | `scratch/t49/out/fields_NSps.json` | `c4c420461c3de270d9168af06719d54b5885cffed540680629ff0ec588febbae` |
+| t49 | `scratch/t49/out/fields_Nfmp.json` | `d1b8e84be431991682bb6a347b085a4c2d41241be757251a7234b656a42ecd14` |
+| t49 | `scratch/t49/out/fields_NCro.json` | `d3f1f0479587071389718005b12ce5820d0991ec7230db136f71d3efb1ada144` |
+| t50 | `scratch/t50/out/REPORT.md` | `8994cc39ce7b67227f9f372c18ef997a173ade3e88ca583f6e4bb4870770b0ba` |
+| t50 | `scratch/t50/out/profile_t9.json` | `95a413310116af0b123128f7e819a47e94aa01556000fef0ab60bfc6d8c1fa06` |
+| t50 | `scratch/t50/out/grammar_diff_t9.json` | `31f1fb7628d0f5d81acfea89e82b77f610942af188b20bc31bb9225148f81477` |
+| t50 | `scratch/t50/out/verify.py` | `179b9c8fdacbff94c2ae6150ec7c08fdf48781c9c462d28b51c2e1617242486c` |
+| t50 | `scratch/t50/out/DONE.md` | `fae026b837e96e59645fbb3effdf3e59c1b1fd1532bb4a3e69545c40ab82f3f2` |
+| t50 | `scratch/t50/out/profiles/table_client_9.rows.jsonl` | `5c5d18c112813371e2b9fcee42046a481b7467337db3d21d0143ac539d6b0d1a` |
+| t50 | `scratch/t50/out/profiles/table_client_extra_9.rows.jsonl` | `98817ff54bdfc6e4695ca415299a63f0e5985a0ddd039bbcee4e8dca4a583249` |
+| t50 | `scratch/t50/out/profiles/table_server_9.rows.jsonl` | `2d8b7b92c350b287e1cc1525e1cb1f98899fda2881cd7c33e22d655902b031db` |
+| t50 | `scratch/t50/out/profiles/table_server_extra_9.rows.jsonl` | `188c68e607b034caa0ce1283edd185780bbb0511b574e88810cd3d1caab09fd4` |
+| t51 | `scratch/t51/out/discovery_unknown2.json` | `3b384f82cab9417a1bc41b0dfded0f15b96f79e354928c87235993045fe538f6` |
+| t51 | `scratch/t51/out/REPORT.md` | `3821c9a3e9da24a8e2c1fbd49929a4a425d5be39e9bcaa28dc594fb1bacc517b` |
+| t51 | `scratch/t51/out/cursor_table_9_client.json` | `4f70c334ab30763e5ece062f493dfb9378d40ecd42d41aecdea3ce302b75a3e7` |
+| t51 | `scratch/t51/out/cursor_table_9_server.json` | `6bff39851db865fec2fb18808ccfc3220bbbb367acc642a7328d459e26b0e670` |
+| t51 | `scratch/t51/out/cursor_table_10_server.json` | `8236f250af16a120a23fb241755df9d66e7f741fcc6baf2c3cc8e1a61f61bf40` |
+| t51 | `scratch/t51/out/fields_Nrvn.json` | `c663f14aed3a1cceccff3adfad55b7f0a23a15b63e3f58c0a8db0273e1191537` |
+| t51 | `scratch/t51/out/fields_Nftb.json` | `69f83b15f3143e2305846967d36d6afc340b6626222527a04232fc90da1fa7b0` |
+| t51 | `scratch/t51/out/fields_Calt.json` | `91a3ad1da9f738038660288071732c4e90f6590485c6e3def2ce40e5789e89d2` |
+| t50 acceptance | `scripts/t50_nation_t9_profile.py` | `659de87f7799ee81242ac75f036068fd910c8fdcbf78ff231cdf438261de7b80` |
+| t50 acceptance | `scratch/cmd/t50_spot.py` | `aa5ee28b5421cdee0afc36079738cbd400288b1c8305a043ca75549da6efff16` |
+
+Acceptance ledger snapshot SHA-256: `99e0161366c76e5ff1d924d6dd581b0aa1b37787b8021e02a5d29dafa089198d`. L4 remains 0.
