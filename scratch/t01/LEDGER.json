@@ -2231,6 +2231,49 @@
     "scripts/t68_club_data_crosswalk.py"
    ],
    "consequence": "club row framing now reader-independently proven at L2; both comp (E102) and club (E103) join nation (E91) in the data-side cross-validated set"
+  },
+  {
+   "id": "E104",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "scope": "t66 comp table_25 derived-collection census (t59 opaque sets)",
+    "status": "partial; L4=0",
+    "grammars_L3": [
+     "vec18: i32 N + per-item i8 tag + 4+2+1+[1 if tag>=2] — 32 rows / 1,405 items, all tag 2 (9B), first row 117 @32808 count 94",
+     "+0xe8: u32 version(2) + u32 N + i16 tag item grammar — 149 rows / 6,597 items, all v2/tag3/12B, first row 0 @148 count 44",
+     "+0xc0: u8 v(1) + u32 N; outer u8 tag + octet + u32 M; inner u8 tag + 1+1+1+4+4 — 315 rows / 1,069 outer / 2,072 inner",
+     "+0xc8: NOT count-led — u8 tag + 4x(u8 tag + 5xu8) fixed calls — 366 rows / 1,464 six-byte subitems, all tag 1",
+     "+0xd0: single 4+4+1+1+4+1 after presence (121 rows); +0xd8 same helper separate slot (51 rows)",
+     "+0x100: i16 N + Nx(1+2+2) — 129 rows / 212 items, counts 0/1/2/3/5/6 = 6918/62/56/9/1/1"
+    ],
+    "held": [
+     "vec30 static u32 N+2N but 7,047 zero counts; +0xa8/+0xe0 static-optional zero presence — no semantics assigned"
+    ],
+    "reference_lanes_L3": [
+     "vec18:item+1 -> t24 (team) via context+0x98 resolver chain 0xeb88a4..->0x37b820d; 1,405/1,405 ordinal hits, wrong-UID 559 all self-row",
+     "+0xd0:item+0 / +0xd8:item+0/+4 -> t23 via context+0x90 (type 23 passed at 0xf0405c); live hits 31/0/8/3, first @33663=71->UID 73",
+     "t23 both-side 278; t24 server 84,507 (client has no entry); extra identity digests recorded"
+    ],
+    "held_lanes": [
+     "+0xe8:item+2 all ffffffff (6,597); +0xc0:inner+4/+8 fail t10 (31/172 misses) and hit multiple domains simultaneously — no target chosen"
+    ],
+    "corrections": [
+     "brief row-count order fixed: present/nonempty +0xc0/+0xc8/+0xd0/+0xd8 = 315/366/121/51 (t59 order confirmed)",
+     "client mode0 skips counts entirely (0xeb7394 jumps to 0xeb7a21) — not 7,047 zero counts on same path"
+    ],
+    "spot": "commander byte checks 5/5 in own decode (vec18/e8/c8/x100/vec30) + structure assertions; worker verify PASS; anchors 7/7"
+   },
+   "evidence": [
+    "scratch/t66/out/collections.json",
+    "scratch/t66/out/census.json",
+    "scratch/t66/out/REPORT.md",
+    "scratch/t66/out/verify.py",
+    "scripts/t66_comp_subtable_discovery.py"
+   ],
+   "consequence": "comp derived collections now carry physical grammars at L3 with two new static resolver bindings (t24 team, t23); no independent comp subtable member bound (honest negative); schema fold of comp collections left for next fold task"
   }
  ]
 }
