@@ -2202,6 +2202,35 @@
     "scripts/t67_comp_data_crosswalk.py"
    ],
    "consequence": "comp row framing now has reader-independent data-side proof at L2, mirroring E91 for nation; club crosswalk (t68) follows same method"
+  },
+  {
+   "id": "E103",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t68 club table_3 data-side crosswalk (reader-independent, t50 paradigm transfer)",
+    "level": "L2 target, L3=0, L4=0",
+    "note": "worker killed twice by environment SIGTERM (rc=143, not quota); deliverables complete before second kill; commander DONE per E88 precedent, content untouched",
+    "assertions": [
+     "row-bytes client 6,932,060 / server 16,595,290 + header 13 + footer 9 == t57 framing 6,932,082 / 16,595,312 byte-exact",
+     "DP single path per side under standard constraints; 31 sensitivity controls per side recorded",
+     "UID set sha256 equal cross-archive (84,259); identity bytes equal; footer e3c03a77 equal",
+     "selector histograms {0:84256, 12:3} both sides == t57 CLUB identity selector_counts",
+     "fixtures: Liverpool 460/676/nation139/city1061; Bernabeu 430/1056/81,044 rechecked"
+    ],
+    "spot": "worker verify PASS (independent) + anchors 7/7 + commander structural checks against t57 constants"
+   },
+   "evidence": [
+    "scratch/t68/out/crosswalk.json",
+    "scratch/t68/out/sensitivity.json",
+    "scratch/t68/out/REPORT.md",
+    "scratch/t68/out/DONE.md",
+    "scratch/t68/out/verify.py",
+    "scripts/t68_club_data_crosswalk.py"
+   ],
+   "consequence": "club row framing now reader-independently proven at L2; both comp (E102) and club (E103) join nation (E91) in the data-side cross-validated set"
   }
  ]
 }
