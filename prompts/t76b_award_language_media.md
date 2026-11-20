@@ -6,6 +6,7 @@
 
 - AGENTS.md;`prompts/t73_slot_mapper.md`(工具口径)、`prompts/t74_row_frames9.md`(先验表:award 77B×3,545 双档同 payload;language 126 行"ordered name + 30B suffix";media 208 行"ordered-name + u32 trailer",client/server 行宽不同)
 - `scratch/t74/out/frames.json` + `REPORT.md`;`scripts/t73_table_slot_mapper.py`
+- **工具边界(指挥官注)**:t73 CLI 只认 2/5/19/41;扫 0/8/7 时用 runpy 载入 `scripts/t73_mapper_core.py` 的纯函数自行组装(不得修改 t73 文件);t74 frames.json 已自证的行框直接用,跳过重复闭合
 - `evidence/fm24/reports/editor_schema/master.json`:`entities['award.xml']` / `entities['language.xml']` / `entities['media source.xml']`(注意 entity key 是 'media source.xml' 不是 'media.xml')+ `enums` + `field_codes`
 - 既有锚点:`scripts/fm24_dump.py` FIELDS(client award `rdui@64/duni@68`;language `rdui_suffix@17`;media `rdui@3/duni@7`);t12 是 award 样 28,597 行的另一张表,**不在范围**,勿混
 - 语言表特殊性:language 126 行≈语言清单,行内主体是名字字符串,rdui_suffix@17 说明 identity 是"suffix"形态——以 t74 自证结论为准

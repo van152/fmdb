@@ -6,6 +6,7 @@
 
 - AGENTS.md;`prompts/t73_slot_mapper.md`(工具口径)、`prompts/t74_row_frames9.md`(先验:derby "ordered-name + u32 trailer"×1,567 双档行宽不同;weather ×334 双档同;lcrg **本仓 lcrg_tail 变长文法 41+5k B×2,488,上游 44B 定长已被否证**;agrm 13B×6)
 - `scratch/t74/out/frames.json` + `REPORT.md`;`scripts/t73_table_slot_mapper.py`
+- **工具边界(指挥官注)**:t73 CLI 只认 2/5/19/41;扫 18/27/47/56 时用 runpy 载入 `scripts/t73_mapper_core.py` 的纯函数自行组装(不得修改 t73 文件);t74 frames.json 已自证的行框直接用(award/derby/lcrg/agreement 已闭),跳过重复闭合
 - `evidence/fm24/reports/editor_schema/master.json`:`entities['derby.xml']` / `entities['weather.xml']` / `entities['local region.xml']`(key 带空格)/ `entities['agreement.xml']` + `enums` + `field_codes`
 - 既有锚点:`scripts/fm24_dump.py` FIELDS(client lcrg `rdui@-13/duni@-9`;agrm `rdui@0/duni@4`);derby 实体 = `db::DERBY`(RTTI,t13 的 'city secondary-name' 命名冲突勿混)
 - lcrg 的 OVERRIDE 文法(`fm24_dump.walk_lcrg`)可直接 runpy 复用作对照
