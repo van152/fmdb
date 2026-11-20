@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<WORKSPACE>\scratch\t15d\out\dspot.py", line 202, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "<WORKSPACE>\scratch\t15d\out\dspot.py", line 189, in main
+    out = [profile(t, a.last_off) for t in tids]
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "<WORKSPACE>\scratch\t15d\out\dspot.py", line 113, in profile
+    raw, n, stride = load(tid)
+                     ^^^^^^^^^
+  File "<WORKSPACE>\scratch\t15d\out\dspot.py", line 67, in load
+    raise RuntimeError(f"closure fail t{tid}: {len(raw)} != {14 + n * stride + 8}")
+RuntimeError: closure fail t34: 12 != 313082

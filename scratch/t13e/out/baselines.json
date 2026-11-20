@@ -1,0 +1,819 @@
+{
+ "task": "t13e",
+ "kind": "bypass-reference (旁路资料整理,非主线产物)",
+ "status": "partial",
+ "generated": "2026-11-18",
+ "purpose": "实体 -> 已知行数基数,供 t13 主线交叉核对;本清单不裁决实体归属",
+ "rules": {
+  "evidence": "每条 count 都带文件名 + table_id 或 E 编号;无出处不入清单",
+  "conflict": "同一实体出现不同数字时两者全部保留并置 conflict=true,不自行取舍",
+  "reliability": "high = 行边界闭合且 ≥2 路独立复算;mid = 基数确定但行边界或实体归属未闭合;low = 实体归属仅 candidate"
+ },
+ "baselines": [
+  {
+   "entity": "award",
+   "count": 3545,
+   "source": "scratch/t05/COVERAGE.json:client table_0 + server table_0",
+   "cross_check": "scratch/t05/fixtures_truth.json table_0 closure 14+3545*77+8=272987;scratch/t01/LEDGER.json:E38 award 3545 行逐行身份复算",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 0,
+     "entity_tag": "awar",
+     "field_count": 38,
+     "source": "scratch/t01/stage2_three_way.json:table_type=0"
+    }
+   ]
+  },
+  {
+   "entity": "city",
+   "count": 56293,
+   "source": "scratch/t05/COVERAGE.json:client table_2 (server table_2 同为 56293)",
+   "cross_check": "E42 city 列画像同为 56293;E30/E38/E51 全量 56,293 行走查;fixtures_truth.json closure 14+56293*43+8=2420621",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 2,
+     "entity_tag": "city",
+     "field_count": 15,
+     "source": "scratch/t01/stage2_three_way.json:table_type=2"
+    },
+    {
+     "table_type": 2,
+     "layout_business_width": {
+      "server": 30,
+      "client": 30
+     },
+     "layout_field_count": {
+      "server": 9,
+      "client": 9
+     },
+     "source": "scratch/t05/layouts.json:type_id=2"
+    }
+   ]
+  },
+  {
+   "entity": "club",
+   "count": 84259,
+   "source": "scratch/t05/COVERAGE.json:client table_3 + server table_3",
+   "cross_check": "E33 行框架 84,259/84,259 走通(5B 标准块 84,256 + 3 特例行);E37 独立 walker 复现 server table_3 = 84,259 行,终点 16,595,304+8",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 3,
+     "entity_tag": "club",
+     "field_count": 433,
+     "source": "scratch/t01/stage2_three_way.json:table_type=3"
+    }
+   ]
+  },
+  {
+   "entity": "competition (comp)",
+   "count": 7047,
+   "source": "scratch/t05/COVERAGE.json:client table_25 + server table_25",
+   "cross_check": "reports/t01f_comp_row_offsets.md 7,047/7,047 身份块全过;E20 自检 7047 行",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 25,
+     "entity_tag": "comp",
+     "field_count": 255,
+     "source": "scratch/t01/stage2_three_way.json:table_type=25"
+    }
+   ]
+  },
+  {
+   "entity": "continent (cont)",
+   "count": 7,
+   "source": "scratch/t05/COVERAGE.json:client table_5 + server table_5",
+   "cross_check": "scratch/t02/cont_reference.json closure 14+7*34+8=260;E56 cont=7",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 5,
+     "entity_tag": "cont",
+     "field_count": 16,
+     "source": "scratch/t01/stage2_three_way.json:table_type=5"
+    }
+   ]
+  },
+  {
+   "entity": "currency (curr)",
+   "count": 173,
+   "source": "scratch/t05/COVERAGE.json:client table_41 + server table_41",
+   "cross_check": "E30 curr 173/173 封口;scratch/t02/curr_reference.json 双 archive byte-identical",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 41,
+     "entity_tag": "curr",
+     "field_count": 7,
+     "source": "scratch/t01/stage2_three_way.json:table_type=41"
+    }
+   ]
+  },
+  {
+   "entity": "derby (drbr)",
+   "count": 1567,
+   "source": "scratch/t02/drbr_reference.json row_framework.count=1567 (client_db/table_18.dat)",
+   "cross_check": "scratch/t05/COVERAGE.json:client table_18 count=1567,server table_18 亦 1567",
+   "reliability": "mid",
+   "note": "同一张表在 COVERAGE.json 里实体名写作 'city-associated secondary-name data',实体归属未定(见 name_conflicts);基数 1567 无争议",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 18,
+     "entity_tag": "drbr",
+     "field_count": 22,
+     "source": "scratch/t01/stage2_three_way.json:table_type=18"
+    }
+   ]
+  },
+  {
+   "entity": "injury (inju)",
+   "count": 115,
+   "source": "scratch/t05/COVERAGE.json:client table_6 + server table_6",
+   "cross_check": "E38/E51 injury 115 行逐行身份;E40 字段命名;fixtures_truth closure 14+115*16+8=1862",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 6,
+     "entity_tag": "inju",
+     "field_count": 27,
+     "source": "scratch/t01/stage2_three_way.json:table_type=6"
+    },
+    {
+     "table_type": 6,
+     "layout_business_width": {
+      "client": 3,
+      "server": 27
+     },
+     "layout_field_count": {
+      "client": 3,
+      "server": 21
+     },
+     "source": "scratch/t05/layouts.json:type_id=6"
+    }
+   ]
+  },
+  {
+   "entity": "language (lang)",
+   "count": 126,
+   "source": "scratch/t05/COVERAGE.json:client table_8 + server table_8",
+   "cross_check": "scratch/t02/lang_reference.json row_len=4+len+30,走查 126 行;E42 language count=126",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 8,
+     "entity_tag": "lang",
+     "field_count": 12,
+     "source": "scratch/t01/stage2_three_way.json:table_type=8"
+    }
+   ]
+  },
+  {
+   "entity": "local region (lcrg)",
+   "count": 2488,
+   "source": "scratch/t05/COVERAGE.json:client table_47 + server table_47",
+   "cross_check": "E37 scripts/t05_lcrg.py 双约束闭合 2,488 行 rdui/duni 2488/2488;E42/E51 2,488 行 csv",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 47,
+     "entity_tag": "lcrg",
+     "field_count": 11,
+     "source": "scratch/t01/stage2_three_way.json:table_type=47"
+    },
+    {
+     "table_type": 47,
+     "layout_business_width": {
+      "client": 31
+     },
+     "layout_field_count": {
+      "client": 18
+     },
+     "source": "scratch/t05/layouts.json:type_id=47"
+    }
+   ]
+  },
+  {
+   "entity": "media source (mdso)",
+   "count": 208,
+   "source": "scratch/t05/COVERAGE.json:client table_7 + server table_7",
+   "cross_check": "E33 fw7 count208/size36824 client+server 双 closure",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 7,
+     "entity_tag": "mdso",
+     "field_count": 22,
+     "source": "scratch/t01/stage2_three_way.json:table_type=7"
+    }
+   ]
+  },
+  {
+   "entity": "nation (nati)",
+   "count": 251,
+   "source": "scratch/t05/COVERAGE.json:client table_10 (server table_10 同为 251)",
+   "cross_check": "E34 client 251/251 行精确封口;E21 duni 锚点;E37 未复现项(我的 walker 第129行卡住,不构成否证)",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 10,
+     "entity_tag": "nati",
+     "field_count": 346,
+     "source": "scratch/t01/stage2_three_way.json:table_type=10"
+    }
+   ]
+  },
+  {
+   "entity": "nation name/key companion",
+   "count": 251,
+   "source": "scratch/t05/COVERAGE.json:client table_9 (server table_9 同为 251)",
+   "cross_check": "COVERAGE.md '251 行 sentinel+duni 尾锚全封口';server table_9 同行数。同基数不等于同一实体 —— E23 裁定 type 9 = NATIONAL_TEAM_CONTAINER,见 name_conflicts",
+   "reliability": "mid",
+   "note": "实体名本身有争议(COVERAGE 叫 'nation name/key companion',stage2_three_way 给 entity_tag=nati,E23 裁定为 NATIONAL_TEAM_CONTAINER);251 这个基数在任何一种解释下都成立",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 9,
+     "entity_tag": "nati",
+     "field_count": 346,
+     "source": "scratch/t01/stage2_three_way.json:table_type=9"
+    }
+   ]
+  },
+  {
+   "entity": "region (regi)",
+   "count": 28,
+   "source": "scratch/t05/COVERAGE.json:client table_19 + server table_19",
+   "cross_check": "E29 regi 28/28 身份块 + closure 14+28*45+8=1282(client)/46(server)",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 19,
+     "entity_tag": "regi",
+     "field_count": 6,
+     "source": "scratch/t01/stage2_three_way.json:table_type=19"
+    },
+    {
+     "table_type": 19,
+     "layout_business_width": {
+      "client": 32,
+      "server": 33
+     },
+     "layout_field_count": {
+      "client": 8,
+      "server": 9
+     },
+     "source": "scratch/t05/layouts.json:type_id=19"
+    }
+   ]
+  },
+  {
+   "entity": "stadium (stad)",
+   "count": 48413,
+   "source": "scratch/t05/COVERAGE.json:client table_21 + server table_21",
+   "cross_check": "E38 stadium 48413 行逐行身份;E51 48,413 行 csv;fixtures_truth closure",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 21,
+     "entity_tag": "stad",
+     "field_count": 60,
+     "source": "scratch/t01/stage2_three_way.json:table_type=21"
+    },
+    {
+     "table_type": 21,
+     "layout_business_width": {
+      "client": 25
+     },
+     "layout_field_count": {
+      "client": 19
+     },
+     "source": "scratch/t05/layouts.json:type_id=21"
+    }
+   ]
+  },
+  {
+   "entity": "stage name (stgn)",
+   "count": 278,
+   "source": "scratch/t05/COVERAGE.json:client table_23 + server table_23",
+   "cross_check": "scratch/t02/stgn_reference.json stride 14 双 archive byte-identical;closure 14+278*14+8=3914",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 23,
+     "entity_tag": "stgn",
+     "field_count": 8,
+     "source": "scratch/t01/stage2_three_way.json:table_type=23"
+    },
+    {
+     "table_type": 23,
+     "layout_business_width": {
+      "client": 1,
+      "server": 1
+     },
+     "layout_field_count": {
+      "client": 1,
+      "server": 1
+     },
+     "source": "scratch/t05/layouts.json:type_id=23"
+    }
+   ]
+  },
+  {
+   "entity": "team",
+   "count": 84507,
+   "source": "scratch/t05/COVERAGE.json:server table_24",
+   "cross_check": "E37 gap:team 84,507 行/8,819,030 B,均值 104.36B 非整数,取数为 L1 走查计数(行边界未闭合)",
+   "reliability": "mid",
+   "note": "行数已从 header 计数与 payload 长度读出,但 table_24 是全库唯一的边界 open 表;E37 报 '12+82*84507 精确满足 table_extra_24' 为强假设,未验收",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 24,
+     "entity_tag": "team",
+     "field_count": 25,
+     "source": "scratch/t01/stage2_three_way.json:table_type=24"
+    }
+   ]
+  },
+  {
+   "entity": "weather profile (weat)",
+   "count": 334,
+   "source": "scratch/t05/COVERAGE.json:client table_27 + server table_27",
+   "cross_check": "E27 334 行全量走查(payload 43,345B)+ 身份块 334/334;E42 city off14 max=333 → 落在 [0,334)",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 27,
+     "entity_tag": "weat",
+     "field_count": 94,
+     "source": "scratch/t01/stage2_three_way.json:table_type=27"
+    }
+   ]
+  },
+  {
+   "entity": "agreement (agrm)",
+   "count": 6,
+   "source": "scratch/t05/COVERAGE.json:client table_56 + server table_56",
+   "cross_check": "closure 14+6*13+8=100(client)/server 同式",
+   "reliability": "high",
+   "conflict": false,
+   "schema": [
+    {
+     "table_type": 56,
+     "entity_tag": "agrm",
+     "field_count": 8,
+     "source": "scratch/t01/stage2_three_way.json:table_type=56"
+    }
+   ]
+  },
+  {
+   "entity": "person (basic_people_db 全库)",
+   "count": 658011,
+   "source": "scratch/t05/people/attrs.json count=658011 (basic_people_db.dat)",
+   "cross_check": "E25 u32 count=658,011 + 658,011/658,011 行尾身份;E32 独立解压走查 658,011 行封口;docs/BASELINE.md people_db 行链 100%",
+   "reliability": "high",
+   "note": "分 class 行数:1 ACTUAL_NON_PLAYER=166064 / 2 ACTUAL_PLAYER=476158 / 3=4757 / 4 OFFICIAL=9839 / 5 RETIRED_NAME=1193(同源 attrs.json class_counts)",
+   "conflict": false,
+   "schema": []
+  },
+  {
+   "entity": "person subtable: 任职履历 (t49)",
+   "count": 792149,
+   "source": "scratch/t05/COVERAGE.json:server table_49",
+   "cross_check": "E56 t49=792149 行(df=1 码 ajob/otea/plac → person);scratch/cmd/stage2_candidate_adjudication.json",
+   "reliability": "mid",
+   "note": "实体归属 A 级(schema df=1),但行边界闭合与 entity 名字不是同一层证据",
+   "conflict": false,
+   "schema": []
+  },
+  {
+   "entity": "club subtable: 球场/迁建 (t22)",
+   "count": 449,
+   "source": "scratch/t05/COVERAGE.json:server table_22 + client table_22",
+   "cross_check": "E56 t22=449 (df=1 码 Salt/Scam/Scpm/Slhm → club);t13d audit rows_dumped 449/449",
+   "reliability": "mid",
+   "note": "449 行 ≠ stadium 主表 48,413;E47 记录 t22 在 club 覆盖 14/14、在 stadium 仅 3/76",
+   "conflict": false,
+   "schema": []
+  },
+  {
+   "entity": "club subtable: 战绩 (t37)",
+   "count": 465712,
+   "source": "scratch/t05/COVERAGE.json:server table_37",
+   "cross_check": "E56 t37=465712 行(club×赛事);closure 14+465712*40+8=18628502",
+   "reliability": "mid",
+   "conflict": false,
+   "schema": []
+  },
+  {
+   "entity": "club subtable: 赛事史 (t34, candidate)",
+   "count": 7115,
+   "source": "scratch/t05/COVERAGE.json:server table_34",
+   "cross_check": "E56 t34=7115 只有 B 类行数/语义锚,candidate;t13d audit rows_dumped 7115/7115",
+   "reliability": "low",
+   "note": "实体归属仅有 B 类(行数/语义)证据,E56 明确标 candidate",
+   "conflict": false,
+   "schema": []
+  },
+  {
+   "entity": "club subtable: 转会分期 (t43, candidate)",
+   "count": 535,
+   "source": "scratch/t05/COVERAGE.json:server table_43",
+   "cross_check": "E56 t43=535 (B 类 candidate);closure 14+535*46+8=24632",
+   "reliability": "low",
+   "conflict": false,
+   "schema": []
+  },
+  {
+   "entity": "player subtable: 伤病/未来状态 (t30)",
+   "count": 72473,
+   "source": "scratch/t05/COVERAGE.json:server table_30",
+   "cross_check": "E56 t30=72473 (df=1 码 futu/inju/pret/seve → player);t13d audit rows_dumped 72473/72473",
+   "reliability": "mid",
+   "note": "72,473 >> injury 主表 115,故是 player 侧伤病例表而非 injury",
+   "conflict": false,
+   "schema": []
+  }
+ ],
+ "unidentified_tables": [
+  {
+   "archive": "server",
+   "table_id": 12,
+   "count": 28597,
+   "source": "scratch/t05/COVERAGE.json:server table_12",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 26,
+   "count": 90128,
+   "source": "scratch/t05/COVERAGE.json:server table_26",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 29,
+   "count": 13278,
+   "source": "scratch/t05/COVERAGE.json:server table_29",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 31,
+   "count": 37283,
+   "source": "scratch/t05/COVERAGE.json:server table_31",
+   "identity": null,
+   "identity_negative": true
+  },
+  {
+   "archive": "server",
+   "table_id": 32,
+   "count": 315,
+   "source": "scratch/t05/COVERAGE.json:server table_32",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 33,
+   "count": 32409,
+   "source": "scratch/t05/COVERAGE.json:server table_33",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 36,
+   "count": 6535,
+   "source": "scratch/t05/COVERAGE.json:server table_36",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 38,
+   "count": 5241,
+   "source": "scratch/t05/COVERAGE.json:server table_38",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 39,
+   "count": 117,
+   "source": "scratch/t05/COVERAGE.json:server table_39",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 42,
+   "count": 17721,
+   "source": "scratch/t05/COVERAGE.json:server table_42",
+   "identity": null,
+   "identity_negative": true
+  },
+  {
+   "archive": "server",
+   "table_id": 45,
+   "count": 84477,
+   "source": "scratch/t05/COVERAGE.json:server table_45",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 46,
+   "count": 7,
+   "source": "scratch/t05/COVERAGE.json:server table_46",
+   "identity": null,
+   "identity_negative": true
+  },
+  {
+   "archive": "server",
+   "table_id": 48,
+   "count": 5210,
+   "source": "scratch/t05/COVERAGE.json:server table_48",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 50,
+   "count": 45,
+   "source": "scratch/t05/COVERAGE.json:server table_50",
+   "identity": null,
+   "identity_negative": true
+  },
+  {
+   "archive": "server",
+   "table_id": 51,
+   "count": 59,
+   "source": "scratch/t05/COVERAGE.json:server table_51",
+   "identity": null,
+   "identity_negative": true
+  },
+  {
+   "archive": "server",
+   "table_id": 58,
+   "count": 8,
+   "source": "scratch/t05/COVERAGE.json:server table_58",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 59,
+   "count": 9079,
+   "source": "scratch/t05/COVERAGE.json:server table_59",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 60,
+   "count": 59,
+   "source": "scratch/t05/COVERAGE.json:server table_60",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 61,
+   "count": 16,
+   "source": "scratch/t05/COVERAGE.json:server table_61",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 62,
+   "count": 37214,
+   "source": "scratch/t05/COVERAGE.json:server table_62",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 63,
+   "count": 2,
+   "source": "scratch/t05/COVERAGE.json:server table_63",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 64,
+   "count": 6946,
+   "source": "scratch/t05/COVERAGE.json:server table_64",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 65,
+   "count": 1417,
+   "source": "scratch/t05/COVERAGE.json:server table_65",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 66,
+   "count": 753,
+   "source": "scratch/t05/COVERAGE.json:server table_66",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 67,
+   "count": 6826,
+   "source": "scratch/t05/COVERAGE.json:server table_67",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 68,
+   "count": 138,
+   "source": "scratch/t05/COVERAGE.json:server table_68",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 69,
+   "count": 230,
+   "source": "scratch/t05/COVERAGE.json:server table_69",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 70,
+   "count": 10075,
+   "source": "scratch/t05/COVERAGE.json:server table_70",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 71,
+   "count": 616665,
+   "source": "scratch/t05/COVERAGE.json:server table_71",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 72,
+   "count": 138,
+   "source": "scratch/t05/COVERAGE.json:server table_72",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 73,
+   "count": 1,
+   "source": "scratch/t05/COVERAGE.json:server table_73",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 52,
+   "count": 0,
+   "source": "scratch/t05/COVERAGE.json:server table_52",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "server",
+   "table_id": 57,
+   "count": 0,
+   "source": "scratch/t05/COVERAGE.json:server table_57",
+   "identity": null,
+   "identity_negative": false
+  },
+  {
+   "archive": "client",
+   "table_id": 35,
+   "count": 890,
+   "source": "scratch/t05/COVERAGE.json:client table_35",
+   "identity": null,
+   "identity_negative": false
+  }
+ ],
+ "source_conflicts": [],
+ "negative_identity_tables": [
+  {
+   "table_id": 31,
+   "count": 37283,
+   "source": "scratch/cmd/stage2_candidate_adjudication.json (status=negative)",
+   "cross_check": "E56 五张零命名字段表被推翻投票;'当前零证据'≠'无实体身份'"
+  },
+  {
+   "table_id": 42,
+   "count": 17721,
+   "source": "scratch/cmd/stage2_candidate_adjudication.json (status=negative)",
+   "cross_check": "E56 五张零命名字段表被推翻投票;'当前零证据'≠'无实体身份'"
+  },
+  {
+   "table_id": 46,
+   "count": 7,
+   "source": "scratch/cmd/stage2_candidate_adjudication.json (status=negative)",
+   "cross_check": "E56 五张零命名字段表被推翻投票;'当前零证据'≠'无实体身份'"
+  },
+  {
+   "table_id": 50,
+   "count": 45,
+   "source": "scratch/cmd/stage2_candidate_adjudication.json (status=negative)",
+   "cross_check": "E56 五张零命名字段表被推翻投票;'当前零证据'≠'无实体身份'"
+  },
+  {
+   "table_id": 51,
+   "count": 59,
+   "source": "scratch/cmd/stage2_candidate_adjudication.json (status=negative)",
+   "cross_check": "E56 五张零命名字段表被推翻投票;'当前零证据'≠'无实体身份'"
+  }
+ ],
+ "name_conflicts": [
+  {
+   "table_id": 18,
+   "count": 1567,
+   "claim_a": "COVERAGE.json: 'city-associated secondary-name data'",
+   "claim_b": "scratch/t02/drbr_reference.json: db::DERBY (RTTI .?AVDERBY@db@@)",
+   "impact": "基数一致(1567),仅实体名冲突;t13 取名时勿同时采纳两种身份"
+  },
+  {
+   "table_id": 24,
+   "count": 84507,
+   "claim_a": "COVERAGE.json: team(行边界 open)",
+   "impact": "行数可用,行边界不可用;若按 82B 定长假设使用会与 E37 的均值 104.36B 冲突"
+  },
+  {
+   "table_id": 9,
+   "count": 251,
+   "claim_a": "COVERAGE.json: 'nation (name/key companion)' + stage2_three_way entity_tag=nati",
+   "claim_b": "LEDGER E23: table_type 9 = NATIONAL_TEAM_CONTAINER,t01e 的 nati 双虚表标签已勘误;table_type 10 才是 NATION",
+   "impact": "251 与 table_10 同基数,不能据此判定同一实体;若需 nation 主表请用 table_10"
+  }
+ ],
+ "known_non_count_anchors": [
+  {
+   "anchor": "六大洲 0..5",
+   "count_ref": "continent=7",
+   "source": "docs/BASELINE.md"
+  },
+  {
+   "anchor": "England=139 / China PR=55",
+   "count_ref": "nation=251,值域 [0,251)",
+   "source": "docs/BASELINE.md + reports/t01f_comp_row_offsets.md (§ccti/cnti 锚点)"
+  },
+  {
+   "anchor": "parent row 352",
+   "count_ref": "comp=7047",
+   "source": "reports/t01f_comp_row_offsets.md"
+  },
+  {
+   "anchor": "Bernabéu 81,044",
+   "count_ref": "stadium=48413",
+   "source": "docs/BASELINE.md"
+  },
+  {
+   "anchor": "city Cnti=139 (Liverpool/Manchester)",
+   "count_ref": "nation=251",
+   "source": "scratch/t05/fixtures_truth.json named_rows"
+  }
+ ],
+ "coverage_note": [
+  "已收录 26 个实体/子实体条目,覆盖 t05 COVERAGE 里全部 client 表与全部已有实体名的 server 表",
+  "34 张实体名未定/被推翻的表以 unidentified_tables 给出基数(含 count=0 的 t52/t57),未强行命名",
+  "同一 (archive,table_id) 跨 5 个既有工件比对基数(COVERAGE / server_bounds / fixtures_truth / stage2_candidate_adjudication / t13d audit),不一致项 0 个(78 张表参与比对)",
+  "未收录:history_db / lang_update_db / summary.dat 等非数值主表(不在必查文件范围)"
+ ]
+}

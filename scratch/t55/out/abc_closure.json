@@ -1,0 +1,407 @@
+{
+  "status": "A_B_C_D_explained_for_both_modes",
+  "original_sha256": "71fd3df89c852b17e7428dd3d380a8c44fbf52687eadc9b33926917484a1231a",
+  "original": "scratch/t46/out/REPORT.md",
+  "original_differential": {
+    "status": "different",
+    "client_first_row_span": 65,
+    "server_first_row_span": 632,
+    "first_counterexample": {
+      "row": 0,
+      "client_span": 65,
+      "server_span": 632,
+      "detail": "server's identity-framed row is 632 bytes; t25 client row 0 is 65 bytes"
+    },
+    "caveat": "This rejects whole-row grammar identity; it does not locate server list segments."
+  },
+  "segments": {
+    "A": {
+      "status": "explained",
+      "parent": "Nlns",
+      "frozen_index": 227,
+      "position": 23,
+      "count_site": 17041175,
+      "count_type": "i8",
+      "object_displacement": 72,
+      "object_site": 17041188,
+      "item_call": 17041243,
+      "item_stride": 5,
+      "profiles": {
+        "client": {
+          "rows": 251,
+          "items": 492,
+          "counts": {
+            "0": 14,
+            "1": 91,
+            "2": 70,
+            "3": 56,
+            "4": 12,
+            "5": 5,
+            "6": 1,
+            "7": 2
+          },
+          "byte_range": [
+            1,
+            36
+          ],
+          "first": {
+            "row": 0,
+            "start": 38,
+            "span": 16,
+            "count": 3
+          }
+        },
+        "server": {
+          "rows": 251,
+          "items": 492,
+          "counts": {
+            "0": 14,
+            "1": 91,
+            "2": 70,
+            "3": 56,
+            "4": 12,
+            "5": 5,
+            "6": 1,
+            "7": 2
+          },
+          "byte_range": [
+            1,
+            36
+          ],
+          "first": {
+            "row": 0,
+            "start": 562,
+            "span": 16,
+            "count": 3
+          }
+        }
+      },
+      "first_row_legacy_offset": {
+        "client": 24,
+        "server": 548
+      },
+      "original_negative": {
+        "status": "unknown",
+        "client": {
+          "count_location": "signed i8 at row+24",
+          "count_width": 1,
+          "count_signed": true,
+          "first_row_count": 3,
+          "item_width": 5
+        },
+        "server": {
+          "count_location": null,
+          "count_width": null,
+          "count_signed": null,
+          "first_row_count": null,
+          "item_width": null,
+          "status_note": "no independently established server segment/count boundary"
+        },
+        "same_offset_probe": {
+          "server_row": 0,
+          "offset": 24,
+          "raw_hex": "a6",
+          "interpreted_with_client_width_as_signed": -90,
+          "client_first_row_count_at_that_slot": 3,
+          "matches": false,
+          "meaning": "positional falsification probe only; server value is not assigned as this segment's count"
+        },
+        "first_counterexample": {
+          "row": 0,
+          "server_offset": 24,
+          "server_raw_hex": "a6",
+          "server_signed_probe": -90,
+          "client_count": 3,
+          "scope": "rejects copying the client count slot; does not establish semantic segment difference"
+        }
+      }
+    },
+    "B": {
+      "status": "explained",
+      "parent": "Nefr",
+      "frozen_index": 222,
+      "position": 24,
+      "count_site": 17041328,
+      "count_type": "i32",
+      "object_displacement": 168,
+      "object_site": 17041341,
+      "item_call": 17041449,
+      "item_stride": 28,
+      "profiles": {
+        "client": {
+          "rows": 251,
+          "items": 214,
+          "counts": {
+            "0": 208,
+            "1": 4,
+            "2": 4,
+            "3": 22,
+            "4": 3,
+            "5": 3,
+            "8": 2,
+            "10": 1,
+            "12": 1,
+            "13": 1,
+            "18": 1,
+            "40": 1
+          },
+          "byte_range": [
+            4,
+            1124
+          ],
+          "first": {
+            "row": 0,
+            "start": 54,
+            "span": 4,
+            "count": 0
+          }
+        },
+        "server": {
+          "rows": 251,
+          "items": 214,
+          "counts": {
+            "0": 208,
+            "1": 4,
+            "2": 4,
+            "3": 22,
+            "4": 3,
+            "5": 3,
+            "8": 2,
+            "10": 1,
+            "12": 1,
+            "13": 1,
+            "18": 1,
+            "40": 1
+          },
+          "byte_range": [
+            4,
+            1124
+          ],
+          "first": {
+            "row": 0,
+            "start": 578,
+            "span": 4,
+            "count": 0
+          }
+        }
+      },
+      "first_row_legacy_offset": {
+        "client": 40,
+        "server": 564
+      },
+      "original_negative": {
+        "status": "unknown",
+        "client": {
+          "count_location": "signed i32le after A items",
+          "count_width": 4,
+          "count_signed": true,
+          "first_row_count": 0,
+          "item_width": 28
+        },
+        "server": {
+          "count_location": null,
+          "count_width": null,
+          "count_signed": null,
+          "first_row_count": null,
+          "item_width": null,
+          "status_note": "no independently established server segment/count boundary"
+        },
+        "same_offset_probe": {
+          "server_row": 0,
+          "offset": 40,
+          "raw_hex": "02000000",
+          "interpreted_with_client_width_as_signed": 2,
+          "client_first_row_count_at_that_slot": 0,
+          "matches": false,
+          "meaning": "positional falsification probe only; server value is not assigned as this segment's count"
+        },
+        "first_counterexample": {
+          "row": 0,
+          "server_offset": 40,
+          "server_raw_hex": "02000000",
+          "server_signed_probe": 2,
+          "client_count": 0,
+          "scope": "rejects copying the client count slot; does not establish semantic segment difference"
+        }
+      }
+    },
+    "C": {
+      "status": "explained",
+      "parent": "Nnfr",
+      "frozen_index": 223,
+      "position": 25,
+      "count_site": 17041516,
+      "count_type": "i32",
+      "object_displacement": 144,
+      "object_site": 17041529,
+      "item_call": 17041643,
+      "item_stride": 28,
+      "profiles": {
+        "client": {
+          "rows": 251,
+          "items": 63,
+          "counts": {
+            "0": 231,
+            "1": 7,
+            "2": 7,
+            "3": 2,
+            "4": 2,
+            "7": 1,
+            "21": 1
+          },
+          "byte_range": [
+            4,
+            592
+          ],
+          "first": {
+            "row": 0,
+            "start": 58,
+            "span": 4,
+            "count": 0
+          }
+        },
+        "server": {
+          "rows": 251,
+          "items": 63,
+          "counts": {
+            "0": 231,
+            "1": 7,
+            "2": 7,
+            "3": 2,
+            "4": 2,
+            "7": 1,
+            "21": 1
+          },
+          "byte_range": [
+            4,
+            592
+          ],
+          "first": {
+            "row": 0,
+            "start": 582,
+            "span": 4,
+            "count": 0
+          }
+        }
+      },
+      "first_row_legacy_offset": {
+        "client": 44,
+        "server": 568
+      },
+      "original_negative": {
+        "status": "unknown",
+        "client": {
+          "count_location": "signed i32le after B items",
+          "count_width": 4,
+          "count_signed": true,
+          "first_row_count": 0,
+          "item_width": 28
+        },
+        "server": {
+          "count_location": null,
+          "count_width": null,
+          "count_signed": null,
+          "first_row_count": null,
+          "item_width": null,
+          "status_note": "no independently established server segment/count boundary"
+        },
+        "same_offset_probe": {
+          "server_row": 0,
+          "offset": 44,
+          "raw_hex": "00000000",
+          "interpreted_with_client_width_as_signed": 0,
+          "client_first_row_count_at_that_slot": 0,
+          "matches": true,
+          "meaning": "positional falsification probe only; server value is not assigned as this segment's count"
+        },
+        "first_counterexample": null
+      }
+    },
+    "D": {
+      "status": "explained",
+      "parent": "Nagr",
+      "frozen_index": 50,
+      "position": 26,
+      "count_site": 17041703,
+      "count_type": "i32",
+      "object_displacement": 192,
+      "object_site": 17041767,
+      "item_call": 17041831,
+      "item_stride": 12,
+      "profiles": {
+        "client": {
+          "rows": 251,
+          "items": 162,
+          "counts": {
+            "0": 125,
+            "1": 90,
+            "2": 36
+          },
+          "byte_range": [
+            4,
+            28
+          ],
+          "first": {
+            "row": 0,
+            "start": 62,
+            "span": 4,
+            "count": 0
+          }
+        },
+        "server": {
+          "rows": 251,
+          "items": 162,
+          "counts": {
+            "0": 125,
+            "1": 90,
+            "2": 36
+          },
+          "byte_range": [
+            4,
+            28
+          ],
+          "first": {
+            "row": 0,
+            "start": 586,
+            "span": 4,
+            "count": 0
+          }
+        }
+      },
+      "first_row_legacy_offset": {
+        "client": 48,
+        "server": 572
+      },
+      "original_negative": {
+        "status": "unknown",
+        "client": {
+          "count_location": "signed i32le after C items",
+          "count_width": 4,
+          "count_signed": true,
+          "first_row_count": 0,
+          "item_width": 12
+        },
+        "server": {
+          "count_location": null,
+          "count_width": null,
+          "count_signed": null,
+          "first_row_count": null,
+          "item_width": null,
+          "status_note": "no independently established server segment/count boundary"
+        },
+        "same_offset_probe": {
+          "server_row": 0,
+          "offset": 48,
+          "raw_hex": "00000000",
+          "interpreted_with_client_width_as_signed": 0,
+          "client_first_row_count_at_that_slot": 0,
+          "matches": true,
+          "meaning": "positional falsification probe only; server value is not assigned as this segment's count"
+        },
+        "first_counterexample": null
+      }
+    }
+  },
+  "formula": "after mode-1 prelude if present: 24B common prefix; A=1+5a, B=4+28b, C=4+28c, D=4+12d; then mode-1 43B and identity",
+  "limit": "server prelude is structurally bounded; unnamed prelude and suffix scalars are not explained semantically by these four lists"
+}

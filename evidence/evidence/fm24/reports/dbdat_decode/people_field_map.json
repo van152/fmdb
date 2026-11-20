@@ -1,0 +1,348 @@
+{
+ "generated_by": "scripts/modding_people_fields.py",
+ "evidence_levels": {
+  "L1": "self-consistent decode of the installed database bytes",
+  "L2": "independent cross-source check (public facts, pl_hist_dt oracle)",
+  "L3": "static evidence from fm.exe (IDA decompilation)",
+  "L4": "not attempted (the game is never launched)"
+ },
+ "basic_people_db": {
+  "path": "D:\\tmp2b\\fm24_worktree\\b41\\archive\\people_bins\\basic_people_db.uncompressed.bin",
+  "header": {
+   "record_count": 658011,
+   "layout": "<u32 record_count><u8 flag>"
+  },
+  "record_layout": "<u8 0x11><u8 class> + class fields + <u32 ordinal><u32 duni><u32 duni>",
+  "classes": {
+   "1": {
+    "name": "ACTUAL_NON_PLAYER",
+    "length": 83,
+    "count": 166064
+   },
+   "2": {
+    "name": "ACTUAL_PLAYER",
+    "length": 83,
+    "count": 476158
+   },
+   "3": {
+    "name": "ACTUAL_PLAYER_AND_NON_PLAYER",
+    "length": 83,
+    "count": 4757
+   },
+   "4": {
+    "name": "OFFICIAL",
+    "length": 34,
+    "count": 9839
+   },
+   "5": {
+    "name": "RETIRED_PERSON_NAME_STRINGS",
+    "length": 22,
+    "count": 1193
+   }
+  },
+  "trailer": "<u8 0x00><u32 max_duni> (2,002,040,908 in db 2430)",
+  "fields": [
+   {
+    "offset": 0,
+    "type": "u8",
+    "value": 17,
+    "semantic": "record marker (constant)",
+    "confidence": "high",
+    "evidence": "658011/658011 records"
+   },
+   {
+    "offset": 1,
+    "type": "u8",
+    "semantic": "person class id",
+    "confidence": "high (structure) / medium (names)",
+    "evidence": "length and count per class match fm.exe class-name strings (ACTUAL_NON_PLAYER/ACTUAL_PLAYER/ACTUAL_PLAYER_AND_NON_PLAYER/OFFICIAL/RETIRED_PERSON_NAME_STRINGS)"
+   },
+   {
+    "offset": 2,
+    "type": "u32",
+    "semantic": "Pnti nation (client id space)",
+    "confidence": "high",
+    "evidence": "equals people_db DOB+9 nation byte for 21/21 known players (Spain 170, Argentina 187, England 139, ...)"
+   },
+   {
+    "offset": 6,
+    "type": "u32",
+    "semantic": "nation in second id space",
+    "confidence": "high (as nation reference), unknown (why two spaces)",
+    "evidence": "1:1 with +2 over 4000 sampled records; delta 626 for most ids, 1462 for the 187..196 block, 270 for 109"
+   },
+   {
+    "offset": 10,
+    "type": "u32",
+    "semantic": "unknown id (club/team-adjacent)",
+    "confidence": "low",
+    "evidence": "varies per person, not in pl_hist club/league sets"
+   },
+   {
+    "offset": 14,
+    "type": "u32",
+    "semantic": "Pcti current club duni",
+    "confidence": "high",
+    "evidence": "pl_hist_dt oracle: exact = last club row for 60% of class-2 sample, 88% inside the pl_hist global club id set, 0xffffffff when the person has no club"
+   },
+   {
+    "offset": 18,
+    "type": "u8[8]",
+    "semantic": "4 nullable u16 slots (mostly 0xFF)",
+    "confidence": "low",
+    "evidence": "constant 0xFF in 98% of class-1/2 records, occasionally small ids"
+   },
+   {
+    "offset": 26,
+    "type": "u32",
+    "semantic": "second nation reference (id space A); 0xFFFFFFFF when absent",
+    "confidence": "medium/high",
+    "evidence": "Messi 170 = Spain and Haaland 139 = England (public second nationalities), both paired with +30 in the same id space as +6; null for most people"
+   },
+   {
+    "offset": 30,
+    "type": "u32",
+    "semantic": "second nation reference (id space B, = +26 + 626 style)",
+    "confidence": "medium/high",
+    "evidence": "796 with 170 (Spain), 765 with 139 (England)"
+   },
+   {
+    "offset": 34,
+    "type": "u32",
+    "semantic": "unknown id",
+    "confidence": "low",
+    "evidence": "varies; not a person duni, not a pl_hist club/league"
+   },
+   {
+    "offset": 38,
+    "type": "u32",
+    "semantic": "unknown id",
+    "confidence": "low",
+    "evidence": "varies; not a person duni, not a pl_hist club/league"
+   },
+   {
+    "offset": 42,
+    "type": "u16[5]",
+    "semantic": "ability-like 0..200 tuple (candidate CA/PA/reputation)",
+    "confidence": "medium (values/ranges), low (field names)",
+    "evidence": "all samples <= 200 and max 200; ordering across the 22 known players is consistent with CA/PA (Messi highest, retired players lower); 0 for de-listed people; field names unproven"
+   },
+   {
+    "offset": 52,
+    "type": "u16",
+    "semantic": "Pdob birth year",
+    "confidence": "high",
+    "evidence": "equals the year half of the people_db packed DOB for 21/21"
+   },
+   {
+    "offset": 54,
+    "type": "u32",
+    "semantic": "unknown (small enum/counter)",
+    "confidence": "low",
+    "evidence": "0..~240, no correlation found"
+   },
+   {
+    "offset": 58,
+    "type": "u16",
+    "semantic": "unknown (nullable)",
+    "confidence": "low",
+    "evidence": "0 or small"
+   },
+   {
+    "offset": 60,
+    "type": "u32",
+    "semantic": "unknown id",
+    "confidence": "low",
+    "evidence": "varies; not a person duni"
+   },
+   {
+    "offset": 62,
+    "type": "u8",
+    "semantic": "age at database freeze",
+    "confidence": "high",
+    "evidence": "matches birth-year arithmetic for 13/13 active players in the known set; 0 for retired people"
+   },
+   {
+    "offset": 71,
+    "type": "u32",
+    "semantic": "record ordinal",
+    "confidence": "high",
+    "evidence": "equals the 0-based record index for 658011/658011"
+   },
+   {
+    "offset": 75,
+    "type": "u32",
+    "semantic": "duni (person unique id)",
+    "confidence": "high",
+    "evidence": "equals pl_hist_index person_id; 5 famous players byte-exact, 21 known players matched by nation+birth year"
+   },
+   {
+    "offset": 79,
+    "type": "u32",
+    "semantic": "duni repeated",
+    "confidence": "high",
+    "evidence": "always equal to +75 in 658011/658011 records"
+   }
+  ],
+  "parsed_records": 658011,
+  "parse_failures": 0
+ },
+ "people_db": {
+  "path": "D:\\tmp2b\\fm24_worktree\\b41\\archive\\people_bins\\people_db_streamed_b22.bin",
+  "header": "payload starts at offset 6; current basic record_count = 658011 then records",
+  "record_model": "u32 ordinal | u8 variant | fields | ... | <u32 ordinal><u32 duni><u32 duni>",
+  "name_dob_anchor": "FF FF FF FF 00 | u32 byte_length | UTF-8 name | u32 packed DOB (b34, unchanged)",
+  "person_duni_inside_record": "the 8-byte repeated-u32 duni occurs exactly once per person; offset from the DOB anchor varies (282..1380 B in the 22-player sample) because the record carries variable-length content",
+  "fields": [
+   {
+    "offset": 0,
+    "type": "u32",
+    "semantic": "row ordinal (matches row trailer)",
+    "confidence": "high",
+    "evidence": "P9: 49,210/50,000 rows start with their own ordinal; P11 Messi row +0 = 52631 (L1)"
+   },
+   {
+    "offset": 4,
+    "type": "u8",
+    "semantic": "record variant (1/2/3/4/5)",
+    "confidence": "high",
+    "evidence": "P1/P2 full-file variant distribution; P11 Messi +4 = 2 (L1)"
+   },
+   {
+    "offset": 5,
+    "type": "u16[5]",
+    "semantic": "reputation/ability vector [current_rep, home_rep, world_rep, CA?, PA?]",
+    "confidence": "medium (values) / low (field names)",
+    "evidence": "P11/P15: 22 players all <=200; CA<=PA in 98.3%; CR7 world=200, Messi all=200; no official CA/PA table to compare (L2 weak)"
+   },
+   {
+    "offset": 30,
+    "type": "u32",
+    "semantic": "Pcti current club duni (variant 2 rows)",
+    "confidence": "high",
+    "evidence": "Legacy b36 population counts withdrawn; full counts require rerun on current chain; 22-player sample still matches pl_hist/public club facts (L2)"
+   },
+   {
+    "offset": 99,
+    "type": "u8[6]|u8|u8",
+    "semantic": "height/weight R2 (variant 1 rows): 01 00 6c 07 00 ff | flag | 00 | u8 weight | u8 height (+99/+102/+105, drifts with variable fields)",
+    "confidence": "high (values)",
+    "evidence": "P13: 10 variant-1 players (Pique/Zidane/Beckham/Maldini/Rooney/Lampard/Gerrard/Puyol/Ferguson/Drogba) (L2)"
+   },
+   {
+    "offset": 108,
+    "type": "u32",
+    "semantic": "Pcjd joined-day packed date (variant 2 rows)",
+    "confidence": "high",
+    "evidence": "Current sample-only evidence: pl_hist last-season joined_day match; legacy full count withdrawn; P8 Messi 2023-07-15 matches (L1/L2)"
+   },
+   {
+    "offset": 126,
+    "type": "u8[5]|u16|u16",
+    "semantic": "height/weight R1 (variant 2 rows): 53 ff 00 00 01 | u16 weight_kg | u16 height_cm",
+    "confidence": "high (values)",
+    "evidence": "P13: 12 variant-2 players; full-file exact public match 15/22 height, 16/22 weight; |d|<=2 height 22/22, |d|<=6 weight 22/22 (L2)"
+   },
+   {
+    "offset": 136,
+    "type": "u32",
+    "semantic": "Pcti current club duni candidate (variant 1 rows)",
+    "confidence": "medium",
+    "evidence": "Legacy v1 population counts withdrawn; higher 'other' rate suggested a v1 sub-layout; it remains unresolved."
+   },
+   {
+    "offset": 148,
+    "type": "u32",
+    "semantic": "Pcjd joined-day (variant 1 rows)",
+    "confidence": "low/medium",
+    "evidence": "P17: 883 hits (v1 rows are mostly retired/staff with no pl_hist joined date)"
+   },
+   {
+    "offset": "rel(DOB)+579",
+    "type": "u32",
+    "semantic": "Pcex contract-expiry packed date (year<<16|day_of_year)",
+    "confidence": "high",
+    "evidence": "P16: ff x7 | u32 packed | 01 00 6c 07 | u16 Pces; current strict chain: 249,701 real dates / 658,011 rows = 37.95%; 198,554 nulls, 448,255 signature hits; Messi/Busquets 2025-12-31, Mbappe 2024-06-30, Haaland 2027-06-30 match public (L2)"
+   },
+   {
+    "offset": "rel(DOB)+108",
+    "type": "u32",
+    "semantic": "Pcjd joined-day (DOB-relative view)",
+    "confidence": "high",
+    "evidence": "P8: Messi 2023-07-15 (hist joined_day=196), Busquets 2023-07-16, Haaland 2022-07-01 (L2)"
+   },
+   {
+    "offset": "rel(DOB)+797",
+    "type": "u32",
+    "semantic": "Pdob packed birth date (year<<16|1-based day_of_year)",
+    "confidence": "high",
+    "evidence": "P8; b34 anchor unchanged: 22/22 known players match public birthdays (L2)"
+   },
+   {
+    "offset": "rel(DOB)-801..-1",
+    "type": "bytes",
+    "semantic": "embedded basic 83B summary row before the name/DOB anchor",
+    "confidence": "medium",
+    "evidence": "P8: c8 00 x4 attributes, club 50 6d 4b 04, ordinal/pid trailer observed in raw bytes (L1)"
+   }
+  ],
+  "strict_row_chain": "reconstructed from current basic ordinal/PID pairs and row headers; 658,011 rows tile 6..400,443,942 with 28-byte tail",
+  "unresolved": [
+   "full variable-field serializer and several variant-specific field layouts",
+   "variant-1 position-vector layout and the 40 PDxx attribute field-to-byte mapping; see PEOPLE_ATTRS.md",
+   "Pcwg wage / Pmsq / Psnu / Pnti second-nation ordering inside the row"
+  ]
+ },
+ "negative_results": [
+  "height/weight are absent from basic_people_db.dat as plain u8/u16 for all 22 known players (best offset matched 2/22 = chance); they live in people_db rows only",
+  "no offset relative to the DOB anchor (+/-4000 B) holds height/weight: the real slots sit *before* the name/DOB anchor, which is why b34's 512 B forward window missed them",
+  "b41 current-chain height/weight census: 76,089 / 658,011 rows (11.56%) carry the R1/R2 pattern; variant-2 R1 20,661/476,158, variant-1 R2 52,330/166,064, variant-3 mixed R1/R2 3,098/4,757, variant-4/5 rows 0%. These counts were rerun from the current basic+people chain; old-cache counts are withdrawn."
+ ],
+ "verified_fields": {
+  "duni": {
+   "confidence": "high",
+   "L": "L2",
+   "evidence": "equals pl_hist_index person_id"
+  },
+  "nation_id": {
+   "confidence": "high",
+   "L": "L2",
+   "evidence": "matches people_db nation byte"
+  },
+  "birth_year": {
+   "confidence": "high",
+   "L": "L2",
+   "evidence": "matches packed DOB year"
+  },
+  "age_at_db_freeze": {
+   "confidence": "high",
+   "L": "L2",
+   "evidence": "birth-year arithmetic"
+  },
+  "current_club_duni": {
+   "confidence": "high",
+   "L": "L2",
+   "evidence": "pl_hist_dt oracle: last club / global club id set"
+  },
+  "height_weight": {
+   "confidence": "high (values) / medium (coverage)",
+   "L": "L2",
+   "evidence": "22/22 solved; exact public match 15/22 height, 16/22 weight; |d|<=2 height 22/22, |d|<=6 weight 22/22"
+  },
+  "contract_expiry_pcex": {
+   "confidence": "high",
+   "L": "L2",
+   "evidence": "current strict chain: 249,701/658,011 rows = 37.95% real dates; 198,554 nulls and 448,255 signature hits. Messi/Busquets 2025-12-31, Mbappe 2024-06-30, Haaland 2027-06-30 match public contract facts"
+  },
+  "current_row_chain": {
+   "confidence": "high",
+   "L": "L1",
+   "evidence": "658,011 unique ordinal/PID rows tile people_db payload offsets 6..400,443,942; 28-byte tail. Old b36 rows.pkl/basic_walk.npy mismatch current basic source and are not used."
+  },
+  "ability_tuple_0_200": {
+   "confidence": "medium",
+   "L": "L1+L2-weak",
+   "evidence": "range + ordering only; names unproven"
+  }
+ }
+}

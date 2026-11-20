@@ -1,0 +1,370 @@
+{
+  "image": {
+    "path": "<OLD_REPO>/input/editor.exe",
+    "sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4",
+    "size": 74807296,
+    "image_base": 5368709120,
+    "sections": [
+      {
+        "name": ".rdata",
+        "va": 4096,
+        "vsize": 24477696,
+        "raw": 1536,
+        "rawsize": 24477696,
+        "exec": true
+      },
+      {
+        "name": ".debug",
+        "va": 24481792,
+        "vsize": 3297280,
+        "raw": 24479232,
+        "rawsize": 3295744,
+        "exec": false
+      },
+      {
+        "name": ".sbss",
+        "va": 27779072,
+        "vsize": 954368,
+        "raw": 27774976,
+        "rawsize": 259584,
+        "exec": false
+      },
+      {
+        "name": ".code",
+        "va": 28733440,
+        "vsize": 602112,
+        "raw": 28034560,
+        "rawsize": 512,
+        "exec": false
+      },
+      {
+        "name": ".didata",
+        "va": 29335552,
+        "vsize": 4096,
+        "raw": 28035072,
+        "rawsize": 512,
+        "exec": false
+      },
+      {
+        "name": ".data1",
+        "va": 29339648,
+        "vsize": 4096,
+        "raw": 28035584,
+        "rawsize": 512,
+        "exec": false
+      },
+      {
+        "name": ".sxdata",
+        "va": 29343744,
+        "vsize": 4096,
+        "raw": 28036096,
+        "rawsize": 512,
+        "exec": false
+      },
+      {
+        "name": ".bss",
+        "va": 29347840,
+        "vsize": 245760,
+        "raw": 28036608,
+        "rawsize": 244224,
+        "exec": false
+      },
+      {
+        "name": ".xpdata",
+        "va": 29593600,
+        "vsize": 176128,
+        "raw": 28280832,
+        "rawsize": 512,
+        "exec": false
+      },
+      {
+        "name": ".reloc",
+        "va": 29769728,
+        "vsize": 45639680,
+        "raw": 28281344,
+        "rawsize": 45639680,
+        "exec": true
+      },
+      {
+        "name": ".data",
+        "va": 75411456,
+        "vsize": 267776,
+        "raw": 73921024,
+        "rawsize": 267776,
+        "exec": false
+      },
+      {
+        "name": ".impdata",
+        "va": 75681792,
+        "vsize": 512,
+        "raw": 74188800,
+        "rawsize": 512,
+        "exec": true
+      },
+      {
+        "name": ".xtls",
+        "va": 75685888,
+        "vsize": 512,
+        "raw": 74189312,
+        "rawsize": 512,
+        "exec": true
+      },
+      {
+        "name": ".data2",
+        "va": 75689984,
+        "vsize": 13792,
+        "raw": 74189824,
+        "rawsize": 12800,
+        "exec": false
+      },
+      {
+        "name": ".00cfg",
+        "va": 75706368,
+        "vsize": 512,
+        "raw": 74202624,
+        "rawsize": 512,
+        "exec": false
+      },
+      {
+        "name": ".srdata",
+        "va": 75710464,
+        "vsize": 1536,
+        "raw": 74203136,
+        "rawsize": 1536,
+        "exec": false
+      },
+      {
+        "name": ".edata",
+        "va": 75714560,
+        "vsize": 512,
+        "raw": 74204672,
+        "rawsize": 512,
+        "exec": false
+      },
+      {
+        "name": ".arch",
+        "va": 75718656,
+        "vsize": 602112,
+        "raw": 74205184,
+        "rawsize": 602112,
+        "exec": false
+      }
+    ]
+  },
+  "scope": "Full raw PE overlap search for both byte orders in ASCII and UTF-16LE/BE. Additionally one solved key-specific computed dispatcher; not all symbolic encodings.",
+  "literal": {
+    "EDfx": {
+      "ascii_forward": [],
+      "ascii_reverse": [
+        {
+          "offset": 171065,
+          "va": 5368882745,
+          "section": ".rdata",
+          "bytes": "78664445",
+          "instruction": 171063,
+          "kind": "comparison",
+          "roles_excluded": [
+            "collection_opener",
+            "container_constructor",
+            "serialization_sink"
+          ]
+        }
+      ],
+      "utf-16le_forward": [],
+      "utf-16le_reverse": [],
+      "utf-16be_forward": [],
+      "utf-16be_reverse": []
+    },
+    "EDsc": {
+      "ascii_forward": [],
+      "ascii_reverse": [],
+      "utf-16le_forward": [],
+      "utf-16le_reverse": [],
+      "utf-16be_forward": [],
+      "utf-16be_reverse": []
+    }
+  },
+  "key_routes": {
+    "EDfx": {
+      "input": 1162110584,
+      "trace": [
+        164299,
+        164305,
+        164307,
+        164313,
+        164319,
+        164325,
+        164669,
+        164675,
+        165322,
+        165328,
+        165331,
+        165337,
+        165343,
+        165346,
+        171063,
+        171069,
+        171075
+      ],
+      "entry": 171075
+    },
+    "EDsc": {
+      "input": 1162113891,
+      "trace": [
+        164299,
+        164305,
+        164307,
+        164313,
+        164513,
+        164519,
+        164525,
+        164531,
+        164537,
+        164543,
+        164546,
+        164552,
+        164559,
+        164563,
+        164566
+      ],
+      "entry": 168841,
+      "table": 174064,
+      "table_va": 5368885744,
+      "entries": 68,
+      "index": 50,
+      "cell": 174264,
+      "rel32": -5223,
+      "cell_bytes": "99ebffff",
+      "same_target_indices": [
+        50
+      ]
+    },
+    "EDsb": {
+      "input": 1162113890,
+      "trace": [
+        164299,
+        164305,
+        164307,
+        164313,
+        164513,
+        164519,
+        164525,
+        164531,
+        164537,
+        164543,
+        164546,
+        164552,
+        164559,
+        164563,
+        164566
+      ],
+      "entry": 173700,
+      "table": 174064,
+      "table_va": 5368885744,
+      "entries": 68,
+      "index": 49,
+      "cell": 174260,
+      "rel32": -364,
+      "cell_bytes": "94feffff",
+      "same_target_indices": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        64
+      ]
+    },
+    "EDsd": {
+      "input": 1162113892,
+      "trace": [
+        164299,
+        164305,
+        164307,
+        164313,
+        164513,
+        164519,
+        164525,
+        164531,
+        164537,
+        164543,
+        164546,
+        164552,
+        164559,
+        164563,
+        164566
+      ],
+      "entry": 168937,
+      "table": 174064,
+      "table_va": 5368885744,
+      "entries": 68,
+      "index": 51,
+      "cell": 174268,
+      "rel32": -5127,
+      "cell_bytes": "f9ebffff",
+      "same_target_indices": [
+        51
+      ]
+    }
+  },
+  "nonliteral": [
+    {
+      "code": "EDsc",
+      "kind": "computed_dispatch",
+      "index_site": 164537,
+      "jump_site": 164566,
+      "table_cell": 174264,
+      "arm": 168841,
+      "role": "generated collection dispatch, not a tagged disk opener or serializer"
+    }
+  ]
+}

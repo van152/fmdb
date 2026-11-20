@@ -1,0 +1,30 @@
+{
+  "entity": "local region",
+  "entity_tag": "lcrg",
+  "fields_total": 13,
+  "top_level_fields": 11,
+  "nested_fields": 2,
+  "fields_named": 2,
+  "fields_unnamed": 11,
+  "offset_space": "dat_row",
+  "source_status": "complete_ledger_partial_coverage_g1_below_95pct",
+  "status": "complete_row_coordinate_conversion_with_unclosed_fields",
+  "conflicts": [{"field": "Lpop", "kind": "walk_vs_inherited", "walk": [4, 4], "inherited": [[17, 4]]}],
+  "walk_summary": {"classes_walked": 1, "serializer_functions": 1, "conditional_jump_count": 16, "class_branches": [{"table_type": 47, "class": "LOCAL_REGION", "status": "ok", "serializer_functions": 1, "conditional_jump_count": 16}]},
+  "scope_note": "",
+  "fields": [
+    {"field":"duni","offset":null,"width":null,"grade":"unnamed","evidence":{"reason":"no unique direct object_off/width/4CC/schema bridge"},"source":"no closed naming bridge","type":"unique_id"},
+    {"field":"rdui","offset":null,"width":null,"grade":"unnamed","evidence":{"reason":"no unique direct object_off/width/4CC/schema bridge"},"source":"no closed naming bridge","type":"integer"},
+    {"field":"NDBC","offset":null,"width":null,"grade":"unnamed","evidence":{"reason":"no unique direct object_off/width/4CC/schema bridge"},"source":"no closed naming bridge","type":"integer"},
+    {"field":"FDBC","offset":null,"width":null,"grade":"unnamed","evidence":{"reason":"no unique direct object_off/width/4CC/schema bridge"},"source":"no closed naming bridge","type":"integer"},
+    {"field":"dbnm","offset":null,"width":null,"grade":"unnamed","evidence":{"reason":"no unique direct object_off/width/4CC/schema bridge"},"source":"no closed naming bridge","type":"string"},
+    {"field":"Lnam","offset":null,"width":null,"grade":"unnamed","evidence":{"reason":"no unique direct object_off/width/4CC/schema bridge"},"source":"no closed naming bridge","type":"string"},
+    {"field":"Lnat","offset":null,"width":null,"grade":"unnamed","evidence":{"reason":"no unique direct object_off/width/4CC/schema bridge"},"source":"no closed naming bridge","type":"database_record_unique_id"},
+    {"field":"Lpop","offset":17,"width":4,"grade":"L3_inherited","evidence":{"bridge":"walked object_off/width -> codes_full read instance -> exact schema field code","matches":[{"offset":4,"width":4,"table_type":47,"class":"LOCAL_REGION","object_off":112,"4CC":"Lpop","chain":"chain_0137","serializer_function":"0x14586e0","instruction_offset":"0x1458723","call_offset":"0x145872c","code_instance_offset":"0x1458fcd","code_read_file_offset":"0x1458fd9","code_access_va":"0x1414599d9","code_instruction":"mov esi, dword ptr [r12 + 0x70]","binary":"editor.exe","exe_sha256":"b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4","branch_depth":1,"branch_count":16}],"table_types":[47],"walk_conflict_preserved":true,"row_coordinate":{"space":"dat_row","offset":17,"method":"inherited row-side baseline"}},"source":"reports/t12_field_names.json","type":"integer"},
+    {"field":"Lwea","offset":8,"width":4,"grade":"L3_inherited","evidence":{"inherited":[{"entity_tag":"lcrg","field":"Lwea","offset":8,"width":4,"source":"reports/t12_field_names.json","table_type":47,"note":"E55 client full_shape_unique"}],"walk_candidates":[],"row_coordinate":{"space":"dat_row","offset":8,"method":"inherited row-side baseline"}},"source":"reports/t12_field_names.json","type":"database_record_unique_id"},
+    {"field":"Lcit","offset":null,"width":null,"grade":"unnamed","evidence":{"reason":"no unique direct object_off/width/4CC/schema bridge"},"source":"no closed naming bridge","type":"database_record_list"},
+    {"field":"Lrll","offset":null,"width":null,"grade":"unnamed","evidence":{"reason":"no unique direct object_off/width/4CC/schema bridge"},"source":"no closed naming bridge","type":"list"},
+    {"field":"Llgl","parent":"Lrll","offset":null,"width":null,"grade":"unnamed","evidence":{"reason":"nested/list member; no row-inline mapping asserted"},"source":"scratch/t05/schema_inventory.json","type":"database_record_unique_id"},
+    {"field":"Llgp","parent":"Lrll","offset":null,"width":null,"grade":"unnamed","evidence":{"reason":"nested/list member; no row-inline mapping asserted"},"source":"scratch/t05/schema_inventory.json","type":"integer"}
+  ]
+}

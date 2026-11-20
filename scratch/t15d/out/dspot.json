@@ -1,0 +1,105 @@
+{
+ "status": "complete_spot_check",
+ "task": "t15e — t15d 抽查的最终汇总(不重跑;只读 scratch/t15d/out 既有产物)",
+ "judged_by": "prompts/t15d_dspot.md 判据:类名语义 ↔ 列画像(ID 空间/金额/日期),只给 plausible|implausible|silent",
+ "reference_bases": {
+  "person": 658011,
+  "club": 84259,
+  "team": 84507,
+  "comp": 7047,
+  "injury": 115
+ },
+ "evidence_sources": [
+  "scratch/t15d/out/measure.json (dspot_final 的可复算 claim)",
+  "scratch/t15d/out/prof/f*.json / p*.json / grid/*.txt",
+  "scratch/t15d/out/fk_hits.json"
+ ],
+ "artefact_gaps": [
+  "prof/p34.json、prof/p37.json 不存在(只有 prof/f34.json、prof/f37.json 的 cands);prof/e34.txt 为 dspot.py closure 异常回溯(e34 报 'closure fail t34: 12 != 313082'),e37.txt 缺失 → 34/37 的结论改由 measure.json + grid/t34.txt、grid/t37.txt 支撑,未重跑补数据"
+ ],
+ "counts": {
+  "tables": 12,
+  "plausible": 8,
+  "implausible": 0,
+  "silent": 4
+ },
+ "tables": [
+  {
+   "table_type": 34,
+   "rtti_class": "STARTING_TEAM_CUP_HISTORY",
+   "verdict": "plausible",
+   "evidence": "7,115 行:u32@0 低 16 位落 comp 域的比例 0.9956(基准 7,047,d_lo=89),u16@8/@10 起止年 0..2023(d=110) → comp+年份 结构自洽"
+  },
+  {
+   "table_type": 37,
+   "rtti_class": "STARTING_TEAM_LEAGUE_HISTORY",
+   "verdict": "plausible",
+   "evidence": "465,712 行:u16@0 comp 0..7044 全落 7,047 域(1.000),u32@4 team 51..84,481 全落 84,507 域(1.000),u16@12 年列 0..2024,u16@5 积分 0..330 → 最强锚点"
+  },
+  {
+   "table_type": 42,
+   "rtti_class": "STARTING_RETIREMENT",
+   "verdict": "plausible",
+   "evidence": "17,721 行:u32@0 全行落 person duni(rows=1.0,d=16,756,dist_hit=16,756,lift=3,092),另有 packed YMD 命中 1.0 与 year 1900..2031(d=56)"
+  },
+  {
+   "table_type": 43,
+   "rtti_class": "STARTING_MONTHLY_INSTALLMENT",
+   "verdict": "plausible",
+   "evidence": "535 行:u32@0 全落 person duni(533/533,lift=3,176);月数列 u32@24 = 2..84(d=14),金额列 u32@28 = 1,041..3,861,111(d=106,量级符合分期)"
+  },
+  {
+   "table_type": 46,
+   "rtti_class": "STARTING_DRAFT_TRANSFER",
+   "verdict": "silent",
+   "evidence": "仅 7 行:u32@0/@4 取值 1,907..72,052,048 不落 person/club/team/comp 任一 ID 空间(高位带 8bit 标记),虽然 packed YMD 1.0、year 2024..2025 存在,引用列无法确证"
+  },
+  {
+   "table_type": 50,
+   "rtti_class": "STARTING_MLS_TRADED_SLOT",
+   "verdict": "silent",
+   "evidence": "45 行:u32@0/@4 值域 1,903..2,000,153,732,low16 判据在 club 基准 84,259>65,535 时退化为恒真(不可用);无金额列、日期列仅 d=3~4 → 无法判引用"
+  },
+  {
+   "table_type": 51,
+   "rtti_class": "STARTING_MLS_GENERAL_ALLOCATION_MONEY",
+   "verdict": "plausible",
+   "evidence": "59 行:金额列 u32@4 = 1,520,812..2,241,197(GAM 量级,d=3),packed YMD 命中 1.0,u16@8 year 2021..2024 —— 金额语义对得上,但 59 行只有 3 种取值,样本薄"
+  },
+  {
+   "table_type": 58,
+   "rtti_class": "STARTING_WEEKLY_WAGE_CONTRIBUTION",
+   "verdict": "plausible",
+   "evidence": "8 行:u32@0 8/8 落 person duni(lift=226.5);三组周薪量级整数 603..1,871 / 658..1,733 / 1,400..38,800(d=8) → 人+周薪金额自洽,样本仅 8 行"
+  },
+  {
+   "table_type": 62,
+   "rtti_class": "STARTING_RESERVE_TEAM",
+   "verdict": "plausible",
+   "evidence": "37,214 行:u32@1 全行 ≤84,258(d=25,034),正好压在 club 基准 84,259 的上界 → 落 club 域;team 84,507 同样相容故不可区分,与 RESERVE_TEAM→club 语义不矛盾"
+  },
+  {
+   "table_type": 64,
+   "rtti_class": "STARTING_CLUB_STAFF_JOB_STATUS",
+   "verdict": "plausible",
+   "evidence": "6,946 行:u32@0 = 11..82,188(≤84,259),753 个不同 club;u8@4 job_type 0..255(d=67)、u8@6 枚举 0..3 → 纯 club 引用 + 岗位枚举,与类名一致"
+  },
+  {
+   "table_type": 66,
+   "rtti_class": "STARTING_CLUB_TRANSFER_PREFERENCE",
+   "verdict": "silent",
+   "evidence": "753 行:u32@0 只有 7.7% 行落 person duni(29/343 distinct),无 club/team 引用列,亦未见 0..20 档偏好滑杆 → 列画像与类名无法对接"
+  },
+  {
+   "table_type": 70,
+   "rtti_class": "STARTING_VISION_OBJECTIVE",
+   "verdict": "silent",
+   "evidence": "10,075 行:u32@0/@4 的 person duni 命中率仅 1.19%/5.36%(lift 79/356,不构成引用证据);仅有 year 列 1900..2033(d=15),@0..@12 全为高位带标记的复合值,未解出引用"
+  }
+ ],
+ "notes": [
+  "本表只做类名↔画像自洽性抽查,不据此升降任何实体裁决(E42 边界依旧有效)。",
+  "silent ≠ 表无意义,只表示现有产物不足以判定;四张 silent 表的阻断原因已在 evidence 里写明,均未重跑补数据。",
+  "无 implausible:没有任何一张表出现'类名要求的引用/金额/日期列与画像明确矛盾'的情形,故不给负判。"
+ ]
+}

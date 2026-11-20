@@ -1,0 +1,79 @@
+{
+  "task": "t23",
+  "status": "complete_client_scope_reconciled_with_server_and_schema_coverage_open",
+  "scope": "2430 client nation table only; no server grammar or full schema ledger claim",
+  "evidence": {
+    "g2_client_rows": {
+      "payload_sha256": "7e9d740b9ee6900965d8616a136ea4bc54a0f7207f9727eac72badfb727f6c34",
+      "payload_bytes": 24732,
+      "row_count": 251,
+      "row_span_bytes": 24710,
+      "closure": "14 + 24710 + 8 = 24732",
+      "count_totals_A_B_C_D": [
+        492,
+        214,
+        63,
+        162
+      ],
+      "count_maxima_A_B_C_D": [
+        7,
+        40,
+        21,
+        2
+      ],
+      "identity_all_rows": true,
+      "footer_start": 24724,
+      "footer_hex": "00 00 00 01 ec 7a e4 04",
+      "verifier": {
+        "command": [
+          "C:\\Users\\oak\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+          "-I",
+          "D:\\tmp2b\\fm24-db\\scratch\\t02\\inbox\\nati\\OUTBOX\\verify.py",
+          "--selftest"
+        ],
+        "returncode": 0,
+        "stdout": "PASS: client nati rows=251; formula spans=24710; closure=14+24710+8=24732; count totals A/B/C/D=[492, 214, 63, 162]; row55 identity@payload+0x1042; duni@payload+0x1046 verified; footer=00 00 00 01 ec 7a e4 04",
+        "stderr": ""
+      }
+    },
+    "t19_status_reconciled": {
+      "recorded_status": "partial_prefix_cursor_tail_and_loops_unresolved",
+      "full_verifier_exit": 1,
+      "full_verifier_stdout": "PASS club_footer_seal: body_end=0x69c66a, footer=0x69c66a, member=6932082\nPASS club_row_count: standard=84256 compact=3 total=84259\nPASS club_sample_name_length_recompute: [{'row': 0, 'observed': 95, 'expected': 95}, {'row': 1, 'observed': 92, 'expected': 92}, {'row': 2, 'observed': 83, 'expected': 83}, {'row': 69705, 'observed': 73, 'expected': 73}, {'row': 69709, 'observed': 79, 'expected': 79}, {'row': 69710, 'observed': 84, 'expected': 84}, {'row': 69702, 'observed': 85, 'expected': 85}, {'row': 69703, 'observed': 67, 'expected': 67}]\nPASS club_compact_identity_frame: [69706, 69707, 69708]\nPASS nation_prefix_widths: {'widths': [1, 4, 4, 4, 4, 1, 1, 4, 1, 1], 'sum': 25}\nPASS nation_prefix_object_sinks: {'first_nine_match': True, 'call24_object_offset': 68, 't01g_call24_sink': 'stack scratch byte'}\nPASS nation_prefix_cursor_accumulation: cursor_end=25\nPASS nation_instruction_recompute_Ngct: {'object_offset': '0x1cb', 'width': 1, 'getter_code': 'Ngct', 'row_offset': 0}\nPASS nation_instruction_recompute_Ncti: {'object_offset': '0xf0', 'width': 4, 'getter_code': 'Ncti', 'row_offset': 1}\nPASS nation_instruction_recompute_Nrgi: {'object_offset': '0xf8', 'width': 4, 'getter_code': 'Nrgi', 'row_offset': 5}\nPASS nation_instruction_recompute_Ncur: {'object_offset': '0x100', 'width': 4, 'getter_code': 'Ncur', 'row_offset': 13}\nPASS nation_instruction_recompute_Nsod: {'object_offset': '0x1cc', 'width': 1, 'getter_code': 'Nsod', 'row_offset': 17}\nPASS nation_instruction_recompute_Necf: {'object_offset': '0x1d0', 'width': 1, 'getter_code': 'Necf', 'row_offset': 18}\nPASS nation_instruction_recompute_Nygn: {'object_offset': '0x1cd', 'width': 1, 'getter_code': 'Nygn', 'row_offset': 23}\nPASS nation_payload_envelope: 14 + 24710 + 8 = 24732\nPASS club_schema_ledger_and_baseline: {'total': 672, 'top_level': 433, 't18_named': 14, 't19_named': 15}\nPASS nation_schema_ledger_and_baseline: {'total': 441, 'top_level': 346, 't18_named': 0, 't19_named': 7}\nPASS club_baseline_field_offset_compare: {'compared': 14, 'fields': ['NDBC', 'FDBC', 'Twhm', 'Tmhm', 'Catd', 'Cmna', 'Cmxa', 'CMWE', 'Cadm', 'Cpfa', 'Chsd', 'Csry', 'Casp', 'levl']}\nPASS nation_prefix_field_offset_compare: {'compared': 7, 'fields': ['Ngct', 'Ncti', 'Nrgi', 'Ncur', 'Nsod', 'Necf', 'Nygn']}\nPASS club_Cccn_instruction_recompute: {'row_offset_candidate': 8, 'object_offset': '0xf0', 'transfer_width': 4, 'getter_code': 'Cccn', 'status': 'inherited_low_confidence_candidate_not_revalidated'}\nBLOCKED: club reader transfer trace is not aligned to row-frame cursor; nation counted-loop body widths and per-row closure remain unresolved",
+      "meaning": "t19's own expanded cursor ledger remains partial; it does not invalidate the independently closed g2 client grammar",
+      "ledger_fields": 441,
+      "inherited_named_fields": 7,
+      "schema_total": 441
+    },
+    "ncpi": {
+      "status": "complete",
+      "code": "Ncpi",
+      "name": "Capital City",
+      "row_offset": 9,
+      "width": 4,
+      "target": "client_db/table_2.dat row ordinal (zero-based)",
+      "evidence_level": "L3",
+      "selftest": {
+        "command": [
+          "C:\\Users\\oak\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+          "-I",
+          "D:\\tmp2b\\fm24-db\\scripts\\t22_nation_capital.py",
+          "--selftest"
+        ],
+        "returncode": 0,
+        "stdout": "PASS: Ncpi row+9 / 4B; 251 nations, 231 city ordinals, 20 nulls, 5 cross-nation rows; 6/6 holdouts",
+        "stderr": ""
+      },
+      "total_nation_fields": 441,
+      "named_by_t19_ledger": 7,
+      "field_scope_note": "Ncpi is a standalone L3 field mapping, not completion of the remaining nation schema fields"
+    }
+  },
+  "open_items": [
+    "server_db table_10 row grammar has only a recorded hash/count; no client formula is extrapolated",
+    "434 of 441 nation fields remain unnamed in the t19 row-coordinate ledger; t23 adds only the independently verified Ncpi mapping",
+    "the commented XML schema record does not prove UI editability or L4 behavior",
+    "alternate arg8!=0 reader path remains unassigned to client/server payload"
+  ],
+  "errors": []
+}

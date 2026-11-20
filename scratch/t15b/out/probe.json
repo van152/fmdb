@@ -1,0 +1,691 @@
+{
+ "task": "t15b",
+ "kind": "bypass-inventory (旁路清点,非主线产物)",
+ "status": "ok",
+ "generated": "2026-11-18",
+ "db_dir": "D:\\tmp2b\\fm24-db\\scratch\\data",
+ "read_only": true,
+ "baseline_ref": "scratch/t13e/out/baselines.json",
+ "scripts": [
+  "scratch/t15b/probe.py",
+  "scratch/t15b/probe2.py",
+  "scratch/t15b/probe3.py",
+  "scratch/t15b/finalize.py"
+ ],
+ "container_summary": {
+  "tad. + zstd@8 (非 FMF)": [
+   "people_db.dat"
+  ],
+  "tadc v3 + 串联 zstd": [
+   "pl_hist_dt.dat",
+   "non_pl_hist_dt.dat"
+  ],
+  "tad. v1 裸 u32 数组": [
+   "pl_hist_id.dat",
+   "non_pl_hist_id.dat"
+  ],
+  "tad. v3569 + zstd (index)": [
+   "pl_hist_index.dat",
+   "non_pl_hist_index.dat"
+  ],
+  "tad. v3569 自有文法 (无 zstd)": [
+   "summary.dat"
+  ],
+  "tad. v3569 + 内嵌 fmf. 目录": [
+   "lang_update_db.dat"
+  ],
+  "结论": "9/9 容器层全部进入,0 个未知外壳"
+ },
+ "files": {
+  "people_db.dat": {
+   "size": 67502767,
+   "sha256": "38a5f6d910dd73587ddfac9d9f60cd81689609c2869e4e4eb1936e266b7d2d41",
+   "container_ok": true,
+   "container": {
+    "tag": "tad.",
+    "version_u16": 3569,
+    "zstd_at_8": true,
+    "fmf_at_8": false,
+    "kind": "tad. + single zstd stream at 8"
+   },
+   "tables": null,
+   "tables_note": "非 FMF 档案(offset 8 单个 Zstd 流),list_tables 抛 'no supported embedded resource-FMF signature'",
+   "decompressed_len": 400443970,
+   "decompressed_sha256": "21686a985e32ebaf8ced73478058e69720be061d08be499be89e4d441f0f2fbd",
+   "key_4cc": [
+    "tad.",
+    "f1 0d (v3569)",
+    "28b52ffd Zstd"
+   ],
+   "structure": {
+    "header_u32_at_2": 658011,
+    "header_note": "payload+2 的 u32 = 658,011,与 basic_people_db.dat payload+0 的 count 完全相同",
+    "compact_segment": {
+     "target_rows": 1193,
+     "walked": 1193,
+     "stop_reason": null,
+     "end_pos": 55750,
+     "start_pos": 6,
+     "byte_span": 55744,
+     "row_span_formula": "33 + name_len",
+     "all_type_5": true,
+     "keys_unique": true,
+     "keys_are_full_range": true,
+     "key_range": [
+      656818,
+      658010
+     ],
+     "duni_range": [
+      2002040996,
+      2002042188
+     ],
+     "empty_names": 1,
+     "names_head": [
+      "Zarko Serafimovski",
+      "Ronny Pattinasarani",
+      "Melvin Andrews",
+      "Ricky Yacobi",
+      "Andi Ramang",
+      "Christian González"
+     ],
+     "names_tail": [
+      "Tom Lund",
+      "Kunishige Kamamoto",
+      "Vicente Lecaro",
+      "Polo Carrera"
+     ]
+    },
+    "cross_join": {
+     "claim": "people_db compact 段 (key, duni) 与 basic_people_db 同 ordinal 行逐一相等",
+     "rows_compared": 1193,
+     "key_missing_in_basic": [],
+     "key_missing_count": 0,
+     "duni_equal": 1193,
+     "duni_equal_all": true,
+     "basic_class_all_5": true,
+     "grade": "L1(两份档案逐字节对齐) + L2(跨文件同值锚点)"
+    },
+    "compact_note": "offset 6..55,750 共 1,193 行 type=5,行跨度 33+namelen;key 集恰为 656818..658010 全覆盖,且每行 (key,duni) 与 basic_people_db 同 ordinal 行逐一相等 1193/1193;足后 376B 未解小间隙,再到 offset 56,126 起是姓名/DOB 锚点流",
+    "gap_after_compact_bytes": 376,
+    "main_anchor_stream_start": 56126,
+    "anchor_markers_ff00_total": 2260437,
+    "valid_name_dob_anchors_full_scan": 186082,
+    "anchor_grammar": "FF FF FF FF 00 | u32 name_len | utf8 name | u32 dob(year<<16|doy)",
+    "name_samples": [
+     {
+      "off": 74870,
+      "name": "Esteban Ariel Saveljich"
+     },
+     {
+      "off": 88392,
+      "name": "Stefan Mugoša"
+     },
+     {
+      "off": 143880,
+      "name": "Vladan Giljen"
+     }
+    ]
+   },
+   "relation_to_baseline": {
+    "basic_people_db_rows": 658011,
+    "people_db_valid_name_dob_est": 159763,
+    "people_db_header_u32_12": [
+     173735936,
+     139132938,
+     327690,
+     301989888,
+     1509949440,
+     1869312609,
+     1919243040,
+     1835624033,
+     1802729071,
+     105,
+     0,
+     168315648
+    ],
+    "pl_hist_persons": 515581,
+    "non_pl_hist_persons": 746543,
+    "pl_plus_non_pl": 1262124,
+    "delta_pl_vs_basic_players": 39423,
+    "delta_nonpl_vs_basic_nonplayers": 580479,
+    "delta_sum_vs_basic": 604113,
+    "t49_server_rows": 792149,
+    "note": "差值只作为量级线索,不构成实体同一性证明"
+   },
+   "verdict": "值得开专项(最高优先级):这是 person 全量扩展库,basic_people_db 只是 658,011 行 stub"
+  },
+  "pl_hist_dt.dat": {
+   "size": 56996116,
+   "sha256": "da8ccfa26856af84807eb4400c9a54f895b5a14465517cc3d0e0936c575a7acd",
+   "container_ok": true,
+   "container": {
+    "tag": "tadc",
+    "version_u16": 3,
+    "zstd_at_8": true,
+    "fmf_at_8": false,
+    "kind": "tadc + concatenated zstd frames"
+   },
+   "tables": null,
+   "key_4cc": [
+    "tadc",
+    "03 00 (v3)",
+    "28b52ffd Zstd"
+   ],
+   "zstd_streams": {
+    "magic_hits": 48510,
+    "first_offsets": [
+     0,
+     964,
+     2043,
+     3042
+    ],
+    "head_frames_parsed": 200,
+    "head_frames_bad": 0,
+    "head_content_sizes": {
+     "18446744073709551615": 200
+    },
+    "tail_frames": [
+     {
+      "off": 56411314,
+      "content_size": 18446744073709551615,
+      "nbytes": 584794
+     },
+     {
+      "off": 56412300,
+      "content_size": 18446744073709551615,
+      "nbytes": 583808
+     },
+     {
+      "off": 56413311,
+      "content_size": 18446744073709551615,
+      "nbytes": 582797
+     }
+    ]
+   },
+   "decompressed_len": 198695332,
+   "stride": 44,
+   "exact_rows": 4515803,
+   "len_mod_stride": 0,
+   "chain_sample": {
+    "rows_total": 4515803,
+    "checked": 6000,
+    "chain_ok": 4982,
+    "chain_bad": 0,
+    "terminal": 1018,
+    "bad_examples": [],
+    "stride": 44
+   },
+   "verdict": "已解(旧仓 L1 全量链 + 本仓抽样复现);行内字段语义不在本任务范围"
+  },
+  "pl_hist_id.dat": {
+   "size": 4124656,
+   "sha256": "54eb80c37a704dc1a5ac3ac0b7d42f276a4eacd59d426d1bfe992f8c3f490b4a",
+   "container_ok": true,
+   "container": {
+    "tag": "tad.",
+    "version_u16": 1,
+    "zstd_at_8": false,
+    "fmf_at_8": false,
+    "kind": "tad. v1 raw u32 array (no zstd)"
+   },
+   "tables": null,
+   "key_4cc": [
+    "tad.",
+    "01 00 (v1) 裸 u32 数组,无 Zstd 无 FMF"
+   ],
+   "array": {
+    "count_u32": 1031162,
+    "pairs_if_std": 515581,
+    "first_8": [
+     0,
+     748,
+     792,
+     1496,
+     1540,
+     2420,
+     2464,
+     3124
+    ],
+    "last_8": [
+     198694980,
+     198695112,
+     198695156,
+     198695156,
+     198695200,
+     198695244,
+     198695288,
+     198695288
+    ],
+    "sample_pair_gap_set": [
+     -1276,
+     -1232,
+     -1188,
+     -1144,
+     -1100,
+     -1056
+    ],
+    "sample_pairs_24_aligned": "5/200",
+    "sample_start_strictly_increasing": true
+   },
+   "pairs": 515581,
+   "pair_stride": 44,
+   "pairs_aligned": "200/200",
+   "contiguous_step": true,
+   "last_end_plus_stride_eq_dt": true,
+   "verdict": "已解;<u32 start,u32 end> inclusive 字节偏移对,与 dt 长度闭合"
+  },
+  "pl_hist_index.dat": {
+   "size": 3081975,
+   "sha256": "e73770ff8cde6e1af6fac15851acc1038a4115cf98a7e893cedc79517aac6cb6",
+   "container_ok": true,
+   "container": {
+    "tag": "tad.",
+    "version_u16": 3569,
+    "zstd_at_8": true,
+    "fmf_at_8": false,
+    "kind": "tad. + single zstd stream at 8"
+   },
+   "tables": null,
+   "key_4cc": [
+    "tad.",
+    "f1 0d (v3569)",
+    "28b52ffd Zstd"
+   ],
+   "decompressed_len": 4124652,
+   "index": {
+    "count": 515581,
+    "payload_len": 4124652,
+    "expected_len": 4124652,
+    "len_matches": true,
+    "ids_sorted_head": true,
+    "first_ids": [
+     3,
+     4,
+     9,
+     12,
+     14,
+     16
+    ],
+    "ordinals_sentinel_in_head": 0
+   },
+   "valid_ordinals": 515581,
+   "verdict": "已解;<u32 count><count × (u32 key,u32 range_ordinal)>"
+  },
+  "non_pl_hist_dt.dat": {
+   "size": 27607915,
+   "sha256": "7feb29fc46cd3ae820b61b84d58ca8fc01cc557646ac3bb80318b9ad7c71a256",
+   "container_ok": true,
+   "container": {
+    "tag": "tadc",
+    "version_u16": 3,
+    "zstd_at_8": true,
+    "fmf_at_8": false,
+    "kind": "tadc + concatenated zstd frames"
+   },
+   "tables": null,
+   "key_4cc": [
+    "tadc",
+    "03 00 (v3)",
+    "28b52ffd Zstd"
+   ],
+   "zstd_streams": {
+    "magic_hits": 18823,
+    "first_offsets": [
+     0,
+     1161,
+     2252,
+     3243
+    ],
+    "head_frames_parsed": 200,
+    "head_frames_bad": 0,
+    "head_content_sizes": {
+     "18446744073709551615": 200
+    },
+    "tail_frames": [
+     {
+      "off": 27379135,
+      "content_size": 18446744073709551615,
+      "nbytes": 228772
+     },
+     {
+      "off": 27380027,
+      "content_size": 18446744073709551615,
+      "nbytes": 227880
+     },
+     {
+      "off": 27381053,
+      "content_size": 18446744073709551615,
+      "nbytes": 226854
+     }
+    ]
+   },
+   "decompressed_len": 77098632,
+   "stride": 24,
+   "exact_rows": 3212443,
+   "len_mod_stride": 0,
+   "chain_sample": {
+    "rows_total": 3212443,
+    "checked": 6000,
+    "chain_ok": 32,
+    "chain_bad": 0,
+    "terminal": 5968,
+    "bad_examples": [],
+    "stride": 24
+   },
+   "verdict": "已解(旧仓 L1 全量链 + 本仓抽样复现);行内字段语义不在本任务范围"
+  },
+  "non_pl_hist_id.dat": {
+   "size": 5972352,
+   "sha256": "4be2dd98cd3ac9c1691d6cb6f037aed3cfd94ce9e4cdad4358ca65f6df4d116f",
+   "container_ok": true,
+   "container": {
+    "tag": "tad.",
+    "version_u16": 1,
+    "zstd_at_8": false,
+    "fmf_at_8": false,
+    "kind": "tad. v1 raw u32 array (no zstd)"
+   },
+   "tables": null,
+   "key_4cc": [
+    "tad.",
+    "01 00 (v1) 裸 u32 数组,无 Zstd 无 FMF"
+   ],
+   "array": {
+    "count_u32": 1493086,
+    "pairs_if_std": 746543,
+    "first_8": [
+     0,
+     0,
+     24,
+     24,
+     48,
+     48,
+     72,
+     72
+    ],
+    "last_8": [
+     77098536,
+     77098536,
+     77098560,
+     77098560,
+     77098584,
+     77098584,
+     77098608,
+     77098608
+    ],
+    "sample_pair_gap_set": [
+     -24,
+     0
+    ],
+    "sample_pairs_24_aligned": "200/200",
+    "sample_start_strictly_increasing": true
+   },
+   "pairs": 746543,
+   "pair_stride": 24,
+   "pairs_aligned": "200/200",
+   "contiguous_step": true,
+   "last_end_plus_stride_eq_dt": true,
+   "verdict": "已解;<u32 start,u32 end> inclusive 字节偏移对,与 dt 长度闭合"
+  },
+  "non_pl_hist_index.dat": {
+   "size": 4153253,
+   "sha256": "16d7853b23d36145041cf7135027b31812335cf0bd689fc0c70b63a9b7a5a4e9",
+   "container_ok": true,
+   "container": {
+    "tag": "tad.",
+    "version_u16": 3569,
+    "zstd_at_8": true,
+    "fmf_at_8": false,
+    "kind": "tad. + single zstd stream at 8"
+   },
+   "tables": null,
+   "key_4cc": [
+    "tad.",
+    "f1 0d (v3569)",
+    "28b52ffd Zstd"
+   ],
+   "decompressed_len": 6037508,
+   "index": {
+    "count": 754688,
+    "payload_len": 6037508,
+    "expected_len": 6037508,
+    "len_matches": true,
+    "ids_sorted_head": true,
+    "first_ids": [
+     3,
+     4,
+     8,
+     9,
+     12,
+     14
+    ],
+    "ordinals_sentinel_in_head": 3
+   },
+   "valid_ordinals": 754688,
+   "verdict": "已解;<u32 count><count × (u32 key,u32 range_ordinal)>"
+  },
+  "summary.dat": {
+   "size": 1648018,
+   "sha256": "966eea20bf8d261c08c78e8783eeee400b3c18c594bc952b26d4f2d2ccf87d94",
+   "container_ok": true,
+   "container": {
+    "tag": "tad.",
+    "version_u16": 3569,
+    "zstd_at_8": false,
+    "fmf_at_8": false,
+    "kind": "tad. own grammar (no zstd, no fmf)"
+   },
+   "tables": null,
+   "key_4cc": [
+    "tad.",
+    "f1 0d (v3569);无 Zstd、无 FMF"
+   ],
+   "summary": {
+    "separators": 54087,
+    "bodies": 54086,
+    "body_len_top": [
+     [
+      17,
+      53742
+     ],
+     [
+      28,
+      92
+     ],
+     [
+      41,
+      7
+     ],
+     [
+      1019,
+      7
+     ]
+    ],
+    "block1_u32_at_8": [
+     7,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "block2_u32_at_40": [
+     251,
+     3,
+     1280,
+     156928,
+     256
+    ],
+    "first_sep_offset": 73,
+    "byte_accounting": {
+     "file": 1648018,
+     "head_before_first_sep": 73
+    }
+   },
+   "byte_accounting_ok": true,
+   "verdict": "容器+分段账已清;字段语义 0 个(旧仓 L2=0,本仓不改判)"
+  },
+  "lang_update_db.dat": {
+   "size": 2317274,
+   "sha256": "fa2608e89b96fcae03d023cd71cbfa777071d438cc0b0fa9da390d9de26e1fde",
+   "container_ok": true,
+   "container": {
+    "tag": "tad.",
+    "version_u16": 3569,
+    "zstd_at_8": false,
+    "fmf_at_8": true,
+    "kind": "tad. + embedded fmf. directory (listable)"
+   },
+   "tables": {
+    "entries": 352,
+    "table_entries": 0,
+    "aux_entries": 352,
+    "table_ids": [],
+    "sample": [
+     {
+      "id": null,
+      "path": "lang_update_db/8_9.dat",
+      "packed": 64,
+      "size": 67,
+      "count": null,
+      "magic": null
+     },
+     {
+      "id": null,
+      "path": "lang_update_db/8_25.dat",
+      "packed": 977,
+      "size": 2085,
+      "count": null,
+      "magic": null
+     },
+     {
+      "id": null,
+      "path": "lang_update_db/8_3.dat",
+      "packed": 88009,
+      "size": 282983,
+      "count": null,
+      "magic": null
+     },
+     {
+      "id": null,
+      "path": "lang_update_db/8_2.dat",
+      "packed": 4115,
+      "size": 6950,
+      "count": null,
+      "magic": null
+     },
+     {
+      "id": null,
+      "path": "lang_update_db/8_5.dat",
+      "packed": 25,
+      "size": 12,
+      "count": null,
+      "magic": null
+     },
+     {
+      "id": null,
+      "path": "lang_update_db/8_6.dat",
+      "packed": 67,
+      "size": 61,
+      "count": null,
+      "magic": null
+     }
+    ]
+   },
+   "tables_note": "352 个 auxiliary 成员(table_entries=0),非数值表",
+   "key_4cc": [
+    "tad.",
+    "f1 0d",
+    "02 01 66 6d 66 2e (fmf.)"
+   ],
+   "lang": {
+    "entries": 352,
+    "numbered_entries": 330,
+    "languages": 22,
+    "table_types": 15,
+    "person_names_files": 22,
+    "decompressed_total": 7390959,
+    "ff_terminator_bytes": 63451,
+    "files_with_tad_header": 235,
+    "count_field_sum": 95585,
+    "files_fully_closed": 0,
+    "grammar_closed": false,
+    "observed_prefix": "每文件 tad. f10d | u32 count | u32 aux | 接着是 (u32 len, utf8, 0xff) 序列",
+    "why_not_closed": "前 3–6 个字符串后出现非 len/utf8/ff 的字节(例 8_3.dat 在 offset 76 遇到 u32=1258291456),说明记录内还有子结构/嵌套;0/235 个带 tad. 头的成员能被单层文法走到 EOF",
+    "sample": "8_9.dat = count 1 + ['Singapore'->ff, 'Singapore'->ff, 'SGP', 'Singaporean', 0x00]"
+   },
+   "verdict": "容器可列(352 成员 = 22 语言 × 15 表号 + 22 person_names);但行文法未闭合(0/235),本地化覆盖层,非 schema 表"
+  }
+ },
+ "baseline_relations": {
+  "person_universe": {
+   "basic_people_db_rows": 658011,
+   "people_db_header_count": 658011,
+   "equal": true,
+   "compact_rows_joined": 1193,
+   "compact_duni_equal": 1193,
+   "evidence": "people_db payload+2 的 u32 == 658,011 == basic_people payload+0 的 count;people_db 开头 1,193 行的 (key,duni) 与 basic_people 同 ordinal 行逐行相等",
+   "grade": "L1(跨档案字节对齐) + L2(同值锚点)"
+  },
+  "hist_vs_person": {
+   "pl_hist_persons": 515581,
+   "non_pl_hist_persons": 746543,
+   "sum": 1262124,
+   "basic_people_total": 658011,
+   "delta_sum": 604113,
+   "basic_class_counts": {
+    "1_NON_PLAYER": 166064,
+    "2_PLAYER": 476158,
+    "3": 4757,
+    "4_OFFICIAL": 9839,
+    "5_RETIRED_NAME": 1193
+   },
+   "delta_pl_vs_class2": 39423,
+   "delta_nonpl_vs_class1": 580479,
+   "t49_server_rows": 792149,
+   "delta_nonpl_vs_t49": -45606,
+   "verdict": "不对等。pl_hist(515,581) 与 class2(476,158) 差 +39,423;non_pl_hist(746,543) 与 class1(166,064) 差 +580,479,non_pl_hist 与 t49(792,149) 差 -45,606。三者是不同层,不能用行数互相替代"
+  },
+  "people_db_vs_basic": {
+   "people_db_decompressed": 400443970,
+   "basic_people_decompressed": 54060043,
+   "ratio": 7.41,
+   "finding": "basic_people 是 658,011 行定长 stub(class1/2/3=83B, class4=34B, class5=22B, class5 段连姓名都没有);people_db 才带姓名+出生日期+后续属性块,同一 person 宇宙",
+   "anchor_stream_valid_name_dob": 186082,
+   "old_report_ref": "<OLD_REPO>/reports/dbdat_decode/PEOPLE_DB.md(解压长度/SHA-256 与本仓逐字节一致)"
+  }
+ },
+ "recommendations": [
+  {
+   "archive": "people_db.dat",
+   "open_project": true,
+   "priority": 1,
+   "why": "唯一带完整 person 姓名/生日/属性块的档案;header count 与 basic_people 同为 658,011,compact 段 1,193 行 key+duni 双向对齐已构成跨档案锚点;400MB 主体 186,082 个姓名+生日锚点可复用",
+   "scope_hint": "先把 1,193 行 compact 段整段闭合(唯一已有双向锚点),再用它反推主体行首标记语义"
+  },
+  {
+   "archive": "pl_hist_* / non_pl_hist_*",
+   "open_project": false,
+   "why": "容器与链条已闭合(id/dt/index 三方对齐、next 链 0 违例),缺的只是行内字段语义,属履历而非 schema;除非要回答球员历史类编辑问题,否则不开"
+  },
+  {
+   "archive": "summary.dat",
+   "open_project": false,
+   "why": "54,086 body 账已平,字段语义旧仓已穷尽尝试且 L2=0;无新增锚点前不重复投入"
+  },
+  {
+   "archive": "lang_update_db.dat",
+   "open_project": false,
+   "why": "352 成员可列可解压,是本地化覆盖层而非 schema 表;行文法未闭合(0/235),但即使解开也只影响本地化文本,不进入体字段映射,优先级最低"
+  }
+ ],
+ "negative_results_kept": [
+  "people_db.dat / summary.dat 对 list_tables() 均抛 'no supported embedded resource-FMF signature' —— 二者不是 FMF 档案,不得按表目录思路处理",
+  "people_db compact 段 1,193 行 key 与行序不同序(first key=657,483,集合覆盖 656818..658010),不能把段内行号当 key",
+  "lang_update_db.dat 352 成员全部 table_id=None,不存在 table_N.dat,不能与 client/server 表号互比",
+  "lang_update_db.dat 成员内部 (u32 len, utf8, 0xff) 单层文法未闭合:235 个带 tad. 头的成员中 0 个能走到 EOF",
+  "non_pl_hist_index count=754,688 ≠ 746,543 个有效范围(差 8,145 个 0xFFFFFFFF sentinel)"
+ ]
+}

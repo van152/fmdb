@@ -1,0 +1,2418 @@
+[
+  {
+    "file_offset": 56297927,
+    "VA": 5426495431,
+    "bytes": "742c",
+    "instruction": "je 0x14371bff5",
+    "direct_target": 56297973,
+    "function": 56297456,
+    "successors": [
+      56297929,
+      56297973
+    ]
+  },
+  {
+    "file_offset": 56297929,
+    "VA": 5426495433,
+    "bytes": "f0ff49fc",
+    "instruction": "lock dec dword ptr [rcx - 4]",
+    "function": 56297456,
+    "successors": [
+      56297933
+    ]
+  },
+  {
+    "file_offset": 56297933,
+    "VA": 5426495437,
+    "bytes": "7526",
+    "instruction": "jne 0x14371bff5",
+    "direct_target": 56297973,
+    "function": 56297456,
+    "successors": [
+      56297935,
+      56297973
+    ]
+  },
+  {
+    "file_offset": 56297935,
+    "VA": 5426495439,
+    "bytes": "4883c1fc",
+    "instruction": "add rcx, -4",
+    "function": 56297456,
+    "successors": [
+      56297939
+    ]
+  },
+  {
+    "file_offset": 56297939,
+    "VA": 5426495443,
+    "bytes": "e8c809bdfd",
+    "instruction": "call 0x1412ec9a0",
+    "direct_target": 19840928,
+    "function": 56297456,
+    "successors": [
+      56297944
+    ]
+  },
+  {
+    "file_offset": 56297944,
+    "VA": 5426495448,
+    "bytes": "eb1b",
+    "instruction": "jmp 0x14371bff5",
+    "direct_target": 56297973,
+    "function": 56297456,
+    "successors": [
+      56297973
+    ]
+  },
+  {
+    "file_offset": 56297946,
+    "VA": 5426495450,
+    "bytes": "4885c9",
+    "instruction": "test rcx, rcx",
+    "function": 56297456,
+    "successors": [
+      56297949
+    ]
+  },
+  {
+    "file_offset": 56297949,
+    "VA": 5426495453,
+    "bytes": "7416",
+    "instruction": "je 0x14371bff5",
+    "direct_target": 56297973,
+    "function": 56297456,
+    "successors": [
+      56297951,
+      56297973
+    ]
+  },
+  {
+    "file_offset": 56297951,
+    "VA": 5426495455,
+    "bytes": "f0ff49fc",
+    "instruction": "lock dec dword ptr [rcx - 4]",
+    "function": 56297456,
+    "successors": [
+      56297955
+    ]
+  },
+  {
+    "file_offset": 56297955,
+    "VA": 5426495459,
+    "bytes": "7509",
+    "instruction": "jne 0x14371bfee",
+    "direct_target": 56297966,
+    "function": 56297456,
+    "successors": [
+      56297957,
+      56297966
+    ]
+  },
+  {
+    "file_offset": 56297957,
+    "VA": 5426495461,
+    "bytes": "4883c1fc",
+    "instruction": "add rcx, -4",
+    "function": 56297456,
+    "successors": [
+      56297961
+    ]
+  },
+  {
+    "file_offset": 56297961,
+    "VA": 5426495465,
+    "bytes": "e8b209bdfd",
+    "instruction": "call 0x1412ec9a0",
+    "direct_target": 19840928,
+    "function": 56297456,
+    "successors": [
+      56297966
+    ]
+  },
+  {
+    "file_offset": 56297966,
+    "VA": 5426495470,
+    "bytes": "488b45e8",
+    "instruction": "mov rax, qword ptr [rbp - 0x18]",
+    "function": 56297456,
+    "successors": [
+      56297970
+    ]
+  },
+  {
+    "file_offset": 56297970,
+    "VA": 5426495474,
+    "bytes": "498906",
+    "instruction": "mov qword ptr [r14], rax",
+    "function": 56297456,
+    "successors": [
+      56297973
+    ]
+  },
+  {
+    "file_offset": 56297973,
+    "VA": 5426495477,
+    "bytes": "f041ff0c24",
+    "instruction": "lock dec dword ptr [r12]",
+    "function": 56297456,
+    "successors": [
+      56297978
+    ]
+  },
+  {
+    "file_offset": 56297978,
+    "VA": 5426495482,
+    "bytes": "7508",
+    "instruction": "jne 0x14371c004",
+    "direct_target": 56297988,
+    "function": 56297456,
+    "successors": [
+      56297980,
+      56297988
+    ]
+  },
+  {
+    "file_offset": 56297980,
+    "VA": 5426495484,
+    "bytes": "4c89e1",
+    "instruction": "mov rcx, r12",
+    "function": 56297456,
+    "successors": [
+      56297983
+    ]
+  },
+  {
+    "file_offset": 56297983,
+    "VA": 5426495487,
+    "bytes": "e89c09bdfd",
+    "instruction": "call 0x1412ec9a0",
+    "direct_target": 19840928,
+    "function": 56297456,
+    "successors": [
+      56297988
+    ]
+  },
+  {
+    "file_offset": 56297988,
+    "VA": 5426495492,
+    "bytes": "8b4710",
+    "instruction": "mov eax, dword ptr [rdi + 0x10]",
+    "function": 56297456,
+    "successors": [
+      56297991
+    ]
+  },
+  {
+    "file_offset": 56297991,
+    "VA": 5426495495,
+    "bytes": "8906",
+    "instruction": "mov dword ptr [rsi], eax",
+    "function": 56297456,
+    "successors": [
+      56297993
+    ]
+  },
+  {
+    "file_offset": 56297993,
+    "VA": 5426495497,
+    "bytes": "4889f0",
+    "instruction": "mov rax, rsi",
+    "function": 56297456,
+    "successors": [
+      56297996
+    ]
+  },
+  {
+    "file_offset": 56297996,
+    "VA": 5426495500,
+    "bytes": "4883c440",
+    "instruction": "add rsp, 0x40",
+    "function": 56297456,
+    "successors": [
+      56298000
+    ]
+  },
+  {
+    "file_offset": 56298000,
+    "VA": 5426495504,
+    "bytes": "5b",
+    "instruction": "pop rbx",
+    "function": 56297456,
+    "successors": [
+      56298001
+    ]
+  },
+  {
+    "file_offset": 56298001,
+    "VA": 5426495505,
+    "bytes": "5f",
+    "instruction": "pop rdi",
+    "function": 56297456,
+    "successors": [
+      56298002
+    ]
+  },
+  {
+    "file_offset": 56298002,
+    "VA": 5426495506,
+    "bytes": "5e",
+    "instruction": "pop rsi",
+    "function": 56297456,
+    "successors": [
+      56298003
+    ]
+  },
+  {
+    "file_offset": 56298003,
+    "VA": 5426495507,
+    "bytes": "415c",
+    "instruction": "pop r12",
+    "function": 56297456,
+    "successors": [
+      56298005
+    ]
+  },
+  {
+    "file_offset": 56298005,
+    "VA": 5426495509,
+    "bytes": "415e",
+    "instruction": "pop r14",
+    "function": 56297456,
+    "successors": [
+      56298007
+    ]
+  },
+  {
+    "file_offset": 56298007,
+    "VA": 5426495511,
+    "bytes": "415f",
+    "instruction": "pop r15",
+    "function": 56297456,
+    "successors": [
+      56298009
+    ]
+  },
+  {
+    "file_offset": 56298009,
+    "VA": 5426495513,
+    "bytes": "5d",
+    "instruction": "pop rbp",
+    "function": 56297456,
+    "successors": [
+      56298010
+    ]
+  },
+  {
+    "file_offset": 56298010,
+    "VA": 5426495514,
+    "bytes": "c3",
+    "instruction": "ret",
+    "function": 56297456,
+    "successors": []
+  },
+  {
+    "file_offset": 60676016,
+    "VA": 5430873520,
+    "bytes": "56",
+    "instruction": "push rsi",
+    "function": 60676016,
+    "successors": [
+      60676017
+    ]
+  },
+  {
+    "file_offset": 60676017,
+    "VA": 5430873521,
+    "bytes": "57",
+    "instruction": "push rdi",
+    "function": 60676016,
+    "successors": [
+      60676018
+    ]
+  },
+  {
+    "file_offset": 60676018,
+    "VA": 5430873522,
+    "bytes": "4883ec28",
+    "instruction": "sub rsp, 0x28",
+    "function": 60676016,
+    "successors": [
+      60676022
+    ]
+  },
+  {
+    "file_offset": 60676022,
+    "VA": 5430873526,
+    "bytes": "488b32",
+    "instruction": "mov rsi, qword ptr [rdx]",
+    "function": 60676016,
+    "successors": [
+      60676025
+    ]
+  },
+  {
+    "file_offset": 60676025,
+    "VA": 5430873529,
+    "bytes": "4885f6",
+    "instruction": "test rsi, rsi",
+    "function": 60676016,
+    "successors": [
+      60676028
+    ]
+  },
+  {
+    "file_offset": 60676028,
+    "VA": 5430873532,
+    "bytes": "7419",
+    "instruction": "je 0x143b48dd7",
+    "direct_target": 60676055,
+    "function": 60676016,
+    "successors": [
+      60676030,
+      60676055
+    ]
+  },
+  {
+    "file_offset": 60676030,
+    "VA": 5430873534,
+    "bytes": "4889c8",
+    "instruction": "mov rax, rcx",
+    "function": 60676016,
+    "successors": [
+      60676033
+    ]
+  },
+  {
+    "file_offset": 60676033,
+    "VA": 5430873537,
+    "bytes": "f0ff4608",
+    "instruction": "lock inc dword ptr [rsi + 8]",
+    "function": 60676016,
+    "successors": [
+      60676037
+    ]
+  },
+  {
+    "file_offset": 60676037,
+    "VA": 5430873541,
+    "bytes": "488b3e",
+    "instruction": "mov rdi, qword ptr [rsi]",
+    "function": 60676016,
+    "successors": [
+      60676040
+    ]
+  },
+  {
+    "file_offset": 60676040,
+    "VA": 5430873544,
+    "bytes": "41b804000000",
+    "instruction": "mov r8d, 4",
+    "function": 60676016,
+    "successors": [
+      60676046
+    ]
+  },
+  {
+    "file_offset": 60676046,
+    "VA": 5430873550,
+    "bytes": "4889f1",
+    "instruction": "mov rcx, rsi",
+    "function": 60676016,
+    "successors": [
+      60676049
+    ]
+  },
+  {
+    "file_offset": 60676049,
+    "VA": 5430873553,
+    "bytes": "4889c2",
+    "instruction": "mov rdx, rax",
+    "function": 60676016,
+    "successors": [
+      60676052
+    ]
+  },
+  {
+    "file_offset": 60676052,
+    "VA": 5430873556,
+    "bytes": "ff5728",
+    "instruction": "call qword ptr [rdi + 0x28]",
+    "direct_target": null,
+    "function": 60676016,
+    "successors": [
+      60676055
+    ]
+  },
+  {
+    "file_offset": 60676055,
+    "VA": 5430873559,
+    "bytes": "8b7e10",
+    "instruction": "mov edi, dword ptr [rsi + 0x10]",
+    "function": 60676016,
+    "successors": [
+      60676058
+    ]
+  },
+  {
+    "file_offset": 60676058,
+    "VA": 5430873562,
+    "bytes": "f0ff4e08",
+    "instruction": "lock dec dword ptr [rsi + 8]",
+    "function": 60676016,
+    "successors": [
+      60676062
+    ]
+  },
+  {
+    "file_offset": 60676062,
+    "VA": 5430873566,
+    "bytes": "750d",
+    "instruction": "jne 0x143b48ded",
+    "direct_target": 60676077,
+    "function": 60676016,
+    "successors": [
+      60676064,
+      60676077
+    ]
+  },
+  {
+    "file_offset": 60676064,
+    "VA": 5430873568,
+    "bytes": "488b06",
+    "instruction": "mov rax, qword ptr [rsi]",
+    "function": 60676016,
+    "successors": [
+      60676067
+    ]
+  },
+  {
+    "file_offset": 60676067,
+    "VA": 5430873571,
+    "bytes": "4889f1",
+    "instruction": "mov rcx, rsi",
+    "function": 60676016,
+    "successors": [
+      60676070
+    ]
+  },
+  {
+    "file_offset": 60676070,
+    "VA": 5430873574,
+    "bytes": "ba01000000",
+    "instruction": "mov edx, 1",
+    "function": 60676016,
+    "successors": [
+      60676075
+    ]
+  },
+  {
+    "file_offset": 60676075,
+    "VA": 5430873579,
+    "bytes": "ff10",
+    "instruction": "call qword ptr [rax]",
+    "direct_target": null,
+    "function": 60676016,
+    "successors": [
+      60676077
+    ]
+  },
+  {
+    "file_offset": 60676077,
+    "VA": 5430873581,
+    "bytes": "85ff",
+    "instruction": "test edi, edi",
+    "function": 60676016,
+    "successors": [
+      60676079
+    ]
+  },
+  {
+    "file_offset": 60676079,
+    "VA": 5430873583,
+    "bytes": "0f94d0",
+    "instruction": "sete al",
+    "function": 60676016,
+    "successors": [
+      60676082
+    ]
+  },
+  {
+    "file_offset": 60676082,
+    "VA": 5430873586,
+    "bytes": "4883c428",
+    "instruction": "add rsp, 0x28",
+    "function": 60676016,
+    "successors": [
+      60676086
+    ]
+  },
+  {
+    "file_offset": 60676086,
+    "VA": 5430873590,
+    "bytes": "5f",
+    "instruction": "pop rdi",
+    "function": 60676016,
+    "successors": [
+      60676087
+    ]
+  },
+  {
+    "file_offset": 60676087,
+    "VA": 5430873591,
+    "bytes": "5e",
+    "instruction": "pop rsi",
+    "function": 60676016,
+    "successors": [
+      60676088
+    ]
+  },
+  {
+    "file_offset": 60676088,
+    "VA": 5430873592,
+    "bytes": "c3",
+    "instruction": "ret",
+    "function": 60676016,
+    "successors": []
+  },
+  {
+    "file_offset": 61526269,
+    "VA": 5431723773,
+    "bytes": "488d050446c6fd",
+    "instruction": "lea rax, [rip - 0x239b9fc]"
+  },
+  {
+    "file_offset": 61611920,
+    "VA": 5431809424,
+    "bytes": "488b4148",
+    "instruction": "mov rax, qword ptr [rcx + 0x48]"
+  },
+  {
+    "file_offset": 61611968,
+    "VA": 5431809472,
+    "bytes": "8078ff6f",
+    "instruction": "cmp byte ptr [rax - 1], 0x6f"
+  },
+  {
+    "file_offset": 61611986,
+    "VA": 5431809490,
+    "bytes": "803803",
+    "instruction": "cmp byte ptr [rax], 3"
+  },
+  {
+    "file_offset": 61753941,
+    "VA": 5431951445,
+    "bytes": "488b7148",
+    "instruction": "mov rsi, qword ptr [rcx + 0x48]"
+  },
+  {
+    "file_offset": 61753984,
+    "VA": 5431951488,
+    "bytes": "803e37",
+    "instruction": "cmp byte ptr [rsi], 0x37"
+  },
+  {
+    "file_offset": 61754006,
+    "VA": 5431951510,
+    "bytes": "807eff01",
+    "instruction": "cmp byte ptr [rsi - 1], 1"
+  },
+  {
+    "file_offset": 61754012,
+    "VA": 5431951516,
+    "bytes": "488b76f5",
+    "instruction": "mov rsi, qword ptr [rsi - 0xb]"
+  },
+  {
+    "file_offset": 62862478,
+    "VA": 5433059982,
+    "bytes": "41f6c108",
+    "instruction": "test r9b, 8"
+  },
+  {
+    "file_offset": 62862514,
+    "VA": 5433060018,
+    "bytes": "8b16",
+    "instruction": "mov edx, dword ptr [rsi]"
+  },
+  {
+    "file_offset": 62862516,
+    "VA": 5433060020,
+    "bytes": "85d2",
+    "instruction": "test edx, edx"
+  },
+  {
+    "file_offset": 62862535,
+    "VA": 5433060039,
+    "bytes": "e874be29fd",
+    "instruction": "call 0x140ffa940",
+    "direct_target": 16752448
+  },
+  {
+    "file_offset": 62862606,
+    "VA": 5433060110,
+    "bytes": "488b04c1",
+    "instruction": "mov rax, qword ptr [rcx + rax*8]"
+  },
+  {
+    "file_offset": 62862610,
+    "VA": 5433060114,
+    "bytes": "488906",
+    "instruction": "mov qword ptr [rsi], rax"
+  },
+  {
+    "file_offset": 66854960,
+    "VA": 5437052464,
+    "bytes": "56",
+    "instruction": "push rsi",
+    "function": 66854960,
+    "successors": [
+      66854961
+    ]
+  },
+  {
+    "file_offset": 66854961,
+    "VA": 5437052465,
+    "bytes": "4883ec20",
+    "instruction": "sub rsp, 0x20",
+    "function": 66854960,
+    "successors": [
+      66854965
+    ]
+  },
+  {
+    "file_offset": 66854965,
+    "VA": 5437052469,
+    "bytes": "4889ce",
+    "instruction": "mov rsi, rcx",
+    "function": 66854960,
+    "successors": [
+      66854968
+    ]
+  },
+  {
+    "file_offset": 66854968,
+    "VA": 5437052472,
+    "bytes": "4c8b4110",
+    "instruction": "mov r8, qword ptr [rcx + 0x10]",
+    "function": 66854960,
+    "successors": [
+      66854972
+    ]
+  },
+  {
+    "file_offset": 66854972,
+    "VA": 5437052476,
+    "bytes": "4d85c0",
+    "instruction": "test r8, r8",
+    "function": 66854960,
+    "successors": [
+      66854975
+    ]
+  },
+  {
+    "file_offset": 66854975,
+    "VA": 5437052479,
+    "bytes": "7412",
+    "instruction": "je 0x14412d653",
+    "direct_target": 66854995,
+    "function": 66854960,
+    "successors": [
+      66854977,
+      66854995
+    ]
+  },
+  {
+    "file_offset": 66854977,
+    "VA": 5437052481,
+    "bytes": "488b0e",
+    "instruction": "mov rcx, qword ptr [rsi]",
+    "function": 66854960,
+    "successors": [
+      66854980
+    ]
+  },
+  {
+    "file_offset": 66854980,
+    "VA": 5437052484,
+    "bytes": "4885c9",
+    "instruction": "test rcx, rcx",
+    "function": 66854960,
+    "successors": [
+      66854983
+    ]
+  },
+  {
+    "file_offset": 66854983,
+    "VA": 5437052487,
+    "bytes": "740a",
+    "instruction": "je 0x14412d653",
+    "direct_target": 66854995,
+    "function": 66854960,
+    "successors": [
+      66854985,
+      66854995
+    ]
+  },
+  {
+    "file_offset": 66854985,
+    "VA": 5437052489,
+    "bytes": "488b5608",
+    "instruction": "mov rdx, qword ptr [rsi + 8]",
+    "function": 66854960,
+    "successors": [
+      66854989
+    ]
+  },
+  {
+    "file_offset": 66854989,
+    "VA": 5437052493,
+    "bytes": "488b01",
+    "instruction": "mov rax, qword ptr [rcx]",
+    "function": 66854960,
+    "successors": [
+      66854992
+    ]
+  },
+  {
+    "file_offset": 66854992,
+    "VA": 5437052496,
+    "bytes": "ff5028",
+    "instruction": "call qword ptr [rax + 0x28]",
+    "direct_target": null,
+    "function": 66854960,
+    "successors": [
+      66854995
+    ]
+  },
+  {
+    "file_offset": 66854995,
+    "VA": 5437052499,
+    "bytes": "48c7461800000000",
+    "instruction": "mov qword ptr [rsi + 0x18], 0",
+    "function": 66854960,
+    "successors": [
+      66855003
+    ]
+  },
+  {
+    "file_offset": 66855003,
+    "VA": 5437052507,
+    "bytes": "48c7461000000000",
+    "instruction": "mov qword ptr [rsi + 0x10], 0",
+    "function": 66854960,
+    "successors": [
+      66855011
+    ]
+  },
+  {
+    "file_offset": 66855011,
+    "VA": 5437052515,
+    "bytes": "48c7460800000000",
+    "instruction": "mov qword ptr [rsi + 8], 0",
+    "function": 66854960,
+    "successors": [
+      66855019
+    ]
+  },
+  {
+    "file_offset": 66855019,
+    "VA": 5437052523,
+    "bytes": "4889f0",
+    "instruction": "mov rax, rsi",
+    "function": 66854960,
+    "successors": [
+      66855022
+    ]
+  },
+  {
+    "file_offset": 66855022,
+    "VA": 5437052526,
+    "bytes": "4883c420",
+    "instruction": "add rsp, 0x20",
+    "function": 66854960,
+    "successors": [
+      66855026
+    ]
+  },
+  {
+    "file_offset": 66855026,
+    "VA": 5437052530,
+    "bytes": "5e",
+    "instruction": "pop rsi",
+    "function": 66854960,
+    "successors": [
+      66855027
+    ]
+  },
+  {
+    "file_offset": 66855027,
+    "VA": 5437052531,
+    "bytes": "c3",
+    "instruction": "ret",
+    "function": 66854960,
+    "successors": []
+  },
+  {
+    "file_offset": 69467888,
+    "VA": 5439665392,
+    "bytes": "4157",
+    "instruction": "push r15",
+    "function": 69467888,
+    "successors": [
+      69467890
+    ]
+  },
+  {
+    "file_offset": 69467890,
+    "VA": 5439665394,
+    "bytes": "4156",
+    "instruction": "push r14",
+    "function": 69467888,
+    "successors": [
+      69467892
+    ]
+  },
+  {
+    "file_offset": 69467892,
+    "VA": 5439665396,
+    "bytes": "56",
+    "instruction": "push rsi",
+    "function": 69467888,
+    "successors": [
+      69467893
+    ]
+  },
+  {
+    "file_offset": 69467893,
+    "VA": 5439665397,
+    "bytes": "57",
+    "instruction": "push rdi",
+    "function": 69467888,
+    "successors": [
+      69467894
+    ]
+  },
+  {
+    "file_offset": 69467894,
+    "VA": 5439665398,
+    "bytes": "53",
+    "instruction": "push rbx",
+    "function": 69467888,
+    "successors": [
+      69467895
+    ]
+  },
+  {
+    "file_offset": 69467895,
+    "VA": 5439665399,
+    "bytes": "4883ec20",
+    "instruction": "sub rsp, 0x20",
+    "function": 69467888,
+    "successors": [
+      69467899
+    ]
+  },
+  {
+    "file_offset": 69467899,
+    "VA": 5439665403,
+    "bytes": "4c89c3",
+    "instruction": "mov rbx, r8",
+    "function": 69467888,
+    "successors": [
+      69467902
+    ]
+  },
+  {
+    "file_offset": 69467902,
+    "VA": 5439665406,
+    "bytes": "4889cf",
+    "instruction": "mov rdi, rcx",
+    "function": 69467888,
+    "successors": [
+      69467905
+    ]
+  },
+  {
+    "file_offset": 69467905,
+    "VA": 5439665409,
+    "bytes": "488b32",
+    "instruction": "mov rsi, qword ptr [rdx]",
+    "function": 69467888,
+    "successors": [
+      69467908
+    ]
+  },
+  {
+    "file_offset": 69467908,
+    "VA": 5439665412,
+    "bytes": "4885f6",
+    "instruction": "test rsi, rsi",
+    "function": 69467888,
+    "successors": [
+      69467911
+    ]
+  },
+  {
+    "file_offset": 69467911,
+    "VA": 5439665415,
+    "bytes": "7404",
+    "instruction": "je 0x1443ab50d",
+    "direct_target": 69467917,
+    "function": 69467888,
+    "successors": [
+      69467913,
+      69467917
+    ]
+  },
+  {
+    "file_offset": 69467913,
+    "VA": 5439665417,
+    "bytes": "f0ff4608",
+    "instruction": "lock inc dword ptr [rsi + 8]",
+    "function": 69467888,
+    "successors": [
+      69467917
+    ]
+  },
+  {
+    "file_offset": 69467917,
+    "VA": 5439665421,
+    "bytes": "488d5714",
+    "instruction": "lea rdx, [rdi + 0x14]",
+    "function": 69467888,
+    "successors": [
+      69467921
+    ]
+  },
+  {
+    "file_offset": 69467921,
+    "VA": 5439665425,
+    "bytes": "488b06",
+    "instruction": "mov rax, qword ptr [rsi]",
+    "function": 69467888,
+    "successors": [
+      69467924
+    ]
+  },
+  {
+    "file_offset": 69467924,
+    "VA": 5439665428,
+    "bytes": "41b804000000",
+    "instruction": "mov r8d, 4",
+    "function": 69467888,
+    "successors": [
+      69467930
+    ]
+  },
+  {
+    "file_offset": 69467930,
+    "VA": 5439665434,
+    "bytes": "4889f1",
+    "instruction": "mov rcx, rsi",
+    "function": 69467888,
+    "successors": [
+      69467933
+    ]
+  },
+  {
+    "file_offset": 69467933,
+    "VA": 5439665437,
+    "bytes": "ff5028",
+    "instruction": "call qword ptr [rax + 0x28]",
+    "direct_target": null,
+    "function": 69467888,
+    "successors": [
+      69467936
+    ]
+  },
+  {
+    "file_offset": 69467936,
+    "VA": 5439665440,
+    "bytes": "4885db",
+    "instruction": "test rbx, rbx",
+    "function": 69467888,
+    "successors": [
+      69467939
+    ]
+  },
+  {
+    "file_offset": 69467939,
+    "VA": 5439665443,
+    "bytes": "740b",
+    "instruction": "je 0x1443ab530",
+    "direct_target": 69467952,
+    "function": 69467888,
+    "successors": [
+      69467941,
+      69467952
+    ]
+  },
+  {
+    "file_offset": 69467941,
+    "VA": 5439665445,
+    "bytes": "48837f0800",
+    "instruction": "cmp qword ptr [rdi + 8], 0",
+    "function": 69467888,
+    "successors": [
+      69467946
+    ]
+  },
+  {
+    "file_offset": 69467946,
+    "VA": 5439665450,
+    "bytes": "7504",
+    "instruction": "jne 0x1443ab530",
+    "direct_target": 69467952,
+    "function": 69467888,
+    "successors": [
+      69467948,
+      69467952
+    ]
+  },
+  {
+    "file_offset": 69467948,
+    "VA": 5439665452,
+    "bytes": "48895f08",
+    "instruction": "mov qword ptr [rdi + 8], rbx",
+    "function": 69467888,
+    "successors": [
+      69467952
+    ]
+  },
+  {
+    "file_offset": 69467952,
+    "VA": 5439665456,
+    "bytes": "488d573c",
+    "instruction": "lea rdx, [rdi + 0x3c]",
+    "function": 69467888,
+    "successors": [
+      69467956
+    ]
+  },
+  {
+    "file_offset": 69467956,
+    "VA": 5439665460,
+    "bytes": "488d5f39",
+    "instruction": "lea rbx, [rdi + 0x39]",
+    "function": 69467888,
+    "successors": [
+      69467960
+    ]
+  },
+  {
+    "file_offset": 69467960,
+    "VA": 5439665464,
+    "bytes": "488b06",
+    "instruction": "mov rax, qword ptr [rsi]",
+    "function": 69467888,
+    "successors": [
+      69467963
+    ]
+  },
+  {
+    "file_offset": 69467963,
+    "VA": 5439665467,
+    "bytes": "41b801000000",
+    "instruction": "mov r8d, 1",
+    "function": 69467888,
+    "successors": [
+      69467969
+    ]
+  },
+  {
+    "file_offset": 69467969,
+    "VA": 5439665473,
+    "bytes": "4889f1",
+    "instruction": "mov rcx, rsi",
+    "function": 69467888,
+    "successors": [
+      69467972
+    ]
+  },
+  {
+    "file_offset": 69467972,
+    "VA": 5439665476,
+    "bytes": "ff5028",
+    "instruction": "call qword ptr [rax + 0x28]",
+    "direct_target": null,
+    "function": 69467888,
+    "successors": [
+      69467975
+    ]
+  },
+  {
+    "file_offset": 69467975,
+    "VA": 5439665479,
+    "bytes": "4c8d772c",
+    "instruction": "lea r14, [rdi + 0x2c]",
+    "function": 69467888,
+    "successors": [
+      69467979
+    ]
+  },
+  {
+    "file_offset": 69467979,
+    "VA": 5439665483,
+    "bytes": "488b06",
+    "instruction": "mov rax, qword ptr [rsi]",
+    "function": 69467888,
+    "successors": [
+      69467982
+    ]
+  },
+  {
+    "file_offset": 69467982,
+    "VA": 5439665486,
+    "bytes": "41b803000000",
+    "instruction": "mov r8d, 3",
+    "function": 69467888,
+    "successors": [
+      69467988
+    ]
+  },
+  {
+    "file_offset": 69467988,
+    "VA": 5439665492,
+    "bytes": "4889f1",
+    "instruction": "mov rcx, rsi",
+    "function": 69467888,
+    "successors": [
+      69467991
+    ]
+  },
+  {
+    "file_offset": 69467991,
+    "VA": 5439665495,
+    "bytes": "4889da",
+    "instruction": "mov rdx, rbx",
+    "function": 69467888,
+    "successors": [
+      69467994
+    ]
+  },
+  {
+    "file_offset": 69467994,
+    "VA": 5439665498,
+    "bytes": "ff5028",
+    "instruction": "call qword ptr [rax + 0x28]",
+    "direct_target": null,
+    "function": 69467888,
+    "successors": [
+      69467997
+    ]
+  },
+  {
+    "file_offset": 69467997,
+    "VA": 5439665501,
+    "bytes": "4c8d7f10",
+    "instruction": "lea r15, [rdi + 0x10]",
+    "function": 69467888,
+    "successors": [
+      69468001
+    ]
+  },
+  {
+    "file_offset": 69468001,
+    "VA": 5439665505,
+    "bytes": "488b06",
+    "instruction": "mov rax, qword ptr [rsi]",
+    "function": 69467888,
+    "successors": [
+      69468004
+    ]
+  },
+  {
+    "file_offset": 69468004,
+    "VA": 5439665508,
+    "bytes": "41b80d000000",
+    "instruction": "mov r8d, 0xd",
+    "function": 69467888,
+    "successors": [
+      69468010
+    ]
+  },
+  {
+    "file_offset": 69468010,
+    "VA": 5439665514,
+    "bytes": "4889f1",
+    "instruction": "mov rcx, rsi",
+    "function": 69467888,
+    "successors": [
+      69468013
+    ]
+  },
+  {
+    "file_offset": 69468013,
+    "VA": 5439665517,
+    "bytes": "4c89f2",
+    "instruction": "mov rdx, r14",
+    "function": 69467888,
+    "successors": [
+      69468016
+    ]
+  },
+  {
+    "file_offset": 69468016,
+    "VA": 5439665520,
+    "bytes": "ff5028",
+    "instruction": "call qword ptr [rax + 0x28]",
+    "direct_target": null,
+    "function": 69467888,
+    "successors": [
+      69468019
+    ]
+  },
+  {
+    "file_offset": 69468019,
+    "VA": 5439665523,
+    "bytes": "488d5f18",
+    "instruction": "lea rbx, [rdi + 0x18]",
+    "function": 69467888,
+    "successors": [
+      69468023
+    ]
+  },
+  {
+    "file_offset": 69468023,
+    "VA": 5439665527,
+    "bytes": "488b06",
+    "instruction": "mov rax, qword ptr [rsi]",
+    "function": 69467888,
+    "successors": [
+      69468026
+    ]
+  },
+  {
+    "file_offset": 69468026,
+    "VA": 5439665530,
+    "bytes": "41b804000000",
+    "instruction": "mov r8d, 4",
+    "function": 69467888,
+    "successors": [
+      69468032
+    ]
+  },
+  {
+    "file_offset": 69468032,
+    "VA": 5439665536,
+    "bytes": "4889f1",
+    "instruction": "mov rcx, rsi",
+    "function": 69467888,
+    "successors": [
+      69468035
+    ]
+  },
+  {
+    "file_offset": 69468035,
+    "VA": 5439665539,
+    "bytes": "4c89fa",
+    "instruction": "mov rdx, r15",
+    "function": 69467888,
+    "successors": [
+      69468038
+    ]
+  },
+  {
+    "file_offset": 69468038,
+    "VA": 5439665542,
+    "bytes": "ff5028",
+    "instruction": "call qword ptr [rax + 0x28]",
+    "direct_target": null,
+    "function": 69467888,
+    "successors": [
+      69468041
+    ]
+  },
+  {
+    "file_offset": 69468041,
+    "VA": 5439665545,
+    "bytes": "488b06",
+    "instruction": "mov rax, qword ptr [rsi]",
+    "function": 69467888,
+    "successors": [
+      69468044
+    ]
+  },
+  {
+    "file_offset": 69468044,
+    "VA": 5439665548,
+    "bytes": "41b814000000",
+    "instruction": "mov r8d, 0x14",
+    "function": 69467888,
+    "successors": [
+      69468050
+    ]
+  },
+  {
+    "file_offset": 69468050,
+    "VA": 5439665554,
+    "bytes": "4889f1",
+    "instruction": "mov rcx, rsi",
+    "function": 69467888,
+    "successors": [
+      69468053
+    ]
+  },
+  {
+    "file_offset": 69468053,
+    "VA": 5439665557,
+    "bytes": "4889da",
+    "instruction": "mov rdx, rbx",
+    "function": 69467888,
+    "successors": [
+      69468056
+    ]
+  },
+  {
+    "file_offset": 69468056,
+    "VA": 5439665560,
+    "bytes": "ff5028",
+    "instruction": "call qword ptr [rax + 0x28]",
+    "direct_target": null,
+    "function": 69467888,
+    "successors": [
+      69468059
+    ]
+  },
+  {
+    "file_offset": 69468059,
+    "VA": 5439665563,
+    "bytes": "f30f104718",
+    "instruction": "movss xmm0, dword ptr [rdi + 0x18]",
+    "function": 69467888,
+    "successors": [
+      69468064
+    ]
+  },
+  {
+    "file_offset": 69468064,
+    "VA": 5439665568,
+    "bytes": "0f2e05d1b94cfd",
+    "instruction": "ucomiss xmm0, dword ptr [rip - 0x2b3462f]",
+    "function": 69467888,
+    "successors": [
+      69468071
+    ]
+  },
+  {
+    "file_offset": 69468071,
+    "VA": 5439665575,
+    "bytes": "7606",
+    "instruction": "jbe 0x1443ab5af",
+    "direct_target": 69468079,
+    "function": 69467888,
+    "successors": [
+      69468073,
+      69468079
+    ]
+  },
+  {
+    "file_offset": 69468073,
+    "VA": 5439665577,
+    "bytes": "c70300000000",
+    "instruction": "mov dword ptr [rbx], 0",
+    "function": 69467888,
+    "successors": [
+      69468079
+    ]
+  },
+  {
+    "file_offset": 69468079,
+    "VA": 5439665583,
+    "bytes": "f30f104f20",
+    "instruction": "movss xmm1, dword ptr [rdi + 0x20]",
+    "function": 69467888,
+    "successors": [
+      69468084
+    ]
+  },
+  {
+    "file_offset": 69468084,
+    "VA": 5439665588,
+    "bytes": "f30f100504bf50fd",
+    "instruction": "movss xmm0, dword ptr [rip - 0x2af40fc]",
+    "function": 69467888,
+    "successors": [
+      69468092
+    ]
+  },
+  {
+    "file_offset": 69468092,
+    "VA": 5439665596,
+    "bytes": "0f2ec1",
+    "instruction": "ucomiss xmm0, xmm1",
+    "function": 69467888,
+    "successors": [
+      69468095
+    ]
+  },
+  {
+    "file_offset": 69468095,
+    "VA": 5439665599,
+    "bytes": "7709",
+    "instruction": "ja 0x1443ab5ca",
+    "direct_target": 69468106,
+    "function": 69467888,
+    "successors": [
+      69468097,
+      69468106
+    ]
+  },
+  {
+    "file_offset": 69468097,
+    "VA": 5439665601,
+    "bytes": "0f2e0d3c913cfd",
+    "instruction": "ucomiss xmm1, dword ptr [rip - 0x2c36ec4]",
+    "function": 69467888,
+    "successors": [
+      69468104
+    ]
+  },
+  {
+    "file_offset": 69468104,
+    "VA": 5439665608,
+    "bytes": "7607",
+    "instruction": "jbe 0x1443ab5d1",
+    "direct_target": 69468113,
+    "function": 69467888,
+    "successors": [
+      69468106,
+      69468113
+    ]
+  },
+  {
+    "file_offset": 69468106,
+    "VA": 5439665610,
+    "bytes": "c747200000803f",
+    "instruction": "mov dword ptr [rdi + 0x20], 0x3f800000",
+    "function": 69467888,
+    "successors": [
+      69468113
+    ]
+  },
+  {
+    "file_offset": 69468113,
+    "VA": 5439665617,
+    "bytes": "f30f104f24",
+    "instruction": "movss xmm1, dword ptr [rdi + 0x24]",
+    "function": 69467888,
+    "successors": [
+      69468118
+    ]
+  },
+  {
+    "file_offset": 69468118,
+    "VA": 5439665622,
+    "bytes": "0f2ec1",
+    "instruction": "ucomiss xmm0, xmm1",
+    "function": 69467888,
+    "successors": [
+      69468121
+    ]
+  },
+  {
+    "file_offset": 69468121,
+    "VA": 5439665625,
+    "bytes": "7709",
+    "instruction": "ja 0x1443ab5e4",
+    "direct_target": 69468132,
+    "function": 69467888,
+    "successors": [
+      69468123,
+      69468132
+    ]
+  },
+  {
+    "file_offset": 69468123,
+    "VA": 5439665627,
+    "bytes": "0f2e0d22913cfd",
+    "instruction": "ucomiss xmm1, dword ptr [rip - 0x2c36ede]",
+    "function": 69467888,
+    "successors": [
+      69468130
+    ]
+  },
+  {
+    "file_offset": 69468130,
+    "VA": 5439665634,
+    "bytes": "7607",
+    "instruction": "jbe 0x1443ab5eb",
+    "direct_target": 69468139,
+    "function": 69467888,
+    "successors": [
+      69468132,
+      69468139
+    ]
+  },
+  {
+    "file_offset": 69468132,
+    "VA": 5439665636,
+    "bytes": "c747240000803f",
+    "instruction": "mov dword ptr [rdi + 0x24], 0x3f800000",
+    "function": 69467888,
+    "successors": [
+      69468139
+    ]
+  },
+  {
+    "file_offset": 69468139,
+    "VA": 5439665643,
+    "bytes": "8b7e10",
+    "instruction": "mov edi, dword ptr [rsi + 0x10]",
+    "function": 69467888,
+    "successors": [
+      69468142
+    ]
+  },
+  {
+    "file_offset": 69468142,
+    "VA": 5439665646,
+    "bytes": "f0ff4e08",
+    "instruction": "lock dec dword ptr [rsi + 8]",
+    "function": 69467888,
+    "successors": [
+      69468146
+    ]
+  },
+  {
+    "file_offset": 69468146,
+    "VA": 5439665650,
+    "bytes": "750d",
+    "instruction": "jne 0x1443ab601",
+    "direct_target": 69468161,
+    "function": 69467888,
+    "successors": [
+      69468148,
+      69468161
+    ]
+  },
+  {
+    "file_offset": 69468148,
+    "VA": 5439665652,
+    "bytes": "488b06",
+    "instruction": "mov rax, qword ptr [rsi]",
+    "function": 69467888,
+    "successors": [
+      69468151
+    ]
+  },
+  {
+    "file_offset": 69468151,
+    "VA": 5439665655,
+    "bytes": "4889f1",
+    "instruction": "mov rcx, rsi",
+    "function": 69467888,
+    "successors": [
+      69468154
+    ]
+  },
+  {
+    "file_offset": 69468154,
+    "VA": 5439665658,
+    "bytes": "ba01000000",
+    "instruction": "mov edx, 1",
+    "function": 69467888,
+    "successors": [
+      69468159
+    ]
+  },
+  {
+    "file_offset": 69468159,
+    "VA": 5439665663,
+    "bytes": "ff10",
+    "instruction": "call qword ptr [rax]",
+    "direct_target": null,
+    "function": 69467888,
+    "successors": [
+      69468161
+    ]
+  },
+  {
+    "file_offset": 69468161,
+    "VA": 5439665665,
+    "bytes": "85ff",
+    "instruction": "test edi, edi",
+    "function": 69467888,
+    "successors": [
+      69468163
+    ]
+  },
+  {
+    "file_offset": 69468163,
+    "VA": 5439665667,
+    "bytes": "0f94d0",
+    "instruction": "sete al",
+    "function": 69467888,
+    "successors": [
+      69468166
+    ]
+  },
+  {
+    "file_offset": 69468166,
+    "VA": 5439665670,
+    "bytes": "4883c420",
+    "instruction": "add rsp, 0x20",
+    "function": 69467888,
+    "successors": [
+      69468170
+    ]
+  },
+  {
+    "file_offset": 69468170,
+    "VA": 5439665674,
+    "bytes": "5b",
+    "instruction": "pop rbx",
+    "function": 69467888,
+    "successors": [
+      69468171
+    ]
+  },
+  {
+    "file_offset": 69468171,
+    "VA": 5439665675,
+    "bytes": "5f",
+    "instruction": "pop rdi",
+    "function": 69467888,
+    "successors": [
+      69468172
+    ]
+  },
+  {
+    "file_offset": 69468172,
+    "VA": 5439665676,
+    "bytes": "5e",
+    "instruction": "pop rsi",
+    "function": 69467888,
+    "successors": [
+      69468173
+    ]
+  },
+  {
+    "file_offset": 69468173,
+    "VA": 5439665677,
+    "bytes": "415e",
+    "instruction": "pop r14",
+    "function": 69467888,
+    "successors": [
+      69468175
+    ]
+  },
+  {
+    "file_offset": 69468175,
+    "VA": 5439665679,
+    "bytes": "415f",
+    "instruction": "pop r15",
+    "function": 69467888,
+    "successors": [
+      69468177
+    ]
+  },
+  {
+    "file_offset": 69468177,
+    "VA": 5439665681,
+    "bytes": "c3",
+    "instruction": "ret",
+    "function": 69467888,
+    "successors": []
+  },
+  {
+    "file_offset": 70575692,
+    "VA": 5440773196,
+    "bytes": "4d8b442410",
+    "instruction": "mov r8, qword ptr [r12 + 0x10]"
+  },
+  {
+    "file_offset": 70575716,
+    "VA": 5440773220,
+    "bytes": "e8d751acfc",
+    "instruction": "call 0x140f7ee40",
+    "direct_target": 16245824
+  },
+  {
+    "file_offset": 71035808,
+    "VA": 5441233312,
+    "bytes": "4157",
+    "instruction": "push r15",
+    "function": 71035808,
+    "successors": [
+      71035810
+    ]
+  },
+  {
+    "file_offset": 71035810,
+    "VA": 5441233314,
+    "bytes": "4156",
+    "instruction": "push r14",
+    "function": 71035808,
+    "successors": [
+      71035812
+    ]
+  },
+  {
+    "file_offset": 71035812,
+    "VA": 5441233316,
+    "bytes": "4155",
+    "instruction": "push r13",
+    "function": 71035808,
+    "successors": [
+      71035814
+    ]
+  },
+  {
+    "file_offset": 71035814,
+    "VA": 5441233318,
+    "bytes": "4154",
+    "instruction": "push r12",
+    "function": 71035808,
+    "successors": [
+      71035816
+    ]
+  },
+  {
+    "file_offset": 71035816,
+    "VA": 5441233320,
+    "bytes": "56",
+    "instruction": "push rsi",
+    "function": 71035808,
+    "successors": [
+      71035817
+    ]
+  },
+  {
+    "file_offset": 71035817,
+    "VA": 5441233321,
+    "bytes": "57",
+    "instruction": "push rdi",
+    "function": 71035808,
+    "successors": [
+      71035818
+    ]
+  },
+  {
+    "file_offset": 71035818,
+    "VA": 5441233322,
+    "bytes": "55",
+    "instruction": "push rbp",
+    "function": 71035808,
+    "successors": [
+      71035819
+    ]
+  },
+  {
+    "file_offset": 71035819,
+    "VA": 5441233323,
+    "bytes": "53",
+    "instruction": "push rbx",
+    "function": 71035808,
+    "successors": [
+      71035820
+    ]
+  },
+  {
+    "file_offset": 71035820,
+    "VA": 5441233324,
+    "bytes": "4883ec48",
+    "instruction": "sub rsp, 0x48",
+    "function": 71035808,
+    "successors": [
+      71035824
+    ]
+  },
+  {
+    "file_offset": 71035824,
+    "VA": 5441233328,
+    "bytes": "4d89ce",
+    "instruction": "mov r14, r9",
+    "function": 71035808,
+    "successors": [
+      71035827
+    ]
+  },
+  {
+    "file_offset": 71035827,
+    "VA": 5441233331,
+    "bytes": "4889d7",
+    "instruction": "mov rdi, rdx",
+    "function": 71035808,
+    "successors": [
+      71035830
+    ]
+  },
+  {
+    "file_offset": 71035830,
+    "VA": 5441233334,
+    "bytes": "4889cb",
+    "instruction": "mov rbx, rcx",
+    "function": 71035808,
+    "successors": [
+      71035833
+    ]
+  },
+  {
+    "file_offset": 71035833,
+    "VA": 5441233337,
+    "bytes": "4c8bac24c8000000",
+    "instruction": "mov r13, qword ptr [rsp + 0xc8]",
+    "function": 71035808,
+    "successors": [
+      71035841
+    ]
+  },
+  {
+    "file_offset": 71035841,
+    "VA": 5441233345,
+    "bytes": "440fb6a424c0000000",
+    "instruction": "movzx r12d, byte ptr [rsp + 0xc0]",
+    "function": 71035808,
+    "successors": [
+      71035850
+    ]
+  },
+  {
+    "file_offset": 71035850,
+    "VA": 5441233354,
+    "bytes": "448bbc24b8000000",
+    "instruction": "mov r15d, dword ptr [rsp + 0xb8]",
+    "function": 71035808,
+    "successors": [
+      71035858
+    ]
+  },
+  {
+    "file_offset": 71035858,
+    "VA": 5441233362,
+    "bytes": "8bac24b0000000",
+    "instruction": "mov ebp, dword ptr [rsp + 0xb0]",
+    "function": 71035808,
+    "successors": [
+      71035865
+    ]
+  },
+  {
+    "file_offset": 71035865,
+    "VA": 5441233369,
+    "bytes": "488b32",
+    "instruction": "mov rsi, qword ptr [rdx]",
+    "function": 71035808,
+    "successors": [
+      71035868
+    ]
+  },
+  {
+    "file_offset": 71035868,
+    "VA": 5441233372,
+    "bytes": "488d9170010000",
+    "instruction": "lea rdx, [rcx + 0x170]",
+    "function": 71035808,
+    "successors": [
+      71035875
+    ]
+  },
+  {
+    "file_offset": 71035875,
+    "VA": 5441233379,
+    "bytes": "488b06",
+    "instruction": "mov rax, qword ptr [rsi]",
+    "function": 71035808,
+    "successors": [
+      71035878
+    ]
+  },
+  {
+    "file_offset": 71035878,
+    "VA": 5441233382,
+    "bytes": "41b804000000",
+    "instruction": "mov r8d, 4",
+    "function": 71035808,
+    "successors": [
+      71035884
+    ]
+  },
+  {
+    "file_offset": 71035884,
+    "VA": 5441233388,
+    "bytes": "4889f1",
+    "instruction": "mov rcx, rsi",
+    "function": 71035808,
+    "successors": [
+      71035887
+    ]
+  },
+  {
+    "file_offset": 71035887,
+    "VA": 5441233391,
+    "bytes": "ff5028",
+    "instruction": "call qword ptr [rax + 0x28]",
+    "direct_target": null,
+    "function": 71035808,
+    "successors": [
+      71035890
+    ]
+  },
+  {
+    "file_offset": 71035890,
+    "VA": 5441233394,
+    "bytes": "837e1000",
+    "instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "function": 71035808,
+    "successors": [
+      71035894
+    ]
+  },
+  {
+    "file_offset": 71035894,
+    "VA": 5441233398,
+    "bytes": "7568",
+    "instruction": "jne 0x14452a260",
+    "direct_target": 71036000,
+    "function": 71035808,
+    "successors": [
+      71035896,
+      71036000
+    ]
+  },
+  {
+    "file_offset": 71035896,
+    "VA": 5441233400,
+    "bytes": "488b37",
+    "instruction": "mov rsi, qword ptr [rdi]",
+    "function": 71035808,
+    "successors": [
+      71035899
+    ]
+  },
+  {
+    "file_offset": 71035899,
+    "VA": 5441233403,
+    "bytes": "488d9378010000",
+    "instruction": "lea rdx, [rbx + 0x178]",
+    "function": 71035808,
+    "successors": [
+      71035906
+    ]
+  },
+  {
+    "file_offset": 71035906,
+    "VA": 5441233410,
+    "bytes": "488b06",
+    "instruction": "mov rax, qword ptr [rsi]",
+    "function": 71035808,
+    "successors": [
+      71035909
+    ]
+  },
+  {
+    "file_offset": 71035909,
+    "VA": 5441233413,
+    "bytes": "41b801000000",
+    "instruction": "mov r8d, 1",
+    "function": 71035808,
+    "successors": [
+      71035915
+    ]
+  },
+  {
+    "file_offset": 71035915,
+    "VA": 5441233419,
+    "bytes": "4889f1",
+    "instruction": "mov rcx, rsi",
+    "function": 71035808,
+    "successors": [
+      71035918
+    ]
+  },
+  {
+    "file_offset": 71035918,
+    "VA": 5441233422,
+    "bytes": "ff5028",
+    "instruction": "call qword ptr [rax + 0x28]",
+    "direct_target": null,
+    "function": 71035808,
+    "successors": [
+      71035921
+    ]
+  },
+  {
+    "file_offset": 71035921,
+    "VA": 5441233425,
+    "bytes": "837e1000",
+    "instruction": "cmp dword ptr [rsi + 0x10], 0",
+    "function": 71035808,
+    "successors": [
+      71035925
+    ]
+  },
+  {
+    "file_offset": 71035925,
+    "VA": 5441233429,
+    "bytes": "7549",
+    "instruction": "jne 0x14452a260",
+    "direct_target": 71036000,
+    "function": 71035808,
+    "successors": [
+      71035927,
+      71036000
+    ]
+  },
+  {
+    "file_offset": 71035927,
+    "VA": 5441233431,
+    "bytes": "4c896c2438",
+    "instruction": "mov qword ptr [rsp + 0x38], r13",
+    "function": 71035808,
+    "successors": [
+      71035932
+    ]
+  },
+  {
+    "file_offset": 71035932,
+    "VA": 5441233436,
+    "bytes": "4488642430",
+    "instruction": "mov byte ptr [rsp + 0x30], r12b",
+    "function": 71035808,
+    "successors": [
+      71035937
+    ]
+  },
+  {
+    "file_offset": 71035937,
+    "VA": 5441233441,
+    "bytes": "44897c2428",
+    "instruction": "mov dword ptr [rsp + 0x28], r15d",
+    "function": 71035808,
+    "successors": [
+      71035942
+    ]
+  },
+  {
+    "file_offset": 71035942,
+    "VA": 5441233446,
+    "bytes": "896c2420",
+    "instruction": "mov dword ptr [rsp + 0x20], ebp",
+    "function": 71035808,
+    "successors": [
+      71035946
+    ]
+  },
+  {
+    "file_offset": 71035946,
+    "VA": 5441233450,
+    "bytes": "4889d9",
+    "instruction": "mov rcx, rbx",
+    "function": 71035808,
+    "successors": [
+      71035949
+    ]
+  },
+  {
+    "file_offset": 71035949,
+    "VA": 5441233453,
+    "bytes": "4889fa",
+    "instruction": "mov rdx, rdi",
+    "function": 71035808,
+    "successors": [
+      71035952
+    ]
+  },
+  {
+    "file_offset": 71035952,
+    "VA": 5441233456,
+    "bytes": "4531c0",
+    "instruction": "xor r8d, r8d",
+    "function": 71035808,
+    "successors": [
+      71035955
+    ]
+  },
+  {
+    "file_offset": 71035955,
+    "VA": 5441233459,
+    "bytes": "4d89f1",
+    "instruction": "mov r9, r14",
+    "function": 71035808,
+    "successors": [
+      71035958
+    ]
+  },
+  {
+    "file_offset": 71035958,
+    "VA": 5441233462,
+    "bytes": "e8650f93fc",
+    "instruction": "call 0x140e5b1a0",
+    "direct_target": 15050656,
+    "function": 71035808,
+    "successors": [
+      71035963
+    ]
+  },
+  {
+    "file_offset": 71035963,
+    "VA": 5441233467,
+    "bytes": "84c0",
+    "instruction": "test al, al",
+    "function": 71035808,
+    "successors": [
+      71035965
+    ]
+  },
+  {
+    "file_offset": 71035965,
+    "VA": 5441233469,
+    "bytes": "7421",
+    "instruction": "je 0x14452a260",
+    "direct_target": 71036000,
+    "function": 71035808,
+    "successors": [
+      71035967,
+      71036000
+    ]
+  },
+  {
+    "file_offset": 71035967,
+    "VA": 5441233471,
+    "bytes": "4889d9",
+    "instruction": "mov rcx, rbx",
+    "function": 71035808,
+    "successors": [
+      71035970
+    ]
+  },
+  {
+    "file_offset": 71035970,
+    "VA": 5441233474,
+    "bytes": "4889fa",
+    "instruction": "mov rdx, rdi",
+    "function": 71035808,
+    "successors": [
+      71035973
+    ]
+  },
+  {
+    "file_offset": 71035973,
+    "VA": 5441233477,
+    "bytes": "4531c0",
+    "instruction": "xor r8d, r8d",
+    "function": 71035808,
+    "successors": [
+      71035976
+    ]
+  },
+  {
+    "file_offset": 71035976,
+    "VA": 5441233480,
+    "bytes": "4d89f1",
+    "instruction": "mov r9, r14",
+    "function": 71035808,
+    "successors": [
+      71035979
+    ]
+  },
+  {
+    "file_offset": 71035979,
+    "VA": 5441233483,
+    "bytes": "4883c448",
+    "instruction": "add rsp, 0x48",
+    "function": 71035808,
+    "successors": [
+      71035983
+    ]
+  },
+  {
+    "file_offset": 71035983,
+    "VA": 5441233487,
+    "bytes": "5b",
+    "instruction": "pop rbx",
+    "function": 71035808,
+    "successors": [
+      71035984
+    ]
+  },
+  {
+    "file_offset": 71035984,
+    "VA": 5441233488,
+    "bytes": "5d",
+    "instruction": "pop rbp",
+    "function": 71035808,
+    "successors": [
+      71035985
+    ]
+  },
+  {
+    "file_offset": 71035985,
+    "VA": 5441233489,
+    "bytes": "5f",
+    "instruction": "pop rdi",
+    "function": 71035808,
+    "successors": [
+      71035986
+    ]
+  },
+  {
+    "file_offset": 71035986,
+    "VA": 5441233490,
+    "bytes": "5e",
+    "instruction": "pop rsi",
+    "function": 71035808,
+    "successors": [
+      71035987
+    ]
+  },
+  {
+    "file_offset": 71035987,
+    "VA": 5441233491,
+    "bytes": "415c",
+    "instruction": "pop r12",
+    "function": 71035808,
+    "successors": [
+      71035989
+    ]
+  },
+  {
+    "file_offset": 71035989,
+    "VA": 5441233493,
+    "bytes": "415d",
+    "instruction": "pop r13",
+    "function": 71035808,
+    "successors": [
+      71035991
+    ]
+  },
+  {
+    "file_offset": 71035991,
+    "VA": 5441233495,
+    "bytes": "415e",
+    "instruction": "pop r14",
+    "function": 71035808,
+    "successors": [
+      71035993
+    ]
+  },
+  {
+    "file_offset": 71035993,
+    "VA": 5441233497,
+    "bytes": "415f",
+    "instruction": "pop r15",
+    "function": 71035808,
+    "successors": [
+      71035995
+    ]
+  },
+  {
+    "file_offset": 71035995,
+    "VA": 5441233499,
+    "bytes": "e9d074cafc",
+    "instruction": "jmp 0x1411d1730",
+    "direct_target": 18681136,
+    "function": 71035808,
+    "successors": []
+  },
+  {
+    "file_offset": 71036000,
+    "VA": 5441233504,
+    "bytes": "31c0",
+    "instruction": "xor eax, eax",
+    "function": 71035808,
+    "successors": [
+      71036002
+    ]
+  },
+  {
+    "file_offset": 71036002,
+    "VA": 5441233506,
+    "bytes": "4883c448",
+    "instruction": "add rsp, 0x48",
+    "function": 71035808,
+    "successors": [
+      71036006
+    ]
+  },
+  {
+    "file_offset": 71036006,
+    "VA": 5441233510,
+    "bytes": "5b",
+    "instruction": "pop rbx",
+    "function": 71035808,
+    "successors": [
+      71036007
+    ]
+  },
+  {
+    "file_offset": 71036007,
+    "VA": 5441233511,
+    "bytes": "5d",
+    "instruction": "pop rbp",
+    "function": 71035808,
+    "successors": [
+      71036008
+    ]
+  },
+  {
+    "file_offset": 71036008,
+    "VA": 5441233512,
+    "bytes": "5f",
+    "instruction": "pop rdi",
+    "function": 71035808,
+    "successors": [
+      71036009
+    ]
+  },
+  {
+    "file_offset": 71036009,
+    "VA": 5441233513,
+    "bytes": "5e",
+    "instruction": "pop rsi",
+    "function": 71035808,
+    "successors": [
+      71036010
+    ]
+  },
+  {
+    "file_offset": 71036010,
+    "VA": 5441233514,
+    "bytes": "415c",
+    "instruction": "pop r12",
+    "function": 71035808,
+    "successors": [
+      71036012
+    ]
+  },
+  {
+    "file_offset": 71036012,
+    "VA": 5441233516,
+    "bytes": "415d",
+    "instruction": "pop r13",
+    "function": 71035808,
+    "successors": [
+      71036014
+    ]
+  },
+  {
+    "file_offset": 71036014,
+    "VA": 5441233518,
+    "bytes": "415e",
+    "instruction": "pop r14",
+    "function": 71035808,
+    "successors": [
+      71036016
+    ]
+  },
+  {
+    "file_offset": 71036016,
+    "VA": 5441233520,
+    "bytes": "415f",
+    "instruction": "pop r15",
+    "function": 71035808,
+    "successors": [
+      71036018
+    ]
+  },
+  {
+    "file_offset": 71036018,
+    "VA": 5441233522,
+    "bytes": "c3",
+    "instruction": "ret",
+    "function": 71035808,
+    "successors": []
+  }
+]

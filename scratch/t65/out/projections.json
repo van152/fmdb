@@ -1,0 +1,3961 @@
+{
+  "scope": "t10 main row only",
+  "coordinates": "absolute offsets in decompressed member; ordinal zero-based; static offsets are PE file offsets",
+  "provenance": {
+    "files": {
+      "scratch/t55/out/field_slots.json": "1625560fa99e635cdf60e10c108fedf799c359790adcfba429fc205edcfbcd17",
+      "scratch/t55/out/field_map.json": "6828a434cff296af0a63471bff8deeb2edbcb0d2226cd3665955797c373137a4",
+      "scratch/t55/out/REPORT.md": "9cbf22d1883cc200ef9f0da699828f71a1b23546381ef63dbb6a644cce058065",
+      "scratch/t55/out/branches.part001.json": "bf7308fd411e23e43429be95090c4a093d862fd3731cbd64e86811346c741b48",
+      "scratch/t55/out/instructions.part001.json": "32f4c3b017f47b736ddc5de425a7b9725ddd710f9bb008d73d545505d4206a0e",
+      "scratch/t55/out/instructions.part002.json": "e50e8d1f2bb779bb13655a44be97296122740308854ec5e3da124880ec1e8de1",
+      "scratch/t55/out/instructions.part003.json": "72158705e606f97321720a8ccb5a33037d7ff2277065c5ee4dcc262c4ac5f850",
+      "scratch/t59/out/REPORT.md": "4049fbb767effd8b6fbc56d9512e12d1e72d9f4bb7fdb4987526f5854bbc15af",
+      "scratch/t53/out/REPORT.md": "e4c07bed43d2d2c569f1aaa9ec9acd607a9cad315390c3d8762c0ebb7c5eddac",
+      "scratch/t61/out/REPORT.md": "3bd6bced9117199cf6a1f8f0be2e7274874a5cf4b41a10720a0d420ca14603c9",
+      "evidence/fm24/reports/editor_schema/master.json": "7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda",
+      "evidence/fm24/reports/qa/IDA_PROVENANCE.md": "14e55d3c61c2ff7871eb943d6e0c7df6507cc597e0977829e526b80d12e7a789"
+    },
+    "public_schema_version": 9,
+    "public_nation_main_row_fields_sha256": "3af4587bbf6bed8c95eb8bcab4e351ac8d967efdb588e2697bda93e40afec1e3"
+  },
+  "static": {
+    "editor": {
+      "path": "<OLD_REPO>/input/editor.exe",
+      "sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4"
+    },
+    "main_cfg": "t55/E94: 992 instructions, 109 conditional branches",
+    "regions": {
+      "local_get": {
+        "entry": 17047360,
+        "end_exclusive": 17055065,
+        "reachable": 1894,
+        "external_edges": [
+          [
+            17052493,
+            16659744
+          ]
+        ],
+        "addresses_sha256": "f252595397869c9d3ff4884247e23c1a7b8b730c399f61db0331f1ce2b432e3e"
+      },
+      "base_get": {
+        "entry": 16659744,
+        "end_exclusive": 16665468,
+        "reachable": 1397,
+        "external_edges": [
+          [
+            16662398,
+            null
+          ],
+          [
+            16665095,
+            null
+          ],
+          [
+            16665457,
+            null
+          ]
+        ],
+        "addresses_sha256": "267153e204c2c1c5a9592275b1a0c820760769afd1a521f2c4d48099d9430c63"
+      },
+      "helper_78": {
+        "entry": 64441904,
+        "end_exclusive": 64442377,
+        "reachable": 134,
+        "external_edges": [],
+        "addresses_sha256": "6b7e62a2a1ac778876735721e6cb84fbf3795b442f725baa30fc82b106d04203"
+      },
+      "item_78": {
+        "entry": 64659728,
+        "end_exclusive": 64659989,
+        "reachable": 78,
+        "external_edges": [],
+        "addresses_sha256": "28f06823d149e60e8d83df549cc24b49ed3b6e089b44f396bbe3513ae4cd6907"
+      },
+      "packed_date": {
+        "entry": 60676016,
+        "end_exclusive": 60676089,
+        "reachable": 26,
+        "external_edges": [],
+        "addresses_sha256": "fa6f554338718c7c4e1dffc9dd467fc72a5407761135b3491fa0a6374433b9ce"
+      },
+      "identity": {
+        "entry": 63308016,
+        "end_exclusive": 63308142,
+        "reachable": 43,
+        "external_edges": [],
+        "addresses_sha256": "ea59744a2cfd0b4f11e5f30dd3b0da5fc690eb99e2c9fcd14b4e1779bee553ae"
+      }
+    },
+    "vslots": {
+      "2": {
+        "file_offset": 25725384,
+        "VA": 5394437064,
+        "bytes": "3029044101000000",
+        "target": 17047344
+      },
+      "10": {
+        "file_offset": 25725448,
+        "VA": 5394437128,
+        "bytes": "b028044101000000",
+        "target": 17047216
+      },
+      "19": {
+        "file_offset": 25725520,
+        "VA": 5394437200,
+        "bytes": "c004044101000000",
+        "target": 17038016
+      },
+      "25": {
+        "file_offset": 25725568,
+        "VA": 5394437248,
+        "bytes": "f0fb034101000000",
+        "target": 17035760
+      }
+    },
+    "exact_frozen_gates": [
+      {
+        "region": "local_get",
+        "code": "Nnty",
+        "xml_index": 12,
+        "baseline_grade": "unmapped",
+        "gate": 17047452,
+        "branch": 17047458,
+        "equal_edge": 17049127
+      },
+      {
+        "region": "local_get",
+        "code": "Nefr",
+        "xml_index": 222,
+        "baseline_grade": "prior_collection",
+        "gate": 17047623,
+        "branch": 17047629,
+        "equal_edge": 17047635
+      },
+      {
+        "region": "local_get",
+        "code": "Nygn",
+        "xml_index": 28,
+        "baseline_grade": "held",
+        "gate": 17047672,
+        "branch": 17047678,
+        "equal_edge": 17050287
+      },
+      {
+        "region": "local_get",
+        "code": "N3ln",
+        "xml_index": 11,
+        "baseline_grade": "unmapped",
+        "gate": 17047713,
+        "branch": 17047719,
+        "equal_edge": 17048995
+      },
+      {
+        "region": "local_get",
+        "code": "Ncti",
+        "xml_index": 16,
+        "baseline_grade": "L3",
+        "gate": 17047946,
+        "branch": 17047952,
+        "equal_edge": 17051351
+      },
+      {
+        "region": "local_get",
+        "code": "Ncur",
+        "xml_index": 20,
+        "baseline_grade": "L3",
+        "gate": 17047958,
+        "branch": 17047964,
+        "equal_edge": 17050749
+      },
+      {
+        "region": "local_get",
+        "code": "Necf",
+        "xml_index": 26,
+        "baseline_grade": "held",
+        "gate": 17047970,
+        "branch": 17047976,
+        "equal_edge": 17047982
+      },
+      {
+        "region": "local_get",
+        "code": "Nlns",
+        "xml_index": 227,
+        "baseline_grade": "prior_collection",
+        "gate": 17048086,
+        "branch": 17048092,
+        "equal_edge": 17051384
+      },
+      {
+        "region": "local_get",
+        "code": "Nnam",
+        "xml_index": 7,
+        "baseline_grade": "unmapped",
+        "gate": 17048098,
+        "branch": 17048104,
+        "equal_edge": 17050782
+      },
+      {
+        "region": "local_get",
+        "code": "Nnfr",
+        "xml_index": 223,
+        "baseline_grade": "prior_collection",
+        "gate": 17048110,
+        "branch": 17048116,
+        "equal_edge": 17048122
+      },
+      {
+        "region": "local_get",
+        "code": "Nsnm",
+        "xml_index": 8,
+        "baseline_grade": "unmapped",
+        "gate": 17048156,
+        "branch": 17048162,
+        "equal_edge": 17051614
+      },
+      {
+        "region": "local_get",
+        "code": "Nsod",
+        "xml_index": 33,
+        "baseline_grade": "held",
+        "gate": 17048168,
+        "branch": 17048174,
+        "equal_edge": 17051247
+      },
+      {
+        "region": "local_get",
+        "code": "Ntxr",
+        "xml_index": 232,
+        "baseline_grade": "prior_collection",
+        "gate": 17048180,
+        "branch": 17048186,
+        "equal_edge": 17048192
+      },
+      {
+        "region": "local_get",
+        "code": "Ngct",
+        "xml_index": 32,
+        "baseline_grade": "held",
+        "gate": 17048453,
+        "branch": 17048459,
+        "equal_edge": 17050183
+      },
+      {
+        "region": "local_get",
+        "code": "Nrgi",
+        "xml_index": 17,
+        "baseline_grade": "L3",
+        "gate": 17048805,
+        "branch": 17048811,
+        "equal_edge": 17048817
+      },
+      {
+        "region": "local_get",
+        "code": "nhrl",
+        "xml_index": 221,
+        "baseline_grade": "unmapped",
+        "gate": 17048862,
+        "branch": 17048868,
+        "equal_edge": 17048874
+      },
+      {
+        "region": "local_get",
+        "code": "Nagr",
+        "xml_index": 50,
+        "baseline_grade": "prior_collection",
+        "gate": 17049284,
+        "branch": 17049290,
+        "equal_edge": 17053053
+      },
+      {
+        "region": "local_get",
+        "code": "Nndn",
+        "xml_index": 29,
+        "baseline_grade": "L3",
+        "gate": 17049296,
+        "branch": 17049302,
+        "equal_edge": 17053171
+      },
+      {
+        "region": "local_get",
+        "code": "Nnsi",
+        "xml_index": 21,
+        "baseline_grade": "L3",
+        "gate": 17052392,
+        "branch": 17052398,
+        "equal_edge": 17052400
+      },
+      {
+        "region": "base_get",
+        "code": "ttcl",
+        "xml_index": 18,
+        "baseline_grade": "unmapped",
+        "gate": 16659900,
+        "branch": 16659906,
+        "equal_edge": 16659912
+      },
+      {
+        "region": "base_get",
+        "code": "dbnm",
+        "xml_index": 6,
+        "baseline_grade": "unmapped",
+        "gate": 16660317,
+        "branch": 16660323,
+        "equal_edge": 16660329
+      },
+      {
+        "region": "base_get",
+        "code": "rdui",
+        "xml_index": 2,
+        "baseline_grade": "unmapped",
+        "gate": 16660578,
+        "branch": 16660584,
+        "equal_edge": 16660590
+      },
+      {
+        "region": "base_get",
+        "code": "duni",
+        "xml_index": 1,
+        "baseline_grade": "prior_identity",
+        "gate": 16660754,
+        "branch": 16660760,
+        "equal_edge": 16661503
+      },
+      {
+        "region": "base_get",
+        "code": "tbcl",
+        "xml_index": 19,
+        "baseline_grade": "unmapped",
+        "gate": 16660864,
+        "branch": 16660870,
+        "equal_edge": 16662315
+      }
+    ],
+    "unmapped_gate_trials": [
+      {
+        "region": "base_get",
+        "code": "rdui",
+        "xml_index": 2,
+        "baseline_grade": "unmapped",
+        "gate": 16660578,
+        "branch": 16660584,
+        "equal_edge": 16660590,
+        "member_route": "base getter exposes this+0x10 only if distinct from this+0xc",
+        "helper_route": [
+          16660637,
+          16660642,
+          16660647,
+          16660662
+        ],
+        "cursor": 63308057,
+        "wire_lane": [
+          8,
+          4
+        ]
+      },
+      {
+        "region": "base_get",
+        "code": "dbnm",
+        "xml_index": 6,
+        "baseline_grade": "unmapped",
+        "gate": 16660317,
+        "branch": 16660323,
+        "equal_edge": 16660329,
+        "member_route": "virtual name provider and formatter; no proven t10 cursor",
+        "helper_route": [
+          16660340,
+          16660374
+        ],
+        "cursor": null,
+        "wire_lane": null
+      },
+      {
+        "region": "local_get",
+        "code": "Nnam",
+        "xml_index": 7,
+        "baseline_grade": "unmapped",
+        "gate": 17048098,
+        "branch": 17048104,
+        "equal_edge": 17050782,
+        "member_route": "name wrapper carrying this + lang selector long",
+        "helper_route": [
+          17050846,
+          17050978,
+          17051055
+        ],
+        "cursor": null,
+        "wire_lane": null
+      },
+      {
+        "region": "local_get",
+        "code": "Nsnm",
+        "xml_index": 8,
+        "baseline_grade": "unmapped",
+        "gate": 17048156,
+        "branch": 17048162,
+        "equal_edge": 17051614,
+        "member_route": "this+0x20 string pointer, not a t10 transfer",
+        "helper_route": [
+          17051614,
+          17051640
+        ],
+        "cursor": null,
+        "wire_lane": null
+      },
+      {
+        "region": "local_get",
+        "code": "N3ln",
+        "xml_index": 11,
+        "baseline_grade": "unmapped",
+        "gate": 17047713,
+        "branch": 17047719,
+        "equal_edge": 17048995,
+        "member_route": "this+0x28 string pointer, not a t10 transfer",
+        "helper_route": [
+          17048995,
+          17049021
+        ],
+        "cursor": null,
+        "wire_lane": null
+      },
+      {
+        "region": "local_get",
+        "code": "Nnty",
+        "xml_index": 12,
+        "baseline_grade": "unmapped",
+        "gate": 17047452,
+        "branch": 17047458,
+        "equal_edge": 17049127,
+        "member_route": "this+0x30 string pointer, not a t10 transfer",
+        "helper_route": [
+          17049127,
+          17049153
+        ],
+        "cursor": null,
+        "wire_lane": null
+      },
+      {
+        "region": "base_get",
+        "code": "ttcl",
+        "xml_index": 18,
+        "baseline_grade": "unmapped",
+        "gate": 16659900,
+        "branch": 16659906,
+        "equal_edge": 16659912,
+        "member_route": "virtual lookup through Nation+0xf0 or fcol fallback; not a Nation colour sink",
+        "helper_route": [
+          16659924,
+          17047216,
+          16659946,
+          16659968
+        ],
+        "cursor": null,
+        "wire_lane": null
+      },
+      {
+        "region": "base_get",
+        "code": "tbcl",
+        "xml_index": 19,
+        "baseline_grade": "unmapped",
+        "gate": 16660864,
+        "branch": 16660870,
+        "equal_edge": 16662315,
+        "member_route": "virtual lookup through Nation+0xf0 or bcol fallback; not a Nation colour sink",
+        "helper_route": [
+          16662327,
+          17047216,
+          16662349,
+          16662371
+        ],
+        "cursor": null,
+        "wire_lane": null
+      },
+      {
+        "region": "local_get",
+        "code": "nhrl",
+        "xml_index": 221,
+        "baseline_grade": "unmapped",
+        "gate": 17048862,
+        "branch": 17048868,
+        "equal_edge": 17048874,
+        "member_route": "compares bounds at [this+0x108]+0x4a0/0x4a8; not a scalar bit load",
+        "helper_route": [
+          17048874,
+          17048882,
+          17048889,
+          17048901,
+          17048904
+        ],
+        "cursor": null,
+        "wire_lane": null
+      }
+    ],
+    "shift_mask_inventory": [
+      {
+        "region": "main",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17038182,
+        "VA": 5385749862,
+        "bytes": "48c1f903",
+        "instruction": "sar rcx, 3"
+      },
+      {
+        "region": "main",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17038322,
+        "VA": 5385750002,
+        "bytes": "48c1fa03",
+        "instruction": "sar rdx, 3"
+      },
+      {
+        "region": "main",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17038567,
+        "VA": 5385750247,
+        "bytes": "48c1f803",
+        "instruction": "sar rax, 3"
+      },
+      {
+        "region": "main",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17038578,
+        "VA": 5385750258,
+        "bytes": "49d1ec",
+        "instruction": "shr r12, 1"
+      },
+      {
+        "region": "main",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17038797,
+        "VA": 5385750477,
+        "bytes": "48c1fa03",
+        "instruction": "sar rdx, 3"
+      },
+      {
+        "region": "main",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17038999,
+        "VA": 5385750679,
+        "bytes": "48c1f902",
+        "instruction": "sar rcx, 2"
+      },
+      {
+        "region": "main",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17039267,
+        "VA": 5385750947,
+        "bytes": "48c1f802",
+        "instruction": "sar rax, 2"
+      },
+      {
+        "region": "main",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17039278,
+        "VA": 5385750958,
+        "bytes": "49d1ec",
+        "instruction": "shr r12, 1"
+      },
+      {
+        "region": "main",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17039478,
+        "VA": 5385751158,
+        "bytes": "48c1fa03",
+        "instruction": "sar rdx, 3"
+      },
+      {
+        "region": "main",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17039887,
+        "VA": 5385751567,
+        "bytes": "48c1f803",
+        "instruction": "sar rax, 3"
+      },
+      {
+        "region": "main",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17039898,
+        "VA": 5385751578,
+        "bytes": "49d1ec",
+        "instruction": "shr r12, 1"
+      },
+      {
+        "region": "local_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17048217,
+        "VA": 5385759897,
+        "bytes": "48c1fa03",
+        "instruction": "sar rdx, 3"
+      },
+      {
+        "region": "local_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17048246,
+        "VA": 5385759926,
+        "bytes": "48c1fa03",
+        "instruction": "sar rdx, 3"
+      },
+      {
+        "region": "local_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17048262,
+        "VA": 5385759942,
+        "bytes": "48c1e83d",
+        "instruction": "shr rax, 0x3d"
+      },
+      {
+        "region": "local_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17048383,
+        "VA": 5385760063,
+        "bytes": "48c1fa03",
+        "instruction": "sar rdx, 3"
+      },
+      {
+        "region": "local_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17048560,
+        "VA": 5385760240,
+        "bytes": "48c1f804",
+        "instruction": "sar rax, 4"
+      },
+      {
+        "region": "local_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17049465,
+        "VA": 5385761145,
+        "bytes": "48c1f904",
+        "instruction": "sar rcx, 4"
+      },
+      {
+        "region": "local_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17049484,
+        "VA": 5385761164,
+        "bytes": "48c1fa1c",
+        "instruction": "sar rdx, 0x1c"
+      },
+      {
+        "region": "local_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17049500,
+        "VA": 5385761180,
+        "bytes": "48c1ff20",
+        "instruction": "sar rdi, 0x20"
+      },
+      {
+        "region": "local_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17049504,
+        "VA": 5385761184,
+        "bytes": "48c1e704",
+        "instruction": "shl rdi, 4"
+      },
+      {
+        "region": "local_get",
+        "role": "packed date comparison on +0xc0 item or context, not a new top-level boolean",
+        "file_offset": 17049513,
+        "VA": 5385761193,
+        "bytes": "81e6ff010000",
+        "instruction": "and esi, 0x1ff"
+      },
+      {
+        "region": "local_get",
+        "role": "packed date comparison on +0xc0 item or context, not a new top-level boolean",
+        "file_offset": 17049542,
+        "VA": 5385761222,
+        "bytes": "81e1ff010000",
+        "instruction": "and ecx, 0x1ff"
+      },
+      {
+        "region": "local_get",
+        "role": "packed date comparison on +0xc0 item or context, not a new top-level boolean",
+        "file_offset": 17049563,
+        "VA": 5385761243,
+        "bytes": "81e7ff010000",
+        "instruction": "and edi, 0x1ff"
+      },
+      {
+        "region": "local_get",
+        "role": "packed date comparison on +0xc0 item or context, not a new top-level boolean",
+        "file_offset": 17049683,
+        "VA": 5385761363,
+        "bytes": "81e1ff010000",
+        "instruction": "and ecx, 0x1ff"
+      },
+      {
+        "region": "local_get",
+        "role": "referenced object handle packaging, not a row-field bit",
+        "file_offset": 17049786,
+        "VA": 5385761466,
+        "bytes": "21f8",
+        "instruction": "and eax, edi"
+      },
+      {
+        "region": "local_get",
+        "role": "referenced object handle packaging, not a row-field bit",
+        "file_offset": 17049788,
+        "VA": 5385761468,
+        "bytes": "c1e618",
+        "instruction": "shl esi, 0x18"
+      },
+      {
+        "region": "local_get",
+        "role": "referenced object handle packaging, not a row-field bit",
+        "file_offset": 17049791,
+        "VA": 5385761471,
+        "bytes": "81e7ffff7f00",
+        "instruction": "and edi, 0x7fffff"
+      },
+      {
+        "region": "local_get",
+        "role": "referenced object handle packaging, not a row-field bit",
+        "file_offset": 17050011,
+        "VA": 5385761691,
+        "bytes": "21f8",
+        "instruction": "and eax, edi"
+      },
+      {
+        "region": "local_get",
+        "role": "referenced object handle packaging, not a row-field bit",
+        "file_offset": 17050013,
+        "VA": 5385761693,
+        "bytes": "c1e618",
+        "instruction": "shl esi, 0x18"
+      },
+      {
+        "region": "local_get",
+        "role": "referenced object handle packaging, not a row-field bit",
+        "file_offset": 17050016,
+        "VA": 5385761696,
+        "bytes": "81e7ffff7f00",
+        "instruction": "and edi, 0x7fffff"
+      },
+      {
+        "region": "local_get",
+        "role": "referenced object handle packaging, not a row-field bit",
+        "file_offset": 17050540,
+        "VA": 5385762220,
+        "bytes": "21d8",
+        "instruction": "and eax, ebx"
+      },
+      {
+        "region": "local_get",
+        "role": "referenced object handle packaging, not a row-field bit",
+        "file_offset": 17050542,
+        "VA": 5385762222,
+        "bytes": "c1e718",
+        "instruction": "shl edi, 0x18"
+      },
+      {
+        "region": "local_get",
+        "role": "referenced object handle packaging, not a row-field bit",
+        "file_offset": 17050545,
+        "VA": 5385762225,
+        "bytes": "81e3ffff7f00",
+        "instruction": "and ebx, 0x7fffff"
+      },
+      {
+        "region": "local_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17051403,
+        "VA": 5385763083,
+        "bytes": "c1e804",
+        "instruction": "shr eax, 4"
+      },
+      {
+        "region": "local_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17051420,
+        "VA": 5385763100,
+        "bytes": "48c1f803",
+        "instruction": "sar rax, 3"
+      },
+      {
+        "region": "local_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17051544,
+        "VA": 5385763224,
+        "bytes": "48c1fa03",
+        "instruction": "sar rdx, 3"
+      },
+      {
+        "region": "local_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 17052990,
+        "VA": 5385764670,
+        "bytes": "48c1f920",
+        "instruction": "sar rcx, 0x20"
+      },
+      {
+        "region": "local_get",
+        "role": "t55 Nndn existing word projection",
+        "file_offset": 17053189,
+        "VA": 5385764869,
+        "bytes": "c1ee09",
+        "instruction": "shr esi, 9"
+      },
+      {
+        "region": "local_get",
+        "role": "t55 Nndn existing word projection",
+        "file_offset": 17053192,
+        "VA": 5385764872,
+        "bytes": "4080e601",
+        "instruction": "and sil, 1"
+      },
+      {
+        "region": "local_get",
+        "role": "getter context/availability test, not a row-field bit",
+        "file_offset": 17054184,
+        "VA": 5385765864,
+        "bytes": "81e7000000ff",
+        "instruction": "and edi, 0xff000000"
+      },
+      {
+        "region": "local_get",
+        "role": "getter context/availability test, not a row-field bit",
+        "file_offset": 17054286,
+        "VA": 5385765966,
+        "bytes": "4420e8",
+        "instruction": "and al, r13b"
+      },
+      {
+        "region": "base_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 16660202,
+        "VA": 5385371882,
+        "bytes": "48c1fa03",
+        "instruction": "sar rdx, 3"
+      },
+      {
+        "region": "base_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 16662996,
+        "VA": 5385374676,
+        "bytes": "48c1f903",
+        "instruction": "sar rcx, 3"
+      },
+      {
+        "region": "base_get",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 16665160,
+        "VA": 5385376840,
+        "bytes": "48c1fb02",
+        "instruction": "sar rbx, 2"
+      },
+      {
+        "region": "helper_78",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 64441984,
+        "VA": 5434639488,
+        "bytes": "48c1f804",
+        "instruction": "sar rax, 4"
+      },
+      {
+        "region": "helper_78",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 64442008,
+        "VA": 5434639512,
+        "bytes": "48c1e604",
+        "instruction": "shl rsi, 4"
+      },
+      {
+        "region": "helper_78",
+        "role": "shift/scale in vector arithmetic, not a keyed boolean",
+        "file_offset": 64442109,
+        "VA": 5434639613,
+        "bytes": "48c1fa03",
+        "instruction": "sar rdx, 3"
+      }
+    ],
+    "helper_transfer_sites": {
+      "helper_78": [
+        64441954
+      ],
+      "item_78": [
+        64659761,
+        64659792,
+        64659824,
+        64659852,
+        64659880,
+        64659908,
+        64659936,
+        64659977
+      ],
+      "packed_date": [
+        60676052
+      ],
+      "identity": [
+        63308057
+      ]
+    },
+    "collection_gate_helper_cursor": [
+      {
+        "position": 2,
+        "code": null,
+        "mode_gate": 17038054,
+        "count_cursor": 17038135,
+        "item_gate": 17038435,
+        "item_activation": "count > 0",
+        "empty_edge": 17038933,
+        "item_path": [
+          17038525
+        ],
+        "wire_stride": 4,
+        "member": 296,
+        "scope": "opaque, no exact top-level getter binding"
+      },
+      {
+        "position": 3,
+        "code": null,
+        "mode_gate": 17038054,
+        "count_cursor": 17038962,
+        "item_gate": 17039146,
+        "item_activation": "count > 0",
+        "empty_edge": 17039619,
+        "item_path": [
+          17039225
+        ],
+        "wire_stride": 4,
+        "member": 344,
+        "scope": "opaque, no exact top-level getter binding"
+      },
+      {
+        "position": 4,
+        "code": "Nftb",
+        "mode_gate": 17038054,
+        "count_cursor": 17039647,
+        "item_gate": 17039684,
+        "item_activation": "count > 0",
+        "empty_edge": 17040201,
+        "item_path": [
+          17039837,
+          22868848
+        ],
+        "wire_stride": null,
+        "member": 368,
+        "scope": "prior parent span only"
+      },
+      {
+        "position": 11,
+        "code": "Ntxr",
+        "mode_gate": 17038054,
+        "count_cursor": 17040482,
+        "item_gate": 17040517,
+        "item_activation": "count > 0",
+        "empty_edge": 17040564,
+        "item_path": [
+          17040532,
+          21281952
+        ],
+        "wire_stride": null,
+        "member": 96,
+        "scope": "prior parent span only"
+      },
+      {
+        "position": 12,
+        "code": null,
+        "mode_gate": 17038054,
+        "count_cursor": 17040593,
+        "item_gate": 17040611,
+        "item_activation": "count != 0",
+        "empty_edge": 17040766,
+        "item_path": [
+          17040681,
+          17040703,
+          17040724,
+          14385024,
+          60676016,
+          60676052
+        ],
+        "wire_stride": 12,
+        "member": 216,
+        "scope": "opaque, no exact top-level getter binding"
+      },
+      {
+        "position": 13,
+        "code": null,
+        "mode_gate": 17038054,
+        "count_cursor": 64441954,
+        "item_gate": 64442224,
+        "item_activation": "count != 0",
+        "empty_edge": 64442309,
+        "item_path": [
+          17040786,
+          17098416,
+          64441904,
+          64442268,
+          17245536,
+          64659728,
+          64659761,
+          64659792,
+          64659824,
+          64659852,
+          64659880,
+          64659908,
+          64659936,
+          64659977
+        ],
+        "wire_stride": 14,
+        "member": 120,
+        "scope": "opaque, no exact top-level getter binding"
+      },
+      {
+        "position": 23,
+        "code": "Nlns",
+        "mode_gate": null,
+        "count_cursor": 17041175,
+        "item_gate": 17041211,
+        "item_activation": "count > 0",
+        "empty_edge": 17041275,
+        "item_path": [
+          17041243,
+          17169232
+        ],
+        "wire_stride": 5,
+        "member": 72,
+        "scope": "prior parent span only"
+      },
+      {
+        "position": 24,
+        "code": "Nefr",
+        "mode_gate": null,
+        "count_cursor": 17041328,
+        "item_gate": 17041366,
+        "item_activation": "count > 0",
+        "empty_edge": 17041481,
+        "item_path": [
+          17041449,
+          22869152
+        ],
+        "wire_stride": 28,
+        "member": 168,
+        "scope": "prior parent span only"
+      },
+      {
+        "position": 25,
+        "code": "Nnfr",
+        "mode_gate": null,
+        "count_cursor": 17041516,
+        "item_gate": 17041560,
+        "item_activation": "count > 0",
+        "empty_edge": 17041674,
+        "item_path": [
+          17041643,
+          22869152
+        ],
+        "wire_stride": 28,
+        "member": 144,
+        "scope": "prior parent span only"
+      },
+      {
+        "position": 26,
+        "code": "Nagr",
+        "mode_gate": null,
+        "count_cursor": 17041703,
+        "item_gate": 17041792,
+        "item_activation": "count > 0",
+        "empty_edge": 17041867,
+        "item_path": [
+          17041831,
+          17169328
+        ],
+        "wire_stride": 12,
+        "member": 192,
+        "scope": "prior parent span only"
+      }
+    ],
+    "server_only_static": [
+      {
+        "position": 1,
+        "outer_gate": 17038054,
+        "main_site": 17038094,
+        "cursor": 17038094,
+        "client_reachable": false
+      },
+      {
+        "position": 2,
+        "outer_gate": 17038054,
+        "main_site": 17038135,
+        "cursor": 17038135,
+        "client_reachable": false
+      },
+      {
+        "position": 3,
+        "outer_gate": 17038054,
+        "main_site": 17038962,
+        "cursor": 17038962,
+        "client_reachable": false
+      },
+      {
+        "position": 4,
+        "outer_gate": 17038054,
+        "main_site": 17039647,
+        "cursor": 17039647,
+        "client_reachable": false
+      },
+      {
+        "position": 5,
+        "outer_gate": 17038054,
+        "main_site": 17040224,
+        "cursor": 17040224,
+        "client_reachable": false
+      },
+      {
+        "position": 6,
+        "outer_gate": 17038054,
+        "main_site": 17040260,
+        "cursor": 17040260,
+        "client_reachable": false
+      },
+      {
+        "position": 7,
+        "outer_gate": 17038054,
+        "main_site": 17040296,
+        "cursor": 17040296,
+        "client_reachable": false
+      },
+      {
+        "position": 8,
+        "outer_gate": 17038054,
+        "main_site": 17040332,
+        "cursor": 17040332,
+        "client_reachable": false
+      },
+      {
+        "position": 9,
+        "outer_gate": 17038054,
+        "main_site": 17040368,
+        "cursor": 17040368,
+        "client_reachable": false
+      },
+      {
+        "position": 10,
+        "outer_gate": 17038054,
+        "main_site": 17040404,
+        "cursor": 17040404,
+        "client_reachable": false
+      },
+      {
+        "position": 11,
+        "outer_gate": 17038054,
+        "main_site": 17040482,
+        "cursor": 17040482,
+        "client_reachable": false
+      },
+      {
+        "position": 12,
+        "outer_gate": 17038054,
+        "main_site": 17040593,
+        "cursor": 17040593,
+        "client_reachable": false
+      },
+      {
+        "position": 13,
+        "outer_gate": 17038054,
+        "main_site": 17040786,
+        "cursor": 64441954,
+        "client_reachable": false
+      },
+      {
+        "position": 27,
+        "outer_gate": 17041875,
+        "main_site": 17041904,
+        "cursor": 17041904,
+        "client_reachable": false
+      },
+      {
+        "position": 28,
+        "outer_gate": 17041875,
+        "main_site": 17041940,
+        "cursor": 17041940,
+        "client_reachable": false
+      },
+      {
+        "position": 29,
+        "outer_gate": 17041875,
+        "main_site": 17041976,
+        "cursor": 17041976,
+        "client_reachable": false
+      },
+      {
+        "position": 30,
+        "outer_gate": 17041875,
+        "main_site": 17042012,
+        "cursor": 17042012,
+        "client_reachable": false
+      },
+      {
+        "position": 31,
+        "outer_gate": 17041875,
+        "main_site": 17042048,
+        "cursor": 17042048,
+        "client_reachable": false
+      },
+      {
+        "position": 32,
+        "outer_gate": 17041875,
+        "main_site": 17042084,
+        "cursor": 17042084,
+        "client_reachable": false
+      },
+      {
+        "position": 33,
+        "outer_gate": 17041875,
+        "main_site": 17042120,
+        "cursor": 17042120,
+        "client_reachable": false
+      },
+      {
+        "position": 34,
+        "outer_gate": 17041875,
+        "main_site": 17042156,
+        "cursor": 17042156,
+        "client_reachable": false
+      },
+      {
+        "position": 35,
+        "outer_gate": 17041875,
+        "main_site": 17042192,
+        "cursor": 17042192,
+        "client_reachable": false
+      },
+      {
+        "position": 36,
+        "outer_gate": 17041875,
+        "main_site": 17042228,
+        "cursor": 17042228,
+        "client_reachable": false
+      },
+      {
+        "position": 37,
+        "outer_gate": 17041875,
+        "main_site": 17042264,
+        "cursor": 17042264,
+        "client_reachable": false
+      },
+      {
+        "position": 38,
+        "outer_gate": 17041875,
+        "main_site": 17042300,
+        "cursor": 17042300,
+        "client_reachable": false
+      }
+    ],
+    "mode_edges": [
+      {
+        "site": 17038054,
+        "predicate": 17038052,
+        "predicate_instruction": "test al, al",
+        "taken": 17040816,
+        "fallthrough": 17038060,
+        "classification": "runtime-external"
+      },
+      {
+        "site": 17041875,
+        "predicate": 17041867,
+        "predicate_instruction": "cmp byte ptr [rsp + 0x120], 0",
+        "taken": 17042313,
+        "fallthrough": 17041881,
+        "classification": "runtime-external"
+      }
+    ],
+    "base_fallback_boundary": {
+      "linked_pointer_call": 17052450,
+      "followed": false,
+      "base_tail": 17052493,
+      "registry_compare": 16659808,
+      "virtual_forward": 16665415,
+      "Nation_virtual_50": 17047216,
+      "virtual_50_member": 240
+    },
+    "instructions": [
+      {
+        "file_offset": 14385024,
+        "VA": 5383096704,
+        "bytes": "e92b04d902",
+        "instruction": "jmp 0x143b48db0",
+        "direct_target": 60676016
+      },
+      {
+        "file_offset": 15907384,
+        "VA": 5384619064,
+        "bytes": "4488642430",
+        "instruction": "mov byte ptr [rsp + 0x30], r12b"
+      },
+      {
+        "file_offset": 15907409,
+        "VA": 5384619089,
+        "bytes": "ff9398000000",
+        "instruction": "call qword ptr [rbx + 0x98]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 16442176,
+        "VA": 5385153856,
+        "bytes": "e9abc9e102",
+        "instruction": "jmp 0x143dcb6f0",
+        "direct_target": 63308016
+      },
+      {
+        "file_offset": 16659787,
+        "VA": 5385371467,
+        "bytes": "488b0d06cdb700",
+        "instruction": "mov rcx, qword ptr [rip + 0xb7cd06]"
+      },
+      {
+        "file_offset": 16659808,
+        "VA": 5385371488,
+        "bytes": "3930",
+        "instruction": "cmp dword ptr [rax], esi"
+      },
+      {
+        "file_offset": 16659810,
+        "VA": 5385371490,
+        "bytes": "0f84e3000000",
+        "instruction": "je 0x140fe404b",
+        "direct_target": 16660043
+      },
+      {
+        "file_offset": 16659900,
+        "VA": 5385371580,
+        "bytes": "81fe6c637474",
+        "instruction": "cmp esi, 0x7474636c"
+      },
+      {
+        "file_offset": 16659906,
+        "VA": 5385371586,
+        "bytes": "0f85860a0000",
+        "instruction": "jne 0x140fe4a4e",
+        "direct_target": 16662606
+      },
+      {
+        "file_offset": 16659924,
+        "VA": 5385371604,
+        "bytes": "ff5050",
+        "instruction": "call qword ptr [rax + 0x50]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 16659946,
+        "VA": 5385371626,
+        "bytes": "ff5310",
+        "instruction": "call qword ptr [rbx + 0x10]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 16659968,
+        "VA": 5385371648,
+        "bytes": "ba6c6f6366",
+        "instruction": "mov edx, 0x66636f6c"
+      },
+      {
+        "file_offset": 16660317,
+        "VA": 5385371997,
+        "bytes": "81fe6d6e6264",
+        "instruction": "cmp esi, 0x64626e6d"
+      },
+      {
+        "file_offset": 16660323,
+        "VA": 5385372003,
+        "bytes": "0f85e5080000",
+        "instruction": "jne 0x140fe4a4e",
+        "direct_target": 16662606
+      },
+      {
+        "file_offset": 16660340,
+        "VA": 5385372020,
+        "bytes": "ff90c8000000",
+        "instruction": "call qword ptr [rax + 0xc8]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 16660374,
+        "VA": 5385372054,
+        "bytes": "e8856d83ff",
+        "instruction": "call 0x14081af20",
+        "direct_target": 8496416
+      },
+      {
+        "file_offset": 16660578,
+        "VA": 5385372258,
+        "bytes": "81fe69756472",
+        "instruction": "cmp esi, 0x72647569"
+      },
+      {
+        "file_offset": 16660584,
+        "VA": 5385372264,
+        "bytes": "0f85e0070000",
+        "instruction": "jne 0x140fe4a4e",
+        "direct_target": 16662606
+      },
+      {
+        "file_offset": 16660637,
+        "VA": 5385372317,
+        "bytes": "418b742410",
+        "instruction": "mov esi, dword ptr [r12 + 0x10]"
+      },
+      {
+        "file_offset": 16660642,
+        "VA": 5385372322,
+        "bytes": "413974240c",
+        "instruction": "cmp dword ptr [r12 + 0xc], esi"
+      },
+      {
+        "file_offset": 16660647,
+        "VA": 5385372327,
+        "bytes": "0f84b80c0000",
+        "instruction": "je 0x140fe4f65",
+        "direct_target": 16663909
+      },
+      {
+        "file_offset": 16660662,
+        "VA": 5385372342,
+        "bytes": "897508",
+        "instruction": "mov dword ptr [rbp + 8], esi"
+      },
+      {
+        "file_offset": 16660754,
+        "VA": 5385372434,
+        "bytes": "81fe696e7564",
+        "instruction": "cmp esi, 0x64756e69"
+      },
+      {
+        "file_offset": 16660760,
+        "VA": 5385372440,
+        "bytes": "0f84e1020000",
+        "instruction": "je 0x140fe45ff",
+        "direct_target": 16661503
+      },
+      {
+        "file_offset": 16660864,
+        "VA": 5385372544,
+        "bytes": "81fe6c636274",
+        "instruction": "cmp esi, 0x7462636c"
+      },
+      {
+        "file_offset": 16660870,
+        "VA": 5385372550,
+        "bytes": "0f849f050000",
+        "instruction": "je 0x140fe492b",
+        "direct_target": 16662315
+      },
+      {
+        "file_offset": 16662327,
+        "VA": 5385374007,
+        "bytes": "ff5050",
+        "instruction": "call qword ptr [rax + 0x50]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 16662349,
+        "VA": 5385374029,
+        "bytes": "ff5310",
+        "instruction": "call qword ptr [rbx + 0x10]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 16662371,
+        "VA": 5385374051,
+        "bytes": "ba6c636b62",
+        "instruction": "mov edx, 0x626b636c"
+      },
+      {
+        "file_offset": 16665415,
+        "VA": 5385377095,
+        "bytes": "ff5050",
+        "instruction": "call qword ptr [rax + 0x50]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 16665457,
+        "VA": 5385377137,
+        "bytes": "49ffe1",
+        "instruction": "jmp r9",
+        "direct_target": null
+      },
+      {
+        "file_offset": 17038044,
+        "VA": 5385749724,
+        "bytes": "0fb6842420010000",
+        "instruction": "movzx eax, byte ptr [rsp + 0x120]"
+      },
+      {
+        "file_offset": 17038052,
+        "VA": 5385749732,
+        "bytes": "84c0",
+        "instruction": "test al, al"
+      },
+      {
+        "file_offset": 17038135,
+        "VA": 5385749815,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 17038435,
+        "VA": 5385750115,
+        "bytes": "0f8eec010000",
+        "instruction": "jle 0x141040855",
+        "direct_target": 17038933
+      },
+      {
+        "file_offset": 17038525,
+        "VA": 5385750205,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 17038962,
+        "VA": 5385750642,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 17039146,
+        "VA": 5385750826,
+        "bytes": "0f8ed3010000",
+        "instruction": "jle 0x141040b03",
+        "direct_target": 17039619
+      },
+      {
+        "file_offset": 17039225,
+        "VA": 5385750905,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 17039647,
+        "VA": 5385751327,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 17039684,
+        "VA": 5385751364,
+        "bytes": "0f8eff010000",
+        "instruction": "jle 0x141040d49",
+        "direct_target": 17040201
+      },
+      {
+        "file_offset": 17039837,
+        "VA": 5385751517,
+        "bytes": "e88ef15800",
+        "instruction": "call 0x1415cfd70",
+        "direct_target": 22868848
+      },
+      {
+        "file_offset": 17040482,
+        "VA": 5385752162,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 17040517,
+        "VA": 5385752197,
+        "bytes": "7e2d",
+        "instruction": "jle 0x141040eb4",
+        "direct_target": 17040564
+      },
+      {
+        "file_offset": 17040532,
+        "VA": 5385752212,
+        "bytes": "e807b84000",
+        "instruction": "call 0x14144c6a0",
+        "direct_target": 21281952
+      },
+      {
+        "file_offset": 17040593,
+        "VA": 5385752273,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 17040611,
+        "VA": 5385752291,
+        "bytes": "0f8495000000",
+        "instruction": "je 0x141040f7e",
+        "direct_target": 17040766
+      },
+      {
+        "file_offset": 17040681,
+        "VA": 5385752361,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 17040703,
+        "VA": 5385752383,
+        "bytes": "e83c7ad7ff",
+        "instruction": "call 0x140db8980",
+        "direct_target": 14385024
+      },
+      {
+        "file_offset": 17040724,
+        "VA": 5385752404,
+        "bytes": "e8277ad7ff",
+        "instruction": "call 0x140db8980",
+        "direct_target": 14385024
+      },
+      {
+        "file_offset": 17040786,
+        "VA": 5385752466,
+        "bytes": "e819e10000",
+        "instruction": "call 0x14104f0b0",
+        "direct_target": 17098416
+      },
+      {
+        "file_offset": 17041175,
+        "VA": 5385752855,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 17041211,
+        "VA": 5385752891,
+        "bytes": "7e3e",
+        "instruction": "jle 0x14104117b",
+        "direct_target": 17041275
+      },
+      {
+        "file_offset": 17041243,
+        "VA": 5385752923,
+        "bytes": "e8f0f30100",
+        "instruction": "call 0x141060550",
+        "direct_target": 17169232
+      },
+      {
+        "file_offset": 17041328,
+        "VA": 5385753008,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 17041366,
+        "VA": 5385753046,
+        "bytes": "7e71",
+        "instruction": "jle 0x141041249",
+        "direct_target": 17041481
+      },
+      {
+        "file_offset": 17041449,
+        "VA": 5385753129,
+        "bytes": "e872ec5800",
+        "instruction": "call 0x1415cfea0",
+        "direct_target": 22869152
+      },
+      {
+        "file_offset": 17041516,
+        "VA": 5385753196,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 17041560,
+        "VA": 5385753240,
+        "bytes": "7e70",
+        "instruction": "jle 0x14104130a",
+        "direct_target": 17041674
+      },
+      {
+        "file_offset": 17041643,
+        "VA": 5385753323,
+        "bytes": "e8b0eb5800",
+        "instruction": "call 0x1415cfea0",
+        "direct_target": 22869152
+      },
+      {
+        "file_offset": 17041703,
+        "VA": 5385753383,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 17041792,
+        "VA": 5385753472,
+        "bytes": "7e49",
+        "instruction": "jle 0x1410413cb",
+        "direct_target": 17041867
+      },
+      {
+        "file_offset": 17041831,
+        "VA": 5385753511,
+        "bytes": "e804f20100",
+        "instruction": "call 0x1410605b0",
+        "direct_target": 17169328
+      },
+      {
+        "file_offset": 17041867,
+        "VA": 5385753547,
+        "bytes": "80bc242001000000",
+        "instruction": "cmp byte ptr [rsp + 0x120], 0"
+      },
+      {
+        "file_offset": 17042383,
+        "VA": 5385754063,
+        "bytes": "e86cd7f6ff",
+        "instruction": "call 0x140faed40",
+        "direct_target": 16442176
+      },
+      {
+        "file_offset": 17047216,
+        "VA": 5385758896,
+        "bytes": "488b81f0000000",
+        "instruction": "mov rax, qword ptr [rcx + 0xf0]"
+      },
+      {
+        "file_offset": 17047344,
+        "VA": 5385759024,
+        "bytes": "41b101",
+        "instruction": "mov r9b, 1"
+      },
+      {
+        "file_offset": 17047347,
+        "VA": 5385759027,
+        "bytes": "e908000000",
+        "instruction": "jmp 0x141042940",
+        "direct_target": 17047360
+      },
+      {
+        "file_offset": 17047452,
+        "VA": 5385759132,
+        "bytes": "81fe79746e4e",
+        "instruction": "cmp esi, 0x4e6e7479"
+      },
+      {
+        "file_offset": 17047458,
+        "VA": 5385759138,
+        "bytes": "0f847f060000",
+        "instruction": "je 0x141043027",
+        "direct_target": 17049127
+      },
+      {
+        "file_offset": 17047623,
+        "VA": 5385759303,
+        "bytes": "81fe7266654e",
+        "instruction": "cmp esi, 0x4e656672"
+      },
+      {
+        "file_offset": 17047629,
+        "VA": 5385759309,
+        "bytes": "0f8558060000",
+        "instruction": "jne 0x1410430ab",
+        "direct_target": 17049259
+      },
+      {
+        "file_offset": 17047672,
+        "VA": 5385759352,
+        "bytes": "81fe6e67794e",
+        "instruction": "cmp esi, 0x4e79676e"
+      },
+      {
+        "file_offset": 17047678,
+        "VA": 5385759358,
+        "bytes": "0f842b0a0000",
+        "instruction": "je 0x1410434af",
+        "direct_target": 17050287
+      },
+      {
+        "file_offset": 17047713,
+        "VA": 5385759393,
+        "bytes": "81fe6e6c334e",
+        "instruction": "cmp esi, 0x4e336c6e"
+      },
+      {
+        "file_offset": 17047719,
+        "VA": 5385759399,
+        "bytes": "0f84f6040000",
+        "instruction": "je 0x141042fa3",
+        "direct_target": 17048995
+      },
+      {
+        "file_offset": 17047946,
+        "VA": 5385759626,
+        "bytes": "81fe6974634e",
+        "instruction": "cmp esi, 0x4e637469"
+      },
+      {
+        "file_offset": 17047952,
+        "VA": 5385759632,
+        "bytes": "0f84410d0000",
+        "instruction": "je 0x1410438d7",
+        "direct_target": 17051351
+      },
+      {
+        "file_offset": 17047958,
+        "VA": 5385759638,
+        "bytes": "81fe7275634e",
+        "instruction": "cmp esi, 0x4e637572"
+      },
+      {
+        "file_offset": 17047964,
+        "VA": 5385759644,
+        "bytes": "0f84db0a0000",
+        "instruction": "je 0x14104367d",
+        "direct_target": 17050749
+      },
+      {
+        "file_offset": 17047970,
+        "VA": 5385759650,
+        "bytes": "81fe6663654e",
+        "instruction": "cmp esi, 0x4e656366"
+      },
+      {
+        "file_offset": 17047976,
+        "VA": 5385759656,
+        "bytes": "0f85fd040000",
+        "instruction": "jne 0x1410430ab",
+        "direct_target": 17049259
+      },
+      {
+        "file_offset": 17048086,
+        "VA": 5385759766,
+        "bytes": "81fe736e6c4e",
+        "instruction": "cmp esi, 0x4e6c6e73"
+      },
+      {
+        "file_offset": 17048092,
+        "VA": 5385759772,
+        "bytes": "0f84d60c0000",
+        "instruction": "je 0x1410438f8",
+        "direct_target": 17051384
+      },
+      {
+        "file_offset": 17048098,
+        "VA": 5385759778,
+        "bytes": "81fe6d616e4e",
+        "instruction": "cmp esi, 0x4e6e616d"
+      },
+      {
+        "file_offset": 17048104,
+        "VA": 5385759784,
+        "bytes": "0f84700a0000",
+        "instruction": "je 0x14104369e",
+        "direct_target": 17050782
+      },
+      {
+        "file_offset": 17048110,
+        "VA": 5385759790,
+        "bytes": "81fe72666e4e",
+        "instruction": "cmp esi, 0x4e6e6672"
+      },
+      {
+        "file_offset": 17048116,
+        "VA": 5385759796,
+        "bytes": "0f8571040000",
+        "instruction": "jne 0x1410430ab",
+        "direct_target": 17049259
+      },
+      {
+        "file_offset": 17048156,
+        "VA": 5385759836,
+        "bytes": "81fe6d6e734e",
+        "instruction": "cmp esi, 0x4e736e6d"
+      },
+      {
+        "file_offset": 17048162,
+        "VA": 5385759842,
+        "bytes": "0f84760d0000",
+        "instruction": "je 0x1410439de",
+        "direct_target": 17051614
+      },
+      {
+        "file_offset": 17048168,
+        "VA": 5385759848,
+        "bytes": "81fe646f734e",
+        "instruction": "cmp esi, 0x4e736f64"
+      },
+      {
+        "file_offset": 17048174,
+        "VA": 5385759854,
+        "bytes": "0f84fb0b0000",
+        "instruction": "je 0x14104386f",
+        "direct_target": 17051247
+      },
+      {
+        "file_offset": 17048180,
+        "VA": 5385759860,
+        "bytes": "81fe7278744e",
+        "instruction": "cmp esi, 0x4e747872"
+      },
+      {
+        "file_offset": 17048186,
+        "VA": 5385759866,
+        "bytes": "0f852b040000",
+        "instruction": "jne 0x1410430ab",
+        "direct_target": 17049259
+      },
+      {
+        "file_offset": 17048453,
+        "VA": 5385760133,
+        "bytes": "81fe7463674e",
+        "instruction": "cmp esi, 0x4e676374"
+      },
+      {
+        "file_offset": 17048459,
+        "VA": 5385760139,
+        "bytes": "0f84b6060000",
+        "instruction": "je 0x141043447",
+        "direct_target": 17050183
+      },
+      {
+        "file_offset": 17048805,
+        "VA": 5385760485,
+        "bytes": "81fe6967724e",
+        "instruction": "cmp esi, 0x4e726769"
+      },
+      {
+        "file_offset": 17048811,
+        "VA": 5385760491,
+        "bytes": "0f85ba010000",
+        "instruction": "jne 0x1410430ab",
+        "direct_target": 17049259
+      },
+      {
+        "file_offset": 17048862,
+        "VA": 5385760542,
+        "bytes": "81fe6c72686e",
+        "instruction": "cmp esi, 0x6e68726c"
+      },
+      {
+        "file_offset": 17048868,
+        "VA": 5385760548,
+        "bytes": "0f8581010000",
+        "instruction": "jne 0x1410430ab",
+        "direct_target": 17049259
+      },
+      {
+        "file_offset": 17048874,
+        "VA": 5385760554,
+        "bytes": "498b842408010000",
+        "instruction": "mov rax, qword ptr [r12 + 0x108]"
+      },
+      {
+        "file_offset": 17048882,
+        "VA": 5385760562,
+        "bytes": "488bb0a8040000",
+        "instruction": "mov rsi, qword ptr [rax + 0x4a8]"
+      },
+      {
+        "file_offset": 17048889,
+        "VA": 5385760569,
+        "bytes": "488bb8a0040000",
+        "instruction": "mov rdi, qword ptr [rax + 0x4a0]"
+      },
+      {
+        "file_offset": 17048901,
+        "VA": 5385760581,
+        "bytes": "4839fe",
+        "instruction": "cmp rsi, rdi"
+      },
+      {
+        "file_offset": 17048904,
+        "VA": 5385760584,
+        "bytes": "0f954520",
+        "instruction": "setne byte ptr [rbp + 0x20]"
+      },
+      {
+        "file_offset": 17048995,
+        "VA": 5385760675,
+        "bytes": "4983c428",
+        "instruction": "add r12, 0x28"
+      },
+      {
+        "file_offset": 17049021,
+        "VA": 5385760701,
+        "bytes": "498b0c24",
+        "instruction": "mov rcx, qword ptr [r12]"
+      },
+      {
+        "file_offset": 17049127,
+        "VA": 5385760807,
+        "bytes": "4983c430",
+        "instruction": "add r12, 0x30"
+      },
+      {
+        "file_offset": 17049153,
+        "VA": 5385760833,
+        "bytes": "498b0c24",
+        "instruction": "mov rcx, qword ptr [r12]"
+      },
+      {
+        "file_offset": 17049259,
+        "VA": 5385760939,
+        "bytes": "803d6ed2b10000",
+        "instruction": "cmp byte ptr [rip + 0xb1d26e], 0"
+      },
+      {
+        "file_offset": 17049266,
+        "VA": 5385760946,
+        "bytes": "0f844e0c0000",
+        "instruction": "je 0x141043d06",
+        "direct_target": 17052422
+      },
+      {
+        "file_offset": 17049284,
+        "VA": 5385760964,
+        "bytes": "81fe7267614e",
+        "instruction": "cmp esi, 0x4e616772"
+      },
+      {
+        "file_offset": 17049290,
+        "VA": 5385760970,
+        "bytes": "0f84ad0e0000",
+        "instruction": "je 0x141043f7d",
+        "direct_target": 17053053
+      },
+      {
+        "file_offset": 17049296,
+        "VA": 5385760976,
+        "bytes": "81fe6e646e4e",
+        "instruction": "cmp esi, 0x4e6e646e"
+      },
+      {
+        "file_offset": 17049302,
+        "VA": 5385760982,
+        "bytes": "0f84170f0000",
+        "instruction": "je 0x141043ff3",
+        "direct_target": 17053171
+      },
+      {
+        "file_offset": 17049488,
+        "VA": 5385761168,
+        "bytes": "488b1c10",
+        "instruction": "mov rbx, qword ptr [rax + rdx]"
+      },
+      {
+        "file_offset": 17049508,
+        "VA": 5385761188,
+        "bytes": "0fb7743808",
+        "instruction": "movzx esi, word ptr [rax + rdi + 8]"
+      },
+      {
+        "file_offset": 17049535,
+        "VA": 5385761215,
+        "bytes": "0fb70dbeaea600",
+        "instruction": "movzx ecx, word ptr [rip + 0xa6aebe]"
+      },
+      {
+        "file_offset": 17049558,
+        "VA": 5385761238,
+        "bytes": "0fb77c380c",
+        "instruction": "movzx edi, word ptr [rax + rdi + 0xc]"
+      },
+      {
+        "file_offset": 17049676,
+        "VA": 5385761356,
+        "bytes": "0fb70d31aea600",
+        "instruction": "movzx ecx, word ptr [rip + 0xa6ae31]"
+      },
+      {
+        "file_offset": 17050846,
+        "VA": 5385762526,
+        "bytes": "4c896010",
+        "instruction": "mov qword ptr [rax + 0x10], r12"
+      },
+      {
+        "file_offset": 17050978,
+        "VA": 5385762658,
+        "bytes": "c747086c6f6e67",
+        "instruction": "mov dword ptr [rdi + 8], 0x676e6f6c"
+      },
+      {
+        "file_offset": 17051055,
+        "VA": 5385762735,
+        "bytes": "e86c777dff",
+        "instruction": "call 0x14081af20",
+        "direct_target": 8496416
+      },
+      {
+        "file_offset": 17051614,
+        "VA": 5385763294,
+        "bytes": "4983c420",
+        "instruction": "add r12, 0x20"
+      },
+      {
+        "file_offset": 17051640,
+        "VA": 5385763320,
+        "bytes": "498b0c24",
+        "instruction": "mov rcx, qword ptr [r12]"
+      },
+      {
+        "file_offset": 17052392,
+        "VA": 5385764072,
+        "bytes": "81fe69736e4e",
+        "instruction": "cmp esi, 0x4e6e7369"
+      },
+      {
+        "file_offset": 17052398,
+        "VA": 5385764078,
+        "bytes": "7516",
+        "instruction": "jne 0x141043d06",
+        "direct_target": 17052422
+      },
+      {
+        "file_offset": 17052422,
+        "VA": 5385764102,
+        "bytes": "4584c9",
+        "instruction": "test r9b, r9b"
+      },
+      {
+        "file_offset": 17052425,
+        "VA": 5385764105,
+        "bytes": "0f8442010000",
+        "instruction": "je 0x141043e51",
+        "direct_target": 17052753
+      },
+      {
+        "file_offset": 17052431,
+        "VA": 5385764111,
+        "bytes": "498b8c2408010000",
+        "instruction": "mov rcx, qword ptr [r12 + 0x108]"
+      },
+      {
+        "file_offset": 17052442,
+        "VA": 5385764122,
+        "bytes": "7415",
+        "instruction": "je 0x141043d31",
+        "direct_target": 17052465
+      },
+      {
+        "file_offset": 17052450,
+        "VA": 5385764130,
+        "bytes": "e8c92b0200",
+        "instruction": "call 0x1410668f0",
+        "direct_target": 17194736
+      },
+      {
+        "file_offset": 17052459,
+        "VA": 5385764139,
+        "bytes": "0f850a010000",
+        "instruction": "jne 0x141043e3b",
+        "direct_target": 17052731
+      },
+      {
+        "file_offset": 17052465,
+        "VA": 5385764145,
+        "bytes": "4c89e1",
+        "instruction": "mov rcx, r12"
+      },
+      {
+        "file_offset": 17052468,
+        "VA": 5385764148,
+        "bytes": "89f2",
+        "instruction": "mov edx, esi"
+      },
+      {
+        "file_offset": 17052493,
+        "VA": 5385764173,
+        "bytes": "e9ce01faff",
+        "instruction": "jmp 0x140fe3f20",
+        "direct_target": 16659744
+      },
+      {
+        "file_offset": 17053171,
+        "VA": 5385764851,
+        "bytes": "410fb7b424c8010000",
+        "instruction": "movzx esi, word ptr [r12 + 0x1c8]"
+      },
+      {
+        "file_offset": 17053189,
+        "VA": 5385764869,
+        "bytes": "c1ee09",
+        "instruction": "shr esi, 9"
+      },
+      {
+        "file_offset": 17053192,
+        "VA": 5385764872,
+        "bytes": "4080e601",
+        "instruction": "and sil, 1"
+      },
+      {
+        "file_offset": 17098416,
+        "VA": 5385810096,
+        "bytes": "e97b13e902",
+        "instruction": "jmp 0x143ee0430",
+        "direct_target": 64441904
+      },
+      {
+        "file_offset": 17169232,
+        "VA": 5385880912,
+        "bytes": "e9ab27e902",
+        "instruction": "jmp 0x143ef2d00",
+        "direct_target": 64517888
+      },
+      {
+        "file_offset": 17169328,
+        "VA": 5385881008,
+        "bytes": "e94b33e902",
+        "instruction": "jmp 0x143ef3900",
+        "direct_target": 64520960
+      },
+      {
+        "file_offset": 17245536,
+        "VA": 5385957216,
+        "bytes": "e9ab27ea02",
+        "instruction": "jmp 0x143f15710",
+        "direct_target": 64659728
+      },
+      {
+        "file_offset": 21281952,
+        "VA": 5389993632,
+        "bytes": "e94bb8f202",
+        "instruction": "jmp 0x144377ef0",
+        "direct_target": 69257456
+      },
+      {
+        "file_offset": 22868848,
+        "VA": 5391580528,
+        "bytes": "e91bb10203",
+        "instruction": "jmp 0x1445fae90",
+        "direct_target": 71891088
+      },
+      {
+        "file_offset": 22869152,
+        "VA": 5391580832,
+        "bytes": "e9ebb10203",
+        "instruction": "jmp 0x1445fb090",
+        "direct_target": 71891600
+      },
+      {
+        "file_offset": 60676016,
+        "VA": 5430873520,
+        "bytes": "56",
+        "instruction": "push rsi"
+      },
+      {
+        "file_offset": 60676040,
+        "VA": 5430873544,
+        "bytes": "41b804000000",
+        "instruction": "mov r8d, 4"
+      },
+      {
+        "file_offset": 60676052,
+        "VA": 5430873556,
+        "bytes": "ff5728",
+        "instruction": "call qword ptr [rdi + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 63308038,
+        "VA": 5433505542,
+        "bytes": "488d5f08",
+        "instruction": "lea rbx, [rdi + 8]"
+      },
+      {
+        "file_offset": 63308045,
+        "VA": 5433505549,
+        "bytes": "41b80c000000",
+        "instruction": "mov r8d, 0xc"
+      },
+      {
+        "file_offset": 63308057,
+        "VA": 5433505561,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 63308088,
+        "VA": 5433505592,
+        "bytes": "448903",
+        "instruction": "mov dword ptr [rbx], r8d"
+      },
+      {
+        "file_offset": 63308105,
+        "VA": 5433505609,
+        "bytes": "ff5018",
+        "instruction": "call qword ptr [rax + 0x18]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 64441904,
+        "VA": 5434639408,
+        "bytes": "4157",
+        "instruction": "push r15"
+      },
+      {
+        "file_offset": 64441948,
+        "VA": 5434639452,
+        "bytes": "41b804000000",
+        "instruction": "mov r8d, 4"
+      },
+      {
+        "file_offset": 64441954,
+        "VA": 5434639458,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 64442222,
+        "VA": 5434639726,
+        "bytes": "85f6",
+        "instruction": "test esi, esi"
+      },
+      {
+        "file_offset": 64442224,
+        "VA": 5434639728,
+        "bytes": "7453",
+        "instruction": "je 0x143ee05c5",
+        "direct_target": 64442309
+      },
+      {
+        "file_offset": 64442268,
+        "VA": 5434639772,
+        "bytes": "e8bf2919fd",
+        "instruction": "call 0x141072f60",
+        "direct_target": 17245536
+      },
+      {
+        "file_offset": 64659728,
+        "VA": 5434857232,
+        "bytes": "56",
+        "instruction": "push rsi"
+      },
+      {
+        "file_offset": 64659752,
+        "VA": 5434857256,
+        "bytes": "41b801000000",
+        "instruction": "mov r8d, 1"
+      },
+      {
+        "file_offset": 64659761,
+        "VA": 5434857265,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 64659780,
+        "VA": 5434857284,
+        "bytes": "41b804000000",
+        "instruction": "mov r8d, 4"
+      },
+      {
+        "file_offset": 64659792,
+        "VA": 5434857296,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 64659815,
+        "VA": 5434857319,
+        "bytes": "41b804000000",
+        "instruction": "mov r8d, 4"
+      },
+      {
+        "file_offset": 64659824,
+        "VA": 5434857328,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 64659843,
+        "VA": 5434857347,
+        "bytes": "41b801000000",
+        "instruction": "mov r8d, 1"
+      },
+      {
+        "file_offset": 64659852,
+        "VA": 5434857356,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 64659871,
+        "VA": 5434857375,
+        "bytes": "41b801000000",
+        "instruction": "mov r8d, 1"
+      },
+      {
+        "file_offset": 64659880,
+        "VA": 5434857384,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 64659899,
+        "VA": 5434857403,
+        "bytes": "41b801000000",
+        "instruction": "mov r8d, 1"
+      },
+      {
+        "file_offset": 64659908,
+        "VA": 5434857412,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 64659927,
+        "VA": 5434857431,
+        "bytes": "41b801000000",
+        "instruction": "mov r8d, 1"
+      },
+      {
+        "file_offset": 64659936,
+        "VA": 5434857440,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      },
+      {
+        "file_offset": 64659965,
+        "VA": 5434857469,
+        "bytes": "41b801000000",
+        "instruction": "mov r8d, 1"
+      },
+      {
+        "file_offset": 64659977,
+        "VA": 5434857481,
+        "bytes": "ff5028",
+        "instruction": "call qword ptr [rax + 0x28]",
+        "direct_target": null
+      }
+    ]
+  },
+  "envelopes": {
+    "client": {
+      "rows": 251,
+      "bytes": 24732,
+      "first_selector": 13,
+      "identity_bytes": 12,
+      "footer_at": 24723,
+      "selector_hist": {
+        "0": 251
+      },
+      "mode": 0,
+      "execution_positions": [
+        0,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        39
+      ],
+      "payload_sha256": "7e9d740b9ee6900965d8616a136ea4bc54a0f7207f9727eac72badfb727f6c34",
+      "body_bytes": 24710
+    },
+    "server": {
+      "rows": 251,
+      "bytes": 422345,
+      "first_selector": 13,
+      "identity_bytes": 12,
+      "footer_at": 422336,
+      "selector_hist": {
+        "0": 251
+      },
+      "mode": 1,
+      "execution_positions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "payload_sha256": "19337841e40d012863cb3aeca72141ec3b059419b8d87e54a6f380e8974b047f",
+      "body_bytes": 422323
+    }
+  },
+  "common_byte_equal_rows": {
+    "0": 251,
+    "14": 251,
+    "15": 251,
+    "16": 251,
+    "17": 251,
+    "18": 251,
+    "19": 251,
+    "20": 251,
+    "21": 251,
+    "22": 251,
+    "23": 251,
+    "24": 251,
+    "25": 251,
+    "26": 251,
+    "39": 251
+  },
+  "server_only": [
+    {
+      "position": 1,
+      "site": 17038094,
+      "object_displacement": 280,
+      "wire_type": "ref_ordinal_u32",
+      "t55_code": "Nnsi",
+      "gate": 17038054,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17038085,
+        "destination_site": 17038075,
+        "destination_operand": "rdx, [r15 + 0x118]",
+        "object_displacement": 280
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "cf1b02557188df91d4af7089060200a2b01698ad9f4db1881951b516e2f2d77a",
+        "first": {
+          "row": 0,
+          "absolute": 14,
+          "raw": "ffffffff",
+          "value": 4294967295
+        },
+        "distinct": 206,
+        "min": 222,
+        "max": 4294967295
+      },
+      "classification": "prior_reference"
+    },
+    {
+      "position": 2,
+      "site": 17038135,
+      "object_displacement": 296,
+      "wire_type": "collection",
+      "t55_code": null,
+      "gate": 17038054,
+      "item_gate": 17038435,
+      "transfer": {
+        "width": 2,
+        "width_site": 17038126,
+        "destination_site": 17038121,
+        "destination_operand": "rdx, [rsp + 0x4e]",
+        "object_displacement": null
+      },
+      "collection": {
+        "name": "extra_128",
+        "proof": 17038399,
+        "item": 17038525,
+        "stride": 4
+      },
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 502,
+        "sha256": "361d71bd11d9fda1cae721e450f3fca911b9c46e17711be20400df87ca904110",
+        "first": {
+          "row": 0,
+          "absolute": 18,
+          "raw": "0000",
+          "value": 0
+        },
+        "distinct": 1,
+        "min": 0,
+        "max": 0,
+        "items": 0,
+        "empty_rows": 251,
+        "count_hist": {
+          "0": 251
+        },
+        "first_nonempty": null,
+        "span_range": [
+          2,
+          2
+        ]
+      },
+      "classification": "opaque_collection"
+    },
+    {
+      "position": 3,
+      "site": 17038962,
+      "object_displacement": 344,
+      "wire_type": "collection",
+      "t55_code": null,
+      "gate": 17038054,
+      "item_gate": 17039146,
+      "transfer": {
+        "width": 4,
+        "width_site": 17038953,
+        "destination_site": 17038948,
+        "destination_operand": "rdx, [rsp + 0x48]",
+        "object_displacement": null
+      },
+      "collection": {
+        "name": "extra_158",
+        "proof": 17039112,
+        "item": 17039225,
+        "stride": 4
+      },
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "fa16c3b03c75c0d2a74b01ab8bd3806b53f82abc36bbcc29ae987898f56f5544",
+        "first": {
+          "row": 0,
+          "absolute": 20,
+          "raw": "00000000",
+          "value": 0
+        },
+        "distinct": 1,
+        "min": 0,
+        "max": 0,
+        "items": 0,
+        "empty_rows": 251,
+        "count_hist": {
+          "0": 251
+        },
+        "first_nonempty": null,
+        "span_range": [
+          4,
+          4
+        ]
+      },
+      "classification": "opaque_collection"
+    },
+    {
+      "position": 4,
+      "site": 17039647,
+      "object_displacement": 368,
+      "wire_type": "collection",
+      "t55_code": "Nftb",
+      "gate": 17038054,
+      "item_gate": 17039684,
+      "transfer": {
+        "width": 2,
+        "width_site": 17039638,
+        "destination_site": 17039633,
+        "destination_operand": "rdx, [rsp + 0x4c]",
+        "object_displacement": null
+      },
+      "collection": {
+        "name": "Nftb",
+        "proof": 17039660,
+        "item": 17039837,
+        "stride": null,
+        "shape": "u8 tag + 4 × (u32 length + bytes) + 4B packed date + 4 × 4B"
+      },
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 851,
+        "sha256": "296acff32867f2f16f65d6f3946aa0d01b3bb317af8ba16315fd145b2730fc71",
+        "first": {
+          "row": 0,
+          "absolute": 24,
+          "raw": "0000",
+          "value": 0
+        },
+        "distinct": 2,
+        "min": 0,
+        "max": 7,
+        "items": 7,
+        "empty_rows": 250,
+        "count_hist": {
+          "0": 250,
+          "7": 1
+        },
+        "first_nonempty": {
+          "row": 162,
+          "absolute": 278809,
+          "raw": "0700",
+          "value": 7
+        },
+        "span_range": [
+          2,
+          351
+        ]
+      },
+      "classification": "frozen_parent"
+    },
+    {
+      "position": 5,
+      "site": 17040224,
+      "object_displacement": 388,
+      "wire_type": "raw32",
+      "t55_code": null,
+      "gate": 17038054,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17040215,
+        "destination_site": 17040205,
+        "destination_operand": "rdx, [r15 + 0x184]",
+        "object_displacement": 388
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "7350f53dc863ab76e82609f634d52a29458f88bf58c9a237ec1ab085477817db",
+        "first": {
+          "row": 0,
+          "absolute": 26,
+          "raw": "2ad60000",
+          "value": 54826
+        },
+        "distinct": 243,
+        "min": 1,
+        "max": 4294967295
+      },
+      "classification": "unnamed_fixed_transfer"
+    },
+    {
+      "position": 6,
+      "site": 17040260,
+      "object_displacement": 392,
+      "wire_type": "raw32",
+      "t55_code": null,
+      "gate": 17038054,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17040251,
+        "destination_site": 17040241,
+        "destination_operand": "rdx, [r15 + 0x188]",
+        "object_displacement": 392
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "0ed2d08d37488b40b1303098ecf792bdda0d7c03c8b0c185d0debe131402600e",
+        "first": {
+          "row": 0,
+          "absolute": 30,
+          "raw": "bffa0100",
+          "value": 129727
+        },
+        "distinct": 243,
+        "min": 1,
+        "max": 4294967295
+      },
+      "classification": "unnamed_fixed_transfer"
+    },
+    {
+      "position": 7,
+      "site": 17040296,
+      "object_displacement": 396,
+      "wire_type": "raw32",
+      "t55_code": null,
+      "gate": 17038054,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17040287,
+        "destination_site": 17040277,
+        "destination_operand": "rdx, [r15 + 0x18c]",
+        "object_displacement": 396
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "8a766bada8d4b8847f2a95c440a9a200b9131e70025ae5b3092da986e3a50b9a",
+        "first": {
+          "row": 0,
+          "absolute": 34,
+          "raw": "da0a0000",
+          "value": 2778
+        },
+        "distinct": 191,
+        "min": 0,
+        "max": 4294967295
+      },
+      "classification": "unnamed_fixed_transfer"
+    },
+    {
+      "position": 8,
+      "site": 17040332,
+      "object_displacement": 400,
+      "wire_type": "raw32",
+      "t55_code": null,
+      "gate": 17038054,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17040323,
+        "destination_site": 17040313,
+        "destination_operand": "rdx, [r15 + 0x190]",
+        "object_displacement": 400
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "53c48905af41150fe4bd061483d3ad4155bbcf7e174b0e7714c20bdb8e686f94",
+        "first": {
+          "row": 0,
+          "absolute": 38,
+          "raw": "a6040000",
+          "value": 1190
+        },
+        "distinct": 222,
+        "min": 0,
+        "max": 19907
+      },
+      "classification": "unnamed_fixed_transfer"
+    },
+    {
+      "position": 9,
+      "site": 17040368,
+      "object_displacement": 404,
+      "wire_type": "raw32",
+      "t55_code": null,
+      "gate": 17038054,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17040359,
+        "destination_site": 17040349,
+        "destination_operand": "rdx, [r15 + 0x194]",
+        "object_displacement": 404
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "266d31c8c6f30ffb64756f687ad12e30ef5571faaa8359b9c6a2c2419ff019b4",
+        "first": {
+          "row": 0,
+          "absolute": 42,
+          "raw": "1f0e0000",
+          "value": 3615
+        },
+        "distinct": 225,
+        "min": 0,
+        "max": 42488
+      },
+      "classification": "unnamed_fixed_transfer"
+    },
+    {
+      "position": 10,
+      "site": 17040404,
+      "object_displacement": 408,
+      "wire_type": "raw32",
+      "t55_code": null,
+      "gate": 17038054,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17040395,
+        "destination_site": 17040385,
+        "destination_operand": "rdx, [r15 + 0x198]",
+        "object_displacement": 408
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "c6d1440f51c390a745e78d018c4d6c10776656e94f6f997049a1e0bc50955527",
+        "first": {
+          "row": 0,
+          "absolute": 46,
+          "raw": "1c000000",
+          "value": 28
+        },
+        "distinct": 89,
+        "min": 0,
+        "max": 24137
+      },
+      "classification": "unnamed_fixed_transfer"
+    },
+    {
+      "position": 11,
+      "site": 17040482,
+      "object_displacement": 96,
+      "wire_type": "collection",
+      "t55_code": "Ntxr",
+      "gate": 17038054,
+      "item_gate": 17040517,
+      "transfer": {
+        "width": 4,
+        "width_site": 17040473,
+        "destination_site": 17040468,
+        "destination_operand": "rdx, [rsp + 0x44]",
+        "object_displacement": null
+      },
+      "collection": {
+        "name": "Ntxr",
+        "proof": 17040495,
+        "item": 17040532,
+        "stride": null,
+        "shape": "tag <2 → 23B, otherwise 25B; t47"
+      },
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 48479,
+        "sha256": "dc4d029ddde53c1485438641a6e122d8e8b980c3bce32c55a544e913440760a9",
+        "first": {
+          "row": 0,
+          "absolute": 50,
+          "raw": "08000000",
+          "value": 8
+        },
+        "distinct": 27,
+        "min": 0,
+        "max": 144,
+        "items": 1899,
+        "empty_rows": 30,
+        "count_hist": {
+          "0": 30,
+          "1": 4,
+          "2": 3,
+          "3": 32,
+          "4": 13,
+          "5": 18,
+          "6": 26,
+          "7": 29,
+          "8": 18,
+          "9": 12,
+          "10": 12,
+          "11": 9,
+          "12": 14,
+          "13": 6,
+          "14": 6,
+          "15": 3,
+          "16": 3,
+          "17": 2,
+          "18": 2,
+          "19": 1,
+          "20": 1,
+          "21": 1,
+          "23": 1,
+          "24": 1,
+          "25": 2,
+          "27": 1,
+          "144": 1
+        },
+        "first_nonempty": {
+          "row": 0,
+          "absolute": 50,
+          "raw": "08000000",
+          "value": 8
+        },
+        "span_range": [
+          4,
+          3604
+        ]
+      },
+      "classification": "frozen_parent"
+    },
+    {
+      "position": 12,
+      "site": 17040593,
+      "object_displacement": 216,
+      "wire_type": "collection",
+      "t55_code": null,
+      "gate": 17038054,
+      "item_gate": 17040611,
+      "transfer": {
+        "width": 4,
+        "width_site": 17040584,
+        "destination_site": 17040579,
+        "destination_operand": "rdx, [rsp + 0x7c]",
+        "object_displacement": null
+      },
+      "collection": {
+        "name": "extra_d8",
+        "proof": 17040617,
+        "item": 17040681,
+        "stride": 12,
+        "shape": "4B opaque + two packed-date helper calls"
+      },
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 327140,
+        "sha256": "636a0ddf306898ffdd15f309eff566441cc10920bdc304e9f23908b14060bebd",
+        "first": {
+          "row": 0,
+          "absolute": 254,
+          "raw": "17000000",
+          "value": 23
+        },
+        "distinct": 115,
+        "min": 0,
+        "max": 2502,
+        "items": 27178,
+        "empty_rows": 87,
+        "count_hist": {
+          "0": 87,
+          "1": 14,
+          "2": 6,
+          "3": 4,
+          "4": 2,
+          "5": 3,
+          "6": 1,
+          "7": 3,
+          "8": 3,
+          "9": 2,
+          "10": 2,
+          "11": 2,
+          "12": 2,
+          "15": 1,
+          "16": 2,
+          "19": 3,
+          "21": 1,
+          "22": 1,
+          "23": 1,
+          "24": 1,
+          "25": 1,
+          "26": 1,
+          "27": 1,
+          "28": 1,
+          "30": 1,
+          "32": 3,
+          "35": 3,
+          "38": 1,
+          "39": 1,
+          "42": 2,
+          "44": 1,
+          "46": 1,
+          "50": 1,
+          "52": 1,
+          "54": 1,
+          "58": 2,
+          "60": 3,
+          "61": 1,
+          "63": 1,
+          "64": 1,
+          "66": 1,
+          "68": 1,
+          "69": 1,
+          "70": 1,
+          "72": 1,
+          "73": 1,
+          "76": 1,
+          "78": 1,
+          "79": 1,
+          "80": 1,
+          "81": 1,
+          "82": 1,
+          "87": 1,
+          "88": 3,
+          "92": 2,
+          "94": 1,
+          "95": 1,
+          "98": 1,
+          "100": 2,
+          "104": 2,
+          "106": 1,
+          "108": 1,
+          "116": 1,
+          "117": 1,
+          "119": 1,
+          "121": 1,
+          "123": 1,
+          "125": 1,
+          "127": 1,
+          "129": 1,
+          "130": 2,
+          "137": 1,
+          "142": 1,
+          "151": 1,
+          "153": 1,
+          "157": 1,
+          "159": 1,
+          "165": 1,
+          "167": 1,
+          "169": 1,
+          "170": 1,
+          "172": 1,
+          "178": 1,
+          "186": 1,
+          "191": 1,
+          "192": 1,
+          "196": 1,
+          "212": 1,
+          "250": 1,
+          "253": 1,
+          "255": 1,
+          "257": 1,
+          "261": 1,
+          "263": 1,
+          "297": 1,
+          "312": 1,
+          "316": 1,
+          "335": 2,
+          "354": 1,
+          "367": 1,
+          "389": 1,
+          "521": 1,
+          "556": 1,
+          "626": 1,
+          "640": 1,
+          "642": 1,
+          "712": 1,
+          "719": 1,
+          "754": 1,
+          "1061": 1,
+          "1090": 1,
+          "1180": 1,
+          "1765": 1,
+          "2076": 1,
+          "2502": 1
+        },
+        "first_nonempty": {
+          "row": 0,
+          "absolute": 254,
+          "raw": "17000000",
+          "value": 23
+        },
+        "span_range": [
+          4,
+          30028
+        ]
+      },
+      "classification": "opaque_collection"
+    },
+    {
+      "position": 13,
+      "site": 64441954,
+      "object_displacement": 120,
+      "wire_type": "collection",
+      "t55_code": null,
+      "gate": 17038054,
+      "item_gate": 64442224,
+      "transfer": null,
+      "collection": {
+        "name": "extra_78",
+        "proof": 17040766,
+        "item": 64442268,
+        "stride": 14
+      },
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1816,
+        "sha256": "aee9faf57878865582995851578c91cf1e7e0be8f5dda1447f06f68c7f02b5ad",
+        "first": {
+          "row": 0,
+          "absolute": 534,
+          "raw": "00000000",
+          "value": 0
+        },
+        "distinct": 8,
+        "min": 0,
+        "max": 9,
+        "items": 58,
+        "empty_rows": 232,
+        "count_hist": {
+          "0": 232,
+          "1": 6,
+          "2": 3,
+          "3": 4,
+          "4": 3,
+          "5": 1,
+          "8": 1,
+          "9": 1
+        },
+        "first_nonempty": {
+          "row": 52,
+          "absolute": 33623,
+          "raw": "01000000",
+          "value": 1
+        },
+        "span_range": [
+          4,
+          130
+        ]
+      },
+      "classification": "opaque_collection"
+    },
+    {
+      "position": 27,
+      "site": 17041904,
+      "object_displacement": 420,
+      "wire_type": "raw32",
+      "t55_code": null,
+      "gate": 17041875,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17041895,
+        "destination_site": 17041885,
+        "destination_operand": "rdx, [r14 + 0x1a4]",
+        "object_displacement": 420
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "fedd8bcf9e53e286670be2a28c8089503d215f68b0f95874140726d578475a01",
+        "first": {
+          "row": 0,
+          "absolute": 590,
+          "raw": "6b011442",
+          "value": 1108607339
+        },
+        "distinct": 231,
+        "min": 0,
+        "max": 3255592668
+      },
+      "classification": "unnamed_fixed_transfer"
+    },
+    {
+      "position": 28,
+      "site": 17041940,
+      "object_displacement": 424,
+      "wire_type": "raw32",
+      "t55_code": null,
+      "gate": 17041875,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17041931,
+        "destination_site": 17041921,
+        "destination_operand": "rdx, [r14 + 0x1a8]",
+        "object_displacement": 424
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "849284e41f28e50238e039b1adbb450f1e9af512830633ecb09f220bbb1f1799",
+        "first": {
+          "row": 0,
+          "absolute": 594,
+          "raw": "ae47b641",
+          "value": 1102464942
+        },
+        "distinct": 231,
+        "min": 0,
+        "max": 3260760112
+      },
+      "classification": "unnamed_fixed_transfer"
+    },
+    {
+      "position": 29,
+      "site": 17041976,
+      "object_displacement": 432,
+      "wire_type": "raw32",
+      "t55_code": null,
+      "gate": 17041875,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17041967,
+        "destination_site": 17041957,
+        "destination_operand": "rdx, [r14 + 0x1b0]",
+        "object_displacement": 432
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "2e45a62155f3708c290d4a5247ce57416348561aedfe0f5b704b5f055fcf63e0",
+        "first": {
+          "row": 0,
+          "absolute": 598,
+          "raw": "ddc11741",
+          "value": 1092075997
+        },
+        "distinct": 231,
+        "min": 0,
+        "max": 3274716328
+      },
+      "classification": "unnamed_fixed_transfer"
+    },
+    {
+      "position": 30,
+      "site": 17042012,
+      "object_displacement": 428,
+      "wire_type": "raw32",
+      "t55_code": null,
+      "gate": 17041875,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17042003,
+        "destination_site": 17041993,
+        "destination_operand": "rdx, [r14 + 0x1ac]",
+        "object_displacement": 428
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "e9489e43b911b3d1161d3a5696db859e33bd55c6bf7409fffb90f04601bbc07c",
+        "first": {
+          "row": 0,
+          "absolute": 602,
+          "raw": "006f02c1",
+          "value": 3238162176
+        },
+        "distinct": 231,
+        "min": 0,
+        "max": 3274963769
+      },
+      "classification": "unnamed_fixed_transfer"
+    },
+    {
+      "position": 31,
+      "site": 17042048,
+      "object_displacement": 440,
+      "wire_type": "raw32",
+      "t55_code": null,
+      "gate": 17041875,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17042039,
+        "destination_site": 17042029,
+        "destination_operand": "rdx, [r14 + 0x1b8]",
+        "object_displacement": 440
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "d611eaf21f9ea1a5bec6cfac856f823f195a3d6fb413856b944e659753880d69",
+        "first": {
+          "row": 0,
+          "absolute": 606,
+          "raw": "d5030000",
+          "value": 981
+        },
+        "distinct": 201,
+        "min": 0,
+        "max": 3114
+      },
+      "classification": "unnamed_fixed_transfer"
+    },
+    {
+      "position": 32,
+      "site": 17042084,
+      "object_displacement": 444,
+      "wire_type": "raw32",
+      "t55_code": null,
+      "gate": 17041875,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17042075,
+        "destination_site": 17042065,
+        "destination_operand": "rdx, [r14 + 0x1bc]",
+        "object_displacement": 444
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "5f1b7884e5414a183adfbdcbf0b76e5b5c97cd65ba658c9d39104de29008eb0c",
+        "first": {
+          "row": 0,
+          "absolute": 610,
+          "raw": "cb030000",
+          "value": 971
+        },
+        "distinct": 200,
+        "min": 0,
+        "max": 9997
+      },
+      "classification": "unnamed_fixed_transfer"
+    },
+    {
+      "position": 33,
+      "site": 17042120,
+      "object_displacement": 448,
+      "wire_type": "raw32",
+      "t55_code": null,
+      "gate": 17041875,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17042111,
+        "destination_site": 17042101,
+        "destination_operand": "rdx, [r14 + 0x1c0]",
+        "object_displacement": 448
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "e38bac2a7d3c3c821029d3868ab1ac42b35cce33cc7915264638c4205a771a8e",
+        "first": {
+          "row": 0,
+          "absolute": 614,
+          "raw": "e7880e00",
+          "value": 952551
+        },
+        "distinct": 225,
+        "min": 0,
+        "max": 24542635
+      },
+      "classification": "unnamed_fixed_transfer"
+    },
+    {
+      "position": 34,
+      "site": 17042156,
+      "object_displacement": 452,
+      "wire_type": "i32",
+      "t55_code": "Npop",
+      "gate": 17041875,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17042147,
+        "destination_site": 17042137,
+        "destination_operand": "rdx, [r14 + 0x1c4]",
+        "object_displacement": 452
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "fd5ceda98b601c0e4eaa166b74f3ab140d510885dda84ef301d0b598d796eb51",
+        "first": {
+          "row": 0,
+          "absolute": 618,
+          "raw": "241d9d02",
+          "value": 43851044
+        },
+        "distinct": 232,
+        "min": 0,
+        "max": 1439323776
+      },
+      "classification": "out_of_frozen_schema"
+    },
+    {
+      "position": 35,
+      "site": 17042192,
+      "object_displacement": 380,
+      "wire_type": "raw32",
+      "t55_code": null,
+      "gate": 17041875,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17042183,
+        "destination_site": 17042173,
+        "destination_operand": "rdx, [r14 + 0x17c]",
+        "object_displacement": 380
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "b996ef4e36d7081244394988877172c3802b336f37e399144913600cbd24adb3",
+        "first": {
+          "row": 0,
+          "absolute": 622,
+          "raw": "ffffffff",
+          "value": 4294967295
+        },
+        "distinct": 1,
+        "min": 4294967295,
+        "max": 4294967295
+      },
+      "classification": "unnamed_fixed_transfer"
+    },
+    {
+      "position": 36,
+      "site": 17042228,
+      "object_displacement": 384,
+      "wire_type": "raw32",
+      "t55_code": null,
+      "gate": 17041875,
+      "item_gate": null,
+      "transfer": {
+        "width": 4,
+        "width_site": 17042219,
+        "destination_site": 17042209,
+        "destination_operand": "rdx, [r14 + 0x180]",
+        "object_displacement": 384
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 1004,
+        "sha256": "b996ef4e36d7081244394988877172c3802b336f37e399144913600cbd24adb3",
+        "first": {
+          "row": 0,
+          "absolute": 626,
+          "raw": "ffffffff",
+          "value": 4294967295
+        },
+        "distinct": 1,
+        "min": 4294967295,
+        "max": 4294967295
+      },
+      "classification": "unnamed_fixed_transfer"
+    },
+    {
+      "position": 37,
+      "site": 17042264,
+      "object_displacement": 456,
+      "wire_type": "u16_bitfield",
+      "t55_code": "Nndn",
+      "gate": 17041875,
+      "item_gate": null,
+      "transfer": {
+        "width": 2,
+        "width_site": 17042255,
+        "destination_site": 17042245,
+        "destination_operand": "rdx, [r14 + 0x1c8]",
+        "object_displacement": 456
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 502,
+        "sha256": "ef6a7af74ee8045ab168fd335a9a9530e978c72c8544ee6ad887c970f888e733",
+        "first": {
+          "row": 0,
+          "absolute": 630,
+          "raw": "0000",
+          "value": 0
+        },
+        "distinct": 2,
+        "min": 0,
+        "max": 512
+      },
+      "classification": "prior_word_bit"
+    },
+    {
+      "position": 38,
+      "site": 17042300,
+      "object_displacement": 458,
+      "wire_type": "raw8",
+      "t55_code": null,
+      "gate": 17041875,
+      "item_gate": null,
+      "transfer": {
+        "width": 1,
+        "width_site": 17042291,
+        "destination_site": 17042281,
+        "destination_operand": "rdx, [r14 + 0x1ca]",
+        "object_displacement": 458
+      },
+      "collection": null,
+      "client": {
+        "rows": 0,
+        "condition": "external mode != 0; t55 client replay uses mode 0"
+      },
+      "server": {
+        "rows": 251,
+        "bytes": 251,
+        "sha256": "e258fc78e23908bdff0123123cb31e7a81008118ab1188ddcb740360727add4f",
+        "first": {
+          "row": 0,
+          "absolute": 632,
+          "raw": "00",
+          "value": 0
+        },
+        "distinct": 1,
+        "min": 0,
+        "max": 0
+      },
+      "classification": "unnamed_fixed_transfer"
+    }
+  ],
+  "opaque_78_item_header": {
+    "items": 58,
+    "header_byte_hist": {
+      "1": 58
+    },
+    "first": {
+      "row": 52,
+      "absolute": 33627,
+      "raw": "01",
+      "value": 1
+    },
+    "item_wire_width": 14,
+    "header_semantics": "unlabelled; one byte read to stack, not a keyed getter field"
+  },
+  "reference_controls": {
+    "client": {
+      "rdui_identity_NOT_reference": {
+        "rows": 251,
+        "ordinal_hit": 92,
+        "ordinal_miss": 159,
+        "null": 0,
+        "wrong_UID_hit": 251,
+        "wrong_UID_miss": 0,
+        "first_ordinal_miss": {
+          "row": 92,
+          "absolute": 6762,
+          "raw": "67010000",
+          "value": 359
+        },
+        "first_wrong_UID_miss": null,
+        "first_collision_distinct_owner": {
+          "row": 0,
+          "absolute": 74,
+          "raw": "05000000",
+          "value": 5,
+          "ordinal_to_UID": 10,
+          "UID_to_ordinal": 0
+        }
+      },
+      "t10_target_count": 251,
+      "raw_t10_hypotheses": {
+        "21": {
+          "rows": 251,
+          "ordinal_hit": 168,
+          "ordinal_miss": 83,
+          "null": 0,
+          "wrong_UID_hit": 0,
+          "wrong_UID_miss": 251,
+          "first_ordinal_miss": {
+            "row": 33,
+            "absolute": 2374,
+            "raw": "00003841",
+            "value": 1094189056
+          },
+          "first_wrong_UID_miss": {
+            "row": 0,
+            "absolute": 33,
+            "raw": "00000000",
+            "value": 0
+          },
+          "first_collision_distinct_owner": null
+        }
+      },
+      "Nnsi_prior_control": {
+        "status": "bypassed_mode"
+      }
+    },
+    "server": {
+      "rdui_identity_NOT_reference": {
+        "rows": 251,
+        "ordinal_hit": 92,
+        "ordinal_miss": 159,
+        "null": 0,
+        "wrong_UID_hit": 251,
+        "wrong_UID_miss": 0,
+        "first_ordinal_miss": {
+          "row": 92,
+          "absolute": 75205,
+          "raw": "67010000",
+          "value": 359
+        },
+        "first_wrong_UID_miss": null,
+        "first_collision_distinct_owner": {
+          "row": 0,
+          "absolute": 641,
+          "raw": "05000000",
+          "value": 5,
+          "ordinal_to_UID": 10,
+          "UID_to_ordinal": 0
+        }
+      },
+      "t10_target_count": 251,
+      "raw_t10_hypotheses": {
+        "5": {
+          "rows": 251,
+          "ordinal_hit": 5,
+          "ordinal_miss": 237,
+          "null": 9,
+          "wrong_UID_hit": 5,
+          "wrong_UID_miss": 237,
+          "first_ordinal_miss": {
+            "row": 0,
+            "absolute": 26,
+            "raw": "2ad60000",
+            "value": 54826
+          },
+          "first_wrong_UID_miss": {
+            "row": 0,
+            "absolute": 26,
+            "raw": "2ad60000",
+            "value": 54826
+          },
+          "first_collision_distinct_owner": {
+            "row": 124,
+            "absolute": 99763,
+            "raw": "06000000",
+            "value": 6,
+            "ordinal_to_UID": 11,
+            "UID_to_ordinal": 1
+          }
+        },
+        "6": {
+          "rows": 251,
+          "ordinal_hit": 4,
+          "ordinal_miss": 238,
+          "null": 9,
+          "wrong_UID_hit": 1,
+          "wrong_UID_miss": 241,
+          "first_ordinal_miss": {
+            "row": 0,
+            "absolute": 30,
+            "raw": "bffa0100",
+            "value": 129727
+          },
+          "first_wrong_UID_miss": {
+            "row": 0,
+            "absolute": 30,
+            "raw": "bffa0100",
+            "value": 129727
+          },
+          "first_collision_distinct_owner": {
+            "row": 198,
+            "absolute": 401553,
+            "raw": "07000000",
+            "value": 7,
+            "ordinal_to_UID": 12,
+            "UID_to_ordinal": 2
+          }
+        },
+        "7": {
+          "rows": 251,
+          "ordinal_hit": 21,
+          "ordinal_miss": 169,
+          "null": 61,
+          "wrong_UID_hit": 5,
+          "wrong_UID_miss": 185,
+          "first_ordinal_miss": {
+            "row": 0,
+            "absolute": 34,
+            "raw": "da0a0000",
+            "value": 2778
+          },
+          "first_wrong_UID_miss": {
+            "row": 0,
+            "absolute": 34,
+            "raw": "da0a0000",
+            "value": 2778
+          },
+          "first_collision_distinct_owner": {
+            "row": 106,
+            "absolute": 83490,
+            "raw": "0f000000",
+            "value": 15,
+            "ordinal_to_UID": 20,
+            "UID_to_ordinal": 10
+          }
+        },
+        "21": {
+          "rows": 251,
+          "ordinal_hit": 168,
+          "ordinal_miss": 83,
+          "null": 0,
+          "wrong_UID_hit": 0,
+          "wrong_UID_miss": 251,
+          "first_ordinal_miss": {
+            "row": 33,
+            "absolute": 19163,
+            "raw": "00003841",
+            "value": 1094189056
+          },
+          "first_wrong_UID_miss": {
+            "row": 0,
+            "absolute": 557,
+            "raw": "00000000",
+            "value": 0
+          },
+          "first_collision_distinct_owner": null
+        },
+        "35": {
+          "rows": 251,
+          "ordinal_hit": 0,
+          "ordinal_miss": 0,
+          "null": 251,
+          "wrong_UID_hit": 0,
+          "wrong_UID_miss": 0,
+          "first_ordinal_miss": null,
+          "first_wrong_UID_miss": null,
+          "first_collision_distinct_owner": null
+        },
+        "36": {
+          "rows": 251,
+          "ordinal_hit": 0,
+          "ordinal_miss": 0,
+          "null": 251,
+          "wrong_UID_hit": 0,
+          "wrong_UID_miss": 0,
+          "first_ordinal_miss": null,
+          "first_wrong_UID_miss": null,
+          "first_collision_distinct_owner": null
+        }
+      },
+      "Nnsi_prior_control": {
+        "rows": 251,
+        "ordinal_hit": 208,
+        "ordinal_miss": 0,
+        "null": 43,
+        "wrong_UID_hit": 79,
+        "wrong_UID_miss": 129,
+        "first_ordinal_miss": null,
+        "first_wrong_UID_miss": {
+          "row": 1,
+          "absolute": 646,
+          "raw": "da2f0000",
+          "value": 12250
+        },
+        "first_collision_distinct_owner": {
+          "row": 2,
+          "absolute": 1620,
+          "raw": "df040000",
+          "value": 1247,
+          "ordinal_to_UID": 103026,
+          "UID_to_ordinal": 603
+        }
+      }
+    }
+  },
+  "wrong_mode_witnesses": {
+    "client": {
+      "row": 0,
+      "absolute": 7188,
+      "raw": "05021700",
+      "value": 1507845,
+      "label": "extra_158 count",
+      "forced_mode": 1,
+      "source": "t55 first bad transfer; raw bytes rechecked"
+    },
+    "server": {
+      "row": 0,
+      "absolute": 38,
+      "raw": "a6",
+      "value": -90,
+      "label": "A count",
+      "forced_mode": 0,
+      "source": "t55 first bad transfer; raw bytes rechecked"
+    }
+  }
+}

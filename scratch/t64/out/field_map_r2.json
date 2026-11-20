@@ -1,0 +1,5500 @@
+{
+  "status": "t64_evidence_increment",
+  "scope": "COMP table_25 main row only; t59 L3/held map is frozen",
+  "baseline": {
+    "path": "scratch/t59/out/field_map.json",
+    "sha256": "fdbcb6120cf87b1f7987d50bc2b2283e8a25d23594060f4b348defbfc546d168",
+    "summary": {
+      "L3": 49,
+      "held": 10,
+      "unmapped": 196
+    },
+    "inversion_count": 818
+  },
+  "provenance": {
+    "editor_sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4",
+    "master_sha256": "7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda",
+    "evidence_manifest": {
+      "snapshot_date": "2026-11-18",
+      "files": {
+        "evidence/fm24/reports/editor_schema/master.json": {
+          "sha256": "7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda",
+          "bytes": 2900594
+        },
+        "evidence/fm24/reports/dbdat_decode/client_table_25_competition_samples.json": {
+          "sha256": "d4930a397c9452cf8a81b820d26e35775720ab23ba70eae3f1a7a0079a7af85a",
+          "bytes": 2105
+        }
+      }
+    },
+    "coordinates": "PE file offsets unless a va field is explicitly present"
+  },
+  "summary": {
+    "reviewed_unmapped_occurrences": 196,
+    "r2_candidates": 1,
+    "new_L3": 0,
+    "baseline_L3_unchanged": true,
+    "baseline_held_unchanged": true,
+    "baseline_inversions_unchanged": true,
+    "bounded_main_getter_literal_occurrences": 47,
+    "no_main_or_slot5_literal_occurrences": 149
+  },
+  "fields": [
+    {
+      "xml_index": 0,
+      "code": "DBvw",
+      "schema": {
+        "field": "DBvw",
+        "name": null,
+        "type": "enum",
+        "raw_name": null
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 4,
+      "code": "EFBR",
+      "schema": {
+        "field": "EFBR",
+        "name": "Advanced Rules Field",
+        "type": "string",
+        "raw_name": "Advanced Rules Field",
+        "is_read_only": "true",
+        "debug_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "advanced_rules_or_debug",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "advanced-rules/debug field has no literal case in the bounded COMP roots",
+      "falsification": "decode its range/helper dispatch and connect it to a main-row wire transfer"
+    },
+    {
+      "xml_index": 5,
+      "code": "NDBC",
+      "schema": {
+        "field": "NDBC",
+        "name": "Number Of Changes",
+        "type": "integer",
+        "raw_name": "Number Of Changes[COMMENT; editor; number of changes for a database record]",
+        "is_read_only": "true",
+        "dependencies": [
+          {
+            "field": "number_records_editing",
+            "equals": "1"
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 6,
+      "code": "FDBC",
+      "schema": {
+        "field": "FDBC",
+        "name": "Number Of Failed Changes",
+        "type": "integer",
+        "raw_name": "Number Of Failed Changes[COMMENT; editor; number of failed changes for a database record]",
+        "is_read_only": "true",
+        "dependencies": [
+          {
+            "field": "number_records_editing",
+            "equals": "1"
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 7,
+      "code": "dbnm",
+      "schema": {
+        "field": "dbnm",
+        "name": "Name",
+        "type": "string",
+        "raw_name": "Name",
+        "database_table_type": "competition"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 8,
+      "code": "dAPw",
+      "schema": {
+        "field": "dAPw",
+        "name": "Name",
+        "type": "string",
+        "raw_name": "Name",
+        "database_table_type": "competition"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 28,
+      "code": "VARv",
+      "schema": {
+        "field": "VARv",
+        "name": "VAR - TV Matches Only",
+        "type": "boolean",
+        "raw_name": "VAR - TV Matches Only[COMMENT: editor; VAR tv flag for a competition]",
+        "hint": "Does VAR only get used for matches on television?",
+        "dependencies": [
+          {
+            "field": "VARt",
+            "not_equals": "4"
+          },
+          {
+            "field": "VARt",
+            "not_equals": "5"
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 29,
+      "code": "VARm",
+      "schema": {
+        "field": "VARm",
+        "name": "VAR - From Stage Onwards (Main Stage Name)",
+        "type": "database_record_unique_id",
+        "raw_name": "VAR - From Stage Onwards (Main Stage Name)[COMMENT: editor; VAR field for a competition]",
+        "hint": "Does VAR only get used for matches from a certain stage onwards?",
+        "database_table_type": "stage_name",
+        "dependencies": [
+          {
+            "field": "VARt",
+            "not_equals": "4"
+          },
+          {
+            "field": "VARt",
+            "not_equals": "5"
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 30,
+      "code": "VARs",
+      "schema": {
+        "field": "VARs",
+        "name": "VAR - From Stage Onwards (Sub Stage Name)",
+        "type": "database_record_unique_id",
+        "raw_name": "VAR - From Stage Onwards (Sub Stage Name)[COMMENT: editor; VAR field for a competition]",
+        "hint": "Does VAR only get used for matches from a certain stage onwards?",
+        "database_table_type": "stage_name",
+        "dependencies": [
+          {
+            "field": "VARt",
+            "not_equals": "4"
+          },
+          {
+            "field": "VARt",
+            "not_equals": "5"
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 31,
+      "code": "VARd",
+      "schema": {
+        "field": "VARd",
+        "name": "VAR - From Date",
+        "type": "date",
+        "raw_name": "VAR - From Date[COMMENT: editor; VAR field for a competition]",
+        "hint": "Does VAR only get used for matches from a certain date onwards?",
+        "dependencies": [
+          {
+            "field": "VARt",
+            "not_equals": "4"
+          },
+          {
+            "field": "VARt",
+            "not_equals": "5"
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 33,
+      "code": "HKEv",
+      "schema": {
+        "field": "HKEv",
+        "name": "Uses Goal-line Technology - TV Matches Only",
+        "type": "boolean",
+        "raw_name": "Uses Goal-line Technology - TV Matches Only[COMMENT: editor; Goal-line technology tv flag for a competition]",
+        "hint": "Does Goal-line technology only get used for matches on television?",
+        "dependencies": [
+          {
+            "field": "HKEt",
+            "equals": "true"
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "rules_context_sibling",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "goal-line fields belong to the +0xd8 rules/context family",
+      "falsification": "prove a main-row scalar transfer independent of the +0xd8 rules object"
+    },
+    {
+      "xml_index": 34,
+      "code": "HKEm",
+      "schema": {
+        "field": "HKEm",
+        "name": "Uses Goal-line Technology - From Stage Onwards (Main Stage Name)",
+        "type": "database_record_unique_id",
+        "raw_name": "Uses Goal-line Technology - From Stage Onwards (Main Stage Name)[COMMENT: editor; Goal-line technology field for a competition]",
+        "hint": "Does Goal-line technology only get used for matches from a certain stage onwards?",
+        "database_table_type": "stage_name",
+        "dependencies": [
+          {
+            "field": "HKEt",
+            "equals": "true"
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "rules_context_sibling",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "goal-line fields belong to the +0xd8 rules/context family",
+      "falsification": "prove a main-row scalar transfer independent of the +0xd8 rules object"
+    },
+    {
+      "xml_index": 35,
+      "code": "HKEs",
+      "schema": {
+        "field": "HKEs",
+        "name": "Uses Goal-line Technology - From Stage Onwards (Sub Stage Name)",
+        "type": "database_record_unique_id",
+        "raw_name": "Uses Goal-line Technology - From Stage Onwards (Sub Stage Name)[COMMENT: editor; VAR field for a competition]",
+        "hint": "Does Goal-line technology only get used for matches from a certain stage onwards?",
+        "database_table_type": "stage_name",
+        "dependencies": [
+          {
+            "field": "HKEt",
+            "equals": "true"
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "rules_context_sibling",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "goal-line fields belong to the +0xd8 rules/context family",
+      "falsification": "prove a main-row scalar transfer independent of the +0xd8 rules object"
+    },
+    {
+      "xml_index": 36,
+      "code": "HKEd",
+      "schema": {
+        "field": "HKEd",
+        "name": "Uses Goal-line Technology - From Date",
+        "type": "date",
+        "raw_name": "Uses Goal-line Technology - From Date[COMMENT: editor; VAR field for a competition]",
+        "hint": "Does Goal-line technology only get used for matches from a certain date onwards?",
+        "dependencies": [
+          {
+            "field": "HKEt",
+            "equals": "true"
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "rules_context_sibling",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "goal-line fields belong to the +0xd8 rules/context family",
+      "falsification": "prove a main-row scalar transfer independent of the +0xd8 rules object"
+    },
+    {
+      "xml_index": 40,
+      "code": "WpBn",
+      "schema": {
+        "field": "WpBn",
+        "name": "Band",
+        "type": "integer",
+        "raw_name": "Band",
+        "is_read_only": "true",
+        "is_optional": "true",
+        "debug_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "candidate",
+      "classification": "projection_candidate",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15473376,
+                "va": "0x140ec24e0",
+                "bytes": "81fe6e427057",
+                "instruction": "cmp esi, 0x5770426e"
+              },
+              "equality_target_file_offset": 15483666,
+              "equality_target_va": "0x140ec4d12"
+            }
+          ]
+        }
+      ],
+      "reason": "getter computes Band from held +0xf4 state; not a raw wire binding",
+      "falsification": "show direct returned value equals the main-row byte for all relevant states and exclude the helper/gate",
+      "candidate_dependency": {
+        "object_offset": 244,
+        "same_slot": "mf4",
+        "helper": 15506480,
+        "post_operation": "result + 1"
+      }
+    },
+    {
+      "xml_index": 41,
+      "code": "IsAC",
+      "schema": {
+        "field": "IsAC",
+        "name": "Is Active Division (Exclude Parent Comps)",
+        "type": "boolean",
+        "raw_name": "Is Active Division (Exclude Parent Comps)",
+        "debug_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "derived_parent_or_global_state",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15471637,
+                "va": "0x140ec1e15",
+                "bytes": "81fe43417349",
+                "instruction": "cmp esi, 0x49734143"
+              },
+              "equality_target_file_offset": 15466780,
+              "equality_target_va": "0x140ec0b1c"
+            }
+          ]
+        }
+      ],
+      "reason": "equal path returns a derived boolean without a same-COMP wire load",
+      "falsification": "trace the shared return into a main-row member transfer"
+    },
+    {
+      "xml_index": 42,
+      "code": "HsAR",
+      "schema": {
+        "field": "HsAR",
+        "name": "Has Advanced Rules",
+        "type": "boolean",
+        "raw_name": "Has Advanced Rules",
+        "is_read_only": "true",
+        "debug_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "advanced_rules_or_debug",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "advanced-rules/debug field has no literal case in the bounded COMP roots",
+      "falsification": "decode its range/helper dispatch and connect it to a main-row wire transfer"
+    },
+    {
+      "xml_index": 43,
+      "code": "NoBR",
+      "schema": {
+        "field": "NoBR",
+        "name": "Broken Rules",
+        "type": "integer",
+        "raw_name": "Broken Rules",
+        "is_read_only": "true",
+        "debug_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "advanced_rules_or_debug",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "advanced-rules/debug field has no literal case in the bounded COMP roots",
+      "falsification": "decode its range/helper dispatch and connect it to a main-row wire transfer"
+    },
+    {
+      "xml_index": 55,
+      "code": "cmtc",
+      "schema": {
+        "field": "cmtc",
+        "name": "Teams (This Year)",
+        "type": "integer",
+        "raw_name": "Teams (This Year)[COMMENT: editor; label for how many teams will be in this year's version of a competition]",
+        "is_read_only": "true",
+        "is_optional": "true",
+        "debug_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "derived_count",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15469148,
+                "va": "0x140ec145c",
+                "bytes": "81fe63746d63",
+                "instruction": "cmp esi, 0x636d7463"
+              },
+              "equality_target_file_offset": 15470262,
+              "equality_target_va": "0x140ec18b6"
+            },
+            {
+              "compare": {
+                "file_offset": 15470324,
+                "va": "0x140ec18f4",
+                "bytes": "81fe63746d63",
+                "instruction": "cmp esi, 0x636d7463"
+              },
+              "equality_target_file_offset": null,
+              "equality_target_va": null
+            }
+          ]
+        }
+      ],
+      "reason": "count is selected from an external/context table using COMP +0x8 as an index",
+      "falsification": "find a direct stream transfer to COMP +0x8 and separate it from the external count table",
+      "member_observed": {
+        "object_offset": 8,
+        "use": "index only"
+      }
+    },
+    {
+      "xml_index": 56,
+      "code": "nytc",
+      "schema": {
+        "field": "nytc",
+        "name": "Teams (Next Year)",
+        "type": "integer",
+        "raw_name": "Teams (Next Year)[COMMENT: editor; label for how many teams will be in next year's version of a competition]",
+        "is_read_only": "true",
+        "is_optional": "true",
+        "debug_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "derived_count",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15470250,
+                "va": "0x140ec18aa",
+                "bytes": "81fe6374796e",
+                "instruction": "cmp esi, 0x6e797463"
+              },
+              "equality_target_file_offset": 15470262,
+              "equality_target_va": "0x140ec18b6"
+            }
+          ]
+        }
+      ],
+      "reason": "count is selected from an external/context table using COMP +0x8 as an index",
+      "falsification": "find a direct stream transfer to COMP +0x8 and separate it from the external count table",
+      "member_observed": {
+        "object_offset": 8,
+        "use": "index only"
+      }
+    },
+    {
+      "xml_index": 57,
+      "code": "ctms",
+      "schema": {
+        "field": "ctms",
+        "name": "Teams",
+        "type": "database_record_list",
+        "raw_name": "Teams",
+        "allow_column_sorting": "true",
+        "allow_swap": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15470756,
+                "va": "0x140ec1aa4",
+                "bytes": "81fe736d7463",
+                "instruction": "cmp esi, 0x63746d73"
+              },
+              "equality_target_file_offset": 15472492,
+              "equality_target_va": "0x140ec216c"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 58,
+      "code": "CTMS",
+      "schema": {
+        "field": "CTMS",
+        "name": "Teams",
+        "type": "database_record_list",
+        "raw_name": "Teams",
+        "allow_column_sorting": "true",
+        "is_read_only": "true",
+        "allow_swap": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "derived_list_or_shared_handler",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15472480,
+                "va": "0x140ec2160",
+                "bytes": "81fe534d5443",
+                "instruction": "cmp esi, 0x43544d53"
+              },
+              "equality_target_file_offset": 15472492,
+              "equality_target_va": "0x140ec216c"
+            },
+            {
+              "compare": {
+                "file_offset": 15472492,
+                "va": "0x140ec216c",
+                "bytes": "81fe534d5443",
+                "instruction": "cmp esi, 0x43544d53"
+              },
+              "equality_target_file_offset": null,
+              "equality_target_va": null
+            }
+          ]
+        }
+      ],
+      "reason": "list/debug view is routed to a shared handler; no main-row scalar binding",
+      "falsification": "decode the shared list handler and prove a main-row scalar wire lane"
+    },
+    {
+      "xml_index": 81,
+      "code": "sfCi",
+      "schema": {
+        "field": "sfCi",
+        "name": "Min Wage",
+        "type": "cash",
+        "raw_name": "Min Wage[COMMENT - person list view column heading; scouting section; abbreviation for Minimum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15469332,
+                "va": "0x140ec1514",
+                "bytes": "81fe69436673",
+                "instruction": "cmp esi, 0x73664369"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476719,
+                "va": "0x140ec31ef",
+                "bytes": "81fe69436673",
+                "instruction": "cmp esi, 0x73664369"
+              },
+              "equality_target_file_offset": 15476908,
+              "equality_target_va": "0x140ec32ac"
+            },
+            {
+              "compare": {
+                "file_offset": 15477050,
+                "va": "0x140ec333a",
+                "bytes": "81fe69436673",
+                "instruction": "cmp esi, 0x73664369"
+              },
+              "equality_target_file_offset": 15477070,
+              "equality_target_va": "0x140ec334e"
+            },
+            {
+              "compare": {
+                "file_offset": 15489461,
+                "va": "0x140ec63b5",
+                "bytes": "81fe69436673",
+                "instruction": "cmp esi, 0x73664369"
+              },
+              "equality_target_file_offset": 15491586,
+              "equality_target_va": "0x140ec6c02"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 82,
+      "code": "sfCx",
+      "schema": {
+        "field": "sfCx",
+        "name": "Max Wage",
+        "type": "cash",
+        "raw_name": "Max Wage[COMMENT - person list view column heading; scouting section; abbreviation for Maximum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15471341,
+                "va": "0x140ec1ced",
+                "bytes": "81fe78436673",
+                "instruction": "cmp esi, 0x73664378"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476731,
+                "va": "0x140ec31fb",
+                "bytes": "81fe78436673",
+                "instruction": "cmp esi, 0x73664378"
+              },
+              "equality_target_file_offset": 15476908,
+              "equality_target_va": "0x140ec32ac"
+            },
+            {
+              "compare": {
+                "file_offset": 15477058,
+                "va": "0x140ec3342",
+                "bytes": "81fe78436673",
+                "instruction": "cmp esi, 0x73664378"
+              },
+              "equality_target_file_offset": 15477070,
+              "equality_target_va": "0x140ec334e"
+            },
+            {
+              "compare": {
+                "file_offset": 15489473,
+                "va": "0x140ec63c1",
+                "bytes": "81fe78436673",
+                "instruction": "cmp esi, 0x73664378"
+              },
+              "equality_target_file_offset": 15491694,
+              "equality_target_va": "0x140ec6c6e"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 83,
+      "code": "ssCi",
+      "schema": {
+        "field": "ssCi",
+        "name": "Min Wage",
+        "type": "cash",
+        "raw_name": "Min Wage[COMMENT - person list view column heading; scouting section; abbreviation for Minimum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15469267,
+                "va": "0x140ec14d3",
+                "bytes": "81fe69437373",
+                "instruction": "cmp esi, 0x73734369"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476930,
+                "va": "0x140ec32c2",
+                "bytes": "81fe69437373",
+                "instruction": "cmp esi, 0x73734369"
+              },
+              "equality_target_file_offset": 15476946,
+              "equality_target_va": "0x140ec32d2"
+            },
+            {
+              "compare": {
+                "file_offset": 15489295,
+                "va": "0x140ec630f",
+                "bytes": "81fe69437373",
+                "instruction": "cmp esi, 0x73734369"
+              },
+              "equality_target_file_offset": 15489311,
+              "equality_target_va": "0x140ec631f"
+            },
+            {
+              "compare": {
+                "file_offset": 15491541,
+                "va": "0x140ec6bd5",
+                "bytes": "81fe69437373",
+                "instruction": "cmp esi, 0x73734369"
+              },
+              "equality_target_file_offset": 15491586,
+              "equality_target_va": "0x140ec6c02"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 84,
+      "code": "ssCx",
+      "schema": {
+        "field": "ssCx",
+        "name": "Max Wage",
+        "type": "cash",
+        "raw_name": "Max Wage[COMMENT - person list view column heading; scouting section; abbreviation for Maximum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15469279,
+                "va": "0x140ec14df",
+                "bytes": "81fe78437373",
+                "instruction": "cmp esi, 0x73734378"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476938,
+                "va": "0x140ec32ca",
+                "bytes": "81fe78437373",
+                "instruction": "cmp esi, 0x73734378"
+              },
+              "equality_target_file_offset": 15476946,
+              "equality_target_va": "0x140ec32d2"
+            },
+            {
+              "compare": {
+                "file_offset": 15489303,
+                "va": "0x140ec6317",
+                "bytes": "81fe78437373",
+                "instruction": "cmp esi, 0x73734378"
+              },
+              "equality_target_file_offset": 15489311,
+              "equality_target_va": "0x140ec631f"
+            },
+            {
+              "compare": {
+                "file_offset": 15491549,
+                "va": "0x140ec6bdd",
+                "bytes": "81fe78437373",
+                "instruction": "cmp esi, 0x73734378"
+              },
+              "equality_target_file_offset": 15491694,
+              "equality_target_va": "0x140ec6c6e"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 85,
+      "code": "syCi",
+      "schema": {
+        "field": "syCi",
+        "name": "Min Wage",
+        "type": "cash",
+        "raw_name": "Min Wage[COMMENT - person list view column heading; scouting section; abbreviation for Minimum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15471283,
+                "va": "0x140ec1cb3",
+                "bytes": "81fe69437973",
+                "instruction": "cmp esi, 0x73794369"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476912,
+                "va": "0x140ec32b0",
+                "bytes": "81fe69437973",
+                "instruction": "cmp esi, 0x73794369"
+              },
+              "equality_target_file_offset": 15476966,
+              "equality_target_va": "0x140ec32e6"
+            },
+            {
+              "compare": {
+                "file_offset": 15489275,
+                "va": "0x140ec62fb",
+                "bytes": "81fe69437973",
+                "instruction": "cmp esi, 0x73794369"
+              },
+              "equality_target_file_offset": 15489291,
+              "equality_target_va": "0x140ec630b"
+            },
+            {
+              "compare": {
+                "file_offset": 15491516,
+                "va": "0x140ec6bbc",
+                "bytes": "81fe69437973",
+                "instruction": "cmp esi, 0x73794369"
+              },
+              "equality_target_file_offset": 15491586,
+              "equality_target_va": "0x140ec6c02"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 86,
+      "code": "syCx",
+      "schema": {
+        "field": "syCx",
+        "name": "Max Wage",
+        "type": "cash",
+        "raw_name": "Max Wage[COMMENT - person list view column heading; scouting section; abbreviation for Maximum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15474299,
+                "va": "0x140ec287b",
+                "bytes": "81fe78437973",
+                "instruction": "cmp esi, 0x73794378"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476920,
+                "va": "0x140ec32b8",
+                "bytes": "81fe78437973",
+                "instruction": "cmp esi, 0x73794378"
+              },
+              "equality_target_file_offset": 15476966,
+              "equality_target_va": "0x140ec32e6"
+            },
+            {
+              "compare": {
+                "file_offset": 15489283,
+                "va": "0x140ec6303",
+                "bytes": "81fe78437973",
+                "instruction": "cmp esi, 0x73794378"
+              },
+              "equality_target_file_offset": 15489291,
+              "equality_target_va": "0x140ec630b"
+            },
+            {
+              "compare": {
+                "file_offset": 15491524,
+                "va": "0x140ec6bc4",
+                "bytes": "81fe78437973",
+                "instruction": "cmp esi, 0x73794378"
+              },
+              "equality_target_file_offset": 15491694,
+              "equality_target_va": "0x140ec6c6e"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 87,
+      "code": "sfMi",
+      "schema": {
+        "field": "sfMi",
+        "name": "Min Wage",
+        "type": "cash",
+        "raw_name": "Min Wage[COMMENT - person list view column heading; scouting section; abbreviation for Minimum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15471353,
+                "va": "0x140ec1cf9",
+                "bytes": "81fe694d6673",
+                "instruction": "cmp esi, 0x73664d69"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476892,
+                "va": "0x140ec329c",
+                "bytes": "81fe694d6673",
+                "instruction": "cmp esi, 0x73664d69"
+              },
+              "equality_target_file_offset": 15476908,
+              "equality_target_va": "0x140ec32ac"
+            },
+            {
+              "compare": {
+                "file_offset": 15489255,
+                "va": "0x140ec62e7",
+                "bytes": "81fe694d6673",
+                "instruction": "cmp esi, 0x73664d69"
+              },
+              "equality_target_file_offset": 15489271,
+              "equality_target_va": "0x140ec62f7"
+            },
+            {
+              "compare": {
+                "file_offset": 15491491,
+                "va": "0x140ec6ba3",
+                "bytes": "81fe694d6673",
+                "instruction": "cmp esi, 0x73664d69"
+              },
+              "equality_target_file_offset": 15491586,
+              "equality_target_va": "0x140ec6c02"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 88,
+      "code": "sfMx",
+      "schema": {
+        "field": "sfMx",
+        "name": "Max Wage",
+        "type": "cash",
+        "raw_name": "Max Wage[COMMENT - person list view column heading; scouting section; abbreviation for Maximum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15471365,
+                "va": "0x140ec1d05",
+                "bytes": "81fe784d6673",
+                "instruction": "cmp esi, 0x73664d78"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476900,
+                "va": "0x140ec32a4",
+                "bytes": "81fe784d6673",
+                "instruction": "cmp esi, 0x73664d78"
+              },
+              "equality_target_file_offset": 15476908,
+              "equality_target_va": "0x140ec32ac"
+            },
+            {
+              "compare": {
+                "file_offset": 15489263,
+                "va": "0x140ec62ef",
+                "bytes": "81fe784d6673",
+                "instruction": "cmp esi, 0x73664d78"
+              },
+              "equality_target_file_offset": 15489271,
+              "equality_target_va": "0x140ec62f7"
+            },
+            {
+              "compare": {
+                "file_offset": 15491499,
+                "va": "0x140ec6bab",
+                "bytes": "81fe784d6673",
+                "instruction": "cmp esi, 0x73664d78"
+              },
+              "equality_target_file_offset": 15491694,
+              "equality_target_va": "0x140ec6c6e"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 89,
+      "code": "ssMi",
+      "schema": {
+        "field": "ssMi",
+        "name": "Min Wage",
+        "type": "cash",
+        "raw_name": "Min Wage[COMMENT - person list view column heading; scouting section; abbreviation for Minimum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15474270,
+                "va": "0x140ec285e",
+                "bytes": "81fe694d7373",
+                "instruction": "cmp esi, 0x73734d69"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476768,
+                "va": "0x140ec3220",
+                "bytes": "81fe694d7373",
+                "instruction": "cmp esi, 0x73734d69"
+              },
+              "equality_target_file_offset": 15476946,
+              "equality_target_va": "0x140ec32d2"
+            },
+            {
+              "compare": {
+                "file_offset": 15485158,
+                "va": "0x140ec52e6",
+                "bytes": "81fe694d7373",
+                "instruction": "cmp esi, 0x73734d69"
+              },
+              "equality_target_file_offset": 15485178,
+              "equality_target_va": "0x140ec52fa"
+            },
+            {
+              "compare": {
+                "file_offset": 15489606,
+                "va": "0x140ec6446",
+                "bytes": "81fe694d7373",
+                "instruction": "cmp esi, 0x73734d69"
+              },
+              "equality_target_file_offset": 15491586,
+              "equality_target_va": "0x140ec6c02"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 90,
+      "code": "ssMx",
+      "schema": {
+        "field": "ssMx",
+        "name": "Max Wage",
+        "type": "cash",
+        "raw_name": "Max Wage[COMMENT - person list view column heading; scouting section; abbreviation for Maximum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15474282,
+                "va": "0x140ec286a",
+                "bytes": "81fe784d7373",
+                "instruction": "cmp esi, 0x73734d78"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476780,
+                "va": "0x140ec322c",
+                "bytes": "81fe784d7373",
+                "instruction": "cmp esi, 0x73734d78"
+              },
+              "equality_target_file_offset": 15476946,
+              "equality_target_va": "0x140ec32d2"
+            },
+            {
+              "compare": {
+                "file_offset": 15485166,
+                "va": "0x140ec52ee",
+                "bytes": "81fe784d7373",
+                "instruction": "cmp esi, 0x73734d78"
+              },
+              "equality_target_file_offset": 15485178,
+              "equality_target_va": "0x140ec52fa"
+            },
+            {
+              "compare": {
+                "file_offset": 15489618,
+                "va": "0x140ec6452",
+                "bytes": "81fe784d7373",
+                "instruction": "cmp esi, 0x73734d78"
+              },
+              "equality_target_file_offset": 15491694,
+              "equality_target_va": "0x140ec6c6e"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 91,
+      "code": "syMi",
+      "schema": {
+        "field": "syMi",
+        "name": "Min Wage",
+        "type": "cash",
+        "raw_name": "Min Wage[COMMENT - person list view column heading; scouting section; abbreviation for Minimum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15474311,
+                "va": "0x140ec2887",
+                "bytes": "81fe694d7973",
+                "instruction": "cmp esi, 0x73794d69"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476834,
+                "va": "0x140ec3262",
+                "bytes": "81fe694d7973",
+                "instruction": "cmp esi, 0x73794d69"
+              },
+              "equality_target_file_offset": 15476966,
+              "equality_target_va": "0x140ec32e6"
+            },
+            {
+              "compare": {
+                "file_offset": 15486553,
+                "va": "0x140ec5859",
+                "bytes": "81fe694d7973",
+                "instruction": "cmp esi, 0x73794d69"
+              },
+              "equality_target_file_offset": 15486573,
+              "equality_target_va": "0x140ec586d"
+            },
+            {
+              "compare": {
+                "file_offset": 15490356,
+                "va": "0x140ec6734",
+                "bytes": "81fe694d7973",
+                "instruction": "cmp esi, 0x73794d69"
+              },
+              "equality_target_file_offset": 15491586,
+              "equality_target_va": "0x140ec6c02"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 92,
+      "code": "syMx",
+      "schema": {
+        "field": "syMx",
+        "name": "Max Wage",
+        "type": "cash",
+        "raw_name": "Max Wage[COMMENT - person list view column heading; scouting section; abbreviation for Maximum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15471312,
+                "va": "0x140ec1cd0",
+                "bytes": "81fe784d7973",
+                "instruction": "cmp esi, 0x73794d78"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476842,
+                "va": "0x140ec326a",
+                "bytes": "81fe784d7973",
+                "instruction": "cmp esi, 0x73794d78"
+              },
+              "equality_target_file_offset": 15476966,
+              "equality_target_va": "0x140ec32e6"
+            },
+            {
+              "compare": {
+                "file_offset": 15486561,
+                "va": "0x140ec5861",
+                "bytes": "81fe784d7973",
+                "instruction": "cmp esi, 0x73794d78"
+              },
+              "equality_target_file_offset": 15486573,
+              "equality_target_va": "0x140ec586d"
+            },
+            {
+              "compare": {
+                "file_offset": 15490368,
+                "va": "0x140ec6740",
+                "bytes": "81fe784d7973",
+                "instruction": "cmp esi, 0x73794d78"
+              },
+              "equality_target_file_offset": 15491694,
+              "equality_target_va": "0x140ec6c6e"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 93,
+      "code": "sfSi",
+      "schema": {
+        "field": "sfSi",
+        "name": "Min Wage",
+        "type": "cash",
+        "raw_name": "Min Wage[COMMENT - person list view column heading; scouting section; abbreviation for Minimum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15476535,
+                "va": "0x140ec3137",
+                "bytes": "81fe69536673",
+                "instruction": "cmp esi, 0x73665369"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476805,
+                "va": "0x140ec3245",
+                "bytes": "81fe69536673",
+                "instruction": "cmp esi, 0x73665369"
+              },
+              "equality_target_file_offset": 15476908,
+              "equality_target_va": "0x140ec32ac"
+            },
+            {
+              "compare": {
+                "file_offset": 15486514,
+                "va": "0x140ec5832",
+                "bytes": "81fe69536673",
+                "instruction": "cmp esi, 0x73665369"
+              },
+              "equality_target_file_offset": 15486534,
+              "equality_target_va": "0x140ec5846"
+            },
+            {
+              "compare": {
+                "file_offset": 15490315,
+                "va": "0x140ec670b",
+                "bytes": "81fe69536673",
+                "instruction": "cmp esi, 0x73665369"
+              },
+              "equality_target_file_offset": 15491586,
+              "equality_target_va": "0x140ec6c02"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 94,
+      "code": "sfSx",
+      "schema": {
+        "field": "sfSx",
+        "name": "Max Wage",
+        "type": "cash",
+        "raw_name": "Max Wage[COMMENT - person list view column heading; scouting section; abbreviation for Maximum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15476543,
+                "va": "0x140ec313f",
+                "bytes": "81fe78536673",
+                "instruction": "cmp esi, 0x73665378"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476813,
+                "va": "0x140ec324d",
+                "bytes": "81fe78536673",
+                "instruction": "cmp esi, 0x73665378"
+              },
+              "equality_target_file_offset": 15476908,
+              "equality_target_va": "0x140ec32ac"
+            },
+            {
+              "compare": {
+                "file_offset": 15486522,
+                "va": "0x140ec583a",
+                "bytes": "81fe78536673",
+                "instruction": "cmp esi, 0x73665378"
+              },
+              "equality_target_file_offset": 15486534,
+              "equality_target_va": "0x140ec5846"
+            },
+            {
+              "compare": {
+                "file_offset": 15490327,
+                "va": "0x140ec6717",
+                "bytes": "81fe78536673",
+                "instruction": "cmp esi, 0x73665378"
+              },
+              "equality_target_file_offset": 15491694,
+              "equality_target_va": "0x140ec6c6e"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 95,
+      "code": "sySi",
+      "schema": {
+        "field": "sySi",
+        "name": "Min Wage",
+        "type": "cash",
+        "raw_name": "Min Wage[COMMENT - person list view column heading; scouting section; abbreviation for Minimum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15471324,
+                "va": "0x140ec1cdc",
+                "bytes": "81fe69537973",
+                "instruction": "cmp esi, 0x73795369"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476950,
+                "va": "0x140ec32d6",
+                "bytes": "81fe69537973",
+                "instruction": "cmp esi, 0x73795369"
+              },
+              "equality_target_file_offset": 15476966,
+              "equality_target_va": "0x140ec32e6"
+            },
+            {
+              "compare": {
+                "file_offset": 15489315,
+                "va": "0x140ec6323",
+                "bytes": "81fe69537973",
+                "instruction": "cmp esi, 0x73795369"
+              },
+              "equality_target_file_offset": 15489331,
+              "equality_target_va": "0x140ec6333"
+            },
+            {
+              "compare": {
+                "file_offset": 15491574,
+                "va": "0x140ec6bf6",
+                "bytes": "81fe69537973",
+                "instruction": "cmp esi, 0x73795369"
+              },
+              "equality_target_file_offset": 15491586,
+              "equality_target_va": "0x140ec6c02"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 96,
+      "code": "sySx",
+      "schema": {
+        "field": "sySx",
+        "name": "Max Wage",
+        "type": "cash",
+        "raw_name": "Max Wage[COMMENT - person list view column heading; scouting section; abbreviation for Maximum Wage Demands; scout's opinion of this value]",
+        "min_value": "0",
+        "max_value": "1000000000",
+        "default_value": "0",
+        "is_optional": "true",
+        "is_weekly_wage": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15474328,
+                "va": "0x140ec2898",
+                "bytes": "81fe78537973",
+                "instruction": "cmp esi, 0x73795378"
+              },
+              "equality_target_file_offset": 15476555,
+              "equality_target_va": "0x140ec314b"
+            },
+            {
+              "compare": {
+                "file_offset": 15476958,
+                "va": "0x140ec32de",
+                "bytes": "81fe78537973",
+                "instruction": "cmp esi, 0x73795378"
+              },
+              "equality_target_file_offset": 15476966,
+              "equality_target_va": "0x140ec32e6"
+            },
+            {
+              "compare": {
+                "file_offset": 15489323,
+                "va": "0x140ec632b",
+                "bytes": "81fe78537973",
+                "instruction": "cmp esi, 0x73795378"
+              },
+              "equality_target_file_offset": 15489331,
+              "equality_target_va": "0x140ec6333"
+            },
+            {
+              "compare": {
+                "file_offset": 15491566,
+                "va": "0x140ec6bee",
+                "bytes": "81fe78537973",
+                "instruction": "cmp esi, 0x73795378"
+              },
+              "equality_target_file_offset": 15491694,
+              "equality_target_va": "0x140ec6c6e"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 97,
+      "code": "Pfq0",
+      "schema": {
+        "field": "Pfq0",
+        "name": "Frequency",
+        "type": "enum",
+        "raw_name": "Frequency[COMMENT: press conference frequency label]",
+        "hint": "The frequency with which this interview type should take place"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 98,
+      "code": "Pob0",
+      "schema": {
+        "field": "Pob0",
+        "name": "Obligatory",
+        "type": "boolean",
+        "raw_name": "Obligatory[COMMENT: press conference frequency type, conferences are an obligation]",
+        "hint": "The competition regulations require that the interview must take place"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 99,
+      "code": "Pat0",
+      "schema": {
+        "field": "Pat0",
+        "name": "Manager Only",
+        "type": "boolean",
+        "raw_name": "Manager Only[COMMENT: press conference attendance type, manager only person who attends]",
+        "hint": "Only the manager can attend. If unticked, any staff member may do so."
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 100,
+      "code": "Pmn0",
+      "schema": {
+        "field": "Pmn0",
+        "name": "Minimum Questions",
+        "type": "integer",
+        "raw_name": "Minimum Questions[COMMENT: press conference comp editor question info, minimum number of questions to be asked in a press conference]",
+        "min_value": "-1",
+        "max_value": "127"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 101,
+      "code": "Pmx0",
+      "schema": {
+        "field": "Pmx0",
+        "name": "Maximum Questions",
+        "type": "integer",
+        "raw_name": "Maximum Questions[COMMENT: press conference comp editor question info, maximum number of questions to be asked in a press conference]",
+        "min_value": "-1",
+        "max_value": "127"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 102,
+      "code": "Pfq1",
+      "schema": {
+        "field": "Pfq1",
+        "name": "Frequency",
+        "type": "enum",
+        "raw_name": "Frequency[COMMENT: press conference frequency label]",
+        "hint": "The frequency with which this interview type should take place"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 103,
+      "code": "Pob1",
+      "schema": {
+        "field": "Pob1",
+        "name": "Obligatory",
+        "type": "boolean",
+        "raw_name": "Obligatory[COMMENT: press conference frequency type, conferences are an obligation]",
+        "hint": "The competition regulations require that the interview must take place"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 104,
+      "code": "Pat1",
+      "schema": {
+        "field": "Pat1",
+        "name": "Manager Only",
+        "type": "boolean",
+        "raw_name": "Manager Only[COMMENT: press conference attendance type, manager only person who attends]",
+        "hint": "Only the manager can attend. If unticked, any staff member may do so."
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 105,
+      "code": "Pmn1",
+      "schema": {
+        "field": "Pmn1",
+        "name": "Minimum Questions",
+        "type": "integer",
+        "raw_name": "Minimum Questions[COMMENT: press conference comp editor question info, minimum number of questions to be asked in a press conference]",
+        "min_value": "-1",
+        "max_value": "127"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 106,
+      "code": "Pmx1",
+      "schema": {
+        "field": "Pmx1",
+        "name": "Maximum Questions",
+        "type": "integer",
+        "raw_name": "Maximum Questions[COMMENT: press conference comp editor question info, maximum number of questions to be asked in a press conference]",
+        "min_value": "-1",
+        "max_value": "127"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 107,
+      "code": "Pfq2",
+      "schema": {
+        "field": "Pfq2",
+        "name": "Frequency",
+        "type": "enum",
+        "raw_name": "Frequency[COMMENT: press conference frequency label]",
+        "hint": "The frequency with which this interview type should take place"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 108,
+      "code": "Pob2",
+      "schema": {
+        "field": "Pob2",
+        "name": "Obligatory",
+        "type": "boolean",
+        "raw_name": "Obligatory[COMMENT: press conference frequency type, conferences are an obligation]",
+        "hint": "The competition regulations require that the interview must take place"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 109,
+      "code": "Pat2",
+      "schema": {
+        "field": "Pat2",
+        "name": "Manager Only",
+        "type": "boolean",
+        "raw_name": "Manager Only[COMMENT: press conference attendance type, manager only person who attends]",
+        "hint": "Only the manager can attend. If unticked, any staff member may do so."
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 110,
+      "code": "Pmn2",
+      "schema": {
+        "field": "Pmn2",
+        "name": "Minimum Questions",
+        "type": "integer",
+        "raw_name": "Minimum Questions[COMMENT: press conference comp editor question info, minimum number of questions to be asked in a press conference]",
+        "min_value": "-1",
+        "max_value": "127"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 111,
+      "code": "Pmx2",
+      "schema": {
+        "field": "Pmx2",
+        "name": "Maximum Questions",
+        "type": "integer",
+        "raw_name": "Maximum Questions[COMMENT: press conference comp editor question info, maximum number of questions to be asked in a press conference]",
+        "min_value": "-1",
+        "max_value": "127"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 112,
+      "code": "Pfq3",
+      "schema": {
+        "field": "Pfq3",
+        "name": "Frequency",
+        "type": "enum",
+        "raw_name": "Frequency[COMMENT: press conference frequency label]",
+        "hint": "The frequency with which this interview type should take place"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 113,
+      "code": "Pob3",
+      "schema": {
+        "field": "Pob3",
+        "name": "Obligatory",
+        "type": "boolean",
+        "raw_name": "Obligatory[COMMENT: press conference frequency type, conferences are an obligation]",
+        "hint": "The competition regulations require that the interview must take place"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 114,
+      "code": "Pat3",
+      "schema": {
+        "field": "Pat3",
+        "name": "Manager Only",
+        "type": "boolean",
+        "raw_name": "Manager Only[COMMENT: press conference attendance type, manager only person who attends]",
+        "hint": "Only the manager can attend. If unticked, any staff member may do so."
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 115,
+      "code": "Pmn3",
+      "schema": {
+        "field": "Pmn3",
+        "name": "Minimum Questions",
+        "type": "integer",
+        "raw_name": "Minimum Questions[COMMENT: press conference comp editor question info, minimum number of questions to be asked in a press conference]",
+        "min_value": "-1",
+        "max_value": "127"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 116,
+      "code": "Pmx3",
+      "schema": {
+        "field": "Pmx3",
+        "name": "Maximum Questions",
+        "type": "integer",
+        "raw_name": "Maximum Questions[COMMENT: press conference comp editor question info, maximum number of questions to be asked in a press conference]",
+        "min_value": "-1",
+        "max_value": "127"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 117,
+      "code": "Pfq4",
+      "schema": {
+        "field": "Pfq4",
+        "name": "Frequency",
+        "type": "enum",
+        "raw_name": "Frequency[COMMENT: press conference frequency label]",
+        "hint": "The frequency with which this interview type should take place"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 118,
+      "code": "Pob4",
+      "schema": {
+        "field": "Pob4",
+        "name": "Obligatory",
+        "type": "boolean",
+        "raw_name": "Obligatory[COMMENT: press conference frequency type, conferences are an obligation]",
+        "hint": "The competition regulations require that the interview must take place"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 119,
+      "code": "Pat4",
+      "schema": {
+        "field": "Pat4",
+        "name": "Manager Only",
+        "type": "boolean",
+        "raw_name": "Manager Only[COMMENT: press conference attendance type, manager only person who attends]",
+        "hint": "Only the manager can attend. If unticked, any staff member may do so."
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 120,
+      "code": "Pmn4",
+      "schema": {
+        "field": "Pmn4",
+        "name": "Minimum Questions",
+        "type": "integer",
+        "raw_name": "Minimum Questions[COMMENT: press conference comp editor question info, minimum number of questions to be asked in a press conference]",
+        "min_value": "-1",
+        "max_value": "127"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 121,
+      "code": "Pmx4",
+      "schema": {
+        "field": "Pmx4",
+        "name": "Maximum Questions",
+        "type": "integer",
+        "raw_name": "Maximum Questions[COMMENT: press conference comp editor question info, maximum number of questions to be asked in a press conference]",
+        "min_value": "-1",
+        "max_value": "127"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 122,
+      "code": "Pfq5",
+      "schema": {
+        "field": "Pfq5",
+        "name": "Frequency",
+        "type": "enum",
+        "raw_name": "Frequency[COMMENT: press conference frequency label]",
+        "hint": "The frequency with which this interview type should take place"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 123,
+      "code": "Pob5",
+      "schema": {
+        "field": "Pob5",
+        "name": "Obligatory",
+        "type": "boolean",
+        "raw_name": "Obligatory[COMMENT: press conference frequency type, conferences are an obligation]",
+        "hint": "The competition regulations require that the interview must take place"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 124,
+      "code": "Pat5",
+      "schema": {
+        "field": "Pat5",
+        "name": "Manager Only",
+        "type": "boolean",
+        "raw_name": "Manager Only[COMMENT: press conference attendance type, manager only person who attends]",
+        "hint": "Only the manager can attend. If unticked, any staff member may do so."
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 125,
+      "code": "Pmn5",
+      "schema": {
+        "field": "Pmn5",
+        "name": "Minimum Questions",
+        "type": "integer",
+        "raw_name": "Minimum Questions[COMMENT: press conference comp editor question info, minimum number of questions to be asked in a press conference]",
+        "min_value": "-1",
+        "max_value": "127"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 126,
+      "code": "Pmx5",
+      "schema": {
+        "field": "Pmx5",
+        "name": "Maximum Questions",
+        "type": "integer",
+        "raw_name": "Maximum Questions[COMMENT: press conference comp editor question info, maximum number of questions to be asked in a press conference]",
+        "min_value": "-1",
+        "max_value": "127"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 127,
+      "code": "cntm",
+      "schema": {
+        "field": "cntm",
+        "name": "Teams For Next Season",
+        "type": "database_record_list",
+        "raw_name": "Teams For Next Season",
+        "hint": "Teams which have their Next Division set to this competition or, if Next Division not set, have their Division set to this competition",
+        "allow_column_sorting": "true",
+        "allow_swap": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15474678,
+                "va": "0x140ec29f6",
+                "bytes": "81fe6d746e63",
+                "instruction": "cmp esi, 0x636e746d"
+              },
+              "equality_target_file_offset": 15475270,
+              "equality_target_va": "0x140ec2c46"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 128,
+      "code": "CNTM",
+      "schema": {
+        "field": "CNTM",
+        "name": "Teams For Next Season",
+        "type": "database_record_list",
+        "raw_name": "Teams For Next Season",
+        "hint": "Teams which have their Next Division set to this competition or, if Next Division not set, have their Division set to this competition",
+        "allow_column_sorting": "true",
+        "is_read_only": "true",
+        "allow_swap": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "derived_list_or_shared_handler",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15475258,
+                "va": "0x140ec2c3a",
+                "bytes": "81fe4d544e43",
+                "instruction": "cmp esi, 0x434e544d"
+              },
+              "equality_target_file_offset": 15475270,
+              "equality_target_va": "0x140ec2c46"
+            },
+            {
+              "compare": {
+                "file_offset": 15475270,
+                "va": "0x140ec2c46",
+                "bytes": "81fe4d544e43",
+                "instruction": "cmp esi, 0x434e544d"
+              },
+              "equality_target_file_offset": null,
+              "equality_target_va": null
+            }
+          ]
+        }
+      ],
+      "reason": "list/debug view is routed to a shared handler; no main-row scalar binding",
+      "falsification": "decode the shared list handler and prove a main-row scalar wire lane"
+    },
+    {
+      "xml_index": 129,
+      "code": "otms",
+      "schema": {
+        "field": "otms",
+        "name": "Teams (Secondary Division)",
+        "type": "database_record_list",
+        "raw_name": "Teams (Secondary Division)[COMMENT - list of teams which have their other division set to this division]",
+        "allow_column_sorting": "true",
+        "allow_swap": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15470173,
+                "va": "0x140ec185d",
+                "bytes": "81fe736d746f",
+                "instruction": "cmp esi, 0x6f746d73"
+              },
+              "equality_target_file_offset": 15472389,
+              "equality_target_va": "0x140ec2105"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 130,
+      "code": "OTMS",
+      "schema": {
+        "field": "OTMS",
+        "name": "Teams (Secondary Division)",
+        "type": "database_record_list",
+        "raw_name": "Teams (Secondary Division)[COMMENT - list of teams which have their other division set to this division]",
+        "allow_column_sorting": "true",
+        "is_read_only": "true",
+        "allow_swap": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "derived_list_or_shared_handler",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15469470,
+                "va": "0x140ec159e",
+                "bytes": "81fe534d544f",
+                "instruction": "cmp esi, 0x4f544d53"
+              },
+              "equality_target_file_offset": 15472389,
+              "equality_target_va": "0x140ec2105"
+            },
+            {
+              "compare": {
+                "file_offset": 15472389,
+                "va": "0x140ec2105",
+                "bytes": "81fe534d544f",
+                "instruction": "cmp esi, 0x4f544d53"
+              },
+              "equality_target_file_offset": null,
+              "equality_target_va": null
+            }
+          ]
+        }
+      ],
+      "reason": "list/debug view is routed to a shared handler; no main-row scalar binding",
+      "falsification": "decode the shared list handler and prove a main-row scalar wire lane"
+    },
+    {
+      "xml_index": 131,
+      "code": "nsod",
+      "schema": {
+        "field": "nsod",
+        "name": "Teams For Next Season (Secondary Division)",
+        "type": "database_record_list",
+        "raw_name": "Teams For Next Season (Secondary Division)[COMMENT: allocate teams for the next iteration of the comp, similar to 293094]",
+        "hint": "Teams which have their Next Division set to this other competition or, if Next Division not set, have their Division set to this other competition",
+        "allow_column_sorting": "true",
+        "allow_swap": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15470238,
+                "va": "0x140ec189e",
+                "bytes": "81fe646f736e",
+                "instruction": "cmp esi, 0x6e736f64"
+              },
+              "equality_target_file_offset": 15476274,
+              "equality_target_va": "0x140ec3032"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 132,
+      "code": "NSOD",
+      "schema": {
+        "field": "NSOD",
+        "name": "Teams For Next Season (Secondary Division)",
+        "type": "database_record_list",
+        "raw_name": "Teams For Next Season (Secondary Division)[COMMENT: allocate teams for the next iteration of the comp, similar to 293094]",
+        "hint": "Teams which have their Next Division set to this other competition or, if Next Division not set, have their Division set to this other competition",
+        "allow_column_sorting": "true",
+        "is_read_only": "true",
+        "allow_swap": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "derived_list_or_shared_handler",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15468007,
+                "va": "0x140ec0fe7",
+                "bytes": "81fe444f534e",
+                "instruction": "cmp esi, 0x4e534f44"
+              },
+              "equality_target_file_offset": 15476274,
+              "equality_target_va": "0x140ec3032"
+            },
+            {
+              "compare": {
+                "file_offset": 15476274,
+                "va": "0x140ec3032",
+                "bytes": "81fe444f534e",
+                "instruction": "cmp esi, 0x4e534f44"
+              },
+              "equality_target_file_offset": null,
+              "equality_target_va": null
+            }
+          ]
+        }
+      ],
+      "reason": "list/debug view is routed to a shared handler; no main-row scalar binding",
+      "falsification": "decode the shared list handler and prove a main-row scalar wire lane"
+    },
+    {
+      "xml_index": 133,
+      "code": "rgts",
+      "schema": {
+        "field": "rgts",
+        "name": "Teams In Region",
+        "type": "database_record_list",
+        "raw_name": "Teams In Region[COMMENT - list of teams which are in this regional division]",
+        "allow_column_sorting": "true",
+        "is_read_only": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15476420,
+                "va": "0x140ec30c4",
+                "bytes": "81fe73746772",
+                "instruction": "cmp esi, 0x72677473"
+              },
+              "equality_target_file_offset": 15484760,
+              "equality_target_va": "0x140ec5158"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 134,
+      "code": "crgt",
+      "schema": {
+        "field": "crgt",
+        "name": "Registered Teams",
+        "type": "list",
+        "raw_name": "Registered Teams",
+        "hint": "Set the teams to be registered in this competition, the year they're to be registered for, and a number to identify their registration by (Info).",
+        "list_item_fields": [
+          {
+            "field": "Ttea",
+            "name": "Team",
+            "type": "database_record_unique_id",
+            "raw_name": "Team",
+            "is_optional": "true",
+            "database_table_type": "team"
+          },
+          {
+            "field": "nati",
+            "name": "Nation",
+            "type": "database_record_unique_id",
+            "raw_name": "Nation",
+            "is_read_only": "true",
+            "is_optional": "true",
+            "database_table_type": "nation"
+          },
+          {
+            "field": "year",
+            "name": "Year",
+            "type": "integer",
+            "raw_name": "Year",
+            "min_value": "1900",
+            "max_value": "2100",
+            "is_optional": "true"
+          },
+          {
+            "field": "info",
+            "name": "Info",
+            "type": "integer",
+            "raw_name": "Info",
+            "min_value": "0",
+            "max_value": "127",
+            "is_optional": "true"
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15475100,
+                "va": "0x140ec2b9c",
+                "bytes": "81fe74677263",
+                "instruction": "cmp esi, 0x63726774"
+              },
+              "equality_target_file_offset": 15475112,
+              "equality_target_va": "0x140ec2ba8"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 135,
+      "code": "RsL0",
+      "schema": {
+        "field": "RsL0",
+        "name": "Level 1 Reserve Teams",
+        "type": "integer",
+        "raw_name": "Level 1 Reserve Teams[COMMENT: comp editor field name, set the reserve teams for a competition at this level]",
+        "is_read_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 136,
+      "code": "RsL0",
+      "schema": {
+        "field": "RsL0",
+        "name": "Level 1 Reserve Teams",
+        "type": "integer",
+        "raw_name": "Level 1 Reserve Teams[COMMENT: comp editor field name, set the reserve teams for a competition at this level]",
+        "is_read_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 137,
+      "code": "RsL1",
+      "schema": {
+        "field": "RsL1",
+        "name": "Level 2 Reserve Teams",
+        "type": "integer",
+        "raw_name": "Level 2 Reserve Teams[COMMENT: comp editor field name, set the reserve teams for a competition at this level]",
+        "is_read_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 138,
+      "code": "RsL2",
+      "schema": {
+        "field": "RsL2",
+        "name": "Level 3 Reserve Teams",
+        "type": "integer",
+        "raw_name": "Level 3 Reserve Teams[COMMENT: comp editor field name, set the reserve teams for a competition at this level]",
+        "is_read_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 139,
+      "code": "RsL3",
+      "schema": {
+        "field": "RsL3",
+        "name": "Level 4 Reserve Teams",
+        "type": "integer",
+        "raw_name": "Level 4 Reserve Teams[COMMENT: comp editor field name, set the reserve teams for a competition at this level]",
+        "is_read_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 140,
+      "code": "RsL4",
+      "schema": {
+        "field": "RsL4",
+        "name": "Level 5 Reserve Teams",
+        "type": "integer",
+        "raw_name": "Level 5 Reserve Teams[COMMENT: comp editor field name, set the reserve teams for a competition at this level]",
+        "is_read_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 141,
+      "code": "RsL5",
+      "schema": {
+        "field": "RsL5",
+        "name": "Level 6 Reserve Teams",
+        "type": "integer",
+        "raw_name": "Level 6 Reserve Teams[COMMENT: comp editor field name, set the reserve teams for a competition at this level]",
+        "is_read_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 142,
+      "code": "CRtm",
+      "schema": {
+        "field": "CRtm",
+        "name": "Reserve Teams",
+        "type": "list",
+        "raw_name": "Reserve Teams",
+        "is_read_only": "true",
+        "is_client_field": "false",
+        "allow_move": "false",
+        "allow_copy": "false",
+        "use_labels_for_columns": "true",
+        "list_item_fields": [
+          {
+            "field": "Cclu",
+            "name": "Club",
+            "type": "database_record_unique_id",
+            "raw_name": "Club",
+            "is_read_only": "true",
+            "is_optional": "true",
+            "use_labels_for_columns": "true",
+            "database_table_type": "club"
+          },
+          {
+            "field": "Cdvi",
+            "name": "Division",
+            "type": "database_record_unique_id",
+            "raw_name": "Division",
+            "is_read_only": "true",
+            "is_optional": "true",
+            "database_table_type": "competition"
+          },
+          {
+            "field": "Ttyp",
+            "name": "Team Type",
+            "type": "enum",
+            "raw_name": "Team Type",
+            "is_read_only": "true",
+            "enum_ref": "rstm"
+          },
+          {
+            "field": "Clri",
+            "name": "Local Region",
+            "type": "database_record_unique_id",
+            "raw_name": "Local Region",
+            "is_read_only": "true",
+            "is_optional": "true",
+            "database_table_type": "local_region"
+          },
+          {
+            "field": "Ttea",
+            "name": "Team Created",
+            "type": "database_record_unique_id",
+            "raw_name": "Team Created[COMMENT: editor; competition reserve teams list; field showing the team created]",
+            "is_optional": "true",
+            "database_table_type": "team"
+          },
+          {
+            "field": "Todo",
+            "name": "Division Entered In",
+            "type": "database_record_unique_id",
+            "raw_name": "Division Entered In[COMMENT: editor; competition reserve teams list; field showing the division a team is entered in]",
+            "is_optional": "true",
+            "database_table_type": "competition"
+          }
+        ],
+        "dependencies": [
+          {
+            "field": "CRtm",
+            "exists": "true"
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "derived_list_or_shared_handler",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15470943,
+                "va": "0x140ec1b5f",
+                "bytes": "81fe6d745243",
+                "instruction": "cmp esi, 0x4352746d"
+              },
+              "equality_target_file_offset": 15470955,
+              "equality_target_va": "0x140ec1b6b"
+            }
+          ]
+        }
+      ],
+      "reason": "list/debug view is routed to a shared handler; no main-row scalar binding",
+      "falsification": "decode the shared list handler and prove a main-row scalar wire lane"
+    },
+    {
+      "xml_index": 143,
+      "code": "CBWc",
+      "schema": {
+        "field": "CBWc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 144,
+      "code": "CBWo",
+      "schema": {
+        "field": "CBWo",
+        "name": "Opposition",
+        "type": "database_record_unique_id",
+        "raw_name": "Opposition",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 145,
+      "code": "CBWf",
+      "schema": {
+        "field": "CBWf",
+        "name": "Team Goals",
+        "type": "integer",
+        "raw_name": "Team Goals[COMMENT: editor; goals scored by team in club record]",
+        "min_value": "0",
+        "max_value": "100"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 146,
+      "code": "CBWa",
+      "schema": {
+        "field": "CBWa",
+        "name": "Opposition Goals",
+        "type": "integer",
+        "raw_name": "Opposition Goals",
+        "min_value": "0",
+        "max_value": "100"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 147,
+      "code": "CBWd",
+      "schema": {
+        "field": "CBWd",
+        "name": "Date",
+        "type": "date",
+        "raw_name": "Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 148,
+      "code": "CHSc",
+      "schema": {
+        "field": "CHSc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 149,
+      "code": "CHSo",
+      "schema": {
+        "field": "CHSo",
+        "name": "Opposition",
+        "type": "database_record_unique_id",
+        "raw_name": "Opposition",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 150,
+      "code": "CHSf",
+      "schema": {
+        "field": "CHSf",
+        "name": "Team Goals",
+        "type": "integer",
+        "raw_name": "Team Goals[COMMENT: editor; goals scored by team in club record]",
+        "min_value": "0",
+        "max_value": "100"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 151,
+      "code": "CHSa",
+      "schema": {
+        "field": "CHSa",
+        "name": "Opposition Goals",
+        "type": "integer",
+        "raw_name": "Opposition Goals",
+        "min_value": "0",
+        "max_value": "100"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 152,
+      "code": "CHSd",
+      "schema": {
+        "field": "CHSd",
+        "name": "Date",
+        "type": "date",
+        "raw_name": "Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 153,
+      "code": "CGMp",
+      "schema": {
+        "field": "CGMp",
+        "name": "Player",
+        "type": "database_record_unique_id",
+        "raw_name": "Player",
+        "is_optional": "true",
+        "database_table_type": "person"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 154,
+      "code": "CGMn",
+      "schema": {
+        "field": "CGMn",
+        "name": "Player Name",
+        "type": "string",
+        "raw_name": "Player Name"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 155,
+      "code": "CGMg",
+      "schema": {
+        "field": "CGMg",
+        "name": "Goals",
+        "type": "integer",
+        "raw_name": "Goals",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 156,
+      "code": "CGMc",
+      "schema": {
+        "field": "CGMc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 157,
+      "code": "CGMo",
+      "schema": {
+        "field": "CGMo",
+        "name": "Opposition",
+        "type": "database_record_unique_id",
+        "raw_name": "Opposition",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 158,
+      "code": "CGMd",
+      "schema": {
+        "field": "CGMd",
+        "name": "Date",
+        "type": "date",
+        "raw_name": "Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 159,
+      "code": "CWRc",
+      "schema": {
+        "field": "CWRc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 160,
+      "code": "CWRg",
+      "schema": {
+        "field": "CWRg",
+        "name": "Games",
+        "type": "integer",
+        "raw_name": "Games",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 161,
+      "code": "CWRs",
+      "schema": {
+        "field": "CWRs",
+        "name": "Start Date",
+        "type": "date",
+        "raw_name": "Start Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 162,
+      "code": "CWRe",
+      "schema": {
+        "field": "CWRe",
+        "name": "End Date",
+        "type": "date",
+        "raw_name": "End Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 163,
+      "code": "CLRc",
+      "schema": {
+        "field": "CLRc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 164,
+      "code": "CLRg",
+      "schema": {
+        "field": "CLRg",
+        "name": "Games",
+        "type": "integer",
+        "raw_name": "Games",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 165,
+      "code": "CLRs",
+      "schema": {
+        "field": "CLRs",
+        "name": "Start Date",
+        "type": "date",
+        "raw_name": "Start Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 166,
+      "code": "CLRe",
+      "schema": {
+        "field": "CLRe",
+        "name": "End Date",
+        "type": "date",
+        "raw_name": "End Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 167,
+      "code": "CWLc",
+      "schema": {
+        "field": "CWLc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 168,
+      "code": "CWLg",
+      "schema": {
+        "field": "CWLg",
+        "name": "Games",
+        "type": "integer",
+        "raw_name": "Games",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 169,
+      "code": "CWLs",
+      "schema": {
+        "field": "CWLs",
+        "name": "Start Date",
+        "type": "date",
+        "raw_name": "Start Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 170,
+      "code": "CWLe",
+      "schema": {
+        "field": "CWLe",
+        "name": "End Date",
+        "type": "date",
+        "raw_name": "End Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 171,
+      "code": "CWWc",
+      "schema": {
+        "field": "CWWc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 172,
+      "code": "CWWg",
+      "schema": {
+        "field": "CWWg",
+        "name": "Games",
+        "type": "integer",
+        "raw_name": "Games",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 173,
+      "code": "CWWs",
+      "schema": {
+        "field": "CWWs",
+        "name": "Start Date",
+        "type": "date",
+        "raw_name": "Start Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 174,
+      "code": "CWWe",
+      "schema": {
+        "field": "CWWe",
+        "name": "End Date",
+        "type": "date",
+        "raw_name": "End Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 175,
+      "code": "CWSc",
+      "schema": {
+        "field": "CWSc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 176,
+      "code": "CWSg",
+      "schema": {
+        "field": "CWSg",
+        "name": "Games",
+        "type": "integer",
+        "raw_name": "Games",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 177,
+      "code": "CWSs",
+      "schema": {
+        "field": "CWSs",
+        "name": "Start Date",
+        "type": "date",
+        "raw_name": "Start Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 178,
+      "code": "CWSe",
+      "schema": {
+        "field": "CWSe",
+        "name": "End Date",
+        "type": "date",
+        "raw_name": "End Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 179,
+      "code": "CWCc",
+      "schema": {
+        "field": "CWCc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 180,
+      "code": "CWCg",
+      "schema": {
+        "field": "CWCg",
+        "name": "Games",
+        "type": "integer",
+        "raw_name": "Games",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 181,
+      "code": "CWCs",
+      "schema": {
+        "field": "CWCs",
+        "name": "Start Date",
+        "type": "date",
+        "raw_name": "Start Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 182,
+      "code": "CWCe",
+      "schema": {
+        "field": "CWCe",
+        "name": "End Date",
+        "type": "date",
+        "raw_name": "End Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 183,
+      "code": "CHAc",
+      "schema": {
+        "field": "CHAc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 184,
+      "code": "CHAa",
+      "schema": {
+        "field": "CHAa",
+        "name": "Highest Attendance",
+        "type": "integer",
+        "raw_name": "Highest Attendance",
+        "min_value": "0",
+        "max_value": "1000000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 185,
+      "code": "CHAo",
+      "schema": {
+        "field": "CHAo",
+        "name": "Opposition",
+        "type": "database_record_unique_id",
+        "raw_name": "Opposition",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 186,
+      "code": "CHAd",
+      "schema": {
+        "field": "CHAd",
+        "name": "Date",
+        "type": "date",
+        "raw_name": "Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 187,
+      "code": "CLAc",
+      "schema": {
+        "field": "CLAc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 188,
+      "code": "CLAa",
+      "schema": {
+        "field": "CLAa",
+        "name": "Lowest Attendance",
+        "type": "integer",
+        "raw_name": "Lowest Attendance",
+        "min_value": "0",
+        "max_value": "1000000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 189,
+      "code": "CLAo",
+      "schema": {
+        "field": "CLAo",
+        "name": "Opposition",
+        "type": "database_record_unique_id",
+        "raw_name": "Opposition",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 190,
+      "code": "CLAd",
+      "schema": {
+        "field": "CLAd",
+        "name": "Date",
+        "type": "date",
+        "raw_name": "Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 191,
+      "code": "CAAc",
+      "schema": {
+        "field": "CAAc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15476852,
+                "va": "0x140ec3274",
+                "bytes": "81fe63414143",
+                "instruction": "cmp esi, 0x43414163"
+              },
+              "equality_target_file_offset": 15485089,
+              "equality_target_va": "0x140ec52a1"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 192,
+      "code": "CAAa",
+      "schema": {
+        "field": "CAAa",
+        "name": "Average Attendance",
+        "type": "integer",
+        "raw_name": "Average Attendance",
+        "min_value": "0",
+        "max_value": "1000000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15472440,
+                "va": "0x140ec2138",
+                "bytes": "81fe61414143",
+                "instruction": "cmp esi, 0x43414161"
+              },
+              "equality_target_file_offset": 15472452,
+              "equality_target_va": "0x140ec2144"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 193,
+      "code": "CAAd",
+      "schema": {
+        "field": "CAAd",
+        "name": "Season Date",
+        "type": "date",
+        "raw_name": "Season Date[COMMENT: comp editor; set date for record for competition]"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15476864,
+                "va": "0x140ec3280",
+                "bytes": "81fe64414143",
+                "instruction": "cmp esi, 0x43414164"
+              },
+              "equality_target_file_offset": 15476876,
+              "equality_target_va": "0x140ec328c"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 194,
+      "code": "HCAa",
+      "schema": {
+        "field": "HCAa",
+        "name": "Average Attendance",
+        "type": "integer",
+        "raw_name": "Average Attendance",
+        "min_value": "0",
+        "max_value": "1000000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15472126,
+                "va": "0x140ec1ffe",
+                "bytes": "81fe61414348",
+                "instruction": "cmp esi, 0x48434161"
+              },
+              "equality_target_file_offset": 15482768,
+              "equality_target_va": "0x140ec4990"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 195,
+      "code": "HCAd",
+      "schema": {
+        "field": "HCAd",
+        "name": "Season Date",
+        "type": "date",
+        "raw_name": "Season Date[COMMENT: comp editor; set date for record for competition]"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15472138,
+                "va": "0x140ec200a",
+                "bytes": "81fe64414348",
+                "instruction": "cmp esi, 0x48434164"
+              },
+              "equality_target_file_offset": 15472150,
+              "equality_target_va": "0x140ec2016"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 196,
+      "code": "LCAa",
+      "schema": {
+        "field": "LCAa",
+        "name": "Average Attendance",
+        "type": "integer",
+        "raw_name": "Average Attendance",
+        "min_value": "0",
+        "max_value": "1000000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15475881,
+                "va": "0x140ec2ea9",
+                "bytes": "81fe6141434c",
+                "instruction": "cmp esi, 0x4c434161"
+              },
+              "equality_target_file_offset": 15483929,
+              "equality_target_va": "0x140ec4e19"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 197,
+      "code": "LCAd",
+      "schema": {
+        "field": "LCAd",
+        "name": "Season Date",
+        "type": "date",
+        "raw_name": "Season Date[COMMENT: comp editor; set date for record for competition]"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15475893,
+                "va": "0x140ec2eb5",
+                "bytes": "81fe6441434c",
+                "instruction": "cmp esi, 0x4c434164"
+              },
+              "equality_target_file_offset": 15475905,
+              "equality_target_va": "0x140ec2ec1"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 198,
+      "code": "CMAp",
+      "schema": {
+        "field": "CMAp",
+        "name": "Player",
+        "type": "database_record_unique_id",
+        "raw_name": "Player",
+        "is_optional": "true",
+        "database_table_type": "person"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15478063,
+                "va": "0x140ec372f",
+                "bytes": "81fe70414d43",
+                "instruction": "cmp esi, 0x434d4170"
+              },
+              "equality_target_file_offset": 15478075,
+              "equality_target_va": "0x140ec373b"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 199,
+      "code": "CMAn",
+      "schema": {
+        "field": "CMAn",
+        "name": "Player Name",
+        "type": "string",
+        "raw_name": "Player Name"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15475770,
+                "va": "0x140ec2e3a",
+                "bytes": "81fe6e414d43",
+                "instruction": "cmp esi, 0x434d416e"
+              },
+              "equality_target_file_offset": 15475782,
+              "equality_target_va": "0x140ec2e46"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 200,
+      "code": "CMAa",
+      "schema": {
+        "field": "CMAa",
+        "name": "Apps",
+        "type": "integer",
+        "raw_name": "Apps",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15475758,
+                "va": "0x140ec2e2e",
+                "bytes": "81fe61414d43",
+                "instruction": "cmp esi, 0x434d4161"
+              },
+              "equality_target_file_offset": 15483650,
+              "equality_target_va": "0x140ec4d02"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 201,
+      "code": "CMGp",
+      "schema": {
+        "field": "CMGp",
+        "name": "Player",
+        "type": "database_record_unique_id",
+        "raw_name": "Player",
+        "is_optional": "true",
+        "database_table_type": "person"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15475246,
+                "va": "0x140ec2c2e",
+                "bytes": "81fe70474d43",
+                "instruction": "cmp esi, 0x434d4770"
+              },
+              "equality_target_file_offset": 15484744,
+              "equality_target_va": "0x140ec5148"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 202,
+      "code": "CMGn",
+      "schema": {
+        "field": "CMGn",
+        "name": "Player Name",
+        "type": "string",
+        "raw_name": "Player Name"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15475324,
+                "va": "0x140ec2c7c",
+                "bytes": "81fe6e474d43",
+                "instruction": "cmp esi, 0x434d476e"
+              },
+              "equality_target_file_offset": 15475336,
+              "equality_target_va": "0x140ec2c88"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 203,
+      "code": "CMGg",
+      "schema": {
+        "field": "CMGg",
+        "name": "Goals",
+        "type": "integer",
+        "raw_name": "Goals",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15475312,
+                "va": "0x140ec2c70",
+                "bytes": "81fe67474d43",
+                "instruction": "cmp esi, 0x434d4767"
+              },
+              "equality_target_file_offset": 15482496,
+              "equality_target_va": "0x140ec4880"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 204,
+      "code": "CMCp",
+      "schema": {
+        "field": "CMCp",
+        "name": "Player",
+        "type": "database_record_unique_id",
+        "raw_name": "Player",
+        "is_optional": "true",
+        "database_table_type": "person"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 205,
+      "code": "CMCn",
+      "schema": {
+        "field": "CMCn",
+        "name": "Player Name",
+        "type": "string",
+        "raw_name": "Player Name"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 206,
+      "code": "CMCc",
+      "schema": {
+        "field": "CMCc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 207,
+      "code": "CMCs",
+      "schema": {
+        "field": "CMCs",
+        "name": "Clean Sheets",
+        "type": "integer",
+        "raw_name": "Clean Sheets[COMMENT: FR 6346, editor field name]",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 208,
+      "code": "CMCd",
+      "schema": {
+        "field": "CMCd",
+        "name": "Season Date",
+        "type": "date",
+        "raw_name": "Season Date[COMMENT: comp editor; set date for record for competition]"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 209,
+      "code": "CHGp",
+      "schema": {
+        "field": "CHGp",
+        "name": "Player",
+        "type": "database_record_unique_id",
+        "raw_name": "Player",
+        "is_optional": "true",
+        "database_table_type": "person"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 210,
+      "code": "CHGn",
+      "schema": {
+        "field": "CHGn",
+        "name": "Player Name",
+        "type": "string",
+        "raw_name": "Player Name"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 211,
+      "code": "CHGt",
+      "schema": {
+        "field": "CHGt",
+        "name": "Club",
+        "type": "database_record_unique_id",
+        "raw_name": "Club",
+        "is_optional": "true",
+        "database_table_type": "club"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 212,
+      "code": "CHGg",
+      "schema": {
+        "field": "CHGg",
+        "name": "Goals",
+        "type": "integer",
+        "raw_name": "Goals",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 213,
+      "code": "CHGs",
+      "schema": {
+        "field": "CHGs",
+        "name": "Start Date",
+        "type": "date",
+        "raw_name": "Start Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 214,
+      "code": "CHGe",
+      "schema": {
+        "field": "CHGe",
+        "name": "End Date",
+        "type": "date",
+        "raw_name": "End Date",
+        "is_optional": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 215,
+      "code": "CYPp",
+      "schema": {
+        "field": "CYPp",
+        "name": "Player",
+        "type": "database_record_unique_id",
+        "raw_name": "Player",
+        "is_optional": "true",
+        "database_table_type": "person"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 216,
+      "code": "CYPn",
+      "schema": {
+        "field": "CYPn",
+        "name": "Player Name",
+        "type": "string",
+        "raw_name": "Player Name"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 217,
+      "code": "CYPc",
+      "schema": {
+        "field": "CYPc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 218,
+      "code": "CYPd",
+      "schema": {
+        "field": "CYPd",
+        "name": "Date Of Birth",
+        "type": "date",
+        "raw_name": "Date Of Birth"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 219,
+      "code": "CYPm",
+      "schema": {
+        "field": "CYPm",
+        "name": "Match Date",
+        "type": "date",
+        "raw_name": "Match Date"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 220,
+      "code": "CYPo",
+      "schema": {
+        "field": "CYPo",
+        "name": "Opposition",
+        "type": "database_record_unique_id",
+        "raw_name": "Opposition",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 221,
+      "code": "COPp",
+      "schema": {
+        "field": "COPp",
+        "name": "Player",
+        "type": "database_record_unique_id",
+        "raw_name": "Player",
+        "is_optional": "true",
+        "database_table_type": "person"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 222,
+      "code": "COPn",
+      "schema": {
+        "field": "COPn",
+        "name": "Player Name",
+        "type": "string",
+        "raw_name": "Player Name"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 223,
+      "code": "COPc",
+      "schema": {
+        "field": "COPc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 224,
+      "code": "COPd",
+      "schema": {
+        "field": "COPd",
+        "name": "Date Of Birth",
+        "type": "date",
+        "raw_name": "Date Of Birth"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 225,
+      "code": "COPm",
+      "schema": {
+        "field": "COPm",
+        "name": "Match Date",
+        "type": "date",
+        "raw_name": "Match Date"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 226,
+      "code": "COPo",
+      "schema": {
+        "field": "COPo",
+        "name": "Opposition",
+        "type": "database_record_unique_id",
+        "raw_name": "Opposition",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 227,
+      "code": "CYSp",
+      "schema": {
+        "field": "CYSp",
+        "name": "Player",
+        "type": "database_record_unique_id",
+        "raw_name": "Player",
+        "is_optional": "true",
+        "database_table_type": "person"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 228,
+      "code": "CYSn",
+      "schema": {
+        "field": "CYSn",
+        "name": "Player Name",
+        "type": "string",
+        "raw_name": "Player Name"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 229,
+      "code": "CYSc",
+      "schema": {
+        "field": "CYSc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 230,
+      "code": "CYSd",
+      "schema": {
+        "field": "CYSd",
+        "name": "Date Of Birth",
+        "type": "date",
+        "raw_name": "Date Of Birth"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 231,
+      "code": "CYSm",
+      "schema": {
+        "field": "CYSm",
+        "name": "Match Date",
+        "type": "date",
+        "raw_name": "Match Date"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 232,
+      "code": "CYSo",
+      "schema": {
+        "field": "CYSo",
+        "name": "Opposition",
+        "type": "database_record_unique_id",
+        "raw_name": "Opposition",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 233,
+      "code": "COPc",
+      "schema": {
+        "field": "COPc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 234,
+      "code": "COSp",
+      "schema": {
+        "field": "COSp",
+        "name": "Player",
+        "type": "database_record_unique_id",
+        "raw_name": "Player",
+        "is_optional": "true",
+        "database_table_type": "person"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 235,
+      "code": "COSc",
+      "schema": {
+        "field": "COSc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 236,
+      "code": "COSn",
+      "schema": {
+        "field": "COSn",
+        "name": "Player Name",
+        "type": "string",
+        "raw_name": "Player Name"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 237,
+      "code": "COSd",
+      "schema": {
+        "field": "COSd",
+        "name": "Date Of Birth",
+        "type": "date",
+        "raw_name": "Date Of Birth"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 238,
+      "code": "COSm",
+      "schema": {
+        "field": "COSm",
+        "name": "Match Date",
+        "type": "date",
+        "raw_name": "Match Date"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 239,
+      "code": "COSo",
+      "schema": {
+        "field": "COSo",
+        "name": "Opposition",
+        "type": "database_record_unique_id",
+        "raw_name": "Opposition",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 240,
+      "code": "CFGp",
+      "schema": {
+        "field": "CFGp",
+        "name": "Player",
+        "type": "database_record_unique_id",
+        "raw_name": "Player",
+        "is_optional": "true",
+        "database_table_type": "person"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 241,
+      "code": "CFGn",
+      "schema": {
+        "field": "CFGn",
+        "name": "Player Name",
+        "type": "string",
+        "raw_name": "Player Name"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 242,
+      "code": "CFGc",
+      "schema": {
+        "field": "CFGc",
+        "name": "Team",
+        "type": "database_record_unique_id",
+        "raw_name": "Team",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 243,
+      "code": "CFGo",
+      "schema": {
+        "field": "CFGo",
+        "name": "Opposition",
+        "type": "database_record_unique_id",
+        "raw_name": "Opposition",
+        "is_optional": "true",
+        "database_table_type": "team"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 244,
+      "code": "CFGd",
+      "schema": {
+        "field": "CFGd",
+        "name": "Match Date",
+        "type": "date",
+        "raw_name": "Match Date"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 245,
+      "code": "CFGs",
+      "schema": {
+        "field": "CFGs",
+        "name": "Seconds",
+        "type": "integer",
+        "raw_name": "Seconds",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 246,
+      "code": "CtRq",
+      "schema": {
+        "field": "CtRq",
+        "name": null,
+        "type": "button",
+        "raw_name": null,
+        "is_not_copyable": "true",
+        "debug_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 247,
+      "code": "Cgcc",
+      "schema": {
+        "field": "Cgcc",
+        "name": null,
+        "type": "button",
+        "raw_name": null,
+        "is_not_copyable": "true",
+        "debug_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 248,
+      "code": "AdHR",
+      "schema": {
+        "field": "AdHR",
+        "name": null,
+        "type": "button",
+        "raw_name": null,
+        "is_not_copyable": "true",
+        "debug_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 249,
+      "code": "Ctoa",
+      "schema": {
+        "field": "Ctoa",
+        "name": null,
+        "type": "button",
+        "raw_name": null,
+        "is_not_copyable": "true",
+        "debug_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 250,
+      "code": "Ctua",
+      "schema": {
+        "field": "Ctua",
+        "name": null,
+        "type": "button",
+        "raw_name": null,
+        "is_not_copyable": "true",
+        "debug_only": "true"
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "no_bounded_comp_getter_case",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence"
+    },
+    {
+      "xml_index": 251,
+      "code": "chst",
+      "schema": {
+        "field": "chst",
+        "name": "History",
+        "type": "list",
+        "raw_name": "History",
+        "list_item_fields": [
+          {
+            "field": "year",
+            "name": "Year",
+            "type": "integer",
+            "raw_name": "Year",
+            "min_value": "1800",
+            "max_value": "2100"
+          },
+          {
+            "field": "chsy",
+            "name": "Start Year",
+            "type": "integer",
+            "raw_name": "Start Year",
+            "min_value": "1800",
+            "max_value": "2100"
+          },
+          {
+            "field": "chey",
+            "name": "End Year",
+            "type": "integer",
+            "raw_name": "End Year",
+            "min_value": "1800",
+            "max_value": "2100"
+          },
+          {
+            "field": "pla1",
+            "name": "First Placed",
+            "type": "database_record_unique_id",
+            "raw_name": "First Placed",
+            "is_optional": "true",
+            "database_table_type": "team"
+          },
+          {
+            "field": "pla2",
+            "name": "Second Placed",
+            "type": "database_record_unique_id",
+            "raw_name": "Second Placed",
+            "is_optional": "true",
+            "database_table_type": "team"
+          },
+          {
+            "field": "pla3",
+            "name": "Third Placed",
+            "type": "database_record_unique_id",
+            "raw_name": "Third Placed",
+            "is_optional": "true",
+            "database_table_type": "team"
+          },
+          {
+            "field": "plwn",
+            "name": "Playoff Winner",
+            "type": "database_record_unique_id",
+            "raw_name": "Playoff Winner",
+            "is_optional": "true",
+            "database_table_type": "team"
+          },
+          {
+            "field": "hst1",
+            "name": "Host Nation",
+            "type": "database_record_unique_id",
+            "raw_name": "Host Nation[COMMENT: editor; field for competition venues]",
+            "is_optional": "true",
+            "database_table_type": "team"
+          },
+          {
+            "field": "hst2",
+            "name": "Host Nation",
+            "type": "database_record_unique_id",
+            "raw_name": "Host Nation[COMMENT: editor; field for competition venues]",
+            "is_optional": "true",
+            "database_table_type": "team"
+          },
+          {
+            "field": "hst3",
+            "name": "Host Nation",
+            "type": "database_record_unique_id",
+            "raw_name": "Host Nation[COMMENT: editor; field for competition venues]",
+            "is_optional": "true",
+            "database_table_type": "team"
+          },
+          {
+            "field": "host",
+            "name": "Hosts (Stadium)",
+            "type": "database_record_unique_id",
+            "raw_name": "Hosts (Stadium)[COMMENT: editor; host stadium for competition]",
+            "is_optional": "true",
+            "database_table_type": "stadium"
+          },
+          {
+            "field": "stgn",
+            "name": "Stage Name",
+            "type": "database_record_unique_id",
+            "raw_name": "Stage Name[COMMENT: editor; stage name for competition history, e.g. Opening Stage]",
+            "is_optional": "true",
+            "database_table_type": "stage_name"
+          },
+          {
+            "field": "yror",
+            "name": "Year Order",
+            "type": "integer",
+            "raw_name": "Year Order[COMMENT: editor; stage name for competition history, e.g. Opening Stage]"
+          },
+          {
+            "field": "dtdc",
+            "name": "Date Decided",
+            "type": "date",
+            "raw_name": "Date Decided[COMMENT: AREA: Editor; SUB-AREA: Competition history list; TONE: Formal; CHARLIMIT: None; NOTE: The date when a competition was decided]"
+          },
+          {
+            "field": "sing",
+            "name": "Took Place In Single Year",
+            "type": "boolean",
+            "raw_name": "Took Place In Single Year[COMMENT: AREA: Editor; SUB-AREA: Competition history format; BN: 7128; TONE: Formal; CHARLIMIT: None]"
+          },
+          {
+            "field": "acro",
+            "name": "Took Place Across Years",
+            "type": "boolean",
+            "raw_name": "Took Place Across Years[COMMENT: AREA: Editor; SUB-AREA: Competition history format; BN: 7128; TONE: Formal; CHARLIMIT: None]"
+          },
+          {
+            "field": "cnod",
+            "name": "No Data For Year",
+            "type": "boolean",
+            "raw_name": "No Data For Year[COMMENT: editor; history table; option showing that there is no data for a year]",
+            "dependencies": [
+              {
+                "field": "cdnt",
+                "not_equals": "true"
+              },
+              {
+                "field": "cdnf",
+                "not_equals": "true"
+              }
+            ]
+          },
+          {
+            "field": "cdnt",
+            "name": "Did Not Take Place",
+            "type": "boolean",
+            "raw_name": "Did Not Take Place[COMMENT: editor; history table; option showing that an award didnt take place one year]",
+            "dependencies": [
+              {
+                "field": "cnod",
+                "not_equals": "true"
+              },
+              {
+                "field": "cdnf",
+                "not_equals": "true"
+              }
+            ]
+          },
+          {
+            "field": "cdnf",
+            "name": "Did Not Finish",
+            "type": "boolean",
+            "raw_name": "Did Not Finish[COMMENT: AREA: Pre-Game Editor; SUB-AREA: Competition history field; FR: 33219; TONE: Formal;]",
+            "dependencies": [
+              {
+                "field": "cnod",
+                "not_equals": "true"
+              },
+              {
+                "field": "cdnt",
+                "not_equals": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15474572,
+                "va": "0x140ec298c",
+                "bytes": "81fe74736863",
+                "instruction": "cmp esi, 0x63687374"
+              },
+              "equality_target_file_offset": 15480670,
+              "equality_target_va": "0x140ec415e"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 252,
+      "code": "AdLe",
+      "schema": {
+        "field": "AdLe",
+        "name": "Alternative Division Levels",
+        "type": "list",
+        "raw_name": "Alternative Division Levels[COMMENT: AREA: Pre-Game Editor; SUB-AREA: DB Competition; FR-BN: 11826, 11555; TONE: Informal;]",
+        "list_item_fields": [
+          {
+            "field": "aLdL",
+            "name": "Competition Level",
+            "type": "integer",
+            "raw_name": "Competition Level",
+            "hint": "Which tier of the pyramid does the competition fall into? 1 indicates the top level, 20 represents the bottom",
+            "min_value": "1",
+            "max_value": "20",
+            "is_optional": "true"
+          },
+          {
+            "field": "dLsY",
+            "name": "Start Year",
+            "type": "integer",
+            "raw_name": "Start Year",
+            "min_value": "1800",
+            "max_value": "2100",
+            "is_optional": "true"
+          },
+          {
+            "field": "dLeY",
+            "name": "End Year",
+            "type": "integer",
+            "raw_name": "End Year",
+            "min_value": "1800",
+            "max_value": "10000",
+            "is_optional": "true"
+          }
+        ],
+        "dependencies": [
+          {
+            "field": "number_records_editing",
+            "equals": "1"
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15470873,
+                "va": "0x140ec1b19",
+                "bytes": "81fe654c6441",
+                "instruction": "cmp esi, 0x41644c65"
+              },
+              "equality_target_file_offset": 15470885,
+              "equality_target_va": "0x140ec1b25"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 253,
+      "code": "csap",
+      "schema": {
+        "field": "csap",
+        "name": "Average Points",
+        "type": "list",
+        "raw_name": "Average Points[COMMENT: advanced editor; rules for average points table in a competition]",
+        "hint": "Use this section to set historical data for this competition in order for average points to be used to determine various fate outcomes. 'Year 3' represents the most recent year of history to include, whilst 'Year 1' is the most distant.",
+        "list_item_fields": [
+          {
+            "field": "team",
+            "name": "Team",
+            "type": "database_record_unique_id",
+            "raw_name": "Team",
+            "is_optional": "true",
+            "database_table_type": "team"
+          },
+          {
+            "field": "gam1",
+            "name": null,
+            "type": "integer",
+            "raw_name": null,
+            "is_optional": "true"
+          },
+          {
+            "field": "pts1",
+            "name": null,
+            "type": "integer",
+            "raw_name": null,
+            "is_optional": "true",
+            "dependencies": [
+              {
+                "field": "gam1",
+                "exists": "true"
+              }
+            ]
+          },
+          {
+            "field": "gam2",
+            "name": null,
+            "type": "integer",
+            "raw_name": null,
+            "is_optional": "true",
+            "dependencies": [
+              {
+                "field": "gam1",
+                "exists": "true"
+              }
+            ]
+          },
+          {
+            "field": "pts2",
+            "name": null,
+            "type": "integer",
+            "raw_name": null,
+            "is_optional": "true",
+            "dependencies": [
+              {
+                "field": "gam2",
+                "exists": "true"
+              }
+            ]
+          },
+          {
+            "field": "gam3",
+            "name": null,
+            "type": "integer",
+            "raw_name": null,
+            "is_optional": "true",
+            "dependencies": [
+              {
+                "field": "gam2",
+                "exists": "true"
+              }
+            ]
+          },
+          {
+            "field": "pts3",
+            "name": null,
+            "type": "integer",
+            "raw_name": null,
+            "is_optional": "true",
+            "dependencies": [
+              {
+                "field": "gam3",
+                "exists": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "bounded_getter_without_wire_closure",
+      "wire_binding": null,
+      "bounded_root_presence": [
+        {
+          "root": "comp_getter",
+          "sites": [
+            {
+              "compare": {
+                "file_offset": 15470604,
+                "va": "0x140ec1a0c",
+                "bytes": "81fe70617363",
+                "instruction": "cmp esi, 0x63736170"
+              },
+              "equality_target_file_offset": 15480436,
+              "equality_target_va": "0x140ec4074"
+            }
+          ]
+        }
+      ],
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path"
+    },
+    {
+      "xml_index": 254,
+      "code": "AXML",
+      "schema": {
+        "field": "AXML",
+        "name": "Advanced Rules",
+        "type": "list",
+        "raw_name": "Advanced Rules[COMMENT: comp editor; section for editing advanced nation/comp rules in the game]",
+        "allow_column_sorting": "true",
+        "is_section": "true",
+        "debug_only": "true",
+        "allow_move": "false",
+        "dont_use_for_undo_path": "true",
+        "dont_use_for_db_field_list": "true",
+        "set_whole_list_in_change": "true",
+        "dependencies": [
+          {
+            "field": "AXML",
+            "exists": "true"
+          }
+        ]
+      },
+      "baseline_status": "unmapped",
+      "r2_status": "unmapped",
+      "classification": "advanced_rules_or_debug",
+      "wire_binding": null,
+      "bounded_root_presence": [],
+      "reason": "advanced-rules/debug field has no literal case in the bounded COMP roots",
+      "falsification": "decode its range/helper dispatch and connect it to a main-row wire transfer"
+    }
+  ]
+}

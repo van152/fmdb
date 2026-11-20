@@ -1,0 +1,216 @@
+{
+ "checks": {
+  "index_keys_nondecreasing": true,
+  "ranges_start_le_end": true,
+  "range_offsets_aligned_24": true,
+  "ranges_sorted_by_start": true,
+  "every_adjacent_range_gap_is_24": true,
+  "valid_index_references_are_a_permutation_of_range_ordinals": true,
+  "dt_size_multiple_of_24": true,
+  "all_ranges_within_dt": true,
+  "inclusive_range_rows_equal_dt_rows": true,
+  "all_next_links_and_terminators_valid": true
+ },
+ "passed": true,
+ "index": {
+  "entry_count": 754688,
+  "unique_key_count": 673317,
+  "duplicate_entries_beyond_first_per_key": 81371,
+  "sentinel_entries_ffffffff": 8145,
+  "valid_range_references": 746543,
+  "invalid_range_references": 0,
+  "first_pairs": [
+   [
+    3,
+    143628
+   ],
+   [
+    4,
+    143629
+   ],
+   [
+    8,
+    111485
+   ],
+   [
+    9,
+    143630
+   ],
+   [
+    12,
+    143631
+   ],
+   [
+    14,
+    143632
+   ],
+   [
+    16,
+    143633
+   ],
+   [
+    19,
+    143634
+   ]
+  ],
+  "last_pairs": [
+   [
+    2000341003,
+    142861
+   ],
+   [
+    2000341006,
+    133204
+   ],
+   [
+    2000341006,
+    132568
+   ],
+   [
+    2000341006,
+    117103
+   ],
+   [
+    2000341006,
+    138957
+   ],
+   [
+    2000342634,
+    4294967295
+   ],
+   [
+    2001040995,
+    734968
+   ],
+   [
+    2002040995,
+    734969
+   ]
+  ]
+ },
+ "id_ranges": {
+  "range_count": 746543,
+  "first_pairs": [
+   [
+    0,
+    0
+   ],
+   [
+    24,
+    24
+   ],
+   [
+    48,
+    48
+   ],
+   [
+    72,
+    72
+   ],
+   [
+    96,
+    96
+   ],
+   [
+    120,
+    120
+   ],
+   [
+    144,
+    144
+   ],
+   [
+    168,
+    168
+   ]
+  ],
+  "last_pairs": [
+   [
+    77098440,
+    77098440
+   ],
+   [
+    77098464,
+    77098464
+   ],
+   [
+    77098488,
+    77098488
+   ],
+   [
+    77098512,
+    77098512
+   ],
+   [
+    77098536,
+    77098536
+   ],
+   [
+    77098560,
+    77098560
+   ],
+   [
+    77098584,
+    77098584
+   ],
+   [
+    77098608,
+    77098608
+   ]
+  ],
+  "start_end_pairs_equal": 265881,
+  "max_end_offset": 77098608,
+  "adjacent_gap_bytes_histogram_top": [
+   [
+    24,
+    746542
+   ]
+  ]
+ },
+ "dt": {
+  "decompressed_bytes": 77098632,
+  "row_stride": 24,
+  "physical_rows": 3212443,
+  "covered_nonterminator_rows": 2465900,
+  "terminator_rows": 746543,
+  "next_link_slots_checked": 3212443,
+  "invalid_next_links": 0,
+  "trailing_bytes_after_last_range": 0
+ },
+ "interpretation": {
+  "id_pair": "(inclusive_start_byte_offset, terminal_row_byte_offset); both offsets are 24-byte aligned",
+  "index_pair": "(nondecreasing_history_id, range_ordinal); repeated IDs are retained and 0xffffffff means no range",
+  "ordinal_rule": "each range ordinal 0..range_count-1 is referenced exactly once, excluding sentinel index entries",
+  "terminator_rule": "each range includes its terminal 24-byte record; next@+20 is 0xffffffff there, otherwise points to the next row (+24)",
+  "player_model_comparison": "same offset-range/terminal-link model as pl_hist, with 24-byte rows; unlike pl_hist, the non-player sorted key column is not unique and sentinel rows occur"
+ },
+ "generated_by": "scripts/b51_nonpl_hist_index.py",
+ "version": "2430",
+ "source_directory": "Z:\\SteamLibrary\\steamapps\\common\\Football Manager 2024\\data\\database\\db\\2430\\2430_fm",
+ "evidence_levels": {
+  "L1": "container, byte-range, count, and next-pointer invariants checked against installed bytes",
+  "L2": "no independent named-person/staff-count oracle asserted in this report",
+  "L3": "not used for the range-layout conclusion",
+  "L4": "not attempted"
+ },
+ "source_files": {
+  "non_pl_hist_index.dat": {
+   "outer_version": 3569,
+   "compressed_bytes": 4153253,
+   "decompressed_bytes": 6037508,
+   "header_count": 754688
+  },
+  "non_pl_hist_id.dat": {
+   "outer_version": 1,
+   "file_bytes": 5972352,
+   "payload_bytes": 5972344,
+   "pair_count": 746543
+  },
+  "non_pl_hist_dt.dat": {
+   "outer": "tadc v3",
+   "compressed_bytes": 27607915,
+   "decompressed_bytes": 77098632
+  }
+ },
+ "population_note": "746,543 is the number of indexed ranges in db 2430, not an independent count of currently employed staff; 754,688 sorted-index entries include 8,145 sentinel entries and repeated keys."
+}

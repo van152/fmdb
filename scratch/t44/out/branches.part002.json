@@ -1,0 +1,329 @@
+{
+  "branches": [
+    {
+      "function": 22188560,
+      "site": 22189404,
+      "taken_to": 22188611,
+      "fallthrough_to": 22189410,
+      "classification": "IO-result",
+      "evidence": [
+        22189402,
+        22189397
+      ],
+      "source": "stream +0x10 or date helper AL; error exits reader",
+      "first_counterexample_or_constraint": "row=0 @43 w=4 site=0x1529555 short read",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189436,
+      "taken_to": 22188611,
+      "fallthrough_to": 22189442,
+      "classification": "IO-result",
+      "evidence": [
+        22189432,
+        22189429
+      ],
+      "source": "stream +0x10 or date helper AL; error exits reader",
+      "first_counterexample_or_constraint": "row=0 @47 w=1 site=0x1529575 short read",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189468,
+      "taken_to": 22188611,
+      "fallthrough_to": 22189474,
+      "classification": "IO-result",
+      "evidence": [
+        22189464,
+        22189461
+      ],
+      "source": "stream +0x10 or date helper AL; error exits reader",
+      "first_counterexample_or_constraint": "row=0 @48 w=1 site=0x1529595 short read",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189500,
+      "taken_to": 22188611,
+      "fallthrough_to": 22189506,
+      "classification": "IO-result",
+      "evidence": [
+        22189496,
+        22189493
+      ],
+      "source": "stream +0x10 or date helper AL; error exits reader",
+      "first_counterexample_or_constraint": "row=0 @49 w=1 site=0x15295b5 short read",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189532,
+      "taken_to": 22188611,
+      "fallthrough_to": 22189538,
+      "classification": "IO-result",
+      "evidence": [
+        22189528,
+        22189525
+      ],
+      "source": "stream +0x10 or date helper AL; error exits reader",
+      "first_counterexample_or_constraint": "row=0 @50 w=4 site=0x15295d5 short read",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189564,
+      "taken_to": 22188611,
+      "fallthrough_to": 22189570,
+      "classification": "IO-result",
+      "evidence": [
+        22189560,
+        22189557
+      ],
+      "source": "stream +0x10 or date helper AL; error exits reader",
+      "first_counterexample_or_constraint": "row=0 @54 w=1 site=0x15295f5 short read",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189582,
+      "taken_to": 22189604,
+      "fallthrough_to": 22189584,
+      "classification": "runtime-external",
+      "evidence": [
+        22189577,
+        22189570
+      ],
+      "source": "global version word VA 0x141b60330, not an item selector",
+      "first_counterexample_or_constraint": "footer/EOF mismatch @398235: 37044 trailing bytes",
+      "changes_regular_item_width": true
+    },
+    {
+      "function": 22188560,
+      "site": 22189598,
+      "taken_to": 22188611,
+      "fallthrough_to": 22189604,
+      "classification": "IO-result",
+      "evidence": [
+        22189596,
+        22189591
+      ],
+      "source": "stream +0x10 or date helper AL; error exits reader",
+      "first_counterexample_or_constraint": "row=0 @55 w=4 site=0x1529617 short read",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189612,
+      "taken_to": 22189645,
+      "fallthrough_to": 22189614,
+      "classification": "wire_data",
+      "evidence": [
+        22189608,
+        22189127
+      ],
+      "source": "raw endpoint equality suppresses staging append, but not stream consumption",
+      "first_counterexample_or_constraint": "row 0: copy endpoint A into B; 47 B still consumed",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189622,
+      "taken_to": 22189658,
+      "fallthrough_to": 22189624,
+      "classification": "context-lifecycle",
+      "evidence": [
+        22189618
+      ],
+      "source": "append capacity",
+      "first_counterexample_or_constraint": "Context fixture: initial empty vector, live stream, successful allocation; other allocation/TLS/release paths not observed or replayed.",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189770,
+      "taken_to": 22189797,
+      "fallthrough_to": 22189772,
+      "classification": "context-lifecycle",
+      "evidence": [
+        22189767
+      ],
+      "source": "old vector end equals insertion point",
+      "first_counterexample_or_constraint": "Context fixture: initial empty vector, live stream, successful allocation; other allocation/TLS/release paths not observed or replayed.",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189818,
+      "taken_to": 22189935,
+      "fallthrough_to": 22189820,
+      "classification": "context-lifecycle",
+      "evidence": [
+        22189811
+      ],
+      "source": "old vector buffer null",
+      "first_counterexample_or_constraint": "Context fixture: initial empty vector, live stream, successful allocation; other allocation/TLS/release paths not observed or replayed.",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189838,
+      "taken_to": 22189851,
+      "fallthrough_to": 22189840,
+      "classification": "context-lifecycle",
+      "evidence": [
+        22189834
+      ],
+      "source": "allocator capacity sentinel",
+      "first_counterexample_or_constraint": "Context fixture: initial empty vector, live stream, successful allocation; other allocation/TLS/release paths not observed or replayed.",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189855,
+      "taken_to": 22189920,
+      "fallthrough_to": 22189857,
+      "classification": "context-lifecycle",
+      "evidence": [
+        22189851
+      ],
+      "source": "allocator mode",
+      "first_counterexample_or_constraint": "Context fixture: initial empty vector, live stream, successful allocation; other allocation/TLS/release paths not observed or replayed.",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189875,
+      "taken_to": 22189920,
+      "fallthrough_to": 22189877,
+      "classification": "context-lifecycle",
+      "evidence": [
+        22189872
+      ],
+      "source": "allocator pool-index range",
+      "first_counterexample_or_constraint": "Context fixture: initial empty vector, live stream, successful allocation; other allocation/TLS/release paths not observed or replayed.",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189884,
+      "taken_to": 22189920,
+      "fallthrough_to": 22189886,
+      "classification": "context-lifecycle",
+      "evidence": [
+        22189881
+      ],
+      "source": "allocator pool pointer null",
+      "first_counterexample_or_constraint": "Context fixture: initial empty vector, live stream, successful allocation; other allocation/TLS/release paths not observed or replayed.",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189909,
+      "taken_to": 22189983,
+      "fallthrough_to": 22189911,
+      "classification": "context-lifecycle",
+      "evidence": [
+        22189905
+      ],
+      "source": "allocator refcount mode",
+      "first_counterexample_or_constraint": "Context fixture: initial empty vector, live stream, successful allocation; other allocation/TLS/release paths not observed or replayed.",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189972,
+      "taken_to": 22188894,
+      "fallthrough_to": 22189978,
+      "classification": "wire_data",
+      "evidence": [
+        22189967,
+        22188602
+      ],
+      "source": "wire count vs completed items",
+      "first_counterexample_or_constraint": "real row 9260 falls through; synthetic count=1 exits after row 0",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189987,
+      "taken_to": 22189935,
+      "fallthrough_to": 22189989,
+      "classification": "dead",
+      "evidence": [
+        22189985,
+        22189983
+      ],
+      "source": "xor eax,eax; test al,al: taken edge impossible",
+      "first_counterexample_or_constraint": "Proof by constant zero",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22189993,
+      "taken_to": 22189935,
+      "fallthrough_to": 22189995,
+      "classification": "context-lifecycle",
+      "evidence": [
+        22189989
+      ],
+      "source": "allocator cleanup flag",
+      "first_counterexample_or_constraint": "Context fixture: initial empty vector, live stream, successful allocation; other allocation/TLS/release paths not observed or replayed.",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22190024,
+      "taken_to": 22188931,
+      "fallthrough_to": 22190030,
+      "classification": "context-lifecycle",
+      "evidence": [
+        22190017
+      ],
+      "source": "TLS init sentinel",
+      "first_counterexample_or_constraint": "Context fixture: initial empty vector, live stream, successful allocation; other allocation/TLS/release paths not observed or replayed.",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22190117,
+      "taken_to": 22188847,
+      "fallthrough_to": 22190123,
+      "classification": "dead",
+      "evidence": [
+        22190115,
+        22190113
+      ],
+      "source": "xor eax,eax; test al,al: taken edge impossible",
+      "first_counterexample_or_constraint": "Proof by constant zero",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 22188560,
+      "site": 22190129,
+      "taken_to": 22188847,
+      "fallthrough_to": 22190135,
+      "classification": "context-lifecycle",
+      "evidence": [
+        22190123
+      ],
+      "source": "allocator cleanup flag",
+      "first_counterexample_or_constraint": "Context fixture: initial empty vector, live stream, successful allocation; other allocation/TLS/release paths not observed or replayed.",
+      "changes_regular_item_width": false
+    },
+    {
+      "function": 60676016,
+      "site": 60676028,
+      "taken_to": 60676055,
+      "fallthrough_to": 60676030,
+      "classification": "dead",
+      "evidence": [
+        60676025,
+        60676055
+      ],
+      "source": "null edge lands at mov edi,[rsi+0x10] and cannot complete a valid read",
+      "first_counterexample_or_constraint": "Hypothetical null RSI; explicitly outside valid stream context",
+      "changes_regular_item_width": false
+    }
+  ]
+}

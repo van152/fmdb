@@ -1,0 +1,48 @@
+{
+  "tests": [
+    {
+      "input": 131126,
+      "mode": "32-bit DBID expanded to repeated-u32 duni",
+      "candidate_duni": 563181881786422,
+      "verified_hits": [
+        {"archive": "client_db.dat", "table_id": 25, "row_index": 250, "byte_offset": 31882, "row_stride": 127, "identity_offset_in_row": 118}
+      ]
+    },
+    {
+      "input": 130932,
+      "mode": "32-bit DBID expanded to repeated-u32 duni",
+      "candidate_duni": 562348658130804,
+      "verified_hits": [
+        {"archive": "client_db.dat", "table_id": 25, "row_index": 245, "byte_offset": 31247, "row_stride": 127, "identity_offset_in_row": 118}
+      ]
+    },
+    {
+      "input": 23318212,
+      "mode": "32-bit DBID expanded to repeated-u32 duni",
+      "candidate_duni": 100150957964512964,
+      "verified_hits": [
+        {"archive": "client_db.dat", "table_id": 21, "row_index": 18795, "byte_offset": 714253, "row_stride": 38, "identity_offset_in_row": 29},
+        {"archive": "server_db.dat", "table_id": 21, "row_index": 18795, "byte_offset": 3402081, "row_stride": 181, "identity_offset_in_row": 172}
+      ]
+    },
+    {
+      "input": 100150957964512964,
+      "mode": "exact uint64 duni",
+      "verified_hits": [
+        {"archive": "client_db.dat", "table_id": 21, "row_index": 18795},
+        {"archive": "server_db.dat", "table_id": 21, "row_index": 18795}
+      ]
+    },
+    {
+      "input": 472446402670,
+      "mode": "exact uint64 duni",
+      "verified_table_candidate_hits": [
+        {"archive": "client_db.dat", "table_id": 10, "byte_offset": 4166, "row_boundary_verified": false},
+        {"archive": "server_db.dat", "table_id": 10, "byte_offset": 34817, "row_boundary_verified": false},
+        {"archive": "client_db.dat", "table_id": 25, "row_index": 94, "byte_offset": 12070, "row_boundary_verified": true}
+      ],
+      "note": "The numeric table/type disambiguates a duni: this repeated-u32 value also occurs as a table-local ID in another table and as references elsewhere. lookup() returns raw hits with confidence markers, not an unconditional globally unique result."
+    }
+  ],
+  "lookup_scope": "Searches exact little-endian uint64 patterns in numeric table_N.dat entries in available client/server archives. Row indexes are emitted only when the byte hit aligns with a validated fixed-stride duni field; other hits are marked as raw/unverified."
+}

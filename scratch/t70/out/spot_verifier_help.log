@@ -1,0 +1,11 @@
+usage: verify.py [-h] [--check | --selftest | --anchors] [--log LOG]
+
+Independently verify public schema v10 against pinned t62-t69 evidence.
+
+options:
+  -h, --help  show this help message and exit
+  --check     verify public v10 pair (default)
+  --selftest  run verification and tamper probes
+  --anchors   run t01 anchor regression
+  --log LOG   write successful check summary to spot_*.log under this
+              directory

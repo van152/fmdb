@@ -1,0 +1,9096 @@
+{
+  "status": "complete_data_profile",
+  "table_type": 50,
+  "archive": "server",
+  "rtti_class": "STARTING_MLS_TRADED_SLOT",
+  "entity_tag": "club",
+  "t14_adjudication": "resolved",
+  "stage2_status": "resolved",
+  "identity_basis": {
+    "t14_primary_class": "STARTING_MLS_TRADED_SLOT",
+    "t14_adjudication": "resolved",
+    "stage2_entity": "club",
+    "stage2_status": "resolved",
+    "stage2_evidence": [
+      {
+        "kind": "D",
+        "source": "editor.exe (read-only), factory jump-table -> RTTI constructor",
+        "claim": "RTTI construction anchor: STARTING_MLS_TRADED_SLOT (depth 0)",
+        "details": {
+          "handler_off": "0xf497a6",
+          "inst_off": "0xf497cb",
+          "vtable_va": "0x141883fe8",
+          "col_off": "0x1885960",
+          "class_name": "STARTING_MLS_TRADED_SLOT",
+          "depth": 0,
+          "fm_cross": "td-only",
+          "independence": "table_type 50 is independently decoded from its jump-table rel32 entry to handler_off 0xf497a6; BFS depth 0 reaches a vtable assignment at 0xf497cb, whose preceding COL/TD chain names STARTING_MLS_TRADED_SLOT. The anchor uses the constructor/class identity, not record-count similarity or a schema-code vote."
+        }
+      }
+    ],
+    "handler_off": "0xf497a6",
+    "vtable_va": "0x141883fe8",
+    "reader_va": null
+  },
+  "payload": {
+    "archive": "server",
+    "member": "server_db/table_50.dat",
+    "packed_offset": 26928902,
+    "packed_size": 478,
+    "payload_size": 1192,
+    "payload_sha256": "1a4df49327ad8f63c354bffa3068691224c535dfb6e1fbf350555440707fff24"
+  },
+  "row_closure": {
+    "status": "complete_arithmetic_closure_L1",
+    "count": 45,
+    "stride": 26,
+    "row_start": 14,
+    "footer_bytes": 8,
+    "row_end_exclusive": 1184,
+    "payload_bytes": 1192,
+    "equation": "14 + 45 * 26 + 8 = 1192",
+    "rows_sha256": "298a6f7ffd8ec201eab967196c480ea3bb85d828d5bbe7ef831e442739764518",
+    "basis": "full payload size/count/stride closure; stride is arithmetic census evidence, not a schema serializer proof"
+  },
+  "full_rows_file": "profiles/table_server_50.rows.jsonl",
+  "full_rows_sha256": "98ae78393ff60cca756d1319ae61eed2f61c5b994f68a3653ca5a154573ed888",
+  "profile_method": {
+    "all_offsets": true,
+    "primitive_widths": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "four_byte_metrics": [
+      "u32 domain",
+      "sentinel",
+      "packed day/year",
+      "signed i32/cash-range",
+      "float32 reinterpretation"
+    ],
+    "limits": "value domains are diagnostics; they do not independently identify fields"
+  },
+  "columns": [
+    {
+      "offset": 0,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 17,
+      "min_unsigned": 21,
+      "max_unsigned": 235,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 235,
+          "count": 6
+        },
+        {
+          "value": 112,
+          "count": 6
+        },
+        {
+          "value": 80,
+          "count": 4
+        },
+        {
+          "value": 161,
+          "count": 4
+        },
+        {
+          "value": 113,
+          "count": 4
+        },
+        {
+          "value": 132,
+          "count": 3
+        },
+        {
+          "value": 115,
+          "count": 3
+        },
+        {
+          "value": 63,
+          "count": 3
+        },
+        {
+          "value": 192,
+          "count": 2
+        },
+        {
+          "value": 157,
+          "count": 2
+        },
+        {
+          "value": 142,
+          "count": 2
+        },
+        {
+          "value": 160,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        21,
+        44,
+        63,
+        67,
+        80,
+        93,
+        111,
+        112,
+        113,
+        115,
+        132,
+        142,
+        157,
+        160,
+        161,
+        192,
+        235
+      ]
+    },
+    {
+      "offset": 1,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 15,
+      "min_unsigned": 7,
+      "max_unsigned": 246,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 7,
+          "count": 8
+        },
+        {
+          "value": 18,
+          "count": 6
+        },
+        {
+          "value": 162,
+          "count": 5
+        },
+        {
+          "value": 109,
+          "count": 4
+        },
+        {
+          "value": 98,
+          "count": 4
+        },
+        {
+          "value": 236,
+          "count": 3
+        },
+        {
+          "value": 246,
+          "count": 3
+        },
+        {
+          "value": 90,
+          "count": 2
+        },
+        {
+          "value": 69,
+          "count": 2
+        },
+        {
+          "value": 35,
+          "count": 2
+        },
+        {
+          "value": 217,
+          "count": 2
+        },
+        {
+          "value": 226,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        7,
+        18,
+        35,
+        69,
+        90,
+        98,
+        109,
+        113,
+        162,
+        165,
+        169,
+        217,
+        226,
+        236,
+        246
+      ]
+    },
+    {
+      "offset": 2,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 9,
+      "min_unsigned": 0,
+      "max_unsigned": 75,
+      "zero_count": 8,
+      "zero_rate": 0.177778,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 75,
+          "count": 13
+        },
+        {
+          "value": 74,
+          "count": 8
+        },
+        {
+          "value": 0,
+          "count": 8
+        },
+        {
+          "value": 54,
+          "count": 6
+        },
+        {
+          "value": 55,
+          "count": 3
+        },
+        {
+          "value": 14,
+          "count": 3
+        },
+        {
+          "value": 67,
+          "count": 2
+        },
+        {
+          "value": 49,
+          "count": 1
+        },
+        {
+          "value": 1,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        0,
+        1,
+        14,
+        49,
+        54,
+        55,
+        67,
+        74,
+        75
+      ]
+    },
+    {
+      "offset": 3,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 4,
+      "min_unsigned": 0,
+      "max_unsigned": 119,
+      "zero_count": 14,
+      "zero_rate": 0.311111,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 4,
+          "count": 21
+        },
+        {
+          "value": 0,
+          "count": 14
+        },
+        {
+          "value": 119,
+          "count": 9
+        },
+        {
+          "value": 1,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        0,
+        1,
+        4,
+        119
+      ]
+    },
+    {
+      "offset": 4,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 17,
+      "min_unsigned": 2,
+      "max_unsigned": 235,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 67,
+          "count": 6
+        },
+        {
+          "value": 111,
+          "count": 6
+        },
+        {
+          "value": 182,
+          "count": 6
+        },
+        {
+          "value": 44,
+          "count": 4
+        },
+        {
+          "value": 2,
+          "count": 3
+        },
+        {
+          "value": 194,
+          "count": 3
+        },
+        {
+          "value": 117,
+          "count": 3
+        },
+        {
+          "value": 132,
+          "count": 3
+        },
+        {
+          "value": 112,
+          "count": 2
+        },
+        {
+          "value": 118,
+          "count": 2
+        },
+        {
+          "value": 63,
+          "count": 1
+        },
+        {
+          "value": 21,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        2,
+        21,
+        44,
+        63,
+        67,
+        111,
+        112,
+        115,
+        117,
+        118,
+        129,
+        132,
+        157,
+        160,
+        182,
+        194,
+        235
+      ]
+    },
+    {
+      "offset": 5,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 13,
+      "min_unsigned": 7,
+      "max_unsigned": 254,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 7,
+          "count": 9
+        },
+        {
+          "value": 226,
+          "count": 7
+        },
+        {
+          "value": 216,
+          "count": 6
+        },
+        {
+          "value": 113,
+          "count": 4
+        },
+        {
+          "value": 206,
+          "count": 4
+        },
+        {
+          "value": 230,
+          "count": 3
+        },
+        {
+          "value": 254,
+          "count": 3
+        },
+        {
+          "value": 236,
+          "count": 3
+        },
+        {
+          "value": 162,
+          "count": 2
+        },
+        {
+          "value": 246,
+          "count": 1
+        },
+        {
+          "value": 165,
+          "count": 1
+        },
+        {
+          "value": 69,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        7,
+        18,
+        69,
+        113,
+        162,
+        165,
+        206,
+        216,
+        226,
+        230,
+        236,
+        246,
+        254
+      ]
+    },
+    {
+      "offset": 6,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 7,
+      "min_unsigned": 0,
+      "max_unsigned": 75,
+      "zero_count": 9,
+      "zero_rate": 0.2,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 74,
+          "count": 12
+        },
+        {
+          "value": 49,
+          "count": 10
+        },
+        {
+          "value": 0,
+          "count": 9
+        },
+        {
+          "value": 55,
+          "count": 6
+        },
+        {
+          "value": 75,
+          "count": 5
+        },
+        {
+          "value": 14,
+          "count": 2
+        },
+        {
+          "value": 54,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        0,
+        14,
+        49,
+        54,
+        55,
+        74,
+        75
+      ]
+    },
+    {
+      "offset": 7,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 4,
+      "min_unsigned": 0,
+      "max_unsigned": 119,
+      "zero_count": 11,
+      "zero_rate": 0.244444,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 4,
+          "count": 17
+        },
+        {
+          "value": 0,
+          "count": 11
+        },
+        {
+          "value": 1,
+          "count": 10
+        },
+        {
+          "value": 119,
+          "count": 7
+        }
+      ],
+      "small_value_set": [
+        0,
+        1,
+        4,
+        119
+      ]
+    },
+    {
+      "offset": 8,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 9,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 3,
+      "min_unsigned": 1,
+      "max_unsigned": 110,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 109,
+          "count": 42
+        },
+        {
+          "value": 1,
+          "count": 2
+        },
+        {
+          "value": 110,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        1,
+        109,
+        110
+      ]
+    },
+    {
+      "offset": 10,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 2,
+      "min_unsigned": 0,
+      "max_unsigned": 1,
+      "zero_count": 2,
+      "zero_rate": 0.044444,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 1,
+          "count": 43
+        },
+        {
+          "value": 0,
+          "count": 2
+        }
+      ],
+      "small_value_set": [
+        0,
+        1
+      ]
+    },
+    {
+      "offset": 11,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 4,
+      "min_unsigned": 108,
+      "max_unsigned": 239,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 231,
+          "count": 41
+        },
+        {
+          "value": 108,
+          "count": 2
+        },
+        {
+          "value": 232,
+          "count": 1
+        },
+        {
+          "value": 239,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        108,
+        231,
+        232,
+        239
+      ]
+    },
+    {
+      "offset": 12,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 7,
+      "max_unsigned": 7,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 7,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        7
+      ]
+    },
+    {
+      "offset": 13,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 0,
+      "max_unsigned": 44,
+      "zero_count": 1,
+      "zero_rate": 0.022222,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 1
+        },
+        {
+          "value": 1,
+          "count": 1
+        },
+        {
+          "value": 2,
+          "count": 1
+        },
+        {
+          "value": 3,
+          "count": 1
+        },
+        {
+          "value": 4,
+          "count": 1
+        },
+        {
+          "value": 5,
+          "count": 1
+        },
+        {
+          "value": 6,
+          "count": 1
+        },
+        {
+          "value": 7,
+          "count": 1
+        },
+        {
+          "value": 8,
+          "count": 1
+        },
+        {
+          "value": 9,
+          "count": 1
+        },
+        {
+          "value": 10,
+          "count": 1
+        },
+        {
+          "value": 11,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "offset": 14,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 15,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 16,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 17,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 1,
+      "max_unsigned": 45,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 1,
+          "count": 1
+        },
+        {
+          "value": 2,
+          "count": 1
+        },
+        {
+          "value": 3,
+          "count": 1
+        },
+        {
+          "value": 4,
+          "count": 1
+        },
+        {
+          "value": 5,
+          "count": 1
+        },
+        {
+          "value": 6,
+          "count": 1
+        },
+        {
+          "value": 7,
+          "count": 1
+        },
+        {
+          "value": 8,
+          "count": 1
+        },
+        {
+          "value": 9,
+          "count": 1
+        },
+        {
+          "value": 10,
+          "count": 1
+        },
+        {
+          "value": 11,
+          "count": 1
+        },
+        {
+          "value": 12,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "offset": 18,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 19,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 20,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 21,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 1,
+      "max_unsigned": 45,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 1,
+          "count": 1
+        },
+        {
+          "value": 2,
+          "count": 1
+        },
+        {
+          "value": 3,
+          "count": 1
+        },
+        {
+          "value": 4,
+          "count": 1
+        },
+        {
+          "value": 5,
+          "count": 1
+        },
+        {
+          "value": 6,
+          "count": 1
+        },
+        {
+          "value": 7,
+          "count": 1
+        },
+        {
+          "value": 8,
+          "count": 1
+        },
+        {
+          "value": 9,
+          "count": 1
+        },
+        {
+          "value": 10,
+          "count": 1
+        },
+        {
+          "value": 11,
+          "count": 1
+        },
+        {
+          "value": 12,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "offset": 22,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 23,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 24,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 25,
+      "width": 1,
+      "interpretation": "u8",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 0,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 19,
+      "min_unsigned": 1903,
+      "max_unsigned": 63039,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 4843,
+          "count": 6
+        },
+        {
+          "value": 27984,
+          "count": 4
+        },
+        {
+          "value": 25249,
+          "count": 4
+        },
+        {
+          "value": 41584,
+          "count": 4
+        },
+        {
+          "value": 60548,
+          "count": 3
+        },
+        {
+          "value": 1907,
+          "count": 3
+        },
+        {
+          "value": 63039,
+          "count": 3
+        },
+        {
+          "value": 23232,
+          "count": 2
+        },
+        {
+          "value": 17821,
+          "count": 2
+        },
+        {
+          "value": 9102,
+          "count": 2
+        },
+        {
+          "value": 1904,
+          "count": 2
+        },
+        {
+          "value": 1905,
+          "count": 2
+        }
+      ],
+      "small_value_set": [
+        1903,
+        1904,
+        1905,
+        1907,
+        4843,
+        9102,
+        17821,
+        23232,
+        25249,
+        27984,
+        28972,
+        41584,
+        41632,
+        42261,
+        43357,
+        55665,
+        57923,
+        60548,
+        63039
+      ]
+    },
+    {
+      "offset": 1,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 15,
+      "min_unsigned": 7,
+      "max_unsigned": 19313,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 7,
+          "count": 8
+        },
+        {
+          "value": 13842,
+          "count": 6
+        },
+        {
+          "value": 19106,
+          "count": 5
+        },
+        {
+          "value": 19309,
+          "count": 4
+        },
+        {
+          "value": 19298,
+          "count": 4
+        },
+        {
+          "value": 14316,
+          "count": 3
+        },
+        {
+          "value": 3830,
+          "count": 3
+        },
+        {
+          "value": 19290,
+          "count": 2
+        },
+        {
+          "value": 19269,
+          "count": 2
+        },
+        {
+          "value": 17187,
+          "count": 2
+        },
+        {
+          "value": 19161,
+          "count": 2
+        },
+        {
+          "value": 12770,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        7,
+        425,
+        3830,
+        12770,
+        13842,
+        14316,
+        17187,
+        19106,
+        19109,
+        19161,
+        19269,
+        19290,
+        19298,
+        19309,
+        19313
+      ]
+    },
+    {
+      "offset": 2,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 9,
+      "min_unsigned": 0,
+      "max_unsigned": 30519,
+      "zero_count": 8,
+      "zero_rate": 0.177778,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 1099,
+          "count": 13
+        },
+        {
+          "value": 1098,
+          "count": 8
+        },
+        {
+          "value": 0,
+          "count": 8
+        },
+        {
+          "value": 30518,
+          "count": 6
+        },
+        {
+          "value": 30519,
+          "count": 3
+        },
+        {
+          "value": 14,
+          "count": 3
+        },
+        {
+          "value": 67,
+          "count": 2
+        },
+        {
+          "value": 305,
+          "count": 1
+        },
+        {
+          "value": 1,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        0,
+        1,
+        14,
+        67,
+        305,
+        1098,
+        1099,
+        30518,
+        30519
+      ]
+    },
+    {
+      "offset": 3,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 32,
+      "min_unsigned": 512,
+      "max_unsigned": 60164,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 28420,
+          "count": 3
+        },
+        {
+          "value": 46711,
+          "count": 3
+        },
+        {
+          "value": 17152,
+          "count": 3
+        },
+        {
+          "value": 28676,
+          "count": 2
+        },
+        {
+          "value": 30212,
+          "count": 2
+        },
+        {
+          "value": 46592,
+          "count": 2
+        },
+        {
+          "value": 17156,
+          "count": 2
+        },
+        {
+          "value": 29956,
+          "count": 2
+        },
+        {
+          "value": 28416,
+          "count": 2
+        },
+        {
+          "value": 11268,
+          "count": 2
+        },
+        {
+          "value": 16128,
+          "count": 1
+        },
+        {
+          "value": 5380,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        512,
+        516,
+        631,
+        5380,
+        11264,
+        11268,
+        11383,
+        16128,
+        17152,
+        17156,
+        17271,
+        28416,
+        28420,
+        28535,
+        28676,
+        29444,
+        29952,
+        29956,
+        30212,
+        33028,
+        33792,
+        33796,
+        33911,
+        40192,
+        41079,
+        46592,
+        46596,
+        46711,
+        49664,
+        49665,
+        49668,
+        60164
+      ]
+    },
+    {
+      "offset": 4,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 19,
+      "min_unsigned": 1903,
+      "max_unsigned": 65218,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 57923,
+          "count": 6
+        },
+        {
+          "value": 55478,
+          "count": 6
+        },
+        {
+          "value": 28972,
+          "count": 4
+        },
+        {
+          "value": 52847,
+          "count": 4
+        },
+        {
+          "value": 58882,
+          "count": 3
+        },
+        {
+          "value": 65218,
+          "count": 3
+        },
+        {
+          "value": 1909,
+          "count": 3
+        },
+        {
+          "value": 60548,
+          "count": 3
+        },
+        {
+          "value": 1910,
+          "count": 2
+        },
+        {
+          "value": 1903,
+          "count": 2
+        },
+        {
+          "value": 41584,
+          "count": 1
+        },
+        {
+          "value": 63039,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        1903,
+        1904,
+        1907,
+        1909,
+        1910,
+        4843,
+        17821,
+        28972,
+        41584,
+        41632,
+        42261,
+        52847,
+        55478,
+        57923,
+        57985,
+        58882,
+        60548,
+        63039,
+        65218
+      ]
+    },
+    {
+      "offset": 5,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 14,
+      "min_unsigned": 7,
+      "max_unsigned": 19313,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 7,
+          "count": 9
+        },
+        {
+          "value": 12770,
+          "count": 6
+        },
+        {
+          "value": 19160,
+          "count": 6
+        },
+        {
+          "value": 19313,
+          "count": 4
+        },
+        {
+          "value": 12750,
+          "count": 4
+        },
+        {
+          "value": 14310,
+          "count": 3
+        },
+        {
+          "value": 19198,
+          "count": 3
+        },
+        {
+          "value": 14316,
+          "count": 3
+        },
+        {
+          "value": 19106,
+          "count": 2
+        },
+        {
+          "value": 3830,
+          "count": 1
+        },
+        {
+          "value": 19109,
+          "count": 1
+        },
+        {
+          "value": 19269,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        7,
+        3810,
+        3830,
+        12750,
+        12770,
+        13842,
+        14310,
+        14316,
+        19106,
+        19109,
+        19160,
+        19198,
+        19269,
+        19313
+      ]
+    },
+    {
+      "offset": 6,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 7,
+      "min_unsigned": 0,
+      "max_unsigned": 30519,
+      "zero_count": 9,
+      "zero_rate": 0.2,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 1098,
+          "count": 12
+        },
+        {
+          "value": 305,
+          "count": 10
+        },
+        {
+          "value": 0,
+          "count": 9
+        },
+        {
+          "value": 30519,
+          "count": 6
+        },
+        {
+          "value": 1099,
+          "count": 5
+        },
+        {
+          "value": 14,
+          "count": 2
+        },
+        {
+          "value": 30518,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        0,
+        14,
+        305,
+        1098,
+        1099,
+        30518,
+        30519
+      ]
+    },
+    {
+      "offset": 7,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 4,
+      "min_unsigned": 0,
+      "max_unsigned": 119,
+      "zero_count": 11,
+      "zero_rate": 0.244444,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 4,
+          "count": 17
+        },
+        {
+          "value": 0,
+          "count": 11
+        },
+        {
+          "value": 1,
+          "count": 10
+        },
+        {
+          "value": 119,
+          "count": 7
+        }
+      ],
+      "small_value_set": [
+        0,
+        1,
+        4,
+        119
+      ]
+    },
+    {
+      "offset": 8,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 3,
+      "min_unsigned": 256,
+      "max_unsigned": 28160,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 27904,
+          "count": 42
+        },
+        {
+          "value": 256,
+          "count": 2
+        },
+        {
+          "value": 28160,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        256,
+        27904,
+        28160
+      ]
+    },
+    {
+      "offset": 9,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 3,
+      "min_unsigned": 1,
+      "max_unsigned": 366,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 365,
+          "count": 42
+        },
+        {
+          "value": 1,
+          "count": 2
+        },
+        {
+          "value": 366,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        1,
+        365,
+        366
+      ]
+    },
+    {
+      "offset": 10,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 4,
+      "min_unsigned": 27648,
+      "max_unsigned": 61185,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 59137,
+          "count": 41
+        },
+        {
+          "value": 27648,
+          "count": 2
+        },
+        {
+          "value": 59393,
+          "count": 1
+        },
+        {
+          "value": 61185,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        27648,
+        59137,
+        59393,
+        61185
+      ]
+    },
+    {
+      "offset": 11,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 4,
+      "min_unsigned": 1900,
+      "max_unsigned": 2031,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 2023,
+          "count": 41
+        },
+        {
+          "value": 1900,
+          "count": 2
+        },
+        {
+          "value": 2024,
+          "count": 1
+        },
+        {
+          "value": 2031,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        1900,
+        2023,
+        2024,
+        2031
+      ]
+    },
+    {
+      "offset": 12,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 7,
+      "max_unsigned": 11271,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 7,
+          "count": 1
+        },
+        {
+          "value": 263,
+          "count": 1
+        },
+        {
+          "value": 519,
+          "count": 1
+        },
+        {
+          "value": 775,
+          "count": 1
+        },
+        {
+          "value": 1031,
+          "count": 1
+        },
+        {
+          "value": 1287,
+          "count": 1
+        },
+        {
+          "value": 1543,
+          "count": 1
+        },
+        {
+          "value": 1799,
+          "count": 1
+        },
+        {
+          "value": 2055,
+          "count": 1
+        },
+        {
+          "value": 2311,
+          "count": 1
+        },
+        {
+          "value": 2567,
+          "count": 1
+        },
+        {
+          "value": 2823,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        7,
+        263,
+        519,
+        775,
+        1031,
+        1287,
+        1543,
+        1799,
+        2055,
+        2311,
+        2567,
+        2823,
+        3079,
+        3335,
+        3591,
+        3847,
+        4103,
+        4359,
+        4615,
+        4871,
+        5127,
+        5383,
+        5639,
+        5895,
+        6151,
+        6407,
+        6663,
+        6919,
+        7175,
+        7431,
+        7687,
+        7943,
+        8199,
+        8455,
+        8711,
+        8967,
+        9223,
+        9479,
+        9735,
+        9991,
+        10247,
+        10503,
+        10759,
+        11015,
+        11271
+      ]
+    },
+    {
+      "offset": 13,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 0,
+      "max_unsigned": 44,
+      "zero_count": 1,
+      "zero_rate": 0.022222,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 1
+        },
+        {
+          "value": 1,
+          "count": 1
+        },
+        {
+          "value": 2,
+          "count": 1
+        },
+        {
+          "value": 3,
+          "count": 1
+        },
+        {
+          "value": 4,
+          "count": 1
+        },
+        {
+          "value": 5,
+          "count": 1
+        },
+        {
+          "value": 6,
+          "count": 1
+        },
+        {
+          "value": 7,
+          "count": 1
+        },
+        {
+          "value": 8,
+          "count": 1
+        },
+        {
+          "value": 9,
+          "count": 1
+        },
+        {
+          "value": 10,
+          "count": 1
+        },
+        {
+          "value": 11,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "offset": 14,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 15,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 16,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 256,
+      "max_unsigned": 11520,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 256,
+          "count": 1
+        },
+        {
+          "value": 512,
+          "count": 1
+        },
+        {
+          "value": 768,
+          "count": 1
+        },
+        {
+          "value": 1024,
+          "count": 1
+        },
+        {
+          "value": 1280,
+          "count": 1
+        },
+        {
+          "value": 1536,
+          "count": 1
+        },
+        {
+          "value": 1792,
+          "count": 1
+        },
+        {
+          "value": 2048,
+          "count": 1
+        },
+        {
+          "value": 2304,
+          "count": 1
+        },
+        {
+          "value": 2560,
+          "count": 1
+        },
+        {
+          "value": 2816,
+          "count": 1
+        },
+        {
+          "value": 3072,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        256,
+        512,
+        768,
+        1024,
+        1280,
+        1536,
+        1792,
+        2048,
+        2304,
+        2560,
+        2816,
+        3072,
+        3328,
+        3584,
+        3840,
+        4096,
+        4352,
+        4608,
+        4864,
+        5120,
+        5376,
+        5632,
+        5888,
+        6144,
+        6400,
+        6656,
+        6912,
+        7168,
+        7424,
+        7680,
+        7936,
+        8192,
+        8448,
+        8704,
+        8960,
+        9216,
+        9472,
+        9728,
+        9984,
+        10240,
+        10496,
+        10752,
+        11008,
+        11264,
+        11520
+      ]
+    },
+    {
+      "offset": 17,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 1,
+      "max_unsigned": 45,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 1,
+          "count": 1
+        },
+        {
+          "value": 2,
+          "count": 1
+        },
+        {
+          "value": 3,
+          "count": 1
+        },
+        {
+          "value": 4,
+          "count": 1
+        },
+        {
+          "value": 5,
+          "count": 1
+        },
+        {
+          "value": 6,
+          "count": 1
+        },
+        {
+          "value": 7,
+          "count": 1
+        },
+        {
+          "value": 8,
+          "count": 1
+        },
+        {
+          "value": 9,
+          "count": 1
+        },
+        {
+          "value": 10,
+          "count": 1
+        },
+        {
+          "value": 11,
+          "count": 1
+        },
+        {
+          "value": 12,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "offset": 18,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 19,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 20,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 256,
+      "max_unsigned": 11520,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 256,
+          "count": 1
+        },
+        {
+          "value": 512,
+          "count": 1
+        },
+        {
+          "value": 768,
+          "count": 1
+        },
+        {
+          "value": 1024,
+          "count": 1
+        },
+        {
+          "value": 1280,
+          "count": 1
+        },
+        {
+          "value": 1536,
+          "count": 1
+        },
+        {
+          "value": 1792,
+          "count": 1
+        },
+        {
+          "value": 2048,
+          "count": 1
+        },
+        {
+          "value": 2304,
+          "count": 1
+        },
+        {
+          "value": 2560,
+          "count": 1
+        },
+        {
+          "value": 2816,
+          "count": 1
+        },
+        {
+          "value": 3072,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        256,
+        512,
+        768,
+        1024,
+        1280,
+        1536,
+        1792,
+        2048,
+        2304,
+        2560,
+        2816,
+        3072,
+        3328,
+        3584,
+        3840,
+        4096,
+        4352,
+        4608,
+        4864,
+        5120,
+        5376,
+        5632,
+        5888,
+        6144,
+        6400,
+        6656,
+        6912,
+        7168,
+        7424,
+        7680,
+        7936,
+        8192,
+        8448,
+        8704,
+        8960,
+        9216,
+        9472,
+        9728,
+        9984,
+        10240,
+        10496,
+        10752,
+        11008,
+        11264,
+        11520
+      ]
+    },
+    {
+      "offset": 21,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 1,
+      "max_unsigned": 45,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 1,
+          "count": 1
+        },
+        {
+          "value": 2,
+          "count": 1
+        },
+        {
+          "value": 3,
+          "count": 1
+        },
+        {
+          "value": 4,
+          "count": 1
+        },
+        {
+          "value": 5,
+          "count": 1
+        },
+        {
+          "value": 6,
+          "count": 1
+        },
+        {
+          "value": 7,
+          "count": 1
+        },
+        {
+          "value": 8,
+          "count": 1
+        },
+        {
+          "value": 9,
+          "count": 1
+        },
+        {
+          "value": 10,
+          "count": 1
+        },
+        {
+          "value": 11,
+          "count": 1
+        },
+        {
+          "value": 12,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "offset": 22,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 23,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 24,
+      "width": 2,
+      "interpretation": "u16",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ]
+    },
+    {
+      "offset": 0,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 19,
+      "min_unsigned": 1903,
+      "max_unsigned": 2000153732,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 2000032491,
+          "count": 6
+        },
+        {
+          "value": 72052048,
+          "count": 4
+        },
+        {
+          "value": 72049313,
+          "count": 4
+        },
+        {
+          "value": 72000112,
+          "count": 4
+        },
+        {
+          "value": 2000153732,
+          "count": 3
+        },
+        {
+          "value": 1907,
+          "count": 3
+        },
+        {
+          "value": 980543,
+          "count": 3
+        },
+        {
+          "value": 72047296,
+          "count": 2
+        },
+        {
+          "value": 72041885,
+          "count": 2
+        },
+        {
+          "value": 4400014,
+          "count": 2
+        },
+        {
+          "value": 1904,
+          "count": 2
+        },
+        {
+          "value": 1905,
+          "count": 2
+        }
+      ],
+      "small_value_set": [
+        1903,
+        1904,
+        1905,
+        1907,
+        108893,
+        980543,
+        4400014,
+        20046403,
+        72000112,
+        72000160,
+        72000789,
+        72014193,
+        72041885,
+        72047296,
+        72049313,
+        72052048,
+        72053036,
+        2000032491,
+        2000153732
+      ],
+      "signed_i32": {
+        "min": 1903,
+        "max": 2000153732,
+        "within_abs_1e9_count": 36,
+        "within_abs_1e9_rate_nonzero_nonnull": 0.8
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 8,
+          "denominator_nonnull": 45,
+          "ratio": 0.177778
+        },
+        "competition": {
+          "in_range_count": 8,
+          "denominator_nonnull": 45,
+          "ratio": 0.177778
+        },
+        "person": {
+          "in_range_count": 9,
+          "denominator_nonnull": 45,
+          "ratio": 0.2
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 8,
+          "denominator_nonnull": 45,
+          "ratio": 0.177778
+        },
+        "stage_name": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "team": {
+          "in_range_count": 8,
+          "denominator_nonnull": 45,
+          "ratio": 0.177778
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 8,
+          "denominator_nonnull": 45,
+          "ratio": 0.177778
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 37,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 0,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 2.666670977610127e-42,
+        "max_finite": 3.7304196558429185e+33,
+        "first_finite_samples": [
+          2.3819659624423674e-36,
+          2.666670977610127e-42,
+          2.391272916006129e-36,
+          3.7304196558429185e+33,
+          3.7304196558429185e+33,
+          3.267210046182706e-38,
+          2.391272916006129e-36,
+          2.3904205678074125e-36,
+          2.672276171467426e-42,
+          3.692897383767169e+33,
+          1.525915936757223e-40,
+          3.7304196558429185e+33
+        ]
+      }
+    },
+    {
+      "offset": 1,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 41,
+      "min_unsigned": 33558262,
+      "max_unsigned": 3942927217,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 3061265938,
+          "count": 2
+        },
+        {
+          "value": 3053453319,
+          "count": 2
+        },
+        {
+          "value": 1124354885,
+          "count": 2
+        },
+        {
+          "value": 1862552226,
+          "count": 2
+        },
+        {
+          "value": 1879329442,
+          "count": 1
+        },
+        {
+          "value": 1056964615,
+          "count": 1
+        },
+        {
+          "value": 352602989,
+          "count": 1
+        },
+        {
+          "value": 41367532,
+          "count": 1
+        },
+        {
+          "value": 1131886572,
+          "count": 1
+        },
+        {
+          "value": 3254858210,
+          "count": 1
+        },
+        {
+          "value": 1979992941,
+          "count": 1
+        },
+        {
+          "value": 1862552410,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        33558262,
+        33835874,
+        41367532,
+        352602989,
+        738197511,
+        738478946,
+        738478957,
+        746010130,
+        1056964615,
+        1124073479,
+        1124073897,
+        1124090659,
+        1124354885,
+        1131886572,
+        1862274806,
+        1862288163,
+        1862552226,
+        1862552410,
+        1870083602,
+        1879329442,
+        1879329634,
+        1929661293,
+        1962938102,
+        1963215522,
+        1963215525,
+        1979992793,
+        1979992941,
+        2164542169,
+        2214592519,
+        2214873762,
+        2222405138,
+        2634022919,
+        2692167186,
+        3053453319,
+        3053734746,
+        3061265938,
+        3061266412,
+        3254779911,
+        3254858210,
+        3255061346,
+        3942927217
+      ],
+      "signed_i32": {
+        "min": -2130425127,
+        "max": 1979992941,
+        "within_abs_1e9_count": 9,
+        "within_abs_1e9_rate_nonzero_nonnull": 0.2
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "competition": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "person": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stage_name": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "team": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 45,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 1,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": -1.599344701574266e+26,
+        "max_finite": 6.708134784341652e+32,
+        "first_finite_samples": [
+          1.6376898732175703e+29,
+          0.5000004172325134,
+          2.671668815930231e-26,
+          1.8162742831871283e-37,
+          247.21844482421875,
+          -32.29871368408203,
+          6.708134784341652e+32,
+          4.0943115745872105e+28,
+          1.818990921428898e-12,
+          -3.6837341212958563e-06,
+          128.00648498535156,
+          -3.6838418964180164e-06
+        ]
+      }
+    },
+    {
+      "offset": 2,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 39,
+      "min_unsigned": 124715075,
+      "max_unsigned": 4274127947,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 3635836726,
+          "count": 2
+        },
+        {
+          "value": 3635806208,
+          "count": 2
+        },
+        {
+          "value": 3796042827,
+          "count": 2
+        },
+        {
+          "value": 125109322,
+          "count": 2
+        },
+        {
+          "value": 1898710091,
+          "count": 2
+        },
+        {
+          "value": 3463382090,
+          "count": 2
+        },
+        {
+          "value": 2725250122,
+          "count": 1
+        },
+        {
+          "value": 4131323904,
+          "count": 1
+        },
+        {
+          "value": 2769617995,
+          "count": 1
+        },
+        {
+          "value": 3858921271,
+          "count": 1
+        },
+        {
+          "value": 3796072247,
+          "count": 1
+        },
+        {
+          "value": 4274127153,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        124715075,
+        124716107,
+        124781643,
+        124978251,
+        125108238,
+        125109322,
+        125174858,
+        125174859,
+        317391947,
+        1167917056,
+        1898708992,
+        1898710091,
+        1898739510,
+        2725250122,
+        2728425270,
+        2769617995,
+        3463381006,
+        3463382090,
+        3463411510,
+        3635806208,
+        3635807307,
+        3635836726,
+        3635836727,
+        3796041728,
+        3796041729,
+        3796041795,
+        3796042827,
+        3796072247,
+        3800106058,
+        3858890766,
+        3858891851,
+        3858921271,
+        3968073728,
+        3968074826,
+        3968104246,
+        4131323904,
+        4274126848,
+        4274127153,
+        4274127947
+      ],
+      "signed_i32": {
+        "min": -1569717174,
+        "max": 1898739510,
+        "within_abs_1e9_count": 37,
+        "within_abs_1e9_rate_nonzero_nonnull": 0.822222
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "competition": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "person": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stage_name": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "team": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 45,
+        "valid_count": 2,
+        "valid_ratio_nonblank": 0.044444,
+        "year_min": 1903,
+        "year_max": 1909,
+        "year_distinct": 2,
+        "day_max": 67,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 2,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": -1.2894626077521405e+38,
+        "max_finite": 8.540086219135291e+29,
+        "first_finite_samples": [
+          -3.252833578534659e-18,
+          -9.684850585743673e+32,
+          -1.2925144410416326e-16,
+          -1.5402669212137435e+23,
+          -9.014263572968988e+20,
+          -1.289382086586014e+38,
+          1.8508244649474565e-34,
+          1.798162318030618e-34,
+          8.517027470283416e+29,
+          -1604984986664960.0,
+          -8.992788439620848e+20,
+          -1604985120882688.0
+        ]
+      }
+    },
+    {
+      "offset": 3,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 35,
+      "min_unsigned": 487168,
+      "max_unsigned": 1265708151,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 1255716471,
+          "count": 3
+        },
+        {
+          "value": 836911872,
+          "count": 3
+        },
+        {
+          "value": 488964,
+          "count": 2
+        },
+        {
+          "value": 1255716352,
+          "count": 2
+        },
+        {
+          "value": 836911876,
+          "count": 2
+        },
+        {
+          "value": 488708,
+          "count": 2
+        },
+        {
+          "value": 1265708036,
+          "count": 2
+        },
+        {
+          "value": 835612420,
+          "count": 2
+        },
+        {
+          "value": 1252159492,
+          "count": 1
+        },
+        {
+          "value": 251019008,
+          "count": 1
+        },
+        {
+          "value": 1252332804,
+          "count": 1
+        },
+        {
+          "value": 937820791,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        487168,
+        487172,
+        487428,
+        488196,
+        488704,
+        488708,
+        488964,
+        249725188,
+        251019008,
+        835612416,
+        835612420,
+        835612535,
+        836911872,
+        836911876,
+        836911991,
+        907209476,
+        937820672,
+        937820676,
+        937820791,
+        938247168,
+        938247172,
+        938247287,
+        1252159492,
+        1252171895,
+        1252332804,
+        1255716352,
+        1255716356,
+        1255716471,
+        1258209792,
+        1258209793,
+        1258209796,
+        1262853376,
+        1265708032,
+        1265708036,
+        1265708151
+      ],
+      "signed_i32": {
+        "min": 487168,
+        "max": 1265708151,
+        "within_abs_1e9_count": 28,
+        "within_abs_1e9_rate_nonzero_nonnull": 0.622222
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "competition": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "person": {
+          "in_range_count": 9,
+          "denominator_nonnull": 45,
+          "ratio": 0.2
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stage_name": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "team": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 45,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 3,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 6.826677702681925e-40,
+        "max_finite": 15805559.0,
+        "first_finite_samples": [
+          5322754.0,
+          6.070434888211348e-30,
+          5409410.0,
+          2.7419284378993325e-05,
+          6.5851355479651374e-09,
+          8347904.5,
+          6.8518450231011985e-40,
+          6.826733754620498e-40,
+          15805440.0,
+          7101243.5,
+          6.585082701349165e-09,
+          7101243.5
+        ]
+      }
+    },
+    {
+      "offset": 4,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 19,
+      "min_unsigned": 1903,
+      "max_unsigned": 2000153732,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 20046403,
+          "count": 6
+        },
+        {
+          "value": 72014006,
+          "count": 6
+        },
+        {
+          "value": 72053036,
+          "count": 4
+        },
+        {
+          "value": 20041327,
+          "count": 4
+        },
+        {
+          "value": 2000152066,
+          "count": 3
+        },
+        {
+          "value": 72023746,
+          "count": 3
+        },
+        {
+          "value": 1909,
+          "count": 3
+        },
+        {
+          "value": 2000153732,
+          "count": 3
+        },
+        {
+          "value": 1910,
+          "count": 2
+        },
+        {
+          "value": 1903,
+          "count": 2
+        },
+        {
+          "value": 72000112,
+          "count": 1
+        },
+        {
+          "value": 980543,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        1903,
+        1904,
+        1907,
+        1909,
+        1910,
+        975489,
+        980543,
+        20041327,
+        20046403,
+        72000112,
+        72000160,
+        72000789,
+        72014006,
+        72023746,
+        72041885,
+        72053036,
+        2000032491,
+        2000152066,
+        2000153732
+      ],
+      "signed_i32": {
+        "min": 1903,
+        "max": 2000153732,
+        "within_abs_1e9_count": 38,
+        "within_abs_1e9_rate_nonzero_nonnull": 0.844444
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 9,
+          "denominator_nonnull": 45,
+          "ratio": 0.2
+        },
+        "competition": {
+          "in_range_count": 9,
+          "denominator_nonnull": 45,
+          "ratio": 0.2
+        },
+        "person": {
+          "in_range_count": 9,
+          "denominator_nonnull": 45,
+          "ratio": 0.2
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 9,
+          "denominator_nonnull": 45,
+          "ratio": 0.2
+        },
+        "stage_name": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "team": {
+          "in_range_count": 9,
+          "denominator_nonnull": 45,
+          "ratio": 0.2
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 9,
+          "denominator_nonnull": 45,
+          "ratio": 0.2
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 36,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 4,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 2.666670977610127e-42,
+        "max_finite": 3.7304196558429185e+33,
+        "first_finite_samples": [
+          2.3819573528646026e-36,
+          1.3740334001044491e-39,
+          2.382078783784327e-36,
+          3.729904053816556e+33,
+          3.267210046182706e-38,
+          2.3861964937165518e-36,
+          2.6764800668604006e-42,
+          2.666670977610127e-42,
+          2.3914501298151212e-36,
+          2.3844494668951087e-36,
+          3.267210046182706e-38,
+          2.3844494668951087e-36
+        ]
+      }
+    },
+    {
+      "offset": 5,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 14,
+      "min_unsigned": 7,
+      "max_unsigned": 7813100,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 7,
+          "count": 9
+        },
+        {
+          "value": 78306,
+          "count": 6
+        },
+        {
+          "value": 281304,
+          "count": 6
+        },
+        {
+          "value": 281457,
+          "count": 4
+        },
+        {
+          "value": 78286,
+          "count": 4
+        },
+        {
+          "value": 7813094,
+          "count": 3
+        },
+        {
+          "value": 281342,
+          "count": 3
+        },
+        {
+          "value": 7813100,
+          "count": 3
+        },
+        {
+          "value": 281250,
+          "count": 2
+        },
+        {
+          "value": 3830,
+          "count": 1
+        },
+        {
+          "value": 281253,
+          "count": 1
+        },
+        {
+          "value": 281413,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        7,
+        3810,
+        3830,
+        78286,
+        78306,
+        281250,
+        281253,
+        281304,
+        281342,
+        281413,
+        281457,
+        7812626,
+        7813094,
+        7813100
+      ],
+      "signed_i32": {
+        "min": 7,
+        "max": 7813100,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 1.0
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 21,
+          "denominator_nonnull": 45,
+          "ratio": 0.466667
+        },
+        "competition": {
+          "in_range_count": 11,
+          "denominator_nonnull": 45,
+          "ratio": 0.244444
+        },
+        "person": {
+          "in_range_count": 38,
+          "denominator_nonnull": 45,
+          "ratio": 0.844444
+        },
+        "nation": {
+          "in_range_count": 9,
+          "denominator_nonnull": 45,
+          "ratio": 0.2
+        },
+        "stadium": {
+          "in_range_count": 11,
+          "denominator_nonnull": 45,
+          "ratio": 0.244444
+        },
+        "stage_name": {
+          "in_range_count": 9,
+          "denominator_nonnull": 45,
+          "ratio": 0.2
+        },
+        "team": {
+          "in_range_count": 21,
+          "denominator_nonnull": 45,
+          "ratio": 0.466667
+        },
+        "media_source": {
+          "in_range_count": 9,
+          "denominator_nonnull": 45,
+          "ratio": 0.2
+        },
+        "city": {
+          "in_range_count": 11,
+          "denominator_nonnull": 45,
+          "ratio": 0.244444
+        },
+        "region": {
+          "in_range_count": 9,
+          "denominator_nonnull": 45,
+          "ratio": 0.2
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 34,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 5,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 9.80908925027372e-45,
+        "max_finite": 1.0948485031616228e-38,
+        "first_finite_samples": [
+          3.941151930913548e-40,
+          5.3669731183640494e-42,
+          3.941193969867478e-40,
+          1.0948476623825442e-38,
+          1.0973007754741913e-40,
+          3.942441125500727e-40,
+          9.80908925027372e-45,
+          9.80908925027372e-45,
+          3.9440526187347e-40,
+          3.9419086320842834e-40,
+          1.0973007754741913e-40,
+          3.9419086320842834e-40
+        ]
+      }
+    },
+    {
+      "offset": 6,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 10,
+      "min_unsigned": 16777230,
+      "max_unsigned": 1845494858,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 1828717642,
+          "count": 10
+        },
+        {
+          "value": 1828716849,
+          "count": 10
+        },
+        {
+          "value": 1828716544,
+          "count": 9
+        },
+        {
+          "value": 1828747063,
+          "count": 6
+        },
+        {
+          "value": 1828717643,
+          "count": 5
+        },
+        {
+          "value": 16778314,
+          "count": 1
+        },
+        {
+          "value": 16777230,
+          "count": 1
+        },
+        {
+          "value": 1845494858,
+          "count": 1
+        },
+        {
+          "value": 1828747062,
+          "count": 1
+        },
+        {
+          "value": 1828716558,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        16777230,
+        16778314,
+        1828716544,
+        1828716558,
+        1828716849,
+        1828717642,
+        1828717643,
+        1828747062,
+        1828747063,
+        1845494858
+      ],
+      "signed_i32": {
+        "min": 16777230,
+        "max": 1845494858,
+        "within_abs_1e9_count": 2,
+        "within_abs_1e9_rate_nonzero_nonnull": 0.044444
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "competition": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "person": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stage_name": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "team": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 45,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 6,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 2.350992625280275e-38,
+        "max_finite": 9.90481660388259e+27,
+        "first_finite_samples": [
+          2.351296426787341e-38,
+          2.350992625280275e-38,
+          2.4762041509706475e+27,
+          2.484887697488929e+27,
+          2.47597009868184e+27,
+          9.90481660388259e+27,
+          2.4758800785707605e+27,
+          2.4758800785707605e+27,
+          2.4762044461185527e+27,
+          2.4762041509706475e+27,
+          2.47597009868184e+27,
+          2.4762041509706475e+27
+        ]
+      }
+    },
+    {
+      "offset": 7,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 7,
+      "min_unsigned": 65536,
+      "max_unsigned": 23986180,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 23920644,
+          "count": 15
+        },
+        {
+          "value": 23920641,
+          "count": 10
+        },
+        {
+          "value": 23920640,
+          "count": 10
+        },
+        {
+          "value": 23920759,
+          "count": 7
+        },
+        {
+          "value": 65540,
+          "count": 1
+        },
+        {
+          "value": 65536,
+          "count": 1
+        },
+        {
+          "value": 23986180,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        65536,
+        65540,
+        23920640,
+        23920641,
+        23920644,
+        23920759,
+        23986180
+      ],
+      "signed_i32": {
+        "min": 65536,
+        "max": 23986180,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 1.0
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 2,
+          "denominator_nonnull": 45,
+          "ratio": 0.044444
+        },
+        "competition": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "person": {
+          "in_range_count": 2,
+          "denominator_nonnull": 45,
+          "ratio": 0.044444
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stage_name": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "team": {
+          "in_range_count": 2,
+          "denominator_nonnull": 45,
+          "ratio": 0.044444
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 45,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 7,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 9.183549615799121e-41,
+        "max_finite": 4.371370738159153e-38,
+        "first_finite_samples": [
+          9.184110135184851e-41,
+          9.183549615799121e-41,
+          4.353003638927555e-38,
+          4.3530358687922344e-38,
+          4.3530027981484763e-38,
+          4.371370738159153e-38,
+          4.3530025178887834e-38,
+          4.3530025178887834e-38,
+          4.353003638927555e-38,
+          4.353003638927555e-38,
+          4.3530027981484763e-38,
+          4.353003638927555e-38
+        ]
+      }
+    },
+    {
+      "offset": 8,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 4,
+      "min_unsigned": 1811939584,
+      "max_unsigned": 4009848064,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 3875630336,
+          "count": 41
+        },
+        {
+          "value": 1811939584,
+          "count": 2
+        },
+        {
+          "value": 3892407808,
+          "count": 1
+        },
+        {
+          "value": 4009848064,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        1811939584,
+        3875630336,
+        3892407808,
+        4009848064
+      ],
+      "signed_i32": {
+        "min": -419336960,
+        "max": 1811939584,
+        "within_abs_1e9_count": 43,
+        "within_abs_1e9_rate_nonzero_nonnull": 0.955556
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "competition": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "person": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stage_name": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "team": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 45,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 8,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": -4.005533918129151e+28,
+        "max_finite": 6.189889091086216e+26,
+        "first_finite_samples": [
+          6.189889091086216e+26,
+          6.189889091086216e+26,
+          -6.111959713942186e+23,
+          -6.111959713942186e+23,
+          -6.111959713942186e+23,
+          -2.444857672553169e+24,
+          -6.111959713942186e+23,
+          -6.111959713942186e+23,
+          -6.111959713942186e+23,
+          -6.111959713942186e+23,
+          -6.111959713942186e+23,
+          -6.111959713942186e+23
+        ]
+      }
+    },
+    {
+      "offset": 9,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 4,
+      "min_unsigned": 124518401,
+      "max_unsigned": 133103981,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 132579693,
+          "count": 41
+        },
+        {
+          "value": 124518401,
+          "count": 2
+        },
+        {
+          "value": 132645230,
+          "count": 1
+        },
+        {
+          "value": 133103981,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        124518401,
+        132579693,
+        132645230,
+        133103981
+      ],
+      "signed_i32": {
+        "min": 124518401,
+        "max": 133103981,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 1.0
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "competition": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "person": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stage_name": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "team": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 45,
+        "valid_count": 45,
+        "valid_ratio_nonblank": 1.0,
+        "year_min": 1900,
+        "year_max": 2031,
+        "year_distinct": 4,
+        "day_max": 366,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 9,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 1.7754667822763532e-34,
+        "max_finite": 3.596156117925786e-34,
+        "first_finite_samples": [
+          1.7754667822763532e-34,
+          1.7754667822763532e-34,
+          3.475785496401584e-34,
+          3.475785496401584e-34,
+          3.475785496401584e-34,
+          3.4908320536808495e-34,
+          3.475785496401584e-34,
+          3.475785496401584e-34,
+          3.475785496401584e-34,
+          3.475785496401584e-34,
+          3.475785496401584e-34,
+          3.475785496401584e-34
+        ]
+      }
+    },
+    {
+      "offset": 10,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 486400,
+      "max_unsigned": 738715393,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 486400,
+          "count": 1
+        },
+        {
+          "value": 17263616,
+          "count": 1
+        },
+        {
+          "value": 34072321,
+          "count": 1
+        },
+        {
+          "value": 50849537,
+          "count": 1
+        },
+        {
+          "value": 67626753,
+          "count": 1
+        },
+        {
+          "value": 84404225,
+          "count": 1
+        },
+        {
+          "value": 101181185,
+          "count": 1
+        },
+        {
+          "value": 117958401,
+          "count": 1
+        },
+        {
+          "value": 134735617,
+          "count": 1
+        },
+        {
+          "value": 151512833,
+          "count": 1
+        },
+        {
+          "value": 168290049,
+          "count": 1
+        },
+        {
+          "value": 185067265,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        486400,
+        17263616,
+        34072321,
+        50849537,
+        67626753,
+        84404225,
+        101181185,
+        117958401,
+        134735617,
+        151512833,
+        168290049,
+        185067265,
+        201844481,
+        218621697,
+        235398913,
+        252176129,
+        268953345,
+        285730561,
+        302507777,
+        319284993,
+        336062209,
+        352839425,
+        369616641,
+        386393857,
+        403171073,
+        419948289,
+        436727553,
+        453502721,
+        470279937,
+        487057153,
+        503834369,
+        520611585,
+        537388801,
+        554166017,
+        570943233,
+        587720449,
+        604497665,
+        621274881,
+        638052097,
+        654829313,
+        671606529,
+        688383745,
+        705160961,
+        721938177,
+        738715393
+      ],
+      "signed_i32": {
+        "min": 486400,
+        "max": 738715393,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 1.0
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "competition": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "person": {
+          "in_range_count": 1,
+          "denominator_nonnull": 45,
+          "ratio": 0.022222
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stage_name": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "team": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 45,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 10,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 6.81591573047591e-40,
+        "max_finite": 1.9312886793271256e-12,
+        "first_finite_samples": [
+          6.81591573047591e-40,
+          2.487307016254093e-38,
+          9.984528454890872e-38,
+          3.993811381956349e-37,
+          1.5975245527825396e-36,
+          6.390281882122474e-36,
+          2.5560392844520633e-35,
+          1.0224157137808253e-34,
+          4.089662855123301e-34,
+          1.6358651420493205e-33,
+          6.543460568197282e-33,
+          2.617384227278913e-32
+        ]
+      }
+    },
+    {
+      "offset": 11,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 1900,
+      "max_unsigned": 2885607,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 1900,
+          "count": 1
+        },
+        {
+          "value": 67436,
+          "count": 1
+        },
+        {
+          "value": 133095,
+          "count": 1
+        },
+        {
+          "value": 198631,
+          "count": 1
+        },
+        {
+          "value": 264167,
+          "count": 1
+        },
+        {
+          "value": 329704,
+          "count": 1
+        },
+        {
+          "value": 395239,
+          "count": 1
+        },
+        {
+          "value": 460775,
+          "count": 1
+        },
+        {
+          "value": 526311,
+          "count": 1
+        },
+        {
+          "value": 591847,
+          "count": 1
+        },
+        {
+          "value": 657383,
+          "count": 1
+        },
+        {
+          "value": 722919,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        1900,
+        67436,
+        133095,
+        198631,
+        264167,
+        329704,
+        395239,
+        460775,
+        526311,
+        591847,
+        657383,
+        722919,
+        788455,
+        853991,
+        919527,
+        985063,
+        1050599,
+        1116135,
+        1181671,
+        1247207,
+        1312743,
+        1378279,
+        1443815,
+        1509351,
+        1574887,
+        1640423,
+        1705967,
+        1771495,
+        1837031,
+        1902567,
+        1968103,
+        2033639,
+        2099175,
+        2164711,
+        2230247,
+        2295783,
+        2361319,
+        2426855,
+        2492391,
+        2557927,
+        2623463,
+        2688999,
+        2754535,
+        2820071,
+        2885607
+      ],
+      "signed_i32": {
+        "min": 1900,
+        "max": 2885607,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 1.0
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 2,
+          "denominator_nonnull": 45,
+          "ratio": 0.044444
+        },
+        "competition": {
+          "in_range_count": 1,
+          "denominator_nonnull": 45,
+          "ratio": 0.022222
+        },
+        "person": {
+          "in_range_count": 13,
+          "denominator_nonnull": 45,
+          "ratio": 0.288889
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 1,
+          "denominator_nonnull": 45,
+          "ratio": 0.022222
+        },
+        "stage_name": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "team": {
+          "in_range_count": 2,
+          "denominator_nonnull": 45,
+          "ratio": 0.044444
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 1,
+          "denominator_nonnull": 45,
+          "ratio": 0.022222
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 44,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 11,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 2.6624670822171524e-42,
+        "max_finite": 4.0435966577449424e-39,
+        "first_finite_samples": [
+          2.6624670822171524e-42,
+          9.449796324020836e-41,
+          1.8650581910931153e-40,
+          2.7834131526730274e-40,
+          3.7017681142529395e-40,
+          4.620137088817495e-40,
+          5.538478037412764e-40,
+          6.456832998992676e-40,
+          7.375187960572588e-40,
+          8.2935429221525e-40,
+          9.211897883732412e-40,
+          1.0130252845312324e-39
+        ]
+      }
+    },
+    {
+      "offset": 12,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 7,
+      "max_unsigned": 11271,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 7,
+          "count": 1
+        },
+        {
+          "value": 263,
+          "count": 1
+        },
+        {
+          "value": 519,
+          "count": 1
+        },
+        {
+          "value": 775,
+          "count": 1
+        },
+        {
+          "value": 1031,
+          "count": 1
+        },
+        {
+          "value": 1287,
+          "count": 1
+        },
+        {
+          "value": 1543,
+          "count": 1
+        },
+        {
+          "value": 1799,
+          "count": 1
+        },
+        {
+          "value": 2055,
+          "count": 1
+        },
+        {
+          "value": 2311,
+          "count": 1
+        },
+        {
+          "value": 2567,
+          "count": 1
+        },
+        {
+          "value": 2823,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        7,
+        263,
+        519,
+        775,
+        1031,
+        1287,
+        1543,
+        1799,
+        2055,
+        2311,
+        2567,
+        2823,
+        3079,
+        3335,
+        3591,
+        3847,
+        4103,
+        4359,
+        4615,
+        4871,
+        5127,
+        5383,
+        5639,
+        5895,
+        6151,
+        6407,
+        6663,
+        6919,
+        7175,
+        7431,
+        7687,
+        7943,
+        8199,
+        8455,
+        8711,
+        8967,
+        9223,
+        9479,
+        9735,
+        9991,
+        10247,
+        10503,
+        10759,
+        11015,
+        11271
+      ],
+      "signed_i32": {
+        "min": 7,
+        "max": 11271,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 1.0
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "competition": {
+          "in_range_count": 28,
+          "denominator_nonnull": 45,
+          "ratio": 0.622222
+        },
+        "person": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "nation": {
+          "in_range_count": 1,
+          "denominator_nonnull": 45,
+          "ratio": 0.022222
+        },
+        "stadium": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "stage_name": {
+          "in_range_count": 2,
+          "denominator_nonnull": 45,
+          "ratio": 0.044444
+        },
+        "team": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "media_source": {
+          "in_range_count": 1,
+          "denominator_nonnull": 45,
+          "ratio": 0.022222
+        },
+        "city": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "region": {
+          "in_range_count": 1,
+          "denominator_nonnull": 45,
+          "ratio": 0.022222
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 0,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 12,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 9.80908925027372e-45,
+        "max_finite": 1.5794034991405013e-41,
+        "first_finite_samples": [
+          9.80908925027372e-45,
+          3.685414961174269e-43,
+          7.2727390298458e-43,
+          1.0860063098517332e-42,
+          1.4447387167188864e-42,
+          1.8034711235860396e-42,
+          2.1622035304531927e-42,
+          2.520935937320346e-42,
+          2.879668344187499e-42,
+          3.238400751054652e-42,
+          3.5971331579218054e-42,
+          3.9558655647889586e-42
+        ]
+      }
+    },
+    {
+      "offset": 13,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 0,
+      "max_unsigned": 44,
+      "zero_count": 1,
+      "zero_rate": 0.022222,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 1
+        },
+        {
+          "value": 1,
+          "count": 1
+        },
+        {
+          "value": 2,
+          "count": 1
+        },
+        {
+          "value": 3,
+          "count": 1
+        },
+        {
+          "value": 4,
+          "count": 1
+        },
+        {
+          "value": 5,
+          "count": 1
+        },
+        {
+          "value": 6,
+          "count": 1
+        },
+        {
+          "value": 7,
+          "count": 1
+        },
+        {
+          "value": 8,
+          "count": 1
+        },
+        {
+          "value": 9,
+          "count": 1
+        },
+        {
+          "value": 10,
+          "count": 1
+        },
+        {
+          "value": 11,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "signed_i32": {
+        "min": 0,
+        "max": 44,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 1.022727
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "competition": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "person": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "nation": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "stadium": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "stage_name": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "team": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "media_source": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "city": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "region": {
+          "in_range_count": 28,
+          "denominator_nonnull": 45,
+          "ratio": 0.622222
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 0,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 13,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 0.0,
+        "max_finite": 6.165713243029195e-44,
+        "first_finite_samples": [
+          0.0,
+          1.401298464324817e-45,
+          2.802596928649634e-45,
+          4.203895392974451e-45,
+          5.605193857299268e-45,
+          7.006492321624085e-45,
+          8.407790785948902e-45,
+          9.80908925027372e-45,
+          1.1210387714598537e-44,
+          1.2611686178923354e-44,
+          1.401298464324817e-44,
+          1.5414283107572988e-44
+        ]
+      }
+    },
+    {
+      "offset": 14,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 16777216,
+      "max_unsigned": 754974720,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 16777216,
+          "count": 1
+        },
+        {
+          "value": 33554432,
+          "count": 1
+        },
+        {
+          "value": 50331648,
+          "count": 1
+        },
+        {
+          "value": 67108864,
+          "count": 1
+        },
+        {
+          "value": 83886080,
+          "count": 1
+        },
+        {
+          "value": 100663296,
+          "count": 1
+        },
+        {
+          "value": 117440512,
+          "count": 1
+        },
+        {
+          "value": 134217728,
+          "count": 1
+        },
+        {
+          "value": 150994944,
+          "count": 1
+        },
+        {
+          "value": 167772160,
+          "count": 1
+        },
+        {
+          "value": 184549376,
+          "count": 1
+        },
+        {
+          "value": 201326592,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        16777216,
+        33554432,
+        50331648,
+        67108864,
+        83886080,
+        100663296,
+        117440512,
+        134217728,
+        150994944,
+        167772160,
+        184549376,
+        201326592,
+        218103808,
+        234881024,
+        251658240,
+        268435456,
+        285212672,
+        301989888,
+        318767104,
+        335544320,
+        352321536,
+        369098752,
+        385875968,
+        402653184,
+        419430400,
+        436207616,
+        452984832,
+        469762048,
+        486539264,
+        503316480,
+        520093696,
+        536870912,
+        553648128,
+        570425344,
+        587202560,
+        603979776,
+        620756992,
+        637534208,
+        654311424,
+        671088640,
+        687865856,
+        704643072,
+        721420288,
+        738197504,
+        754974720
+      ],
+      "signed_i32": {
+        "min": 16777216,
+        "max": 754974720,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 1.0
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "competition": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "person": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stage_name": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "team": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 45,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 14,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 2.350988701644575e-38,
+        "max_finite": 7.275957614183426e-12,
+        "first_finite_samples": [
+          2.350988701644575e-38,
+          9.4039548065783e-38,
+          3.76158192263132e-37,
+          1.504632769052528e-36,
+          6.018531076210112e-36,
+          2.407412430484045e-35,
+          9.62964972193618e-35,
+          3.851859888774472e-34,
+          1.5407439555097887e-33,
+          6.162975822039155e-33,
+          2.465190328815662e-32,
+          9.860761315262648e-32
+        ]
+      }
+    },
+    {
+      "offset": 15,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 65536,
+      "max_unsigned": 2949120,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 65536,
+          "count": 1
+        },
+        {
+          "value": 131072,
+          "count": 1
+        },
+        {
+          "value": 196608,
+          "count": 1
+        },
+        {
+          "value": 262144,
+          "count": 1
+        },
+        {
+          "value": 327680,
+          "count": 1
+        },
+        {
+          "value": 393216,
+          "count": 1
+        },
+        {
+          "value": 458752,
+          "count": 1
+        },
+        {
+          "value": 524288,
+          "count": 1
+        },
+        {
+          "value": 589824,
+          "count": 1
+        },
+        {
+          "value": 655360,
+          "count": 1
+        },
+        {
+          "value": 720896,
+          "count": 1
+        },
+        {
+          "value": 786432,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        65536,
+        131072,
+        196608,
+        262144,
+        327680,
+        393216,
+        458752,
+        524288,
+        589824,
+        655360,
+        720896,
+        786432,
+        851968,
+        917504,
+        983040,
+        1048576,
+        1114112,
+        1179648,
+        1245184,
+        1310720,
+        1376256,
+        1441792,
+        1507328,
+        1572864,
+        1638400,
+        1703936,
+        1769472,
+        1835008,
+        1900544,
+        1966080,
+        2031616,
+        2097152,
+        2162688,
+        2228224,
+        2293760,
+        2359296,
+        2424832,
+        2490368,
+        2555904,
+        2621440,
+        2686976,
+        2752512,
+        2818048,
+        2883584,
+        2949120
+      ],
+      "signed_i32": {
+        "min": 65536,
+        "max": 2949120,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 1.0
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 1,
+          "denominator_nonnull": 45,
+          "ratio": 0.022222
+        },
+        "competition": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "person": {
+          "in_range_count": 12,
+          "denominator_nonnull": 45,
+          "ratio": 0.266667
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stage_name": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "team": {
+          "in_range_count": 1,
+          "denominator_nonnull": 45,
+          "ratio": 0.022222
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 45,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 15,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 9.183549615799121e-41,
+        "max_finite": 4.1325973271096045e-39,
+        "first_finite_samples": [
+          9.183549615799121e-41,
+          1.8367099231598242e-40,
+          2.7550648847397363e-40,
+          3.6734198463196485e-40,
+          4.5917748078995606e-40,
+          5.510129769479473e-40,
+          6.428484731059385e-40,
+          7.346839692639297e-40,
+          8.265194654219209e-40,
+          9.183549615799121e-40,
+          1.0101904577379033e-39,
+          1.1020259538958945e-39
+        ]
+      }
+    },
+    {
+      "offset": 16,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 256,
+      "max_unsigned": 11520,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 256,
+          "count": 1
+        },
+        {
+          "value": 512,
+          "count": 1
+        },
+        {
+          "value": 768,
+          "count": 1
+        },
+        {
+          "value": 1024,
+          "count": 1
+        },
+        {
+          "value": 1280,
+          "count": 1
+        },
+        {
+          "value": 1536,
+          "count": 1
+        },
+        {
+          "value": 1792,
+          "count": 1
+        },
+        {
+          "value": 2048,
+          "count": 1
+        },
+        {
+          "value": 2304,
+          "count": 1
+        },
+        {
+          "value": 2560,
+          "count": 1
+        },
+        {
+          "value": 2816,
+          "count": 1
+        },
+        {
+          "value": 3072,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        256,
+        512,
+        768,
+        1024,
+        1280,
+        1536,
+        1792,
+        2048,
+        2304,
+        2560,
+        2816,
+        3072,
+        3328,
+        3584,
+        3840,
+        4096,
+        4352,
+        4608,
+        4864,
+        5120,
+        5376,
+        5632,
+        5888,
+        6144,
+        6400,
+        6656,
+        6912,
+        7168,
+        7424,
+        7680,
+        7936,
+        8192,
+        8448,
+        8704,
+        8960,
+        9216,
+        9472,
+        9728,
+        9984,
+        10240,
+        10496,
+        10752,
+        11008,
+        11264,
+        11520
+      ],
+      "signed_i32": {
+        "min": 256,
+        "max": 11520,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 1.0
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "competition": {
+          "in_range_count": 27,
+          "denominator_nonnull": 45,
+          "ratio": 0.6
+        },
+        "person": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "stage_name": {
+          "in_range_count": 1,
+          "denominator_nonnull": 45,
+          "ratio": 0.022222
+        },
+        "team": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 0,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 16,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 3.587324068671532e-43,
+        "max_finite": 1.6142958309021893e-41,
+        "first_finite_samples": [
+          3.587324068671532e-43,
+          7.174648137343064e-43,
+          1.0761972206014595e-42,
+          1.4349296274686127e-42,
+          1.793662034335766e-42,
+          2.152394441202919e-42,
+          2.5111268480700722e-42,
+          2.8698592549372254e-42,
+          3.2285916618043785e-42,
+          3.587324068671532e-42,
+          3.946056475538685e-42,
+          4.304788882405838e-42
+        ]
+      }
+    },
+    {
+      "offset": 17,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 1,
+      "max_unsigned": 45,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 1,
+          "count": 1
+        },
+        {
+          "value": 2,
+          "count": 1
+        },
+        {
+          "value": 3,
+          "count": 1
+        },
+        {
+          "value": 4,
+          "count": 1
+        },
+        {
+          "value": 5,
+          "count": 1
+        },
+        {
+          "value": 6,
+          "count": 1
+        },
+        {
+          "value": 7,
+          "count": 1
+        },
+        {
+          "value": 8,
+          "count": 1
+        },
+        {
+          "value": 9,
+          "count": 1
+        },
+        {
+          "value": 10,
+          "count": 1
+        },
+        {
+          "value": 11,
+          "count": 1
+        },
+        {
+          "value": 12,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "signed_i32": {
+        "min": 1,
+        "max": 45,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 1.0
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "competition": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "person": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "nation": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "stadium": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "stage_name": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "team": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "media_source": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "city": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "region": {
+          "in_range_count": 27,
+          "denominator_nonnull": 45,
+          "ratio": 0.6
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 0,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 17,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 1.401298464324817e-45,
+        "max_finite": 6.305843089461677e-44,
+        "first_finite_samples": [
+          1.401298464324817e-45,
+          2.802596928649634e-45,
+          4.203895392974451e-45,
+          5.605193857299268e-45,
+          7.006492321624085e-45,
+          8.407790785948902e-45,
+          9.80908925027372e-45,
+          1.1210387714598537e-44,
+          1.2611686178923354e-44,
+          1.401298464324817e-44,
+          1.5414283107572988e-44,
+          1.6815581571897805e-44
+        ]
+      }
+    },
+    {
+      "offset": 18,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 16777216,
+      "max_unsigned": 754974720,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 16777216,
+          "count": 1
+        },
+        {
+          "value": 33554432,
+          "count": 1
+        },
+        {
+          "value": 50331648,
+          "count": 1
+        },
+        {
+          "value": 67108864,
+          "count": 1
+        },
+        {
+          "value": 83886080,
+          "count": 1
+        },
+        {
+          "value": 100663296,
+          "count": 1
+        },
+        {
+          "value": 117440512,
+          "count": 1
+        },
+        {
+          "value": 134217728,
+          "count": 1
+        },
+        {
+          "value": 150994944,
+          "count": 1
+        },
+        {
+          "value": 167772160,
+          "count": 1
+        },
+        {
+          "value": 184549376,
+          "count": 1
+        },
+        {
+          "value": 201326592,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        16777216,
+        33554432,
+        50331648,
+        67108864,
+        83886080,
+        100663296,
+        117440512,
+        134217728,
+        150994944,
+        167772160,
+        184549376,
+        201326592,
+        218103808,
+        234881024,
+        251658240,
+        268435456,
+        285212672,
+        301989888,
+        318767104,
+        335544320,
+        352321536,
+        369098752,
+        385875968,
+        402653184,
+        419430400,
+        436207616,
+        452984832,
+        469762048,
+        486539264,
+        503316480,
+        520093696,
+        536870912,
+        553648128,
+        570425344,
+        587202560,
+        603979776,
+        620756992,
+        637534208,
+        654311424,
+        671088640,
+        687865856,
+        704643072,
+        721420288,
+        738197504,
+        754974720
+      ],
+      "signed_i32": {
+        "min": 16777216,
+        "max": 754974720,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 1.0
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "competition": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "person": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stage_name": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "team": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 45,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 18,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 2.350988701644575e-38,
+        "max_finite": 7.275957614183426e-12,
+        "first_finite_samples": [
+          2.350988701644575e-38,
+          9.4039548065783e-38,
+          3.76158192263132e-37,
+          1.504632769052528e-36,
+          6.018531076210112e-36,
+          2.407412430484045e-35,
+          9.62964972193618e-35,
+          3.851859888774472e-34,
+          1.5407439555097887e-33,
+          6.162975822039155e-33,
+          2.465190328815662e-32,
+          9.860761315262648e-32
+        ]
+      }
+    },
+    {
+      "offset": 19,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 65536,
+      "max_unsigned": 2949120,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 65536,
+          "count": 1
+        },
+        {
+          "value": 131072,
+          "count": 1
+        },
+        {
+          "value": 196608,
+          "count": 1
+        },
+        {
+          "value": 262144,
+          "count": 1
+        },
+        {
+          "value": 327680,
+          "count": 1
+        },
+        {
+          "value": 393216,
+          "count": 1
+        },
+        {
+          "value": 458752,
+          "count": 1
+        },
+        {
+          "value": 524288,
+          "count": 1
+        },
+        {
+          "value": 589824,
+          "count": 1
+        },
+        {
+          "value": 655360,
+          "count": 1
+        },
+        {
+          "value": 720896,
+          "count": 1
+        },
+        {
+          "value": 786432,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        65536,
+        131072,
+        196608,
+        262144,
+        327680,
+        393216,
+        458752,
+        524288,
+        589824,
+        655360,
+        720896,
+        786432,
+        851968,
+        917504,
+        983040,
+        1048576,
+        1114112,
+        1179648,
+        1245184,
+        1310720,
+        1376256,
+        1441792,
+        1507328,
+        1572864,
+        1638400,
+        1703936,
+        1769472,
+        1835008,
+        1900544,
+        1966080,
+        2031616,
+        2097152,
+        2162688,
+        2228224,
+        2293760,
+        2359296,
+        2424832,
+        2490368,
+        2555904,
+        2621440,
+        2686976,
+        2752512,
+        2818048,
+        2883584,
+        2949120
+      ],
+      "signed_i32": {
+        "min": 65536,
+        "max": 2949120,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 1.0
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 1,
+          "denominator_nonnull": 45,
+          "ratio": 0.022222
+        },
+        "competition": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "person": {
+          "in_range_count": 12,
+          "denominator_nonnull": 45,
+          "ratio": 0.266667
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stage_name": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "team": {
+          "in_range_count": 1,
+          "denominator_nonnull": 45,
+          "ratio": 0.022222
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 45,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 19,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 9.183549615799121e-41,
+        "max_finite": 4.1325973271096045e-39,
+        "first_finite_samples": [
+          9.183549615799121e-41,
+          1.8367099231598242e-40,
+          2.7550648847397363e-40,
+          3.6734198463196485e-40,
+          4.5917748078995606e-40,
+          5.510129769479473e-40,
+          6.428484731059385e-40,
+          7.346839692639297e-40,
+          8.265194654219209e-40,
+          9.183549615799121e-40,
+          1.0101904577379033e-39,
+          1.1020259538958945e-39
+        ]
+      }
+    },
+    {
+      "offset": 20,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 256,
+      "max_unsigned": 11520,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 256,
+          "count": 1
+        },
+        {
+          "value": 512,
+          "count": 1
+        },
+        {
+          "value": 768,
+          "count": 1
+        },
+        {
+          "value": 1024,
+          "count": 1
+        },
+        {
+          "value": 1280,
+          "count": 1
+        },
+        {
+          "value": 1536,
+          "count": 1
+        },
+        {
+          "value": 1792,
+          "count": 1
+        },
+        {
+          "value": 2048,
+          "count": 1
+        },
+        {
+          "value": 2304,
+          "count": 1
+        },
+        {
+          "value": 2560,
+          "count": 1
+        },
+        {
+          "value": 2816,
+          "count": 1
+        },
+        {
+          "value": 3072,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        256,
+        512,
+        768,
+        1024,
+        1280,
+        1536,
+        1792,
+        2048,
+        2304,
+        2560,
+        2816,
+        3072,
+        3328,
+        3584,
+        3840,
+        4096,
+        4352,
+        4608,
+        4864,
+        5120,
+        5376,
+        5632,
+        5888,
+        6144,
+        6400,
+        6656,
+        6912,
+        7168,
+        7424,
+        7680,
+        7936,
+        8192,
+        8448,
+        8704,
+        8960,
+        9216,
+        9472,
+        9728,
+        9984,
+        10240,
+        10496,
+        10752,
+        11008,
+        11264,
+        11520
+      ],
+      "signed_i32": {
+        "min": 256,
+        "max": 11520,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 1.0
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "competition": {
+          "in_range_count": 27,
+          "denominator_nonnull": 45,
+          "ratio": 0.6
+        },
+        "person": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "nation": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "stadium": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "stage_name": {
+          "in_range_count": 1,
+          "denominator_nonnull": 45,
+          "ratio": 0.022222
+        },
+        "team": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "media_source": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        },
+        "city": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "region": {
+          "in_range_count": 0,
+          "denominator_nonnull": 45,
+          "ratio": 0.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 0,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 20,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 3.587324068671532e-43,
+        "max_finite": 1.6142958309021893e-41,
+        "first_finite_samples": [
+          3.587324068671532e-43,
+          7.174648137343064e-43,
+          1.0761972206014595e-42,
+          1.4349296274686127e-42,
+          1.793662034335766e-42,
+          2.152394441202919e-42,
+          2.5111268480700722e-42,
+          2.8698592549372254e-42,
+          3.2285916618043785e-42,
+          3.587324068671532e-42,
+          3.946056475538685e-42,
+          4.304788882405838e-42
+        ]
+      }
+    },
+    {
+      "offset": 21,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 1,
+      "max_unsigned": 45,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 1,
+          "count": 1
+        },
+        {
+          "value": 2,
+          "count": 1
+        },
+        {
+          "value": 3,
+          "count": 1
+        },
+        {
+          "value": 4,
+          "count": 1
+        },
+        {
+          "value": 5,
+          "count": 1
+        },
+        {
+          "value": 6,
+          "count": 1
+        },
+        {
+          "value": 7,
+          "count": 1
+        },
+        {
+          "value": 8,
+          "count": 1
+        },
+        {
+          "value": 9,
+          "count": 1
+        },
+        {
+          "value": 10,
+          "count": 1
+        },
+        {
+          "value": 11,
+          "count": 1
+        },
+        {
+          "value": 12,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "signed_i32": {
+        "min": 1,
+        "max": 45,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 1.0
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "competition": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "person": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "nation": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "stadium": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "stage_name": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "team": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "media_source": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "city": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "region": {
+          "in_range_count": 27,
+          "denominator_nonnull": 45,
+          "ratio": 0.6
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 0,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 21,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 1.401298464324817e-45,
+        "max_finite": 6.305843089461677e-44,
+        "first_finite_samples": [
+          1.401298464324817e-45,
+          2.802596928649634e-45,
+          4.203895392974451e-45,
+          5.605193857299268e-45,
+          7.006492321624085e-45,
+          8.407790785948902e-45,
+          9.80908925027372e-45,
+          1.1210387714598537e-44,
+          1.2611686178923354e-44,
+          1.401298464324817e-44,
+          1.5414283107572988e-44,
+          1.6815581571897805e-44
+        ]
+      }
+    },
+    {
+      "offset": 22,
+      "width": 4,
+      "interpretation": "u32",
+      "count": 45,
+      "distinct": 1,
+      "min_unsigned": 0,
+      "max_unsigned": 0,
+      "zero_count": 45,
+      "zero_rate": 1.0,
+      "sentinel_value": "0xFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 45
+        }
+      ],
+      "small_value_set": [
+        0
+      ],
+      "signed_i32": {
+        "min": 0,
+        "max": 0,
+        "within_abs_1e9_count": 45,
+        "within_abs_1e9_rate_nonzero_nonnull": 45.0
+      },
+      "reference_domains": {
+        "club": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "competition": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "person": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "nation": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "stadium": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "stage_name": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "team": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "media_source": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "city": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        },
+        "region": {
+          "in_range_count": 45,
+          "denominator_nonnull": 45,
+          "ratio": 1.0
+        }
+      },
+      "packed_day_year": {
+        "nonblank_count": 0,
+        "valid_count": 0,
+        "valid_ratio_nonblank": 0.0,
+        "year_min": null,
+        "year_max": null,
+        "year_distinct": 0,
+        "day_max": null,
+        "rule": "u32 low16=day_or_ordinal<=366, high16=year 1900..2035; 0/0xffffffff/year=0xffff treated as blank"
+      },
+      "float32": {
+        "offset": 22,
+        "width": 4,
+        "count": 45,
+        "finite_count": 45,
+        "finite_ratio": 1.0,
+        "min_finite": 0.0,
+        "max_finite": 0.0,
+        "first_finite_samples": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "offset": 0,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 42,
+      "min_unsigned": 8173327164302,
+      "max_unsigned": 8590594867912381163,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 309297802623980267,
+          "count": 2
+        },
+        {
+          "value": 86098645359478173,
+          "count": 2
+        },
+        {
+          "value": 86076844105441904,
+          "count": 2
+        },
+        {
+          "value": 309238126420337312,
+          "count": 1
+        },
+        {
+          "value": 4211400117323631,
+          "count": 1
+        },
+        {
+          "value": 309241034113248592,
+          "count": 1
+        },
+        {
+          "value": 8590587712496987268,
+          "count": 1
+        },
+        {
+          "value": 86098647287590020,
+          "count": 1
+        },
+        {
+          "value": 309339633625457219,
+          "count": 1
+        },
+        {
+          "value": 8203459587408,
+          "count": 1
+        },
+        {
+          "value": 8173394811584,
+          "count": 1
+        },
+        {
+          "value": 309465433197512563,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        8173327164302,
+        8173394811584,
+        8177689780897,
+        8190574685520,
+        8199093548607,
+        8199164568176,
+        8199164568853,
+        8203459549553,
+        8203459587408,
+        4189693424621937,
+        4211400117323631,
+        86076844034422335,
+        86076844105441904,
+        86076846033474283,
+        86098645287438193,
+        86098645287545181,
+        86098645291836302,
+        86098645359478173,
+        86098647287590020,
+        309238126420337312,
+        309238334506799851,
+        309241034113248592,
+        309297800623949680,
+        309297800623949683,
+        309297800695995072,
+        309297802623980267,
+        309297802624101508,
+        309339633605412720,
+        309339633625457219,
+        309339633677460129,
+        309417540017194867,
+        309465433197512563,
+        309465433269559969,
+        309465433269562704,
+        309465435197543147,
+        8590074139854467372,
+        8590587710497814079,
+        8590587710568882849,
+        8590587712496987268,
+        8590594865912350577,
+        8590594865984348784,
+        8590594867912381163
+      ]
+    },
+    {
+      "offset": 1,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 41,
+      "min_unsigned": 31927059235,
+      "max_unsigned": 33557011202782738,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 1208194541499922,
+          "count": 2
+        },
+        {
+          "value": 1208194533687303,
+          "count": 2
+        },
+        {
+          "value": 336322833435461,
+          "count": 2
+        },
+        {
+          "value": 336237672286882,
+          "count": 2
+        },
+        {
+          "value": 1207961431329442,
+          "count": 1
+        },
+        {
+          "value": 16450781708295,
+          "count": 1
+        },
+        {
+          "value": 1207972789504877,
+          "count": 1
+        },
+        {
+          "value": 33556983251941356,
+          "count": 1
+        },
+        {
+          "value": 336322840967148,
+          "count": 1
+        },
+        {
+          "value": 1208357943849442,
+          "count": 1
+        },
+        {
+          "value": 32044764013,
+          "count": 1
+        },
+        {
+          "value": 31927323482,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        31927059235,
+        31927323482,
+        31944100706,
+        31994432365,
+        32027709174,
+        32027986594,
+        32027986597,
+        32044763865,
+        32044764013,
+        16365989939929,
+        16450781708295,
+        336237672009462,
+        336237672286882,
+        336237679818258,
+        336322833154055,
+        336322833154473,
+        336322833171235,
+        336322833435461,
+        336322840967148,
+        1207961431329442,
+        1207962244167186,
+        1207972789504877,
+        1208194533687303,
+        1208194533968730,
+        1208194541499922,
+        1208194541500396,
+        1208357943771143,
+        1208357943849442,
+        1208357944052578,
+        1208662265692167,
+        1208849348427783,
+        1208849348709218,
+        1208849348709229,
+        1208849356240402,
+        33554977108806513,
+        33556983244132086,
+        33556983244409698,
+        33556983251941356,
+        33557011194970119,
+        33557011195251362,
+        33557011202782738
+      ]
+    },
+    {
+      "offset": 2,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 39,
+      "min_unsigned": 72057658298793984,
+      "max_unsigned": 7926340064320291121,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 7854282469644072758,
+          "count": 2
+        },
+        {
+          "value": 7854282469644042240,
+          "count": 2
+        },
+        {
+          "value": 7854279063895213131,
+          "count": 2
+        },
+        {
+          "value": 7854277750259254346,
+          "count": 2
+        },
+        {
+          "value": 7854282472201913419,
+          "count": 2
+        },
+        {
+          "value": 7854279063562552394,
+          "count": 2
+        },
+        {
+          "value": 72062312637269066,
+          "count": 1
+        },
+        {
+          "value": 72057658298793984,
+          "count": 1
+        },
+        {
+          "value": 7854282468777854027,
+          "count": 1
+        },
+        {
+          "value": 7854408832099972919,
+          "count": 1
+        },
+        {
+          "value": 7854279063895242551,
+          "count": 1
+        },
+        {
+          "value": 7926340064320291121,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        72057658298793984,
+        72062312637269066,
+        7854277750258860099,
+        7854277750258861131,
+        7854277750258926667,
+        7854277750259123275,
+        7854277750259253262,
+        7854277750259254346,
+        7854277750259319882,
+        7854277750259319883,
+        7854277814063793226,
+        7854279063562551310,
+        7854279063562552394,
+        7854279063562581814,
+        7854279063895212032,
+        7854279063895212033,
+        7854279063895212099,
+        7854279063895213131,
+        7854279063895242551,
+        7854282468736661302,
+        7854282468777854027,
+        7854282469644042240,
+        7854282469644043339,
+        7854282469644072758,
+        7854282469644072759,
+        7854282470282362880,
+        7854282470282363979,
+        7854282471471120384,
+        7854282472201912320,
+        7854282472201913419,
+        7854282472201942838,
+        7854408824263476299,
+        7854408832099942414,
+        7854408832099943499,
+        7854408832099972919,
+        7854408832209125376,
+        7854408832209126474,
+        7854408832209155894,
+        7926340064320291121
+      ]
+    },
+    {
+      "offset": 3,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 35,
+      "min_unsigned": 281475227729664,
+      "max_unsigned": 103019859914179073,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 102738384934975095,
+          "count": 3
+        },
+        {
+          "value": 102738371631268608,
+          "count": 3
+        },
+        {
+          "value": 102738366499878404,
+          "count": 2
+        },
+        {
+          "value": 102738384934974976,
+          "count": 2
+        },
+        {
+          "value": 102738371631268612,
+          "count": 2
+        },
+        {
+          "value": 102738366499878148,
+          "count": 2
+        },
+        {
+          "value": 102738384944966660,
+          "count": 2
+        },
+        {
+          "value": 102738371629969156,
+          "count": 2
+        },
+        {
+          "value": 281493408739332,
+          "count": 1
+        },
+        {
+          "value": 281475227729664,
+          "count": 1
+        },
+        {
+          "value": 102738384931591428,
+          "count": 1
+        },
+        {
+          "value": 102738878538318455,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        281475227729664,
+        281493408739332,
+        102738366499876608,
+        102738366499876612,
+        102738366499876868,
+        102738366499877636,
+        102738366499878144,
+        102738366499878148,
+        102738366499878404,
+        102738366749114628,
+        102738371629969152,
+        102738371629969156,
+        102738371629969271,
+        102738371631268608,
+        102738371631268612,
+        102738371631268727,
+        102738384931430519,
+        102738384931591428,
+        102738384934974976,
+        102738384934974980,
+        102738384934975095,
+        102738384937468416,
+        102738384937468420,
+        102738384942112000,
+        102738384944966656,
+        102738384944966660,
+        102738384944966775,
+        102738878507707140,
+        102738878538318336,
+        102738878538318340,
+        102738878538318455,
+        102738878538744832,
+        102738878538744836,
+        102738878538744951,
+        103019859914179073
+      ]
+    },
+    {
+      "offset": 4,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 21,
+      "min_unsigned": 7782221255608825407,
+      "max_unsigned": 17222166296808916847,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 16645705544525537859,
+          "count": 6
+        },
+        {
+          "value": 16645705544577505462,
+          "count": 6
+        },
+        {
+          "value": 16645705544577544492,
+          "count": 4
+        },
+        {
+          "value": 16645705544525532783,
+          "count": 4
+        },
+        {
+          "value": 16645705546505643522,
+          "count": 3
+        },
+        {
+          "value": 16645705544505493365,
+          "count": 3
+        },
+        {
+          "value": 16645705546505645188,
+          "count": 3
+        },
+        {
+          "value": 16645705544505493366,
+          "count": 2
+        },
+        {
+          "value": 16645705544577515202,
+          "count": 2
+        },
+        {
+          "value": 7782221255679844976,
+          "count": 1
+        },
+        {
+          "value": 7782221255608825407,
+          "count": 1
+        },
+        {
+          "value": 16645705544577492245,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        7782221255608825407,
+        7782221255679844976,
+        16645705544505493359,
+        16645705544505493360,
+        16645705544505493363,
+        16645705544505493365,
+        16645705544505493366,
+        16645705544506466945,
+        16645705544525532783,
+        16645705544525537859,
+        16645705544577491616,
+        16645705544577492245,
+        16645705544577505462,
+        16645705544577515202,
+        16645705544577533341,
+        16645705544577544492,
+        16645705546505523947,
+        16645705546505643522,
+        16645705546505645188,
+        16717764238127070914,
+        17222166296808916847
+      ]
+    },
+    {
+      "offset": 5,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 17,
+      "min_unsigned": 534802460045217526,
+      "max_unsigned": 571677245362405383,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 569425445548720135,
+          "count": 8
+        },
+        {
+          "value": 569425445548798434,
+          "count": 6
+        },
+        {
+          "value": 569425445549001432,
+          "count": 6
+        },
+        {
+          "value": 569425445549001585,
+          "count": 4
+        },
+        {
+          "value": 569425445548798414,
+          "count": 4
+        },
+        {
+          "value": 569425445556533222,
+          "count": 3
+        },
+        {
+          "value": 569425445556533228,
+          "count": 3
+        },
+        {
+          "value": 569425445549001470,
+          "count": 2
+        },
+        {
+          "value": 534802460045494946,
+          "count": 1
+        },
+        {
+          "value": 534802460045217526,
+          "count": 1
+        },
+        {
+          "value": 569425445549001381,
+          "count": 1
+        },
+        {
+          "value": 569706924820679422,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        534802460045217526,
+        534802460045494946,
+        569425445548720135,
+        569425445548723938,
+        569425445548798414,
+        569425445548798434,
+        569425445549001378,
+        569425445549001381,
+        569425445549001432,
+        569425445549001470,
+        569425445549001541,
+        569425445549001585,
+        569425445556532754,
+        569425445556533222,
+        569425445556533228,
+        569706924820679422,
+        571677245362405383
+      ]
+    },
+    {
+      "offset": 6,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 2089072109552714,
+      "max_unsigned": 3172758455815504177,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 2089072109552714,
+          "count": 1
+        },
+        {
+          "value": 74146666147479566,
+          "count": 1
+        },
+        {
+          "value": 146339506222531658,
+          "count": 1
+        },
+        {
+          "value": 218397100260489015,
+          "count": 1
+        },
+        {
+          "value": 290454694298386737,
+          "count": 1
+        },
+        {
+          "value": 362513387864720458,
+          "count": 1
+        },
+        {
+          "value": 434569882374242304,
+          "count": 1
+        },
+        {
+          "value": 506627476412170240,
+          "count": 1
+        },
+        {
+          "value": 578685070450099275,
+          "count": 1
+        },
+        {
+          "value": 650742664488027210,
+          "count": 1
+        },
+        {
+          "value": 722800258525954353,
+          "count": 1
+        },
+        {
+          "value": 794857852563883082,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        2089072109552714,
+        74146666147479566,
+        146339506222531658,
+        218397100260489015,
+        290454694298386737,
+        362513387864720458,
+        434569882374242304,
+        506627476412170240,
+        578685070450099275,
+        650742664488027210,
+        722800258525954353,
+        794857852563883082,
+        866915446601811018,
+        938973040639738161,
+        1011030634677666890,
+        1083088228715593728,
+        1155145822753522763,
+        1227203416791449905,
+        1299261010829378634,
+        1371318604867305472,
+        1443376198905263927,
+        1515433792943161344,
+        1587491386981119798,
+        1659548981019018314,
+        1731606575056945457,
+        1803664169094873393,
+        1875730559225823232,
+        1947779357170730059,
+        2019836951208687415,
+        2091894545246584832,
+        2163952139284513866,
+        2236009733322441803,
+        2308067327360369738,
+        2380124921398296881,
+        2452182515436255031,
+        2524240109474152448,
+        2596297703512080384,
+        2668355297550009419,
+        2740412891587937354,
+        2812470485625894711,
+        2884528079663792433,
+        2956585673701720078,
+        3028643267739648305,
+        3100700861777606455,
+        3172758455815504177
+      ]
+    },
+    {
+      "offset": 7,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 8160437927940,
+      "max_unsigned": 12393587718029313,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 8160437927940,
+          "count": 1
+        },
+        {
+          "value": 289635414638592,
+          "count": 1
+        },
+        {
+          "value": 571638696181764,
+          "count": 1
+        },
+        {
+          "value": 853113672892535,
+          "count": 1
+        },
+        {
+          "value": 1134588649603073,
+          "count": 1
+        },
+        {
+          "value": 1416067921346564,
+          "count": 1
+        },
+        {
+          "value": 1697538603024384,
+          "count": 1
+        },
+        {
+          "value": 1979013579735040,
+          "count": 1
+        },
+        {
+          "value": 2260488556445700,
+          "count": 1
+        },
+        {
+          "value": 2541963533156356,
+          "count": 1
+        },
+        {
+          "value": 2823438509867009,
+          "count": 1
+        },
+        {
+          "value": 3104913486577668,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        8160437927940,
+        289635414638592,
+        571638696181764,
+        853113672892535,
+        1134588649603073,
+        1416067921346564,
+        1697538603024384,
+        1979013579735040,
+        2260488556445700,
+        2541963533156356,
+        2823438509867009,
+        3104913486577668,
+        3386388463288324,
+        3667863439998977,
+        3949338416709636,
+        4230813393420288,
+        4512288370130948,
+        4793763346841601,
+        5075238323552260,
+        5356713300262912,
+        5638188276973687,
+        5919663253684224,
+        6201138230394999,
+        6482613207105540,
+        6764088183816193,
+        7045563160526849,
+        7327072496975872,
+        7608513113948164,
+        7889988090658935,
+        8171463067369472,
+        8452938044080132,
+        8734413020790788,
+        9015887997501444,
+        9297362974212097,
+        9578837950922871,
+        9860312927633408,
+        10141787904344064,
+        10423262881054724,
+        10704737857765380,
+        10986212834476151,
+        11267687811186689,
+        11549162787897344,
+        11830637764608001,
+        12112112741318775,
+        12393587718029313
+      ]
+    },
+    {
+      "offset": 8,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 31876710656,
+      "max_unsigned": 48412452023552,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 31876710656,
+          "count": 1
+        },
+        {
+          "value": 1131388338432,
+          "count": 1
+        },
+        {
+          "value": 2232963656960,
+          "count": 1
+        },
+        {
+          "value": 3332475284736,
+          "count": 1
+        },
+        {
+          "value": 4431986912512,
+          "count": 1
+        },
+        {
+          "value": 5531515317760,
+          "count": 1
+        },
+        {
+          "value": 6631010168064,
+          "count": 1
+        },
+        {
+          "value": 7730521795840,
+          "count": 1
+        },
+        {
+          "value": 8830033423616,
+          "count": 1
+        },
+        {
+          "value": 9929545051392,
+          "count": 1
+        },
+        {
+          "value": 11029056679168,
+          "count": 1
+        },
+        {
+          "value": 12128568306944,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        31876710656,
+        1131388338432,
+        2232963656960,
+        3332475284736,
+        4431986912512,
+        5531515317760,
+        6631010168064,
+        7730521795840,
+        8830033423616,
+        9929545051392,
+        11029056679168,
+        12128568306944,
+        13228079934720,
+        14327591562496,
+        15427103190272,
+        16526614818048,
+        17626126445824,
+        18725638073600,
+        19825149701376,
+        20924661329152,
+        22024172956928,
+        23123684584704,
+        24223196212480,
+        25322707840256,
+        26422219468032,
+        27521731095808,
+        28621376941312,
+        29720754351360,
+        30820265979136,
+        31919777606912,
+        33019289234688,
+        34118800862464,
+        35218312490240,
+        36317824118016,
+        37417335745792,
+        38516847373568,
+        39616359001344,
+        40715870629120,
+        41815382256896,
+        42914893884672,
+        44014405512448,
+        45113917140224,
+        46213428768000,
+        47312940395776,
+        48412452023552
+      ]
+    },
+    {
+      "offset": 9,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 124518401,
+      "max_unsigned": 189111140717,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 124518401,
+          "count": 1
+        },
+        {
+          "value": 4419485697,
+          "count": 1
+        },
+        {
+          "value": 8722514285,
+          "count": 1
+        },
+        {
+          "value": 13017481581,
+          "count": 1
+        },
+        {
+          "value": 17312448877,
+          "count": 1
+        },
+        {
+          "value": 21607481710,
+          "count": 1
+        },
+        {
+          "value": 25902383469,
+          "count": 1
+        },
+        {
+          "value": 30197350765,
+          "count": 1
+        },
+        {
+          "value": 34492318061,
+          "count": 1
+        },
+        {
+          "value": 38787285357,
+          "count": 1
+        },
+        {
+          "value": 43082252653,
+          "count": 1
+        },
+        {
+          "value": 47377219949,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        124518401,
+        4419485697,
+        8722514285,
+        13017481581,
+        17312448877,
+        21607481710,
+        25902383469,
+        30197350765,
+        34492318061,
+        38787285357,
+        43082252653,
+        47377219949,
+        51672187245,
+        55967154541,
+        60262121837,
+        64557089133,
+        68852056429,
+        73147023725,
+        77441991021,
+        81736958317,
+        86031925613,
+        90326892909,
+        94621860205,
+        98916827501,
+        103211794797,
+        107506762093,
+        111802253677,
+        116096696685,
+        120391663981,
+        124686631277,
+        128981598573,
+        133276565869,
+        137571533165,
+        141866500461,
+        146161467757,
+        150456435053,
+        154751402349,
+        159046369645,
+        163341336941,
+        167636304237,
+        171931271533,
+        176226238829,
+        180521206125,
+        184816173421,
+        189111140717
+      ]
+    },
+    {
+      "offset": 10,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 72057594038414336,
+      "max_unsigned": 3242591732445472513,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 72057594038414336,
+          "count": 1
+        },
+        {
+          "value": 144115188093119488,
+          "count": 1
+        },
+        {
+          "value": 216172782147856129,
+          "count": 1
+        },
+        {
+          "value": 288230376202561281,
+          "count": 1
+        },
+        {
+          "value": 360287970257266433,
+          "count": 1
+        },
+        {
+          "value": 432345564311971841,
+          "count": 1
+        },
+        {
+          "value": 504403158366676737,
+          "count": 1
+        },
+        {
+          "value": 576460752421381889,
+          "count": 1
+        },
+        {
+          "value": 648518346476087041,
+          "count": 1
+        },
+        {
+          "value": 720575940530792193,
+          "count": 1
+        },
+        {
+          "value": 792633534585497345,
+          "count": 1
+        },
+        {
+          "value": 864691128640202497,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        72057594038414336,
+        144115188093119488,
+        216172782147856129,
+        288230376202561281,
+        360287970257266433,
+        432345564311971841,
+        504403158366676737,
+        576460752421381889,
+        648518346476087041,
+        720575940530792193,
+        792633534585497345,
+        864691128640202497,
+        936748722694907649,
+        1008806316749612801,
+        1080863910804317953,
+        1152921504859023105,
+        1224979098913728257,
+        1297036692968433409,
+        1369094287023138561,
+        1441151881077843713,
+        1513209475132548865,
+        1585267069187254017,
+        1657324663241959169,
+        1729382257296664321,
+        1801439851351369473,
+        1873497445406074625,
+        1945555039460781825,
+        2017612633515484929,
+        2089670227570190081,
+        2161727821624895233,
+        2233785415679600385,
+        2305843009734305537,
+        2377900603789010689,
+        2449958197843715841,
+        2522015791898420993,
+        2594073385953126145,
+        2666130980007831297,
+        2738188574062536449,
+        2810246168117241601,
+        2882303762171946753,
+        2954361356226651905,
+        3026418950281357057,
+        3098476544336062209,
+        3170534138390767361,
+        3242591732445472513
+      ]
+    },
+    {
+      "offset": 11,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 281474976712556,
+      "max_unsigned": 12666373954865127,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 281474976712556,
+          "count": 1
+        },
+        {
+          "value": 562949953488748,
+          "count": 1
+        },
+        {
+          "value": 844424930265063,
+          "count": 1
+        },
+        {
+          "value": 1125899907041255,
+          "count": 1
+        },
+        {
+          "value": 1407374883817447,
+          "count": 1
+        },
+        {
+          "value": 1688849860593640,
+          "count": 1
+        },
+        {
+          "value": 1970324837369831,
+          "count": 1
+        },
+        {
+          "value": 2251799814146023,
+          "count": 1
+        },
+        {
+          "value": 2533274790922215,
+          "count": 1
+        },
+        {
+          "value": 2814749767698407,
+          "count": 1
+        },
+        {
+          "value": 3096224744474599,
+          "count": 1
+        },
+        {
+          "value": 3377699721250791,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        281474976712556,
+        562949953488748,
+        844424930265063,
+        1125899907041255,
+        1407374883817447,
+        1688849860593640,
+        1970324837369831,
+        2251799814146023,
+        2533274790922215,
+        2814749767698407,
+        3096224744474599,
+        3377699721250791,
+        3659174698026983,
+        3940649674803175,
+        4222124651579367,
+        4503599628355559,
+        4785074605131751,
+        5066549581907943,
+        5348024558684135,
+        5629499535460327,
+        5910974512236519,
+        6192449489012711,
+        6473924465788903,
+        6755399442565095,
+        7036874419341287,
+        7318349396117479,
+        7599824372893679,
+        7881299349669863,
+        8162774326446055,
+        8444249303222247,
+        8725724279998439,
+        9007199256774631,
+        9288674233550823,
+        9570149210327015,
+        9851624187103207,
+        10133099163879399,
+        10414574140655591,
+        10696049117431783,
+        10977524094207975,
+        11258999070984167,
+        11540474047760359,
+        11821949024536551,
+        12103424001312743,
+        12384898978088935,
+        12666373954865127
+      ]
+    },
+    {
+      "offset": 12,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 1099511627783,
+      "max_unsigned": 49478023261191,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 1099511627783,
+          "count": 1
+        },
+        {
+          "value": 2199023255815,
+          "count": 1
+        },
+        {
+          "value": 3298534883847,
+          "count": 1
+        },
+        {
+          "value": 4398046511879,
+          "count": 1
+        },
+        {
+          "value": 5497558139911,
+          "count": 1
+        },
+        {
+          "value": 6597069767943,
+          "count": 1
+        },
+        {
+          "value": 7696581395975,
+          "count": 1
+        },
+        {
+          "value": 8796093024007,
+          "count": 1
+        },
+        {
+          "value": 9895604652039,
+          "count": 1
+        },
+        {
+          "value": 10995116280071,
+          "count": 1
+        },
+        {
+          "value": 12094627908103,
+          "count": 1
+        },
+        {
+          "value": 13194139536135,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        1099511627783,
+        2199023255815,
+        3298534883847,
+        4398046511879,
+        5497558139911,
+        6597069767943,
+        7696581395975,
+        8796093024007,
+        9895604652039,
+        10995116280071,
+        12094627908103,
+        13194139536135,
+        14293651164167,
+        15393162792199,
+        16492674420231,
+        17592186048263,
+        18691697676295,
+        19791209304327,
+        20890720932359,
+        21990232560391,
+        23089744188423,
+        24189255816455,
+        25288767444487,
+        26388279072519,
+        27487790700551,
+        28587302328583,
+        29686813956615,
+        30786325584647,
+        31885837212679,
+        32985348840711,
+        34084860468743,
+        35184372096775,
+        36283883724807,
+        37383395352839,
+        38482906980871,
+        39582418608903,
+        40681930236935,
+        41781441864967,
+        42880953492999,
+        43980465121031,
+        45079976749063,
+        46179488377095,
+        47279000005127,
+        48378511633159,
+        49478023261191
+      ]
+    },
+    {
+      "offset": 13,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 4294967296,
+      "max_unsigned": 193273528364,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 4294967296,
+          "count": 1
+        },
+        {
+          "value": 8589934593,
+          "count": 1
+        },
+        {
+          "value": 12884901890,
+          "count": 1
+        },
+        {
+          "value": 17179869187,
+          "count": 1
+        },
+        {
+          "value": 21474836484,
+          "count": 1
+        },
+        {
+          "value": 25769803781,
+          "count": 1
+        },
+        {
+          "value": 30064771078,
+          "count": 1
+        },
+        {
+          "value": 34359738375,
+          "count": 1
+        },
+        {
+          "value": 38654705672,
+          "count": 1
+        },
+        {
+          "value": 42949672969,
+          "count": 1
+        },
+        {
+          "value": 47244640266,
+          "count": 1
+        },
+        {
+          "value": 51539607563,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        4294967296,
+        8589934593,
+        12884901890,
+        17179869187,
+        21474836484,
+        25769803781,
+        30064771078,
+        34359738375,
+        38654705672,
+        42949672969,
+        47244640266,
+        51539607563,
+        55834574860,
+        60129542157,
+        64424509454,
+        68719476751,
+        73014444048,
+        77309411345,
+        81604378642,
+        85899345939,
+        90194313236,
+        94489280533,
+        98784247830,
+        103079215127,
+        107374182424,
+        111669149721,
+        115964117018,
+        120259084315,
+        124554051612,
+        128849018909,
+        133143986206,
+        137438953503,
+        141733920800,
+        146028888097,
+        150323855394,
+        154618822691,
+        158913789988,
+        163208757285,
+        167503724582,
+        171798691879,
+        176093659176,
+        180388626473,
+        184683593770,
+        188978561067,
+        193273528364
+      ]
+    },
+    {
+      "offset": 14,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 72057594054705152,
+      "max_unsigned": 3242591732461731840,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 72057594054705152,
+          "count": 1
+        },
+        {
+          "value": 144115188109410304,
+          "count": 1
+        },
+        {
+          "value": 216172782164115456,
+          "count": 1
+        },
+        {
+          "value": 288230376218820608,
+          "count": 1
+        },
+        {
+          "value": 360287970273525760,
+          "count": 1
+        },
+        {
+          "value": 432345564328230912,
+          "count": 1
+        },
+        {
+          "value": 504403158382936064,
+          "count": 1
+        },
+        {
+          "value": 576460752437641216,
+          "count": 1
+        },
+        {
+          "value": 648518346492346368,
+          "count": 1
+        },
+        {
+          "value": 720575940547051520,
+          "count": 1
+        },
+        {
+          "value": 792633534601756672,
+          "count": 1
+        },
+        {
+          "value": 864691128656461824,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        72057594054705152,
+        144115188109410304,
+        216172782164115456,
+        288230376218820608,
+        360287970273525760,
+        432345564328230912,
+        504403158382936064,
+        576460752437641216,
+        648518346492346368,
+        720575940547051520,
+        792633534601756672,
+        864691128656461824,
+        936748722711166976,
+        1008806316765872128,
+        1080863910820577280,
+        1152921504875282432,
+        1224979098929987584,
+        1297036692984692736,
+        1369094287039397888,
+        1441151881094103040,
+        1513209475148808192,
+        1585267069203513344,
+        1657324663258218496,
+        1729382257312923648,
+        1801439851367628800,
+        1873497445422333952,
+        1945555039477039104,
+        2017612633531744256,
+        2089670227586449408,
+        2161727821641154560,
+        2233785415695859712,
+        2305843009750564864,
+        2377900603805270016,
+        2449958197859975168,
+        2522015791914680320,
+        2594073385969385472,
+        2666130980024090624,
+        2738188574078795776,
+        2810246168133500928,
+        2882303762188206080,
+        2954361356242911232,
+        3026418950297616384,
+        3098476544352321536,
+        3170534138407026688,
+        3242591732461731840
+      ]
+    },
+    {
+      "offset": 15,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 281474976776192,
+      "max_unsigned": 12666373954928640,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 281474976776192,
+          "count": 1
+        },
+        {
+          "value": 562949953552384,
+          "count": 1
+        },
+        {
+          "value": 844424930328576,
+          "count": 1
+        },
+        {
+          "value": 1125899907104768,
+          "count": 1
+        },
+        {
+          "value": 1407374883880960,
+          "count": 1
+        },
+        {
+          "value": 1688849860657152,
+          "count": 1
+        },
+        {
+          "value": 1970324837433344,
+          "count": 1
+        },
+        {
+          "value": 2251799814209536,
+          "count": 1
+        },
+        {
+          "value": 2533274790985728,
+          "count": 1
+        },
+        {
+          "value": 2814749767761920,
+          "count": 1
+        },
+        {
+          "value": 3096224744538112,
+          "count": 1
+        },
+        {
+          "value": 3377699721314304,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        281474976776192,
+        562949953552384,
+        844424930328576,
+        1125899907104768,
+        1407374883880960,
+        1688849860657152,
+        1970324837433344,
+        2251799814209536,
+        2533274790985728,
+        2814749767761920,
+        3096224744538112,
+        3377699721314304,
+        3659174698090496,
+        3940649674866688,
+        4222124651642880,
+        4503599628419072,
+        4785074605195264,
+        5066549581971456,
+        5348024558747648,
+        5629499535523840,
+        5910974512300032,
+        6192449489076224,
+        6473924465852416,
+        6755399442628608,
+        7036874419404800,
+        7318349396180992,
+        7599824372957184,
+        7881299349733376,
+        8162774326509568,
+        8444249303285760,
+        8725724280061952,
+        9007199256838144,
+        9288674233614336,
+        9570149210390528,
+        9851624187166720,
+        10133099163942912,
+        10414574140719104,
+        10696049117495296,
+        10977524094271488,
+        11258999071047680,
+        11540474047823872,
+        11821949024600064,
+        12103424001376256,
+        12384898978152448,
+        12666373954928640
+      ]
+    },
+    {
+      "offset": 16,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 1099511628032,
+      "max_unsigned": 49478023261440,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 1099511628032,
+          "count": 1
+        },
+        {
+          "value": 2199023256064,
+          "count": 1
+        },
+        {
+          "value": 3298534884096,
+          "count": 1
+        },
+        {
+          "value": 4398046512128,
+          "count": 1
+        },
+        {
+          "value": 5497558140160,
+          "count": 1
+        },
+        {
+          "value": 6597069768192,
+          "count": 1
+        },
+        {
+          "value": 7696581396224,
+          "count": 1
+        },
+        {
+          "value": 8796093024256,
+          "count": 1
+        },
+        {
+          "value": 9895604652288,
+          "count": 1
+        },
+        {
+          "value": 10995116280320,
+          "count": 1
+        },
+        {
+          "value": 12094627908352,
+          "count": 1
+        },
+        {
+          "value": 13194139536384,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        1099511628032,
+        2199023256064,
+        3298534884096,
+        4398046512128,
+        5497558140160,
+        6597069768192,
+        7696581396224,
+        8796093024256,
+        9895604652288,
+        10995116280320,
+        12094627908352,
+        13194139536384,
+        14293651164416,
+        15393162792448,
+        16492674420480,
+        17592186048512,
+        18691697676544,
+        19791209304576,
+        20890720932608,
+        21990232560640,
+        23089744188672,
+        24189255816704,
+        25288767444736,
+        26388279072768,
+        27487790700800,
+        28587302328832,
+        29686813956864,
+        30786325584896,
+        31885837212928,
+        32985348840960,
+        34084860468992,
+        35184372097024,
+        36283883725056,
+        37383395353088,
+        38482906981120,
+        39582418609152,
+        40681930237184,
+        41781441865216,
+        42880953493248,
+        43980465121280,
+        45079976749312,
+        46179488377344,
+        47279000005376,
+        48378511633408,
+        49478023261440
+      ]
+    },
+    {
+      "offset": 17,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 4294967297,
+      "max_unsigned": 193273528365,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 4294967297,
+          "count": 1
+        },
+        {
+          "value": 8589934594,
+          "count": 1
+        },
+        {
+          "value": 12884901891,
+          "count": 1
+        },
+        {
+          "value": 17179869188,
+          "count": 1
+        },
+        {
+          "value": 21474836485,
+          "count": 1
+        },
+        {
+          "value": 25769803782,
+          "count": 1
+        },
+        {
+          "value": 30064771079,
+          "count": 1
+        },
+        {
+          "value": 34359738376,
+          "count": 1
+        },
+        {
+          "value": 38654705673,
+          "count": 1
+        },
+        {
+          "value": 42949672970,
+          "count": 1
+        },
+        {
+          "value": 47244640267,
+          "count": 1
+        },
+        {
+          "value": 51539607564,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        4294967297,
+        8589934594,
+        12884901891,
+        17179869188,
+        21474836485,
+        25769803782,
+        30064771079,
+        34359738376,
+        38654705673,
+        42949672970,
+        47244640267,
+        51539607564,
+        55834574861,
+        60129542158,
+        64424509455,
+        68719476752,
+        73014444049,
+        77309411346,
+        81604378643,
+        85899345940,
+        90194313237,
+        94489280534,
+        98784247831,
+        103079215128,
+        107374182425,
+        111669149722,
+        115964117019,
+        120259084316,
+        124554051613,
+        128849018910,
+        133143986207,
+        137438953504,
+        141733920801,
+        146028888098,
+        150323855395,
+        154618822692,
+        158913789989,
+        163208757286,
+        167503724583,
+        171798691880,
+        176093659177,
+        180388626474,
+        184683593771,
+        188978561068,
+        193273528365
+      ]
+    },
+    {
+      "offset": 18,
+      "width": 8,
+      "interpretation": "u64",
+      "count": 45,
+      "distinct": 45,
+      "min_unsigned": 16777216,
+      "max_unsigned": 754974720,
+      "zero_count": 0,
+      "zero_rate": 0.0,
+      "sentinel_value": "0xFFFFFFFFFFFFFFFF",
+      "sentinel_count": 0,
+      "sentinel_rate": 0.0,
+      "top_values": [
+        {
+          "value": 16777216,
+          "count": 1
+        },
+        {
+          "value": 33554432,
+          "count": 1
+        },
+        {
+          "value": 50331648,
+          "count": 1
+        },
+        {
+          "value": 67108864,
+          "count": 1
+        },
+        {
+          "value": 83886080,
+          "count": 1
+        },
+        {
+          "value": 100663296,
+          "count": 1
+        },
+        {
+          "value": 117440512,
+          "count": 1
+        },
+        {
+          "value": 134217728,
+          "count": 1
+        },
+        {
+          "value": 150994944,
+          "count": 1
+        },
+        {
+          "value": 167772160,
+          "count": 1
+        },
+        {
+          "value": 184549376,
+          "count": 1
+        },
+        {
+          "value": 201326592,
+          "count": 1
+        }
+      ],
+      "small_value_set": [
+        16777216,
+        33554432,
+        50331648,
+        67108864,
+        83886080,
+        100663296,
+        117440512,
+        134217728,
+        150994944,
+        167772160,
+        184549376,
+        201326592,
+        218103808,
+        234881024,
+        251658240,
+        268435456,
+        285212672,
+        301989888,
+        318767104,
+        335544320,
+        352321536,
+        369098752,
+        385875968,
+        402653184,
+        419430400,
+        436207616,
+        452984832,
+        469762048,
+        486539264,
+        503316480,
+        520093696,
+        536870912,
+        553648128,
+        570425344,
+        587202560,
+        603979776,
+        620756992,
+        637534208,
+        654311424,
+        671088640,
+        687865856,
+        704643072,
+        721420288,
+        738197504,
+        754974720
+      ]
+    }
+  ]
+}

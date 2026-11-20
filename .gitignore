@@ -1,25 +1,20 @@
-# 大文件与二进制
+# 缓存与二进制
 *.dat
 *.bin
 *.i64
 *.idb
 *.pkl
 *.npy
-*.jsonl
-*.tmp
-__pycache__/
 *.pyc
+__pycache__/
+*.tmp
 
-# 中间产物与会话日志
-scratch/*
-!scratch/t01/
-!scratch/cmd/
-scratch/t01/*
-scratch/cmd/*
-!scratch/t01/LEDGER.json
-!scratch/cmd/HANDOFF.md
-!scratch/cmd/morning_report_2026-11-20.md
-
-# 旧库快照与工具配置
-evidence/
-.pi/
+# pi 会话/日志/大中间产物(结果 out 已单独纳入)
+scratch/pi-logs/
+scratch/pi-sessions/
+scratch/pi-sessions-backup/
+scratch/cmd/pi-logs/
+scratch/data/
+scratch/*/pi-logs/
+scratch/*/pi-sessions/
+*.jsonl

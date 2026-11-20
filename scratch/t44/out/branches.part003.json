@@ -1,0 +1,17 @@
+{
+  "branches": [
+    {
+      "function": 60676016,
+      "site": 60676062,
+      "taken_to": 60676077,
+      "fallthrough_to": 60676064,
+      "classification": "context-lifecycle",
+      "evidence": [
+        60676058
+      ],
+      "source": "stream final release",
+      "first_counterexample_or_constraint": "Context fixture: initial empty vector, live stream, successful allocation; other allocation/TLS/release paths not observed or replayed.",
+      "changes_regular_item_width": false
+    }
+  ]
+}

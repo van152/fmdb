@@ -1,0 +1,1684 @@
+{
+  "status": "t64_negative_and_boundary_ledger",
+  "scope": "COMP table_25 main row only; t59 L3/held map is frozen",
+  "baseline_field_map_sha256": "fdbcb6120cf87b1f7987d50bc2b2283e8a25d23594060f4b348defbfc546d168",
+  "categories": {
+    "advanced_rules_or_debug": 4,
+    "bounded_getter_without_wire_closure": 38,
+    "derived_count": 2,
+    "derived_list_or_shared_handler": 5,
+    "derived_parent_or_global_state": 1,
+    "no_bounded_comp_getter_case": 141,
+    "projection_candidate": 1,
+    "rules_context_sibling": 4
+  },
+  "fields": [
+    {
+      "xml_index": 0,
+      "code": "DBvw",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 4,
+      "code": "EFBR",
+      "classification": "advanced_rules_or_debug",
+      "reason": "advanced-rules/debug field has no literal case in the bounded COMP roots",
+      "falsification": "decode its range/helper dispatch and connect it to a main-row wire transfer",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 5,
+      "code": "NDBC",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 6,
+      "code": "FDBC",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 7,
+      "code": "dbnm",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 8,
+      "code": "dAPw",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 28,
+      "code": "VARv",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 29,
+      "code": "VARm",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 30,
+      "code": "VARs",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 31,
+      "code": "VARd",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 33,
+      "code": "HKEv",
+      "classification": "rules_context_sibling",
+      "reason": "goal-line fields belong to the +0xd8 rules/context family",
+      "falsification": "prove a main-row scalar transfer independent of the +0xd8 rules object",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 34,
+      "code": "HKEm",
+      "classification": "rules_context_sibling",
+      "reason": "goal-line fields belong to the +0xd8 rules/context family",
+      "falsification": "prove a main-row scalar transfer independent of the +0xd8 rules object",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 35,
+      "code": "HKEs",
+      "classification": "rules_context_sibling",
+      "reason": "goal-line fields belong to the +0xd8 rules/context family",
+      "falsification": "prove a main-row scalar transfer independent of the +0xd8 rules object",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 36,
+      "code": "HKEd",
+      "classification": "rules_context_sibling",
+      "reason": "goal-line fields belong to the +0xd8 rules/context family",
+      "falsification": "prove a main-row scalar transfer independent of the +0xd8 rules object",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 40,
+      "code": "WpBn",
+      "classification": "projection_candidate",
+      "reason": "getter computes Band from held +0xf4 state; not a raw wire binding",
+      "falsification": "show direct returned value equals the main-row byte for all relevant states and exclude the helper/gate",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 41,
+      "code": "IsAC",
+      "classification": "derived_parent_or_global_state",
+      "reason": "equal path returns a derived boolean without a same-COMP wire load",
+      "falsification": "trace the shared return into a main-row member transfer",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 42,
+      "code": "HsAR",
+      "classification": "advanced_rules_or_debug",
+      "reason": "advanced-rules/debug field has no literal case in the bounded COMP roots",
+      "falsification": "decode its range/helper dispatch and connect it to a main-row wire transfer",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 43,
+      "code": "NoBR",
+      "classification": "advanced_rules_or_debug",
+      "reason": "advanced-rules/debug field has no literal case in the bounded COMP roots",
+      "falsification": "decode its range/helper dispatch and connect it to a main-row wire transfer",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 55,
+      "code": "cmtc",
+      "classification": "derived_count",
+      "reason": "count is selected from an external/context table using COMP +0x8 as an index",
+      "falsification": "find a direct stream transfer to COMP +0x8 and separate it from the external count table",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 56,
+      "code": "nytc",
+      "classification": "derived_count",
+      "reason": "count is selected from an external/context table using COMP +0x8 as an index",
+      "falsification": "find a direct stream transfer to COMP +0x8 and separate it from the external count table",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 57,
+      "code": "ctms",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 58,
+      "code": "CTMS",
+      "classification": "derived_list_or_shared_handler",
+      "reason": "list/debug view is routed to a shared handler; no main-row scalar binding",
+      "falsification": "decode the shared list handler and prove a main-row scalar wire lane",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 81,
+      "code": "sfCi",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 82,
+      "code": "sfCx",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 83,
+      "code": "ssCi",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 84,
+      "code": "ssCx",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 85,
+      "code": "syCi",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 86,
+      "code": "syCx",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 87,
+      "code": "sfMi",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 88,
+      "code": "sfMx",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 89,
+      "code": "ssMi",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 90,
+      "code": "ssMx",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 91,
+      "code": "syMi",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 92,
+      "code": "syMx",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 93,
+      "code": "sfSi",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 94,
+      "code": "sfSx",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 95,
+      "code": "sySi",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 96,
+      "code": "sySx",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 97,
+      "code": "Pfq0",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 98,
+      "code": "Pob0",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 99,
+      "code": "Pat0",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 100,
+      "code": "Pmn0",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 101,
+      "code": "Pmx0",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 102,
+      "code": "Pfq1",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 103,
+      "code": "Pob1",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 104,
+      "code": "Pat1",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 105,
+      "code": "Pmn1",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 106,
+      "code": "Pmx1",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 107,
+      "code": "Pfq2",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 108,
+      "code": "Pob2",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 109,
+      "code": "Pat2",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 110,
+      "code": "Pmn2",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 111,
+      "code": "Pmx2",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 112,
+      "code": "Pfq3",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 113,
+      "code": "Pob3",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 114,
+      "code": "Pat3",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 115,
+      "code": "Pmn3",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 116,
+      "code": "Pmx3",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 117,
+      "code": "Pfq4",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 118,
+      "code": "Pob4",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 119,
+      "code": "Pat4",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 120,
+      "code": "Pmn4",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 121,
+      "code": "Pmx4",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 122,
+      "code": "Pfq5",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 123,
+      "code": "Pob5",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 124,
+      "code": "Pat5",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 125,
+      "code": "Pmn5",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 126,
+      "code": "Pmx5",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 127,
+      "code": "cntm",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 128,
+      "code": "CNTM",
+      "classification": "derived_list_or_shared_handler",
+      "reason": "list/debug view is routed to a shared handler; no main-row scalar binding",
+      "falsification": "decode the shared list handler and prove a main-row scalar wire lane",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 129,
+      "code": "otms",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 130,
+      "code": "OTMS",
+      "classification": "derived_list_or_shared_handler",
+      "reason": "list/debug view is routed to a shared handler; no main-row scalar binding",
+      "falsification": "decode the shared list handler and prove a main-row scalar wire lane",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 131,
+      "code": "nsod",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 132,
+      "code": "NSOD",
+      "classification": "derived_list_or_shared_handler",
+      "reason": "list/debug view is routed to a shared handler; no main-row scalar binding",
+      "falsification": "decode the shared list handler and prove a main-row scalar wire lane",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 133,
+      "code": "rgts",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 134,
+      "code": "crgt",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 135,
+      "code": "RsL0",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 136,
+      "code": "RsL0",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 137,
+      "code": "RsL1",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 138,
+      "code": "RsL2",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 139,
+      "code": "RsL3",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 140,
+      "code": "RsL4",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 141,
+      "code": "RsL5",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 142,
+      "code": "CRtm",
+      "classification": "derived_list_or_shared_handler",
+      "reason": "list/debug view is routed to a shared handler; no main-row scalar binding",
+      "falsification": "decode the shared list handler and prove a main-row scalar wire lane",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 143,
+      "code": "CBWc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 144,
+      "code": "CBWo",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 145,
+      "code": "CBWf",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 146,
+      "code": "CBWa",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 147,
+      "code": "CBWd",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 148,
+      "code": "CHSc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 149,
+      "code": "CHSo",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 150,
+      "code": "CHSf",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 151,
+      "code": "CHSa",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 152,
+      "code": "CHSd",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 153,
+      "code": "CGMp",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 154,
+      "code": "CGMn",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 155,
+      "code": "CGMg",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 156,
+      "code": "CGMc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 157,
+      "code": "CGMo",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 158,
+      "code": "CGMd",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 159,
+      "code": "CWRc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 160,
+      "code": "CWRg",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 161,
+      "code": "CWRs",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 162,
+      "code": "CWRe",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 163,
+      "code": "CLRc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 164,
+      "code": "CLRg",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 165,
+      "code": "CLRs",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 166,
+      "code": "CLRe",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 167,
+      "code": "CWLc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 168,
+      "code": "CWLg",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 169,
+      "code": "CWLs",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 170,
+      "code": "CWLe",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 171,
+      "code": "CWWc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 172,
+      "code": "CWWg",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 173,
+      "code": "CWWs",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 174,
+      "code": "CWWe",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 175,
+      "code": "CWSc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 176,
+      "code": "CWSg",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 177,
+      "code": "CWSs",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 178,
+      "code": "CWSe",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 179,
+      "code": "CWCc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 180,
+      "code": "CWCg",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 181,
+      "code": "CWCs",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 182,
+      "code": "CWCe",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 183,
+      "code": "CHAc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 184,
+      "code": "CHAa",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 185,
+      "code": "CHAo",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 186,
+      "code": "CHAd",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 187,
+      "code": "CLAc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 188,
+      "code": "CLAa",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 189,
+      "code": "CLAo",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 190,
+      "code": "CLAd",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 191,
+      "code": "CAAc",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 192,
+      "code": "CAAa",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 193,
+      "code": "CAAd",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 194,
+      "code": "HCAa",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 195,
+      "code": "HCAd",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 196,
+      "code": "LCAa",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 197,
+      "code": "LCAd",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 198,
+      "code": "CMAp",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 199,
+      "code": "CMAn",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 200,
+      "code": "CMAa",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 201,
+      "code": "CMGp",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 202,
+      "code": "CMGn",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 203,
+      "code": "CMGg",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 204,
+      "code": "CMCp",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 205,
+      "code": "CMCn",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 206,
+      "code": "CMCc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 207,
+      "code": "CMCs",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 208,
+      "code": "CMCd",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 209,
+      "code": "CHGp",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 210,
+      "code": "CHGn",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 211,
+      "code": "CHGt",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 212,
+      "code": "CHGg",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 213,
+      "code": "CHGs",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 214,
+      "code": "CHGe",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 215,
+      "code": "CYPp",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 216,
+      "code": "CYPn",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 217,
+      "code": "CYPc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 218,
+      "code": "CYPd",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 219,
+      "code": "CYPm",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 220,
+      "code": "CYPo",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 221,
+      "code": "COPp",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 222,
+      "code": "COPn",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 223,
+      "code": "COPc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 224,
+      "code": "COPd",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 225,
+      "code": "COPm",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 226,
+      "code": "COPo",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 227,
+      "code": "CYSp",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 228,
+      "code": "CYSn",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 229,
+      "code": "CYSc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 230,
+      "code": "CYSd",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 231,
+      "code": "CYSm",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 232,
+      "code": "CYSo",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 233,
+      "code": "COPc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 234,
+      "code": "COSp",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 235,
+      "code": "COSc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 236,
+      "code": "COSn",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 237,
+      "code": "COSd",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 238,
+      "code": "COSm",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 239,
+      "code": "COSo",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 240,
+      "code": "CFGp",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 241,
+      "code": "CFGn",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 242,
+      "code": "CFGc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 243,
+      "code": "CFGo",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 244,
+      "code": "CFGd",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 245,
+      "code": "CFGs",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 246,
+      "code": "CtRq",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 247,
+      "code": "Cgcc",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 248,
+      "code": "AdHR",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 249,
+      "code": "Ctoa",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 250,
+      "code": "Ctua",
+      "classification": "no_bounded_comp_getter_case",
+      "reason": "no literal 4CC compare in the two bounded COMP getter roots",
+      "falsification": "follow range dispatch or helper roots outside the bounded scan before claiming absence",
+      "bounded_roots": []
+    },
+    {
+      "xml_index": 251,
+      "code": "chst",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 252,
+      "code": "AdLe",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 253,
+      "code": "csap",
+      "classification": "bounded_getter_without_wire_closure",
+      "reason": "literal getter compare exists, but t64 found no new main-reader wire closure",
+      "falsification": "prove an additional main-reader transfer and same-object getter member path",
+      "bounded_roots": [
+        "comp_getter"
+      ]
+    },
+    {
+      "xml_index": 254,
+      "code": "AXML",
+      "classification": "advanced_rules_or_debug",
+      "reason": "advanced-rules/debug field has no literal case in the bounded COMP roots",
+      "falsification": "decode its range/helper dispatch and connect it to a main-row wire transfer",
+      "bounded_roots": []
+    }
+  ],
+  "payload_boundary": {
+    "a8": "static entry exists; data presence byte is zero for all server rows and absent from client mode",
+    "e0": "static entry exists; data presence byte is zero for all server rows and absent from client mode",
+    "d0_d8": "not conflated with a8/e0; server presence counts are recorded in helpers.json"
+  }
+}

@@ -1,0 +1,3879 @@
+{
+  "note": "字段名由全局 4CC 窄访问候选和 reader obj_seq.object_off 连接；已有独立 assignment 仅用作显式证据/歧义约束。ref_only 不伪装成窄读。row_off/width 原样保留。",
+  "entities": 26,
+  "results": [
+    {
+      "type_id": 2,
+      "entity": "city",
+      "reader_body": "0x3aa5550",
+      "archives": {
+        "server": {
+          "business_width": 30,
+          "window": [
+            0,
+            8
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 1,
+              "object_off": 83,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 1,
+              "width": 8,
+              "object_off": 72,
+              "field": "Clat+Clon",
+              "codes": [
+                "Clat",
+                "Clon"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Clat",
+                  "object_off": 72,
+                  "size": 4,
+                  "kind": "read",
+                  "file_off": "0xe55152",
+                  "access_va": "0x140e55d62",
+                  "score": 0.99,
+                  "why": "je 目标块内 movss xmm6, dword ptr [rdi + 0x48]; reader obj_seq 全局偏移/宽度命中"
+                },
+                {
+                  "code": "Clon",
+                  "object_off": 76,
+                  "size": 4,
+                  "kind": "read",
+                  "file_off": "0xe55097",
+                  "access_va": "0x140e55c84",
+                  "score": 0.97,
+                  "why": "je 目标块内 movss xmm6, dword ptr [rdi + 0x4c]; reader obj_seq 8B 槽内子字段命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movss xmm6, dword ptr [rdi + 0x48]; reader obj_seq 全局偏移/宽度命中",
+                "je 目标块内 movss xmm6, dword ptr [rdi + 0x4c]; reader obj_seq 8B 槽内子字段命中"
+              ]
+            },
+            {
+              "idx": 2,
+              "row_off": 9,
+              "width": 1,
+              "object_off": 84,
+              "field": "Catt",
+              "codes": [
+                "Catt"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Catt",
+                  "object_off": 84,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0xe55219",
+                  "access_va": "0x140e55c25",
+                  "score": 0.955,
+                  "why": "jne fall-through内 movsx edi, byte ptr [rdi + 0x54]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "jne fall-through内 movsx edi, byte ptr [rdi + 0x54]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 3,
+              "row_off": 10,
+              "width": 4,
+              "object_off": 32,
+              "field": "Cnti",
+              "codes": [
+                "Cnti"
+              ],
+              "confidence": "ref_only",
+              "accesses": [
+                {
+                  "code": "Cnti",
+                  "object_off": 32,
+                  "size": 4,
+                  "kind": "ref_only",
+                  "file_off": "0xe55187",
+                  "access_va": "0x140e55dc4",
+                  "score": 0.9,
+                  "why": "reader obj_seq 连接 row+10，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x20。"
+                }
+              ],
+              "why": [
+                "reader obj_seq 连接 row+10，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x20。"
+              ]
+            },
+            {
+              "idx": 4,
+              "row_off": 14,
+              "width": 4,
+              "object_off": 40,
+              "field": "Cwea",
+              "codes": [
+                "Cwea"
+              ],
+              "confidence": "ref_only",
+              "accesses": [
+                {
+                  "code": "Cwea",
+                  "object_off": 40,
+                  "size": 4,
+                  "kind": "ref_only",
+                  "file_off": "0xe55193",
+                  "access_va": "0x140e55de1",
+                  "score": 0.9,
+                  "why": "reader obj_seq 连接 row+14，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x28。"
+                }
+              ],
+              "why": [
+                "reader obj_seq 连接 row+14，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x28。"
+              ]
+            },
+            {
+              "idx": 5,
+              "row_off": 18,
+              "width": 3,
+              "object_off": 80,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 6,
+              "row_off": 21,
+              "width": 4,
+              "object_off": 48,
+              "field": "Clgi",
+              "codes": [
+                "Clgi"
+              ],
+              "confidence": "ref_only",
+              "accesses": [
+                {
+                  "code": "Clgi",
+                  "object_off": 48,
+                  "size": 4,
+                  "kind": "ref_only",
+                  "file_off": "0xe5515e",
+                  "access_va": "0x140e55b6a",
+                  "score": 0.9,
+                  "why": "reader obj_seq 连接 row+21，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x30。"
+                }
+              ],
+              "why": [
+                "reader obj_seq 连接 row+21，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x30。"
+              ]
+            },
+            {
+              "idx": 7,
+              "row_off": 25,
+              "width": 4,
+              "object_off": 56,
+              "field": "Clri",
+              "codes": [
+                "Clri"
+              ],
+              "confidence": "ref_only",
+              "accesses": [
+                {
+                  "code": "Clri",
+                  "object_off": 56,
+                  "size": 4,
+                  "kind": "ref_only",
+                  "file_off": "0xe550a3",
+                  "access_va": "0x140e55ce6",
+                  "score": 0.9,
+                  "why": "reader obj_seq 连接 row+25，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x38。"
+                }
+              ],
+              "why": [
+                "reader obj_seq 连接 row+25，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x38。"
+              ]
+            },
+            {
+              "idx": 8,
+              "row_off": 29,
+              "width": 1,
+              "object_off": 85,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        },
+        "client": {
+          "business_width": 30,
+          "window": [
+            0,
+            8
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 1,
+              "object_off": 83,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 1,
+              "width": 8,
+              "object_off": 72,
+              "field": "Clat+Clon",
+              "codes": [
+                "Clat",
+                "Clon"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Clat",
+                  "object_off": 72,
+                  "size": 4,
+                  "kind": "read",
+                  "file_off": "0xe55152",
+                  "access_va": "0x140e55d62",
+                  "score": 0.99,
+                  "why": "je 目标块内 movss xmm6, dword ptr [rdi + 0x48]; reader obj_seq 全局偏移/宽度命中"
+                },
+                {
+                  "code": "Clon",
+                  "object_off": 76,
+                  "size": 4,
+                  "kind": "read",
+                  "file_off": "0xe55097",
+                  "access_va": "0x140e55c84",
+                  "score": 0.97,
+                  "why": "je 目标块内 movss xmm6, dword ptr [rdi + 0x4c]; reader obj_seq 8B 槽内子字段命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movss xmm6, dword ptr [rdi + 0x48]; reader obj_seq 全局偏移/宽度命中",
+                "je 目标块内 movss xmm6, dword ptr [rdi + 0x4c]; reader obj_seq 8B 槽内子字段命中"
+              ]
+            },
+            {
+              "idx": 2,
+              "row_off": 9,
+              "width": 1,
+              "object_off": 84,
+              "field": "Catt",
+              "codes": [
+                "Catt"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Catt",
+                  "object_off": 84,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0xe55219",
+                  "access_va": "0x140e55c25",
+                  "score": 0.955,
+                  "why": "jne fall-through内 movsx edi, byte ptr [rdi + 0x54]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "jne fall-through内 movsx edi, byte ptr [rdi + 0x54]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 3,
+              "row_off": 10,
+              "width": 4,
+              "object_off": 32,
+              "field": "Cnti",
+              "codes": [
+                "Cnti"
+              ],
+              "confidence": "ref_only",
+              "accesses": [
+                {
+                  "code": "Cnti",
+                  "object_off": 32,
+                  "size": 4,
+                  "kind": "ref_only",
+                  "file_off": "0xe55187",
+                  "access_va": "0x140e55dc4",
+                  "score": 0.9,
+                  "why": "reader obj_seq 连接 row+10，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x20。"
+                }
+              ],
+              "why": [
+                "reader obj_seq 连接 row+10，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x20。"
+              ]
+            },
+            {
+              "idx": 4,
+              "row_off": 14,
+              "width": 4,
+              "object_off": 40,
+              "field": "Cwea",
+              "codes": [
+                "Cwea"
+              ],
+              "confidence": "ref_only",
+              "accesses": [
+                {
+                  "code": "Cwea",
+                  "object_off": 40,
+                  "size": 4,
+                  "kind": "ref_only",
+                  "file_off": "0xe55193",
+                  "access_va": "0x140e55de1",
+                  "score": 0.9,
+                  "why": "reader obj_seq 连接 row+14，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x28。"
+                }
+              ],
+              "why": [
+                "reader obj_seq 连接 row+14，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x28。"
+              ]
+            },
+            {
+              "idx": 5,
+              "row_off": 18,
+              "width": 3,
+              "object_off": 80,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 6,
+              "row_off": 21,
+              "width": 4,
+              "object_off": 48,
+              "field": "Clgi",
+              "codes": [
+                "Clgi"
+              ],
+              "confidence": "ref_only",
+              "accesses": [
+                {
+                  "code": "Clgi",
+                  "object_off": 48,
+                  "size": 4,
+                  "kind": "ref_only",
+                  "file_off": "0xe5515e",
+                  "access_va": "0x140e55b6a",
+                  "score": 0.9,
+                  "why": "reader obj_seq 连接 row+21，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x30。"
+                }
+              ],
+              "why": [
+                "reader obj_seq 连接 row+21，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x30。"
+              ]
+            },
+            {
+              "idx": 7,
+              "row_off": 25,
+              "width": 4,
+              "object_off": 56,
+              "field": "Clri",
+              "codes": [
+                "Clri"
+              ],
+              "confidence": "ref_only",
+              "accesses": [
+                {
+                  "code": "Clri",
+                  "object_off": 56,
+                  "size": 4,
+                  "kind": "ref_only",
+                  "file_off": "0xe550a3",
+                  "access_va": "0x140e55ce6",
+                  "score": 0.9,
+                  "why": "reader obj_seq 连接 row+25，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x38。"
+                }
+              ],
+              "why": [
+                "reader obj_seq 连接 row+25，宽度 4；独立 assignments 的验证为 ref-only。分发分支首个对象成员指针在 +0x38。"
+              ]
+            },
+            {
+              "idx": 8,
+              "row_off": 29,
+              "width": 1,
+              "object_off": 85,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 6,
+      "entity": "inju",
+      "reader_body": "0x157fe70",
+      "archives": {
+        "client": {
+          "business_width": 3,
+          "window": [
+            0,
+            2
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 1,
+              "object_off": 76,
+              "field": "icla",
+              "codes": [
+                "icla"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "icla",
+                  "object_off": 76,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x158101b",
+                  "access_va": "0x141581fb2",
+                  "score": 0.975,
+                  "why": "je 目标块内 movsx edi, byte ptr [rdi + 0x4c]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movsx edi, byte ptr [rdi + 0x4c]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 1,
+              "row_off": 1,
+              "width": 1,
+              "object_off": 77,
+              "field": "iscl",
+              "codes": [
+                "iscl"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "iscl",
+                  "object_off": 77,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1581033",
+                  "access_va": "0x141581a3f",
+                  "score": 0.955,
+                  "why": "jne fall-through内 movsx edi, byte ptr [rdi + 0x4d]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "jne fall-through内 movsx edi, byte ptr [rdi + 0x4d]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 2,
+              "row_off": 2,
+              "width": 1,
+              "object_off": 74,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        },
+        "server": {
+          "business_width": 27,
+          "window": [
+            0,
+            20
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 1,
+              "object_off": 76,
+              "field": "icla",
+              "codes": [
+                "icla"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "icla",
+                  "object_off": 76,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x158101b",
+                  "access_va": "0x141581fb2",
+                  "score": 0.975,
+                  "why": "je 目标块内 movsx edi, byte ptr [rdi + 0x4c]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movsx edi, byte ptr [rdi + 0x4c]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 1,
+              "row_off": 1,
+              "width": 1,
+              "object_off": 77,
+              "field": "iscl",
+              "codes": [
+                "iscl"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "iscl",
+                  "object_off": 77,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1581033",
+                  "access_va": "0x141581a3f",
+                  "score": 0.955,
+                  "why": "jne fall-through内 movsx edi, byte ptr [rdi + 0x4d]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "jne fall-through内 movsx edi, byte ptr [rdi + 0x4d]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 2,
+              "row_off": 2,
+              "width": 1,
+              "object_off": 74,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 3,
+              "width": 2,
+              "object_off": 52,
+              "field": "Imnd",
+              "codes": [
+                "Imnd"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Imnd",
+                  "object_off": 52,
+                  "size": 2,
+                  "kind": "read",
+                  "file_off": "0x1580f01",
+                  "access_va": "0x141581e8c",
+                  "score": 0.975,
+                  "why": "je 目标块内 movsx edi, word ptr [rdi + 0x34]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movsx edi, word ptr [rdi + 0x34]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 4,
+              "row_off": 5,
+              "width": 2,
+              "object_off": 54,
+              "field": "Iexd",
+              "codes": [
+                "Iexd"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Iexd",
+                  "object_off": 54,
+                  "size": 2,
+                  "kind": "read",
+                  "file_off": "0x1580c93",
+                  "access_va": "0x141581b15",
+                  "score": 0.975,
+                  "why": "je 目标块内 movsx edi, word ptr [rdi + 0x36]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movsx edi, word ptr [rdi + 0x36]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 5,
+              "row_off": 7,
+              "width": 1,
+              "object_off": 88,
+              "field": "Iiar",
+              "codes": [
+                "Iiar"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Iiar",
+                  "object_off": 88,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1580cab",
+                  "access_va": "0x1415816b7",
+                  "score": 0.955,
+                  "why": "jne fall-through内 movsx edi, byte ptr [rdi + 0x58]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "jne fall-through内 movsx edi, byte ptr [rdi + 0x58]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 6,
+              "row_off": 8,
+              "width": 1,
+              "object_off": 89,
+              "field": "Irec",
+              "codes": [
+                "Irec"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Irec",
+                  "object_off": 89,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1580dc9",
+                  "access_va": "0x141581d04",
+                  "score": 0.975,
+                  "why": "je 目标块内 movzx ebx, byte ptr [rdi + 0x59]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movzx ebx, byte ptr [rdi + 0x59]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 7,
+              "row_off": 9,
+              "width": 1,
+              "object_off": 92,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 8,
+              "row_off": 10,
+              "width": 1,
+              "object_off": 93,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 9,
+              "row_off": 11,
+              "width": 1,
+              "object_off": 90,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 10,
+              "row_off": 12,
+              "width": 1,
+              "object_off": 91,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 11,
+              "row_off": 13,
+              "width": 4,
+              "object_off": 48,
+              "field": "Iocr",
+              "codes": [
+                "Iocr"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Iocr",
+                  "object_off": 48,
+                  "size": 4,
+                  "kind": "read",
+                  "file_off": "0x1580dbd",
+                  "access_va": "0x141581ca2",
+                  "score": 0.99,
+                  "why": "je 目标块内 movss xmm6, dword ptr [rdi + 0x30]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movss xmm6, dword ptr [rdi + 0x30]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 12,
+              "row_off": 17,
+              "width": 1,
+              "object_off": 80,
+              "field": "Imip",
+              "codes": [
+                "Imip"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Imip",
+                  "object_off": 80,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1580ef5",
+                  "access_va": "0x141581e2d",
+                  "score": 0.975,
+                  "why": "je 目标块内 movsx edi, byte ptr [rdi + 0x50]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movsx edi, byte ptr [rdi + 0x50]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 13,
+              "row_off": 18,
+              "width": 2,
+              "object_off": 78,
+              "field": "Icau",
+              "codes": [
+                "Icau"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Icau",
+                  "object_off": 78,
+                  "size": 2,
+                  "kind": "read",
+                  "file_off": "0x1580d46",
+                  "access_va": "0x141581752",
+                  "score": 0.955,
+                  "why": "jne fall-through内 movsx edi, word ptr [rdi + 0x4e]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "jne fall-through内 movsx edi, word ptr [rdi + 0x4e]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 14,
+              "row_off": 20,
+              "width": 1,
+              "object_off": 81,
+              "field": "Iagr",
+              "codes": [
+                "Iagr"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Iagr",
+                  "object_off": 81,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x15810aa",
+                  "access_va": "0x141581ab6",
+                  "score": 0.955,
+                  "why": "jne fall-through内 movsx edi, byte ptr [rdi + 0x51]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "jne fall-through内 movsx edi, byte ptr [rdi + 0x51]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 15,
+              "row_off": 21,
+              "width": 1,
+              "object_off": 82,
+              "field": "Icms",
+              "codes": [
+                "Icms"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Icms",
+                  "object_off": 82,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1580fa4",
+                  "access_va": "0x141581f53",
+                  "score": 0.975,
+                  "why": "je 目标块内 movsx edi, byte ptr [rdi + 0x52]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movsx edi, byte ptr [rdi + 0x52]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 16,
+              "row_off": 22,
+              "width": 1,
+              "object_off": 83,
+              "field": "Icon",
+              "codes": [
+                "Icon"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Icon",
+                  "object_off": 83,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1580fb0",
+                  "access_va": "0x1415819bc",
+                  "score": 0.955,
+                  "why": "jne fall-through内 movzx ebx, byte ptr [rdi + 0x53]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "jne fall-through内 movzx ebx, byte ptr [rdi + 0x53]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 17,
+              "row_off": 23,
+              "width": 1,
+              "object_off": 84,
+              "field": "inSr",
+              "codes": [
+                "inSr"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "inSr",
+                  "object_off": 84,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1581027",
+                  "access_va": "0x141582011",
+                  "score": 0.975,
+                  "why": "je 目标块内 movsx edi, byte ptr [rdi + 0x54]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movsx edi, byte ptr [rdi + 0x54]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 18,
+              "row_off": 24,
+              "width": 1,
+              "object_off": 85,
+              "field": "Igpr",
+              "codes": [
+                "Igpr"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Igpr",
+                  "object_off": 85,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1580c9f",
+                  "access_va": "0x141581b74",
+                  "score": 0.975,
+                  "why": "je 目标块内 movzx edi, byte ptr [rdi + 0x55]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movzx edi, byte ptr [rdi + 0x55]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 19,
+              "row_off": 25,
+              "width": 1,
+              "object_off": 86,
+              "field": "Icdp",
+              "codes": [
+                "Icdp"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Icdp",
+                  "object_off": 86,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1580f98",
+                  "access_va": "0x141581eeb",
+                  "score": 0.975,
+                  "why": "je 目标块内 movzx edi, byte ptr [rdi + 0x56]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movzx edi, byte ptr [rdi + 0x56]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 20,
+              "row_off": 26,
+              "width": 1,
+              "object_off": 87,
+              "field": "Ibin+Ibis+Ibph+Ibsp+Ibpg",
+              "codes": [
+                "Ibin",
+                "Ibis",
+                "Ibph",
+                "Ibsp",
+                "Ibpg"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Ibin",
+                  "object_off": 87,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1580e6c",
+                  "access_va": "0x141581d63",
+                  "score": 0.975,
+                  "why": "je 目标块内 movzx ebx, byte ptr [rdi + 0x57]; reader obj_seq 全局偏移/宽度命中"
+                },
+                {
+                  "code": "Ibis",
+                  "object_off": 87,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1580e78",
+                  "access_va": "0x141581dc8",
+                  "score": 0.975,
+                  "why": "je 目标块内 movzx ebx, byte ptr [rdi + 0x57]; reader obj_seq 全局偏移/宽度命中"
+                },
+                {
+                  "code": "Ibph",
+                  "object_off": 87,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1580d2e",
+                  "access_va": "0x141581bdc",
+                  "score": 0.975,
+                  "why": "je 目标块内 movzx ebx, byte ptr [rdi + 0x57]; reader obj_seq 全局偏移/宽度命中"
+                },
+                {
+                  "code": "Ibsp",
+                  "object_off": 87,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1580d3a",
+                  "access_va": "0x141581c3e",
+                  "score": 0.975,
+                  "why": "je 目标块内 movzx ebx, byte ptr [rdi + 0x57]; reader obj_seq 全局偏移/宽度命中"
+                },
+                {
+                  "code": "Ibpg",
+                  "object_off": 87,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1580e84",
+                  "access_va": "0x141581890",
+                  "score": 0.955,
+                  "why": "jne fall-through内 movzx ebx, byte ptr [rdi + 0x57]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movzx ebx, byte ptr [rdi + 0x57]; reader obj_seq 全局偏移/宽度命中",
+                "je 目标块内 movzx ebx, byte ptr [rdi + 0x57]; reader obj_seq 全局偏移/宽度命中",
+                "je 目标块内 movzx ebx, byte ptr [rdi + 0x57]; reader obj_seq 全局偏移/宽度命中",
+                "je 目标块内 movzx ebx, byte ptr [rdi + 0x57]; reader obj_seq 全局偏移/宽度命中",
+                "jne fall-through内 movzx ebx, byte ptr [rdi + 0x57]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 19,
+      "entity": "regi",
+      "reader_body": "0x43b6f90",
+      "archives": {
+        "client": {
+          "business_width": 32,
+          "window": [
+            0,
+            7
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 40,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 4,
+              "object_off": 44,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 8,
+              "width": 4,
+              "object_off": 48,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 12,
+              "width": 4,
+              "object_off": 52,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 4,
+              "row_off": 16,
+              "width": 4,
+              "object_off": 56,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 5,
+              "row_off": 20,
+              "width": 4,
+              "object_off": 60,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 6,
+              "row_off": 24,
+              "width": 4,
+              "object_off": 64,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 7,
+              "row_off": 28,
+              "width": 4,
+              "object_off": 68,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        },
+        "server": {
+          "business_width": 33,
+          "window": [
+            0,
+            8
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 40,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 4,
+              "object_off": 44,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 8,
+              "width": 4,
+              "object_off": 48,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 12,
+              "width": 4,
+              "object_off": 52,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 4,
+              "row_off": 16,
+              "width": 4,
+              "object_off": 56,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 5,
+              "row_off": 20,
+              "width": 4,
+              "object_off": 60,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 6,
+              "row_off": 24,
+              "width": 4,
+              "object_off": 64,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 7,
+              "row_off": 28,
+              "width": 4,
+              "object_off": 68,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 8,
+              "row_off": 32,
+              "width": 1,
+              "object_off": 73,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 21,
+      "entity": "stad",
+      "reader_body": "0x1183f30",
+      "archives": {
+        "client": {
+          "business_width": 25,
+          "window": [
+            10,
+            28
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 2,
+              "object_off": 142,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 2,
+              "width": 1,
+              "object_off": 157,
+              "field": "Spty",
+              "codes": [
+                "Spty"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Spty",
+                  "object_off": 157,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1186603",
+                  "access_va": "0x14118700f",
+                  "score": 0.955,
+                  "why": "jne fall-through内 movzx eax, byte ptr [rdi + 0x9d]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "jne fall-through内 movzx eax, byte ptr [rdi + 0x9d]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 2,
+              "row_off": 3,
+              "width": 1,
+              "object_off": 159,
+              "field": "Sste",
+              "codes": [
+                "Sste"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Sste",
+                  "object_off": 159,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1186b0d",
+                  "access_va": "0x141187fa4",
+                  "score": 0.975,
+                  "why": "je 目标块内 movsx esi, byte ptr [rdi + 0x9f]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movsx esi, byte ptr [rdi + 0x9f]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 3,
+              "row_off": 4,
+              "width": 1,
+              "object_off": 160,
+              "field": "Senv",
+              "codes": [
+                "Senv"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Senv",
+                  "object_off": 160,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1186514",
+                  "access_va": "0x141187a5b",
+                  "score": 0.975,
+                  "why": "je 目标块内 movsx esi, byte ptr [rdi + 0xa0]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movsx esi, byte ptr [rdi + 0xa0]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 4,
+              "row_off": 5,
+              "width": 1,
+              "object_off": 155,
+              "field": "Sdah+Sitg+Sext",
+              "codes": [
+                "Sdah",
+                "Sitg",
+                "Sext"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Sdah",
+                  "object_off": 155,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x118971a",
+                  "access_va": "0x14118a66b",
+                  "score": 0.975,
+                  "why": "je 目标块内 movzx ecx, byte ptr [rsi + 0x9b]; reader obj_seq 全局偏移/宽度命中"
+                },
+                {
+                  "code": "Sitg",
+                  "object_off": 155,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1186aa2",
+                  "access_va": "0x141187f67",
+                  "score": 0.975,
+                  "why": "je 目标块内 mov bl, byte ptr [rdi + 0x9b]; reader obj_seq 全局偏移/宽度命中"
+                },
+                {
+                  "code": "Sext",
+                  "object_off": 155,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1186520",
+                  "access_va": "0x141186f2c",
+                  "score": 0.955,
+                  "why": "jne fall-through内 mov bl, byte ptr [rdi + 0x9b]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movzx ecx, byte ptr [rsi + 0x9b]; reader obj_seq 全局偏移/宽度命中",
+                "je 目标块内 mov bl, byte ptr [rdi + 0x9b]; reader obj_seq 全局偏移/宽度命中",
+                "jne fall-through内 mov bl, byte ptr [rdi + 0x9b]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 5,
+              "row_off": 6,
+              "width": 1,
+              "object_off": 161,
+              "field": "Sunt",
+              "codes": [
+                "Sunt"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Sunt",
+                  "object_off": 161,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x118698a",
+                  "access_va": "0x141187e85",
+                  "score": 0.975,
+                  "why": "je 目标块内 movsx esi, byte ptr [rdi + 0xa1]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movsx esi, byte ptr [rdi + 0xa1]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 6,
+              "row_off": 7,
+              "width": 1,
+              "object_off": 162,
+              "field": "Su21",
+              "codes": [
+                "Su21"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Su21",
+                  "object_off": 162,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x118638c",
+                  "access_va": "0x1411879ac",
+                  "score": 0.975,
+                  "why": "je 目标块内 movsx esi, byte ptr [rdi + 0xa2]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movsx esi, byte ptr [rdi + 0xa2]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 7,
+              "row_off": 8,
+              "width": 1,
+              "object_off": 163,
+              "field": "Su19",
+              "codes": [
+                "Su19"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Su19",
+                  "object_off": 163,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x1186b19",
+                  "access_va": "0x141187525",
+                  "score": 0.955,
+                  "why": "jne fall-through内 movsx esi, byte ptr [rdi + 0xa3]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "jne fall-through内 movsx esi, byte ptr [rdi + 0xa3]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 8,
+              "row_off": 9,
+              "width": 1,
+              "object_off": 164,
+              "field": "Soty",
+              "codes": [
+                "Soty"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Soty",
+                  "object_off": 164,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x118679c",
+                  "access_va": "0x1411871a8",
+                  "score": 0.955,
+                  "why": "jne fall-through内 movsx esi, byte ptr [rdi + 0xa4]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "jne fall-through内 movsx esi, byte ptr [rdi + 0xa4]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 9,
+              "row_off": 10,
+              "width": 1,
+              "object_off": 165,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 10,
+              "row_off": 11,
+              "width": 2,
+              "object_off": 144,
+              "field": "Smnl",
+              "codes": [
+                "Smnl"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Smnl",
+                  "object_off": 144,
+                  "size": 2,
+                  "kind": "read",
+                  "file_off": "0x118691c",
+                  "access_va": "0x141187dfb",
+                  "score": 0.975,
+                  "why": "je 目标块内 movsx eax, word ptr [rdi + 0x90]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movsx eax, word ptr [rdi + 0x90]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 11,
+              "row_off": 13,
+              "width": 2,
+              "object_off": 146,
+              "field": "Smnw",
+              "codes": [
+                "Smnw"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Smnw",
+                  "object_off": 146,
+                  "size": 2,
+                  "kind": "read",
+                  "file_off": "0x1186928",
+                  "access_va": "0x141187334",
+                  "score": 0.955,
+                  "why": "jne fall-through内 movsx eax, word ptr [rdi + 0x92]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "jne fall-through内 movsx eax, word ptr [rdi + 0x92]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 12,
+              "row_off": 15,
+              "width": 2,
+              "object_off": 148,
+              "field": "Smxl",
+              "codes": [
+                "Smxl"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Smxl",
+                  "object_off": 148,
+                  "size": 2,
+                  "kind": "read",
+                  "file_off": "0x1186655",
+                  "access_va": "0x141187b45",
+                  "score": 0.975,
+                  "why": "je 目标块内 movsx eax, word ptr [rdi + 0x94]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movsx eax, word ptr [rdi + 0x94]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 13,
+              "row_off": 17,
+              "width": 2,
+              "object_off": 150,
+              "field": "Smxw",
+              "codes": [
+                "Smxw"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Smxw",
+                  "object_off": 150,
+                  "size": 2,
+                  "kind": "read",
+                  "file_off": "0x1186661",
+                  "access_va": "0x14118706d",
+                  "score": 0.955,
+                  "why": "jne fall-through内 movsx eax, word ptr [rdi + 0x96]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "jne fall-through内 movsx eax, word ptr [rdi + 0x96]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 14,
+              "row_off": 19,
+              "width": 1,
+              "object_off": 156,
+              "field": "Sdtr",
+              "codes": [
+                "Sdtr"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Sdtr",
+                  "object_off": 156,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x11867e8",
+                  "access_va": "0x141187cfe",
+                  "score": 0.975,
+                  "why": "je 目标块内 movsx esi, byte ptr [rdi + 0x9c]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "je 目标块内 movsx esi, byte ptr [rdi + 0x9c]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 15,
+              "row_off": 20,
+              "width": 1,
+              "object_off": 79,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 16,
+              "row_off": 21,
+              "width": 1,
+              "object_off": 158,
+              "field": "Sprr",
+              "codes": [
+                "Sprr"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Sprr",
+                  "object_off": 158,
+                  "size": 1,
+                  "kind": "read",
+                  "file_off": "0x11868d8",
+                  "access_va": "0x1411872e4",
+                  "score": 0.955,
+                  "why": "jne fall-through内 movsx esi, byte ptr [rdi + 0x9e]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "jne fall-through内 movsx esi, byte ptr [rdi + 0x9e]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 17,
+              "row_off": 22,
+              "width": 2,
+              "object_off": 166,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 18,
+              "row_off": 24,
+              "width": 1,
+              "object_off": 168,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 22,
+      "entity": "?",
+      "reader_body": "0x1537800",
+      "archives": {
+        "server": {
+          "business_width": 66,
+          "window": [
+            0,
+            18
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 4,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 8,
+              "width": 4,
+              "object_off": 40,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 12,
+              "width": 4,
+              "object_off": 60,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 4,
+              "row_off": 16,
+              "width": 1,
+              "object_off": 100,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 5,
+              "row_off": 17,
+              "width": 4,
+              "object_off": 72,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 6,
+              "row_off": 21,
+              "width": 1,
+              "object_off": 101,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 7,
+              "row_off": 22,
+              "width": 4,
+              "object_off": 64,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 8,
+              "row_off": 26,
+              "width": 4,
+              "object_off": 80,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 9,
+              "row_off": 30,
+              "width": 4,
+              "object_off": 84,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 10,
+              "row_off": 34,
+              "width": 4,
+              "object_off": 88,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 11,
+              "row_off": 38,
+              "width": 4,
+              "object_off": 92,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 12,
+              "row_off": 42,
+              "width": 1,
+              "object_off": 102,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 13,
+              "row_off": 43,
+              "width": 4,
+              "object_off": 96,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 14,
+              "row_off": 47,
+              "width": 1,
+              "object_off": 105,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 15,
+              "row_off": 48,
+              "width": 1,
+              "object_off": 103,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 16,
+              "row_off": 49,
+              "width": 1,
+              "object_off": 104,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 17,
+              "row_off": 50,
+              "width": 4,
+              "object_off": 68,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 18,
+              "row_off": 54,
+              "width": 12,
+              "object_off": null,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 23,
+      "entity": "stgn",
+      "reader_body": "0x43dcea0",
+      "archives": {
+        "client": {
+          "business_width": 1,
+          "window": [
+            0,
+            0
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 1,
+              "object_off": 59,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        },
+        "server": {
+          "business_width": 1,
+          "window": [
+            0,
+            0
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 1,
+              "object_off": 59,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 30,
+      "entity": "?",
+      "reader_body": "0x3e58330",
+      "archives": {
+        "server": {
+          "business_width": 21,
+          "window": [
+            0,
+            8
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 4,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 8,
+              "width": 4,
+              "object_off": 40,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 12,
+              "width": 4,
+              "object_off": 44,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 4,
+              "row_off": 16,
+              "width": 1,
+              "object_off": 48,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 5,
+              "row_off": 17,
+              "width": 1,
+              "object_off": 49,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 6,
+              "row_off": 18,
+              "width": 1,
+              "object_off": 50,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 7,
+              "row_off": 19,
+              "width": 1,
+              "object_off": 51,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 8,
+              "row_off": 20,
+              "width": 1,
+              "object_off": 52,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 31,
+      "entity": "?",
+      "reader_body": "0x43db9a0",
+      "archives": {
+        "server": {
+          "business_width": 8,
+          "window": [
+            0,
+            2
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 2,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 6,
+              "width": 2,
+              "object_off": 34,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 34,
+      "entity": "?",
+      "reader_body": "0x43a6890",
+      "archives": {
+        "server": {
+          "business_width": 31,
+          "window": [
+            0,
+            10
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 4,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 8,
+              "width": 2,
+              "object_off": 72,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 10,
+              "width": 2,
+              "object_off": 74,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 4,
+              "row_off": 12,
+              "width": 4,
+              "object_off": 48,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 5,
+              "row_off": 16,
+              "width": 4,
+              "object_off": 56,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 6,
+              "row_off": 20,
+              "width": 1,
+              "object_off": 76,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 7,
+              "row_off": 21,
+              "width": 1,
+              "object_off": 77,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 8,
+              "row_off": 22,
+              "width": 4,
+              "object_off": 40,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 9,
+              "row_off": 26,
+              "width": 1,
+              "object_off": 78,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 10,
+              "row_off": 27,
+              "width": 4,
+              "object_off": 64,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 35,
+      "entity": "?",
+      "reader_body": "0x43eb190",
+      "archives": {
+        "client": {
+          "business_width": 2,
+          "window": [
+            0,
+            1
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 1,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 1,
+              "width": 1,
+              "object_off": 33,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        },
+        "server": {
+          "business_width": 2,
+          "window": [
+            0,
+            1
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 1,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 1,
+              "width": 1,
+              "object_off": 33,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 37,
+      "entity": "?",
+      "reader_body": "0x3e62b90",
+      "archives": {
+        "server": {
+          "business_width": 27,
+          "window": [
+            0,
+            13
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 4,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 8,
+              "width": 4,
+              "object_off": 40,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 12,
+              "width": 2,
+              "object_off": 54,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 4,
+              "row_off": 14,
+              "width": 1,
+              "object_off": 57,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 5,
+              "row_off": 15,
+              "width": 1,
+              "object_off": 58,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 6,
+              "row_off": 16,
+              "width": 1,
+              "object_off": 59,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 7,
+              "row_off": 17,
+              "width": 1,
+              "object_off": 60,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 8,
+              "row_off": 18,
+              "width": 1,
+              "object_off": 61,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 9,
+              "row_off": 19,
+              "width": 2,
+              "object_off": 48,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 10,
+              "row_off": 21,
+              "width": 2,
+              "object_off": 50,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 11,
+              "row_off": 23,
+              "width": 2,
+              "object_off": 52,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 12,
+              "row_off": 25,
+              "width": 1,
+              "object_off": 56,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 13,
+              "row_off": 26,
+              "width": 1,
+              "object_off": 62,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 42,
+      "entity": "?",
+      "reader_body": "0x3e62790",
+      "archives": {
+        "server": {
+          "business_width": 13,
+          "window": [
+            4,
+            8
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 1,
+              "object_off": 39,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 1,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 5,
+              "width": 4,
+              "object_off": 28,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 9,
+              "width": 2,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 4,
+              "row_off": 11,
+              "width": 2,
+              "object_off": 34,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 43,
+      "entity": "?",
+      "reader_body": "0x4370860",
+      "archives": {
+        "server": {
+          "business_width": 33,
+          "window": [
+            0,
+            5
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 8,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 8,
+              "width": 8,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 16,
+              "width": 8,
+              "object_off": 40,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 24,
+              "width": 4,
+              "object_off": 48,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 4,
+              "row_off": 28,
+              "width": 4,
+              "object_off": 52,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 5,
+              "row_off": 32,
+              "width": 1,
+              "object_off": 56,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 46,
+      "entity": "?",
+      "reader_body": "0x43d6440",
+      "archives": {
+        "server": {
+          "business_width": 12,
+          "window": [
+            0,
+            4
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 4,
+              "object_off": 28,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 8,
+              "width": 1,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 9,
+              "width": 1,
+              "object_off": 33,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 4,
+              "row_off": 10,
+              "width": 2,
+              "object_off": 34,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 47,
+      "entity": "lcrg",
+      "reader_body": "0x14586e0",
+      "archives": {
+        "client": {
+          "business_width": 31,
+          "window": [
+            14,
+            31
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 1,
+              "object_off": 86,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 1,
+              "width": 2,
+              "object_off": 70,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 3,
+              "width": 4,
+              "object_off": 72,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 7,
+              "width": 1,
+              "object_off": 80,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 4,
+              "row_off": 8,
+              "width": 4,
+              "object_off": 104,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 5,
+              "row_off": 12,
+              "width": 1,
+              "object_off": 41,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 6,
+              "row_off": 13,
+              "width": 4,
+              "object_off": 48,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 7,
+              "row_off": 17,
+              "width": 4,
+              "object_off": 112,
+              "field": "Lpop",
+              "codes": [
+                "Lpop"
+              ],
+              "confidence": "readpair",
+              "accesses": [
+                {
+                  "code": "Lpop",
+                  "object_off": 112,
+                  "size": 4,
+                  "kind": "read",
+                  "file_off": "0x1458fcd",
+                  "access_va": "0x1414599d9",
+                  "score": 0.955,
+                  "why": "jne fall-through内 mov esi, dword ptr [r12 + 0x70]; reader obj_seq 全局偏移/宽度命中"
+                }
+              ],
+              "why": [
+                "jne fall-through内 mov esi, dword ptr [r12 + 0x70]; reader obj_seq 全局偏移/宽度命中"
+              ]
+            },
+            {
+              "idx": 8,
+              "row_off": 21,
+              "width": 1,
+              "object_off": 72,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 9,
+              "row_off": 22,
+              "width": 1,
+              "object_off": 73,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 10,
+              "row_off": 23,
+              "width": 1,
+              "object_off": 74,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 11,
+              "row_off": 24,
+              "width": 1,
+              "object_off": 75,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 12,
+              "row_off": 25,
+              "width": 1,
+              "object_off": 76,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 13,
+              "row_off": 26,
+              "width": 1,
+              "object_off": 77,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 14,
+              "row_off": 27,
+              "width": 1,
+              "object_off": 78,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 15,
+              "row_off": 28,
+              "width": 1,
+              "object_off": 79,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 16,
+              "row_off": 29,
+              "width": 1,
+              "object_off": 80,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 17,
+              "row_off": 30,
+              "width": 1,
+              "object_off": 81,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 49,
+      "entity": "?",
+      "reader_body": "0x4216580",
+      "archives": {
+        "server": {
+          "business_width": 23,
+          "window": [
+            4,
+            12
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 1,
+              "object_off": 39,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 1,
+              "width": 2,
+              "object_off": 36,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 3,
+              "width": 2,
+              "object_off": 38,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 5,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 4,
+              "row_off": 9,
+              "width": 4,
+              "object_off": 28,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 5,
+              "row_off": 13,
+              "width": 4,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 6,
+              "row_off": 17,
+              "width": 4,
+              "object_off": 40,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 7,
+              "row_off": 21,
+              "width": 1,
+              "object_off": 44,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 8,
+              "row_off": 22,
+              "width": 1,
+              "object_off": 45,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 50,
+      "entity": "?",
+      "reader_body": "0x43d7b10",
+      "archives": {
+        "server": {
+          "business_width": 13,
+          "window": [
+            0,
+            3
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 4,
+              "object_off": 28,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 8,
+              "width": 1,
+              "object_off": 36,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 9,
+              "width": 4,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 51,
+      "entity": "?",
+      "reader_body": "0x4357bf0",
+      "archives": {
+        "server": {
+          "business_width": 10,
+          "window": [
+            0,
+            2
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 4,
+              "object_off": 28,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 8,
+              "width": 2,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 58,
+      "entity": "?",
+      "reader_body": "0x43722a0",
+      "archives": {
+        "server": {
+          "business_width": 32,
+          "window": [
+            7,
+            15
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 4,
+              "object_off": 28,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 8,
+              "width": 4,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 12,
+              "width": 4,
+              "object_off": 36,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 4,
+              "row_off": 16,
+              "width": 4,
+              "object_off": 40,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 5,
+              "row_off": 20,
+              "width": 4,
+              "object_off": 44,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 6,
+              "row_off": 24,
+              "width": 2,
+              "object_off": 48,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 7,
+              "row_off": 26,
+              "width": 2,
+              "object_off": 50,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 8,
+              "row_off": 28,
+              "width": 4,
+              "object_off": 52,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 60,
+      "entity": "?",
+      "reader_body": "0x4357bf0",
+      "archives": {
+        "server": {
+          "business_width": 10,
+          "window": [
+            0,
+            2
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 4,
+              "object_off": 28,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 8,
+              "width": 2,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 61,
+      "entity": "?",
+      "reader_body": "0x43d81b0",
+      "archives": {
+        "server": {
+          "business_width": 7,
+          "window": [
+            0,
+            2
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 1,
+              "object_off": 28,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 5,
+              "width": 2,
+              "object_off": 30,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 62,
+      "entity": "?",
+      "reader_body": "0x3e5d730",
+      "archives": {
+        "server": {
+          "business_width": 29,
+          "window": [
+            0,
+            10
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 1,
+              "object_off": 68,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 1,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 5,
+              "width": 4,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 9,
+              "width": 4,
+              "object_off": 48,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 4,
+              "row_off": 13,
+              "width": 4,
+              "object_off": 56,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 5,
+              "row_off": 17,
+              "width": 4,
+              "object_off": 60,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 6,
+              "row_off": 21,
+              "width": 4,
+              "object_off": 64,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 7,
+              "row_off": 25,
+              "width": 1,
+              "object_off": 69,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 8,
+              "row_off": 26,
+              "width": 1,
+              "object_off": 70,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 9,
+              "row_off": 27,
+              "width": 1,
+              "object_off": 71,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 10,
+              "row_off": 28,
+              "width": 1,
+              "object_off": 72,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 63,
+      "entity": "?",
+      "reader_body": "0x43d81b0",
+      "archives": {
+        "server": {
+          "business_width": 7,
+          "window": [
+            0,
+            2
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 1,
+              "object_off": 28,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 5,
+              "width": 2,
+              "object_off": 30,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 64,
+      "entity": "?",
+      "reader_body": "0x43d4a10",
+      "archives": {
+        "server": {
+          "business_width": 8,
+          "window": [
+            0,
+            3
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 2,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 6,
+              "width": 1,
+              "object_off": 34,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 7,
+              "width": 1,
+              "object_off": 35,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 66,
+      "entity": "?",
+      "reader_body": "0x43583b0",
+      "archives": {
+        "server": {
+          "business_width": 11,
+          "window": [
+            0,
+            4
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 4,
+              "object_off": 28,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 8,
+              "width": 1,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 9,
+              "width": 1,
+              "object_off": 33,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 4,
+              "row_off": 10,
+              "width": 1,
+              "object_off": 34,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type_id": 70,
+      "entity": "?",
+      "reader_body": "0x4214ce0",
+      "archives": {
+        "server": {
+          "business_width": 27,
+          "window": [
+            0,
+            11
+          ],
+          "fields": [
+            {
+              "idx": 0,
+              "row_off": 0,
+              "width": 4,
+              "object_off": 24,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 1,
+              "row_off": 4,
+              "width": 4,
+              "object_off": 32,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 2,
+              "row_off": 8,
+              "width": 4,
+              "object_off": 40,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 3,
+              "row_off": 12,
+              "width": 4,
+              "object_off": 44,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 4,
+              "row_off": 16,
+              "width": 2,
+              "object_off": 48,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 5,
+              "row_off": 18,
+              "width": 2,
+              "object_off": 50,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 6,
+              "row_off": 20,
+              "width": 2,
+              "object_off": 52,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 7,
+              "row_off": 22,
+              "width": 1,
+              "object_off": 54,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 8,
+              "row_off": 23,
+              "width": 1,
+              "object_off": 55,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 9,
+              "row_off": 24,
+              "width": 1,
+              "object_off": 56,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 10,
+              "row_off": 25,
+              "width": 1,
+              "object_off": 57,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            },
+            {
+              "idx": 11,
+              "row_off": 26,
+              "width": 1,
+              "object_off": 58,
+              "field": null,
+              "codes": [],
+              "confidence": "unresolved",
+              "accesses": [],
+              "why": []
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "exe_sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4"
+}

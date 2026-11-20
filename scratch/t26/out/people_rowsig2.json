@@ -1,0 +1,64 @@
+{
+ "task": "t26-A3",
+ "payload_len": 400443970,
+ "header_count": 658011,
+ "variants": {
+  "2": 3464939,
+  "3": 2729452,
+  "4": 2618041,
+  "5": 2429451,
+  "6": 2363911,
+  "7": 2081941,
+  "8": 2010445,
+  "9": 1393215,
+  "10": 1391975,
+  "11": 909032,
+  "12": 907036
+ },
+ "signature_occurrences": 22299438,
+ "verified_distinct_keys": 658011,
+ "verified_pct": 100.0,
+ "duplicate_key_hits": 3842160,
+ "coverage_by_class": {
+  "1": {
+   "rows": 166064,
+   "covered": 166064,
+   "pct": 100.0
+  },
+  "2": {
+   "rows": 476158,
+   "covered": 476158,
+   "pct": 100.0
+  },
+  "3": {
+   "rows": 4757,
+   "covered": 4757,
+   "pct": 100.0
+  },
+  "4": {
+   "rows": 9839,
+   "covered": 9839,
+   "pct": 100.0
+  },
+  "5": {
+   "rows": 1193,
+   "covered": 1193,
+   "pct": 100.0
+  }
+ },
+ "missing": {
+  "keys": 0,
+  "by_class": {
+   "1": 0,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 0
+  },
+  "first_12": []
+ },
+ "variant_of_choice": {
+  "2": 658011
+ },
+ "grade": "L1(尾部签名自洽) + L2(basic_people_db 同 ordinal duni 逐条对齐)"
+}

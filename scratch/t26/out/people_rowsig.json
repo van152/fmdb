@@ -1,0 +1,90 @@
+{
+ "task": "t26-A2",
+ "payload_len": 400443970,
+ "header_count": 658011,
+ "signature": {
+  "layout": "8x00 | u32 key2 | u32 duni | u32 duni  (duni 重复两遍)",
+  "occurrences": 2010445,
+  "key2_in_range": 2010445,
+  "key2_distinct": 614931,
+  "duni_distinct": 615090
+ },
+ "cross_check": {
+  "claim": "签名行 (key2, duni) 与 basic_people_db 同 ordinal 的 duni 逐条相等",
+  "matched_occurrences": 614914,
+  "matched_pct": 30.586,
+  "distinct_verified_keys": 614912,
+  "of_header_count": 658011,
+  "coverage_pct": 93.45,
+  "grade": "L1(同文件签名自洽) + L2(basic_people_db 独立计数/独立 duni 列逐条对齐)"
+ },
+ "coverage_by_class": {
+  "1": {
+   "rows": 166064,
+   "covered": 153200,
+   "pct": 92.25
+  },
+  "2": {
+   "rows": 476158,
+   "covered": 446636,
+   "pct": 93.8
+  },
+  "3": {
+   "rows": 4757,
+   "covered": 4482,
+   "pct": 94.22
+  },
+  "4": {
+   "rows": 9839,
+   "covered": 9401,
+   "pct": 95.55
+  },
+  "5": {
+   "rows": 1193,
+   "covered": 1193,
+   "pct": 100.0
+  }
+ },
+ "missing": {
+  "keys": 43099,
+  "by_class": {
+   "1": 12864,
+   "2": 29522,
+   "3": 275,
+   "4": 438,
+   "5": 0
+  },
+  "sample_keys": [
+   6,
+   12,
+   58,
+   64,
+   134,
+   139,
+   159,
+   184
+  ]
+ },
+ "missing_elsewhere": {
+  "question": "未命中签名的行,其 duni 是否以'相邻重复 u32'形式出现在别处",
+  "missing_total": 43099,
+  "duni_seen_as_adjacent_dup": 43099,
+  "note": "只说明值出现过,不构成行定位"
+ },
+ "row_pitch": {
+  "median": 213,
+  "p10": 2,
+  "p90": 464,
+  "max": 3180,
+  "buckets": {
+   "0-32": 483907,
+   "32-64": 304808,
+   "64-128": 189712,
+   "128-256": 410829,
+   "256-512": 519010,
+   "512-1024": 100222,
+   "1024-4096": 1956,
+   "4096-1048576": 0
+  }
+ }
+}
