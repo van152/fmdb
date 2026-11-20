@@ -63,3 +63,21 @@ club(433)+ nation(346)+ person(271)+ comp(255)+ player(179)五个实体占 2,144
 | 仍开 | held 枚举域(scoped enum_ref)批量补、EDfx 上游/EDsc 调用链、club 399+comp 196+nation 327 未映射主行字段、comp 82 站点中未对齐的投影、merge-to-main(仍按 HANDOFF 搁置) |
 
 更新命令不变:`py -V:3.12 -I scripts/baseline_coverage.py --check`(快照数字仍应 OK)。
+
+## 增量(2026-11-20 日班,E100–E109,指挥官记录)
+
+接上节。快照数字不动(`baseline_coverage.py --check` 仍 OK)。E99 之后本轮新增验收:
+
+| 层 | 增量 |
+|---|---|
+| schema | **v8→v9**(t60/E100,comp 主行并入)、**v9→v10**(t70,本轮 r2 证据并入);条目级 ledger 守卫扩至 E84–E109 |
+| club 主行 | t63(E106):399 unmapped 复查 → **+8 L3**(Ccba/Cadm/Cesd/Ceed/Cead/CteA/Chaf/Cmtp,全为 server `CLUB+0x150` tag-0 getter 投影)、41 held、350 unmapped;**club 主行 L3 13→21**;负证据保留(4/4 appeal 早于 start,首 row 1410 @851416;Casp 越界 85,746.46 @15571299) |
+| comp 主行 | t64(E107):196 unmapped 复查 → **0 新 L3**(诚实负结果)+ 调用记账修正(55 = 52 外层 + 3 tag-4 备用);+0xa8/+0xe0 静态谓词与 7,047 全零数据反例;8 类排除 196 项 |
+| nation 主行 | t65(E108):327 unmapped 复查 → **0 新 L3 / 9 转 held**、318 unmapped;封口 24,732 / 422,345,identity **12B**(修正旧 13B 借用),footer ec7ae404 |
+| comp 集合 | t66(E104):**7 个非空集合物理文法 L3**(vec18/+0xe8/+0xc0/+0xc8/+0xd0/+0xd8/+0x100)+ 3 held;**4 条引用 lane L3**:vec18:item+1→t24(team)、+0xd0:item+0 / +0xd8:item+0/+4→t23;未绑定独立 comp 子表成员(诚实负结果) |
+| 悬案 | t62(E105):**EDsc 分发闭合**——非字面 4CC,key 0x45447363 归一化 +0xbabb8ccf = 0x32,表基址 0x2a7f0 第 0x32 格 → 0x29389(68 格唯一),按对象类型进 COMP/NATION Schedule 生成器并返回 UI;它不是持久化字段,held 保持正确。**EDfx 上游仍未闭合**(仅 cmp @0x29c37,链路至 fles 容器/日历桶/NATION+0x108 backlink,7 条可重开排除) |
+| 数据侧交叉 | t67(E102,comp)、t68(E103,club):DP 单路 + 跨档 UID 同值 + 敏感性全表复现;club selector `{0:84,256, 12:3}` 与 t57 一致;三张主表行框均已有 reader 独立的数据侧证明(与 E91 nation 并列) |
+| 尾账 | t69(E109):18 项(club skipped 10 全部承接、nation held 4、comp static-zero 3、edge-pending 1),**零悬案** |
+| 仍开 | EDfx 上游持久化来源;club 350 / comp 196 / nation 318 未映射主行字段;comp 集合业务语义(t66 仅物理层);club 22 cnst 投影缺主行游标;merge-to-main(仍按 HANDOFF 搁置) |
+
+更新命令不变:`py -V:3.12 -I scripts/baseline_coverage.py --check`(快照数字仍应 OK)。
