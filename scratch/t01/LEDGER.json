@@ -2535,6 +2535,35 @@
     "scripts/t72_slot_fingerprint.py"
    ],
    "consequence": "t75 wire-first reverse lookup input ready; t76 lanes unaffected; nation inner-item grammars remain open (t46/t55 boundary preserved)"
+  },
+  {
+   "id": "E113",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t73 generic table_slot_mapper extracted from t57/t59 method + 4 tables closed dual-archive: city(2)/continent(5)/region(19)/currency(41)",
+    "frames": "8/8 closed: city 14+56293x43+8 (payload identical both archives, sha 66f8cc27..); continent client 34B / server 48B rows (server = client bytes + 14B all-zero slot block, 7/7 rows); region server +1B per row (constant 04 at the extra site); currency variable trailer walk 173 rows, rdui@-13/duni@-9; all identity sites self-proven per table",
+    "alias_negative": "(13,9)/(14,8)/(15,7) same-alias-group — data side CANNOT determine header origin for fixed-stride tables; resolved only via footer flag byte (F=8 flag_be1) + frozen anchor sanity (Clat@1 legal f32 latitude only at H=14); footer_last_eq_max_uid rejected as non-generic (fails on 7-row tables); header_origin_data_unique=false on all 6 fixed archives — kept as conclusion, not defect",
+    "slots": "17 L2 slots (city rdui@30/duni@34; continent s rdui@35/duni@39; region s rdui@33/duni@37; currency Cnam row-start/Cexr row-start+34/rdui/duni trailer); 14 frozen L3 anchors re-verified with ZERO conflicts (city Clat@1/Clon@5/Catt@9/Cnti@10/Cwea@14/Clgi@21/Clri@25 + cont/regi/curr tails); unmapped not forced: NDBC/FDBC/Calt/Cinh/Crgs/DBvw with reasons",
+    "fk_gap": "FK judgement has no capability against variable-length target tables (t10/t8/t27/t47) — reference_uids self-proof limited to fixed tables; 4 FK lanes (Cnti/Clgi/Clri/Cwea) fell to unmapped by tool limitation, offsets still stand via frozen L3 anchors; recorded honestly, not back-filled",
+    "tool_boundaries": "mapper covers tables 2/5/19/41 only; variable tables need walk_var grammars or escalate_to_sol; 34s/table on city-scale; enum judgement requires non-empty scoped enum names",
+    "verification": "verify.py independent 44/44; t01 anchors 7/7; selftest ok (synthetic table exercises frame/alias/var-walker/schema-load); 8/8 build status=closed",
+    "commander_spot": "independent decode city client row 1061 (Liverpool): ordinal@30=1061, duni@34=100047, Clat@1=53.408371, Clon@5=-2.991573, Cnti@10=139 England; continent row0 rdui@21=0/duni@25=1"
+   },
+   "evidence": [
+    "scratch/t73/out/frames.json",
+    "scratch/t73/out/slots_client_2.json",
+    "scratch/t73/out/slots_client_5.json",
+    "scratch/t73/out/slots_client_19.json",
+    "scratch/t73/out/slots_client_41.json",
+    "scratch/t73/out/REPORT.md",
+    "scratch/t73/out/verify.py",
+    "scripts/t73_mapper_core.py",
+    "scripts/t73_table_slot_mapper.py"
+   ],
+   "consequence": "generic mapper ready for wave-2 scan lanes (t76a/b/c) with documented boundaries; 4 simple tables' field slots closed at L2 with frozen-anchor L3 cross-check; alias-group negative result is repo-wide method knowledge"
   }
  ]
 }

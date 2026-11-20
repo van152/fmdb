@@ -12,13 +12,12 @@
 
 ## 任务
 
-1. **优先级队列**(按 t72 指纹的信息量排序):
-   - 外键命中高且 wrong-UID 控制例干净(真引用 lane,如 t66 的 `+0xd0/+0xd8→t23` 模式)
-   - 小枚举子集(值域落在某 scoped enum 冻结域内,master.json `enums`)
-   - t72 标 `escalate_to_sol` 的槽(t72 自己承认搞不定的)
-   - held 邻接槽(t63/t64/t65 held 但指纹显示有活值的)
-   - 全零/全一且无 xref 的放最后(可能就没 wire)
-2. **反查链**:每个目标槽位给:数据侧槽位坐标(archive+行内偏移+宽度候选)→ 对应 reader 位移(t57/t59/t55 slots 的 object_displacement/transfer)→ 在 CLUB/NATION/COMP reader extent 及 helper 区内找读该位移的指令(精确比较/bit-test gate、helper rel32、vtable 调用)→ case-sensitive 4CC 匹配 master.json `field_codes`(3,009 个,含 locations)→ 全档域验证。
+1. **优先级队列**(指挥官 2026-11-21 指令:先 nation 段内文法,后 club/comp 特色槽):
+   - **第一优先:t72 的 10 项 `escalations`(nation 段内变长文法,slot_2/slot_3/slot_4/... 的 A/B/C/D 段、Nftb 等内项文法)**——t72 数据侧明确上交的,配合 t46 profiles / t55 field_slots 的段坐标,把每段的 item 文法钉到字节级并给段内标量/引用槽命名;这是 nation 主行 318 unmapped 的最大空白。
+   - 第二优先:club/comp 的 unnamed 槽里**数据特征最强**的(小枚举子集命中 scoped enum、外键命中高且 wrong-UID 控制例干净、非全零全一),按 t72 指纹排序逐个反查。
+   - 第三优先:held 邻接槽(t63/t64/t65 held 但指纹显示有活值的;t71 已闭的 24 项不在其列,勿重做)。
+   - 全零/全一且无 xref 的放最后(可能就没 wire)。
+2. **反查链**:每个目标槽位给:数据侧槽位坐标(archive+行内偏移+宽度候选)→ 对应 reader 位移(t57/t59/t55 slots 的 object_displacement/transfer)→ 在 CLUB/NATION/COMP reader extent 及 helper 区内找读该位移的指令(精确比较/bit-test gate、helper rel32、vtable 调用)→ case-sensitive 4CC 匹配 master.json `field_codes`(3,009 个,含 locations)→ 全档域验证。nation 段内文法另需:段循环的静态读取点(t46 server table_10 reader 链)→ 段内 item 边界文法 → 全档 item 重放闭包。
 3. **nation 特记**:t65 第二轮 forward 普查 0 新 L3(收益递减已量化);本任务是**反向**角度,若指纹显示某槽是干净引用 lane 而 forward 4CC 搜漏了,允许转正,但每条必须有完整四件套(gate/helper/cursor/域)。nation A_B_C_D 段内文法若 t72 重放成功,可顺带闭合段内标量槽;失败项沿用 t46/t55 边界。
 4. **过闸 L3 / 不过 held+首反例**;与既有 negative 冲突时不翻案,除非给出推翻旧条目的明确证据并引用原条目 id。
 5. **独立 verify.py**(不 import builder/ReaderCFG/fm24_dump)+ builder `scripts/t75_slot_xref_reverse.py`;`--help`/`--selftest`;退出码 0/1/2;t01 anchors 7/7。
