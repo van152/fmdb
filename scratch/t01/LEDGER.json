@@ -2485,6 +2485,33 @@
     "scratch/t70/out/REPORT.md"
    ],
    "consequence": "public schema v10 carries all day-shift evidence (r2 censuses, comp collections, EDfx/EDsc adjudication, tail ledger); only EDfx upstream and remaining unmapped fields stay open"
+  },
+  {
+   "id": "E111",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "scope": "t71 CLUB+0x100 cross-object read chain closed; 24 held fields promoted (22 cnst + Cebd + Cyfn)",
+    "member_binding": "table_extra_3.dat proven via name formatter (extra=1, old_save=0): 0xf5164c/58 -> 0xf54f00 -> 0x3bb8b70; 0x3cefca4/cb2 immediate 'table_extra_' + 0x3cefd4e decimal suffix + '.dat'; loaded by 4B-ordinal join loop into existing CLUB, object allocated 0x130B at CLUB+0x100 (0xe5d250..29d); club_links/8 numbered subtables/name_table_* excluded with evidence",
+    "row_frame": "extra_3 identity = row-prefix u32 ordinal only (NOT 12B triple); header 12 + rows + footer 0; client 12+13,053,896=13,053,908, server 12+35,009,236=35,009,248; 84,259 rows both; UID via exact table_3 ordinal join 84,259/84,259 dual-archive",
+    "wire": "A block tag 2 + 7 bytes -> extra+0xe0 (Ccsp Ccsk Ccsf Ccsr Ccsb Ccsh Ccsy); B block tag 3 + 15 bytes -> extra+0xe7 (B-lane order per t63 object_path); A=r+132+19E, B=r+140+19E, E=u8[r+83] election presence; Cebd=r+88 only if E=1 (11,963 present / 72,296 absent); Cyfn client r+4, server formula a28/f48/a68 (12-byte chain)",
+    "domain": "84,259 rows x 22 i8 columns = 1,853,698 bytes, 0 violations vs frozen cnst={0,1,2,3,4,6}; enum 3 legal-unobserved; Ccpc constant 6 retained by unique 4CC+sink; cnst/Cebd server-only wire (client 0 intersection vs default-6 object baseline), Cyfn dual-archive (30,661 zero + 53,598 in 1857..2024); adjacent unnamed +0xcc = 84,259 x ffffffff both archives, kept unnamed",
+    "regression": "Liverpool 460/676 -> city 1061/100047; Bernabeu 81,044; 14 client extra_3 year witnesses original coordinates (Arsenal 1886, Liverpool 1892, Man City wire 1894 preserved); Old Trafford 74,031 != 74,140 preserved",
+    "verification": "verify.py independent (no builder/ReaderCFG/fm24_dump import): reverse DP + bounded replay + PE byte recheck + full-domain: PASS 2x84,259 rows, 14 year witnesses, L3=24; --help/--selftest rc=0; t01 anchors 7/7",
+    "commander_spot": "independent re-decode via fm24_dump.load_payload: server payload sha256 af382d1343981ef0... matches rows_extra3.json; client row 387 prefix ordinal @170473; Cyfn u16@r+4=1886 (Arsenal); server Cyfn formula recomputes 1886; A/B physical layout tag 2 + 7B + tag 3 + 15B with all 22 bytes within {0,1,2,4,6} (Arsenal row: 6x21 + 1)"
+   },
+   "evidence": [
+    "scratch/t71/out/chain.json",
+    "scratch/t71/out/field_map_r3.json",
+    "scratch/t71/out/rows_extra3.json",
+    "scratch/t71/out/REPORT.md",
+    "scratch/t71/out/DONE.md",
+    "scratch/t71/out/verify.py",
+    "scripts/t71_club100_cnst.py"
+   ],
+   "consequence": "club main-row held 22 cnst + Cebd + Cyfn closed via cross-object chain; club L3 21->43 (main-row 22 new slots at extra object); schema v11 fold input; negative evidence (date_relationship_control, Casp, Csnm bounds) untouched"
   }
  ]
 }
