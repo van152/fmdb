@@ -2274,6 +2274,79 @@
     "scripts/t66_comp_subtable_discovery.py"
    ],
    "consequence": "comp derived collections now carry physical grammars at L3 with two new static resolver bindings (t24 team, t23); no independent comp subtable member bound (honest negative); schema fold of comp collections left for next fold task"
+  },
+  {
+   "id": "E105",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "scope": "t62 EDfx upstream + EDsc dispatch (v3 baseline oldest open item)",
+    "status": "partial; EDsc dispatch closed, EDfx upstream open; L4=0",
+    "edsc_closed": [
+     "EDsc is NOT a literal 4CC compare — it normalizes: key 0x45447363 + 0xbabb8ccf = 0x32 (cell index), bounds-checked against 0x43",
+     "rel32 table base 0x2a7f0 (VA 0x14002b1f0); cell 0x32 @0x2a8b8 bytes 99ebffff = -0x1467 -> target 0x29389 — base-relative, only one of 68 cells points there",
+     "neighbor controls: EDsb/0x31 -> 0x2a684 (default), EDsd/0x33 -> 0x293e9 — not a prefix/range heuristic",
+     "dispatch forks by selected object type: COMP(25) -> 0x6c120 schedule generator, NATION(10) -> 0x6bb00 (delegates to 0x6c120); result returns to UI via 0x83d5a0",
+     "schema occurrences: nation.xml#nati idx344 and comp test.xml#cpts idx22 both EDsc; no new table_10 main-row wire slot"
+    ],
+    "edfx_open": [
+     "EDfx literal occurrence is only cmp esi,0x45446678 @0x29c37 (pure compare, not opener/ctor/sink)",
+     "chain traced to NATION gate -> 0x907f0 -> context+0x20 fles container -> comp helper 0xa2d350 -> calendar bucket 0xb02980 (this+0x38 from context+0x1f8) -> NATION+0x108 backlink -> projection out",
+     "no reader/writer/member bound; 7 falsifiable exclusions with reopen conditions in exclusions.json; no backing member assigned"
+    ],
+    "evidence_hygiene": "t55 EDsc source record is grade=held slot=null; task shorthand no_main_wire_slot is a scope label, not the original grade — corrected in place, old negative untouched",
+    "data_side": "FMF directories 31/77 entries, none has EDfx/EDsc in path (case-insensitive); t10/t25 positive controls re-verified",
+    "spot": "commander independently recomputed all three table cells (0x32->0x29389 PASS, 0x31->0x2a684 PASS, 0x33->0x293e9 PASS), uniqueness of 0x32 target, EDsc normalization to 0x32, EDfx imm bytes 78664445 at 0x29c37; worker verify PASS (277 witnesses); anchors 7/7"
+   },
+   "evidence": [
+    "scratch/t62/out/xref.json",
+    "scratch/t62/out/chain.json",
+    "scratch/t62/out/exclusions.json",
+    "scratch/t62/out/REPORT.md",
+    "scratch/t62/out/verify.py",
+    "scripts/t62_edfx_edsc.py"
+   ],
+   "consequence": "EDsc dispatch is now closed evidence (UI schedule generator for COMP/NATION) — it never was a stored field, so held stays correct; EDfx upstream remains the single oldest open question with an explicit exclusion list"
+  },
+  {
+   "id": "E106",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "scope": "t63 club table_3 unmapped second-round census (399 E97 unmapped occurrences re-reviewed)",
+    "result": "8 new L3 / 41 held / 350 remain unmapped; L4=0; E97 13 L3 + 11 held + 10 skipped preserved unchanged",
+    "new_L3": [
+     "Ccba (+0x14 lane 0-3, i32, -85,917,952..450,000,000 within XML +-1e9)",
+     "Cadm (+0x3b bit1 via shr1;and1, 0:84,253 1:3, raw {0:84246,2:3,16:7} — byte nonzero is NOT the bit)",
+     "Cesd (+0x2c lane 8-11, 23 distinct dates 1900-2024, 84,215 at (1900,1))",
+     "Ceed (+0x30 lane 12-15, 25 distinct dates 1900-2025)",
+     "Cead (+0x34 lane 16-19, 4 distinct 1900-2024, 84,252 at (1900,1))",
+     "CteA (+0x38 movsx i8, {0:84253,15:2,19:1}; XML declares integer only, no invented age domain)",
+     "Chaf (+0x39 gated by +0x3c!=0, 0:444 1:22, 83,790 suppressed not counted as false)",
+     "Cmtp (+0x18 f32 0-100 within XML 0-300; reader 0x423ffa0 >150 clamp never triggered)"
+    ],
+    "all_L3_scope": "server mode only, CLUB+0x150 tag-0 local getter projections over the 45B obj150 cursor (+0x14,4)(+0x3c,1)(+0x39,3)(+0x2c,13)(+0x10,4)(+0x18,20); client has no such payload — 8 projections are NOT 8 new outer sites",
+    "held_evidence": [
+     "22 cnst contract projections located to extra-object getters (*(CLUB+0x100)+0xe0..0xf5, 7+15 movsx bytes) but no main-row cursor connection — held",
+     "Chsd/Cpfa no scoped enum_ref; Casp same-object f32 binding holds but one violation 85,746.46 @15571299 byte 3b79a747 (first counterexample preserved)",
+     "rdui = identity third dword, getter suppresses when equal to UID (all 168,518 rows), persisted lane not counted as usable field",
+     "refs: Clri via City+0x38, Cldi/Cndi/Codi forward first Team, Csmn/Csna context list; ref_e0 nation resolver +0x28 live 26,587/null 57,672, wrong-UID 9,286 — not named"
+    ],
+    "negative_preserved": "date_relationship_control: 41 non-default start/end all ordered; 4 appeal/start pairs ALL violate \"must be before start\", first server row 1410 @851416 (2023-283 start vs 2023-344 appeal)",
+    "spot": "commander re-decoded independently: server table_3 = 16,595,312 B; row 1410 @851416 dates (2023,283)/(2024,284)/(2023,344) byte-exact; Casp @15571299 = 85746.4609375 byte-exact; Cadm/Chaf/Cmtp cursor lanes match transfer_spans; worker verify PASS (168,518 rows); anchors 7/7"
+   },
+   "evidence": [
+    "scratch/t63/out/projections.json",
+    "scratch/t63/out/field_map_r2.json",
+    "scratch/t63/out/REPORT.md",
+    "scratch/t63/out/verify.py",
+    "scripts/t63_club_unmapped_r2.py"
+   ],
+   "consequence": "club main-row L3 goes 13 -> 21 (8 new, all server-side tag-0 projections); date/age/finance clusters now citable; the appeal-order violation is banked as an input-table vs UI-constraint negative, not a mapping error"
   }
  ]
 }
