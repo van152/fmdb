@@ -2736,6 +2736,34 @@
     "scripts/t76a_stadium_slots.py"
    ],
    "consequence": "stadium L2 base complete for t83/t79 cross-checks; t76b orphan resolved (award/language/media moved to t83); Wave 10 scan lanes now E118(t76c)+E120(t76a) with t76b formally dropped"
+  },
+  {
+   "id": "E121",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "scope": "t82 (neon xhigh) table_extra_3 remaining payload naming — dual-object closure, 35 new L3, 39 held with first counterexamples, 131 negative proofs",
+    "major": [
+     "CBW*/CBD* mystery solved: all 117 club.xml[211..327] record-family fields (incl. CBWa/CBWc/CBWd/CBWf/CBWo, CBDa/CBDc/CBDd/CBDf/CBDo) live in server_db/table_45.dat STARTING_RECORD (84,477 records) — TC_RECORD_GET@0x3ebad50 never touches CLUB+0x100/+0xb0; table type 45 self-proved via mov edx,0x2d DATABASE_TABLE ctor + RTTI .?AV?$DATABASE_TABLE@VSTARTING_RECORD@db@@ — closes the largest club unresolved cluster from E116 denominator",
+     "dual-object architecture closed byte-exact both archives (84,259 rows): CLUB+0x100 (0x130B CLUB_IN_GAME_DATA) + CLUB+0xb0 (0xB0B TEAM_CONTAINER_IN_GAME_DATA); common-tail stream SHA-256 identical client vs server; no client-only fields",
+     "35 new L3: 6 server-only scalars (Ctlv/Cmle/Cyim/Cyfb/Cytv/Crcb at +0x120..+0x12d), 5 election sub-object (Cetl/Cmtm/Cect/Cemn/Cemx; invariant elec_club==row_ordinal 11,963/11,963, elec_flag iff Cown in {3,7} 84,259/84,259), 6 supporter profile (Csly..Cspe), 10 UEFA coefficient ring (Cuf1..Cuf9/Cf10, 569 rows, [0,36] in [0,50]), TCht common-tail string, 3 server-only i32 (Catd/Cmna/Cmxa), 4 list/polymorphic L3 (Cbbl/Csoc/pcpt/CPsL with UID-pair + wrong-UID controls)",
+     "39 held preserved with first counterexamples (Csth -1 rows, 4 unscopeable enums, 4 formation out-of-domain, 10 read-only derived colors, 6 kit containers without list_item_fields schema, etc.)",
+     "sentinel discipline: +0xcc 84,259x0xffffffff vs 0 legal-0; ctor defaults (10/10000) vs persisted values separated; date4 sentinel 0x076c0001 slots listed"
+    ],
+    "club_l3_count": "43 (E111) -> 78 (E121); club.xml 211..327 record family re-routed to table_45 (was 117 of the 239 unresolved club occurrences in E116)",
+    "verification": "verify.py 9/9 (independent reload + walk rebuild), selftest PASS, t01 anchors 7/7; commander third-path recompute: payload closure 13,053,908/35,009,248 exact + 14/14 Cyfn year witnesses via t71 frozen coordinates on client payload"
+   },
+   "evidence": [
+    "scratch/t82/out/xref_extra3.json",
+    "scratch/t82/out/field_map.json",
+    "scratch/t82/out/domain_stats.json",
+    "scratch/t82/out/verify.py",
+    "scratch/t82/out/REPORT.md",
+    "scratch/t82/out/DONE.md"
+   ],
+   "consequence": "club denominator shrinks decisively; CBW*/CBD* fields now have a wire home (table_45) for a follow-up scan lane; t83 (award/language/weather/derby/media L3) cleared to launch on freed neon slot"
   }
  ]
 }
