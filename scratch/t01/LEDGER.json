@@ -2589,6 +2589,27 @@
     "scripts/t75_slot_xref_reverse.py"
    ],
    "consequence": "nation segment grammar layer closed (infrastructure for future naming); all 99 unnamed slots now carry adjudication records — the un-named residue is documented as missing resolver+getter pairing, the precise target for editor-runtime (t02) if authorized"
+  },
+  {
+   "id": "E116",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L1",
+   "claim": {
+    "scope": "t78 real physical-coverage denominator for club/nation/comp 1,034 top-level XML occurrences (frozen artifacts only, no .dat read, no disassembly)",
+    "denominator": "1034 = club 433 + nation 346 + comp 255; buckets: mapped_l3 99 (club 45 incl t71 24 / nation 5 / comp 49), independent_member 11, string_name_table 0, ui_or_derived 24, held 59, unresolved_wire_slot 277, no_wire_evidence 564",
+    "physical_coverage": "110/1034 = 10.6% carried by physical members; club 239 unresolved occurrences hang on just 20 unnamed slots (selector, derived_170/178, ref_e0, name_len/short_len, raw166/16c/168, vec110/130/138, obj150_tag, base18/30/60/78/90/a8) — highest naming ROI; comp 38 on 36 slots; nation 0 unresolved but 318 no_wire_evidence (grammar closed by t75, naming needs name-pool/t02)",
+    "status": "complete — commander local build; devseek 3 attempts hit walls/empty-out (t72/t53 precedent); write_coverage/write_done were missing and completed by commander; selftest 14/14 anchors PASS (E99 49/10, t64 38, 196-38-13-5=140, mapped_l3 sum 99, t71 club-spine id/code match)",
+    "purpose": "priority basis for Wave 10/11 ordering and the targeted t02 Top-N list (user directive: get real denominator first)"
+   },
+   "evidence": [
+    "scratch/t78/out/buckets.json",
+    "scratch/t78/out/coverage.md",
+    "scratch/t78/out/DONE.md",
+    "scripts/t78_xml_denominator.py"
+   ],
+   "consequence": "coverage accounting now ledger-backed; sol/neon compute can leave the three main-row battlefields for static-rich targets (stadium/team/extra_3/name pools) with 20-slot club ROI as the top trail"
   }
  ]
 }
