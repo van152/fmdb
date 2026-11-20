@@ -654,3 +654,44 @@ t57 的独立 verifier、builder selftest、本文档前缀、v7 快照 SHA、�
 
 E99 为 acceptance/L3，canonical claim SHA-256 `e13990af22d739ba1f6a61e9adc2211febb051821845a48358e30306d452b16b`；v8 基线 E98 SHA-256 `57a2384c170c3effc159a98012b866ab174849da8849269abc118b8e7fe4f150`。ledger 守卫逐条覆盖 E84–E99，仅校验 id、kind、level 与 canonical claim SHA，不钉全文件。
 Coverage 新增 `comp_main_row_*` 项；既有 club/nation 计数及 tables、negative regressions、v3 baseline、club auxiliary、club/nation 主行节保持不变。
+
+
+## t70 — accepted evidence increment (E104–E109)
+
+This is an additive appendix to the byte-pinned v9 Markdown. Existing schema sections, including held/unmapped records, remain unchanged; round-2 source records are embedded in v10 JSON.
+
+### Club `table_3` round 2 (t63 / E106)
+
+- Re-reviewed 399 prior unmapped occurrences: 8 new L3 (`Ccba`, `Cadm`, `Cesd`, `Ceed`, `Cead`, `CteA`, `Chaf`, `Cmtp`), 41 held, 350 unmapped; L4=0. The cumulative club main-row L3 count is 21; the frozen v9 `club_main_row_fields` object remains verbatim.
+- These are server-mode `CLUB+0x150` tag-0 getter projections, not new outer sites. Held reasons and all 350 unmapped source records remain embedded unchanged.
+- Counterexample retained: Casp server row 78,210 @15,571,299, bytes `3b79a747` = 85,746.4609375, outside the frozen XML 0–10,000 domain. The `date_relationship_control` negative remains in source records.
+
+### COMP `table_25` round 2 (t64 / E107)
+
+- 196/196 reviewed; new L3=0. E99's 49 L3, 10 held and 818 inversions are unchanged. WpBn remains candidate-only.
+- Corrected accounting: 55 direct `stream+0x28` calls = 52 outer + 3 tag-4 alternates; the extra outer marker is `wbcl_present` @0xeb7c8f. The +0xa8/+0xe0 presence-gated static paths and zero-data counterexamples are retained without asserting non-existence.
+
+### Nation `table_10` round 2 (t65 / E108)
+
+- 327 reviewed: 9 moved to held, 318 remain unmapped, new L3=0. The 9 held objects are embedded as source-identical records; `rdui` remains identity-lane suppression, not a usable reference.
+- Dual archive closure remains client `13+24710+9=24732`, server `13+422323+9=422345`; identity 12 B, footer `ec7ae404`.
+
+### COMP inline collections (t66 / E104)
+
+- Seven non-empty physical grammars and four reference lanes are L3. `vec18:item+1` targets t24; `+0xd0:item+0` and `+0xd8:item+0/+4` target t23. No independent COMP member is bound.
+- Corrected present/nonempty rows for +0xc0/+0xc8/+0xd0/+0xd8 are **315/366/121/51**. `+0xc8` is fixed-call grammar, not a count. `vec30`, +0xa8 and +0xe0 remain held; +0x100 remains physical grammar only.
+
+### EDfx / EDsc (t62 / E105)
+
+- EDsc dispatch is closed: normalized index `0x32`, cell `0x2a8b8`, rel32 target `0x29389`, unique among 68 cells. It dispatches UI consumers for COMP/NATION; it is not a persisted field and the original held grade remains.
+- EDfx upstream persistence remains unbound: no reader, writer or member assigned. Seven bounded exclusions and reopen conditions are preserved.
+
+### Tail ledger (t69 / E109)
+
+- 18 items reconciled: club skipped 10, nation held 4, COMP static-zero 3 and edge-pending 1. `unresolved_club=[]`; no prior grade changes.
+
+### Provenance and boundaries
+
+- Ledger guards cover E84–E109 by entry id, kind, level and canonical claim SHA-256. t70 records source SHA-256/byte counts and embeds each accepted JSON plus its full report/DONE text (and t69 SUMMARY).
+- Coverage records round-2 counts separately for COMP/nation/collections/tail; the protected v9 tables, regressions, v3 baseline, club auxiliary sources, club main-row section and all existing nation sections are unchanged.
+- No work was performed in t47–t69, and `docs/BASELINE.md` was not modified.

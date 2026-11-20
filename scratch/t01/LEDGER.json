@@ -2450,6 +2450,41 @@
     "scratch/t69/out/verify.py"
    ],
    "consequence": "三表尾账 now closed with zero orphans — the accounting basis for schema v10 fold; nothing in this audit changes any prior grade"
+  },
+  {
+   "id": "E110",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "schema": "club_nation_subtable_schema v10",
+    "fold": "six round-2 evidence packages merged as additive sections",
+    "new_sections": [
+     "club_main_row_fields_r2 (t63: 8 new L3 / 41 held / 350 unmapped; cumulative club main L3 13->21; Casp 85,746.46 counterexample and appeal-order negative preserved)",
+     "comp_main_row_fields_r2 (t64: 196 reviewed, 0 new L3; 49/10/818 inverted-set unchanged; 55-call accounting correction)",
+     "nation_main_row_fields_r2 (t65: 327 reviewed, 0 new L3, 9 held, 318 unmapped; 12B identity closure)",
+     "comp_collections (t66: 7 physical grammars L3, 4 reference lanes L3 -> t24/t23, independent_member_bindings=0)",
+     "edfx_edsc_dispatch (t62: EDsc 0x32 -> 0x29389 closed; EDfx upstream open with 7 exclusions)",
+     "tail_ledger (t69: 18 items, unresolved_club=[])"
+    ],
+    "coverage": [
+     "club_main_row_L3 21 (r1 13 + r2 8), held 41, unmapped 350; row1 counts preserved separately",
+     "comp_main_row_L3 49 / held 10 / unmapped 196 / inversions 818 unchanged",
+     "nation_main_row L3 5 unchanged; r2 9 held + 318 unmapped",
+     "club subtable 94/59/21 unchanged; L4=0"
+    ],
+    "guards": "acceptance_ledger_entries spans E84-E86 + E87-E109 = 26 entries, each canonical claim SHA + kind + level re-verified against LEDGER; E110 excluded",
+    "protected": "v9 tables/negative_regressions/v3_baseline/club_auxiliary_sources/nation_*/club_main_row_fields/comp_main_row_fields byte-identical; markdown v9 as verbatim prefix",
+    "spot": "commander spot: 123 assertions PASS / 0 FAIL across SHA pins, protected sections, all round-2 counts, lane targets, tail ledger, 26 guards, markdown prefix; worker verify rc=0; anchors 7/7"
+   },
+   "evidence": [
+    "reports/club_nation_subtable_schema.json#7c351608",
+    "reports/club_nation_subtable_schema.md#b9ba0bb3",
+    "scratch/t70/out/club_nation_subtable_schema.v9.json#703df30e",
+    "scratch/t70/out/REPORT.md"
+   ],
+   "consequence": "public schema v10 carries all day-shift evidence (r2 censuses, comp collections, EDfx/EDsc adjudication, tail ledger); only EDfx upstream and remaining unmapped fields stay open"
   }
  ]
 }
