@@ -2709,6 +2709,33 @@
     "evidence/fm24/reports/editor_schema/master.json"
    ],
    "consequence": "E116 denominator ledger unchanged; t61 67 no-source held entries remain held (dictionary adds nothing); t75 six unfrozen 4CC stay unfrozen pending L3 static lanes; task tree re-routed"
+  },
+  {
+   "id": "E120",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t76a-fix1 (fresh session) stadium(21) dual-archive slot scan — 12 client slots / 47 server slots, 0 uncovered bytes both archives",
+    "structural": [
+     "server 143B differential = server-only prefix segment; server[143:181]==client[0:38] byte-identical on 48,413/48,413 rows (commander recompute: True)",
+     "rdui@25 label ambiguity resolved: @25 is row_ordinal (== arange 48,413), @33 is rdui_raw (== duni, exe-suppressed arm); independently consistent with t79 static",
+     "new intermediate grade L2_structural for capacity family Scas<=Sscy<=Scpy<=Secy (98.70% on 5,065 non-zero rows; 66 counterexamples preserved)"
+    ],
+    "slots": "client L2/L3 28B of 38 (73.7%); server 11 L2/L2_structural + 2 L3 frozen anchors; honest downgrades: Sowi candidate (club/team domain ambiguity, t3 UID control unavailable), 5 date slots candidate (business order only 77.1%), 8 pitch slots data-undecidable, flags u16 bit-order data-undecidable",
+    "verification": "verify.py 49/49; t01 anchors 7/7; builder selftest 21/21; commander independent recompute of byte-identity + Scti domain + ordinal==arange all True"
+   },
+   "evidence": [
+    "scratch/t76a/out/slots_client_21.json",
+    "scratch/t76a/out/slots_server_21.json",
+    "scratch/t76a/out/REPORT.md",
+    "scratch/t76a/out/verify.py",
+    "scratch/t76a/out/verify.json",
+    "scratch/t76a/out/DONE.md",
+    "scripts/t76a_stadium_slots.py"
+   ],
+   "consequence": "stadium L2 base complete for t83/t79 cross-checks; t76b orphan resolved (award/language/media moved to t83); Wave 10 scan lanes now E118(t76c)+E120(t76a) with t76b formally dropped"
   }
  ]
 }
