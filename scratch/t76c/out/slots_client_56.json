@@ -1,0 +1,159 @@
+{
+ "archive": "client",
+ "table": 56,
+ "entity": "agreement.xml",
+ "tool": "t76c_slots",
+ "schema": "t76c.slots.v1",
+ "t74_frame": {
+  "header": 14,
+  "footer": 8,
+  "count": 6,
+  "model": "fixed",
+  "row_rule": "[ordinal u32][UID u32][UID u32][marker 0]"
+ },
+ "payload_len": 100,
+ "payload_sha256": "10b2fe7fe11e60f2e5794baa831646d113b98de6555aa8909d53ae17adf81572",
+ "walk": {
+  "rows": 6,
+  "end": 92,
+  "footer": 8,
+  "footer_ok": true,
+  "count_ok": true,
+  "closure": "14 + sum(row_len) + 8 = 100"
+ },
+ "identity": {
+  "rows_ok": 6,
+  "rows": 6,
+  "width": 13,
+  "anchor": "row_end-13",
+  "layout": "ord@-13 uid@-9 uid@-5 marker@-1"
+ },
+ "status": "closed",
+ "slots": [
+  {
+   "field": "rdui",
+   "offset": 0,
+   "width": 4,
+   "kind": "ident",
+   "grade": "L3",
+   "why": "row-leading ordinal equals row index, 6/6; equals the frozen FIELDS anchor `client agreement rdui=0`",
+   "evidence": [
+    {
+     "anchor": "scripts/fm24_dump.py:FIELDS (client,56) rdui=0",
+     "kind": "L3",
+     "rows_ok": 6
+    }
+   ]
+  },
+  {
+   "field": "duni",
+   "offset": 4,
+   "width": 4,
+   "kind": "ident",
+   "grade": "L3",
+   "why": "UID pair u32==u32!=0 with zero marker, 6/6; equals the frozen FIELDS anchor `client agreement duni=4`",
+   "evidence": [
+    {
+     "anchor": "scripts/fm24_dump.py:FIELDS (client,56) duni=4",
+     "kind": "L3",
+     "rows_ok": 6
+    }
+   ]
+  },
+  {
+   "field": null,
+   "offset": null,
+   "width": 0,
+   "kind": "neg",
+   "grade": "L2",
+   "why": "NEGATIVE RESULT (kept verbatim): an agreement row is EXACTLY the 13B identity trailer — 14 + 6*13 + 8 == 100 consumes the whole payload. There is no byte left for dbnm/AGna/AGsn/Anti/NDBC/FDBC, so those fields cannot be located in this table's payload at all. They must live in a separate string/collection member, which is out of scope for a packed-table slot map.",
+   "evidence": [
+    {
+     "payload_len": 100,
+     "closure": "14 + 6*13 + 8 = 100",
+     "business_bytes_per_row": 0,
+     "identity": {
+      "uids": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "ordinals": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "field": "dbnm",
+   "offset": null,
+   "width": null,
+   "kind": "-",
+   "grade": "unmapped",
+   "why": "no business byte exists in this payload (see negative result)",
+   "evidence": []
+  },
+  {
+   "field": "AGna",
+   "offset": null,
+   "width": null,
+   "kind": "-",
+   "grade": "unmapped",
+   "why": "no business byte exists in this payload (see negative result)",
+   "evidence": []
+  },
+  {
+   "field": "AGsn",
+   "offset": null,
+   "width": null,
+   "kind": "-",
+   "grade": "unmapped",
+   "why": "no business byte exists in this payload (see negative result)",
+   "evidence": []
+  },
+  {
+   "field": "Anti",
+   "offset": null,
+   "width": null,
+   "kind": "-",
+   "grade": "unmapped",
+   "why": "no business byte exists in this payload (see negative result)",
+   "evidence": []
+  },
+  {
+   "field": "NDBC",
+   "offset": null,
+   "width": null,
+   "kind": "-",
+   "grade": "unmapped",
+   "why": "no business byte exists in this payload (see negative result)",
+   "evidence": []
+  },
+  {
+   "field": "FDBC",
+   "offset": null,
+   "width": null,
+   "kind": "-",
+   "grade": "unmapped",
+   "why": "no business byte exists in this payload (see negative result)",
+   "evidence": []
+  }
+ ],
+ "unresolved": [
+  "dbnm",
+  "AGna",
+  "AGsn",
+  "Anti",
+  "NDBC",
+  "FDBC"
+ ]
+}

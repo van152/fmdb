@@ -2658,6 +2658,34 @@
     "scripts/t79_stad_team_harvest.py"
    ],
    "consequence": "stadium 41 + team 11 + extra_24 3 + club 6 = 61 new L3 occurrences; club base18-forwarded held debt cleared; club main-row named-slot count 43->49 (main) + projections; stadium/team slot semantics now editor-grade"
+  },
+  {
+   "id": "E118",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t76c batch scan derby(18)/weather(27)/local_region(47)/agreement(56) — 8/8 (archive,table) slots L2 with two new structural results",
+    "structural": "(1) derby dual-archive 6-byte row difference = exactly 3 non-client schema fields D1tw/D1td/D1tl (three u16, born/die together); (2) weather 95B mid-block = 3 + 4x23 proven by discriminant — the only {0,100} column lands at 3+23b+22; competing 3+4x22+4 closure collapses 1519->583 of 4008 — rejected",
+    "slots": "derby 11 slots; weather 4 groups per block; lcrg 2 groups; agreement identity-only (6 rows, 13B fixed); t74 frames reproduced 100% both archives; 4 grammar families byte-closed",
+    "verification": "verify.py independent 197/197; t01 anchors 7/7; builder scripts/t76c_slots.py reuses t73_mapper_core pure functions (t73 untouched)",
+    "note": "t76c original session needed 3 attempts (2 wall-kills) but delivered complete on attempt 3 via its own incremental writes"
+   },
+   "evidence": [
+    "scratch/t76c/out/slots_client_18.json",
+    "scratch/t76c/out/slots_client_27.json",
+    "scratch/t76c/out/slots_client_47.json",
+    "scratch/t76c/out/slots_client_56.json",
+    "scratch/t76c/out/slots_server_18.json",
+    "scratch/t76c/out/slots_server_27.json",
+    "scratch/t76c/out/slots_server_47.json",
+    "scratch/t76c/out/slots_server_56.json",
+    "scratch/t76c/out/REPORT.md",
+    "scratch/t76c/out/verify.py",
+    "scripts/t76c_slots.py"
+   ],
+   "consequence": "derby/weather/lcrg/agreement slot semantics at L2 with frozen-anchor cross-checks; Wave 11 t83 (L3 upgrade via neon) has its fingerprint base"
   }
  ]
 }

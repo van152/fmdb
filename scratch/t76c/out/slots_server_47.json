@@ -1,0 +1,292 @@
+{
+ "archive": "server",
+ "table": 47,
+ "entity": "local region.xml",
+ "tool": "t76c_slots",
+ "schema": "t76c.slots.v1",
+ "t74_frame": {
+  "header": 14,
+  "footer": 8,
+  "count": 2488,
+  "model": "variable",
+  "row_rule": "同 client(两档 payload 逐字节相同)"
+ },
+ "payload_len": 109505,
+ "payload_sha256": "a7f7d479d3a91a3ad08a1ad648555e11a59445b9e6dd9fda126889f6f4f10793",
+ "walk": {
+  "rows": 2488,
+  "end": 109497,
+  "footer": 8,
+  "footer_ok": true,
+  "count_ok": true,
+  "closure": "14 + sum(row_len) + 8 = 109505"
+ },
+ "identity": {
+  "rows_ok": 2488,
+  "rows": 2488,
+  "width": 13,
+  "anchor": "row_end-13",
+  "layout": "ord@-13 uid@-9 uid@-5 marker@-1"
+ },
+ "status": "closed",
+ "slots": [
+  {
+   "field": "rdui",
+   "offset": -13,
+   "width": 4,
+   "kind": "ident",
+   "grade": "L3",
+   "why": "trailer ordinal equals row index, 2,488/2,488; equals the frozen FIELDS anchor `client lcrg rdui=-13`",
+   "evidence": [
+    {
+     "anchor": "scripts/fm24_dump.py:FIELDS (client,47) rdui=-13",
+     "kind": "L3",
+     "rows_ok": 2488
+    }
+   ]
+  },
+  {
+   "field": "duni",
+   "offset": -9,
+   "width": 4,
+   "kind": "ident",
+   "grade": "L3",
+   "why": "trailer UID pair u32==u32!=0 with zero marker, 2,488/2,488; equals the frozen FIELDS anchor `client lcrg duni=-9`",
+   "evidence": [
+    {
+     "anchor": "scripts/fm24_dump.py:FIELDS (client,47) duni=-9",
+     "kind": "L3",
+     "rows_ok": 2488
+    }
+   ]
+  },
+  {
+   "field": null,
+   "offset": 0,
+   "width": 1,
+   "kind": "blk",
+   "grade": "L2",
+   "why": "row grammar closed byte-exactly: row_len == 41 + 5k, i.e. 28B fixed prefix + k x 5B items + 13B identity; biz_len == 28 + 5k on 2,488/2,488 and prefix byte 22 equals k on 2,488/2,488",
+   "evidence": [
+    {
+     "len_hist": {
+      "41": 1380,
+      "46": 878,
+      "51": 129,
+      "56": 79,
+      "61": 6,
+      "71": 14,
+      "76": 2
+     },
+     "b22_eq_k": 2488
+    }
+   ]
+  },
+  {
+   "field": "Lpop",
+   "offset": 4,
+   "width": 4,
+   "kind": "u32",
+   "grade": "L2",
+   "why": "u32 0..81,330,531 (644 zeros) and <= 1e9 on 2,488/2,488; Lpop is 0..1,000,000,000 in the schema and is the only unbounded integer",
+   "evidence": [
+    {
+     "max": 81330531,
+     "zeros": 644,
+     "le_1e9": 2488
+    }
+   ]
+  },
+  {
+   "field": null,
+   "offset": 0,
+   "width": 1,
+   "kind": "u8",
+   "grade": "candidate",
+   "why": "u8 0..242 (164 distinct, 48 zeros). Domain fits nation(251) 100%. But every table with N >= 243 fits equally, and Lnat/Lwea are u32-width references in the schema, so a 1-byte slot cannot be either. Left unnamed.",
+   "evidence": [
+    {
+     "fits": [
+      {
+       "target": "nation",
+       "N": 251,
+       "rate": 1.0,
+       "max_over_N": 0.9641,
+       "covers_tightly": true
+      },
+      {
+       "target": "weather",
+       "N": 334,
+       "rate": 1.0,
+       "max_over_N": 0.7246,
+       "covers_tightly": true
+      }
+     ],
+     "domain": {
+      "n": 2488,
+      "null": 0,
+      "nonnull": 2488,
+      "distinct": 164,
+      "min": 0,
+      "max": 242,
+      "zeros": 48,
+      "all_ones": 255
+     }
+    }
+   ]
+  },
+  {
+   "field": null,
+   "offset": 24,
+   "width": 4,
+   "kind": "u32",
+   "grade": "candidate",
+   "why": "nullable u32 (0xffffffff on 1181/2,488): non-null values 0..242, 79 distinct. This IS a u32-width reference, and its domain admits both Lnat(nation,251) and Lwea(weather,334); the data cannot separate them, and Lcit is a list so it is not a scalar slot.",
+   "evidence": [
+    {
+     "fits": [
+      {
+       "target": "nation",
+       "N": 251,
+       "rate": 1.0,
+       "max_over_N": 0.9641,
+       "covers_tightly": true
+      },
+      {
+       "target": "weather",
+       "N": 334,
+       "rate": 1.0,
+       "max_over_N": 0.7246,
+       "covers_tightly": true
+      },
+      {
+       "target": "city",
+       "N": 56293,
+       "rate": 1.0,
+       "max_over_N": 0.0043,
+       "covers_tightly": false
+      }
+     ],
+     "domain": {
+      "n": 2488,
+      "null": 1181,
+      "nonnull": 1307,
+      "distinct": 79,
+      "min": 0,
+      "max": 242,
+      "zeros": 2,
+      "all_ones": 4294967295
+     }
+    }
+   ]
+  },
+  {
+   "field": null,
+   "offset": 8,
+   "width": 12,
+   "kind": "u8x12",
+   "grade": "candidate",
+   "why": "twelve consecutive u8, all 0..100 on 2,488/2,488, but only 612/2,488 rows are non-zero. No schema field in local region.xml is a 12-slot percentage block, so this is left unnamed rather than fitted to 'it looks like percentages'.",
+   "evidence": [
+    {
+     "max_each": [
+      100,
+      100,
+      100,
+      100,
+      93,
+      99,
+      100,
+      96,
+      80,
+      54,
+      100,
+      127
+     ],
+     "nonzero_rows": 612
+    }
+   ]
+  },
+  {
+   "field": null,
+   "offset": 20,
+   "width": 1,
+   "kind": "u8",
+   "grade": "unassigned",
+   "why": "constant 0x00 on all rows",
+   "evidence": [
+    {
+     "constant": 0
+    }
+   ]
+  },
+  {
+   "field": null,
+   "offset": 21,
+   "width": 1,
+   "kind": "u8",
+   "grade": "unassigned",
+   "why": "0/1 flag (1 on only 13 rows)",
+   "evidence": [
+    {
+     "ones": 13
+    }
+   ]
+  },
+  {
+   "field": "Lrll[i].Llgp",
+   "offset": 23,
+   "width": 5,
+   "kind": "u8+u32",
+   "grade": "L2",
+   "why": "repeated 5B item (u8 percentage, u32 reference), k+1 per row at 23 + 5i. 1495/1495 body percentages are <= 100, and the per-row body percentage sum is exactly 100 on 869/1108 rows with k>0 -- the group-closure invariant of a percentage list. The leading item (i=0) always has pct == 0 (2488/2488). Structurally this is exactly Lrll's list_item_fields (Llgp integer 0..100 + Llgl database_record_unique_id).",
+   "evidence": [
+    {
+     "items": 1495,
+     "pct_le100": 1495,
+     "pct_distinct": 20,
+     "row_pct_sum_100": 869,
+     "rows_with_k": 1108,
+     "leading_pct_zero": 2488
+    }
+   ]
+  },
+  {
+   "field": "Lrll[i].Llgl",
+   "offset": 24,
+   "width": 4,
+   "kind": "u32",
+   "grade": "candidate",
+   "why": "the u32 half of the same 5B item. Domain: non-null values 0..333 (null 783/1495, 105 distinct). It fits language(126) only 537/712, so it is NOT the language UID set; but it fits weather(334) 100% with max exactly 333 == weather-1, a tight ordinal fit for the WRONG table. The reference target is therefore undecided.",
+   "evidence": [
+    {
+     "ref_nonnull": 712,
+     "ref_null": 783,
+     "ref_max": 333,
+     "ref_distinct": 105,
+     "fits": [
+      {
+       "target": "weather",
+       "N": 334,
+       "rate": 1.0,
+       "max_over_N": 0.997,
+       "covers_tightly": true
+      },
+      {
+       "target": "city",
+       "N": 56293,
+       "rate": 1.0,
+       "max_over_N": 0.0059,
+       "covers_tightly": false
+      }
+     ],
+     "language_uid_hits": 537
+    }
+   ]
+  }
+ ],
+ "unresolved": [
+  "@20",
+  "@21"
+ ]
+}
