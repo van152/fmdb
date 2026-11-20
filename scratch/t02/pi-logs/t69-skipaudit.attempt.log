@@ -1,0 +1,12 @@
+Warning: No project session found with id 't69-skipaudit-openai-codex'; creating a new session with that id.
+t69 审计完成，共 **18 项**。Club 的 10 个跳过项均找到承接，**0 悬案**；Nation 的 4 项按 t61 保持 `held`。COMP 双档均未触发 `+0xa8/+0xe0` payload 或 `vec30` item：server 实读为零，client 跳过，未把缺测计作零。`+0x100` 沿用 t66 的物理文法结论，业务绑定仍待定。未新增 L3/L4。
+
+`verify.py --help`、`--selftest`、`--check` 均通过。
+
+交付清单（`scratch/t69/out/`）：
+
+- `tail_ledger.json` — 逐项证据与承接
+- `SUMMARY.md` — 三表尾账总表
+- `REPORT.md` — 审计明细及复核口径
+- `DONE.md` — 验收记录
+- `verify.py` — 只读验证入口

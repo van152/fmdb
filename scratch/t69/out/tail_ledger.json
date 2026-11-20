@@ -1,0 +1,1530 @@
+{
+  "task": "t69",
+  "schema_versions": [
+    8,
+    9
+  ],
+  "grade_target": "L2",
+  "new_L3": 0,
+  "L4": 0,
+  "count": 18,
+  "totals": {
+    "club": {
+      "skipped": 10
+    },
+    "nation": {
+      "held": 4
+    },
+    "comp": {
+      "static-zero": 3,
+      "edge-pending": 1
+    }
+  },
+  "unresolved_club": [],
+  "delivery_status": {
+    "t61": {
+      "status": "delivered",
+      "report": "scratch/t61/out/REPORT.md",
+      "done": "scratch/t61/out/DONE.md"
+    },
+    "t66": {
+      "status": "delivered",
+      "report": "scratch/t66/out/REPORT.md",
+      "done": "scratch/t66/out/DONE.md"
+    },
+    "t68": {
+      "status": "delivered",
+      "report": "scratch/t68/out/REPORT.md",
+      "done": "scratch/t68/out/DONE.md"
+    }
+  },
+  "context_refs": [
+    {
+      "path": "scratch/t50/out/REPORT.md",
+      "pointer": "",
+      "section": "§4 / §6"
+    },
+    {
+      "path": "scratch/t68/out/crosswalk.json",
+      "pointer": "/claims/3"
+    },
+    {
+      "path": "scratch/t68/out/crosswalk.json",
+      "pointer": "/scope"
+    },
+    {
+      "path": "reports/club_nation_subtable_schema.json",
+      "pointer": "/comp_main_row_fields/outer_sequence_closure"
+    }
+  ],
+  "comp_archive_members": {
+    "client": {
+      "member": "client_db/table_25.dat",
+      "range": [
+        4964983,
+        5071328
+      ],
+      "bound": 5071328,
+      "frames": [
+        [
+          4964983,
+          5071328,
+          894991
+        ]
+      ],
+      "declared_size": 894991,
+      "payload_sha256": "ae14d97c7ef951f197d885cc6f925cf13d13b09f7f2d9d04925fb17dcefb4a4d",
+      "compressed_sha256": "696798d6c635681ec5ee3ccd89126e340995d15d0b3248c435265a611fa6dd4f",
+      "count": 7047
+    },
+    "server": {
+      "member": "server_db/table_25.dat",
+      "range": [
+        8333241,
+        8471082
+      ],
+      "bound": 8471082,
+      "frames": [
+        [
+          8333241,
+          8471082,
+          1533972
+        ]
+      ],
+      "declared_size": 1533972,
+      "payload_sha256": "98bb59ad08a6de9bc73992d8e7bf400ea6697159bf5911b5e56742a6bdb1d8f5",
+      "compressed_sha256": "298569dc9a0ba266cda81261626bfc0e71a027b203114e2211a6dadcb9ea1315",
+      "count": 7047
+    }
+  },
+  "comp_preserved_wrong_mode": {
+    "client": "vec30: row 0 @129: invalid count 16777216",
+    "server": "row 0 @128: identity (255, 4294901760, 131071)"
+  },
+  "comp_static_predicates": {
+    "mode": {
+      "editor": "D:/tmp2b/fm24/input/editor.exe",
+      "sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4",
+      "predicate": "test r13b, r13b",
+      "zero_taken_to": "0xeb7a21",
+      "nonzero_fallthrough": "0xeb73a6",
+      "instructions": [
+        {
+          "file_offset": "0xeb739d",
+          "VA": "0x140eb7d9d",
+          "bytes": "4584ed",
+          "text": "test r13b, r13b"
+        },
+        {
+          "file_offset": "0xeb73a0",
+          "VA": "0x140eb7da0",
+          "bytes": "0f847b060000",
+          "text": "je 0x140eb8421"
+        }
+      ],
+      "refs": [
+        {
+          "path": "scratch/t59/out/branches.part01.json",
+          "pointer": "/30"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part01.json",
+          "pointer": "/445"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part01.json",
+          "pointer": "/446"
+        }
+      ]
+    },
+    "+0xa8": {
+      "editor": "D:/tmp2b/fm24/input/editor.exe",
+      "sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4",
+      "predicate": "cmp byte ptr [rsp + 0x5f], 0",
+      "zero_taken_to": "0xeb75d7",
+      "nonzero_fallthrough": "0xeb754a",
+      "instructions": [
+        {
+          "file_offset": "0xeb7532",
+          "VA": "0x140eb7f32",
+          "bytes": "ff5028",
+          "text": "call qword ptr [rax + 0x28]"
+        },
+        {
+          "file_offset": "0xeb753f",
+          "VA": "0x140eb7f3f",
+          "bytes": "807c245f00",
+          "text": "cmp byte ptr [rsp + 0x5f], 0"
+        },
+        {
+          "file_offset": "0xeb7544",
+          "VA": "0x140eb7f44",
+          "bytes": "0f848d000000",
+          "text": "je 0x140eb7fd7"
+        },
+        {
+          "file_offset": "0xeb75ca",
+          "VA": "0x140eb7fca",
+          "bytes": "e8e124b4ff",
+          "text": "call 0x1409fa4b0"
+        }
+      ],
+      "refs": [
+        {
+          "path": "scratch/t59/out/branches.part01.json",
+          "pointer": "/43"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part01.json",
+          "pointer": "/539"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part01.json",
+          "pointer": "/542"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part01.json",
+          "pointer": "/543"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part01.json",
+          "pointer": "/563"
+        }
+      ]
+    },
+    "+0xe0": {
+      "editor": "D:/tmp2b/fm24/input/editor.exe",
+      "sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4",
+      "predicate": "cmp byte ptr [rsp + 0x5e], 0",
+      "zero_taken_to": "0xeb770b",
+      "nonzero_fallthrough": "0xeb76d4",
+      "instructions": [
+        {
+          "file_offset": "0xeb76c0",
+          "VA": "0x140eb80c0",
+          "bytes": "ff5028",
+          "text": "call qword ptr [rax + 0x28]"
+        },
+        {
+          "file_offset": "0xeb76cd",
+          "VA": "0x140eb80cd",
+          "bytes": "807c245e00",
+          "text": "cmp byte ptr [rsp + 0x5e], 0"
+        },
+        {
+          "file_offset": "0xeb76d2",
+          "VA": "0x140eb80d2",
+          "bytes": "7437",
+          "text": "je 0x140eb810b"
+        },
+        {
+          "file_offset": "0xeb76fb",
+          "VA": "0x140eb80fb",
+          "bytes": "e8801398ff",
+          "text": "call 0x140839480"
+        }
+      ],
+      "refs": [
+        {
+          "path": "scratch/t59/out/branches.part01.json",
+          "pointer": "/54"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part02.json",
+          "pointer": "/21"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part02.json",
+          "pointer": "/24"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part02.json",
+          "pointer": "/25"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part02.json",
+          "pointer": "/35"
+        }
+      ]
+    }
+  },
+  "entries": [
+    {
+      "id": "club.CNtp",
+      "table": "club",
+      "kind": "skipped",
+      "source_grade": "skipped_separate_member",
+      "evidence_refs": [
+        {
+          "path": "scratch/t57/out/field_map.json",
+          "pointer": "/fields/45"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/4"
+        },
+        {
+          "path": "scratch/t60/out/club_nation_subtable_schema.v8.json",
+          "pointer": "/tables/4"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/4/fields/0",
+          "code": "nati"
+        }
+      ],
+      "status": "handed_off",
+      "grade": "L2",
+      "承接": {
+        "task": "t34",
+        "scope": "existing source only"
+      },
+      "member": "server_db/table_66.dat",
+      "client_member_present": false,
+      "server_rows": 753,
+      "server_closure": "13 + 753 * 24 + 9 = 18094",
+      "owner": {
+        "table_type": 66,
+        "rtti_class": "STARTING_CLUB_TRANSFER_PREFERENCE",
+        "scope": "club"
+      },
+      "accepted_child_example": "nati"
+    },
+    {
+      "id": "club.CSrs",
+      "table": "club",
+      "kind": "skipped",
+      "source_grade": "skipped_separate_member",
+      "evidence_refs": [
+        {
+          "path": "scratch/t57/out/field_map.json",
+          "pointer": "/fields/83"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/2"
+        },
+        {
+          "path": "scratch/t60/out/club_nation_subtable_schema.v8.json",
+          "pointer": "/tables/2"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/2/fields/0",
+          "code": "Ttyp"
+        }
+      ],
+      "status": "handed_off",
+      "grade": "L2",
+      "承接": {
+        "task": "t31",
+        "scope": "existing source only"
+      },
+      "member": "server_db/table_62.dat",
+      "client_member_present": false,
+      "server_rows": 37214,
+      "server_closure": "13 + 37214 * 42 + 9 = 1563010",
+      "owner": {
+        "table_type": 62,
+        "rtti_class": "STARTING_RESERVE_TEAM",
+        "scope": "club"
+      },
+      "accepted_child_example": "Ttyp"
+    },
+    {
+      "id": "club.Cstc",
+      "table": "club",
+      "kind": "skipped",
+      "source_grade": "skipped_separate_member",
+      "evidence_refs": [
+        {
+          "path": "scratch/t57/out/field_map.json",
+          "pointer": "/fields/84"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/0"
+        },
+        {
+          "path": "scratch/t60/out/club_nation_subtable_schema.v8.json",
+          "pointer": "/tables/0"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/0/fields/0",
+          "code": "Slea"
+        }
+      ],
+      "status": "handed_off",
+      "grade": "L2",
+      "承接": {
+        "task": "t27",
+        "scope": "existing source only"
+      },
+      "member": "server_db/table_22.dat",
+      "client_member_present": true,
+      "server_rows": 449,
+      "server_closure": "13 + 449 * 79 + 9 = 35493",
+      "owner": {
+        "table_type": 22,
+        "rtti_class": "STADIUM_CHANGE",
+        "scope": "club"
+      },
+      "accepted_child_example": "Slea"
+    },
+    {
+      "id": "club.Csme",
+      "table": "club",
+      "kind": "skipped",
+      "source_grade": "skipped_separate_member",
+      "evidence_refs": [
+        {
+          "path": "scratch/t57/out/field_map.json",
+          "pointer": "/fields/105"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/7/owner_scope"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/7"
+        },
+        {
+          "path": "scratch/t60/out/club_nation_subtable_schema.v8.json",
+          "pointer": "/tables/7"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/7/fields/0",
+          "code": "Melf"
+        }
+      ],
+      "status": "handed_off",
+      "grade": "L2",
+      "承接": {
+        "task": "t41",
+        "scope": "existing source only"
+      },
+      "member": "server_db/table_59.dat",
+      "client_member_present": false,
+      "server_rows": 9079,
+      "server_closure": "13 + 6567 * 22 + 2512 * 32 + 9 = 224880",
+      "owner": {
+        "table_type": 59,
+        "rtti_class": "STARTING_MEDIA_EXPECTATIONS",
+        "scope": "club_editor_team_owned",
+        "qualification": "not club-exclusive: actual owners include selector 11; play label is not a PLAYER pointer or dispatch proof"
+      },
+      "accepted_child_example": "Melf"
+    },
+    {
+      "id": "club.Cdbt",
+      "table": "club",
+      "kind": "skipped",
+      "source_grade": "skipped_separate_member",
+      "evidence_refs": [
+        {
+          "path": "scratch/t57/out/field_map.json",
+          "pointer": "/fields/117"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/5"
+        },
+        {
+          "path": "scratch/t60/out/club_nation_subtable_schema.v8.json",
+          "pointer": "/tables/5"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/5/fields/0",
+          "code": "cash"
+        }
+      ],
+      "status": "handed_off",
+      "grade": "L2",
+      "承接": {
+        "task": "t36",
+        "scope": "existing source only"
+      },
+      "member": "server_db/table_33.dat",
+      "client_member_present": false,
+      "server_rows": 32409,
+      "server_closure": "13 + 32409 * 79 + 9 = 2560333",
+      "owner": {
+        "table_type": 33,
+        "rtti_class": "STARTING_CLUB_DEBT",
+        "scope": "club"
+      },
+      "accepted_child_example": "cash"
+    },
+    {
+      "id": "club.Cmti",
+      "table": "club",
+      "kind": "skipped",
+      "source_grade": "skipped_separate_member",
+      "evidence_refs": [
+        {
+          "path": "scratch/t57/out/field_map.json",
+          "pointer": "/fields/122"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/3"
+        },
+        {
+          "path": "scratch/t60/out/club_nation_subtable_schema.v8.json",
+          "pointer": "/tables/3"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/3/fields/0",
+          "code": "play"
+        }
+      ],
+      "status": "handed_off",
+      "grade": "L2",
+      "承接": {
+        "task": "t32",
+        "scope": "existing source only"
+      },
+      "member": "server_db/table_43.dat",
+      "client_member_present": false,
+      "server_rows": 535,
+      "server_closure": "13 + 535 * 46 + 9 = 24632",
+      "owner": {
+        "table_type": 43,
+        "rtti_class": "STARTING_MONTHLY_INSTALLMENT",
+        "scope": "club"
+      },
+      "accepted_child_example": "play"
+    },
+    {
+      "id": "club.Cafl",
+      "table": "club",
+      "kind": "skipped",
+      "source_grade": "skipped_separate_member",
+      "evidence_refs": [
+        {
+          "path": "scratch/t57/out/field_map.json",
+          "pointer": "/fields/209"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/club_auxiliary_sources/0/server_payload"
+        },
+        {
+          "path": "scratch/t44/out/fields_cafl_cvfl.json",
+          "pointer": "/occurrences/Cafl/0"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/club_auxiliary_sources/0/views/0"
+        },
+        {
+          "path": "scratch/t60/out/club_nation_subtable_schema.v8.json",
+          "pointer": "/club_auxiliary_sources/0/views/0"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/club_auxiliary_sources/0/views/0/occurrences/0",
+          "code": "affl"
+        }
+      ],
+      "status": "handed_off",
+      "grade": "L2",
+      "承接": {
+        "task": "t44",
+        "scope": "existing source only"
+      },
+      "member": "server_db/club_links.dat",
+      "client_member_present": false,
+      "server_rows": 9261,
+      "server_closure": "12 + 9261 * 47 + 0 = 435279",
+      "owner": {
+        "source_id": "CLUB_LINK",
+        "table_type": null,
+        "view_mode": 0,
+        "occurrence_grade_counts": {
+          "L3": 26,
+          "held_all_missing": 1,
+          "held_domain_conflict": 2
+        }
+      },
+      "accepted_child_example": "affl"
+    },
+    {
+      "id": "club.Cvfl",
+      "table": "club",
+      "kind": "skipped",
+      "source_grade": "skipped_separate_member",
+      "evidence_refs": [
+        {
+          "path": "scratch/t57/out/field_map.json",
+          "pointer": "/fields/210"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/club_auxiliary_sources/0/server_payload"
+        },
+        {
+          "path": "scratch/t44/out/fields_cafl_cvfl.json",
+          "pointer": "/occurrences/Cvfl/0"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/club_auxiliary_sources/0/views/1"
+        },
+        {
+          "path": "scratch/t60/out/club_nation_subtable_schema.v8.json",
+          "pointer": "/club_auxiliary_sources/0/views/1"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/club_auxiliary_sources/0/views/1/occurrences/0",
+          "code": "affl"
+        }
+      ],
+      "status": "handed_off",
+      "grade": "L2",
+      "承接": {
+        "task": "t44",
+        "scope": "existing source only"
+      },
+      "member": "server_db/club_links.dat",
+      "client_member_present": false,
+      "server_rows": 9261,
+      "server_closure": "12 + 9261 * 47 + 0 = 435279",
+      "owner": {
+        "source_id": "CLUB_LINK",
+        "table_type": null,
+        "view_mode": 1,
+        "occurrence_grade_counts": {
+          "L3": 16,
+          "held_domain_conflict": 2,
+          "runtime_only_no_wire_slot": 1
+        }
+      },
+      "accepted_child_example": "affl"
+    },
+    {
+      "id": "club.Clhs",
+      "table": "club",
+      "kind": "skipped",
+      "source_grade": "skipped_separate_member",
+      "evidence_refs": [
+        {
+          "path": "scratch/t57/out/field_map.json",
+          "pointer": "/fields/329"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/1"
+        },
+        {
+          "path": "scratch/t60/out/club_nation_subtable_schema.v8.json",
+          "pointer": "/tables/1"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/1/fields/0",
+          "code": "divi"
+        }
+      ],
+      "status": "handed_off",
+      "grade": "L2",
+      "承接": {
+        "task": "t30",
+        "scope": "existing source only"
+      },
+      "member": "server_db/table_37.dat",
+      "client_member_present": false,
+      "server_rows": 465712,
+      "server_closure": "13 + 465712 * 40 + 9 = 18628502",
+      "owner": {
+        "table_type": 37,
+        "rtti_class": "STARTING_TEAM_LEAGUE_HISTORY",
+        "scope": "club"
+      },
+      "accepted_child_example": "divi"
+    },
+    {
+      "id": "club.Tchl",
+      "table": "club",
+      "kind": "skipped",
+      "source_grade": "skipped_separate_member",
+      "evidence_refs": [
+        {
+          "path": "scratch/t57/out/field_map.json",
+          "pointer": "/fields/331"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/6/supplemental_evidence/shared_dispatch_and_owner_scope"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/6"
+        },
+        {
+          "path": "scratch/t60/out/club_nation_subtable_schema.v8.json",
+          "pointer": "/tables/6"
+        },
+        {
+          "path": "reports/club_nation_subtable_schema.json",
+          "pointer": "/tables/6/fields/0",
+          "code": "tchc"
+        }
+      ],
+      "status": "handed_off",
+      "grade": "L2",
+      "承接": {
+        "task": "t39",
+        "scope": "existing source only"
+      },
+      "member": "server_db/table_34.dat",
+      "client_member_present": false,
+      "server_rows": 7115,
+      "server_closure": "13 + 7115 * 44 + 9 = 313082",
+      "owner": {
+        "table_type": 34,
+        "rtti_class": "STARTING_TEAM_CUP_HISTORY",
+        "scope": "club_nation_shared",
+        "qualification": "t39 REPORT.md; 7,084 nonempty owner ordinals resolve to table24 selector11 NATIONAL_TEAM; 31 owners are null; club-exclusive L3=0."
+      },
+      "accepted_child_example": "tchc"
+    },
+    {
+      "id": "nation.Necf",
+      "table": "nation",
+      "kind": "held",
+      "grade": "held",
+      "status": "t61_confirmed_no_promotion",
+      "decision": "no_enum_source",
+      "evidence_refs": [
+        {
+          "path": "scratch/t55/out/field_map.json",
+          "pointer": "/fields/26"
+        },
+        {
+          "path": "scratch/t61/out/enum_inventory.json",
+          "pointer": "/occurrences/6"
+        }
+      ],
+      "diagnostics": {
+        "client": [
+          {
+            "member": "table_10.dat",
+            "status": "scanned",
+            "rows": 251,
+            "encoding": "i8",
+            "tested": 251,
+            "histogram": {
+              "0": 28,
+              "1": 7,
+              "2": 3,
+              "3": 10,
+              "4": 12,
+              "5": 14,
+              "6": 13,
+              "7": 19,
+              "8": 13,
+              "9": 13,
+              "10": 12,
+              "11": 17,
+              "12": 18,
+              "13": 18,
+              "14": 7,
+              "15": 8,
+              "16": 12,
+              "17": 7,
+              "18": 9,
+              "19": 10,
+              "20": 1
+            },
+            "enum_misses": null,
+            "out_of_enum": {},
+            "first_value": {
+              "row": 0,
+              "item": null,
+              "absolute": 32,
+              "raw": "0d",
+              "value": 13
+            },
+            "first_enum_counterexample": null,
+            "frozen_bound_violations": 28,
+            "first_frozen_bound_counterexample": {
+              "row": 121,
+              "item": null,
+              "absolute": 8628,
+              "raw": "00",
+              "value": 0
+            }
+          }
+        ],
+        "server": [
+          {
+            "member": "table_10.dat",
+            "status": "scanned",
+            "rows": 251,
+            "encoding": "i8",
+            "tested": 251,
+            "histogram": {
+              "0": 28,
+              "1": 7,
+              "2": 3,
+              "3": 10,
+              "4": 12,
+              "5": 14,
+              "6": 13,
+              "7": 19,
+              "8": 13,
+              "9": 13,
+              "10": 12,
+              "11": 17,
+              "12": 18,
+              "13": 18,
+              "14": 7,
+              "15": 8,
+              "16": 12,
+              "17": 7,
+              "18": 9,
+              "19": 10,
+              "20": 1
+            },
+            "enum_misses": null,
+            "out_of_enum": {},
+            "first_value": {
+              "row": 0,
+              "item": null,
+              "absolute": 556,
+              "raw": "0d",
+              "value": 13
+            },
+            "first_enum_counterexample": null,
+            "frozen_bound_violations": 28,
+            "first_frozen_bound_counterexample": {
+              "row": 121,
+              "item": null,
+              "absolute": 99394,
+              "raw": "00",
+              "value": 0
+            }
+          }
+        ]
+      },
+      "prior_first_counterexample": {
+        "side": "client",
+        "row": 121,
+        "absolute": 8628,
+        "raw": "00",
+        "value": 0
+      },
+      "承接": {
+        "task": "t61",
+        "scope": "existing enum review; no rejudgment"
+      }
+    },
+    {
+      "id": "nation.Nygn",
+      "table": "nation",
+      "kind": "held",
+      "grade": "held",
+      "status": "t61_confirmed_no_promotion",
+      "decision": "no_enum_source",
+      "evidence_refs": [
+        {
+          "path": "scratch/t55/out/field_map.json",
+          "pointer": "/fields/28"
+        },
+        {
+          "path": "scratch/t61/out/enum_inventory.json",
+          "pointer": "/occurrences/7"
+        }
+      ],
+      "diagnostics": {
+        "client": [
+          {
+            "member": "table_10.dat",
+            "status": "scanned",
+            "rows": 251,
+            "encoding": "i8",
+            "tested": 251,
+            "histogram": {
+              "-1": 26,
+              "0": 78,
+              "2": 3,
+              "3": 9,
+              "4": 4,
+              "5": 81,
+              "6": 3,
+              "7": 14,
+              "8": 7,
+              "9": 3,
+              "10": 18,
+              "15": 3,
+              "20": 2
+            },
+            "enum_misses": null,
+            "out_of_enum": {},
+            "first_value": {
+              "row": 0,
+              "item": null,
+              "absolute": 37,
+              "raw": "07",
+              "value": 7
+            },
+            "first_enum_counterexample": null,
+            "frozen_bound_violations": 26,
+            "first_frozen_bound_counterexample": {
+              "row": 29,
+              "item": null,
+              "absolute": 2102,
+              "raw": "ff",
+              "value": -1
+            }
+          }
+        ],
+        "server": [
+          {
+            "member": "table_10.dat",
+            "status": "scanned",
+            "rows": 251,
+            "encoding": "i8",
+            "tested": 251,
+            "histogram": {
+              "-1": 26,
+              "0": 78,
+              "2": 3,
+              "3": 9,
+              "4": 4,
+              "5": 81,
+              "6": 3,
+              "7": 14,
+              "8": 7,
+              "9": 3,
+              "10": 18,
+              "15": 3,
+              "20": 2
+            },
+            "enum_misses": null,
+            "out_of_enum": {},
+            "first_value": {
+              "row": 0,
+              "item": null,
+              "absolute": 561,
+              "raw": "07",
+              "value": 7
+            },
+            "first_enum_counterexample": null,
+            "frozen_bound_violations": 26,
+            "first_frozen_bound_counterexample": {
+              "row": 29,
+              "item": null,
+              "absolute": 17005,
+              "raw": "ff",
+              "value": -1
+            }
+          }
+        ]
+      },
+      "prior_first_counterexample": {
+        "side": "client",
+        "row": 29,
+        "absolute": 2102,
+        "raw": "ff",
+        "value": -1
+      },
+      "承接": {
+        "task": "t61",
+        "scope": "existing enum review; no rejudgment"
+      }
+    },
+    {
+      "id": "nation.Ngct",
+      "table": "nation",
+      "kind": "held",
+      "grade": "held",
+      "status": "t61_confirmed_no_promotion",
+      "decision": "no_enum_source",
+      "evidence_refs": [
+        {
+          "path": "scratch/t55/out/field_map.json",
+          "pointer": "/fields/32"
+        },
+        {
+          "path": "scratch/t61/out/enum_inventory.json",
+          "pointer": "/occurrences/8"
+        }
+      ],
+      "diagnostics": {
+        "client": [
+          {
+            "member": "table_10.dat",
+            "status": "scanned",
+            "rows": 251,
+            "encoding": "i8",
+            "tested": 251,
+            "histogram": {
+              "1": 122,
+              "2": 129
+            },
+            "enum_misses": null,
+            "out_of_enum": {},
+            "first_value": {
+              "row": 0,
+              "item": null,
+              "absolute": 14,
+              "raw": "01",
+              "value": 1
+            },
+            "first_enum_counterexample": null,
+            "frozen_bound_violations": 0,
+            "first_frozen_bound_counterexample": null
+          }
+        ],
+        "server": [
+          {
+            "member": "table_10.dat",
+            "status": "scanned",
+            "rows": 251,
+            "encoding": "i8",
+            "tested": 251,
+            "histogram": {
+              "1": 122,
+              "2": 129
+            },
+            "enum_misses": null,
+            "out_of_enum": {},
+            "first_value": {
+              "row": 0,
+              "item": null,
+              "absolute": 538,
+              "raw": "01",
+              "value": 1
+            },
+            "first_enum_counterexample": null,
+            "frozen_bound_violations": 0,
+            "first_frozen_bound_counterexample": null
+          }
+        ]
+      },
+      "prior_first_counterexample": {
+        "side": "client",
+        "row": 0,
+        "absolute": 14,
+        "raw": "01",
+        "value": 1
+      },
+      "承接": {
+        "task": "t61",
+        "scope": "existing enum review; no rejudgment"
+      }
+    },
+    {
+      "id": "nation.Nsod",
+      "table": "nation",
+      "kind": "held",
+      "grade": "held",
+      "status": "t61_confirmed_no_promotion",
+      "decision": "no_enum_source",
+      "evidence_refs": [
+        {
+          "path": "scratch/t55/out/field_map.json",
+          "pointer": "/fields/33"
+        },
+        {
+          "path": "scratch/t61/out/enum_inventory.json",
+          "pointer": "/occurrences/9"
+        }
+      ],
+      "diagnostics": {
+        "client": [
+          {
+            "member": "table_10.dat",
+            "status": "scanned",
+            "rows": 251,
+            "encoding": "i8",
+            "tested": 251,
+            "histogram": {
+              "0": 21,
+              "1": 54,
+              "2": 100,
+              "3": 76
+            },
+            "enum_misses": null,
+            "out_of_enum": {},
+            "first_value": {
+              "row": 0,
+              "item": null,
+              "absolute": 31,
+              "raw": "02",
+              "value": 2
+            },
+            "first_enum_counterexample": null,
+            "frozen_bound_violations": 0,
+            "first_frozen_bound_counterexample": null
+          }
+        ],
+        "server": [
+          {
+            "member": "table_10.dat",
+            "status": "scanned",
+            "rows": 251,
+            "encoding": "i8",
+            "tested": 251,
+            "histogram": {
+              "0": 21,
+              "1": 54,
+              "2": 100,
+              "3": 76
+            },
+            "enum_misses": null,
+            "out_of_enum": {},
+            "first_value": {
+              "row": 0,
+              "item": null,
+              "absolute": 555,
+              "raw": "02",
+              "value": 2
+            },
+            "first_enum_counterexample": null,
+            "frozen_bound_violations": 0,
+            "first_frozen_bound_counterexample": null
+          }
+        ]
+      },
+      "prior_first_counterexample": {
+        "side": "client",
+        "row": 0,
+        "absolute": 31,
+        "raw": "02",
+        "value": 2
+      },
+      "承接": {
+        "task": "t61",
+        "scope": "existing enum review; no rejudgment"
+      }
+    },
+    {
+      "id": "comp.+0xa8",
+      "table": "comp",
+      "kind": "static-zero",
+      "status": "untriggered_item_or_payload",
+      "grade": "L2",
+      "inherited_grade": "held",
+      "inherited_grade_scope": "physical item grammar only",
+      "existing_grammar": "static optional; no payload coordinate",
+      "evidence_refs": [
+        {
+          "path": "scratch/t59/out/field_slots.json",
+          "pointer": "/slots/44"
+        },
+        {
+          "path": "scratch/t59/out/field_slots.json",
+          "pointer": "/slots/45"
+        },
+        {
+          "path": "scratch/t66/out/collections.json",
+          "pointer": "/collections/+0xa8"
+        },
+        {
+          "path": "scratch/t66/out/census.json",
+          "pointer": "/sides/client/collections/+0xa8"
+        },
+        {
+          "path": "scratch/t66/out/census.json",
+          "pointer": "/sides/server/collections/+0xa8"
+        },
+        {
+          "path": "scratch/t59/out/branches.part01.json",
+          "pointer": "/30"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part01.json",
+          "pointer": "/445"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part01.json",
+          "pointer": "/446"
+        },
+        {
+          "path": "scratch/t59/out/branches.part01.json",
+          "pointer": "/43"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part01.json",
+          "pointer": "/539"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part01.json",
+          "pointer": "/542"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part01.json",
+          "pointer": "/543"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part01.json",
+          "pointer": "/563"
+        }
+      ],
+      "data": {
+        "client": {
+          "status": "mode_skipped",
+          "rows": 7047,
+          "values_read": 0,
+          "histogram": {},
+          "nonzero_rows": 0,
+          "item_rows": 0,
+          "items": 0,
+          "first": null,
+          "payload_events": 0
+        },
+        "server": {
+          "status": "presence_read",
+          "rows": 7047,
+          "values_read": 7047,
+          "histogram": {
+            "0": 7047
+          },
+          "nonzero_rows": 0,
+          "item_rows": 0,
+          "items": 0,
+          "first": {
+            "row": 0,
+            "at": 133,
+            "raw": "00",
+            "value": 0
+          },
+          "first_nonzero": null,
+          "coordinate_sha256": "50b0039b8455bc86ce966623b9f7d9af4a870768a1730b0f54e5627f14890cdf",
+          "content_sha256": "b42047fdde5e14f7b6530a82e20f4af07b802c663ff940506623c635832bbfa4",
+          "payload_events": 0
+        }
+      },
+      "open_edge": "presence != 0 payload: no archive witness",
+      "承接": {
+        "task": "t66",
+        "scope": "physical record only; open edge has no assigned successor"
+      }
+    },
+    {
+      "id": "comp.+0xe0",
+      "table": "comp",
+      "kind": "static-zero",
+      "status": "untriggered_item_or_payload",
+      "grade": "L2",
+      "inherited_grade": "held",
+      "inherited_grade_scope": "physical item grammar only",
+      "existing_grammar": "static optional; no payload coordinate",
+      "evidence_refs": [
+        {
+          "path": "scratch/t59/out/field_slots.json",
+          "pointer": "/slots/51"
+        },
+        {
+          "path": "scratch/t59/out/field_slots.json",
+          "pointer": "/slots/52"
+        },
+        {
+          "path": "scratch/t66/out/collections.json",
+          "pointer": "/collections/+0xe0"
+        },
+        {
+          "path": "scratch/t66/out/census.json",
+          "pointer": "/sides/client/collections/+0xe0"
+        },
+        {
+          "path": "scratch/t66/out/census.json",
+          "pointer": "/sides/server/collections/+0xe0"
+        },
+        {
+          "path": "scratch/t59/out/branches.part01.json",
+          "pointer": "/30"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part01.json",
+          "pointer": "/445"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part01.json",
+          "pointer": "/446"
+        },
+        {
+          "path": "scratch/t59/out/branches.part01.json",
+          "pointer": "/54"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part02.json",
+          "pointer": "/21"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part02.json",
+          "pointer": "/24"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part02.json",
+          "pointer": "/25"
+        },
+        {
+          "path": "scratch/t59/out/instructions.part02.json",
+          "pointer": "/35"
+        }
+      ],
+      "data": {
+        "client": {
+          "status": "mode_skipped",
+          "rows": 7047,
+          "values_read": 0,
+          "histogram": {},
+          "nonzero_rows": 0,
+          "item_rows": 0,
+          "items": 0,
+          "first": null,
+          "payload_events": 0
+        },
+        "server": {
+          "status": "presence_read",
+          "rows": 7047,
+          "values_read": 7047,
+          "histogram": {
+            "0": 7047
+          },
+          "nonzero_rows": 0,
+          "item_rows": 0,
+          "items": 0,
+          "first": {
+            "row": 0,
+            "at": 142,
+            "raw": "00",
+            "value": 0
+          },
+          "first_nonzero": null,
+          "coordinate_sha256": "ce536b090f94186989bb4d0e969542cbad99a5bebd9ecd286a7151f4d88adee7",
+          "content_sha256": "b42047fdde5e14f7b6530a82e20f4af07b802c663ff940506623c635832bbfa4",
+          "payload_events": 0
+        }
+      },
+      "open_edge": "presence != 0 payload: no archive witness",
+      "承接": {
+        "task": "t66",
+        "scope": "physical record only; open edge has no assigned successor"
+      }
+    },
+    {
+      "id": "comp.vec30",
+      "table": "comp",
+      "kind": "static-zero",
+      "status": "untriggered_item_or_payload",
+      "grade": "L2",
+      "inherited_grade": "held",
+      "inherited_grade_scope": "physical item grammar only",
+      "existing_grammar": "u32 N; N × 2 (static only for N > 0)",
+      "evidence_refs": [
+        {
+          "path": "scratch/t59/out/field_slots.json",
+          "pointer": "/slots/43"
+        },
+        {
+          "path": "scratch/t66/out/collections.json",
+          "pointer": "/collections/vec30"
+        },
+        {
+          "path": "scratch/t66/out/census.json",
+          "pointer": "/sides/client/collections/vec30"
+        },
+        {
+          "path": "scratch/t66/out/census.json",
+          "pointer": "/sides/server/collections/vec30"
+        }
+      ],
+      "data": {
+        "client": {
+          "status": "mode_skipped",
+          "rows": 7047,
+          "values_read": 0,
+          "histogram": {},
+          "nonzero_rows": 0,
+          "item_rows": 0,
+          "items": 0,
+          "first": null,
+          "payload_events": 0
+        },
+        "server": {
+          "status": "count_read",
+          "rows": 7047,
+          "values_read": 7047,
+          "histogram": {
+            "0": 7047
+          },
+          "nonzero_rows": 0,
+          "item_rows": 0,
+          "items": 0,
+          "first": {
+            "row": 0,
+            "at": 129,
+            "raw": "00000000",
+            "value": 0
+          },
+          "first_nonzero": null,
+          "coordinate_sha256": "836bda2ebd2b617c8a3dffcb8a09c7effb533df08387442b39a8219c7933138b",
+          "content_sha256": "55f7131c693ee3ce40c930f1085810619a4702f4a8796b5acc1de71500dddfc7",
+          "payload_events": 7047
+        }
+      },
+      "open_edge": "N > 0 item arm: no archive witness",
+      "承接": {
+        "task": "t66",
+        "scope": "physical record only; open edge has no assigned successor"
+      }
+    },
+    {
+      "id": "comp.+0x100",
+      "table": "comp",
+      "kind": "edge-pending",
+      "status": "physical_grammar_only",
+      "grade": "L2",
+      "inherited_grade": "L3",
+      "inherited_grade_scope": "physical item grammar only",
+      "existing_grammar": "i16 N; N × (1 + 2 + 2); no item tag",
+      "evidence_refs": [
+        {
+          "path": "scratch/t59/out/field_slots.json",
+          "pointer": "/slots/65"
+        },
+        {
+          "path": "scratch/t66/out/collections.json",
+          "pointer": "/collections/+0x100"
+        },
+        {
+          "path": "scratch/t66/out/census.json",
+          "pointer": "/sides/client/collections/+0x100"
+        },
+        {
+          "path": "scratch/t66/out/census.json",
+          "pointer": "/sides/server/collections/+0x100"
+        }
+      ],
+      "data": {
+        "client": {
+          "status": "mode_skipped",
+          "rows": 7047,
+          "values_read": 0,
+          "histogram": {},
+          "nonzero_rows": 0,
+          "item_rows": 0,
+          "items": 0,
+          "first": null,
+          "payload_events": 0
+        },
+        "server": {
+          "status": "count_read",
+          "rows": 7047,
+          "values_read": 7047,
+          "histogram": {
+            "0": 6918,
+            "1": 62,
+            "2": 56,
+            "3": 9,
+            "5": 1,
+            "6": 1
+          },
+          "nonzero_rows": 129,
+          "item_rows": 129,
+          "items": 212,
+          "first": {
+            "row": 0,
+            "at": 854,
+            "raw": "0000",
+            "value": 0
+          },
+          "first_nonzero": {
+            "row": 47,
+            "at": 17364,
+            "raw": "0100",
+            "value": 1
+          },
+          "coordinate_sha256": "a8c678cf47878741622c59b4c79ba7415d1b85e978b84db89ac91c209c8abb49",
+          "content_sha256": "75d157aba3f85e1d7659eb3ff6ac39c6d2f54ef37541bd026469bd80ef0915d3",
+          "payload_events": 7047,
+          "item_histograms_unsigned_LE": {
+            "item.+0": {
+              "0": 8,
+              "1": 7,
+              "2": 26,
+              "3": 103,
+              "4": 46,
+              "5": 4,
+              "6": 6,
+              "7": 6,
+              "8": 4,
+              "9": 2
+            },
+            "item.+1": {
+              "0": 23,
+              "1904": 2,
+              "1908": 3,
+              "1914": 1,
+              "1920": 1,
+              "1948": 52,
+              "1959": 2,
+              "1962": 1,
+              "1964": 1,
+              "1965": 2,
+              "1973": 3,
+              "1974": 2,
+              "1975": 4,
+              "1979": 1,
+              "1982": 2,
+              "1984": 1,
+              "1985": 1,
+              "1988": 1,
+              "1991": 19,
+              "1992": 3,
+              "2006": 1,
+              "2007": 3,
+              "2013": 1,
+              "2014": 56,
+              "2016": 8,
+              "2017": 1,
+              "2019": 7,
+              "2021": 1,
+              "2022": 2,
+              "2023": 4,
+              "2024": 3
+            },
+            "item.+3": {
+              "0": 11,
+              "1947": 5,
+              "1965": 2,
+              "1973": 1,
+              "1982": 2,
+              "1987": 4,
+              "1990": 54,
+              "1991": 2,
+              "1992": 3,
+              "2002": 2,
+              "2004": 4,
+              "2013": 22,
+              "2014": 3,
+              "2015": 1,
+              "2016": 8,
+              "2019": 4,
+              "2020": 55,
+              "2021": 1,
+              "2022": 4,
+              "2023": 24
+            }
+          }
+        }
+      },
+      "open_edge": "business name / getter binding not established",
+      "承接": {
+        "task": "t66",
+        "scope": "physical record only; open edge has no assigned successor"
+      }
+    }
+  ]
+}

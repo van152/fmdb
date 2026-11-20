@@ -1,1 +1,7 @@
-Warning: No project session found with id 't64-compmap2-hiyo-key2'; creating a new session with that id.
+t64 已完成，当前分支为 `t64-compmap2`。
+
+交付物已生成：[`t64_comp_unmapped_r2.py`](D:/tmp2b/fm24-db/scripts/t64_comp_unmapped_r2.py)，以及 `scratch/t64/out/` 下的 `helpers.json`、`field_map_r2.json`、`exclusions.json`、`verify.py`、`REPORT.md` 和 `DONE.md`。
+
+验证通过：构建、自测、独立 verifier、t59 verifier，以及 t01 锚点回归（7/7）。196 条 unmapped occurrence 均已审查；没有新增 L3，t59 的 49 L3、10 held 和 818 条 inversions 保持不变，t66 派生集合未扫描。
+
+另记录了一项计数差异：静态扫描得到 55 个直接流读取调用（52 个外层槽位、3 个备用调用）；t59 报告记为 54/51。多出的调用是 t59 `field_slots.json` 已记录的 `wbcl_present`（`0xeb7c8f`）；t59 映射和 inversion 未修改。

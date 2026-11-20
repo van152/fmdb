@@ -1,0 +1,4349 @@
+{
+  "scope": "frozen nation.xml#nation top-level occurrences only; delta, not a replacement for E94",
+  "before": {
+    "L3": 5,
+    "held": 5,
+    "linked_parent_held": 1,
+    "no_main_wire_slot": 1,
+    "no_wire_slot": 1,
+    "prior_collection": 5,
+    "prior_identity": 1,
+    "unmapped": 327
+  },
+  "round2_of_327": {
+    "unmapped": 318,
+    "held": 9
+  },
+  "new_L3": 0,
+  "L4": 0,
+  "public_schema_changed": false,
+  "fields": [
+    {
+      "xml_index": 0,
+      "code": "DBvw",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 1,
+      "code": "duni",
+      "t55_grade": "prior_identity",
+      "grade": "prior_identity",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 2,
+      "code": "rdui",
+      "t55_grade": "unmapped",
+      "grade": "held",
+      "schema_domain": {
+        "type": "integer"
+      },
+      "status": "same_member_wire_but_getter_suppressed",
+      "slot": 39,
+      "wire_lane": [
+        8,
+        4
+      ],
+      "domain_status": "no_exposed_samples",
+      "archives": {
+        "client": {
+          "status": "held_getter_suppressed",
+          "rows": 251,
+          "suppressed": 251,
+          "exposed": 0,
+          "raw_unsigned_range": [
+            5,
+            82082540
+          ],
+          "raw_values_sha256": "337e65e44adae3dee47f17bd7c147abc40c0ce075125eeb5c9e32d4ec4c0c6dc",
+          "xml_min": null,
+          "xml_max": null,
+          "xml_enum_ref": null,
+          "first_unexposed": {
+            "row": 0,
+            "absolute": 74,
+            "raw": "05000000",
+            "value": 5
+          }
+        },
+        "server": {
+          "status": "held_getter_suppressed",
+          "rows": 251,
+          "suppressed": 251,
+          "exposed": 0,
+          "raw_unsigned_range": [
+            5,
+            82082540
+          ],
+          "raw_values_sha256": "337e65e44adae3dee47f17bd7c147abc40c0ce075125eeb5c9e32d4ec4c0c6dc",
+          "xml_min": null,
+          "xml_max": null,
+          "xml_enum_ref": null,
+          "first_unexposed": {
+            "row": 0,
+            "absolute": 641,
+            "raw": "05000000",
+            "value": 5
+          }
+        }
+      },
+      "first_counterexample": {
+        "row": 0,
+        "absolute": 74,
+        "raw": "05000000",
+        "value": 5
+      },
+      "projection_gate": 16660578
+    },
+    {
+      "xml_index": 3,
+      "code": "EFBR",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 4,
+      "code": "NDBC",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 5,
+      "code": "FDBC",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 6,
+      "code": "dbnm",
+      "t55_grade": "unmapped",
+      "grade": "held",
+      "schema_domain": {
+        "type": "string",
+        "database_table_type": "nation"
+      },
+      "status": "getter_proven_but_no_main_row_sink",
+      "domain_status": "no_bound_samples",
+      "slot": null,
+      "first_counterexample": {
+        "kind": "static_member_or_helper_mismatch",
+        "gate": 16660317,
+        "source": "virtual name provider and formatter; no proven t10 cursor",
+        "first_evidence": 16660340,
+        "absolute": null
+      },
+      "projection_gate": 16660317
+    },
+    {
+      "xml_index": 7,
+      "code": "Nnam",
+      "t55_grade": "unmapped",
+      "grade": "held",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "getter_proven_but_no_main_row_sink",
+      "domain_status": "no_bound_samples",
+      "slot": null,
+      "first_counterexample": {
+        "kind": "static_member_or_helper_mismatch",
+        "gate": 17048098,
+        "source": "name wrapper carrying this + lang selector long",
+        "first_evidence": 17050846,
+        "absolute": null
+      },
+      "projection_gate": 17048098
+    },
+    {
+      "xml_index": 8,
+      "code": "Nsnm",
+      "t55_grade": "unmapped",
+      "grade": "held",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "getter_proven_but_no_main_row_sink",
+      "domain_status": "no_bound_samples",
+      "slot": null,
+      "first_counterexample": {
+        "kind": "static_member_or_helper_mismatch",
+        "gate": 17048156,
+        "source": "this+0x20 string pointer, not a t10 transfer",
+        "first_evidence": 17051614,
+        "absolute": null
+      },
+      "projection_gate": 17048156
+    },
+    {
+      "xml_index": 9,
+      "code": "TCnn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 10,
+      "code": "TCht",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 11,
+      "code": "N3ln",
+      "t55_grade": "unmapped",
+      "grade": "held",
+      "schema_domain": {
+        "type": "string",
+        "max_length": "3"
+      },
+      "status": "getter_proven_but_no_main_row_sink",
+      "domain_status": "no_bound_samples",
+      "slot": null,
+      "first_counterexample": {
+        "kind": "static_member_or_helper_mismatch",
+        "gate": 17047713,
+        "source": "this+0x28 string pointer, not a t10 transfer",
+        "first_evidence": 17048995,
+        "absolute": null
+      },
+      "projection_gate": 17047713
+    },
+    {
+      "xml_index": 12,
+      "code": "Nnty",
+      "t55_grade": "unmapped",
+      "grade": "held",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "getter_proven_but_no_main_row_sink",
+      "domain_status": "no_bound_samples",
+      "slot": null,
+      "first_counterexample": {
+        "kind": "static_member_or_helper_mismatch",
+        "gate": 17047452,
+        "source": "this+0x30 string pointer, not a t10 transfer",
+        "first_evidence": 17049127,
+        "absolute": null
+      },
+      "projection_gate": 17047452
+    },
+    {
+      "xml_index": 13,
+      "code": "Nafy",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "1800",
+        "max_value": "2100"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 14,
+      "code": "NCTC",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 15,
+      "code": "NCTB",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 16,
+      "code": "Ncti",
+      "t55_grade": "L3",
+      "grade": "L3",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 17,
+      "code": "Nrgi",
+      "t55_grade": "L3",
+      "grade": "L3",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 18,
+      "code": "ttcl",
+      "t55_grade": "unmapped",
+      "grade": "held",
+      "schema_domain": {
+        "type": "colour"
+      },
+      "status": "getter_proven_but_no_main_row_sink",
+      "domain_status": "no_bound_samples",
+      "slot": null,
+      "first_counterexample": {
+        "kind": "static_member_or_helper_mismatch",
+        "gate": 16659900,
+        "source": "virtual lookup through Nation+0xf0 or fcol fallback; not a Nation colour sink",
+        "first_evidence": 16659924,
+        "absolute": null
+      },
+      "projection_gate": 16659900
+    },
+    {
+      "xml_index": 19,
+      "code": "tbcl",
+      "t55_grade": "unmapped",
+      "grade": "held",
+      "schema_domain": {
+        "type": "colour"
+      },
+      "status": "getter_proven_but_no_main_row_sink",
+      "domain_status": "no_bound_samples",
+      "slot": null,
+      "first_counterexample": {
+        "kind": "static_member_or_helper_mismatch",
+        "gate": 16660864,
+        "source": "virtual lookup through Nation+0xf0 or bcol fallback; not a Nation colour sink",
+        "first_evidence": 16662327,
+        "absolute": null
+      },
+      "projection_gate": 16660864
+    },
+    {
+      "xml_index": 20,
+      "code": "Ncur",
+      "t55_grade": "L3",
+      "grade": "L3",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 21,
+      "code": "Nnsi",
+      "t55_grade": "L3",
+      "grade": "L3",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 22,
+      "code": "Nrep",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 23,
+      "code": "Catd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "1000000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 24,
+      "code": "Cmna",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "1000000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 25,
+      "code": "Cmxa",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "1000000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 26,
+      "code": "Necf",
+      "t55_grade": "held",
+      "grade": "held",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 27,
+      "code": "Nfap",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "1",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 28,
+      "code": "Nygn",
+      "t55_grade": "held",
+      "grade": "held",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 29,
+      "code": "Nndn",
+      "t55_grade": "L3",
+      "grade": "L3",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 30,
+      "code": "Numa",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "boolean"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 31,
+      "code": "Nmya",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "15",
+        "max_value": "25"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 32,
+      "code": "Ngct",
+      "t55_grade": "held",
+      "grade": "held",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 33,
+      "code": "Nsod",
+      "t55_grade": "held",
+      "grade": "held",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 34,
+      "code": "Ngim",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 35,
+      "code": "Nffm",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "boolean"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 36,
+      "code": "Nfay",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "1904",
+        "max_value": "2100"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 37,
+      "code": "Nfrp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "2500"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 38,
+      "code": "Nfdy",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "1900",
+        "max_value": "2100"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 39,
+      "code": "Neu1",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "real",
+        "min_value": "0",
+        "max_value": "50"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 40,
+      "code": "Neu2",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "real",
+        "min_value": "0",
+        "max_value": "50"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 41,
+      "code": "Neu3",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "real",
+        "min_value": "0",
+        "max_value": "50"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 42,
+      "code": "Neu4",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "real",
+        "min_value": "0",
+        "max_value": "50"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 43,
+      "code": "Neu5",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "real",
+        "min_value": "0",
+        "max_value": "50"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 44,
+      "code": "Neu6",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "real",
+        "min_value": "0",
+        "max_value": "50"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 45,
+      "code": "Neu7",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "real",
+        "min_value": "0",
+        "max_value": "50"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 46,
+      "code": "Neu8",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "real",
+        "min_value": "0",
+        "max_value": "50"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 47,
+      "code": "Neu9",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "real",
+        "min_value": "0",
+        "max_value": "50"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 48,
+      "code": "Ne10",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "real",
+        "min_value": "0",
+        "max_value": "50"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 49,
+      "code": "Ne11",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "real",
+        "min_value": "0",
+        "max_value": "50"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 50,
+      "code": "Nagr",
+      "t55_grade": "prior_collection",
+      "grade": "prior_collection",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 51,
+      "code": "NYRt",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "200"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 52,
+      "code": "Natt",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 53,
+      "code": "Ndep",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 54,
+      "code": "Ndir",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 55,
+      "code": "Nflm",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 56,
+      "code": "Nflx",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 57,
+      "code": "Nfrl",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 58,
+      "code": "Nmar",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 59,
+      "code": "Noff",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 60,
+      "code": "Nprs",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 61,
+      "code": "Nstb",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 62,
+      "code": "Ntpo",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 63,
+      "code": "Nupm",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 64,
+      "code": "TCrs",
+      "t55_grade": "no_main_wire_slot",
+      "grade": "no_main_wire_slot",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 65,
+      "code": "Nfpa",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 66,
+      "code": "Nfml",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 67,
+      "code": "Nwid",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 68,
+      "code": "Nprf",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "pfms",
+        "enum_definition_rows": 32
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 69,
+      "code": "Nspf",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "sfms",
+        "enum_definition_rows": 32
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 70,
+      "code": "Ndfm",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "dfms",
+        "enum_definition_rows": 19
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 71,
+      "code": "Nafm",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "afms",
+        "enum_definition_rows": 38
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 72,
+      "code": "Nmni",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 73,
+      "code": "Tcap",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 74,
+      "code": "Tvcp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 75,
+      "code": "Nchi",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list",
+        "database_table_type": "person"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 76,
+      "code": "Nphi",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list",
+        "database_table_type": "person"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 77,
+      "code": "Tko1",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 78,
+      "code": "Tkg1",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 79,
+      "code": "Tko2",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 80,
+      "code": "Tkg2",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 81,
+      "code": "Tko3",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 82,
+      "code": "Tkg3",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 83,
+      "code": "CBWo",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "nation",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 84,
+      "code": "CBWf",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "100",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 85,
+      "code": "CBWa",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "100",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 86,
+      "code": "CBWd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 87,
+      "code": "CBWc",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "competition",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 88,
+      "code": "CBDo",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "nation",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 89,
+      "code": "CBDf",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "100",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 90,
+      "code": "CBDa",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "100",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 91,
+      "code": "CBDd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 92,
+      "code": "CBDc",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "competition",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 93,
+      "code": "CHSo",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "nation",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 94,
+      "code": "CHSf",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "100",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 95,
+      "code": "CHSa",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "100",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 96,
+      "code": "CHSd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 97,
+      "code": "CHSc",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "competition",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 98,
+      "code": "CWRg",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 99,
+      "code": "CWRs",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 100,
+      "code": "CWRe",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 101,
+      "code": "CLRg",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 102,
+      "code": "CLRs",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 103,
+      "code": "CLRe",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 104,
+      "code": "CWLg",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 105,
+      "code": "CWLs",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 106,
+      "code": "CWLe",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 107,
+      "code": "CWWg",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 108,
+      "code": "CWWs",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 109,
+      "code": "CWWe",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 110,
+      "code": "CWSg",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 111,
+      "code": "CWSs",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 112,
+      "code": "CWSe",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 113,
+      "code": "CWCg",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 114,
+      "code": "CWCs",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 115,
+      "code": "CWCe",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 116,
+      "code": "CHAa",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "1000000",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 117,
+      "code": "CHAo",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "nation",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 118,
+      "code": "CHAd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 119,
+      "code": "CHAc",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "competition",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 120,
+      "code": "CLAa",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "1000000",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 121,
+      "code": "CLAo",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "nation",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 122,
+      "code": "CLAd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 123,
+      "code": "CLAc",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "competition",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 124,
+      "code": "CMAp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 125,
+      "code": "CMAn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 126,
+      "code": "CMAa",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 127,
+      "code": "CMGp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 128,
+      "code": "CMGn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 129,
+      "code": "CMGg",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 130,
+      "code": "CMCp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 131,
+      "code": "CMCn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 132,
+      "code": "CMCs",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 133,
+      "code": "CMCd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 134,
+      "code": "CHGp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 135,
+      "code": "CHGn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 136,
+      "code": "CHGc",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "competition",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 137,
+      "code": "CHGg",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 138,
+      "code": "CYPp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 139,
+      "code": "CYPn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 140,
+      "code": "CYPd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 141,
+      "code": "CYPm",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 142,
+      "code": "CYPo",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "team",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 143,
+      "code": "CYPc",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "competition",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 144,
+      "code": "COPp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 145,
+      "code": "COPn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 146,
+      "code": "COPd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 147,
+      "code": "COPm",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 148,
+      "code": "COPo",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "team",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 149,
+      "code": "COPc",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "competition",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 150,
+      "code": "CYSp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 151,
+      "code": "CYSn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 152,
+      "code": "CYSd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 153,
+      "code": "CYSm",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 154,
+      "code": "CYSo",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "team",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 155,
+      "code": "CYSc",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "competition",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 156,
+      "code": "COSp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 157,
+      "code": "COSn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 158,
+      "code": "COSd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 159,
+      "code": "COSm",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 160,
+      "code": "COSo",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "team",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 161,
+      "code": "COSc",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "competition",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 162,
+      "code": "CGMp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 163,
+      "code": "CGMn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 164,
+      "code": "CGMg",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 165,
+      "code": "CGMd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 166,
+      "code": "CGMo",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "team",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 167,
+      "code": "CGMc",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "competition",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 168,
+      "code": "CGLp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 169,
+      "code": "CGLn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 170,
+      "code": "CGLg",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "20"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 171,
+      "code": "CGLd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 172,
+      "code": "CGLo",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "team",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 173,
+      "code": "CGLc",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "competition",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 174,
+      "code": "CFGp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 175,
+      "code": "CFGn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 176,
+      "code": "CFGo",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "nation",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 177,
+      "code": "CFGd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 178,
+      "code": "CFGm",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "competition",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 179,
+      "code": "CFGs",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 180,
+      "code": "CHFp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 181,
+      "code": "CHFn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 182,
+      "code": "CHFs",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "club",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 183,
+      "code": "CHFf",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "cash",
+        "min_value": "0",
+        "max_value": "200000000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 184,
+      "code": "CHFd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 185,
+      "code": "CHRp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 186,
+      "code": "CHRn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 187,
+      "code": "CHRb",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "club",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 188,
+      "code": "CHRf",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "cash",
+        "min_value": "0",
+        "max_value": "200000000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 189,
+      "code": "CHRd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 190,
+      "code": "NGpe",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 191,
+      "code": "NGfn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 192,
+      "code": "NGsn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 193,
+      "code": "NGgl",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 194,
+      "code": "NApe",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 195,
+      "code": "NAfn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 196,
+      "code": "NAsn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 197,
+      "code": "NAgl",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "integer",
+        "min_value": "0",
+        "max_value": "10000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 198,
+      "code": "NMEp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 199,
+      "code": "NMEn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 200,
+      "code": "NMEs",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "club",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 201,
+      "code": "NMEb",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "club",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 202,
+      "code": "NMEf",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "cash",
+        "min_value": "0",
+        "max_value": "200000000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 203,
+      "code": "NMEd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 204,
+      "code": "NHPp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 205,
+      "code": "NHPn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 206,
+      "code": "NHPs",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "club",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 207,
+      "code": "NHPb",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "club",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 208,
+      "code": "NHPf",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "cash",
+        "min_value": "0",
+        "max_value": "200000000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 209,
+      "code": "NHPd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 210,
+      "code": "NHRp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 211,
+      "code": "NHRn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "string"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 212,
+      "code": "NHRs",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "club",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 213,
+      "code": "NHRb",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "club",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 214,
+      "code": "NHRf",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "cash",
+        "min_value": "0",
+        "max_value": "200000000"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 215,
+      "code": "NHRd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 216,
+      "code": "Nrvn",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 217,
+      "code": "cwsd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 218,
+      "code": "cwed",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 219,
+      "code": "nwsd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 220,
+      "code": "nwed",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 221,
+      "code": "nhrl",
+      "t55_grade": "unmapped",
+      "grade": "held",
+      "schema_domain": {
+        "type": "boolean"
+      },
+      "status": "getter_proven_but_no_main_row_sink",
+      "domain_status": "no_bound_samples",
+      "slot": null,
+      "first_counterexample": {
+        "kind": "static_member_or_helper_mismatch",
+        "gate": 17048862,
+        "source": "compares bounds at [this+0x108]+0x4a0/0x4a8; not a scalar bit load",
+        "first_evidence": 17048874,
+        "absolute": null
+      },
+      "projection_gate": 17048862
+    },
+    {
+      "xml_index": 222,
+      "code": "Nefr",
+      "t55_grade": "prior_collection",
+      "grade": "prior_collection",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 223,
+      "code": "Nnfr",
+      "t55_grade": "prior_collection",
+      "grade": "prior_collection",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 224,
+      "code": "Nntp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 225,
+      "code": "Nctp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 226,
+      "code": "Nrtp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 227,
+      "code": "Nlns",
+      "t55_grade": "prior_collection",
+      "grade": "prior_collection",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 228,
+      "code": "NTRv",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 229,
+      "code": "NWGv",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 230,
+      "code": "NSps",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 231,
+      "code": "NCro",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 232,
+      "code": "Ntxr",
+      "t55_grade": "prior_collection",
+      "grade": "prior_collection",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 233,
+      "code": "Nfmp",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 234,
+      "code": "Nftb",
+      "t55_grade": "linked_parent_held",
+      "grade": "linked_parent_held",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 235,
+      "code": "Calt",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 236,
+      "code": "RP00",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 237,
+      "code": "RJ00",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 238,
+      "code": "RP01",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 239,
+      "code": "RJ01",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 240,
+      "code": "RP02",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 241,
+      "code": "RJ02",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 242,
+      "code": "RP03",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 243,
+      "code": "RJ03",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 244,
+      "code": "RP04",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 245,
+      "code": "RJ04",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 246,
+      "code": "RP05",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 247,
+      "code": "RJ05",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 248,
+      "code": "RP06",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 249,
+      "code": "RJ06",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 250,
+      "code": "RP07",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 251,
+      "code": "RJ07",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 252,
+      "code": "RP08",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 253,
+      "code": "RJ08",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 254,
+      "code": "RP09",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 255,
+      "code": "RJ09",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 256,
+      "code": "RP10",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 257,
+      "code": "RJ10",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 258,
+      "code": "RP11",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 259,
+      "code": "RJ11",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 260,
+      "code": "RP12",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 261,
+      "code": "RJ12",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 262,
+      "code": "RP13",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 263,
+      "code": "RJ13",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 264,
+      "code": "RP14",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 265,
+      "code": "RJ14",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 266,
+      "code": "RP15",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 267,
+      "code": "RJ15",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 268,
+      "code": "RP16",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 269,
+      "code": "RJ16",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 270,
+      "code": "RP17",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 271,
+      "code": "RJ17",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 272,
+      "code": "RP18",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 273,
+      "code": "RJ18",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 274,
+      "code": "RP19",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 275,
+      "code": "RJ19",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 276,
+      "code": "RP20",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 277,
+      "code": "RJ20",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 278,
+      "code": "RP21",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 279,
+      "code": "RJ21",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 280,
+      "code": "RP22",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 281,
+      "code": "RJ22",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 282,
+      "code": "RP23",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 283,
+      "code": "RJ23",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 284,
+      "code": "RP24",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 285,
+      "code": "RJ24",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 286,
+      "code": "RP25",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 287,
+      "code": "RJ25",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 288,
+      "code": "RP26",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 289,
+      "code": "RJ26",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 290,
+      "code": "RP27",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 291,
+      "code": "RJ27",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 292,
+      "code": "RP28",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 293,
+      "code": "RJ28",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 294,
+      "code": "RP29",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 295,
+      "code": "RJ29",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 296,
+      "code": "RP30",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 297,
+      "code": "RJ30",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 298,
+      "code": "RP31",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 299,
+      "code": "RJ31",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 300,
+      "code": "RP32",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 301,
+      "code": "RJ32",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 302,
+      "code": "RP33",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 303,
+      "code": "RJ33",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 304,
+      "code": "RP34",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 305,
+      "code": "RJ34",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 306,
+      "code": "RP35",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 307,
+      "code": "RJ35",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 308,
+      "code": "RP36",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 309,
+      "code": "RJ36",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 310,
+      "code": "RP37",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 311,
+      "code": "RJ37",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 312,
+      "code": "RP38",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 313,
+      "code": "RJ38",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 314,
+      "code": "RP39",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 315,
+      "code": "RJ39",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 316,
+      "code": "RP40",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 317,
+      "code": "RJ40",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 318,
+      "code": "RP41",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 319,
+      "code": "RJ41",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 320,
+      "code": "RP42",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 321,
+      "code": "RJ42",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 322,
+      "code": "RP43",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 323,
+      "code": "RJ43",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 324,
+      "code": "RP44",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 325,
+      "code": "RJ44",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 326,
+      "code": "RP45",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 327,
+      "code": "RJ45",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 328,
+      "code": "RP46",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 329,
+      "code": "RJ46",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 330,
+      "code": "RP47",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 331,
+      "code": "RJ47",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 332,
+      "code": "RP48",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "database_record_unique_id",
+        "database_table_type": "person",
+        "is_optional": "true"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 333,
+      "code": "RJ48",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "enum",
+        "enum_ref": "mdjc",
+        "enum_definition_rows": 87
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 334,
+      "code": "EDsd",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 335,
+      "code": "EDed",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "date"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 336,
+      "code": "EDdo",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "boolean"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 337,
+      "code": "EDcc",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "boolean"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 338,
+      "code": "EDin",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "boolean"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 339,
+      "code": "EDif",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "boolean"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 340,
+      "code": "EDal",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "boolean"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 341,
+      "code": "EDsr",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "boolean"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 342,
+      "code": "EDfx",
+      "t55_grade": "no_wire_slot",
+      "grade": "no_wire_slot",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 343,
+      "code": "Tchl",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    },
+    {
+      "xml_index": 344,
+      "code": "EDsc",
+      "t55_grade": "held",
+      "grade": "held",
+      "status": "unchanged_e94"
+    },
+    {
+      "xml_index": 345,
+      "code": "AXML",
+      "t55_grade": "unmapped",
+      "grade": "unmapped",
+      "schema_domain": {
+        "type": "list"
+      },
+      "status": "no_bounded_exact_getter_gate",
+      "domain_status": "not_evaluable_without_wire_binding"
+    }
+  ]
+}

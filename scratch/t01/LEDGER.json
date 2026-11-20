@@ -2347,6 +2347,109 @@
     "scripts/t63_club_unmapped_r2.py"
    ],
    "consequence": "club main-row L3 goes 13 -> 21 (8 new, all server-side tag-0 projections); date/age/finance clusters now citable; the appeal-order violation is banked as an input-table vs UI-constraint negative, not a mapping error"
+  },
+  {
+   "id": "E107",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "scope": "t64 comp table_25 unmapped second round (196 t59 unmapped + 2 static payloads)",
+    "result": "196/196 reviewed; new L3 = 0; t59 49 L3 / 10 held / 818 inversions frozen byte-exact (baseline field_map SHA pinned = actual t59 SHA)",
+    "candidate_not_promoted": [
+     "WpBn — getter computes a Band projection from already-read +0xf4 state; not promoted to wire binding"
+    ],
+    "correction": [
+     "main-reader call accounting: 55 direct stream+0x28 calls = 52 outer slots + 3 tag-4 alternates (0xeb7218/0xeb72f8/0xeb7332); t59 report said 54/51 — the extra outer marker is wbcl_present @0xeb7c8f, already in t59 field_slots. Call accounting only; no field status changed",
+     "tag-4 arm gated at 0xeb71b9, reads COMP+0x48/+0x40; cnam/csnm/c3ln getter candidates add r12+0x40/+0x48/+0x50 but main-row stream does not prove transfer and tag-4 absent in both archives — held statuses unchanged"
+    ],
+    "var_he": [
+     "VARt loads COMP+0xd0, HKEt loads COMP+0xd8; matching-code/non-null branch reaches 0xec1830 reading context-object +0xc0/+0xc8 via helper VA 0x140eba600; no same-COMP scalar wire transfer — both stay held"
+    ],
+    "static_payloads": [
+     "+0xa8 entry gate: presence@0xeb7532 -> cmp 0xeb753f / je 0xeb7544 -> alloc 0xeb754a -> reader 0xeb75ca",
+     "+0xe0 entry gate: presence@0xeb76c0 -> cmp 0xeb76cd / je 0xeb76d2 -> 0xeb76d9/0xeb76e4 -> reader 0xeb76fb",
+     "data counterexample to entry: client has no extension block (no a8/e0 events); server 7,047 presence events each, ALL zero, obj events 0/0 — zero result proves non-entry, not non-existence",
+     "sibling rules objects kept separate: +0xd0 presence 121, +0xd8 presence 51; generic readers 0xeb718b/0xeb71a2 -> +0x138/+0x13c have no XML consumer; 0xeb7cc4/0xeb7ccd maps +0x140/+0x144 -> wbst/wben"
+    ],
+    "exclusions": [
+     "8 categories over 196: no_bounded_comp_getter_case 141, bounded_getter_without_wire_closure 38, derived_list_or_shared_handler 5, advanced_rules_or_debug 4, rules_context_sibling 4, derived_count 2, derived_parent_or_global_state 1, projection_candidate 1",
+     "remaining negatives are bounded to the two getter roots, NOT a whole-binary absence claim"
+    ],
+    "spot": "commander re-verified baseline SHA pin (t59 field_map == fdbcb612...), exclusions category sums to 196, worker verify PASS; anchors 7/7"
+   },
+   "evidence": [
+    "scratch/t64/out/helpers.json",
+    "scratch/t64/out/field_map_r2.json",
+    "scratch/t64/out/exclusions.json",
+    "scratch/t64/out/REPORT.md",
+    "scratch/t64/out/verify.py",
+    "scripts/t64_comp_unmapped_r2.py"
+   ],
+   "consequence": "comp round-2 is a banked negative plus one call-accounting correction; the honest zero-L3 result is the evidence that the census gate is not rubber-stamping"
+  },
+  {
+   "id": "E108",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "scope": "t65 nation table_10 unmapped second round (327 E94 unmapped occurrences)",
+    "result": "327 surveyed -> 9 moved to held, 318 remain unmapped; NEW L3 = 0; L4=0; public schema untouched (v9 nation_main_row_fields identical to t55 embed)",
+    "framing_reconfirmed": "slot19 0x103fac0..0x1040be4 (entry VA 0x1410404c0): 992 reachable / 109 conditional / 0 external edges; 25 server-only positions proven unreachable on the client mode edges — not listed as extra outer positions",
+    "new_held": [
+     "rdui: 0xfe3862 -> 0xfe389d/a2/a7 compares this+0x10 vs this+0xc, equal -> skip; reader 0x1040bcf -> 0xfae340 -> 0x3c60119 reads 12B into this+8, last lane is the value; first client @74:05000000, server @641:05000000; 251/251 suppressed both sides. Frozen XML has integer only, no min/max/enum_ref — held",
+     "Nnam: 0x1042222 formatter path, non-inline string cursor",
+     "Nsnm: 0x104225c, this+0x20 string ptr, no t10 write point",
+     "N3ln: 0x10420a1, this+0x28 string ptr, no t10 write point (XML 3-char limit NOT applied to unknown raw column)",
+     "Nnty: 0x1041f9c, this+0x30 string ptr, no main-row sink",
+     "nhrl: 0x104251e compares [this+0x108]+0x4a0/+0x4a8 (setne of another object, not a byte bit)",
+     "dbnm: 0xfe375d virtual name provider + formatter, no main-row sink",
+     "ttcl: 0xfe35bc forwards to object lookup or fcol fallback",
+     "tbcl: 0xfe3980 forwards to object lookup or bcol fallback"
+    ],
+    "projection_sweep": "10 collection/count triples + 9 new-4CC attempts published; example +0x78: mode gate -> 0x1040592 -> 0x104e6b0 -> 0x3d74e30, count @0x3d74e62, 8 item transfers = 1+4+4+1+1+1+1+1 = 14B, 58 items all first byte 01, first server row 52 @33627 — first byte goes to stack, no invented typed 4CC; +0xd8 count!=0 -> +0x1040529 4B and two packed dates via 0xdb7f80 -> 0x39dd7b0@0x39dd7d4, keeps t55 12B item framing, dates not named",
+    "bit_projection": "47 shift/mask instructions across 5 extents; 0x1043605/08 is existing Nndn u16 shr9/and1 (not re-graded); nhrl setne is pointer compare not byte bit; 53 of 327 declare scoped enum_ref but none bind this round — no enum domain filled from adjacent bytes",
+    "closure": "client 13+24,710+9=24,732 / server 13+422,323+9=422,345, each 251 rows; 15 common positions 251/251 byte-identical; native identity 12B (13B is the historical next-selector/footer borrow), footer 00000000|01|ec7ae404",
+    "reference_control": "Nnsi positive control not re-adjudicated: server t21 48,413 targets, 208 hit/0 miss/43 null, UID-use only 79 hits, first miss row 1 @646:da2f0000=12250; rdui hits t10 UID set 251/251 but ordinal set only 92 — confirms it is an identity lane, NOT a reference",
+    "spot": "commander decoded both archives independently: client 24,732 / server 422,345 byte-exact, footer ec7ae404 both sides, rdui lane @74:05000000 reproduced; worker verify PASS (251+251, 40/15, 25 server-only); anchors 7/7"
+   },
+   "evidence": [
+    "scratch/t65/out/projections.json",
+    "scratch/t65/out/field_map_r2.json",
+    "scratch/t65/out/REPORT.md",
+    "scratch/t65/out/verify.py",
+    "scripts/t65_nation_unmapped_r2.py"
+   ],
+   "consequence": "nation round-2 banks another honest negative with 9 evidence-backed held transfers; confirms per-table identity width (12B) against the older 13B borrowing convention"
+  },
+  {
+   "id": "E109",
+   "date": "2026-11-20",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t69 tail-ledger audit across club skipped / comp static-zero / nation held",
+    "grade_target": "L2; new L3=0, L4=0",
+    "entries": [
+     "18 items total: club skipped 10 (all matched to a closed subtable/CLUB_LINK with entry-level evidence pointers), nation held 4 (per t61, not re-adjudicated), comp static-zero 3, comp edge-pending 1",
+     "unresolved_club = [] — zero orphan skips: every club skipped_separate_member occurrence names its承接 table with pointers into t57 field_map and schema /tables/N",
+     "graded L2 x14, held x4; each entry carries path+JSON-pointer evidence refs and raw in-volume byte stats"
+    ],
+    "cross_task": "delivery_status records t61/t66/t68 as delivered; t68 used only as table_3 row-frame cross evidence, explicitly NOT as independent-member evidence",
+    "comp": "3 static-zero (+0xa8/+0xe0/vec30 family) + 1 edge-pending (+0x100 business binding) — inherits t66 physical L3, business binding still pending",
+    "spot": "worker verify --check PASS (18 items, 2x7,047 COMP row witnesses, 4 selected slots); commander confirmed 18=10+4+3+1 and unresolved_club empty"
+   },
+   "evidence": [
+    "scratch/t69/out/tail_ledger.json",
+    "scratch/t69/out/SUMMARY.md",
+    "scratch/t69/out/REPORT.md",
+    "scratch/t69/out/verify.py"
+   ],
+   "consequence": "三表尾账 now closed with zero orphans — the accounting basis for schema v10 fold; nothing in this audit changes any prior grade"
   }
  ]
 }
