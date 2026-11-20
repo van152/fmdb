@@ -1,0 +1,226 @@
+{
+  "script": "scripts/b43_crrp_unicorn.py",
+  "input": "input/editor.exe",
+  "input_sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4",
+  "evidence_scope": "L3 source bytes + isolated instruction emulation; not a live editor/game run",
+  "va_start": "0x141cf6055",
+  "va_end_exclusive": "0x141cf606d",
+  "snippet_sha256": "a6f53087234d84a85cbba3c5c0453290465d82faf696102ed491745d92f96d9f",
+  "instruction_count": 7,
+  "disassembly": [
+    {
+      "va": "0x141cf6055",
+      "bytes": "8b44242c",
+      "mnemonic": "mov",
+      "operands": "eax, dword ptr [rsp + 0x2c]"
+    },
+    {
+      "va": "0x141cf6059",
+      "bytes": "01c0",
+      "mnemonic": "add",
+      "operands": "eax, eax"
+    },
+    {
+      "va": "0x141cf605b",
+      "bytes": "8d0c80",
+      "mnemonic": "lea",
+      "operands": "ecx, [rax + rax*4]"
+    },
+    {
+      "va": "0x141cf605e",
+      "bytes": "83c901",
+      "mnemonic": "or",
+      "operands": "ecx, 1"
+    },
+    {
+      "va": "0x141cf6061",
+      "bytes": "894c2434",
+      "mnemonic": "mov",
+      "operands": "dword ptr [rsp + 0x34], ecx"
+    },
+    {
+      "va": "0x141cf6065",
+      "bytes": "8d44800a",
+      "mnemonic": "lea",
+      "operands": "eax, [rax + rax*4 + 0xa]"
+    },
+    {
+      "va": "0x141cf6069",
+      "bytes": "89442430",
+      "mnemonic": "mov",
+      "operands": "dword ptr [rsp + 0x30], eax"
+    }
+  ],
+  "mapped_memory": {
+    "code_page": "0x141cf6000",
+    "code_page_size": 4096,
+    "scratch_stack": "0x70000000",
+    "scratch_stack_size": 8192,
+    "external_calls": 0
+  },
+  "cases": [
+    {
+      "counter": 0,
+      "expected_lo": 1,
+      "actual_lo": 1,
+      "expected_hi": 10,
+      "actual_hi": 10,
+      "matches": true
+    },
+    {
+      "counter": 1,
+      "expected_lo": 11,
+      "actual_lo": 11,
+      "expected_hi": 20,
+      "actual_hi": 20,
+      "matches": true
+    },
+    {
+      "counter": 2,
+      "expected_lo": 21,
+      "actual_lo": 21,
+      "expected_hi": 30,
+      "actual_hi": 30,
+      "matches": true
+    },
+    {
+      "counter": 3,
+      "expected_lo": 31,
+      "actual_lo": 31,
+      "expected_hi": 40,
+      "actual_hi": 40,
+      "matches": true
+    },
+    {
+      "counter": 4,
+      "expected_lo": 41,
+      "actual_lo": 41,
+      "expected_hi": 50,
+      "actual_hi": 50,
+      "matches": true
+    },
+    {
+      "counter": 5,
+      "expected_lo": 51,
+      "actual_lo": 51,
+      "expected_hi": 60,
+      "actual_hi": 60,
+      "matches": true
+    },
+    {
+      "counter": 6,
+      "expected_lo": 61,
+      "actual_lo": 61,
+      "expected_hi": 70,
+      "actual_hi": 70,
+      "matches": true
+    },
+    {
+      "counter": 7,
+      "expected_lo": 71,
+      "actual_lo": 71,
+      "expected_hi": 80,
+      "actual_hi": 80,
+      "matches": true
+    },
+    {
+      "counter": 8,
+      "expected_lo": 81,
+      "actual_lo": 81,
+      "expected_hi": 90,
+      "actual_hi": 90,
+      "matches": true
+    },
+    {
+      "counter": 9,
+      "expected_lo": 91,
+      "actual_lo": 91,
+      "expected_hi": 100,
+      "actual_hi": 100,
+      "matches": true
+    },
+    {
+      "counter": 10,
+      "expected_lo": 101,
+      "actual_lo": 101,
+      "expected_hi": 110,
+      "actual_hi": 110,
+      "matches": true
+    },
+    {
+      "counter": 11,
+      "expected_lo": 111,
+      "actual_lo": 111,
+      "expected_hi": 120,
+      "actual_hi": 120,
+      "matches": true
+    },
+    {
+      "counter": 12,
+      "expected_lo": 121,
+      "actual_lo": 121,
+      "expected_hi": 130,
+      "actual_hi": 130,
+      "matches": true
+    },
+    {
+      "counter": 13,
+      "expected_lo": 131,
+      "actual_lo": 131,
+      "expected_hi": 140,
+      "actual_hi": 140,
+      "matches": true
+    },
+    {
+      "counter": 14,
+      "expected_lo": 141,
+      "actual_lo": 141,
+      "expected_hi": 150,
+      "actual_hi": 150,
+      "matches": true
+    },
+    {
+      "counter": 15,
+      "expected_lo": 151,
+      "actual_lo": 151,
+      "expected_hi": 160,
+      "actual_hi": 160,
+      "matches": true
+    },
+    {
+      "counter": 16,
+      "expected_lo": 161,
+      "actual_lo": 161,
+      "expected_hi": 170,
+      "actual_hi": 170,
+      "matches": true
+    },
+    {
+      "counter": 17,
+      "expected_lo": 171,
+      "actual_lo": 171,
+      "expected_hi": 180,
+      "actual_hi": 180,
+      "matches": true
+    },
+    {
+      "counter": 18,
+      "expected_lo": 181,
+      "actual_lo": 181,
+      "expected_hi": 190,
+      "actual_hi": 190,
+      "matches": true
+    },
+    {
+      "counter": 19,
+      "expected_lo": 191,
+      "actual_lo": 191,
+      "expected_hi": 200,
+      "actual_hi": 200,
+      "matches": true
+    }
+  ],
+  "case_count": 20,
+  "matched_count": 20,
+  "status": "pass"
+}
