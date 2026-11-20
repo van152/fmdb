@@ -4,7 +4,7 @@
 
 ## 环境
 
-数据已本地化:`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`(已设)。**不许读 Z:。**
+数据已本地化:`FM24_DB_DIR=<WORKSPACE>/scratch/data`(已设)。**不许读 Z:。**
 
 ## 抽查对象(从 stage2_map 挑,建议这批,可按数据可得性替换)
 

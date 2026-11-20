@@ -7,8 +7,8 @@ from __future__ import annotations
 import struct
 import sys
 
-BP = r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm\basic_people_db.dat"
-ED = r"D:\tmp2b\fm24\input\editor.exe"
+BP = r"<GAME_DATA>\data\database\db\2430\2430_fm\basic_people_db.dat"
+ED = r"<OLD_REPO>\input\editor.exe"
 fails = 0
 
 def check(label, cond, detail=""):
@@ -19,7 +19,7 @@ def check(label, cond, detail=""):
 # --- decompress independently via old repo zstd helper ---
 spec = None
 import importlib.util
-spec = importlib.util.spec_from_file_location("o", r"D:\tmp2b\fm24\scripts\modding_read_dbdat.py")
+spec = importlib.util.spec_from_file_location("o", r"<OLD_REPO>\scripts\modding_read_dbdat.py")
 old = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(old)
 zmod = old._zstd_module()

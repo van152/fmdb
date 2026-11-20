@@ -9,7 +9,7 @@ import json
 import struct
 import sys
 
-ED = r"D:\tmp2b\fm24\input\editor.exe"
+ED = r"<OLD_REPO>\input\editor.exe"
 VA_DELTA = 0xA00
 fails = 0
 
@@ -102,10 +102,10 @@ if codes:
     print(f"{'PASS' if good else 'FAIL':4} 7 mapped codes present in window (missing: {miss})")
 
 # --- .dat side: table_10 payload ---
-spec = importlib.util.spec_from_file_location("oldread", r"D:\tmp2b\fm24\scripts\modding_read_dbdat.py")
+spec = importlib.util.spec_from_file_location("oldread", r"<OLD_REPO>\scripts\modding_read_dbdat.py")
 old = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(old)
-DB = r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm"
+DB = r"<GAME_DATA>\data\database\db\2430\2430_fm"
 raw = None
 for arch in ("client_db.dat", "server_db.dat"):
     path, d, meta = old._entries(DB, arch)

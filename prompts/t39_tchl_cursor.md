@@ -3,11 +3,11 @@
 你是受指挥官委派的子代理。club 子表 branch-aware cursor 方法已六次证实(t27 Cstc14/t30 Clhs8/t31 CSrs10/10/t32 Cmti5+1held/t34 CNtp2+2held/t36 Cdbt5/5,累计 44 L3)。本任务复制到 **Tchl(杯赛历史),table_type=34**。静态攻坚,晋级 L3。
 
 ## 必读
-- D:\tmp2b\fm24-db\AGENTS.md(硬约束)
-- D:\tmp2b\fm24-db\scratch\t27\out\replication.md(方法模板;§3 Tchl 行:stride44,club/nation 未排他,见 t13d 伪帧反例)
-- D:\tmp2b\fm24-db\scratch\t36\out\cursor_cdbt.json + fields_cdbt.json + scratch\t32\out\REPORT.md(**最新范例**;record-key i32 pair vs 单 lane identity 逐 read site 判定、packed day/year、float32 real、contextual 坐标、leaf thunk→真 reader+identity tail 双 extent)
-- D:\tmp2b\fm24-db\scratch\t33\out\profiles\table_server_34.profile.json + .rows.jsonl(**数据侧画像,直接消费**)+ scratch\t29\out\profiles\table_server_34.profile.json(t29 先例)
-- D:\tmp2b\fm24-db\scratch\t24\out\subtables.part00*.json(Tchl 9 个 nested occurrence idx562–570)
+- <WORKSPACE>\AGENTS.md(硬约束)
+- <WORKSPACE>\scratch\t27\out\replication.md(方法模板;§3 Tchl 行:stride44,club/nation 未排他,见 t13d 伪帧反例)
+- <WORKSPACE>\scratch\t36\out\cursor_cdbt.json + fields_cdbt.json + scratch\t32\out\REPORT.md(**最新范例**;record-key i32 pair vs 单 lane identity 逐 read site 判定、packed day/year、float32 real、contextual 坐标、leaf thunk→真 reader+identity tail 双 extent)
+- <WORKSPACE>\scratch\t33\out\profiles\table_server_34.profile.json + .rows.jsonl(**数据侧画像,直接消费**)+ scratch\t29\out\profiles\table_server_34.profile.json(t29 先例)
+- <WORKSPACE>\scratch\t24\out\subtables.part00*.json(Tchl 9 个 nested occurrence idx562–570)
 - evidence/fm24/reports/editor_schema/master.json(club.xml Tchl.list_item_fields,冻结 SHA 7d57477e 对照 MANIFEST)
 
 ## 已知锚点
@@ -34,4 +34,4 @@
 - cursor_tchl.json、fields_tchl.json(9 字段台账+grade)、instructions.part*.json、branches.part*.json、verify.py、REPORT.md、DONE.md
 - scripts/t39_tchl_cursor.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;只写 scratch/t39/ 与 scripts/t39_*.py;完成跑 verify + t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;只写 scratch/t39/ 与 scripts/t39_*.py;完成跑 verify + t01_anchors.py(7/7)。

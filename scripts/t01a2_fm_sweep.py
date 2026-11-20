@@ -26,10 +26,10 @@ import struct
 import sys
 import time
 
-FM_EXE = r"D:\tmp2b\fm24\input\fm.exe"
-EDITOR_EXE = r"D:\tmp2b\fm24\input\editor.exe"
-MASTER = r"D:\tmp2b\fm24-db\evidence\fm24\reports\editor_schema\master.json"
-OUT_DIR = r"D:\tmp2b\fm24-db\scratch\t01\inbox\t01a2"
+FM_EXE = r"<OLD_REPO>\input\fm.exe"
+EDITOR_EXE = r"<OLD_REPO>\input\editor.exe"
+MASTER = r"<WORKSPACE>\evidence\fm24\reports\editor_schema\master.json"
+OUT_DIR = r"<WORKSPACE>\scratch\t01\inbox\t01a2"
 
 WINDOW = 1 << 20      # 密度剖面窗口: 1MB
 CLUSTER_GAP = 4096    # 相邻 <4096B 归簇

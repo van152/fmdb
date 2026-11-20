@@ -1,6 +1,6 @@
 # t37 — nation 子表广度 inventory(luna 数据侧侦察,补 t29b club)
 
-先读 D:\tmp2b\fm24-db\AGENTS.md。你是受指挥官委派的子代理。club 侧 t29b inventory 已交付(38 父码),sol 静态 cursor 已闭 6 子表 44 L3,但 **sol openai-codex 额度暂受限**,静态线暂停。本任务做 **nation 侧互补广度数据侧侦察**:把 nation list 父码的子表找出来、画像、生成 L2 候选,为 sol 恢复后静态闭合备料。**不做静态 cursor、不晋级 L3**。
+先读 <WORKSPACE>\AGENTS.md。你是受指挥官委派的子代理。club 侧 t29b inventory 已交付(38 父码),sol 静态 cursor 已闭 6 子表 44 L3,但 **sol openai-codex 额度暂受限**,静态线暂停。本任务做 **nation 侧互补广度数据侧侦察**:把 nation list 父码的子表找出来、画像、生成 L2 候选,为 sol 恢复后静态闭合备料。**不做静态 cursor、不晋级 L3**。
 
 ## 已确认基线
 - **nation schema**:evidence/fm24/reports/editor_schema/master.json#entities.nation.xml[0].fields(346 字段,冻结 SHA 7d57477e 对照 MANIFEST)。**29 个 list 父码**,从 `list_item_fields` 取 item 字段名+类型。有 item 的父码(子表候选):Nagr(3)/TCrs(4)/Nrvn(2)/Nefr(7)/Nnfr(7)/Nntp(6)/Nctp(5)/Nrtp(5)/Nlns(2)/NTRv(2)/NWGv(2)/NSps(2)/NCro(2)/Ntxr(9)/Nfmp(6)/Nftb(7)/Calt(2);0 item 的(Nchi/Nphi/Tko1/Tkg1/Tko2/Tkg2/Tko3/Tkg3)多为 ref-only list,可能嵌主行或共享表,如实标注。
@@ -8,7 +8,7 @@
 - **子表身份源**:scratch/t14/out/census.json(74 表 table_type/handler_off/vtables.class/primary_class/entity_tag)+ scratch/t14/out/stage2_map.json + reports/stage2_table_identity.json。
 - **t33 batch II 画像**(E75,直接消费):scratch/t33/out/profiles/(t12 AWARD_HISTORY/t39 AVERAGE_POINTS/t45,t48 RECORD/t58 WEEKLY_WAGE_CONTRIBUTION/t59 MEDIA_EXPECTATIONS/t73 ITALIAN_SERIE_A)+ subtable_candidates.json(候选 t12->AWsh/t39->csap/t45,t48->Plhs/Pnph/Pacl/t58->Cwcl/t59->Csme)。
 - **club 方法范例**:scratch/t29/out/subtable_inventory.json + build_inventory.json(**复用其 inventory 结构与方法**;注意其 verify.py ROOT parents[3] bug,你用 parents[2])。
-- 数据导出 scripts/fm24_dump.py,FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;**多帧成员注意 E66**(load_payload 取首帧,空 stub 时取真实第二帧;client table3 有 28 帧)。
+- 数据导出 scripts/fm24_dump.py,FM24_DB_DIR=<WORKSPACE>/scratch/data;**多帧成员注意 E66**(load_payload 取首帧,空 stub 时取真实第二帧;client table3 有 28 帧)。
 
 ## 任务(数据侧,候选不晋级)
 对每个 nation list 父码(优先有 item 字段的):

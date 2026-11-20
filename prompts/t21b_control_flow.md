@@ -20,7 +20,7 @@
 
 ## 方法和纪律
 
-- 只读 `D:\tmp2b\fm24\input\editor.exe`、`scratch/t21/out/audit.json`、t01h/t05/t12/t19 等证据；本地数据路径用 `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`。
+- 只读 `<OLD_REPO>\input\editor.exe`、`scratch/t21/out/audit.json`、t01h/t05/t12/t19 等证据；本地数据路径用 `FM24_DB_DIR=<WORKSPACE>/scratch/data`。
 - PE file offset/RVA/VA 必须使用 `scripts/t05_pe.py`，不能套固定 delta。
 - 指令必须保存原始 bytes、file offset、VA、反汇编文本；helper target 用 PE 映射后再分析。
 - 控制流分析优先 CFG/basic-block 路径；线性扫描只能标为候选，不能冒充 executed cursor。

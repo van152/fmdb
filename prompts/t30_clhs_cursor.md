@@ -3,11 +3,11 @@
 你是受指挥官委派的子代理。t27 已证明 club 子表 branch-aware cursor 方法可复制(验收 33/33 绿,Cstc 0→14 L3)。本任务把该方法**首次复制到 Clhs(联赛史)**,目标 table_type=37。这是静态攻坚,晋级 L3。
 
 ## 必读
-- D:\tmp2b\fm24-db\AGENTS.md(硬约束)
-- D:\tmp2b\fm24-db\scratch\t27\out\replication.md(**方法模板**,尤其 §1 分支五分类、§2 walk 模板、§3 scout 表)
-- D:\tmp2b\fm24-db\scripts\t27_stadium_cursor.py + scratch\t27\out\verify.py(builder/独立 verify 范例)
-- D:\tmp2b\fm24-db\scratch\t29\out\subtable_inventory.json + profiles/(**若已交付**:Clhs 的数据侧画像/候选列/stride 封口,直接消费,不重做)
-- D:\tmp2b\fm24-db\scratch\t24\out\subtables.part00*.json(Clhs 的 12 个 nested schema occurrence)
+- <WORKSPACE>\AGENTS.md(硬约束)
+- <WORKSPACE>\scratch\t27\out\replication.md(**方法模板**,尤其 §1 分支五分类、§2 walk 模板、§3 scout 表)
+- <WORKSPACE>\scripts\t27_stadium_cursor.py + scratch\t27\out\verify.py(builder/独立 verify 范例)
+- <WORKSPACE>\scratch\t29\out\subtable_inventory.json + profiles/(**若已交付**:Clhs 的数据侧画像/候选列/stride 封口,直接消费,不重做)
+- <WORKSPACE>\scratch\t24\out\subtables.part00*.json(Clhs 的 12 个 nested schema occurrence)
 - evidence/fm24/reports/editor_schema/master.json(club.xml Clhs.list_item_fields=[year,orde,divi,posi,mxtm,poin,…],冻结 SHA 7d57477e 对照 MANIFEST)
 
 ## 已知锚点(t27 scout)
@@ -25,7 +25,7 @@
 ## 边界
 - 只 Clhs/table37;不碰 Cstc(t27 已闭)、不碰 Cafl/Cvfl(双视图歧义,另案)。
 - 候选不写结论;negative 原样保留;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
-- 若 t29 画像未交付,自行 dump 画像(fm24_dump.py,FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data),但优先消费 t29 成果避免重复。
+- 若 t29 画像未交付,自行 dump 画像(fm24_dump.py,FM24_DB_DIR=<WORKSPACE>/scratch/data),但优先消费 t29 成果避免重复。
 - 预算内无法闭合则诚实 partial + 已绑定子集 + 剩余清单 + 首个反例。
 
 ## 交付 scratch/t30/out/

@@ -9,7 +9,7 @@
   - B 块 15 个(`+0xe7..0xf5`):`Ccjm Ccja Ccjc Ccji Ccjg Ccpc Ccjy Ccjs Ccjp Ccjd Ccjt Ccjh Ccda Ccss Ccdr`
 - **两条 getter 链**(t63 REPORT):玩家态 `0xe89be8 → 0xe89bea → 0xe89c13 → 0x151d9b0`;职员态 `0xe89fd3 bit-test → 0xe89fdc → 0xe8a005 → 0x151e500`;首断点 `0xe89bef` / `0xe89fe1` 都是加载额外对象指针(即 CLUB+0x100 的 qword load)。
 - **同对象的旁证**(t57/t63 held):`Cebd` 走 `+0x100 → extra+0x78`(election 对象);`Cyfn` getter `0xe8e6a9/e8e6b1` 是 `CLUB+0x100 → extra+0xd8`。
-- 静态来源:只读 `D:/tmp2b/fm24/input/editor.exe`,SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`;下文 file offset 不得混淆 VA。CLUB slot 19 `0xe5a7a0`(extent `0xe5a7a0..0xe5bfca`)、slot 2 `0xe89a00`。
+- 静态来源:只读 `<OLD_REPO>/input/editor.exe`,SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`;下文 file offset 不得混淆 VA。CLUB slot 19 `0xe5a7a0`(extent `0xe5a7a0..0xe5bfca`)、slot 2 `0xe89a00`。
 - 对照范本:t64 已在 comp 侧转正过 22 个同名范式的 cnst(Pcsp/Pcsk/...),但其对象是 `COMP+0x198` 本地——**club 是跨对象,不得照抄 comp 的 wire 顺序或偏移**。
 
 ## 任务
@@ -31,4 +31,4 @@
 
 - `chain.json`(静态链:成员绑定 + 对象内游标,含 VA/file offset/原字节)、`field_map_r3.json`(24 个字段的增量 grades,引用 t63/t57 held id)、`rows_extra3.json`(行框 + 坐标摘要)、`verify.py`、`REPORT.md`、`DONE.md`(首行 `DONE type=t71 status=complete`);builder `scripts/t71_club100_cnst.py`。
 
-Python `py -V:3.12 -I -B`;`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`;完成跑 verify + `scripts/t01_anchors.py`(7/7)。
+Python `py -V:3.12 -I -B`;`FM24_DB_DIR=<WORKSPACE>/scratch/data`;完成跑 verify + `scripts/t01_anchors.py`(7/7)。

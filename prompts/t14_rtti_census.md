@@ -10,7 +10,7 @@
 
 ### 1. factory 跳表(类 = archive table_type,已交叉验证)
 
-- editor.exe(D:\tmp2b\fm24\input\editor.exe,只读)`.rdata` 段内有 rel32 数组,**文件偏移基址 `0xF49D38`**。
+- editor.exe(<OLD_REPO>\input\editor.exe,只读)`.rdata` 段内有 rel32 数组,**文件偏移基址 `0xF49D38`**。
 - `handler_off(t) = 0xF49D38 + rel32(小端)@ (0xF49D38 + 4*t)`,t = archive table_type。
 - 负对照:t10 → 0xf48f27 == t01g handler;t25 → 0xf49129 == t01f/t01g COMP handler(见 `scratch/t01/t01h_jump_table_anchor.json`)。
 - 实体交叉验证(8 个精确命中,零矛盾):t0→AWARD、t2→CITY、t8→LANGUAGE、t18→DERBY、t19→REGION、t23→STAGE_NAME、t27→WEATHER、t56→AGREEMENT(对应 E22 的 awar/city/lang/drbr/regi/stgn/weat/agrm)。
@@ -63,7 +63,7 @@ callee 追到(深度 2):32→STARTING_FUTURE_TRANSFER(callee VA 0x140f734b0)、3
 
 已知线索:t12 与 t33 的 A 锚(4CC)分别指向 award/club —— 它们的构造 callee 深追后应看到 AWARD/CLUB 家族;若看到别的,记 conflict,**不许推翻 A 锚**。t1=BASIC_PERSON(E24),t24=team,t25=comp(E20)。`scratch/t02/drbr_reference.json` 有 `.?AVDERBY@db@@` 旧引用可对照。
 
-### 5. fm.exe 交叉(D:\tmp2b\fm24\input\fm.exe,只读,491MB)
+### 5. fm.exe 交叉(<OLD_REPO>\input\fm.exe,只读,491MB)
 
 - 同族封装(.sdata 大代码段 + .arch 371MB packed),274 个 `.?AV...@db@@` 类名(editor 只有 257),**COL 同为相对 RVA 形态**(司令官已验证 STARTING_BAN/CITY/COMP_HISTORY_RECORD 三条链)。
 - 没有 `cmp ecx,0x49` dispatch,布局不同;交叉路线:类名字符串 → TD → COL → vtable → 全文件扫指向 vtable 的 8 字节 VA → 引用代码。

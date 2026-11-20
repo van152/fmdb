@@ -2,9 +2,9 @@
 
 ## 角色与硬约束
 
-你是数据逆向工程师。工作区 `D:\tmp2b\fm24-db`,Python 固定 `py -V:3.12 -I -B`。
+你是数据逆向工程师。工作区 `<WORKSPACE>`,Python 固定 `py -V:3.12 -I -B`。
 
-**只读**:游戏数据目录 `Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm\`(含 `client_db.dat`、`server_db.dat`)只读;上游 `D:\tmp2b\fm24\` 全目录只读。**唯一可写 = 本任务 OUTDIR**。不要改 `scratch/t01`、`scratch/t02` 既有文件。
+**只读**:游戏数据目录 `<GAME_DATA>\data\database\db\2430\2430_fm\`(含 `client_db.dat`、`server_db.dat`)只读;上游 `<OLD_REPO>\` 全目录只读。**唯一可写 = 本任务 OUTDIR**。不要改 `scratch/t01`、`scratch/t02` 既有文件。
 
 **纪律**:closure 精确算术;允许诚实负结果;第一步先落盘骨架 JSON。
 
@@ -34,8 +34,8 @@
 
 ### 已知
 - `client_db/table_25.dat`(competition)。schema 255 字段:44 个子字段 + 15 个 list → **196 个顶层标量**。
-- 已解 **18 个字段**:见 `D:\tmp2b\fm24-db\scratch\t01\inbox\t01f\output.json`(`row_offset_map`)与其 `REPORT.md`。
-- 上游: `D:\tmp2b\fm24\reports\dbdat_decode\DB_TABLES_BIG.md` 的 `table_25` 段;`D:\tmp2b\fm24\reports\dbdat_decode\client_table_25_competition_samples.json`。
+- 已解 **18 个字段**:见 `<WORKSPACE>\scratch\t01\inbox\t01f\output.json`(`row_offset_map`)与其 `REPORT.md`。
+- 上游: `<OLD_REPO>\reports\dbdat_decode\DB_TABLES_BIG.md` 的 `table_25` 段;`<OLD_REPO>\reports\dbdat_decode\client_table_25_competition_samples.json`。
 
 ### 要做
 1. 先确认 table_25 的行边界模型(定长/变长),给出精确 closure。若既有资料不足,自己解。
@@ -46,10 +46,10 @@
 
 | 用途 | 路径 |
 |---|---|
-| archive 读取 | `D:\tmp2b\fm24\scripts\modding_read_dbdat.py`(`runpy.run_path` 加载;`list_tables()`、`_resolve_table(tid, ents, 'server_db.dat'|'client_db.dat')`、`_stream_decompress`) |
-| schema 字段表 | `D:\tmp2b\fm24\reports\EDITOR_SCHEMA_FIELDS.md`(搜 `### team（记录标识 \`team\`` 与 `### comp（记录标识 \`comp\``) |
-| exe | `D:\tmp2b\fm24\input\editor.exe`;reader 入口:team `0x11c1d80`、comp `0xed0a40`(census: `D:\tmp2b\fm24-db\scratch\t01\inbox\t01h\output.json`) |
-| 行框架范例 | `D:\tmp2b\fm24-db\scratch\t02\inbox\club_v2\solve.py`(`load_raw()` 解压 + 全表 walker) |
+| archive 读取 | `<OLD_REPO>\scripts\modding_read_dbdat.py`(`runpy.run_path` 加载;`list_tables()`、`_resolve_table(tid, ents, 'server_db.dat'|'client_db.dat')`、`_stream_decompress`) |
+| schema 字段表 | `<OLD_REPO>\reports\EDITOR_SCHEMA_FIELDS.md`(搜 `### team（记录标识 \`team\`` 与 `### comp（记录标识 \`comp\``) |
+| exe | `<OLD_REPO>\input\editor.exe`;reader 入口:team `0x11c1d80`、comp `0xed0a40`(census: `<WORKSPACE>\scratch\t01\inbox\t01h\output.json`) |
+| 行框架范例 | `<WORKSPACE>\scratch\t02\inbox\club_v2\solve.py`(`load_raw()` 解压 + 全表 walker) |
 | capstone | 已安装 |
 
 **解压陷阱**:`_resolve_table()` 的 `offset` 不是 zstd 帧起点。从 offset 起向后 64 B 内搜 magic `28 b5 2f fd`,从 magic 起解压。解压后断言 `len == payload_size` 且 `sha256` 与上游普查一致。

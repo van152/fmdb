@@ -34,4 +34,4 @@
 
 - `inventory.json`(三表全部槽位分类清单)、`fingerprints.json`(unnamed+held 逐槽指纹,双档)、`verify.py`(独立复算抽样槽 + 重放一致性)、`REPORT.md`、`DONE.md`(首行 `DONE type=t72 status=complete`);builder `scripts/t72_slot_fingerprint.py`(支持 `--help`/`--selftest`,退出码 0/1/2)。
 
-Python `py -V:3.12 -I -B`;`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`。归档成员用 `scripts/fm24_dump.py` 的 `load_payload` 模式(可 runpy 复用,不得修改);大表向量化,别逐行 python 循环 84k×34 慢扫。
+Python `py -V:3.12 -I -B`;`FM24_DB_DIR=<WORKSPACE>/scratch/data`。归档成员用 `scripts/fm24_dump.py` 的 `load_payload` 模式(可 runpy 复用,不得修改);大表向量化,别逐行 python 循环 84k×34 慢扫。

@@ -74,18 +74,18 @@ FM24《Football Manager 2024》的安装数据库是 `.dat` 文件(自定义容�
 
 ### 第 4 步:写回
 - 产出 `output.json`(结构见下)与 `REPORT.md`(≤150 行,含每步证据);
-- 已知 L2 锚点用于交叉验证:六大洲 ccti∈0..5、cnti England=139/China PR=55、cpcm parent row=352、rdui@+114、duni@+118(来自 D:\tmp2b\fm24-db\evidence\fm24\reports\dbdat_decode\DB_TABLES_BIG.md 的 table_25 节)。
+- 已知 L2 锚点用于交叉验证:六大洲 ccti∈0..5、cnti England=139/China PR=55、cpcm parent row=352、rdui@+114、duni@+118(来自 <WORKSPACE>\evidence\fm24\reports\dbdat_decode\DB_TABLES_BIG.md 的 table_25 节)。
 
 ## 输入路径(全部只读)
-- `D:\tmp2b\fm24\input\editor.exe`(二进制)
-- `D:\tmp2b\fm24-db\evidence\fm24\reports\editor_schema\master.json`(3009 字段码、32 实体)
-- `D:\tmp2b\fm24-db\evidence\fm24\reports\DBDAT_FORMAT.md`(表格式)
-- `D:\tmp2b\fm24-db\evidence\fm24\reports\dbdat_decode\DB_TABLES_BIG.md`(table_25 已知锚点)
-- `D:\tmp2b\fm24-db\evidence\fm24\reports\editor_gen\PROPERTY_MAP.md`(database_table_type↔entity 先例)
-- `D:\tmp2b\fm24-db\scratch\t01\LEDGER.json`(指挥官账本,追加你的发现时沿用其格式)
-- `D:\tmp2b\fm24-db\scratch\t01\probe_pe.py`(PE 换算,只读运行)
+- `<OLD_REPO>\input\editor.exe`(二进制)
+- `<WORKSPACE>\evidence\fm24\reports\editor_schema\master.json`(3009 字段码、32 实体)
+- `<WORKSPACE>\evidence\fm24\reports\DBDAT_FORMAT.md`(表格式)
+- `<WORKSPACE>\evidence\fm24\reports\dbdat_decode\DB_TABLES_BIG.md`(table_25 已知锚点)
+- `<WORKSPACE>\evidence\fm24\reports\editor_gen\PROPERTY_MAP.md`(database_table_type↔entity 先例)
+- `<WORKSPACE>\scratch\t01\LEDGER.json`(指挥官账本,追加你的发现时沿用其格式)
+- `<WORKSPACE>\scratch\t01\probe_pe.py`(PE 换算,只读运行)
 
-## 输出契约(写到 `D:\tmp2b\fm24-db\scratch\t01\inbox\t01b\`)
+## 输出契约(写到 `<WORKSPACE>\scratch\t01\inbox\t01b\`)
 - `output.json`:
   ```json
   {

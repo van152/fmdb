@@ -43,7 +43,7 @@ import struct
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-UPSTREAM = pathlib.Path(r"D:\tmp2b\fm24")
+UPSTREAM = pathlib.Path(r"<OLD_REPO>")
 ZSTD_DIR = UPSTREAM / "tools/python"
 READER_VERIFY = ROOT / "scratch/t01/inbox/t01k/verify.py"
 MAGIC = bytes.fromhex("28b52ffd")

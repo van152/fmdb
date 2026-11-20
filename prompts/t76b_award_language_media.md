@@ -28,4 +28,4 @@
 
 - `slots_client_{0,8,7}.json`、`slots_server_{0,8,7}.json`、`verify.py`、`REPORT.md`、`DONE.md`(首行 `DONE type=t76b status=complete`);辅助脚本 `scripts/t76b_*.py`。
 
-Python `py -V:3.12 -I -B`;`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`;完成跑 `scripts/t01_anchors.py`(7/7)。
+Python `py -V:3.12 -I -B`;`FM24_DB_DIR=<WORKSPACE>/scratch/data`;完成跑 `scripts/t01_anchors.py`(7/7)。

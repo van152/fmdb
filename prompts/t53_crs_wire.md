@@ -3,7 +3,7 @@
 你是受指挥官委派的子代理,负责**最难**的收尾任务。t51(sol,E90)已把 TCrs 追到 getter 所用集合(`[this+0xb0]+0x48`)、12B 分配池与 `0x11d3200` 填充路径,但 **member/mode 未绑**;其 sidecar 候选 `table_extra_9.dat` 被 t50(E91)**数据侧**判明为 nation 名称表形态(251 块 `ordinal|name_len|name`,server block0=(0,11,"Les Fennecs"))——TCrs 的 PUn* item 数据**不可能**以该形态存在于块首结构已闭合的部分,sidecar 假设须正面处置。t51 同时记录了关键反例:已绑定的 t9 主 reader 在 `0x105dd63` 也调用同一 item reader,但 `0x105dd56` 写 **`this+0x188`**;server presence 0/1 = **166/85 行**,row 1 `@1726:01` 后确实消费 308 B。本任务裁决 TCrs 的持久化归属并闭合 wire,顺带收尾 EDfx/EDsc。
 
 ## 必读
-- D:\tmp2b\fm24-db\AGENTS.md(硬约束;negative 原样保留;候选不写结论;L4=0)
+- <WORKSPACE>\AGENTS.md(硬约束;negative 原样保留;候选不写结论;L4=0)
 - scratch/t51/out/discovery_unknown2.json(**TCrs 真源**:getter/setter/projection/read_chain sites、object_pointer_path [176,72]、item_allocation_width 12、allocation_pool_VA、archive_candidate_context、main_table_context_comparison;REPORT.md 的 TCrs 段与 Nftb 三重闸门范例)
 - scratch/t49/out/cursor_t9_{client,server}.json + REPORT.md(**已接受的 t9 主档行界**,251×2;未命名变长站点只消费不命名——你的 TCrs walk 必须落在这些行界内并与之相容)
 - scratch/t50/out/profiles/table_{client,server}_extra_9.rows.jsonl + profile_t9.json(**extra_9 名称表形态 L1 证据**,块首已闭/块内未解)
@@ -26,4 +26,4 @@
 - discovery_crs_wire.json(TCrs 归属裁决+EDfx/EDsc 处置)、cursor_crs_*.json(闭合者)、fields_PUn*.json(逐字段三重闸门+ordinal join+grades)、instructions.part*.json、branches.part*.json、verify.py、REPORT.md、DONE.md
 - scripts/t53_crs_wire.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;只写 scratch/t53/ 与 scripts/t53_*.py;完成跑 verify + t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;只写 scratch/t53/ 与 scripts/t53_*.py;完成跑 verify + t01_anchors.py(7/7)。

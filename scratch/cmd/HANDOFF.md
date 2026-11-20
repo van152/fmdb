@@ -30,10 +30,10 @@
 4. nation 6 unknown parent(Nftb/EDfx/EDsc/Nrvn/Calt/TCrs)静态 getter 发现(未来 sol)。
 
 ## 关键锚点 / 约束
-- editor.exe SHA `b82ebe8e032f2017...`(只读 D:/tmp2b/fm24/input);frozen master `7d57477e...`;t37 baseline REPORT `5656568e...`/inventory `8af89c72...`(原样保留)。
+- editor.exe SHA `b82ebe8e032f2017...`(只读 <OLD_REPO>/input);frozen master `7d57477e...`;t37 baseline REPORT `5656568e...`/inventory `8af89c72...`(原样保留)。
 - **E80**:成员绝对起点=`data_base(34)+entry.offset`,按 `entry.size` 选帧;`entry.sha256`=压缩区 SHA(非 payload SHA)。无多帧成员(460/460 单帧)。
-- 硬约束(AGENTS.md):只读 Z:/D:\tmp2b\fm24;不启动游戏/编辑器/IDA 除非用户显式授权;L4=0;negative 原样保留不删改;候选不写结论;Python `py -V:3.12 -I -B`,新脚本 --help/--selftest,退出 0/1/2;大数据/二进制不入 repo;只写 scratch/<task>/ 与 scripts/tNN_*.py。
-- 验证:FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;指挥官 spots `scratch/cmd/t4{3,4,6,7,8}_spot.py`;anchors `scripts/t01_anchors.py`(7/7)。codec `_zstd_module()` 须先调用再 import zstandard(vendored path)。
+- 硬约束(AGENTS.md):只读 Z:/<OLD_REPO>;不启动游戏/编辑器/IDA 除非用户显式授权;L4=0;negative 原样保留不删改;候选不写结论;Python `py -V:3.12 -I -B`,新脚本 --help/--selftest,退出 0/1/2;大数据/二进制不入 repo;只写 scratch/<task>/ 与 scripts/tNN_*.py。
+- 验证:FM24_DB_DIR=<WORKSPACE>/scratch/data;指挥官 spots `scratch/cmd/t4{3,4,6,7,8}_spot.py`;anchors `scripts/t01_anchors.py`(7/7)。codec `_zstd_module()` 须先调用再 import zstandard(vendored path)。
 
 ## 未提交 WIP(在盘上保留,非丢失)
 - `scratch/t49/out/`(空)、pi-logs/pi-sessions(操作日志,tracked M)、scratch/cmd 各 launch/spot 日志。下一 session 按需 reconcile。已接受结论全部已提交。

@@ -2,9 +2,9 @@
 
 ## 角色与硬约束
 
-你是数据逆向工程师。工作区 `D:\tmp2b\fm24-db`,Python 固定 `py -V:3.12 -I -B`。
+你是数据逆向工程师。工作区 `<WORKSPACE>`,Python 固定 `py -V:3.12 -I -B`。
 
-**只读**:`Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm\basic_people_db.dat` 只读;上游 `D:\tmp2b\fm24\` 全目录只读。**唯一可写 = 本任务 OUTDIR**。不要改 `scratch/t01`、`scratch/t02` 既有文件。
+**只读**:`<GAME_DATA>\data\database\db\2430\2430_fm\basic_people_db.dat` 只读;上游 `<OLD_REPO>\` 全目录只读。**唯一可写 = 本任务 OUTDIR**。不要改 `scratch/t01`、`scratch/t02` 既有文件。
 
 **纪律**:每个偏移必须有数据侧统计支撑;允许诚实负结果;第一步先落盘骨架。
 
@@ -22,13 +22,13 @@
 
 | 用途 | 路径 |
 |---|---|
-| **上游人员字段映射(重要起点)** | `D:\tmp2b\fm24\reports\dbdat_decode\people_field_map.json`(含 basic_people_db 的 record_layout 与 fields 列表:offset/type/semantic/confidence) |
-| **上游位置向量映射(已确认锚点)** | `D:\tmp2b\fm24\reports\dbdat_decode\people_attr_map.json`(`schema_inventory.position_fields`:如 `Pgoa` confirmed@34、`Pdce`@37、`Pdmc`@39 等;还有 `variant_2_3_attribute_window_candidate`、`ca_pa`) |
-| 上游校验件 | `D:\tmp2b\fm24\reports\dbdat_decode\people_attr_verify.json`、`people_field_verify.json` |
-| 上游说明 | `D:\tmp2b\fm24\reports\dbdat_decode\PEOPLE_FIELDS.md`、`PEOPLE_ATTRS.md`、`PEOPLE_DB.md` |
-| 已解 15 字段(前序) | `D:\tmp2b\fm24-db\scratch\t02\inbox\pw\output.json` + `REPORT.md` + `verify.py`(`--selftest` 需 `-I -B`) |
-| schema(权威) | `D:\tmp2b\fm24\reports\EDITOR_SCHEMA_FIELDS.md`:`### person（记录标识 \`pers\`，271 个字段）`、`### player（记录标识 \`play\`，179 个字段）`、`### non player（记录标识 \`nnpl\`，129 个字段）` |
-| exe | `D:\tmp2b\fm24\input\editor.exe` |
+| **上游人员字段映射(重要起点)** | `<OLD_REPO>\reports\dbdat_decode\people_field_map.json`(含 basic_people_db 的 record_layout 与 fields 列表:offset/type/semantic/confidence) |
+| **上游位置向量映射(已确认锚点)** | `<OLD_REPO>\reports\dbdat_decode\people_attr_map.json`(`schema_inventory.position_fields`:如 `Pgoa` confirmed@34、`Pdce`@37、`Pdmc`@39 等;还有 `variant_2_3_attribute_window_candidate`、`ca_pa`) |
+| 上游校验件 | `<OLD_REPO>\reports\dbdat_decode\people_attr_verify.json`、`people_field_verify.json` |
+| 上游说明 | `<OLD_REPO>\reports\dbdat_decode\PEOPLE_FIELDS.md`、`PEOPLE_ATTRS.md`、`PEOPLE_DB.md` |
+| 已解 15 字段(前序) | `<WORKSPACE>\scratch\t02\inbox\pw\output.json` + `REPORT.md` + `verify.py`(`--selftest` 需 `-I -B`) |
+| schema(权威) | `<OLD_REPO>\reports\EDITOR_SCHEMA_FIELDS.md`:`### person（记录标识 \`pers\`，271 个字段）`、`### player（记录标识 \`play\`，179 个字段）`、`### non player（记录标识 \`nnpl\`，129 个字段）` |
+| exe | `<OLD_REPO>\input\editor.exe` |
 | capstone | 已安装 |
 
 ## 目标

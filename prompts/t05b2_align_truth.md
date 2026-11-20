@@ -18,8 +18,8 @@
 
 ## 硬约束
 
-- 工作区 `D:\tmp2b\fm24-db`,Python `py -V:3.12 -I -B`。
-- 游戏数据与 `D:\tmp2b\fm24\` 全只读;唯一可写 = OUTDIR。不要改 `scratch/t01`、`scratch/t02`。
+- 工作区 `<WORKSPACE>`,Python `py -V:3.12 -I -B`。
+- 游戏数据与 `<OLD_REPO>\` 全只读;唯一可写 = OUTDIR。不要改 `scratch/t01`、`scratch/t02`。
 - **不要写 `status: in_progress`**;结论必须定格为 `complete*` / `partial*` / `negative`。
 
 ## 直接可用的输入
@@ -32,7 +32,7 @@
 | 设计笔记 | `scratch/t05/ALIGNMENT_NOTES.md`(必读,尤其"字节/标量密度"与"optional 跳过"两节) |
 | club 行框架 | `scratch/t02/inbox/club_v2/output.json`(84,259 行闭合) |
 | club 已验字段 | `scratch/t02/inbox/club_fields/output.json`(Cccn@+8,字节链 8/8) |
-| exe | `D:\tmp2b\fm24\input\editor.exe` |
+| exe | `<OLD_REPO>\input\editor.exe` |
 | 导出器(取行) | `scripts/fm24_dump.py`(`_reader()` / `load_payload()` / `fixed_specs()` / `walk_fixed()`) |
 
 ## 必须先接受的四条结构事实(指挥官已实测)

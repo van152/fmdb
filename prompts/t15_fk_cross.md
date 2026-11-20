@@ -4,7 +4,7 @@
 
 ## 环境变化(重要)
 
-游戏数据库已本地化:`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`(环境变量已设好,`scripts/fm24_dump.py` 已支持)。**不许再读 Z: 盘。** dump 用法:
+游戏数据库已本地化:`FM24_DB_DIR=<WORKSPACE>/scratch/data`(环境变量已设好,`scripts/fm24_dump.py` 已支持)。**不许再读 Z: 盘。** dump 用法:
 
 ```
 py -V:3.12 -I -B scripts/fm24_dump.py --archive server --table 26 --csv scratch/t15/out/t26.csv

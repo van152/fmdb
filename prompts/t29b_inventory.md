@@ -3,15 +3,15 @@
 你是受指挥官委派的子代理。t29 已产出 **13 个子表 complete_data_profile**(指挥官独立核验 13/13 封口+count+列统计通过),但超时前未写综合 inventory。本任务**只补综合层,不重 dump、不重画像**——短任务,务必在窗口内完成。
 
 ## 已交付(直接读,勿重做)
-- D:\tmp2b\fm24-db\scratch\t29\out\profiles\table_server_{33,34,37,43,50,51,60,61,62,63,64,66,70}.profile.json + .rows.jsonl
+- <WORKSPACE>\scratch\t29\out\profiles\table_server_{33,34,37,43,50,51,60,61,62,63,64,66,70}.profile.json + .rows.jsonl
   - 33 Cdbt STARTING_CLUB_DEBT 32409×79 / 34 Tchl STARTING_TEAM_CUP_HISTORY 7115×44 / 37 Clhs 465712×40(t30 已 8 L3) / 43 Cmti STARTING_MONTHLY_INSTALLMENT 535×46 / 50 MLS_TRADED_SLOT 45×26 / 51 MLS_GENERAL_ALLOCATION_MONEY 59×23 / 60 MLS_TARGETED_ALLOCATION_MONEY 59×23 / 61 ITALIAN_SERIE_A_FREED_NON_EU_SLOT 16×20 / 62 CSrs STARTING_RESERVE_TEAM 37214×42(t31 进行中) / 63 ITALIAN_NON_EU_SLOTS_NUMBER 2×20 / 64 CLUB_STAFF_JOB_STATUS 6946×21 / 66 CNtp CLUB_TRANSFER_PREFERENCE 753×24 / 70 VISION_OBJECTIVE 10075×40
 
 ## 必读
-- D:\tmp2b\fm24-db\AGENTS.md
-- D:\tmp2b\fm24-db\scratch\t27\out\replication.md §3 scout 表(parent↔table 候选配对 + Cafl/Cvfl 双视图歧义说明)
-- D:\tmp2b\fm24-db\scratch\t24\out\subtables.part00*.json(club 全部 nested parent_4cc 清单 + 各 list_item_fields idx)
-- D:\tmp2b\fm24-db\scratch\t14\out\census.json(74 表 RTTI/handler/vtables/primary_class/entity_tag/adjudication)
-- D:\tmp2b\fm24-db\reports\stage2_table_identity.json(54 resolved 实体归属)
+- <WORKSPACE>\AGENTS.md
+- <WORKSPACE>\scratch\t27\out\replication.md §3 scout 表(parent↔table 候选配对 + Cafl/Cvfl 双视图歧义说明)
+- <WORKSPACE>\scratch\t24\out\subtables.part00*.json(club 全部 nested parent_4cc 清单 + 各 list_item_fields idx)
+- <WORKSPACE>\scratch\t14\out\census.json(74 表 RTTI/handler/vtables/primary_class/entity_tag/adjudication)
+- <WORKSPACE>\reports\stage2_table_identity.json(54 resolved 实体归属)
 - evidence/fm24/reports/editor_schema/master.json(club.xml list 父码 + list_item_fields;冻结 SHA 7d57477e 对照 MANIFEST)
 
 ## 任务(纯综合)
@@ -28,4 +28,4 @@
 - 候选不写结论;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
 - **不重 dump 全表**(画像已在);综合若需抽样验证只读少量行。务必窗口内交付 inventory+REPORT+DONE。
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data。完成跑 verify + t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data。完成跑 verify + t01_anchors.py(7/7)。

@@ -11,7 +11,7 @@
 | 提交数 | 216 |
 | 本地分支 | 34(任务分支 `tNN-短名` 线性链,见下) |
 | 验收台账 | `scratch/t01/LEDGER.json`,**110 条**,末条 E110 |
-| 远端 | `origin` = `github.com/van152/fm24-db.git` |
+| 远端 | `origin` = `<REMOTE>` |
 | 体积 | 2.0 GB(`.git` 190 MB、`scratch` 1.7 GB、`reports` 29 MB、`evidence` 15 MB) |
 
 **分支拓扑**:主体是一条任务分支线性链 `t41-csme-cursor → … → t70-schemav10`,每次 pi dispatch 建新分支、指挥官在分支上提交,工作全部保留、尚未 merge-to-main。`main` 停在 `7a8a0bf`(初始化骨架),`github-snapshot` 停在 `c9e7dab`(脱敏快照,也是 `origin/main`)。远端自快照后无更新。
@@ -19,7 +19,7 @@
 ## 二、方法与硬约束(摘自 AGENTS.md)
 
 - **证据分级**:L1 自检 / L2 独立事实对照 / L3 exe 静态证据(注明二进制、VA、来源)/ L4 真机加载(=0)。候选不写成结论,负结果原文保留不删改。
-- **只读外部数据**:游戏库 `Z:`、旧证据库 `D:\tmp2b\fm24` 一律只读;不启动游戏/编辑器/IDA,除非显式授权。引用旧证据须经 `evidence/fm24/` 快照 + MANIFEST SHA-256。
+- **只读外部数据**:游戏库 `Z:`、旧证据库 `<OLD_REPO>` 一律只读;不启动游戏/编辑器/IDA,除非显式授权。引用旧证据须经 `evidence/fm24/` 快照 + MANIFEST SHA-256。
 - **Python 3.12**:`py -V:3.12 -I`;新脚本须有 `--help` 与 `--selftest`;退出码 0/1/2。
 - **Git**:任务分支 `tNN-短名`;提交信息 `feat/fix/docs/chore(tNN): 摘要`;大数据/二进制不入库。
 - **落地位置**:临时实验进 `scratch/<任务>/`,结论进 `reports/`,机读结果与报告同名成对。

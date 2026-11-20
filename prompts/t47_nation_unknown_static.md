@@ -3,7 +3,7 @@
 你是受指挥官委派的子代理,负责**最难**的发现任务。t37(luna 数据侧)已诚实负例:nation 29 list parent 中 **25 unknown/partial,0 nation 独占 L3**;15 个 item-bearing parent 的 table_type/archive/RTTI/count/stride **全未知**(link_status=partial_parent_to_table_unknown)。t44(sol)刚用**静态集合追踪** crack 了 Cafl/Cvfl 共用的具名辅助 POD 成员 `club_links.dat`(无 factory case/RTTI/slot19)。本任务把同一方法推广到 **NATION** 对象,反查这些未知 parent 的真实 backing member 与 reader,闭合 cursor 并按三重闸门晋级 L3。
 
 ## 必读
-- D:\tmp2b\fm24-db\AGENTS.md(硬约束)
+- <WORKSPACE>\AGENTS.md(硬约束)
 - scratch/t37/out/nation_subtable_inventory.json + REPORT.md(**负例真源,原样保留不删改**;parents/link_status/blockers;next_static_handoff 点名 Nntp/Ntxr/Nfmp)
 - scratch/t44/out/REPORT.md + discovery_cafl_cvfl.json + cursor_club_links.json(**集合追踪+具名辅助 POD 成员范例**:CLUB slot2 `0xe89a00` 按 4CC 精确分发→club `+0x118/+0x120` vector→分配池 VA `0x141b5ecc8`(CLUB_LINK,非 RTTI)→具名打开器 `0x434e390` 拼 `club_links.dat`→reader `0x1529210`;47B POD,12B header+u32 count@8,无 selector/identity/footer;版本 word VA `0x141b60330` 门槛 `0x0dd6`)
 - scratch/t39/out/REPORT.md(**NATION slot2 锚点**:`0x1041f30 → 0x1041f40`,`0x1043322 → 0x1065ef0`,`0x1066981` 同 4CC 汇入 `0x11f41d0`;Team 集合 helper `0x15e9830 → 0x44d7bf0`,全局 VA `0x141b60158` table `+0x80` vector,owner 筛选)
@@ -51,4 +51,4 @@
 - discovery_nation_unknown.json(parent→member→reader 静态链+table_type 判定,逐 parent)、cursor_*.json/fields_*.json(闭合者)、instructions.part*.json、branches.part*.json、verify.py、REPORT.md、DONE.md
 - scripts/t47_nation_unknown.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;只写 scratch/t47/ 与 scripts/t47_*.py;完成跑 verify + t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;只写 scratch/t47/ 与 scripts/t47_*.py;完成跑 verify + t01_anchors.py(7/7)。

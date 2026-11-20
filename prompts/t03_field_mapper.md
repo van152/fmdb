@@ -14,7 +14,7 @@ E20(t01f)证明:**行偏移不存于 descriptor 槽,而是序列化器 reader �
 
 - `scratch/t02/field_mapper/fixtures.json`:**7 个归一化回归夹具,173 字段**,覆盖 5 种模式。每个含 type_id/field_count/{code:row_offset}/reader(entry+unwrapped+mode)。
 - `scratch/t01/inbox/t01h/output.json`:**74 项 census,63 项有 reader.entry_file_offset**;每项含 factory handler/ctor/RTTI/reader mode。
-- `editor.exe`:`D:/tmp2b/fm24/input/editor.exe`(只读,SHA b82ebe8e032f2017)。
+- `editor.exe`:`<OLD_REPO>/input/editor.exe`(只读,SHA b82ebe8e032f2017)。
 - `capstone 5.0.7` / `numpy` / `pefile` 已装,`py -V:3.12 -I -B` 可 import。
 
 ## 任务(先落盘,边做边存)

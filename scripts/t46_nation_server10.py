@@ -7,7 +7,7 @@ as an identity cross-check. It never applies client count/item formulas to serve
 Run with Python 3.12:
   py -V:3.12 -I -B scripts/t46_nation_server10.py --help
   py -V:3.12 -I -B scripts/t46_nation_server10.py --selftest
-  FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scripts/t46_nation_server10.py --build
+  FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scripts/t46_nation_server10.py --build
 """
 from __future__ import annotations
 

@@ -1,17 +1,17 @@
 # t35 — Cafl/Cvfl 俱乐部附属关系子表数据侧发现(luna 广度侦察)
 
-先读 D:\tmp2b\fm24-db\AGENTS.md。你是受指挥官委派的子代理。club 子表静态 cursor 由 sol 复制(t27/t30/t31/t32 已闭 Cstc/Clhs/CSrs/Cmti,37 L3);t29b inventory 把 Cafl/Cvfl 标 unknown。本任务做**数据侧发现+画像**,为 sol 后续静态闭合备料。**不做静态 cursor、不晋级 L3**。
+先读 <WORKSPACE>\AGENTS.md。你是受指挥官委派的子代理。club 子表静态 cursor 由 sol 复制(t27/t30/t31/t32 已闭 Cstc/Clhs/CSrs/Cmti,37 L3);t29b inventory 把 Cafl/Cvfl 标 unknown。本任务做**数据侧发现+画像**,为 sol 后续静态闭合备料。**不做静态 cursor、不晋级 L3**。
 
 ## 核心假说(待证据验证,不预设结论)
 Cafl(29 字段)与 Cvfl(19 字段)**共享大量 item 字段**:affl/ismc/stdt/type/yfee/fri%/frly/golo/fotb/plfr/smbo/fnhl/perm/yutr/hlwf/mrrl/scks/cpsd。Cvfl 近似 Cafl 子集,但多 `clfr`(Validated? enum)、少 `endt` 及 Cafl 后段字段(msls/yout/rsrv/pfpr/pwgp/bttr/ualf/lpfs/ustf/UsSK)。t27 replication.md 静态线索:Cafl compare `0xe8b4db`→`0xe8f13d`→thunk `0x141532ab0`(R8D=0,取 club +0x118/+0x120);Cvfl compare `0xe8c1e8` 后比较 club 相同偏移,`0xe8c217` 调 `0x141532c60`(R8B=1)。**假说:同一 club-owned affiliation 集合的两个视图(R8 flag 0/1 选视图),而非两个独立表。** 用数据验证或反驳,保留反例。
 
 ## 必读
-- D:\tmp2b\fm24-db\scratch\t27\out\replication.md(§3 Cafl/Cvfl 优先切口)
-- D:\tmp2b\fm24-db\scratch\t29\out\subtable_inventory.json(Cafl/Cvfl unknown 页)+ profiles/ 已有 13 表
-- D:\tmp2b\fm24-db\scratch\t14\out\census.json(74 表 table_type/handler_off/vtables.class/primary_class/entity_tag)+ reports/stage2_table_identity.json(54 resolved)
-- D:\tmp2b\fm24-db\scratch\t24\out\subtables.part00*.json(Cafl idx370–398 / Cvfl idx400–418 完整 item 字段)
+- <WORKSPACE>\scratch\t27\out\replication.md(§3 Cafl/Cvfl 优先切口)
+- <WORKSPACE>\scratch\t29\out\subtable_inventory.json(Cafl/Cvfl unknown 页)+ profiles/ 已有 13 表
+- <WORKSPACE>\scratch\t14\out\census.json(74 表 table_type/handler_off/vtables.class/primary_class/entity_tag)+ reports/stage2_table_identity.json(54 resolved)
+- <WORKSPACE>\scratch\t24\out\subtables.part00*.json(Cafl idx370–398 / Cvfl idx400–418 完整 item 字段)
 - evidence/fm24/reports/editor_schema/master.json(club.xml,冻结 SHA 7d57477e 对照 MANIFEST)
-- scripts/fm24_dump.py(FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data);多帧成员注意 E66 caveat(load_payload 取首帧,空 stub 时取真实第二帧)
+- scripts/fm24_dump.py(FM24_DB_DIR=<WORKSPACE>/scratch/data);多帧成员注意 E66 caveat(load_payload 取首帧,空 stub 时取真实第二帧)
 
 ## 任务(数据侧)
 1. **定候选表**:在 t14 census + stage2 identity 中按 RTTI 语义搜 CLUB_AFFILIATION / AFFILIATE / CLUB_LINK 类名(及近义),列出所有候选 table_type+archive+RTTI+primary_class+entity_tag。匹配不确定标 unknown,**不猜**。

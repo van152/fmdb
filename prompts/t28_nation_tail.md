@@ -3,13 +3,13 @@
 你是受指挥官委派的子代理。目标:**把 nation client reader 的变量尾(A/B/C/D 集合 + reader calls 24-39)绑定到行内 wire 坐标,晋级 client schema 的 49 个字段(21 direct + 28 nested list item)中可证实者**。t25 已把数据帧完全闭合,但 reader→wire 未对账;本任务补这一层,方法同 t24/t27(branch-aware symbolic cursor)。
 
 ## 必读
-- D:\tmp2b\fm24-db\AGENTS.md(硬约束;只读 editor.exe,PE 换算 scripts/t05_pe.py)
-- D:\tmp2b\fm24-db\scratch\t27\out\replication.md(t27 子表方法模板,刚验收 33/33 绿)
-- D:\tmp2b\fm24-db\scripts\t27_stadium_cursor.py、t24_club_cursor.py(branch-aware walker + 独立 verify 范例)
-- D:\tmp2b\fm24-db\scratch\t25\out\cursor_nation.json(数据帧 + reader_evidence:reader_entry foff `0x103fac0`/VA `0x1410404c0`;prefix 10 transfers;A-count reader `0x1040728` movsx + helper `0x1040731` + count_test `0x1040736`;per_item helper;B/C/D count/item 线索)
-- D:\tmp2b\fm24-db\scratch\t25\out\schema_split.json(client_fields=49:21 direct + 28 nested,各 type/list_item_fields;unmarked=392)
-- D:\tmp2b\fm24-db\scratch\t25\out\fields_nation.json(已 7 个 L3 prefix 字段 + 数据画像)
-- D:\tmp2b\fm24-db\scripts\t22_nation_capital.py(Ncpi getter 链方法;nation.xml 抽取)
+- <WORKSPACE>\AGENTS.md(硬约束;只读 editor.exe,PE 换算 scripts/t05_pe.py)
+- <WORKSPACE>\scratch\t27\out\replication.md(t27 子表方法模板,刚验收 33/33 绿)
+- <WORKSPACE>\scripts\t27_stadium_cursor.py、t24_club_cursor.py(branch-aware walker + 独立 verify 范例)
+- <WORKSPACE>\scratch\t25\out\cursor_nation.json(数据帧 + reader_evidence:reader_entry foff `0x103fac0`/VA `0x1410404c0`;prefix 10 transfers;A-count reader `0x1040728` movsx + helper `0x1040731` + count_test `0x1040736`;per_item helper;B/C/D count/item 线索)
+- <WORKSPACE>\scratch\t25\out\schema_split.json(client_fields=49:21 direct + 28 nested,各 type/list_item_fields;unmarked=392)
+- <WORKSPACE>\scratch\t25\out\fields_nation.json(已 7 个 L3 prefix 字段 + 数据画像)
+- <WORKSPACE>\scripts\t22_nation_capital.py(Ncpi getter 链方法;nation.xml 抽取)
 - evidence/fm24/reports/editor_schema/master.json(nation.xml 字段类型;list_item_fields)
 
 ## 已知事实(勿重做)
@@ -38,4 +38,4 @@
 - scripts/t28_nation_tail.py(builder)
 - 完成后写 scratch/t28/out/DONE.md(一句话状态 + 晋级数 + 关键结论)
 
-Python:`py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data。只读外部;只写 scratch/t28/ 与 scripts/t28_*.py。
+Python:`py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data。只读外部;只写 scratch/t28/ 与 scripts/t28_*.py。

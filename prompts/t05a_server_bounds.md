@@ -2,11 +2,11 @@
 
 ## 角色与硬约束
 
-你是数据逆向工程师。工作区 `D:\tmp2b\fm24-db`,Python 固定 `py -V:3.12 -I -B`(必须带 `-I -B`)。
+你是数据逆向工程师。工作区 `<WORKSPACE>`,Python 固定 `py -V:3.12 -I -B`(必须带 `-I -B`)。
 
 **只读边界(不可违反)**:
-- 游戏数据 `Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm\server_db.dat` **只读**。
-- 上游工作区 `D:\tmp2b\fm24\` **全目录只读**(它的 AGENTS.md 禁止写入;你只能读它的 reports 和 scripts)。
+- 游戏数据 `<GAME_DATA>\data\database\db\2430\2430_fm\server_db.dat` **只读**。
+- 上游工作区 `<OLD_REPO>\` **全目录只读**(它的 AGENTS.md 禁止写入;你只能读它的 reports 和 scripts)。
 - 你的**唯一可写目录**是本任务的 OUTDIR。不要写 `scratch/t01`、不要改 `scratch/t02` 的任何既有文件。
 
 **纪律**:
@@ -17,7 +17,7 @@
 
 ## 目标
 
-`server_db.dat` 目录里 **59 张数值主表**。上游普查(`D:\tmp2b\fm24\reports\dbdat_decode\server_tables_census.json`)给出:37 张 `fixed_stride`、18 张 `variable_or_nonstandard`、少量 empty/auxiliary。
+`server_db.dat` 目录里 **59 张数值主表**。上游普查(`<OLD_REPO>\reports\dbdat_decode\server_tables_census.json`)给出:37 张 `fixed_stride`、18 张 `variable_or_nonstandard`、少量 empty/auxiliary。
 
 你的任务:
 1. **对全部 59 张数值表独立复算闭包**(不信任上游结论,自己解压自己算):定长表验 `14 + count*stride + 8 == payload_len`;变长表必须真正走完整表。
@@ -28,11 +28,11 @@
 
 | 用途 | 路径 |
 |---|---|
-| archive 读取/解压 | `D:\tmp2b\fm24\scripts\modding_read_dbdat.py`(用 `runpy.run_path` 加载;函数 `list_tables()`、`_resolve_table(tid, ents, 'server_db.dat')`、`_stream_decompress(buf, maxlen)`) |
-| 容器格式说明 | `D:\tmp2b\fm24\reports\CONTAINER_SPEC.md`、`D:\tmp2b\fm24\reports\DBDAT_FORMAT.md` |
-| 上游普查(仅作假设) | `D:\tmp2b\fm24\reports\dbdat_decode\server_tables_census.json`(每条含 `table_id / record_count_header / payload_size / payload_sha256 / row_model / row_boundary`) |
-| 变长行范例(已解) | `D:\tmp2b\fm24-db\scratch\t02\inbox\nati\OUTBOX\framework.json`(4 段计数循环 `row_len=50+5A+28B+28C+12D`) |
-| 变长行走范例(已解) | `D:\tmp2b\fm24-db\scratch\t02\inbox\club_v2\solve.py`(84,259 行全封口的 walker,注意 `load_raw()`) |
+| archive 读取/解压 | `<OLD_REPO>\scripts\modding_read_dbdat.py`(用 `runpy.run_path` 加载;函数 `list_tables()`、`_resolve_table(tid, ents, 'server_db.dat')`、`_stream_decompress(buf, maxlen)`) |
+| 容器格式说明 | `<OLD_REPO>\reports\CONTAINER_SPEC.md`、`<OLD_REPO>\reports\DBDAT_FORMAT.md` |
+| 上游普查(仅作假设) | `<OLD_REPO>\reports\dbdat_decode\server_tables_census.json`(每条含 `table_id / record_count_header / payload_size / payload_sha256 / row_model / row_boundary`) |
+| 变长行范例(已解) | `<WORKSPACE>\scratch\t02\inbox\nati\OUTBOX\framework.json`(4 段计数循环 `row_len=50+5A+28B+28C+12D`) |
+| 变长行走范例(已解) | `<WORKSPACE>\scratch\t02\inbox\club_v2\solve.py`(84,259 行全封口的 walker,注意 `load_raw()`) |
 
 **已知陷阱(务必先解决)**:
 `_resolve_table()` 返回的 `offset` **不是 zstd 帧起点**。正确做法二选一:

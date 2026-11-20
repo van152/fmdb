@@ -3,7 +3,7 @@
 你是受指挥官委派的子代理,负责**最难**的发现任务。t35(luna 数据侧)已诚实负例:**74 类 t14 census + 45 行 stage2 全扫,0 语义 RTTI 候选**(AFFILIAT/CLUB_LINK/FEEDER/FARM/SATELLITE 等全空),Cafl/Cvfl 的 table_type/archive/RTTI/count/stride **全未知**。本任务用 **静态集合追踪**(t39/t41 已证法)从 CLUB 对象分发反查真实表,突破无语义锚点困境。
 
 ## 必读
-- D:\tmp2b\fm24-db\AGENTS.md(硬约束)
+- <WORKSPACE>\AGENTS.md(硬约束)
 - scratch/t35/out/cafl_cvfl_discovery.json + REPORT.md(**负例真源,原样保留不删改**;view_hypothesis/unknown_list/near_miss_club_classes)
 - scratch/t39/out/REPORT.md + scratch/t41/out/REPORT.md(**集合追踪范例**:Club slot2 `0xe89a00` 按 4CC 精确分发→集合 helper(全局 VA table `+0x80` vector,t39=0x141b60158/t41=0x141b601e8)→entry vptr→factory case→table_type;owner 筛选 outer+0x30)
 - scratch/t27/out/replication.md(cursor 方法模板)
@@ -34,4 +34,4 @@
 - discovery_cafl_cvfl.json(table_type 判定+静态链)、cursor_*.json/fields_*.json(若闭合)、instructions.part*.json、branches.part*.json、verify.py、REPORT.md、DONE.md
 - scripts/t44_cafl_cvfl.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;只写 scratch/t44/ 与 scripts/t44_*.py;完成跑 verify + t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;只写 scratch/t44/ 与 scripts/t44_*.py;完成跑 verify + t01_anchors.py(7/7)。

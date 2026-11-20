@@ -6,7 +6,7 @@ import importlib.util
 import struct
 import sys
 
-ED = r"D:\tmp2b\fm24\input\editor.exe"
+ED = r"<OLD_REPO>\input\editor.exe"
 fails = 0
 data = open(ED, "rb").read()
 
@@ -49,11 +49,11 @@ expect("Pdob getter cmp edx,'Pdob' @0xe506a5", 0xe506a5, "81 fa 62 6f 64 50")
 expect("Pdob getter movzx word [rdi+0x5a] @0xe51158", 0xe51158, "0f b7 7f 5a")
 
 # payload sample: class-4 row @0x13b29
-spec = importlib.util.spec_from_file_location("o", r"D:\tmp2b\fm24\scripts\modding_read_dbdat.py")
+spec = importlib.util.spec_from_file_location("o", r"<OLD_REPO>\scripts\modding_read_dbdat.py")
 old = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(old)
 zmod = old._zstd_module()
-raw_file = open(r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm\basic_people_db.dat", "rb").read()
+raw_file = open(r"<GAME_DATA>\data\database\db\2430\2430_fm\basic_people_db.dat", "rb").read()
 payload = old._stream_decompress(raw_file[8:], 256 * 1024 * 1024)
 sample = payload[0x13b29:0x13b37].hex()
 good = sample == "1104af0000002103000064006c07"

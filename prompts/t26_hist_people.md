@@ -4,7 +4,7 @@
 
 ## 已有基线(t15b 清点,直接复用其脚本手法)
 
-- 容器处理先例:`scratch/t15b/probe.py` / `probe2.py` / `probe3.py`(tad. 外壳 + zstd 解压、tadc v3 串联 zstd、tad. v1 u32 数组)。数据一律用本地镜像 `D:/tmp2b/fm24-db/scratch/data/`(原始容器文件),**不读写 Z:**。
+- 容器处理先例:`scratch/t15b/probe.py` / `probe2.py` / `probe3.py`(tad. 外壳 + zstd 解压、tadc v3 串联 zstd、tad. v1 u32 数组)。数据一律用本地镜像 `<WORKSPACE>/scratch/data/`(原始容器文件),**不读写 Z:**。
 - `people_db.dat`:tad. + zstd@8,解压后 400,443,970 B;头部 `u32@2 = 658011`(与 basic_people_db 行数完全一致);probe3 已从 pos 6 走通 1193 行 compact 文法:`row_span = 33 + name_len`,全 type 5,key 范围 [656818, 658010],duni 范围 [2002040996, 2002042188],见 `scratch/t15b/out/probe3.json`。
 - `non_pl_hist_dt.dat`:27.6MB,tadc v3 + 串联 zstd,容器已进、表层未拆。
 - `non_pl_hist_id.dat` / `pl_hist_id.dat`:tad. v1 + u32 数组。

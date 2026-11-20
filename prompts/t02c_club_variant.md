@@ -29,7 +29,7 @@ FM24 `.dat` 语义解析:把 schema 字段映射到行内偏移。**只读输入
 
 ## 硬约束
 
-- 只读:`D:/tmp2b/fm24`、`Z:/SteamLibrary/...`、editor.exe 只读。
+- 只读:`<OLD_REPO>`、`<GAME_DRIVE>/...`、editor.exe 只读。
 - 每 claim 带 file offset + 字节证据;候选不写成结论;负结果保留原文。
 - 只写 `OUTDIR/`,不改目录外任何文件。
 

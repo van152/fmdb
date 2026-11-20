@@ -30,9 +30,9 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CLIENT_DB = pathlib.Path(
-    r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm\client_db.dat"
+    r"<GAME_DATA>\data\database\db\2430\2430_fm\client_db.dat"
 )
-READER = pathlib.Path(r"D:\tmp2b\fm24\scripts\modding_read_dbdat.py")
+READER = pathlib.Path(r"<OLD_REPO>\scripts\modding_read_dbdat.py")
 MAGIC = bytes.fromhex("28b52ffd")
 
 TABLE_ID = 47

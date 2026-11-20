@@ -55,7 +55,7 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-REPO = Path(r"D:\tmp2b\fm24-db")
+REPO = Path(r"<WORKSPACE>")
 DEFAULT_MASTER = REPO / "evidence/fm24/reports/editor_schema/master.json"
 DEFAULT_PMAP = REPO / "evidence/fm24/reports/editor_gen/PROPERTY_MAP.md"
 DEFAULT_OUT = REPO / "scratch/t01/inbox/t01c"

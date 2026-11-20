@@ -6,7 +6,7 @@ Run: py -V:3.12 -I scripts/t01f_spotcheck.py
 from __future__ import annotations
 import struct, sys
 
-ED = r"D:\tmp2b\fm24\input\editor.exe"
+ED = r"<OLD_REPO>\input\editor.exe"
 VA_DELTA = 0xA00          # .rdata/.debug-ish: VA = fileoff + 0xA00 (+0x140000000)
 RELOC_DELTA = 0x16B600    # .reloc
 

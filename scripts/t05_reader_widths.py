@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-EXE = Path(r"D:\tmp2b\fm24\input\editor.exe")
+EXE = Path(r"<OLD_REPO>\input\editor.exe")
 CENSUS = ROOT / "scratch/t01/inbox/t01h/output.json"
 COVERAGE = ROOT / "scratch/t05/COVERAGE.json"
 OUT = ROOT / "scratch/t05/reader_widths.json"

@@ -23,4 +23,4 @@
 ## 交付 scratch/t63/out/
 - projections.json(三元组台账)、field_map_r2.json(增量 grades,引用 r1 id)、verify.py、REPORT.md、DONE.md;scripts/t63_club_unmapped_r2.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;完成跑 verify + scripts/t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;完成跑 verify + scripts/t01_anchors.py(7/7)。

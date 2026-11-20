@@ -7,8 +7,8 @@
 
 ## 硬约束
 
-- 工作区 `D:\tmp2b\fm24-db`,Python 固定 `py -V:3.12 -I -B`。
-- 游戏数据目录与 `D:\tmp2b\fm24\` **全部只读**。唯一可写 = OUTDIR。
+- 工作区 `<WORKSPACE>`,Python 固定 `py -V:3.12 -I -B`。
+- 游戏数据目录与 `<OLD_REPO>\` **全部只读**。唯一可写 = OUTDIR。
 - 不要改 `scratch/t01`、`scratch/t02` 既有文件;不要动 `_t24.bin`。
 - closure 必须精确算术;允许诚实负结果;**不要写 `status: in_progress`**,结论无论好坏都要定格成
   `complete*` / `partial*` / `negative`。
@@ -18,12 +18,12 @@
 | 内容 | 路径 |
 |---|---|
 | **table_24 已解压载荷** | `scratch/t05/team_comp/_t24.bin`(8,819,030 B) |
-| 解压器(备用) | `D:\tmp2b\fm24\scripts\modding_read_dbdat.py` |
+| 解压器(备用) | `<OLD_REPO>\scripts\modding_read_dbdat.py` |
 | 本仓 loader 参考 | `scratch/t05/team_comp/loader.py`(上次留下,含正确的 zstd magic 扫描) |
-| schema | `D:\tmp2b\fm24\reports\EDITOR_SCHEMA_FIELDS.md` 搜 `### team（记录标识 \`team\`，25 个字段）` |
+| schema | `<OLD_REPO>\reports\EDITOR_SCHEMA_FIELDS.md` 搜 `### team（记录标识 \`team\`，25 个字段）` |
 | 机读 schema(推荐) | `scratch/t05/schema_inventory.json` 的 `entities.team`(保序字段表 + 类型) |
-| 上游普查 | `D:\tmp2b\fm24\reports\dbdat_decode\server_tables_census.json` 里 `table_id == 24` |
-| exe | `D:\tmp2b\fm24\input\editor.exe`,reader 入口 `0x11c1d80` |
+| 上游普查 | `<OLD_REPO>\reports\dbdat_decode\server_tables_census.json` 里 `table_id == 24` |
+| exe | `<OLD_REPO>\input\editor.exe`,reader 入口 `0x11c1d80` |
 
 ## 已知事实与强假设
 

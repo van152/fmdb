@@ -21,4 +21,4 @@
 - enum_inventory.json(逐 held:表/4CC/XML 路径/enum_ref 源/枚举集/双档直方图/判定/首反例)
 - promoted.json(晋级清单+证据引用)、verify.py、REPORT.md、DONE.md;scripts/t61_enum_ref_sweep.py
 
-优先级:有 enum_ref 的先做;预期重点 nation Ngct/Nsod、club Csti、comp CTty/PLgn。Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;完成跑 verify + scripts/t01_anchors.py(7/7)。
+优先级:有 enum_ref 的先做;预期重点 nation Ngct/Nsod、club Csti、comp CTty/PLgn。Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;完成跑 verify + scripts/t01_anchors.py(7/7)。

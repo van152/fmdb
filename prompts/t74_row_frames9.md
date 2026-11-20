@@ -45,4 +45,4 @@ club/comp 用 12B、nation 用 13B、client extra_3 是另一套——每张表�
 
 - `frames.json`(9 表 × 双档全量行框,含 escalate 项)、`row_widths_{table}.csv`(逐行行长分布,大表可采样摘要+全量直方图)、`verify.py`、`REPORT.md`、`DONE.md`(首行 `DONE type=t74 status=complete`);builder `scripts/t74_row_frames9.py`(`--help`/`--selftest`,退出码 0/1/2)。
 
-Python `py -V:3.12 -I -B`;`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`。team(24) payload 8.8MB×84k 行,DP 要向量化。
+Python `py -V:3.12 -I -B`;`FM24_DB_DIR=<WORKSPACE>/scratch/data`。team(24) payload 8.8MB×84k 行,DP 要向量化。

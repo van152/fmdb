@@ -15,7 +15,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT/'scratch/t41/out'
-EXE = Path('D:/tmp2b/fm24/input/editor.exe')
+EXE = Path('<OLD_REPO>/input/editor.exe')
 EXE_SHA = 'b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4'
 MASTER = 'evidence/fm24/reports/editor_schema/master.json'
 PROV = 'evidence/fm24/reports/qa/IDA_PROVENANCE.md'
@@ -297,7 +297,7 @@ def choose_frame(z, archive, offset, bound, ent):
 def archives():
     os.environ.setdefault('FM24_DB_DIR',str(ROOT/'scratch/data'))
     import fm24_dump as fm
-    sys.path.append('D:/tmp2b/fm24/tools/python')
+    sys.path.append('<OLD_REPO>/tools/python')
     import zstandard as z
     codec=fm._reader();infos={};fetch={};payload=None
     for key,num in [('client',31),('server',77)]:
@@ -571,7 +571,7 @@ def build():
 
 
 def selftest():
-    sys.path.append('D:/tmp2b/fm24/tools/python');import zstandard as z
+    sys.path.append('<OLD_REPO>/tools/python');import zstandard as z
     enc=z.ZstdCompressor();a,b=b'stub',b'payload'*40;ea,eb=enc.compress(a),enc.compress(b)
     raw,hit,hits=choose_frame(z,ea+eb,0,len(ea+eb),dict(size=len(b),packed_size=max(len(ea),len(eb))))
     req(raw==b and hit['offset']==len(ea) and len(hits)==2,'size beats first magic')

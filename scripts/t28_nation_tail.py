@@ -13,7 +13,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'scratch/t28/out'
 EDITOR = ROOT.parent / 'fm24/input/editor.exe'
-DATA = Path('D:/tmp2b/fm24-db/scratch/data')
+DATA = Path('<WORKSPACE>/scratch/data')
 MASTER = 'evidence/fm24/reports/editor_schema/master.json'
 PROV = 'evidence/fm24/reports/qa/IDA_PROVENANCE.md'
 BASE = ROOT / 'scratch/t25/out'

@@ -3,7 +3,7 @@
 
 知识源:
   1. 本仓 census  scratch/t01/inbox/t01h/output.json   (74 factory type / mode / reader entry)
-  2. 上游普查    D:/tmp2b/fm24/reports/dbdat_decode/*   (行边界 / 身份 / entity 分级, 全只读)
+  2. 上游普查    <OLD_REPO>/reports/dbdat_decode/*   (行边界 / 身份 / entity 分级, 全只读)
   3. 本仓产物    scratch/t01|t02 下的 field map         (已命名偏移)
 
 输出:
@@ -23,7 +23,7 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-UPSTREAM = pathlib.Path(r"D:\tmp2b\fm24")
+UPSTREAM = pathlib.Path(r"<OLD_REPO>")
 SCHEMA_MD = UPSTREAM / "reports" / "EDITOR_SCHEMA_FIELDS.md"
 
 CLIENT_IDS = [0, 2, 3, 5, 6, 7, 8, 9, 10, 18, 19, 21, 22, 23, 25, 27, 35, 41, 47, 56]

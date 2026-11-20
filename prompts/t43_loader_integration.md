@@ -3,10 +3,10 @@
 你是受指挥官委派的子代理。t38 已证实(E80):`fm24_dump.load_payload` 漏加 FMF `data_base`(=34),致 119 条目误读前一成员 stub(含 server34 取 12B)。本任务把 **最小修复集成进共享加载器**,严格回归,不破坏已接受任务。
 
 ## 必读
-- D:\tmp2b\fm24-db\AGENTS.md(硬约束)
+- <WORKSPACE>\AGENTS.md(硬约束)
 - scripts/fm24_dump.py(**待修目标,仅 load_payload 函数**;现 line 86-96)
 - scripts/t38_multiframe.py(load_payload_mf 参考实现,member_bounds/decode_frames)+ scratch/t38/out/REPORT.md §7(最小修复点)
-- D:\tmp2b\fm24\scripts\modding_read_dbdat.py(codec:`_archive_layout(data)`→{data_base,...}、`_read_archive`、`_entry_summary`、`list_tables`、`_resolve_table`;entry.offset **相对 data_base**)
+- <OLD_REPO>\scripts\modding_read_dbdat.py(codec:`_archive_layout(data)`→{data_base,...}、`_read_archive`、`_entry_summary`、`list_tables`、`_resolve_table`;entry.offset **相对 data_base**)
 
 ## 已知事实(E80,460/460 实证)
 - 成员绝对起点 = `data_base + entry["offset"]`;边界 = `packed_size`;**460 条目全单帧**,唯一帧 len==entry["size"]。
@@ -33,4 +33,4 @@
 
 ## 交付 scratch/t43/out/
 - integration_report.json(修前后对照/119 抽样/回归矩阵)、verify.py(独立不 import fm24_dump,从 archive 复算修复后 load_payload 应得 payload)、REPORT.md、DONE.md
-- Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;完成跑上述全回归 + t01_anchors.py(7/7)。
+- Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;完成跑上述全回归 + t01_anchors.py(7/7)。

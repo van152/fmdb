@@ -3,11 +3,11 @@
 你是受指挥官委派的子代理(devseek,数据侧批量)。t29 已画像 13 个 server 子表,t29b inventory 显示 38 个 club nested 父码中 28 个仍 unknown(无表连接)。本任务**画像一批未覆盖的 STARTING_* server 子表**,产出 complete_data_profile,为 parent↔table 连接与 sol 静态复制备料。**不做静态 cursor、不晋级 L3**。
 
 ## 必读
-- D:\tmp2b\fm24-db\AGENTS.md(硬约束;只读 scratch/data + 仓内证据)
-- D:\tmp2b\fm24-db\scratch\t29\out\profiles\table_server_43.profile.json(**画像格式模板**:status/table_type/archive/rtti_class/entity_tag/payload{sha256,packed_offset}/row_closure{count,stride,equation,rows_sha256}/columns[逐字节列 unsigned 统计])
-- D:\tmp2b\fm24-db\scratch\t29\out\subtable_inventory.json(38 父码现状:high/candidate/unknown;unjoined_tables;next_scout)
-- D:\tmp2b\fm24-db\scratch\t14\out\census.json(74 表 RTTI/primary_class/entity_tag/adjudication)
-- D:\tmp2b\fm24-db\scripts\fm24_dump.py(load_payload;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data)
+- <WORKSPACE>\AGENTS.md(硬约束;只读 scratch/data + 仓内证据)
+- <WORKSPACE>\scratch\t29\out\profiles\table_server_43.profile.json(**画像格式模板**:status/table_type/archive/rtti_class/entity_tag/payload{sha256,packed_offset}/row_closure{count,stride,equation,rows_sha256}/columns[逐字节列 unsigned 统计])
+- <WORKSPACE>\scratch\t29\out\subtable_inventory.json(38 父码现状:high/candidate/unknown;unjoined_tables;next_scout)
+- <WORKSPACE>\scratch\t14\out\census.json(74 表 RTTI/primary_class/entity_tag/adjudication)
+- <WORKSPACE>\scripts\fm24_dump.py(load_payload;FM24_DB_DIR=<WORKSPACE>/scratch/data)
 
 ## 目标表(本批 7 个,均 server archive)
 | table | RTTI | entity | 可能父码 |

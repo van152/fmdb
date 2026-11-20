@@ -15,7 +15,7 @@ Row boundaries
 Usage
   py -V:3.12 -I -B scripts/t33_profile_batch.py --help
   py -V:3.12 -I -B scripts/t33_profile_batch.py --selftest
-  FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data \
+  FM24_DB_DIR=<WORKSPACE>/scratch/data \
     py -V:3.12 -I -B scripts/t33_profile_batch.py [--only 58,39]
 Exit codes 0 ok / 1 check failed / 2 usage or fatal
 """

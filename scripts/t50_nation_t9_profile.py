@@ -18,7 +18,7 @@ see which parts the data pins down and which parts it does not.
 Run with Python 3.12:
   py -V:3.12 -I -B scripts/t50_nation_t9_profile.py --help
   py -V:3.12 -I -B scripts/t50_nation_t9_profile.py --selftest
-  FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scripts/t50_nation_t9_profile.py --build
+  FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scripts/t50_nation_t9_profile.py --build
 Exit codes: 0 success / 1 check failed / 2 usage or fatal error.
 """
 from __future__ import annotations
@@ -38,7 +38,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUTDIR = ROOT / "scratch/t50/out"
 PROFILE_DIR = OUTDIR / "profiles"
 DBDIR = pathlib.Path(os.environ.get("FM24_DB_DIR") or (ROOT / "scratch/data")).resolve()
-CODEC = pathlib.Path(r"D:\tmp2b\fm24\scripts\modding_read_dbdat.py")
+CODEC = pathlib.Path(r"<OLD_REPO>\scripts\modding_read_dbdat.py")
 
 TAD_MAGIC = bytes.fromhex("03017461642ef10d")
 MEMBERS = ("table_9.dat", "table_extra_9.dat")
@@ -212,7 +212,7 @@ def _reload_payload(zstd, lay: dict[str, Any], blob: bytes, name: str) -> bytes:
 
 
 def _zstd():
-    sys.path.append(r"D:\tmp2b\fm24\tools\python")
+    sys.path.append(r"<OLD_REPO>\tools\python")
     import zstandard  # noqa: PLC0415
     return zstandard
 

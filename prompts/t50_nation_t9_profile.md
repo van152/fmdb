@@ -3,7 +3,7 @@
 你是受指挥官委派的子代理,做**数据侧批量画像**(cheap batch)。t47(sol,E87)已静态发现 nation 8 parent 内嵌于 t9 NATIONAL_TEAM_CONTAINER;t49(sol)正做静态+wire 验收。本任务**独立从数据侧**重建 t9 两成员的 row framing/identity census,作为 t49 的 **L2 交叉验证**。**只做数据侧:不读 editor.exe、不追 reader/VA、不命名语义字段、不做 ordinal join**(那是 t49 的事)。
 
 ## 必读
-- D:\tmp2b\fm24-db\AGENTS.md(硬约束;negative 原样保留;候选不写结论;L4=0)
+- <WORKSPACE>\AGENTS.md(硬约束;negative 原样保留;候选不写结论;L4=0)
 - scratch/t46/out/REPORT.md + profiles/table_server_10.profile.json + profiles/table_server_10.rows.jsonl(**数据侧画像范例**:row/offset/body_offset/len/raw_hex/identity/prefix_probe)
 - scratch/t47/out/cursor_nation_tax.json(**仅对照 row framing 结果,不拷其静态结论**;archives 成员起点/size/SHA)
 - scripts/fm24_dump.py(load_payload,E80 已修:member start=data_base+offset,按 entry.size 选帧)
@@ -32,4 +32,4 @@
 - profile_t9.json(4 成员 anchors+shell+count+closure 判定)、profiles/table_{client,server}_{9,extra_9}.rows.jsonl(row framing+identity)、grammar_diff_t9.json(双档对比)、verify.py、REPORT.md、DONE.md
 - scripts/t50_nation_t9_profile.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;完成跑 verify + t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;完成跑 verify + t01_anchors.py(7/7)。

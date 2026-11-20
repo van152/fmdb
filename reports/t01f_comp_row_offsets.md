@@ -5,7 +5,7 @@
 **行偏移不存于所谓 0x38 描述符槽。** COMP 的读写器按固定指令顺序和分支逐项传输；对当前样本累加实际调用宽度，即得行偏移。字段分发提供 4CC→对象成员，序列化器提供对象成员→流位置。旧的 `mov [row+N]` 联合搜索无命中是预期结果，不能推出存在行偏移数组。
 
 - 交付：`scratch/t01/inbox/t01f/{REPORT.md,output.json,verify.py}`；正式成对工件 `reports/t01f_comp_row_offsets.{md,json}`。JSON 含逐项 file offset、VA、原字节和实际 payload 样例；下文裸代码偏移均为 **editor.exe file offset**，除非另注明。
-- PE 来源：只读 `D:/tmp2b/fm24/input/{editor.exe,fm.exe}`，SHA-256 与 `evidence/fm24/reports/qa/IDA_PROVENANCE.md` 一致；editor 为 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。分段地址：`RVA=off+0xA00`（相关 `.rdata/.debug`）或 `off+0x16B600`（`.reloc`）。
+- PE 来源：只读 `<OLD_REPO>/input/{editor.exe,fm.exe}`，SHA-256 与 `evidence/fm24/reports/qa/IDA_PROVENANCE.md` 一致；editor 为 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。分段地址：`RVA=off+0xA00`（相关 `.rdata/.debug`）或 `off+0x16B600`（`.reloc`）。
 - 数据来源：只读安装库 `2430/2430_fm`，`client_db.dat@0x4bc277`、`server_db.dat@0x7f27b9` 均为 `28 b5 2f fd`；复用旧库的只读 `scripts/modding_read_dbdat.py` 在内存解包。下文 payload 偏移指**解压后的成员**，不与 archive file offset 混用。旧结论只引 `evidence/fm24/` 快照，以 `evidence/MANIFEST.json` 校验。
 
 ## 1. 两种对象、两个虚表；helperB 不返回字段数组

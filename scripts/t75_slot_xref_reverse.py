@@ -576,7 +576,7 @@ def build():
     for name,s in slots.items():
         src=s['source']; vt={'club':lambda:src['CLUB']['vtable'],'comp':lambda:src['comp']['vtable'],'nation':lambda:src['nation_vtable_VA']}[name]()
         vtable[name]={str(k):dict(pe.data(pe.off(vt)+8*k,8),target=pe.off(S.unpack_from('<Q',pe.raw,pe.off(vt)+8*k)[0])) for k in (2,19,20)}
-    xref=dict(editor=dict(path='D:/tmp2b/fm24/input/editor.exe',sha256=EXEH),L4=0,addressing='PE file offset; archive offsets are member-relative; body_relative uses legacy14',
+    xref=dict(editor=dict(path='<OLD_REPO>/input/editor.exe',sha256=EXEH),L4=0,addressing='PE file offset; archive offsets are member-relative; body_relative uses legacy14',
               inputs_sha256={p:h((ROOT/p).read_bytes()) for p in sorted(pins)},target_and_payload_identity=tm,
               t72_negative_notes_verbatim=inv['negative_notes'],negative_evidence=negatives,
               bounded_scan=census,vtable=vtable,nation_escalations=groups,slots=trials,instructions=[pe.record(a) for a in sorted(instructions)])

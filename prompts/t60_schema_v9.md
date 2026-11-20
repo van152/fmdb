@@ -20,4 +20,4 @@
 ## 交付 scratch/t60/out/
 - consolidate_v9.py、verify.py、spot_*.log、club_nation_subtable_schema.v8.json/.v8.md 快照、REPORT.md、DONE.md;reports/ 两文件升 v9
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;完成跑 verify + scripts/t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;完成跑 verify + scripts/t01_anchors.py(7/7)。

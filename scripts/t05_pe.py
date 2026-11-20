@@ -14,7 +14,7 @@ from pathlib import Path
 
 import pefile
 
-EXE = Path(r"D:\tmp2b\fm24\input\editor.exe")
+EXE = Path(r"<OLD_REPO>\input\editor.exe")
 
 
 class PE:

@@ -3,7 +3,7 @@
 你是受指挥官委派的子代理,负责**最难**的 wire 验收。t47(sol,E87 已接受)完成 nation 未知 item-bearing parent **静态发现**:15 目标中 9 连到内嵌集合+reader,其中 **8 个落在同一 t9 NATIONAL_TEAM_CONTAINER**(owner_type9),Ntxr 已单独闭合(t10,7 L3)。t47 **只证静态链,未做 t9 按档读游标、未绑 mode、未做 target ordinal join,故未发布任何 t9 item 的 L3 坐标或档内 item count**。本任务把这 8 条静态链推进到**双档 wire 验收**。
 
 ## 必读
-- D:\tmp2b\fm24-db\AGENTS.md(硬约束;negative 原样保留;候选不写结论;L4=0)
+- <WORKSPACE>\AGENTS.md(硬约束;negative 原样保留;候选不写结论;L4=0)
 - scratch/t47/out/discovery_nation_unknown.json(**静态链真源**:parents 8 inline 的 reader/sites/collection/schema_index/list_item_fields;factory[9];extents;t9_owner_fixup)
 - scratch/t47/out/REPORT.md + cursor_nation_tax.json(**游标方法范例**:Ntxr 双档 server mode1/client mode0、selector 前置、identity 后置、footer count0/flag1/maxid、五类分支+首反例、wrong_mode_first)
 - scratch/t46/out/REPORT.md + grammar_diff_client_server.json(t10 数据侧 client/server row grammar 差异范例)
@@ -46,4 +46,4 @@
 - discovery_t9_wire.json(member↔mode 绑定+静态链复核)、cursor_t9_*.json(双档游标)、fields_*.json(逐 parent 三重闸门+ordinal join+grades)、instructions.part*.json、branches.part*.json、verify.py、REPORT.md、DONE.md
 - scripts/t49_nation_t9.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;只写 scratch/t49/ 与 scripts/t49_*.py;完成跑 verify + t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;只写 scratch/t49/ 与 scripts/t49_*.py;完成跑 verify + t01_anchors.py(7/7)。

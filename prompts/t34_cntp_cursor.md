@@ -3,12 +3,12 @@
 你是受指挥官委派的子代理。club 子表 branch-aware cursor 方法已四次证实(t27 stadium 14 L3 / t30 Clhs 8 / t31 CSrs 10/10 / t32 Cmti 5+1held)。本任务复制到 **CNtp(转会偏好),table_type=66**。静态攻坚,晋级 L3。
 
 ## 必读
-- D:\tmp2b\fm24-db\AGENTS.md(硬约束)
-- D:\tmp2b\fm24-db\scratch\t27\out\replication.md(方法模板)
-- D:\tmp2b\fm24-db\scratch\t32\out\REPORT.md + scripts\t32_cmti_cursor.py + scratch\t32\out\verify.py(**最新范例**;record-key i32 pair 模型、contextual 坐标、leaf thunk→真 reader+identity tail 双 extent、footer 末 u32 含义不妄断)
-- D:\tmp2b\fm24-db\scratch\t31\out\REPORT.md(有符号 i8 sentinel、bool 同字节双掩码、ordinal 引用走目标表 ordinal 域)
-- D:\tmp2b\fm24-db\scratch\t29\out\profiles\table_server_66.profile.json + .rows.jsonl(**数据侧画像,直接消费不重 dump**)+ scratch\t29\out\subtable_inventory.json(CNtp 页)
-- D:\tmp2b\fm24-db\scratch\t24\out\subtables.part001.json(CNtp 的 4 个 nested schema occurrence idx 46–49)
+- <WORKSPACE>\AGENTS.md(硬约束)
+- <WORKSPACE>\scratch\t27\out\replication.md(方法模板)
+- <WORKSPACE>\scratch\t32\out\REPORT.md + scripts\t32_cmti_cursor.py + scratch\t32\out\verify.py(**最新范例**;record-key i32 pair 模型、contextual 坐标、leaf thunk→真 reader+identity tail 双 extent、footer 末 u32 含义不妄断)
+- <WORKSPACE>\scratch\t31\out\REPORT.md(有符号 i8 sentinel、bool 同字节双掩码、ordinal 引用走目标表 ordinal 域)
+- <WORKSPACE>\scratch\t29\out\profiles\table_server_66.profile.json + .rows.jsonl(**数据侧画像,直接消费不重 dump**)+ scratch\t29\out\subtable_inventory.json(CNtp 页)
+- <WORKSPACE>\scratch\t24\out\subtables.part001.json(CNtp 的 4 个 nested schema occurrence idx 46–49)
 - evidence/fm24/reports/editor_schema/master.json(club.xml CNtp.list_item_fields,冻结 SHA 7d57477e 对照 MANIFEST)
 
 ## 已知锚点
@@ -34,4 +34,4 @@
 - cursor_cntp.json、fields_cntp.json(4 字段台账+grade)、instructions.part*.json、branches.part*.json、verify.py、REPORT.md、DONE.md
 - scripts/t34_cntp_cursor.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;只写 scratch/t34/ 与 scripts/t34_*.py;完成跑 verify + t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;只写 scratch/t34/ 与 scripts/t34_*.py;完成跑 verify + t01_anchors.py(7/7)。
