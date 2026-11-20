@@ -1,6 +1,6 @@
 # t77 — Schema v11 模块化合并 + 仓库治理(deepseek #1;唯一允许碰 reports/ 的车道)
 
-你是受指挥官委派的子代理。E111–E119 九个验收包已入账,公共 schema 停在 v10。本任务把九包成果**模块化合入 v11** 并做仓库治理。**你是本轮唯一被授权写 `reports/` 的车道**;`scratch/t01/LEDGER.json` 仍由指挥官记账,你不碰。
+你是受指挥官委派的子代理。E111–E119 验收包已入账(E119=指挥官负结果探测:t80 枚举增补前提证伪,见 LEDGER;E120=t76a stadium/team)(t76b 三连墙零落盘已弃,其 award/language/media 由 t83 吸收,本版不涉),公共 schema 停在 v10。本任务把九包成果**模块化合入 v11** 并做仓库治理。**你是本轮唯一被授权写 `reports/` 的车道**;`scratch/t01/LEDGER.json` 仍由指挥官记账,你不碰。
 
 ## 合并输入(E111–E119,全部已验收)
 
@@ -12,9 +12,9 @@
 | E114 | t75 | nation 10 段文法闭合+99 槽裁决(新具名 L3=0) | `nation_segment_grammars`、`xref_reverse_adjudication` |
 | E115 | t74 | 9 表双档行框+identity 自证 | `row_frames9`(表→(archive,header,footer,count,model,identity) 紧凑表) |
 | E116 | t78 | 分母账本 110/1034=10.6% | **单拆文件** `reports/xml_denominator_coverage.json`(主 schema 只留指针) |
-| E117 | t76a | stadium/team L2 槽位 | `scan_tables` |
-| E118 | t76b | award/language/media L2 槽位 | `scan_tables` |
-| E119 | t76c | derby/weather/lcrg/agreement L2 槽位 | `scan_tables` |
+| E120 | t76a | stadium/team L2 槽位(t76a2 新会话交付) | `scan_tables` |
+| E118 | t76c | derby/weather/lcrg/agreement L2 槽位 + derby 6B 差=3 字段、weather 95B=3+4×23 结构发现 | `scan_tables` |
+| — | t76b | **弃**award/language/media(三连墙零落盘)→ 本版 `scan_tables` 节不含它们 | `pending:t76b(由 t83 接收)` |
 
 ## 任务
 
@@ -22,7 +22,7 @@
    - 读 `reports/club_nation_subtable_schema.json`(v10)→ 逐节 additive 合并(不改动既有节内容;upgrade 新节如上表)
    - `schema_version: 11`;`incremental_provenance` 追加 E111–E119;`coverage` 数字更新(club 主行 L3 43;t75 后不变;t78 分母指针)
    - **体积治理**:v11 主 JSON 只保留三主表+8 编号子表+CLUB_LINK+各 r2/r3 节;把 t73/t76 的 13 张非主表槽位结论写到 **`reports/other_tables_schema.json`**(独立文件,主 schema 里放路径指针+SHA-256);分母写 **`reports/xml_denominator_coverage.json`**
-   - `--verify`:重读全部输入,校验每个新节的条目数与 LEDGER claim 一致(E111 24 项、E113 8 帧 17 L2、E115 9 表×2 档等)
+   - `--verify`:重读全部输入,校验每个新节的条目数与 LEDGER claim 一致(E111 24 项、E113 8 帧 17 L2、E115 9 表×2 档、E118 t76c 8 档 slots、E119 t76a stadium/team 等)
 2. **治理杂项**:
    - 根目录若有 `nul` 文件(Windows 保留名事故产物)→ 删除
    - `README.md`/`docs/REPO_STATUS.md`/`docs/BASELINE.md` 增量段同步 v11 状态(数字引用 E 号,不改历史段落)

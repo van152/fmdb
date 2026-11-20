@@ -2686,6 +2686,29 @@
     "scripts/t76c_slots.py"
    ],
    "consequence": "derby/weather/lcrg/agreement slot semantics at L2 with frozen-anchor cross-checks; Wave 11 t83 (L3 upgrade via neon) has its fingerprint base"
+  },
+  {
+   "id": "E119",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "probe_negative",
+   "level": "L2",
+   "claim": {
+    "scope": "t80 (enum supplement dictionary) premise void — lane killed before relaunch",
+    "findings": [
+     "enums.json (289 keys) value-sets identical to master.json enums 289/289; enum_extras.json (15 keys) identical 15/15; 0 richer, 0 missing, 0 diff — snapshots fully subsumed by frozen master",
+     "DBvw (comp.xml) empty-name defect present in BOTH snapshot and master (4 values, 4 empty names) — supplement cannot repair it",
+     "t75 six unfrozen 4CC (Ccre/cosr/Npop/Ncpi/CICF): 0 occurrences across snapshots+master.json — exe-only getters with no XML enum linkage; correct closure path is L3 static getter chains (t79/t82/t83 paradigm), not enum dictionaries"
+    ],
+    "action": "t80 devseek lane killed 05:39 (attempt 2 mid-flight, 0 files); prompts/t80_fix1.md retained but not dispatched; devseek slot redirected to t84 (name tables)"
+   },
+   "evidence": [
+    "scratch/t80/probe_snapshot_premise.py",
+    "evidence/fm24/reports/editor_schema/enums.json",
+    "evidence/fm24/reports/editor_schema/enum_extras.json",
+    "evidence/fm24/reports/editor_schema/master.json"
+   ],
+   "consequence": "E116 denominator ledger unchanged; t61 67 no-source held entries remain held (dictionary adds nothing); t75 six unfrozen 4CC stay unfrozen pending L3 static lanes; task tree re-routed"
   }
  ]
 }
