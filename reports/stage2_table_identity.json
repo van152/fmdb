@@ -1,0 +1,630 @@
+{
+ "status": "stage2-consolidated",
+ "n_total": 45,
+ "counts": {
+  "resolved": 29,
+  "candidate": 3,
+  "negative": 11,
+  "empty": 2
+ },
+ "not_in_archive": [
+  4,
+  11,
+  13,
+  14,
+  15,
+  16,
+  17,
+  20,
+  28,
+  40,
+  44,
+  53,
+  54,
+  55
+ ],
+ "rows": [
+  {
+   "table_type": 0,
+   "entity": "awar",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "award.xml#awar",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23",
+    "t01e/E17"
+   ]
+  },
+  {
+   "table_type": 1,
+   "entity": "pers",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "person.xml#pers",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23"
+   ]
+  },
+  {
+   "table_type": 2,
+   "entity": "city",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "city.xml#city",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23"
+   ]
+  },
+  {
+   "table_type": 3,
+   "entity": "club",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "club.xml#club",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23",
+    "t01e/E17"
+   ]
+  },
+  {
+   "table_type": 5,
+   "entity": "cont",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "continent.xml#cont",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23"
+   ]
+  },
+  {
+   "table_type": 6,
+   "entity": "inju",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "injury.xml#inju",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23",
+    "t01e/E17"
+   ]
+  },
+  {
+   "table_type": 7,
+   "entity": "mdso",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "media source.xml#mdso",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23",
+    "t01e/E17"
+   ]
+  },
+  {
+   "table_type": 8,
+   "entity": "lang",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "language.xml#lang",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23"
+   ]
+  },
+  {
+   "table_type": 9,
+   "entity": "nati",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "nation.xml#nati",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23",
+    "t01e/E17"
+   ]
+  },
+  {
+   "table_type": 10,
+   "entity": "nati",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "nation.xml#nati",
+   "anchors": [
+    "E21",
+    "t01c/property_map",
+    "t01g",
+    "t01h/E23"
+   ]
+  },
+  {
+   "table_type": 12,
+   "entity": "awar",
+   "status": "resolved",
+   "level": "A",
+   "source": "t13锚点",
+   "role": "",
+   "anchors": [
+    "type 12 reader 的 object_off=128 与 award 专属字段 AHp1 对齐；chain_0106 的读取指令直接访问该成员，AHp1 在 schema_inventory 中 df=1 且语义为 award 字段。"
+   ],
+   "note": ""
+  },
+  {
+   "table_type": 18,
+   "entity": "drbr",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "derby.xml#drbr",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23",
+    "t01e/E17"
+   ]
+  },
+  {
+   "table_type": 19,
+   "entity": "regi",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "region.xml#regi",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23"
+   ]
+  },
+  {
+   "table_type": 21,
+   "entity": "stad",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "stadium.xml#stad",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23",
+    "t01e/E17"
+   ]
+  },
+  {
+   "table_type": 22,
+   "entity": "club",
+   "status": "resolved",
+   "level": "A",
+   "source": "E56裁决",
+   "role": "club 的球场/迁建属性集",
+   "anchors": [
+    "Salt=Alternative Stadium(df=1,club)",
+    "Scam=Stadium Rental Cash Amount(df=1,club)",
+    "Scpm=Is Potential Move(df=1,club)",
+    "Slhm=Likelihood of Stadium Move(df=1,club)"
+   ],
+   "note": "449 行, 不是 stadium 主表(48413); 字段语义全为 club 拥有的球场计划, 与 t19(28 行)共享 S 码属同一类不同表"
+  },
+  {
+   "table_type": 23,
+   "entity": "stgn",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "stage name.xml#stgn",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23"
+   ]
+  },
+  {
+   "table_type": 24,
+   "entity": "team",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "team.xml#team",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23"
+   ]
+  },
+  {
+   "table_type": 25,
+   "entity": "comp",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "comp.xml#comp",
+   "anchors": [
+    "E20",
+    "t01c/property_map",
+    "t01f",
+    "t01h/E23"
+   ]
+  },
+  {
+   "table_type": 26,
+   "entity": null,
+   "status": "negative",
+   "level": "-",
+   "source": "t13锚点",
+   "role": "",
+   "anchors": [],
+   "note": "负结果：scratch/t05/reader_widths.json 中 type 26 的 seq=[12]、obj_seq=[null]，没有可关联到 schema 字段的成员偏移；scratch/t08/out/chains.json 的邻近链未提供与该 reader 相连的唯一 df=1 字段码。闭合行数据虽可读，当前未找到独立 A/B/C 锚点；不以候选硬定实体。"
+  },
+  {
+   "table_type": 27,
+   "entity": "weat",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "weather.xml#weat",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23",
+    "t01e/E17"
+   ]
+  },
+  {
+   "table_type": 29,
+   "entity": null,
+   "status": "negative",
+   "level": "-",
+   "source": "t13锚点",
+   "role": "",
+   "anchors": [],
+   "note": "负结果：type 29 的 reader_widths 只有一个 12-byte call 且无 object_off；邻近 player 码簇仅是位置候选，不能按邻近投票定案。现有工件没有独立的 4CC、独立基数或已验证 ID 域锚点。"
+  },
+  {
+   "table_type": 30,
+   "entity": "player",
+   "status": "resolved",
+   "level": "A",
+   "source": "E56裁决",
+   "role": "球员伤病/未来状态记录",
+   "anchors": [
+    "futu=Future(df=1,player)",
+    "inju=Injury(df=1,player)",
+    "pret=Prevents Training(df=1,player)",
+    "seve=Severity(df=1,player)"
+   ],
+   "note": "72473 行 >> injury 主表 115, 故是 player 侧的伤病实例/状态表而非 injury 表"
+  },
+  {
+   "table_type": 31,
+   "entity": null,
+   "status": "negative",
+   "level": "negative",
+   "source": "E56裁决",
+   "role": "零字段表",
+   "anchors": [],
+   "note": "t11 投给 club 但无任何命名字段、无 A 类证据; 37283 行与 club 主表 84259 不符, 不认可"
+  },
+  {
+   "table_type": 32,
+   "entity": null,
+   "status": "negative",
+   "level": "-",
+   "source": "t13锚点",
+   "role": "",
+   "anchors": [],
+   "note": "负结果：type 32 为变长 count-loop 行，reader_widths 的 obj_seq=[null]；邻近链中没有能与本 reader 直接关联的唯一 df=1 schema 字段。weather 334 对 315 的差异不能单独定案，未找到其他独立锚点。"
+  },
+  {
+   "table_type": 33,
+   "entity": "club",
+   "status": "resolved",
+   "level": "A",
+   "source": "t13锚点",
+   "role": "",
+   "anchors": [
+    "type 33 reader 的 object_off=68 与 schema 中仅属于 club 的 CMWE（Maximum Wage Allowed）成员对齐；reader 邻接链 chain_0145 的指令读取 [rbx+0x44]，CMWE 跨实体 df=1。"
+   ],
+   "note": ""
+  },
+  {
+   "table_type": 34,
+   "entity": "club",
+   "status": "candidate",
+   "level": "B",
+   "source": "E56裁决",
+   "role": "俱乐部赛事历史(起止年/对手/结果)",
+   "anchors": [
+    "tcop=Opposition(df=2,club+nation)",
+    "mstn=Last Stage(df=2,club+nation)",
+    "edyr=End Year + styr=Start Year(df>=2,club+nation)"
+   ],
+   "note": "6 个码全部 club+nation 共有, 无 df=1 码, 故只有 B 类语义锚: tcop/mstn/edyr/styr 四码共同构成赛事历程; 7115 行与 club 主表 84259 不同, 是子表。不能算 resolved"
+  },
+  {
+   "table_type": 35,
+   "entity": "dscr",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "description.xml#dscr",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23"
+   ]
+  },
+  {
+   "table_type": 36,
+   "entity": null,
+   "status": "negative",
+   "level": "-",
+   "source": "t13锚点",
+   "role": "",
+   "anchors": [],
+   "note": "负结果：type 36 的行边界已闭合，但 reader_widths 只有 object_off 24、64 两个无语义的 4-byte 访问；周边 injury/player 码簇未出现与该 reader 成员可复核的唯一字段锚。comp 基数差 7.27%，不作硬配。"
+  },
+  {
+   "table_type": 37,
+   "entity": "club",
+   "status": "resolved",
+   "level": "A",
+   "source": "E56裁决",
+   "role": "俱乐部战绩/积分榜记录",
+   "anchors": [
+    "draw=Games Drawn(df=1,club)",
+    "gfor=Goals For(df=1,club)",
+    "gaga=Goals Against(df=1,club)",
+    "poin=Points(df=1,club)",
+    "wins=Games Won(df=1,club)"
+   ],
+   "note": "465712 行 = 俱乐部×赛季/赛事条目; 不是 club 主表(84259)"
+  },
+  {
+   "table_type": 38,
+   "entity": null,
+   "status": "negative",
+   "level": "-",
+   "source": "t13锚点",
+   "role": "",
+   "anchors": [],
+   "note": "负结果：type 38 的 7 个 reader object_off 只能给出结构位置；最近链候选码经 schema_inventory 去重后均不是唯一实体码，值域也未形成有语义来源且哨兵/fill 同时吻合的 C 锚。"
+  },
+  {
+   "table_type": 39,
+   "entity": null,
+   "status": "negative",
+   "level": "-",
+   "source": "t13锚点",
+   "role": "",
+   "anchors": [],
+   "note": "负结果：117 行与 injury 的 115 行接近但不相等；type 39 的混合 reader 有 null object_off，邻近链接的代码簇未建立到本表的唯一 schema 字段关系。没有独立值域锚，保留 injury 为已拒绝的数量候选。"
+  },
+  {
+   "table_type": 41,
+   "entity": "curr",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "currency.xml#curr",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23"
+   ]
+  },
+  {
+   "table_type": 42,
+   "entity": null,
+   "status": "negative",
+   "level": "negative",
+   "source": "E56裁决",
+   "role": "零字段表",
+   "anchors": [],
+   "note": "t11 投给 club 但零字段; 17721 行无独立锚点, 不认可"
+  },
+  {
+   "table_type": 43,
+   "entity": "club",
+   "status": "candidate",
+   "level": "B",
+   "source": "E56裁决",
+   "role": "转会付款分期",
+   "anchors": [
+    "mths=Number Months(df=1,club)",
+    "pyiv=Payment Interval(df=1,club)"
+   ],
+   "note": "535 行; 两个唯一码均为财务分期语义, 但与 club 主表的连接仅有码证据, 无行数独立核对"
+  },
+  {
+   "table_type": 45,
+   "entity": "pers",
+   "status": "resolved",
+   "level": "A",
+   "source": "t13锚点",
+   "role": "",
+   "anchors": [
+    "type 45 reader 的 object_off=86 与 person 专属 schema 字段 gols（Goals）对齐；chain_0153 的读取指令访问 [rdi+0x56]，gols 在 schema_inventory 中 df=1。"
+   ],
+   "note": ""
+  },
+  {
+   "table_type": 46,
+   "entity": null,
+   "status": "negative",
+   "level": "negative",
+   "source": "E56裁决",
+   "role": "零字段表",
+   "anchors": [],
+   "note": "7 行与 continent(7) 相同但无字段码; 行数吻合只是候选, 不足以定案"
+  },
+  {
+   "table_type": 47,
+   "entity": "lcrg",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "local region.xml#lcrg",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23"
+   ]
+  },
+  {
+   "table_type": 48,
+   "entity": "pers",
+   "status": "resolved",
+   "level": "A",
+   "source": "t13锚点",
+   "role": "",
+   "anchors": [
+    "type 48 reader 序列也明确含 object_off=86；其链内 gols 读取指令映射到 schema 中 df=1 的 person 字段。该结论逐表核验，不由 type 45 的归属推导。"
+   ],
+   "note": ""
+  },
+  {
+   "table_type": 49,
+   "entity": "person",
+   "status": "resolved",
+   "level": "A",
+   "source": "E56裁决",
+   "role": "人员任职/对阵履历",
+   "anchors": [
+    "ajob=Job(df=1,person)",
+    "otea=Opposition(df=1,person)",
+    "plac=Type(df=1,person)"
+   ],
+   "note": "792149 行; 3 个唯一码全属 person, 是典型履历子表; t11 投给 club 系投票污染, 已推翻 [E58补注: t49=792149 > person主库658011(E25/E32封口,E58/t13e), 多20.4%; 归属由df=1三码维持, 但'履历'语义与行数张力待解]"
+  },
+  {
+   "table_type": 50,
+   "entity": null,
+   "status": "negative",
+   "level": "negative",
+   "source": "E56裁决",
+   "role": "零字段表",
+   "anchors": [],
+   "note": "45 行, 零字段; t11 投 club 无证据"
+  },
+  {
+   "table_type": 51,
+   "entity": null,
+   "status": "negative",
+   "level": "negative",
+   "source": "E56裁决",
+   "role": "零字段表",
+   "anchors": [],
+   "note": "59 行, 零字段; t11 投 nation 无证据"
+  },
+  {
+   "table_type": 52,
+   "entity": null,
+   "status": "empty",
+   "level": "-",
+   "source": "t13锚点",
+   "role": "",
+   "anchors": [],
+   "note": ""
+  },
+  {
+   "table_type": 56,
+   "entity": "agrm",
+   "status": "resolved",
+   "level": "A",
+   "source": "E22三向表",
+   "role": "agreement.xml#agrm",
+   "anchors": [
+    "t01c/property_map",
+    "t01h/E23"
+   ]
+  },
+  {
+   "table_type": 57,
+   "entity": null,
+   "status": "empty",
+   "level": "-",
+   "source": "t13锚点",
+   "role": "",
+   "anchors": [],
+   "note": ""
+  },
+  {
+   "table_type": 58,
+   "entity": null,
+   "status": "candidate",
+   "level": "candidate",
+   "source": "E56裁决",
+   "role": "零决定性字段表",
+   "anchors": [],
+   "note": "8 行; 只有 comp/divi/team 三个跨表码(df>=2), 无唯一码; person/club 皆可能, 不定案"
+  }
+ ],
+ "commander_recheck": {
+  "static_ok": true,
+  "detail": "4 个 A 锚的 file_off 指令逐条反汇编 + 4 个 cmp 站点立即数 big-endian 解码, 8/8 全一致",
+  "schema_df_ok": true,
+  "df": "AHp1=award/CMWE=club/gols=person, 全 df=1",
+  "reader_offsets_ok": true,
+  "downgrades": [],
+  "upgrades": [
+   {
+    "table": [
+     45,
+     48
+    ],
+    "from": "A(单码gols)",
+    "to": "A(簇级)",
+    "reason": "obj84=apps/gams, obj86=gols, obj88=fsgs/fsgt/ogls 三连续槽全为person进球统计,w=2自洽"
+   },
+   {
+    "table": 33,
+    "note": "chain_0145 混合(club47:person10), 但C前缀专属码簇(CMWE/Ctbu/Crmb/Csry/Ctrl/Cpll/Csrp/Ctbt/Ccfa)占reader 9/18偏移, A级维持"
+   }
+  ],
+  "caveats": [
+   "t12 的 28,597 行与已知 award 表 3,545 行差 706%, 类身份有A锚但行集不同, resolved仅指实体类别",
+   "t45/t48 共用 reader 0x1543730, chain_0153 同时被 t08 配给 t58(score5); 属共用getter区, 不构成冲突但需标注",
+   "t13 报的 4 resolved 全是静态L3; 6 negative 保留原样不硬凑"
+  ]
+ },
+ "devseek_t13d": {
+  "artifact": "scratch/t13d/out/audit.json(终版23:45, 21462B)+quick_audit.md(新增)+_audit.py",
+  "revision": "初版用过期club基数3000-6000致t22/t34 fit=false; 终版已改用正确club84259/nation251",
+  "t22": "结论: 数据侧不支持club主表(449/84259=0.53%), 但c0的362个非哨兵值全部落在[86,82403]⊂club ID域且无姓名文本 -> '按club引用+日期'的子表, 与E56的club球场/迁建子表裁决一致(非推翻)",
+  "t34": "结论: 相对club差12倍/相对nation差28倍均不吻合, c3/c4值域⊆[0,251)但仅81/54不同值 -> '7115行各自引用一国'而非'每国一行'; 判无法判断, 与E56的candidate一致",
+  "t30_t49_DOWNGRADED": {
+   "issue": "初版报t30->player/t49->person fit=true; 但终版caveat自承'player7万/person79万的量级口径直接取自本表行数, 不是独立基数, 量级吻合不构成确认' -> 循环论证",
+   "action": "E57里'交叉验证t30/t49'的表述撤回; t30/t49 仍维持E56的A级(靠df=1唯一码), 数据侧不构成独立确认",
+   "independent_baselines": "仓内仅club84259(server table_3)与nation251(table_10)是可复核独立基线"
+  },
+  "method_note": "c0/t22、c1/t34 的值落在club ID域只说明'引用了该实体', 不等于'本表实体是club' —— 本次诊断最易误读处"
+ },
+ "devseek_t13e": {
+  "artifact": "scratch/t13e/out/baselines.json+mdd+build.py(真实交付, status=partial)",
+  "n": 26,
+  "reliability": {
+   "high": 17,
+   "mid": 7,
+   "low": 2
+  },
+  "key_values": "award3545/city56293/club84259/comp7047/cont7/inju115/nati251/stad48413/weat334/lang126/lcrg2488",
+  "crosscheck_confirm": "t13d 用过期club基数(3000-6000), t13e 正确给84259, 进一步证E56裁决",
+  "new_finding": {
+   "issue": "person 主库 basic_people_db=658011(E25/E32双重封口 high), 但t49任职履历子表=792149, 多134138行(20.4%)",
+   "impact": "E56 判 t49->person 依据3个df=1码(ajob/otea/plac)仍成立, 但'履历'语义与行数比例需谨慎; otea=Opposition更像比赛出场而非静态任职",
+   "action": "t49 归属维持resolved但note加注行数张力; 不推翻(码证据是硬的)"
+  },
+  "name_conflicts": [
+   "table18: COVERAGE='city secondary-name' vs RTTI db::DERBY(1567行) - t13取名勿混",
+   "table24: team=84507行但行边界open, 不可用82B定长假设(E37均值104.36B)",
+   "table9: nation name/key companion 251行, 与table10同为nati"
+  ],
+  "unidentified": 34,
+  "negative_identity": 5
+ }
+}
