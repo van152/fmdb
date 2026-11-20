@@ -2796,6 +2796,33 @@
     "scripts/t77_schema_v11.py"
    ],
    "consequence": "public schema now carries all Wave-0/10 results; t87 (v11.1 E121 patch) cleared to run on next free devseek slot; merge-to-main decision documented for user review"
+  },
+  {
+   "id": "E123",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t84 name-table unpacking + name-slot join probe — lane died at 3 walls (0 REPORT/DONE/verify) but delivered the three science files; commander completed verification",
+    "structural": [
+     "six members pair as 3 index tables + 3 string blobs: name_table_{0,1,2} = 12B header + N x 12B fixed index rows (245,981 / 542,060 / 85,668 — closure arithmetic (bytes-12)/12 exact, commander recompute True), name_table_extra_{0,1,2} = string blobs (extra_1 holds England/Liverpool/Arsenal; extra_0 person tokens like Sabri; extra_2 mixed)",
+     "all six client payloads byte-identical to server (commander recompute True on all 3 index tables)",
+     "name_table_{0,1,2} contain NO ASCII/UTF-16 strings (commander probe) — index-only; strings live exclusively in extra_* blobs"
+    ],
+    "negative": [
+     "8 name-slot 4CCs (Cnam/Csnm/Nnam/Nsnm/N3ln/cnam/csnm/c3ln) do NOT index these pools: club names are inline length-prefixed strings inside the club main row (pool membership false for all 3 pools on first counterexample); nation names have no type-10 member in lang_update_db — all 8 stay held with NEW justification (pool-ref hypothesis refuted, not merely unfrozen)",
+     "pool semantics per joins.json: pool0 given-name-like tokens (77.86% single-token), pool1 surname-like (88.99%), pool2 compound nicknames (21.47%) — person-token pools (serves person/PDxx tables, out of this round's scope)"
+    ],
+    "verification": "commander independent: member extraction via t71 directory walker + own frame puller; 12B-row closure arithmetic exact x3; client==server identical x3; extra-blob membership probes consistent with joins.json",
+    "lane_note": "3 attempts walled (rc=124 x3) at 05:41/06:21/07:41; outbox has members_profile.json + joins.json + lang_update_check.json; REPORT/DONE/verify.py not delivered — commander verification recorded here stands in"
+   },
+   "evidence": [
+    "scratch/t84/out/members_profile.json",
+    "scratch/t84/out/joins.json",
+    "scratch/t84/out/lang_update_check.json"
+   ],
+   "consequence": "name-slot helds now carry refutation evidence instead of vacuum; person name pools mapped for future person-table lanes; 8 name 4CCs correctly re-classified as inline-string slots (position known, semantics known) — candidates for L2 upgrade in next scan pass"
   }
  ]
 }

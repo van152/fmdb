@@ -1,0 +1,335 @@
+{
+ "task": "t84",
+ "db_dir": "D:\\tmp2b\\fm24-db\\scratch\\data",
+ "pool_semantics": {
+  "pool0": {
+   "count": 245981,
+   "client_equals_server": true,
+   "single_token_share": 77.86,
+   "probe_membership": {
+    "England": false,
+    "Brazil": false,
+    "Wales": false,
+    "Denmark": true,
+    "Liverpool": false,
+    "Arsenal": false,
+    "Serie A": false,
+    "Premier Division": false
+   },
+   "samples": [
+    "Sabri",
+    "Oldřich",
+    "Miko",
+    "Lucas",
+    "Jesper",
+    "Ezequiel",
+    "Mistake",
+    "Helmut"
+   ]
+  },
+  "pool1": {
+   "count": 542060,
+   "client_equals_server": true,
+   "single_token_share": 88.99,
+   "probe_membership": {
+    "England": true,
+    "Brazil": true,
+    "Wales": true,
+    "Denmark": false,
+    "Liverpool": true,
+    "Arsenal": true,
+    "Serie A": false,
+    "Premier Division": false
+   },
+   "samples": [
+    "Ramadhan",
+    "Nejedlý",
+    "Mistakesson",
+    "Walter",
+    "Morlock",
+    "Rahn",
+    "Haller",
+    "Kumar"
+   ]
+  },
+  "pool2": {
+   "count": 85668,
+   "client_equals_server": true,
+   "single_token_share": 21.47,
+   "probe_membership": {
+    "England": false,
+    "Brazil": false,
+    "Wales": false,
+    "Denmark": false,
+    "Liverpool": false,
+    "Arsenal": false,
+    "Serie A": false,
+    "Premier Division": false
+   },
+   "samples": [
+    "DJ Buffonge",
+    "Steven Rua",
+    "Tre' Ming",
+    "Juanito",
+    "Lucho",
+    "Leo",
+    "Cundo",
+    "Villo"
+   ]
+  }
+ },
+ "slots": [
+  {
+   "entity": "club",
+   "code": "Cnam",
+   "xml_id": "club.xml#club/006",
+   "xml_index": 6,
+   "bucket_before": "held",
+   "bucket_after": "held",
+   "join_established": false,
+   "hold_reason": "value is an inline length-prefixed string inside the club main row (table_3); the name pools hold person tokens, not club names",
+   "first_counterexample": {
+    "kind": "pool_membership",
+    "code": "Cnam",
+    "pool_hit": {
+     "0": false,
+     "1": false,
+     "2": false
+    },
+    "lang_uid_equals_row_db_id": "0/3462"
+   },
+   "provenance": [
+    "scratch/t78/out/buckets.json",
+    "scratch/t57/out/field_map.json",
+    "reports/club_nation_subtable_schema.json"
+   ]
+  },
+  {
+   "entity": "club",
+   "code": "Csnm",
+   "xml_id": "club.xml#club/007",
+   "xml_index": 7,
+   "bucket_before": "held",
+   "bucket_after": "held",
+   "join_established": false,
+   "hold_reason": "value is an inline length-prefixed string inside the club main row (table_3); the name pools hold person tokens, not club names",
+   "first_counterexample": {
+    "kind": "pool_membership",
+    "code": "Csnm",
+    "pool_hit": {
+     "0": false,
+     "1": false,
+     "2": false
+    },
+    "lang_uid_equals_row_db_id": "0/3462"
+   },
+   "provenance": [
+    "scratch/t78/out/buckets.json",
+    "scratch/t57/out/field_map.json",
+    "reports/club_nation_subtable_schema.json"
+   ]
+  },
+  {
+   "entity": "nation",
+   "code": "Nnam",
+   "xml_id": "nation.xml#nati/007",
+   "xml_index": null,
+   "bucket_before": "held",
+   "bucket_after": "held",
+   "join_established": false,
+   "hold_reason": "no nation (type 10) member exists in lang_update_db; the pools carry person tokens and table_10 has no printable name bytes",
+   "first_counterexample": {
+    "kind": "no_name_store",
+    "code": "Nnam",
+    "lang_update_has_type_10": false,
+    "pool_hit": {
+     "0": false,
+     "1": true,
+     "2": false
+    },
+    "table_10_printable_share": 0.082
+   },
+   "provenance": [
+    "scratch/t78/out/buckets.json",
+    "scratch/t57/out/field_map.json",
+    "reports/club_nation_subtable_schema.json"
+   ]
+  },
+  {
+   "entity": "nation",
+   "code": "Nsnm",
+   "xml_id": "nation.xml#nati/008",
+   "xml_index": null,
+   "bucket_before": "held",
+   "bucket_after": "held",
+   "join_established": false,
+   "hold_reason": "no nation (type 10) member exists in lang_update_db; the pools carry person tokens and table_10 has no printable name bytes",
+   "first_counterexample": {
+    "kind": "no_name_store",
+    "code": "Nsnm",
+    "lang_update_has_type_10": false,
+    "pool_hit": {
+     "0": false,
+     "1": false,
+     "2": false
+    },
+    "table_10_printable_share": 0.082
+   },
+   "provenance": [
+    "scratch/t78/out/buckets.json",
+    "scratch/t57/out/field_map.json",
+    "reports/club_nation_subtable_schema.json"
+   ]
+  },
+  {
+   "entity": "nation",
+   "code": "N3ln",
+   "xml_id": "nation.xml#nati/011",
+   "xml_index": null,
+   "bucket_before": "held",
+   "bucket_after": "held",
+   "join_established": false,
+   "hold_reason": "no nation (type 10) member exists in lang_update_db; the pools carry person tokens and table_10 has no printable name bytes",
+   "first_counterexample": {
+    "kind": "no_name_store",
+    "code": "N3ln",
+    "lang_update_has_type_10": false,
+    "pool_hit": {
+     "0": false,
+     "1": false,
+     "2": false
+    },
+    "table_10_printable_share": 0.082
+   },
+   "provenance": [
+    "scratch/t78/out/buckets.json",
+    "scratch/t57/out/field_map.json",
+    "reports/club_nation_subtable_schema.json"
+   ]
+  },
+  {
+   "entity": "comp",
+   "code": "cnam",
+   "xml_id": "comp.xml#comp/009",
+   "xml_index": 9,
+   "bucket_before": "held",
+   "bucket_after": "held",
+   "join_established": false,
+   "hold_reason": "comp names live in the lang_update 8_25 uid overlay; table_25 carries the uid but no inline name and the pools hold no comp names",
+   "first_counterexample": {
+    "kind": "overlay_not_pool",
+    "code": "cnam",
+    "pool_hit": {
+     "0": false,
+     "1": false,
+     "2": false
+    },
+    "lang_8_25_uid_hits": "30/30"
+   },
+   "provenance": [
+    "scratch/t78/out/buckets.json",
+    "scratch/t57/out/field_map.json",
+    "reports/club_nation_subtable_schema.json"
+   ]
+  },
+  {
+   "entity": "comp",
+   "code": "csnm",
+   "xml_id": "comp.xml#comp/010",
+   "xml_index": 10,
+   "bucket_before": "held",
+   "bucket_after": "held",
+   "join_established": false,
+   "hold_reason": "comp names live in the lang_update 8_25 uid overlay; table_25 carries the uid but no inline name and the pools hold no comp names",
+   "first_counterexample": {
+    "kind": "overlay_not_pool",
+    "code": "csnm",
+    "pool_hit": {
+     "0": false,
+     "1": false,
+     "2": false
+    },
+    "lang_8_25_uid_hits": "30/30"
+   },
+   "provenance": [
+    "scratch/t78/out/buckets.json",
+    "scratch/t57/out/field_map.json",
+    "reports/club_nation_subtable_schema.json"
+   ]
+  },
+  {
+   "entity": "comp",
+   "code": "c3ln",
+   "xml_id": "comp.xml#comp/011",
+   "xml_index": 11,
+   "bucket_before": "held",
+   "bucket_after": "held",
+   "join_established": false,
+   "hold_reason": "comp names live in the lang_update 8_25 uid overlay; table_25 carries the uid but no inline name and the pools hold no comp names",
+   "first_counterexample": {
+    "kind": "overlay_not_pool",
+    "code": "c3ln",
+    "pool_hit": {
+     "0": false,
+     "1": false,
+     "2": false
+    },
+    "lang_8_25_uid_hits": "30/30"
+   },
+   "provenance": [
+    "scratch/t78/out/buckets.json",
+    "scratch/t57/out/field_map.json",
+    "reports/club_nation_subtable_schema.json"
+   ]
+  }
+ ],
+ "lang_update": {
+  "members_present": {
+   "8_3": "club",
+   "8_25": "comp"
+  },
+  "nation_type_10_present": false,
+  "footer_bytes": 0,
+  "club_8_3": {
+   "closure": true,
+   "records": 3462,
+   "end": 282983,
+   "payload_len": 282983,
+   "inline_name_found": 3462,
+   "uid_equals_row_db_id": 0,
+   "mismatch_examples": [
+    {
+     "lang_uid": 74,
+     "row_db_id": 1,
+     "name": "Atlético Petróleos de Luanda"
+    },
+    {
+     "lang_uid": 75,
+     "row_db_id": 1,
+     "name": "Clube Desportivo Primeiro de Agosto"
+    },
+    {
+     "lang_uid": 76,
+     "row_db_id": 1,
+     "name": "Estrela Clube 1º de Maio de Benguela"
+    },
+    {
+     "lang_uid": 102,
+     "row_db_id": 128,
+     "name": "Pyunik Yerevan"
+    },
+    {
+     "lang_uid": 103,
+     "row_db_id": 128,
+     "name": "Shirak Gyumri"
+    }
+   ]
+  },
+  "comp_8_25": {
+   "closure": true,
+   "records": 30,
+   "end": 2085,
+   "payload_len": 2085
+  }
+ }
+}
