@@ -695,3 +695,135 @@ This is an additive appendix to the byte-pinned v9 Markdown. Existing schema sec
 - Ledger guards cover E84–E109 by entry id, kind, level and canonical claim SHA-256. t70 records source SHA-256/byte counts and embeds each accepted JSON plus its full report/DONE text (and t69 SUMMARY).
 - Coverage records round-2 counts separately for COMP/nation/collections/tail; the protected v9 tables, regressions, v3 baseline, club auxiliary sources, club main-row section and all existing nation sections are unchanged.
 - No work was performed in t47–t69, and `docs/BASELINE.md` was not modified.
+
+## t77 — schema v10 -> v11 (E111–E120)
+
+This is an additive appendix to the byte-pinned v10 Markdown. Every existing section, including held/unmapped records and all negative regressions, is unchanged; v11 only adds sections and updates `schema_version`, `generated_by`, `coverage` and `incremental_provenance`. L4=0 throughout.
+
+### Volume governance
+
+| Item | Value |
+|---|---|
+| main schema | three main tables + 8 numbered club subtables + CLUB_LINK + r2/r3 sections + v11 pointer sections |
+| `reports/other_tables_schema.json` | 13 non-main tables, 286,605 B, SHA-256 `9dcb5e6d6a5af916…` |
+| `reports/xml_denominator_coverage.json` | 1,034 occurrence records, 297,905 B, SHA-256 `e3a6d56e639fb3d9…` |
+
+### club `table_extra_3` object (t71 / E111, L3)
+
+- `CLUB+0x100` chain closed: member `table_extra_3.dat`, object allocation `0x130B`, dual-archive row frame client 12 + 13,053,896 + 0 = 13,053,908; server 12 + 35,009,236 + 0 = 35,009,248; 84,259 rows both archives.
+- Identity: row-prefix u32 ordinal only; UID via exact table_3 ordinal join. UID join: exact table_3 ordinal join 84,259/84,259 dual-archive.
+- 24 held records promoted: 22 cnst projections at the extra object (A block `+0xe0`, B block `+0xe7`) plus `Cebd` and `Cyfn`.
+- club main-row L3 21 -> **43** (delta 22, per E111's slot accounting).
+- Domain: 84,259 rows x 22 i8 columns = 1,853,698 bytes, 0 violations vs frozen cnst={0,1,2,3,4,6}; enum 3 legal-unobserved.
+- Server-only wire: cnst/Cebd server-only wire (client 0 intersection vs default-6 object baseline); `Cyfn` dual-archive (30,661 zero + 53,598 in 1857..2024).
+- Kept unnamed: extra+0xcc = 84,259 x ffffffff both archives, kept unnamed.
+
+### Unnamed slot fingerprints (t72 / E112, L2, partial)
+
+| Table | Slots | unnamed | held | l3_claimed |
+|---|---:|---:|---:|---:|
+| club | 34 | 20 | 5 | 9 |
+| comp | 84 | 36 | 4 | 32 |
+| nation | 40 | 24 | 10 | 5 |
+
+- 10 escalations, all nation inner-item grammars, handed to t75: slot_2, slot_3, slot_4, slot_11, slot_12, slot_13, slot_23, slot_24, slot_25, slot_26.
+- Grading ceiling: L2/candidate (data side only; no exe static claim). verify.py/REPORT/DONE not delivered by the lane (wall-clock kill); inventory.json + fingerprints.json + commander-written REPORT/DONE are the accepted artifacts.
+
+### Simple tables (t73 / E113, L2)
+
+- 8/8 (archive, table) frames closed: city(2), continent(5), region(19), currency(41).
+- L2 slots: 17 stated in the claim, 10 distinct (table, field, offset) triples in the artifacts, 14 graded records over 8 archives. The E113 claim text states 17 L2 slots but enumerates 10 (city 2 + continent 2 + region 2 + currency 4). The artifacts carry 14 L2-graded records over 8 archives = 10 distinct (table, field, offset) triples. Both numbers are recorded; the substance (offsets) is asserted in --verify, the count discrepancy is kept as an open accounting note for the commander.
+- Frozen anchors re-verified: 14, conflicts 0.
+- Alias negative: (13,9)/(14,8)/(15,7) same-alias-group — data side CANNOT determine header origin for fixed-stride tables. Resolution: footer flag byte (F=8 flag_be1) + frozen anchor sanity.
+- Dual archive: city client and server payload byte-identical (sha 66f8cc27..); continent server = client business bytes + 14B all-zero slot block (7/7 rows); region server +1B per row (constant 04 at the extra site, 28/28).
+- Tool boundaries: only fixed-stride tables self-prove identity; variable tables need walk_var or escalate; enum judgement requires non-empty scoped enum names; footer_last_eq_max_uid is not a general criterion; FK judgement has no capability against variable-length target tables (Cnti/Clgi/Clri/Cwea offsets stand via frozen L3 anchors, not via FK hits).
+
+### Nation segment grammars (t75 / E114, L3)
+
+- 10 inner-item grammars surveyed, 8 closed byte-level, held (0 real items): slot_2, slot_3.
+- Dual archive: A/B/C/D four segments 251/251 dual-archive count+payload match.
+- Prior named sub-slots re-verified: 19.
+- Boundary: new named L3 = 0 — remaining slots lack resolver+getter pairing.
+
+### Slot adjudication (t75 / E114, L3)
+
+| Entity | Adjudicated | held |
+|---|---:|---:|
+| nation | 34 | 34 |
+| club | 25 | 25 |
+| comp | 40 | 40 |
+
+- Totals: 99 slots adjudicated, 99 held, **new named L3 = 0**.
+- `club_ref_e0`: reproduces E106 nation resolver 26,587 live full-hit, no scoped 4CC -> held
+- `club_raw168_comp_m152`: true t21 ordinal lanes (84,259 & 7,047 full hit, wrong-UID all wrong-pointing) but no resolver+4CC pairing -> cannot name Stadium, held
+- `comp_Ccre_cosr`: exact gates found but not in frozen field_codes -> not promoted
+- `slot_12_slot_13`: new physical lanes profiled unnamed
+
+### Nine-table row frames (t74 / E115, L2)
+
+| Table | Entity | Archive | Model | Header | Footer | Count | Identity | Closure |
+|---|---|---|---|---:|---:|---:|---|---|
+| 0 | award | client | fixed | 14 | 8 | 3,545 | 13B @ row_end-13 | `14 + 3545*77 + 8 == 272987` |
+| 0 | award | server | fixed | 14 | 8 | 3,545 | 13B @ row_end-13 | `14 + 3545*77 + 8 == 272987` |
+| 7 | media | client | variable | 14 | 8 | 208 | 13B @ row_end-13 | `14 + Σrowlen + 8 == 36824;身份 trailer 由 DP 唯一铺满(1 路),行首 name 长度前缀逐行可读,url 长度前缀对 204/208 行成立(4 行 url_len==0)` |
+| 7 | media | server | variable | 14 | 8 | 208 | 13B @ row_end-13 | `14 + Σrowlen + 8 == 38280;DP 唯一 1 路` |
+| 8 | language | client | variable | 14 | 8 | 126 | 13B @ row_end-13 | `14 + Σ(4+name_len+17+13) + 8 == 5248 (逐行复算 126/126)` |
+| 8 | language | server | variable | 14 | 8 | 126 | 13B @ row_end-13 | `同上 126/126` |
+| 18 | derby | client | variable | 14 | 8 | 1,567 | 13B @ row_end-13 | `14 + Σrowlen + 8 == 139891;逐行复算 1567/1567 成立` |
+| 18 | derby | server | variable | 14 | 8 | 1,567 | 13B @ row_end-13 | `14 + Σrowlen + 8 == 149293;逐行复算 1567/1567 成立(行长 == Σ name_len + 71)` |
+| 21 | stadium | client | fixed | 14 | 8 | 48,413 | 13B @ row_end-13 | `14 + 48413*38 + 8 == 1839716` |
+| 21 | stadium | server | fixed | 14 | 8 | 48,413 | 13B @ row_end-13 | `14 + 48413*181 + 8 == 8762775` |
+| 24 | team | client | absent | – | – | – | – | entry absent |
+| 24 | team | server | variable | 14 | 8 | 84,507 | 13B @ row_end-13 | `14 + Sigma(rowlen) + 8 == 8819030,84,507 行逐行铺满到 footer(唯一 DP 路径重建)` |
+| 27 | weather | client | variable | 14 | 8 | 334 | 13B @ row_end-13 | `14 + Σ(4+name_len+95+13) + 8 == 43345;顺序游标逐行前进 334 行恰好停在 footer(43337==F),无需 DP` |
+| 27 | weather | server | variable | 14 | 8 | 334 | 13B @ row_end-13 | `同 client 334 行闭合` |
+| 47 | local_region | client | variable | 14 | 8 | 2,488 | 13B @ row_end-13 | `25 + Σrowlen + 8 == 109505;2488 行全部 (len-41)%5==0` |
+| 47 | local_region | server | variable | 14 | 8 | 2,488 | 13B @ row_end-13 | `同 client 2488 行闭合` |
+| 56 | agreement | client | fixed | 14 | 8 | 6 | 13B @ row_start | `14 + 6*13 + 8 == 100` |
+| 56 | agreement | server | fixed | 14 | 8 | 6 | 13B @ row_start | `14 + 6*13 + 8 == 100` |
+
+- 17/17 (archive, table) closures, zero escalations.
+- Identity doctrine: W=13/footer8 与 W=12/footer9 在数据侧等价(各 1 路);footer 7/10/12 均 0 路;因此宽度争议只在 12/13 间,13 择优(第 13 字节为显式 marker,12B 假设下该字节须并入前一字段)
+
+### Stadium / team / extra_24 (t79 / E117, L3)
+
+- stadium.xml: 41 L3 of 60 occurrences; team.xml 11 of 25; table_extra_24 3 mapped fields; club `+0x18` forwarding upgraded 6 fields held->L3.
+- Grades (stadium): {'L3': 41, 'held': 4, 'editor_metadata': 2, 'non_wire_computed': 1, 'non_wire_language_layer': 1, 'non_wire_forwarded': 1, 'unhandled_no_getter': 9, 'subtable_backed': 1}
+- Grades (team): {'L3': 11, 'held': 2, 'editor_metadata': 2, 'non_wire_computed': 2, 'non_wire_unhandled_on_team': 2, 'non_wire_forwarded': 6}
+
+### Scan tables: stadium + derby/weather/lcrg/agreement (t76a E120, t76c E118, L2)
+
+- stadium(21): 12 client / 47 server slots, 0 uncovered bytes both archives, verify 49 checks / 0 failed.
+  - server 143B differential = server-only prefix segment; server[143:181] == client[0:38] byte-identical on 48,413/48,413 rows
+  - rdui@25 label ambiguity resolved: @25 is row_ordinal (== arange 48,413), @33 is rdui_raw (== duni, exe-suppressed arm)
+  - new intermediate grade L2_structural for capacity family Scas<=Sscy<=Scpy<=Secy (98.70% on 5,065 non-zero rows; 66 counterexamples kept)
+
+| Table | Entity | client slots | server slots |
+|---|---|---:|---:|
+| 18 | derby | 10 | 10 |
+| 27 | weather | 25 | 25 |
+| 47 | local_region | 11 | 11 |
+| 56 | agreement | 9 | 9 |
+
+- derby dual-archive 6-byte row difference = exactly the 3 non-client schema fields D1tw/D1td/D1tl (three u16, born/die together)
+- weather 95B mid-block = 3 + 4x23 proven by discriminant: the only {0,100} column lands at 3+23b+22; rival 3+4x22+4 collapses 1519->583 of 4008
+- **t76b (award/language/media) is dropped**: award/language/media — three-wall zero-delivery, dropped; absorbed by t83 (not in this version).
+
+### XML denominator (t78 / E116, L1) — split file
+
+| Entity | mapped_l3 | independent_member | string_name_table | ui_or_derived | held | unresolved_wire_slot | no_wire_evidence | Sum |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| club | 45 | 10 | 0 | 5 | 28 | 239 | 106 | **433** |
+| nation | 5 | 1 | 0 | 1 | 21 | 0 | 318 | **346** |
+| comp | 49 | 0 | 0 | 18 | 10 | 38 | 140 | **255** |
+
+- Physical coverage: **110/1034 = 10.6%** (110/1034).
+- Full ledger: `reports/xml_denominator_coverage.json` (SHA-256 `e3a6d56e639fb3d9cd507500d81b3e5d4a9f591eafdfc75f0d1f1227d23df9c4`).
+
+### Provenance and boundaries
+
+- Ledger guards cover E111–E120 by entry id, kind, level and canonical claim SHA-256; the v10 t70 snapshot is preserved verbatim inside `incremental_provenance`.
+- E119 (t80 enum-supplement premise void) is recorded as a `probe_negative` entry, not as an acceptance; E116 is L1 (frozen-artifact accounting only).
+- E121 (t82, table_extra_3 dual-object closure) landed after this lane departed and is **not** folded here; it belongs to t87.
+- v10 sections are byte-preserved: three main tables, 8 numbered club subtables, CLUB_LINK, all r2 sections and every negative regression.
+- No game/editor/IDA was started; no `.dat` payload was decoded for this fold. L4=0.

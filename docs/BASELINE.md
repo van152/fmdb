@@ -81,3 +81,24 @@ club(433)+ nation(346)+ person(271)+ comp(255)+ player(179)五个实体占 2,144
 | 仍开 | EDfx 上游持久化来源;club 350 / comp 196 / nation 318 未映射主行字段;comp 集合业务语义(t66 仅物理层);club 22 cnst 投影缺主行游标;merge-to-main(仍按 HANDOFF 搁置) |
 
 更新命令不变:`py -V:3.12 -I scripts/baseline_coverage.py --check`(快照数字仍应 OK)。
+
+## 增量(2026-11-21,E111–E120,schema v10 → v11)
+
+接上节。快照数字不动(`baseline_coverage.py --check` 仍 OK,分母单拆为独立文件不影响冻结聚合)。E109 之后的本轮验收与 `schema v11` 合并:
+
+| 层 | 增量 |
+|---|---|
+| schema | **v10 → v11**(t77/E111–E120,additive-only):22 个 v10 根节逐字节不变,新增 10 节 + 2 个拆分件指针;`--verify` 63/63。**E121(t82)不入本版**,归 t87 补丁 |
+| club 主行 | t71(E111):`CLUB+0x100` 链闭合为 `table_extra_3.dat` 双档行框(client 13+13,053,908+9 / server 13+35,009,248+9,84,259×2 行);**24 条 held 记录转正**(22 cnst 投影在 extra 对象 `+0xe0`/`+0xe7` 双块 + `Cebd` + `Cyfn`);**club 主行 L3 21 → 43** |
+| 槽位指纹 | t72(E112):三主表未命名槽位清单 club 34 / comp 84 / nation 40 槽(未命名 20/36/24),10 项 nation 内层文法升级移交给 t75;**partial 交付,不言称闭合** |
+| 简单表 | t73(E113):通用映射器 + city(2)/continent(5)/region(19)/currency(41) **8/8 帧闭合**;预警记录 14、flip **1**、未命名 27、candidate 4、unmapped 27;10 个 distinct L2 (表,字段,offset) 三元组;alias group **否定结果原文保留**(header_origin_data_unique 全 False → 数据侧无法定 header 起源);冻结锚点复验 14/0 冲突 |
+| nation 文法 | t75(E114):10 段内层文法survey,**8 段字节级闭合**、slot_2/slot_3 无真项保持 held;**99 槽逐条裁决,新具名 L3 = 0**(诚实负结果);club 25 / comp 40 / nation 34 held;t71 的 24 个 4CC 排除不重复计入 |
+| 行框 | t74(E115):9 表 × 2 档 = 17 个 (archive,table) 行框闭合、**0 escalations**;team(24) client 条目按 t66 记录**真缺失**(非空目录),已如实记录;identity 宽度逐表自证(敏感性反例已跑) |
+| 分母 | t78(E116,L1):**1,034 occurrence** 真实分母(club 433 / nation 346 / comp 255),物理覆盖 **110/1034 = 10.6%**;分桶 held 59 / unresolved_wire_slot 277 / no_wire_evidence 564 / ui_or_derived 24 |
+| stadium/team | t79(E117,t71 静态方法收割):stadium.xml 41 L3、team.xml 11 L3、table_extra_24 3 映射字段、club `+0x18` 转发 6 字段 held→L3;L4=0 |
+| scan 表 | t76a(E120):stadium **12 client / 47 server 槽,0 未覆盖字节**,verify 49 项 0 failed;t76c(E118):derby 10 / weather 25 / local_region 11 / agreement 9 槽(各档同数),**8/8 档闭合**;derby 6B 差=3 字段、weather 95B=3+4×23 结构发现 |
+| 车道裁撤 | t80(E119,**probe_negative**):枚举增补前提证伪——快照与 master 枚举 100% 恒等,无增补空间,车道裁撤。**记为负结果探测,不是验收**。t76b(award/language/media)三连墙零落盘已弃,转 t83 接收 |
+| 体积治理 | v11 主 JSON 只留三主表 + 8 编号子表 + CLUB_LINK + r2/r3;13 张非主表槽位裁决 → `reports/other_tables_schema.json`(286 KB);分母全账本 → `reports/xml_denominator_coverage.json`(298 KB)。主 schema 存 path + SHA-256 指针,`--verify` 重算比对 |
+| 仍开 | EDfx 上游;club 350 / comp 196 / nation 318 未映射(分母口径已明确:优先级看 E116 的 277 unresolved_wire_slot);award/language/media → t83;comp 集合业务语义;held 枚举域;E121 → t87;merge-to-main(评估见 REPO_STATUS 第六节,未执行) |
+
+更新命令不变:`py -V:3.12 -I scripts/baseline_coverage.py --check`(快照数字仍应 OK)。
