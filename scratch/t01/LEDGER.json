@@ -2564,6 +2564,31 @@
     "scripts/t73_table_slot_mapper.py"
    ],
    "consequence": "generic mapper ready for wave-2 scan lanes (t76a/b/c) with documented boundaries; 4 simple tables' field slots closed at L2 with frozen-anchor L3 cross-check; alias-group negative result is repo-wide method knowledge"
+  },
+  {
+   "id": "E114",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "scope": "t75 wire-first reverse lookup: 10 t72 escalations (nation segment grammars) processed first, then 99 club/comp/nation unnamed/held outer slots adjudicated",
+    "nation_grammars": "8 segment item grammars closed byte-level (slot_4 Nftb i16 count, u8 tag + 4x len-prefixed strings + date + 4 lanes, 1 row/7 items 46-54B; slot_11 Ntxr 221 rows/1,899 items tag2 25B — matches E87 frozen 1,899; slot_12 u32 count 164 rows/27,178 items ordered-map key i32 + 2 packed dates, t3/t10/t25 ordinal 0-hit, container key NOT business ID; slot_13 19/58 loop 1+4+4+1+1+1+1+1; slot_23 Nlns i8 4+1 237/492; slot_24 Nefr 5x4+date+date 43/214; slot_25 Nnfr shares Nefr reader 20/63 all-null kept static; slot_26 Nagr 4+date+date 126/162); slot_2/slot_3 have 0 real items -> held; A/B/C/D four segments 251/251 dual-archive count+payload match",
+    "prior_lanes": "19 existing named sub-slots of A/B/C/D re-verified against live target identity (t5/8/10/19/56): lang 492/492 ordinal hits but 488 UID lookups all wrong-pointing; Nnfr/nfrc 63 all-null; Nlns/perc 17/91 raw!=reader-rewritten-100 preserved",
+    "club_comp": "99 unnamed/held slots adjudicated (club 25 / comp 40 / nation 34): club ref_e0 reproduces E106 nation resolver 26,587 live full-hit, no scoped 4CC, held; club raw168 / comp m152 are true t21 ordinal lanes (84,259 & 7,047 full hit, wrong-UID all wrong-pointing) but no resolver+4CC pairing -> cannot name Stadium, held; comp Ccre/cosr exact gates found but not in frozen index -> not promoted; slot_12/slot_13 new physical lanes profiled unnamed",
+    "boundary": "new named L3 = 0 — remaining slots lack resolver+getter pairing; coverage unchanged; t66/t71/eight subtables/CLUB_LINK/person untouched; negatives preserved verbatim (E60 Cccn, t59 falsified, t64/t62 exclusions)",
+    "verification": "builder --help/--selftest OK; verify.py --check OK: 6 main members, 99 held trials, 10 escalation records, 19 prior lanes with server domains; t01 anchors 7/7",
+    "commander_spot": "Ntxr 221 rows/1,899 items matches E87 frozen fact exactly; lang wrong-UID 488/488 consistent with t66 discipline"
+   },
+   "evidence": [
+    "scratch/t75/out/xref_reverse.json",
+    "scratch/t75/out/field_map_r3.json",
+    "scratch/t75/out/REPORT.md",
+    "scratch/t75/out/DONE.md",
+    "scratch/t75/out/verify.py",
+    "scripts/t75_slot_xref_reverse.py"
+   ],
+   "consequence": "nation segment grammar layer closed (infrastructure for future naming); all 99 unnamed slots now carry adjudication records — the un-named residue is documented as missing resolver+getter pairing, the precise target for editor-runtime (t02) if authorized"
   }
  ]
 }
