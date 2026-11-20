@@ -26,11 +26,15 @@ person 属性块(PDxx)不在本工作区范围;如需启动须用户明示。
 6. **Git**:任务分支 `tNN-短名`;提交信息 `feat/fix/docs/chore(tNN): 摘要`;大数据与二进制不入库(`.gitignore` 已覆盖)。
 7. **临时实验写 `scratch/<任务>/`**;结论文档进 `reports/`,机读结果与报告同名成对。
 
-## 起步任务
+## 任务起点与当前进度
 
-- **t01**:editor.exe 字段槽位映射侦察——找 table type → schema 字段 → 行内偏移的映射结构。线索:`PROPERTY_MAP.md` 的 `database_table_type=25`→`cext` 反推先例、`fm.i64` `sub_1449A06C0` 手法复刻、86 份既有伪代码(`D:\tmp2b\fm24\reports\reverse_engineering\`)。
-- **t02**:单变量编辑器对照(需用户授权)。
-- **t03**:把既有 L2 锚点固化为回归项。
+起步任务(2026-11-18 订立;状态更新至 2026-11-20):
+
+- **t01**:editor.exe 字段槽位映射侦察——找 table type → schema 字段 → 行内偏移的映射结构。线索:`PROPERTY_MAP.md` 的 `database_table_type=25`→`cext` 反推先例、`fm.i64` `sub_1449A06C0` 手法复刻、86 份既有伪代码(`D:\tmp2b\fm24\reports\reverse_engineering\`)。**已演化为 t41–t70 主线**:三重闸门法(frozen 唯一 occurrence → getter 4CC 精确分发 → 同位移 sink)+ 目标 ordinal join + 条目级 ledger 守卫,已跨多任务复用。
+- **t02**:单变量编辑器对照(需用户授权)——**仍未启动**,保持只读,未经显式授权不做。
+- **t03**:把既有 L2 锚点固化为回归项——**已落地** `scripts/t01_anchors.py`(7/7)。
+
+当前:分支 `t70-schemav10`,公共 schema v10、LEDGER 110 条(E110)。完整拓扑、版本演进、仍开事项见 [docs/REPO_STATUS.md](docs/REPO_STATUS.md)。
 
 ## 基线与进度
 
