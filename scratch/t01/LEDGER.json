@@ -2610,6 +2610,30 @@
     "scripts/t78_xml_denominator.py"
    ],
    "consequence": "coverage accounting now ledger-backed; sol/neon compute can leave the three main-row battlefields for static-rich targets (stadium/team/extra_3/name pools) with 20-slot club ROI as the top trail"
+  },
+  {
+   "id": "E115",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t74 nine-table dual-archive row frames closed + identity width self-proven (fix1 chunked delivery; delivered DONE on its own attempt 3)",
+    "frames": "17/17 (archive,table) closed, header + sum(row) + footer == payload byte-exact; 9 tables x 2 archives; zero escalate_to_sol; team(24) client entry documented absent (t66-consistent), server-only 84,507 rows variable 86..666B",
+    "identity": "13B [ordinal u32][UID u32][UID u32][tail] at row end; two independent criteria: (A) alignment self-proof — only -13 satisfies (ordinal==i AND UID-pair-equal) for EVERY row across all 17 archives, neighbours hit <=1 row; (B) footer uniqueness — W13 fixed, only footer=8 tiles, 16/17 unique-path, weather 3-path (documented); tail byte = marker 0 on 15 archives, team selector {10:84256, 11:250, 0:1} (crossref t39 Team selector, data-side only)",
+    "grammars": "agreement 13B fixed x6; award 77B fixed x3545; stadium client 38B / server 181B x48413 (server extra segment = per-row 143B field block); language [len][UTF-8 name][17B][13B id] suffix 30B rdui_suffix@17 126/126; weather [len][name][95B numeric mid][13B id]; derby k-lstr + (const-4k) numeric + 13B id, k in {2,4}, const 65 client / 71 server; lcrg 41+5k rows {41..76}; media identity-DP, server +7B per row before identity",
+    "verification": "verify.py 95/95 PASS (anchors incl lcrg rdui@-13/duni@-9 2488/2488, language suffix 126/126); sensitivity.json per (table,archive) identity-width x footer matrix; t74 fix1 discipline held (chunked writes, deliver-first)",
+    "commander_spot": "team server closure recomputed from width histogram: 84,507 rows, 14 + 8,819,008 + 8 = 8,819,030 exact; frames.json 9x2 tables zero-escalate"
+   },
+   "evidence": [
+    "scratch/t74/out/frames.json",
+    "scratch/t74/out/sensitivity.json",
+    "scratch/t74/out/REPORT.md",
+    "scratch/t74/out/DONE.md",
+    "scratch/t74/out/verify.py",
+    "scripts/t74_row_frames9.py"
+   ],
+   "consequence": "row-frame prerequisite for all scan lanes complete; variable-table identity sites ready for t81 FK index; stadium/team/extra_24 ready for t79 neon static harvest"
   }
  ]
 }
