@@ -2512,6 +2512,29 @@
     "scripts/t71_club100_cnst.py"
    ],
    "consequence": "club main-row held 22 cnst + Cebd + Cyfn closed via cross-object chain; club L3 21->43 (main-row 22 new slots at extra object); schema v11 fold input; negative evidence (date_relationship_control, Casp, Csnm bounds) untouched"
+  },
+  {
+   "id": "E112",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t72 unnamed/held physical slot inventory + dual-archive value fingerprints for club/comp/nation (data-side only)",
+    "deliverables": "inventory.json: club 34 (unnamed 20/l3_claimed 9/held 5), comp 84 (unnamed 36/l3_claimed 32/held 4/collection_closed 12), nation 40 (unnamed 24/l3_claimed 5/held 10/identity_envelope 1); fingerprints.json: per-slot width histogram, first/last (row,absolute,raw), distinct, zero/all-ones ratios, u8..i32/f32 interpretations, value histograms, FK probes (1B slots marked non-discriminating), xref_hint shape-only",
+    "escalations": "10, all nation inner-item variable grammars (A/B/C/D segments, Nftb etc.) — discipline-held, handed to t75 sol",
+    "replay": "frozen-trajectory replay: club/client 84,259 rows payload 6,932,082 header 13 footer 9 coordinate_digests_matched=16; comp/nation same method; inputs_sha256 11 artifacts",
+    "status": "partial — verify.py/REPORT/DONE not delivered (devseek 40-min wall killed 3 attempts); commander-written per t53/t68 precedent",
+    "commander_spot": "club selector histogram {0:84256,12:3} exactly matches frozen t57 REPORT; builder --help/--selftest PASS; grading_ceiling L2/candidate, L4=0"
+   },
+   "evidence": [
+    "scratch/t72/out/inventory.json",
+    "scratch/t72/out/fingerprints.json",
+    "scratch/t72/out/REPORT.md",
+    "scratch/t72/out/DONE.md",
+    "scripts/t72_slot_fingerprint.py"
+   ],
+   "consequence": "t75 wire-first reverse lookup input ready; t76 lanes unaffected; nation inner-item grammars remain open (t46/t55 boundary preserved)"
   }
  ]
 }
