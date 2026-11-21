@@ -1,0 +1,635 @@
+{
+ "archive": "client",
+ "table": 6,
+ "entity": "injury.xml",
+ "entity_id": "inju",
+ "tool": "t81_small_slots",
+ "schema": "t81.small_slots.v1",
+ "payload_len": 1862,
+ "payload_sha256": "ae7383decc3d0baef8e054789f151ad1f34cd90b7ed87ab15276f041bb041298",
+ "frame_self_proof": {
+  "payload_len": 1862,
+  "count_from_header": 115,
+  "arithmetic_and_identity_candidates": 4,
+  "alias_group": [
+   [
+    14,
+    8,
+    3
+   ],
+   [
+    15,
+    7,
+    2
+   ],
+   [
+    16,
+    6,
+    1
+   ],
+   [
+    17,
+    5,
+    0
+   ]
+  ],
+  "alias_group_size": 4,
+  "header_origin_data_unique": false,
+  "footer_flag_be1_members": [
+   [
+    14,
+    8
+   ]
+  ],
+  "header_origin_decider": "data side cannot fix the header origin: every alias member closes and carries the identical identity triple; the t73 rule selects the member whose footer head reads as big-endian 1 (F=8)",
+  "resolved": true,
+  "frame": {
+   "header": 14,
+   "footer": 8,
+   "stride": 16,
+   "count": 115,
+   "identity_offset": 3,
+   "identity_site": "row_end-13",
+   "model": "fixed"
+  },
+  "closure": "14 + 115 x 16 + 8 = 1862",
+  "identity_rows": 115
+ },
+ "status": "closed",
+ "business_bytes": 3,
+ "identity": {
+  "width": 13,
+  "layout": "ord@+0 uid@+4 uid@+8 marker@+12",
+  "ordinal_eq_row_index": 115,
+  "uid_pair_ok": 115,
+  "marker_values": [
+   0
+  ],
+  "rows": 115,
+  "uid_min": 1,
+  "uid_max": 133,
+  "uid_distinct": 115
+ },
+ "slot_grades": {
+  "candidate": 1,
+  "L2": 1,
+  "unassigned": 1
+ },
+ "slots": [
+  {
+   "field": "icla",
+   "offset": 0,
+   "width": 1,
+   "grade": "candidate",
+   "why": "the only remaining byte of the 3-byte client business block once iscl is fixed at +1; icla is `is_client_field` and is the parent class of iscl. Enum containment FAILS by exactly one value (data carries 13, master lists 14) so this is not promoted to L2",
+   "negative": "off0 domain = [1,3,4,5,6,8,9,10,11,12,13]; master enum icla = [-3,1,3,4,5,6,8,9,10,11,12,14] -> slot_minus_enum [13], enum_minus_slot [-3,14]. The editor XML enum and the shipped data disagree on one code; recorded, not reconciled",
+   "evidence": [
+    {
+     "enum": "icla",
+     "domain": 12,
+     "slot": 11,
+     "subset": false,
+     "exact": false,
+     "slot_minus_enum": [
+      13
+     ],
+     "enum_minus_slot": [
+      -3,
+      14
+     ]
+    }
+   ],
+   "domain": {
+    "width": 1,
+    "rows": 115,
+    "distinct": 11,
+    "min": 1,
+    "max": 13,
+    "n_zero": 0,
+    "n_sentinel_ff": 0,
+    "live": 115,
+    "live_min": 1,
+    "live_max": 13,
+    "values": [
+     1,
+     3,
+     4,
+     5,
+     6,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13
+    ]
+   }
+  },
+  {
+   "field": "iscl",
+   "offset": 1,
+   "width": 1,
+   "grade": "L2",
+   "why": "45/46 containment of the master `iscl` enum domain: every value in the column is a legal sub-classification, and a 12-value enum cannot produce 45 distinct values, so the assignment is unique among the two client-field enums",
+   "negative": "master `iscl` is [-3]+1..48 with gaps; the column omits -3 ('Any'), which is the editor-only sentinel, not a data value",
+   "evidence": [
+    {
+     "enum": "iscl",
+     "domain": 46,
+     "slot": 45,
+     "subset": true,
+     "exact": false,
+     "slot_minus_enum": [],
+     "enum_minus_slot": [
+      -3
+     ]
+    }
+   ],
+   "domain": {
+    "width": 1,
+    "rows": 115,
+    "distinct": 45,
+    "min": 1,
+    "max": 48,
+    "n_zero": 0,
+    "n_sentinel_ff": 0,
+    "live": 115,
+    "live_min": 1,
+    "live_max": 48,
+    "values": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "values_truncated": true
+   }
+  },
+  {
+   "field": null,
+   "offset": 2,
+   "width": 1,
+   "grade": "unassigned",
+   "why": "binary column {0,1} with 27/115 ones; byte-identical to server offset 2 on all 115 rows, so it is a stored field, but no schema boolean carries `is_client_field`, so no field can claim it from the data side",
+   "domain": {
+    "width": 1,
+    "rows": 115,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "n_zero": 88,
+    "n_sentinel_ff": 0,
+    "live": 115,
+    "live_min": 0,
+    "live_max": 1,
+    "values": [
+     0,
+     1
+    ]
+   }
+  }
+ ],
+ "held": {
+  "reason": "string fields live in a length-prefixed region, not a fixed-width slot. This payload carries NO such region: runs of >=6 printable bytes = 0 (longest 0 B; the header magic 'tad.' is 4 B and is excluded from the count). The text is supplied by the language/localisation layer and is therefore not absent by omission -- it is structurally absent here",
+  "text_probe": {
+   "min_run": 6,
+   "n_runs": 0,
+   "longest": 0,
+   "note": "header magic 'tad.' is exactly 4 bytes, below min_run",
+   "text_present": false
+  },
+  "fields": [
+   "dbnm",
+   "Inam",
+   "Isnm"
+  ]
+ },
+ "unmapped": [
+  "duni",
+  "rdui",
+  "NDBC",
+  "FDBC",
+  "Imnd",
+  "Iexd",
+  "Iiar",
+  "Iocr",
+  "Imip",
+  "Igpr",
+  "Icdp",
+  "Irec",
+  "Icon",
+  "Icau",
+  "inSr",
+  "Iagr",
+  "Icms",
+  "Ibph",
+  "Ibsp",
+  "Ibin",
+  "Ibis",
+  "Ibpg"
+ ],
+ "fk": {
+  "outbound": {
+   "declared_fk_fields": [],
+   "why": "injury.xml declares no database_record_unique_id field; the model is the other way round -- other tables point at this one"
+  },
+  "inbound_lanes_scanned": 0,
+  "inbound": [],
+  "ordinal_domain": {
+   "kind": "range",
+   "start": 0,
+   "stop": 114,
+   "count": 115,
+   "source": "scratch/t81/out/fk_index.json (prior t81 deliverable, referenced not rebuilt)"
+  },
+  "uid_domain": {
+   "count": 115,
+   "distinct": 115,
+   "min": 1,
+   "max": 133,
+   "sha256": "1156648f70ac47e0408dc0bcf10c543731e631cd86ff670b78d5109084176f5b"
+  },
+  "inju_vs_table_30": {
+   "cited_from": "reports/stage2_table_identity.json (stage2 conclusion, NOT re-adjudicated in this task)",
+   "stage2_row": {
+    "table_type": 30,
+    "entity": "player",
+    "status": "resolved",
+    "level": "A",
+    "role": "player injury / future-state record table",
+    "note": "72,473 rows >> injury master 115, so table_30 is the player-side injury instance/status table, not the injury dictionary"
+   },
+   "reading": "injury(6) is the dictionary (115 rows) that table_30 rows reference per player; the referential direction is table_30 -> injury(6). ordinal sets are compatible (0..114) but the link is NOT re-derived here: no byte-level FK was established in either direction, so no grade is claimed",
+   "grade": "none (cited stage2 identity only)"
+  }
+ },
+ "column_profile": {
+  "0": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 11,
+   "min": 1,
+   "max": 13,
+   "n_zero": 0,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 1,
+   "live_max": 13,
+   "values": [
+    1,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ]
+  },
+  "1": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 45,
+   "min": 1,
+   "max": 48,
+   "n_zero": 0,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 1,
+   "live_max": 48,
+   "values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+   ],
+   "values_truncated": true
+  },
+  "2": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 2,
+   "min": 0,
+   "max": 1,
+   "n_zero": 88,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 0,
+   "live_max": 1,
+   "values": [
+    0,
+    1
+   ]
+  },
+  "3": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 115,
+   "min": 0,
+   "max": 114,
+   "n_zero": 1,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 0,
+   "live_max": 114,
+   "values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ],
+   "values_truncated": true
+  },
+  "4": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 1,
+   "min": 0,
+   "max": 0,
+   "n_zero": 115,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 0,
+   "live_max": 0,
+   "values": [
+    0
+   ]
+  },
+  "5": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 1,
+   "min": 0,
+   "max": 0,
+   "n_zero": 115,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 0,
+   "live_max": 0,
+   "values": [
+    0
+   ]
+  },
+  "6": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 1,
+   "min": 0,
+   "max": 0,
+   "n_zero": 115,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 0,
+   "live_max": 0,
+   "values": [
+    0
+   ]
+  },
+  "7": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 115,
+   "min": 1,
+   "max": 133,
+   "n_zero": 0,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 1,
+   "live_max": 133,
+   "values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+   ],
+   "values_truncated": true
+  },
+  "8": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 1,
+   "min": 0,
+   "max": 0,
+   "n_zero": 115,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 0,
+   "live_max": 0,
+   "values": [
+    0
+   ]
+  },
+  "9": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 1,
+   "min": 0,
+   "max": 0,
+   "n_zero": 115,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 0,
+   "live_max": 0,
+   "values": [
+    0
+   ]
+  },
+  "10": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 1,
+   "min": 0,
+   "max": 0,
+   "n_zero": 115,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 0,
+   "live_max": 0,
+   "values": [
+    0
+   ]
+  },
+  "11": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 115,
+   "min": 1,
+   "max": 133,
+   "n_zero": 0,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 1,
+   "live_max": 133,
+   "values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+   ],
+   "values_truncated": true
+  },
+  "12": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 1,
+   "min": 0,
+   "max": 0,
+   "n_zero": 115,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 0,
+   "live_max": 0,
+   "values": [
+    0
+   ]
+  },
+  "13": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 1,
+   "min": 0,
+   "max": 0,
+   "n_zero": 115,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 0,
+   "live_max": 0,
+   "values": [
+    0
+   ]
+  },
+  "14": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 1,
+   "min": 0,
+   "max": 0,
+   "n_zero": 115,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 0,
+   "live_max": 0,
+   "values": [
+    0
+   ]
+  },
+  "15": {
+   "width": 1,
+   "rows": 115,
+   "distinct": 1,
+   "min": 0,
+   "max": 0,
+   "n_zero": 115,
+   "n_sentinel_ff": 0,
+   "live": 115,
+   "live_min": 0,
+   "live_max": 0,
+   "values": [
+    0
+   ]
+  }
+ }
+}

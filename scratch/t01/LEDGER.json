@@ -2850,6 +2850,36 @@
     "scripts/t87_v11_patch.py"
    ],
    "consequence": "public schema carries all 14 accepted packages; next high-ROI lane = t88 table_45 STARTING_RECORD 117-field slot scan (recommended by t87)"
+  },
+  {
+   "id": "E125",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t81 variable-table FK index + city FK closure + t76 cross-FK rescan + injury(6)/stage_name(23)/description(35) small tables — full brief across two lane runs",
+    "deliverables": [
+     "fk_index.json: 37 targets; variable tables t8/t27/t47 closed both archives (identity 13B + ordinal ranges); t10 client closed, t10 server honestly escalated (structure differs); t24 available for city lanes",
+     "rescan_fk_city.json: t73 tool-gap closed — Cnti mapped-ordinal 56,293/56,293 in-domain (max 249, tightness 0.992), UID encoding rejected by control (0.338)",
+     "rescan_fk_t76.json: t76 lanes' FK items re-adjudicated with the new index",
+     "slots_{client,server}_{6,23,35}.json: six (archive,table) closures — t6 115 rows, t23 278 rows x 14B, t35 35 rows; frame_self_proof with alias-group + footer-flag criterion; t23 has 1 business byte (constant 0x00) + identity only — stage-name content lives in pools (cross-confirms E123)"
+    ],
+    "verification": "commander independent recompute 12/12: closure arithmetic, ordinal==arange, UID pairs, payload lengths all True; payload SHA-256 recorded by lane",
+    "lane_note": "two runs (t81-fkvar + t81-fix2, fresh session for continuation); launcher heuristic closed both early — REPORT/DONE/verify not delivered; commander verification recorded here stands in; frozen anchors (t6 rdui@3, t23 rdui@1, t35 rdui@2) respected in identity layouts"
+   },
+   "evidence": [
+    "scratch/t81/out/fk_index.json",
+    "scratch/t81/out/rescan_fk_city.json",
+    "scratch/t81/out/rescan_fk_t76.json",
+    "scratch/t81/out2/slots_client_6.json",
+    "scratch/t81/out2/slots_server_6.json",
+    "scratch/t81/out2/slots_client_23.json",
+    "scratch/t81/out2/slots_server_23.json",
+    "scratch/t81/out2/slots_client_35.json",
+    "scratch/t81/out2/slots_server_35.json"
+   ],
+   "consequence": "t73's confessed FK tool-gap closed; city Cnti/Clgi/Clri/Cwea lanes now adjudicable; three remaining clean tables scanned; Wave-10/11 scan queue fully drained"
   }
  ]
 }
