@@ -2823,6 +2823,33 @@
     "scratch/t84/out/lang_update_check.json"
    ],
    "consequence": "name-slot helds now carry refutation evidence instead of vacuum; person name pools mapped for future person-table lanes; 8 name 4CCs correctly re-classified as inline-string slots (position known, semantics known) — candidates for L2 upgrade in next scan pass"
+  },
+  {
+   "id": "E124",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L1",
+   "claim": {
+    "scope": "t87 schema v11→v11.1 additive patch: E121(t82) merged",
+    "merge": [
+     "new section club_extra3_l3_e121: 35 new L3 grouped (6 server-only scalars, 5 election, 6 supporter, 10 UEFA ring, 3 i32, 5 string/list-tail), 39 held counted, 131 negatives = 117 table_45 record family + 14 other non-extra_3; t71's 24 excluded",
+     "CBW*/CBD* re-route documented: club.xml[211..327] 117 fields' wire home = server_db/table_45.dat (DATABASE_TABLE<STARTING_RECORD>, type 45, 84,477 records); static witnesses live-checked against t82 REPORT 5/5",
+     "coverage: club_main_row_L3 43→78 (prior/delta keys added); club_denominator_note_E121 records 117/239 carve-out; xml_denominator_coverage.json intentionally unchanged (re-bucket deferred)",
+     "guard: 32 non-mutable root sections byte-identical (digests + raw slices + adder_guard); --build refuses re-run on patched file"
+    ],
+    "known_legacy": "t77 verifier 4 assertions superseded by v11.1 (whitelisted explicitly in t87 --verify); other t77 regressions still fail",
+    "verification": "--verify 59/59, --selftest 9/9, t01 anchors 7/7, baseline stable; commander spot: version 11.1, 37 keys, E121 section with 35-L3 groups, coverage 78/prior 43"
+   },
+   "evidence": [
+    "reports/club_nation_subtable_schema.json",
+    "reports/club_nation_subtable_schema.md",
+    "scratch/t87/out/v11_section_digests.json",
+    "scratch/t87/out/REPORT.md",
+    "scratch/t87/out/DONE.md",
+    "scripts/t87_v11_patch.py"
+   ],
+   "consequence": "public schema carries all 14 accepted packages; next high-ROI lane = t88 table_45 STARTING_RECORD 117-field slot scan (recommended by t87)"
   }
  ]
 }

@@ -10,6 +10,7 @@
 - 外部只读引用:[docs/refs.md](docs/refs.md) — 旧证据库 `D:\tmp2b\fm24` 与游戏库 `Z:`
 - 证据快照:[evidence/fm24/](evidence/fm24/)(56 文件,SHA-256 见 [evidence/MANIFEST.json](evidence/MANIFEST.json))
 - 公共 schema:`reports/club_nation_subtable_schema.{json,md}`(**v11**,E111–E120 已并入;E110 为 v10 验收点)
+- **v11.1(t87)**:E121(t82)additive 补丁已并入 — 新节 `club_extra3_l3_e121`(35 新 L3 / 39 held / 131 负证,`CBW*`/`CBD*`→`server table_45` 正名),club 主行+extra_3 对象 L3 43→**78**;`--build/--verify/--selftest` = 27/59/9 全过,anchors 7/7
 - schema v11 拆分件(主 schema 只留指针 + SHA-256):
   - `reports/other_tables_schema.json` — 13 张非主表槽位裁决(t73 4 + t76a 1 + t76c 4 + t74 行框 4)
   - `reports/xml_denominator_coverage.json` — 1,034 occurrence 分母台账(物理覆盖 110/1034 = 10.6%)
@@ -24,7 +25,7 @@
 
 - 分支 `t70-schemav10` 线性链;HEAD 已推进至 t82(E121);LEDGER **121 条**(末 E121)。
 - **schema v10→v11(t77)已构建并自检**(E111–E120 增量合并;anchors 7/7、L4=0)。v11 纯增量:22 个 v10 根节 byte 不变,新增 10 个节 + 两个拆分件指针。
-- E121(t82,table_extra_3 双对象闭合,35 新 L3)不在 v11 内,归 t87 补丁。
+- E121(t82,table_extra_3 双对象闭合,35 新 L3)不在 v11 内,归 t87 补丁。→ **已由 t87 并入 v11.1**(见上一条)。
 - 未结悬案:EDfx 上游持久化来源;award/language/media 三表槽位(t76b 三面碰壁,转 t83);merge-to-main(评估见 REPO_STATUS,未执行)。
 - 车队全部空闲,无后台进程。
 
@@ -48,4 +49,6 @@ py -V:3.12 -I scripts/baseline_coverage.py --check    # 对照 BASELINE.md 数�
 py -V:3.12 -I -B scripts/t01_anchors.py               # 冻结锚点回归(7/7)
 py -V:3.12 -I -B scripts/t77_schema_v11.py --selftest # v11 构建器自检
 py -V:3.12 -I -B scripts/t77_schema_v11.py --verify   # 重读全部输入、复算每节计数(只读)
+py -V:3.12 -I -B scripts/t87_v11_patch.py --selftest # v11.1 补丁器自检
+py -V:3.12 -I -B scripts/t87_v11_patch.py --verify   # v11.1 + t82 产物复算(E121 计数)只读
 ```

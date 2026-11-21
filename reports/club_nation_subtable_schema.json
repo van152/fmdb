@@ -1,7 +1,7 @@
 {
   "schema_id": "fm24.club_nation_subtable_schema",
-  "schema_version": 11,
-  "generated_by": "t77",
+  "schema_version": "11.1",
+  "generated_by": "t87",
   "evidence_grade_policy": "Only accepted source-ledger L3 rows are in fields. Held rows, exclusions, and negative regressions remain separate. L4=0.",
   "binary_provenance": {
     "binary": "editor.exe",
@@ -178,7 +178,7 @@
     "nation_t53_negative_trial_groups": 8,
     "club_main_row_occurrences": 433,
     "club_main_row_aligned": 18,
-    "club_main_row_L3": 43,
+    "club_main_row_L3": 78,
     "club_main_row_held": 41,
     "club_main_row_skipped_separate_member": 10,
     "club_main_row_unmapped": 350,
@@ -278,7 +278,12 @@
       "bytes": 286605,
       "table_count": 13,
       "note": "13 non-main-table slot verdicts (t73 4 + t76a 1 + t76c 4 + t74 frames 4)"
-    }
+    },
+    "club_main_row_L3_prior_v11": 43,
+    "club_main_row_L3_delta_E121": 35,
+    "club_main_row_L3_note_E121": "43 (v11) + 35 = 78 club main-row + extra_3 object L3 per E121. The 35 are the t82 table_extra_3 promotions (31 scalars + 4 list/polymorphic); the 24 t71 records of E111 are already inside the 43 and are not counted twice.",
+    "club_denominator_note_E121": "the club.xml[211..327] record family (117 items, incl. CBW*/CBD*) is a server_db/table_45.dat STARTING_RECORD payload, not table_extra_3, so those 117 of the 239 club unresolved_wire_slot occurrences in E116 are re-routed out of the club extra_3 denominator. reports/xml_denominator_coverage.json is NOT rewritten by t87; the bucket re-issue is a follow-up.",
+    "xml_denominator_pointer_note_E121": "pointer still carries the E116 numbers (1,034 occurrences / 110 carried); t87 records the re-routing as a note only"
   },
   "inventory_reconciliation": {
     "club_inventory": "scratch/t29/out/subtable_inventory.json is context only. Where t29 lists Cmti/CNtp/Cdbt item candidates at candidate/L2, the accepted t32/t34/t36 L3 ledgers take precedence for this consolidation.",
@@ -26291,6 +26296,12 @@
         "level": "L2",
         "date": "2026-11-21",
         "claim_sha256": "266eecf0d2b641b226b5b0f76567f6db6ebfb804dfd91c302674bbaef1007d13"
+      },
+      "E121": {
+        "kind": "acceptance",
+        "level": "L3",
+        "date": "2026-11-21",
+        "claim_sha256": "714e3331e7a02f6d39c77e543241bff32e849b5260d00d3ff21e5617a3204222"
       }
     },
     "acceptance_ledger_source": {
@@ -27412,6 +27423,19 @@
           "scratch/t79/out/DONE.md",
           "scratch/t79/out/verify.py"
         ]
+      },
+      "t82": {
+        "acceptance_ledger_entry": "E121",
+        "acceptance_ledger_level": "L3",
+        "section": "club_extra3_l3_e121",
+        "source_artifacts": [
+          "scratch/t82/out/DONE.md",
+          "scratch/t82/out/REPORT.md",
+          "scratch/t82/out/domain_stats.json",
+          "scratch/t82/out/field_map.json",
+          "scratch/t82/out/verify.py",
+          "scratch/t82/out/xref_extra3.json"
+        ]
       }
     },
     "t52_ledger_snapshot": {
@@ -27962,7 +27986,37 @@
         }
       ],
       "rationale": "v10 was 29.5 MB because bulk records (nation_t9_wire 1.27 MB, comp_collections 4.10 MB, r2 held/unmapped lists) are embedded inline. v11 does not touch those sections (byte-preserved) and keeps its own additions pointer-based so the fold adds ~0.2 MB instead of ~2 MB."
-    }
+    },
+    "t87_ledger_snapshot": {
+      "path": "scratch/t01/LEDGER.json",
+      "guard_scope": "entry-level id, kind, level, date and canonical claim SHA-256; no live full-file hash or byte-count pin",
+      "guarded_entries": [
+        "E121"
+      ],
+      "entries": [
+        {
+          "id": "E121",
+          "kind": "acceptance",
+          "level": "L3",
+          "date": "2026-11-21",
+          "claim_sha256": "714e3331e7a02f6d39c77e543241bff32e849b5260d00d3ff21e5617a3204222"
+        }
+      ],
+      "out_of_scope_note": "E122 and later belong to the next lane; E111-E120 stay as t77 pinned them"
+    },
+    "t87_volume_policy": {
+      "main_schema_keeps": [
+        "the new 35-code section",
+        "counters",
+        "a single source pointer"
+      ],
+      "bulk_stays_out": "the t82 74-field ledger, per-field static chains and all 131 negative witnesses remain in scratch/t82/out/",
+      "split_files_untouched": [
+        "reports/other_tables_schema.json",
+        "reports/xml_denominator_coverage.json"
+      ]
+    },
+    "t87_additive_rule": "v11 sections are value-identical after the patch; only schema_version, generated_by, coverage and incremental_provenance change, plus the new root section"
   },
   "nation_static_side": {
     "source_task": "t47",
@@ -1194871,5 +1194925,316 @@
     },
     "generated_by": "t77",
     "rule": "sections in this file never inline another report file's bulk; they carry path + SHA-256 + aggregates only"
+  },
+  "club_extra3_l3_e121": {
+    "generated_by": "t87",
+    "acceptance_ledger_entry": "E121",
+    "acceptance_ledger_level": "L3",
+    "source_task": "t82",
+    "source_artifact": {
+      "path": "scratch/t82/out/field_map.json",
+      "sha256": "2a31c0250c905d45b1528c4196e20da9b492225ccaed17bed976d9060041ddae",
+      "bytes": 260540,
+      "rule": "pointer only; the 74-field ledger stays in the t82 artifact"
+    },
+    "baseline_v11": {
+      "sha256": "8733497cbd42b33eed7e19a702034dbbc9dc08bb2800d2a30695ef8d2f7cf555",
+      "bytes": 29884088
+    },
+    "counts": {
+      "new_L3": 35,
+      "held": 39,
+      "negative_not_extra3": 131,
+      "negative_to_table_45": 117,
+      "negative_other": 14,
+      "excluded_t71_L3": 24,
+      "grade_counts": {
+        "L3": 35,
+        "held": 39,
+        "negative_not_extra3": 130,
+        "preserved_t63_held_non_extra3": 1
+      },
+      "L4": 0
+    },
+    "new_L3_codes": [
+      "CPsL",
+      "Catd",
+      "Cbbl",
+      "Cect",
+      "Cemn",
+      "Cemx",
+      "Cetl",
+      "Cf10",
+      "Cmle",
+      "Cmna",
+      "Cmtm",
+      "Cmxa",
+      "Crcb",
+      "Csaf",
+      "Csly",
+      "Csoc",
+      "Cspe",
+      "Csps",
+      "Cspt",
+      "Cste",
+      "Ctlv",
+      "Cuf1",
+      "Cuf2",
+      "Cuf3",
+      "Cuf4",
+      "Cuf5",
+      "Cuf6",
+      "Cuf7",
+      "Cuf8",
+      "Cuf9",
+      "Cyfb",
+      "Cyim",
+      "Cytv",
+      "TCht",
+      "pcpt"
+    ],
+    "new_L3_by_group": {
+      "server_only_scalars": {
+        "count": 6,
+        "codes": [
+          "Cmle",
+          "Ctlv",
+          "Cytv",
+          "Cyfb",
+          "Crcb",
+          "Cyim"
+        ],
+        "wire_scope": [
+          "server_only"
+        ]
+      },
+      "election_sub_object": {
+        "count": 5,
+        "codes": [
+          "Cetl",
+          "Cmtm",
+          "Cect",
+          "Cemn",
+          "Cemx"
+        ],
+        "wire_scope": [
+          "server_only_conditional_flag_11963"
+        ]
+      },
+      "supporter_profile": {
+        "count": 6,
+        "codes": [
+          "Csly",
+          "Csps",
+          "Cspt",
+          "Csaf",
+          "Cste",
+          "Cspe"
+        ],
+        "wire_scope": [
+          "server_only"
+        ]
+      },
+      "uefa_coefficient_ring": {
+        "count": 10,
+        "codes": [
+          "Cuf1",
+          "Cuf2",
+          "Cuf3",
+          "Cuf4",
+          "Cuf5",
+          "Cuf6",
+          "Cuf7",
+          "Cuf8",
+          "Cuf9",
+          "Cf10"
+        ],
+        "wire_scope": [
+          "server_only_conditional_flag_569"
+        ]
+      },
+      "server_only_i32": {
+        "count": 3,
+        "codes": [
+          "Catd",
+          "Cmna",
+          "Cmxa"
+        ],
+        "wire_scope": [
+          "server_only"
+        ]
+      },
+      "string_and_list_tail": {
+        "count": 5,
+        "codes": [
+          "TCht",
+          "Cbbl",
+          "Csoc",
+          "pcpt",
+          "CPsL"
+        ],
+        "detail": [
+          {
+            "code": "TCht",
+            "wire_type": "u32_len_utf8",
+            "object_path": "CLUB+0xb0 -> +0x98"
+          },
+          {
+            "code": "Cbbl",
+            "wire_type": "poly_tag7_24B",
+            "object_path": "CLUB+0xb0 -> +0x00 polymorphic tag 7 (PLAYER_BUY_BACK_INFO, 24B)"
+          },
+          {
+            "code": "Csoc",
+            "wire_type": "poly_tag5_24B",
+            "object_path": "CLUB+0xb0 -> +0x00 polymorphic tag 5 (NEXT_SALE_PERCENTAGE_INFO, 24B)"
+          },
+          {
+            "code": "pcpt",
+            "wire_type": "poly_tag38_varlen",
+            "object_path": "CLUB+0xb0 -> +0x00 polymorphic tag 38 (TESTIMONIAL_INFO, varlen)"
+          },
+          {
+            "code": "CPsL",
+            "wire_type": "vec_tag2_11B",
+            "object_path": "CLUB+0x100 -> +0x68 (u16 cnt x (tag=2 + 10B))"
+          }
+        ]
+      }
+    },
+    "held_count": 39,
+    "held_codes": [
+      "1sbc",
+      "1scl",
+      "2sbc",
+      "2scl",
+      "2tbc",
+      "2tcl",
+      "3sbc",
+      "3scl",
+      "3tbc",
+      "3tcl",
+      "C2pf",
+      "CScP",
+      "Cafo",
+      "Camc",
+      "Cdfo",
+      "Cepr",
+      "Chti",
+      "Cown",
+      "Cpfr",
+      "Cren",
+      "Cscm",
+      "Cspb",
+      "CssE",
+      "CssP",
+      "CssS",
+      "CssT",
+      "Csth",
+      "TCnn",
+      "TCrs",
+      "Tkg1",
+      "Tkg2",
+      "Tkg3",
+      "Tko1",
+      "Tko2",
+      "Tko3",
+      "tbcl",
+      "tbcl",
+      "ttcl",
+      "ttcl"
+    ],
+    "held_codes_with_xml_index": [
+      "1sbc[71]",
+      "1scl[70]",
+      "2sbc[73]",
+      "2scl[72]",
+      "2tbc[79]",
+      "2tcl[78]",
+      "3sbc[75]",
+      "3scl[74]",
+      "3tbc[81]",
+      "3tcl[80]",
+      "C2pf[146]",
+      "CScP[34]",
+      "Cafo[148]",
+      "Camc[121]",
+      "Cdfo[147]",
+      "Cepr[49]",
+      "Chti[55]",
+      "Cown[47]",
+      "Cpfr[145]",
+      "Cren[199]",
+      "Cscm[104]",
+      "Cspb[86]",
+      "CssE[112]",
+      "CssP[110]",
+      "CssS[111]",
+      "CssT[109]",
+      "Csth[115]",
+      "TCnn[11]",
+      "TCrs[201]",
+      "Tkg1[179]",
+      "Tkg2[181]",
+      "Tkg3[183]",
+      "Tko1[178]",
+      "Tko2[180]",
+      "Tko3[182]",
+      "tbcl[25]",
+      "tbcl[77]",
+      "ttcl[24]",
+      "ttcl[76]"
+    ],
+    "held_policy": "held records are copied as counts + codes only; first counterexamples live in the t82 artifact and are unchanged",
+    "cbw_cbd_table_45_verdict": {
+      "verdict": "not in table_extra_3; the whole 117-item club.xml[211..327] record family is a server_db/table_45.dat STARTING_RECORD payload",
+      "xml_index_range": [
+        211,
+        327
+      ],
+      "occurrence_count": 117,
+      "cb_code_count": 10,
+      "cb_codes": [
+        "CBDa",
+        "CBDc",
+        "CBDd",
+        "CBDf",
+        "CBDo",
+        "CBWa",
+        "CBWc",
+        "CBWd",
+        "CBWf",
+        "CBWo"
+      ],
+      "table_45": {
+        "target_table": "server_db/table_45.dat",
+        "table_type": 45,
+        "rtti": ".?AV?$DATABASE_TABLE@VSTARTING_RECORD@db@@",
+        "records": 84477,
+        "getter": {
+          "symbol": "TC_RECORD_GET",
+          "file_offset": "0x3ebad50"
+        },
+        "setter": {
+          "symbol": "TC_RECORD_SET",
+          "file_offset": "0x3ebaf50"
+        },
+        "ctor_witness": {
+          "file_offset": "0xf06c70..0xf06c84",
+          "bytes": "mov edx, 0x2d"
+        }
+      },
+      "consequence": "the E116 denominator's 239 unresolved club occurrences shrink by these 117; the bucket re-issue belongs to a follow-up task",
+      "evidence_pointer": "scratch/t82/out/field_map.json#/negative_not_extra3"
+    },
+    "dual_object_closure": {
+      "client_object": "CLUB+0x100 (0x130B CLUB_IN_GAME_DATA)",
+      "server_object": "CLUB+0xb0 (0xB0B TEAM_CONTAINER_IN_GAME_DATA)",
+      "rows": 84259,
+      "client_payload_bytes": 13053908,
+      "server_payload_bytes": 35009248,
+      "client_only_fields": 0
+    },
+    "L4": 0
   }
 }

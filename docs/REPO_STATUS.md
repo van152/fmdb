@@ -13,7 +13,7 @@
 | 验收台账 | `scratch/t01/LEDGER.json`,**121 条**,末条 E121 |
 | 远端 | `origin` = `github.com/van152/fm24-db.git` |
 | 体积 | 2.0 GB(`.git` 190 MB、`scratch` 1.7 GB、`reports` 29 MB、`evidence` 15 MB) |
-| 公共 schema | `reports/club_nation_subtable_schema.{json,md}` **v11**(29.9 MB / 87 KB) |
+| 公共 schema | `reports/club_nation_subtable_schema.{json,md}` **v11.1**(29.9 MB / 89 KB) |
 
 **分支拓扑**:主体是一条任务分支线性链 `t41-csme-cursor → … → t70-schemav10`,每次 pi dispatch 建新分支、指挥官在分支上提交,工作全部保留、尚未 merge-to-main。`main` 停在 `7a8a0bf`(初始化骨架),`github-snapshot` 停在 `c9e7dab`(脱敏快照,也是 `origin/main`)。远端自快照后无更新。
 
@@ -52,8 +52,9 @@ v10 主 JSON 达 29.5 MB(大量内嵌批量记录:nation_t9_wire 1.27 MB、comp_
 | v9 | t60/E100 | t59 comp 主行 49 L3 |
 | **v10** | t70(E110) | E104–E109 r2 证据:club +8 L3(累计 21)、comp/nation 0 新 L3、7 文法 + 4 lane、EDsc 闭合、尾账 18 项 |
 | **v11** | **t77(本轮)** | E111–E120 additive:club 主行 21→**43**(E111 extra_3 对象 22 cnst 投影 + Cebd/Cyfn)、三主表槽位指纹(E112)、city/cont/regi/curr 8 帧闭环(E113)、nation 10 段文法 + 99 槽裁决(E114)、9 表行框(E115)、分母 1,034(E116)、stadium/team L3(E117)、t76c 四表 + t76a stadium 槽位(E118/E120)。**E119=t80 枚举前提证伪(probe_negative,非验收)**;t76b 弃(award/language/media → t83) |
+| **v11.1** | **t87** | E121(t82)additive 补丁:新节 `club_extra3_l3_e121`(35 新 L3 / 39 held / 131 负证含 117 项 `CBW*`/`CBD*`→`server table_45` 正名),club 主行+extra_3 对象 L3 43→**78**;v11 的 32 个非 mutable 根节逐字节不变 |
 
-公共 schema 文件 `reports/club_nation_subtable_schema.json` 现为 **v11**(29.9 MB;v8 起体积主要由内嵌批量记录驱动),`.md` 87 KB(v10 字节为严格前缀 + t77 附录)。v10 的 JSON/Markdown SHA-256 记于 `scratch/t70/out/REPORT.md`,v11 的记于 `scratch/t77/out/`。
+公共 schema 文件 `reports/club_nation_subtable_schema.json` 现为 **v11.1**(29.9 MB,= v11 + t87/E121 补丁;v8 起体积主要由内嵌批量记录驱动),`.md` 89 KB(v10 字节为严格前缀 + t77 附录 + t87 附录)。v10 的 JSON/Markdown SHA-256 记于 `scratch/t70/out/REPORT.md`,v11 的记于 `scratch/t77/out/`,v11.1 的记于 `scratch/t87/out/`。
 
 ### 三张主表行框(per-table identity 宽度必须按表自证,不得照抄)
 
@@ -93,7 +94,7 @@ v10 主 JSON 达 29.5 MB(大量内嵌批量记录:nation_t9_wire 1.27 MB、comp_
 3. **award / language / media 三表槽位**:t76b 三连墙零落盘已弃,转 **t83** 接收(v11 中 `reports/other_tables_schema.json` 对应表标 `pending:t76b`)。
 4. **comp 集合业务语义**:t66 仅物理层 7 文法 + 4 lane,+`0x100` 业务绑定仍 pending。
 5. **held 枚举域批量补**:scoped `enum_ref` 专项。
-6. **E121 补丁**:t82 的 table_extra_3 双对象闭合(35 新 L3 / 39 held / table_45 117 字段族正名)需 t87 并入 schema(v12 或 v11.1)。
+6. ~~**E121 补丁**~~:已由 **t87** 并入 schema **v11.1**(E121:t82 的 table_extra_3 双对象闭合、35 新 L3 / 39 held / 131 负证含 `CBW*`/`CBD*`→`server table_45` 家族正名);club 主行+extra_3 对象 L3 43→78。遗留跟进:t82 的 117 项 `table_45` STARTING_RECORD 字段(`CBW*`/`CBD*` 等)尚无 wire 槽位扫描,归后续 lane;`reports/xml_denominator_coverage.json` 的 E116 分桶未重发(117 项 carve-out 仅作注记)。
 7. **merge-to-main**:见下节专论。
 
 ## 六、merge-to-main 评估(本次只评估,不执行)

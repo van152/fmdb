@@ -827,3 +827,32 @@ This is an additive appendix to the byte-pinned v10 Markdown. Every existing sec
 - E121 (t82, table_extra_3 dual-object closure) landed after this lane departed and is **not** folded here; it belongs to t87.
 - v10 sections are byte-preserved: three main tables, 8 numbered club subtables, CLUB_LINK, all r2 sections and every negative regression.
 - No game/editor/IDA was started; no `.dat` payload was decoded for this fold. L4=0.
+
+## t87 - schema v11 -> v11.1 (E121)
+
+Additive appendix to the byte-pinned v11 Markdown. No existing section, held record or negative regression is modified; this patch only appends a section and updates `schema_version`, `generated_by`, `coverage` and `incremental_provenance`. L4=0.
+
+### Volume governance
+
+| Item | Value |
+|---|---|
+| E121 source pointer | `scratch/t82/out/field_map.json`, 260,540 B, SHA-256 `2a31c0250c905d45...` |
+| split files | `reports/other_tables_schema.json` and `reports/xml_denominator_coverage.json` untouched by this patch |
+
+### club `table_extra_3` remainder (t82 / E121, L3)
+
+- New L3: **35** (31 scalars + 4 list/polymorphic); held: **39** (codes + counts only); excluded t71 records: 24.
+- club main-row + extra_3 object L3 43 -> **78** (+35).
+- Dual-object closure: `CLUB+0x100` (`0x130B`) + `CLUB+0xb0` (`0xB0B`), 84,259 rows; client 13,053,908 B / server 35,009,248 B; 0 client-only fields.
+
+### `CBW*`/`CBD*` verdict: not `table_extra_3`
+
+- The whole `club.xml[211..327]` record family (**117** items, 10 `CB*` codes) is a `server_db/table_45.dat` (`DATABASE_TABLE<STARTING_RECORD>`, type `0x2d`=45, 84,477 records) payload.
+- `TC_RECORD_GET @ 0x3ebad50` never reads `CLUB+0x100` or `CLUB+0xb0`; the table type is self-proved by `mov edx, 0x2d` at `0xf06c70..0xf06c84` with RTTI `.?AV?$DATABASE_TABLE@VSTARTING_RECORD@db@@`.
+- Consequence: 117 of the 239 club `unresolved_wire_slot` occurrences in E116 are re-routed out of the club extra_3 denominator. The E116 bucket file is **not** rewritten here; the re-issue is a follow-up.
+
+### Provenance and boundaries
+
+- E121 guards: id, kind, level, date and canonical claim SHA-256 (entry-level only).
+- v11 sections are value-identical after the patch; only the four mutable roots and the new root section differ.
+- No game/editor/IDA was started and no `.dat` payload was decoded for this patch. L4=0.
