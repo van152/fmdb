@@ -1,0 +1,42 @@
+=== attempt 1/2 Sat Nov 21 04:23:42     2026 model=Gemini 4 Neon (XHigh) ===
+`t79` 已全部完成并通过独立校验与回归测试(**L3 静态 + 全档向量化校验;L4=0**)。
+
+### 核心结果
+
+1. **`stadium` (`table_21.dat`, 48,413 行, client 38B / server 181B)**
+   - **L3**: **41 / 60**(`duni` + 9 公共双档字段 + 31 server-only 字段),另有 7 个内部/不透明 wire 槽使 181B/38B 字节 100% 闭合。
+   - **双档差异静态证明**:`STADIUM::read` (`0x1183f30`) 在 `0x1183f49..0x1183f54` 按 `[rsp+0xd0]` 分支(`je 0x11843b6`),client 模式跳过全部 143B server-only 前缀(`Scpy..Sscl` 及 `STADIUM+0x18` 侧翼子对象);全部 48,413 行 × 37B (`common 25B + identity 12B`) 双档逐字节相等。client 锚点 **`Scti@3 / Slat@17 / Slon@21 / ordinal@25 (b47 rdui@25) / duni@29`** 完整复洽。
+   - **`held` (4)**:`rdui`(48,413/48,413 被 `0xfe38a2` 抑制)、`Sdtr`(29,983 行原值 `0` 越出 `{1,2,3}` 且 getter `0x11872fe` 直接 `movsx`,首反例 row 0 UID 600)、`Splr`(大小写错配:`STADIUM_GET 0x1186313` 空操作返回 1 且无 setter,实际 `s+131/+0x20` 由大写 **`SplR`** 分发)、`Ssds`(12 子字段静态全闭合且 11/12 域通过,但 `sage` 存在 20,425 侧负值 `[-7173,-1]`,含 10,291 `exis=True` 侧,违背 XML `min_value=0`)。其余 15 项为非 wire / 转发(`Snti`) / 子表(`Scpc→table_22`) / 语言层(`Snam`) / 未实现(`Shts..Shtl, Shcc`) / 编辑器元数据(`NDBC, FDBC`)。
+
+2. **`team` (`table_24.dat`, server-only, 84,507 行)**
+   - 原生行框 `13 + Σrow + 9 = 8,819,030 B` 精确闭合(251 `selector=11 NATIONAL_TEAM` 49B 前缀 + 84,256 `selector=10 TEAM`,与 `Tisn==1` 100% 一致,复洽 t74 边界)。
+   - **L3**: **11 / 25**(`duni`, `Trep`, `Tdvi`, `Tndi`, `Tsti`, `Todo`, `Tnod`, `Ttyp`, `Tisn`, `Tlna`, `Tsna`);**`held` (2)**:`rdui`(全抑制)、`PLgn`(经 owner `+0xb9` 转发且无作用域枚举);其余 12 项为 owner 转发(`Tmtd/Ccti/Ccba/Ctbu/Crmb/Crkt`)、未处理(`Clri/Cnti`)、虚拟名(`dbnm/dAPw`)与元数据(`NDBC/FDBC`)。另已绑定内部槽 `Tldi@+0x60` (`TEAM+8..11`)。
+
+3. **`table_extra_24.dat` (server-only, 6,929,586 B = `12 + 84,507 × 82 + 0`)**
+   - **静态绑定**:由 `0xf5167e`(server 门控)→ `[db+0x98]` (`DATABASE_TABLE<TEAM>`)→ `0x3bb9b00` 装载,经 `0x11a1580` 分配 `0x118` B 对象写入 **`TEAM+0xa0`**(`0x11a15fa`,同构于 t71 `table_extra_3 → CLUB+0x100`)。
+   - **82B 自证**:任意对齐搜索仅得唯一解 `(start=12, stride=82, footer=0)`,头尾灵敏度唯一通过,`0x11a160c..0x11a1b2a` 82B 文法全闭合(6 个可变段全 0 + `h10e` 恒 8B)。
+   - **已映射槽位**:**`Twhm`** (`@10`, `extra+0x109`, **L3**, 10,775 live `1..7`)、**`Tmhm`** (`@11`, `extra+0x10a`, **L3**, 6,897 live `1..7`),二者同时经 `CLUB+0x18` 由 `CLUB_GET/SET` 转发;内部 4CC **`Tpvr`** (`@21..22`, `extra+0xf8`, **L3 内部**)。
+
+4. **`CLUB+0x18` 转发链 — 六个 `club.xml` held 字段全部升 L3(`经 +0x18 转发的投影`)**
+   - `CLUB` 基类 reader `0x11d0d30` 读入 `base18` → fixup `0x11d2580` 经 `[db+0x98]` 解析为 `TEAM*`;全档 82,515 家有队俱乐部 100% 双向匹配(`owner==club_ord` 且 `Tisn==0`,0 家首队被跳过),1,744 家无队。
+   - **`Crep→Trep`、`Cdvi→Tdvi`、`Cldi→Tldi`、`Cndi→Tndi`、`Codi→Todo`、`Csti→Tsti`**(含 `Csti` 两个 rel32 跳转表 `0xe91d8c[8]` / `0xe86b38[6]`)的 **getter 与 setter 完整链**均已静态证实并通过全档值域与错配 UID 对照(0 违例)。
+
+---
+
+### 验证结果
+
+- `scripts/t79_stad_team_harvest.py --help / --selftest / --build`:exit `0`
+- `scratch/t79/out/verify.py --help / --selftest` + 全量独立校验(不 import builder/`t05_pe`/`ReaderCFG`/`fm24_dump`):**12/12 PASS**,exit `0`
+- `scripts/t01_anchors.py`:**7/7 PASS**,exit `0`
+
+---
+
+### 交付清单
+
+- [t79_stad_team_harvest.py](file:///D:/tmp2b/fm24-db/scripts/t79_stad_team_harvest.py) (91,692 B) — t79 静态收割与全档向量化构建脚本
+- [xref_stad_team.json](file:///D:/tmp2b/fm24-db/scratch/t79/out/xref_stad_team.json) (57,161 B) — 工厂/vtable/RTTI/CFG/`db+offset`/行框自证/锚点与旧负结果静态链台账
+- [field_map.json](file:///D:/tmp2b/fm24-db/scratch/t79/out/field_map.json) (84,264 B) — `stadium.xml`(60)、`team.xml`(25)、`table_extra_24` 及 `club.xml` 6 转发字段逐项评级与全档值域统计
+- [verify.py](file:///D:/tmp2b/fm24-db/scratch/t79/out/verify.py) (29,921 B) — 零内部依赖的独立校验脚本(12/12 PASS)
+- [REPORT.md](file:///D:/tmp2b/fm24-db/scratch/t79/out/REPORT.md) (19,827 B) — t79 技术报告
+- [DONE.md](file:///D:/tmp2b/fm24-db/scratch/t79/out/DONE.md) (1,469 B) — 完工标记(首行 `DONE type=t79 status=complete`)
+=== DONE t79-stadteam-neon attempt=1 rc=0 Sat Nov 21 05:01:32     2026 ===

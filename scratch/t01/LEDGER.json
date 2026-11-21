@@ -2939,6 +2939,34 @@
     "scratch/t85/work/ident_census.json"
    ],
    "consequence": "variable-member framing (13B header + 12B trailer + 9B footer) now proven for t9/t10 — complements t74's 9 non-main tables; NATION+0x108 question escalated to static lane; table_9 structural base ready for L3 upgrade"
+  },
+  {
+   "id": "E128",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "state_note",
+   "level": "L1",
+   "claim": {
+    "scope": "session wrap-up at commander's request — all lanes parked, artifacts preserved, resumption pointers recorded",
+    "parked_lanes": [
+     "t88-fix1: killed at attempt 3 start (11:15); out2 has row_frame.json (server table_45 variable 80..122B closed: rowlen==80+namelen, DP unique, identity 13B row_end-13, client has NO table_45) + _rows_tmp/_starts/_p_server_45.bin assets; static dispatch tables (20 JSONs in scratch/t88/) intact; REMAINING: rec_structure (+0x4c/+0x5e wire sites), 117-field slot joins, verify/REPORT — resume with prompts/t88_fix1.md (out2), brief already staged",
+     "t89-neon: killed 26 min after dispatch (11:13→11:39), scratch/t89/ empty — brief prompts/t89_nation108_neon.md ready, no work lost; task = [NATION+0x108] static read-chain + table_9 item grammar (E127 escalation)"
+    ],
+    "session_totals": {
+     "ledger": "E111–E128; accepted packages: t71 E111, t72 E112(partial), t73 E113, t75 E114, t74 E115, t78 E116, t76c E118, t80-negative E119, t76a E120, t82 E121, t77 E122, t87 E124, t84 E123, t81 E125, t83 E126, t85 E127",
+     "schema": "v11.1 (club_main_row_L3 78; 13 non-main tables + 1034-occurrence denominator split out)",
+     "key_milestones": "CBW*/CBD* 117-field family located (server table_45 STARTING_RECORD); five-table block (award/language/weather/derby/media) closed at L3 (152 fields) incl. media 20-step grammar and weather wind/precip E118 correction; t73 FK tool-gap closed (city Cnti); name-pool discovery (3 index tables + 3 person-token blobs, client==server); t9/t10 strict variable closures (13B header + 12B trailer + 9B footer framing)",
+     "lane_meta": "devseek walls at 40min produced 7 multi-attempt evolutions — recovery pattern: fresh session + deliver-first brief + isolated outbox; launcher heuristic false-DONE on stale outboxes 3 times (t81-fkvar/t81-fix1/t85-fix1) — future continuation lanes must use fresh outbox dirs"
+    },
+    "pending_user_decision": "Phase 3 t02 targeted editor authorization (Top 20-30 dead slots + 10 existing L3 live read/write regression) — awaiting explicit user approval; t86 unified read-only library/CLI afterwards"
+   },
+   "evidence": [
+    "scratch/t01/LEDGER.json (entries E111–E127)",
+    "reports/club_nation_subtable_schema.json (v11.1)",
+    "reports/other_tables_schema.json",
+    "reports/xml_denominator_coverage.json"
+   ],
+   "consequence": "repo is in a clean commit state; resumption requires only re-dispatching t88-fix1 and t89 with existing briefs"
   }
  ]
 }

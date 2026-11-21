@@ -1,0 +1,37 @@
+=== attempt 1/3 Sat Nov 21 01:51:26     2026 provider=devseek model=deepseek-v4.1-flash-free ===
+=== attempt 1 rc=124 Sat Nov 21 02:28:06     2026 ===
+=== attempt 2/3 Sat Nov 21 02:28:21     2026 provider=devseek model=deepseek-v4.1-flash-free ===
+写入范围没有越界，只涉及 `scratch/t73/` 和 `scripts/t73_*.py`。
+
+## 交付清单
+
+**Builder（防冲突规则内）**
+| 文件 | 内容 |
+|---|---|
+| `scripts/t73_mapper_core.py` | 方法层：载荷解码复用、行框 DP、alias 规范化、变长 walker、列 profiling、字段对齐、冻结锚点复核、双档差分 |
+| `scripts/t73_table_slot_mapper.py` | CLI 壳：`--table/--archive/--json/--selftest/--help`，退出码 0/1/2 |
+
+**`scratch/t73/out/`**
+| 文件 | 内容 |
+|---|---|
+| `frames.json` | 8 个 (archive,table) 行框 + alias group + footer 敏感性 + 双档 SHA |
+| `slots_client_{2,5,19,41}.json` | 4 份 client 槽位表 |
+| `slots_server_{2,5,19,41}.json` | 4 份 server 槽位表 |
+| `verify.py` | 独立复核，不 import builder |
+| `REPORT.md` / `DONE.md` | 首行 `DONE type=t73 status=complete` |
+
+## 结果
+
+- **8/8 行框闭合** — city `14+56293×43+8`、continent client `14+7×34+8` / server `14+7×48+8`、region client `14+28×45+8` / server `14+28×46+8`、currency `14+Σrow+8=74,352`（173 行变长）
+- **L2 槽位 17 个**，**L3 锚点 14 个复核全过、零冲突**（city `frozen_check` 9/9）
+- **`verify.py` 44/44**（重算 3 张表行框 + currency 全量 walk + 9 个 city 槽位值域 + continent 双档差分）
+- **`t01_anchors.py` 7/7**
+
+## 三个值得记的结论
+
+1. **header 原点在数据侧永远不能唯一确定。** city/continent/region 各有 3 个 alias（`13/9` `14/8` `15/7`），全部逐行 identity 成立。决定原生原点的是 **F=8 时 footer 前 4B 读作 BE `1`**，不是算术。这一条已写进 `frames.json` 的 `header_origin_data_unique: false`。
+2. **continent server 行 = client 业务字节 + 14B 全零槽位**（`0:21` 逐字节相同，`21:35` 全零，7/7 行），34→48 行宽差异来自零填充字段块。
+3. **工具一项能力缺口如实记录**：FK 判据对变长表（t10/t8/t27/t47）无能力，所以 `Cnti/Clgi/Clri/Cwea` 不是 FK 命中，而是 L3 冻结锚点给出的偏移；我没有把 L3 结果回填成 L2。
+
+主动放弃的伪通用规则：`footer_last_eq_max_uid`（continent 7 行 `0x333e4 != 0x7`），已从主判据集移除，仅在报告保留原文。
+=== DONE t73-slotmapper attempt=2 rc=0 Sat Nov 21 02:55:19     2026 ===

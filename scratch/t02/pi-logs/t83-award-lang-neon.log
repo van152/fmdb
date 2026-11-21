@@ -1,0 +1,39 @@
+=== attempt 1/2 Sat Nov 21 08:49:47     2026 model=Gemini 4 Neon (XHigh) ===
+root agent idle; waiting for 1 background task(s) to finish
+Checking the UID scanner results on the reference tables (`t3`, `t10`, `t24`, `t47`) before finalizing the fixes to `scripts/t83_five_tables_l3.py` and `scratch/t83/out/verify.py`.
+=== attempt 2/2 Sat Nov 21 09:50:04     2026 model=Gemini 4 Neon (XHigh) ===
+`t83` 五表 L3 升级与 `t76b` 遗产吸收已完成并落盘（**L4=0**，未触碰 `reports/` 与 `LEDGER`）。
+
+### 核心结果汇总（XML 分母 188/188 全入账，双档零缺口闭合）
+
+| 表 (`table_id`) | 行数 | 双档关系 | XML 总数 | **L3** | **held** | 非 wire / 元数据 / 子表 | 内部 wire 槽 | 关键静态与对账结论 |
+|---|---:|---|---:|---:|---:|---:|---:|---|
+| **`award`** (`0`) | 3,545 | `client == server` (77B) | 38 | **24** | **7** | 7 | 10 | 补齐 77B L2 逐列 profiling 与 `t5/t6/t10/t47/t25/t30/t3` FK 候选矩阵；`AWna/AWsn` 属语言层、`AWsh` 走 `table_12`；64B body 0 缺口；7 项 `held` (`rdui`, `AWsc`, `AWty`, `AWdr`, `AWfo`, `AWxa`, `AWbr`) 均带首反例 |
+| **`language`** (`8`) | 126 | `client == server` | 12 | **5** | **4** | 3 | 3 | 补齐 17B+13B L2 逐列与 FK 候选矩阵；`Lnat` 经 `[db+0x28]`→`t10` 闭合（Chinese→55 / English→139）；`Lfam/Lgro/Lsub` 及 `rdui` 依规 `held` |
+| **`derby`** (`18`) | 1,567 | `server = client + 6B/row` | 22 | **18** | **1** | 3 | 3 | `0x3d00aae` 门控 +6B 为 **`D1tw@s28(+0x70) / D1td@s30(+0x72) / D1tl@s32(+0x74)`**；`Dtm1/Dtm2` 实绑 `[db+0x98] = table_24 TEAM`；固定读 4 `lstr` (`Dnam/Dsnm/Dasn/Danm`)；修正 `slots_client_18.json` `Dwdr/Dntr` 偏移笔误 |
+| **`weather`** (`27`) | 334 | `client == server` | 94 | **90** | **1** | 3 | 2 | 四重静态证明纠偏 `t01l(E27)` 与 `t76c(E118)` 的风/降水互换（**`blk+2..6 = w{b}w0..w4`**、**`blk+7..11 = w{b}p0..p4`**）；`w{b}sd` 为 2B i16@`blk+0..1`、`w{b}dn` (`tend`) 位于 `blk+22` 且 `0x64(100)` 为显式 NULL 哨兵；归一化器 `0x43e7e10` (76/67/468) 核实 |
+| **`media`** (`7`) | 208 | `server = client + 7B/row` | 22 | **15** | **4** | 3 | 3 | `MEDIA_SOURCE::read (0x15457c0)` 20 步变长文法 208/208 双档闭合 (`36,824B` / `38,280B`)；`0x1545cfe` server +7B = `1B Mper + 1B Mscp + 4B Mdlp + u8 cnt_jor(=0)`；`Mcli` 为 8B CLUB UID 对 (450/450 命中 `t3` UID) + `lstr curl`；identity 前 5B 的 16 种取值 100% 拆解为 `u32(cnt_lnm=0 或末个 Mlnm 序数) + u8(Mapc)` |
+| **合计** | 5,780 | 10 成员全闭合 | **188** | **152** | **17** | **19** | **21** | — |
+
+### 关键修复与验证结果
+
+- **接续修复**：修复上一轮遗留的 `AWna`/`AWsn` 指令文本匹配（`add r15, 0x30/0x38`）、将 `scan_uids`/`extract_uids` 升级为后向 DP（17 张参考表与 `t81` 共测 12 表 SHA-256 100% 吻合、13 张双档共享表 `client==server` 0 差，且 `table_24` row 0 检出精确 `UID=5` + 尾字节 `0x0b`）、修复 `t74/frames.json` 读取结构使 10/10 长度/行数/SHA-256 校验真正生效，并补齐 `award(0)` 77B 与 `language(8)` 17B+13B 的向量化 L2 列剖析与多表 FK 候选矩阵。
+- **全量校验通过**：
+  - [t83_five_tables_l3.py](file:///D:/tmp2b/fm24-db/scripts/t83_five_tables_l3.py) `--selftest --build`：5/5 selftest PASS，退出码 0。
+  - [verify.py](file:///D:/tmp2b/fm24-db/scratch/t83/out/verify.py) `--selftest`（严格独立，0 禁止 import）：**11/11 PASS**（含 5 类 RTTI/vtable/factory + **741** 条 `editor.exe` 指令字节/rel32 直验、10/10 t74 + 4/4 t76c SHA-256、17 项 `held` 首反例直验、合成篡改 L4 拦截 PASS），退出码 0。
+  - [t01_anchors.py](file:///D:/tmp2b/fm24-db/scripts/t01_anchors.py)：**7/7 PASS**。
+
+### 交付清单
+
+- [t83_five_tables_l3.py](file:///D:/tmp2b/fm24-db/scripts/t83_five_tables_l3.py) (126,214 B) — 五表 L3 静态与全档向量化 builder (`--help` / `--selftest` / `--build`)
+- [field_map.json](file:///D:/tmp2b/fm24-db/scratch/t83/out/field_map.json) (214,345 B) — 188 字段增量分级台账（152 L3 / 17 held + 首反例 / 19 非 wire-子表 / 21 内部槽 / R1–R5 对账）
+- [xref_award.json](file:///D:/tmp2b/fm24-db/scratch/t83/out/xref_award.json) (43,543 B) — `AWARD` (`table_0`) 静态链与成员指令台账
+- [xref_language.json](file:///D:/tmp2b/fm24-db/scratch/t83/out/xref_language.json) (13,310 B) — `LANGUAGE` (`table_8`) 静态链与成员指令台账
+- [xref_weather.json](file:///D:/tmp2b/fm24-db/scratch/t83/out/xref_weather.json) (105,745 B) — `WEATHER` (`table_27`) 静态链、跳转表与归一化器台账
+- [xref_derby.json](file:///D:/tmp2b/fm24-db/scratch/t83/out/xref_derby.json) (24,518 B) — `DERBY` (`table_18`) 静态链、server +6B 门控与成员台账
+- [xref_media.json](file:///D:/tmp2b/fm24-db/scratch/t83/out/xref_media.json) (27,091 B) — `MEDIA_SOURCE` (`table_7`) 静态链、20 步变长文法与 server +7B 门控台账
+- [domain_stats.json](file:///D:/tmp2b/fm24-db/scratch/t83/out/domain_stats.json) (103,607 B) — 五表全档向量化值域统计 + `award`/`language` 逐列 L2 profiling 与多表 FK 候选矩阵
+- [verify.py](file:///D:/tmp2b/fm24-db/scratch/t83/out/verify.py) (36,617 B) — 独立校验器 (`--help` / `--selftest`)
+- [REPORT.md](file:///D:/tmp2b/fm24-db/scratch/t83/out/REPORT.md) (25,554 B) — 完整技术报告
+- [DONE.md](file:///D:/tmp2b/fm24-db/scratch/t83/out/DONE.md) (3,144 B) — 完成标记（首行 `DONE type=t83 status=complete`）
+=== DONE t83-award-lang-neon attempt=2 rc=0 Sat Nov 21 10:03:52     2026 ===
