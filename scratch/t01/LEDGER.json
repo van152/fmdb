@@ -2967,6 +2967,24 @@
     "reports/xml_denominator_coverage.json"
    ],
    "consequence": "repo is in a clean commit state; resumption requires only re-dispatching t88-fix1 and t89 with existing briefs"
+  },
+  {
+   "id": "E129",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": "t90(devseek,attempt3)交付验收:schema v11.2 合并件+分母 v2 重桶。合入 reports/club_nation_subtable_schema.json(37→40 根节:新增 fk_index_e125/five_tables_l3_e126/table9_closure_e127,改 5 节,32 根节逐字节不动)与 reports/xml_denominator_coverage.json(1034 守恒;unresolved 277→160=15.5%;117 条 club.xml[211..327] 连续整体移入 re_routed_table_45,grade=L2_candidate)。weather R1/R2 改值 16×2 处、旧理由 why_before_E118 全保留、结构零改动。指挥官第三路径:根节 diff 独立重算、R1/R2 四点抽查、守恒与区间复算、基线哈希比对——全吻合。",
+   "evidence": [
+    "scratch/t90/out/verify.py (35/35)",
+    "scratch/t90/out/diff_inventory.json",
+    "scratch/t90/out/denominator_v2.json",
+    "scratch/t90/out/REPORT.md",
+    "scripts/t90_schema_v112.py --verify 36/36",
+    "scripts/t90_denominator.py --verify 18/18",
+    "scripts/t01_anchors.py 7/7"
+   ],
+   "consequence": "escalate 三条裁决:C1 按 [211..327] 区间口径,纠正 CBW*/CBD* 简写(E121/E124 措辞过窄,117 项中 CB* 仅 10);C2 五表不入 1034 分母(扩容留待专报,五表侧 188 字段独立分母已存 five_table_side_denominator);C3 city Cnti 不动桶(分母内既有 Cnti 已 mapped_l3)。口径:headline 物理覆盖 110/1034=10.6% 不变,净口径 110/917=12.0% 并列存档。schema_version 定稿 11.2,candidate 原件留盘 scratch/t90/out/(gitignore 豁免,30MB 重复)。车道 meta:attempt1-2 又 rc=124 墙,attempt3 依盘上骨架 13 分钟收口——fix1 模式第三次应验。"
   }
  ]
 }
