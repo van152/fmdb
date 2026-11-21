@@ -2914,6 +2914,31 @@
     "scripts/t83_five_tables_l3.py"
    ],
    "consequence": "Wave 11 five-table block fully closed at L3; E118 slot tables remain as historical layer with corrections documented; 17 held items enumerated for any future editor-schema fixes"
+  },
+  {
+   "id": "E127",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t85 partial (original 3-wall run + fix1 continuation): collection fields inventory + variable-member identity census + table_9 closure — [NATION+0x108] wire-home question narrowed, item grammar honestly held",
+    "deliverables": [
+     "collection_fields.json: getter_proven_but_no_main_row_sink + [this+0x108]-pattern fields inventoried from t75 slots + t78 comp unresolved (brief task 1)",
+     "wire_candidates.json: full member identity census (both archives) + variable-table closures via 13B header + per-row body + 12B identity trailer + 9B footer framing with STRICT unique tiling: table_9 client 31,956B (13+28,922+12x251+9 — commander arithmetic True) and table_10 client 24,732B both closed; table_9 UID ladder 5..82,082,540 is its OWN uid space (not nation main-row UIDs); cross-checked against t51 frozen cursor (identity triples agree)",
+     "profile_nation.json: table_9 (NATION_T9, db+0x60 per t83 static) per-row lane domains profiled (body 46..449B mean 115.23, 92 distinct); item grammar held_no_item_grammar after two probing rounds with first counterexample row 0 preserved — no third-round guessing"
+    ],
+    "open_question": "whether table_9 is the wire home of [NATION+0x108] collection remains UNPROVEN (item grammar undetermined data-side) — escalate_to_sol for static read-chain tracing of NATION+0x108 (next neon lane candidate)",
+    "verification": "commander arithmetic recompute True; t83 static independently corroborates table_9 = NATION_T9 registered at DATABASE db+0x60 with count 251",
+    "lane_note": "original t85 run gave up after 3 walls (0 outbox, 128 work files incl. full identity census); fix1 continuation assembled from those artifacts; launcher heuristic closed it at attempt-2 wall — REPORT/DONE/verify not delivered, commander verification stands in"
+   },
+   "evidence": [
+    "scratch/t85/out2/collection_fields.json",
+    "scratch/t85/out2/wire_candidates.json",
+    "scratch/t85/out2/profile_nation.json",
+    "scratch/t85/work/ident_census.json"
+   ],
+   "consequence": "variable-member framing (13B header + 12B trailer + 9B footer) now proven for t9/t10 — complements t74's 9 non-main tables; NATION+0x108 question escalated to static lane; table_9 structural base ready for L3 upgrade"
   }
  ]
 }
