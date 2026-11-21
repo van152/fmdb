@@ -2880,6 +2880,40 @@
     "scratch/t81/out2/slots_server_35.json"
    ],
    "consequence": "t73's confessed FK tool-gap closed; city Cnti/Clgi/Clri/Cwea lanes now adjudicable; three remaining clean tables scanned; Wave-10/11 scan queue fully drained"
+  },
+  {
+   "id": "E126",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "scope": "t83 (neon xhigh) five tables award(0)/language(8)/weather(27)/derby(18)/media(7) L3 upgrade + t76b legacy absorbed — 188 XML fields 100% accounted, 0 byte gaps, 152 L3 / 17 held with first counterexamples",
+    "major": [
+     "award 24 L3: FKs AWci@23->t5, AWni@27->t10, AWmi@41->t25 (UID controls reject); 3 RGB555 colors, 2 packed dates, 2 bit flags (AWus/AWop sharing @49), 8 enums via jump tables; 7 held (rdui fully suppressed 3,545/3,545; enum out-of-domain with raw movsx evidence)",
+     "language 5 L3: Lnam/Linf/Ldff/Lnat (Chinese->55 China PR, English->139 England cross-validated with frozen anchors); legacy language IDs 2000005181.. for 5 post-hoc languages; 4 held",
+     "derby 18 L3 (upgrades E118): D1tw/D1td/D1tl ORDERED server-only sequence (test bpl, bpl gate at 0x3d00aae); Dtm1/Dtm2 re-adjudicated club->TEAM table_24 via fixup [db+0x98] (was t76c's data-side club fit); 4 lstr order fixed Dnam->Dsnm->Dasn->Danm; slots_client_18 typo 36 corrected",
+     "weather 90 L3 (upgrades E118): R1 wind/precip SWAP corrected — blk+2..6 is WIND (win0..win4), blk+7..11 is PRECIPITATION (pre0..pre4), quadruple static evidence (read/get/season-get/set) + normalizer 0x43e7e10 block-sum counts (76/67/468); R2 w{b}sd is 2B i16 and w{b}dn at blk+22 with 0x64 explicit NULL sentinel",
+     "media 15 L3: t74's unsolved nested grammar closed as 20-step MEDIA_SOURCE::read sequence; server +7B exactly = Mper(1)+Mscp(1)+Mdlp(4)+jor-cnt(1=0); identity-prefix 16 values solved = cnt_lnm + Mapc; Mcli 450/450 club UID hits",
+     "R5: fm24_dump award rdui@64 / language rdui_suffix@17 are row ordinals (+0x08); native rdui (+0x10) at @72/suf+25 fully suppressed — consistent with E117/E120 pattern"
+    ],
+    "e118_note": "this entry supersedes two E118 (t76c) adjudications via new static chains: wind/precip ordering and sd/dn layout — E118 evidence preserved verbatim in t76c outputs; corrections machine-readable in t83 field_map.json reconciliations R1/R2/R3",
+    "verification": "verify.py --selftest PASS (11/11 core incl. 741 instruction-byte rechecks, tamper negative-tests); builder selftest 5/5; t01 anchors 7/7; commander third-path: derby row0 'Merseyside' + language Chinese Lnat=55 / English Lnat=139 via own TOC walker — all True"
+   },
+   "evidence": [
+    "scratch/t83/out/field_map.json",
+    "scratch/t83/out/domain_stats.json",
+    "scratch/t83/out/xref_award.json",
+    "scratch/t83/out/xref_language.json",
+    "scratch/t83/out/xref_weather.json",
+    "scratch/t83/out/xref_derby.json",
+    "scratch/t83/out/xref_media.json",
+    "scratch/t83/out/verify.py",
+    "scratch/t83/out/REPORT.md",
+    "scratch/t83/out/DONE.md",
+    "scripts/t83_five_tables_l3.py"
+   ],
+   "consequence": "Wave 11 five-table block fully closed at L3; E118 slot tables remain as historical layer with corrections documented; 17 held items enumerated for any future editor-schema fixes"
   }
  ]
 }

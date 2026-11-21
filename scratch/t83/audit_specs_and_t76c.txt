@@ -1,0 +1,331 @@
+
+================ award.xml (38 fields) ================
+  [ 0] duni  | unique_id                  | Unique ID                            | rest={}
+  [ 1] rdui  | integer                    | Random ID                            | rest={"is_read_only": "true"}
+  [ 2] NDBC  | integer                    | Number Of Changes                    | rest={"is_read_only": "true"}
+  [ 3] FDBC  | integer                    | Number Of Failed Changes             | rest={"is_read_only": "true"}
+  [ 4] dbnm  | string                     | Name                                 | rest={"database_table_type": "award"}
+  [ 5] dAPw  | string                     | Name                                 | rest={"database_table_type": "award"}
+  [ 6] AWna  | string                     | Name                                 | rest={"is_client_field": "true", "is_language_field": "true"}
+  [ 7] AWsn  | string                     | Short Name                           | rest={"max_length": "25", "is_client_field": "true", "is_language_field": "true"}
+  [ 8] AWci  | database_record_unique_id  | Continent                            | rest={"is_optional": "true", "is_client_field": "true", "database_table_type": "continent"}
+  [ 9] AWni  | database_record_unique_id  | Nation                               | rest={"is_optional": "true", "is_client_field": "true", "database_table_type": "nation"}
+  [10] AWmi  | database_record_unique_id  | Competition                          | rest={"is_optional": "true", "is_client_field": "true", "database_table_type": "competition"}
+  [11] AWre  | integer                    | Reputation                           | rest={"min_value": "0", "max_value": "20", "is_client_field": "true"}
+  [12] AWwh  | integer                    | Winner Home Reputation               | rest={"min_value": "1", "max_value": "200", "is_optional": "true", "is_client_field": "true"}
+  [13] AWwr  | integer                    | Winner World Reputation              | rest={"min_value": "1", "max_value": "200", "is_optional": "true", "is_client_field": "true"}
+  [14] AWfc  | colour                     | Foreground Colour                    | rest={"is_client_field": "true"}
+  [15] AWbc  | colour                     | Background Colour                    | rest={"is_client_field": "true"}
+  [16] AWtc  | colour                     | Trim Colour                          | rest={"is_client_field": "true"}
+  [17] AWrt  | enum                       | Award Recipient Type                 | rest={"is_client_field": "true"}
+  [18] AWty  | enum                       | Award Type                           | rest={"is_client_field": "true"}
+  [19] AWdr  | enum                       | Award Period                         | rest={"is_client_field": "true"}
+  [20] AWda  | date                       | Award Date                           | rest={"is_client_field": "true"}
+  [21] AWad  | date                       | Announcement Date                    | rest={"hint": "This can be used to configure a different date to announce the award on if you want the winner(s) to be decided (using Award Date)
+  [22] AWnp  | enum                       | Number Of Placings                   | rest={"is_client_field": "true"}
+  [23] AWma  | integer                    | Minimum Age                          | rest={"min_value": "10", "max_value": "99", "is_optional": "true", "is_client_field": "true"}
+  [24] AWxa  | integer                    | Maximum Age                          | rest={"min_value": "10", "max_value": "99", "is_optional": "true", "is_client_field": "true"}
+  [25] AWpo  | enum                       | Position                             | rest={"is_client_field": "true"}
+  [26] AWsr  | enum                       | Side                                 | rest={"is_client_field": "true"}
+  [27] AWfo  | enum                       | Formation                            | rest={"sort_ascending": "true", "is_client_field": "true", "enum_ref": "foms"}
+  [28] AWus  | boolean                    | Use Subs For Team Award              | rest={"is_client_field": "true"}
+  [29] AWsc  | enum                       | Voting                               | rest={"is_client_field": "true"}
+  [30] AWvf  | enum                       | Voting Format                        | rest={"is_client_field": "true"}
+  [31] AWop  | boolean                    | Can Vote For Own Player              | rest={"is_client_field": "true"}
+  [32] AWrb  | enum                       | Run By                               | rest={"is_client_field": "true"}
+  [33] AWbr  | enum                       | Based                                | rest={"is_client_field": "true"}
+  [34] AWss  | enum                       | Use Stats From                       | rest={"is_client_field": "true"}
+  [35] AWap  | enum                       | Allow Previous Winner                | rest={"is_client_field": "true"}
+  [36] AWmg  | integer                    | Minimum Percentage Of Games Played   | rest={"min_value": "1", "max_value": "100", "default_value": "70", "is_optional": "true", "is_client_field": "true"}
+  [37] AWsh  | list                       | History                              | rest={"list_item_fields": [{"field": "AHye", "name": "Year", "type": "integer", "raw_name": "Year", "min_value": "1800", "max_value": "2100"}, {"
+
+================ language.xml (12 fields) ================
+  [ 0] duni  | unique_id                  | Unique ID                            | rest={}
+  [ 1] rdui  | integer                    | Random ID                            | rest={"is_read_only": "true"}
+  [ 2] NDBC  | integer                    | Number Of Changes                    | rest={"is_read_only": "true"}
+  [ 3] FDBC  | integer                    | Number Of Failed Changes             | rest={"is_read_only": "true"}
+  [ 4] dbnm  | string                     | Name                                 | rest={"is_read_only": "true", "database_table_type": "language"}
+  [ 5] Lnam  | string                     | Name                                 | rest={"is_client_field": "true", "is_language_field": "true"}
+  [ 6] Linf  | integer                    | Language Influence                   | rest={"min_value": "0", "max_value": "20", "is_client_field": "true"}
+  [ 7] Ldff  | integer                    | Language Difficulty                  | rest={"min_value": "0", "max_value": "20", "is_client_field": "true"}
+  [ 8] Lnat  | database_record_unique_id  | Nation                               | rest={"is_optional": "true", "is_client_field": "true", "database_table_type": "nation"}
+  [ 9] Lfam  | enum                       | Language Family                      | rest={}
+  [10] Lgro  | enum                       | Language Group                       | rest={}
+  [11] Lsub  | enum                       | Language Sub Group                   | rest={}
+
+================ weather.xml (94 fields) ================
+  [ 0] duni  | unique_id                  | Unique ID                            | rest={}
+  [ 1] rdui  | integer                    | Random ID                            | rest={"is_read_only": "true"}
+  [ 2] NDBC  | integer                    | Number Of Changes                    | rest={"is_read_only": "true"}
+  [ 3] FDBC  | integer                    | Number Of Failed Changes             | rest={"is_read_only": "true"}
+  [ 4] dbnm  | string                     | Name                                 | rest={"database_table_type": "weather"}
+  [ 5] wnam  | string                     | Name                                 | rest={}
+  [ 6] w0sd  | integer                    | Start Day                            | rest={"min_value": "0", "max_value": "365"}
+  [ 7] w0p0  | integer                    | Dry                                  | rest={"min_value": "0", "max_value": "100"}
+  [ 8] w0p1  | integer                    | Wet                                  | rest={"min_value": "0", "max_value": "100"}
+  [ 9] w0p2  | integer                    | Drizzle                              | rest={"min_value": "0", "max_value": "100"}
+  [10] w0p3  | integer                    | Shower                               | rest={"min_value": "0", "max_value": "100"}
+  [11] w0p4  | integer                    | Down Pour                            | rest={"min_value": "0", "max_value": "100"}
+  [12] w0w0  | integer                    | Calm                                 | rest={"min_value": "0", "max_value": "100"}
+  [13] w0w1  | integer                    | Breezy                               | rest={"min_value": "0", "max_value": "100"}
+  [14] w0w2  | integer                    | Gusty                                | rest={"min_value": "0", "max_value": "100"}
+  [15] w0w3  | integer                    | Strong                               | rest={"min_value": "0", "max_value": "100"}
+  [16] w0w4  | integer                    | Gale                                 | rest={"min_value": "0", "max_value": "100"}
+  [17] w0te  | integer                    | Extremely Freezing (-16 Celsius and below) | rest={"min_value": "0", "max_value": "100"}
+  [18] w0tv  | integer                    | Very Freezing (-15 to -8 Celsius)    | rest={"min_value": "0", "max_value": "100"}
+  [19] w0t0  | integer                    | Freezing (-7 to 0 Celsius)           | rest={"min_value": "0", "max_value": "100"}
+  [20] w0t1  | integer                    | Cold (1 to 6 Celsius)                | rest={"min_value": "0", "max_value": "100"}
+  [21] w0t2  | integer                    | Mild (7 to 13 Celsius)               | rest={"min_value": "0", "max_value": "100"}
+  [22] w0t3  | integer                    | Fine (14 to 21 Celsius)              | rest={"min_value": "0", "max_value": "100"}
+  [23] w0t4  | integer                    | Warm (22 to 28 Celsius)              | rest={"min_value": "0", "max_value": "100"}
+  [24] w0t5  | integer                    | Hot (29 to 34 Celsius)               | rest={"min_value": "0", "max_value": "100"}
+  [25] w0t6  | integer                    | Very Hot (35 to 42 Celsius)          | rest={"min_value": "0", "max_value": "100"}
+  [26] w0t7  | integer                    | Extremely Hot (43 Celsius and above) | rest={"min_value": "0", "max_value": "100"}
+  [27] w0dn  | integer                    | Day/Night Variance                   | rest={"hint": "The temperature drop between peak daytime temperature and night-time temperature", "min_value": "0", "max_value": "50", "is_option
+  [28] w1sd  | integer                    | Start Day                            | rest={"min_value": "0", "max_value": "365"}
+  [29] w1p0  | integer                    | Dry                                  | rest={"min_value": "0", "max_value": "100"}
+  [30] w1p1  | integer                    | Wet                                  | rest={"min_value": "0", "max_value": "100"}
+  [31] w1p2  | integer                    | Drizzle                              | rest={"min_value": "0", "max_value": "100"}
+  [32] w1p3  | integer                    | Shower                               | rest={"min_value": "0", "max_value": "100"}
+  [33] w1p4  | integer                    | Down Pour                            | rest={"min_value": "0", "max_value": "100"}
+  [34] w1w0  | integer                    | Calm                                 | rest={"min_value": "0", "max_value": "100"}
+  [35] w1w1  | integer                    | Breezy                               | rest={"min_value": "0", "max_value": "100"}
+  [36] w1w2  | integer                    | Gusty                                | rest={"min_value": "0", "max_value": "100"}
+  [37] w1w3  | integer                    | Strong                               | rest={"min_value": "0", "max_value": "100"}
+  [38] w1w4  | integer                    | Gale                                 | rest={"min_value": "0", "max_value": "100"}
+  [39] w1te  | integer                    | Extremely Freezing (-16 Celsius and below) | rest={"min_value": "0", "max_value": "100"}
+  [40] w1tv  | integer                    | Very Freezing (-15 to -8 Celsius)    | rest={"min_value": "0", "max_value": "100"}
+  [41] w1t0  | integer                    | Freezing (-7 to 0 Celsius)           | rest={"min_value": "0", "max_value": "100"}
+  [42] w1t1  | integer                    | Cold (1 to 6 Celsius)                | rest={"min_value": "0", "max_value": "100"}
+  [43] w1t2  | integer                    | Mild (7 to 13 Celsius)               | rest={"min_value": "0", "max_value": "100"}
+  [44] w1t3  | integer                    | Fine (14 to 21 Celsius)              | rest={"min_value": "0", "max_value": "100"}
+  [45] w1t4  | integer                    | Warm (22 to 28 Celsius)              | rest={"min_value": "0", "max_value": "100"}
+  [46] w1t5  | integer                    | Hot (29 to 34 Celsius)               | rest={"min_value": "0", "max_value": "100"}
+  [47] w1t6  | integer                    | Very Hot (35 to 42 Celsius)          | rest={"min_value": "0", "max_value": "100"}
+  [48] w1t7  | integer                    | Extremely Hot (43 Celsius and above) | rest={"min_value": "0", "max_value": "100"}
+  [49] w1dn  | integer                    | Day/Night Variance                   | rest={"hint": "The temperature drop between peak daytime temperature and night-time temperature", "min_value": "0", "max_value": "50", "is_option
+  [50] w2sd  | integer                    | Start Day                            | rest={"min_value": "0", "max_value": "365"}
+  [51] w2p0  | integer                    | Dry                                  | rest={"min_value": "0", "max_value": "100"}
+  [52] w2p1  | integer                    | Wet                                  | rest={"min_value": "0", "max_value": "100"}
+  [53] w2p2  | integer                    | Drizzle                              | rest={"min_value": "0", "max_value": "100"}
+  [54] w2p3  | integer                    | Shower                               | rest={"min_value": "0", "max_value": "100"}
+  [55] w2p4  | integer                    | Down Pour                            | rest={"min_value": "0", "max_value": "100"}
+  [56] w2w0  | integer                    | Calm                                 | rest={"min_value": "0", "max_value": "100"}
+  [57] w2w1  | integer                    | Breezy                               | rest={"min_value": "0", "max_value": "100"}
+  [58] w2w2  | integer                    | Gusty                                | rest={"min_value": "0", "max_value": "100"}
+  [59] w2w3  | integer                    | Strong                               | rest={"min_value": "0", "max_value": "100"}
+  [60] w2w4  | integer                    | Gale                                 | rest={"min_value": "0", "max_value": "100"}
+  [61] w2te  | integer                    | Extremely Freezing (-16 Celsius and below) | rest={"min_value": "0", "max_value": "100"}
+  [62] w2tv  | integer                    | Very Freezing (-15 to -8 Celsius)    | rest={"min_value": "0", "max_value": "100"}
+  [63] w2t0  | integer                    | Freezing (-7 to 0 Celsius)           | rest={"min_value": "0", "max_value": "100"}
+  [64] w2t1  | integer                    | Cold (1 to 6 Celsius)                | rest={"min_value": "0", "max_value": "100"}
+  [65] w2t2  | integer                    | Mild (7 to 13 Celsius)               | rest={"min_value": "0", "max_value": "100"}
+  [66] w2t3  | integer                    | Fine (14 to 21 Celsius)              | rest={"min_value": "0", "max_value": "100"}
+  [67] w2t4  | integer                    | Warm (22 to 28 Celsius)              | rest={"min_value": "0", "max_value": "100"}
+  [68] w2t5  | integer                    | Hot (29 to 34 Celsius)               | rest={"min_value": "0", "max_value": "100"}
+  [69] w2t6  | integer                    | Very Hot (35 to 42 Celsius)          | rest={"min_value": "0", "max_value": "100"}
+  [70] w2t7  | integer                    | Extremely Hot (43 Celsius and above) | rest={"min_value": "0", "max_value": "100"}
+  [71] w2dn  | integer                    | Day/Night Variance                   | rest={"hint": "The temperature drop between peak daytime temperature and night-time temperature", "min_value": "0", "max_value": "50", "is_option
+  [72] w3sd  | integer                    | Start Day                            | rest={"min_value": "0", "max_value": "365"}
+  [73] w3p0  | integer                    | Dry                                  | rest={"min_value": "0", "max_value": "100"}
+  [74] w3p1  | integer                    | Wet                                  | rest={"min_value": "0", "max_value": "100"}
+  [75] w3p2  | integer                    | Drizzle                              | rest={"min_value": "0", "max_value": "100"}
+  [76] w3p3  | integer                    | Shower                               | rest={"min_value": "0", "max_value": "100"}
+  [77] w3p4  | integer                    | Down Pour                            | rest={"min_value": "0", "max_value": "100"}
+  [78] w3w0  | integer                    | Calm                                 | rest={"min_value": "0", "max_value": "100"}
+  [79] w3w1  | integer                    | Breezy                               | rest={"min_value": "0", "max_value": "100"}
+  [80] w3w2  | integer                    | Gusty                                | rest={"min_value": "0", "max_value": "100"}
+  [81] w3w3  | integer                    | Strong                               | rest={"min_value": "0", "max_value": "100"}
+  [82] w3w4  | integer                    | Gale                                 | rest={"min_value": "0", "max_value": "100"}
+  [83] w3te  | integer                    | Extremely Freezing (-16 Celsius and below) | rest={"min_value": "0", "max_value": "100"}
+  [84] w3tv  | integer                    | Very Freezing (-15 to -8 Celsius)    | rest={"min_value": "0", "max_value": "100"}
+  [85] w3t0  | integer                    | Freezing (-7 to 0 Celsius)           | rest={"min_value": "0", "max_value": "100"}
+  [86] w3t1  | integer                    | Cold (1 to 6 Celsius)                | rest={"min_value": "0", "max_value": "100"}
+  [87] w3t2  | integer                    | Mild (7 to 13 Celsius)               | rest={"min_value": "0", "max_value": "100"}
+  [88] w3t3  | integer                    | Fine (14 to 21 Celsius)              | rest={"min_value": "0", "max_value": "100"}
+  [89] w3t4  | integer                    | Warm (22 to 28 Celsius)              | rest={"min_value": "0", "max_value": "100"}
+  [90] w3t5  | integer                    | Hot (29 to 34 Celsius)               | rest={"min_value": "0", "max_value": "100"}
+  [91] w3t6  | integer                    | Very Hot (35 to 42 Celsius)          | rest={"min_value": "0", "max_value": "100"}
+  [92] w3t7  | integer                    | Extremely Hot (43 Celsius and above) | rest={"min_value": "0", "max_value": "100"}
+  [93] w3dn  | integer                    | Day/Night Variance                   | rest={"hint": "The temperature drop between peak daytime temperature and night-time temperature", "min_value": "0", "max_value": "50", "is_option
+
+================ derby.xml (22 fields) ================
+  [ 0] duni  | unique_id                  | Unique ID                            | rest={}
+  [ 1] rdui  | integer                    | Random ID                            | rest={"is_read_only": "true"}
+  [ 2] NDBC  | integer                    | Number Of Changes                    | rest={"is_read_only": "true"}
+  [ 3] FDBC  | integer                    | Number Of Failed Changes             | rest={"is_read_only": "true"}
+  [ 4] dbnm  | string                     | Name                                 | rest={"database_table_type": "derby"}
+  [ 5] Dnam  | string                     | Name                                 | rest={"is_client_field": "true", "is_language_field": "true"}
+  [ 6] Dsnm  | string                     | Short Name                           | rest={"is_client_field": "true", "is_language_field": "true"}
+  [ 7] Danm  | string                     | Alternative Name                     | rest={"is_client_field": "true", "is_language_field": "true"}
+  [ 8] Dasn  | string                     | Alternative Short Name               | rest={"is_client_field": "true", "is_language_field": "true"}
+  [ 9] Dtm1  | database_record_unique_id  | Team 1                               | rest={"is_optional": "true", "is_client_field": "true", "database_table_type": "team"}
+  [10] Dtm2  | database_record_unique_id  | Team 2                               | rest={"is_optional": "true", "is_client_field": "true", "database_table_type": "team"}
+  [11] Dfmd  | date                       | First Match Date                     | rest={"is_client_field": "true"}
+  [12] Dfmc  | database_record_unique_id  | First Match Competition              | rest={"is_optional": "true", "is_client_field": "true", "database_table_type": "competition"}
+  [13] Dfms  | database_record_unique_id  | First Match Stadium                  | rest={"is_optional": "true", "is_client_field": "true", "database_table_type": "stadium"}
+  [14] Dfma  | integer                    | First Match Attendance               | rest={"min_value": "0", "max_value": "200000", "is_optional": "true", "is_client_field": "true"}
+  [15] Dfg1  | integer                    | First Match Team 1 Goals             | rest={"min_value": "0", "max_value": "100", "is_optional": "true", "is_client_field": "true"}
+  [16] Dfg2  | integer                    | First Match Team 2 Goals             | rest={"min_value": "0", "max_value": "100", "is_optional": "true", "is_client_field": "true"}
+  [17] D1tw  | integer                    | Team 1 Total Games Won               | rest={"min_value": "0", "max_value": "10000", "is_optional": "true"}
+  [18] D1td  | integer                    | Team 1 Total Games Drawn             | rest={"min_value": "0", "max_value": "10000", "is_optional": "true"}
+  [19] D1tl  | integer                    | Team 1 Total Games Lost              | rest={"min_value": "0", "max_value": "10000", "is_optional": "true"}
+  [20] Dwdr  | integer                    | World Reputation                     | rest={"min_value": "0", "max_value": "200", "is_client_field": "true"}
+  [21] Dntr  | integer                    | National Reputation                  | rest={"min_value": "0", "max_value": "200", "is_client_field": "true"}
+
+================ media source.xml (22 fields) ================
+  [ 0] duni  | unique_id                  | Unique ID                            | rest={}
+  [ 1] rdui  | integer                    | Random ID                            | rest={"is_read_only": "true"}
+  [ 2] NDBC  | integer                    | Number Of Changes                    | rest={"is_read_only": "true"}
+  [ 3] FDBC  | integer                    | Number Of Failed Changes             | rest={"is_read_only": "true"}
+  [ 4] dbnm  | string                     | Name                                 | rest={"is_read_only": "true", "database_table_type": "media_source"}
+  [ 5] Mnam  | string                     | Name                                 | rest={"is_client_field": "true", "is_language_field": "true"}
+  [ 6] Murl  | string                     | URL                                  | rest={"is_client_field": "true"}
+  [ 7] Mhtg  | string                     | Hashtag                              | rest={"is_client_field": "true"}
+  [ 8] Mtyp  | list                       | Types                                | rest={"is_client_field": "true", "list_item_fields": [{"field": "Mtyp", "name": "Type", "type": "enum", "raw_name": "Type"}]}
+  [ 9] Mper  | enum                       | Period                               | rest={}
+  [10] Mscp  | enum                       | Scope                                | rest={}
+  [11] Mnti  | database_record_list       | Nations                              | rest={"is_client_field": "true", "database_table_type": "nation"}
+  [12] Mcti  | database_record_unique_id  | Continent                            | rest={"is_optional": "true", "is_client_field": "true", "database_table_type": "continent"}
+  [13] Mcyi  | database_record_unique_id  | City                                 | rest={"is_optional": "true", "is_client_field": "true", "database_table_type": "city"}
+  [14] Mrgi  | database_record_list       | Local Region                         | rest={"is_client_field": "true", "database_table_type": "local_region"}
+  [15] Mcli  | list                       | Clubs                                | rest={"list_item_fields": [{"field": "club", "name": "Club", "type": "database_record_unique_id", "raw_name": "Club", "is_optional": "true", "dat
+  [16] Mcmi  | database_record_list       | Competitions                         | rest={"is_client_field": "true", "database_table_type": "competition"}
+  [17] Msty  | enum                       | Style                                | rest={}
+  [18] Mdlp  | date                       | Date Last Published                  | rest={"is_optional": "true"}
+  [19] Misf  | boolean                    | Is Fake                              | rest={"is_client_field": "true"}
+  [20] Mapc  | boolean                    | Attends Press Conferences            | rest={"is_client_field": "true"}
+  [21] Mlnm  | database_record_list       | Linked Media                         | rest={"is_client_field": "true", "database_table_type": "media_source"}
+
+================ GATE 1 OCCURRENCE COUNTS (>1) ================
+  award.xml: multi-entity fields = [('duni', 21), ('rdui', 20), ('NDBC', 20), ('FDBC', 20), ('dbnm', 21), ('dAPw', 4)]
+  language.xml: multi-entity fields = [('duni', 21), ('rdui', 20), ('NDBC', 20), ('FDBC', 20), ('dbnm', 21), ('Lnam', 2), ('Lnat', 2)]
+  weather.xml: multi-entity fields = [('duni', 21), ('rdui', 20), ('NDBC', 20), ('FDBC', 20), ('dbnm', 21)]
+  derby.xml: multi-entity fields = [('duni', 21), ('rdui', 20), ('NDBC', 20), ('FDBC', 20), ('dbnm', 21)]
+  media source.xml: multi-entity fields = [('duni', 21), ('rdui', 20), ('NDBC', 20), ('FDBC', 20), ('dbnm', 21)]
+
+--- t76c slots_client_18.json keys=['archive', 'table', 'entity', 'tool', 'schema', 't74_frame', 'payload_len', 'payload_sha256', 'walk', 'identity', 'status', 'slots', 'unresolved'] ---
+  {"field": "Dfmd", "offset": 0, "width": 4, "kind": "date", "grade": "L2", "why": "packed date: u16 day-of-year @0 (1..366, 1567/1567) + u16 year @2 (1872..2022, 1567/1567); schema 
+  {"field": "Dtm1", "offset": 4, "width": 4, "kind": "u32", "grade": "L2", "why": "whole-u32 column, every non-null value < club(84,259) at 100% and top value 83930 sits at 0.996 of 
+  {"field": "Dtm2", "offset": 8, "width": 4, "kind": "u32", "grade": "L2", "why": "whole-u32 column, every non-null value < club(84,259) at 100% and top value 78419 sits at 0.931 of 
+  {"field": "Dfmc", "offset": 12, "width": 4, "kind": "u32", "grade": "L2", "why": "competition reference, optional (null 1165/1,567); ordinal domain fits comp(7047) at 100% with top
+  {"field": "Dfms", "offset": 16, "width": 4, "kind": "u32", "grade": "L2", "why": "stadium reference, optional (null 1430/1,567); ordinal domain fits stadium(48413) at 100% with top
+  {"field": "Dfma", "offset": 20, "width": 4, "kind": "u32", "grade": "L2", "why": "attendance, optional (null 1433/1,567): non-null values 0..82100 all <= 200,000 (134/134), the sch
+  {"field": null, "offset": 24, "width": 4, "kind": "u32", "grade": "unassigned", "why": "constant 0xffffffff across 1,567/1,567 rows: a null placeholder block with no schema field b
+  {"field": null, "offset": 28, "width": 2, "kind": "u8", "grade": "candidate", "why": "two nullable u8 counters (0..11 / 0..10, null = 0xff on the same 1,034 rows); goal-sized domai
+  {"field": null, "offset": 30, "width": 4, "kind": "u32", "grade": "unassigned", "why": "constant zero block (4B) between the goal counters and the reputation pair; in the server ar
+  {"field": null, "offset": 36, "width": 2, "kind": "u8", "grade": "candidate", "why": "two u8 in 0..200 with no nulls (54 / 62 distinct, differ on 1,384 rows): numeric domain matche
+
+--- t76c slots_client_27.json keys=['archive', 'table', 'entity', 'tool', 'schema', 't74_frame', 'payload_len', 'payload_sha256', 'walk', 'identity', 'status', 'slots', 'unresolved'] ---
+  {"field": null, "offset": 0, "width": 1, "kind": "blk", "grade": "L2", "why": "row grammar: numeric middle is exactly 95B = 3 zero prefix bytes + 4 x 23B blocks (3 + 4*23 == 95; pr
+  {"field": "w0sd", "offset": 3, "width": 1, "kind": "u8", "grade": "L2", "why": "start day: u8 0..244, schema w0sd is 0..365 and is the only day field in block 0; rel0 is the sole n
+  {"field": "w0p0..w0p4", "offset": 5, "width": 5, "kind": "u8x5", "grade": "L2", "why": "precipitation group: 5 consecutive u8, each 0..100, sum == 100 on 316/334 rows (every failur
+  {"field": "w0w0..w0w4", "offset": 10, "width": 5, "kind": "u8x5", "grade": "L2", "why": "wind group: 5 consecutive u8, each 0..100, sum == 100 on 317/334 rows (best 5B window is re
+  {"field": "w0te..w0t7", "offset": 15, "width": 10, "kind": "u8x10", "grade": "L2", "why": "temperature group: 10 consecutive u8 (rel12..rel21), each 0..100, matching the 10 tempera
+  {"field": "w0dn", "offset": 4, "width": 1, "kind": "u8", "grade": "candidate", "why": "day/night variance, 0..50 in the schema. Block 0 is 23 bytes and needs 22 fields, so exactly 
+  {"field": null, "offset": 25, "width": 1, "kind": "u8", "grade": "unassigned", "why": "block 0 rel22: the only {0,100} column; identical row-wise across all four blocks (set of per
+  {"field": "w1sd", "offset": 26, "width": 1, "kind": "u8", "grade": "L2", "why": "start day: u8 0..190, schema w1sd is 0..365 and is the only day field in block 1; rel0 is the sole 
+  {"field": "w1p0..w1p4", "offset": 28, "width": 5, "kind": "u8x5", "grade": "L2", "why": "precipitation group: 5 consecutive u8, each 0..100, sum == 100 on 318/334 rows (every failu
+  {"field": "w1w0..w1w4", "offset": 33, "width": 5, "kind": "u8x5", "grade": "L2", "why": "wind group: 5 consecutive u8, each 0..100, sum == 100 on 319/334 rows (best 5B window is re
+  {"field": "w1te..w1t7", "offset": 38, "width": 10, "kind": "u8x10", "grade": "L2", "why": "temperature group: 10 consecutive u8 (rel12..rel21), each 0..100, matching the 10 tempera
+  {"field": "w1dn", "offset": 27, "width": 1, "kind": "u8", "grade": "candidate", "why": "day/night variance, 0..50 in the schema. Block 1 is 23 bytes and needs 22 fields, so exactly
+  {"field": null, "offset": 48, "width": 1, "kind": "u8", "grade": "unassigned", "why": "block 1 rel22: the only {0,100} column; identical row-wise across all four blocks (set of per
+  {"field": "w2sd", "offset": 49, "width": 1, "kind": "u8", "grade": "L2", "why": "start day: u8 0..253, schema w2sd is 0..365 and is the only day field in block 2; rel0 is the sole 
+  {"field": "w2p0..w2p4", "offset": 51, "width": 5, "kind": "u8x5", "grade": "L2", "why": "precipitation group: 5 consecutive u8, each 0..100, sum == 100 on 312/334 rows (every failu
+  {"field": "w2w0..w2w4", "offset": 56, "width": 5, "kind": "u8x5", "grade": "L2", "why": "wind group: 5 consecutive u8, each 0..100, sum == 100 on 318/334 rows (best 5B window is re
+  {"field": "w2te..w2t7", "offset": 61, "width": 10, "kind": "u8x10", "grade": "L2", "why": "temperature group: 10 consecutive u8 (rel12..rel21), each 0..100, matching the 10 tempera
+  {"field": "w2dn", "offset": 50, "width": 1, "kind": "u8", "grade": "candidate", "why": "day/night variance, 0..50 in the schema. Block 2 is 23 bytes and needs 22 fields, so exactly
+  {"field": null, "offset": 71, "width": 1, "kind": "u8", "grade": "unassigned", "why": "block 2 rel22: the only {0,100} column; identical row-wise across all four blocks (set of per
+  {"field": "w3sd", "offset": 72, "width": 1, "kind": "u8", "grade": "L2", "why": "start day: u8 0..244, schema w3sd is 0..365 and is the only day field in block 3; rel0 is the sole 
+  {"field": "w3p0..w3p4", "offset": 74, "width": 5, "kind": "u8x5", "grade": "L2", "why": "precipitation group: 5 consecutive u8, each 0..100, sum == 100 on 314/334 rows (every failu
+  {"field": "w3w0..w3w4", "offset": 79, "width": 5, "kind": "u8x5", "grade": "L2", "why": "wind group: 5 consecutive u8, each 0..100, sum == 100 on 315/334 rows (best 5B window is re
+  {"field": "w3te..w3t7", "offset": 84, "width": 10, "kind": "u8x10", "grade": "L2", "why": "temperature group: 10 consecutive u8 (rel12..rel21), each 0..100, matching the 10 tempera
+  {"field": "w3dn", "offset": 73, "width": 1, "kind": "u8", "grade": "candidate", "why": "day/night variance, 0..50 in the schema. Block 3 is 23 bytes and needs 22 fields, so exactly
+  {"field": null, "offset": 94, "width": 1, "kind": "u8", "grade": "unassigned", "why": "block 3 rel22: the only {0,100} column; identical row-wise across all four blocks (set of per
+
+--- t76c slots_client_47.json keys=['archive', 'table', 'entity', 'tool', 'schema', 't74_frame', 'payload_len', 'payload_sha256', 'walk', 'identity', 'status', 'slots', 'unresolved'] ---
+  {"field": "rdui", "offset": -13, "width": 4, "kind": "ident", "grade": "L3", "why": "trailer ordinal equals row index, 2,488/2,488; equals the frozen FIELDS anchor `client lcrg rdu
+  {"field": "duni", "offset": -9, "width": 4, "kind": "ident", "grade": "L3", "why": "trailer UID pair u32==u32!=0 with zero marker, 2,488/2,488; equals the frozen FIELDS anchor `cli
+  {"field": null, "offset": 0, "width": 1, "kind": "blk", "grade": "L2", "why": "row grammar closed byte-exactly: row_len == 41 + 5k, i.e. 28B fixed prefix + k x 5B items + 13B ident
+  {"field": "Lpop", "offset": 4, "width": 4, "kind": "u32", "grade": "L2", "why": "u32 0..81,330,531 (644 zeros) and <= 1e9 on 2,488/2,488; Lpop is 0..1,000,000,000 in the schema and
+  {"field": null, "offset": 0, "width": 1, "kind": "u8", "grade": "candidate", "why": "u8 0..242 (164 distinct, 48 zeros). Domain fits nation(251) 100%. But every table with N >= 243
+  {"field": null, "offset": 24, "width": 4, "kind": "u32", "grade": "candidate", "why": "nullable u32 (0xffffffff on 1181/2,488): non-null values 0..242, 79 distinct. This IS a u32-w
+  {"field": null, "offset": 8, "width": 12, "kind": "u8x12", "grade": "candidate", "why": "twelve consecutive u8, all 0..100 on 2,488/2,488, but only 612/2,488 rows are non-zero. No 
+  {"field": null, "offset": 20, "width": 1, "kind": "u8", "grade": "unassigned", "why": "constant 0x00 on all rows", "evidence": [{"constant": 0}]}
+  {"field": null, "offset": 21, "width": 1, "kind": "u8", "grade": "unassigned", "why": "0/1 flag (1 on only 13 rows)", "evidence": [{"ones": 13}]}
+  {"field": "Lrll[i].Llgp", "offset": 23, "width": 5, "kind": "u8+u32", "grade": "L2", "why": "repeated 5B item (u8 percentage, u32 reference), k+1 per row at 23 + 5i. 1495/1495 body
+  {"field": "Lrll[i].Llgl", "offset": 24, "width": 4, "kind": "u32", "grade": "candidate", "why": "the u32 half of the same 5B item. Domain: non-null values 0..333 (null 783/1495, 10
+
+--- t76c slots_client_56.json keys=['archive', 'table', 'entity', 'tool', 'schema', 't74_frame', 'payload_len', 'payload_sha256', 'walk', 'identity', 'status', 'slots', 'unresolved'] ---
+  {"field": "rdui", "offset": 0, "width": 4, "kind": "ident", "grade": "L3", "why": "row-leading ordinal equals row index, 6/6; equals the frozen FIELDS anchor `client agreement rdui
+  {"field": "duni", "offset": 4, "width": 4, "kind": "ident", "grade": "L3", "why": "UID pair u32==u32!=0 with zero marker, 6/6; equals the frozen FIELDS anchor `client agreement dun
+  {"field": null, "offset": null, "width": 0, "kind": "neg", "grade": "L2", "why": "NEGATIVE RESULT (kept verbatim): an agreement row is EXACTLY the 13B identity trailer — 14 + 6*13 
+  {"field": "dbnm", "offset": null, "width": null, "kind": "-", "grade": "unmapped", "why": "no business byte exists in this payload (see negative result)", "evidence": []}
+  {"field": "AGna", "offset": null, "width": null, "kind": "-", "grade": "unmapped", "why": "no business byte exists in this payload (see negative result)", "evidence": []}
+  {"field": "AGsn", "offset": null, "width": null, "kind": "-", "grade": "unmapped", "why": "no business byte exists in this payload (see negative result)", "evidence": []}
+  {"field": "Anti", "offset": null, "width": null, "kind": "-", "grade": "unmapped", "why": "no business byte exists in this payload (see negative result)", "evidence": []}
+  {"field": "NDBC", "offset": null, "width": null, "kind": "-", "grade": "unmapped", "why": "no business byte exists in this payload (see negative result)", "evidence": []}
+  {"field": "FDBC", "offset": null, "width": null, "kind": "-", "grade": "unmapped", "why": "no business byte exists in this payload (see negative result)", "evidence": []}
+
+--- t76c slots_server_18.json keys=['archive', 'table', 'entity', 'tool', 'schema', 't74_frame', 'payload_len', 'payload_sha256', 'walk', 'identity', 'status', 'slots', 'unresolved'] ---
+  {"field": "Dfmd", "offset": 0, "width": 4, "kind": "date", "grade": "L2", "why": "packed date: u16 day-of-year @0 (1..366, 1567/1567) + u16 year @2 (1872..2022, 1567/1567); schema 
+  {"field": "Dtm1", "offset": 4, "width": 4, "kind": "u32", "grade": "L2", "why": "whole-u32 column, every non-null value < club(84,259) at 100% and top value 83930 sits at 0.996 of 
+  {"field": "Dtm2", "offset": 8, "width": 4, "kind": "u32", "grade": "L2", "why": "whole-u32 column, every non-null value < club(84,259) at 100% and top value 78419 sits at 0.931 of 
+  {"field": "Dfmc", "offset": 12, "width": 4, "kind": "u32", "grade": "L2", "why": "competition reference, optional (null 1165/1,567); ordinal domain fits comp(7047) at 100% with top
+  {"field": "Dfms", "offset": 16, "width": 4, "kind": "u32", "grade": "L2", "why": "stadium reference, optional (null 1430/1,567); ordinal domain fits stadium(48413) at 100% with top
+  {"field": "Dfma", "offset": 20, "width": 4, "kind": "u32", "grade": "L2", "why": "attendance, optional (null 1433/1,567): non-null values 0..82100 all <= 200,000 (134/134), the sch
+  {"field": null, "offset": 24, "width": 4, "kind": "u32", "grade": "unassigned", "why": "constant 0xffffffff across 1,567/1,567 rows: a null placeholder block with no schema field b
+  {"field": null, "offset": 28, "width": 2, "kind": "u8", "grade": "candidate", "why": "two nullable u8 counters (0..11 / 0..10, null = 0xff on the same 1,034 rows); goal-sized domai
+  {"field": "D1tw/D1td/D1tl", "offset": 28, "width": 6, "kind": "u16x3", "grade": "L2", "why": "server-only 6B = 3 x u16. The archive delta is EXACTLY 6 bytes and derby.xml is the on
+  {"field": null, "offset": 40, "width": 2, "kind": "u8", "grade": "candidate", "why": "two u8 in 0..200 with no nulls (54 / 62 distinct, differ on 1,384 rows): numeric domain matche
+
+--- t76c slots_server_27.json keys=['archive', 'table', 'entity', 'tool', 'schema', 't74_frame', 'payload_len', 'payload_sha256', 'walk', 'identity', 'status', 'slots', 'unresolved'] ---
+  {"field": null, "offset": 0, "width": 1, "kind": "blk", "grade": "L2", "why": "row grammar: numeric middle is exactly 95B = 3 zero prefix bytes + 4 x 23B blocks (3 + 4*23 == 95; pr
+  {"field": "w0sd", "offset": 3, "width": 1, "kind": "u8", "grade": "L2", "why": "start day: u8 0..244, schema w0sd is 0..365 and is the only day field in block 0; rel0 is the sole n
+  {"field": "w0p0..w0p4", "offset": 5, "width": 5, "kind": "u8x5", "grade": "L2", "why": "precipitation group: 5 consecutive u8, each 0..100, sum == 100 on 316/334 rows (every failur
+  {"field": "w0w0..w0w4", "offset": 10, "width": 5, "kind": "u8x5", "grade": "L2", "why": "wind group: 5 consecutive u8, each 0..100, sum == 100 on 317/334 rows (best 5B window is re
+  {"field": "w0te..w0t7", "offset": 15, "width": 10, "kind": "u8x10", "grade": "L2", "why": "temperature group: 10 consecutive u8 (rel12..rel21), each 0..100, matching the 10 tempera
+  {"field": "w0dn", "offset": 4, "width": 1, "kind": "u8", "grade": "candidate", "why": "day/night variance, 0..50 in the schema. Block 0 is 23 bytes and needs 22 fields, so exactly 
+  {"field": null, "offset": 25, "width": 1, "kind": "u8", "grade": "unassigned", "why": "block 0 rel22: the only {0,100} column; identical row-wise across all four blocks (set of per
+  {"field": "w1sd", "offset": 26, "width": 1, "kind": "u8", "grade": "L2", "why": "start day: u8 0..190, schema w1sd is 0..365 and is the only day field in block 1; rel0 is the sole 
+  {"field": "w1p0..w1p4", "offset": 28, "width": 5, "kind": "u8x5", "grade": "L2", "why": "precipitation group: 5 consecutive u8, each 0..100, sum == 100 on 318/334 rows (every failu
+  {"field": "w1w0..w1w4", "offset": 33, "width": 5, "kind": "u8x5", "grade": "L2", "why": "wind group: 5 consecutive u8, each 0..100, sum == 100 on 319/334 rows (best 5B window is re
+  {"field": "w1te..w1t7", "offset": 38, "width": 10, "kind": "u8x10", "grade": "L2", "why": "temperature group: 10 consecutive u8 (rel12..rel21), each 0..100, matching the 10 tempera
+  {"field": "w1dn", "offset": 27, "width": 1, "kind": "u8", "grade": "candidate", "why": "day/night variance, 0..50 in the schema. Block 1 is 23 bytes and needs 22 fields, so exactly
+  {"field": null, "offset": 48, "width": 1, "kind": "u8", "grade": "unassigned", "why": "block 1 rel22: the only {0,100} column; identical row-wise across all four blocks (set of per
+  {"field": "w2sd", "offset": 49, "width": 1, "kind": "u8", "grade": "L2", "why": "start day: u8 0..253, schema w2sd is 0..365 and is the only day field in block 2; rel0 is the sole 
+  {"field": "w2p0..w2p4", "offset": 51, "width": 5, "kind": "u8x5", "grade": "L2", "why": "precipitation group: 5 consecutive u8, each 0..100, sum == 100 on 312/334 rows (every failu
+  {"field": "w2w0..w2w4", "offset": 56, "width": 5, "kind": "u8x5", "grade": "L2", "why": "wind group: 5 consecutive u8, each 0..100, sum == 100 on 318/334 rows (best 5B window is re
+  {"field": "w2te..w2t7", "offset": 61, "width": 10, "kind": "u8x10", "grade": "L2", "why": "temperature group: 10 consecutive u8 (rel12..rel21), each 0..100, matching the 10 tempera
+  {"field": "w2dn", "offset": 50, "width": 1, "kind": "u8", "grade": "candidate", "why": "day/night variance, 0..50 in the schema. Block 2 is 23 bytes and needs 22 fields, so exactly
+  {"field": null, "offset": 71, "width": 1, "kind": "u8", "grade": "unassigned", "why": "block 2 rel22: the only {0,100} column; identical row-wise across all four blocks (set of per
+  {"field": "w3sd", "offset": 72, "width": 1, "kind": "u8", "grade": "L2", "why": "start day: u8 0..244, schema w3sd is 0..365 and is the only day field in block 3; rel0 is the sole 
+  {"field": "w3p0..w3p4", "offset": 74, "width": 5, "kind": "u8x5", "grade": "L2", "why": "precipitation group: 5 consecutive u8, each 0..100, sum == 100 on 314/334 rows (every failu
+  {"field": "w3w0..w3w4", "offset": 79, "width": 5, "kind": "u8x5", "grade": "L2", "why": "wind group: 5 consecutive u8, each 0..100, sum == 100 on 315/334 rows (best 5B window is re
+  {"field": "w3te..w3t7", "offset": 84, "width": 10, "kind": "u8x10", "grade": "L2", "why": "temperature group: 10 consecutive u8 (rel12..rel21), each 0..100, matching the 10 tempera
+  {"field": "w3dn", "offset": 73, "width": 1, "kind": "u8", "grade": "candidate", "why": "day/night variance, 0..50 in the schema. Block 3 is 23 bytes and needs 22 fields, so exactly
+  {"field": null, "offset": 94, "width": 1, "kind": "u8", "grade": "unassigned", "why": "block 3 rel22: the only {0,100} column; identical row-wise across all four blocks (set of per
+
+--- t76c slots_server_47.json keys=['archive', 'table', 'entity', 'tool', 'schema', 't74_frame', 'payload_len', 'payload_sha256', 'walk', 'identity', 'status', 'slots', 'unresolved'] ---
+  {"field": "rdui", "offset": -13, "width": 4, "kind": "ident", "grade": "L3", "why": "trailer ordinal equals row index, 2,488/2,488; equals the frozen FIELDS anchor `client lcrg rdu
+  {"field": "duni", "offset": -9, "width": 4, "kind": "ident", "grade": "L3", "why": "trailer UID pair u32==u32!=0 with zero marker, 2,488/2,488; equals the frozen FIELDS anchor `cli
+  {"field": null, "offset": 0, "width": 1, "kind": "blk", "grade": "L2", "why": "row grammar closed byte-exactly: row_len == 41 + 5k, i.e. 28B fixed prefix + k x 5B items + 13B ident
+  {"field": "Lpop", "offset": 4, "width": 4, "kind": "u32", "grade": "L2", "why": "u32 0..81,330,531 (644 zeros) and <= 1e9 on 2,488/2,488; Lpop is 0..1,000,000,000 in the schema and
+  {"field": null, "offset": 0, "width": 1, "kind": "u8", "grade": "candidate", "why": "u8 0..242 (164 distinct, 48 zeros). Domain fits nation(251) 100%. But every table with N >= 243
+  {"field": null, "offset": 24, "width": 4, "kind": "u32", "grade": "candidate", "why": "nullable u32 (0xffffffff on 1181/2,488): non-null values 0..242, 79 distinct. This IS a u32-w
+  {"field": null, "offset": 8, "width": 12, "kind": "u8x12", "grade": "candidate", "why": "twelve consecutive u8, all 0..100 on 2,488/2,488, but only 612/2,488 rows are non-zero. No 
+  {"field": null, "offset": 20, "width": 1, "kind": "u8", "grade": "unassigned", "why": "constant 0x00 on all rows", "evidence": [{"constant": 0}]}
+  {"field": null, "offset": 21, "width": 1, "kind": "u8", "grade": "unassigned", "why": "0/1 flag (1 on only 13 rows)", "evidence": [{"ones": 13}]}
+  {"field": "Lrll[i].Llgp", "offset": 23, "width": 5, "kind": "u8+u32", "grade": "L2", "why": "repeated 5B item (u8 percentage, u32 reference), k+1 per row at 23 + 5i. 1495/1495 body
+  {"field": "Lrll[i].Llgl", "offset": 24, "width": 4, "kind": "u32", "grade": "candidate", "why": "the u32 half of the same 5B item. Domain: non-null values 0..333 (null 783/1495, 10
+
+--- t76c slots_server_56.json keys=['archive', 'table', 'entity', 'tool', 'schema', 't74_frame', 'payload_len', 'payload_sha256', 'walk', 'identity', 'status', 'slots', 'unresolved'] ---
+  {"field": "rdui", "offset": 0, "width": 4, "kind": "ident", "grade": "L3", "why": "row-leading ordinal equals row index, 6/6; equals the frozen FIELDS anchor `client agreement rdui
+  {"field": "duni", "offset": 4, "width": 4, "kind": "ident", "grade": "L3", "why": "UID pair u32==u32!=0 with zero marker, 6/6; equals the frozen FIELDS anchor `client agreement dun
+  {"field": null, "offset": null, "width": 0, "kind": "neg", "grade": "L2", "why": "NEGATIVE RESULT (kept verbatim): an agreement row is EXACTLY the 13B identity trailer — 14 + 6*13 
+  {"field": "dbnm", "offset": null, "width": null, "kind": "-", "grade": "unmapped", "why": "no business byte exists in this payload (see negative result)", "evidence": []}
+  {"field": "AGna", "offset": null, "width": null, "kind": "-", "grade": "unmapped", "why": "no business byte exists in this payload (see negative result)", "evidence": []}
+  {"field": "AGsn", "offset": null, "width": null, "kind": "-", "grade": "unmapped", "why": "no business byte exists in this payload (see negative result)", "evidence": []}
+  {"field": "Anti", "offset": null, "width": null, "kind": "-", "grade": "unmapped", "why": "no business byte exists in this payload (see negative result)", "evidence": []}
+  {"field": "NDBC", "offset": null, "width": null, "kind": "-", "grade": "unmapped", "why": "no business byte exists in this payload (see negative result)", "evidence": []}
+  {"field": "FDBC", "offset": null, "width": null, "kind": "-", "grade": "unmapped", "why": "no business byte exists in this payload (see negative result)", "evidence": []}

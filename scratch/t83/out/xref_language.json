@@ -1,0 +1,523 @@
+{
+  "task": "t83",
+  "class": {
+    "table_id": 8,
+    "xml": "language.xml",
+    "entity_code": "lang",
+    "rtti": ".?AVLANGUAGE@db@@",
+    "factory": {
+      "function_fo": "0xf48b30",
+      "function_va": "0x140f49530",
+      "rel32_table_fo": "0xf49d38",
+      "case_fo": "0xf48ebb",
+      "case_va": "0x140f498bb",
+      "dis_head": [
+        {
+          "fo": "0xf48ebb",
+          "va": "0x140f498bb",
+          "bytes": "e8f0890200",
+          "text": "call 0x140f722b0"
+        },
+        {
+          "fo": "0xf48ec0",
+          "va": "0x140f498c0",
+          "bytes": "4889c6",
+          "text": "mov rsi, rax"
+        },
+        {
+          "fo": "0xf48ec3",
+          "va": "0x140f498c3",
+          "bytes": "48c74008ffffffff",
+          "text": "mov qword ptr [rax + 8], 0xffffffffffffffff"
+        },
+        {
+          "fo": "0xf48ecb",
+          "va": "0x140f498cb",
+          "bytes": "c7401000000000",
+          "text": "mov dword ptr [rax + 0x10], 0"
+        },
+        {
+          "fo": "0xf48ed2",
+          "va": "0x140f498d2",
+          "bytes": "488d05dff49300",
+          "text": "lea rax, [rip + 0x93f4df]"
+        },
+        {
+          "fo": "0xf48ed9",
+          "va": "0x140f498d9",
+          "bytes": "488906",
+          "text": "mov qword ptr [rsi], rax"
+        }
+      ]
+    },
+    "vtable_va": "0x141888db8",
+    "vtable_fo": "0x18883b8",
+    "vtable_slots": {
+      "slot2_get": {
+        "entry_fo": "0x1038a00",
+        "entry_va": "0x141039400",
+        "real_fo": "0x1038a00",
+        "real_va": "0x141039400"
+      },
+      "slot3_set": {
+        "entry_fo": "0x1039110",
+        "entry_va": "0x141039b10",
+        "real_fo": "0x1039110",
+        "real_va": "0x141039b10"
+      },
+      "slot5_prop_reg": {
+        "entry_fo": "0x10387a0",
+        "entry_va": "0x1410391a0",
+        "real_fo": "0x3d55b30",
+        "real_va": "0x143ec1130"
+      },
+      "slot19_read": {
+        "entry_fo": "0x10376d0",
+        "entry_va": "0x1410380d0",
+        "real_fo": "0x3d546d0",
+        "real_va": "0x143ebfcd0"
+      },
+      "slot20_fixup": {
+        "entry_fo": "0x10385f0",
+        "entry_va": "0x141038ff0",
+        "real_fo": "0x3d550a0",
+        "real_va": "0x143ec06a0"
+      },
+      "slot21_write": {
+        "entry_fo": "0x1038620",
+        "entry_va": "0x141039020",
+        "real_fo": "0x3d55740",
+        "real_va": "0x143ec0d40"
+      }
+    }
+  },
+  "db_context_refs": [
+    {
+      "db_off": "+0x28",
+      "table_id": 10,
+      "name": "NATION",
+      "ctor_call": {
+        "fo": "0xf02d27",
+        "va": "0x140f03727",
+        "bytes": "e8e46b0f00",
+        "text": "call 0x140ffa310"
+      },
+      "store_ins": {
+        "fo": "0xf02e47",
+        "va": "0x140f03847",
+        "bytes": "49897e28",
+        "text": "mov qword ptr [r14 + 0x28], rdi"
+      }
+    },
+    {
+      "db_off": "+0x50",
+      "table_id": 8,
+      "name": "LANGUAGE",
+      "ctor_call": {
+        "fo": "0xf03353",
+        "va": "0x140f03d53",
+        "bytes": "e8b8650f00",
+        "text": "call 0x140ffa310"
+      },
+      "store_ins": {
+        "fo": "0xf03473",
+        "va": "0x140f03e73",
+        "bytes": "49897e50",
+        "text": "mov qword ptr [r14 + 0x50], rdi"
+      }
+    }
+  ],
+  "helpers": {
+    "lstr_reader": {
+      "thunk_fo": "0x814110",
+      "real_fo": "0x35b07f0"
+    },
+    "post_read_lang_id_map": {
+      "fo": "0x1037880",
+      "va": "0x141038280"
+    },
+    "identity_reader": {
+      "thunk_fo": "0xfae340",
+      "real_fo": "0x3c600f0"
+    }
+  },
+  "members": [
+    {
+      "field": "duni",
+      "member_off": "+0x0c",
+      "getter_cmp": {
+        "fo": "0xfe3912",
+        "va": "0x140fe4312",
+        "bytes": "81fe696e7564",
+        "text": "cmp esi, 0x64756e69"
+      },
+      "reader": {
+        "fo": "0x3c600f0",
+        "va": "0x143dcb6f0",
+        "bytes": "56",
+        "text": "push rsi"
+      }
+    },
+    {
+      "field": "rdui",
+      "member_off": "+0x10",
+      "getter_cmp": {
+        "fo": "0xfe3862",
+        "va": "0x140fe4262",
+        "bytes": "81fe69756472",
+        "text": "cmp esi, 0x72647569"
+      },
+      "reader": {
+        "fo": "0x3c600f0",
+        "va": "0x143dcb6f0",
+        "bytes": "56",
+        "text": "push rsi"
+      }
+    },
+    {
+      "field": "dbnm",
+      "getter_cmp": {
+        "fo": "0x1038a4f",
+        "va": "0x14103944f",
+        "bytes": "81fb6d6e6264",
+        "text": "cmp ebx, 0x64626e6d"
+      },
+      "getter_handler": {
+        "fo": "0x1038a5b",
+        "va": "0x14103945b",
+        "bytes": "4c8d7718",
+        "text": "lea r14, [rdi + 0x18]"
+      },
+      "classification": "non_wire_computed"
+    },
+    {
+      "field": "Lnam",
+      "grade": "L3",
+      "wire_loc": "lstr@0",
+      "width": null,
+      "member_off": "+0x18",
+      "getter_cmp": {
+        "fo": "0x1038bbf",
+        "va": "0x1410395bf",
+        "bytes": "81fb6d616e4c",
+        "text": "cmp ebx, 0x4c6e616d"
+      },
+      "getter_handler": {
+        "fo": "0x1038bcb",
+        "va": "0x1410395cb",
+        "bytes": "4883c718",
+        "text": "add rdi, 0x18"
+      },
+      "setter_cmp": {
+        "fo": "0x103917c",
+        "va": "0x141039b7c",
+        "bytes": "81fa6d616e4c",
+        "text": "cmp edx, 0x4c6e616d"
+      },
+      "setter_handler": {
+        "fo": "0x1039188",
+        "va": "0x141039b88",
+        "bytes": "498b08",
+        "text": "mov rcx, qword ptr [r8]"
+      },
+      "reader_sink": {
+        "fo": "0x3d546e4",
+        "va": "0x143ebfce4",
+        "bytes": "4c8d4618",
+        "text": "lea r8, [rsi + 0x18]"
+      },
+      "fixup": null
+    },
+    {
+      "field": "Linf",
+      "grade": "L3",
+      "wire_loc": "suf+1",
+      "width": 1,
+      "member_off": "+0x3b",
+      "getter_cmp": {
+        "fo": "0x1038bb3",
+        "va": "0x1410395b3",
+        "bytes": "81fb666e694c",
+        "text": "cmp ebx, 0x4c696e66"
+      },
+      "getter_handler": {
+        "fo": "0x1038da1",
+        "va": "0x1410397a1",
+        "bytes": "0fbe7f3b",
+        "text": "movsx edi, byte ptr [rdi + 0x3b]"
+      },
+      "setter_cmp": {
+        "fo": "0x1039170",
+        "va": "0x141039b70",
+        "bytes": "81fa666e694c",
+        "text": "cmp edx, 0x4c696e66"
+      },
+      "setter_handler": {
+        "fo": "0x10392e2",
+        "va": "0x141039ce2",
+        "bytes": "498b08",
+        "text": "mov rcx, qword ptr [r8]"
+      },
+      "reader_sink": {
+        "fo": "0x3d54721",
+        "va": "0x143ebfd21",
+        "bytes": "488d563b",
+        "text": "lea rdx, [rsi + 0x3b]"
+      },
+      "fixup": null
+    },
+    {
+      "field": "Ldff",
+      "grade": "L3",
+      "wire_loc": "suf+2",
+      "width": 1,
+      "member_off": "+0x3c",
+      "getter_cmp": {
+        "fo": "0x1038b48",
+        "va": "0x141039548",
+        "bytes": "81fb6666644c",
+        "text": "cmp ebx, 0x4c646666"
+      },
+      "getter_handler": {
+        "fo": "0x1038b54",
+        "va": "0x141039554",
+        "bytes": "0fbe7f3c",
+        "text": "movsx edi, byte ptr [rdi + 0x3c]"
+      },
+      "setter_cmp": {
+        "fo": "0x1039143",
+        "va": "0x141039b43",
+        "bytes": "81fa6666644c",
+        "text": "cmp edx, 0x4c646666"
+      },
+      "setter_handler": {
+        "fo": "0x103914f",
+        "va": "0x141039b4f",
+        "bytes": "498b08",
+        "text": "mov rcx, qword ptr [r8]"
+      },
+      "reader_sink": {
+        "fo": "0x3d54742",
+        "va": "0x143ebfd42",
+        "bytes": "488d563c",
+        "text": "lea rdx, [rsi + 0x3c]"
+      },
+      "fixup": null
+    },
+    {
+      "field": "Lnat",
+      "grade": "L3",
+      "wire_loc": "suf+9",
+      "width": 4,
+      "member_off": "+0x28",
+      "getter_cmp": {
+        "fo": "0x1038a37",
+        "va": "0x141039437",
+        "bytes": "81fb74616e4c",
+        "text": "cmp ebx, 0x4c6e6174"
+      },
+      "getter_handler": {
+        "fo": "0x1038cc1",
+        "va": "0x1410396c1",
+        "bytes": "488b4f28",
+        "text": "mov rcx, qword ptr [rdi + 0x28]"
+      },
+      "setter_cmp": {
+        "fo": "0x103921f",
+        "va": "0x141039c1f",
+        "bytes": "81fa74616e4c",
+        "text": "cmp edx, 0x4c6e6174"
+      },
+      "setter_handler": {
+        "fo": "0x103930d",
+        "va": "0x141039d0d",
+        "bytes": "488b3dbc60b200",
+        "text": "mov rdi, qword ptr [rip + 0xb260bc]"
+      },
+      "reader_sink": {
+        "fo": "0x3d547b6",
+        "va": "0x143ebfdb6",
+        "bytes": "488d5628",
+        "text": "lea rdx, [rsi + 0x28]"
+      },
+      "fixup": {
+        "fo": "0x3d550a0",
+        "va": "0x143ec06a0",
+        "bytes": "4883ec38",
+        "text": "sub rsp, 0x38"
+      }
+    },
+    {
+      "field": "Lfam",
+      "grade": "held",
+      "wire_loc": "suf+3",
+      "width": 2,
+      "member_off": "+0x34",
+      "getter_cmp": {
+        "fo": "0x1038c4a",
+        "va": "0x14103964a",
+        "bytes": "81fb6d61664c",
+        "text": "cmp ebx, 0x4c66616d"
+      },
+      "getter_handler": {
+        "fo": "0x1038dfd",
+        "va": "0x1410397fd",
+        "bytes": "0fbf7f34",
+        "text": "movsx edi, word ptr [rdi + 0x34]"
+      },
+      "setter_cmp": {
+        "fo": "0x10391f1",
+        "va": "0x141039bf1",
+        "bytes": "81fa6d61664c",
+        "text": "cmp edx, 0x4c66616d"
+      },
+      "setter_handler": {
+        "fo": "0x10392f7",
+        "va": "0x141039cf7",
+        "bytes": "498b08",
+        "text": "mov rcx, qword ptr [r8]"
+      },
+      "reader_sink": {
+        "fo": "0x3d5475f",
+        "va": "0x143ebfd5f",
+        "bytes": "488d5634",
+        "text": "lea rdx, [rsi + 0x34]"
+      },
+      "fixup": null
+    },
+    {
+      "field": "Lgro",
+      "grade": "held",
+      "wire_loc": "suf+5",
+      "width": 2,
+      "member_off": "+0x36",
+      "getter_cmp": {
+        "fo": "0x1038c56",
+        "va": "0x141039656",
+        "bytes": "81fb6f72674c",
+        "text": "cmp ebx, 0x4c67726f"
+      },
+      "getter_handler": {
+        "fo": "0x1038c62",
+        "va": "0x141039662",
+        "bytes": "0fbf7f36",
+        "text": "movsx edi, word ptr [rdi + 0x36]"
+      },
+      "setter_cmp": {
+        "fo": "0x10391fd",
+        "va": "0x141039bfd",
+        "bytes": "81fa6f72674c",
+        "text": "cmp edx, 0x4c67726f"
+      },
+      "setter_handler": {
+        "fo": "0x1039209",
+        "va": "0x141039c09",
+        "bytes": "498b08",
+        "text": "mov rcx, qword ptr [r8]"
+      },
+      "reader_sink": {
+        "fo": "0x3d5477c",
+        "va": "0x143ebfd7c",
+        "bytes": "488d5636",
+        "text": "lea rdx, [rsi + 0x36]"
+      },
+      "fixup": null
+    },
+    {
+      "field": "Lsub",
+      "grade": "held",
+      "wire_loc": "suf+7",
+      "width": 2,
+      "member_off": "+0x38",
+      "getter_cmp": {
+        "fo": "0x1038a43",
+        "va": "0x141039443",
+        "bytes": "81fb6275734c",
+        "text": "cmp ebx, 0x4c737562"
+      },
+      "getter_handler": {
+        "fo": "0x1038cde",
+        "va": "0x1410396de",
+        "bytes": "0fbf7f38",
+        "text": "movsx edi, word ptr [rdi + 0x38]"
+      },
+      "setter_cmp": {
+        "fo": "0x103922b",
+        "va": "0x141039c2b",
+        "bytes": "81fa6275734c",
+        "text": "cmp edx, 0x4c737562"
+      },
+      "setter_handler": {
+        "fo": "0x1039237",
+        "va": "0x141039c37",
+        "bytes": "498b08",
+        "text": "mov rcx, qword ptr [r8]"
+      },
+      "reader_sink": {
+        "fo": "0x3d54799",
+        "va": "0x143ebfd99",
+        "bytes": "488d5638",
+        "text": "lea rdx, [rsi + 0x38]"
+      },
+      "fixup": null
+    }
+  ],
+  "internal_wire_slots": [
+    {
+      "wire_loc": "suf+0",
+      "width": 1,
+      "member_off": "+0x3a",
+      "reader_fo": "0x3d54700",
+      "values": {
+        "const": 0,
+        "rows": 126
+      }
+    },
+    {
+      "wire_loc": "suf+13..16",
+      "width": 4,
+      "member_off": "+0x30",
+      "reader_fo": "0x3d547ee",
+      "note": "ver>=0xde7 legacy language ID passed to 0x1037880; equals duni on 121/126 rows, differs on 5 late-added languages",
+      "diff_from_duni": [
+        {
+          "row": 116,
+          "name": "Uyghur",
+          "plus30": 2000005181,
+          "duni": 118
+        },
+        {
+          "row": 117,
+          "name": "Hakka",
+          "plus30": 2000011093,
+          "duni": 119
+        },
+        {
+          "row": 118,
+          "name": "Belarusian",
+          "plus30": 2000027847,
+          "duni": 120
+        },
+        {
+          "row": 119,
+          "name": "Igbo",
+          "plus30": 2000254975,
+          "duni": 121
+        },
+        {
+          "row": 120,
+          "name": "Hausa",
+          "plus30": 2000254976,
+          "duni": 122
+        }
+      ]
+    },
+    {
+      "wire_loc": "suf+17..20",
+      "width": 4,
+      "member_off": "+0x08",
+      "reader_fo": "0x3c600f0",
+      "note": "row ordinal (0..125); fm24_dump label 'rdui_suffix@17' points here"
+    }
+  ]
+}
