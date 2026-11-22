@@ -2985,6 +2985,21 @@
     "scripts/t01_anchors.py 7/7"
    ],
    "consequence": "escalate 三条裁决:C1 按 [211..327] 区间口径,纠正 CBW*/CBD* 简写(E121/E124 措辞过窄,117 项中 CB* 仅 10);C2 五表不入 1034 分母(扩容留待专报,五表侧 188 字段独立分母已存 five_table_side_denominator);C3 city Cnti 不动桶(分母内既有 Cnti 已 mapped_l3)。口径:headline 物理覆盖 110/1034=10.6% 不变,净口径 110/917=12.0% 并列存档。schema_version 定稿 11.2,candidate 原件留盘 scratch/t90/out/(gitignore 豁免,30MB 重复)。车道 meta:attempt1-2 又 rc=124 墙,attempt3 依盘上骨架 13 分钟收口——fix1 模式第三次应验。"
+  },
+  {
+   "id": "E130",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "static_analysis",
+   "level": "L3",
+   "claim": "[NATION+0x108] 容器类型=NATION_T9(table_9)类,集合字段双路分发坐实:t9 读链裁决(t89 Phase 1,指挥官亲做)。链:t9 getter nation侧 va=0x141043d0f mov rcx,[r12+0x108] → call 0x1410668f0(t9_get_impl 入口,probe 首行吻合);setter va=0x141046276 → call 0x141063f30(t9_set_impl,4CC 0x5443736e);al=false 回落主行(jmp 0x140fe3f20 / call 0x140fe2700)。t75 gate 17048862 的边界比较体=va 0x141042f2a:[rax+0x4a0]=begin、[rax+0x4a8]=end、迭代基 +0x18——T9 对象内存布局。read/write 入口 0x14105d510/0x1410608f0。",
+   "evidence": [
+    "scratch/cmd/t89_phase1_verdict.json(7 处 VA/fo/字节三件套)",
+    "scratch/t89/probe_t9_{get_impl,set_impl,read,write,ctor,base_ctor}.txt(agy 前棒遗产 1.3MB)",
+    "scratch/t83/out/REPORT.md L40-41(DATABASE 构造器 0xf026c0:+0x60=t9 NATION_T9 251,E126 L3)",
+    "scratch/t75/out/xref_reverse.json(gate 17048862)"
+   ],
+   "consequence": "E127 升级项的静态环闭合:集合字段 wire 家=table_9 由类型恒等+调用环双证。归因三重支撑:t83 E126 绑定 + t47 E87(t9 8-parent NATIONAL_TEAM_CONTAINER)+ 本调用环;探针簇 t9_* 标注系 agy 前棒遗留,其 vtable/RTTI 终封可由 t89b 文法工作中 per-code 分发与 nation escalation 槽位的对应性独立复核。遗留:条目字节网格(Phase 2)、held 回填(Phase 3)、双档对拍(Phase 4)→ t89b 车道(prompts/t89b_t9grammar.md,devseek)进行中;Phase 1 车道不再重做。"
   }
  ]
 }

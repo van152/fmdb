@@ -1,0 +1,19 @@
+{
+ "schema": "cmd.t89_phase1_verdict.v1",
+ "task": "t89 Phase 1 (commander-side, E127 升级项)",
+ "date": "2026-11-22",
+ "verdict": "[NATION+0x108] 容器类型 = NATION_T9 (table_9) 类;集合字段双路分发:先试 T9 容器(按 4CC),回落 nation 主行",
+ "grade": "L3(静态指令链,VA/fo/指令字节三件套齐)",
+ "evidence": [
+  {"site": "nation getter", "va": "0x141043d0f", "fo": "0x104330f", "bytes": "498b8c2408010000", "insn": "mov rcx, qword ptr [r12 + 0x108]", "then": "call 0x1410668f0 @ va=0x141043d22 (fo=0x1043322, e8c92b0200), rcx=容器, edx=4CC, r8=out; al=false 则回落 nation 本体 jmp 0x140fe3f20"},
+  {"site": "nation setter", "va": "0x141046276", "fo": "0x1045876", "bytes": "498b8f08010000", "insn": "mov rcx, qword ptr [r15 + 0x108]", "then": "call 0x141063f30 @ va=0x14104628a (fo=0x104588a, e8a1dc0100), edx=0x5443736e; false 则回落 0x140fe2700"},
+  {"site": "t9_get_impl entry", "va": "0x1410668f0", "fo": "0x1065ef0", "bytes": "55", "insn": "push rbp", "proof": "scratch/t89/probe_t9_get_impl.txt 首行声明 VA=0x1410668f0..0x141069d29"},
+  {"site": "t9_set_impl entry", "va": "0x141063f30", "fo": "0x1063530", "bytes": "55", "insn": "push rbp", "proof": "scratch/t89/probe_t9_set_impl.txt 首行"},
+  {"site": "t9_read entry", "va": "0x14105d510", "fo": "0x105cb10", "bytes": "4157", "insn": "push r15", "proof": "scratch/t89/probe_t9_read.txt 首行"},
+  {"site": "t9_write entry", "va": "0x1410608f0", "fo": "0x105fef0", "bytes": "4157", "insn": "push r15", "proof": "scratch/t89/probe_t9_write.txt 首行"},
+  {"site": "bounds compare (t75 gate 17048862 对应体)", "va": "0x141042f2a", "fo": "0x104252a", "bytes": "498b842408010000", "insn": "mov rax, qword ptr [r12 + 0x108]", "then": "rsi=[rax+0x4a8] (end) @0x141042f32; rdi=[rax+0x4a0] (begin) @0x141042f39; cmp rsi,rdi; setne [rbp+0x20]; 迭代基 add rax,0x18", "note": "T9 对象内存布局:begin/end 指针在 +0x4a0/+0x4a8,数据基 +0x18"}
+ ],
+ "chain": "NATION+0x108 → T9 对象 → T9 read/write (0x14105d510/0x1410608f0) = table_9.dat 载荷读写器(t83: DATABASE 构造器 db+0x60 绑 t9)",
+ "residual": "wire 家=table_9 的静态环已闭合;字段值→table_9 条目内偏移的数据侧 join(Phase 3)与条目字节网格(Phase 2)仍由 lane 完成",
+ "provenance": "指挥官从 t89 被杀前 agy 探针遗产(1.3MB)grep 定点复算;brief prompts/t89_devseek.md 骨架的 reader_handlers 四 VA 与探针首行逐一吻合"
+}
