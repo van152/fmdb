@@ -3090,6 +3090,20 @@
     "scripts/t89_disasm.py(节表局限)"
    ],
    "consequence": "slots.json 中 CBW 族的 held 理由(4CC 缺席)降级为存疑;真分发链以 E121 为准。下棒 fix8 必须先用真 PE 头(非硬编码节表)解 fo↔VA,再回到 0x11f0ca7 窗口找 cmp 立即数 0x61444243(CBDa LE)。fix7/fix8 的 40 分钟预算教训:该子任务需 PE 寻址基建先行。"
+  },
+  {
+   "id": "E137",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "static_analysis",
+   "level": "L2",
+   "claim": "CBW 族路由终判(指挥官全量字节扫描,真 PE 节表):CBDa/CBWa/CBWo/CHSo 四码字节串在 editor.exe(74.8MB)与 fm.exe(491MB)中均零出现(cmp 上下文与原始引用皆无)。裁决:①fix6 的 80 held 实质正确(非误报);②E121 negative_proof 中『CBDa cmp @0x11f0ca7/CBWa @0x11f0cb6』引用无法按字节复现,降级为未验证(其下 TC_RECORD_GET 0x3ebad50 等链地址属 .reloc 45MB 可执行大区,真节表见 fix8 pe_sections.json);③club 记录族字段读取机制=(rec_type, tag 序号) 位置路由,4CC 只存在于 editor schema——与 fix6 的 34 L3 tag/rt 链自洽。",
+   "evidence": [
+    "scratch/t88/out3/pe_sections.json(fix8 交付,真 PE 头)",
+    "指挥官全量扫描(两 exe 四码零命中,cmp 操作码上下文核对)",
+    "scratch/t88/TC_GET2_4cc.json(lea 组来源重审:schema 侧非 exe 侧)"
+   ],
+   "consequence": "slots.json 80 held 的路由问题转为纯数据侧任务:per-rec_type 行体 tag 序列→字段序→wire 偏移(fix5 recget_tagmap.json 的 8 组即静态映射)。E121 引用降级注记入 schema v11.3。指挥官 meta:本条由 fix8(仅交付 PE 基建)后的指挥官接棒完成——车道 40 分钟预算内 PE 解析+扫描装不下,指挥官两步做完。"
   }
  ]
 }
