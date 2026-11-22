@@ -3017,6 +3017,23 @@
     "scripts/t91_nulldate.py"
    ],
    "consequence": "指挥官第三路径:t71 archives+冻结 t76a 帧独立复算五槽位命中率逐一吻合至小数两位、对照常量零、文法≥95%。分级零变动(club 78/comp 49/nation 30 L3 不变);外源标签不写入 reports/。范围限制如实:field_dict.csv 不在克隆内(仅 18 条可恢复);server_21 row+37 的 108 行文法反例原样保留未解释。车道 meta:attempt1 rc=124 墙,attempt2 11 分钟收口——骨架先行模式再次应验。"
+  },
+  {
+   "id": "E132",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "static_analysis",
+   "level": "L2",
+   "claim": "table_45 rec 结构指挥官数据侧探针(t88-fix2/3/4 八次车道尝试零进展后接管):行=(club,person) 记录——u32@0=club-uid(对 club 主表 DP 扫出的 84,259 uid 全自洽集成员率 96.7%,8,368 club 实际出现),u8@4=类型字节(37 值,255=null×38,968),u32@5=person-uid(外源锚定:C罗 735216×18,agentC 报告值),u32@21/25=第二 [id][id] 双写对(6,800 distinct,实体未定),identity uid=行自键致密 0..89,974。前提否证:「84,477=84,259+218」不成立,负结果原样保留。",
+   "evidence": [
+    "scratch/cmd/t88_rec_probe.json",
+    "scratch/t88/out2/_p_server_45.bin",
+    "scratch/t88/out2/_starts.bin",
+    "scratch/t88/out2/row_frame.json",
+    "scripts/t71_club100_cnst.py archives()",
+    "scratch/ext/fm-data/docs/reports/agentC-summary-db.md(735216 锚)"
+   ],
+   "consequence": "本仓首个外源锚定 wire 列(provenance=ext/fm-data@d7a7150,分级仍按本仓 L2)。residual 交 t88-fix5 窄化车道(per-4CC (type,offset) 映射,配 t82 tagmap);lane meta:fix4 又双墙+断流,大台账上下文+跨域推断是 devseek 死穴,指挥官接管数据侧+窄化简报是当前最优解。"
   }
  ]
 }
