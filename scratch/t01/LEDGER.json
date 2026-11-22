@@ -3104,6 +3104,21 @@
     "scratch/t88/TC_GET2_4cc.json(lea 组来源重审:schema 侧非 exe 侧)"
    ],
    "consequence": "slots.json 80 held 的路由问题转为纯数据侧任务:per-rec_type 行体 tag 序列→字段序→wire 偏移(fix5 recget_tagmap.json 的 8 组即静态映射)。E121 引用降级注记入 schema v11.3。指挥官 meta:本条由 fix8(仅交付 PE 基建)后的指挥官接棒完成——车道 40 分钟预算内 PE 解析+扫描装不下,指挥官两步做完。"
+  },
+  {
+   "id": "E138",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "static_analysis",
+   "level": "L2",
+   "claim": "table_45 结构定论(指挥官,fix9 墙后接管):全部 84,477 行同构 = pre37B + [u32 len][utf8 name] + tail 26B 定长 + identity 13B(rowlen=80+namelen 普适)——物理仅 ~14 列(8 前缀列+名+~5 尾列),**装不下 117 字段**。117 club.xml 码 = (family→rec_type, suffix→行/列) 访问器视图:family↔rt 对应从 34 L3 证实(CFG→24, CHA→13, CHS→25, CLA→26,多后缀共族一 rt)。rec_type 8 全部 3,391 行为最短行(namelen=0),pre 列实证:club_uid@0/rt@4/person_uid@5(空=ffff)/club_uid2 对@21/25。",
+   "evidence": [
+    "scratch/t88/out2/{row_frame,_starts,_p_server_45}.json",
+    "scratch/t88/out3/slots.json(34 L3 family↔rt)",
+    "scratch/t88/out3/tag_wire.json(fix9 骨架,墙截)",
+    "scratch/cmd/t88_rec_probe.json(E132)"
+   ],
+   "consequence": "E121『117 字段在 table_45』细化为『117 码=table_45 访问器视图』;fix9 车道墙截(仅骨架),指挥官接管收束结构问题。遗留(机械,非结构):suffix→列钉死(需 per-family reader_off 或值域匹配);可作下波数据侧任务。t88 链 14 次车道尝试+3 次指挥官接管,至此结构层全部收束。"
   }
  ]
 }
