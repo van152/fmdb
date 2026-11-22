@@ -3076,6 +3076,20 @@
     "scratch/t88/out3/REPORT.md(车道写)"
    ],
    "consequence": "E121 的『117 族经 TC_RECORD_GET 4CC 分发』细化:34 码走 4CC/rt 链已锚,83 码(CBW*/CBD* 主族)走 tag 表路由——两机制并存。遗留:tag 表路由解析(inner_tag→字段序)、reader_off→wire_off 派生、verify.py 缺(指挥官验收时补)。fix6 为 ≤1 attempt 装配量设计首次部分成功:34 码落定=每 attempt 有效产出再验证。"
+  },
+  {
+   "id": "E136",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "correction",
+   "level": "L1",
+   "claim": "两笔更正:①fix7 零产出(40 分钟墙,无新文件)——tag 路由区 devseek 三撞墙(fix2/4/7);②**fix6 的『CBW*/CBD* 4CC 缺席』负结果与 E121 矛盾**:t82 xref_extra3.negative_proof 记录 CBDa@0x11f0ca7/CBWa@0x11f0cb6 cmp 位点→hub 0x11f2a76→0x11e8af0→TC_RECORD_GET,且 VA 0x141b60190 全局表 type 0x2d=45。指挥官复验时命中 fo/rva 换算歧义(t89_disasm 硬编码 5 节表不覆盖 0x3ebad50 区;0x1411f0ca7 窗口见序列化代码非 cmp),复验未决,挂起。",
+   "evidence": [
+    "scratch/t82/out/xref_extra3.json(negative_proof_starting_record)",
+    "scratch/t88/out3/slots.json(fix6 held 注记)",
+    "scripts/t89_disasm.py(节表局限)"
+   ],
+   "consequence": "slots.json 中 CBW 族的 held 理由(4CC 缺席)降级为存疑;真分发链以 E121 为准。下棒 fix8 必须先用真 PE 头(非硬编码节表)解 fo↔VA,再回到 0x11f0ca7 窗口找 cmp 立即数 0x61444243(CBDa LE)。fix7/fix8 的 40 分钟预算教训:该子任务需 PE 寻址基建先行。"
   }
  ]
 }
