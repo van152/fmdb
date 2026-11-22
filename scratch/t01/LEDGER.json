@@ -3061,6 +3061,21 @@
     "scratch/cmd/t88_rec_probe.json(E132)"
    ],
    "consequence": "继承 E132 三列,rec 结构定稿级收敛;遗留=二级分发+117 码映射→fix6(装配棒)。车道 meta:发射器启发式再次在 rc=124 误判 DONE(连续第二次,E133 同款);40 分钟/attempt 是 devseek 实际有效预算,任务设计须 ≤1 attempt 装配量。"
+  },
+  {
+   "id": "E135",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "acceptance_partial",
+   "level": "L2",
+   "claim": "t88-fix6(devseek,attempt1 rc=124 截断,车道自写 partial DONE——纪律习得)slots.json 装配:117 码全入账,34 L3(rec_type+reader_off+exe 链,如 CHSo rt=25 [rdi+0x30] dl=25)、3 L2、80 held。**关键负结果:CBW*/CBD* 主族 4CC 字节在 exe 分发中缺席**(cmp-immediate 无此码;原 t88 台账 TC_GET2_4cc.json 印证——CBDa/CBWa 仅在 lea 组=地址引用)→ 该族走 tag 表(inner_tag)路由而非 4CC 比较。",
+   "evidence": [
+    "scratch/t88/out3/slots.json(117 码)",
+    "scratch/t88/out3/tail_{cols,prof,ref,sig}.json(尾区 4 件)",
+    "scratch/t88/TC_GET2_4cc.json(lea/cmp 分组,原账印证)",
+    "scratch/t88/out3/REPORT.md(车道写)"
+   ],
+   "consequence": "E121 的『117 族经 TC_RECORD_GET 4CC 分发』细化:34 码走 4CC/rt 链已锚,83 码(CBW*/CBD* 主族)走 tag 表路由——两机制并存。遗留:tag 表路由解析(inner_tag→字段序)、reader_off→wire_off 派生、verify.py 缺(指挥官验收时补)。fix6 为 ≤1 attempt 装配量设计首次部分成功:34 码落定=每 attempt 有效产出再验证。"
   }
  ]
 }
