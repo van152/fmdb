@@ -3134,6 +3134,27 @@
     "reports/xml_denominator_coverage.json(注记)"
    ],
    "consequence": "schema v11.3 定稿;t88 链自 E121 起的叙事链(E132 探针→E134 结构→E135 slots→E136/E137 更正→E138 访问器模型)全部合入公共 schema。车道 meta:t92 首次 attempt1 内完成(rc=124 于收尾时才到,交付已落盘)——纯机械装配+冻结输入是 devseek 最稳形态。遗留(下波):suffix→列钉死、t89c helper 24 字段展开、Phase 3 t02 授权待决。"
+  },
+  {
+   "id": "E140",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "external_corpus_discovery_plus_anchor_cross_validation",
+   "level": "L2",
+   "claim": {
+    "what": "三个社区仓克隆入 scratch/ext/(gitignored,只读):fmsave@755fe9c(MIT 纯 Python FM26/27 存档解析,唯一依赖 backports.zstd——与我方 tad.+zstd 容器同族)、fm-editor@ba605f4(GPL,FM24/26/27 内存布局,docs/fm24/memory-layout.md 为我方版本)、FMLibreEditor@fb76023(GPL,FM27 recon 20+ 篇)",
+    "cross_validation": "外部 UID 锚(fm-editor FM24 文档)在我方 table_45 wire 数据上全部命中:Harry Kane person-uid=28049320 命中且行三元收敛(名=\"Harry Kane\"、person=28049320、club=728=Tottenham,与文档逐字吻合;2023-07 Kane 尚在热刺);Ronaldo 735216 再证(32 行);Bayern 915(47 行)/Tottenham 728(54 行)/Antalyaspor 1865(24 行)club-uid 列全部成属",
+    "corroborations": "①fmsave 用 zstd 分节=压缩家族同源;②fm-editor 日期文法(doy+flag<<8,year)与 E133 的 01 00 6c 07 完全一致;③fm-editor 跨 FM24/26/27 同法布局=用户\"几乎通用\"假说三轴成立;④FMLibreEditor object-pools 文法与 E82 DATABASE_TABLE<T> 发现同构",
+    "kane_rt_hist": "255×9 + {24,11,6,4,33}×1——每人每 family 单记录,与 E138 访问器视图模型一致",
+    "discipline": "外源仓零执行;外源标签仅假设源,不升级我方 L1/L2/L3 分级;本条 L2 仅指锚测试(独立事实对照)在我方数据上完成"
+   },
+   "evidence": [
+    "scratch/cmd/t93_ext_probe.json",
+    "scratch/cmd/t93_ext_probe.py",
+    "scratch/ext/{fmsave@755fe9c,fm-editor@ba605f4,FMLibreEditor@fb76023}",
+    "prompts/t93_ext_mining.md"
+   ],
+   "consequence": "路线A(数据侧已知值锚定)武器化:名称列=球员全名已证,语义字典(fmsave models + fm-editor 布局)可直接喂 suffix→列钉死;t93 挖矿车道已派(摘录文法/字典/crosswalk,全 held 级)"
   }
  ]
 }
