@@ -3000,6 +3000,23 @@
     "scratch/t75/out/xref_reverse.json(gate 17048862)"
    ],
    "consequence": "E127 升级项的静态环闭合:集合字段 wire 家=table_9 由类型恒等+调用环双证。归因三重支撑:t83 E126 绑定 + t47 E87(t9 8-parent NATIONAL_TEAM_CONTAINER)+ 本调用环;探针簇 t9_* 标注系 agy 前棒遗留,其 vtable/RTTI 终封可由 t89b 文法工作中 per-code 分发与 nation escalation 槽位的对应性独立复核。遗留:条目字节网格(Phase 2)、held 回填(Phase 3)、双档对拍(Phase 4)→ t89b 车道(prompts/t89b_t9grammar.md,devseek)进行中;Phase 1 车道不再重做。"
+  },
+  {
+   "id": "E131",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": "t91(devseek,attempt2)外源对照验收:github nottatdat/fm-data(d7a7150)与我们的 FM24 解码独立收敛。①码表:18 条可恢复外源码全部命中我们码表(0 缺失),7 条标签/表域漂移如实列列不改判(FM26≠FM24),natc↔nati 命名域冲突记录;②空日期探针:0x076c0001 在 server_21 六槽位命中率 78.93..100%(基线 25-35 倍),对照常量 0x076c0002/0x076c0000 全零,非 sentinel 行 (u16 doy,u16 year) 文法通过 95-100%——为既有 date4 sentinel 口径增加槽位级维度;③文法 H1-H8:H1/H2/H3/H7 独立收敛,H6=确定差异(FM24 8B 头 vs FM26 12B,负结果原文保留)。",
+   "evidence": [
+    "scratch/t91/out/{code_coverage,nulldate_probe}.json",
+    "scratch/t91/out/hypotheses.md",
+    "scratch/t91/out/verify.py(45 项)",
+    "scratch/ext/fm-data/(只读,d7a7150)",
+    "scripts/t91_codes.py",
+    "scripts/t91_nulldate.py"
+   ],
+   "consequence": "指挥官第三路径:t71 archives+冻结 t76a 帧独立复算五槽位命中率逐一吻合至小数两位、对照常量零、文法≥95%。分级零变动(club 78/comp 49/nation 30 L3 不变);外源标签不写入 reports/。范围限制如实:field_dict.csv 不在克隆内(仅 18 条可恢复);server_21 row+37 的 108 行文法反例原样保留未解释。车道 meta:attempt1 rc=124 墙,attempt2 11 分钟收口——骨架先行模式再次应验。"
   }
  ]
 }
