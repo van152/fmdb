@@ -1,37 +1,39 @@
-# HANDOFF — 指挥官收尾交接(2026-11-21,E128 终态,用户关机)
+# HANDOFF — 指挥官收尾交接(2026-11-22,E140 终态)
 
-本文件记录收尾时的完整状态与下一 session 恢复指令。fleet 已干净停止,所有已接受工作已提交,无工作丢失。
+本文件记录收尾时的完整状态与下一 session 恢复指令。已接受工作全部提交。
 
 ## LEDGER / 分支
-- **LEDGER 128 条,末 E128**(`scratch/t01/LEDGER.json`,append-only;E111–E128 为本轮 18 条)。
-- 分支:34 条任务分支单条线性链;HEAD 为 origin/main 直接超集后继(merge 评估见 `docs/REPO_STATUS.md` §六,未执行)。
-- 本轮末次提交:`e6f8f6d`(E128 收尾)、`256d59b`(E127 t85)、`0f85dcb`(E126 t83)、`f67eaea`(E125 t81)、`e430ab8`(E124 t87 v11.1)。**工作树干净(0 未提交)。**
+- **LEDGER 140 条,末 E140**(`scratch/t01/LEDGER.json`,append-only;E129–E139 为 Wave 12 十一条,E140 外部语料+锚交叉验证)。
+- 分支 `t75-wirex`,工作树收尾时仅余 t93 车道半程产物(随本次交接入库)。
+- 本轮末次提交:`1919182`(E140)、`5842fce`(t92 日志)、`33024b1`(E139 v11.3 定稿)。
 
-## 本轮核心成果(E111–E127 摘要;细则以 LEDGER 为准)
-- **t82/t83(E121/E126)**:extra_3 双对象闭合;五表 188 字段全入账,**152 L3**;media 20 步文法闭合;weather 风/降水纠偏 E118。
-- **t87(E124)**:schema **v11.1**,club 主行+extra_3 L3 43→**78**;`CBW*`/`CBD*` 117 字段族正名 server `table_45`。
-- **t81(E125)**:变长表 FK 索引,city Cnti 闭环(t73 工具缺口收口)。
-- **t85(E127)**:table_9(NATION_T9)严格闭包(13+28,922+12×251+9=31,956);条目文法 held;[NATION+0x108] 升级静态车道。
-- **t80/t84(E119/E123)**:两条负结果原样保留(枚举快照前提证伪;name 池引用假说否证)。
-- **t88-fix1(停车前已交付关键件)**:server table_45 行框闭合——变长 80–122B,rowlen=80+namelen,行+37 嵌 [u32 len][utf8 name],DP unique_paths=1,identity 13B 在行尾;client 无 table_45(server-only)。
+## Wave 12 + E140 核心成果(E129–E140;细则以 LEDGER 为准)
+- **E132/E138 table_45 结构定论**:uniform 行分解(rowlen=80+namelen 普适)、三列冻结(club-uid@0 / rec_type@4=37 值 / person-uid@5)、**117 码=访问器视图**(family→rt:CFG→24/CHA→13/CHS→25/CLA→26)。
+- **E130 [NATION+0x108]=NATION_T9 L3 定论**(getter 0x1410668f0 / setter 0x141063f30 双路由闭环)。
+- **E133 table_9 文法闭**:client 31,956 精确;server **307,564**(纠 E127 九字节);ordinal/sentinel lane 251/251。
+- **E135–E137 CBW 终判**:CBDa/CBWa/CBWo/CHSo 在 editor.exe+fm.exe 零存在(全量扫);E121 cmp 位点引用降级。
+- **E129/E139 schema v11.2→v11.3**(43 根节),分母 1034 行守恒+117 条改路由注记。
+- **E140 外部语料侦察**:三仓入 scratch/ext/(fmsave@755fe9c 纯 Python zstd 存档解析 1,417 字段字典;fm-editor@ba605f4 FM24 内存布局;FMLibreEditor@fb76023 FM27 recon)。"几乎通用"三轴成立。**UID 锚满贯 4/4**:Harry Kane person=28049320+club=728(Tottenham)三元收敛;Ronaldo 735216、Bayern 915、Antalyaspor 1865 全命中(`scratch/cmd/t93_ext_probe.json`)。
 
-## fleet 停止状态(关机前)
-- **t88-fix1**(table_45 扫表续作):停车时 out2/ 已有 `row_frame.json`+assets;剩 rec 结构 +0x4c/+0x5e、117 字段槽位 join、verify/REPORT。恢复:`bash scripts/launch.sh t88-fix1 devseek deepseek-v4.1-flash-free prompts/t88_fix1.md scratch/t88/out2 3 2400`
-- **t89-neon**([NATION+0x108] 追源+table_9 文法定型):停车时 `scratch/t89/` 空,无损失。恢复:`bash scripts/launch_agy.sh t89 prompts/t89_nation108_neon.md scratch/t89/out 3600`
-- 子代理进程树(launch.sh/timeout/node-with-args/agy)已全部 taskkill 停止;**用户自有的 3 个交互 pi 会话(pwsh 下裸 `node cli.js`,无参数)与本 fleet 无关,未碰**。
+## t93 车道状态(收尾时 in-flight!)
+- **attempt 2 运行中**(attempt 1 rc=1 节流重试),交付目录 **`scratch/t93/outbox.md/`(车道把 outbox 参数当目录写,quirk 保留)**。
+- 已落 6/9:`README.md`、`save_grammar.json`、`field_dictionary.json`、`fm24_fields.json`、`fm24_memory_layout.json`、`fm27_recon_digest.json`。
+- **缺 3+1**:`crosswalk.json`、`verify.py`、`REPORT.md`、`DONE.md`。
+- 车道脚本 `scripts/t93_{fields,fm24,recon}.py`(767 行)已入库。
+- **恢复指令**:若关机杀死 → 新会话名重发(避免 stale outbox 误报):`bash scripts/launch.sh t93b devseek deepseek-v4.1-flash-free prompts/t93_ext_mining.md scratch/t93/outbox2.md 3 2400`,brief 里注明只补缺的 4 件;若 `DONE.md` 已存在 → 直接验收(程序:lane verify + 根 diff 抽查 + E141 入账)。
 
 ## 下一 session 待办(优先级)
-1. **待用户决策**:Phase 3 **t02 定向编辑器授权**(Top 20–30 死槽 + 10 个既有 L3 字段真机读写回归)。授权即破 L4;之后 t86 统一只读解析库/导出 CLI(逐字段 L2/L3/L4 分级)。
-2. **恢复 t88-fix1**:117 字段 join(t82 的 4CC 台账已冻结,brief `prompts/t88_fix1.md`;铁律:>20KB 不进会话、≤120 行分块写、先落骨架)。
-3. **重发 t89-neon**:brief `prompts/t89_nation108_neon.md` 就绪。
-4. **schema v11.2**:吸收 E125/E126/E127(t87 模式),并重发分母分桶(`reports/xml_denominator_coverage.json`:117 carve-out + t83 五表字段未重桶)。
-5. **merge-to-main**:评估已备(`docs/REPO_STATUS.md` §六),待用户定脱敏/体积口径。
+1. **t93 验收**(或重发,见上)——验收后字典喂 suffix→列钉死(83 码)。
+2. **t94:t14 handler 全量反编译**(新最短路径):`scratch/t14/out/census.json` 已冻结 **74 表入口(63 dedicated handler_off)**——逐表反编译 handler 本体,字段读取序=wire 列序,预计一棒吃 10–20 表;静态已授权无需 t02。
+3. **t95 三小件**:社区 custom DB(editor data)差分挖矿;lang_update_db 全解(官方字段显示名);11 张 default handler 表一次收。
+4. **待用户决策(不变)**:Phase 3 **t02 定向编辑器授权**——时间线最大压缩杠杆(估省 3–5 波);之后 t86 统一只读库。merge-to-main 评估备于 `docs/REPO_STATUS.md` §六。
+5. 进度口径(实测):74 表分母,已透 6 表(8% 按表数 / ~25% 按难度加权);只读全解包估 12–14 波,t86 可用约 8–9 波。
 
 ## 关键锚点 / 约束(不变)
 - editor.exe SHA `b82ebe8e032f2017...`(只读 D:/tmp2b/fm24/input);frozen master `7d57477e...`;t37 baseline REPORT `5656568e...`/inventory `8af89c72...`(原样保留)。
-- **E80**:成员绝对起点=`data_base(34)+entry.offset`,按 `entry.size` 选帧;`entry.sha256`=压缩区 SHA(非 payload SHA)。无多帧成员(460/460 单帧)。
+- **E80**:成员绝对起点=`data_base(34)+entry.offset`,按 `entry.size` 选帧;`entry.sha256`=压缩区 SHA(非 payload SHA)。
+- **E138**:table_45 wire 三列+行框冻结(`scratch/t88/out2/row_frame.json`;`_p_server_45.bin` 84,477 行)。
+- **E140 纪律**:外源仓(scratch/ext/,gitignored)零执行、标签仅假设源、provenance=ext/<repo>@<hash>。
 - 硬约束(AGENTS.md):只读 Z:/D:\tmp2b\fm24;不启动游戏/编辑器/IDA 除非用户显式授权;L4=0;负结果原样保留不删改;候选不写结论;Python `py -V:3.12 -I -B`,新脚本 --help/--selftest,退出 0/1/2;大数据/二进制不入 repo;车道只写 scratch/<task>/ 与 scripts/tNN_*.py。
-- 验证:`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`;anchors `scripts/t01_anchors.py`(**7/7 绿**)、t83 verify `--selftest` PASS;zstandard vendored 于 `D:/tmp2b/fm24/tools/python`(`-I` 下须 sys.path.insert);GBK 终端先 `sys.stdout.reconfigure(encoding='utf-8',errors='replace')`。
-- 车道运营教训(E128 meta):launch.sh DONE 判定对续作车道会误报(旧 outbox 计入)→ 续作一律独立 out2/ outbox;devseek 连墙→新会话+10 分钟先落骨架;agy 429 约 2h 重置,交付后可能僵死需 taskkill。
-
-**收尾完成。关机。**
+- 验证:`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`;anchors `scripts/t01_anchors.py`(**7/7 绿**);zstandard vendored 于 `D:/tmp2b/fm24/tools/python`(`-I` 下须 sys.path.insert);GBK 终端先 `sys.stdout.reconfigure(encoding='utf-8',errors='replace')`。
+- 车道运营教训(E128 meta+本轮):launch.sh DONE 判定续作车道误报(stale outbox)→ 续作一律独立 outbox;devseek rc=124→微交付(每小节覆写落盘、≤120 行分块、先骨架);outbox 参数可能被车道当目录(outbox.md/ quirk)→验收时查两处。

@@ -1,0 +1,6493 @@
+{
+ "schema": "t93/field_dictionary/v1",
+ "provenance": "ext/fmsave@755fe9c566bb0497d4ad6ef6e1ac1fd2fde7351b",
+ "method": "read-only parse of scratch/ext/fmsave/src/fmsave/{models,readers}; no import",
+ "ext_status_vocabulary": {
+  "verified": "fmsave's own register_field_statuses(verified=...) list",
+  "unconfirmed": "fmsave's own register_field_statuses(unconfirmed=...) list",
+  "unstated": "field has no entry in either list"
+ },
+ "grade_policy": "ext_status is fmsave's internal claim; it is NOT our L1-L4 grade",
+ "entity_count": 58,
+ "field_total": 720,
+ "entities": [
+  {
+   "entity": "Player",
+   "priority": true,
+   "file": "src/fmsave/models/players.py",
+   "field_count": 53,
+   "verified_count": 19,
+   "unconfirmed_count": 27,
+   "fields": [
+    {
+     "name": "uid",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 376,
+     "ext_status": "unconfirmed",
+     "semantics": "The id fmsave reads for the player's record and joins every table on. It is not"
+    },
+    {
+     "name": "unique_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 377,
+     "ext_status": "unconfirmed",
+     "semantics": "The player's Unique ID in the game database, the same in every new game"
+    },
+    {
+     "name": "name",
+     "type": "str | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 378,
+     "ext_status": "unconfirmed",
+     "semantics": "Display name: common name first, else first plus last name, else legal name"
+    },
+    {
+     "name": "first_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 379,
+     "ext_status": "unconfirmed",
+     "semantics": "First name (unconfirmed)."
+    },
+    {
+     "name": "last_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 380,
+     "ext_status": "unconfirmed",
+     "semantics": "Last name (unconfirmed)."
+    },
+    {
+     "name": "common_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 381,
+     "ext_status": "unconfirmed",
+     "semantics": "Common (nickname) name, when the save stores one (unconfirmed)."
+    },
+    {
+     "name": "full_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 382,
+     "ext_status": "unconfirmed",
+     "semantics": "First name plus last name, or None when either is missing (unconfirmed)."
+    },
+    {
+     "name": "legal_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 383,
+     "ext_status": "unconfirmed",
+     "semantics": "The save's stored legal name, or None when the save stores none"
+    },
+    {
+     "name": "birth_date",
+     "type": "date | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 384,
+     "ext_status": "unconfirmed",
+     "semantics": "Date of birth (unconfirmed)."
+    },
+    {
+     "name": "age",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 385,
+     "ext_status": "unconfirmed",
+     "semantics": "Age at the save's in-game clock date, or None when birth_date or the clock"
+    },
+    {
+     "name": "nation_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 386,
+     "ext_status": "unconfirmed",
+     "semantics": "Save-local id of the player's primary nation (unconfirmed)."
+    },
+    {
+     "name": "second_nation_ids",
+     "type": "tuple[int, ...]",
+     "file": "src/fmsave/models/players.py",
+     "line": 387,
+     "ext_status": "verified",
+     "semantics": "Save-local ids of the player's other eligible nations."
+    },
+    {
+     "name": "home_grown_nation_ids",
+     "type": "tuple[int, ...]",
+     "file": "src/fmsave/models/players.py",
+     "line": 388,
+     "ext_status": "verified",
+     "semantics": "Save-local ids of nations the player is considered home grown for."
+    },
+    {
+     "name": "home_grown_club_uids",
+     "type": "tuple[int | None, ...]",
+     "file": "src/fmsave/models/players.py",
+     "line": 389,
+     "ext_status": "unconfirmed",
+     "semantics": "Uids of clubs the player is considered home grown for, in"
+    },
+    {
+     "name": "home_grown_club_names",
+     "type": "tuple[str | None, ...]",
+     "file": "src/fmsave/models/players.py",
+     "line": 390,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised names for home_grown_club_uids, in the same"
+    },
+    {
+     "name": "height_cm",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 391,
+     "ext_status": "unconfirmed",
+     "semantics": "Height in centimetres (unconfirmed)."
+    },
+    {
+     "name": "ability",
+     "type": "Ability",
+     "file": "src/fmsave/models/players.py",
+     "line": 392,
+     "ext_status": "unstated",
+     "semantics": "Current and potential ability."
+    },
+    {
+     "name": "reputation",
+     "type": "Reputation",
+     "file": "src/fmsave/models/players.py",
+     "line": 393,
+     "ext_status": "unstated",
+     "semantics": "Reputation figures; never threshold on reputation.bucket."
+    },
+    {
+     "name": "club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 394,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the club the player belongs to: the club fielding his registered"
+    },
+    {
+     "name": "club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 395,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised full name of club_uid (unconfirmed)."
+    },
+    {
+     "name": "club_short_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 396,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised short name of club_uid (unconfirmed)."
+    },
+    {
+     "name": "club_nation_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 397,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised save-local league nation id of club_uid; None also when"
+    },
+    {
+     "name": "club_fa_nation_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 398,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised save-local FA nation id of club_uid (unconfirmed)."
+    },
+    {
+     "name": "club_reputation",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 399,
+     "ext_status": "verified",
+     "semantics": "Denormalised reputation of club_uid."
+    },
+    {
+     "name": "club_last_league_position",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 400,
+     "ext_status": "verified",
+     "semantics": "Denormalised last completed season league position of"
+    },
+    {
+     "name": "team_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 401,
+     "ext_status": "unconfirmed",
+     "semantics": "Id of the player's registered team, or None for a free agent"
+    },
+    {
+     "name": "team_slot",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 402,
+     "ext_status": "unconfirmed",
+     "semantics": "The team's slot in club_uid's team list, which counts that club's own"
+    },
+    {
+     "name": "team_club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 403,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the club whose record stores the player's registered team,"
+    },
+    {
+     "name": "team_club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 404,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised full name of team_club_uid; None wherever"
+    },
+    {
+     "name": "club_join_date",
+     "type": "date | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 405,
+     "ext_status": "unconfirmed",
+     "semantics": "Date the player joined his current club; it disagrees with the"
+    },
+    {
+     "name": "natural_positions",
+     "type": "tuple[str, ...]",
+     "file": "src/fmsave/models/players.py",
+     "line": 406,
+     "ext_status": "verified",
+     "semantics": "Position codes rated at least 18, best first."
+    },
+    {
+     "name": "accomplished_positions",
+     "type": "tuple[str, ...]",
+     "file": "src/fmsave/models/players.py",
+     "line": 407,
+     "ext_status": "verified",
+     "semantics": "Position codes rated 15 to 17, best first. This is an"
+    },
+    {
+     "name": "personality",
+     "type": "Personality | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 408,
+     "ext_status": "unstated",
+     "semantics": "Personality profile, or None when no person block validates."
+    },
+    {
+     "name": "attributes",
+     "type": "Attributes",
+     "file": "src/fmsave/models/players.py",
+     "line": 409,
+     "ext_status": "unstated",
+     "semantics": "The 52 non-foot attributes, on the 1 to 20 display scale."
+    },
+    {
+     "name": "raw_attributes",
+     "type": "Attributes",
+     "file": "src/fmsave/models/players.py",
+     "line": 410,
+     "ext_status": "unstated",
+     "semantics": "The same 52 attributes, on the 1 to 100 raw scale."
+    },
+    {
+     "name": "left_foot",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 411,
+     "ext_status": "verified",
+     "semantics": "Left foot strength, on the 1 to 20 display scale."
+    },
+    {
+     "name": "right_foot",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 412,
+     "ext_status": "verified",
+     "semantics": "Right foot strength, on the 1 to 20 display scale."
+    },
+    {
+     "name": "raw_left_foot",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 413,
+     "ext_status": "verified",
+     "semantics": "Left foot strength, on the 1 to 100 raw scale."
+    },
+    {
+     "name": "raw_right_foot",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 414,
+     "ext_status": "verified",
+     "semantics": "Right foot strength, on the 1 to 100 raw scale."
+    },
+    {
+     "name": "positions",
+     "type": "Positions",
+     "file": "src/fmsave/models/players.py",
+     "line": 415,
+     "ext_status": "unstated",
+     "semantics": "The 15 position ratings."
+    },
+    {
+     "name": "transfer_value",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 416,
+     "ext_status": "verified",
+     "semantics": "Transfer value in the save's base currency, set only when"
+    },
+    {
+     "name": "transfer_value_state",
+     "type": "TransferValueState",
+     "file": "src/fmsave/models/players.py",
+     "line": 417,
+     "ext_status": "unconfirmed",
+     "semantics": "How transfer_value was read from the save (unconfirmed)."
+    },
+    {
+     "name": "raw_condition",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 418,
+     "ext_status": "verified",
+     "semantics": "Condition, on the 0 to 10000 scale the save stores it on. The"
+    },
+    {
+     "name": "raw_match_sharpness",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 419,
+     "ext_status": "verified",
+     "semantics": "Match sharpness, on the 0 to 10000 scale the save stores"
+    },
+    {
+     "name": "traits",
+     "type": "tuple[CodedValue[Trait], ...]",
+     "file": "src/fmsave/models/players.py",
+     "line": 420,
+     "ext_status": "verified",
+     "semantics": "Named player traits; an unnamed bit is Trait.UNKNOWN with raw set to the"
+    },
+    {
+     "name": "trait_bits",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 421,
+     "ext_status": "verified",
+     "semantics": "The raw trait bitmask, or None when no person block validates."
+    },
+    {
+     "name": "on_loan",
+     "type": "bool | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 422,
+     "ext_status": "verified",
+     "semantics": "Whether the player is on loan from the club of his contract in effect:"
+    },
+    {
+     "name": "loan_parent_club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 423,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the club of the contract in effect when on_loan is"
+    },
+    {
+     "name": "loan_parent_club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 424,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of loan_parent_club_uid (unconfirmed)."
+    },
+    {
+     "name": "loan_start",
+     "type": "date | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 425,
+     "ext_status": "verified",
+     "semantics": "Date the loan began when on_loan is True, else None. It is also None"
+    },
+    {
+     "name": "loan_end",
+     "type": "date | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 426,
+     "ext_status": "verified",
+     "semantics": "Date the loan ends when on_loan is True, else None."
+    },
+    {
+     "name": "contract",
+     "type": "Contract | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 427,
+     "ext_status": "unstated",
+     "semantics": "The player's current contract, or None when a current contract cannot be"
+    },
+    {
+     "name": "suspensions",
+     "type": "tuple[PlayerSuspension, ...] | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 428,
+     "ext_status": "verified",
+     "semantics": "The player's unserved suspensions, in the order the save stores them,"
+    }
+   ]
+  },
+  {
+   "entity": "Staff",
+   "priority": true,
+   "file": "src/fmsave/models/staff.py",
+   "field_count": 31,
+   "verified_count": 5,
+   "unconfirmed_count": 21,
+   "fields": [
+    {
+     "name": "uid",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 256,
+     "ext_status": "unconfirmed",
+     "semantics": "The id fmsave reads for the person's object and joins every table on. It is not"
+    },
+    {
+     "name": "unique_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 257,
+     "ext_status": "unconfirmed",
+     "semantics": "The person's Unique ID in the game database, the same in every new game"
+    },
+    {
+     "name": "is_human_manager",
+     "type": "bool",
+     "file": "src/fmsave/models/staff.py",
+     "line": 258,
+     "ext_status": "unconfirmed",
+     "semantics": "Whether this is the save's own human manager (unconfirmed)."
+    },
+    {
+     "name": "name",
+     "type": "str | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 259,
+     "ext_status": "unconfirmed",
+     "semantics": "Common name, else first and last name, else legal name (unconfirmed)."
+    },
+    {
+     "name": "first_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 260,
+     "ext_status": "unconfirmed",
+     "semantics": "First name (unconfirmed)."
+    },
+    {
+     "name": "last_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 261,
+     "ext_status": "unconfirmed",
+     "semantics": "Surname (unconfirmed)."
+    },
+    {
+     "name": "common_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 262,
+     "ext_status": "unconfirmed",
+     "semantics": "The name the game shows in place of the full name (unconfirmed)."
+    },
+    {
+     "name": "full_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 263,
+     "ext_status": "unconfirmed",
+     "semantics": "First and last name together, when both are known (unconfirmed)."
+    },
+    {
+     "name": "legal_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 264,
+     "ext_status": "unconfirmed",
+     "semantics": "The stored legal name (unconfirmed)."
+    },
+    {
+     "name": "birth_date",
+     "type": "date | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 265,
+     "ext_status": "unconfirmed",
+     "semantics": "Date of birth (unconfirmed)."
+    },
+    {
+     "name": "age",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 266,
+     "ext_status": "unconfirmed",
+     "semantics": "Age at the save's in-game date (unconfirmed)."
+    },
+    {
+     "name": "nation_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 267,
+     "ext_status": "unconfirmed",
+     "semantics": "Save-local nation id (unconfirmed)."
+    },
+    {
+     "name": "club_uid",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 268,
+     "ext_status": "verified",
+     "semantics": "Uid of the club the person works for."
+    },
+    {
+     "name": "club_name",
+     "type": "str",
+     "file": "src/fmsave/models/staff.py",
+     "line": 269,
+     "ext_status": "verified",
+     "semantics": "Denormalised full name of club_uid."
+    },
+    {
+     "name": "team_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 270,
+     "ext_status": "verified",
+     "semantics": "The team his contract registers him with, or on FM27 the team of a role he"
+    },
+    {
+     "name": "team_slot",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 271,
+     "ext_status": "unconfirmed",
+     "semantics": "That team's slot in the club's team list, None wherever team_id is"
+    },
+    {
+     "name": "job",
+     "type": "CodedValue[StaffJob] | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 272,
+     "ext_status": "unconfirmed",
+     "semantics": "His job at the club, None where no record of it is read, which is every row on"
+    },
+    {
+     "name": "listed_club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 273,
+     "ext_status": "unconfirmed",
+     "semantics": "The club whose own staff list holds him, which is club_uid unless an"
+    },
+    {
+     "name": "listed_club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 274,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised full name of listed_club_uid; None wherever"
+    },
+    {
+     "name": "in_club_lists",
+     "type": "bool",
+     "file": "src/fmsave/models/staff.py",
+     "line": 275,
+     "ext_status": "unconfirmed",
+     "semantics": "Whether a club's staff list holds him at all (unconfirmed)."
+    },
+    {
+     "name": "list_indexes",
+     "type": "tuple[int, ...]",
+     "file": "src/fmsave/models/staff.py",
+     "line": 276,
+     "ext_status": "unconfirmed",
+     "semantics": "Which of the three lists hold him, 0 to 2, empty when none does"
+    },
+    {
+     "name": "has_contract",
+     "type": "bool",
+     "file": "src/fmsave/models/staff.py",
+     "line": 277,
+     "ext_status": "unconfirmed",
+     "semantics": "Whether a contract at club_uid was read for him (unconfirmed)."
+    },
+    {
+     "name": "wage",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 278,
+     "ext_status": "verified",
+     "semantics": "What the contract pays, per week, in the save's base currency; None without a"
+    },
+    {
+     "name": "contract_start",
+     "type": "date | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 279,
+     "ext_status": "verified",
+     "semantics": "The day the contract started."
+    },
+    {
+     "name": "contract_end",
+     "type": "date | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 280,
+     "ext_status": "unconfirmed",
+     "semantics": "The day it ends, None when the save stores none (unconfirmed)."
+    },
+    {
+     "name": "ability",
+     "type": "Ability | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 281,
+     "ext_status": "unstated",
+     "semantics": "Current and potential ability, None when the object carries no readable"
+    },
+    {
+     "name": "personality",
+     "type": "Personality | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 282,
+     "ext_status": "unstated",
+     "semantics": "The eight personality values, None without a name block."
+    },
+    {
+     "name": "attributes",
+     "type": "StaffAttributes | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 283,
+     "ext_status": "unstated",
+     "semantics": "Readable staff ratings on their stored scales, None without a name block."
+    },
+    {
+     "name": "preferences",
+     "type": "StaffPreferences | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 284,
+     "ext_status": "unstated",
+     "semantics": "The named preferences, None when the object carries no readable ability"
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/staff.py",
+     "line": 285,
+     "ext_status": "unconfirmed",
+     "semantics": "Numeric fields with no known meaning (unconfirmed). The ability-block keys"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/staff.py",
+     "line": 287,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "Club",
+   "priority": true,
+   "file": "src/fmsave/models/clubs.py",
+   "field_count": 13,
+   "verified_count": 2,
+   "unconfirmed_count": 11,
+   "fields": [
+    {
+     "name": "uid",
+     "type": "int",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 78,
+     "ext_status": "unconfirmed",
+     "semantics": "fmsave's join key for this club within the save. The value 0 is valid. Use"
+    },
+    {
+     "name": "name",
+     "type": "str",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 79,
+     "ext_status": "unconfirmed",
+     "semantics": "Full club name (unconfirmed)."
+    },
+    {
+     "name": "short_name",
+     "type": "str",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 80,
+     "ext_status": "unconfirmed",
+     "semantics": "Short club name (unconfirmed)."
+    },
+    {
+     "name": "nation_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 81,
+     "ext_status": "unconfirmed",
+     "semantics": "Save-local id of the nation whose league the club plays in, or None when the"
+    },
+    {
+     "name": "fa_nation_id",
+     "type": "int",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 82,
+     "ext_status": "unconfirmed",
+     "semantics": "Save-local id of the nation whose football association the club belongs to. It"
+    },
+    {
+     "name": "city_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 83,
+     "ext_status": "unconfirmed",
+     "semantics": "Id of the club's city, or None when the save stores the missing-id marker"
+    },
+    {
+     "name": "teams",
+     "type": "tuple[Team, ...]",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 84,
+     "ext_status": "unconfirmed",
+     "semantics": "The club's own teams in stored order, including slots no player is registered"
+    },
+    {
+     "name": "parent_club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 85,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the club that controls this one, when another club lists one"
+    },
+    {
+     "name": "parent_club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 86,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised full name of parent_club_uid; None wherever"
+    },
+    {
+     "name": "reputation",
+     "type": "int | None",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 87,
+     "ext_status": "verified",
+     "semantics": "Club reputation from 1 to 10000, or None when it cannot be read."
+    },
+    {
+     "name": "last_league_position",
+     "type": "int | None",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 88,
+     "ext_status": "verified",
+     "semantics": "League position at the end of the last completed season, or"
+    },
+    {
+     "name": "unique_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 89,
+     "ext_status": "unconfirmed",
+     "semantics": "The club's Unique ID in the game database, for matching across separate"
+    },
+    {
+     "name": "gender",
+     "type": "CodedValue[ClubGender] | None",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 90,
+     "ext_status": "unconfirmed",
+     "semantics": "The club's stored gender code, or None when no team list parses. Unknown"
+    }
+   ]
+  },
+  {
+   "entity": "Nation",
+   "priority": true,
+   "file": "src/fmsave/models/nations.py",
+   "field_count": 2,
+   "verified_count": 0,
+   "unconfirmed_count": 2,
+   "fields": [
+    {
+     "name": "nation_id",
+     "type": "int",
+     "file": "src/fmsave/models/nations.py",
+     "line": 25,
+     "ext_status": "unconfirmed",
+     "semantics": "Save-local nation id, counted from 0. Other tables' nation fields join"
+    },
+    {
+     "name": "database_id",
+     "type": "int",
+     "file": "src/fmsave/models/nations.py",
+     "line": 26,
+     "ext_status": "unconfirmed",
+     "semantics": "The nation's id in the game's installed database, used to join external"
+    }
+   ]
+  },
+  {
+   "entity": "Contract",
+   "priority": true,
+   "file": "src/fmsave/models/contracts.py",
+   "field_count": 25,
+   "verified_count": 8,
+   "unconfirmed_count": 16,
+   "fields": [
+    {
+     "name": "player_uid",
+     "type": "int",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 230,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the player this contract belongs to (unconfirmed)."
+    },
+    {
+     "name": "player_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 231,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of player_uid (unconfirmed)."
+    },
+    {
+     "name": "club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 232,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the contracting club of the record in effect, or None when no"
+    },
+    {
+     "name": "club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 233,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of club_uid (unconfirmed)."
+    },
+    {
+     "name": "team_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 234,
+     "ext_status": "unconfirmed",
+     "semantics": "Id of the contracting team of the record in effect, or None"
+    },
+    {
+     "name": "wage",
+     "type": "int | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 235,
+     "ext_status": "unconfirmed",
+     "semantics": "Weekly wage from the record in effect, in the save's base currency"
+    },
+    {
+     "name": "start",
+     "type": "date | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 236,
+     "ext_status": "unconfirmed",
+     "semantics": "Contract start date, from the record in effect (unconfirmed)."
+    },
+    {
+     "name": "end",
+     "type": "date | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 237,
+     "ext_status": "verified",
+     "semantics": "Contract end date."
+    },
+    {
+     "name": "end_source",
+     "type": "ContractEndSource",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 238,
+     "ext_status": "verified",
+     "semantics": "Where end was read from."
+    },
+    {
+     "name": "squad_status",
+     "type": "CodedValue[SquadStatus] | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 239,
+     "ext_status": "verified",
+     "semantics": "Squad status from the terms of the record in effect, the role agreed in"
+    },
+    {
+     "name": "kind",
+     "type": "CodedValue[ContractType] | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 240,
+     "ext_status": "verified",
+     "semantics": "The contract's type from the terms of the record in effect, or None when it"
+    },
+    {
+     "name": "clauses",
+     "type": "tuple[Clause, ...]",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 241,
+     "ext_status": "verified",
+     "semantics": "Clauses from the terms of the record in effect, or () when it gives no terms"
+    },
+    {
+     "name": "on_loan",
+     "type": "bool | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 242,
+     "ext_status": "verified",
+     "semantics": "Whether the player is on loan from the club of the contract in effect:"
+    },
+    {
+     "name": "loan_parent_club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 243,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the club of the contract in effect when on_loan is"
+    },
+    {
+     "name": "loan_parent_club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 244,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of loan_parent_club_uid (unconfirmed)."
+    },
+    {
+     "name": "loan_start",
+     "type": "date | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 245,
+     "ext_status": "verified",
+     "semantics": "Date the loan began when on_loan is True, else None. It is also None"
+    },
+    {
+     "name": "loan_end",
+     "type": "date | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 246,
+     "ext_status": "verified",
+     "semantics": "Date the loan ends when on_loan is True, else None."
+    },
+    {
+     "name": "event_count",
+     "type": "int | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 247,
+     "ext_status": "unconfirmed",
+     "semantics": "Contract event count from the terms of the record in effect, or None"
+    },
+    {
+     "name": "chain",
+     "type": "tuple[ContractChainEntry, ...]",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 248,
+     "ext_status": "unconfirmed",
+     "semantics": "Every chain record, oldest first (unconfirmed)."
+    },
+    {
+     "name": "chain_club_uids",
+     "type": "tuple[int | None, ...]",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 249,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the contracting club for each chain record, in the same"
+    },
+    {
+     "name": "chain_club_names",
+     "type": "tuple[str | None, ...]",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 250,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised names for chain_club_uids, in the same order"
+    },
+    {
+     "name": "chain_club_uids_with_terms",
+     "type": "tuple[int, ...]",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 251,
+     "ext_status": "unconfirmed",
+     "semantics": "Uids of the clubs of the chain records that carry their"
+    },
+    {
+     "name": "chain_club_names_with_terms",
+     "type": "tuple[str | None, ...]",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 252,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised names for chain_club_uids_with_terms, in"
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 253,
+     "ext_status": "unconfirmed",
+     "semantics": "Numeric fields with no known meaning, from the terms of the record in"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 255,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "Competition",
+   "priority": true,
+   "file": "src/fmsave/models/competitions.py",
+   "field_count": 4,
+   "verified_count": 2,
+   "unconfirmed_count": 2,
+   "fields": [
+    {
+     "name": "id",
+     "type": "int",
+     "file": "src/fmsave/models/competitions.py",
+     "line": 103,
+     "ext_status": "verified",
+     "semantics": "The competition id, in the stage id space, which `Suspension.competition_id`"
+    },
+    {
+     "name": "database_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/competitions.py",
+     "line": 104,
+     "ext_status": "unconfirmed",
+     "semantics": "The competition's id in the game's own editor database, which is stable"
+    },
+    {
+     "name": "name",
+     "type": "str | None",
+     "file": "src/fmsave/models/competitions.py",
+     "line": 105,
+     "ext_status": "unconfirmed",
+     "semantics": "The competition's name, which is None unless a name map is supplied: the save"
+    },
+    {
+     "name": "stage_ids",
+     "type": "tuple[int, ...]",
+     "file": "src/fmsave/models/competitions.py",
+     "line": 106,
+     "ext_status": "verified",
+     "semantics": "The ids of this competition's stages, in the order the stage table stores"
+    }
+   ]
+  },
+  {
+   "entity": "Stadium",
+   "priority": true,
+   "file": "src/fmsave/models/stadiums.py",
+   "field_count": 20,
+   "verified_count": 10,
+   "unconfirmed_count": 9,
+   "fields": [
+    {
+     "name": "uid",
+     "type": "int",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 94,
+     "ext_status": "unconfirmed",
+     "semantics": "The ground's uid, which is the stored value plus one, the same convention club"
+    },
+    {
+     "name": "name",
+     "type": "str | None",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 95,
+     "ext_status": "unconfirmed",
+     "semantics": "The ground's name as the save stores it inline, or None when the save stores"
+    },
+    {
+     "name": "total_capacity",
+     "type": "int",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 96,
+     "ext_status": "verified",
+     "semantics": "The ground's total capacity, seated and standing together: the"
+    },
+    {
+     "name": "seated_capacity",
+     "type": "int",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 97,
+     "ext_status": "verified",
+     "semantics": "How many of the total are seats: the figure the facilities screen"
+    },
+    {
+     "name": "expansion_capacity",
+     "type": "int",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 98,
+     "ext_status": "verified",
+     "semantics": "The capacity the ground would hold expanded, which is at or above"
+    },
+    {
+     "name": "capacity",
+     "type": "int | None",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 99,
+     "ext_status": "verified",
+     "semantics": "The additional capacity figure on the Facilities screen. It appears"
+    },
+    {
+     "name": "owner_club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 100,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the club that owns the ground, or None when the save names no"
+    },
+    {
+     "name": "owner_club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 101,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of owner_club_uid, or None when there is no owner"
+    },
+    {
+     "name": "home_club_uids",
+     "type": "tuple[int, ...] | None",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 102,
+     "ext_status": "unconfirmed",
+     "semantics": "Uids of the clubs whose home ground this is, in ascending order. It"
+    },
+    {
+     "name": "home_club_names",
+     "type": "tuple[str, ...] | None",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 103,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised names of home_club_uids, in the same order; None"
+    },
+    {
+     "name": "pitch_length_dm",
+     "type": "int",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 104,
+     "ext_status": "verified",
+     "semantics": "The pitch's length in decimetres. The facilities screen shows whole"
+    },
+    {
+     "name": "pitch_width_dm",
+     "type": "int",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 105,
+     "ext_status": "verified",
+     "semantics": "The pitch's width in decimetres. As with the length, a few grounds"
+    },
+    {
+     "name": "pitch_min_length_dm",
+     "type": "int",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 106,
+     "ext_status": "unconfirmed",
+     "semantics": "The shortest pitch length the ground allows (unconfirmed)."
+    },
+    {
+     "name": "pitch_min_width_dm",
+     "type": "int",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 107,
+     "ext_status": "unconfirmed",
+     "semantics": "The narrowest pitch width the ground allows (unconfirmed)."
+    },
+    {
+     "name": "pitch_max_length_dm",
+     "type": "int",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 108,
+     "ext_status": "verified",
+     "semantics": "The longest pitch length the ground allows."
+    },
+    {
+     "name": "pitch_max_width_dm",
+     "type": "int",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 109,
+     "ext_status": "verified",
+     "semantics": "The widest pitch width the ground allows."
+    },
+    {
+     "name": "built_date",
+     "type": "datetime.date | None",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 110,
+     "ext_status": "verified",
+     "semantics": "The date the ground was built, or None when the save stores none. Grounds"
+    },
+    {
+     "name": "rebuilt_date",
+     "type": "datetime.date | None",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 111,
+     "ext_status": "verified",
+     "semantics": "The date the ground was last rebuilt, or None when the save stores none."
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 112,
+     "ext_status": "unconfirmed",
+     "semantics": "Numeric fields with no known meaning: two capacity-like words, a small code,"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/stadiums.py",
+     "line": 114,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "Team",
+   "priority": true,
+   "file": "src/fmsave/models/clubs.py",
+   "field_count": 4,
+   "verified_count": 0,
+   "unconfirmed_count": 4,
+   "fields": [
+    {
+     "name": "team_id",
+     "type": "int",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 37,
+     "ext_status": "unconfirmed",
+     "semantics": "The team's id, which player records use to name their team (unconfirmed)."
+    },
+    {
+     "name": "slot",
+     "type": "int",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 38,
+     "ext_status": "unconfirmed",
+     "semantics": "Position in the club's team list, 0 for the first entry. Which side each own"
+    },
+    {
+     "name": "club_uid",
+     "type": "int",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 39,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the club whose record stores this team: the club listing it for its"
+    },
+    {
+     "name": "is_affiliate",
+     "type": "bool",
+     "file": "src/fmsave/models/clubs.py",
+     "line": 40,
+     "ext_status": "unconfirmed",
+     "semantics": "Whether the team belongs to an affiliate club the listing club controls"
+    }
+   ]
+  },
+  {
+   "entity": "Ability",
+   "priority": false,
+   "file": "src/fmsave/models/players.py",
+   "field_count": 3,
+   "verified_count": 0,
+   "unconfirmed_count": 3,
+   "fields": [
+    {
+     "name": "current",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 34,
+     "ext_status": "unconfirmed",
+     "semantics": "Current ability (unconfirmed)."
+    },
+    {
+     "name": "potential",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 35,
+     "ext_status": "unconfirmed",
+     "semantics": "Potential ability, or None when the save stores a range code instead"
+    },
+    {
+     "name": "potential_range_code",
+     "type": "int | None",
+     "file": "src/fmsave/models/players.py",
+     "line": 36,
+     "ext_status": "unconfirmed",
+     "semantics": "The stored negative code when potential is unknown, else None"
+    }
+   ]
+  },
+  {
+   "entity": "AffiliateGroup",
+   "priority": false,
+   "file": "src/fmsave/models/affiliates.py",
+   "field_count": 3,
+   "verified_count": 1,
+   "unconfirmed_count": 2,
+   "fields": [
+    {
+     "name": "group_index",
+     "type": "int",
+     "file": "src/fmsave/models/affiliates.py",
+     "line": 45,
+     "ext_status": "verified",
+     "semantics": "The group's own place in the section, counting from zero in stored"
+    },
+    {
+     "name": "club_uids",
+     "type": "tuple[int | None, ...]",
+     "file": "src/fmsave/models/affiliates.py",
+     "line": 46,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of each member, in stored order, None for a member whose stored club"
+    },
+    {
+     "name": "club_names",
+     "type": "tuple[str | None, ...]",
+     "file": "src/fmsave/models/affiliates.py",
+     "line": 47,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised full name of each entry of `club_uids`, aligned with it and"
+    }
+   ]
+  },
+  {
+   "entity": "Attributes",
+   "priority": false,
+   "file": "src/fmsave/models/players.py",
+   "field_count": 52,
+   "verified_count": 52,
+   "unconfirmed_count": 0,
+   "fields": [
+    {
+     "name": "crossing",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 118,
+     "ext_status": "verified",
+     "semantics": "Crossing."
+    },
+    {
+     "name": "dribbling",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 119,
+     "ext_status": "verified",
+     "semantics": "Dribbling."
+    },
+    {
+     "name": "finishing",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 120,
+     "ext_status": "verified",
+     "semantics": "Finishing."
+    },
+    {
+     "name": "heading",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 121,
+     "ext_status": "verified",
+     "semantics": "Heading."
+    },
+    {
+     "name": "long_shots",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 122,
+     "ext_status": "verified",
+     "semantics": "Long shots."
+    },
+    {
+     "name": "marking",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 123,
+     "ext_status": "verified",
+     "semantics": "Marking."
+    },
+    {
+     "name": "off_the_ball",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 124,
+     "ext_status": "verified",
+     "semantics": "Off the ball movement."
+    },
+    {
+     "name": "passing",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 125,
+     "ext_status": "verified",
+     "semantics": "Passing."
+    },
+    {
+     "name": "penalty_taking",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 126,
+     "ext_status": "verified",
+     "semantics": "Penalty taking."
+    },
+    {
+     "name": "tackling",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 127,
+     "ext_status": "verified",
+     "semantics": "Tackling."
+    },
+    {
+     "name": "vision",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 128,
+     "ext_status": "verified",
+     "semantics": "Vision."
+    },
+    {
+     "name": "handling",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 129,
+     "ext_status": "verified",
+     "semantics": "Goalkeeping handling."
+    },
+    {
+     "name": "aerial_reach",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 130,
+     "ext_status": "verified",
+     "semantics": "Goalkeeping aerial reach."
+    },
+    {
+     "name": "command_of_area",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 131,
+     "ext_status": "verified",
+     "semantics": "Goalkeeping command of area."
+    },
+    {
+     "name": "communication",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 132,
+     "ext_status": "verified",
+     "semantics": "Goalkeeping communication."
+    },
+    {
+     "name": "kicking",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 133,
+     "ext_status": "verified",
+     "semantics": "Goalkeeping kicking."
+    },
+    {
+     "name": "throwing",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 134,
+     "ext_status": "verified",
+     "semantics": "Goalkeeping throwing."
+    },
+    {
+     "name": "anticipation",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 135,
+     "ext_status": "verified",
+     "semantics": "Anticipation."
+    },
+    {
+     "name": "decisions",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 136,
+     "ext_status": "verified",
+     "semantics": "Decisions."
+    },
+    {
+     "name": "one_on_ones",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 137,
+     "ext_status": "verified",
+     "semantics": "Goalkeeping one-on-ones."
+    },
+    {
+     "name": "positioning",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 138,
+     "ext_status": "verified",
+     "semantics": "Positioning (an attribute, not a position rating)."
+    },
+    {
+     "name": "reflexes",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 139,
+     "ext_status": "verified",
+     "semantics": "Goalkeeping reflexes."
+    },
+    {
+     "name": "first_touch",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 140,
+     "ext_status": "verified",
+     "semantics": "First touch."
+    },
+    {
+     "name": "technique",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 141,
+     "ext_status": "verified",
+     "semantics": "Technique."
+    },
+    {
+     "name": "flair",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 142,
+     "ext_status": "verified",
+     "semantics": "Flair."
+    },
+    {
+     "name": "corners",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 143,
+     "ext_status": "verified",
+     "semantics": "Corners."
+    },
+    {
+     "name": "teamwork",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 144,
+     "ext_status": "verified",
+     "semantics": "Teamwork."
+    },
+    {
+     "name": "work_rate",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 145,
+     "ext_status": "verified",
+     "semantics": "Work rate."
+    },
+    {
+     "name": "long_throws",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 146,
+     "ext_status": "verified",
+     "semantics": "Long throws."
+    },
+    {
+     "name": "eccentricity",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 147,
+     "ext_status": "verified",
+     "semantics": "Goalkeeping eccentricity."
+    },
+    {
+     "name": "rushing_out",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 148,
+     "ext_status": "verified",
+     "semantics": "Goalkeeping tendency to rush out."
+    },
+    {
+     "name": "punching",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 149,
+     "ext_status": "verified",
+     "semantics": "Goalkeeping tendency to punch crosses."
+    },
+    {
+     "name": "acceleration",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 150,
+     "ext_status": "verified",
+     "semantics": "Acceleration."
+    },
+    {
+     "name": "free_kick_taking",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 151,
+     "ext_status": "verified",
+     "semantics": "Free kick taking."
+    },
+    {
+     "name": "strength",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 152,
+     "ext_status": "verified",
+     "semantics": "Strength."
+    },
+    {
+     "name": "stamina",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 153,
+     "ext_status": "verified",
+     "semantics": "Stamina."
+    },
+    {
+     "name": "pace",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 154,
+     "ext_status": "verified",
+     "semantics": "Pace."
+    },
+    {
+     "name": "jumping_reach",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 155,
+     "ext_status": "verified",
+     "semantics": "Jumping reach."
+    },
+    {
+     "name": "leadership",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 156,
+     "ext_status": "verified",
+     "semantics": "Leadership."
+    },
+    {
+     "name": "dirtiness",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 157,
+     "ext_status": "verified",
+     "semantics": "Dirtiness, a hidden attribute."
+    },
+    {
+     "name": "balance",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 158,
+     "ext_status": "verified",
+     "semantics": "Balance."
+    },
+    {
+     "name": "bravery",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 159,
+     "ext_status": "verified",
+     "semantics": "Bravery."
+    },
+    {
+     "name": "consistency",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 160,
+     "ext_status": "verified",
+     "semantics": "Consistency, a hidden attribute."
+    },
+    {
+     "name": "aggression",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 161,
+     "ext_status": "verified",
+     "semantics": "Aggression."
+    },
+    {
+     "name": "agility",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 162,
+     "ext_status": "verified",
+     "semantics": "Agility."
+    },
+    {
+     "name": "important_matches",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 163,
+     "ext_status": "verified",
+     "semantics": "Big-match temperament, a hidden attribute."
+    },
+    {
+     "name": "injury_proneness",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 164,
+     "ext_status": "verified",
+     "semantics": "Injury proneness, a hidden attribute."
+    },
+    {
+     "name": "versatility",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 165,
+     "ext_status": "verified",
+     "semantics": "Versatility, a hidden attribute."
+    },
+    {
+     "name": "natural_fitness",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 166,
+     "ext_status": "verified",
+     "semantics": "Natural fitness."
+    },
+    {
+     "name": "determination",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 167,
+     "ext_status": "verified",
+     "semantics": "Determination."
+    },
+    {
+     "name": "composure",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 168,
+     "ext_status": "verified",
+     "semantics": "Composure."
+    },
+    {
+     "name": "concentration",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 169,
+     "ext_status": "verified",
+     "semantics": "Concentration."
+    }
+   ]
+  },
+  {
+   "entity": "Clause",
+   "priority": false,
+   "file": "src/fmsave/models/contracts.py",
+   "field_count": 4,
+   "verified_count": 2,
+   "unconfirmed_count": 1,
+   "fields": [
+    {
+     "name": "unconfirmed",
+     "type": "a minority of MINIMUM_FEE_RELEASE clauses carry one whose meaning no in-game",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 123,
+     "ext_status": "unstated",
+     "semantics": null
+    },
+    {
+     "name": "kind",
+     "type": "CodedValue[ClauseKind]",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 134,
+     "ext_status": "verified",
+     "semantics": "The clause's kind."
+    },
+    {
+     "name": "parameter",
+     "type": "int | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 135,
+     "ext_status": "unconfirmed",
+     "semantics": "The clause's parameter, whose meaning depends on kind; None when the"
+    },
+    {
+     "name": "value",
+     "type": "int | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 136,
+     "ext_status": "verified",
+     "semantics": "The clause's money value, in the save's own money unit and not converted;"
+    }
+   ]
+  },
+  {
+   "entity": "ClubFacilities",
+   "priority": false,
+   "file": "src/fmsave/models/facilities.py",
+   "field_count": 3,
+   "verified_count": 1,
+   "unconfirmed_count": 2,
+   "fields": [
+    {
+     "name": "club_uid",
+     "type": "int",
+     "file": "src/fmsave/models/facilities.py",
+     "line": 101,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the club (unconfirmed)."
+    },
+    {
+     "name": "club_name",
+     "type": "str",
+     "file": "src/fmsave/models/facilities.py",
+     "line": 102,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised full name of club_uid (unconfirmed)."
+    },
+    {
+     "name": "corporate_facilities",
+     "type": "CodedValue[CorporateFacilities]",
+     "file": "src/fmsave/models/facilities.py",
+     "line": 103,
+     "ext_status": "verified",
+     "semantics": "How good the club's corporate facilities are. Every code from 0"
+    }
+   ]
+  },
+  {
+   "entity": "CodedValue",
+   "priority": false,
+   "file": "src/fmsave/models/common.py",
+   "field_count": 2,
+   "verified_count": 0,
+   "unconfirmed_count": 0,
+   "fields": [
+    {
+     "name": "label",
+     "type": "EnumT",
+     "file": "src/fmsave/models/common.py",
+     "line": 29,
+     "ext_status": "unstated",
+     "semantics": "The enum member for the code, or UNKNOWN."
+    },
+    {
+     "name": "raw",
+     "type": "int",
+     "file": "src/fmsave/models/common.py",
+     "line": 30,
+     "ext_status": "unstated",
+     "semantics": "The number exactly as stored in the save."
+    }
+   ]
+  },
+  {
+   "entity": "CompetitionRules",
+   "priority": false,
+   "file": "src/fmsave/models/rules.py",
+   "field_count": 11,
+   "verified_count": 0,
+   "unconfirmed_count": 10,
+   "fields": [
+    {
+     "name": "kind",
+     "type": "RulesBlockKind",
+     "file": "src/fmsave/models/rules.py",
+     "line": 213,
+     "ext_status": "unconfirmed",
+     "semantics": "Which structure the row was read from. Every row is PREAMBLE, since the tagged"
+    },
+    {
+     "name": "competition_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/rules.py",
+     "line": 214,
+     "ext_status": "unconfirmed",
+     "semantics": "The competition of the league table the save stores right after this"
+    },
+    {
+     "name": "competition_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/rules.py",
+     "line": 215,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of competition_id, which is None unless a name map"
+    },
+    {
+     "name": "fixtures_per_club",
+     "type": "int | None",
+     "file": "src/fmsave/models/rules.py",
+     "line": 216,
+     "ext_status": "unconfirmed",
+     "semantics": "How many matches each club plays, which is the number of rounds the"
+    },
+    {
+     "name": "promotion_places",
+     "type": "int | None",
+     "file": "src/fmsave/models/rules.py",
+     "line": 217,
+     "ext_status": "unconfirmed",
+     "semantics": "How many clubs are promoted, or None when the block's two copies of"
+    },
+    {
+     "name": "playoff_places",
+     "type": "int | None",
+     "file": "src/fmsave/models/rules.py",
+     "line": 218,
+     "ext_status": "unconfirmed",
+     "semantics": "How many clubs enter a promotion play-off, or None as promotion_places"
+    },
+    {
+     "name": "relegation_places",
+     "type": "int | None",
+     "file": "src/fmsave/models/rules.py",
+     "line": 219,
+     "ext_status": "unconfirmed",
+     "semantics": "How many clubs are relegated, or None as promotion_places"
+    },
+    {
+     "name": "prize_money",
+     "type": "tuple[int, ...]",
+     "file": "src/fmsave/models/rules.py",
+     "line": 220,
+     "ext_status": "unconfirmed",
+     "semantics": "Prize money by finishing position, in the save's base currency, in"
+    },
+    {
+     "name": "rounds",
+     "type": "tuple[RulesRound, ...]",
+     "file": "src/fmsave/models/rules.py",
+     "line": 221,
+     "ext_status": "unconfirmed",
+     "semantics": "The competition's calendar, in stored order (unconfirmed)."
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/rules.py",
+     "line": 222,
+     "ext_status": "unconfirmed",
+     "semantics": "Numeric fields with no known meaning. \"promotion_byte2\" is the third byte of"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/rules.py",
+     "line": 224,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "ContractChainEntry",
+   "priority": false,
+   "file": "src/fmsave/models/contracts.py",
+   "field_count": 7,
+   "verified_count": 1,
+   "unconfirmed_count": 6,
+   "fields": [
+    {
+     "name": "club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 157,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the contracting club, or None when the team does not resolve"
+    },
+    {
+     "name": "club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 158,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of club_uid (unconfirmed)."
+    },
+    {
+     "name": "team_id",
+     "type": "int",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 159,
+     "ext_status": "unconfirmed",
+     "semantics": "Id of the contracting team, exactly as stored (unconfirmed)."
+    },
+    {
+     "name": "wage",
+     "type": "int",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 160,
+     "ext_status": "unconfirmed",
+     "semantics": "Weekly wage, in the save's base currency (unconfirmed)."
+    },
+    {
+     "name": "start",
+     "type": "date | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 161,
+     "ext_status": "unconfirmed",
+     "semantics": "Start date of this spell (unconfirmed)."
+    },
+    {
+     "name": "end",
+     "type": "date | None",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 162,
+     "ext_status": "verified",
+     "semantics": "End date from this record's own terms, or None when it gives no terms up or"
+    },
+    {
+     "name": "has_terms",
+     "type": "bool",
+     "file": "src/fmsave/models/contracts.py",
+     "line": 163,
+     "ext_status": "unconfirmed",
+     "semantics": "Whether this record carries the terms agreed in it: an end date, a squad"
+    }
+   ]
+  },
+  {
+   "entity": "FinanceMonth",
+   "priority": false,
+   "file": "src/fmsave/models/finances.py",
+   "field_count": 15,
+   "verified_count": 6,
+   "unconfirmed_count": 9,
+   "fields": [
+    {
+     "name": "club_uid",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 75,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the club (unconfirmed)."
+    },
+    {
+     "name": "club_name",
+     "type": "str",
+     "file": "src/fmsave/models/finances.py",
+     "line": 76,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised full name of club_uid (unconfirmed)."
+    },
+    {
+     "name": "month",
+     "type": "date",
+     "file": "src/fmsave/models/finances.py",
+     "line": 77,
+     "ext_status": "verified",
+     "semantics": "First day of the month the row covers, worked out from the save's own date: the"
+    },
+    {
+     "name": "balance",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 78,
+     "ext_status": "verified",
+     "semantics": "The club's balance at the end of the month. On most clubs whose series"
+    },
+    {
+     "name": "transfer_budget_allocated",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 79,
+     "ext_status": "unconfirmed",
+     "semantics": "A transfer figure with no confirmed meaning"
+    },
+    {
+     "name": "transfer_budget_remaining",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 80,
+     "ext_status": "verified",
+     "semantics": "What is left of the transfer budget."
+    },
+    {
+     "name": "wage_budget_weekly",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 81,
+     "ext_status": "verified",
+     "semantics": "The wage budget, per week; a club's screen showed this times 52."
+    },
+    {
+     "name": "wage_payroll_weekly",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 82,
+     "ext_status": "verified",
+     "semantics": "The wages being paid, per week; likewise times 52 on the screen."
+    },
+    {
+     "name": "income_excluding_transfers",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 83,
+     "ext_status": "unconfirmed",
+     "semantics": "The month's income other than transfer fees"
+    },
+    {
+     "name": "net_transfers",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 84,
+     "ext_status": "unconfirmed",
+     "semantics": "The month's transfer flow, **positive for a net spend** (unconfirmed)."
+    },
+    {
+     "name": "wage_bill",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 85,
+     "ext_status": "unconfirmed",
+     "semantics": "The month's wage expenditure (unconfirmed)."
+    },
+    {
+     "name": "net",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 86,
+     "ext_status": "verified",
+     "semantics": "The month's income less its expenditure."
+    },
+    {
+     "name": "expenditure_excluding_transfers",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 87,
+     "ext_status": "unconfirmed",
+     "semantics": "The month's expenditure other than transfer fees"
+    },
+    {
+     "name": "total_income",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 88,
+     "ext_status": "unconfirmed",
+     "semantics": "The month's total income (unconfirmed)."
+    },
+    {
+     "name": "total_expenditure",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 89,
+     "ext_status": "unconfirmed",
+     "semantics": "The month's total expenditure (unconfirmed)."
+    }
+   ]
+  },
+  {
+   "entity": "Fixture",
+   "priority": false,
+   "file": "src/fmsave/models/fixtures.py",
+   "field_count": 28,
+   "verified_count": 22,
+   "unconfirmed_count": 5,
+   "fields": [
+    {
+     "name": "stage_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 110,
+     "ext_status": "verified",
+     "semantics": "The stage this match belongs to, which is the only route to its"
+    },
+    {
+     "name": "competition_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 111,
+     "ext_status": "verified",
+     "semantics": "Id of the competition, in the **stage** id space, reached through the stage;"
+    },
+    {
+     "name": "competition_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 112,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of competition_id, which is None unless a name"
+    },
+    {
+     "name": "round",
+     "type": "CodedValue[CompetitionRound] | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 113,
+     "ext_status": "verified",
+     "semantics": "The stage's round, or None when the match has no stage or its stage carries no"
+    },
+    {
+     "name": "round_index",
+     "type": "int | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 114,
+     "ext_status": "verified",
+     "semantics": "The match's zero-based index within its round, so a matchday is this"
+    },
+    {
+     "name": "date",
+     "type": "datetime.date | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 115,
+     "ext_status": "verified",
+     "semantics": "The kick-off date, or None when the stored date does not decode."
+    },
+    {
+     "name": "kick_off_time",
+     "type": "datetime.time | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 116,
+     "ext_status": "verified",
+     "semantics": "The kick-off time of day, or None when the stored slot does not land"
+    },
+    {
+     "name": "season_start_year",
+     "type": "int | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 117,
+     "ext_status": "verified",
+     "semantics": "The calendar year the season started in, or None when the record"
+    },
+    {
+     "name": "home_team_id",
+     "type": "int",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 118,
+     "ext_status": "verified",
+     "semantics": "The home side's team id, exactly as stored."
+    },
+    {
+     "name": "home_club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 119,
+     "ext_status": "verified",
+     "semantics": "Uid of the club fielding the home team, or None when no club lists"
+    },
+    {
+     "name": "home_club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 120,
+     "ext_status": "verified",
+     "semantics": "Denormalised name of home_club_uid, or None when the team does not"
+    },
+    {
+     "name": "home_club_short_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 121,
+     "ext_status": "verified",
+     "semantics": "Denormalised short name of home_club_uid, or None when the team"
+    },
+    {
+     "name": "home_team_slot",
+     "type": "int | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 122,
+     "ext_status": "verified",
+     "semantics": "The home team's slot in its club's team list, 0 for the first entry,"
+    },
+    {
+     "name": "away_team_id",
+     "type": "int",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 123,
+     "ext_status": "verified",
+     "semantics": "The away side's team id, exactly as stored."
+    },
+    {
+     "name": "away_club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 124,
+     "ext_status": "verified",
+     "semantics": "Uid of the club fielding the away team, or None when no club lists"
+    },
+    {
+     "name": "away_club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 125,
+     "ext_status": "verified",
+     "semantics": "Denormalised name of away_club_uid, or None when the team does not"
+    },
+    {
+     "name": "away_club_short_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 126,
+     "ext_status": "verified",
+     "semantics": "Denormalised short name of away_club_uid, or None when the team"
+    },
+    {
+     "name": "away_team_slot",
+     "type": "int | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 127,
+     "ext_status": "verified",
+     "semantics": "The away team's slot in its club's team list, 0 for the first entry,"
+    },
+    {
+     "name": "home_goals",
+     "type": "int | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 128,
+     "ext_status": "verified",
+     "semantics": "Goals the home side scored, or None when no unambiguous score was"
+    },
+    {
+     "name": "away_goals",
+     "type": "int | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 129,
+     "ext_status": "verified",
+     "semantics": "Goals the away side scored, or None when no unambiguous score was"
+    },
+    {
+     "name": "played",
+     "type": "bool",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 130,
+     "ext_status": "verified",
+     "semantics": "Whether the save marks the match as played."
+    },
+    {
+     "name": "is_neutral_venue",
+     "type": "bool | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 131,
+     "ext_status": "verified",
+     "semantics": "Whether the match was played away from the home club's usual"
+    },
+    {
+     "name": "stadium_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 132,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the ground the match is played at, from the stadium table; None"
+    },
+    {
+     "name": "stadium_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 133,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of stadium_uid. Only a couple of hundred grounds"
+    },
+    {
+     "name": "referee_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 134,
+     "ext_status": "verified",
+     "semantics": "Save-local ID of the referee for a played match, or None when"
+    },
+    {
+     "name": "match_rules_template",
+     "type": "tuple[int, ...]",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 135,
+     "ext_status": "unconfirmed",
+     "semantics": "The three bytes naming the shared match-rules template this"
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 136,
+     "ext_status": "unconfirmed",
+     "semantics": "Numeric fields with no known meaning. \"result_r22\" is the byte stored beside"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/fixtures.py",
+     "line": 138,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "InjuryRecord",
+   "priority": false,
+   "file": "src/fmsave/models/injuries.py",
+   "field_count": 14,
+   "verified_count": 8,
+   "unconfirmed_count": 5,
+   "fields": [
+    {
+     "name": "kind",
+     "type": "InjuryRecordKind",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 137,
+     "ext_status": "verified",
+     "semantics": "Which store the row came from: HISTORY for an injury that happened, TYPED for a"
+    },
+    {
+     "name": "player_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 138,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the person the row is stored against, or None when the save no"
+    },
+    {
+     "name": "player_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 139,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised display name of player_uid; None wherever player_uid is"
+    },
+    {
+     "name": "date",
+     "type": "datetime.date | None",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 140,
+     "ext_status": "verified",
+     "semantics": "When the injury happened, on a HISTORY row. On a TYPED row it is the day the"
+    },
+    {
+     "name": "team_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 141,
+     "ext_status": "verified",
+     "semantics": "Id of the team the person was registered with at the time, on a HISTORY row;"
+    },
+    {
+     "name": "club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 142,
+     "ext_status": "verified",
+     "semantics": "Uid of the club that fields team_id, which for a team another club controls"
+    },
+    {
+     "name": "club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 143,
+     "ext_status": "verified",
+     "semantics": "Denormalised full name of club_uid; None wherever club_uid is."
+    },
+    {
+     "name": "team_slot",
+     "type": "int | None",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 144,
+     "ext_status": "unconfirmed",
+     "semantics": "The team's slot in club_uid's team list, counting that club's own teams"
+    },
+    {
+     "name": "type_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 145,
+     "ext_status": "verified",
+     "semantics": "The injury's type code, on a TYPED row; None on every HISTORY row, which"
+    },
+    {
+     "name": "type_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 146,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of type_id from `Save.injury_types`, None for the codes"
+    },
+    {
+     "name": "cause",
+     "type": "CodedValue[InjuryCause] | None",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 147,
+     "ext_status": "verified",
+     "semantics": "Whether the injury happened in training or in a match, on a HISTORY row; None"
+    },
+    {
+     "name": "severity",
+     "type": "CodedValue[InjurySeverity] | None",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 148,
+     "ext_status": "verified",
+     "semantics": "How bad the injury was, on a HISTORY row; None on every TYPED row. All four"
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 149,
+     "ext_status": "unconfirmed",
+     "semantics": "Numeric fields with no known meaning, each present only on the kind of row"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 151,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "InjuryType",
+   "priority": false,
+   "file": "src/fmsave/models/injuries.py",
+   "field_count": 4,
+   "verified_count": 0,
+   "unconfirmed_count": 3,
+   "fields": [
+    {
+     "name": "id",
+     "type": "int",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 44,
+     "ext_status": "unconfirmed",
+     "semantics": "The code the save stores on an injury of this type (unconfirmed)."
+    },
+    {
+     "name": "name",
+     "type": "str",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 45,
+     "ext_status": "unconfirmed",
+     "semantics": "The game's own name for the injury, in the language the save was written in"
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 46,
+     "ext_status": "unconfirmed",
+     "semantics": "Numeric fields with no known meaning: a flag byte, and a second id in an id"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/injuries.py",
+     "line": 48,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "JobVacancy",
+   "priority": false,
+   "file": "src/fmsave/models/jobs.py",
+   "field_count": 10,
+   "verified_count": 4,
+   "unconfirmed_count": 5,
+   "fields": [
+    {
+     "name": "team_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/jobs.py",
+     "line": 47,
+     "ext_status": "verified",
+     "semantics": "The team the job is at, None where the record names no team."
+    },
+    {
+     "name": "club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/jobs.py",
+     "line": 48,
+     "ext_status": "verified",
+     "semantics": "Uid of the club that fields `team_id`, None for a team no club lists and"
+    },
+    {
+     "name": "club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/jobs.py",
+     "line": 49,
+     "ext_status": "verified",
+     "semantics": "Denormalised full name of club_uid, None wherever club_uid is."
+    },
+    {
+     "name": "team_slot",
+     "type": "int | None",
+     "file": "src/fmsave/models/jobs.py",
+     "line": 50,
+     "ext_status": "unconfirmed",
+     "semantics": "The team's place in that club's own team list, 0 for its first team;"
+    },
+    {
+     "name": "advertised_date",
+     "type": "date | None",
+     "file": "src/fmsave/models/jobs.py",
+     "line": 51,
+     "ext_status": "verified",
+     "semantics": "Date the vacancy was advertised, None when the stored date does not"
+    },
+    {
+     "name": "competition_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/jobs.py",
+     "line": 52,
+     "ext_status": "unconfirmed",
+     "semantics": "Id of the competition the job's team plays in, in the stage id space;"
+    },
+    {
+     "name": "competition_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/jobs.py",
+     "line": 53,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of competition_id, None unless the save was"
+    },
+    {
+     "name": "league_position",
+     "type": "int | None",
+     "file": "src/fmsave/models/jobs.py",
+     "line": 54,
+     "ext_status": "unconfirmed",
+     "semantics": "The team's current position in that competition's table, None where"
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/jobs.py",
+     "line": 55,
+     "ext_status": "unconfirmed",
+     "semantics": "Numeric fields with no known meaning: the role code the vacancy's job title"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/jobs.py",
+     "line": 57,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "LeagueTable",
+   "priority": false,
+   "file": "src/fmsave/models/league_tables.py",
+   "field_count": 4,
+   "verified_count": 1,
+   "unconfirmed_count": 3,
+   "fields": [
+    {
+     "name": "competition_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 238,
+     "ext_status": "unconfirmed",
+     "semantics": "The competition the table was voted to belong to, in the stage id"
+    },
+    {
+     "name": "competition_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 239,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of competition_id, which is None unless a name map"
+    },
+    {
+     "name": "club_count",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 240,
+     "ext_status": "unconfirmed",
+     "semantics": "How many rows the table holds (unconfirmed)."
+    },
+    {
+     "name": "rows",
+     "type": "tuple[LeagueTableRow, ...]",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 241,
+     "ext_status": "verified",
+     "semantics": "One row per club, in the order the save stores the group."
+    }
+   ]
+  },
+  {
+   "entity": "LeagueTableMatch",
+   "priority": false,
+   "file": "src/fmsave/models/league_tables.py",
+   "field_count": 10,
+   "verified_count": 10,
+   "unconfirmed_count": 0,
+   "fields": [
+    {
+     "name": "slot",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 129,
+     "ext_status": "verified",
+     "semantics": "The slot's index in the row, counting from zero."
+    },
+    {
+     "name": "home_or_away",
+     "type": "MatchSide | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 130,
+     "ext_status": "verified",
+     "semantics": "Which side of the match the row's club was, the home one or the away"
+    },
+    {
+     "name": "opponent_team_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 131,
+     "ext_status": "verified",
+     "semantics": "The opponent's team id exactly as stored, or None for an unplayed"
+    },
+    {
+     "name": "opponent_club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 132,
+     "ext_status": "verified",
+     "semantics": "Uid of the club fielding the opponent, or None when the slot is"
+    },
+    {
+     "name": "opponent_club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 133,
+     "ext_status": "verified",
+     "semantics": "Denormalised name of opponent_club_uid, or None when it does not"
+    },
+    {
+     "name": "opponent_club_short_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 134,
+     "ext_status": "verified",
+     "semantics": "Denormalised short name of opponent_club_uid, or None when it"
+    },
+    {
+     "name": "goals_for",
+     "type": "int | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 135,
+     "ext_status": "verified",
+     "semantics": "Goals the club scored, or None for an unplayed slot."
+    },
+    {
+     "name": "goals_against",
+     "type": "int | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 136,
+     "ext_status": "verified",
+     "semantics": "Goals the club conceded, or None for an unplayed slot."
+    },
+    {
+     "name": "outcome",
+     "type": "MatchOutcome | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 137,
+     "ext_status": "verified",
+     "semantics": "Whether the club won, drew or lost, or None for an unplayed slot."
+    },
+    {
+     "name": "points",
+     "type": "int | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 138,
+     "ext_status": "verified",
+     "semantics": "Points the club took from the match, or None for an unplayed slot."
+    }
+   ]
+  },
+  {
+   "entity": "LeagueTableRow",
+   "priority": false,
+   "file": "src/fmsave/models/league_tables.py",
+   "field_count": 21,
+   "verified_count": 13,
+   "unconfirmed_count": 3,
+   "fields": [
+    {
+     "name": "position",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 188,
+     "ext_status": "verified",
+     "semantics": "The club's place in the table, counting from one, which is the order the"
+    },
+    {
+     "name": "team_id",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 189,
+     "ext_status": "verified",
+     "semantics": "The club's first-team id exactly as stored."
+    },
+    {
+     "name": "club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 190,
+     "ext_status": "verified",
+     "semantics": "Uid of the club fielding that team, or None when no club lists it."
+    },
+    {
+     "name": "club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 191,
+     "ext_status": "verified",
+     "semantics": "Denormalised name of club_uid, or None when the team does not resolve."
+    },
+    {
+     "name": "club_short_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 192,
+     "ext_status": "verified",
+     "semantics": "Denormalised short name of club_uid, or None when the team does not"
+    },
+    {
+     "name": "team_slot",
+     "type": "int | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 193,
+     "ext_status": "unconfirmed",
+     "semantics": "The team's slot in its club's team list, 0 for the first entry, or None when"
+    },
+    {
+     "name": "played",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 194,
+     "ext_status": "verified",
+     "semantics": "Matches played in total. On FM27 some cup group stages count matches here that"
+    },
+    {
+     "name": "won",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 195,
+     "ext_status": "verified",
+     "semantics": "Matches won in total."
+    },
+    {
+     "name": "drawn",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 196,
+     "ext_status": "verified",
+     "semantics": "Matches drawn in total."
+    },
+    {
+     "name": "lost",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 197,
+     "ext_status": "verified",
+     "semantics": "Matches lost in total."
+    },
+    {
+     "name": "goals_for",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 198,
+     "ext_status": "verified",
+     "semantics": "Goals scored in total."
+    },
+    {
+     "name": "goals_against",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 199,
+     "ext_status": "verified",
+     "semantics": "Goals conceded in total."
+    },
+    {
+     "name": "points",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 200,
+     "ext_status": "verified",
+     "semantics": "Points taken in total, after any adjustment such as a points deduction, so it"
+    },
+    {
+     "name": "home",
+     "type": "LeagueTableSplit",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 201,
+     "ext_status": "unstated",
+     "semantics": "The club's home record (every field unconfirmed)."
+    },
+    {
+     "name": "away",
+     "type": "LeagueTableSplit",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 202,
+     "ext_status": "unstated",
+     "semantics": "The club's away record (every field unconfirmed)."
+    },
+    {
+     "name": "first_half",
+     "type": "LeagueTableSplit",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 203,
+     "ext_status": "unstated",
+     "semantics": "The club's record in the first half of the season (every field"
+    },
+    {
+     "name": "second_half",
+     "type": "LeagueTableSplit",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 204,
+     "ext_status": "unstated",
+     "semantics": "The club's record in the second half of the season (every field"
+    },
+    {
+     "name": "rounds_per_venue",
+     "type": "int | None",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 205,
+     "ext_status": "unconfirmed",
+     "semantics": "How many rounds the group plays at each venue, so the row holds twice"
+    },
+    {
+     "name": "matches",
+     "type": "tuple[LeagueTableMatch, ...]",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 206,
+     "ext_status": "verified",
+     "semantics": "One entry per match slot, in stored order, including slots never played;"
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 207,
+     "ext_status": "unconfirmed",
+     "semantics": "The 19 bytes stored in front of the block, one int per byte. The first of"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 209,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "LeagueTableSplit",
+   "priority": false,
+   "file": "src/fmsave/models/league_tables.py",
+   "field_count": 7,
+   "verified_count": 0,
+   "unconfirmed_count": 7,
+   "fields": [
+    {
+     "name": "played",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 81,
+     "ext_status": "unconfirmed",
+     "semantics": "Matches played in this split (unconfirmed)."
+    },
+    {
+     "name": "won",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 82,
+     "ext_status": "unconfirmed",
+     "semantics": "Matches won (unconfirmed)."
+    },
+    {
+     "name": "drawn",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 83,
+     "ext_status": "unconfirmed",
+     "semantics": "Matches drawn (unconfirmed)."
+    },
+    {
+     "name": "lost",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 84,
+     "ext_status": "unconfirmed",
+     "semantics": "Matches lost (unconfirmed)."
+    },
+    {
+     "name": "goals_for",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 85,
+     "ext_status": "unconfirmed",
+     "semantics": "Goals scored (unconfirmed)."
+    },
+    {
+     "name": "goals_against",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 86,
+     "ext_status": "unconfirmed",
+     "semantics": "Goals conceded (unconfirmed)."
+    },
+    {
+     "name": "points",
+     "type": "int",
+     "file": "src/fmsave/models/league_tables.py",
+     "line": 87,
+     "ext_status": "unconfirmed",
+     "semantics": "Points taken (unconfirmed)."
+    }
+   ]
+  },
+  {
+   "entity": "ManagedClub",
+   "priority": false,
+   "file": "src/fmsave/models/managed.py",
+   "field_count": 8,
+   "verified_count": 0,
+   "unconfirmed_count": 8,
+   "fields": [
+    {
+     "name": "club_uid",
+     "type": "int",
+     "file": "src/fmsave/models/managed.py",
+     "line": 42,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the managed club (unconfirmed)."
+    },
+    {
+     "name": "club_name",
+     "type": "str",
+     "file": "src/fmsave/models/managed.py",
+     "line": 43,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised full name of club_uid (unconfirmed)."
+    },
+    {
+     "name": "club_short_name",
+     "type": "str",
+     "file": "src/fmsave/models/managed.py",
+     "line": 44,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised short name of club_uid (unconfirmed)."
+    },
+    {
+     "name": "manager_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/managed.py",
+     "line": 45,
+     "ext_status": "unconfirmed",
+     "semantics": "The human manager's name as the save summary stores it, or None when"
+    },
+    {
+     "name": "manager_staff_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/managed.py",
+     "line": 46,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the human manager's own record, which is a `Staff.uid`"
+    },
+    {
+     "name": "balance",
+     "type": "int | None",
+     "file": "src/fmsave/models/managed.py",
+     "line": 47,
+     "ext_status": "unconfirmed",
+     "semantics": "The club's balance on the save's date, the finances screen's Overall"
+    },
+    {
+     "name": "scouting_budget",
+     "type": "int | None",
+     "file": "src/fmsave/models/managed.py",
+     "line": 48,
+     "ext_status": "unconfirmed",
+     "semantics": "The club's scouting budget for the season, in the same unit"
+    },
+    {
+     "name": "scouting_budget_remaining",
+     "type": "int | None",
+     "file": "src/fmsave/models/managed.py",
+     "line": 49,
+     "ext_status": "unconfirmed",
+     "semantics": "What is left of scouting_budget (unconfirmed). None"
+    }
+   ]
+  },
+  {
+   "entity": "MentoringGroup",
+   "priority": false,
+   "file": "src/fmsave/models/training.py",
+   "field_count": 8,
+   "verified_count": 6,
+   "unconfirmed_count": 2,
+   "fields": [
+    {
+     "name": "team_id",
+     "type": "int",
+     "file": "src/fmsave/models/training.py",
+     "line": 165,
+     "ext_status": "verified",
+     "semantics": "The team the group belongs to, as the save stores it."
+    },
+    {
+     "name": "club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/training.py",
+     "line": 166,
+     "ext_status": "verified",
+     "semantics": "Uid of the club that fields `team_id`, None for a team no club lists."
+    },
+    {
+     "name": "club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/training.py",
+     "line": 167,
+     "ext_status": "verified",
+     "semantics": "Denormalised full name of club_uid."
+    },
+    {
+     "name": "team_slot",
+     "type": "int | None",
+     "file": "src/fmsave/models/training.py",
+     "line": 168,
+     "ext_status": "unconfirmed",
+     "semantics": "The team's place in that club's own team list, 0 for its first team; None"
+    },
+    {
+     "name": "group_number",
+     "type": "int",
+     "file": "src/fmsave/models/training.py",
+     "line": 169,
+     "ext_status": "unconfirmed",
+     "semantics": "The number the save stores with the group, which runs from one up"
+    },
+    {
+     "name": "label",
+     "type": "str",
+     "file": "src/fmsave/models/training.py",
+     "line": 170,
+     "ext_status": "verified",
+     "semantics": "The group's label as the save stores it: the game's default wording with its"
+    },
+    {
+     "name": "member_uids",
+     "type": "tuple[int | None, ...]",
+     "file": "src/fmsave/models/training.py",
+     "line": 171,
+     "ext_status": "verified",
+     "semantics": "Uid of each member, in stored order, None for a member whose stored"
+    },
+    {
+     "name": "member_names",
+     "type": "tuple[str | None, ...]",
+     "file": "src/fmsave/models/training.py",
+     "line": 172,
+     "ext_status": "verified",
+     "semantics": "Denormalised name of each entry of `member_uids`, aligned with it and"
+    }
+   ]
+  },
+  {
+   "entity": "Official",
+   "priority": false,
+   "file": "src/fmsave/models/officials.py",
+   "field_count": 3,
+   "verified_count": 3,
+   "unconfirmed_count": 0,
+   "fields": [
+    {
+     "name": "referee_id",
+     "type": "int",
+     "file": "src/fmsave/models/officials.py",
+     "line": 20,
+     "ext_status": "verified",
+     "semantics": "Save-local ID used by `Fixture.referee_id`."
+    },
+    {
+     "name": "person_uid",
+     "type": "int",
+     "file": "src/fmsave/models/officials.py",
+     "line": 21,
+     "ext_status": "verified",
+     "semantics": "The official's person UID."
+    },
+    {
+     "name": "name",
+     "type": "str | None",
+     "file": "src/fmsave/models/officials.py",
+     "line": 22,
+     "ext_status": "verified",
+     "semantics": "The official's name, or None when no name resolves."
+    }
+   ]
+  },
+  {
+   "entity": "Personality",
+   "priority": false,
+   "file": "src/fmsave/models/players.py",
+   "field_count": 8,
+   "verified_count": 8,
+   "unconfirmed_count": 0,
+   "fields": [
+    {
+     "name": "adaptability",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 228,
+     "ext_status": "verified",
+     "semantics": "Adaptability."
+    },
+    {
+     "name": "ambition",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 229,
+     "ext_status": "verified",
+     "semantics": "Ambition."
+    },
+    {
+     "name": "loyalty",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 230,
+     "ext_status": "verified",
+     "semantics": "Loyalty."
+    },
+    {
+     "name": "pressure",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 231,
+     "ext_status": "verified",
+     "semantics": "Pressure."
+    },
+    {
+     "name": "professionalism",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 232,
+     "ext_status": "verified",
+     "semantics": "Professionalism."
+    },
+    {
+     "name": "sportsmanship",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 233,
+     "ext_status": "verified",
+     "semantics": "Sportsmanship."
+    },
+    {
+     "name": "temperament",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 234,
+     "ext_status": "verified",
+     "semantics": "Temperament."
+    },
+    {
+     "name": "controversy",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 235,
+     "ext_status": "verified",
+     "semantics": "Controversy."
+    }
+   ]
+  },
+  {
+   "entity": "PlayerMatchStats",
+   "priority": false,
+   "file": "src/fmsave/models/matches.py",
+   "field_count": 22,
+   "verified_count": 12,
+   "unconfirmed_count": 9,
+   "fields": [
+    {
+     "name": "player_uid",
+     "type": "int",
+     "file": "src/fmsave/models/matches.py",
+     "line": 118,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the player the record belongs to, which is the player whose object"
+    },
+    {
+     "name": "player_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/matches.py",
+     "line": 119,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of player_uid (unconfirmed)."
+    },
+    {
+     "name": "date",
+     "type": "datetime.date",
+     "file": "src/fmsave/models/matches.py",
+     "line": 120,
+     "ext_status": "verified",
+     "semantics": "The date the match was played."
+    },
+    {
+     "name": "competition_id",
+     "type": "int",
+     "file": "src/fmsave/models/matches.py",
+     "line": 121,
+     "ext_status": "verified",
+     "semantics": "Id of the competition, in the **stage** id space. It is stored on the"
+    },
+    {
+     "name": "opponent_team_id",
+     "type": "int",
+     "file": "src/fmsave/models/matches.py",
+     "line": 122,
+     "ext_status": "verified",
+     "semantics": "The opposing team's id, exactly as stored. It is a team id and never"
+    },
+    {
+     "name": "opponent_club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/matches.py",
+     "line": 123,
+     "ext_status": "verified",
+     "semantics": "Uid of the club fielding the opposing team, or None when no club"
+    },
+    {
+     "name": "opponent_club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/matches.py",
+     "line": 124,
+     "ext_status": "verified",
+     "semantics": "Denormalised name of opponent_club_uid, or None when the team does"
+    },
+    {
+     "name": "opponent_club_short_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/matches.py",
+     "line": 125,
+     "ext_status": "verified",
+     "semantics": "Denormalised short name of opponent_club_uid, or None when"
+    },
+    {
+     "name": "opponent_team_slot",
+     "type": "int | None",
+     "file": "src/fmsave/models/matches.py",
+     "line": 126,
+     "ext_status": "unconfirmed",
+     "semantics": "The opposing team's slot in its club's team list, 0 for the first"
+    },
+    {
+     "name": "has_stats",
+     "type": "bool",
+     "file": "src/fmsave/models/matches.py",
+     "line": 127,
+     "ext_status": "unconfirmed",
+     "semantics": "Whether the record holds statistics for the match. A record without them"
+    },
+    {
+     "name": "position",
+     "type": "CodedValue[MatchPosition] | None",
+     "file": "src/fmsave/models/matches.py",
+     "line": 128,
+     "ext_status": "verified",
+     "semantics": "The position played, as a coded value over the mask the record stores. Only"
+    },
+    {
+     "name": "minutes",
+     "type": "int | None",
+     "file": "src/fmsave/models/matches.py",
+     "line": 129,
+     "ext_status": "verified",
+     "semantics": "Minutes played, or None when the save holds no statistics for the match."
+    },
+    {
+     "name": "left_at_minute",
+     "type": "int | None",
+     "file": "src/fmsave/models/matches.py",
+     "line": 130,
+     "ext_status": "verified",
+     "semantics": "The minute the player left the pitch. None when the player stayed on"
+    },
+    {
+     "name": "goals",
+     "type": "int | None",
+     "file": "src/fmsave/models/matches.py",
+     "line": 131,
+     "ext_status": "verified",
+     "semantics": "Goals scored, or None when the save holds no statistics for the match."
+    },
+    {
+     "name": "assists",
+     "type": "int | None",
+     "file": "src/fmsave/models/matches.py",
+     "line": 132,
+     "ext_status": "verified",
+     "semantics": "Assists, or None when the save holds no statistics for the match."
+    },
+    {
+     "name": "rating",
+     "type": "float | None",
+     "file": "src/fmsave/models/matches.py",
+     "line": 133,
+     "ext_status": "unconfirmed",
+     "semantics": "The retained match rating to one decimal place. None when the save stores"
+    },
+    {
+     "name": "passes_attempted",
+     "type": "int | None",
+     "file": "src/fmsave/models/matches.py",
+     "line": 134,
+     "ext_status": "unconfirmed",
+     "semantics": "Passes attempted, or None when the save holds no statistics for the"
+    },
+    {
+     "name": "passes_completed",
+     "type": "int | None",
+     "file": "src/fmsave/models/matches.py",
+     "line": 135,
+     "ext_status": "unconfirmed",
+     "semantics": "Passes completed, or None when the save holds no statistics for the"
+    },
+    {
+     "name": "stats_in_range",
+     "type": "bool",
+     "file": "src/fmsave/models/matches.py",
+     "line": 136,
+     "ext_status": "unconfirmed",
+     "semantics": "fmsave's own sanity flag, not a value the save stores: true when the"
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/matches.py",
+     "line": 137,
+     "ext_status": "unconfirmed",
+     "semantics": "Numeric fields with no known meaning. \"role_code\" moves with the position"
+    },
+    {
+     "name": "entered_at_minute",
+     "type": "int | None",
+     "file": "src/fmsave/models/matches.py",
+     "line": 138,
+     "ext_status": "verified",
+     "semantics": "The minute the player came on as a substitute. None for starters"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/matches.py",
+     "line": 140,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "PlayerSeasonHistory",
+   "priority": false,
+   "file": "src/fmsave/models/season_history.py",
+   "field_count": 2,
+   "verified_count": 0,
+   "unconfirmed_count": 3,
+   "fields": [
+    {
+     "name": "season_year",
+     "type": "int",
+     "file": "src/fmsave/models/season_history.py",
+     "line": 30,
+     "ext_status": "unconfirmed",
+     "semantics": "Candidate season year; whether it identifies the start or end of a"
+    },
+    {
+     "name": "competition_reference",
+     "type": "int",
+     "file": "src/fmsave/models/season_history.py",
+     "line": 31,
+     "ext_status": "unconfirmed",
+     "semantics": "Raw candidate competition reference, without a confirmed"
+    }
+   ]
+  },
+  {
+   "entity": "PlayerSeasonStats",
+   "priority": false,
+   "file": "src/fmsave/models/season_stats.py",
+   "field_count": 69,
+   "verified_count": 83,
+   "unconfirmed_count": 30,
+   "fields": [
+    {
+     "name": "Rates",
+     "type": "most counts have a `_per_90` version (such as `goals_per_90`), plus",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 55,
+     "ext_status": "unstated",
+     "semantics": null
+    },
+    {
+     "name": "player_uid",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 147,
+     "ext_status": "verified",
+     "semantics": "Uid of the player."
+    },
+    {
+     "name": "player_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 148,
+     "ext_status": "verified",
+     "semantics": "Denormalised name of player_uid."
+    },
+    {
+     "name": "kind",
+     "type": "SeasonStatsKind",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 149,
+     "ext_status": "verified",
+     "semantics": "The competition type the row covers."
+    },
+    {
+     "name": "team_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 150,
+     "ext_status": "verified",
+     "semantics": "The team the row is for: the player's current team, or another team they"
+    },
+    {
+     "name": "club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 151,
+     "ext_status": "verified",
+     "semantics": "Uid of the club whose team list holds team_id, or None when no club lists it."
+    },
+    {
+     "name": "club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 152,
+     "ext_status": "verified",
+     "semantics": "Denormalised name of club_uid, or None when the team does not resolve."
+    },
+    {
+     "name": "club_short_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 153,
+     "ext_status": "verified",
+     "semantics": "Denormalised short name of club_uid, or None when the team does not"
+    },
+    {
+     "name": "team_slot",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 154,
+     "ext_status": "unconfirmed",
+     "semantics": "The team's slot in its club's team list, 0 for the first entry, or None when"
+    },
+    {
+     "name": "starts",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 155,
+     "ext_status": "verified",
+     "semantics": "Appearances from the start."
+    },
+    {
+     "name": "substitute_appearances",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 156,
+     "ext_status": "verified",
+     "semantics": "Appearances from the bench."
+    },
+    {
+     "name": "minutes",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 157,
+     "ext_status": "verified",
+     "semantics": "Minutes played."
+    },
+    {
+     "name": "rated_appearances",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 158,
+     "ext_status": "verified",
+     "semantics": "Appearances the game gave a rating."
+    },
+    {
+     "name": "average_rating",
+     "type": "float | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 159,
+     "ext_status": "verified",
+     "semantics": "Average match rating, or None when no appearance was rated."
+    },
+    {
+     "name": "player_of_the_match",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 160,
+     "ext_status": "unconfirmed",
+     "semantics": "Player of the match awards (unconfirmed)."
+    },
+    {
+     "name": "goals",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 161,
+     "ext_status": "verified",
+     "semantics": "Goals."
+    },
+    {
+     "name": "assists",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 162,
+     "ext_status": "verified",
+     "semantics": "Assists."
+    },
+    {
+     "name": "expected_goals",
+     "type": "float",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 163,
+     "ext_status": "verified",
+     "semantics": "Expected goals (xG)."
+    },
+    {
+     "name": "non_penalty_expected_goals",
+     "type": "float",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 164,
+     "ext_status": "unconfirmed",
+     "semantics": "Expected goals from shots other than penalties (npxG)"
+    },
+    {
+     "name": "expected_assists",
+     "type": "float",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 165,
+     "ext_status": "verified",
+     "semantics": "Expected assists (xA)."
+    },
+    {
+     "name": "shots",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 166,
+     "ext_status": "verified",
+     "semantics": "Shots."
+    },
+    {
+     "name": "shots_on_target",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 167,
+     "ext_status": "verified",
+     "semantics": "Shots on target."
+    },
+    {
+     "name": "shots_outside_box",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 168,
+     "ext_status": "verified",
+     "semantics": "Shots from outside the box."
+    },
+    {
+     "name": "goals_outside_box",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 169,
+     "ext_status": "unconfirmed",
+     "semantics": "Goals from outside the box. Always None for now: the stored count"
+    },
+    {
+     "name": "free_kick_shots",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 170,
+     "ext_status": "unconfirmed",
+     "semantics": "Shots from free kicks (unconfirmed)."
+    },
+    {
+     "name": "penalties_taken",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 171,
+     "ext_status": "verified",
+     "semantics": "Penalties taken."
+    },
+    {
+     "name": "penalties_scored",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 172,
+     "ext_status": "verified",
+     "semantics": "Penalties scored."
+    },
+    {
+     "name": "passes_attempted",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 173,
+     "ext_status": "verified",
+     "semantics": "Passes attempted."
+    },
+    {
+     "name": "passes_completed",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 174,
+     "ext_status": "verified",
+     "semantics": "Passes completed."
+    },
+    {
+     "name": "progressive_passes",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 175,
+     "ext_status": "verified",
+     "semantics": "Progressive passes."
+    },
+    {
+     "name": "key_passes",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 176,
+     "ext_status": "verified",
+     "semantics": "Key passes."
+    },
+    {
+     "name": "open_play_key_passes",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 177,
+     "ext_status": "verified",
+     "semantics": "Key passes in open play."
+    },
+    {
+     "name": "clear_cut_chances_created",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 178,
+     "ext_status": "verified",
+     "semantics": "Clear-cut chances created. The game's \"chances created\""
+    },
+    {
+     "name": "crosses_attempted",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 179,
+     "ext_status": "verified",
+     "semantics": "Crosses attempted."
+    },
+    {
+     "name": "crosses_completed",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 180,
+     "ext_status": "verified",
+     "semantics": "Crosses completed."
+    },
+    {
+     "name": "open_play_crosses_attempted",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 181,
+     "ext_status": "unconfirmed",
+     "semantics": "Crosses attempted in open play (unconfirmed)."
+    },
+    {
+     "name": "open_play_crosses_completed",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 182,
+     "ext_status": "unconfirmed",
+     "semantics": "Crosses completed in open play; None on a goalkeeper's"
+    },
+    {
+     "name": "dribbles",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 183,
+     "ext_status": "verified",
+     "semantics": "Dribbles made."
+    },
+    {
+     "name": "offsides",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 184,
+     "ext_status": "verified",
+     "semantics": "Offsides."
+    },
+    {
+     "name": "distance_km",
+     "type": "float",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 185,
+     "ext_status": "verified",
+     "semantics": "Distance covered, in kilometres."
+    },
+    {
+     "name": "high_intensity_sprints",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 186,
+     "ext_status": "verified",
+     "semantics": "High intensity sprints."
+    },
+    {
+     "name": "aerial_challenges_attempted",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 187,
+     "ext_status": "verified",
+     "semantics": "Aerial challenges attempted; None for a goalkeeper."
+    },
+    {
+     "name": "headers_won",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 188,
+     "ext_status": "verified",
+     "semantics": "Headers won; None for a goalkeeper."
+    },
+    {
+     "name": "key_headers",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 189,
+     "ext_status": "unconfirmed",
+     "semantics": "Key headers (unconfirmed)."
+    },
+    {
+     "name": "tackles_attempted",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 190,
+     "ext_status": "verified",
+     "semantics": "Tackles attempted."
+    },
+    {
+     "name": "tackles_completed",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 191,
+     "ext_status": "verified",
+     "semantics": "Tackles completed."
+    },
+    {
+     "name": "key_tackles",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 192,
+     "ext_status": "unconfirmed",
+     "semantics": "Key tackles (unconfirmed)."
+    },
+    {
+     "name": "interceptions",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 193,
+     "ext_status": "verified",
+     "semantics": "Interceptions."
+    },
+    {
+     "name": "possession_won",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 194,
+     "ext_status": "verified",
+     "semantics": "Times the player won possession."
+    },
+    {
+     "name": "possession_lost",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 195,
+     "ext_status": "unconfirmed",
+     "semantics": "Times the player lost possession (unconfirmed)."
+    },
+    {
+     "name": "pressures_attempted",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 196,
+     "ext_status": "verified",
+     "semantics": "Pressures attempted, or None when unsupported."
+    },
+    {
+     "name": "pressures_completed",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 197,
+     "ext_status": "verified",
+     "semantics": "Pressures completed, or None when unsupported."
+    },
+    {
+     "name": "blocks",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 198,
+     "ext_status": "unconfirmed",
+     "semantics": "Blocks; None for a goalkeeper (unconfirmed)."
+    },
+    {
+     "name": "shots_blocked",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 199,
+     "ext_status": "unconfirmed",
+     "semantics": "Shots blocked while defending (unconfirmed)."
+    },
+    {
+     "name": "clearances",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 200,
+     "ext_status": "verified",
+     "semantics": "Clearances; None for a goalkeeper."
+    },
+    {
+     "name": "fouls_made",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 201,
+     "ext_status": "verified",
+     "semantics": "Fouls made."
+    },
+    {
+     "name": "fouls_against",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 202,
+     "ext_status": "verified",
+     "semantics": "Fouls suffered."
+    },
+    {
+     "name": "yellow_cards",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 203,
+     "ext_status": "verified",
+     "semantics": "Yellow cards."
+    },
+    {
+     "name": "red_cards",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 204,
+     "ext_status": "verified",
+     "semantics": "Red cards."
+    },
+    {
+     "name": "mistakes_leading_to_goal",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 205,
+     "ext_status": "verified",
+     "semantics": "Mistakes leading to a goal."
+    },
+    {
+     "name": "clean_sheets",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 206,
+     "ext_status": "verified",
+     "semantics": "Clean sheets. Usually 0 for an outfield player."
+    },
+    {
+     "name": "goals_allowed",
+     "type": "int",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 207,
+     "ext_status": "verified",
+     "semantics": "Goals conceded as goalkeeper. Usually 0 for an outfield player."
+    },
+    {
+     "name": "saves_held",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 208,
+     "ext_status": "unconfirmed",
+     "semantics": "Saves held; None for an outfield player (unconfirmed)."
+    },
+    {
+     "name": "saves_parried",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 209,
+     "ext_status": "unconfirmed",
+     "semantics": "Saves parried; None for an outfield player (unconfirmed)."
+    },
+    {
+     "name": "saves_tipped",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 210,
+     "ext_status": "unconfirmed",
+     "semantics": "Saves tipped; None for an outfield player (unconfirmed)."
+    },
+    {
+     "name": "shots_on_target_faced",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 211,
+     "ext_status": "unconfirmed",
+     "semantics": "Shots on target faced as goalkeeper; None for an outfield player"
+    },
+    {
+     "name": "expected_goals_prevented",
+     "type": "float",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 212,
+     "ext_status": "unconfirmed",
+     "semantics": "Expected goals prevented (xGP); negative when a goalkeeper"
+    },
+    {
+     "name": "minutes_since_last_goal",
+     "type": "int | None",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 213,
+     "ext_status": "verified",
+     "semantics": "Minutes since the most recent goal in the overall club row."
+    },
+    {
+     "name": "COMPUTED_FIELDS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/season_stats.py",
+     "line": 215,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "PlayerSuspension",
+   "priority": false,
+   "file": "src/fmsave/models/suspensions.py",
+   "field_count": 6,
+   "verified_count": 5,
+   "unconfirmed_count": 1,
+   "fields": [
+    {
+     "name": "scope",
+     "type": "SuspensionScope",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 62,
+     "ext_status": "verified",
+     "semantics": "Whether the ban references a competition or a nation, has Europe scope, or is UNKNOWN."
+    },
+    {
+     "name": "scope_code",
+     "type": "int",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 63,
+     "ext_status": "verified",
+     "semantics": "The stored scope code. Code 1 references a competition. Codes 5, 6 and"
+    },
+    {
+     "name": "competition_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 64,
+     "ext_status": "verified",
+     "semantics": "Id of the competition the ban applies to, in the **stage** id space,"
+    },
+    {
+     "name": "competition_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 65,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of competition_id, which is None unless a name"
+    },
+    {
+     "name": "nation_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 66,
+     "ext_status": "verified",
+     "semantics": "Save-local id of the nation the ban references, in the same id space as"
+    },
+    {
+     "name": "issued_date",
+     "type": "date",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 67,
+     "ext_status": "verified",
+     "semantics": "Date the ban was issued."
+    }
+   ]
+  },
+  {
+   "entity": "Positions",
+   "priority": false,
+   "file": "src/fmsave/models/players.py",
+   "field_count": 15,
+   "verified_count": 15,
+   "unconfirmed_count": 0,
+   "fields": [
+    {
+     "name": "gk",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 196,
+     "ext_status": "verified",
+     "semantics": "Goalkeeper."
+    },
+    {
+     "name": "sw",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 197,
+     "ext_status": "verified",
+     "semantics": "Sweeper."
+    },
+    {
+     "name": "dl",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 198,
+     "ext_status": "verified",
+     "semantics": "Left back."
+    },
+    {
+     "name": "dc",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 199,
+     "ext_status": "verified",
+     "semantics": "Centre back."
+    },
+    {
+     "name": "dr",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 200,
+     "ext_status": "verified",
+     "semantics": "Right back."
+    },
+    {
+     "name": "dm",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 201,
+     "ext_status": "verified",
+     "semantics": "Defensive midfielder."
+    },
+    {
+     "name": "ml",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 202,
+     "ext_status": "verified",
+     "semantics": "Left midfielder."
+    },
+    {
+     "name": "mc",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 203,
+     "ext_status": "verified",
+     "semantics": "Central midfielder."
+    },
+    {
+     "name": "mr",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 204,
+     "ext_status": "verified",
+     "semantics": "Right midfielder."
+    },
+    {
+     "name": "aml",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 205,
+     "ext_status": "verified",
+     "semantics": "Attacking midfielder, left."
+    },
+    {
+     "name": "amc",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 206,
+     "ext_status": "verified",
+     "semantics": "Attacking midfielder, centre."
+    },
+    {
+     "name": "amr",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 207,
+     "ext_status": "verified",
+     "semantics": "Attacking midfielder, right."
+    },
+    {
+     "name": "stc",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 208,
+     "ext_status": "verified",
+     "semantics": "Striker."
+    },
+    {
+     "name": "wbl",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 209,
+     "ext_status": "verified",
+     "semantics": "Left wing back."
+    },
+    {
+     "name": "wbr",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 210,
+     "ext_status": "verified",
+     "semantics": "Right wing back."
+    }
+   ]
+  },
+  {
+   "entity": "Reputation",
+   "priority": false,
+   "file": "src/fmsave/models/players.py",
+   "field_count": 4,
+   "verified_count": 3,
+   "unconfirmed_count": 1,
+   "fields": [
+    {
+     "name": "bucket",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 53,
+     "ext_status": "unconfirmed",
+     "semantics": "Coarse reputation bucket that loses precision (unconfirmed)."
+    },
+    {
+     "name": "home",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 54,
+     "ext_status": "verified",
+     "semantics": "Home reputation."
+    },
+    {
+     "name": "current",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 55,
+     "ext_status": "verified",
+     "semantics": "Current reputation."
+    },
+    {
+     "name": "world",
+     "type": "int",
+     "file": "src/fmsave/models/players.py",
+     "line": 56,
+     "ext_status": "verified",
+     "semantics": "World reputation."
+    }
+   ]
+  },
+  {
+   "entity": "RulesRound",
+   "priority": false,
+   "file": "src/fmsave/models/rules.py",
+   "field_count": 5,
+   "verified_count": 0,
+   "unconfirmed_count": 4,
+   "fields": [
+    {
+     "name": "number",
+     "type": "int",
+     "file": "src/fmsave/models/rules.py",
+     "line": 133,
+     "ext_status": "unconfirmed",
+     "semantics": "The round's number, counting from one. A round the save does not number"
+    },
+    {
+     "name": "date",
+     "type": "datetime.date | None",
+     "file": "src/fmsave/models/rules.py",
+     "line": 134,
+     "ext_status": "unconfirmed",
+     "semantics": "The date the round is played on, or None when the stored date does not decode"
+    },
+    {
+     "name": "match_count",
+     "type": "int",
+     "file": "src/fmsave/models/rules.py",
+     "line": 135,
+     "ext_status": "unconfirmed",
+     "semantics": "Unidentified u32 retained unchanged under its legacy field name. It is"
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/rules.py",
+     "line": 136,
+     "ext_status": "unconfirmed",
+     "semantics": "Numeric fields with no known meaning. \"kind\" and \"b5\" are the two"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/rules.py",
+     "line": 138,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "SaveInfo",
+   "priority": false,
+   "file": "src/fmsave/models/meta.py",
+   "field_count": 12,
+   "verified_count": 8,
+   "unconfirmed_count": 4,
+   "fields": [
+    {
+     "name": "game",
+     "type": "str",
+     "file": "src/fmsave/models/meta.py",
+     "line": 65,
+     "ext_status": "verified",
+     "semantics": "Game edition, for example \"FM26\"."
+    },
+    {
+     "name": "build",
+     "type": "str",
+     "file": "src/fmsave/models/meta.py",
+     "line": 66,
+     "ext_status": "verified",
+     "semantics": "Version and build that last wrote the save, for example \"26.3.2+2329565\"."
+    },
+    {
+     "name": "build_number",
+     "type": "int",
+     "file": "src/fmsave/models/meta.py",
+     "line": 67,
+     "ext_status": "verified",
+     "semantics": "The numeric build."
+    },
+    {
+     "name": "known_build",
+     "type": "bool",
+     "file": "src/fmsave/models/meta.py",
+     "line": 68,
+     "ext_status": "verified",
+     "semantics": "Whether fmsave has a layout registered for every reader for this build."
+    },
+    {
+     "name": "db_version",
+     "type": "str",
+     "file": "src/fmsave/models/meta.py",
+     "line": 69,
+     "ext_status": "unconfirmed",
+     "semantics": "Game database version string stored in the save (unconfirmed)."
+    },
+    {
+     "name": "game_date",
+     "type": "date | None",
+     "file": "src/fmsave/models/meta.py",
+     "line": 70,
+     "ext_status": "unconfirmed",
+     "semantics": "In-game date, falling back to the structured save summary before the first"
+    },
+    {
+     "name": "time_slot",
+     "type": "int",
+     "file": "src/fmsave/models/meta.py",
+     "line": 71,
+     "ext_status": "unconfirmed",
+     "semantics": "Intra-day time slot stored with the in-game date (unconfirmed)."
+    },
+    {
+     "name": "save_name",
+     "type": "str",
+     "file": "src/fmsave/models/meta.py",
+     "line": 72,
+     "ext_status": "verified",
+     "semantics": "The save's own name. `fmsave info` hides it unless --show-name is passed."
+    },
+    {
+     "name": "sections",
+     "type": "tuple[SectionInfo, ...]",
+     "file": "src/fmsave/models/meta.py",
+     "line": 73,
+     "ext_status": "verified",
+     "semantics": "Every named section in file order."
+    },
+    {
+     "name": "summary_strings",
+     "type": "tuple[str, ...]",
+     "file": "src/fmsave/models/meta.py",
+     "line": 74,
+     "ext_status": "unconfirmed",
+     "semantics": "The readable strings stored in the save summary, in file order,"
+    },
+    {
+     "name": "section_schemas",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/meta.py",
+     "line": 75,
+     "ext_status": "verified",
+     "semantics": "Schema number of every named section, read-only."
+    },
+    {
+     "name": "file_name",
+     "type": "str",
+     "file": "src/fmsave/models/meta.py",
+     "line": 76,
+     "ext_status": "verified",
+     "semantics": "The save's file name, without its folder."
+    }
+   ]
+  },
+  {
+   "entity": "SectionInfo",
+   "priority": false,
+   "file": "src/fmsave/models/meta.py",
+   "field_count": 8,
+   "verified_count": 6,
+   "unconfirmed_count": 1,
+   "fields": [
+    {
+     "name": "name",
+     "type": "str",
+     "file": "src/fmsave/models/meta.py",
+     "line": 28,
+     "ext_status": "verified",
+     "semantics": "Section name."
+    },
+    {
+     "name": "extension",
+     "type": "str",
+     "file": "src/fmsave/models/meta.py",
+     "line": 29,
+     "ext_status": "verified",
+     "semantics": "\".dat\" or \".cmt\"."
+    },
+    {
+     "name": "file_offset",
+     "type": "int",
+     "file": "src/fmsave/models/meta.py",
+     "line": 30,
+     "ext_status": "verified",
+     "semantics": "Where the section's compressed frame starts in the file."
+    },
+    {
+     "name": "compressed_size",
+     "type": "int",
+     "file": "src/fmsave/models/meta.py",
+     "line": 31,
+     "ext_status": "verified",
+     "semantics": "Size of the compressed frame in bytes."
+    },
+    {
+     "name": "decompressed_size",
+     "type": "int",
+     "file": "src/fmsave/models/meta.py",
+     "line": 32,
+     "ext_status": "verified",
+     "semantics": "Size of the section once decompressed."
+    },
+    {
+     "name": "schema",
+     "type": "int",
+     "file": "src/fmsave/models/meta.py",
+     "line": 33,
+     "ext_status": "verified",
+     "semantics": "Schema number stored at the start of the section."
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/meta.py",
+     "line": 34,
+     "ext_status": "unconfirmed",
+     "semantics": "Directory values without an identified meaning (\"tail0\", \"tail1\")"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/meta.py",
+     "line": 36,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "Selection",
+   "priority": false,
+   "file": "src/fmsave/models/tactics.py",
+   "field_count": 8,
+   "verified_count": 0,
+   "unconfirmed_count": 8,
+   "fields": [
+    {
+     "name": "club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 263,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the club the team plays for, None for a team no club lists"
+    },
+    {
+     "name": "club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 264,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised full name of club_uid (unconfirmed)."
+    },
+    {
+     "name": "team_id",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 265,
+     "ext_status": "unconfirmed",
+     "semantics": "The team the selection belongs to, as the save stores it (unconfirmed)."
+    },
+    {
+     "name": "team_slot",
+     "type": "int | None",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 266,
+     "ext_status": "unconfirmed",
+     "semantics": "The team's place in that club's own team list, 0 for its first team; None"
+    },
+    {
+     "name": "substitute",
+     "type": "bool",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 267,
+     "ext_status": "unconfirmed",
+     "semantics": "False for a starter, True for a substitute (unconfirmed)."
+    },
+    {
+     "name": "slot",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 268,
+     "ext_status": "unconfirmed",
+     "semantics": "The place within the starters or within the substitutes, counting from zero in"
+    },
+    {
+     "name": "player_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 269,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the picked player, None when the stored pick names no player record"
+    },
+    {
+     "name": "player_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 270,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of player_uid (unconfirmed)."
+    }
+   ]
+  },
+  {
+   "entity": "SetPieceRoutine",
+   "priority": false,
+   "file": "src/fmsave/models/tactics.py",
+   "field_count": 6,
+   "verified_count": 1,
+   "unconfirmed_count": 5,
+   "fields": [
+    {
+     "name": "club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 221,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the club the team plays for, None for a team no club lists"
+    },
+    {
+     "name": "club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 222,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised full name of club_uid (unconfirmed)."
+    },
+    {
+     "name": "team_id",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 223,
+     "ext_status": "unconfirmed",
+     "semantics": "The team the slot belongs to, as the save stores it (unconfirmed)."
+    },
+    {
+     "name": "team_slot",
+     "type": "int | None",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 224,
+     "ext_status": "unconfirmed",
+     "semantics": "The team's place in that club's own team list, 0 for its first team; None"
+    },
+    {
+     "name": "slot",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 225,
+     "ext_status": "unconfirmed",
+     "semantics": "The routine's place in the team's stored routines, counting from zero in stored"
+    },
+    {
+     "name": "name",
+     "type": "str | None",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 226,
+     "ext_status": "verified",
+     "semantics": "Stored routine name, or None when unnamed. A team may store more than 20"
+    }
+   ]
+  },
+  {
+   "entity": "Sponsorship",
+   "priority": false,
+   "file": "src/fmsave/models/finances.py",
+   "field_count": 9,
+   "verified_count": 5,
+   "unconfirmed_count": 3,
+   "fields": [
+    {
+     "name": "club_uid",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 116,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the club (unconfirmed)."
+    },
+    {
+     "name": "club_name",
+     "type": "str",
+     "file": "src/fmsave/models/finances.py",
+     "line": 117,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised full name of club_uid (unconfirmed)."
+    },
+    {
+     "name": "kind",
+     "type": "CodedValue[SponsorType]",
+     "file": "src/fmsave/models/finances.py",
+     "line": 118,
+     "ext_status": "verified",
+     "semantics": "What kind of sponsorship it is. Codes without a confirmed label for the"
+    },
+    {
+     "name": "start",
+     "type": "date | None",
+     "file": "src/fmsave/models/finances.py",
+     "line": 119,
+     "ext_status": "verified",
+     "semantics": "The day the contract starts."
+    },
+    {
+     "name": "end",
+     "type": "date | None",
+     "file": "src/fmsave/models/finances.py",
+     "line": 120,
+     "ext_status": "verified",
+     "semantics": "The day it ends."
+    },
+    {
+     "name": "total_value",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 121,
+     "ext_status": "verified",
+     "semantics": "The contract's whole value. On most running contracts it is the annual"
+    },
+    {
+     "name": "annual_value",
+     "type": "int",
+     "file": "src/fmsave/models/finances.py",
+     "line": 122,
+     "ext_status": "verified",
+     "semantics": "What a running contract pays a year. A contract that has ended can"
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/finances.py",
+     "line": 123,
+     "ext_status": "unconfirmed",
+     "semantics": "Numeric fields with no known meaning (unconfirmed)."
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/finances.py",
+     "line": 125,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "SquadPlannerSlot",
+   "priority": false,
+   "file": "src/fmsave/models/squad_planner.py",
+   "field_count": 3,
+   "verified_count": 0,
+   "unconfirmed_count": 3,
+   "fields": [
+    {
+     "name": "season_offset",
+     "type": "int",
+     "file": "src/fmsave/models/squad_planner.py",
+     "line": 21,
+     "ext_status": "unconfirmed",
+     "semantics": "0 for the current season, 1 for the next, and 2 for the season after (unconfirmed)."
+    },
+    {
+     "name": "slot",
+     "type": "int",
+     "file": "src/fmsave/models/squad_planner.py",
+     "line": 22,
+     "ext_status": "unconfirmed",
+     "semantics": "Slot number from 1 to 27 in stored order (unconfirmed)."
+    },
+    {
+     "name": "player_uids",
+     "type": "tuple[int | None, ...]",
+     "file": "src/fmsave/models/squad_planner.py",
+     "line": 23,
+     "ext_status": "unconfirmed",
+     "semantics": "Player UIDs in depth order (unconfirmed). An empty slot is an empty"
+    }
+   ]
+  },
+  {
+   "entity": "StaffAppointment",
+   "priority": false,
+   "file": "src/fmsave/models/staff.py",
+   "field_count": 9,
+   "verified_count": 5,
+   "unconfirmed_count": 4,
+   "fields": [
+    {
+     "name": "club_uid",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 347,
+     "ext_status": "verified",
+     "semantics": "Uid of the club that holds this appointment."
+    },
+    {
+     "name": "club_name",
+     "type": "str",
+     "file": "src/fmsave/models/staff.py",
+     "line": 348,
+     "ext_status": "verified",
+     "semantics": "Full name of the club."
+    },
+    {
+     "name": "team_id",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 349,
+     "ext_status": "verified",
+     "semantics": "Id of the team this appointment is with."
+    },
+    {
+     "name": "team_slot",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 350,
+     "ext_status": "unconfirmed",
+     "semantics": "The team's position in the club's team list (unconfirmed)."
+    },
+    {
+     "name": "job",
+     "type": "CodedValue[StaffJob] | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 351,
+     "ext_status": "unconfirmed",
+     "semantics": "Job code with label if available (unconfirmed)."
+    },
+    {
+     "name": "has_contract",
+     "type": "bool",
+     "file": "src/fmsave/models/staff.py",
+     "line": 352,
+     "ext_status": "unconfirmed",
+     "semantics": "Whether the appointment includes terms (unconfirmed)."
+    },
+    {
+     "name": "wage",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 353,
+     "ext_status": "verified",
+     "semantics": "Weekly wage in the save's base currency."
+    },
+    {
+     "name": "contract_start",
+     "type": "date | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 354,
+     "ext_status": "verified",
+     "semantics": "The date the contract began."
+    },
+    {
+     "name": "contract_end",
+     "type": "date | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 355,
+     "ext_status": "unconfirmed",
+     "semantics": "The date the contract expires (unconfirmed)."
+    }
+   ]
+  },
+  {
+   "entity": "StaffAttributes",
+   "priority": false,
+   "file": "src/fmsave/models/staff.py",
+   "field_count": 22,
+   "verified_count": 1,
+   "unconfirmed_count": 21,
+   "fields": [
+    {
+     "name": "adaptability",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 143,
+     "ext_status": "verified",
+     "semantics": "Adaptability."
+    },
+    {
+     "name": "goalkeeping",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 144,
+     "ext_status": "unconfirmed",
+     "semantics": "Goalkeeping (unconfirmed)."
+    },
+    {
+     "name": "judging_player_ability",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 145,
+     "ext_status": "unconfirmed",
+     "semantics": "Judging player ability (unconfirmed)."
+    },
+    {
+     "name": "judging_player_potential",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 146,
+     "ext_status": "unconfirmed",
+     "semantics": "Judging player potential (unconfirmed)."
+    },
+    {
+     "name": "people_management",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 147,
+     "ext_status": "unconfirmed",
+     "semantics": "People management (unconfirmed)."
+    },
+    {
+     "name": "motivating",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 148,
+     "ext_status": "unconfirmed",
+     "semantics": "Motivating (unconfirmed)."
+    },
+    {
+     "name": "physiotherapy",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 149,
+     "ext_status": "unconfirmed",
+     "semantics": "Physiotherapy (unconfirmed)."
+    },
+    {
+     "name": "tactical_knowledge",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 150,
+     "ext_status": "unconfirmed",
+     "semantics": "Tactical knowledge (unconfirmed)."
+    },
+    {
+     "name": "attacking",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 151,
+     "ext_status": "unconfirmed",
+     "semantics": "Attacking (unconfirmed)."
+    },
+    {
+     "name": "defending",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 152,
+     "ext_status": "unconfirmed",
+     "semantics": "Defending (unconfirmed)."
+    },
+    {
+     "name": "fitness",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 153,
+     "ext_status": "unconfirmed",
+     "semantics": "Fitness (unconfirmed)."
+    },
+    {
+     "name": "possession",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 154,
+     "ext_status": "unconfirmed",
+     "semantics": "Possession (unconfirmed)."
+    },
+    {
+     "name": "technical",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 155,
+     "ext_status": "unconfirmed",
+     "semantics": "Technical (unconfirmed)."
+    },
+    {
+     "name": "tactical",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 156,
+     "ext_status": "unconfirmed",
+     "semantics": "Tactical (unconfirmed)."
+    },
+    {
+     "name": "analysing_data",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 157,
+     "ext_status": "unconfirmed",
+     "semantics": "Analysing data (unconfirmed)."
+    },
+    {
+     "name": "sports_science",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 158,
+     "ext_status": "unconfirmed",
+     "semantics": "Sports science (unconfirmed)."
+    },
+    {
+     "name": "negotiating",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 159,
+     "ext_status": "unconfirmed",
+     "semantics": "Negotiating (unconfirmed)."
+    },
+    {
+     "name": "judging_staff_ability",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 160,
+     "ext_status": "unconfirmed",
+     "semantics": "Judging staff ability (unconfirmed)."
+    },
+    {
+     "name": "set_pieces",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 161,
+     "ext_status": "unconfirmed",
+     "semantics": "Set pieces (unconfirmed)."
+    },
+    {
+     "name": "authority",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 162,
+     "ext_status": "unconfirmed",
+     "semantics": "Authority (unconfirmed)."
+    },
+    {
+     "name": "working_with_youngsters",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 163,
+     "ext_status": "unconfirmed",
+     "semantics": "Working with youngsters (unconfirmed)."
+    },
+    {
+     "name": "determination",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 164,
+     "ext_status": "unconfirmed",
+     "semantics": "Determination (unconfirmed)."
+    }
+   ]
+  },
+  {
+   "entity": "StaffCandidate",
+   "priority": false,
+   "file": "src/fmsave/models/staff.py",
+   "field_count": 18,
+   "verified_count": 0,
+   "unconfirmed_count": 14,
+   "fields": [
+    {
+     "name": "uid",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 392,
+     "ext_status": "unconfirmed",
+     "semantics": "The save-local person id used to join with the staff table (unconfirmed)."
+    },
+    {
+     "name": "unique_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 393,
+     "ext_status": "unconfirmed",
+     "semantics": "The person's Unique ID in the game database, when readable (unconfirmed)."
+    },
+    {
+     "name": "is_human_manager",
+     "type": "bool",
+     "file": "src/fmsave/models/staff.py",
+     "line": 394,
+     "ext_status": "unconfirmed",
+     "semantics": "Whether this is the save's human manager (unconfirmed)."
+    },
+    {
+     "name": "name",
+     "type": "str | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 395,
+     "ext_status": "unconfirmed",
+     "semantics": "Common name, else first and last name, else legal name (unconfirmed)."
+    },
+    {
+     "name": "first_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 396,
+     "ext_status": "unconfirmed",
+     "semantics": "First name (unconfirmed)."
+    },
+    {
+     "name": "last_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 397,
+     "ext_status": "unconfirmed",
+     "semantics": "Surname (unconfirmed)."
+    },
+    {
+     "name": "common_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 398,
+     "ext_status": "unconfirmed",
+     "semantics": "The name the game shows in place of the full name (unconfirmed)."
+    },
+    {
+     "name": "full_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 399,
+     "ext_status": "unconfirmed",
+     "semantics": "First and last name together, when both are known (unconfirmed)."
+    },
+    {
+     "name": "legal_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 400,
+     "ext_status": "unconfirmed",
+     "semantics": "The stored legal name (unconfirmed)."
+    },
+    {
+     "name": "birth_date",
+     "type": "date | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 401,
+     "ext_status": "unconfirmed",
+     "semantics": "Date of birth (unconfirmed)."
+    },
+    {
+     "name": "age",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 402,
+     "ext_status": "unconfirmed",
+     "semantics": "Age at the save's in-game date (unconfirmed)."
+    },
+    {
+     "name": "nation_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 403,
+     "ext_status": "unconfirmed",
+     "semantics": "Save-local nation id (unconfirmed)."
+    },
+    {
+     "name": "ability",
+     "type": "Ability | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 404,
+     "ext_status": "unstated",
+     "semantics": "Current and potential ability, when readable."
+    },
+    {
+     "name": "personality",
+     "type": "Personality | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 405,
+     "ext_status": "unstated",
+     "semantics": "The 8 personality values, when readable."
+    },
+    {
+     "name": "attributes",
+     "type": "StaffAttributes | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 406,
+     "ext_status": "unstated",
+     "semantics": "Readable staff ratings on their stored scales."
+    },
+    {
+     "name": "preferences",
+     "type": "StaffPreferences | None",
+     "file": "src/fmsave/models/staff.py",
+     "line": 407,
+     "ext_status": "unstated",
+     "semantics": "The named preferences, when readable."
+    },
+    {
+     "name": "employment",
+     "type": "StaffEmployment",
+     "file": "src/fmsave/models/staff.py",
+     "line": 408,
+     "ext_status": "unconfirmed",
+     "semantics": "Employment status (unconfirmed)."
+    },
+    {
+     "name": "appointments",
+     "type": "tuple[StaffAppointment, ...]",
+     "file": "src/fmsave/models/staff.py",
+     "line": 409,
+     "ext_status": "unconfirmed",
+     "semantics": "The resolved current club appointments found for this person"
+    }
+   ]
+  },
+  {
+   "entity": "StaffList",
+   "priority": false,
+   "file": "src/fmsave/models/staff.py",
+   "field_count": 5,
+   "verified_count": 0,
+   "unconfirmed_count": 5,
+   "fields": [
+    {
+     "name": "club_uid",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 440,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the club whose record holds the list (unconfirmed)."
+    },
+    {
+     "name": "club_name",
+     "type": "str",
+     "file": "src/fmsave/models/staff.py",
+     "line": 441,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised full name of club_uid (unconfirmed)."
+    },
+    {
+     "name": "list_index",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 442,
+     "ext_status": "unconfirmed",
+     "semantics": "Which of the club's three lists this is, 0 to 2 (unconfirmed)."
+    },
+    {
+     "name": "staff_uids",
+     "type": "tuple[int, ...]",
+     "file": "src/fmsave/models/staff.py",
+     "line": 443,
+     "ext_status": "unconfirmed",
+     "semantics": "The uid of each person the list holds, in stored order. They are"
+    },
+    {
+     "name": "staff_names",
+     "type": "tuple[str | None, ...]",
+     "file": "src/fmsave/models/staff.py",
+     "line": 444,
+     "ext_status": "unconfirmed",
+     "semantics": "Each of those people's name, aligned with staff_uids"
+    }
+   ]
+  },
+  {
+   "entity": "StaffPreferences",
+   "priority": false,
+   "file": "src/fmsave/models/staff.py",
+   "field_count": 14,
+   "verified_count": 14,
+   "unconfirmed_count": 0,
+   "fields": [
+    {
+     "name": "attacking",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 92,
+     "ext_status": "verified",
+     "semantics": "How attacking a side he wants."
+    },
+    {
+     "name": "business",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 93,
+     "ext_status": "verified",
+     "semantics": "How commercial he wants the club to be."
+    },
+    {
+     "name": "directness",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 94,
+     "ext_status": "verified",
+     "semantics": "How direct he wants the passing."
+    },
+    {
+     "name": "interference",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 95,
+     "ext_status": "verified",
+     "semantics": "How much he involves himself in other people's work."
+    },
+    {
+     "name": "patience",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 96,
+     "ext_status": "verified",
+     "semantics": "How patient he is with a plan."
+    },
+    {
+     "name": "trigger_press",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 97,
+     "ext_status": "verified",
+     "semantics": "How eagerly he wants the side to press."
+    },
+    {
+     "name": "resources",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 98,
+     "ext_status": "verified",
+     "semantics": "How freely he wants the club's resources spent."
+    },
+    {
+     "name": "buying_players",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 99,
+     "ext_status": "verified",
+     "semantics": "How readily he wants players bought."
+    },
+    {
+     "name": "mind_games",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 100,
+     "ext_status": "verified",
+     "semantics": "How much he plays on an opponent's mind."
+    },
+    {
+     "name": "flexibility",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 101,
+     "ext_status": "verified",
+     "semantics": "How willing he is to change an approach."
+    },
+    {
+     "name": "hardness_of_training",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 102,
+     "ext_status": "verified",
+     "semantics": "How hard he wants the side trained."
+    },
+    {
+     "name": "squad_rotation",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 103,
+     "ext_status": "verified",
+     "semantics": "How much he wants the side rotated."
+    },
+    {
+     "name": "tempo",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 104,
+     "ext_status": "verified",
+     "semantics": "How quickly he wants the side to play."
+    },
+    {
+     "name": "width",
+     "type": "int",
+     "file": "src/fmsave/models/staff.py",
+     "line": 105,
+     "ext_status": "verified",
+     "semantics": "How wide he wants the side to play."
+    }
+   ]
+  },
+  {
+   "entity": "Stage",
+   "priority": false,
+   "file": "src/fmsave/models/competitions.py",
+   "field_count": 8,
+   "verified_count": 4,
+   "unconfirmed_count": 3,
+   "fields": [
+    {
+     "name": "id",
+     "type": "int",
+     "file": "src/fmsave/models/competitions.py",
+     "line": 76,
+     "ext_status": "verified",
+     "semantics": "The stage id, which every fixture, league-table group and per-match record joins"
+    },
+    {
+     "name": "competition_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/competitions.py",
+     "line": 77,
+     "ext_status": "verified",
+     "semantics": "Id of the competition this stage belongs to, in the stage id space;"
+    },
+    {
+     "name": "competition_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/competitions.py",
+     "line": 78,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of competition_id, which is None unless a name"
+    },
+    {
+     "name": "group_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/competitions.py",
+     "line": 79,
+     "ext_status": "verified",
+     "semantics": "Id of the group or section within the competition, or None when the stage"
+    },
+    {
+     "name": "round",
+     "type": "CodedValue[CompetitionRound] | None",
+     "file": "src/fmsave/models/competitions.py",
+     "line": 80,
+     "ext_status": "verified",
+     "semantics": "The stage's round, or None when the stage has no round, as a league matchday"
+    },
+    {
+     "name": "previous_stage_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/competitions.py",
+     "line": 81,
+     "ext_status": "unconfirmed",
+     "semantics": "The stage id the row claims comes before this one; None when the"
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/competitions.py",
+     "line": 82,
+     "ext_status": "unconfirmed",
+     "semantics": "Numeric fields with no known meaning. \"s25\" is data, not a sentinel: it"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/competitions.py",
+     "line": 84,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "Suspension",
+   "priority": false,
+   "file": "src/fmsave/models/suspensions.py",
+   "field_count": 12,
+   "verified_count": 5,
+   "unconfirmed_count": 6,
+   "fields": [
+    {
+     "name": "player_uid",
+     "type": "int",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 103,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the suspended player, copied from the decoded player"
+    },
+    {
+     "name": "player_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 104,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of player_uid (unconfirmed)."
+    },
+    {
+     "name": "club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 105,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the club the player belongs to, which for a player registered with"
+    },
+    {
+     "name": "club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 106,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised full name of club_uid (unconfirmed)."
+    },
+    {
+     "name": "scope",
+     "type": "SuspensionScope",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 107,
+     "ext_status": "verified",
+     "semantics": "Whether the ban references a competition or a nation, has Europe scope, or is UNKNOWN."
+    },
+    {
+     "name": "scope_code",
+     "type": "int",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 108,
+     "ext_status": "verified",
+     "semantics": "The stored scope code. Code 1 references a competition. Codes 5, 6 and"
+    },
+    {
+     "name": "competition_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 109,
+     "ext_status": "verified",
+     "semantics": "Id of the competition the ban applies to, in the **stage** id space,"
+    },
+    {
+     "name": "competition_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 110,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised name of competition_id, which is None unless a name"
+    },
+    {
+     "name": "nation_id",
+     "type": "int | None",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 111,
+     "ext_status": "verified",
+     "semantics": "Save-local id of the nation the ban references, in the same id space as"
+    },
+    {
+     "name": "issued_date",
+     "type": "date",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 112,
+     "ext_status": "verified",
+     "semantics": "Date the ban was issued."
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 113,
+     "ext_status": "unconfirmed",
+     "semantics": "Numeric fields with no known meaning (unconfirmed)."
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/suspensions.py",
+     "line": 115,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "Tactic",
+   "priority": false,
+   "file": "src/fmsave/models/tactics.py",
+   "field_count": 11,
+   "verified_count": 2,
+   "unconfirmed_count": 8,
+   "fields": [
+    {
+     "name": "club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 187,
+     "ext_status": "unconfirmed",
+     "semantics": "Uid of the club the team plays for, None for a team no club lists"
+    },
+    {
+     "name": "club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 188,
+     "ext_status": "unconfirmed",
+     "semantics": "Denormalised full name of club_uid (unconfirmed)."
+    },
+    {
+     "name": "team_id",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 189,
+     "ext_status": "unconfirmed",
+     "semantics": "The team the copy belongs to, as the save stores it (unconfirmed)."
+    },
+    {
+     "name": "team_slot",
+     "type": "int | None",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 190,
+     "ext_status": "unconfirmed",
+     "semantics": "The team's place in that club's own team list, 0 for its first team; None"
+    },
+    {
+     "name": "index",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 191,
+     "ext_status": "unconfirmed",
+     "semantics": "The copy's place among the team's own tactics, counting from zero in stored"
+    },
+    {
+     "name": "name",
+     "type": "str",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 192,
+     "ext_status": "unconfirmed",
+     "semantics": "Stored tactic name (unconfirmed)."
+    },
+    {
+     "name": "style_name",
+     "type": "str",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 193,
+     "ext_status": "unconfirmed",
+     "semantics": "The tactical style shown with the tactic, as stored text. No screen has"
+    },
+    {
+     "name": "mentality",
+     "type": "CodedValue[Mentality]",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 194,
+     "ext_status": "verified",
+     "semantics": "The mentality the tactic is set to; the seven codes the game offers each"
+    },
+    {
+     "name": "slots",
+     "type": "tuple[TacticSlot, ...]",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 195,
+     "ext_status": "verified",
+     "semantics": "The eleven positions, in stored order."
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 196,
+     "ext_status": "unconfirmed",
+     "semantics": "The 19 team-instruction bytes, one int per byte, and the tactic's four-byte"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 198,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "TacticSettingUnit",
+   "priority": false,
+   "file": "src/fmsave/models/tactics.py",
+   "field_count": 5,
+   "verified_count": 0,
+   "unconfirmed_count": 5,
+   "fields": [
+    {
+     "name": "head_byte",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 96,
+     "ext_status": "unconfirmed",
+     "semantics": "The byte after the unit's lead bytes, which is 0 on most units and 2 or 10"
+    },
+    {
+     "name": "first_bits",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 97,
+     "ext_status": "unconfirmed",
+     "semantics": "The unit's seven-byte bit field as one little-endian int; between none and"
+    },
+    {
+     "name": "second_bits_low",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 98,
+     "ext_status": "unconfirmed",
+     "semantics": "Bits 0 to 31 of the unit's twelve-byte bit field (unconfirmed)."
+    },
+    {
+     "name": "second_bits_middle",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 99,
+     "ext_status": "unconfirmed",
+     "semantics": "Bits 32 to 63 of that field (unconfirmed)."
+    },
+    {
+     "name": "second_bits_high",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 100,
+     "ext_status": "unconfirmed",
+     "semantics": "Bits 64 to 95 of that field. The field is wider than 64 bits, so it"
+    }
+   ]
+  },
+  {
+   "entity": "TacticSlot",
+   "priority": false,
+   "file": "src/fmsave/models/tactics.py",
+   "field_count": 12,
+   "verified_count": 5,
+   "unconfirmed_count": 5,
+   "fields": [
+    {
+     "name": "from",
+     "type": "its low bits are positions and its two high bits flag which of a pair of central or",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 108,
+     "ext_status": "unstated",
+     "semantics": null
+    },
+    {
+     "name": "number",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 132,
+     "ext_status": "verified",
+     "semantics": "The slot's place in the tactic, 0 for the first."
+    },
+    {
+     "name": "in_possession_positions",
+     "type": "tuple[CodedValue[TacticPosition], ...]",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 133,
+     "ext_status": "verified",
+     "semantics": "The positions the in-possession mask sets, in ascending bit"
+    },
+    {
+     "name": "in_possession_mask",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 134,
+     "ext_status": "verified",
+     "semantics": "The whole in-possession mask, column flags included."
+    },
+    {
+     "name": "in_possession_setting_count",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 135,
+     "ext_status": "unconfirmed",
+     "semantics": "How many setting units the in-possession block holds"
+    },
+    {
+     "name": "in_possession_settings",
+     "type": "tuple[TacticSettingUnit, ...]",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 136,
+     "ext_status": "unconfirmed",
+     "semantics": "Those units, in stored order (unconfirmed)."
+    },
+    {
+     "name": "out_of_possession_positions",
+     "type": "tuple[CodedValue[TacticPosition], ...]",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 137,
+     "ext_status": "verified",
+     "semantics": "The positions stored for this slot in the defending"
+    },
+    {
+     "name": "out_of_possession_mask",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 138,
+     "ext_status": "verified",
+     "semantics": "The whole out-of-possession mask."
+    },
+    {
+     "name": "out_of_possession_setting_count",
+     "type": "int",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 139,
+     "ext_status": "unconfirmed",
+     "semantics": "How many setting units that block holds"
+    },
+    {
+     "name": "out_of_possession_settings",
+     "type": "tuple[TacticSettingUnit, ...]",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 140,
+     "ext_status": "unconfirmed",
+     "semantics": "Those units, in stored order (unconfirmed)."
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 141,
+     "ext_status": "unconfirmed",
+     "semantics": "The role and trail bits for each phase (unconfirmed). The role bits can be"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/tactics.py",
+     "line": 143,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "TeamMatchStats",
+   "priority": false,
+   "file": "src/fmsave/models/team_match_stats.py",
+   "field_count": 35,
+   "verified_count": 33,
+   "unconfirmed_count": 2,
+   "fields": [
+    {
+     "name": "competition_id",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 68,
+     "ext_status": "verified",
+     "semantics": "Id of the competition, as `Fixture.competition_id`."
+    },
+    {
+     "name": "home_team_id",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 69,
+     "ext_status": "verified",
+     "semantics": "The home side's team id, as `Fixture.home_team_id`."
+    },
+    {
+     "name": "away_team_id",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 70,
+     "ext_status": "verified",
+     "semantics": "The away side's team id, as `Fixture.away_team_id`."
+    },
+    {
+     "name": "date",
+     "type": "datetime.date",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 71,
+     "ext_status": "verified",
+     "semantics": "The kick-off date, as `Fixture.date`."
+    },
+    {
+     "name": "kick_off_time",
+     "type": "datetime.time",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 72,
+     "ext_status": "verified",
+     "semantics": "The kick-off time of day, as `Fixture.kick_off_time`."
+    },
+    {
+     "name": "team_id",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 73,
+     "ext_status": "verified",
+     "semantics": "The team this row describes, one of the two above."
+    },
+    {
+     "name": "is_home",
+     "type": "bool",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 74,
+     "ext_status": "verified",
+     "semantics": "Whether the row describes the home side."
+    },
+    {
+     "name": "detailed_report",
+     "type": "bool",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 75,
+     "ext_status": "unconfirmed",
+     "semantics": "Whether the game kept the longer report format for this match. Only"
+    },
+    {
+     "name": "players",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 76,
+     "ext_status": "unconfirmed",
+     "semantics": "Player records in the team's matchday squad, starters and substitutes"
+    },
+    {
+     "name": "shots",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 77,
+     "ext_status": "verified",
+     "semantics": "Shots."
+    },
+    {
+     "name": "shots_on_target",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 78,
+     "ext_status": "verified",
+     "semantics": "Shots on target."
+    },
+    {
+     "name": "blocked_shots",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 79,
+     "ext_status": "verified",
+     "semantics": "The team's shots that were blocked."
+    },
+    {
+     "name": "shots_outside_box",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 80,
+     "ext_status": "verified",
+     "semantics": "Shots from outside the box, which the screen calls long shots."
+    },
+    {
+     "name": "clear_cut_chances",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 81,
+     "ext_status": "verified",
+     "semantics": "Clear-cut chances the team had."
+    },
+    {
+     "name": "woodwork",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 82,
+     "ext_status": "verified",
+     "semantics": "Shots that hit the woodwork."
+    },
+    {
+     "name": "fouls_made",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 83,
+     "ext_status": "verified",
+     "semantics": "Fouls committed."
+    },
+    {
+     "name": "offsides",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 84,
+     "ext_status": "verified",
+     "semantics": "Offsides."
+    },
+    {
+     "name": "yellow_cards",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 85,
+     "ext_status": "verified",
+     "semantics": "Yellow cards."
+    },
+    {
+     "name": "red_cards",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 86,
+     "ext_status": "verified",
+     "semantics": "Red cards."
+    },
+    {
+     "name": "crosses_attempted",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 87,
+     "ext_status": "verified",
+     "semantics": "Crosses attempted."
+    },
+    {
+     "name": "crosses_completed",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 88,
+     "ext_status": "verified",
+     "semantics": "Crosses completed."
+    },
+    {
+     "name": "tackles_attempted",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 89,
+     "ext_status": "verified",
+     "semantics": "Tackles attempted."
+    },
+    {
+     "name": "tackles_completed",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 90,
+     "ext_status": "verified",
+     "semantics": "Tackles won."
+    },
+    {
+     "name": "aerial_challenges_attempted",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 91,
+     "ext_status": "verified",
+     "semantics": "Aerial challenges attempted."
+    },
+    {
+     "name": "headers_won",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 92,
+     "ext_status": "verified",
+     "semantics": "Aerial challenges won."
+    },
+    {
+     "name": "distance_km",
+     "type": "float",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 93,
+     "ext_status": "verified",
+     "semantics": "Distance covered by the squad, in kilometres."
+    },
+    {
+     "name": "expected_goals",
+     "type": "float",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 94,
+     "ext_status": "verified",
+     "semantics": "Expected goals (xG)."
+    },
+    {
+     "name": "non_penalty_expected_goals",
+     "type": "float",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 95,
+     "ext_status": "verified",
+     "semantics": "Expected goals from shots other than penalties (npxG)."
+    },
+    {
+     "name": "corners",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 96,
+     "ext_status": "verified",
+     "semantics": "Corners."
+    },
+    {
+     "name": "passes_attempted",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 97,
+     "ext_status": "verified",
+     "semantics": "Passes attempted."
+    },
+    {
+     "name": "passes_completed",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 98,
+     "ext_status": "verified",
+     "semantics": "Passes completed. A few rows store more than were attempted, and the"
+    },
+    {
+     "name": "final_third_passes",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 99,
+     "ext_status": "verified",
+     "semantics": "Passes into the final third."
+    },
+    {
+     "name": "progressive_passes",
+     "type": "int | None",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 100,
+     "ext_status": "verified",
+     "semantics": "Progressive passes, or None when the report is not detailed,"
+    },
+    {
+     "name": "possession_percent",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 101,
+     "ext_status": "verified",
+     "semantics": "The team's share of both sides' completed passes, in whole percent."
+    },
+    {
+     "name": "ball_distribution_percent",
+     "type": "int",
+     "file": "src/fmsave/models/team_match_stats.py",
+     "line": 102,
+     "ext_status": "verified",
+     "semantics": "The screen's ball distribution between players, in whole"
+    }
+   ]
+  },
+  {
+   "entity": "TeamTraining",
+   "priority": false,
+   "file": "src/fmsave/models/training.py",
+   "field_count": 6,
+   "verified_count": 4,
+   "unconfirmed_count": 2,
+   "fields": [
+    {
+     "name": "team_id",
+     "type": "int",
+     "file": "src/fmsave/models/training.py",
+     "line": 137,
+     "ext_status": "verified",
+     "semantics": "The team whose calendar this is, as the save stores it."
+    },
+    {
+     "name": "club_uid",
+     "type": "int | None",
+     "file": "src/fmsave/models/training.py",
+     "line": 138,
+     "ext_status": "verified",
+     "semantics": "Uid of the club that fields `team_id`, None for a team no club lists. For a"
+    },
+    {
+     "name": "club_name",
+     "type": "str | None",
+     "file": "src/fmsave/models/training.py",
+     "line": 139,
+     "ext_status": "verified",
+     "semantics": "Denormalised full name of club_uid."
+    },
+    {
+     "name": "team_slot",
+     "type": "int | None",
+     "file": "src/fmsave/models/training.py",
+     "line": 140,
+     "ext_status": "unconfirmed",
+     "semantics": "The team's place in that club's own team list, 0 for its first team; None"
+    },
+    {
+     "name": "weeks",
+     "type": "tuple[TrainingWeek, ...]",
+     "file": "src/fmsave/models/training.py",
+     "line": 141,
+     "ext_status": "verified",
+     "semantics": "Every week of the calendar, in stored order, running from before the save's"
+    },
+    {
+     "name": "schedule_library",
+     "type": "tuple[TrainingSchedule, ...] | None",
+     "file": "src/fmsave/models/training.py",
+     "line": 142,
+     "ext_status": "unconfirmed",
+     "semantics": "The schedules the manager has saved, in stored order, or None when"
+    }
+   ]
+  },
+  {
+   "entity": "TrainingDay",
+   "priority": false,
+   "file": "src/fmsave/models/training.py",
+   "field_count": 2,
+   "verified_count": 2,
+   "unconfirmed_count": 0,
+   "fields": [
+    {
+     "name": "day",
+     "type": "date | None",
+     "file": "src/fmsave/models/training.py",
+     "line": 73,
+     "ext_status": "verified",
+     "semantics": "The date, which is the week's start plus the day's place in the week; None when"
+    },
+    {
+     "name": "sessions",
+     "type": "tuple[CodedValue[TrainingSession], ...]",
+     "file": "src/fmsave/models/training.py",
+     "line": 74,
+     "ext_status": "verified",
+     "semantics": "The day's three sessions in the order the Training screen lists them, top to"
+    }
+   ]
+  },
+  {
+   "entity": "TrainingSchedule",
+   "priority": false,
+   "file": "src/fmsave/models/training.py",
+   "field_count": 4,
+   "verified_count": 0,
+   "unconfirmed_count": 3,
+   "fields": [
+    {
+     "name": "folder",
+     "type": "str",
+     "file": "src/fmsave/models/training.py",
+     "line": 106,
+     "ext_status": "unconfirmed",
+     "semantics": "The folder the schedule is filed under (unconfirmed)."
+    },
+    {
+     "name": "name",
+     "type": "str",
+     "file": "src/fmsave/models/training.py",
+     "line": 107,
+     "ext_status": "unconfirmed",
+     "semantics": "The schedule's name (unconfirmed)."
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/training.py",
+     "line": 108,
+     "ext_status": "unconfirmed",
+     "semantics": "Numeric fields with no known meaning: the id the save stores with the"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/training.py",
+     "line": 110,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  },
+  {
+   "entity": "TrainingWeek",
+   "priority": false,
+   "file": "src/fmsave/models/training.py",
+   "field_count": 3,
+   "verified_count": 3,
+   "unconfirmed_count": 0,
+   "fields": [
+    {
+     "name": "week_start",
+     "type": "date | None",
+     "file": "src/fmsave/models/training.py",
+     "line": 89,
+     "ext_status": "verified",
+     "semantics": "The day the week starts, None when the stored date does not decode."
+    },
+    {
+     "name": "schedule_name",
+     "type": "str",
+     "file": "src/fmsave/models/training.py",
+     "line": 90,
+     "ext_status": "verified",
+     "semantics": "Name of the schedule the week runs, exactly as the save holds it. A"
+    },
+    {
+     "name": "days",
+     "type": "tuple[TrainingDay, ...]",
+     "file": "src/fmsave/models/training.py",
+     "line": 91,
+     "ext_status": "verified",
+     "semantics": "The week's seven days in calendar order, starting on `week_start`. Empty when a"
+    }
+   ]
+  },
+  {
+   "entity": "TransferWindow",
+   "priority": false,
+   "file": "src/fmsave/models/rules.py",
+   "field_count": 8,
+   "verified_count": 6,
+   "unconfirmed_count": 1,
+   "fields": [
+    {
+     "name": "start_day",
+     "type": "int",
+     "file": "src/fmsave/models/rules.py",
+     "line": 73,
+     "ext_status": "verified",
+     "semantics": "Day of the month the window opens, 1 to 31."
+    },
+    {
+     "name": "start_month",
+     "type": "int",
+     "file": "src/fmsave/models/rules.py",
+     "line": 74,
+     "ext_status": "verified",
+     "semantics": "Month the window opens, 1 to 12."
+    },
+    {
+     "name": "start_season_year_offset",
+     "type": "int",
+     "file": "src/fmsave/models/rules.py",
+     "line": 75,
+     "ext_status": "verified",
+     "semantics": "Which season year the window opens in: 0 is the season's own"
+    },
+    {
+     "name": "end_day",
+     "type": "int",
+     "file": "src/fmsave/models/rules.py",
+     "line": 76,
+     "ext_status": "verified",
+     "semantics": "Day of the month the window closes, 1 to 31."
+    },
+    {
+     "name": "end_month",
+     "type": "int",
+     "file": "src/fmsave/models/rules.py",
+     "line": 77,
+     "ext_status": "verified",
+     "semantics": "Month the window closes, 1 to 12."
+    },
+    {
+     "name": "end_season_year_offset",
+     "type": "int",
+     "file": "src/fmsave/models/rules.py",
+     "line": 78,
+     "ext_status": "verified",
+     "semantics": "Which season year the window closes in, as"
+    },
+    {
+     "name": "unknown",
+     "type": "Mapping[str, int]",
+     "file": "src/fmsave/models/rules.py",
+     "line": 79,
+     "ext_status": "unconfirmed",
+     "semantics": "Numeric fields with no known meaning. \"close_time\" is the value stored"
+    },
+    {
+     "name": "UNKNOWN_KEYS",
+     "type": "ClassVar[tuple[str, ...]]",
+     "file": "src/fmsave/models/rules.py",
+     "line": 81,
+     "ext_status": "unstated",
+     "semantics": null
+    }
+   ]
+  }
+ ],
+ "readers": {
+  "affiliates": {
+   "region": "game_db",
+   "doc": "Walking the groups of clubs in the `feeder_man` section and joining them to their clubs."
+  },
+  "club_table": {
+   "region": "game_db",
+   "doc": "Bound club records by walking their counted table."
+  },
+  "clubs": {
+   "region": "game_db",
+   "doc": "Club records, their team lists, and the club-status table in `game_db`."
+  },
+  "competitions": {
+   "region": "game_db",
+   "doc": "Competitions, collected from the stage table, and the editor database id of each."
+  },
+  "contracts": {
+   "region": "game_db",
+   "doc": "Decoding a player's contract chain in `game_db` into `Contract`."
+  },
+  "facilities": {
+   "region": "game_db",
+   "doc": "The facilities rating a club keeps behind its monthly finance chain, club record by record."
+  },
+  "finances": {
+   "region": "game_db",
+   "doc": "A club's monthly finance snapshots and its sponsor contracts, inside its own club record."
+  },
+  "fixtures": {
+   "region": "game_db",
+   "doc": "The fixture calendar, built from the raw records one span pass collected."
+  },
+  "fm27_span": {
+   "region": "game_db",
+   "doc": "Bounded, partial raw grammar observed on the FM27 preview build."
+  },
+  "injuries": {
+   "region": "game_db",
+   "doc": "Reading the injury-type names, and the injury history the save keeps against its people."
+  },
+  "jobs": {
+   "region": "job_centre",
+   "doc": "Reading the open vacancies out of the `job_centre` section."
+  },
+  "league_tables": {
+   "region": "game_db",
+   "doc": "Live league tables, built from the blocks one span pass collected."
+  },
+  "managed": {
+   "region": "game_db",
+   "doc": "Reading the clubs run by the save's human managers."
+  },
+  "match_cache": {
+   "region": "match_stats_cfg",
+   "doc": "Locate nullable match-cache declarations through owned, bounded field grammar."
+  },
+  "match_summaries": {
+   "region": "match_stats_cfg",
+   "doc": "Counted, owned match summaries used only to enrich missing fixture scores."
+  },
+  "matches": {
+   "region": "match_stats_cfg",
+   "doc": "Read complete counted per-match histories within player objects."
+  },
+  "names": {
+   "region": "game_db",
+   "doc": "The three name pools in `game_db`: first names, surnames and common names."
+  },
+  "nations": {
+   "region": "game_db",
+   "doc": "The nation table, and the game-database id of each nation."
+  },
+  "persons": {
+   "region": "game_db",
+   "doc": "Decoding one player's person block: names, birth date, nations, relations, traits and"
+  },
+  "player_scan": {
+   "region": "game_db",
+   "doc": "Locating player records in `game_db`: the marker and completeness scans, and acceptance."
+  },
+  "players": {
+   "region": "game_db",
+   "doc": "Decoding player records in `game_db` into `Player`."
+  },
+  "results": {
+   "region": "game_db",
+   "doc": "Stage results, owned match summaries and framed calendar scores."
+  },
+  "rules": {
+   "region": "game_db",
+   "doc": "Competition rules and transfer windows, read from the span and from `game_db`."
+  },
+  "season_history": {
+   "region": "game_db",
+   "doc": "Bounded archive/list decoding with ownership from validated person blocks."
+  },
+  "season_stats": {
+   "region": "game_db",
+   "doc": "The season-statistics section: one record per player, walked end to end."
+  },
+  "span": {
+   "region": "game_db",
+   "doc": "One streamed pass over the unnamed span: fixtures, tables, rules preambles, results."
+  },
+  "squad_planner": {
+   "region": "game_db",
+   "doc": "Reading the numbered slots in a single human manager's squad planner."
+  },
+  "stadiums": {
+   "region": "game_db",
+   "doc": "The stadium table in `game_db`, and the calendar link that says who plays where."
+  },
+  "staff": {
+   "region": "game_db",
+   "doc": "The people a club employs who are not players: the club lists, their contracts and objects."
+  },
+  "stages": {
+   "region": "game_db",
+   "doc": "The stage table near the end of `game_db`, and the joins it carries to competitions."
+  },
+  "suspensions": {
+   "region": "game_db",
+   "doc": "Locating unserved suspension entries in `game_db` and joining them to their players."
+  },
+  "tactics": {
+   "region": "tactics_man",
+   "doc": "Walking the manager's team blocks in `tactics_man` and building the two tables from them."
+  },
+  "team_match_stats": {
+   "region": "match_stats_cfg",
+   "doc": "Reading per-match team statistics from the match report store."
+  },
+  "training": {
+   "region": "training_man",
+   "doc": "Walking the team blocks of the `training_man` section, and finding the schedule library."
+  }
+ }
+}
