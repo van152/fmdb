@@ -1,7 +1,7 @@
 {
  "schema_id": "fm24.club_nation_subtable_schema",
- "schema_version": "11.2",
- "generated_by": "t90",
+ "schema_version": "11.3",
+ "generated_by": "t92",
  "evidence_grade_policy": "Only accepted source-ledger L3 rows are in fields. Held rows, exclusions, and negative regressions remain separate. L4=0.",
  "binary_provenance": {
   "binary": "editor.exe",
@@ -315,6 +315,36 @@
    "re_routed_table_45": 117,
    "unresolved_wire_slot_before": 277,
    "unresolved_wire_slot_after": 160
+  },
+  "table45_structure_E132_E138": {
+   "table": "server_db/table_45.dat",
+   "rows": 84477,
+   "physical_columns": "~14",
+   "xml_codes_viewed": 117,
+   "family_to_rec_type_anchored": 7,
+   "L3_codes": 34,
+   "grade": "L2",
+   "note": "117 club.xml codes = accessor view over ~14 physical columns; suffix->column pin-down stays open (no new L3)"
+  },
+  "t9_grammar_E133": {
+   "table_9_client_bytes": 31956,
+   "table_9_server_bytes": 307564,
+   "server_corrected_from": 307555,
+   "ordinal_lane": "251/251",
+   "sentinel_head": "251/251",
+   "grade": "L2",
+   "note": "13B header decode + closure + lanes; corrects E127's server value by +9 bytes (footer not counted in the t51 cursor end)"
+  },
+  "cbw_route_E135_E137": {
+   "four_cc_zero_occurrence": true,
+   "binaries_scanned": [
+    "editor.exe",
+    "fm.exe"
+   ],
+   "routing_model": "tag-position ((rec_type, tag ordinal))",
+   "e121_citation_downgraded": true,
+   "grade": "L2",
+   "note": "negative result preserved; 80 held codes become a data-side task"
   }
  },
  "inventory_reconciliation": {
@@ -26352,6 +26382,48 @@
     "level": "L2",
     "date": "2026-11-21",
     "claim_sha256": "3440eb76857d3c57a2a355105fd53248cde507d456f91d180f61661e7d7f4f88"
+   },
+   "E132": {
+    "kind": "static_analysis",
+    "level": "L2",
+    "date": "2026-11-22",
+    "claim_sha256": "1fef2e78acab615cb8e7567d4b0a13cd4ca6893e23ac71db1b21472ec1bea7cc"
+   },
+   "E133": {
+    "kind": "acceptance_partial",
+    "level": "L2",
+    "date": "2026-11-22",
+    "claim_sha256": "99201b034c5139acdaa60d842a8588c3656b81fff56abee8afbf49fc9f833a9d"
+   },
+   "E134": {
+    "kind": "acceptance_partial",
+    "level": "L2",
+    "date": "2026-11-22",
+    "claim_sha256": "09e63f31f8d46246a409e34e43255fd341ed44618bc8e321e1bcb996bb186f26"
+   },
+   "E135": {
+    "kind": "acceptance_partial",
+    "level": "L2",
+    "date": "2026-11-22",
+    "claim_sha256": "784f92a3eabee48bc40e5175474d3d61577c527399cfd3263e767753e93d9bd5"
+   },
+   "E136": {
+    "kind": "correction",
+    "level": "L1",
+    "date": "2026-11-22",
+    "claim_sha256": "28bc89bbf3b6ebb73080d74168253f9c8cdb6c92e10bc5e72995153856fbe41f"
+   },
+   "E137": {
+    "kind": "static_analysis",
+    "level": "L2",
+    "date": "2026-11-22",
+    "claim_sha256": "7860321d3787ca378c5029ad958e1777f38c25f88ee29c5aa89836c4712ca280"
+   },
+   "E138": {
+    "kind": "static_analysis",
+    "level": "L2",
+    "date": "2026-11-22",
+    "claim_sha256": "d47cdd6450b8494b679661cbfef6a4574ff1dbae1e85b363af24c985e5314411"
    }
   },
   "acceptance_ledger_source": {
@@ -28273,16 +28345,303 @@
    "L4": 0
   },
   "commander_acceptance": {
-   "entry": "E129",
+   "entry": "E139",
    "date": "2026-11-22",
    "status": "accepted",
-   "verified": "lane verify 35/35 + anchors 7/7 + 指挥官独立重算根节 diff(37→40,added 3/changed 5/untouched 32 逐字节)+ weather R1/R2 抽查(@5=wind,@10=precip,@3 w2,@25 w0dn,why_before_E118 保留)+ 分母守恒 1034 与 117 连续 [211..327] 复算",
-   "escalations": {
-    "C1": "按 [211..327] 区间口径采纳;CBW*/CBD* 简写系 E121/E124 措辞过窄(117 项中 CB* 仅 10),以本轮为准",
-    "C2": "采纳不移桶:五表不在 E116 分母内,扩容留待后续专报",
-    "C3": "采纳:city(2) 无 occurrence;分母内既有 Cnti 已是 mapped_l3"
+   "verified": "lane verify 8/8 + 指挥官独立根节 diff(40→43,added 3/changed 5/untouched 35)+ 四点抽查(E127 修正 307,564 与旧值保留、accessor_view_model family_to_rec_type 在位、cbw_route 4CC 零存在+demotion 在位、denominator_note 纯注记)",
+   "escalations": "无新增 escalate;E127 九字节修正已带 why_before;E121 引用降级按 E136/E137 注记",
+   "merge": "reports/club_nation_subtable_schema.json ← v11.3 定稿;reports/xml_denominator_coverage.json 117 条 re_routed 加注记(值不变)"
+  },
+  "t92_ledger_snapshot": {
+   "path": "scratch/t01/LEDGER.json",
+   "guard_scope": "entry-level id, kind, level, date and canonical claim SHA-256; no live full-file hash pin",
+   "guarded_entries": [
+    "E132",
+    "E133",
+    "E134",
+    "E135",
+    "E136",
+    "E137",
+    "E138"
+   ],
+   "entries": [
+    {
+     "id": "E132",
+     "kind": "static_analysis",
+     "level": "L2",
+     "date": "2026-11-22",
+     "claim_sha256": "1fef2e78acab615cb8e7567d4b0a13cd4ca6893e23ac71db1b21472ec1bea7cc"
+    },
+    {
+     "id": "E133",
+     "kind": "acceptance_partial",
+     "level": "L2",
+     "date": "2026-11-22",
+     "claim_sha256": "99201b034c5139acdaa60d842a8588c3656b81fff56abee8afbf49fc9f833a9d"
+    },
+    {
+     "id": "E134",
+     "kind": "acceptance_partial",
+     "level": "L2",
+     "date": "2026-11-22",
+     "claim_sha256": "09e63f31f8d46246a409e34e43255fd341ed44618bc8e321e1bcb996bb186f26"
+    },
+    {
+     "id": "E135",
+     "kind": "acceptance_partial",
+     "level": "L2",
+     "date": "2026-11-22",
+     "claim_sha256": "784f92a3eabee48bc40e5175474d3d61577c527399cfd3263e767753e93d9bd5"
+    },
+    {
+     "id": "E136",
+     "kind": "correction",
+     "level": "L1",
+     "date": "2026-11-22",
+     "claim_sha256": "28bc89bbf3b6ebb73080d74168253f9c8cdb6c92e10bc5e72995153856fbe41f"
+    },
+    {
+     "id": "E137",
+     "kind": "static_analysis",
+     "level": "L2",
+     "date": "2026-11-22",
+     "claim_sha256": "7860321d3787ca378c5029ad958e1777f38c25f88ee29c5aa89836c4712ca280"
+    },
+    {
+     "id": "E138",
+     "kind": "static_analysis",
+     "level": "L2",
+     "date": "2026-11-22",
+     "claim_sha256": "d47cdd6450b8494b679661cbfef6a4574ff1dbae1e85b363af24c985e5314411"
+    }
+   ],
+   "out_of_scope_note": "E131 and earlier stay as pinned by t90/t91"
+  },
+  "t92_source_snapshot": [
+   {
+    "path": "scratch/t88/out2/row_frame.json",
+    "sha256": "2910173ba625d3a50e98771b5eb30c807c8e1fc4014d09d255b192b45b570d3e",
+    "bytes": 1249
    },
-   "accounting": "headline 物理覆盖 110/1034=10.6% 不变;净口径 110/917=12.0% 并列存档"
+   {
+    "path": "scratch/t88/out3/slots.json",
+    "sha256": "f1050953d19da7ea30902f3cc11ee4eb0cf1e55b1f4ca8be408f7f2026663420",
+    "bytes": 35443
+   },
+   {
+    "path": "scratch/t88/out3/pe_sections.json",
+    "sha256": "894a34f5d5f1f65b545041cb9196e1bb8e2978e85ea1424fbb0975c351451d30",
+    "bytes": 5003
+   },
+   {
+    "path": "scratch/t88/out3/rec_structure.json",
+    "sha256": "8dd00f0528fdbbbec60b8fc0ebe98b6c5ab44347fa767a62a4ebc2d9e33cf294",
+    "bytes": 3414
+   },
+   {
+    "path": "scratch/t89/out/table9_grammar.json",
+    "sha256": "5915217d5aa12ecd127bfc1c28aec90c816a73cb5dd727cf725f409775d22bdd",
+    "bytes": 2727
+   },
+   {
+    "path": "scratch/t89/out/_dual.json",
+    "sha256": "0b7aa492de9295d1f2eef2fa74de68a79385a32c4eba78cd124bbc61ca08de40",
+    "bytes": 28463
+   },
+   {
+    "path": "scratch/t89/out/verify.py",
+    "sha256": "fc1d706fc2ab7d57a6901598f7d06f8dc6083d02652d88fc4c74af722f4513c8",
+    "bytes": 2786
+   }
+  ],
+  "t92_volume_policy": {
+   "main_schema_keeps": [
+    "per-section grade + ledger pointer",
+    "counters",
+    "one source pointer per artifact"
+   ],
+   "bulk_stays_out": "the t88 out2 7.6MB payload, the 337KB start table, the t88 out3 559KB grid and the t89 28KB dual profile stay in their own artifacts; only recomputed aggregates enter",
+   "split_files_untouched": [
+    "reports/other_tables_schema.json",
+    "reports/xml_denominator_coverage.json"
+   ]
+  },
+  "t92_additive_rule": "v11.2 sections are value-identical after the patch except table9_closure_e127 (two integer values + annotation keys under cross_check_t51_frozen_cursor/server, plus one new sibling key t92_e127_note); only schema_version, generated_by, coverage and incremental_provenance change, plus the three new root sections",
+  "t92_assembly_guard": {
+   "baseline": {
+    "schema_version": "11.2",
+    "sha256": "e3c5400c6d1331605df433558dadce9fb8c84fda916913f0652182bfdd7f5a85",
+    "bytes": 21344318,
+    "root_keys": 40
+   },
+   "product": {
+    "schema_version": "11.3-candidate",
+    "root_keys": 43
+   },
+   "untouched_root_digests": {
+    "schema_id": {
+     "sha256": "6f508358d4761abe1614c4ca22c46eac5644c7a2281397cacd98f375e77faaf2",
+     "bytes": 34
+    },
+    "evidence_grade_policy": {
+     "sha256": "c52bf7d180c9c25e14d3fc3f5cecfeeb7a2cf7b1a38de0c12af384a714ec69a8",
+     "bytes": 123
+    },
+    "binary_provenance": {
+     "sha256": "d4302b13ba0406e7d928a02b789b334c6bff6008b84921cf8a28c246dd567a10",
+     "bytes": 587
+    },
+    "inventory_reconciliation": {
+     "sha256": "a4a095d52b5856bde08bbc99634f9d112a6650199300c56d255411f4db3a9845",
+     "bytes": 821
+    },
+    "source_artifacts": {
+     "sha256": "51ad3950a463021fabef773effb117ca4c20a6ac6841dc1c2a5dcc52900b843d",
+     "bytes": 15269
+    },
+    "tables": {
+     "sha256": "2ad9ca5f712d35411438fdaddd1eca73cf838f5aa8892ba42d5505fe8081c8df",
+     "bytes": 589673
+    },
+    "negative_regressions": {
+     "sha256": "4f5bc65363b286c83afcb5b235c719c15fa92aa86609122c9dcf74805b20565f",
+     "bytes": 422
+    },
+    "schema_provenance": {
+     "sha256": "38b617b447c06101183f1d78e46c8b322aebe6058b3ab36fe3b9420c74f12009",
+     "bytes": 784
+    },
+    "club_auxiliary_sources": {
+     "sha256": "12dab0b84f8f1bd07df0d89f7910ccb86e18a6e4b3fb8c69eeb6a89c31c2ae2c",
+     "bytes": 163434
+    },
+    "nation_data_side_status": {
+     "sha256": "15bd6ccdf44a727afd48b3d62ed626939655514af84d29d6ccfd1dd19a65938b",
+     "bytes": 16039
+    },
+    "v3_baseline": {
+     "sha256": "d7b892abadf3d28460b80415c21db464aa10460279ba679ea6867689dde239b5",
+     "bytes": 461
+    },
+    "nation_static_side": {
+     "sha256": "54468ba8841e49d0a92c1612232cdd44150429bff5a302e117f673c6c00c59c8",
+     "bytes": 199062
+    },
+    "nation_t9_wire": {
+     "sha256": "2857992a7c6d147afc5c4222d270f5d33e52f9f97d10b1dcd5ce4122e38fabc1",
+     "bytes": 2932027
+    },
+    "nation_main_row_fields": {
+     "sha256": "13d029835d627697346ea88177dc8fa975c69c6c7dd1c167a0d5634d3f6dd161",
+     "bytes": 1421770
+    },
+    "club_main_row_fields": {
+     "sha256": "6dc1fccee9b5b65918484024d01903536d8c53a93c3631dd11afd2951b183f53",
+     "bytes": 665608
+    },
+    "comp_main_row_fields": {
+     "sha256": "7304cc870b791a5ca4cde3948835f3d2da61697e0a299aa059370d4a9b001071",
+     "bytes": 1265705
+    },
+    "club_main_row_fields_r2": {
+     "sha256": "cae4f6f9660e2467e651ae41cef786f91d80cf3f43a6770047cf1dd98e749d5b",
+     "bytes": 1979029
+    },
+    "comp_main_row_fields_r2": {
+     "sha256": "553dc31cea0d601129df793509ad56d4f30ae1288558db0f9f5b33b6ff7c887f",
+     "bytes": 391459
+    },
+    "nation_main_row_fields_r2": {
+     "sha256": "6f372937be70202ac7586ed4c4598a175879c314dbe44750977f745b9a57744f",
+     "bytes": 379204
+    },
+    "comp_collections": {
+     "sha256": "3844a3248f2d13894b63d54ba98351a47c02ab83f31d58a7bccc1a26370e59bb",
+     "bytes": 16842212
+    },
+    "edfx_edsc_dispatch": {
+     "sha256": "926529733f1f42aa0cb743be275356c7eefc691fa88408cdbd30059a34a20908",
+     "bytes": 148914
+    },
+    "tail_ledger": {
+     "sha256": "8c5dcaa5adf46e7556367c7f5f7845ea7cab67cca12fa38066033d29ada2a306",
+     "bytes": 60976
+    },
+    "club_extra_object_row": {
+     "sha256": "0b5b60cae151c7b0db81b84c98f62536459f2d4c38f20508f13bb7497d31e566",
+     "bytes": 50822
+    },
+    "slot_fingerprints": {
+     "sha256": "93a1705c9a8a9e1959c8b4670746d046889adafa7d84993c9c6ddd616dc209f5",
+     "bytes": 8080
+    },
+    "simple_tables": {
+     "sha256": "aca40748786e1278cc87a5e0b02c3a36b12d5233a68e3178a510add4884ef734",
+     "bytes": 14760
+    },
+    "nation_segment_grammars": {
+     "sha256": "06a46c228099b3b4aea93bf6220ab15f598edbe5017f9ddabd61494417511d54",
+     "bytes": 7241
+    },
+    "xref_reverse_adjudication": {
+     "sha256": "4b8a5e3a64dc3e77aae90dd734721f36edf3a3c4b40e82395f1e6d4ede2cbd70",
+     "bytes": 4447
+    },
+    "row_frames9": {
+     "sha256": "2be6d2f2fe0796a93e5525c3c3fb01f732fb71c42e23948ed0d8505fc0ca03e1",
+     "bytes": 15057
+    },
+    "stadium_team_l3": {
+     "sha256": "25e02a96e6774ebee4f8c16b96ee0eed9b9c61561f36abc4470966d4c2827929",
+     "bytes": 82576
+    },
+    "scan_tables": {
+     "sha256": "759adf09abd1feaef006040dd1b83319979eb1e859cb524440a26a417987d70a",
+     "bytes": 187258
+    },
+    "xml_denominator_coverage": {
+     "sha256": "8b9df4ede94eca6d35065f0156c3d23d82f635e1ccf0539560844846aa1f32bc",
+     "bytes": 1341
+    },
+    "pointer_artifacts": {
+     "sha256": "12dadbd91dee93c524b82504a04ba7575752ce0aded826630e2e151b72f43b41",
+     "bytes": 544
+    },
+    "club_extra3_l3_e121": {
+     "sha256": "8f00e60dadfd42e58028751241366c5729554c495677aeb3730bd50732d37309",
+     "bytes": 6275
+    },
+    "fk_index_e125": {
+     "sha256": "4897cfca351b8eb1de620ad1d7caa77786a75ecf0f544e6d8cb2125798bc5d7c",
+     "bytes": 20041
+    },
+    "five_tables_l3_e126": {
+     "sha256": "8259b683411195dae54813baabed0606c224db233712c9fb653e21ba54827127",
+     "bytes": 240197
+    }
+   },
+   "mutable_roots": [
+    "schema_version",
+    "generated_by",
+    "incremental_provenance",
+    "coverage",
+    "table9_closure_e127"
+   ],
+   "new_roots": [
+    "table45_structure_e132_e138",
+    "t9_grammar_e133",
+    "cbw_route_e135_e137"
+   ],
+   "structural_edits": [
+    "table9_closure_e127/cross_check_t51_frozen_cursor/server|table_9.dat/{t51_footer_at,t51_last_end}: 307555 -> 307564 (values only, E133)"
+   ],
+   "annotation_keys_added": [
+    "table9_closure_e127/cross_check_t51_frozen_cursor/server|table_9.dat/t92_why_before",
+    ".../t92_correction",
+    "table9_closure_e127/t92_e127_note"
+   ],
+   "reports_touched": [],
+   "L4": 0
   }
  },
  "nation_static_side": {
@@ -1206071,10 +1206430,21 @@
     "t51_count": 251,
     "t51_trailer_bytes": 12,
     "t51_body0": 1086,
-    "t51_footer_at": 307555,
-    "t51_last_end": 307555,
+    "t51_footer_at": 307564,
+    "t51_last_end": 307564,
     "identity_triples_agree_head4": true,
-    "last_trailer_matches_payload_minus_footer": true
+    "last_trailer_matches_payload_minus_footer": true,
+    "t92_why_before": "E127 recorded 307,555 for both t51_footer_at and t51_last_end. E133/t89 established the true server payload length is 307,564: 307,555 is the end of the LAST ROW BODY (== footer START), so the t51 frozen cursor stopped one 9B footer early. The 9 bytes are the footer 00 00 00 00 01 ec 7a e4 04, verified independently by t92 (load_payload(server,9)[307555:307564] == that footer). Client 31,947/31,956 is the identical 9-byte relation and is already correct.",
+    "t92_correction": {
+     "ledger": "E133",
+     "value_before": 307555,
+     "value_after": 307564,
+     "delta_bytes": 9,
+     "edits": [
+      "t51_footer_at",
+      "t51_last_end"
+     ]
+    }
    },
    "client|table_10.dat": {
     "status": "compared",
@@ -1207866,6 +1208236,401 @@
   "held": {
    "item_grammar": "held_no_item_grammar (both archives, both tables; two probing rounds, first counterexample preserved)",
    "nation_0x108": "whether table_9 is the wire home of [NATION+0x108] remains UNPROVEN -> escalated to a static lane (t89)"
+  },
+  "L4": 0,
+  "t92_e127_note": {
+   "rule": "VALUE edit only on cross_check_t51_frozen_cursor/server; no other key of table9_closure_e127 is touched by t92",
+   "why_the_section_was_right_elsewhere": "closure_claims/chains already carried 307564; only the t51 cross-check copied the cursor end",
+   "ledger": "E133"
+  }
+ },
+ "table45_structure_e132_e138": {
+  "generated_by": "t92",
+  "acceptance_ledger_entries": [
+   "E132",
+   "E134",
+   "E138"
+  ],
+  "acceptance_ledger_level": "L2",
+  "source_task": [
+   "t88-fix2/fix3/fix4 (E132 commander probe)",
+   "t88-fix5 (E134)",
+   "t88-fix9 + commander (E138)"
+  ],
+  "table": {
+   "path": "server_db/table_45.dat",
+   "table_type": 45,
+   "rtti": ".?AV?$DATABASE_TABLE@VSTARTING_RECORD@db@@",
+   "rows": 84477,
+   "client_archive": "absent (client_db.dat has no table_45 entry; server-only)",
+   "grade": "L2"
+  },
+  "row_decomposition_e138": {
+   "grade": "L2",
+   "form": "pre[0..36] 37B | [u32 namelen][utf8 name] @37 | tail 26B | identity 13B",
+   "rowlen_rule": "rowlen == 80 + namelen (universal over all 84,477 rows)",
+   "tail_at": "row_end - 39 (26B fixed window, fixed distance from row end)",
+   "identity_at": "row_end - 13",
+   "identity_layout": "[ordinal u32][uid u32][uid u32][u8 tail=0]",
+   "physical_column_count": "~14 (8 prefix u32-slots + rec_type u8 + name + ~5 tail columns)",
+   "capacity_verdict": "the physical row CANNOT hold 117 independent fields -> the 117 club.xml codes are an accessor VIEW over ~14 physical columns",
+   "frozen_artifacts": [
+    "scratch/t88/out2/row_frame.json",
+    "scratch/t88/out3/rec_structure.json"
+   ],
+   "header_count_at_plus8": 84477,
+   "footer_hex": "00000001775f0100",
+   "footer_bytes": 8,
+   "t92_recompute": {
+    "source": [
+     "scratch/t88/out2/_p_server_45.bin",
+     "scratch/t88/out2/_starts.bin"
+    ],
+    "payload_bytes": 7608748,
+    "header_bytes": 13,
+    "header_count_at_plus8": 84477,
+    "footer_bytes": 8,
+    "footer_hex": "00000001775f0100",
+    "rows": 84477,
+    "bad_rowlen": 0,
+    "rowlen_min": 80,
+    "rowlen_max": 122,
+    "rowlen_distinct": 38,
+    "rec_type_distinct": 37,
+    "rec_type_255_null": 38968,
+    "rec_type_8_rows": 3391,
+    "rec_type_8_namelen_nonzero": 0,
+    "bad_identity": 0,
+    "recompute_verdict": "rowlen==80+namelen universal; identity 13B self-consistent"
+   }
+  },
+  "three_columns_e132": {
+   "grade": "L2 (data-side self-consistent; u32@5 has an external anchor)",
+   "columns": [
+    {
+     "col": "u32@0",
+     "verdict": "club-uid link column",
+     "evidence": "96.7% membership against the 84,259 club main-row UIDs; 8,368 clubs actually appear"
+    },
+    {
+     "col": "u8@4",
+     "verdict": "rec_type byte",
+     "evidence": "37 distinct values; 255 = null x 38,968"
+    },
+    {
+     "col": "u32@5",
+     "verdict": "person-uid",
+     "evidence": "external anchor C.Ronaldo 735216 x18 (provenance ext/fm-data@d7a7150); 35,926 distinct"
+    }
+   ],
+   "undetermined": [
+    {
+     "col": "u32@9",
+     "verdict": "未定 (0 x38,968 / 0xffffffff x25,755 / 其余)"
+    },
+    {
+     "col": "u32@21/25",
+     "verdict": "第二 [id][id] 双写对, 6,800 distinct, 第二链接实体未定"
+    },
+    {
+     "col": "u32@13/17",
+     "verdict": "sentinel 对 (0xffffffff x84,316)"
+    },
+    {
+     "col": "u32@33",
+     "verdict": "布尔旗 (0xffffffff vs 0)"
+    }
+   ],
+   "prefix_grid_e134": {
+    "u32_slots": [
+     0,
+     9,
+     13,
+     17,
+     21,
+     25,
+     29,
+     33
+    ],
+    "u8_slots": [
+     4
+    ],
+    "note": "7 u32 slots @9..33 vary by rec_type; 37B prefix is fixed-length"
+   },
+   "identity_uid": "row self-key, dense 0..89,974",
+   "premise_refuted": "『84,477=84,259+218』已否证(指挥官); 行=(club,person) 记录, 8,368 club 实际出现。原样保留。"
+  },
+  "rec_type_census_e138": {
+   "grade": "L2",
+   "distinct": 37,
+   "null_255": 38968,
+   "rec_type_8": {
+    "rows": 3391,
+    "namelen_zero_all": true,
+    "note": "shortest rows in the table (namelen=0); prefix columns proven on this family: club_uid@0 / rt@4 / person_uid@5 (0xffffffff = empty) / club_uid2 pair @21,@25"
+   },
+   "census_source": "scratch/t88/out3/rec_structure.json#/sections/rec_type_census"
+  },
+  "accessor_view_model_e138": {
+   "grade": "L2",
+   "claim": "117 club.xml codes = (family -> rec_type, suffix -> row/column) accessor view, NOT 117 physical columns",
+   "family_to_rec_type": {
+    "CFG": [
+     24
+    ],
+    "CHA": [
+     13
+    ],
+    "CHS": [
+     25
+    ],
+    "CLA": [
+     26
+    ],
+    "COS": [
+     28
+    ],
+    "CYP": [
+     10
+    ],
+    "CYS": [
+     27
+    ]
+   },
+   "family_to_rec_type_basis": "34 L3 codes in scratch/t88/out3/slots.json (multi-suffix families share one rec_type)",
+   "families_anchored": 7,
+   "rec_types_anchored": [
+    10,
+    13,
+    24,
+    25,
+    26,
+    27,
+    28
+   ],
+   "l3_code_count": 34,
+   "family_rt_conflicts": [],
+   "rt_14_34_L3_examples": [
+    {
+     "family": "CFG",
+     "rec_type": 24,
+     "l3_codes": 6
+    },
+    {
+     "family": "CHA",
+     "rec_type": 13,
+     "l3_codes": 1
+    },
+    {
+     "family": "CHS",
+     "rec_type": 25,
+     "l3_codes": 5
+    },
+    {
+     "family": "CLA",
+     "rec_type": 26,
+     "l3_codes": 4
+    },
+    {
+     "family": "CYP",
+     "rec_type": 10,
+     "l3_codes": 6
+    },
+    {
+     "family": "CYS",
+     "rec_type": 27,
+     "l3_codes": 6
+    },
+    {
+     "family": "COS",
+     "rec_type": 28,
+     "l3_codes": 6
+    }
+   ],
+   "reader_off_semantics": "the 34 L3 reader_off values are IN-MEMORY record offsets ([rdi+0xNN]), not wire offsets; wire_off derivation stays open",
+   "open": [
+    "suffix -> column pin-down (per-family reader_off or value-domain match)",
+    "reader_off -> wire_off derivation",
+    "per-4CC (rec_type, offset) mapping for the 80 held codes"
+   ]
+  },
+  "held_policy": "E134/E135 slot verdicts are copied as counts + the first counterexample pointers; nothing is re-adjudicated here",
+  "L4": 0
+ },
+ "t9_grammar_e133": {
+  "generated_by": "t92",
+  "acceptance_ledger_entries": [
+   "E133"
+  ],
+  "acceptance_ledger_level": "L2",
+  "source_task": "t89c (partial, commander REPORT/verify/DONE per E88 precedent)",
+  "table": {
+   "table_type": 9,
+   "rtti": "NATIONAL_TEAM_CONTAINER",
+   "rows": 251,
+   "archives": [
+    "client",
+    "server"
+   ],
+   "grade": "L2"
+  },
+  "header_13b_decode": {
+   "len": 13,
+   "hex": "03 01 74 61 64 2e f1 0d fb 00 00 00 00",
+   "fields": [
+    {
+     "off": 0,
+     "len": 1,
+     "value": "03",
+     "meaning": "magic/version byte"
+    },
+    {
+     "off": 1,
+     "len": 4,
+     "value": "74 61 64 2e",
+     "ascii": "tad."
+    },
+    {
+     "off": 5,
+     "len": 2,
+     "value": "f1 0d",
+     "meaning": "payload_version 3569 LE"
+    },
+    {
+     "off": 7,
+     "len": 2,
+     "value": "fb 00",
+     "meaning": "record_count 251 LE"
+    },
+    {
+     "off": 9,
+     "len": 4,
+     "value": "00 00 00 00"
+    }
+   ],
+   "count_field": "u32 @ +8 = 251 (both archives)",
+   "isomorphic_to_table_45": "same 13B header shape as table_45 (count u32@+8 = 84,477) -> the framing is a shared DATABASE_TABLE convention, not a t9 speciality"
+  },
+  "closure": {
+   "rule": "13 + sum(body_len) + 12*rows + 9 = payload",
+   "client": {
+    "payload": 31956,
+    "body_sum": 28922,
+    "arithmetic": "13 + 28,922 + 12*251 + 9 = 31,956",
+    "closure_exact": true,
+    "body_len": {
+     "min": 46,
+     "max": 449,
+     "distinct": 92
+    }
+   },
+   "server": {
+    "payload": 307564,
+    "body_sum": 304530,
+    "arithmetic": "13 + 304,530 + 12*251 + 9 = 307,564",
+    "closure_exact": true,
+    "body_len": {
+     "min": 371,
+     "max": 36502,
+     "distinct": 211
+    },
+    "server_211_distinct_lengths": "unexplained (carried as open)"
+   },
+   "trailer": "12B identity [ordinal u32][uid u32][uid u32][u8 0]",
+   "footer": {
+    "len": 9,
+    "hex": "00 00 00 00 01 ec 7a e4 04"
+   }
+  },
+  "lanes": {
+   "ordinal_lane": {
+    "offset": 12,
+    "rule": "body[12] == ordinal & 0xff",
+    "rows_ok": "251/251",
+    "archive": "client"
+   },
+   "sentinel_head": {
+    "bytes": "00 ff ff ff ff",
+    "offset": 0,
+    "rows_ok": "251/251",
+    "archive": "client",
+    "note": "constant across all 251 client rows; the sentinel head is NOT the ordinal"
+   }
+  },
+  "e127_correction": {
+   "field": "server payload",
+   "value_before": 307555,
+   "value_after": 307564,
+   "delta_bytes": 9,
+   "why_before": "E127/t85 recorded the t51 frozen-cursor footer offset (307,555) as the server payload length; the payload is 9 bytes longer because the 9B footer sits after that cursor end",
+   "verified_by": "scratch/t89/out/verify.py V1 (len(payload)==307564) + t92 independent re-read of load_payload(server, table 9)",
+   "ledger": "E133"
+  },
+  "carried_from_e127": {
+   "table_9_is_per_nation": true,
+   "rows_equal_nation_rows": true,
+   "item_grammar": "held_no_item_grammar (both archives, both tables; two probing rounds, first counterexample preserved)",
+   "nation_0x108": "whether table_9 is the wire home of [NATION+0x108] remains UNPROVEN -> escalated to a static lane (t89)"
+  },
+  "open": [
+   "24 helper route expansion",
+   "wire offset mapping",
+   "row0 byte-level reconciliation",
+   "server 211 distinct body lengths"
+  ],
+  "L4": 0
+ },
+ "cbw_route_e135_e137": {
+  "generated_by": "t92",
+  "acceptance_ledger_entries": [
+   "E135",
+   "E136",
+   "E137"
+  ],
+  "acceptance_ledger_level": "L2 (E136 correction is L1)",
+  "source_task": [
+   "t88-fix6 (E135)",
+   "fix7 zero-output (E136)",
+   "fix8 PE baseline (E137)"
+  ],
+  "negative_result_4cc_absence": {
+   "grade": "L2",
+   "claim": "the CBW*/CBD* family 4CC byte strings (CBDa/CBWa/CBWo/CHSo) are ZERO-OCCURRENCE in BOTH editor.exe (74.8MB) and fm.exe (491MB) - neither as cmp immediates nor as raw references",
+   "method": "commander full-byte scan over both executables with the true PE section table (fix8 baseline)",
+   "verdict_on_e135": "the fix6 '80 held' bucket is substantively correct, not a false negative",
+   "preserved_as": "negative result kept verbatim; not upgraded to a positive routing proof"
+  },
+  "tag_position_routing": {
+   "grade": "L2",
+   "claim": "club record-family field reads = (rec_type, tag ordinal) POSITION routing; the 4CC exists only in the editor schema, not in the executables",
+   "consistency": "self-consistent with the 34 L3 tag/rt chains in scratch/t88/out3/slots.json (E135) and with the accessor-view model (E138)",
+   "consequence": "the remaining 80 held codes become a pure DATA-SIDE task: per-rec_type row-body tag sequence -> field order -> wire offset (recget_tagmap.json's 12 static groups are the seed)"
+  },
+  "e121_reference_downgrade": {
+   "grade": "unverified (downgraded from an L3 citation)",
+   "affected": "club_extra3_l3_e121 negative_proof: 'CBDa cmp @0x11f0ca7 / CBWa cmp @0x11f0cb6'",
+   "reason": "cannot be reproduced byte-wise; t89_disasm.py used a hard-coded 5-section table that does not cover the 0x3ebad50 region, and the 0x1411f0ca7 window shows serialization code, not a cmp",
+   "status": "the cited sites stay in the schema as UNVERIFIED references, not as evidence",
+   "note": "the underlying TC_RECORD_GET chain addresses (0x3ebad50 etc.) live in the .reloc 45MB executable region; the true section table is fix8's",
+   "preserved": "sec121.cbw_cbd_table_45_verdict is unchanged (it is a table-location verdict, not a dispatch verdict)"
+  },
+  "pe_baseline_fix8": {
+   "exe": "D:\\tmp2b\\fm24\\input\\editor.exe",
+   "sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4",
+   "image_base": 5368709120,
+   "size_of_image": 76320768,
+   "nsec": 18,
+   "entry_rva": 75685920,
+   "reloc_section": {
+    "name": ".reloc",
+    "rva": 29769728,
+    "vsize": 45639506,
+    "fo": 28281344,
+    "rawsize": 45639680,
+    "exec": true
+   },
+   "note": "true PE header (18 sections) replaces the hard-coded 5-section table used by t89_disasm.py",
+   "source": "scratch/t88/out3/pe_sections.json"
   },
   "L4": 0
  }

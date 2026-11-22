@@ -1,0 +1,2715 @@
+{
+ "generated_by": "t92",
+ "product": {
+  "path": "scratch/t92/out/schema_v113.json",
+  "sha256": "e4175578d587e201b7d0b14bd15c69c967679049d4a0d236cd4f9e861944254e",
+  "bytes": 21369551,
+  "schema_version": "11.3-candidate",
+  "root_keys": 43
+ },
+ "baseline": {
+  "path": "reports/club_nation_subtable_schema.json",
+  "sha256": "e3c5400c6d1331605df433558dadce9fb8c84fda916913f0652182bfdd7f5a85",
+  "schema_version": "11.2",
+  "root_keys": 40
+ },
+ "checks": [
+  {
+   "check": "V1_traceability",
+   "pass": true
+  },
+  {
+   "check": "V2_e127_correction",
+   "pass": true
+  },
+  {
+   "check": "V3_new_section_counts",
+   "pass": true
+  },
+  {
+   "check": "V4_root_invariants",
+   "pass": true
+  },
+  {
+   "check": "V5_family_rt_vs_slots",
+   "pass": true
+  },
+  {
+   "check": "V6_denominator_note",
+   "pass": true
+  },
+  {
+   "check": "V7_ledger_provenance",
+   "pass": true
+  },
+  {
+   "check": "V8_t9_dual_agreement",
+   "pass": true
+  }
+ ],
+ "diff_inventory": [
+  {
+   "path": "/cbw_route_e135_e137/L4",
+   "change": "added",
+   "after": 0,
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/acceptance_ledger_entries",
+   "change": "added",
+   "after": [
+    "E135",
+    "E136",
+    "E137"
+   ],
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/acceptance_ledger_level",
+   "change": "added",
+   "after": "L2 (E136 correction is L1)",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/e121_reference_downgrade/affected",
+   "change": "added",
+   "after": "club_extra3_l3_e121 negative_proof: 'CBDa cmp @0x11f0ca7 / CBWa cmp @0x11f0cb6'",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/e121_reference_downgrade/grade",
+   "change": "added",
+   "after": "unverified (downgraded from an L3 citation)",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/e121_reference_downgrade/note",
+   "change": "added",
+   "after": "the underlying TC_RECORD_GET chain addresses (0x3ebad50 etc.) live in the .reloc 45MB executable region; the true section table is fix8's",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/e121_reference_downgrade/preserved",
+   "change": "added",
+   "after": "sec121.cbw_cbd_table_45_verdict is unchanged (it is a table-location verdict, not a dispatch verdict)",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/e121_reference_downgrade/reason",
+   "change": "added",
+   "after": "cannot be reproduced byte-wise; t89_disasm.py used a hard-coded 5-section table that does not cover the 0x3ebad50 region, and the 0x1411f0ca7 window shows serialization code, not a cmp",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/e121_reference_downgrade/status",
+   "change": "added",
+   "after": "the cited sites stay in the schema as UNVERIFIED references, not as evidence",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/generated_by",
+   "change": "added",
+   "after": "t92",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/negative_result_4cc_absence/claim",
+   "change": "added",
+   "after": "the CBW*/CBD* family 4CC byte strings (CBDa/CBWa/CBWo/CHSo) are ZERO-OCCURRENCE in BOTH editor.exe (74.8MB) and fm.exe (491MB) - neither as cmp immediates nor as raw references",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/negative_result_4cc_absence/grade",
+   "change": "added",
+   "after": "L2",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/negative_result_4cc_absence/method",
+   "change": "added",
+   "after": "commander full-byte scan over both executables with the true PE section table (fix8 baseline)",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/negative_result_4cc_absence/preserved_as",
+   "change": "added",
+   "after": "negative result kept verbatim; not upgraded to a positive routing proof",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/negative_result_4cc_absence/verdict_on_e135",
+   "change": "added",
+   "after": "the fix6 '80 held' bucket is substantively correct, not a false negative",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/pe_baseline_fix8/entry_rva",
+   "change": "added",
+   "after": 75685920,
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/pe_baseline_fix8/exe",
+   "change": "added",
+   "after": "D:\\tmp2b\\fm24\\input\\editor.exe",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/pe_baseline_fix8/image_base",
+   "change": "added",
+   "after": 5368709120,
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/pe_baseline_fix8/note",
+   "change": "added",
+   "after": "true PE header (18 sections) replaces the hard-coded 5-section table used by t89_disasm.py",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/pe_baseline_fix8/nsec",
+   "change": "added",
+   "after": 18,
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/pe_baseline_fix8/reloc_section/exec",
+   "change": "added",
+   "after": true,
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/pe_baseline_fix8/reloc_section/fo",
+   "change": "added",
+   "after": 28281344,
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/pe_baseline_fix8/reloc_section/name",
+   "change": "added",
+   "after": ".reloc",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/pe_baseline_fix8/reloc_section/rawsize",
+   "change": "added",
+   "after": 45639680,
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/pe_baseline_fix8/reloc_section/rva",
+   "change": "added",
+   "after": 29769728,
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/pe_baseline_fix8/reloc_section/vsize",
+   "change": "added",
+   "after": 45639506,
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/pe_baseline_fix8/sha256",
+   "change": "added",
+   "after": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/pe_baseline_fix8/size_of_image",
+   "change": "added",
+   "after": 76320768,
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/pe_baseline_fix8/source",
+   "change": "added",
+   "after": "scratch/t88/out3/pe_sections.json",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/source_task",
+   "change": "added",
+   "after": [
+    "t88-fix6 (E135)",
+    "fix7 zero-output (E136)",
+    "fix8 PE baseline (E137)"
+   ],
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/tag_position_routing/claim",
+   "change": "added",
+   "after": "club record-family field reads = (rec_type, tag ordinal) POSITION routing; the 4CC exists only in the editor schema, not in the executables",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/tag_position_routing/consequence",
+   "change": "added",
+   "after": "the remaining 80 held codes become a pure DATA-SIDE task: per-rec_type row-body tag sequence -> field order -> wire offset (recget_tagmap.json's 12 static groups are the seed)",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/tag_position_routing/consistency",
+   "change": "added",
+   "after": "self-consistent with the 34 L3 tag/rt chains in scratch/t88/out3/slots.json (E135) and with the accessor-view model (E138)",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/cbw_route_e135_e137/tag_position_routing/grade",
+   "change": "added",
+   "after": "L2",
+   "trace": "new root section /cbw_route_e135_e137 (E132-E138)"
+  },
+  {
+   "path": "/coverage/cbw_route_E135_E137/binaries_scanned",
+   "change": "added",
+   "after": [
+    "editor.exe",
+    "fm.exe"
+   ],
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/cbw_route_E135_E137/e121_citation_downgraded",
+   "change": "added",
+   "after": true,
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/cbw_route_E135_E137/four_cc_zero_occurrence",
+   "change": "added",
+   "after": true,
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/cbw_route_E135_E137/grade",
+   "change": "added",
+   "after": "L2",
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/cbw_route_E135_E137/note",
+   "change": "added",
+   "after": "negative result preserved; 80 held codes become a data-side task",
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/cbw_route_E135_E137/routing_model",
+   "change": "added",
+   "after": "tag-position ((rec_type, tag ordinal))",
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/t9_grammar_E133/grade",
+   "change": "added",
+   "after": "L2",
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/t9_grammar_E133/note",
+   "change": "added",
+   "after": "13B header decode + closure + lanes; corrects E127's server value by +9 bytes (footer not counted in the t51 cursor end)",
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/t9_grammar_E133/ordinal_lane",
+   "change": "added",
+   "after": "251/251",
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/t9_grammar_E133/sentinel_head",
+   "change": "added",
+   "after": "251/251",
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/t9_grammar_E133/server_corrected_from",
+   "change": "added",
+   "after": 307555,
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/t9_grammar_E133/table_9_client_bytes",
+   "change": "added",
+   "after": 31956,
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/t9_grammar_E133/table_9_server_bytes",
+   "change": "added",
+   "after": 307564,
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/table45_structure_E132_E138/L3_codes",
+   "change": "added",
+   "after": 34,
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/table45_structure_E132_E138/family_to_rec_type_anchored",
+   "change": "added",
+   "after": 7,
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/table45_structure_E132_E138/grade",
+   "change": "added",
+   "after": "L2",
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/table45_structure_E132_E138/note",
+   "change": "added",
+   "after": "117 club.xml codes = accessor view over ~14 physical columns; suffix->column pin-down stays open (no new L3)",
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/table45_structure_E132_E138/physical_columns",
+   "change": "added",
+   "after": "~14",
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/table45_structure_E132_E138/rows",
+   "change": "added",
+   "after": 84477,
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/table45_structure_E132_E138/table",
+   "change": "added",
+   "after": "server_db/table_45.dat",
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/coverage/table45_structure_E132_E138/xml_codes_viewed",
+   "change": "added",
+   "after": 117,
+   "trace": "coverage counters appended by t92"
+  },
+  {
+   "path": "/generated_by",
+   "change": "value",
+   "before": "t90",
+   "after": "t92",
+   "trace": "generator bump t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E132/claim_sha256",
+   "change": "added",
+   "after": "1fef2e78acab615cb8e7567d4b0a13cd4ca6893e23ac71db1b21472ec1bea7cc",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E132/date",
+   "change": "added",
+   "after": "2026-11-22",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E132/kind",
+   "change": "added",
+   "after": "static_analysis",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E132/level",
+   "change": "added",
+   "after": "L2",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E133/claim_sha256",
+   "change": "added",
+   "after": "99201b034c5139acdaa60d842a8588c3656b81fff56abee8afbf49fc9f833a9d",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E133/date",
+   "change": "added",
+   "after": "2026-11-22",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E133/kind",
+   "change": "added",
+   "after": "acceptance_partial",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E133/level",
+   "change": "added",
+   "after": "L2",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E134/claim_sha256",
+   "change": "added",
+   "after": "09e63f31f8d46246a409e34e43255fd341ed44618bc8e321e1bcb996bb186f26",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E134/date",
+   "change": "added",
+   "after": "2026-11-22",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E134/kind",
+   "change": "added",
+   "after": "acceptance_partial",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E134/level",
+   "change": "added",
+   "after": "L2",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E135/claim_sha256",
+   "change": "added",
+   "after": "784f92a3eabee48bc40e5175474d3d61577c527399cfd3263e767753e93d9bd5",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E135/date",
+   "change": "added",
+   "after": "2026-11-22",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E135/kind",
+   "change": "added",
+   "after": "acceptance_partial",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E135/level",
+   "change": "added",
+   "after": "L2",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E136/claim_sha256",
+   "change": "added",
+   "after": "28bc89bbf3b6ebb73080d74168253f9c8cdb6c92e10bc5e72995153856fbe41f",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E136/date",
+   "change": "added",
+   "after": "2026-11-22",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E136/kind",
+   "change": "added",
+   "after": "correction",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E136/level",
+   "change": "added",
+   "after": "L1",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E137/claim_sha256",
+   "change": "added",
+   "after": "7860321d3787ca378c5029ad958e1777f38c25f88ee29c5aa89836c4712ca280",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E137/date",
+   "change": "added",
+   "after": "2026-11-22",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E137/kind",
+   "change": "added",
+   "after": "static_analysis",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E137/level",
+   "change": "added",
+   "after": "L2",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E138/claim_sha256",
+   "change": "added",
+   "after": "d47cdd6450b8494b679661cbfef6a4574ff1dbae1e85b363af24c985e5314411",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E138/date",
+   "change": "added",
+   "after": "2026-11-22",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E138/kind",
+   "change": "added",
+   "after": "static_analysis",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/acceptance_ledger_entries/E138/level",
+   "change": "added",
+   "after": "L2",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_additive_rule",
+   "change": "added",
+   "after": "v11.2 sections are value-identical after the patch except table9_closure_e127 (two integer values + annotation keys under cross_check_t51_frozen_cursor/server, plus one new sibling key t92_e127_note); only schema_version, generated_by, coverage and incremental_provenance change, plus the three new root sections",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/L4",
+   "change": "added",
+   "after": 0,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/annotation_keys_added",
+   "change": "added",
+   "after": [
+    "table9_closure_e127/cross_check_t51_frozen_cursor/server|table_9.dat/t92_why_before",
+    ".../t92_correction",
+    "table9_closure_e127/t92_e127_note"
+   ],
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/baseline/bytes",
+   "change": "added",
+   "after": 21344318,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/baseline/root_keys",
+   "change": "added",
+   "after": 40,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/baseline/schema_version",
+   "change": "added",
+   "after": "11.2",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/baseline/sha256",
+   "change": "added",
+   "after": "e3c5400c6d1331605df433558dadce9fb8c84fda916913f0652182bfdd7f5a85",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/mutable_roots",
+   "change": "added",
+   "after": [
+    "schema_version",
+    "generated_by",
+    "incremental_provenance",
+    "coverage",
+    "table9_closure_e127"
+   ],
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/new_roots",
+   "change": "added",
+   "after": [
+    "table45_structure_e132_e138",
+    "t9_grammar_e133",
+    "cbw_route_e135_e137"
+   ],
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/product/root_keys",
+   "change": "added",
+   "after": 43,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/product/schema_version",
+   "change": "added",
+   "after": "11.3-candidate",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/reports_touched",
+   "change": "added",
+   "after": [],
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/structural_edits",
+   "change": "added",
+   "after": [
+    "table9_closure_e127/cross_check_t51_frozen_cursor/server|table_9.dat/{t51_footer_at,t51_last_end}: 307555 -> 307564 (values only, E133)"
+   ],
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/binary_provenance/bytes",
+   "change": "added",
+   "after": 587,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/binary_provenance/sha256",
+   "change": "added",
+   "after": "d4302b13ba0406e7d928a02b789b334c6bff6008b84921cf8a28c246dd567a10",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/club_auxiliary_sources/bytes",
+   "change": "added",
+   "after": 163434,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/club_auxiliary_sources/sha256",
+   "change": "added",
+   "after": "12dab0b84f8f1bd07df0d89f7910ccb86e18a6e4b3fb8c69eeb6a89c31c2ae2c",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/club_extra3_l3_e121/bytes",
+   "change": "added",
+   "after": 6275,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/club_extra3_l3_e121/sha256",
+   "change": "added",
+   "after": "8f00e60dadfd42e58028751241366c5729554c495677aeb3730bd50732d37309",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/club_extra_object_row/bytes",
+   "change": "added",
+   "after": 50822,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/club_extra_object_row/sha256",
+   "change": "added",
+   "after": "0b5b60cae151c7b0db81b84c98f62536459f2d4c38f20508f13bb7497d31e566",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/club_main_row_fields/bytes",
+   "change": "added",
+   "after": 665608,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/club_main_row_fields/sha256",
+   "change": "added",
+   "after": "6dc1fccee9b5b65918484024d01903536d8c53a93c3631dd11afd2951b183f53",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/club_main_row_fields_r2/bytes",
+   "change": "added",
+   "after": 1979029,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/club_main_row_fields_r2/sha256",
+   "change": "added",
+   "after": "cae4f6f9660e2467e651ae41cef786f91d80cf3f43a6770047cf1dd98e749d5b",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/comp_collections/bytes",
+   "change": "added",
+   "after": 16842212,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/comp_collections/sha256",
+   "change": "added",
+   "after": "3844a3248f2d13894b63d54ba98351a47c02ab83f31d58a7bccc1a26370e59bb",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/comp_main_row_fields/bytes",
+   "change": "added",
+   "after": 1265705,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/comp_main_row_fields/sha256",
+   "change": "added",
+   "after": "7304cc870b791a5ca4cde3948835f3d2da61697e0a299aa059370d4a9b001071",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/comp_main_row_fields_r2/bytes",
+   "change": "added",
+   "after": 391459,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/comp_main_row_fields_r2/sha256",
+   "change": "added",
+   "after": "553dc31cea0d601129df793509ad56d4f30ae1288558db0f9f5b33b6ff7c887f",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/edfx_edsc_dispatch/bytes",
+   "change": "added",
+   "after": 148914,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/edfx_edsc_dispatch/sha256",
+   "change": "added",
+   "after": "926529733f1f42aa0cb743be275356c7eefc691fa88408cdbd30059a34a20908",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/evidence_grade_policy/bytes",
+   "change": "added",
+   "after": 123,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/evidence_grade_policy/sha256",
+   "change": "added",
+   "after": "c52bf7d180c9c25e14d3fc3f5cecfeeb7a2cf7b1a38de0c12af384a714ec69a8",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/five_tables_l3_e126/bytes",
+   "change": "added",
+   "after": 240197,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/five_tables_l3_e126/sha256",
+   "change": "added",
+   "after": "8259b683411195dae54813baabed0606c224db233712c9fb653e21ba54827127",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/fk_index_e125/bytes",
+   "change": "added",
+   "after": 20041,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/fk_index_e125/sha256",
+   "change": "added",
+   "after": "4897cfca351b8eb1de620ad1d7caa77786a75ecf0f544e6d8cb2125798bc5d7c",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/inventory_reconciliation/bytes",
+   "change": "added",
+   "after": 821,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/inventory_reconciliation/sha256",
+   "change": "added",
+   "after": "a4a095d52b5856bde08bbc99634f9d112a6650199300c56d255411f4db3a9845",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/nation_data_side_status/bytes",
+   "change": "added",
+   "after": 16039,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/nation_data_side_status/sha256",
+   "change": "added",
+   "after": "15bd6ccdf44a727afd48b3d62ed626939655514af84d29d6ccfd1dd19a65938b",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/nation_main_row_fields/bytes",
+   "change": "added",
+   "after": 1421770,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/nation_main_row_fields/sha256",
+   "change": "added",
+   "after": "13d029835d627697346ea88177dc8fa975c69c6c7dd1c167a0d5634d3f6dd161",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/nation_main_row_fields_r2/bytes",
+   "change": "added",
+   "after": 379204,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/nation_main_row_fields_r2/sha256",
+   "change": "added",
+   "after": "6f372937be70202ac7586ed4c4598a175879c314dbe44750977f745b9a57744f",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/nation_segment_grammars/bytes",
+   "change": "added",
+   "after": 7241,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/nation_segment_grammars/sha256",
+   "change": "added",
+   "after": "06a46c228099b3b4aea93bf6220ab15f598edbe5017f9ddabd61494417511d54",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/nation_static_side/bytes",
+   "change": "added",
+   "after": 199062,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/nation_static_side/sha256",
+   "change": "added",
+   "after": "54468ba8841e49d0a92c1612232cdd44150429bff5a302e117f673c6c00c59c8",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/nation_t9_wire/bytes",
+   "change": "added",
+   "after": 2932027,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/nation_t9_wire/sha256",
+   "change": "added",
+   "after": "2857992a7c6d147afc5c4222d270f5d33e52f9f97d10b1dcd5ce4122e38fabc1",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/negative_regressions/bytes",
+   "change": "added",
+   "after": 422,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/negative_regressions/sha256",
+   "change": "added",
+   "after": "4f5bc65363b286c83afcb5b235c719c15fa92aa86609122c9dcf74805b20565f",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/pointer_artifacts/bytes",
+   "change": "added",
+   "after": 544,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/pointer_artifacts/sha256",
+   "change": "added",
+   "after": "12dadbd91dee93c524b82504a04ba7575752ce0aded826630e2e151b72f43b41",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/row_frames9/bytes",
+   "change": "added",
+   "after": 15057,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/row_frames9/sha256",
+   "change": "added",
+   "after": "2be6d2f2fe0796a93e5525c3c3fb01f732fb71c42e23948ed0d8505fc0ca03e1",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/scan_tables/bytes",
+   "change": "added",
+   "after": 187258,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/scan_tables/sha256",
+   "change": "added",
+   "after": "759adf09abd1feaef006040dd1b83319979eb1e859cb524440a26a417987d70a",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/schema_id/bytes",
+   "change": "added",
+   "after": 34,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/schema_id/sha256",
+   "change": "added",
+   "after": "6f508358d4761abe1614c4ca22c46eac5644c7a2281397cacd98f375e77faaf2",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/schema_provenance/bytes",
+   "change": "added",
+   "after": 784,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/schema_provenance/sha256",
+   "change": "added",
+   "after": "38b617b447c06101183f1d78e46c8b322aebe6058b3ab36fe3b9420c74f12009",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/simple_tables/bytes",
+   "change": "added",
+   "after": 14760,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/simple_tables/sha256",
+   "change": "added",
+   "after": "aca40748786e1278cc87a5e0b02c3a36b12d5233a68e3178a510add4884ef734",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/slot_fingerprints/bytes",
+   "change": "added",
+   "after": 8080,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/slot_fingerprints/sha256",
+   "change": "added",
+   "after": "93a1705c9a8a9e1959c8b4670746d046889adafa7d84993c9c6ddd616dc209f5",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/source_artifacts/bytes",
+   "change": "added",
+   "after": 15269,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/source_artifacts/sha256",
+   "change": "added",
+   "after": "51ad3950a463021fabef773effb117ca4c20a6ac6841dc1c2a5dcc52900b843d",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/stadium_team_l3/bytes",
+   "change": "added",
+   "after": 82576,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/stadium_team_l3/sha256",
+   "change": "added",
+   "after": "25e02a96e6774ebee4f8c16b96ee0eed9b9c61561f36abc4470966d4c2827929",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/tables/bytes",
+   "change": "added",
+   "after": 589673,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/tables/sha256",
+   "change": "added",
+   "after": "2ad9ca5f712d35411438fdaddd1eca73cf838f5aa8892ba42d5505fe8081c8df",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/tail_ledger/bytes",
+   "change": "added",
+   "after": 60976,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/tail_ledger/sha256",
+   "change": "added",
+   "after": "8c5dcaa5adf46e7556367c7f5f7845ea7cab67cca12fa38066033d29ada2a306",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/v3_baseline/bytes",
+   "change": "added",
+   "after": 461,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/v3_baseline/sha256",
+   "change": "added",
+   "after": "d7b892abadf3d28460b80415c21db464aa10460279ba679ea6867689dde239b5",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/xml_denominator_coverage/bytes",
+   "change": "added",
+   "after": 1341,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/xml_denominator_coverage/sha256",
+   "change": "added",
+   "after": "8b9df4ede94eca6d35065f0156c3d23d82f635e1ccf0539560844846aa1f32bc",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/xref_reverse_adjudication/bytes",
+   "change": "added",
+   "after": 4447,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_assembly_guard/untouched_root_digests/xref_reverse_adjudication/sha256",
+   "change": "added",
+   "after": "4b8a5e3a64dc3e77aae90dd734721f36edf3a3c4b40e82395f1e6d4ede2cbd70",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[0]/claim_sha256",
+   "change": "added",
+   "after": "1fef2e78acab615cb8e7567d4b0a13cd4ca6893e23ac71db1b21472ec1bea7cc",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[0]/date",
+   "change": "added",
+   "after": "2026-11-22",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[0]/id",
+   "change": "added",
+   "after": "E132",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[0]/kind",
+   "change": "added",
+   "after": "static_analysis",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[0]/level",
+   "change": "added",
+   "after": "L2",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[1]/claim_sha256",
+   "change": "added",
+   "after": "99201b034c5139acdaa60d842a8588c3656b81fff56abee8afbf49fc9f833a9d",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[1]/date",
+   "change": "added",
+   "after": "2026-11-22",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[1]/id",
+   "change": "added",
+   "after": "E133",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[1]/kind",
+   "change": "added",
+   "after": "acceptance_partial",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[1]/level",
+   "change": "added",
+   "after": "L2",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[2]/claim_sha256",
+   "change": "added",
+   "after": "09e63f31f8d46246a409e34e43255fd341ed44618bc8e321e1bcb996bb186f26",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[2]/date",
+   "change": "added",
+   "after": "2026-11-22",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[2]/id",
+   "change": "added",
+   "after": "E134",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[2]/kind",
+   "change": "added",
+   "after": "acceptance_partial",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[2]/level",
+   "change": "added",
+   "after": "L2",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[3]/claim_sha256",
+   "change": "added",
+   "after": "784f92a3eabee48bc40e5175474d3d61577c527399cfd3263e767753e93d9bd5",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[3]/date",
+   "change": "added",
+   "after": "2026-11-22",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[3]/id",
+   "change": "added",
+   "after": "E135",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[3]/kind",
+   "change": "added",
+   "after": "acceptance_partial",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[3]/level",
+   "change": "added",
+   "after": "L2",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[4]/claim_sha256",
+   "change": "added",
+   "after": "28bc89bbf3b6ebb73080d74168253f9c8cdb6c92e10bc5e72995153856fbe41f",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[4]/date",
+   "change": "added",
+   "after": "2026-11-22",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[4]/id",
+   "change": "added",
+   "after": "E136",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[4]/kind",
+   "change": "added",
+   "after": "correction",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[4]/level",
+   "change": "added",
+   "after": "L1",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[5]/claim_sha256",
+   "change": "added",
+   "after": "7860321d3787ca378c5029ad958e1777f38c25f88ee29c5aa89836c4712ca280",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[5]/date",
+   "change": "added",
+   "after": "2026-11-22",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[5]/id",
+   "change": "added",
+   "after": "E137",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[5]/kind",
+   "change": "added",
+   "after": "static_analysis",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[5]/level",
+   "change": "added",
+   "after": "L2",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[6]/claim_sha256",
+   "change": "added",
+   "after": "d47cdd6450b8494b679661cbfef6a4574ff1dbae1e85b363af24c985e5314411",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[6]/date",
+   "change": "added",
+   "after": "2026-11-22",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[6]/id",
+   "change": "added",
+   "after": "E138",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[6]/kind",
+   "change": "added",
+   "after": "static_analysis",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/entries[6]/level",
+   "change": "added",
+   "after": "L2",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/guard_scope",
+   "change": "added",
+   "after": "entry-level id, kind, level, date and canonical claim SHA-256; no live full-file hash pin",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/guarded_entries",
+   "change": "added",
+   "after": [
+    "E132",
+    "E133",
+    "E134",
+    "E135",
+    "E136",
+    "E137",
+    "E138"
+   ],
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/out_of_scope_note",
+   "change": "added",
+   "after": "E131 and earlier stay as pinned by t90/t91",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_ledger_snapshot/path",
+   "change": "added",
+   "after": "scratch/t01/LEDGER.json",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[0]/bytes",
+   "change": "added",
+   "after": 1249,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[0]/path",
+   "change": "added",
+   "after": "scratch/t88/out2/row_frame.json",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[0]/sha256",
+   "change": "added",
+   "after": "2910173ba625d3a50e98771b5eb30c807c8e1fc4014d09d255b192b45b570d3e",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[1]/bytes",
+   "change": "added",
+   "after": 35443,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[1]/path",
+   "change": "added",
+   "after": "scratch/t88/out3/slots.json",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[1]/sha256",
+   "change": "added",
+   "after": "f1050953d19da7ea30902f3cc11ee4eb0cf1e55b1f4ca8be408f7f2026663420",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[2]/bytes",
+   "change": "added",
+   "after": 5003,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[2]/path",
+   "change": "added",
+   "after": "scratch/t88/out3/pe_sections.json",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[2]/sha256",
+   "change": "added",
+   "after": "894a34f5d5f1f65b545041cb9196e1bb8e2978e85ea1424fbb0975c351451d30",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[3]/bytes",
+   "change": "added",
+   "after": 3414,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[3]/path",
+   "change": "added",
+   "after": "scratch/t88/out3/rec_structure.json",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[3]/sha256",
+   "change": "added",
+   "after": "8dd00f0528fdbbbec60b8fc0ebe98b6c5ab44347fa767a62a4ebc2d9e33cf294",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[4]/bytes",
+   "change": "added",
+   "after": 2727,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[4]/path",
+   "change": "added",
+   "after": "scratch/t89/out/table9_grammar.json",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[4]/sha256",
+   "change": "added",
+   "after": "5915217d5aa12ecd127bfc1c28aec90c816a73cb5dd727cf725f409775d22bdd",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[5]/bytes",
+   "change": "added",
+   "after": 28463,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[5]/path",
+   "change": "added",
+   "after": "scratch/t89/out/_dual.json",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[5]/sha256",
+   "change": "added",
+   "after": "0b7aa492de9295d1f2eef2fa74de68a79385a32c4eba78cd124bbc61ca08de40",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[6]/bytes",
+   "change": "added",
+   "after": 2786,
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[6]/path",
+   "change": "added",
+   "after": "scratch/t89/out/verify.py",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_source_snapshot[6]/sha256",
+   "change": "added",
+   "after": "fc1d706fc2ab7d57a6901598f7d06f8dc6083d02652d88fc4c74af722f4513c8",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_volume_policy/bulk_stays_out",
+   "change": "added",
+   "after": "the t88 out2 7.6MB payload, the 337KB start table, the t88 out3 559KB grid and the t89 28KB dual profile stay in their own artifacts; only recomputed aggregates enter",
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_volume_policy/main_schema_keeps",
+   "change": "added",
+   "after": [
+    "per-section grade + ledger pointer",
+    "counters",
+    "one source pointer per artifact"
+   ],
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/incremental_provenance/t92_volume_policy/split_files_untouched",
+   "change": "added",
+   "after": [
+    "reports/other_tables_schema.json",
+    "reports/xml_denominator_coverage.json"
+   ],
+   "trace": "provenance snapshots appended by t92"
+  },
+  {
+   "path": "/schema_version",
+   "change": "value",
+   "before": "11.2",
+   "after": "11.3-candidate",
+   "trace": "version bump t92"
+  },
+  {
+   "path": "/t9_grammar_e133/L4",
+   "change": "added",
+   "after": 0,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/acceptance_ledger_entries",
+   "change": "added",
+   "after": [
+    "E133"
+   ],
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/acceptance_ledger_level",
+   "change": "added",
+   "after": "L2",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/carried_from_e127/item_grammar",
+   "change": "added",
+   "after": "held_no_item_grammar (both archives, both tables; two probing rounds, first counterexample preserved)",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/carried_from_e127/nation_0x108",
+   "change": "added",
+   "after": "whether table_9 is the wire home of [NATION+0x108] remains UNPROVEN -> escalated to a static lane (t89)",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/carried_from_e127/rows_equal_nation_rows",
+   "change": "added",
+   "after": true,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/carried_from_e127/table_9_is_per_nation",
+   "change": "added",
+   "after": true,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/client/arithmetic",
+   "change": "added",
+   "after": "13 + 28,922 + 12*251 + 9 = 31,956",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/client/body_len/distinct",
+   "change": "added",
+   "after": 92,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/client/body_len/max",
+   "change": "added",
+   "after": 449,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/client/body_len/min",
+   "change": "added",
+   "after": 46,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/client/body_sum",
+   "change": "added",
+   "after": 28922,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/client/closure_exact",
+   "change": "added",
+   "after": true,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/client/payload",
+   "change": "added",
+   "after": 31956,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/footer/hex",
+   "change": "added",
+   "after": "00 00 00 00 01 ec 7a e4 04",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/footer/len",
+   "change": "added",
+   "after": 9,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/rule",
+   "change": "added",
+   "after": "13 + sum(body_len) + 12*rows + 9 = payload",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/server/arithmetic",
+   "change": "added",
+   "after": "13 + 304,530 + 12*251 + 9 = 307,564",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/server/body_len/distinct",
+   "change": "added",
+   "after": 211,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/server/body_len/max",
+   "change": "added",
+   "after": 36502,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/server/body_len/min",
+   "change": "added",
+   "after": 371,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/server/body_sum",
+   "change": "added",
+   "after": 304530,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/server/closure_exact",
+   "change": "added",
+   "after": true,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/server/payload",
+   "change": "added",
+   "after": 307564,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/server/server_211_distinct_lengths",
+   "change": "added",
+   "after": "unexplained (carried as open)",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/closure/trailer",
+   "change": "added",
+   "after": "12B identity [ordinal u32][uid u32][uid u32][u8 0]",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/e127_correction/delta_bytes",
+   "change": "added",
+   "after": 9,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/e127_correction/field",
+   "change": "added",
+   "after": "server payload",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/e127_correction/ledger",
+   "change": "added",
+   "after": "E133",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/e127_correction/value_after",
+   "change": "added",
+   "after": 307564,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/e127_correction/value_before",
+   "change": "added",
+   "after": 307555,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/e127_correction/verified_by",
+   "change": "added",
+   "after": "scratch/t89/out/verify.py V1 (len(payload)==307564) + t92 independent re-read of load_payload(server, table 9)",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/e127_correction/why_before",
+   "change": "added",
+   "after": "E127/t85 recorded the t51 frozen-cursor footer offset (307,555) as the server payload length; the payload is 9 bytes longer because the 9B footer sits after that cursor end",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/generated_by",
+   "change": "added",
+   "after": "t92",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/count_field",
+   "change": "added",
+   "after": "u32 @ +8 = 251 (both archives)",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[0]/len",
+   "change": "added",
+   "after": 1,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[0]/meaning",
+   "change": "added",
+   "after": "magic/version byte",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[0]/off",
+   "change": "added",
+   "after": 0,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[0]/value",
+   "change": "added",
+   "after": "03",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[1]/ascii",
+   "change": "added",
+   "after": "tad.",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[1]/len",
+   "change": "added",
+   "after": 4,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[1]/off",
+   "change": "added",
+   "after": 1,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[1]/value",
+   "change": "added",
+   "after": "74 61 64 2e",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[2]/len",
+   "change": "added",
+   "after": 2,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[2]/meaning",
+   "change": "added",
+   "after": "payload_version 3569 LE",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[2]/off",
+   "change": "added",
+   "after": 5,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[2]/value",
+   "change": "added",
+   "after": "f1 0d",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[3]/len",
+   "change": "added",
+   "after": 2,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[3]/meaning",
+   "change": "added",
+   "after": "record_count 251 LE",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[3]/off",
+   "change": "added",
+   "after": 7,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[3]/value",
+   "change": "added",
+   "after": "fb 00",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[4]/len",
+   "change": "added",
+   "after": 4,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[4]/off",
+   "change": "added",
+   "after": 9,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/fields[4]/value",
+   "change": "added",
+   "after": "00 00 00 00",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/hex",
+   "change": "added",
+   "after": "03 01 74 61 64 2e f1 0d fb 00 00 00 00",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/isomorphic_to_table_45",
+   "change": "added",
+   "after": "same 13B header shape as table_45 (count u32@+8 = 84,477) -> the framing is a shared DATABASE_TABLE convention, not a t9 speciality",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/header_13b_decode/len",
+   "change": "added",
+   "after": 13,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/lanes/ordinal_lane/archive",
+   "change": "added",
+   "after": "client",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/lanes/ordinal_lane/offset",
+   "change": "added",
+   "after": 12,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/lanes/ordinal_lane/rows_ok",
+   "change": "added",
+   "after": "251/251",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/lanes/ordinal_lane/rule",
+   "change": "added",
+   "after": "body[12] == ordinal & 0xff",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/lanes/sentinel_head/archive",
+   "change": "added",
+   "after": "client",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/lanes/sentinel_head/bytes",
+   "change": "added",
+   "after": "00 ff ff ff ff",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/lanes/sentinel_head/note",
+   "change": "added",
+   "after": "constant across all 251 client rows; the sentinel head is NOT the ordinal",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/lanes/sentinel_head/offset",
+   "change": "added",
+   "after": 0,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/lanes/sentinel_head/rows_ok",
+   "change": "added",
+   "after": "251/251",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/open",
+   "change": "added",
+   "after": [
+    "24 helper route expansion",
+    "wire offset mapping",
+    "row0 byte-level reconciliation",
+    "server 211 distinct body lengths"
+   ],
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/source_task",
+   "change": "added",
+   "after": "t89c (partial, commander REPORT/verify/DONE per E88 precedent)",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/table/archives",
+   "change": "added",
+   "after": [
+    "client",
+    "server"
+   ],
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/table/grade",
+   "change": "added",
+   "after": "L2",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/table/rows",
+   "change": "added",
+   "after": 251,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/table/rtti",
+   "change": "added",
+   "after": "NATIONAL_TEAM_CONTAINER",
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/t9_grammar_e133/table/table_type",
+   "change": "added",
+   "after": 9,
+   "trace": "new root section /t9_grammar_e133 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/L4",
+   "change": "added",
+   "after": 0,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/acceptance_ledger_entries",
+   "change": "added",
+   "after": [
+    "E132",
+    "E134",
+    "E138"
+   ],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/acceptance_ledger_level",
+   "change": "added",
+   "after": "L2",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/claim",
+   "change": "added",
+   "after": "117 club.xml codes = (family -> rec_type, suffix -> row/column) accessor view, NOT 117 physical columns",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/families_anchored",
+   "change": "added",
+   "after": 7,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/family_rt_conflicts",
+   "change": "added",
+   "after": [],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/family_to_rec_type/CFG",
+   "change": "added",
+   "after": [
+    24
+   ],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/family_to_rec_type/CHA",
+   "change": "added",
+   "after": [
+    13
+   ],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/family_to_rec_type/CHS",
+   "change": "added",
+   "after": [
+    25
+   ],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/family_to_rec_type/CLA",
+   "change": "added",
+   "after": [
+    26
+   ],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/family_to_rec_type/COS",
+   "change": "added",
+   "after": [
+    28
+   ],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/family_to_rec_type/CYP",
+   "change": "added",
+   "after": [
+    10
+   ],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/family_to_rec_type/CYS",
+   "change": "added",
+   "after": [
+    27
+   ],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/family_to_rec_type_basis",
+   "change": "added",
+   "after": "34 L3 codes in scratch/t88/out3/slots.json (multi-suffix families share one rec_type)",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/grade",
+   "change": "added",
+   "after": "L2",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/l3_code_count",
+   "change": "added",
+   "after": 34,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/open",
+   "change": "added",
+   "after": [
+    "suffix -> column pin-down (per-family reader_off or value-domain match)",
+    "reader_off -> wire_off derivation",
+    "per-4CC (rec_type, offset) mapping for the 80 held codes"
+   ],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/reader_off_semantics",
+   "change": "added",
+   "after": "the 34 L3 reader_off values are IN-MEMORY record offsets ([rdi+0xNN]), not wire offsets; wire_off derivation stays open",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rec_types_anchored",
+   "change": "added",
+   "after": [
+    10,
+    13,
+    24,
+    25,
+    26,
+    27,
+    28
+   ],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[0]/family",
+   "change": "added",
+   "after": "CFG",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[0]/l3_codes",
+   "change": "added",
+   "after": 6,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[0]/rec_type",
+   "change": "added",
+   "after": 24,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[1]/family",
+   "change": "added",
+   "after": "CHA",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[1]/l3_codes",
+   "change": "added",
+   "after": 1,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[1]/rec_type",
+   "change": "added",
+   "after": 13,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[2]/family",
+   "change": "added",
+   "after": "CHS",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[2]/l3_codes",
+   "change": "added",
+   "after": 5,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[2]/rec_type",
+   "change": "added",
+   "after": 25,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[3]/family",
+   "change": "added",
+   "after": "CLA",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[3]/l3_codes",
+   "change": "added",
+   "after": 4,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[3]/rec_type",
+   "change": "added",
+   "after": 26,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[4]/family",
+   "change": "added",
+   "after": "CYP",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[4]/l3_codes",
+   "change": "added",
+   "after": 6,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[4]/rec_type",
+   "change": "added",
+   "after": 10,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[5]/family",
+   "change": "added",
+   "after": "CYS",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[5]/l3_codes",
+   "change": "added",
+   "after": 6,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[5]/rec_type",
+   "change": "added",
+   "after": 27,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[6]/family",
+   "change": "added",
+   "after": "COS",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[6]/l3_codes",
+   "change": "added",
+   "after": 6,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/accessor_view_model_e138/rt_14_34_L3_examples[6]/rec_type",
+   "change": "added",
+   "after": 28,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/generated_by",
+   "change": "added",
+   "after": "t92",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/held_policy",
+   "change": "added",
+   "after": "E134/E135 slot verdicts are copied as counts + the first counterexample pointers; nothing is re-adjudicated here",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/rec_type_census_e138/census_source",
+   "change": "added",
+   "after": "scratch/t88/out3/rec_structure.json#/sections/rec_type_census",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/rec_type_census_e138/distinct",
+   "change": "added",
+   "after": 37,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/rec_type_census_e138/grade",
+   "change": "added",
+   "after": "L2",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/rec_type_census_e138/null_255",
+   "change": "added",
+   "after": 38968,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/rec_type_census_e138/rec_type_8/namelen_zero_all",
+   "change": "added",
+   "after": true,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/rec_type_census_e138/rec_type_8/note",
+   "change": "added",
+   "after": "shortest rows in the table (namelen=0); prefix columns proven on this family: club_uid@0 / rt@4 / person_uid@5 (0xffffffff = empty) / club_uid2 pair @21,@25",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/rec_type_census_e138/rec_type_8/rows",
+   "change": "added",
+   "after": 3391,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/capacity_verdict",
+   "change": "added",
+   "after": "the physical row CANNOT hold 117 independent fields -> the 117 club.xml codes are an accessor VIEW over ~14 physical columns",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/footer_bytes",
+   "change": "added",
+   "after": 8,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/footer_hex",
+   "change": "added",
+   "after": "00000001775f0100",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/form",
+   "change": "added",
+   "after": "pre[0..36] 37B | [u32 namelen][utf8 name] @37 | tail 26B | identity 13B",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/frozen_artifacts",
+   "change": "added",
+   "after": [
+    "scratch/t88/out2/row_frame.json",
+    "scratch/t88/out3/rec_structure.json"
+   ],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/grade",
+   "change": "added",
+   "after": "L2",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/header_count_at_plus8",
+   "change": "added",
+   "after": 84477,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/identity_at",
+   "change": "added",
+   "after": "row_end - 13",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/identity_layout",
+   "change": "added",
+   "after": "[ordinal u32][uid u32][uid u32][u8 tail=0]",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/physical_column_count",
+   "change": "added",
+   "after": "~14 (8 prefix u32-slots + rec_type u8 + name + ~5 tail columns)",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/rowlen_rule",
+   "change": "added",
+   "after": "rowlen == 80 + namelen (universal over all 84,477 rows)",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/bad_identity",
+   "change": "added",
+   "after": 0,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/bad_rowlen",
+   "change": "added",
+   "after": 0,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/footer_bytes",
+   "change": "added",
+   "after": 8,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/footer_hex",
+   "change": "added",
+   "after": "00000001775f0100",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/header_bytes",
+   "change": "added",
+   "after": 13,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/header_count_at_plus8",
+   "change": "added",
+   "after": 84477,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/payload_bytes",
+   "change": "added",
+   "after": 7608748,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/rec_type_255_null",
+   "change": "added",
+   "after": 38968,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/rec_type_8_namelen_nonzero",
+   "change": "added",
+   "after": 0,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/rec_type_8_rows",
+   "change": "added",
+   "after": 3391,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/rec_type_distinct",
+   "change": "added",
+   "after": 37,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/recompute_verdict",
+   "change": "added",
+   "after": "rowlen==80+namelen universal; identity 13B self-consistent",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/rowlen_distinct",
+   "change": "added",
+   "after": 38,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/rowlen_max",
+   "change": "added",
+   "after": 122,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/rowlen_min",
+   "change": "added",
+   "after": 80,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/rows",
+   "change": "added",
+   "after": 84477,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/t92_recompute/source",
+   "change": "added",
+   "after": [
+    "scratch/t88/out2/_p_server_45.bin",
+    "scratch/t88/out2/_starts.bin"
+   ],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/row_decomposition_e138/tail_at",
+   "change": "added",
+   "after": "row_end - 39 (26B fixed window, fixed distance from row end)",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/source_task",
+   "change": "added",
+   "after": [
+    "t88-fix2/fix3/fix4 (E132 commander probe)",
+    "t88-fix5 (E134)",
+    "t88-fix9 + commander (E138)"
+   ],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/table/client_archive",
+   "change": "added",
+   "after": "absent (client_db.dat has no table_45 entry; server-only)",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/table/grade",
+   "change": "added",
+   "after": "L2",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/table/path",
+   "change": "added",
+   "after": "server_db/table_45.dat",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/table/rows",
+   "change": "added",
+   "after": 84477,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/table/rtti",
+   "change": "added",
+   "after": ".?AV?$DATABASE_TABLE@VSTARTING_RECORD@db@@",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/table/table_type",
+   "change": "added",
+   "after": 45,
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/columns[0]/col",
+   "change": "added",
+   "after": "u32@0",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/columns[0]/evidence",
+   "change": "added",
+   "after": "96.7% membership against the 84,259 club main-row UIDs; 8,368 clubs actually appear",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/columns[0]/verdict",
+   "change": "added",
+   "after": "club-uid link column",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/columns[1]/col",
+   "change": "added",
+   "after": "u8@4",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/columns[1]/evidence",
+   "change": "added",
+   "after": "37 distinct values; 255 = null x 38,968",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/columns[1]/verdict",
+   "change": "added",
+   "after": "rec_type byte",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/columns[2]/col",
+   "change": "added",
+   "after": "u32@5",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/columns[2]/evidence",
+   "change": "added",
+   "after": "external anchor C.Ronaldo 735216 x18 (provenance ext/fm-data@d7a7150); 35,926 distinct",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/columns[2]/verdict",
+   "change": "added",
+   "after": "person-uid",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/grade",
+   "change": "added",
+   "after": "L2 (data-side self-consistent; u32@5 has an external anchor)",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/identity_uid",
+   "change": "added",
+   "after": "row self-key, dense 0..89,974",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/prefix_grid_e134/note",
+   "change": "added",
+   "after": "7 u32 slots @9..33 vary by rec_type; 37B prefix is fixed-length",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/prefix_grid_e134/u32_slots",
+   "change": "added",
+   "after": [
+    0,
+    9,
+    13,
+    17,
+    21,
+    25,
+    29,
+    33
+   ],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/prefix_grid_e134/u8_slots",
+   "change": "added",
+   "after": [
+    4
+   ],
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/premise_refuted",
+   "change": "added",
+   "after": "『84,477=84,259+218』已否证(指挥官); 行=(club,person) 记录, 8,368 club 实际出现。原样保留。",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/undetermined[0]/col",
+   "change": "added",
+   "after": "u32@9",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/undetermined[0]/verdict",
+   "change": "added",
+   "after": "未定 (0 x38,968 / 0xffffffff x25,755 / 其余)",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/undetermined[1]/col",
+   "change": "added",
+   "after": "u32@21/25",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/undetermined[1]/verdict",
+   "change": "added",
+   "after": "第二 [id][id] 双写对, 6,800 distinct, 第二链接实体未定",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/undetermined[2]/col",
+   "change": "added",
+   "after": "u32@13/17",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/undetermined[2]/verdict",
+   "change": "added",
+   "after": "sentinel 对 (0xffffffff x84,316)",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/undetermined[3]/col",
+   "change": "added",
+   "after": "u32@33",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table45_structure_e132_e138/three_columns_e132/undetermined[3]/verdict",
+   "change": "added",
+   "after": "布尔旗 (0xffffffff vs 0)",
+   "trace": "new root section /table45_structure_e132_e138 (E132-E138)"
+  },
+  {
+   "path": "/table9_closure_e127/cross_check_t51_frozen_cursor/server|table_9.dat/t51_footer_at",
+   "change": "value",
+   "before": 307555,
+   "after": 307564,
+   "trace": "E133 nine-byte correction + annotations"
+  },
+  {
+   "path": "/table9_closure_e127/cross_check_t51_frozen_cursor/server|table_9.dat/t51_last_end",
+   "change": "value",
+   "before": 307555,
+   "after": 307564,
+   "trace": "E133 nine-byte correction + annotations"
+  },
+  {
+   "path": "/table9_closure_e127/cross_check_t51_frozen_cursor/server|table_9.dat/t92_correction/delta_bytes",
+   "change": "added",
+   "after": 9,
+   "trace": "E133 nine-byte correction + annotations"
+  },
+  {
+   "path": "/table9_closure_e127/cross_check_t51_frozen_cursor/server|table_9.dat/t92_correction/edits",
+   "change": "added",
+   "after": [
+    "t51_footer_at",
+    "t51_last_end"
+   ],
+   "trace": "E133 nine-byte correction + annotations"
+  },
+  {
+   "path": "/table9_closure_e127/cross_check_t51_frozen_cursor/server|table_9.dat/t92_correction/ledger",
+   "change": "added",
+   "after": "E133",
+   "trace": "E133 nine-byte correction + annotations"
+  },
+  {
+   "path": "/table9_closure_e127/cross_check_t51_frozen_cursor/server|table_9.dat/t92_correction/value_after",
+   "change": "added",
+   "after": 307564,
+   "trace": "E133 nine-byte correction + annotations"
+  },
+  {
+   "path": "/table9_closure_e127/cross_check_t51_frozen_cursor/server|table_9.dat/t92_correction/value_before",
+   "change": "added",
+   "after": 307555,
+   "trace": "E133 nine-byte correction + annotations"
+  },
+  {
+   "path": "/table9_closure_e127/cross_check_t51_frozen_cursor/server|table_9.dat/t92_why_before",
+   "change": "added",
+   "after": "E127 recorded 307,555 for both t51_footer_at and t51_last_end. E133/t89 established the true server payload length is 307,564: 307,555 is the end of the LAST ROW BODY (== footer START), so the t51 frozen cursor stopped one 9B footer early. The 9 bytes are the footer 00 00 00 00 01 ec 7a e4 04, verified independently by t92 (load_payload(server,9)[307555:307564] == that footer). Client 31,947/31,956 is the identical 9-byte relation and is already correct.",
+   "trace": "E133 nine-byte correction + annotations"
+  },
+  {
+   "path": "/table9_closure_e127/t92_e127_note/ledger",
+   "change": "added",
+   "after": "E133",
+   "trace": "E133 nine-byte correction + annotations"
+  },
+  {
+   "path": "/table9_closure_e127/t92_e127_note/rule",
+   "change": "added",
+   "after": "VALUE edit only on cross_check_t51_frozen_cursor/server; no other key of table9_closure_e127 is touched by t92",
+   "trace": "E133 nine-byte correction + annotations"
+  },
+  {
+   "path": "/table9_closure_e127/t92_e127_note/why_the_section_was_right_elsewhere",
+   "change": "added",
+   "after": "closure_claims/chains already carried 307564; only the t51 cross-check copied the cursor end",
+   "trace": "E133 nine-byte correction + annotations"
+  }
+ ],
+ "diff_count": 423,
+ "new_roots": [
+  "table45_structure_e132_e138",
+  "t9_grammar_e133",
+  "cbw_route_e135_e137"
+ ],
+ "mutable_roots": [
+  "schema_version",
+  "generated_by",
+  "coverage",
+  "incremental_provenance",
+  "table9_closure_e127"
+ ],
+ "verdict": "pass",
+ "L4": 0
+}
