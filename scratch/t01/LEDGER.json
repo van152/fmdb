@@ -3155,6 +3155,25 @@
     "prompts/t93_ext_mining.md"
    ],
    "consequence": "路线A(数据侧已知值锚定)武器化:名称列=球员全名已证,语义字典(fmsave models + fm-editor 布局)可直接喂 suffix→列钉死;t93 挖矿车道已派(摘录文法/字典/crosswalk,全 held 级)"
+  },
+  {
+   "id": "E141",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "t93_acceptance_external_dictionary",
+   "level": "L2",
+   "claim": {
+    "what": "t93 外部语料挖矿验收通过(attempt3 rc=0 完整交付 10/10;launcher rc=1 为 outbox.md 目录 quirk 造成的假阴性——DONE 判定只查文件不查目录)",
+    "deliverables": "save_grammar.json(30 条文法,全部 file:line+原文溯源;G01 存档魔数 02 01 66 6d 66 2e=\"\u0002\u0001fmf.\"——存档容器同属 fmf 家族)、field_dictionary.json(58 实体 720 字段,逐字段 file:line+ext_status[verified/unconfirmed/unstated]+语义;Player.unique_id=\"每个新档相同\"再证 uid 跨档稳定)、fm24_memory_layout.json、fm27_recon_digest.json(22 篇 102 个行锚点)、crosswalk.json(20 条全 held,0 升级)、verify.py 9/9、anchors 7/7",
+    "verification": "lane verify 9/9 PASS(含修复 G17 行号 2691、83 名 vs 69 字段派生列单列、domain 字段名、禁用模式误命中四处真问题)+ 指挥官第三路抽查(结构/溯源/嵌套 grade 三项独立确认)",
+    "consequence": "语义字典就位:58 实体命名+verified 比例已知(如 Player 53 字段中 19 verified);下一棒 t94 验收(70 伪代码在盘)+ 83 码钉列可开字典"
+   },
+   "evidence": [
+    "scratch/t93/outbox.md/",
+    "scratch/t93/outbox.md/verify.py",
+    "scratch/t93/outbox.md/summary 纪律核对段",
+    "scripts/t01_anchors.py 7/7"
+   ]
   }
  ]
 }

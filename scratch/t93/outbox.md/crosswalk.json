@@ -1,0 +1,523 @@
+{
+  "schema": "t93/crosswalk/v1",
+  "generated": "2026-11-22",
+  "provenance_external": {
+    "ext/fmsave": {
+      "commit": "755fe9c566bb0497d4ad6ef6e1ac1fd2fde7351b",
+      "license": "MIT",
+      "role": "FM26/27 save-file wire grammar (sections, records, zstd frames)"
+    },
+    "ext/fm-editor": {
+      "commit": "ba605f4b64137dfc18940a69ecb2f523007f3ea8",
+      "license": "GPL",
+      "role": "FM24/26/27 live process memory layout (RVAs, strides, member offsets)"
+    },
+    "ext/FMLibreEditor": {
+      "commit": "fb76023fc28c53ddc851ad1afdaf9879d3534d5c",
+      "license": "GPL",
+      "role": "FM27 recon notes (object pools, contracts, transfers, names)"
+    }
+  },
+  "provenance_internal": {
+    "scratch/t92/out/schema_v113.json": "e4175578d587e201b7d0b14bd15c69c967679049d4a0d236cd4f9e861944254e",
+    "scratch/t88/out3/slots.json": "f1050953d19da7ea30902f3cc11ee4eb0cf1e55b1f4ca8be408f7f2026663420",
+    "reports/stage2_table_identity.json": "f2533a06de4e79c19b26d93c4f51471da7c0552d45a0c20b54ccc31c4f5b14c7"
+  },
+  "policy": {
+    "verdict_vocabulary": "held (this file uses no other value)",
+    "rule": "An external corpus can point at a place to look; it cannot raise, lower or confirm our L1-L4 grade. Every entry below is held even where the two sides agree exactly, and an agreement between two external repos is still external-only evidence.",
+    "domains_kept_apart": "fmsave describes save-file wire bytes; fm-editor and FMLibreEditor describe live process memory of a running game. A byte match across those domains is a coincidence of concept, never a transfer of evidence."
+  },
+  "summary": {
+    "entry_count": 20,
+    "by_relation": {
+      "code_agreement": 4,
+      "coverage_gap": 1,
+      "external_agreement_only": 1,
+      "id_namespace_only": 1,
+      "naming_match": 3,
+      "no_relation": 1,
+      "range_only": 1,
+      "structural_match": 8
+    },
+    "held_count": 20,
+    "grade_moves": 0,
+    "note": "Every row is held. No row asserts that an external corpus confirmed, weakened or re-graded one of our fields; each row records what the two sides say and why the distance between them is still open."
+  },
+  "entries": [
+    {
+      "id": "X01",
+      "topic": "table_9.dat header framing vs the fmsave section head",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/table9_closure_e127/chains/client|table_9.dat/framing",
+        "grade": "L2",
+        "statement": "client_db/table_9.dat opens 03 01 74 61 64 2e f1 0d fb 00 00 00 00 (13-byte header: magic 03 01, reversed extension 'dat.', u16 schema, u32 row count 251, zero byte)."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/_version.py:54,56,88",
+          "statement": "SECTION_MAGIC_PREFIX = b'\\x03\\x01'; SCHEMA_OFFSET = 6; a section head is the prefix plus the reversed extension, and the u16 at offset 6 is its schema.",
+          "ext_label": "grammar"
+        }
+      ],
+      "relation": "structural_match",
+      "verdict": "held",
+      "why_not_upgraded": "fmsave reads sections of a save container (game_db, humans, tactics_man...). Our table_9.dat is a database-table payload inside a client archive; the shared 13/8-byte head shape does not make the tables the same table, and fmsave never reads table_9.",
+      "residual": "Bytes 6-7 of our header decode as 0x0DF1 under fmsave's SCHEMA_OFFSET rule; what that number means for a client_db table stays unproven on our side."
+    },
+    {
+      "id": "X02",
+      "topic": "record closing header: <III vs our 12-byte trailer and 13-byte identity",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/table45_structure_e132_e138/row_decomposition_e138",
+        "grade": "L2",
+        "statement": "table_45 rows end with a 12-byte identity [ordinal u32][uid u32][uid u32] plus a u8 tail 0; table_9 rows carry a 12-byte trailer; both are fixed distance from row end."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/readers/nations.py:30",
+          "statement": "_CLOSING_HEADER = struct.Struct('<III'): row position, database id, a third word.",
+          "ext_label": "grammar"
+        },
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/readers/club_table.py:11,100",
+          "statement": "_FOOTER = struct.Struct('<III'); a row's footer must hold its own ordinal.",
+          "ext_label": "grammar"
+        }
+      ],
+      "relation": "structural_match",
+      "verdict": "held",
+      "why_not_upgraded": "Same width and same ordinal-first discipline, different payload: fmsave's second word is a database id that is stable across saves, ours is a save-local uid. Nothing here says our third word is fmsave's 'third word'.",
+      "residual": "Whether our second/third words map to (database id, save-local id) in either order is not decided by either side."
+    },
+    {
+      "id": "X03",
+      "topic": "0xFFFFFFFF as the empty-uid sentinel",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/table45_structure_e132_e138/three_columns_e132",
+        "grade": "L1 external anchor / L2 table",
+        "statement": "u8@4 rec_type 255 = null (38,968 rows); u32@5 person-uid 0xffffffff marks empty; 37 distinct rec_type values, 35,926 distinct person uids."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/readers/club_table.py:101-103",
+          "statement": "A row is rejected when its uid is 0 or 0xFFFFFFFF, or repeats an earlier uid.",
+          "ext_label": "grammar"
+        }
+      ],
+      "relation": "code_agreement",
+      "verdict": "held",
+      "why_not_upgraded": "fmsave treats 0xFFFFFFFF as 'no such record'; we read it as 'no such person'. The agreement is on the sentinel value only -- fmsave's context is a club table, ours is a person link column.",
+      "residual": "fmsave also rejects uid 0 while our club table accepts uid 0 (ext/fmsave models/clubs.py:50 says 0 is a valid club uid) -- an unresolved tension inside fmsave itself."
+    },
+    {
+      "id": "X04",
+      "topic": "251 rows: table_9 vs the fmsave nation table",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/table9_closure_e127/profile_members",
+        "grade": "L2",
+        "statement": "table_9 is per-nation with exactly 251 rows on both archives, 92 distinct body lengths, exact closure 13 + sum(body) + 12*rows + 9 = payload."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/_layouts/fm26_26_3_2.py:1184",
+          "statement": "NATION_TABLE row_count=251, walked with 14 counted RecordSteps and a 1..2**31-1 database-id range.",
+          "ext_label": "grammar"
+        }
+      ],
+      "relation": "structural_match",
+      "verdict": "held",
+      "why_not_upgraded": "Equal row counts on a per-nation container is suggestive, not probative: fmsave walks a game_db section with a step script, we walk per-row closures in a client/server table. Neither reader ever reads the other's bytes.",
+      "residual": "fmsave's nation table and our table_9 may both be keyed on the 251 nations while holding different content (national teams vs nation rows)."
+    },
+    {
+      "id": "X05",
+      "topic": "tagged-stream tag vocabulary vs our 34 L3 4CC slot tags",
+      "our_side": {
+        "artifact": "scratch/t88/out3/slots.json",
+        "grade": "L3",
+        "statement": "34 mapped codes carry wire tags stdt/endt/comp/gols/ogls/atte/stid/stnm/fsgt/otht/stdb, each anchored to the RECORD_GET dispatch at exe 0x1543ca0."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/_layouts/fm26_26_3_2.py:1211-1221,1234-1247",
+          "statement": "TAGGED_STREAM: 4-byte tags stored byte-reversed, separator 0x01, type codes u8 0x11 / u16 0x12 / u32 {01,02,03,0B,0F} / string 0x1A / list 0x0A / nil 0x00; TRANSFER_WINDOWS names tags stdt, endt, dyom, mont, year, wnCT, wnty.",
+          "ext_label": "grammar"
+        }
+      ],
+      "relation": "naming_match",
+      "verdict": "held",
+      "why_not_upgraded": "Two of our ten tags (stdt, endt) also appear in fmsave's transfer-window stream, but our tags are dispatch cases in the exe while fmsave's are entries in a self-describing list in a save section. Tag spelling is not a shared record grammar.",
+      "residual": "If a save-section tag stream ever surfaces in our archives, the fmsave type-code table would be the first thing to test against it."
+    },
+    {
+      "id": "X06",
+      "topic": "the null date 0x076C0001, byte-exact across two external repos",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/stadium_team_l3/stadium_21",
+        "grade": "L3 (unrelated slot)",
+        "statement": "Our only date-shaped L3 slots are 2-byte object slots (CHSd/CLAd at reader_off 64) fed by a u16 reader; we hold no 4-byte wire date grammar."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/_scan.py:77-87 + src/fmsave/_version.py:65",
+          "statement": "decode_date reads u16 packed (day-of-year & 0x1FF, flags in the high bits) plus u16 year 1901..2200; UNSET_GAME_INFO_CLOCK = struct.pack('<HH', 1, 1900).",
+          "ext_label": "grammar"
+        },
+        {
+          "provenance": "ext/fm-editor@ba605f4",
+          "locator": "docs/fm24/memory-layout.md:131",
+          "statement": "A not-listed player's listed date is the packed 1 Jan 1900 value 0x076C0001.",
+          "ext_label": "recon"
+        }
+      ],
+      "relation": "code_agreement",
+      "verdict": "held",
+      "why_not_upgraded": "pack('<HH', 1, 1900) is exactly 01 00 6c 07 = 0x076C0001, so the two external repos describe the same 4-byte date encoding in wire and memory respectively. That is external agreement twice over, and it says nothing about our 2-byte stdt slot.",
+      "residual": "Our stdt object slot is 2 bytes wide; whether the object converts a 4-byte save date into that slot is a separate question we have not asked."
+    },
+    {
+      "id": "X07",
+      "topic": "stadium capacity and pitch columns",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/stadium_team_l3/stadium_21/schema_fields",
+        "grade": "L3 (41 of 60 stadium.xml codes)",
+        "statement": "server-body offsets: Scpy 0, Sscy 4, Secy 8, Scas 12, Sucy 21, Spln 25 (i16_div10), Spwd 27, Smnl 54, Smnw 56; client body carries only Scti at 3."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fm-editor@ba605f4",
+          "locator": "src/fields/fm24/stadium.rs:22-33 + docs/fm24/memory-layout.md:241-243",
+          "statement": "Memory: capacity/seated/used/all-seater/expansion at 0x6C/0x70/0x74/0x78/0x7C, pitch length/width at 0x88/0x8A, 'values are x10: 1050 = 105m'; standing, environment, condition unmapped.",
+          "ext_label": "recon"
+        },
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/models/stadiums.py:94-112",
+          "statement": "Wire model: total_capacity, seated_capacity, expansion_capacity, capacity, pitch_length_dm ... pitch_max_width_dm (decimetres), built/rebuilt dates.",
+          "ext_label": "grammar"
+        }
+      ],
+      "relation": "structural_match",
+      "verdict": "held",
+      "why_not_upgraded": "All three sides agree a stadium holds five capacity numbers and four pitch numbers in that conceptual order. But our columns are table_21 server-body offsets, fmsave's are a save-section struct, and fm-editor's are heap members; the field ORDER differs between all three, so no offset transfers.",
+      "residual": "fmsave's dm and fm-editor's x10 both mean tenths of a metre, which makes our i16_div10 the same unit -- unit agreement only, not slot agreement."
+    },
+    {
+      "id": "X08",
+      "topic": "club uid and the 'stored value plus one' convention",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/stadium_team_l3/stadium_21/schema_fields",
+        "grade": "L3",
+        "statement": "Stadium duni (index 0) equals rdui (index 1) raw on all 48,413 rows, 0 violations."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/models/stadiums.py:38",
+          "statement": "A ground's uid is 'the stored value plus one, the same convention club ...'.",
+          "ext_label": "grammar"
+        }
+      ],
+      "relation": "naming_match",
+      "verdict": "held",
+      "why_not_upgraded": "A +1 convention would break the duni == rdui identity we measured unless both columns are post-increment. Our measurement stands on its own 48,413 rows; fmsave's note is about a different container.",
+      "residual": "Whether table_21 stores uid or uid-1 cannot be settled from fmsave; it needs a stadium whose game-screen uid we can read."
+    },
+    {
+      "id": "X09",
+      "topic": "reputation: forwarded club field vs two external sources",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/stadium_team_l3/club_base18_forwarded_6",
+        "grade": "L3",
+        "statement": "Crep forwards CLUB+0x18 index 0 to TEAM+0xa8, wire table_24 TEAM+2..3 as i16; five more club.xml codes forward the same way (Cdvi/Cldi/Cndi/Codi/Csti)."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/models/clubs.py:69,96",
+          "statement": "Club.reputation 1..10000, listed in verified=('reputation', 'last_league_position').",
+          "ext_label": "grammar"
+        },
+        {
+          "provenance": "ext/fm-editor@ba605f4",
+          "locator": "src/fields/fm24/club.rs:96",
+          "statement": "c_reputation ships with offset: None (not located) in the FM24 table.",
+          "ext_label": "recon"
+        }
+      ],
+      "relation": "range_only",
+      "verdict": "held",
+      "why_not_upgraded": "fmsave's 1..10000 range is a claim about save content, and it happens to fit an i16 at TEAM+2..3. That is a range coincidence; fm-editor, the only source that maps this entity's memory, could not locate the field at all.",
+      "residual": "Whether our TEAM+0xa8 i16 and fmsave's Club.reputation are the same number is untested; a 1..10000 bound would be the first thing to check against a real row."
+    },
+    {
+      "id": "X10",
+      "topic": "squad status codes, 17 for 17",
+      "our_side": {
+        "artifact": "scratch/t88/out3/slots.json",
+        "grade": "held (no squad-status slot in our 34 L3 codes)",
+        "statement": "We hold no squad-status field: none of the 34 mapped 4CC codes is a contract status."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/models/contracts.py:43-62",
+          "statement": "SquadStatus: 1 Star Player, 2 Important, 3 Regular Starter, 4 Squad Player, 5 Impact Sub, 7 Fringe, 9 Emergency Backup, 10 Breakthrough Prospect, 11 Future Prospect, 13 Youngster, 14 B Team Regular, 15/16/17/18 goalkeepers, 20 Backup, 21 Goalkeeper Emergency Backup, 22 Surplus to Requirements.",
+          "ext_label": "grammar"
+        },
+        {
+          "provenance": "ext/FMLibreEditor@fb76023",
+          "locator": "docs/recon/fm27-contracts.md:84-100",
+          "statement": "Same 17 codes on the FM27 heap at contract+0x54, same labels, each with a named witness player; 6, 8, 12, 18, 19 unseen across 169,023 players.",
+          "ext_label": "recon"
+        }
+      ],
+      "relation": "external_agreement_only",
+      "verdict": "held",
+      "why_not_upgraded": "Two external repos agreeing on 17 codes is the strongest match in this file and still changes nothing on our side: neither reads a database table, and we have no slot to compare against.",
+      "residual": "fmsave names 18 (Continental Cup Goalkeeper) while FMLibre lists 18 as unseen -- a disagreement between the two externals, recorded rather than resolved."
+    },
+    {
+      "id": "X11",
+      "topic": "rec_type as a family discriminator vs fmsave's counted RecordStep walk",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/table45_structure_e132_e138/accessor_view_model_e138",
+        "grade": "L2",
+        "statement": "117 club.xml codes are an accessor VIEW: 7 families map to rec_types {CFG:24, CHA:13, CHS:25, CLA:26, COS:28, CYP:10, CYS:27}, suffix selects row/column."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/readers/nations.py:28-40",
+          "statement": "A table is told apart by walking its records whole (RecordStep script), never by its closing headers, because a record can hold bytes shaped like another header.",
+          "ext_label": "grammar"
+        }
+      ],
+      "relation": "structural_match",
+      "verdict": "held",
+      "why_not_upgraded": "Both sides say a row's byte layout is family-dependent and must be walked with a per-family script. But fmsave has one script per table, we have seven rec_types in one table that share one physical row width (rowlen == 80 + namelen for all 84,477 rows).",
+      "residual": "fmsave's variable-width per-family rows are the opposite finding from our fixed 14-column row; that contrast is the useful part, and neither side may borrow the other's result."
+    },
+    {
+      "id": "X12",
+      "topic": "staff job codes",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/coverage",
+        "grade": "held",
+        "statement": "Our coverage no L3 slot for staff job; club/person/team/stadium/comp/nation only."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/models/staff.py:30-66",
+          "statement": "StaffJob: 2 Coach, 4 Chairperson, 6 Director, 8 Managing Director, 10 Director of Football, 12 Physio, 14 Scout, 16 Manager, 20 Assistant, 22 Set Piece, 26 Fitness, 34 GK Coach, 38 Chief Doctor, 40 Head of Sports Science, ... 88 Technical Director.",
+          "ext_label": "grammar"
+        },
+        {
+          "provenance": "ext/FMLibreEditor@fb76023",
+          "locator": "docs/recon/fm27-staff.md:18-23",
+          "statement": "FM27 heap job codes with counts and witnesses: 38 Chief Doctor 307, 46 Doctor 436, 62 Head Performance Analyst 205, 66 Owner 143.",
+          "ext_label": "recon"
+        }
+      ],
+      "relation": "code_agreement",
+      "verdict": "held",
+      "why_not_upgraded": "The two externals agree on 38/46/62/66 labels and both disagree about code 8 (fmsave 'Managing Director', FMLibre 'not told apart yet'). We have no slot, so the row stays a pointer to what an FM26/27 staff table would look like.",
+      "residual": "FMLibre's code 24 and fmsave's absence of 24 is a gap; neither can be tested here."
+    },
+    {
+      "id": "X13",
+      "topic": "clause kinds: 14 named by fmsave, 40 tabulated by FMLibre",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/club_main_row_fields",
+        "grade": "held",
+        "statement": "We hold no contract-clause field in any L3 table."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/models/contracts.py:102-113",
+          "statement": "ClauseKind: 0x00 min fee release, 0x01 relegation release, 0x02 non promotion, 0x0F top-division relegation salary drop, 0x10/0x11/0x12 foreign/domestic-higher/domestic release, 0x16 optional extension, 0x20 appearance fee, 0x22 shutout, 0x25 international cap, 0x26 unused sub, 0x29 seasonal landmark G+A.",
+          "ext_label": "grammar"
+        },
+        {
+          "provenance": "ext/FMLibreEditor@fb76023",
+          "locator": "docs/recon/fm27-contracts.md:11-56",
+          "statement": "8-byte entries at contract+0x68: u32 amount, u16 condition, u16 kind; 40 kinds tabulated 0..56 with witnesses.",
+          "ext_label": "recon"
+        }
+      ],
+      "relation": "code_agreement",
+      "verdict": "held",
+      "why_not_upgraded": "Where they overlap the numbers agree exactly (0 min fee, 1 relegation, 2 non promotion, 15 salary drop, 16/17/18 the release family, 22 extension, 32 appearance, 34 clean sheet, 37 cap bonus, 38 unused sub, 41 combined G+A). fmsave calls 0x22 SHUTOUT_BONUS where FMLibre calls 34 Clean Sheet Bonus -- the same concept at a different code, so the two externally-tagged tables are not interchangeable.",
+      "residual": "0x22 vs 34 is an open external disagreement about which code is the clean-sheet bonus."
+    },
+    {
+      "id": "X14",
+      "topic": "nation id vs nation row index",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/nation_main_row_fields/L3_fields",
+        "grade": "L3",
+        "statement": "Five nation slots: Nnsi ref->table 21, Ncti ->5, Nrgi ->19, Ncur ->41, Nndn u16_bitfield; each carries an object displacement (280/240/248/256/456) and a wire position."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/readers/nations.py:1-9",
+          "statement": "Every nation field elsewhere in a save holds the nation's ROW in the 251-row table, not its database id; the closing header's second word carries the database id and is the join to outside lists.",
+          "ext_label": "grammar"
+        }
+      ],
+      "relation": "structural_match",
+      "verdict": "held",
+      "why_not_upgraded": "fmsave's warning -- 'a nation reference is a row index, and only the closing header carries the database id' -- is the exact distinction our Nnsi/... slots need before any cross-save join. Our table_9 uid ladder is a row ladder too (5, 6, 7 ... 82082526).",
+      "residual": "Whether our 5 nation slots hold row indices or database ids is undecided on our side; fmsave's rule is a hypothesis to test, not a finding we may import."
+    },
+    {
+      "id": "X15",
+      "topic": "zstd framing of save payloads vs our flat table payloads",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/table9_closure_e127/closure_claims",
+        "grade": "L2",
+        "statement": "Both archives close exactly: client payload 31,956 = 13 + 28,922 + 12*251 + 9; server payload 307,564 the same shape, one strict tiling solution each."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/_container.py + _layouts/fm26_26_3_2.py",
+          "statement": "Save payloads arrive as zstd frames (magic 0xFD2FB528, skippable 0x184D2A50..5F, 128 KiB blocks) and are then split into regions/sections.",
+          "ext_label": "grammar"
+        }
+      ],
+      "relation": "no_relation",
+      "verdict": "held",
+      "why_not_upgraded": "Our client_db/server_db tables are uncompressed payloads with exact closures. fmsave's container is the layer above any such payload, so its frame grammar cannot confirm our arithmetic.",
+      "residual": "If a future archive ever ships compressed, the fmsave frame grammar is the reference."
+    },
+    {
+      "id": "X16",
+      "topic": "row-count header vs count field bounds",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/table9_closure_e127/chains",
+        "grade": "L2",
+        "statement": "header_record_count 251 equals walked rows on both archives; count is a u32 at header+9."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/_layouts/fm26_26_3_2.py:309-310 + readers/club_table.py:87-93",
+          "statement": "CLUB_TABLE: header_bytes=5, count_range=(1, 200_000); a count outside the range or larger than len//12 is rejected before the walk.",
+          "ext_label": "grammar"
+        }
+      ],
+      "relation": "structural_match",
+      "verdict": "held",
+      "why_not_upgraded": "Both sides treat a declared count as a claim to be validated against the bytes, not as truth. Our closure already does this arithmetically; fmsave does it with a range guard.",
+      "residual": "Our count sits at header+9 while fmsave's is at header+0 with a 5-byte head -- a different placement for the same idea."
+    },
+    {
+      "id": "X17",
+      "topic": "a person uid seen in both a client table and a live process",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/table45_structure_e132_e138/three_columns_e132",
+        "grade": "L1 external anchor inside an L2 table",
+        "statement": "u32@5 is a person uid: C.Ronaldo 735216 appears on 18 rows; 35,926 distinct; external anchor provenance ext/fm-data@d7a7150."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fm-editor@ba605f4",
+          "locator": "docs/fm24/memory-layout.md:70-72",
+          "statement": "The player object carries its UID at 0x284 in live memory (witnesses found by searching the heap for that uid).",
+          "ext_label": "recon"
+        }
+      ],
+      "relation": "id_namespace_only",
+      "verdict": "held",
+      "why_not_upgraded": "Both sides name a 'person uid' and both can point at Ronaldo, but 735216 is an FM24 database id while our anchor is already external to this task. Agreeing the number exists in two places says nothing about column 5's semantics.",
+      "residual": "Our col5 is 35,926 distinct over 84,477 rows; if it were the FM24 person id it should be far denser. That density gap is unexplained and stays unexplained."
+    },
+    {
+      "id": "X18",
+      "topic": "build gating: fmsave's layout ladder vs fm-editor's fingerprint",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/incremental_provenance",
+        "grade": "n/a (our assets are archive tables, not per-build saves)",
+        "statement": "Our tables are read from a frozen archvie pair with no build gate at all."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/_version.py + _layouts/__init__.py",
+          "statement": "A layout is selected by (region, schema, build) with a gating ladder and a FALLBACK_BUILD; SUPPORTED_GAME_MAJOR = 26 rejects other majors outright.",
+          "ext_label": "grammar"
+        },
+        {
+          "provenance": "ext/fm-editor@ba605f4",
+          "locator": "docs/fm24/memory-layout.md + src/fields/fm24/mod.rs",
+          "statement": "FM24 has no game_plugin.dll -- every entity RVA lives in fm.exe, image base 0x140000000; a separate build fingerprint marks the Epic build.",
+          "ext_label": "recon"
+        }
+      ],
+      "relation": "structural_match",
+      "verdict": "held",
+      "why_not_upgraded": "Both externals accept that offsets are build-scoped and must be gated, and both refuse to guess across builds. That is a method agreement, useful as a caution, not as evidence.",
+      "residual": "Our archive tables carry a schema word (f1 0d) that we do not yet gate on; fmsave's ladder is the shape such a gate would take."
+    },
+    {
+      "id": "X19",
+      "topic": "memory-offset tables vs wire-offset tables: the conflation trap",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/stadium_team_l3/stadium_21/schema_fields",
+        "grade": "L3",
+        "statement": "Our stadium slots are WIRE offsets inside a table body (client 3, server 0..56) plus a separate object displacement (+0x0c etc.)."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fm-editor@ba605f4",
+          "locator": "src/fields/fm24/stadium.rs:1-25",
+          "statement": "The same 14 stadium fields are described as live-memory offsets in a 0xB0-stride object reached through club.home_stadium.",
+          "ext_label": "recon"
+        }
+      ],
+      "relation": "naming_match",
+      "verdict": "held",
+      "why_not_upgraded": "Same field names (UID/name/capacity/seated/expansion/pitch length/pitch width), completely different coordinate systems. A reader who mixed these up would place our wire columns at heap offsets.",
+      "residual": "Only a live-memory capture of the same object could relate the two, and that is outside this task by construction."
+    },
+    {
+      "id": "X20",
+      "topic": "what the externals hold that we do not",
+      "our_side": {
+        "artifact": "scratch/t92/out/schema_v113.json#/coverage",
+        "grade": "held",
+        "statement": "We hold 34 L3 slots (club 13, comp 49, nation 5, stadium 41, team 11 + forwarded 6) and 0 L4."
+      },
+      "external_side": [
+        {
+          "provenance": "ext/fmsave@755fe9c",
+          "locator": "src/fmsave/models/*",
+          "statement": "20 record types modelled to field level: Player 53, Staff 31, Contract 25, Stadium 20, Club 13, Competition 4, Team 4, Nation 2, plus matches/training/tactics/finances/facilities/affiliates/loans.",
+          "ext_label": "grammar"
+        },
+        {
+          "provenance": "ext/FMLibreEditor@fb76023",
+          "locator": "docs/recon/ (22 docs)",
+          "statement": "FM27 recon on bans, debts, loans, transfers, offers, prize money, sponsorships, youth intake, national teams, tactics and value, object pools, 5 Steam builds.",
+          "ext_label": "recon"
+        }
+      ],
+      "relation": "coverage_gap",
+      "verdict": "held",
+      "why_not_upgraded": "The externals cover contract clauses, loans, transfer offers, prize money and sponsorships -- areas where our coverage has no L3 slot at all. They are a reading list, not a grade.",
+      "residual": "Every one of these areas would need our own probe before it could carry any grade."
+    }
+  ]
+}

@@ -21,6 +21,7 @@
 | `save_grammar.json` | 容器/分节/表/记录文法 + zstd 用法 + per-build 布局门控(每条 file:line) | 2 |
 | `field_dictionary.json` | fmsave 表→字段→语义(players/staff/clubs/nations 优先) | 3 |
 | `fm24_memory_layout.json` | FM24 实体数组/stride/对象字段偏移(**内存布局,非 wire 格式**) | 4 |
+| `fm24_fields.json` | 同上 270 字段、无 curated fact;`t93_fm24.py` 中间产物,非交付物 | 4 |
 | `fm27_recon_digest.json` | FMLibreEditor 22 篇 recon 每篇 3–8 条要点 | 5 |
 | `crosswalk.json` | 我方冻结资产 vs 外部字典,逐条 held 级对照 | 6 |
 | `verify.py` | 独立校验(provenance / file:line 存在性 / 计数 / 全 held / 零执行自证) | 7 |
