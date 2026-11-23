@@ -1,9 +1,0 @@
-Warning: No project session found with id 't47-natunk-openai-codex'; creating a new session with that id.
-t47 部分完成：15 个目标中，9 个已建立内嵌集合到 reader 的静态链，6 个仍未闭合。未发现新的独立子表，t37 负例原样保留。
-
-- **`Ntxr` 已闭合**：client/server `table_10` 各 251 行走到 EOF。Server 读出 1,899 个 25 B 税项，client 跳过税段；合成反例独立验证了 23 B 分支。**7 项 L3、2 项 held、L4=0**。
-- **其余 8 个已链接项**属于 type 9 的 `NATIONAL_TEAM_CONTAINER`。Transfer prefs 三件和 repu values 三件各有独立集合，并非同簇共用一个数组。`table_9` 与 `table_extra_9` 的分档游标尚未闭合，未晋级字段。
-
-独立 verifier、builder 的 `--help` / `--selftest` 均通过；`t01_anchors.py` **7/7**。
-
-**交付清单**：`scripts/t47_nation_unknown.py`；`scratch/t47/out/` 下的 `discovery_nation_unknown.json`、`cursor_nation_tax.json`、`fields_nation_tax.json`、`instructions.part001–010.json`、`branches.part001–002.json`、`verify.py`、`REPORT.md`、`DONE.md`。

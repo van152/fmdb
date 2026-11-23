@@ -1,6 +1,0 @@
-Warning: No project session found with id 't12-shape-openai-codex'; creating a new session with that id.
-**t12 交付已写入 `scratch/t12/out/`：** `codes_full.json`、`club_paths.json`、`naming_result.json`、`extract.py`、`build.py`、`verify.py`、`REPORT.md`。三个 JSON 均为完成状态。
-
-**验收未通过，主要缺口是 club 覆盖：** `offset/path/remote = 266/483（55.07%）`，低于 420。报告附有未定位码逐码归因。另一个待核差异：对 SHA-256 符合基线的 exe 严格反序扫描得到 **386 个字节存在、189 个不存在**，与任务给定的 **483/92** 不符；没有把未解析码伪标为 absent 或 remote。
-
-其他检查通过：命名 **134/240**、schema-illegal **0**、t07 **45/45**、injury **13/13**、city **6/6**；`Sold/Snew/Salt` 分别定位到 **32/40/72**。4,278 条实例的指令文本及 CMP 立即数复核无误，ScYK 陷阱 **2/2** 通过。三个脚本的 `--help` / `--selftest` 均通过；`verify.py` 返回码为 **1**，仅因 club 覆盖未达标。
