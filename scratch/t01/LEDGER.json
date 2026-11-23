@@ -3174,6 +3174,31 @@
     "scratch/t93/outbox.md/summary 纪律核对段",
     "scripts/t01_anchors.py 7/7"
    ]
+  },
+  {
+   "id": "E142",
+   "date": "2026-11-23",
+   "author": "co(MCode 会话)",
+   "kind": "merge_gate",
+   "level": "L1",
+   "claim": {
+    "gate_1": "scripts/baseline_coverage.py --check → PASS(rc=0): 冻结聚合与 docs/BASELINE.md 一致",
+    "gate_2": "scripts/t01_anchors.py → 7/7 PASS(rc=0)",
+    "gate_3": "scripts/t77_schema_v11.py --verify → 58/63 后 FAIL(rc=1): 既存债,非本次合并引入——(a) 该校验器钉死 v11 期断言(schema_version==11 / generated_by==t77 / 根键集合=10 节 / club_main_row_L3==43),而已发布 schema 已被 t87/t90/t92 升到 v11.3(43 根节 / club_main_row_L3=78);(b) schema.pointer_artifacts.xml_denominator_coverage 仍钉 E116 期 SHA e3a6d56e…/297,905 B,实际文件已被 E139 更新为 17e23a58…/345,332 B",
+    "current_version_gate": "scripts/t92_schema_v113.py --selftest → PASS;scratch/t92/out/verify.py(已发布件校验)6/8,失败项同为版本钉(11.3-candidate 与 E139 前分母 SHA),非数据缺陷",
+    "regression_suite": "scripts/t145_final_regression.py 在 CN/GBK 控制台第 7/24 项崩溃: subprocess.run(text=True) 按系统 locale(GBK) 解码子进程 UTF-8 输出(t121 输出含 em dash 0x94)→UnicodeDecodeError→p.stdout=None→TypeError;给两处 subprocess.run 加 encoding='utf-8', errors='replace' 后实测 24/24 PASS(187s, protected_clean=True)",
+    "merge_action": "本地 274 条任务提交历史与远端 fmdb/main(15 条脱敏重写谱系)合并为单一 merge commit 后推送;两侧内容树 5,380 文件一致,仅 WAVE14_MORNING_REPORT.md 一行差异",
+    "remote_fact": "origin(van152/fm24-db)已不存在;van152/xugezone 与 van152/fmdb 均指向同一仓 van152/fmdb(PUBLIC, default=main);远端 main=e8bffb7"
+   },
+   "evidence": [
+    "scripts/baseline_coverage.py --check(rc=0)",
+    "scripts/t01_anchors.py(7/7)",
+    "scripts/t77_schema_v11.py --verify(58/63,FAIL 项为版本钉)",
+    "scripts/t92_schema_v113.py --selftest(PASS)",
+    "scratch/t92/out/verify.py(6/8)",
+    "scratch/t145/out/regression_matrix.json(2026-11-22 版 24/24;本次复跑需 encoding 修补)"
+   ],
+   "consequence": "merge-to-main 前置闸门实况入账:两条绿、一条因版本钉发红(已定性为既存债,本次合并不改任何已发布产物);wave14 成果仍未入账(E142 之后待开 E143 起),L4 仍为 0"
   }
  ]
 }
