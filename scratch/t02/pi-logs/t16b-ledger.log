@@ -1,8 +1,0 @@
-=== attempt 1/3 Thu Nov 19 03:11:19     2026 provider=openai-codex model=gpt-6-luna ===
-Warning: No project session found with id 't16b-ledger-openai-codex'; creating a new session with that id.
-已交付至 `scratch/t16b/out/`：stage2 的 **54 张 resolved 表去重为 20 个实体 tag**，均有 `fields_<tag>.json`；大文件已分片。另有 `ledger.json`、`ledger.md`、`REPORT.md`、`verify.py` 和 `g1_checks.json`。新增脚本：`scripts/t16b_build.py`、`scripts/t16b_verify.py`。
-
-**G1 未达标**：12/237，5.06%（门槛 95%）；记录了 18 列冲突、207 列无匹配 walk 桥，未静默覆盖。状态为 `complete_ledger_partial_coverage_g1_below_95pct`。`verify.py` 的抽样指令复算通过，但因 G1 未过而返回退出码 1；脚本 `--help` / `--selftest` 均通过。
-
-Club walk 记录了 15 个 class branches、16 个 serializer 候选函数、139 条条件跳转；分支到字段的闭合仍未完成。`play` 台账已保留，但遵守 AGENTS.md 的 PDxx 范围限制，未运行该 tag 的 walk。 t30/t38/t49 的 C 类佐证已作为 `L2_data` 旁证标注，并保留候选 caveat。
-=== DONE t16b-ledger attempt=1 rc=0 Thu Nov 19 03:35:44     2026 ===

@@ -1,7 +1,0 @@
-=== attempt 1/3 Fri Nov 20 03:55:03     2026 provider=hiyo-key2 model=gpt-6-luna ===
-**t54-fix1 已完成。** ledger 校验按 E87/E89/E90/E91/E92/E93 逐条匹配 ID、canonical claim SHA-256、kind 和 level；不再用当前 ledger 的全文件 SHA 或大小作守卫。`ledger_snapshot.json` 及其摘要仍作为历史记录保留。E94 不影响校验。
-
-`scratch/t54/out/REPORT.md` 和 `DONE.md` 仅在末尾追加了 `fix1` 根因与修复说明；`spot_fix1.log` 记录了验证结果。公共 `reports/` 文件未改动，SHA-256 仍为 JSON `02751ef7…010f44`、Markdown `a8d6509b…234ac6`。
-
-验证通过：builder `--selftest`（确认公共 v6 未变、scratch 报告与生成内容一致）；`verify.py --check`（104 项，退出码 0）；t01 anchors（7/7）；spot check（37 项）。
-=== DONE t54-schemav6 attempt=1 rc=0 Fri Nov 20 04:09:34     2026 ===
