@@ -13,7 +13,7 @@ import sys
 
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[2]
-EXE=Path('<OLD_REPO>/input/editor.exe')
+EXE=Path('D:/tmp2b/fm24/input/editor.exe')
 MASTER='evidence/fm24/reports/editor_schema/master.json'
 HEADER=bytes.fromhex('03017461642ef10d')
 NEW=S.Struct('<IBIiIIIiBBIbbBIbI')

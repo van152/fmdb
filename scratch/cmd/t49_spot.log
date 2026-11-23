@@ -1,0 +1,101 @@
+[PASS] status partial_sidecar_positive_reader_open
+[PASS] discovery L3=17 held=13 L4=0
+[PASS] editor SHA b82ebe8e
+[PASS] binding reader 17156880 client m0 / server m1
+[PASS] sidecar unbound + may_not_assign flag
+[PASS] trials: 8 member/mode combos, 6 rejections
+[PASS] client/table_9.dat size 31956 == entry.size == recorded
+[PASS] client/table_9.dat payload SHA matches recorded 784810f0946a25d2
+[PASS] client/table_9.dat compressed region SHA matches entry 4e85f79f11196cf0
+[PASS] client/table_9.dat tad shell
+[PASS] client/table_9.dat count@8==251
+[PASS] client/table_extra_9.dat size 83927 == entry.size == recorded
+[PASS] client/table_extra_9.dat payload SHA matches recorded 2717052d63a4cba9
+[PASS] client/table_extra_9.dat compressed region SHA matches entry 91d149897032833f
+[PASS] client/table_extra_9.dat tad shell
+[PASS] client/table_extra_9.dat count@8==251
+[PASS] server/table_9.dat size 307564 == entry.size == recorded
+[PASS] server/table_9.dat payload SHA matches recorded 6c2d8a0606de2665
+[PASS] server/table_9.dat compressed region SHA matches entry 57ea2e312e8bbd59
+[PASS] server/table_9.dat tad shell
+[PASS] server/table_9.dat count@8==251
+[PASS] server/table_extra_9.dat size 105228 == entry.size == recorded
+[PASS] server/table_extra_9.dat payload SHA matches recorded a56715372b33bd48
+[PASS] server/table_extra_9.dat compressed region SHA matches entry e4931778250325da
+[PASS] server/table_extra_9.dat tad shell
+[PASS] server/table_extra_9.dat count@8==251
+[PASS] table_9 sizes 31956/307564
+[PASS] table_extra_9 sizes 83927/105228
+[PASS] client cursor mode
+[PASS] client 251 rows
+[PASS] client cursor payload SHA/len match
+[PASS] client closure 13+31934+9==31956
+[PASS] client all selectors 0
+[PASS] client raw selector byte 0 at every wire13
+[PASS] client identity tail = last 12B of every row
+[PASS] client footer 00000000|01|ec7ae404 at 31947
+[PASS] client row0 identity (0,5,5) at 264
+[PASS] client row0 wire_sha256 recompute
+[PASS] client bound mode closed, opposite mode has first_failure
+[PASS] server cursor mode
+[PASS] server 251 rows
+[PASS] server cursor payload SHA/len match
+[PASS] server closure 13+307542+9==307564
+[PASS] server all selectors 0
+[PASS] server raw selector byte 0 at every wire13
+[PASS] server identity tail = last 12B of every row
+[PASS] server footer 00000000|01|ec7ae404 at 307555
+[PASS] server row0 identity (0,5,5) at 1099
+[PASS] server row0 wire_sha256 recompute
+[PASS] server bound mode closed, opposite mode has first_failure
+[PASS] NCro all 251 rows gate=0, no count
+[PASS] NTRv server counts: 114x20+137x0, items 2280
+[PASS] NTRv client mode bypass (no collection)
+[PASS] NWGv server counts: 114x20+137x0, items 2280
+[PASS] NWGv client mode bypass (no collection)
+[PASS] NSps server counts: 18x20+233x0, items 360
+[PASS] NSps client mode bypass (no collection)
+[PASS] Nntp items client==server==1136 (got 1136/1136)
+[PASS] Nntp cross-archive item bytes equal for 1136 items, 0 row mismatches
+[PASS] Nntp first-lane i32 all in [0,250] (1136 items, min 0, max 249)
+[PASS] Nctp items client==server==640 (got 640/640)
+[PASS] Nctp cross-archive item bytes equal for 640 items, 0 row mismatches
+[PASS] Nctp first-lane i32 all in [0,250] (640 items, min 0, max 5)
+[PASS] Nrtp items client==server==254 (got 254/254)
+[PASS] Nrtp cross-archive item bytes equal for 254 items, 0 row mismatches
+[PASS] Nrtp first-lane i32 all in [0,250] (254 items, min 0, max 24)
+[PASS] Nfmp server row0 count 26 start 284 (got 26/284)
+[PASS] Nfmp row0 item0 pers @284 == 43016
+[PASS] Nfmp row0 item0 side/perm byte @291 == 0c (side=4, perm=1)
+[PASS] Nfmp perm bits ones/zeros 1731/927 (perm0=927, perm1=1731)
+[PASS] Nfmp side values subset of 0..7 (obs [0, 1, 2, 4])
+[PASS] NTRv valu items decoded 2280
+[PASS] NTRv valu i32 all nonneg (min 0, max 171492928)
+[PASS] NWGv valu items decoded 2280
+[PASS] NWGv valu i32 all nonneg (min 0, max 1500000)
+[PASS] NSps valu items decoded 360
+[PASS] NSps valu i32 all nonneg (min 0, max 150056304)
+[PASS] Nntp L3=3 L4=0
+[PASS] Nntp held=3 (got 3)
+[PASS] Nctp L3=4 L4=0
+[PASS] Nctp held=1 (got 1)
+[PASS] Nrtp L3=4 L4=0
+[PASS] Nrtp held=1 (got 1)
+[PASS] NTRv L3=1 L4=0
+[PASS] NTRv held=1 (got 1)
+[PASS] NWGv L3=1 L4=0
+[PASS] NWGv held=1 (got 1)
+[PASS] NSps L3=1 L4=0
+[PASS] NSps held=1 (got 1)
+[PASS] Nfmp L3=3 L4=0
+[PASS] Nfmp held=3 (got 3)
+[PASS] NCro L3=0 L4=0
+[PASS] NCro held=2 (got 2)
+[PASS] grade sums 17 L3 + 13 held
+[PASS] t37 inventory SHA 8af89c72 untouched
+[PASS] t47 discovery SHA 2c0a5b53 untouched
+[PASS] builder --selftest rc0 (rc=0)
+[PASS] t49 verify.py PASS rc0 (rc=0)
+[PASS] t01_anchors 7/7 (rc=0)
+
+=== t49 spot: 99/99 ===

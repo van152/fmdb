@@ -30,10 +30,10 @@ import struct
 import sys
 import time
 
-EDITOR_EXE = r"<OLD_REPO>\input\editor.exe"
-VOCAB = r"<WORKSPACE>\scratch\t01\inbox\t01c\vocab.json"
-MASTER = r"<WORKSPACE>\evidence\fm24\reports\editor_schema\master.json"
-OUT_DIR = r"<WORKSPACE>\scratch\t01\inbox\t01d"
+EDITOR_EXE = r"D:\tmp2b\fm24\input\editor.exe"
+VOCAB = r"D:\tmp2b\fm24-db\scratch\t01\inbox\t01c\vocab.json"
+MASTER = r"D:\tmp2b\fm24-db\evidence\fm24\reports\editor_schema\master.json"
+OUT_DIR = r"D:\tmp2b\fm24-db\scratch\t01\inbox\t01d"
 OUT_JSON = os.path.join(OUT_DIR, "census.json")
 
 WINDOW = 0x100000     # 密度窗口 1MB

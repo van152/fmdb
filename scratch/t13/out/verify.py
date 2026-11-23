@@ -30,7 +30,7 @@ ARTIFACTS = {
     "chains": ROOT / "scratch/t08/out/chains.json",
     "codes": ROOT / "scratch/t12/out/codes_full.json",
     "stage2": ROOT / "scratch/t01/stage2_three_way.json",
-    "exe": Path(r"<OLD_REPO>\input\editor.exe"),
+    "exe": Path(r"D:\tmp2b\fm24\input\editor.exe"),
 }
 
 

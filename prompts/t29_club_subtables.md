@@ -7,7 +7,7 @@
 - **239 嵌套字段清单**(t24):`scratch/t24/out/subtables.part00{1,2,3}.json` 的 `nested_fields`,按父码分组:Cafl 29 / Cstc 28 / Cvfl 19 / Clhs 12 / CSrs 10 / CAmb 10 / CpTI 9(实际 12)/ Tchl 9 / Calt 6 / Cspb 6 / Coin 6 / Camc 6 / Cmti 6 / Cdbt 5 / Cwcl 5 / …。**Cstc 归 sol t27,本任务跳过 Cstc,专注其余父码。**
 - **schema item 语义**(冻结 master.json,SHA 7d57477e 对照 MANIFEST):`evidence/fm24/reports/editor_schema/master.json#entities.club.xml[0].fields`,每个 list 父码的 `list_item_fields` 给出 item 字段名+类型。例:Cafl=[affl,ismc,stdt,endt,type,yfee](联盟,含开始/结束日期+年费);Clhs=[year,orde,divi,posi,mxtm,poin](联赛史,年份/名次/积分);CAmb=[type,levl,styr,enyr,mage,mlen](雄心,起始/结束年)。这些日期/cash/integer/ref 语义是画像的强目标。
 - **子表身份来源**:`scratch/t14/out/census.json`(74 表,table_type/handler_off/vtables.class/primary_class/entity_tag/adjudication)+ `reports/stage2_table_identity.json`(54 resolved)+ `scratch/t20/out/cursor_t22.json`(stadium 先例:RTTI STADIUM_CHANGE,factory 0xF49092,slot-19 reader 0x1537800,449×79B)。
-- **数据导出**:`scripts/fm24_dump.py`,`FM24_DB_DIR=<WORKSPACE>/scratch/data`;子表多在 **server** archive。t13d 画像先例 `scratch/t13d/out/audit.json`(packed day/year 手法)。
+- **数据导出**:`scripts/fm24_dump.py`,`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`;子表多在 **server** archive。t13d 画像先例 `scratch/t13d/out/audit.json`(packed day/year 手法)。
 
 ## 唯一目标(数据侧,候选不晋级)
 
@@ -24,7 +24,7 @@
 - **候选不写成结论**;无独立证据的列名不赋义;负结果保留;匹配不到的父码如实标 unknown。
 - 每父码独立落盘,**卡壳就写 partial 再做下一个**(devseek 式纪律);20+ 父码做不完就交已完成的,顶层 status 汇总。
 - 新脚本 `--help`/`--selftest`,退出码 0/1/2;单次打印 ≤400 行;大 JSON 分片;状态词 `complete_*`/`partial_*`/`negative_*`。
-- 不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 
 ## 交付
 

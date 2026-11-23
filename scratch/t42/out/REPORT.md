@@ -47,7 +47,7 @@ Exact v1 inputs were preserved before report replacement:
 - `club_nation_subtable_schema.v1.json`: SHA-256 `963bfec0ee13ecff23fe05cb1a622841eaff46735fbda2a5dcbda72f9fdc5a7c`.
 - `club_nation_subtable_schema.v1.md`: SHA-256 `3e713d47daecc05e72bf077e719ef41e71525456af91edf97b70ae01949ea163`.
 
-Executed with `FM24_DB_DIR=<WORKSPACE>/scratch/data` and Python 3.12 isolated/no-bytecode mode:
+Executed with `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data` and Python 3.12 isolated/no-bytecode mode:
 
 - `py -V:3.12 -I -B scratch/t42/out/consolidate_v2.py --help` — PASS.
 - `py -V:3.12 -I -B scratch/t42/out/verify.py --help` — PASS.

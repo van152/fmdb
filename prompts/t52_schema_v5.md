@@ -8,7 +8,7 @@
 4. **t50(未交付,dispatch 时仍在跑)**:按 pending 如实记,**不虚构、不占位定稿**;若指挥官附言说明已交付则以其 REPORT.md 为准并入。
 
 ## 必读
-- <WORKSPACE>\AGENTS.md(硬约束;候选不写结论;negative/held 原样保留;L4=0)
+- D:\tmp2b\fm24-db\AGENTS.md(硬约束;候选不写结论;negative/held 原样保留;L4=0)
 - reports/club_nation_subtable_schema.json + .md(**v4 基线**,合并基底)
 - scratch/t47/out/discovery_nation_unknown.json + fields_nation_tax.json + cursor_nation_tax.json + REPORT.md
 - scratch/t49/out/(REPORT.md + fields_*.json + discovery_t9_wire.json,已提交 77f85b6)
@@ -26,10 +26,10 @@
 
 ## 边界
 - 只改 reports/club_nation_subtable_schema.json/.md(schema v5)与 scratch/t52/、scripts/t52_*.py;**不改** scratch/t47/t49/t51/t50 任何文件;不改 BASELINE.md(另行)。
-- 不启动游戏/编辑器/IDA,不联网,不读写 Z:;L4=0。
+- 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:;L4=0。
 - 若 t49/t50 尚未交付对应部分,按指挥官 dispatch 附言的实际清单合并,缺项如实记 pending,不虚构。
 
 ## 交付 scratch/t52/out/
 - consolidate_v5.py(合并脚本)、verify.py(独立)、spot_*.log、REPORT.md、DONE.md;reports/ 两文件升级为 v5(指挥官验收后由指挥官提交)
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;只写 scratch/t52/、scripts/t52_*.py 与 reports/ 两文件;完成跑 verify + t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;只写 scratch/t52/、scripts/t52_*.py 与 reports/ 两文件;完成跑 verify + t01_anchors.py(7/7)。

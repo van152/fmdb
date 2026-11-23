@@ -1,0 +1,146 @@
+=== MASTER.JSON ENUMS & FIELDS ===
+Entity award.xml: type=list, len=1
+  award.xml awar (None): {"fields": [{"field": "duni", "name": "Unique ID", "type": "unique_id", "raw_name": "Unique ID", "dependencies": [{"field": "number_records_editing", "equals": ...
+Entity language.xml: type=list, len=1
+  language.xml lang (None): {"fields": [{"field": "duni", "name": "Unique ID", "type": "unique_id", "raw_name": "Unique ID", "dependencies": [{"field": "number_records_editing", "equals": ...
+Entity weather.xml: type=list, len=1
+  weather.xml weat (None): {"fields": [{"field": "duni", "name": "Unique ID", "type": "unique_id", "raw_name": "Unique ID", "dependencies": [{"field": "number_records_editing", "equals": ...
+Entity derby.xml: type=list, len=1
+  derby.xml drbr (None): {"fields": [{"field": "duni", "name": "Unique ID", "type": "unique_id", "raw_name": "Unique ID", "dependencies": [{"field": "number_records_editing", "equals": ...
+Entity media source.xml: type=list, len=1
+  media source.xml mdso (None): {"fields": [{"field": "duni", "name": "Unique ID", "type": "unique_id", "raw_name": "Unique ID", "dependencies": [{"field": "number_records_editing", "equals": ...
+enums[foms] = {'file': 'input/editor.exe formation builder VA 0x141cf6580 (thunk 0x140032740; called with key foms at 0x14000fc5e)', 'values': [{'enum': '2', 'enum_id': '2', 'name': None}, {'enum': '3', 'enum_id': '3', 'name': None}, {'enum': '4', 'enum_id': '4', 'name': None}, {'enum': '7', 'enum_id': '7', 'name': None}, {'enum': '8', 'enum_id': '8', 'name': None}, {'enum': '12', 'enum_id': '12', 'name': None}, {'enum': '14', 'enum_id': '14', 'name': None}, {'enum': '15', 'enum_id': '15', 'name': None}, {'enum': '16', 'enum_id': '16', 'name': None}, {'enum': '18', 'enum_id': '18', 'name': None}, {'enum': '19', 'enum_id': '19', 'name': None}, {'enum': '20', 'enum_id': '20', 'name': None}, {'enum': '21', 'enum_id': '21', 'name': None}, {'enum': '22', 'enum_id': '22', 'name': None}, {'enum': '23', 'enum_id': '23', 'name': None}, {'enum': '24', 'enum_id': '24', 'name': None}, {'enum': '25', 'enum_id': '25', 'name': None}, {'enum': '26', 'enum_id': '26', 'name': None}, {'enum': '27', 'enum_id': '27', 'name': None}, {'enum': '28', 'enum_id': '28', 'name': None}, {'enum': '29', 'enum_id': '29', 'name': None}, {'enum': '30', 'enum_id': '30', 'name': None}, {'enum': '31', 'enum_id': '31', 'name': None}, {'enum': '32', 'enum_id': '32', 'name': None}, {'enum': '33', 'enum_id': '33', 'name': None}, {'enum': '34', 'enum_id': '34', 'name': None}, {'enum': '35', 'enum_id': '35', 'name': None}, {'enum': '36', 'enum_id': '36', 'name': None}, {'enum': '38', 'enum_id': '38', 'name': None}, {'enum': '40', 'enum_id': '40', 'name': None}, {'enum': '41', 'enum_id': '41', 'name': None}, {'enum': '42', 'enum_id': '42', 'name': None}], 'provenance': {'source': 'builder iterates formation ids 0..0x40 filtered by validity function 0x14087a3b0(id, list_type=0); static fallback masks compiled into 0x14087a3b0', 'method': 'list_type 0 mask 0x75ffffff19f over ids < 0x2f, minus pre-exclusions {1,13,17,37,43,44,45,48,49}, id 0 excluded by range pre-check', 'field_semantics': 'AWfo "Formation" (award) in format/database/award.xml', 'names': 'formation names generated per id from the loaded game database (name function 0x141cf6700); id 0 name = translation 291387 (text not installed). CAVEAT: when a database is loaded, a runtime per-id flags table overrides the static fallback'}}
+
+Loaded client: {'table_0.dat': 272987, 'table_2.dat': 2420621, 'table_3.dat': 6932082, 'table_5.dat': 260, 'table_7.dat': 36824, 'table_8.dat': 5248, 'table_9.dat': 31956, 'table_10.dat': 24732, 'table_18.dat': 139891, 'table_21.dat': 1839716, 'table_25.dat': 894991, 'table_27.dat': 43345, 'table_47.dat': 109505}
+Loaded server: {'table_0.dat': 272987, 'table_2.dat': 2420621, 'table_3.dat': 16595312, 'table_5.dat': 358, 'table_7.dat': 38280, 'table_8.dat': 5248, 'table_9.dat': 307564, 'table_10.dat': 422345, 'table_12.dat': 3739570, 'table_18.dat': 149293, 'table_21.dat': 8762775, 'table_24.dat': 8819030, 'table_25.dat': 1533972, 'table_27.dat': 43345, 'table_30.dat': 2464104, 'table_47.dat': 109505}
+
+Ref table counts: {0: 3545, 2: 56293, 3: 84259, 5: 7, 7: 208, 8: 126, 9: 251, 10: 251, 12: 28597, 18: 1567, 21: 48413, 24: 84507, 25: 7047, 27: 334, 30: 72473, 47: 2488}
+
+==================== TABLE 0: AWARD ====================
+client==server: True len: 272987 hdr_n: 3545
+sel unique: [0]
+id: ord==0..N-1: True, duni unique: 3545, duni==rdui: 3545/3545
+  @ 0 int_+7e  (u8 ): min=0, max=0, hist={0: 3545}
+  @ 1 int_+7f  (u8 ): min=0, max=0, hist={0: 3545}
+  @ 2 AWsc     (i8 ): min=0, max=7, hist={0: 138, 1: 3071, 2: 283, 3: 43, 4: 3, 5: 5, 7: 2}
+  @ 3 int_col0 (u8 ): min=1, max=1, hist={1: 3545}
+  @ 4 AWfc     (u16): min=0, max=32767, uniq=36, top5=[(2521, 32767), (196, 32584), (173, 26756), (130, 8744), (99, 3204)]
+  @ 6 AWbc     (u16): min=0, max=32767, uniq=45, top5=[(1507, 140), (443, 26756), (375, 32767), (166, 20546), (154, 2219)]
+  @ 8 AWtc     (u16): min=0, max=32767, uniq=33, top5=[(1909, 0), (452, 32767), (283, 26756), (182, 3204), (125, 5365)]
+  @10 int_col4 (u16): min=0, max=0, hist={0: 3545}
+  @12 int_col6 (u16): min=0, max=0, hist={0: 3545}
+  @14 int_col8 (u8 ): min=1, max=1, hist={1: 3545}
+  @15 AWre     (i16): min=0, max=20, uniq=21, top5=[(1113, 0), (269, 5), (250, 1), (225, 2), (209, 6)]
+  @17 AWty     (i8 ): min=-1, max=44, uniq=23, top5=[(1562, 37), (583, -1), (429, 4), (341, 15), (321, 3)]
+  @18 AWdr     (i8 ): min=0, max=9, hist={0: 4, 1: 197, 2: 504, 3: 1801, 4: 755, 5: 217, 6: 19, 7: 31, 8: 15, 9: 2}
+  @35 AWrb     (i8 ): min=0, max=3, hist={0: 275, 1: 1600, 2: 1516, 3: 154}
+  @36 dSAw     (u8 ): min=0, max=0, hist={0: 3545}
+  @37 AWfo     (i8 ): min=0, max=64, hist={0: 3027, 3: 356, 4: 59, 7: 26, 28: 1, 29: 55, 30: 8, 35: 12, 64: 1}
+  @38 AWxa     (u8 ): min=0, max=100, hist={0: 3179, 7: 1, 17: 3, 18: 6, 19: 11, 20: 34, 21: 177, 22: 20, 23: 93, 24: 10, 25: 5, 26: 1, 40: 1, 45: 2, 48: 1, 100: 1}
+  @39 AWwh     (u8 ): min=0, max=200, uniq=63, top5=[(1644, 0), (135, 100), (104, 80), (97, 150), (89, 50)]
+  @40 AWwr     (u8 ): min=0, max=200, uniq=72, top5=[(1786, 0), (183, 10), (131, 50), (130, 40), (109, 20)]
+  @45 AWbr     (i8 ): min=1, max=9, hist={1: 14, 2: 3139, 3: 32, 4: 173, 5: 120, 6: 48, 7: 2, 8: 10, 9: 7}
+  @46 AWsr     (i8 ): min=0, max=4, hist={0: 3530, 1: 1, 2: 1, 3: 10, 4: 3}
+  @47 AWss     (i8 ): min=0, max=7, hist={0: 1570, 1: 1318, 2: 59, 3: 326, 4: 12, 5: 28, 6: 21, 7: 211}
+  @48 int_+8c  (u8 ): min=0, max=50, hist={0: 2932, 3: 273, 4: 55, 5: 138, 6: 10, 7: 1, 8: 17, 10: 76, 11: 6, 12: 3, 14: 1, 15: 6, 16: 3, 20: 11, 30: 8, 33: 1, 35: 1, 50: 3}
+  @49 AWus/op  (u8 ): min=0, max=3, hist={0: 3268, 1: 204, 2: 66, 3: 7}
+  @50 AWap     (i8 ): min=0, max=3, hist={0: 1109, 1: 62, 2: 114, 3: 2260}
+  @51 AWrt     (i8 ): min=1, max=8, hist={1: 2382, 2: 398, 3: 12, 4: 70, 6: 25, 7: 542, 8: 116}
+  @52 AWvf     (i8 ): min=0, max=3, hist={0: 3191, 1: 141, 2: 179, 3: 34}
+  @53 AWmg     (u8 ): min=0, max=100, uniq=21, top5=[(2587, 0), (323, 70), (141, 50), (102, 65), (94, 75)]
+  @54 AWma     (u8 ): min=0, max=70, hist={0: 3469, 14: 4, 15: 35, 16: 13, 17: 5, 18: 7, 19: 4, 20: 1, 22: 1, 23: 1, 30: 1, 35: 1, 50: 1, 60: 1, 70: 1}
+  @55 AWpo     (u32): min=0, max=16384, hist={0: 3126, 1: 189, 12: 8, 30: 82, 128: 4, 6144: 3, 14336: 3, 16256: 61, 16384: 69}
+  @59 AWnp     (i8 ): min=0, max=3, hist={0: 1378, 1: 862, 2: 1283, 3: 22}
+  DATE AWda@19   : n=3545, bad=0, zero=0, 1900-01-01=3292, y=[1900..2024]
+  DATE AWad@60   : n=3545, bad=0, zero=0, 1900-01-01=3171, y=[1900..2024]
+  FK AWci@23      -> t 5 (N=     7): live= 3452 (0=208), -1=   93, neg!=0, ord_ok=3452, ord_miss=0, min=0, max=5 | wrong_uid_hits=3244/3452
+  FK AWni@27->10  -> t10 (N=   251): live= 3232 (0=22), -1=  313, neg!=0, ord_ok=3232, ord_miss=0, min=0, max=248 | wrong_uid_hits=998/3232
+  FK AWni@27->9   -> t 9 (N=   251): live= 3232 (0=22), -1=  313, neg!=0, ord_ok=3232, ord_miss=0, min=0, max=248 | wrong_uid_hits=999/3232
+  FK int+68@31    -> t47 (N=  2488): live=    7 (0=0), -1= 3538, neg!=0, ord_ok=7, ord_miss=0, min=4, max=4 | wrong_uid_hits=0/7
+  FK AWmi@41      -> t25 (N=  7047): live= 3291 (0=22), -1=  254, neg!=0, ord_ok=3291, ord_miss=0, min=0, max=6971 | wrong_uid_hits=441/3291
+  AWre > 20 count: 0 AWre < 0: 0 percentiles: [0.0, 4.0, 12.0, 15.0, 20.0]
+  AWpo unique bits OR: 0x7f9f vals: {'0x0': 3126, '0x1': 189, '0xc': 8, '0x1e': 82, '0x80': 4, '0x1800': 3, '0x3800': 3, '0x3f80': 61, '0x4000': 69}
+
+==================== TABLE 8: LANGUAGE ====================
+client==server: True len: 5248 hdr_n: 126
+pos=5239, expected=5239, exact_closure=True, sel_uniq={0}
+id: ord==0..N-1: True, duni==rdui: 126/126
+sample languages: [(0, 'Albanian', 1), (1, 'Arabic', 2), (2, 'Bulgarian', 3), (3, 'Chinese', 4), (4, 'Croatian', 5)]
+  suf+ 0 int_+3a  (u8 ): min=0, max=0, hist={0: 126}
+  suf+ 1 Linf     (i8 ): min=0, max=20, hist={0: 45, 1: 41, 2: 11, 3: 6, 4: 3, 5: 2, 7: 3, 8: 2, 9: 2, 11: 3, 12: 2, 13: 1, 14: 2, 16: 1, 18: 1, 20: 1}
+  suf+ 2 Ldff     (i8 ): min=0, max=20, hist={0: 5, 4: 1, 5: 4, 6: 1, 7: 1, 8: 2, 10: 7, 11: 1, 12: 3, 13: 10, 14: 4, 15: 74, 16: 3, 17: 4, 18: 3, 19: 2, 20: 1}
+  suf+ 3 Lfam     (i16): min=0, max=109, hist={0: 1, 1: 11, 4: 7, 13: 2, 14: 15, 15: 1, 17: 1, 31: 1, 33: 2, 44: 48, 46: 1, 70: 21, 79: 1, 82: 1, 84: 5, 87: 1, 90: 2, 95: 1, 97: 3, 109: 1}
+  suf+ 5 Lgro     (i16): min=0, max=31, uniq=32, sample_min=[0, 1, 2, 3, 4], sample_max=[27, 28, 29, 30, 31]
+  suf+ 7 Lsub     (i16): min=0, max=34, uniq=35, sample_min=[0, 1, 2, 3, 4], sample_max=[30, 31, 32, 33, 34]
+  suf+13 int_+30  (i32): min=1, max=2000254976, uniq=126, sample_min=[1, 2, 3, 4, 5], sample_max=[2000005181, 2000011093, 2000027847, 2000254975, 2000254976]
+  FK Lnat@suf+9   -> t 9 (N=   251): live=  121 (0=1), -1=    5, neg!=0, ord_ok=121, ord_miss=0, min=0, max=247 | wrong_uid_hits=49/121
+  int_+30 == duni8: 121 diff rows: [(116, 'Uyghur', 2000005181, 118), (117, 'Hakka', 2000011093, 119), (118, 'Belarusian', 2000027847, 120), (119, 'Igbo', 2000254975, 121), (120, 'Hausa', 2000254976, 122)]
+
+==================== TABLE 18: DERBY ====================
+DERBY N=1567, sel_c={0}, sel_s={0}
+strings client==server: True
+non-empty counts [Dnam, Dsnm, Dasn, Danm]: [1567, 1567, 121, 121]
+num[0:28] client==server: True
+num[28:36] client == num[34:42] server: True
+id client==server: True
+id: ord==0..N-1: True, duni==rdui: 1567/1567
+  DATE Dfmd@0    : n=1567, bad=0, zero=0, 1900-01-01=1046, y=[1872..2022]
+  FK Dtm1@4->t24  -> t24 (N= 84507): live= 1567 (0=0), -1=    0, neg!=0, ord_ok=1567, ord_miss=0, min=20, max=83930 | wrong_uid_hits=679/1567
+  FK Dtm2@8->t24  -> t24 (N= 84507): live= 1566 (0=0), -1=    1, neg!=0, ord_ok=1566, ord_miss=0, min=16, max=78419 | wrong_uid_hits=589/1566
+  FK Dtm1@4->t3!  -> t 3 (N= 84259): live= 1567 (0=0), -1=    0, neg!=0, ord_ok=1567, ord_miss=0, min=20, max=83930 | wrong_uid_hits=602/1567
+  FK Dfmc@12      -> t25 (N=  7047): live=  402 (0=8), -1= 1165, neg!=0, ord_ok=402, ord_miss=0, min=0, max=5933 | wrong_uid_hits=84/402
+  FK Dfms@16      -> t21 (N= 48413): live=  137 (0=0), -1= 1430, neg!=0, ord_ok=137, ord_miss=0, min=12, max=41129 | wrong_uid_hits=20/137
+  s@20 Dfma     (i32): neg=1433 (m1=1433), live=134, live_min=15, live_max=82100, uniq=90
+  s@24 rpdr     (i32): hist={-1: 1567}
+  s@28 D1tw(s)  (i16): neg=903 (m1=903), live=664, live_min=0, live_max=232, uniq=136
+  s@30 D1td(s)  (i16): neg=903 (m1=903), live=664, live_min=0, live_max=231, uniq=120
+  s@32 D1tl(s)  (i16): neg=903 (m1=903), live=664, live_min=0, live_max=247, uniq=129
+  s@34 Dfg1     (i8 ): neg=1034 (m1=1034), live=533, live_min=0, live_max=11, uniq=13
+  s@35 Dfg2     (i8 ): hist={-1: 1034, 0: 158, 1: 169, 2: 100, 3: 60, 4: 22, 5: 10, 6: 5, 7: 5, 8: 1, 9: 2, 10: 1}
+  s@36 int36    (u8 ): hist={0: 1567}
+  s@37 int37    (u8 ): hist={0: 1567}
+  s@38 int38    (u8 ): hist={0: 1567}
+  s@39 int39    (u8 ): hist={0: 1567}
+  s@40 Dwdr     (u8 ): neg=0 (m1=0), live=1567, live_min=0, live_max=200, uniq=54
+  s@41 Dntr     (u8 ): neg=0 (m1=0), live=1567, live_min=0, live_max=200, uniq=62
+
+==================== TABLE 27: WEATHER ====================
+client==server: True len: 43345 hdr_n: 334
+pos=43336, expected=43336, exact_closure=True, sel_uniq={0}
+id: ord==0..N-1: True, duni==rdui: 334/334
+mid[0:3] unique: [0]
+  season 0 (base= 3): sd=[0..335] (>365:0, <0:0), win=[0..100] sum!=100:18, pre=[0..100] sum!=100:17, te=[0..0], tv=[0..20], t0..7=[0..100] sum!=100:92, dn: 100(null)=20, live=314 [0..0]
+  season 1 (base=26): sd=[0..356] (>365:0, <0:0), win=[0..100] sum!=100:16, pre=[0..100] sum!=100:15, te=[0..0], tv=[0..0], t0..7=[0..95] sum!=100:243, dn: 100(null)=20, live=314 [0..0]
+  season 2 (base=49): sd=[0..304] (>365:0, <0:0), win=[0..100] sum!=100:22, pre=[0..100] sum!=100:16, te=[0..0], tv=[0..4], t0..7=[0..100] sum!=100:90, dn: 100(null)=20, live=314 [0..0]
+  season 3 (base=72): sd=[0..359] (>365:0, <0:0), win=[0..100] sum!=100:20, pre=[0..100] sum!=100:19, te=[0..90], tv=[0..57], t0..7=[0..100] sum!=100:78, dn: 100(null)=20, live=314 [0..0]
+  all 4 sd equal count: 12 sd>365 rows: []
+
+==================== TABLE 7: MEDIA_SOURCE ====================
+MEDIA 100% CLOSED BOTH ARCHIVES! N_cli=208, N_srv=208
+sel_c: {0} sel_s: {0}
+ALL shared fields client==server: True
+srv_len hist: Counter({7: 208})
+row_len delta (srv-cli) hist: Counter({7: 208})
+id ord==0..N-1: True duni==rdui: 208 / 208
+int_d1 hist: Counter({0: 208})
+Mtyp len hist: Counter({1: 181, 2: 27}) vals hist: Counter({6: 78, 1: 74, 4: 40, 5: 31, 11: 5, 2: 4, 10: 3})
+Murl non-empty: 203 Mhtg non-empty: 0
+Misf hist: Counter({0: 208})
+Msty hist: Counter({1: 88, 3: 45, 0: 25, 2: 23, 5: 19, 6: 6, 4: 2})
+Mper hist: Counter({1: 191, 4: 7, 2: 4, 7: 2, 0: 2, 3: 1, 14: 1})
+Mscp hist: Counter({4: 74, 2: 60, 1: 31, 3: 20, 5: 7, 0: 6, 7: 5, 6: 5})
+Mapc hist: Counter({1: 176, 0: 32})
+Mjor len hist: Counter({0: 208})
+  DATE Mdlp      : n=208, bad=0, zero=0, 1900-01-01=208, y=[1900..1900]
+  FK Mcmi_flat    -> t25 (N=  7047): live=  196 (0=1), -1=    0, neg!=0, ord_ok=196, ord_miss=0, min=0, max=6400 | wrong_uid_hits=57/196
+  FK Mcyi         -> t 2 (N= 56293): live=   65 (0=0), -1=  143, neg!=0, ord_ok=65, ord_miss=0, min=9, max=13633 | wrong_uid_hits=52/65
+  FK Mrgi_flat    -> t47 (N=  2488): live=    6 (0=0), -1=    0, neg!=0, ord_ok=6, ord_miss=0, min=2, max=2005 | wrong_uid_hits=0/6
+  FK Mnti_flat    -> t 9 (N=   251): live=  237 (0=0), -1=    0, neg!=0, ord_ok=237, ord_miss=0, min=11, max=216 | wrong_uid_hits=127/237
+  FK Mcti         -> t 5 (N=     7): live=   95 (0=0), -1=  113, neg!=0, ord_ok=95, ord_miss=0, min=1, max=2 | wrong_uid_hits=95/95
+  FK Mlnm_flat    -> t 7 (N=   208): live=   22 (0=0), -1=    0, neg!=0, ord_ok=22, ord_miss=0, min=16, max=79 | wrong_uid_hits=4/22
+Mcli total items=450 across 129 rows
+  Mcli u1==u2: 450/450, u2==0: 0, u1 in club UIDs: 450/450, u1 < club N: 318/450, non-empty curl: 187
+  Mcli sample: [(602, 602, ''), (630, 630, ''), (676, 676, ''), (679, 679, ''), (680, 680, '')]
+pre5 distinct count: 16 (cnt_lnm==0 rows=192, cnt_lnm>0 rows=16)
+  pre5 top 10: [('0000000001', 161), ('0000000000', 31), ('4000000001', 3), ('1900000001', 1), ('4f00000001', 1), ('2300000001', 1), ('1000000001', 1), ('1700000001', 1), ('3400000001', 1), ('3600000001', 1)]
+  Mlnm len hist: Counter({0: 192, 1: 12, 2: 3, 4: 1})

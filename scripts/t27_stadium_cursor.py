@@ -16,8 +16,8 @@ sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'scratch/t27/out'
-EDITOR = Path('<OLD_REPO>/input/editor.exe')
-DATA = '<WORKSPACE>/scratch/data'
+EDITOR = Path('D:/tmp2b/fm24/input/editor.exe')
+DATA = 'D:/tmp2b/fm24-db/scratch/data'
 SHA = 'b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4'
 PROV = 'evidence/fm24/reports/qa/IDA_PROVENANCE.md'
 MASTER = 'evidence/fm24/reports/editor_schema/master.json'

@@ -8,7 +8,7 @@
 - `scratch/t57/out/field_slots.json`、`scratch/t59/out/field_slots.json`、`scratch/t55/out/field_slots.json`(槽位→object_displacement/execution_index 的坐标来源)
 - 既有静态台账(不得推翻,只能补充):t57/t59/t55 REPORT + instructions/branches 分片;t63/t64/t65 field_map_r2(negative/held 原文保留);`scratch/t62/out/` EDsc 分发;schema v10 `reports/club_nation_subtable_schema.json`
 - t66 REPORT(引用 lane 的 ordinal-vs-UID 纪律)
-- 静态来源:只读 `<OLD_REPO>/input/editor.exe`,SHA `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`;file offset/VA 口径沿用 t57
+- 静态来源:只读 `D:/tmp2b/fm24/input/editor.exe`,SHA `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`;file offset/VA 口径沿用 t57
 
 ## 任务
 
@@ -25,10 +25,10 @@
 ## 边界
 
 - 只做三主行 unnamed/held 槽位的反查;不碰 8 个 club 子表、CLUB_LINK、t71 的 +0x100 链、集合层(t66 已闭)、person/PDxx。
-- 不启动游戏/编辑器/IDA,不联网,不读写 Z:;全档验证向量化,不得抽样代替。
+- 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:;全档验证向量化,不得抽样代替。
 
 ## 交付 scratch/t75/out/
 
 - `xref_reverse.json`(逐槽反查台账:槽位坐标→指令链→4CC→grade,含 escalate/负结果原文)、`field_map_r3.json`(club/comp/nation 增量 grades,引用既有 id)、`verify.py`、`REPORT.md`、`DONE.md`(首行 `DONE type=t75 status=complete`);builder `scripts/t75_slot_xref_reverse.py`。
 
-Python `py -V:3.12 -I -B`;`FM24_DB_DIR=<WORKSPACE>/scratch/data`。
+Python `py -V:3.12 -I -B`;`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`。

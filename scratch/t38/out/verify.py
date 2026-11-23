@@ -52,7 +52,7 @@ def find_root(start: pathlib.Path) -> pathlib.Path:
 ROOT = find_root(HERE)
 DB_DIR = pathlib.Path(os.environ.get("FM24_DB_DIR") or (ROOT / "scratch/data"))
 VERIFY_READER = ROOT / "scratch/t01/inbox/t01k/verify.py"
-UPSTREAM = pathlib.Path(r"<OLD_REPO>")
+UPSTREAM = pathlib.Path(r"D:\tmp2b\fm24")
 REPORT = HERE / "multiframe_report.json"
 MAGIC = bytes.fromhex("28b52ffd")
 DAT_MAGIC = b"\x03\x01tad."

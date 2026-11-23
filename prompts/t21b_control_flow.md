@@ -20,11 +20,11 @@
 
 ## 方法和纪律
 
-- 只读 `<OLD_REPO>\input\editor.exe`、`scratch/t21/out/audit.json`、t01h/t05/t12/t19 等证据；本地数据路径用 `FM24_DB_DIR=<WORKSPACE>/scratch/data`。
+- 只读 `D:\tmp2b\fm24\input\editor.exe`、`scratch/t21/out/audit.json`、t01h/t05/t12/t19 等证据；本地数据路径用 `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`。
 - PE file offset/RVA/VA 必须使用 `scripts/t05_pe.py`，不能套固定 delta。
 - 指令必须保存原始 bytes、file offset、VA、反汇编文本；helper target 用 PE 映射后再分析。
 - 控制流分析优先 CFG/basic-block 路径；线性扫描只能标为候选，不能冒充 executed cursor。
-- 不启动游戏、编辑器、IDA，不联网，不读写 Z:；不碰旧 t02 未提交日志。
+- 不启动游戏本体/FM 编辑器(IDA 静态分析允许)，不联网，不读写 Z:；不碰旧 t02 未提交日志。
 - 输出状态用 `partial_control_flow_*` 或 `negative_*`；没有新行坐标就明确写 0。
 - 单次输出 ≤400 行；大列表 JSON 分片或 compact records。
 - 新脚本必须支持 `--help`、`--selftest`，退出码 0/1/2。

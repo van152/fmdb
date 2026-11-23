@@ -1,10 +1,10 @@
 # t01-d 任务书:editor.exe 4CC 普查(deepseek 渠道 2)
 
-> 机械扫描任务,纯 Python,只读输入,产物写 `<WORKSPACE>\scratch\t01\inbox\t01d\`。
+> 机械扫描任务,纯 Python,只读输入,产物写 `D:\tmp2b\fm24-db\scratch\t01\inbox\t01d\`。
 > Python 固定 `py -V:3.12 -I`。不 pip install,不启动任何程序。
 
 ## 背景
-editor.exe(`<OLD_REPO>\input\editor.exe`,74,807,296 B)里字段码以 4 字节立即数出现,字节序是 ASCII **反序**(字段码 'cnam' 在指令里是 6d 61 6e 63)。已知一个样本:mov-imm 注册块 `c7 45 f0 6d 61 6e 63`(@0xebf093)。另一代理在做注册块的深度解码,你做**全量普查**——哪些字段码以哪种指令形态出现在哪里。两层互补,不要做块解码。
+editor.exe(`D:\tmp2b\fm24\input\editor.exe`,74,807,296 B)里字段码以 4 字节立即数出现,字节序是 ASCII **反序**(字段码 'cnam' 在指令里是 6d 61 6e 63)。已知一个样本:mov-imm 注册块 `c7 45 f0 6d 61 6e 63`(@0xebf093)。另一代理在做注册块的深度解码,你做**全量普查**——哪些字段码以哪种指令形态出现在哪里。两层互补,不要做块解码。
 
 ## 任务
 1. 全文件扫描以下指令形态,提取 imm32 并**反序**成候选字段码(字符集 [A-Za-z0-9]{4}):
@@ -15,7 +15,7 @@ editor.exe(`<OLD_REPO>\input\editor.exe`,74,807,296 B)里字段码以 4 字节�
    - `81 f8`..`ff <imm32>`、`81 fa <imm32>`、`3d <imm32>`(cmp r32, imm)
 2. 统计输出:
    - 每形态命中数;每候选码的 (形态 × 次数) 矩阵
-   - 与词汇表对照:读 `<WORKSPACE>\scratch\t01\inbox\t01c\vocab.json`(若尚不存在,退回读 `<WORKSPACE>\evidence\fm24\reports\editor_schema\master.json` 的 entity_summary codes),报告:
+   - 与词汇表对照:读 `D:\tmp2b\fm24-db\scratch\t01\inbox\t01c\vocab.json`(若尚不存在,退回读 `D:\tmp2b\fm24-db\evidence\fm24\reports\editor_schema\master.json` 的 entity_summary codes),报告:
      a. 32 实体的字段码中,哪些在 exe 内**零命中**(这些实体可能走哈希/间接路径——重要负结果)
      b. 命中码按实体的覆盖分布(每实体命中码数/总码数)
    - 密度地图:0x100000 为窗口,每窗口 imm-4CC 命中数 top20

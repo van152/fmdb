@@ -4,7 +4,7 @@
 
 ## CFG 与坐标
 
-静态输入为只读 `<OLD_REPO>/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。下文指令地址为 PE file offset；指令分片附 VA、原字节和后继。冻结 `master.json` SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda` 与 `IDA_PROVENANCE.md` 对 MANIFEST 核验。
+静态输入为只读 `D:/tmp2b/fm24/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。下文指令地址为 PE file offset；指令分片附 VA、原字节和后继。冻结 `master.json` SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda` 与 `IDA_PROVENANCE.md` 对 MANIFEST 核验。
 
 - NATION slot 19 `0x103fac0`（VA `0x1410404c0`），PE exception extent `0x103fac0..0x1040be4`：992 条可达指令、109 条条件分支、0 条 extent 外 CFG 边。40 个直接 stream `+0x28` 站点中，37 个属于外层；3 个是 opaque loop 内部（`0x103fcbd`/`0x103ff79`/`0x1040529`）。另列 `+0x78` 集合 helper 的 count、loader selector 和 identity，共 40 个外层位置。不是 40 个业务字段，也不把内存维护、分配、读失败路径当新字段。对未归类的分支只发谓词和边，不宣称其不可行。
 - `0xf2ba38` 转发外部 mode；`0x103fae6` 和 `0x10409d3` 分别跳过首、尾扩展。双档 selector 都为 0，不能把它当 mode。Client 强制 mode 1 首反例 `@7188` count 1,507,845；server 强制 mode 0 首反例 `@38` A count −90。旧版、helper 的未观测分支及实际运行时状态均不外推。
@@ -47,7 +47,7 @@
 `Ncpi` 复核 client body+9、t22 六个 holdout，双档各 231 个 city ordinal 命中、20 个空、仅 25 个错误 UID 控制命中、5 个异国 owner。England=139/UID 765、China=55/UID 110；parent 352 只验 t01f 已接受的字节夹具，不读 t25 成员。`Ntxr` 7 L3 不变；`TCrs` 4 held 不变。独立 verifier 不 import builder、ReaderCFG 或 fm24_dump。未启动游戏、编辑器、IDA；未联网或访问 Z:。
 
 ```text
-FM24_DB_DIR=<WORKSPACE>/scratch/data
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data
 py -V:3.12 -I -B scripts/t55_natmain_fields.py --build
 py -V:3.12 -I -B scratch/t55/out/verify.py
 py -V:3.12 -I -B scripts/t01_anchors.py

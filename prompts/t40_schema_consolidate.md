@@ -3,7 +3,7 @@
 你是受指挥官委派的子代理。club/nation 子表 cursor 法已 6 次证实,累计 **44 个 L3 字段**分散在 6 个任务台账。本任务把它们 **consolidate 成首份可用语义 schema**(reports/ 结论 + 统一 JSON),全 provenance,不新增解析、不碰未闭表。
 
 ## 必读
-- <WORKSPACE>\AGENTS.md(硬约束;结论入 reports/ + 同名 JSON)
+- D:\tmp2b\fm24-db\AGENTS.md(硬约束;结论入 reports/ + 同名 JSON)
 - 6 份已接受台账(只读消费,不重跑 cursor):
   - scratch/t27/out/(Cstc stadium table22,fields_t22.json,14 L3;scripts/t27_stadium_cursor.py)
   - scratch/t30/out/fields_clhs.json(Clhs table_type37,8 L3)
@@ -30,4 +30,4 @@
 ## 交付
 - reports/club_nation_subtable_schema.json + .md
 - scratch/t40/out/consolidate.py(--help/--selftest:校验 JSON 字段数==44 L3 + held 计数、provenance 完整、closure 算术自洽)、verify.py(独立,不 import builder)、REPORT.md、DONE.md
-- Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;完成跑 verify + t01_anchors.py(7/7)。
+- Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;完成跑 verify + t01_anchors.py(7/7)。

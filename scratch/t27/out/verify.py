@@ -100,14 +100,14 @@ def get_rule_count(master, cells, schema):
 def verify():
     from capstone import Cs, CS_ARCH_X86, CS_MODE_64
     from t05_pe import PE
-    os.environ['FM24_DB_DIR'] = '<WORKSPACE>/scratch/data'
+    os.environ['FM24_DB_DIR'] = 'D:/tmp2b/fm24-db/scratch/data'
     import fm24_dump as db
     codec = db._reader()
     c = json_at(OUT/'cursor_t22.json')
     f = json_at(OUT/'fields_t22.json')
     req(c['status'] == 'complete_observed_row_cursor_partial_runtime_only_edges'
         and f['status'] == 'partial_Cstc_ledger', 'published statuses')
-    pe = PE(Path('<OLD_REPO>/input/editor.exe'))
+    pe = PE(Path('D:/tmp2b/fm24/input/editor.exe'))
     md = Cs(CS_ARCH_X86, CS_MODE_64)
     md.detail = True
     req(digest(pe.raw) == c['provenance']['editor_sha256'] == EXPECTED_SHA, 'PE hash')

@@ -1,6 +1,6 @@
 # t38 — 多帧感知 payload 加载器(devseek 基础设施,解 E66 阻塞)
 
-先读 <WORKSPACE>\AGENTS.md。你是受指挥官委派的子代理。FM24 archive 成员常含**多 zstd 帧**:空 stub 首帧(count=0)+ 真实 payload 第二帧。现有 `scripts/fm24_dump.py:load_payload` 取**首帧**,导致 server table34 返回 12B 空 stub(真实 313082B 在第二帧)、client table3 有 28 帧需选 +34 真实帧。本任务建**独立多帧感知加载器**,为 sol 静态闭合(额度恢复后)与后续 dump 移除阻塞。**不修改 fm24_dump.py**(避影响既有调用者)。
+先读 D:\tmp2b\fm24-db\AGENTS.md。你是受指挥官委派的子代理。FM24 archive 成员常含**多 zstd 帧**:空 stub 首帧(count=0)+ 真实 payload 第二帧。现有 `scripts/fm24_dump.py:load_payload` 取**首帧**,导致 server table34 返回 12B 空 stub(真实 313082B 在第二帧)、client table3 有 28 帧需选 +34 真实帧。本任务建**独立多帧感知加载器**,为 sol 静态闭合(额度恢复后)与后续 dump 移除阻塞。**不修改 fm24_dump.py**(避影响既有调用者)。
 
 ## 关键判据(指挥官已核实)
 目录条目(`codec["list_tables"]` + `codec["_resolve_table"](tid,ents,fn)`)含权威字段:
@@ -23,7 +23,7 @@
    - 取 entry offset/packed_size/size;在 [offset, offset+packed_size) 内定位首 MAGIC;
    - 用 zstandard decompressobj 逐帧解压(unused_data 推进),**仅限 packed_size 边界内**;
    - 返回解压长度 == entry["size"] 的帧;若多帧同长则用 entry sha256(若是 payload SHA)或 record_count_header 消歧;无匹配则 raise(诚实失败,不返回首帧凑数)。
-   - zstandard 在 <OLD_REPO>/tools/python(sys.path 插入);FM24_DB_DIR=<WORKSPACE>/scratch/data。
+   - zstandard 在 D:/tmp2b/fm24/tools/python(sys.path 插入);FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data。
 2. **--selftest**:验证 server34→313082(SHA a07b2bb7...)、client3→6932082(SHA db8ea78c...)、server73→45、server66→18094、server43→24632;**单帧表回归**:对 t33 七表 + t29 若干单帧表,load_payload_mf 结果与 load_payload 一致(单帧时首帧即真实帧)。
 3. **--help**;退出码 0 成功/1 校验失败/2 用法或致命。单次打印 ≤400 行。
 4. **REPORT.md**:多帧成员清单(哪些表多帧/首帧 stub 长度/真实帧相对偏移/size)、选帧判据验证、单帧回归结果、与 load_payload 差异表。
@@ -31,7 +31,7 @@
 
 ## 纪律
 - 只读 scratch/data/ + 仓内证据;**只写 scratch/t38/out/ 与 scripts/t38_*.py**;**不改 fm24_dump.py 及其他 scripts**(指挥官后续决定是否集成)。
-- 负结果保留(无匹配帧如实 raise);不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 负结果保留(无匹配帧如实 raise);不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 候选不写结论;帧消歧依据须落盘证据。
 
 ## 交付 scratch/t38/out/

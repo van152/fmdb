@@ -27,10 +27,10 @@ import json
 import struct
 from pathlib import Path
 
-EXE = Path(r"<OLD_REPO>\input\editor.exe")
-SWEEP = Path(r"<WORKSPACE>\scratch\t01\t01a_editor_sweep.json")
-MASTER = Path(r"<WORKSPACE>\evidence\fm24\reports\editor_schema\master.json")
-OUT = Path(r"<WORKSPACE>\scratch\t01\t01e_vtables.json")
+EXE = Path(r"D:\tmp2b\fm24\input\editor.exe")
+SWEEP = Path(r"D:\tmp2b\fm24-db\scratch\t01\t01a_editor_sweep.json")
+MASTER = Path(r"D:\tmp2b\fm24-db\evidence\fm24\reports\editor_schema\master.json")
+OUT = Path(r"D:\tmp2b\fm24-db\scratch\t01\t01e_vtables.json")
 
 LO, HI = 0x1758600, 0x1A7D000          # .debug raw region (E11)
 A0, A1 = 0x140001000, 0x150000000      # VA window for table entries

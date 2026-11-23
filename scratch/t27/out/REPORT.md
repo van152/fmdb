@@ -4,7 +4,7 @@
 
 ## Cursor 与分支
 
-- 静态输入为只读 `<OLD_REPO>/input/editor.exe`；SHA-256 与 IDA_PROVENANCE 一致，provenance 与 schema 快照均经 `evidence/MANIFEST.json` 校验。factory case 22 file offset `0xf49092`，vtable VA `0x1418bd5a8`，slot 19 VA `0x141538200` / file offset `0x1537800`。
+- 静态输入为只读 `D:/tmp2b/fm24/input/editor.exe`；SHA-256 与 IDA_PROVENANCE 一致，provenance 与 schema 快照均经 `evidence/MANIFEST.json` 校验。factory case 22 file offset `0xf49092`，vtable VA `0x1418bd5a8`，slot 19 VA `0x141538200` / file offset `0x1537800`。
 - PE runtime extent 至 file offset `0x1537b04`（exclusive），可达 **210 指令、35 基本块、28 条条件分支、2 条无条件跳转**。t20 的 23 条仅数至第一个 `ret`：2 条外部入口条件（context／业务模式）+ 18 条 stream status + 3 条 helper AL。另 5 条在后置路径，其中只有 `0x1537acc` 用 t22 行体读入值决定分支。`branches.part001.json` 逐条记录谓词、双边、证据及两份 archive 的计数。
 - 三个漏算的 4B 消费点是 caller `0x1537888` / `0x153789c` / `0x15379d0` → thunk `0xdb7f80` → helper `0x39dd7b0` → stream call `0x39dd7d4`。对象目标分别为 `+0x30/+0x34/+0x38`。它们把 t20 的 18 次直读（54 B）补足为 **66 B 属性块**。t20 的 `66` 刚好也是 `54 B 直读 + 12 B bulk`；两者不能互换。
 - 12 B bulk：`0x1537aa1` 取 `this+8`，`0x1537aa8` 设宽度 12，`0x1537ab1` 把 sink 放入 RDX，`0x1537ab4` 执行转移。server `+66/+70/+74`（client `+0/+4/+8`）是三条 little-endian u32，全部为 `(i,i+1,i+1)`，449 行在两个 archive 逐字节相同。首 lane 是 record ordinal，另两 lane 是重复的 UID 形态；均不计 Cstc 业务字段。首 lane 喂无符号阈值 `0x989681` 的 `jb`，449/449 取边、不重写 ordinal；并非用行号决定分支。

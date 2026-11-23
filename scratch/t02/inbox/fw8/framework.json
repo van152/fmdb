@@ -1,0 +1,80 @@
+{
+ "type_id": 8,
+ "status": "complete",
+ "client": {
+  "member": "client_db/table_8.dat",
+  "count": 126,
+  "stride": null,
+  "variable": true,
+  "rows_offset": "0xe",
+  "payload_len": 5248,
+  "header": "03 01 74 61 64 2e f1 0d 7e 00 00 00 00 00",
+  "footer": "00 00 00 01 44 42 0f 00",
+  "payload_sha256": "0c8fbbb7875632f780b12b3e33520abe3cf3ae73fc6830649f51aa5b17b43eb2",
+  "row_len_formula": "row_len = 4 + len(utf8_name) + 30  (u32 name_len + name bytes + 30B trailer)",
+  "row_len_min": 37,
+  "row_len_max": 53,
+  "row_len_distinct": 16,
+  "row_len_sample_first10": [
+   42,
+   40,
+   43,
+   41,
+   42,
+   39,
+   39,
+   41,
+   41,
+   40
+  ],
+  "trailer_len": 30,
+  "trailer_sample_first3": [
+   "00 00 0f 2c 00 01 00 14 00 7e 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 00",
+   "00 0c 12 01 00 12 00 05 00 4e 00 00 00 02 00 00 00 01 00 00 00 02 00 00 00 02 00 00 00 00",
+   "00 00 0f 2c 00 13 00 12 00 86 00 00 00 03 00 00 00 02 00 00 00 03 00 00 00 03 00 00 00 00"
+  ],
+  "rows_end": "0x1478",
+  "footer_len": 8,
+  "closure": "14 + sum(row_len_i) + 8 == 5248 (sum=5226, count=126)",
+  "closure_ok": true
+ },
+ "server": {
+  "member": "server_db/table_8.dat",
+  "count": 126,
+  "stride": null,
+  "variable": true,
+  "rows_offset": "0xe",
+  "payload_len": 5248,
+  "header": "03 01 74 61 64 2e f1 0d 7e 00 00 00 00 00",
+  "footer": "00 00 00 01 44 42 0f 00",
+  "payload_sha256": "0c8fbbb7875632f780b12b3e33520abe3cf3ae73fc6830649f51aa5b17b43eb2",
+  "row_len_formula": "row_len = 4 + len(utf8_name) + 30  (u32 name_len + name bytes + 30B trailer)",
+  "row_len_min": 37,
+  "row_len_max": 53,
+  "row_len_distinct": 16,
+  "row_len_sample_first10": [
+   42,
+   40,
+   43,
+   41,
+   42,
+   39,
+   39,
+   41,
+   41,
+   40
+  ],
+  "trailer_len": 30,
+  "trailer_sample_first3": [
+   "00 00 0f 2c 00 01 00 14 00 7e 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 00",
+   "00 0c 12 01 00 12 00 05 00 4e 00 00 00 02 00 00 00 01 00 00 00 02 00 00 00 02 00 00 00 00",
+   "00 00 0f 2c 00 13 00 12 00 86 00 00 00 03 00 00 00 02 00 00 00 03 00 00 00 03 00 00 00 00"
+  ],
+  "rows_end": "0x1478",
+  "footer_len": 8,
+  "closure": "14 + sum(row_len_i) + 8 == 5248 (sum=5226, count=126)",
+  "closure_ok": true
+ },
+ "relation": "payloads byte-identical=True; common prefix 5248 of 5248/5248 bytes",
+ "payload_identical": true
+}

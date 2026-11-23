@@ -2,7 +2,7 @@
 
 本工作区不复制大资产;以下路径一律只读。
 
-## 旧证据库 `<OLD_REPO>`(冻结,2026-11-18 起不再写入)
+## 旧证据库 `D:\tmp2b\fm24`(冻结,2026-11-18 起不再写入)
 
 已快照进 `evidence/fm24/`(见 `evidence/MANIFEST.json` SHA-256)的除外,其余按原始路径引用:
 
@@ -18,15 +18,15 @@
 
 | 路径 | 说明 |
 |---|---|
-| `<OLD_REPO>\ida\editor_merge_v2.i64` | editor.exe IDA 库(501MB,不复制;IDA 会话产物只写 scratch) |
-| `<OLD_REPO>\input\editor.exe`、`<OLD_REPO>\input\fm.exe` | 静态分析对象 |
-| `<OLD_REPO>\reports\qa\IDA_PROVENANCE.md`(已快照) | L3 来源登记规则,引用 exe 地址时必须遵守 |
+| `D:\tmp2b\fm24\ida\editor_merge_v2.i64` | editor.exe IDA 库(501MB,不复制;IDA 会话产物只写 scratch) |
+| `D:\tmp2b\fm24\input\editor.exe`、`D:\tmp2b\fm24\input\fm.exe` | 静态分析对象 |
+| `D:\tmp2b\fm24\reports\qa\IDA_PROVENANCE.md`(已快照) | L3 来源登记规则,引用 exe 地址时必须遵守 |
 
 ## 游戏安装库(只读)
 
-- `<GAME_DATA>\data\database\db\2430\2430_fm\`
+- `Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm\`
   - `client_db.dat`、`server_db.dat`、`lang_update_db.dat`、`people_db.dat`、`basic_people_db.dat`、`summary.dat`、`pl_hist_*`、`non_pl_hist_*`
 
 ## 范围外
 
-- `<OTHER_PROJECT>`:另一游戏的独立研究项目,不在本工作区范围。
+- `D:\tmp2b\fm27\`:FM27 研究,独立项目,不在本工作区操作范围。

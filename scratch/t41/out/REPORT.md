@@ -13,7 +13,7 @@ Server `entry.offset=38661625`，`data_base=34`，真实 Zstd magic `38661659`�
 
 ## 静态链与变长来源
 
-二进制：只读 `<OLD_REPO>/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。冻结 `evidence/fm24/reports/qa/IDA_PROVENANCE.md` 和 `evidence/fm24/reports/editor_schema/master.json` 均通过 `evidence/MANIFEST.json`；后者 SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`。以下指令地址默认 PE **file offset**；VA 与原始 bytes 在 `instructions.part*.json`。
+二进制：只读 `D:/tmp2b/fm24/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。冻结 `evidence/fm24/reports/qa/IDA_PROVENANCE.md` 和 `evidence/fm24/reports/editor_schema/master.json` 均通过 `evidence/MANIFEST.json`；后者 SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`。以下指令地址默认 PE **file offset**；VA 与原始 bytes 在 `instructions.part*.json`。
 
 - loader `0xf2ba0e` 消费 selector，`0xf2ba23` 调 `0xf48b30`。rel32 表 `0xf49d38` 第 59 格 → `0xf49950`；`0xf4996c/0xf49973` 设 vptr VA `0x141882fa8`，COL/TD 为 `.?AVSTARTING_MEDIA_EXPECTATIONS@db@@`。Case 59 不按 selector 分叉。合成 row 0 selector=1 仍消耗 22 B，不代表档内有此 selector。
 - Slot 19 **直接**进入 `0x15831a0..0x1583580`（VA `0x141583ba0..0x141583f80`，右端 exclusive），不是 leaf thunk。以 PE `RUNTIME_FUNCTION` + `t21b_control_flow.ReaderCFG` 解出 **260 可达指令、49 块、29 条条件分支，0 extent 外 CFG 边**；调用单列。Identity 在同一 extent 内，`0x1583500` 起，`0x158351f` 将 12 B 读到对象 `+0x8/+0xc/+0x10`。
@@ -65,4 +65,4 @@ t33 先选了 row 0 的最短合法尾，row 1 在同一尾端重新对齐，所
 
 ## 复验与剩余
 
-`FM24_DB_DIR=<WORKSPACE>/scratch/data`，`py -V:3.12 -I -B`：builder、独立 verifier、两者的 `--help`/`--selftest` 与 `scripts/t01_anchors.py` **7/7 PASS**。Verifier 不 import builder 或 `ReaderCFG`；另建 PE 可达图，重读两目录，用顺序计数解码独立验全表、双 mode、帧及负例。返回码 0/1/2 为成功 / 检查未过 / 用法或致命错误。未启动游戏、编辑器、IDA，未联网，未访问 Z:。剩余：需要含非空 `Msid` 的合法档或授权交叉证据才能验 live 编码及目标命中；外层 byte 未命名，不进入字段台账。此文件为 t41 实验交接，不改公共 loader、既有 ledger 或其他任务结论。
+`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`，`py -V:3.12 -I -B`：builder、独立 verifier、两者的 `--help`/`--selftest` 与 `scripts/t01_anchors.py` **7/7 PASS**。Verifier 不 import builder 或 `ReaderCFG`；另建 PE 可达图，重读两目录，用顺序计数解码独立验全表、双 mode、帧及负例。返回码 0/1/2 为成功 / 检查未过 / 用法或致命错误。未启动游戏、编辑器、IDA，未联网，未访问 Z:。剩余：需要含非空 `Msid` 的合法档或授权交叉证据才能验 live 编码及目标命中；外层 byte 未命名，不进入字段台账。此文件为 t41 实验交接，不改公共 loader、既有 ledger 或其他任务结论。

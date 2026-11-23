@@ -1,0 +1,9 @@
+t66 已交付，提交 `a22c8c5`。双档各 7,047 行逐行闭合；**7 个行内集合文法、4 条 ordinal 引用获 L3，L4=0**。Client mode 0 跳过这些集合，不是读取零 count。
+
+按 t59 坐标复核，`+0xc0/+0xc8/+0xd0/+0xd8` 的非空行数为 **315/366/121/51**，与任务简报不同。`vec30`、`+0xa8/+0xe0` 无实项，保持 held；未绑定新的独立子表，未给 opaque 集合贴业务名。
+
+独立 `verify.py`、两脚本的 `--help` / `--selftest` 均通过；`t01_anchors.py` **7/7**。
+
+**交付清单**
+- `scratch/t66/out/{collections.json,census.json,verify.py,REPORT.md,DONE.md}`
+- `scripts/t66_comp_subtable_discovery.py`

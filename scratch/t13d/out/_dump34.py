@@ -15,7 +15,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 DB_DIR = pathlib.Path(
-    r"<GAME_DATA>\data\database\db\2430\2430_fm"
+    r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm"
 )
 MAGIC = bytes.fromhex("28b52ffd")
 

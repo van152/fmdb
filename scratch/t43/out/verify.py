@@ -58,7 +58,7 @@ def find_root(start: pathlib.Path) -> pathlib.Path:
 
 ROOT = find_root(HERE)
 DB_DIR = pathlib.Path(os.environ.get("FM24_DB_DIR") or (ROOT / "scratch/data"))
-UPSTREAM = pathlib.Path(r"<OLD_REPO>")
+UPSTREAM = pathlib.Path(r"D:\tmp2b\fm24")
 T33 = ROOT / "scratch/t33/out/profiles"
 T29 = ROOT / "scratch/t29/out/subtable_inventory.json"
 DUMP_SRC = ROOT / "scripts/fm24_dump.py"

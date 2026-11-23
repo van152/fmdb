@@ -15,7 +15,7 @@ import sys
 
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[2]
-EXE=Path('<OLD_REPO>/input/editor.exe')
+EXE=Path('D:/tmp2b/fm24/input/editor.exe')
 EXE_HASH='b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4'
 MASTER='evidence/fm24/reports/editor_schema/master.json'
 PROV='evidence/fm24/reports/qa/IDA_PROVENANCE.md'
@@ -393,7 +393,7 @@ def check_fields(f,raw,rs,fetch):
 
 
 def verify():
-    sys.path.extend([str(ROOT/'scripts'),'<OLD_REPO>/tools/python'])
+    sys.path.extend([str(ROOT/'scripts'),'D:/tmp2b/fm24/tools/python'])
     c=js(HERE/'cursor_csme.json');f=js(HERE/'fields_csme.json');check(c['table_type']==f['table_type']==59 and c['parent']==f['parent']=='Csme','task scope')
     branches=check_pe(c,f);print('PASS PE extent, independent CFG, native transfers, mode ABI, and 4CC/owner routes')
     b,fetch=check_archives(c['archives']);rs=replay(b,c['archives']['server'],branches);check_prior(c,b,rs)
@@ -402,7 +402,7 @@ def verify():
 
 
 def selftest():
-    sys.path.append('<OLD_REPO>/tools/python');import zstandard as z
+    sys.path.append('D:/tmp2b/fm24/tools/python');import zstandard as z
     q=z.ZstdCompressor();a=q.compress(b'short');b=q.compress(bytes(range(40)))
     check(one_frame(z,a+b)==(b'short',len(a)) and one_frame(z,(a+b)[len(a):])==(bytes(range(40)),len(b)),'two-frame boundaries')
     for n in range(3):

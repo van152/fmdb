@@ -14,7 +14,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'scripts'))
 OUT = ROOT/'scratch/t31/out'
-EXE = Path('<OLD_REPO>/input/editor.exe')
+EXE = Path('D:/tmp2b/fm24/input/editor.exe')
 EXE_SHA = 'b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4'
 MASTER = 'evidence/fm24/reports/editor_schema/master.json'
 PROV = 'evidence/fm24/reports/qa/IDA_PROVENANCE.md'

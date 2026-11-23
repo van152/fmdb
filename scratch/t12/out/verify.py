@@ -10,7 +10,7 @@ from pathlib import Path
 
 OUT = Path(__file__).resolve().parent
 ROOT = OUT.parents[2]
-DEFAULT_EXE = Path(r"<OLD_REPO>\input\editor.exe")
+DEFAULT_EXE = Path(r"D:\tmp2b\fm24\input\editor.exe")
 CODES_FILE = OUT / "codes_full.json"
 PATHS_FILE = OUT / "club_paths.json"
 NAMING_FILE = OUT / "naming_result.json"

@@ -822,8 +822,8 @@ def report(cw: dict[str, Any], sensitivity: dict[str, Any]) -> str:
         "## Reproduction",
         "",
         "```text",
-        "FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scripts/t67_comp_data_crosswalk.py --build",
-        "FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scratch/t67/out/verify.py --check",
+        "FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scripts/t67_comp_data_crosswalk.py --build",
+        "FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scratch/t67/out/verify.py --check",
         "py -V:3.12 -I -B scripts/t01_anchors.py",
         "```",
         "",
@@ -881,9 +881,9 @@ def build() -> None:
         "- `scripts/t67_comp_data_crosswalk.py`: builder with `--help` and `--selftest`.\n\n"
         "Commands:\n\n"
         "```text\n"
-        "FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scripts/t67_comp_data_crosswalk.py --build\n"
-        "FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scratch/t67/out/verify.py --selftest\n"
-        "FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scratch/t67/out/verify.py --check\n"
+        "FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scripts/t67_comp_data_crosswalk.py --build\n"
+        "FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scratch/t67/out/verify.py --selftest\n"
+        "FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scratch/t67/out/verify.py --check\n"
         "py -V:3.12 -I -B scripts/t01_anchors.py\n"
         "```\n", encoding="ascii")
     print(f"t67 build PASS: {N} rows per side; output={OUT}")

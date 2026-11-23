@@ -68,7 +68,7 @@
       "method": "不调用 t14 verifier 的解码函数；直接解析 editor.exe 跳表 signed rel32、Capstone handler LEA、vtable[-1] COL VA、COL RVA 与 TD 装饰类名，并对 CHD 地址/头部作健全性检查。",
       "result": "pass",
       "actual": "Independent raw re-decode, five chains (rel32 -> handler -> LEA/vtable -> COL -> TD):\n0: rel32→0xf48c54→LEA@0xf48c6b→vtable 0x14187b828→COL 0x187af80→TD .?AVAWARD@db@@\n2: rel32→0xf48d44→LEA@0xf48d5b→vtable 0x14187c7b8→COL 0x187bf10→TD .?AVCITY@db@@\n27: rel32→0xf491dd→LEA@0xf49258→vtable 0x141882de8→COL 0x1882540→TD .?AVWEATHER@db@@\n26: rel32→0xf49143→LEA@0xf4915f→vtable 0x1418be248→COL 0x18bd9a0→TD .?AVCOMP_HISTORY_RECORD@db@@\n38: rel32→0xf495af→LEA@0xf495dc→vtable 0x141877848→COL 0x1877190→TD .?AVSTARTING_BAN@db@@",
-      "source": "<OLD_REPO>/input/editor.exe (read-only); scratch/t14/out/census.json; scripts/t05_pe.py"
+      "source": "D:/tmp2b/fm24/input/editor.exe (read-only); scratch/t14/out/census.json; scripts/t05_pe.py"
     },
     {
       "id": "D9",

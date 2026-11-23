@@ -3,12 +3,12 @@
 你是受指挥官委派的子代理。club 子表 branch-aware cursor 方法已四次证实(t27 Cstc 14 / t30 Clhs 8 / t31 CSrs 10/10 / t32 Cmti 5+1held,累计 37 L3)。本任务复制到 **Cdbt(俱乐部债务),table_type=33**。静态攻坚,晋级 L3。
 
 ## 必读
-- <WORKSPACE>\AGENTS.md(硬约束)
-- <WORKSPACE>\scratch\t27\out\replication.md(方法模板)
-- <WORKSPACE>\scratch\t32\out\REPORT.md + scripts\t32_cmti_cursor.py + scratch\t32\out\verify.py(**最新范例**;record-key i32 pair 模型、contextual 坐标、leaf thunk→真 reader+identity tail 双 extent、footer 末 u32 不妄断)
-- <WORKSPACE>\scratch\t30\out\REPORT.md(**packed day/year 日期手法**;stdt/endt 必用)
-- <WORKSPACE>\scratch\t29\out\profiles\table_server_33.profile.json + .rows.jsonl(**数据侧画像,直接消费不重 dump**)+ subtable_inventory.json(Cdbt 页)
-- <WORKSPACE>\scratch\t24\out\subtables.part00*.json(Cdbt 5 个 nested occurrence idx188–192)
+- D:\tmp2b\fm24-db\AGENTS.md(硬约束)
+- D:\tmp2b\fm24-db\scratch\t27\out\replication.md(方法模板)
+- D:\tmp2b\fm24-db\scratch\t32\out\REPORT.md + scripts\t32_cmti_cursor.py + scratch\t32\out\verify.py(**最新范例**;record-key i32 pair 模型、contextual 坐标、leaf thunk→真 reader+identity tail 双 extent、footer 末 u32 不妄断)
+- D:\tmp2b\fm24-db\scratch\t30\out\REPORT.md(**packed day/year 日期手法**;stdt/endt 必用)
+- D:\tmp2b\fm24-db\scratch\t29\out\profiles\table_server_33.profile.json + .rows.jsonl(**数据侧画像,直接消费不重 dump**)+ subtable_inventory.json(Cdbt 页)
+- D:\tmp2b\fm24-db\scratch\t24\out\subtables.part00*.json(Cdbt 5 个 nested occurrence idx188–192)
 - evidence/fm24/reports/editor_schema/master.json(club.xml Cdbt.list_item_fields,冻结 SHA 7d57477e 对照 MANIFEST)
 
 ## 已知锚点
@@ -28,11 +28,11 @@
 
 ## 边界
 - 只 Cdbt/table33;不碰已闭 Cstc/Clhs/CSrs/Cmti;Cafl/Cvfl 另案(luna t35)。
-- 候选不写结论;negative/held 反例保留;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 候选不写结论;negative/held 反例保留;L4=0;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 消费 t29 画像;预算内无法闭合则诚实 partial+已绑定子集+剩余+首反例。
 
 ## 交付 scratch/t36/out/
 - cursor_cdbt.json、fields_cdbt.json(5 字段台账+grade)、instructions.part*.json、branches.part*.json、verify.py、REPORT.md、DONE.md
 - scripts/t36_cdbt_cursor.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;只写 scratch/t36/ 与 scripts/t36_*.py;完成跑 verify + t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;只写 scratch/t36/ 与 scripts/t36_*.py;完成跑 verify + t01_anchors.py(7/7)。

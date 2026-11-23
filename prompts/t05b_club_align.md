@@ -2,9 +2,9 @@
 
 ## 角色与硬约束
 
-你是逆向工程师 + 算法工程师。工作区 `<WORKSPACE>`,Python 固定 `py -V:3.12 -I -B`。
+你是逆向工程师 + 算法工程师。工作区 `D:\tmp2b\fm24-db`,Python 固定 `py -V:3.12 -I -B`。
 
-**只读边界**:游戏数据 `Z:\...\2430_fm\client_db.dat` 只读;上游 `<OLD_REPO>\` 全目录只读(可读其 reports/scripts);**唯一可写目录 = 本任务 OUTDIR**。不要修改 `scratch/t01`、`scratch/t02` 既有文件。
+**只读边界**:游戏数据 `Z:\...\2430_fm\client_db.dat` 只读;上游 `D:\tmp2b\fm24\` 全目录只读(可读其 reports/scripts);**唯一可写目录 = 本任务 OUTDIR**。不要修改 `scratch/t01`、`scratch/t02` 既有文件。
 
 **纪律**:closure/偏移断言必须可机械复现;允许诚实负结果;第一步先落盘骨架。
 
@@ -26,13 +26,13 @@
 
 | 用途 | 路径 |
 |---|---|
-| **schema 字段表(权威)** | `<OLD_REPO>\reports\EDITOR_SCHEMA_FIELDS.md` — 用正则取 `### club（记录标识 \`club\`，433 个字段）` 段落;子字段以 `| 　　\`` 缩进标记,`↳` 行是列表项标题 |
-| 机器可读 schema(可选) | `<OLD_REPO>\reports\editor_schema\master.json`、`<WORKSPACE>\evidence\fm24\reports\editor_schema\master.json` |
-| club 行框架(已全封口) | `<WORKSPACE>\scratch\t02\inbox\club_v2\output.json` + `solve.py`(`load_raw()` 解压;84,259 行、footer 精确) |
-| club 半自动底稿(74 事件) | `<WORKSPACE>\scratch\t02\field_mapper\club_substrate.json` |
-| club 已闭合字段 | `<WORKSPACE>\scratch\t02\inbox\club_fields\output.json`(Cccn@row+8,字节链 8/8 已验证) + 其 `REPORT.md` |
-| 上游 club 结论(6 个 L2 候选) | `<OLD_REPO>\reports\dbdat_decode\DB_TABLES_BIG.md` 的 `table_3` 段 |
-| exe | `<OLD_REPO>\input\editor.exe`(club reader entry `0xe5a7a0`,census 在 `<WORKSPACE>\scratch\t01\inbox\t01h\output.json`) |
+| **schema 字段表(权威)** | `D:\tmp2b\fm24\reports\EDITOR_SCHEMA_FIELDS.md` — 用正则取 `### club（记录标识 \`club\`，433 个字段）` 段落;子字段以 `| 　　\`` 缩进标记,`↳` 行是列表项标题 |
+| 机器可读 schema(可选) | `D:\tmp2b\fm24\reports\editor_schema\master.json`、`D:\tmp2b\fm24-db\evidence\fm24\reports\editor_schema\master.json` |
+| club 行框架(已全封口) | `D:\tmp2b\fm24-db\scratch\t02\inbox\club_v2\output.json` + `solve.py`(`load_raw()` 解压;84,259 行、footer 精确) |
+| club 半自动底稿(74 事件) | `D:\tmp2b\fm24-db\scratch\t02\field_mapper\club_substrate.json` |
+| club 已闭合字段 | `D:\tmp2b\fm24-db\scratch\t02\inbox\club_fields\output.json`(Cccn@row+8,字节链 8/8 已验证) + 其 `REPORT.md` |
+| 上游 club 结论(6 个 L2 候选) | `D:\tmp2b\fm24\reports\dbdat_decode\DB_TABLES_BIG.md` 的 `table_3` 段 |
+| exe | `D:\tmp2b\fm24\input\editor.exe`(club reader entry `0xe5a7a0`,census 在 `D:\tmp2b\fm24-db\scratch\t01\inbox\t01h\output.json`) |
 | capstone | 已装(`capstone` 可 import) |
 
 **注意 mixed 模式**:club 有两套 RTTI/reader(`CLUB` 与 `LEAGUE_BODY_CLUB`)。`Cccn@+8` 与 substrate 前几个事件 `[0,4,8,12,16]` 可能来自不同 reader,务必分别建模、不要混用。

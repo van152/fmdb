@@ -3,7 +3,7 @@
 你是受指挥官委派的子代理。t25 已闭 **nation client table_10** 坐标(复杂变长 4 段计数循环),但 **server table_10 grammar 仍开**(t25 明确"no formula extrapolation to server")。本任务做 **server 侧数据画像**,为 sol 静态 server grammar 攻坚备料。**只数据侧 L1/L2,不晋级 L3,不重跑 client。**
 
 ## 必读
-- <WORKSPACE>\AGENTS.md(硬约束)
+- D:\tmp2b\fm24-db\AGENTS.md(硬约束)
 - scratch/t25/out/cursor_nation.json + REPORT.md(**client grammar 真源,参照不外推**:prefix25B,A=signed i8 count@row+24/items5B,B/C=signed i32 count/items28B,D=signed i32 count/items12B,identity ordinal|id|repeated;client 251 行 24732B SHA7e9d740b,collection A492/B214/C63/D162)
 - scratch/t25/out/schema_split.json(client_direct/inherited_list_item/server_only_explicit/unknown_unmarked codes)
 - scratch/t37/out/nation_subtable_inventory.json(nation 上下文)
@@ -18,11 +18,11 @@
 
 ## 边界
 - 只 nation table_10 server 画像;不碰已闭 client/club 子表;不晋级 L3(reader 绑定 sol-tier);L4=0。
-- 候选不写结论;negative/held 反例保留;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 候选不写结论;negative/held 反例保留;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 只写 scratch/t46/ 与 scripts/t46_*.py;server grammar 若预算内无法确定则诚实 partial+已绑定子集+首反例。
 
 ## 交付 scratch/t46/out/
 - profiles/table_server_10.profile.json + .rows.jsonl、grammar_diff_client_server.json、REPORT.md、verify.py(独立)、DONE.md
 - scripts/t46_nation_server10.py(--help/--selftest)
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;完成跑 verify + t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;完成跑 verify + t01_anchors.py(7/7)。

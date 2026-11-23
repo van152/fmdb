@@ -1,0 +1,247 @@
+
+=== FULL CSCM_ITEM_LOOP @ 0xe5e169 ===
+  0xe5e169: call     qword ptr [rax + 0x28]
+  0xe5e16c: lea      rax, [rbp + 0x148]
+  0xe5e173: mov      qword ptr [rax + 0x10], 0
+  0xe5e17b: mov      qword ptr [rax + 8], 0
+  0xe5e183: mov      qword ptr [rax], 0
+  0xe5e18a: mov      rcx, rdi
+  0xe5e18d: mov      rdx, rsi
+  0xe5e190: call     0x140e5f970 ; -> 0xe5ef70 (thunk->0x3aaf9e0)
+  0xe5e195: test     al, al
+  0xe5e197: je       0x140e5ef0f
+  0xe5e19d: mov      rax, qword ptr [rbp + 0x130]
+  0xe5e1a4: mov      rcx, qword ptr [rax + 0x28]
+  0xe5e1a8: mov      rdx, r15
+  0xe5e1ab: call     0x14087f540 ; -> 0x87eb40 (thunk->0x36b5f20)
+  0xe5e1b0: inc      bl
+  0xe5e1b2: cmp      bl, byte ptr [rbp + 0x13d]
+  0xe5e1b8: jl       0x140e5eb19
+  0xe5e1be: mov      r8, qword ptr [rbp + 0x150]
+  0xe5e1c5: lea      rsi, [rbp + 0x13e]
+  0xe5e1cc: cmp      qword ptr [rbp + 0x158], rsi
+  0xe5e1d3: je       0x140e5ec02
+  0xe5e1d5: test     r8, r8
+  0xe5e1d8: je       0x140e5ebf3
+  0xe5e1da: mov      rcx, qword ptr [rbp + 0x140]
+  0xe5e1e1: test     rcx, rcx
+  0xe5e1e4: je       0x140e5ebf3
+  0xe5e1e6: mov      rdx, qword ptr [rbp + 0x148]
+  0xe5e1ed: mov      rax, qword ptr [rcx]
+  0xe5e1f0: call     qword ptr [rax + 0x28]
+
+=== FULL VTAG38_ITEM_READ @ 0x14da5b0 ===
+  0x14da5b0: mov      qword ptr [r13 + 0x18], rax
+  0x14da5b4: mov      ebx, dword ptr [rbp - 0xc]
+  0x14da5b7: test     ebx, ebx
+  0x14da5b9: mov      rbx, qword ptr [rbp - 0x18]
+  0x14da5bd: je       0x1414db50e
+  0x14da5c3: xor      r14d, r14d
+  0x14da5c6: mov      ecx, 0x40
+  0x14da5cb: call     0x141750cc0 ; -> 0x17502c0
+  0x14da5d0: mov      r15, rax
+  0x14da5d3: cmp      qword ptr [rip + 0x5e2495], 0
+  0x14da5db: jne      0x1414db010
+  0x14da5dd: mov      eax, dword ptr [rip + 0x67eac5]
+  0x14da5e3: mov      ecx, dword ptr [rip + 0x5ead77]
+  0x14da5e9: mov      rdx, qword ptr gs:[0x58]
+  0x14da5f2: mov      rcx, qword ptr [rdx + rcx*8]
+  0x14da5f6: cmp      eax, dword ptr [rcx + 4]
+  0x14da5fc: jg       0x1414db394
+  0x14da602: lea      rax, [rip + 0x67ea5f]
+  0x14da609: mov      qword ptr [rip + 0x5e2460], rax
+  0x14da610: mov      qword ptr [r15 + 0x10], 0
+  0x14da618: mov      qword ptr [r15 + 8], 0
+  0x14da620: mov      qword ptr [r15], 0
+  0x14da627: lea      r12, [r15 + 0x18]
+  0x14da62b: mov      rcx, r12
+  0x14da62e: call     0x1407c9510 ; -> 0x7c8b10 (thunk->0x34c8f80)
+  0x14da633: movabs   rax, 0x76c0001ffffffff
+  0x14da63d: mov      qword ptr [r15 + 0x30], rax
+  0x14da641: mov      dword ptr [r15 + 0x38], 0x76c0001
+  0x14da649: mov      word ptr [r15 + 0x3c], 0xff00
+  0x14da650: mov      rdi, qword ptr [rbx]
+  0x14da653: mov      rax, qword ptr [rdi]
+  0x14da656: mov      r8d, 1
+  0x14da65c: mov      rcx, rdi
+  0x14da65f: lea      rdx, [rbp - 0xd]
+  0x14da663: call     qword ptr [rax + 0x28]
+  0x14da666: cmp      dword ptr [rdi + 0x10], 0
+  0x14da66a: jne      0x1414db3da
+  0x14da670: mov      rcx, qword ptr [rbx]
+  0x14da673: lea      rdx, [rbp - 8]
+  0x14da677: mov      r8, r12
+  0x14da67a: call     0x140839290 ; -> 0x838890 (thunk->0x360e390)
+  0x14da67f: cmp      dword ptr [rbp - 8], 0
+  0x14da683: jne      0x1414db3da
+  0x14da689: lea      rdx, [r15 + 0x30]
+  0x14da68d: mov      rdi, qword ptr [rbx]
+  0x14da690: mov      rax, qword ptr [rdi]
+  0x14da693: mov      r8d, 4
+  0x14da699: mov      rcx, rdi
+  0x14da69c: call     qword ptr [rax + 0x28]
+  0x14da69f: cmp      dword ptr [rdi + 0x10], 0
+  0x14da6a3: jne      0x1414db3da
+  0x14da6a9: mov      rdi, qword ptr [rbx]
+  0x14da6ac: test     rdi, rdi
+  0x14da6af: je       0x1414db0c8
+  0x14da6b1: lea      rdx, [r15 + 0x34]
+  0x14da6b5: lock inc dword ptr [rdi + 8]
+  0x14da6b9: mov      rax, qword ptr [rdi]
+  0x14da6bc: mov      r8d, 4
+  0x14da6c2: mov      rcx, rdi
+  0x14da6c5: call     qword ptr [rax + 0x28]
+  0x14da6c8: mov      esi, dword ptr [rdi + 0x10]
+  0x14da6cb: lock dec dword ptr [rdi + 8]
+  0x14da6cf: jne      0x1414db0de
+  0x14da6d1: mov      rax, qword ptr [rdi]
+  0x14da6d4: mov      rcx, rdi
+  0x14da6d7: mov      edx, 1
+  0x14da6dc: call     qword ptr [rax]
+  0x14da6de: test     esi, esi
+  0x14da6e0: jne      0x1414db3da
+  0x14da6e6: mov      rdi, qword ptr [rbx]
+  0x14da6e9: test     rdi, rdi
+  0x14da6ec: je       0x1414db105
+  0x14da6ee: lea      rdx, [r15 + 0x38]
+  0x14da6f2: lock inc dword ptr [rdi + 8]
+  0x14da6f6: mov      rax, qword ptr [rdi]
+  0x14da6f9: mov      r8d, 4
+  0x14da6ff: mov      rcx, rdi
+  0x14da702: call     qword ptr [rax + 0x28]
+  0x14da705: mov      esi, dword ptr [rdi + 0x10]
+  0x14da708: lock dec dword ptr [rdi + 8]
+  0x14da70c: jne      0x1414db11b
+  0x14da70e: mov      rax, qword ptr [rdi]
+  0x14da711: mov      rcx, rdi
+  0x14da714: mov      edx, 1
+  0x14da719: call     qword ptr [rax]
+  0x14da71b: test     esi, esi
+  0x14da71d: jne      0x1414db3da
+  0x14da723: lea      rdx, [r15 + 0x3c]
+  0x14da727: mov      rdi, qword ptr [rbx]
+  0x14da72a: mov      rax, qword ptr [rdi]
+
+=== CALLS IN TC_EXTRA_READER 0x11d3d00..0x11d53f0 ===
+  0x11d3d32: call     0x1407e53d0 ; -> 0x7e49d0 (thunk->0x350adb0)
+  0x11d3d3e: call     0x141751048 ; -> 0x1750648 (thunk->0x465aa28)
+  0x11d3d4a: call     0x141750ea0 ; -> 0x17504a0 (thunk->0x4659860)
+  0x11d3da1: call     0x140eb2dd0 ; -> 0xeb23d0 (thunk->0x3b13150)
+  0x11d3dbb: call     0x141758a00 ; -> 0x1758000
+  0x11d3e11: mov      eax, dword ptr [rcx + 0x30]
+  0x11d3e22: mov      rdx, qword ptr [rcx + 0x18]
+  0x11d3e4c: call     qword ptr [rip + 0x772d86]
+  0x11d3e52: cmp      byte ptr [rbx + 0x48], 0
+  0x11d3e7a: call     0x141758a00 ; -> 0x1758000
+  0x11d3e88: mov      eax, dword ptr [rcx + 0x30]
+  0x11d3e91: call     qword ptr [rip + 0x7740f9]
+  0x11d3ee8: call     0x1407e4490 ; -> 0x7e3a90 (thunk->0x3506770)
+  0x11d3f16: call     0x141758a00 ; -> 0x1758000
+  0x11d3f2e: call     0x141758a00 ; -> 0x1758000
+  0x11d3f72: call     qword ptr [rax + 0x28]
+  0x11d3f96: call     qword ptr [rax + 0x28]
+  0x11d3fba: call     qword ptr [rax + 0x28]
+  0x11d3fde: call     qword ptr [rax + 0x28]
+  0x11d4002: call     qword ptr [rax + 0x28]
+  0x11d4022: call     qword ptr [rax + 0x28]
+  0x11d4042: call     qword ptr [rax + 0x28]
+  0x11d4062: call     qword ptr [rax + 0x28]
+  0x11d4093: call     qword ptr [rax + 0x28]
+  0x11d40d1: call     qword ptr [rax]
+  0x11d40d7: call     0x1411cf8f0 ; -> 0x11ceef0
+  0x11d4111: call     0x1412d33c0 ; -> 0x12d29c0
+  0x11d4132: call     0x1412d33c0 ; -> 0x12d29c0
+  0x11d417b: call     qword ptr [rax + 0x28]
+  0x11d41ca: call     0x1412e70a0 ; -> 0x12e66a0 (thunk->0x3fc2030)
+  0x11d41e1: mov      r14, qword ptr [rcx + 0x18]
+  0x11d421c: call     0x1407e4490 ; -> 0x7e3a90 (thunk->0x3506770)
+  0x11d4224: mov      rdx, qword ptr [rdi + 0x18]
+  0x11d4232: call     0x141758a00 ; -> 0x1758000
+  0x11d4237: mov      rdx, qword ptr [rdi + 0x18]
+  0x11d4255: call     0x1407e4890 ; -> 0x7e3e90 (thunk->0x3506850)
+  0x11d4264: mov      qword ptr [rcx + 0x18], rsi
+  0x11d42c9: call     0x1411d5c20 ; -> 0x11d5220 (thunk->0x3ea5070)
+  0x11d4308: call     qword ptr [rax + 0x28]
+  0x11d4328: call     0x1411d5cd0 ; -> 0x11d52d0 (thunk->0x3ea5150)
+  0x11d4346: sub      r12, qword ptr [r15 + 0x18]
+  0x11d4395: call     0x1407e4490 ; -> 0x7e3a90 (thunk->0x3506770)
+  0x11d43a1: mov      rdx, qword ptr [r14 + 0x18]
+  0x11d43b2: call     0x141758a00 ; -> 0x1758000
+  0x11d43d0: call     0x141758a00 ; -> 0x1758000
+  0x11d43d5: mov      rdx, qword ptr [r14 + 0x18]
+  0x11d43ec: call     0x1407e4890 ; -> 0x7e3e90 (thunk->0x3506850)
+  0x11d43f1: mov      qword ptr [r14 + 0x18], rsi
+  0x11d445e: call     qword ptr [rax + 0x28]
+  0x11d44a5: call     0x1412e70a0 ; -> 0x12e66a0 (thunk->0x3fc2030)
+  0x11d44bc: mov      r14, qword ptr [rcx + 0x30]
+  0x11d44f6: call     0x1407e4490 ; -> 0x7e3a90 (thunk->0x3506770)
+  0x11d44fe: mov      rdx, qword ptr [rdi + 0x30]
+  0x11d450c: call     0x141758a00 ; -> 0x1758000
+  0x11d4511: mov      rdx, qword ptr [rdi + 0x30]
+  0x11d452f: call     0x1407e4890 ; -> 0x7e3e90 (thunk->0x3506850)
+  0x11d453e: mov      qword ptr [rcx + 0x30], rsi
+  0x11d4594: call     0x141750cc0 ; -> 0x17502c0
+  0x11d45cf: call     qword ptr [rax + 0x28]
+  0x11d45ff: call     qword ptr [rax + 0x28]
+  0x11d4622: call     qword ptr [rax + 0x28]
+  0x11d4649: call     qword ptr [rax + 0x28]
+  0x11d4667: sub      r15, qword ptr [r13 + 0x30]
+  0x11d46b3: call     0x1407e4490 ; -> 0x7e3a90 (thunk->0x3506770)
+  0x11d46bf: mov      rdx, qword ptr [r13 + 0x30]
+  0x11d46d0: call     0x141758a00 ; -> 0x1758000
+  0x11d46ee: call     0x141758a00 ; -> 0x1758000
+  0x11d46f3: mov      rdx, qword ptr [r13 + 0x30]
+  0x11d470a: call     0x1407e4890 ; -> 0x7e3e90 (thunk->0x3506850)
+  0x11d470f: mov      qword ptr [r13 + 0x30], r14
+  0x11d4765: call     qword ptr [rax + 0x28]
+  0x11d479b: call     0x141750cfc ; -> 0x17502fc (thunk->0x17580b0)
+  0x11d47de: call     qword ptr [rax + 0x28]
+  0x11d481e: call     qword ptr [rax + 0x28]
+  0x11d4866: call     0x1412e70a0 ; -> 0x12e66a0 (thunk->0x3fc2030)
+  0x11d4882: call     0x14096bfe0 ; -> 0x96b5e0 (thunk->0x3746930)
+  0x11d48fc: call     qword ptr [rax + 0x28]
+  0x11d494d: call     0x1412e70a0 ; -> 0x12e66a0 (thunk->0x3fc2030)
+  0x11d4959: call     0x1414d00d0 ; -> 0x14cf6d0
+  0x11d498c: call     qword ptr [rax + 0x28]
+  0x11d49b6: call     qword ptr [rax + 0x10]
+  0x11d49dc: call     0x140db9d30 ; -> 0xdb9330 (thunk->0x39e40a0)
+  0x11d49f5: call     qword ptr [rax]
+  0x11d4a4b: call     0x1407e4490 ; -> 0x7e3a90 (thunk->0x3506770)
+  0x11d4a68: call     0x141758a00 ; -> 0x1758000
+  0x11d4a8d: call     0x141758a00 ; -> 0x1758000
+  0x11d4ab6: call     0x1407e4890 ; -> 0x7e3e90 (thunk->0x3506850)
+  0x11d4b13: call     qword ptr [rax + 0x28]
+  0x11d4b5a: call     0x1412e70a0 ; -> 0x12e66a0 (thunk->0x3fc2030)
+  0x11d4b71: call     0x141750cc0 ; -> 0x17502c0
+  0x11d4b83: call     0x1407e4940 ; -> 0x7e3f40 (thunk->0x3506910)
+  0x11d4bad: mov      qword ptr [rax + 0x48], rsi
+  0x11d4bd3: call     qword ptr [rax + 0x28]
+  0x11d4bfe: call     0x14155be50 ; -> 0x155b450 (thunk->0x4387ab0)
+  0x11d4c2d: call     qword ptr [rax + 0x28]
+  0x11d4c69: call     0x141750e08 ; -> 0x1750408 (thunk->0x4659218)
+  0x11d4c82: call     0x1407e3e70 ; -> 0x7e3470 (thunk->0x35054d0)
+  0x11d4c8e: call     0x141751048 ; -> 0x1750648 (thunk->0x465aa28)
+  0x11d4c9a: call     0x141750ea0 ; -> 0x17504a0 (thunk->0x4659860)
+  0x11d4cab: call     0x141750e08 ; -> 0x1750408 (thunk->0x4659218)
+  0x11d4cc7: call     0x1407e4940 ; -> 0x7e3f40 (thunk->0x3506910)
+  0x11d4cfb: call     0x141751048 ; -> 0x1750648 (thunk->0x465aa28)
+  0x11d4d07: call     0x141750ea0 ; -> 0x17504a0 (thunk->0x4659860)
+  0x11d4d18: call     0x141750e08 ; -> 0x1750408 (thunk->0x4659218)
+  0x11d4d5f: call     0x1407e53d0 ; -> 0x7e49d0 (thunk->0x350adb0)
+  0x11d4d6b: call     0x141751048 ; -> 0x1750648 (thunk->0x465aa28)
+  0x11d4d77: call     0x141750ea0 ; -> 0x17504a0 (thunk->0x4659860)
+  0x11d4d88: call     0x141750e08 ; -> 0x1750408 (thunk->0x4659218)
+  0x11d4da1: call     0x1407e3e70 ; -> 0x7e3470 (thunk->0x35054d0)
+  0x11d4dad: call     0x141751048 ; -> 0x1750648 (thunk->0x465aa28)
+  0x11d4db9: call     0x141750ea0 ; -> 0x17504a0 (thunk->0x4659860)
+  0x11d4dc3: call     0x1400526c0 ; -> 0x51cc0 (thunk->0x1baddf0)
+  0x11d4dc8: call     0x1400526c0 ; -> 0x51cc0 (thunk->0x1baddf0)
+  0x11d4dcd: call     0x1400526c0 ; -> 0x51cc0 (thunk->0x1baddf0)
+  0x11d4e03: call     0x141750e70 ; -> 0x1750470 (thunk->0x4659300)
+  0x11d4e43: call     0x141750e70 ; -> 0x1750470 (thunk->0x4659300)
+  0x11d4e7c: call     0x141758970 ; -> 0x1757f70
+
+=== basic_people_db.dat first 32B: 03017461642ef10d28b52ffd0460bcf1015a425b894510202f29cd010df00004 ===
+  basic_people_db decompressed: 54060043B, first 32B: 5b0a0a0000110183000000f502000044980000d3c16202ffffffffffffffffff, u32[0..3]=(658011, 2197885184, 4110417920, 1140850690)
+  client table_25: len=894991, cnt=7047, first 32B=03017461642ef10d871b00000000000001487c0508487c000000000100000001
+  server table_29: len=995872, cnt=13278, first 32B=03017461642ef10dde33000000004d200000ffffffff9e430000f400e7070100

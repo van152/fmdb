@@ -206,7 +206,7 @@ DIFF[EXPECTED(E66-family)] server#34: legacy=12B vs mf=313082B
 ## 7. 复现命令
 
 ```bash
-export FM24_DB_DIR=<WORKSPACE>/scratch/data
+export FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data
 
 # 修复自检
 py -V:3.12 -I -B scripts/fm24_dump.py --selftest          # 50 PASS / 0 FAIL / 0 SKIP
@@ -228,6 +228,6 @@ py -V:3.12 -I -B scratch/t43/build.py --build             # 写 integration_repo
 ## 8. 未做 / 边界
 
 * `data_base`=34 的结构含义**未做 L3 exe 静态确认** —— 本次是操作性修复,不写结构结论。
-* 未启动游戏/编辑器/IDA,未联网,未读写 `Z:`;`<OLD_REPO>` 与 `scratch/data` 全部只读。
+* 未启动游戏/编辑器/IDA,未联网,未读写 `Z:`;`D:\tmp2b\fm24` 与 `scratch/data` 全部只读。
 * 未改 `scripts/t38_multiframe.py`、`scripts/t01_anchors.py`、`scratch/cmd/*` 或任何其它任务产物。
 * 未对 `lang_update` 的 117 个条目做业务语义解读(它们不是 `table_N.dat`,无表号);仅验证其 payload 边界与长度。

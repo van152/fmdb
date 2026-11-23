@@ -11,7 +11,7 @@ from pathlib import Path
 
 OUT = Path(__file__).resolve().parent
 ROOT = OUT.parents[2]
-DEFAULT_EXE = Path(r"<OLD_REPO>\input\editor.exe")
+DEFAULT_EXE = Path(r"D:\tmp2b\fm24\input\editor.exe")
 SCHEMA = ROOT / "scratch/t05/schema_inventory.json"
 OBJECT_REGS = {"rax", "rbx", "rcx", "rdx", "rsi", "rdi", *(f"r{i}" for i in range(8, 16))}
 BOUNDARY_BRANCHES = {"jle", "jl", "jg", "jae", "ja", "jb", "jbe"}

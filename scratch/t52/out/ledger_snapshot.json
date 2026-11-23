@@ -12,7 +12,7 @@
    "level": "L3-static(文件偏移;VA 已换算)",
    "claim": "editor.exe 内 comp 实体字段码以 4CC 立即数出现(mov-imm 反序字节);4CC 字段码体系在 editor.exe 直接可检索",
    "evidence": {
-    "binary": "<OLD_REPO>/input/editor.exe (74,807,296 B)",
+    "binary": "D:/tmp2b/fm24/input/editor.exe (74,807,296 B)",
     "probe": "原始字节搜索 ASCII 4CC 及其反序",
     "hits": {
      "ccti(反序itcc)": [
@@ -990,7 +990,7 @@
      "payload 完整性: t05a 报告 58 个 census SHA-256 全匹配;table_21 的 census SHA 缺失,已记录本次计算值(如实标注,不冒充验证)"
     ],
     "errata": [
-     "【上游假阳性】<OLD_REPO> 的 client table_47 被判为 `exact fixed stride 25+2488*44+8=109505`。实测按 44B 切分 rdui==行号 仅 3/2488、重复尾 u32 仅 576/2488 —— 纯算术巧合。真解为 14+Σ(41+5k)+8=109505(2488 行,rdui/duni 均 2488/2488),见 scripts/t05_lcrg.py",
+     "【上游假阳性】D:/tmp2b/fm24 的 client table_47 被判为 `exact fixed stride 25+2488*44+8=109505`。实测按 44B 切分 rdui==行号 仅 3/2488、重复尾 u32 仅 576/2488 —— 纯算术巧合。真解为 14+Σ(41+5k)+8=109505(2488 行,rdui/duni 均 2488/2488),见 scripts/t05_lcrg.py",
      "【本仓旧结论升级】scratch/t02/lcrg_partial.json 的『第 9 行起变长、无法封口』不成立;变长可行,尾锚+行号约束即精确封口",
      "【方法学】上游 b46 把『14+N×stride+8 整除』记作 exact fixed stride 是不够的;必须加身份槽验证,否则会把 lcrg 这类变长表误判为定长"
     ],

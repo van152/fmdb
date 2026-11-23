@@ -37,4 +37,4 @@
 
 - `frames.json`(4 表 × 双档行框+敏感性)、`slots_client_{2,5,19,41}.json`、`slots_server_{2,5,19,41}.json`、`verify.py`、`REPORT.md`、`DONE.md`(首行 `DONE type=t73 status=complete`);builder `scripts/t73_table_slot_mapper.py`。
 
-Python `py -V:3.12 -I -B`;`FM24_DB_DIR=<WORKSPACE>/scratch/data`;完成跑 `scripts/t01_anchors.py`(7/7)。
+Python `py -V:3.12 -I -B`;`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`;完成跑 `scripts/t01_anchors.py`(7/7)。

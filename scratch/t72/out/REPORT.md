@@ -23,6 +23,6 @@
 ## 复跑
 
 ```bash
-export FM24_DB_DIR=<WORKSPACE>/scratch/data
+export FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data
 py -V:3.12 -I -B scripts/t72_slot_fingerprint.py --selftest
 ```

@@ -1,0 +1,201 @@
+CFG 3d60300, size 200, end 3d60628, ext 0
+3d60300 push    r15                                      
+3d60302 push    r14                                      
+3d60304 push    rsi                                      
+3d60305 push    rdi                                      
+3d60306 push    rbp                                      
+3d60307 push    rbx                                      
+3d60308 sub     rsp, 0x38                                
+3d6030c mov     r14d, r9d                                
+3d6030f mov     rsi, r8                                  
+3d60312 mov     rdi, rcx                                 
+3d60315 movzx   r15d, byte ptr [rsp + 0x90]              
+3d6031e lea     rdx, [rcx + 0xf0]                        
+3d60325 mov     rcx, r8                                  
+3d60328 mov     r8d, r15d                                
+3d6032b call    0x140f7f220                              -> f7e820
+3d60330 lea     rdx, [rdi + 0xf8]                        
+3d60337 mov     rcx, rsi                                 
+3d6033a mov     r8d, r15d                                
+3d6033d call    0x140f7fc40                              -> f7f240
+3d60342 lea     rdx, [rdi + 0xe8]                        
+3d60349 mov     r8, qword ptr [rsi + 8]                  
+3d6034d mov     byte ptr [rsp + 0x28], 0                 
+3d60352 mov     byte ptr [rsp + 0x20], 1                 
+3d60357 mov     rcx, rsi                                 
+3d6035a mov     r9d, r15d                                
+3d6035d call    0x140f7ec80                              -> f7e280
+3d60362 lea     rdx, [rdi + 0x100]                       
+3d60369 mov     rcx, rsi                                 
+3d6036c mov     r8d, r15d                                
+3d6036f call    0x140f7f320                              -> f7e920
+3d60374 mov     rdx, qword ptr [rdi + 0x128]             
+3d6037b cmp     qword ptr [rdi + 0x130], rdx             
+3d60382 je      0x143ecb9cd                              -> 3d603cd
+3d60384 xor     ebx, ebx                                 
+3d60386 xor     ebp, ebp                                 
+3d60388 nop     dword ptr [rax + rax]                    
+3d60390 add     rdx, rbx                                 
+3d60393 mov     r8, qword ptr [rsi + 0x28]               
+3d60397 mov     byte ptr [rsp + 0x28], 0                 
+3d6039c mov     byte ptr [rsp + 0x20], 1                 
+3d603a1 mov     rcx, rsi                                 
+3d603a4 mov     r9d, r15d                                
+3d603a7 call    0x140f7ec80                              -> f7e280
+3d603ac inc     rbp                                      
+3d603af mov     rdx, qword ptr [rdi + 0x128]             
+3d603b6 mov     rax, qword ptr [rdi + 0x130]             
+3d603bd sub     rax, rdx                                 
+3d603c0 sar     rax, 3                                   
+3d603c4 add     rbx, 8                                   
+3d603c8 cmp     rbp, rax                                 
+3d603cb jb      0x143ecb990                              -> 3d60390
+3d603cd mov     rdx, qword ptr [rdi + 0x48]              
+3d603d1 cmp     qword ptr [rdi + 0x50], rdx              
+3d603d5 je      0x143ecba4b                              -> 3d6044b
+3d603d7 xor     ebp, ebp                                 
+3d603d9 jmp     0x143ecb9ef                              -> 3d603ef
+3d603e0 inc     rbp                                      
+3d603e3 sub     r8, rdx                                  
+3d603e6 sar     r8, 4                                    
+3d603ea cmp     rbp, r8                                  
+3d603ed jae     0x143ecba4b                              -> 3d6044b
+3d603ef mov     rbx, rbp                                 
+3d603f2 shl     rbx, 4                                   
+3d603f6 add     rdx, rbx                                 
+3d603f9 mov     r8, qword ptr [rsi + 0x50]               
+3d603fd mov     byte ptr [rsp + 0x28], 0                 
+3d60402 mov     byte ptr [rsp + 0x20], 1                 
+3d60407 mov     rcx, rsi                                 
+3d6040a mov     r9d, r15d                                
+3d6040d call    0x140f7ec80                              -> f7e280
+3d60412 mov     rdx, qword ptr [rdi + 0x48]              
+3d60416 mov     r8, qword ptr [rdi + 0x50]               
+3d6041a cmp     qword ptr [rdx + rbx], 0                 
+3d6041f jne     0x143ecb9e0                              -> 3d603e0
+3d60421 add     rdx, rbx                                 
+3d60424 lea     rax, [rdx + 0x10]                        
+3d60428 sub     r8, rax                                  
+3d6042b mov     rcx, rdx                                 
+3d6042e mov     rdx, rax                                 
+3d60431 call    0x141758a00                              -> 1758000
+3d60436 mov     rdx, qword ptr [rdi + 0x48]              
+3d6043a mov     r8, qword ptr [rdi + 0x50]               
+3d6043e add     r8, -0x10                                
+3d60442 mov     qword ptr [rdi + 0x50], r8               
+3d60446 dec     rbp                                      
+3d60449 jmp     0x143ecb9e0                              -> 3d603e0
+3d6044b mov     rax, qword ptr [rdi + 0xa8]              
+3d60452 cmp     qword ptr [rdi + 0xb0], rax              
+3d60459 je      0x143ecbafe                              -> 3d604fe
+3d6045f xor     ebx, ebx                                 
+3d60461 nop     word ptr cs:[rax + rax]                  
+3d60470 mov     rbp, qword ptr [rax + rbx*8]             
+3d60474 mov     r8, qword ptr [rsi + 0x28]               
+3d60478 mov     byte ptr [rsp + 0x28], 0                 
+3d6047d mov     byte ptr [rsp + 0x20], 1                 
+3d60482 mov     rcx, rsi                                 
+3d60485 mov     rdx, rbp                                 
+3d60488 mov     r9d, r15d                                
+3d6048b call    0x140f7ec80                              -> f7e280
+3d60490 lea     rdx, [rbp + 8]                           
+3d60494 mov     rcx, rsi                                 
+3d60497 mov     r8d, r15d                                
+3d6049a call    0x140f7f220                              -> f7e820
+3d6049f lea     rdx, [rbp + 0x10]                        
+3d604a3 mov     r8, qword ptr [rsi + 0x28]               
+3d604a7 mov     byte ptr [rsp + 0x28], 0                 
+3d604ac mov     byte ptr [rsp + 0x20], 1                 
+3d604b1 mov     rcx, rsi                                 
+3d604b4 mov     r9d, r15d                                
+3d604b7 call    0x140f7ec80                              -> f7e280
+3d604bc lea     rdx, [rbp + 0x18]                        
+3d604c0 mov     rcx, rsi                                 
+3d604c3 mov     r8d, r15d                                
+3d604c6 call    0x140f7fc40                              -> f7f240
+3d604cb add     rbp, 0x20                                
+3d604cf mov     rcx, rsi                                 
+3d604d2 mov     rdx, rbp                                 
+3d604d5 mov     r8d, r15d                                
+3d604d8 call    0x140f80150                              -> f7f750
+3d604dd inc     rbx                                      
+3d604e0 mov     rax, qword ptr [rdi + 0xa8]              
+3d604e7 mov     rcx, qword ptr [rdi + 0xb0]              
+3d604ee sub     rcx, rax                                 
+3d604f1 sar     rcx, 3                                   
+3d604f5 cmp     rbx, rcx                                 
+3d604f8 jb      0x143ecba70                              -> 3d60470
+3d604fe mov     rax, qword ptr [rdi + 0x90]              
+3d60505 cmp     qword ptr [rdi + 0x98], rax              
+3d6050c je      0x143ecbbae                              -> 3d605ae
+3d60512 xor     ebx, ebx                                 
+3d60514 nop     word ptr cs:[rax + rax]                  
+3d60520 mov     rbp, qword ptr [rax + rbx*8]             
+3d60524 mov     r8, qword ptr [rsi + 0x28]               
+3d60528 mov     byte ptr [rsp + 0x28], 0                 
+3d6052d mov     byte ptr [rsp + 0x20], 1                 
+3d60532 mov     rcx, rsi                                 
+3d60535 mov     rdx, rbp                                 
+3d60538 mov     r9d, r15d                                
+3d6053b call    0x140f7ec80                              -> f7e280
+3d60540 lea     rdx, [rbp + 8]                           
+3d60544 mov     rcx, rsi                                 
+3d60547 mov     r8d, r15d                                
+3d6054a call    0x140f7f220                              -> f7e820
+3d6054f lea     rdx, [rbp + 0x10]                        
+3d60553 mov     r8, qword ptr [rsi + 0x28]               
+3d60557 mov     byte ptr [rsp + 0x28], 0                 
+3d6055c mov     byte ptr [rsp + 0x20], 1                 
+3d60561 mov     rcx, rsi                                 
+3d60564 mov     r9d, r15d                                
+3d60567 call    0x140f7ec80                              -> f7e280
+3d6056c lea     rdx, [rbp + 0x18]                        
+3d60570 mov     rcx, rsi                                 
+3d60573 mov     r8d, r15d                                
+3d60576 call    0x140f7fc40                              -> f7f240
+3d6057b add     rbp, 0x20                                
+3d6057f mov     rcx, rsi                                 
+3d60582 mov     rdx, rbp                                 
+3d60585 mov     r8d, r15d                                
+3d60588 call    0x140f80150                              -> f7f750
+3d6058d inc     rbx                                      
+3d60590 mov     rax, qword ptr [rdi + 0x90]              
+3d60597 mov     rcx, qword ptr [rdi + 0x98]              
+3d6059e sub     rcx, rax                                 
+3d605a1 sar     rcx, 3                                   
+3d605a5 cmp     rbx, rcx                                 
+3d605a8 jb      0x143ecbb20                              -> 3d60520
+3d605ae mov     rdx, qword ptr [rdi + 0xc0]              
+3d605b5 cmp     qword ptr [rdi + 0xc8], rdx              
+3d605bc je      0x143ecbbff                              -> 3d605ff
+3d605be xor     ebx, ebx                                 
+3d605c0 xor     ebp, ebp                                 
+3d605c2 nop     word ptr cs:[rax + rax]                  
+3d605d0 add     rdx, rbx                                 
+3d605d3 mov     rcx, rsi                                 
+3d605d6 mov     r8d, r15d                                
+3d605d9 call    0x140f80150                              -> f7f750
+3d605de inc     rbp                                      
+3d605e1 mov     rdx, qword ptr [rdi + 0xc0]              
+3d605e8 mov     rax, qword ptr [rdi + 0xc8]              
+3d605ef sub     rax, rdx                                 
+3d605f2 sar     rax, 4                                   
+3d605f6 add     rbx, 0x10                                
+3d605fa cmp     rbp, rax                                 
+3d605fd jb      0x143ecbbd0                              -> 3d605d0
+3d605ff test    r14b, r14b                               
+3d60602 je      0x143ecbc19                              -> 3d60619
+3d60604 add     rdi, 0x118                               
+3d6060b mov     rcx, rsi                                 
+3d6060e mov     rdx, rdi                                 
+3d60611 mov     r8d, r15d                                
+3d60614 call    0x140f7fd40                              -> f7f340
+3d60619 mov     al, 1                                    
+3d6061b add     rsp, 0x38                                
+3d6061f pop     rbx                                      
+3d60620 pop     rbp                                      
+3d60621 pop     rdi                                      
+3d60622 pop     rsi                                      
+3d60623 pop     r14                                      
+3d60625 pop     r15                                      
+3d60627 ret                                              

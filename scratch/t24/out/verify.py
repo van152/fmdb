@@ -15,7 +15,7 @@ sys.dont_write_bytecode = True
 OUT = Path(__file__).resolve().parent
 ROOT = OUT.parents[2]
 sys.path.insert(0, str(ROOT / 'scripts'))
-EXE = Path('<OLD_REPO>/input/editor.exe')
+EXE = Path('D:/tmp2b/fm24/input/editor.exe')
 
 
 class Failure(Exception):
@@ -173,7 +173,7 @@ def sample_fields(raw, rows, pe, inst, summary):
 def verify():
     from fm24_dump import _reader, load_payload
     from t05_pe import PE
-    os.environ.setdefault('FM24_DB_DIR','<WORKSPACE>/scratch/data')
+    os.environ.setdefault('FM24_DB_DIR','D:/tmp2b/fm24-db/scratch/data')
     manifest = load('cursor.json')
     raw = load_payload(_reader(),'client',3)
     pe = PE(EXE)

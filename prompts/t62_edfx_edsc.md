@@ -8,7 +8,7 @@
 - scratch/t55/out/REPORT.md(EDsc no_main_wire_slot 的证据与口径)
 - scratch/t27/out/replication.md、scratch/t39/t44 REPORT(club 集合 helper `0x15e9830→0x44d7bf0`、全局 VA `0x141b60158`、CLUB slot2 `0xe89a00` 精确分发)
 - evidence/fm24/reports/editor_schema/master.json(冻结;club/nation XML 中 EDfx/EDsc 关联字段)
-- <OLD_REPO>/input/editor.exe(只读;SHA-256 b82ebe8e…da4,见 t59 REPORT)
+- D:/tmp2b/fm24/input/editor.exe(只读;SHA-256 b82ebe8e…da4,见 t59 REPORT)
 
 ## 任务
 1. **交叉引用普查**:editor.exe 内 EDfx/EDsc 4CC 全量引用点(字符串/立即数/比较器),逐点分类:collection 打开器/容器构造/序列化 sink/纯比较。
@@ -18,7 +18,7 @@
 5. 独立 verify.py + builder scripts/t62_edfx_edsc.py;--help/--selftest;退出码 0/1/2;partial 诚实(排除清单也算交付)。
 
 ## 边界
-- 只 EDfx/EDsc(AXML/Tchl 顺带引用点可记,不展开);不碰已闭 L3 层;不启动游戏/编辑器/IDA,不联网,不读写 Z:;PE extent 法照 t21b/t59 口径,不可达边不写成死边。
+- 只 EDfx/EDsc(AXML/Tchl 顺带引用点可记,不展开);不碰已闭 L3 层;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:;PE extent 法照 t21b/t59 口径,不可达边不写成死边。
 - 交付 scratch/t62/out/:xref.json(引用点台账)、chain.json(逐跳)、exclusions.json(证伪清单)、verify.py、REPORT.md、DONE.md;scripts/t62_edfx_edsc.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;完成跑 verify + scripts/t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;完成跑 verify + scripts/t01_anchors.py(7/7)。

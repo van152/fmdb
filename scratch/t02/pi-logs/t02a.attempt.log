@@ -1,0 +1,9 @@
+<​｜DSML｜调用>
+<​｜DSML｜参数 name="command">cd /d/tmp2b/fm24-db && py -V:3.12 -I -B -c "
+import sys; sys.path.insert(0,'scratch/t02/inbox/a')
+from _lib import *
+pe=PE(EDITOR.read_bytes())
+print(pe.op(0x158002e), pe.op(0x1580030))
+print(pe.data[0x1580028:0x1580040].hex(' '))
+"</​｜DSML｜参数>
+</​｜DSML｜调用>

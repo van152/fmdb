@@ -18,7 +18,7 @@ Server 目录项 offset `26649596`，Zstd frame offset `26649630`，packed size 
 
 ## 静态证据与分支
 
-只读二进制 `<OLD_REPO>\input\editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`，与 `evidence/fm24/reports/qa/IDA_PROVENANCE.md` 对照。冻结 `master.json` SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`；两份快照通过 `evidence/MANIFEST.json`。下文非明确标记的地址是 PE **file offset**；VA、原指令 bytes 见 `instructions.part*.json`。
+只读二进制 `D:\tmp2b\fm24\input\editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`，与 `evidence/fm24/reports/qa/IDA_PROVENANCE.md` 对照。冻结 `master.json` SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`；两份快照通过 `evidence/MANIFEST.json`。下文非明确标记的地址是 PE **file offset**；VA、原指令 bytes 见 `instructions.part*.json`。
 
 1. Factory `0xf48b30` 以 rel32 表 `0xf49d38` 的第 62 格入 `0xf49a2b`，`0xf49a58 → 0xf49a5f` 写 vptr VA `0x141884988`，COL `0x18840e0` → TD `.?AVSTARTING_RESERVE_TEAM@db@@`。
 2. Slot19 VA `0x14119c960` / offset `0x119bf60` 是 leaf thunk。真属性 reader offset `0x3e5d730` / VA `0x143fc8d30`，PE runtime-function exclusive end `0x3e5d8b4` / VA `0x143fc8eb4`：113 条可达指令、13 块、11 条条件，11 次 stream vtable `+0x28` 共 29 B。成功后 `0x3e5d8af` tail-jump → leaf `0xfae340` → 真 identity reader `0x3c600f0` / VA `0x143dcb6f0`，第二个 runtime-function exclusive end `0x3c6016e` / VA `0x143dcb76e`：43 条指令、11 块、5 条条件，`0x3c60119` 实际读 12 B。合计唯一外部 CFG 边是已追完的 tail-jump，不是零字节 helper。

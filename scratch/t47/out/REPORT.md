@@ -4,7 +4,7 @@
 
 ## 静态证据与逐 parent 判定
 
-下文地址为 PE **file offset**。只读 `<OLD_REPO>/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。`IDA_PROVENANCE.md` 和 `master.json` 按冻结 `evidence/MANIFEST.json` 核验，master SHA-256 为 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`。指令分片含原 bytes、VA、直接跳转目标；发现 JSON 含 factory rel32 格、COL、TD、vptr 槽和 schema。t37 原报告及 inventory 字节未改。t24 分片未收录本次 `Ntxr` 等 Nation scoped item；仅 `Calt`、`TCrs` 命中未分 Nation scope 的同名 occurrence，不能代替 frozen master 所列 Nation item。
+下文地址为 PE **file offset**。只读 `D:/tmp2b/fm24/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。`IDA_PROVENANCE.md` 和 `master.json` 按冻结 `evidence/MANIFEST.json` 核验，master SHA-256 为 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`。指令分片含原 bytes、VA、直接跳转目标；发现 JSON 含 factory rel32 格、COL、TD、vptr 槽和 schema。t37 原报告及 inventory 字节未改。t24 分片未收录本次 `Ntxr` 等 Nation scoped item；仅 `Calt`、`TCrs` 命中未分 Nation scope 的同名 occurrence，不能代替 frozen master 所列 Nation item。
 
 **为什么只查 `NATION` 的 slot 19 会漏。** `NATION` slot 2 `0x1041f30 → 0x1041f40`，无本类匹配时 `0x104330f` 取 NATION `+0x108`，非空才在 `0x1043322` 直调 `0x1065ef0`。独立反向见证：factory `0xf48b30` 的第 9 格跳 `0xf48f12`，构造在 `0x1059a4f/56` 写入 `NATIONAL_TEAM_CONTAINER` vptr `VA 0x1418898d8`。其 slot 2 `0x1065eb0 → 0x3d95190` 先试其 `+0x170` 的 Nation（`R9D=0`），未命中才进同一个 `0x1065ef0`。slot 20 `0x105fc60 → 0x3d885f0` 修复 `+0x170`，成功且目标非空时 `0x3d88644` 将容器写入 Nation `[+0x108 + 8*container[+0xb9]]`；Nation 的上述读取选第 0 侧。未声称 251 条 archive 行的 backlink 均选这一侧。旧版 `≤0x0dc3` 的 slot 19 有额外手工构造 Nation 的写点 `0x105cb99/0x105cba0`；不是现代档运行观测。t9 slot 19 为 `0x105cb10`，按调用上下文的版本及 mode 分叉；下表只证明某个 reader 路径，不将 archive 头等同于进程状态。
 
@@ -75,4 +75,4 @@ Repu 三件共享的是 **owner、外层 reader 和 UI 投影 helper**，不是 
 
 ## 复验
 
-`FM24_DB_DIR=<WORKSPACE>/scratch/data`，`py -V:3.12 -I -B`。`scripts/t47_nation_unknown.py --build` / `--selftest`，`scratch/t47/out/verify.py` / `--selftest` 和两者 `--help`，`scripts/t01_anchors.py` **7/7**。独立 verifier 不导入 builder、`ReaderCFG` 或 `fm24_dump`；独立 frame 边界、PE 工作队列和 struct 解码检查原字节、坐标、域和 held。退出码 0/1/2。未启动游戏、编辑器、IDA，未联网，未访问 Z:。
+`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`，`py -V:3.12 -I -B`。`scripts/t47_nation_unknown.py --build` / `--selftest`，`scratch/t47/out/verify.py` / `--selftest` 和两者 `--help`，`scripts/t01_anchors.py` **7/7**。独立 verifier 不导入 builder、`ReaderCFG` 或 `fm24_dump`；独立 frame 边界、PE 工作队列和 struct 解码检查原字节、坐标、域和 held。退出码 0/1/2。未启动游戏、编辑器、IDA，未联网，未访问 Z:。

@@ -17,7 +17,7 @@
 
 ## 静态路线与分支
 
-L3 二进制：只读 `<OLD_REPO>\input\editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`；与快照 `evidence/fm24/reports/qa/IDA_PROVENANCE.md` 核对。`master.json` 冻结 SHA `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`；二者均通过 `evidence/MANIFEST.json`。下表和说明用 PE file offset，VA 和原指令 bytes 见 `instructions.part*.json`。
+L3 二进制：只读 `D:\tmp2b\fm24\input\editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`；与快照 `evidence/fm24/reports/qa/IDA_PROVENANCE.md` 核对。`master.json` 冻结 SHA `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`；二者均通过 `evidence/MANIFEST.json`。下表和说明用 PE file offset，VA 和原指令 bytes 见 `instructions.part*.json`。
 
 - factory `0xf48b30` 的表基址 `0xf49d38`，第 37 个 rel32 cell 解到 `0xf49558`；`0xf49574→0xf4957b` 取并写入 vptr `0x14188e118`，slot −1/COL `0x188d870` 回溯 TD `STARTING_TEAM_LEAGUE_HISTORY`。
 - slot 19 `0x14119e7f0` / file `0x119ddf0` 是无 runtime-function extent 的直接跳板。真 reader `0x143fce190` / file `0x3e62b90`；PE runtime-function exclusive end `0x143fce3e7` / `0x3e62de7`。`ReaderCFG` 走出 164 条指令、27 基本块、20 条条件、无外部 CFG 边。15 个实际传输都是 stream vtable `+0x28`（14 个成员 transfer 和 `0x3e62d8f` identity bulk），没有要当作 0 B 的属性 helper。另有 2 个间接调用：callback、最终释放。外层 footer helper 也跟到真 transfer `0xffa602`；外层只记录 header、行分派及 footer 的相关片段，并非整个通用 loader CFG。

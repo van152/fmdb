@@ -1,0 +1,98 @@
+{
+ "type_id": 8,
+ "entity": "lang",
+ "rtti": ".?AVLANGUAGE@db@@",
+ "status": "complete",
+ "source": "commander hand-decode + devseek fw8 框架交叉(row_len=4+len+30 一致)",
+ "row_framework": {
+  "archive": "client_db.dat",
+  "member": "client_db/table_8.dat",
+  "count": 126,
+  "row_start": 14,
+  "payload_len": 5248,
+  "variable": true,
+  "row_shape": "u32 name_len + UTF-8 name + 30B trailer(17B payload + 12B identity + 1B marker)",
+  "row_len_min": 37,
+  "row_len_max": 53,
+  "closures": "14 + sum(row_len) + 8 == 5248 (walk end 5240, +8 footer)"
+ },
+ "row_offset_map": [
+  {
+   "idx": 0,
+   "row_off": 0,
+   "width": 4,
+   "object_off": null,
+   "reader": "u32 name length prefix",
+   "semantic": "name_len"
+  },
+  {
+   "idx": 1,
+   "row_off": 4,
+   "width": "var",
+   "object_off": null,
+   "reader": null,
+   "semantic": "UTF-8 language name (Albanian/Arabic/Bulgarian/Chinese...)"
+  },
+  {
+   "idx": 2,
+   "row_off": "4+len",
+   "width": 17,
+   "object_off": null,
+   "reader": null,
+   "semantic": "17B scalar block: [0:2] u16, [2:4] u16, [4:6] u16, [6:8] u16, [8:12] u32, [12:16] u32 (见 samples)"
+  },
+  {
+   "idx": 3,
+   "row_off": "4+len+17",
+   "width": 12,
+   "object_off": null,
+   "reader": null,
+   "semantic": "identity block ordinal|ID|重复ID (126/126)"
+  },
+  {
+   "idx": 4,
+   "row_off": "4+len+29",
+   "width": 1,
+   "object_off": null,
+   "reader": null,
+   "semantic": "boundary marker 0x00 (126/126)"
+  }
+ ],
+ "identity_block": {
+  "verified": "126/126 ordinal==row_index, ID pair equal"
+ },
+ "samples": [
+  {
+   "row": 0,
+   "name": "Albanian",
+   "trailer": "00000f2c00010014007e00000001000000|00000000|01000000|01000000|00",
+   "bytes": [
+    0,
+    3884,
+    1,
+    20,
+    126,
+    1,
+    0,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "row": 1,
+   "name": "Arabic",
+   "trailer": "000c120100120005004e00000002000000|01000000|02000000|02000000|00"
+  },
+  {
+   "row": 3,
+   "name": "Chinese",
+   "trailer": "0010145400050006003700000004000000|03000000|04000000|04000000|00"
+  }
+ ],
+ "unclosed": [
+  "17B 前缀块各标量的业务语义(疑似 sort order / abbreviation / ISO code;未证)",
+  "语言名与 DB ID 的对应关系未做外部交叉"
+ ],
+ "note": "devseek fw8 给出 row_len=4+len(name)+30、16 种行长、126 行,与本次手解完全一致"
+}

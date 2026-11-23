@@ -1,0 +1,29 @@
+{
+ "schema": "cmd.t88_rec_probe.v1",
+ "task": "t88 rec 结构指挥官数据侧探针(fix4 三轮失败后接管)",
+ "date": "2026-11-22",
+ "grade": "L2(数据侧;无 exe 指令证据)",
+ "assets": {
+  "payload": "scratch/t88/out2/_p_server_45.bin (7,608,748B)",
+  "row_starts": "scratch/t88/out2/_starts.bin (84,477 行)",
+  "row_frame": "scratch/t88/out2/row_frame.json(冻结:变长 80+namelen,name@row+37,identity 13B@row_end-13)"
+ },
+ "findings": [
+  {"col": "u32@0", "verdict": "club-uid 链接列", "evidence": "对 club 主表('server','3')DP 扫出的 84,259 个 uid(ord|uid|uid 顺序全自洽)成员率 96.7%;399 个非成员值含 2.0G 族(2000192381 等)与 763/775/786 小值族;8,368 个 distinct club 实际出现"},
+  {"col": "u8@4", "verdict": "类型/角色字节", "evidence": "37 个 distinct;255(null)×38,968 居首,1..20 连续分布,16/17 稀有(68/58)"},
+  {"col": "u32@5", "verdict": "person-uid(外源锚定)", "evidence": "735216×18 = C罗 unique_id(agentC/agentB 独立报告值),35,926 distinct,club-uid 成员率仅 0.7%"},
+  {"col": "u32@9", "verdict": "未定(0×38,968 / ffff×25,755 / 其余)", "evidence": "club-uid 成员率 46.3%"},
+  {"col": "u32@21/25", "verdict": "第二 [id][id] 双写对,6,800 distinct", "evidence": "两列 profile 完全一致;club-uid 成员率 26.9%——第二链接实体未定(league/nation/其他容器)"},
+  {"col": "u32@13/17", "verdict": "sentinel 对(ffff×84,316)", "evidence": "profile 一致"},
+  {"col": "u32@33", "verdict": "布尔旗(ffff vs 0 二值)", "evidence": ""},
+  {"col": "post_name", "verdict": "(doy,year) 日期区(含 null date 01 00 6c 07 ×3 起始)", "evidence": "row0/1/2 三连 null date,row40000 实日期 doy=215 year=1980;另见 40 9c/4f 9c 4f 9c [id][id] 对"},
+  {"col": "identity uid", "verdict": "行自键:全唯一 84,477,致密 0..89,974", "evidence": "非 club uid 空间"}
+ ],
+ "premise_refuted": "简报与 t82 叙事的『84,477 行 vs 84,259 club=1.0026/club,+218 条』前提不成立——行=(club,person) 记录,8,368 个 club 实际出现,byte+4≠218 解释;负结果原样保留",
+ "external_anchor": {
+  "what": "u32@5=person uid 由外源 fm-data(d7a7150)agentC 报告的 unique_id=735216(C罗)交叉锚定",
+  "significance": "本仓首个外源锚定的 wire 列;provenance=ext/fm-data@d7a7150,分级仍按本仓 L2 数据侧"
+ },
+ "residual": "u32@9/21/25 实体归属、byte+4 语义名、117 字段 join 的 per-4CC (type,offset) 映射 → 交 t88-fix5 窄化车道(配 t82 tagmap 静态件)",
+ "rec_type_pair_stat": "(club,type) 51,620 对,其中 4,369 对多行——非唯一键"
+}

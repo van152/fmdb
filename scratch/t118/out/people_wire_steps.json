@@ -1,0 +1,5100 @@
+{
+  "schema_version": 1,
+  "status": "partial",
+  "serialization_methods": [
+    {
+      "class_name": "ACTUAL_PLAYER",
+      "method": "read_from_stream_server",
+      "func_va": "0x143bcc880",
+      "file": "scratch/t113/out/funcs/143bcc880.c",
+      "decompiled": true,
+      "step_count": 0,
+      "steps": [],
+      "slot_va": "0x140e1ef30",
+      "thunk": "jmp:0x140e1ef30->0x143bcc880",
+      "status": "decompiled body has no recognized direct stream steps"
+    },
+    {
+      "class_name": "ACTUAL_PLAYER",
+      "method": "read_from_stream_client",
+      "func_va": "0x143bcc030",
+      "file": "scratch/t113/out/funcs/143bcc030.c",
+      "decompiled": true,
+      "step_count": 0,
+      "steps": [],
+      "slot_va": "0x140e1ee50",
+      "thunk": "jmp:0x140e1ee50->0x143bcc030",
+      "status": "decompiled body has no recognized direct stream steps"
+    },
+    {
+      "class_name": "ACTUAL_PLAYER",
+      "method": "write_to_stream",
+      "func_va": "0x143bc77b0",
+      "file": "scratch/t113/out/funcs/143bc77b0.c",
+      "decompiled": true,
+      "step_count": 14,
+      "steps": [
+        {
+          "step_idx": 0,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x8",
+          "mem_off_int": 8,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 29,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:29",
+          "source_expression": "v4 = *(int *)(*(_QWORD *)(a1 + 8) + 4LL);",
+          "offset_access": "deref_cast_before",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 1,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( *(_BYTE *)(v5 + 47) == 0 )",
+            "if ( v7 != 0 )"
+          ],
+          "callee_va": "0x1411e6040",
+          "helper_vas": [
+            "0x1411e6040"
+          ],
+          "linked_4ccs": [],
+          "source_line": 43,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:43",
+          "source_expression": "v8 = sub_1411E6040(v7, v6, 0);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 2,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0xf8",
+          "mem_off_int": 248,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 48,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:48",
+          "source_expression": "v9 = *(_QWORD **)(a1 + 248);",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 3,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (a2[2] - *a2) >> 3 < v10 )"
+          ],
+          "callee_va": "0x1400526c0",
+          "helper_vas": [
+            "0x1400526c0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 56,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:56",
+          "source_expression": "sub_1400526C0();",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 4,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (a2[2] - *a2) >> 3 < v10 )"
+          ],
+          "callee_va": "0x1407e4490",
+          "helper_vas": [
+            "0x1407e4490"
+          ],
+          "linked_4ccs": [],
+          "source_line": 58,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:58",
+          "source_expression": "v13 = sub_1407E4490(qword_141ABD470);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 5,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (a2[2] - *a2) >> 3 < v10 )"
+          ],
+          "callee_va": "0x141758a00",
+          "helper_vas": [
+            "0x141758a00"
+          ],
+          "linked_4ccs": [],
+          "source_line": 59,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:59",
+          "source_expression": "sub_141758A00(v13, *a2, a2[1] - *a2);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 6,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (a2[2] - *a2) >> 3 < v10 )",
+            "if ( *a2 != 0 )"
+          ],
+          "callee_va": "0x1412d33c0",
+          "helper_vas": [
+            "0x1412d33c0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 89,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:89",
+          "source_expression": "sub_1412D33C0();",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 7,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0xf8",
+          "mem_off_int": 248,
+          "version_gate": [
+            "if ( (a2[2] - *a2) >> 3 < v10 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 95,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:95",
+          "source_expression": "v9 = *(_QWORD **)(a1 + 248);",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 8,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (__int64)(v9[1] - *v9) >> 3 > v21 )",
+            "if ( v22 != 0 )"
+          ],
+          "callee_va": "0x1407c9510",
+          "helper_vas": [
+            "0x1407c9510"
+          ],
+          "linked_4ccs": [],
+          "source_line": 111,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:111",
+          "source_expression": "sub_1407C9510(v24);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 9,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (__int64)(v9[1] - *v9) >> 3 > v21 )",
+            "if ( v22 != 0 )"
+          ],
+          "callee_va": "0x14146ecd0",
+          "helper_vas": [
+            "0x14146ecd0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 112,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:112",
+          "source_expression": "sub_14146ECD0(v22, a1, v27, v24);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 10,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (__int64)(v9[1] - *v9) >> 3 > v21 )",
+            "if ( v22 != 0 )"
+          ],
+          "callee_va": "0x14083dda0",
+          "helper_vas": [
+            "0x14083dda0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 113,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:113",
+          "source_expression": "sub_14083DDA0(v25, v24);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 11,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (__int64)(v9[1] - *v9) >> 3 > v21 )",
+            "if ( v22 != 0 )"
+          ],
+          "callee_va": "0x14083b5f0",
+          "helper_vas": [
+            "0x14083b5f0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 114,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:114",
+          "source_expression": "sub_14083B5F0(a2, v25);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 12,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (__int64)(v9[1] - *v9) >> 3 > v21 )",
+            "if ( v22 != 0 )"
+          ],
+          "callee_va": "0x140833970",
+          "helper_vas": [
+            "0x140833970"
+          ],
+          "linked_4ccs": [],
+          "source_line": 116,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:116",
+          "source_expression": "sub_140833970(v24);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 13,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0xf8",
+          "mem_off_int": 248,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 121,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:121",
+          "source_expression": "v9 = *(_QWORD **)(a1 + 248);",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        }
+      ],
+      "slot_va": "0x140e1ced0",
+      "thunk": "jmp:0x140e1ced0->0x143bc77b0",
+      "status": "static steps extracted"
+    },
+    {
+      "class_name": "ACTUAL_PLAYER_AND_NON_PLAYER",
+      "method": "read_from_stream_server",
+      "func_va": "0x143bcc880",
+      "file": "scratch/t113/out/funcs/143bcc880.c",
+      "decompiled": true,
+      "step_count": 0,
+      "steps": [],
+      "slot_va": "0x140e1ef30",
+      "thunk": "jmp:0x140e1ef30->0x143bcc880",
+      "status": "decompiled body has no recognized direct stream steps"
+    },
+    {
+      "class_name": "ACTUAL_PLAYER_AND_NON_PLAYER",
+      "method": "read_from_stream_client",
+      "func_va": "0x143bcc030",
+      "file": "scratch/t113/out/funcs/143bcc030.c",
+      "decompiled": true,
+      "step_count": 0,
+      "steps": [],
+      "slot_va": "0x140e1ee50",
+      "thunk": "jmp:0x140e1ee50->0x143bcc030",
+      "status": "decompiled body has no recognized direct stream steps"
+    },
+    {
+      "class_name": "ACTUAL_PLAYER_AND_NON_PLAYER",
+      "method": "write_to_stream",
+      "func_va": "0x143bc77b0",
+      "file": "scratch/t113/out/funcs/143bc77b0.c",
+      "decompiled": true,
+      "step_count": 14,
+      "steps": [
+        {
+          "step_idx": 0,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x8",
+          "mem_off_int": 8,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 29,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:29",
+          "source_expression": "v4 = *(int *)(*(_QWORD *)(a1 + 8) + 4LL);",
+          "offset_access": "deref_cast_before",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 1,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( *(_BYTE *)(v5 + 47) == 0 )",
+            "if ( v7 != 0 )"
+          ],
+          "callee_va": "0x1411e6040",
+          "helper_vas": [
+            "0x1411e6040"
+          ],
+          "linked_4ccs": [],
+          "source_line": 43,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:43",
+          "source_expression": "v8 = sub_1411E6040(v7, v6, 0);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 2,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0xf8",
+          "mem_off_int": 248,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 48,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:48",
+          "source_expression": "v9 = *(_QWORD **)(a1 + 248);",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 3,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (a2[2] - *a2) >> 3 < v10 )"
+          ],
+          "callee_va": "0x1400526c0",
+          "helper_vas": [
+            "0x1400526c0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 56,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:56",
+          "source_expression": "sub_1400526C0();",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 4,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (a2[2] - *a2) >> 3 < v10 )"
+          ],
+          "callee_va": "0x1407e4490",
+          "helper_vas": [
+            "0x1407e4490"
+          ],
+          "linked_4ccs": [],
+          "source_line": 58,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:58",
+          "source_expression": "v13 = sub_1407E4490(qword_141ABD470);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 5,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (a2[2] - *a2) >> 3 < v10 )"
+          ],
+          "callee_va": "0x141758a00",
+          "helper_vas": [
+            "0x141758a00"
+          ],
+          "linked_4ccs": [],
+          "source_line": 59,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:59",
+          "source_expression": "sub_141758A00(v13, *a2, a2[1] - *a2);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 6,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (a2[2] - *a2) >> 3 < v10 )",
+            "if ( *a2 != 0 )"
+          ],
+          "callee_va": "0x1412d33c0",
+          "helper_vas": [
+            "0x1412d33c0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 89,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:89",
+          "source_expression": "sub_1412D33C0();",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 7,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0xf8",
+          "mem_off_int": 248,
+          "version_gate": [
+            "if ( (a2[2] - *a2) >> 3 < v10 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 95,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:95",
+          "source_expression": "v9 = *(_QWORD **)(a1 + 248);",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 8,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (__int64)(v9[1] - *v9) >> 3 > v21 )",
+            "if ( v22 != 0 )"
+          ],
+          "callee_va": "0x1407c9510",
+          "helper_vas": [
+            "0x1407c9510"
+          ],
+          "linked_4ccs": [],
+          "source_line": 111,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:111",
+          "source_expression": "sub_1407C9510(v24);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 9,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (__int64)(v9[1] - *v9) >> 3 > v21 )",
+            "if ( v22 != 0 )"
+          ],
+          "callee_va": "0x14146ecd0",
+          "helper_vas": [
+            "0x14146ecd0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 112,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:112",
+          "source_expression": "sub_14146ECD0(v22, a1, v27, v24);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 10,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (__int64)(v9[1] - *v9) >> 3 > v21 )",
+            "if ( v22 != 0 )"
+          ],
+          "callee_va": "0x14083dda0",
+          "helper_vas": [
+            "0x14083dda0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 113,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:113",
+          "source_expression": "sub_14083DDA0(v25, v24);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 11,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (__int64)(v9[1] - *v9) >> 3 > v21 )",
+            "if ( v22 != 0 )"
+          ],
+          "callee_va": "0x14083b5f0",
+          "helper_vas": [
+            "0x14083b5f0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 114,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:114",
+          "source_expression": "sub_14083B5F0(a2, v25);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 12,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (__int64)(v9[1] - *v9) >> 3 > v21 )",
+            "if ( v22 != 0 )"
+          ],
+          "callee_va": "0x140833970",
+          "helper_vas": [
+            "0x140833970"
+          ],
+          "linked_4ccs": [],
+          "source_line": 116,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:116",
+          "source_expression": "sub_140833970(v24);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 13,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0xf8",
+          "mem_off_int": 248,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 121,
+          "source": "scratch/t113/out/funcs/143bc77b0.c:121",
+          "source_expression": "v9 = *(_QWORD **)(a1 + 248);",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        }
+      ],
+      "slot_va": "0x140e1ced0",
+      "thunk": "jmp:0x140e1ced0->0x143bc77b0",
+      "status": "static steps extracted"
+    },
+    {
+      "class_name": "BASIC_PERSON",
+      "method": "read_from_stream_server",
+      "func_va": "0x140e4fd70",
+      "file": "scratch/t113/out/funcs/140e4fd70.c",
+      "decompiled": true,
+      "step_count": 20,
+      "steps": [
+        {
+          "step_idx": 0,
+          "stream_op": "read",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x65",
+          "mem_off_int": 101,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ptyp"
+          ],
+          "source_line": 36,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:36",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 101, 1);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 1,
+          "stream_op": "read",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x30",
+          "mem_off_int": 48,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Pnti"
+          ],
+          "source_line": 52,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:52",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 48, v25);",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 2,
+          "stream_op": "read",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x20",
+          "mem_off_int": 32,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "BPjo",
+            "Pcti",
+            "Ptaj",
+            "picc",
+            "ptcn",
+            "ptdn"
+          ],
+          "source_line": 69,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:69",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 32, v27);",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 3,
+          "stream_op": "read",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x28",
+          "mem_off_int": 40,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Pnai",
+            "Pnaj"
+          ],
+          "source_line": 77,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:77",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 40, v29);",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 4,
+          "stream_op": "read",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x38",
+          "mem_off_int": 56,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": "0x140fb2ba0",
+          "helper_vas": [
+            "0x140fb2ba0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 80,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:80",
+          "source_expression": "if ( (unsigned __int8)sub_140FB2BA0(a2, a1 + 56) == 0 )",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 5,
+          "stream_op": "read",
+          "width": 4,
+          "width_expression": null,
+          "mem_off": "0x48",
+          "mem_off_int": 72,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Pdva"
+          ],
+          "source_line": 83,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:83",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 72, 4);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 6,
+          "stream_op": "read",
+          "width": 4,
+          "width_expression": null,
+          "mem_off": "0x4c",
+          "mem_off_int": 76,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Pcww"
+          ],
+          "source_line": 87,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:87",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 76, 4);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 7,
+          "stream_op": "read",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x50",
+          "mem_off_int": 80,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ascp",
+            "Nwrr",
+            "PWRP"
+          ],
+          "source_line": 91,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:91",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 80, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 8,
+          "stream_op": "read",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x52",
+          "mem_off_int": 82,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ncrr",
+            "PCRP",
+            "pnrc"
+          ],
+          "source_line": 95,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:95",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 82, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 9,
+          "stream_op": "read",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x54",
+          "mem_off_int": 84,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Nhmr",
+            "PHRP"
+          ],
+          "source_line": 99,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:99",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 84, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 10,
+          "stream_op": "read",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x56",
+          "mem_off_int": 86,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ncra",
+            "PCAB"
+          ],
+          "source_line": 103,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:103",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 86, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 11,
+          "stream_op": "read",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x58",
+          "mem_off_int": 88,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Npta",
+            "PPAB"
+          ],
+          "source_line": 107,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:107",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 88, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 12,
+          "stream_op": "read",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x5a",
+          "mem_off_int": 90,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Pdob"
+          ],
+          "source_line": 111,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:111",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 90, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 13,
+          "stream_op": "read",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x5e",
+          "mem_off_int": 94,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "BPmj",
+            "PCJO"
+          ],
+          "source_line": 115,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:115",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 94, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 14,
+          "stream_op": "read",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x60",
+          "mem_off_int": 96,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "PSJO"
+          ],
+          "source_line": 119,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:119",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 96, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 15,
+          "stream_op": "read",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x62",
+          "mem_off_int": 98,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "PNJO"
+          ],
+          "source_line": 123,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:123",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 98, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 16,
+          "stream_op": "read",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x64",
+          "mem_off_int": 100,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Piap",
+            "pcii"
+          ],
+          "source_line": 127,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:127",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 100, 1);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 17,
+          "stream_op": "read",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x66",
+          "mem_off_int": 102,
+          "version_gate": [
+            "if ( !_bittest(&v18, v16) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 131,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:131",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 102, 1);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 18,
+          "stream_op": "read",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x28",
+          "mem_off_int": 40,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Pnai",
+            "Pnaj"
+          ],
+          "source_line": 143,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:143",
+          "source_expression": "*(_QWORD *)(a1 + 40) = -1;",
+          "offset_access": "deref_cast_before",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 19,
+          "stream_op": "read",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x52",
+          "mem_off_int": 82,
+          "version_gate": [
+            "if ( v15 == 4 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ncrr",
+            "PCRP",
+            "pnrc"
+          ],
+          "source_line": 151,
+          "source": "scratch/t113/out/funcs/140e4fd70.c:151",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 82, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        }
+      ],
+      "slot_va": "0x140e4fd70",
+      "thunk": null,
+      "status": "static steps extracted"
+    },
+    {
+      "class_name": "BASIC_PERSON",
+      "method": "read_from_stream_client",
+      "func_va": "0x143c0c110",
+      "file": "scratch/t113/out/funcs/143c0c110.c",
+      "decompiled": true,
+      "step_count": 4,
+      "steps": [
+        {
+          "step_idx": 0,
+          "stream_op": "read",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x28",
+          "mem_off_int": 40,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Pnai",
+            "Pnaj"
+          ],
+          "source_line": 10,
+          "source": "scratch/t113/out/funcs/143c0c110.c:10",
+          "source_expression": "v9[0] = *(_QWORD *)(a1 + 40);",
+          "offset_access": "deref_cast_before",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 1,
+          "stream_op": "read",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x28",
+          "mem_off_int": 40,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Pnai",
+            "Pnaj"
+          ],
+          "source_line": 12,
+          "source": "scratch/t113/out/funcs/143c0c110.c:12",
+          "source_expression": "*(_QWORD *)(a1 + 40) = v9[0];",
+          "offset_access": "deref_cast_before",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 2,
+          "stream_op": "read",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x30",
+          "mem_off_int": 48,
+          "version_gate": [],
+          "callee_va": "0x140f7ec80",
+          "helper_vas": [
+            "0x140f7ec80"
+          ],
+          "linked_4ccs": [
+            "Pnti"
+          ],
+          "source_line": 13,
+          "source": "scratch/t113/out/funcs/143c0c110.c:13",
+          "source_expression": "sub_140F7EC80(a3, a1 + 48, *(_QWORD *)(a3 + 40), a5, 1, 1);",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 3,
+          "stream_op": "read",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x38",
+          "mem_off_int": 56,
+          "version_gate": [],
+          "callee_va": "0x140f7ec80",
+          "helper_vas": [
+            "0x140f7ec80"
+          ],
+          "linked_4ccs": [],
+          "source_line": 14,
+          "source": "scratch/t113/out/funcs/143c0c110.c:14",
+          "source_expression": "sub_140F7EC80(a3, a1 + 56, *(_QWORD *)(a3 + 40), a5, 1, 1);",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        }
+      ],
+      "slot_va": "0x140e50170",
+      "thunk": "jmp:0x140e50170->0x143c0c110",
+      "status": "static steps extracted"
+    },
+    {
+      "class_name": "BASIC_PERSON",
+      "method": "write_to_stream",
+      "func_va": "0x140e50880",
+      "file": "scratch/t113/out/funcs/140e50880.c",
+      "decompiled": true,
+      "step_count": 28,
+      "steps": [
+        {
+          "step_idx": 0,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x65",
+          "mem_off_int": 101,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ptyp"
+          ],
+          "source_line": 49,
+          "source": "scratch/t113/out/funcs/140e50880.c:49",
+          "source_expression": "v8 = (char *)(a1 + 101);",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 1,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x65",
+          "mem_off_int": 101,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ptyp"
+          ],
+          "source_line": 50,
+          "source": "scratch/t113/out/funcs/140e50880.c:50",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 101, 1);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 2,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x30",
+          "mem_off_int": 48,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Pnti"
+          ],
+          "source_line": 62,
+          "source": "scratch/t113/out/funcs/140e50880.c:62",
+          "source_expression": "v23 = *(_QWORD *)(a1 + 48);",
+          "offset_access": "deref_cast_before",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 3,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x18",
+          "mem_off_int": 24,
+          "version_gate": [
+            "if ( _bittest(&v13, v11) )",
+            "if ( v10 != 4 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 106,
+          "source": "scratch/t113/out/funcs/140e50880.c:106",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 24, 8);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 4,
+          "stream_op": "write_or_helper",
+          "width": 4,
+          "width_expression": null,
+          "mem_off": "0x8",
+          "mem_off_int": 8,
+          "version_gate": [
+            "if ( _bittest(&v13, v11) )",
+            "if ( v10 != 4 )",
+            "if ( *((_DWORD *)v19 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "BOCI"
+          ],
+          "source_line": 110,
+          "source": "scratch/t113/out/funcs/140e50880.c:110",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 8, 4);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 5,
+          "stream_op": "write_or_helper",
+          "width": 4,
+          "width_expression": null,
+          "mem_off": "0xc",
+          "mem_off_int": 12,
+          "version_gate": [
+            "if ( _bittest(&v13, v11) )",
+            "if ( v10 != 4 )",
+            "if ( *((_DWORD *)v19 + 4) == 0 )",
+            "if ( *((_DWORD *)v20 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "duni"
+          ],
+          "source_line": 114,
+          "source": "scratch/t113/out/funcs/140e50880.c:114",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 12, 4);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 6,
+          "stream_op": "write_or_helper",
+          "width": 4,
+          "width_expression": null,
+          "mem_off": "0x10",
+          "mem_off_int": 16,
+          "version_gate": [
+            "if ( _bittest(&v13, v11) )",
+            "if ( v10 != 4 )",
+            "if ( *((_DWORD *)v19 + 4) == 0 )",
+            "if ( *((_DWORD *)v20 + 4) == 0 )",
+            "if ( *((_DWORD *)v8 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 118,
+          "source": "scratch/t113/out/funcs/140e50880.c:118",
+          "source_expression": "v22 = *(_DWORD *)(a1 + 16) != 0 ? a1 + 16 : a1 + 12;",
+          "offset_access": "deref_cast_before",
+          "ctype": "_DWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 7,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x10",
+          "mem_off_int": 16,
+          "version_gate": [
+            "if ( _bittest(&v13, v11) )",
+            "if ( v10 != 4 )",
+            "if ( *((_DWORD *)v19 + 4) == 0 )",
+            "if ( *((_DWORD *)v20 + 4) == 0 )",
+            "if ( *((_DWORD *)v8 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 118,
+          "source": "scratch/t113/out/funcs/140e50880.c:118",
+          "source_expression": "v22 = *(_DWORD *)(a1 + 16) != 0 ? a1 + 16 : a1 + 12;",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 8,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0xc",
+          "mem_off_int": 12,
+          "version_gate": [
+            "if ( _bittest(&v13, v11) )",
+            "if ( v10 != 4 )",
+            "if ( *((_DWORD *)v19 + 4) == 0 )",
+            "if ( *((_DWORD *)v20 + 4) == 0 )",
+            "if ( *((_DWORD *)v8 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "duni"
+          ],
+          "source_line": 118,
+          "source": "scratch/t113/out/funcs/140e50880.c:118",
+          "source_expression": "v22 = *(_DWORD *)(a1 + 16) != 0 ? a1 + 16 : a1 + 12;",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 9,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x52",
+          "mem_off_int": 82,
+          "version_gate": [
+            "if ( _bittest(&v13, v11) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ncrr",
+            "PCRP",
+            "pnrc"
+          ],
+          "source_line": 131,
+          "source": "scratch/t113/out/funcs/140e50880.c:131",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 82, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 10,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x5a",
+          "mem_off_int": 90,
+          "version_gate": [
+            "if ( _bittest(&v13, v11) )",
+            "if ( *((_DWORD *)v14 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Pdob"
+          ],
+          "source_line": 135,
+          "source": "scratch/t113/out/funcs/140e50880.c:135",
+          "source_expression": "v16 = a1 + 90;",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 11,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x20",
+          "mem_off_int": 32,
+          "version_gate": [],
+          "callee_va": "0x140f805c0",
+          "helper_vas": [
+            "0x140f805c0"
+          ],
+          "linked_4ccs": [
+            "BPjo",
+            "Pcti",
+            "Ptaj",
+            "picc",
+            "ptcn",
+            "ptdn"
+          ],
+          "source_line": 144,
+          "source": "scratch/t113/out/funcs/140e50880.c:144",
+          "source_expression": "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 32), 0) != 0 )",
+          "offset_access": "deref_cast_before",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 12,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x28",
+          "mem_off_int": 40,
+          "version_gate": [
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 32), 0) != 0 )"
+          ],
+          "callee_va": "0x140f805c0",
+          "helper_vas": [
+            "0x140f805c0"
+          ],
+          "linked_4ccs": [
+            "Pnai",
+            "Pnaj"
+          ],
+          "source_line": 147,
+          "source": "scratch/t113/out/funcs/140e50880.c:147",
+          "source_expression": "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 40), 0) != 0 )",
+          "offset_access": "deref_cast_before",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 13,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x38",
+          "mem_off_int": 56,
+          "version_gate": [
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 32), 0) != 0 )",
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 40), 0) != 0 )"
+          ],
+          "callee_va": "0x140f805c0",
+          "helper_vas": [
+            "0x140f805c0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 150,
+          "source": "scratch/t113/out/funcs/140e50880.c:150",
+          "source_expression": "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 56), 0) != 0 )",
+          "offset_access": "deref_cast_before",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 14,
+          "stream_op": "write_or_helper",
+          "width": 4,
+          "width_expression": null,
+          "mem_off": "0x48",
+          "mem_off_int": 72,
+          "version_gate": [
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 32), 0) != 0 )",
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 40), 0) != 0 )",
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 56), 0) != 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Pdva"
+          ],
+          "source_line": 153,
+          "source": "scratch/t113/out/funcs/140e50880.c:153",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 72, 4);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 15,
+          "stream_op": "write_or_helper",
+          "width": 4,
+          "width_expression": null,
+          "mem_off": "0x4c",
+          "mem_off_int": 76,
+          "version_gate": [
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 32), 0) != 0 )",
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 40), 0) != 0 )",
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 56), 0) != 0 )",
+            "if ( *((_DWORD *)v30 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Pcww"
+          ],
+          "source_line": 157,
+          "source": "scratch/t113/out/funcs/140e50880.c:157",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 76, 4);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 16,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x50",
+          "mem_off_int": 80,
+          "version_gate": [
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 32), 0) != 0 )",
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 40), 0) != 0 )",
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 56), 0) != 0 )",
+            "if ( *((_DWORD *)v30 + 4) == 0 )",
+            "if ( *((_DWORD *)v31 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ascp",
+            "Nwrr",
+            "PWRP"
+          ],
+          "source_line": 161,
+          "source": "scratch/t113/out/funcs/140e50880.c:161",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 80, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 17,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x52",
+          "mem_off_int": 82,
+          "version_gate": [
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 32), 0) != 0 )",
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 40), 0) != 0 )",
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 56), 0) != 0 )",
+            "if ( *((_DWORD *)v30 + 4) == 0 )",
+            "if ( *((_DWORD *)v31 + 4) == 0 )",
+            "if ( *((_DWORD *)v32 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ncrr",
+            "PCRP",
+            "pnrc"
+          ],
+          "source_line": 165,
+          "source": "scratch/t113/out/funcs/140e50880.c:165",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 82, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 18,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x54",
+          "mem_off_int": 84,
+          "version_gate": [
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 40), 0) != 0 )",
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 56), 0) != 0 )",
+            "if ( *((_DWORD *)v30 + 4) == 0 )",
+            "if ( *((_DWORD *)v31 + 4) == 0 )",
+            "if ( *((_DWORD *)v32 + 4) == 0 )",
+            "if ( *((_DWORD *)v33 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Nhmr",
+            "PHRP"
+          ],
+          "source_line": 169,
+          "source": "scratch/t113/out/funcs/140e50880.c:169",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 84, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 19,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x56",
+          "mem_off_int": 86,
+          "version_gate": [
+            "if ( (unsigned __int8)sub_140F805C0(a2, *(_QWORD *)(a1 + 56), 0) != 0 )",
+            "if ( *((_DWORD *)v30 + 4) == 0 )",
+            "if ( *((_DWORD *)v31 + 4) == 0 )",
+            "if ( *((_DWORD *)v32 + 4) == 0 )",
+            "if ( *((_DWORD *)v33 + 4) == 0 )",
+            "if ( *((_DWORD *)v34 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ncra",
+            "PCAB"
+          ],
+          "source_line": 173,
+          "source": "scratch/t113/out/funcs/140e50880.c:173",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 86, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 20,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x58",
+          "mem_off_int": 88,
+          "version_gate": [
+            "if ( *((_DWORD *)v30 + 4) == 0 )",
+            "if ( *((_DWORD *)v31 + 4) == 0 )",
+            "if ( *((_DWORD *)v32 + 4) == 0 )",
+            "if ( *((_DWORD *)v33 + 4) == 0 )",
+            "if ( *((_DWORD *)v34 + 4) == 0 )",
+            "if ( *((_DWORD *)v35 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Npta",
+            "PPAB"
+          ],
+          "source_line": 177,
+          "source": "scratch/t113/out/funcs/140e50880.c:177",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 88, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 21,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x5a",
+          "mem_off_int": 90,
+          "version_gate": [
+            "if ( *((_DWORD *)v31 + 4) == 0 )",
+            "if ( *((_DWORD *)v32 + 4) == 0 )",
+            "if ( *((_DWORD *)v33 + 4) == 0 )",
+            "if ( *((_DWORD *)v34 + 4) == 0 )",
+            "if ( *((_DWORD *)v35 + 4) == 0 )",
+            "if ( *((_DWORD *)v36 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Pdob"
+          ],
+          "source_line": 181,
+          "source": "scratch/t113/out/funcs/140e50880.c:181",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 90, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 22,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x5e",
+          "mem_off_int": 94,
+          "version_gate": [
+            "if ( *((_DWORD *)v32 + 4) == 0 )",
+            "if ( *((_DWORD *)v33 + 4) == 0 )",
+            "if ( *((_DWORD *)v34 + 4) == 0 )",
+            "if ( *((_DWORD *)v35 + 4) == 0 )",
+            "if ( *((_DWORD *)v36 + 4) == 0 )",
+            "if ( *((_DWORD *)v37 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "BPmj",
+            "PCJO"
+          ],
+          "source_line": 185,
+          "source": "scratch/t113/out/funcs/140e50880.c:185",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 94, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 23,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x60",
+          "mem_off_int": 96,
+          "version_gate": [
+            "if ( *((_DWORD *)v33 + 4) == 0 )",
+            "if ( *((_DWORD *)v34 + 4) == 0 )",
+            "if ( *((_DWORD *)v35 + 4) == 0 )",
+            "if ( *((_DWORD *)v36 + 4) == 0 )",
+            "if ( *((_DWORD *)v37 + 4) == 0 )",
+            "if ( *((_DWORD *)v38 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "PSJO"
+          ],
+          "source_line": 189,
+          "source": "scratch/t113/out/funcs/140e50880.c:189",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 96, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 24,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x62",
+          "mem_off_int": 98,
+          "version_gate": [
+            "if ( *((_DWORD *)v34 + 4) == 0 )",
+            "if ( *((_DWORD *)v35 + 4) == 0 )",
+            "if ( *((_DWORD *)v36 + 4) == 0 )",
+            "if ( *((_DWORD *)v37 + 4) == 0 )",
+            "if ( *((_DWORD *)v38 + 4) == 0 )",
+            "if ( *((_DWORD *)v39 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "PNJO"
+          ],
+          "source_line": 193,
+          "source": "scratch/t113/out/funcs/140e50880.c:193",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 98, 2);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 25,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x64",
+          "mem_off_int": 100,
+          "version_gate": [
+            "if ( *((_DWORD *)v35 + 4) == 0 )",
+            "if ( *((_DWORD *)v36 + 4) == 0 )",
+            "if ( *((_DWORD *)v37 + 4) == 0 )",
+            "if ( *((_DWORD *)v38 + 4) == 0 )",
+            "if ( *((_DWORD *)v39 + 4) == 0 )",
+            "if ( *((_DWORD *)v40 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Piap",
+            "pcii"
+          ],
+          "source_line": 197,
+          "source": "scratch/t113/out/funcs/140e50880.c:197",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 100, 1);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 26,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x66",
+          "mem_off_int": 102,
+          "version_gate": [
+            "if ( *((_DWORD *)v36 + 4) == 0 )",
+            "if ( *((_DWORD *)v37 + 4) == 0 )",
+            "if ( *((_DWORD *)v38 + 4) == 0 )",
+            "if ( *((_DWORD *)v39 + 4) == 0 )",
+            "if ( *((_DWORD *)v40 + 4) == 0 )",
+            "if ( *((_DWORD *)v41 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 201,
+          "source": "scratch/t113/out/funcs/140e50880.c:201",
+          "source_expression": "(*(void (__fastcall **)(__int64 *, __int64, __int64))(**a2 + 40))(*a2, a1 + 102, 1);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 27,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x68",
+          "mem_off_int": 104,
+          "version_gate": [
+            "if ( *((_DWORD *)v37 + 4) == 0 )",
+            "if ( *((_DWORD *)v38 + 4) == 0 )",
+            "if ( *((_DWORD *)v39 + 4) == 0 )",
+            "if ( *((_DWORD *)v40 + 4) == 0 )",
+            "if ( *((_DWORD *)v41 + 4) == 0 )",
+            "if ( *((_DWORD *)v42 + 4) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "PLag"
+          ],
+          "source_line": 205,
+          "source": "scratch/t113/out/funcs/140e50880.c:205",
+          "source_expression": "v16 = a1 + 104;",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        }
+      ],
+      "slot_va": "0x140e50880",
+      "thunk": null,
+      "status": "static steps extracted"
+    },
+    {
+      "class_name": "CONTRACT",
+      "method": "read_from_stream_server",
+      "slot_va": null,
+      "func_va": null,
+      "decompiled": false,
+      "status": "no function VA in vtable snapshot",
+      "steps": []
+    },
+    {
+      "class_name": "CONTRACT",
+      "method": "read_from_stream_client",
+      "slot_va": null,
+      "func_va": null,
+      "decompiled": false,
+      "status": "no function VA in vtable snapshot",
+      "steps": []
+    },
+    {
+      "class_name": "CONTRACT",
+      "method": "write_to_stream",
+      "func_va": "0x140ee0800",
+      "file": "scratch/t113/out/funcs/140ee0800.c",
+      "decompiled": true,
+      "step_count": 64,
+      "steps": [
+        {
+          "step_idx": 0,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x1c",
+          "mem_off_int": 28,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 219,
+          "source": "scratch/t113/out/funcs/140ee0800.c:219",
+          "source_expression": "*((_BYTE *)a1 + 28) = a5;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_BYTE",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 1,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x10",
+          "mem_off_int": 16,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ccsc",
+            "Clme",
+            "Clmf",
+            "Clmt",
+            "WpCw"
+          ],
+          "source_line": 221,
+          "source": "scratch/t113/out/funcs/140ee0800.c:221",
+          "source_expression": "v14 = *((_QWORD *)a1 + 2);",
+          "offset_access": "deref_cast_after",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 2,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x8",
+          "mem_off_int": 8,
+          "version_gate": [
+            "if ( v14 == 0 )",
+            "if ( v21 == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "CGpm",
+            "Chwp",
+            "Clbn",
+            "Cloa",
+            "Crlb",
+            "Cvmr",
+            "Cwpp",
+            "mlCT",
+            "ydpc"
+          ],
+          "source_line": 246,
+          "source": "scratch/t113/out/funcs/140ee0800.c:246",
+          "source_expression": "*((_QWORD *)a1 + 1) = v22;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 3,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x8",
+          "mem_off_int": 8,
+          "version_gate": [
+            "if ( v14 == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "CGpm",
+            "Chwp",
+            "Clbn",
+            "Cloa",
+            "Crlb",
+            "Cvmr",
+            "Cwpp",
+            "mlCT",
+            "ydpc"
+          ],
+          "source_line": 253,
+          "source": "scratch/t113/out/funcs/140ee0800.c:253",
+          "source_expression": "*((_QWORD *)a1 + 1) = *(int *)(*(_QWORD *)(a2 + 8) + 4LL) + a2 + 8;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 4,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x10",
+          "mem_off_int": 16,
+          "version_gate": [
+            "if ( v14 == 0 )",
+            "if ( v14 != 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ccsc",
+            "Clme",
+            "Clmf",
+            "Clmt",
+            "WpCw"
+          ],
+          "source_line": 256,
+          "source": "scratch/t113/out/funcs/140ee0800.c:256",
+          "source_expression": "if ( *((_QWORD *)a1 + 2) == 0 )",
+          "offset_access": "deref_cast_after",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 5,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x10",
+          "mem_off_int": 16,
+          "version_gate": [
+            "if ( v14 == 0 )",
+            "if ( v14 != 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ccsc",
+            "Clme",
+            "Clmf",
+            "Clmt",
+            "WpCw"
+          ],
+          "source_line": 257,
+          "source": "scratch/t113/out/funcs/140ee0800.c:257",
+          "source_expression": "*((_QWORD *)a1 + 2) = v14;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 6,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x8",
+          "mem_off_int": 8,
+          "version_gate": [
+            "if ( a2 != 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "CGpm",
+            "Chwp",
+            "Clbn",
+            "Cloa",
+            "Crlb",
+            "Cvmr",
+            "Cwpp",
+            "mlCT",
+            "ydpc"
+          ],
+          "source_line": 268,
+          "source": "scratch/t113/out/funcs/140ee0800.c:268",
+          "source_expression": "*((_QWORD *)a1 + 1) = *(int *)(*(_QWORD *)(a2 + 8) + 4LL) + a2 + 8;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 7,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x8",
+          "mem_off_int": 8,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "CGpm",
+            "Chwp",
+            "Clbn",
+            "Cloa",
+            "Crlb",
+            "Cvmr",
+            "Cwpp",
+            "mlCT",
+            "ydpc"
+          ],
+          "source_line": 273,
+          "source": "scratch/t113/out/funcs/140ee0800.c:273",
+          "source_expression": "*((_QWORD *)a1 + 1) = 0;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 8,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x10",
+          "mem_off_int": 16,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ccsc",
+            "Clme",
+            "Clmf",
+            "Clmt",
+            "WpCw"
+          ],
+          "source_line": 284,
+          "source": "scratch/t113/out/funcs/140ee0800.c:284",
+          "source_expression": "v23 = *((_QWORD *)a1 + 2);",
+          "offset_access": "deref_cast_after",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 9,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x10",
+          "mem_off_int": 16,
+          "version_gate": [
+            "if ( v32 == 6 )",
+            "if ( (_BYTE)v24 != 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ccsc",
+            "Clme",
+            "Clmf",
+            "Clmt",
+            "WpCw"
+          ],
+          "source_line": 357,
+          "source": "scratch/t113/out/funcs/140ee0800.c:357",
+          "source_expression": "v36 = *((_QWORD *)a1 + 2);",
+          "offset_access": "deref_cast_after",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 10,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( v32 == 6 )",
+            "if ( (_BYTE)v24 != 0 )"
+          ],
+          "callee_va": "0x14151e1d0",
+          "helper_vas": [
+            "0x14151e1d0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 360,
+          "source": "scratch/t113/out/funcs/140ee0800.c:360",
+          "source_expression": "v38 = (unsigned __int8 *)(v35 + (unsigned int)sub_14151E1D0(v37, v36) + 231);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 11,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x3c",
+          "mem_off_int": 60,
+          "version_gate": [
+            "if ( v31 != 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 375,
+          "source": "scratch/t113/out/funcs/140ee0800.c:375",
+          "source_expression": "v43 = a1[15];",
+          "offset_access": "subscript",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 12,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (_BYTE)v24 != 0 )"
+          ],
+          "callee_va": "0x1408b4cb0",
+          "helper_vas": [
+            "0x1408b4cb0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 409,
+          "source": "scratch/t113/out/funcs/140ee0800.c:409",
+          "source_expression": "v52 = sub_1408B4CB0(qword_141B5AD60, *(_QWORD *)(v49 + 368), *(unsigned __int8 *)(v49 + 185));",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 13,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (_BYTE)v24 != 0 )",
+            "if ( v52 != 0 )"
+          ],
+          "callee_va": "0x140d8bf00",
+          "helper_vas": [
+            "0x140d8bf00"
+          ],
+          "linked_4ccs": [],
+          "source_line": 412,
+          "source": "scratch/t113/out/funcs/140ee0800.c:412",
+          "source_expression": "v53 = sub_140D8BF00(v52, v47, v50, v46, 0);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 14,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x18",
+          "mem_off_int": 24,
+          "version_gate": [
+            "if ( v27 != 0 )",
+            "if ( (*(int (__fastcall **)(_DWORD *))(*(_QWORD *)a1 + 64LL))(a1) < v51 )",
+            "if ( ((v54 < 2) | (unsigned __int8)v215 ^ 1) == 0 )",
+            "if ( v55 <= 0x14 )",
+            "if ( _bittest(&v56, v55) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 453,
+          "source": "scratch/t113/out/funcs/140ee0800.c:453",
+          "source_expression": "a1[6] = 0;",
+          "offset_access": "subscript",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 15,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( v27 != 0 )",
+            "if ( (_BYTE)v50 != 0 && v210 == 0 )"
+          ],
+          "callee_va": "0x1408b4cb0",
+          "helper_vas": [
+            "0x1408b4cb0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 460,
+          "source": "scratch/t113/out/funcs/140ee0800.c:460",
+          "source_expression": "v57 = sub_1408B4CB0(qword_141B5AD60, *(_QWORD *)(v49 + 368), *(unsigned __int8 *)(v49 + 185));",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 16,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( v27 != 0 )",
+            "if ( (_BYTE)v50 != 0 && v210 == 0 )",
+            "if ( (*(int (__fastcall **)(_DWORD *))(*(_QWORD *)a1 + 64LL))(a1) <= 0 && *(__int16 *)(v27 + 512) <= 89 )"
+          ],
+          "callee_va": "0x1408b4cb0",
+          "helper_vas": [
+            "0x1408b4cb0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 465,
+          "source": "scratch/t113/out/funcs/140ee0800.c:465",
+          "source_expression": "v59 = sub_1408B4CB0(qword_141B5AD60, *(_QWORD *)(v49 + 368), *(unsigned __int8 *)(v49 + 185));",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 17,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( v27 != 0 )",
+            "if ( (_BYTE)v50 != 0 && v210 == 0 )",
+            "if ( (*(int (__fastcall **)(_DWORD *))(*(_QWORD *)a1 + 64LL))(a1) <= 0 && *(__int16 *)(v27 + 512) <= 89 )",
+            "if ( (char)v46 < v58 && (char)v46 < v64 )",
+            "if ( (*(unsigned __int8 (__fastcall **)(_DWORD *))(*(_QWORD *)a1 + 208LL))(a1) != 1 )",
+            "if ( (*(unsigned __int8 (__fastcall **)(_DWORD *))(*(_QWORD *)a1 + 208LL))(a1) != 0 )"
+          ],
+          "callee_va": "0x14106ef90",
+          "helper_vas": [
+            "0x14106ef90"
+          ],
+          "linked_4ccs": [],
+          "source_line": 501,
+          "source": "scratch/t113/out/funcs/140ee0800.c:501",
+          "source_expression": "v65 = sub_14106EF90(v49, v47, v27, v46);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 18,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( v27 != 0 )",
+            "if ( (_BYTE)v50 != 0 && v210 == 0 )",
+            "if ( (*(int (__fastcall **)(_DWORD *))(*(_QWORD *)a1 + 64LL))(a1) <= 0 && *(__int16 *)(v27 + 512) <= 89 )",
+            "if ( (char)v46 < v58 && (char)v46 < v64 )",
+            "if ( (*(unsigned __int8 (__fastcall **)(_DWORD *))(*(_QWORD *)a1 + 208LL))(a1) != 1 )"
+          ],
+          "callee_va": "0x14106f930",
+          "helper_vas": [
+            "0x14106f930"
+          ],
+          "linked_4ccs": [],
+          "source_line": 509,
+          "source": "scratch/t113/out/funcs/140ee0800.c:509",
+          "source_expression": "v65 = sub_14106F930(v49, v47, v46, v69, 0);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 19,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x18",
+          "mem_off_int": 24,
+          "version_gate": [
+            "if ( v27 != 0 )",
+            "if ( (_BYTE)v50 != 0 && v210 == 0 )",
+            "if ( (*(int (__fastcall **)(_DWORD *))(*(_QWORD *)a1 + 64LL))(a1) <= 0 && *(__int16 *)(v27 + 512) <= 89 )",
+            "if ( (char)v46 < v58 && (char)v46 < v64 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 513,
+          "source": "scratch/t113/out/funcs/140ee0800.c:513",
+          "source_expression": "a1[6] = v51;",
+          "offset_access": "subscript",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 20,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x18",
+          "mem_off_int": 24,
+          "version_gate": [
+            "if ( v27 != 0 )",
+            "if ( (_BYTE)v50 != 0 && v210 == 0 )"
+          ],
+          "callee_va": "0x14106ef90",
+          "helper_vas": [
+            "0x14106ef90"
+          ],
+          "linked_4ccs": [],
+          "source_line": 517,
+          "source": "scratch/t113/out/funcs/140ee0800.c:517",
+          "source_expression": "a1[6] = sub_14106EF90(v49, v47, v27, v46);",
+          "offset_access": "subscript",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 21,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x10",
+          "mem_off_int": 16,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ccsc",
+            "Clme",
+            "Clmf",
+            "Clmt",
+            "WpCw"
+          ],
+          "source_line": 554,
+          "source": "scratch/t113/out/funcs/140ee0800.c:554",
+          "source_expression": "if ( v66 && *(_BYTE *)(*(_QWORD *)(*((_QWORD *)a1 + 2) + 48LL) + 186LL) == 1 )",
+          "offset_access": "deref_cast_after",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 22,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( v66 && *(_BYTE *)(*(_QWORD *)(*((_QWORD *)a1 + 2) + 48LL) + 186LL) == 1 )",
+            "if ( v77 != 0 )",
+            "if ( (_BYTE)v216 != 0 )"
+          ],
+          "callee_va": "0x141034d20",
+          "helper_vas": [
+            "0x141034d20"
+          ],
+          "linked_4ccs": [],
+          "source_line": 574,
+          "source": "scratch/t113/out/funcs/140ee0800.c:574",
+          "source_expression": "if ( (unsigned __int8)sub_141034D20(a5, a6, v80) != 0 )",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 23,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x10",
+          "mem_off_int": 16,
+          "version_gate": [
+            "if ( v66 && *(_BYTE *)(*(_QWORD *)(*((_QWORD *)a1 + 2) + 48LL) + 186LL) == 1 )",
+            "if ( v77 != 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ccsc",
+            "Clme",
+            "Clmf",
+            "Clmt",
+            "WpCw"
+          ],
+          "source_line": 588,
+          "source": "scratch/t113/out/funcs/140ee0800.c:588",
+          "source_expression": "v98 = *((_QWORD *)a1 + 2);",
+          "offset_access": "deref_cast_after",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 24,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( v66 && *(_BYTE *)(*(_QWORD *)(*((_QWORD *)a1 + 2) + 48LL) + 186LL) == 1 )",
+            "if ( v77 != 0 )",
+            "if ( v98 != 0 )",
+            "if ( (_BYTE)v211 != 0 )"
+          ],
+          "callee_va": "0x140ee1f50",
+          "helper_vas": [
+            "0x140ee1f50"
+          ],
+          "linked_4ccs": [],
+          "source_line": 597,
+          "source": "scratch/t113/out/funcs/140ee0800.c:597",
+          "source_expression": "v95 = sub_140EE1F50((_DWORD)a1, v100, v99, a7, 0, v84, v214, 0, 1, (__int64)&v205, 0, 0, 0, 4, 0);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 25,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( v209 != 0 && v72 )",
+            "if ( ((((v85 - 2) & 0xFFFFFFFD) != 0 && v213 != 0) & (unsigned __int8)v218) == 1 && *(_QWORD *)(v49 + 1088) != 0 )"
+          ],
+          "callee_va": "0x1414954a0",
+          "helper_vas": [
+            "0x1414954a0"
+          ],
+          "linked_4ccs": [],
+          "source_line": 643,
+          "source": "scratch/t113/out/funcs/140ee0800.c:643",
+          "source_expression": "sub_1414954A0(v213, 0, v186, v47, v86, *(_WORD *)(v86 + 508), v185, v78, v183, v89);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 26,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x10",
+          "mem_off_int": 16,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ccsc",
+            "Clme",
+            "Clmf",
+            "Clmt",
+            "WpCw"
+          ],
+          "source_line": 648,
+          "source": "scratch/t113/out/funcs/140ee0800.c:648",
+          "source_expression": "v90 = *((_QWORD *)a1 + 2);",
+          "offset_access": "deref_cast_after",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 27,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [],
+          "callee_va": "0x140ee1f50",
+          "helper_vas": [
+            "0x140ee1f50"
+          ],
+          "linked_4ccs": [],
+          "source_line": 657,
+          "source": "scratch/t113/out/funcs/140ee0800.c:657",
+          "source_expression": "v67 = sub_140EE1F50((_DWORD)a1, v92, v91, a7, 0, a5, v214, 0, v72, (__int64)&v205, 0, 0, 0, 4, 0);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 28,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x18",
+          "mem_off_int": 24,
+          "version_gate": [
+            "if ( v94 >= 0x64 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 674,
+          "source": "scratch/t113/out/funcs/140ee0800.c:674",
+          "source_expression": "a1[6] = 0;",
+          "offset_access": "subscript",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 29,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x10",
+          "mem_off_int": 16,
+          "version_gate": [
+            "if ( v94 >= 0x64 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ccsc",
+            "Clme",
+            "Clmf",
+            "Clmt",
+            "WpCw"
+          ],
+          "source_line": 678,
+          "source": "scratch/t113/out/funcs/140ee0800.c:678",
+          "source_expression": "v101 = *((_QWORD *)a1 + 2);",
+          "offset_access": "deref_cast_after",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 30,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( v94 >= 0x64 )"
+          ],
+          "callee_va": "0x140ddc300",
+          "helper_vas": [
+            "0x140ddc300"
+          ],
+          "linked_4ccs": [],
+          "source_line": 706,
+          "source": "scratch/t113/out/funcs/140ee0800.c:706",
+          "source_expression": "v107 = sub_140DDC300(a2 + 336);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 31,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( ((v27 == 0) | (unsigned __int8)v216 ^ 1) == 0 && *(_QWORD *)(v214 + 48) != 0 )"
+          ],
+          "callee_va": "0x1409a3c20",
+          "helper_vas": [
+            "0x1409a3c20"
+          ],
+          "linked_4ccs": [],
+          "source_line": 745,
+          "source": "scratch/t113/out/funcs/140ee0800.c:745",
+          "source_expression": "if ( v110 != 0 && *(_QWORD *)(v110 + 176) != 0 && sub_1409A3C20() > 0.0 )",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 32,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( ((v27 == 0) | (unsigned __int8)v216 ^ 1) == 0 && *(_QWORD *)(v214 + 48) != 0 )",
+            "if ( v110 != 0 && *(_QWORD *)(v110 + 176) != 0 && sub_1409A3C20() > 0.0 )"
+          ],
+          "callee_va": "0x140ebdd70",
+          "helper_vas": [
+            "0x140ebdd70"
+          ],
+          "linked_4ccs": [],
+          "source_line": 757,
+          "source": "scratch/t113/out/funcs/140ee0800.c:757",
+          "source_expression": "sub_140EBDD70(v110, v112, v113, v111, v209, 1, v78);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 33,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x18",
+          "mem_off_int": 24,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 769,
+          "source": "scratch/t113/out/funcs/140ee0800.c:769",
+          "source_expression": "a1[6] = v67;",
+          "offset_access": "subscript",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 34,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( v68 != 0 )",
+            "if ( v213 != 0 && v116 > 0 )"
+          ],
+          "callee_va": "0x141491280",
+          "helper_vas": [
+            "0x141491280"
+          ],
+          "linked_4ccs": [],
+          "source_line": 779,
+          "source": "scratch/t113/out/funcs/140ee0800.c:779",
+          "source_expression": "v120 = sub_141491280(v213, v46, v118, v119, v117, 0);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 35,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x18",
+          "mem_off_int": 24,
+          "version_gate": [
+            "if ( v68 != 0 )",
+            "if ( v213 != 0 && v116 > 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 781,
+          "source": "scratch/t113/out/funcs/140ee0800.c:781",
+          "source_expression": "a1[6] = v120;",
+          "offset_access": "subscript",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 36,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x4f",
+          "mem_off_int": 79,
+          "version_gate": [
+            "if ( a8 != 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 786,
+          "source": "scratch/t113/out/funcs/140ee0800.c:786",
+          "source_expression": "*((_BYTE *)a1 + 79) = 0;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_BYTE",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 37,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x3e",
+          "mem_off_int": 62,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 789,
+          "source": "scratch/t113/out/funcs/140ee0800.c:789",
+          "source_expression": "v121 = *((unsigned __int16 *)a1 + 31);",
+          "offset_access": "deref_cast_after",
+          "ctype": "unsigned __int16",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 38,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x3c",
+          "mem_off_int": 60,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 790,
+          "source": "scratch/t113/out/funcs/140ee0800.c:790",
+          "source_expression": "v122 = a1[15] & 0x1FF;",
+          "offset_access": "subscript",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 39,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( (_DWORD)v121 == 1900 && v122 == 1 || (LOBYTE(v114) = v115 & v114, (_BYTE)v114 != 0) )",
+            "if ( v206 != 0 )",
+            "if ( (*(_BYTE *)(*(int *)(*(_QWORD *)(a2 + 8) + 4LL) + a2 + 32) & 8) != 0 )"
+          ],
+          "callee_va": "0x140087040",
+          "helper_vas": [
+            "0x140087040"
+          ],
+          "linked_4ccs": [],
+          "source_line": 799,
+          "source": "scratch/t113/out/funcs/140ee0800.c:799",
+          "source_expression": "if ( (unsigned __int8)sub_140087040(v121, v114, v115) != 0 )",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 40,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x3e",
+          "mem_off_int": 62,
+          "version_gate": [
+            "if ( v124 != 0 && *(_DWORD *)(v124 + 12) == 765 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 847,
+          "source": "scratch/t113/out/funcs/140ee0800.c:847",
+          "source_expression": "v129 = *((_WORD *)a1 + 31);",
+          "offset_access": "deref_cast_after",
+          "ctype": "_WORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 41,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x3c",
+          "mem_off_int": 60,
+          "version_gate": [
+            "if ( v124 != 0 && *(_DWORD *)(v124 + 12) == 765 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 849,
+          "source": "scratch/t113/out/funcs/140ee0800.c:849",
+          "source_expression": "if ( (a1[15] & 0x1FF ^ 1 | v129 ^ 0x76C) == 0",
+          "offset_access": "subscript",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 42,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x3c",
+          "mem_off_int": 60,
+          "version_gate": [
+            "if ( v124 != 0 && *(_DWORD *)(v124 + 12) == 765 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 851,
+          "source": "scratch/t113/out/funcs/140ee0800.c:851",
+          "source_expression": "|| v129 <= v130 && (unsigned __int16)(a1[15] & 0x1FF) <= (unsigned __int16)(v125 + 1) )",
+          "offset_access": "subscript",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 43,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x4f",
+          "mem_off_int": 79,
+          "version_gate": [
+            "if ( v124 != 0 && *(_DWORD *)(v124 + 12) == 765 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 854,
+          "source": "scratch/t113/out/funcs/140ee0800.c:854",
+          "source_expression": "*((_BYTE *)a1 + 79) = 0;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_BYTE",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 44,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x3c",
+          "mem_off_int": 60,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 894,
+          "source": "scratch/t113/out/funcs/140ee0800.c:894",
+          "source_expression": "v141 = a1[15] & 0x1FF;",
+          "offset_access": "subscript",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 45,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x3e",
+          "mem_off_int": 62,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 896,
+          "source": "scratch/t113/out/funcs/140ee0800.c:896",
+          "source_expression": "v143 = *((_WORD *)a1 + 31);",
+          "offset_access": "deref_cast_after",
+          "ctype": "_WORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 46,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x3e",
+          "mem_off_int": 62,
+          "version_gate": [
+            "if ( HIWORD(v205) <= v143 && (HIWORD(v205) < v143 || (unsigned __int16)v140 < (unsigned __int16)v141) )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 901,
+          "source": "scratch/t113/out/funcs/140ee0800.c:901",
+          "source_expression": "v145 = *((_WORD *)a1 + 31);",
+          "offset_access": "deref_cast_after",
+          "ctype": "_WORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 47,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x3e",
+          "mem_off_int": 62,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 906,
+          "source": "scratch/t113/out/funcs/140ee0800.c:906",
+          "source_expression": "v142 = *((_WORD *)a1 + 31);",
+          "offset_access": "deref_cast_after",
+          "ctype": "_WORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 48,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x3e",
+          "mem_off_int": 62,
+          "version_gate": [
+            "if ( v144 * (v145 - v142) + v140 - v141 > v135 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 996,
+          "source": "scratch/t113/out/funcs/140ee0800.c:996",
+          "source_expression": "if ( *((_WORD *)a1 + 31) < v162",
+          "offset_access": "deref_cast_after",
+          "ctype": "_WORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 49,
+          "stream_op": "write_or_helper",
+          "width": 2,
+          "width_expression": null,
+          "mem_off": "0x3e",
+          "mem_off_int": 62,
+          "version_gate": [
+            "if ( v144 * (v145 - v142) + v140 - v141 > v135 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 997,
+          "source": "scratch/t113/out/funcs/140ee0800.c:997",
+          "source_expression": "|| *((_WORD *)a1 + 31) <= v162 && (unsigned __int16)(a1[15] & 0x1FF) < (unsigned __int16)(*v161 & 0x1FF) )",
+          "offset_access": "deref_cast_after",
+          "ctype": "_WORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 50,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x3c",
+          "mem_off_int": 60,
+          "version_gate": [
+            "if ( v144 * (v145 - v142) + v140 - v141 > v135 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 997,
+          "source": "scratch/t113/out/funcs/140ee0800.c:997",
+          "source_expression": "|| *((_WORD *)a1 + 31) <= v162 && (unsigned __int16)(a1[15] & 0x1FF) < (unsigned __int16)(*v161 & 0x1FF) )",
+          "offset_access": "subscript",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 51,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x4f",
+          "mem_off_int": 79,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 1002,
+          "source": "scratch/t113/out/funcs/140ee0800.c:1002",
+          "source_expression": "*((_BYTE *)a1 + 79) = 0;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_BYTE",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 52,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( v202 != 0 )",
+            "if ( v67 >= 7500 )",
+            "if ( (_BYTE)v211 != 0 )"
+          ],
+          "callee_va": "0x1410f1110",
+          "helper_vas": [
+            "0x1410f1110"
+          ],
+          "linked_4ccs": [],
+          "source_line": 1136,
+          "source": "scratch/t113/out/funcs/140ee0800.c:1136",
+          "source_expression": "v195 = sub_1410F1110(v167, v192, v191);",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 53,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x4c",
+          "mem_off_int": 76,
+          "version_gate": [
+            "if ( v202 != 0 )",
+            "if ( v67 >= 7500 )",
+            "if ( (_BYTE)v211 != 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 1137,
+          "source": "scratch/t113/out/funcs/140ee0800.c:1137",
+          "source_expression": "if ( *((_BYTE *)a1 + 76) != v195 )",
+          "offset_access": "deref_cast_after",
+          "ctype": "_BYTE",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 54,
+          "stream_op": "helper_call",
+          "width": null,
+          "mem_off": null,
+          "version_gate": [
+            "if ( v202 != 0 )",
+            "if ( v67 >= 7500 )",
+            "if ( (_BYTE)v211 != 0 )",
+            "if ( *((_BYTE *)a1 + 76) != v195 )"
+          ],
+          "callee_va": "0x140087040",
+          "helper_vas": [
+            "0x140087040"
+          ],
+          "linked_4ccs": [],
+          "source_line": 1139,
+          "source": "scratch/t113/out/funcs/140ee0800.c:1139",
+          "source_expression": "if ( (unsigned __int8)sub_140087040(v194, v193, v196) != 0 )",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 55,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x4c",
+          "mem_off_int": 76,
+          "version_gate": [
+            "if ( v202 != 0 )",
+            "if ( v67 >= 7500 )",
+            "if ( (_BYTE)v211 != 0 )",
+            "if ( *((_BYTE *)a1 + 76) != v195 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 1141,
+          "source": "scratch/t113/out/funcs/140ee0800.c:1141",
+          "source_expression": "if ( *((_BYTE *)a1 + 76) > v195 )",
+          "offset_access": "deref_cast_after",
+          "ctype": "_BYTE",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 56,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x54",
+          "mem_off_int": 84,
+          "version_gate": [
+            "if ( v202 != 0 )",
+            "if ( v67 >= 7500 )",
+            "if ( (_BYTE)v211 != 0 )",
+            "if ( *((_BYTE *)a1 + 76) != v195 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 1142,
+          "source": "scratch/t113/out/funcs/140ee0800.c:1142",
+          "source_expression": "*((_BYTE *)a1 + 84) = 20;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_BYTE",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 57,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x4c",
+          "mem_off_int": 76,
+          "version_gate": [
+            "if ( v202 != 0 )",
+            "if ( v67 >= 7500 )",
+            "if ( (_BYTE)v211 != 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 1144,
+          "source": "scratch/t113/out/funcs/140ee0800.c:1144",
+          "source_expression": "*((_BYTE *)a1 + 76) = v195;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_BYTE",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 58,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x4e",
+          "mem_off_int": 78,
+          "version_gate": [
+            "if ( v202 != 0 )",
+            "if ( v67 >= 7500 )",
+            "if ( (_BYTE)v211 != 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 1145,
+          "source": "scratch/t113/out/funcs/140ee0800.c:1145",
+          "source_expression": "*((_BYTE *)a1 + 78) = v195;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_BYTE",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 59,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x56",
+          "mem_off_int": 86,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Ctoo"
+          ],
+          "source_line": 1162,
+          "source": "scratch/t113/out/funcs/140ee0800.c:1162",
+          "source_expression": "*((_BYTE *)a1 + 86) = 0;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_BYTE",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 60,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x20",
+          "mem_off_int": 32,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "Circ"
+          ],
+          "source_line": 1163,
+          "source": "scratch/t113/out/funcs/140ee0800.c:1163",
+          "source_expression": "*((_QWORD *)a1 + 4) = 0;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_QWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 61,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x53",
+          "mem_off_int": 83,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 1172,
+          "source": "scratch/t113/out/funcs/140ee0800.c:1172",
+          "source_expression": "*((_BYTE *)a1 + 83) = v199 + ((unsigned __int16)(v198 - v199 + ((unsigned __int16)(v198 - v199) >> 15)) >> 1);",
+          "offset_access": "deref_cast_after",
+          "ctype": "_BYTE",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 62,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x52",
+          "mem_off_int": 82,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 1173,
+          "source": "scratch/t113/out/funcs/140ee0800.c:1173",
+          "source_expression": "*((_BYTE *)a1 + 82) = *(_BYTE *)(a2 + 84) + *(_BYTE *)(a2 + 82) - *(_BYTE *)(a2 + 81) + 10;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_BYTE",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 63,
+          "stream_op": "write_or_helper",
+          "width": 1,
+          "width_expression": null,
+          "mem_off": "0x52",
+          "mem_off_int": 82,
+          "version_gate": [
+            "if ( result <= 0x14u )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 1178,
+          "source": "scratch/t113/out/funcs/140ee0800.c:1178",
+          "source_expression": "*((_BYTE *)a1 + 82) += result;",
+          "offset_access": "deref_cast_after",
+          "ctype": "_BYTE",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        }
+      ],
+      "slot_va": "0x140ee0800",
+      "thunk": null,
+      "status": "static steps extracted"
+    },
+    {
+      "class_name": "PERSON",
+      "method": "read_from_stream_server",
+      "func_va": "0x143f2b820",
+      "file": "scratch/t113/out/funcs/143f2b820.c",
+      "decompiled": true,
+      "step_count": 2,
+      "steps": [
+        {
+          "step_idx": 0,
+          "stream_op": "read",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x18",
+          "mem_off_int": 24,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "PCDB",
+            "PCcj",
+            "PCij",
+            "PScj",
+            "PcJj",
+            "Pcbi",
+            "PcjN",
+            "Pcob",
+            "Pfke",
+            "Pfrg",
+            "Pife",
+            "PkHs",
+            "Ppfj",
+            "Preg",
+            "Prtg",
+            "Pslr",
+            "deit",
+            "dept"
+          ],
+          "source_line": 21,
+          "source": "scratch/t113/out/funcs/143f2b820.c:21",
+          "source_expression": "(*(void (__fastcall **)(volatile signed __int32 *, __int64, __int64))(*(_QWORD *)v11 + 40LL))(v11, a1 + 24, 8);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 1,
+          "stream_op": "read",
+          "width": 12,
+          "width_expression": null,
+          "mem_off": "0x8",
+          "mem_off_int": 8,
+          "version_gate": [
+            "if ( v13 == 0 )",
+            "if ( *a2 != nullptr )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "PFxP"
+          ],
+          "source_line": 30,
+          "source": "scratch/t113/out/funcs/143f2b820.c:30",
+          "source_expression": "(*(void (__fastcall **)(volatile signed __int32 *, __int64, __int64))(*(_QWORD *)v15 + 40LL))(v15, a1 + 8, 12);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        }
+      ],
+      "slot_va": "0x141084540",
+      "thunk": "jmp:0x141084540->0x143f2b820",
+      "status": "static steps extracted"
+    },
+    {
+      "class_name": "PERSON",
+      "method": "read_from_stream_client",
+      "slot_va": null,
+      "func_va": null,
+      "decompiled": false,
+      "status": "no function VA in vtable snapshot",
+      "steps": []
+    },
+    {
+      "class_name": "PERSON",
+      "method": "write_to_stream",
+      "func_va": "0x143f2bc10",
+      "file": "scratch/t113/out/funcs/143f2bc10.c",
+      "decompiled": true,
+      "step_count": 6,
+      "steps": [
+        {
+          "step_idx": 0,
+          "stream_op": "write_or_helper",
+          "width": 8,
+          "width_expression": null,
+          "mem_off": "0x18",
+          "mem_off_int": 24,
+          "version_gate": [],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "PCDB",
+            "PCcj",
+            "PCij",
+            "PScj",
+            "PcJj",
+            "Pcbi",
+            "PcjN",
+            "Pcob",
+            "Pfke",
+            "Pfrg",
+            "Pife",
+            "PkHs",
+            "Ppfj",
+            "Preg",
+            "Prtg",
+            "Pslr",
+            "deit",
+            "dept"
+          ],
+          "source_line": 11,
+          "source": "scratch/t113/out/funcs/143f2bc10.c:11",
+          "source_expression": "(*(void (__fastcall **)(_DWORD *, __int64, __int64))(*(_QWORD *)v4 + 40LL))(v4, a1 + 24, 8);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 1,
+          "stream_op": "write_or_helper",
+          "width": 4,
+          "width_expression": null,
+          "mem_off": "0x8",
+          "mem_off_int": 8,
+          "version_gate": [
+            "if ( v4[4] == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "PFxP"
+          ],
+          "source_line": 16,
+          "source": "scratch/t113/out/funcs/143f2bc10.c:16",
+          "source_expression": "(*(void (__fastcall **)(_QWORD, __int64, __int64))(*(_QWORD *)*a2 + 40LL))(*a2, a1 + 8, 4);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 2,
+          "stream_op": "write_or_helper",
+          "width": 4,
+          "width_expression": null,
+          "mem_off": "0xc",
+          "mem_off_int": 12,
+          "version_gate": [
+            "if ( v4[4] == 0 )",
+            "if ( v5[4] == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "PAcn",
+            "PLwg"
+          ],
+          "source_line": 20,
+          "source": "scratch/t113/out/funcs/143f2bc10.c:20",
+          "source_expression": "(*(void (__fastcall **)(_QWORD, __int64, __int64))(*(_QWORD *)*a2 + 40LL))(*a2, a1 + 12, 4);",
+          "offset_access": "address_with_size",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 3,
+          "stream_op": "write_or_helper",
+          "width": 4,
+          "width_expression": null,
+          "mem_off": "0x10",
+          "mem_off_int": 16,
+          "version_gate": [
+            "if ( v4[4] == 0 )",
+            "if ( v5[4] == 0 )",
+            "if ( *(_DWORD *)(v6 + 16) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 24,
+          "source": "scratch/t113/out/funcs/143f2bc10.c:24",
+          "source_expression": "v8 = *(_DWORD *)(a1 + 16) != 0 ? a1 + 16 : a1 + 12;",
+          "offset_access": "deref_cast_before",
+          "ctype": "_DWORD",
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 4,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0x10",
+          "mem_off_int": 16,
+          "version_gate": [
+            "if ( v4[4] == 0 )",
+            "if ( v5[4] == 0 )",
+            "if ( *(_DWORD *)(v6 + 16) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [],
+          "source_line": 24,
+          "source": "scratch/t113/out/funcs/143f2bc10.c:24",
+          "source_expression": "v8 = *(_DWORD *)(a1 + 16) != 0 ? a1 + 16 : a1 + 12;",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        },
+        {
+          "step_idx": 5,
+          "stream_op": "write_or_helper",
+          "width": null,
+          "width_expression": "not statically literal",
+          "mem_off": "0xc",
+          "mem_off_int": 12,
+          "version_gate": [
+            "if ( v4[4] == 0 )",
+            "if ( v5[4] == 0 )",
+            "if ( *(_DWORD *)(v6 + 16) == 0 )"
+          ],
+          "callee_va": null,
+          "helper_vas": [],
+          "linked_4ccs": [
+            "PAcn",
+            "PLwg"
+          ],
+          "source_line": 24,
+          "source": "scratch/t113/out/funcs/143f2bc10.c:24",
+          "source_expression": "v8 = *(_DWORD *)(a1 + 16) != 0 ? a1 + 16 : a1 + 12;",
+          "offset_access": "address",
+          "ctype": null,
+          "branch_execution_order": "source-order; conditions may skip steps"
+        }
+      ],
+      "slot_va": "0x141084680",
+      "thunk": "jmp:0x141084680->0x143f2bc10",
+      "status": "static steps extracted"
+    },
+    {
+      "class_name": "PLAYER",
+      "method": "read_from_stream_server",
+      "slot_va": "0x140e3fb20",
+      "func_va": "0x143beccd0",
+      "decompiled": false,
+      "status": "missing decompilation",
+      "steps": []
+    },
+    {
+      "class_name": "PLAYER",
+      "method": "read_from_stream_client",
+      "func_va": "0x143becd10",
+      "file": "scratch/t113/out/funcs/143becd10.c",
+      "decompiled": true,
+      "step_count": 0,
+      "steps": [],
+      "slot_va": "0x140e3fb30",
+      "thunk": "jmp:0x140e3fb30->0x143becd10",
+      "status": "decompiled body has no recognized direct stream steps"
+    },
+    {
+      "class_name": "PLAYER",
+      "method": "write_to_stream",
+      "slot_va": null,
+      "func_va": null,
+      "decompiled": false,
+      "status": "no function VA in vtable snapshot",
+      "steps": []
+    },
+    {
+      "class_name": "VIRTUAL_PLAYER",
+      "method": "read_from_stream_server",
+      "slot_va": "0x140e3fb20",
+      "func_va": "0x143beccd0",
+      "decompiled": false,
+      "status": "missing decompilation",
+      "steps": []
+    },
+    {
+      "class_name": "VIRTUAL_PLAYER",
+      "method": "read_from_stream_client",
+      "func_va": "0x143becd10",
+      "file": "scratch/t113/out/funcs/143becd10.c",
+      "decompiled": true,
+      "step_count": 0,
+      "steps": [],
+      "slot_va": "0x140e3fb30",
+      "thunk": "jmp:0x140e3fb30->0x143becd10",
+      "status": "decompiled body has no recognized direct stream steps"
+    },
+    {
+      "class_name": "VIRTUAL_PLAYER",
+      "method": "write_to_stream",
+      "slot_va": null,
+      "func_va": null,
+      "decompiled": false,
+      "status": "no function VA in vtable snapshot",
+      "steps": []
+    }
+  ],
+  "people_db_probe": {
+    "status": "partial_static_and_byte_verified_type5_prefix",
+    "archive": {
+      "decompressed_bytes": 400443970,
+      "header_zero_prefix_hex": "0000",
+      "declared_record_count_u32": 658011,
+      "first_record_offset": 6,
+      "payload_sha256": "21686a985e32ebaf8ced73478058e69720be061d08be499be89e4d441f0f2fbd"
+    },
+    "record_header": {
+      "ordinal_u32_offset": 0,
+      "ordinal_u32_width": 4,
+      "person_type_offset": 4,
+      "person_type_width": 1,
+      "body_starts_at_record_plus": 5,
+      "evidence": "repeatedly verified on 1,193 consecutive type-5 records"
+    },
+    "type5_prefix": {
+      "rows_closed": 1193,
+      "next_record_offset": 55750,
+      "histogram": {
+        "5": 1193
+      },
+      "basic_people_class5_count": null,
+      "all_type5_rows_match": true,
+      "first_20_rows": [
+        {
+          "record_index": 0,
+          "record_offset": 6,
+          "record_end_offset_exclusive": 57,
+          "record_byte_length": 51,
+          "ordinal_u32": 657483,
+          "person_type": 5,
+          "person_type_offset": 10,
+          "body_offset": 11,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 11,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 15,
+              "width": 4,
+              "value": 18,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 19,
+              "width": 18,
+              "value": "Zarko Serafimovski",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 37,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 45,
+              "width": 4,
+              "value": 657483,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 49,
+              "width": 4,
+              "value": 2002041661,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 53,
+              "width": 4,
+              "value": 2002041661,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Zarko Serafimovski",
+          "subclass_body_begin": 11,
+          "raw_record_hex": "4b080a000500000000120000005a61726b6f205365726166696d6f76736b6900000000000000004b080a003dbb54773dbb5477"
+        },
+        {
+          "record_index": 1,
+          "record_offset": 57,
+          "record_end_offset_exclusive": 109,
+          "record_byte_length": 52,
+          "ordinal_u32": 657296,
+          "person_type": 5,
+          "person_type_offset": 61,
+          "body_offset": 62,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 62,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 66,
+              "width": 4,
+              "value": 19,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 70,
+              "width": 19,
+              "value": "Ronny Pattinasarani",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 89,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 97,
+              "width": 4,
+              "value": 657296,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 101,
+              "width": 4,
+              "value": 2002041474,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 105,
+              "width": 4,
+              "value": 2002041474,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Ronny Pattinasarani",
+          "subclass_body_begin": 62,
+          "raw_record_hex": "90070a00050000000013000000526f6e6e792050617474696e61736172616e69000000000000000090070a0082ba547782ba5477"
+        },
+        {
+          "record_index": 2,
+          "record_offset": 109,
+          "record_end_offset_exclusive": 156,
+          "record_byte_length": 47,
+          "ordinal_u32": 657971,
+          "person_type": 5,
+          "person_type_offset": 113,
+          "body_offset": 114,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 114,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 118,
+              "width": 4,
+              "value": 14,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 122,
+              "width": 14,
+              "value": "Melvin Andrews",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 136,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 144,
+              "width": 4,
+              "value": 657971,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 148,
+              "width": 4,
+              "value": 2002042149,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 152,
+              "width": 4,
+              "value": 2002042149,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Melvin Andrews",
+          "subclass_body_begin": 114,
+          "raw_record_hex": "330a0a0005000000000e0000004d656c76696e20416e64726577730000000000000000330a0a0025bd547725bd5477"
+        },
+        {
+          "record_index": 3,
+          "record_offset": 156,
+          "record_end_offset_exclusive": 201,
+          "record_byte_length": 45,
+          "ordinal_u32": 657297,
+          "person_type": 5,
+          "person_type_offset": 160,
+          "body_offset": 161,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 161,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 165,
+              "width": 4,
+              "value": 12,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 169,
+              "width": 12,
+              "value": "Ricky Yacobi",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 181,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 189,
+              "width": 4,
+              "value": 657297,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 193,
+              "width": 4,
+              "value": 2002041475,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 197,
+              "width": 4,
+              "value": 2002041475,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Ricky Yacobi",
+          "subclass_body_begin": 161,
+          "raw_record_hex": "91070a0005000000000c0000005269636b79205961636f6269000000000000000091070a0083ba547783ba5477"
+        },
+        {
+          "record_index": 4,
+          "record_offset": 201,
+          "record_end_offset_exclusive": 245,
+          "record_byte_length": 44,
+          "ordinal_u32": 657298,
+          "person_type": 5,
+          "person_type_offset": 205,
+          "body_offset": 206,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 206,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 210,
+              "width": 4,
+              "value": 11,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 214,
+              "width": 11,
+              "value": "Andi Ramang",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 225,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 233,
+              "width": 4,
+              "value": 657298,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 237,
+              "width": 4,
+              "value": 2002041476,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 241,
+              "width": 4,
+              "value": 2002041476,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Andi Ramang",
+          "subclass_body_begin": 206,
+          "raw_record_hex": "92070a0005000000000b000000416e64692052616d616e67000000000000000092070a0084ba547784ba5477"
+        },
+        {
+          "record_index": 5,
+          "record_offset": 245,
+          "record_end_offset_exclusive": 297,
+          "record_byte_length": 52,
+          "ordinal_u32": 657299,
+          "person_type": 5,
+          "person_type_offset": 249,
+          "body_offset": 250,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 250,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 254,
+              "width": 4,
+              "value": 19,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 258,
+              "width": 19,
+              "value": "Christian González",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 277,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 285,
+              "width": 4,
+              "value": 657299,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 289,
+              "width": 4,
+              "value": 2002041477,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 293,
+              "width": 4,
+              "value": 2002041477,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Christian González",
+          "subclass_body_begin": 250,
+          "raw_record_hex": "93070a0005000000001300000043687269737469616e20476f6e7ac3a16c657a000000000000000093070a0085ba547785ba5477"
+        },
+        {
+          "record_index": 6,
+          "record_offset": 297,
+          "record_end_offset_exclusive": 343,
+          "record_byte_length": 46,
+          "ordinal_u32": 657972,
+          "person_type": 5,
+          "person_type_offset": 301,
+          "body_offset": 302,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 302,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 306,
+              "width": 4,
+              "value": 13,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 310,
+              "width": 13,
+              "value": "Vernus Abbott",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 323,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 331,
+              "width": 4,
+              "value": 657972,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 335,
+              "width": 4,
+              "value": 2002042150,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 339,
+              "width": 4,
+              "value": 2002042150,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Vernus Abbott",
+          "subclass_body_begin": 302,
+          "raw_record_hex": "340a0a0005000000000d0000005665726e7573204162626f74740000000000000000340a0a0026bd547726bd5477"
+        },
+        {
+          "record_index": 7,
+          "record_offset": 343,
+          "record_end_offset_exclusive": 388,
+          "record_byte_length": 45,
+          "ordinal_u32": 657973,
+          "person_type": 5,
+          "person_type_offset": 347,
+          "body_offset": 348,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 348,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 352,
+              "width": 4,
+              "value": 12,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 356,
+              "width": 12,
+              "value": "Luis Mendoza",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 368,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 376,
+              "width": 4,
+              "value": 657973,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 380,
+              "width": 4,
+              "value": 2002042151,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 384,
+              "width": 4,
+              "value": 2002042151,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Luis Mendoza",
+          "subclass_body_begin": 348,
+          "raw_record_hex": "350a0a0005000000000c0000004c756973204d656e646f7a610000000000000000350a0a0027bd547727bd5477"
+        },
+        {
+          "record_index": 8,
+          "record_offset": 388,
+          "record_end_offset_exclusive": 431,
+          "record_byte_length": 43,
+          "ordinal_u32": 657974,
+          "person_type": 5,
+          "person_type_offset": 392,
+          "body_offset": 393,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 393,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 397,
+              "width": 4,
+              "value": 10,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 401,
+              "width": 10,
+              "value": "Iain Dowie",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 411,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 419,
+              "width": 4,
+              "value": 657974,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 423,
+              "width": 4,
+              "value": 2002042152,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 427,
+              "width": 4,
+              "value": 2002042152,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Iain Dowie",
+          "subclass_body_begin": 393,
+          "raw_record_hex": "360a0a0005000000000a0000004961696e20446f7769650000000000000000360a0a0028bd547728bd5477"
+        },
+        {
+          "record_index": 9,
+          "record_offset": 431,
+          "record_end_offset_exclusive": 480,
+          "record_byte_length": 49,
+          "ordinal_u32": 657975,
+          "person_type": 5,
+          "person_type_offset": 435,
+          "body_offset": 436,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 436,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 440,
+              "width": 4,
+              "value": 16,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 444,
+              "width": 16,
+              "value": "Rúrik Gíslason",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 460,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 468,
+              "width": 4,
+              "value": 657975,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 472,
+              "width": 4,
+              "value": 2002042153,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 476,
+              "width": 4,
+              "value": 2002042153,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Rúrik Gíslason",
+          "subclass_body_begin": 436,
+          "raw_record_hex": "370a0a0005000000001000000052c3ba72696b2047c3ad736c61736f6e0000000000000000370a0a0029bd547729bd5477"
+        },
+        {
+          "record_index": 10,
+          "record_offset": 480,
+          "record_end_offset_exclusive": 533,
+          "record_byte_length": 53,
+          "ordinal_u32": 657976,
+          "person_type": 5,
+          "person_type_offset": 484,
+          "body_offset": 485,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 485,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 489,
+              "width": 4,
+              "value": 20,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 493,
+              "width": 20,
+              "value": "Ríkharður Daðason",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 513,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 521,
+              "width": 4,
+              "value": 657976,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 525,
+              "width": 4,
+              "value": 2002042154,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 529,
+              "width": 4,
+              "value": 2002042154,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Ríkharður Daðason",
+          "subclass_body_begin": 485,
+          "raw_record_hex": "380a0a0005000000001400000052c3ad6b686172c3b07572204461c3b061736f6e0000000000000000380a0a002abd54772abd5477"
+        },
+        {
+          "record_index": 11,
+          "record_offset": 533,
+          "record_end_offset_exclusive": 578,
+          "record_byte_length": 45,
+          "ordinal_u32": 657977,
+          "person_type": 5,
+          "person_type_offset": 537,
+          "body_offset": 538,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 538,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 542,
+              "width": 4,
+              "value": 12,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 546,
+              "width": 12,
+              "value": "Yvon Lutbert",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 558,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 566,
+              "width": 4,
+              "value": 657977,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 570,
+              "width": 4,
+              "value": 2002042155,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 574,
+              "width": 4,
+              "value": 2002042155,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Yvon Lutbert",
+          "subclass_body_begin": 538,
+          "raw_record_hex": "390a0a0005000000000c00000059766f6e204c7574626572740000000000000000390a0a002bbd54772bbd5477"
+        },
+        {
+          "record_index": 12,
+          "record_offset": 578,
+          "record_end_offset_exclusive": 626,
+          "record_byte_length": 48,
+          "ordinal_u32": 657978,
+          "person_type": 5,
+          "person_type_offset": 582,
+          "body_offset": 583,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 583,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 587,
+              "width": 4,
+              "value": 15,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 591,
+              "width": 15,
+              "value": "Gérard Janvion",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 606,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 614,
+              "width": 4,
+              "value": 657978,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 618,
+              "width": 4,
+              "value": 2002042156,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 622,
+              "width": 4,
+              "value": 2002042156,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Gérard Janvion",
+          "subclass_body_begin": 583,
+          "raw_record_hex": "3a0a0a0005000000000f00000047c3a972617264204a616e76696f6e00000000000000003a0a0a002cbd54772cbd5477"
+        },
+        {
+          "record_index": 13,
+          "record_offset": 626,
+          "record_end_offset_exclusive": 680,
+          "record_byte_length": 54,
+          "ordinal_u32": 657979,
+          "person_type": 5,
+          "person_type_offset": 630,
+          "body_offset": 631,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 631,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 635,
+              "width": 4,
+              "value": 21,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 639,
+              "width": 21,
+              "value": "Daniel Charles-Alfred",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 660,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 668,
+              "width": 4,
+              "value": 657979,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 672,
+              "width": 4,
+              "value": 2002042157,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 676,
+              "width": 4,
+              "value": 2002042157,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Daniel Charles-Alfred",
+          "subclass_body_begin": 631,
+          "raw_record_hex": "3b0a0a0005000000001500000044616e69656c20436861726c65732d416c6672656400000000000000003b0a0a002dbd54772dbd5477"
+        },
+        {
+          "record_index": 14,
+          "record_offset": 680,
+          "record_end_offset_exclusive": 731,
+          "record_byte_length": 51,
+          "ordinal_u32": 657980,
+          "person_type": 5,
+          "person_type_offset": 684,
+          "body_offset": 685,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 685,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 689,
+              "width": 4,
+              "value": 18,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 693,
+              "width": 18,
+              "value": "Saulius Mikoliunas",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 711,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 719,
+              "width": 4,
+              "value": 657980,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 723,
+              "width": 4,
+              "value": 2002042158,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 727,
+              "width": 4,
+              "value": 2002042158,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Saulius Mikoliunas",
+          "subclass_body_begin": 685,
+          "raw_record_hex": "3c0a0a000500000000120000005361756c697573204d696b6f6c69756e617300000000000000003c0a0a002ebd54772ebd5477"
+        },
+        {
+          "record_index": 15,
+          "record_offset": 731,
+          "record_end_offset_exclusive": 779,
+          "record_byte_length": 48,
+          "ordinal_u32": 657981,
+          "person_type": 5,
+          "person_type_offset": 735,
+          "body_offset": 736,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 736,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 740,
+              "width": 4,
+              "value": 15,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 744,
+              "width": 15,
+              "value": "Rainford Kalaba",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 759,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 767,
+              "width": 4,
+              "value": 657981,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 771,
+              "width": 4,
+              "value": 2002042159,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 775,
+              "width": 4,
+              "value": 2002042159,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Rainford Kalaba",
+          "subclass_body_begin": 736,
+          "raw_record_hex": "3d0a0a0005000000000f0000005261696e666f7264204b616c61626100000000000000003d0a0a002fbd54772fbd5477"
+        },
+        {
+          "record_index": 16,
+          "record_offset": 779,
+          "record_end_offset_exclusive": 824,
+          "record_byte_length": 45,
+          "ordinal_u32": 657300,
+          "person_type": 5,
+          "person_type_offset": 783,
+          "body_offset": 784,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 784,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 788,
+              "width": 4,
+              "value": 12,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 792,
+              "width": 12,
+              "value": "Iswadi Idris",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 804,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 812,
+              "width": 4,
+              "value": 657300,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 816,
+              "width": 4,
+              "value": 2002041478,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 820,
+              "width": 4,
+              "value": 2002041478,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Iswadi Idris",
+          "subclass_body_begin": 784,
+          "raw_record_hex": "94070a0005000000000c000000497377616469204964726973000000000000000094070a0086ba547786ba5477"
+        },
+        {
+          "record_index": 17,
+          "record_offset": 824,
+          "record_end_offset_exclusive": 870,
+          "record_byte_length": 46,
+          "ordinal_u32": 657301,
+          "person_type": 5,
+          "person_type_offset": 828,
+          "body_offset": 829,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 829,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 833,
+              "width": 4,
+              "value": 13,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 837,
+              "width": 13,
+              "value": "Maulwi Saelan",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 850,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 858,
+              "width": 4,
+              "value": 657301,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 862,
+              "width": 4,
+              "value": 2002041479,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 866,
+              "width": 4,
+              "value": 2002041479,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Maulwi Saelan",
+          "subclass_body_begin": 829,
+          "raw_record_hex": "95070a0005000000000d0000004d61756c7769205361656c616e000000000000000095070a0087ba547787ba5477"
+        },
+        {
+          "record_index": 18,
+          "record_offset": 870,
+          "record_end_offset_exclusive": 915,
+          "record_byte_length": 45,
+          "ordinal_u32": 657302,
+          "person_type": 5,
+          "person_type_offset": 874,
+          "body_offset": 875,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 875,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 879,
+              "width": 4,
+              "value": 12,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 883,
+              "width": 12,
+              "value": "Ponirin Meka",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 895,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 903,
+              "width": 4,
+              "value": 657302,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 907,
+              "width": 4,
+              "value": 2002041480,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 911,
+              "width": 4,
+              "value": 2002041480,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Ponirin Meka",
+          "subclass_body_begin": 875,
+          "raw_record_hex": "96070a0005000000000c000000506f6e6972696e204d656b61000000000000000096070a0088ba547788ba5477"
+        },
+        {
+          "record_index": 19,
+          "record_offset": 915,
+          "record_end_offset_exclusive": 959,
+          "record_byte_length": 44,
+          "ordinal_u32": 657303,
+          "person_type": 5,
+          "person_type_offset": 919,
+          "body_offset": 920,
+          "body_fields": [
+            {
+              "name": "opaque_u32_0",
+              "offset": 920,
+              "width": 4,
+              "value": 0,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "utf8_name_length",
+              "offset": 924,
+              "width": 4,
+              "value": 11,
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "full_name_utf8",
+              "offset": 928,
+              "width": 11,
+              "value": "Ronny Pasla",
+              "semantic_status": "byte-verified"
+            },
+            {
+              "name": "opaque_zero_8",
+              "offset": 939,
+              "width": 8,
+              "value_hex": "0000000000000000",
+              "semantic_status": "byte-verified; meaning unknown"
+            },
+            {
+              "name": "repeated_ordinal_u32",
+              "offset": 947,
+              "width": 4,
+              "value": 657303,
+              "semantic_status": "value equals record ordinal"
+            },
+            {
+              "name": "opaque_u32_a",
+              "offset": 951,
+              "width": 4,
+              "value": 2002041481,
+              "semantic_status": "unknown"
+            },
+            {
+              "name": "opaque_u32_b",
+              "offset": 955,
+              "width": 4,
+              "value": 2002041481,
+              "semantic_status": "equals preceding opaque_u32_a"
+            }
+          ],
+          "name": "Ronny Pasla",
+          "subclass_body_begin": 920,
+          "raw_record_hex": "97070a0005000000000b000000526f6e6e79205061736c61000000000000000097070a0089ba547789ba5477"
+        }
+      ]
+    },
+    "first_non_type5_record": {
+      "record_index": 1193,
+      "record_offset": 55750,
+      "ordinal_u32": 354399,
+      "person_type": 2,
+      "body_offset": 55755,
+      "body_prefix_hex": "3700370005003700410000ffff000000fffffffffffdff00003088e4040001000e001400120000120000000000000000",
+      "class_name_hint": "PLAYER",
+      "class_name_hint_source": "t115 brief/factory case 2; not independently named by row bytes",
+      "body_begin_verified": true
+    },
+    "semantic_header_fields": {
+      "uid": "not identified by this type-5 parser; ordinal is retained without renaming",
+      "first_name_id": "not located / not proven",
+      "second_name_id": "not located / not proven",
+      "common_name_id": "not located / not proven",
+      "dob": "not located / not proven",
+      "nation": "not located / not proven"
+    },
+    "known_star_uid_byte_hits": [
+      {
+        "uid": 28049320,
+        "label": "Harry Kane",
+        "raw_byte_occurrences_sample": [
+          {
+            "payload_offset": 70465241,
+            "following_byte": 9,
+            "context_hex": "644f00ffe7880200a8ffab0109000301644f00ff"
+          },
+          {
+            "payload_offset": 72654025,
+            "following_byte": 9,
+            "context_hex": "ffff0102e7880200a8ffab0109000301644f00ff"
+          },
+          {
+            "payload_offset": 92402384,
+            "following_byte": 0,
+            "context_hex": "4b0000ffe7880200a8ffab01000003024b0000ff"
+          },
+          {
+            "payload_offset": 94029698,
+            "following_byte": 9,
+            "context_hex": "4b0000ffe7880200a8ffab01090003014b0000ff"
+          },
+          {
+            "payload_offset": 95402134,
+            "following_byte": 0,
+            "context_hex": "4b0000ffe7880200a8ffab01000003024b0000ff"
+          },
+          {
+            "payload_offset": 129046646,
+            "following_byte": 5,
+            "context_hex": "645000ffe7880200a8ffab01050003014b0000ff"
+          },
+          {
+            "payload_offset": 164807100,
+            "following_byte": 9,
+            "context_hex": "4b0000ffe7880200a8ffab0109000301460000ff"
+          },
+          {
+            "payload_offset": 217750426,
+            "following_byte": 9,
+            "context_hex": "13000107e7880200a8ffab0109000301324f00ff"
+          }
+        ],
+        "record_membership_verified": false
+      },
+      {
+        "uid": 735216,
+        "label": "Cristiano Ronaldo",
+        "raw_byte_occurrences_sample": [
+          {
+            "payload_offset": 373728,
+            "following_byte": 9,
+            "context_hex": "01000105644b0000f0370b0009000301644f00ff"
+          },
+          {
+            "payload_offset": 454433,
+            "following_byte": 9,
+            "context_hex": "464f00ff644b0000f0370b00090003013c0000ff"
+          },
+          {
+            "payload_offset": 1761351,
+            "following_byte": 9,
+            "context_hex": "4b4f00ff644b0000f0370b0009000301190000ff"
+          },
+          {
+            "payload_offset": 1768601,
+            "following_byte": 9,
+            "context_hex": "645000ff644b0000f0370b0009000301190000ff"
+          },
+          {
+            "payload_offset": 2033244,
+            "following_byte": 9,
+            "context_hex": "5a4f00ff644b0000f0370b00090003015a4f00ff"
+          },
+          {
+            "payload_offset": 2046111,
+            "following_byte": 9,
+            "context_hex": "645000ff644b0000f0370b00090003014b4f00ff"
+          },
+          {
+            "payload_offset": 2051032,
+            "following_byte": 9,
+            "context_hex": "645000ff644b0000f0370b00090003014b4f00ff"
+          },
+          {
+            "payload_offset": 2293453,
+            "following_byte": 9,
+            "context_hex": "645000ff644b0000f0370b00090003014b4f00ff"
+          }
+        ],
+        "record_membership_verified": false
+      },
+      {
+        "uid": 7458500,
+        "label": "Lionel Messi",
+        "raw_byte_occurrences_sample": [
+          {
+            "payload_offset": 1566651,
+            "following_byte": 9,
+            "context_hex": "4b4f00ff97cd0000c4ce710009000301190000ff"
+          },
+          {
+            "payload_offset": 2024201,
+            "following_byte": 9,
+            "context_hex": "645000ff97cd0000c4ce7100090003014b4f00ff"
+          },
+          {
+            "payload_offset": 3292291,
+            "following_byte": 9,
+            "context_hex": "644f00ff97cd0000c4ce710009000301644f00ff"
+          },
+          {
+            "payload_offset": 3369207,
+            "following_byte": 9,
+            "context_hex": "ff03010997cd0000c4ce710009000301644f00ff"
+          },
+          {
+            "payload_offset": 3401420,
+            "following_byte": 9,
+            "context_hex": "ff03010597cd0000c4ce710009000301644f00ff"
+          },
+          {
+            "payload_offset": 3467403,
+            "following_byte": 9,
+            "context_hex": "ff03010597cd0000c4ce710009000301644f00ff"
+          },
+          {
+            "payload_offset": 3510802,
+            "following_byte": 9,
+            "context_hex": "ff03010397cd0000c4ce710009000301644f00ff"
+          },
+          {
+            "payload_offset": 3518652,
+            "following_byte": 9,
+            "context_hex": "ff03010397cd0000c4ce710009000301644f00ff"
+          }
+        ],
+        "record_membership_verified": false
+      }
+    ],
+    "type1_to_type6_samples": {
+      "5": "first 20 records parsed; type 5 prefix closes to count 1,193",
+      "1": "not reached with a closed record parser",
+      "2": "record header at offset 55750; body begins at 55755; body end unknown",
+      "3": "not reached with a closed record parser",
+      "4": "not reached with a closed record parser",
+      "6": "not reached with a closed record parser"
+    },
+    "limitations": [
+      "Only the type-5 body grammar is currently closed from bytes.",
+      "No 400 MB decompressed file was written to disk.",
+      "The full PERSON and PLAYER readers are missing from the supplied C corpus, so names/UID/DOB/nation fields and later row boundaries are not claimed."
+    ]
+  },
+  "basic_people_db_validation": {
+    "row_count": 658011,
+    "row_chain_end": 54060034,
+    "footer_offset": 54060034,
+    "footer_hex": "00000000014cbd5477",
+    "histogram": {
+      "1": 166064,
+      "2": 476158,
+      "3": 4757,
+      "4": 9839,
+      "5": 1193
+    },
+    "closure_diff": 0
+  },
+  "wire_step_count": 152,
+  "wire_step_note": "Steps are source-order observations; conditional branches are retained as version_gate/condition context and are not linearized as one unconditional execution path.",
+  "semantic_status": "Static-only for present methods. Byte-verified type-5 frame is a separate raw-data result; PERSON and PLAYER wire headers remain open.",
+  "input_archives": {
+    "people_db.dat": {
+      "archive_bytes": 67502767,
+      "archive_sha256": "38a5f6d910dd73587ddfac9d9f60cd81689609c2869e4e4eb1936e266b7d2d41",
+      "decompressed_bytes": 400443970,
+      "payload_sha256": "21686a985e32ebaf8ced73478058e69720be061d08be499be89e4d441f0f2fbd",
+      "decompressor": "libzstd ZSTD_decompressStream",
+      "raw_dump_written": false
+    },
+    "basic_people_db.dat": {
+      "archive_bytes": 12934775,
+      "archive_sha256": "2ac7da37e7b1df755b76c16cf39c569cb0a1e96509a7557c2ab9acf5d67f48bc",
+      "decompressed_bytes": 54060043,
+      "payload_sha256": "16709b0b5dda358179313c19ef58d0f78bff259cde68a0dcd1bb01c9589d35a5",
+      "decompressor": "libzstd ZSTD_decompressStream",
+      "raw_dump_written": false
+    }
+  }
+}

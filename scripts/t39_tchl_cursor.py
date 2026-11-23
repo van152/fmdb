@@ -15,7 +15,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT/'scratch/t39/out'
-EXE = Path('<OLD_REPO>/input/editor.exe')
+EXE = Path('D:/tmp2b/fm24/input/editor.exe')
 EXE_SHA = 'b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4'
 MASTER = 'evidence/fm24/reports/editor_schema/master.json'
 PROV = 'evidence/fm24/reports/qa/IDA_PROVENANCE.md'
@@ -346,7 +346,7 @@ def pick_frame(zstd, archive, entry, offset, bound):
 def read_archives():
     os.environ.setdefault('FM24_DB_DIR',str(ROOT/'scratch/data'))
     import fm24_dump as fm
-    codec=fm._reader();sys.path.insert(0,'<OLD_REPO>/tools/python')
+    codec=fm._reader();sys.path.insert(0,'D:/tmp2b/fm24/tools/python')
     import zstandard as zstd
     def open_db(archive):
         fn=archive+'_db.dat'; _,raw,d=codec['_entries'](fm.DB_DIR/fn,fn)
@@ -631,7 +631,7 @@ def build():
 
 
 def selftest():
-    sys.path.insert(0,'<OLD_REPO>/tools/python')
+    sys.path.insert(0,'D:/tmp2b/fm24/tools/python')
     import zstandard as zs
     a=b'03017461642e';b=bytes(80);c=zs.ZstdCompressor();x=c.compress(a);y=c.compress(b);p=b'P'+x+y
     payload,hit,hits=pick_frame(zs,p,dict(path='fixture',size=len(b),packed_size=max(len(x),len(y))),0,len(p))

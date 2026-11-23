@@ -84,7 +84,7 @@ t01_anchors 7/7 · t39 26/26 · t34 13/13 · t36 9/9 · t43 verify 19/0
 ## 复现
 
 ```bash
-export FM24_DB_DIR=<WORKSPACE>/scratch/data
+export FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data
 py -V:3.12 -I -B scripts/fm24_dump.py --selftest          # 50 PASS / 0 FAIL / 0 SKIP
 py -V:3.12 -I -B scripts/t01_anchors.py                   # 7/7
 py -V:3.12 -I -B scripts/t38_multiframe.py --selftest     # 0 FAIL

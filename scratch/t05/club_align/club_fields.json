@@ -1,0 +1,4997 @@
+{
+  "status": "complete_partial",
+  "entity": "club",
+  "type_id": 3,
+  "total_schema_fields": 433,
+  "top_level_scalars": 386,
+  "named": [
+    {
+      "field": "Cccn",
+      "offset": 8,
+      "width": 4,
+      "evidence": {
+        "reader_file_offset": "0xe5a864",
+        "bytes": "49 8d be f0 00 00 00",
+        "width_file_offset": "0xe5a86e",
+        "width_bytes": "41 b8 04 00 00 00",
+        "transfer_file_offset": "0xe5a877",
+        "transfer_bytes": "ff 50 28",
+        "getter_cmp_file_offset": "0xe8b7bf",
+        "getter_cmp_bytes": "81 fb 6e 63 63 43",
+        "getter_member_file_offset": "0xe8b7cb",
+        "getter_member_bytes": "49 8b 8c 24 f0 00 00 00",
+        "source_evidence_file": "scratch/t02/inbox/club_fields/output.json"
+      },
+      "reader_mode": "CLUB",
+      "confidence": "low",
+      "data_validation": {
+        "status": "blocked",
+        "reason": "The row framing closes globally, but its proposed ordinal split has no per-row class byte and the three compact bodies are only identity-framed. The task forbids merging CLUB and LEAGUE_BODY_CLUB; no mode-safe table-wide Cccn value distribution is available.",
+        "prior_single_sample": {
+          "row": 69709,
+          "bytes": "85 00 00 00",
+          "note": "At this framed row, +8 repeats row+0 identity bytes; because the CLUB reader and framing/class partition are not linked per row, this is not Cccn data validation."
+        }
+      },
+      "mapping_basis": "Existing getter 4CC -> object member +0xf0, CLUB reader sink to the same member, fixed width 4, and a single row-cursor candidate +8 in that reader's local analysis. This is not transferred to the LEAGUE_BODY_CLUB stream."
+    }
+  ],
+  "collections": [
+    {
+      "field": "CNtp",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "nati",
+          "type": "database_record_unique_id",
+          "name": "Nation"
+        },
+        {
+          "field": "rati",
+          "type": "enum",
+          "name": "Rating"
+        },
+        {
+          "field": "mina",
+          "type": "integer",
+          "name": "Minimum Age"
+        },
+        {
+          "field": "maxa",
+          "type": "integer",
+          "name": "Maximum Age"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "CNse",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "Fnat",
+          "type": "database_record_unique_id",
+          "name": "First Nation"
+        },
+        {
+          "field": "Snat",
+          "type": "database_record_unique_id",
+          "name": "Second Nation"
+        },
+        {
+          "field": "perc",
+          "type": "integer",
+          "name": "Percentage"
+        },
+        {
+          "field": "igno",
+          "type": "boolean",
+          "name": "Ignore Second Nationality for Names"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Crty",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "Ttyp",
+          "type": "enum",
+          "name": "Team Type"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "CSrs",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "Ttyp",
+          "type": "enum",
+          "name": "Team Type"
+        },
+        {
+          "field": "Tdvi",
+          "type": "database_record_unique_id",
+          "name": "Division"
+        },
+        {
+          "field": "tmno",
+          "type": "boolean",
+          "name": "Not Used"
+        },
+        {
+          "field": "tmnv",
+          "type": "boolean",
+          "name": "Never Used"
+        },
+        {
+          "field": "Tsti",
+          "type": "database_record_unique_id",
+          "name": "Stadium"
+        },
+        {
+          "field": "Twhm",
+          "type": "day_of_week",
+          "name": "Weekend Home Match Day"
+        },
+        {
+          "field": "Tmhm",
+          "type": "day_of_week",
+          "name": "Midweek Home Match Day"
+        },
+        {
+          "field": "Catd",
+          "type": "integer",
+          "name": "Attendance"
+        },
+        {
+          "field": "Cmna",
+          "type": "integer",
+          "name": "Minimum Attendance"
+        },
+        {
+          "field": "Cmxa",
+          "type": "integer",
+          "name": "Maximum Attendance"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cstc",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "Styp",
+          "type": "enum",
+          "name": "Type"
+        },
+        {
+          "field": "Snew",
+          "type": "database_record_unique_id",
+          "name": "New Stadium"
+        },
+        {
+          "field": "Snew",
+          "type": "database_record_unique_id",
+          "name": "New Stadium"
+        },
+        {
+          "field": "Salt",
+          "type": "database_record_unique_id",
+          "name": "Alternative Stadium"
+        },
+        {
+          "field": "Slea",
+          "type": "date",
+          "name": "Start Date"
+        },
+        {
+          "field": "Ssta",
+          "type": "date",
+          "name": "Leave Date"
+        },
+        {
+          "field": "Ssta",
+          "type": "date",
+          "name": "Leave Date"
+        },
+        {
+          "field": "Slmd",
+          "type": "date",
+          "name": "Latest Move Date"
+        },
+        {
+          "field": "Scpm",
+          "type": "boolean",
+          "name": "Is Potential Move"
+        },
+        {
+          "field": "Slhm",
+          "type": "integer",
+          "name": "Likelihood of Stadium Move"
+        },
+        {
+          "field": "Snxa",
+          "type": "integer",
+          "name": "New Expected Attendance"
+        },
+        {
+          "field": "Stks",
+          "type": "integer",
+          "name": "Expected Season Tickets Sold"
+        },
+        {
+          "field": "Scam",
+          "type": "integer",
+          "name": "Stadium Rental Cash Amount"
+        },
+        {
+          "field": "Snmn",
+          "type": "integer",
+          "name": "Expected Minimum Attendance"
+        },
+        {
+          "field": "Snmx",
+          "type": "integer",
+          "name": "Expected Maximum Attendance"
+        },
+        {
+          "field": "Sceb",
+          "type": "integer",
+          "name": "Future Stadium Development Fund"
+        },
+        {
+          "field": "Sold",
+          "type": "database_record_unique_id",
+          "name": "Current Training Stadium"
+        },
+        {
+          "field": "Sold",
+          "type": "database_record_unique_id",
+          "name": "Current Training Stadium"
+        },
+        {
+          "field": "Snew",
+          "type": "database_record_unique_id",
+          "name": "New Training Stadium"
+        },
+        {
+          "field": "ScTL",
+          "type": "integer",
+          "name": "New Training Level"
+        },
+        {
+          "field": "ScYL",
+          "type": "integer",
+          "name": "New Youth Level"
+        },
+        {
+          "field": "Sold",
+          "type": "database_record_unique_id",
+          "name": "Current Youth Stadium"
+        },
+        {
+          "field": "Snew",
+          "type": "database_record_unique_id",
+          "name": "New Youth Stadium"
+        },
+        {
+          "field": "Sold",
+          "type": "database_record_unique_id",
+          "name": "Current Reserve Stadium"
+        },
+        {
+          "field": "Snew",
+          "type": "database_record_unique_id",
+          "name": "New Reserve Stadium"
+        },
+        {
+          "field": "Scap",
+          "type": "integer",
+          "name": "New Capacity"
+        },
+        {
+          "field": "Sscp",
+          "type": "integer",
+          "name": "New Seating Capacity"
+        },
+        {
+          "field": "Scns",
+          "type": "enum",
+          "name": "Stadium Condition"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Calt",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "cmid",
+          "type": "database_record_unique_id",
+          "name": "Competition"
+        },
+        {
+          "field": "stid",
+          "type": "database_record_unique_id",
+          "name": "Stadium"
+        },
+        {
+          "field": "year",
+          "type": "integer",
+          "name": "Year"
+        },
+        {
+          "field": "cate",
+          "type": "enum",
+          "name": "Stage Type"
+        },
+        {
+          "field": "stdt",
+          "type": "date",
+          "name": "Start Date"
+        },
+        {
+          "field": "endt",
+          "type": "date",
+          "name": "End Date"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cspb",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "cmid",
+          "type": "database_record_unique_id",
+          "name": "Competition"
+        },
+        {
+          "field": "type",
+          "type": "enum",
+          "name": "Ban Type"
+        },
+        {
+          "field": "venu",
+          "type": "enum",
+          "name": "Venue"
+        },
+        {
+          "field": "matc",
+          "type": "integer",
+          "name": "Number Matches"
+        },
+        {
+          "field": "stdt",
+          "type": "date",
+          "name": "Start Date"
+        },
+        {
+          "field": "endt",
+          "type": "date",
+          "name": "End Date"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Coin",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "cash",
+          "type": "cash",
+          "name": "Total Value"
+        },
+        {
+          "field": "type",
+          "type": "enum",
+          "name": "Income Type"
+        },
+        {
+          "field": "stdt",
+          "type": "date",
+          "name": "Start Date"
+        },
+        {
+          "field": "endt",
+          "type": "date",
+          "name": "End Date"
+        },
+        {
+          "field": "rnin",
+          "type": "boolean",
+          "name": "Renew Income"
+        },
+        {
+          "field": "fxin",
+          "type": "boolean",
+          "name": "Fixed Value"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cscm",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "stco",
+          "type": "database_record_unique_id",
+          "name": "Competition"
+        },
+        {
+          "field": "stnm",
+          "type": "integer",
+          "name": "No. Matches"
+        },
+        {
+          "field": "slsn",
+          "type": "database_record_unique_id",
+          "name": "Last Stage"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Csme",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "Msid",
+          "type": "database_record_unique_id",
+          "name": "Media Source"
+        },
+        {
+          "field": "Melf",
+          "type": "integer",
+          "name": "Predicted League Finish"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cdbt",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "cash",
+          "type": "cash",
+          "name": "Original Debt"
+        },
+        {
+          "field": "sour",
+          "type": "enum",
+          "name": "Source"
+        },
+        {
+          "field": "stdt",
+          "type": "date",
+          "name": "Start Date"
+        },
+        {
+          "field": "endt",
+          "type": "date",
+          "name": "End Date"
+        },
+        {
+          "field": "inrt",
+          "type": "real",
+          "name": "Interest Rate"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cffp",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "cash",
+          "type": "cash",
+          "name": "Amount"
+        },
+        {
+          "field": "year",
+          "type": "integer",
+          "name": "Year"
+        },
+        {
+          "field": "comp",
+          "type": "database_record_unique_id",
+          "name": "Competition"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cbbl",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "play",
+          "type": "database_record_unique_id",
+          "name": "Player"
+        },
+        {
+          "field": "club",
+          "type": "database_record_unique_id",
+          "name": "Club"
+        },
+        {
+          "field": "cash",
+          "type": "cash",
+          "name": "Buy Back Fee"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Csoc",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "play",
+          "type": "database_record_unique_id",
+          "name": "Player"
+        },
+        {
+          "field": "club",
+          "type": "database_record_unique_id",
+          "name": "Club"
+        },
+        {
+          "field": "perc",
+          "type": "integer",
+          "name": "Percentage"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Camc",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "play",
+          "type": "database_record_unique_id",
+          "name": "Player"
+        },
+        {
+          "field": "club",
+          "type": "database_record_unique_id",
+          "name": "Club"
+        },
+        {
+          "field": "type",
+          "type": "enum",
+          "name": "Condition"
+        },
+        {
+          "field": "cash",
+          "type": "cash",
+          "name": "Fee"
+        },
+        {
+          "field": "apps",
+          "type": "integer",
+          "name": "Amount Required"
+        },
+        {
+          "field": "apfr",
+          "type": "integer",
+          "name": "Amount So Far"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cmti",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "icom",
+          "type": "enum",
+          "name": "Direction"
+        },
+        {
+          "field": "play",
+          "type": "database_record_unique_id",
+          "name": "Player"
+        },
+        {
+          "field": "club",
+          "type": "database_record_unique_id",
+          "name": "Club"
+        },
+        {
+          "field": "cash",
+          "type": "cash",
+          "name": "Payable (per month)"
+        },
+        {
+          "field": "mths",
+          "type": "integer",
+          "name": "Number Months"
+        },
+        {
+          "field": "pyiv",
+          "type": "enum",
+          "name": "Payment Interval"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cwcl",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "icom",
+          "type": "enum",
+          "name": "Direction"
+        },
+        {
+          "field": "play",
+          "type": "database_record_unique_id",
+          "name": "Player"
+        },
+        {
+          "field": "club",
+          "type": "database_record_unique_id",
+          "name": "Club"
+        },
+        {
+          "field": "wage",
+          "type": "cash",
+          "name": "Wage"
+        },
+        {
+          "field": "wend",
+          "type": "date",
+          "name": "Contributions Paid Till"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Crdl",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "leve",
+          "type": "integer",
+          "name": "Level"
+        },
+        {
+          "field": "comp",
+          "type": "database_record_unique_id",
+          "name": "Division"
+        },
+        {
+          "field": "year",
+          "type": "integer",
+          "name": "Year"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Tko1",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Tkg1",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Tko2",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Tkg2",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Tko3",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Tkg3",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cdri",
+      "kind": "database_record_list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cchi",
+      "kind": "database_record_list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Csci",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cphi",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "C1sq",
+      "kind": "database_record_list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Clnp",
+      "kind": "database_record_list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Calo",
+      "kind": "database_record_list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "pcpt",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "PtPl",
+          "type": "database_record_unique_id",
+          "name": "Player"
+        },
+        {
+          "field": "PtLy",
+          "type": "date",
+          "name": "Date"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "CPsL",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "per1",
+          "type": "database_record_unique_id",
+          "name": "Player 1"
+        },
+        {
+          "field": "per2",
+          "type": "database_record_unique_id",
+          "name": "Player 2"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "CpTI",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "ottm",
+          "type": "database_record_unique_id",
+          "name": "Other Team"
+        },
+        {
+          "field": "date",
+          "type": "date",
+          "name": "Date"
+        },
+        {
+          "field": "alls",
+          "type": "cash",
+          "name": "Allocation Money Given"
+        },
+        {
+          "field": "allr",
+          "type": "cash",
+          "name": "Allocation Money Received"
+        },
+        {
+          "field": "plar",
+          "type": "database_record_list",
+          "name": "Players Arriving"
+        },
+        {
+          "field": "plde",
+          "type": "database_record_list",
+          "name": "Players Departing"
+        },
+        {
+          "field": "plrr",
+          "type": "database_record_list",
+          "name": "Player Rights Received"
+        },
+        {
+          "field": "plrl",
+          "type": "database_record_list",
+          "name": "Player Rights Lost"
+        },
+        {
+          "field": "edal",
+          "type": "list",
+          "name": "Draft Allocations Outgoing",
+          "item_fields": [
+            {
+              "field": "type",
+              "type": "enum",
+              "name": "MLS Draft Type"
+            },
+            {
+              "field": "year",
+              "type": "integer",
+              "name": "Year"
+            },
+            {
+              "field": "roun",
+              "type": "integer",
+              "name": "Round"
+            },
+            {
+              "field": "pick",
+              "type": "integer",
+              "name": "Pick"
+            },
+            {
+              "field": "dral",
+              "type": "list",
+              "name": "Draft Allocations Incoming",
+              "item_fields": [
+                {
+                  "field": "type",
+                  "type": "enum",
+                  "name": "MLS Draft Type"
+                },
+                {
+                  "field": "year",
+                  "type": "integer",
+                  "name": "Year"
+                },
+                {
+                  "field": "roun",
+                  "type": "integer",
+                  "name": "Round"
+                },
+                {
+                  "field": "pick",
+                  "type": "integer",
+                  "name": "Pick"
+                },
+                {
+                  "field": "exis",
+                  "type": "list",
+                  "name": "International Slots Outgoing",
+                  "item_fields": [
+                    {
+                      "field": "expi",
+                      "type": "date",
+                      "name": "Expiry Date"
+                    },
+                    {
+                      "field": "insl",
+                      "type": "list",
+                      "name": "International Slots Incoming",
+                      "item_fields": [
+                        {
+                          "field": "expi",
+                          "type": "date",
+                          "name": "Expiry Date"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cren",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "rsnp",
+          "type": "database_record_unique_id",
+          "name": "Player"
+        },
+        {
+          "field": "rsnn",
+          "type": "integer",
+          "name": "Squad Number"
+        },
+        {
+          "field": "rsnr",
+          "type": "enum",
+          "name": "Retired Squad Number Reason"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "TCrs",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "PUnI",
+          "type": "enum",
+          "name": "Responsibility"
+        },
+        {
+          "field": "PUnT",
+          "type": "enum",
+          "name": "Team Type"
+        },
+        {
+          "field": "PUnP",
+          "type": "database_record_unique_id",
+          "name": "Person"
+        },
+        {
+          "field": "PUnJ",
+          "type": "enum",
+          "name": "Expected Job"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Crvc",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "club",
+          "type": "database_record_unique_id",
+          "name": "Club"
+        },
+        {
+          "field": "leve",
+          "type": "integer",
+          "name": "Level"
+        },
+        {
+          "field": "rrea",
+          "type": "enum",
+          "name": "Reason"
+        },
+        {
+          "field": "rcdt",
+          "type": "boolean",
+          "name": "Clubs Don't Transfer Players"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cnec",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "club",
+          "type": "database_record_unique_id",
+          "name": "New Club"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cfvp",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "pers",
+          "type": "database_record_unique_id",
+          "name": "Person"
+        },
+        {
+          "field": "leve",
+          "type": "integer",
+          "name": "Level"
+        },
+        {
+          "field": "rrea",
+          "type": "enum",
+          "name": "Reason"
+        },
+        {
+          "field": "perm",
+          "type": "boolean",
+          "name": "Permanent"
+        },
+        {
+          "field": "rnsp",
+          "type": "boolean",
+          "name": "Can Name Stadium After Person"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Clgl",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "stnm",
+          "type": "string",
+          "name": "Name"
+        },
+        {
+          "field": "stid",
+          "type": "database_record_unique_id",
+          "name": "Person"
+        },
+        {
+          "field": "rati",
+          "type": "integer",
+          "name": "Level"
+        },
+        {
+          "field": "rrea",
+          "type": "enum",
+          "name": "Reason"
+        },
+        {
+          "field": "cnst",
+          "type": "boolean",
+          "name": "Can Name Stadium After Person"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "CIcl",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "stnm",
+          "type": "string",
+          "name": "Name"
+        },
+        {
+          "field": "stid",
+          "type": "database_record_unique_id",
+          "name": "Person"
+        },
+        {
+          "field": "rati",
+          "type": "integer",
+          "name": "Level"
+        },
+        {
+          "field": "rrea",
+          "type": "enum",
+          "name": "Reason"
+        },
+        {
+          "field": "cnst",
+          "type": "boolean",
+          "name": "Can Name Stadium After Person"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cdsp",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "pers",
+          "type": "database_record_unique_id",
+          "name": "Person"
+        },
+        {
+          "field": "leve",
+          "type": "integer",
+          "name": "Level"
+        },
+        {
+          "field": "perm",
+          "type": "boolean",
+          "name": "Permanent"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cafl",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "affl",
+          "type": "database_record_unique_id",
+          "name": "Affiliated Club"
+        },
+        {
+          "field": "ismc",
+          "type": "boolean",
+          "name": "Is Main Club"
+        },
+        {
+          "field": "stdt",
+          "type": "date",
+          "name": "Start Date"
+        },
+        {
+          "field": "endt",
+          "type": "date",
+          "name": "End Date"
+        },
+        {
+          "field": "type",
+          "type": "enum",
+          "name": "Affiliation Type"
+        },
+        {
+          "field": "yfee",
+          "type": "cash",
+          "name": "Yearly Fee"
+        },
+        {
+          "field": "fri%",
+          "type": "integer",
+          "name": "Percentage Chance Of Friendly Each Year"
+        },
+        {
+          "field": "frly",
+          "type": "boolean",
+          "name": "Players Move Freely"
+        },
+        {
+          "field": "golo",
+          "type": "boolean",
+          "name": "Players Go On Loan"
+        },
+        {
+          "field": "fotb",
+          "type": "boolean",
+          "name": "First Option To Buy"
+        },
+        {
+          "field": "UsSK",
+          "type": "boolean",
+          "name": "Uses Same Kit"
+        },
+        {
+          "field": "plfr",
+          "type": "boolean",
+          "name": "Play Friendlies"
+        },
+        {
+          "field": "smbo",
+          "type": "boolean",
+          "name": "Same Board"
+        },
+        {
+          "field": "fnhl",
+          "type": "boolean",
+          "name": "Financial Help"
+        },
+        {
+          "field": "perm",
+          "type": "boolean",
+          "name": "Permanent Deal"
+        },
+        {
+          "field": "yutr",
+          "type": "boolean",
+          "name": "Youth Players Training"
+        },
+        {
+          "field": "hlwf",
+          "type": "boolean",
+          "name": "Help With Facilities"
+        },
+        {
+          "field": "mrrl",
+          "type": "boolean",
+          "name": "Marketing Relations"
+        },
+        {
+          "field": "scks",
+          "type": "boolean",
+          "name": "Scouting Knowledge Shared"
+        },
+        {
+          "field": "cpsd",
+          "type": "boolean",
+          "name": "Cannot Play In Same Division"
+        },
+        {
+          "field": "ualf",
+          "type": "boolean",
+          "name": "Uses All Parent Club Facilities"
+        },
+        {
+          "field": "lpfs",
+          "type": "boolean",
+          "name": "Loan Players from Sub Team"
+        },
+        {
+          "field": "ustf",
+          "type": "boolean",
+          "name": "Uses Sub Team Training Facilities"
+        },
+        {
+          "field": "msls",
+          "type": "integer",
+          "name": "Maximum No. Players Loaned"
+        },
+        {
+          "field": "yout",
+          "type": "boolean",
+          "name": "Sends youth players to gain experience"
+        },
+        {
+          "field": "rsrv",
+          "type": "boolean",
+          "name": "Link used to showcase reserve players"
+        },
+        {
+          "field": "pfpr",
+          "type": "boolean",
+          "name": "Sends first team players to aid affiliate club with promotion"
+        },
+        {
+          "field": "pwgp",
+          "type": "integer",
+          "name": "Percentage of loan player wage paid by parent club"
+        },
+        {
+          "field": "bttr",
+          "type": "boolean",
+          "name": "Players with the B Team train alongside players from the main club"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Cvfl",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "affl",
+          "type": "database_record_unique_id",
+          "name": "Affiliated Club"
+        },
+        {
+          "field": "ismc",
+          "type": "boolean",
+          "name": "Is Main Club"
+        },
+        {
+          "field": "clfr",
+          "type": "enum",
+          "name": "Validated?"
+        },
+        {
+          "field": "stdt",
+          "type": "date",
+          "name": "Start Date"
+        },
+        {
+          "field": "type",
+          "type": "enum",
+          "name": "Affiliation Type"
+        },
+        {
+          "field": "yfee",
+          "type": "cash",
+          "name": "Yearly Fee"
+        },
+        {
+          "field": "fri%",
+          "type": "integer",
+          "name": "Percentage Chance Of Friendly Each Year"
+        },
+        {
+          "field": "frly",
+          "type": "boolean",
+          "name": "Players Move Freely"
+        },
+        {
+          "field": "golo",
+          "type": "boolean",
+          "name": "Players Go On Loan"
+        },
+        {
+          "field": "fotb",
+          "type": "boolean",
+          "name": "First Option To Buy"
+        },
+        {
+          "field": "plfr",
+          "type": "boolean",
+          "name": "Play Friendlies"
+        },
+        {
+          "field": "smbo",
+          "type": "boolean",
+          "name": "Same Board"
+        },
+        {
+          "field": "fnhl",
+          "type": "boolean",
+          "name": "Financial Help"
+        },
+        {
+          "field": "perm",
+          "type": "boolean",
+          "name": "Permanent Deal"
+        },
+        {
+          "field": "yutr",
+          "type": "boolean",
+          "name": "Youth Players Training"
+        },
+        {
+          "field": "hlwf",
+          "type": "boolean",
+          "name": "Help With Facilities"
+        },
+        {
+          "field": "mrrl",
+          "type": "boolean",
+          "name": "Marketing Relations"
+        },
+        {
+          "field": "scks",
+          "type": "boolean",
+          "name": "Scouting Knowledge Shared"
+        },
+        {
+          "field": "cpsd",
+          "type": "boolean",
+          "name": "Cannot Play In Same Division"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Clhs",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "year",
+          "type": "integer",
+          "name": "Year"
+        },
+        {
+          "field": "orde",
+          "type": "integer",
+          "name": "Order"
+        },
+        {
+          "field": "divi",
+          "type": "database_record_unique_id",
+          "name": "Division"
+        },
+        {
+          "field": "posi",
+          "type": "integer",
+          "name": "Position"
+        },
+        {
+          "field": "mxtm",
+          "type": "integer",
+          "name": "Max Teams"
+        },
+        {
+          "field": "poin",
+          "type": "integer",
+          "name": "Points"
+        },
+        {
+          "field": "play",
+          "type": "integer",
+          "name": "Games Played"
+        },
+        {
+          "field": "wins",
+          "type": "integer",
+          "name": "Games Won"
+        },
+        {
+          "field": "draw",
+          "type": "integer",
+          "name": "Games Drawn"
+        },
+        {
+          "field": "lost",
+          "type": "integer",
+          "name": "Games Lost"
+        },
+        {
+          "field": "gfor",
+          "type": "integer",
+          "name": "Goals For"
+        },
+        {
+          "field": "gaga",
+          "type": "integer",
+          "name": "Goals Against"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "CAmb",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "type",
+          "type": "enum",
+          "name": "Type"
+        },
+        {
+          "field": "levl",
+          "type": "integer",
+          "name": "Importance"
+        },
+        {
+          "field": "styr",
+          "type": "integer",
+          "name": "Start Year"
+        },
+        {
+          "field": "enyr",
+          "type": "integer",
+          "name": "End Year"
+        },
+        {
+          "field": "mage",
+          "type": "integer",
+          "name": "Max Age"
+        },
+        {
+          "field": "mlen",
+          "type": "integer",
+          "name": "Min Length"
+        },
+        {
+          "field": "isog",
+          "type": "boolean",
+          "name": "Is Ongoing Club Vision"
+        },
+        {
+          "field": "comp",
+          "type": "database_record_unique_id",
+          "name": "Competition"
+        },
+        {
+          "field": "nati",
+          "type": "database_record_unique_id",
+          "name": "Nation"
+        },
+        {
+          "field": "wrcl",
+          "type": "enum",
+          "name": "World Reputation Classification"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    },
+    {
+      "field": "Tchl",
+      "kind": "list",
+      "count_offset": null,
+      "item_width": null,
+      "item_fields": [
+        {
+          "field": "tchc",
+          "type": "database_record_unique_id",
+          "name": "Competition"
+        },
+        {
+          "field": "styr",
+          "type": "integer",
+          "name": "Start Year"
+        },
+        {
+          "field": "edyr",
+          "type": "integer",
+          "name": "End Year"
+        },
+        {
+          "field": "mstn",
+          "type": "database_record_unique_id",
+          "name": "Last Stage"
+        },
+        {
+          "field": "sstn",
+          "type": "database_record_unique_id",
+          "name": "Last Sub-Stage"
+        },
+        {
+          "field": "dbrt",
+          "type": "enum",
+          "name": "Result"
+        },
+        {
+          "field": "posi",
+          "type": "integer",
+          "name": "Position Achieved"
+        },
+        {
+          "field": "cquf",
+          "type": "database_record_unique_id",
+          "name": "Competition Qualified For"
+        },
+        {
+          "field": "tcop",
+          "type": "database_record_unique_id",
+          "name": "Opposition"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "No uniquely closed count/segment reader and row offset evidence; nested item schema is recorded only."
+    }
+  ],
+  "unresolved": [
+    {
+      "field_index": 0,
+      "field": "duni",
+      "name": "Unique ID",
+      "type": "unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 1,
+      "field": "rdui",
+      "name": "Random ID",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 2,
+      "field": "NDBC",
+      "name": "Number Of Changes",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 3,
+      "field": "FDBC",
+      "name": "Number Of Failed Changes",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 4,
+      "field": "dbnm",
+      "name": "Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 5,
+      "field": "dAPw",
+      "name": "Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 6,
+      "field": "Cnam",
+      "name": "Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 7,
+      "field": "Csnm",
+      "name": "Short Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 8,
+      "field": "Csxn",
+      "name": "Six Letter Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 9,
+      "field": "Cl3n",
+      "name": "Three Letter Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 10,
+      "field": "Ca3n",
+      "name": "Alternative Three Letter Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 11,
+      "field": "TCnn",
+      "name": "Nickname",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 12,
+      "field": "TCht",
+      "name": "Hashtag",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 13,
+      "field": "Cext",
+      "name": "Extinct",
+      "type": "boolean",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 14,
+      "field": "PLgn",
+      "name": "Player Gender",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 15,
+      "field": "Cedp",
+      "name": "Extra Designated Player slot (MLS clubs only)",
+      "type": "boolean",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 16,
+      "field": "Cnti",
+      "name": "Nation",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 17,
+      "field": "Cbni",
+      "name": "Based Nation",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 19,
+      "field": "CLat",
+      "name": "Latitude",
+      "type": "real",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 20,
+      "field": "CLon",
+      "name": "Longitude",
+      "type": "real",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 21,
+      "field": "Cncl",
+      "name": "New Club",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 22,
+      "field": "Ccty",
+      "name": "City",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 23,
+      "field": "Clri",
+      "name": "Local Region",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 24,
+      "field": "ttcl",
+      "name": "Foreground Colour",
+      "type": "colour",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 25,
+      "field": "tbcl",
+      "name": "Background Colour",
+      "type": "colour",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 26,
+      "field": "Cyfn",
+      "name": "Year Founded",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 27,
+      "field": "Cprs",
+      "name": "Status",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation.",
+      "prior_unclosed_candidate": {
+        "field": "Cprs",
+        "schema_name": "Status",
+        "getter_compare": {
+          "file_offset": "0xe8c48d",
+          "bytes": "81 fb 73 72 70 43"
+        },
+        "getter_member_read": {
+          "file_offset": "0xe8d46f",
+          "bytes": "41 0f be b4 24 6a 01 00 00",
+          "member_disp": "0x16a"
+        },
+        "reader_sink": {
+          "file_offset": "0xe5a9c0",
+          "bytes": "49 8d be 6a 01 00 00",
+          "call": {
+            "file_offset": "0xe5a9ea",
+            "bytes": "ff 50 28"
+          },
+          "row_offset_candidates": [
+            0,
+            20
+          ],
+          "width": "dynamic/unresolved"
+        },
+        "reason": "same member slot is a strong 4CC alignment, but the source cursor is split between 0 and 20 and no width/path closure was obtained"
+      }
+    },
+    {
+      "field_index": 28,
+      "field": "Cmag",
+      "name": "Maximum Age",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 29,
+      "field": "Cnag",
+      "name": "Minimum Age",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 30,
+      "field": "Cmle",
+      "name": "Morale",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 31,
+      "field": "Crep",
+      "name": "Reputation",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 32,
+      "field": "CIns",
+      "name": "Is Institute",
+      "type": "boolean",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 33,
+      "field": "CASt",
+      "name": "Is All-Star Club",
+      "type": "boolean",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 34,
+      "field": "CScP",
+      "name": "Scouting Package",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 35,
+      "field": "lpRP",
+      "name": "Logo",
+      "type": "picture",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 36,
+      "field": "ipRP",
+      "name": "Icon",
+      "type": "picture",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 37,
+      "field": "hpRP",
+      "name": "Home Kit",
+      "type": "picture",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 38,
+      "field": "apRP",
+      "name": "Away Kit",
+      "type": "picture",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 39,
+      "field": "tpRP",
+      "name": "Third Kit",
+      "type": "picture",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 40,
+      "field": "lpRS",
+      "name": "Logo",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 41,
+      "field": "ipRS",
+      "name": "Icon",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 42,
+      "field": "hpRS",
+      "name": "Home Kit",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 43,
+      "field": "apRS",
+      "name": "Away Kit",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 44,
+      "field": "tpRS",
+      "name": "Third Kit",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 45,
+      "field": "CNtp",
+      "name": "Nation Transfer Preferences",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 46,
+      "field": "CNse",
+      "name": "Nation Newgen Specifications",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 47,
+      "field": "Cown",
+      "name": "Ownership Type",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 48,
+      "field": "Cebd",
+      "name": "Election Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 49,
+      "field": "Cepr",
+      "name": "Promises",
+      "type": "multiple_enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 50,
+      "field": "Cetl",
+      "name": "Max Length of Term",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 51,
+      "field": "Cmtm",
+      "name": "Max Number of Terms",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 52,
+      "field": "Cect",
+      "name": "Current Number of Terms",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 53,
+      "field": "Cemn",
+      "name": "Minimum Turnout",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 54,
+      "field": "Cemx",
+      "name": "Maximum Turnout",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 55,
+      "field": "Chti",
+      "name": "Chairperson Title",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 56,
+      "field": "Csot",
+      "name": "Stop Outside Takeovers",
+      "type": "boolean",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 57,
+      "field": "Csti",
+      "name": "Stadium",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 58,
+      "field": "Ctsi",
+      "name": "Training Ground",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation.",
+      "prior_unclosed_candidate": {
+        "field": "Ctsi",
+        "schema_name": "Training Ground",
+        "getter_compare": {
+          "file_offset": "0xe8c57d",
+          "bytes": "81 fb 69 73 74 43"
+        },
+        "getter_member_read": {
+          "file_offset": "0xe8c589",
+          "bytes": "49 8b 8c 24 40 01 00 00",
+          "member_disp": "0x140"
+        },
+        "reader_sink": {
+          "file_offset": "0xe5bbef",
+          "bytes": "49 8d b6 40 01 00 00",
+          "call": {
+            "file_offset": "0xe5bc1f",
+            "bytes": "ff 50 28"
+          },
+          "width_candidates": [
+            1,
+            2
+          ],
+          "row_offset_candidates": []
+        },
+        "reason": "cursor already unknown before this sink; width also branches between 1 and 2"
+      }
+    },
+    {
+      "field_index": 59,
+      "field": "Twhm",
+      "name": "Weekend Home Match Day",
+      "type": "day_of_week",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 60,
+      "field": "Tmhm",
+      "name": "Midweek Home Match Day",
+      "type": "day_of_week",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 61,
+      "field": "Catd",
+      "name": "Attendance",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 62,
+      "field": "Cmna",
+      "name": "Minimum Attendance",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 63,
+      "field": "Cmxa",
+      "name": "Maximum Attendance",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 64,
+      "field": "Ctlv",
+      "name": "Training",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 65,
+      "field": "Cytv",
+      "name": "Youth Coaching",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 66,
+      "field": "Cyfb",
+      "name": "Youth Facilities",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 67,
+      "field": "Crcb",
+      "name": "Youth Recruitment",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 68,
+      "field": "Cyim",
+      "name": "Youth Importance",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 69,
+      "field": "CcfE",
+      "name": "Corporate Facilities",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 70,
+      "field": "1scl",
+      "name": "Shirt Foreground Colour 1",
+      "type": "colour",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 71,
+      "field": "1sbc",
+      "name": "Shirt Background Colour 1",
+      "type": "colour",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 72,
+      "field": "2scl",
+      "name": "Shirt Foreground Colour 2",
+      "type": "colour",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 73,
+      "field": "2sbc",
+      "name": "Shirt Background Colour 2",
+      "type": "colour",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 74,
+      "field": "3scl",
+      "name": "Shirt Foreground Colour 3",
+      "type": "colour",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 75,
+      "field": "3sbc",
+      "name": "Shirt Background Colour 3",
+      "type": "colour",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 76,
+      "field": "ttcl",
+      "name": "Title Foreground Colour 1",
+      "type": "colour",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 77,
+      "field": "tbcl",
+      "name": "Title Background Colour 1",
+      "type": "colour",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 78,
+      "field": "2tcl",
+      "name": "Title Foreground Colour 2",
+      "type": "colour",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 79,
+      "field": "2tbc",
+      "name": "Title Background Colour 2",
+      "type": "colour",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 80,
+      "field": "3tcl",
+      "name": "Title Foreground Colour 3",
+      "type": "colour",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 81,
+      "field": "3tbc",
+      "name": "Title Background Colour 3",
+      "type": "colour",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 82,
+      "field": "Crty",
+      "name": "Reserve Teams",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 83,
+      "field": "CSrs",
+      "name": "Reserve Teams To Create",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 84,
+      "field": "Cstc",
+      "name": "Stadium Change",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 85,
+      "field": "Calt",
+      "name": "Alternative Stadiums",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 86,
+      "field": "Cspb",
+      "name": "Supporter Bans",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 87,
+      "field": "Csmn",
+      "name": "New Stadium",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 88,
+      "field": "Csna",
+      "name": "Alternative Stadium",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 89,
+      "field": "Csld",
+      "name": "Leave Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 90,
+      "field": "Csjd",
+      "name": "Move In Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 91,
+      "field": "Ccba",
+      "name": "Balance",
+      "type": "cash",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 92,
+      "field": "Ctbu",
+      "name": "Transfer Budget",
+      "type": "cash",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 93,
+      "field": "CMWE",
+      "name": "Maximum Wage Allowed",
+      "type": "cash",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 94,
+      "field": "Crmb",
+      "name": "Remaining Player Wage Budget",
+      "type": "cash",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 95,
+      "field": "Cadm",
+      "name": "In Administration",
+      "type": "boolean",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 96,
+      "field": "Cpfa",
+      "name": "Transfer Embargo Type",
+      "type": "multiple_enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 97,
+      "field": "Cesd",
+      "name": "Transfer Embargo Start Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 98,
+      "field": "Ceed",
+      "name": "Transfer Embargo End Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 99,
+      "field": "Cead",
+      "name": "Transfer Embargo Appeal Date (Must Be Before Start)",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 100,
+      "field": "CteA",
+      "name": "Transfer Embargo Age Restriction",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 101,
+      "field": "Chsd",
+      "name": "Rich Benefactor",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 102,
+      "field": "Chaf",
+      "name": "Rich Benefactor Increases Starting Finances",
+      "type": "boolean",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 103,
+      "field": "Coin",
+      "name": "Other Income",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 104,
+      "field": "Cscm",
+      "name": "Season Ticket Cup Matches",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 105,
+      "field": "Csme",
+      "name": "Starting Media Expectations",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 106,
+      "field": "Csry",
+      "name": "Stadium Rental Per Year",
+      "type": "cash",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 107,
+      "field": "Cmtp",
+      "name": "Average Match Ticket Price",
+      "type": "cash",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 108,
+      "field": "Casp",
+      "name": "Average Season Ticket Price",
+      "type": "cash",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 109,
+      "field": "CssT",
+      "name": "Special Season Tickets Sold",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 110,
+      "field": "CssP",
+      "name": "Special Season Ticket Price",
+      "type": "cash",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 111,
+      "field": "CssS",
+      "name": "Special Season Tickets Start Datee",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 112,
+      "field": "CssE",
+      "name": "Special Season Tickets End Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 113,
+      "field": "CsGA",
+      "name": "Starting General Allocation Money (MLS clubs only)",
+      "type": "cash",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 114,
+      "field": "CsTA",
+      "name": "Starting Target Allocation Money (MLS clubs only)",
+      "type": "cash",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 115,
+      "field": "Csth",
+      "name": "Number Of Season Ticket Holders",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 116,
+      "field": "Chdb",
+      "name": "Has Debts",
+      "type": "boolean",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 117,
+      "field": "Cdbt",
+      "name": "Debts",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 118,
+      "field": "Cffp",
+      "name": "Financial Fair Play Records",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 119,
+      "field": "Cbbl",
+      "name": "Player Buy Back Clauses",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 120,
+      "field": "Csoc",
+      "name": "Sell On Clauses",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 121,
+      "field": "Camc",
+      "name": "Conditional Fees",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 122,
+      "field": "Cmti",
+      "name": "Instalments",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 123,
+      "field": "Cwcl",
+      "name": "Wage Contributions",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 124,
+      "field": "levl",
+      "name": "Division Level",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 125,
+      "field": "Cdvi",
+      "name": "Division",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 126,
+      "field": "Cldi",
+      "name": "Last Division",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 127,
+      "field": "Clps",
+      "name": "Last Position",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 128,
+      "field": "Cndi",
+      "name": "Next Division",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 129,
+      "field": "Clpn",
+      "name": "Last Position For Next Division",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 130,
+      "field": "Codi",
+      "name": "Secondary Division",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 131,
+      "field": "Cnod",
+      "name": "Next Secondary Division",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 132,
+      "field": "Clpo",
+      "name": "Last Position For Next Secondary Division",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 133,
+      "field": "Cuf1",
+      "name": "—",
+      "type": "real",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 134,
+      "field": "Cuf2",
+      "name": "—",
+      "type": "real",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 135,
+      "field": "Cuf3",
+      "name": "—",
+      "type": "real",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 136,
+      "field": "Cuf4",
+      "name": "—",
+      "type": "real",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 137,
+      "field": "Cuf5",
+      "name": "—",
+      "type": "real",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 138,
+      "field": "Cuf6",
+      "name": "—",
+      "type": "real",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 139,
+      "field": "Cuf7",
+      "name": "—",
+      "type": "real",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 140,
+      "field": "Cuf8",
+      "name": "—",
+      "type": "real",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 141,
+      "field": "Cuf9",
+      "name": "—",
+      "type": "real",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 142,
+      "field": "Cf10",
+      "name": "—",
+      "type": "real",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 143,
+      "field": "Chrd",
+      "name": "Has Regional Division",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 144,
+      "field": "Crdl",
+      "name": "Regional Divisions",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 145,
+      "field": "Cpfr",
+      "name": "Preferred Formation",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 146,
+      "field": "C2pf",
+      "name": "Second Preferred Formation",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 147,
+      "field": "Cdfo",
+      "name": "Defensive Formation",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 148,
+      "field": "Cafo",
+      "name": "Attacking Formation",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 149,
+      "field": "Csly",
+      "name": "Loyalty",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 150,
+      "field": "Csps",
+      "name": "Passion",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 151,
+      "field": "Cspt",
+      "name": "Patience",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 152,
+      "field": "Csaf",
+      "name": "Affluence",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 153,
+      "field": "Cste",
+      "name": "Temperament",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 154,
+      "field": "Cspe",
+      "name": "Expectations",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 155,
+      "field": "Ccsp",
+      "name": "Star Player",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 156,
+      "field": "Ccsk",
+      "name": "Star Player",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 157,
+      "field": "Ccsf",
+      "name": "Regular Starter",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 158,
+      "field": "Ccsr",
+      "name": "Squad Player",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 159,
+      "field": "Ccsb",
+      "name": "Fringe Player",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 160,
+      "field": "Ccsh",
+      "name": "Hot Prospect",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 161,
+      "field": "Ccsy",
+      "name": "Youngster",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 162,
+      "field": "Ccjm",
+      "name": "Manager",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 163,
+      "field": "Ccja",
+      "name": "Assistant Manager",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 164,
+      "field": "Ccjc",
+      "name": "Coach",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 165,
+      "field": "Ccji",
+      "name": "Fitness Coach",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 166,
+      "field": "Ccjg",
+      "name": "Goalkeeping Coach",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 167,
+      "field": "Ccpc",
+      "name": "Set Piece Coach",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 168,
+      "field": "Ccjy",
+      "name": "Youth Team Coach",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 169,
+      "field": "Ccjs",
+      "name": "Scout",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 170,
+      "field": "Ccjp",
+      "name": "Physio",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 171,
+      "field": "Ccjd",
+      "name": "Director of football",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 172,
+      "field": "Ccjt",
+      "name": "Technical Director",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 173,
+      "field": "Ccjh",
+      "name": "Loan Manager",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 174,
+      "field": "Ccda",
+      "name": "Data Analyst",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 175,
+      "field": "Ccss",
+      "name": "Sports Scientist",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 176,
+      "field": "Ccdr",
+      "name": "Doctor",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 177,
+      "field": "Crkt",
+      "name": "Randomise Kits",
+      "type": "boolean",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 178,
+      "field": "Tko1",
+      "name": "Colours/Kits",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 179,
+      "field": "Tkg1",
+      "name": "Colours/Kits",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 180,
+      "field": "Tko2",
+      "name": "Colours/Kits",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 181,
+      "field": "Tkg2",
+      "name": "Colours/Kits",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 182,
+      "field": "Tko3",
+      "name": "Colours/Kits",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 183,
+      "field": "Tkg3",
+      "name": "Colours/Kits",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 184,
+      "field": "Ccri",
+      "name": "Chairperson",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 185,
+      "field": "Cdof",
+      "name": "Director Of Football",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation.",
+      "prior_unclosed_candidate": {
+        "field": "Cdof",
+        "schema_name": "Director Of Football",
+        "getter_compare": {
+          "file_offset": "0xe8b17c",
+          "bytes": "81 fb 66 6f 64 43"
+        },
+        "getter_member_read": {
+          "file_offset": "0xe8b188",
+          "bytes": "49 8b 84 24 48 01 00 00",
+          "member_disp": "0x148"
+        },
+        "reader_sink": {
+          "file_offset": "0xe5aa69",
+          "bytes": "49 8d be 48 01 00 00",
+          "width_instruction": {
+            "file_offset": "0xe5aa73",
+            "bytes": "41 b8 02 00 00 00"
+          },
+          "call": {
+            "file_offset": "0xe5aa7c",
+            "bytes": "ff 50 28"
+          },
+          "row_offset_candidates": [
+            0,
+            1,
+            20,
+            21
+          ]
+        },
+        "reason": "getter and reader member displacement agree, but multiple row cursor alternatives remain; no class/branch evidence selects one"
+      }
+    },
+    {
+      "field_index": 186,
+      "field": "Cdri",
+      "name": "Board",
+      "type": "database_record_list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 187,
+      "field": "Cmni",
+      "name": "Manager",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 188,
+      "field": "Tcap",
+      "name": "Captain",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 189,
+      "field": "Tvcp",
+      "name": "Vice-Captain",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 190,
+      "field": "Cchi",
+      "name": "Coaches",
+      "type": "database_record_list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 191,
+      "field": "Csci",
+      "name": "Scouting Team",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 192,
+      "field": "Cphi",
+      "name": "Medical Team",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 193,
+      "field": "C1sq",
+      "name": "Players",
+      "type": "database_record_list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 194,
+      "field": "Clnp",
+      "name": "Players On Loan",
+      "type": "database_record_list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 195,
+      "field": "Calo",
+      "name": "Players Away On Loan",
+      "type": "database_record_list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 196,
+      "field": "pcpt",
+      "name": "Player Testimonial List",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 197,
+      "field": "CPsL",
+      "name": "Player Partnerships",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 198,
+      "field": "CpTI",
+      "name": "Trades",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 199,
+      "field": "Cren",
+      "name": "Retired Squad Numbers",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 200,
+      "field": "CrcS",
+      "name": "Has Rival Club",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 201,
+      "field": "TCrs",
+      "name": "Responsibilities",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 202,
+      "field": "Crvc",
+      "name": "Rival Clubs",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 203,
+      "field": "Cnec",
+      "name": "New Club Link",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 204,
+      "field": "Cfvp",
+      "name": "Favourite People",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 205,
+      "field": "Clgl",
+      "name": "Club Legends",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 206,
+      "field": "CIcl",
+      "name": "Club Icons",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 207,
+      "field": "Cdsp",
+      "name": "Disliked People",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 208,
+      "field": "ChAf",
+      "name": "Has Affiliated Club",
+      "type": "multiple_enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 209,
+      "field": "Cafl",
+      "name": "Current Affiliations",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 210,
+      "field": "Cvfl",
+      "name": "Validated Current Affiliations",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 211,
+      "field": "CBWo",
+      "name": "Opposition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 212,
+      "field": "CBWf",
+      "name": "Team Goals",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 213,
+      "field": "CBWa",
+      "name": "Opposition Goals",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 214,
+      "field": "CBWd",
+      "name": "Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 215,
+      "field": "CBWc",
+      "name": "Competition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 216,
+      "field": "CBDo",
+      "name": "Opposition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 217,
+      "field": "CBDf",
+      "name": "Team Goals",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 218,
+      "field": "CBDa",
+      "name": "Opposition Goals",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 219,
+      "field": "CBDd",
+      "name": "Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 220,
+      "field": "CBDc",
+      "name": "Competition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 221,
+      "field": "CHSo",
+      "name": "Opposition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 222,
+      "field": "CHSf",
+      "name": "Team Goals",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 223,
+      "field": "CHSa",
+      "name": "Opposition Goals",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 224,
+      "field": "CHSd",
+      "name": "Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 225,
+      "field": "CHSc",
+      "name": "Competition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 226,
+      "field": "CHLo",
+      "name": "Opposition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 227,
+      "field": "CHLf",
+      "name": "Team Goals",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 228,
+      "field": "CHLa",
+      "name": "Opposition Goals",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 229,
+      "field": "CHLd",
+      "name": "Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 230,
+      "field": "CHLc",
+      "name": "Competition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 231,
+      "field": "CWRg",
+      "name": "Games",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 232,
+      "field": "CWRs",
+      "name": "Start Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 233,
+      "field": "CWRe",
+      "name": "End Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 234,
+      "field": "CLRg",
+      "name": "Games",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 235,
+      "field": "CLRs",
+      "name": "Start Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 236,
+      "field": "CLRe",
+      "name": "End Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 237,
+      "field": "CWLg",
+      "name": "Games",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 238,
+      "field": "CWLs",
+      "name": "Start Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 239,
+      "field": "CWLe",
+      "name": "End Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 240,
+      "field": "CWWg",
+      "name": "Games",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 241,
+      "field": "CWWs",
+      "name": "Start Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 242,
+      "field": "CWWe",
+      "name": "End Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 243,
+      "field": "CWSg",
+      "name": "Games",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 244,
+      "field": "CWSs",
+      "name": "Start Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 245,
+      "field": "CWSe",
+      "name": "End Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 246,
+      "field": "CWCg",
+      "name": "Games",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 247,
+      "field": "CWCs",
+      "name": "Start Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 248,
+      "field": "CWCe",
+      "name": "End Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 249,
+      "field": "CHAa",
+      "name": "Highest Attendance",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 250,
+      "field": "CHAo",
+      "name": "Opposition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 251,
+      "field": "CHAd",
+      "name": "Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 252,
+      "field": "CHAc",
+      "name": "Competition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 253,
+      "field": "CLAa",
+      "name": "Lowest Attendance",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 254,
+      "field": "CLAo",
+      "name": "Opposition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 255,
+      "field": "CLAd",
+      "name": "Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 256,
+      "field": "CLAc",
+      "name": "Competition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 257,
+      "field": "CAAa",
+      "name": "Average Attendance",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 258,
+      "field": "CAAd",
+      "name": "Season Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 259,
+      "field": "CMAp",
+      "name": "Player",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 260,
+      "field": "CMAn",
+      "name": "Player Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 261,
+      "field": "CMAa",
+      "name": "Apps",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 262,
+      "field": "CMGp",
+      "name": "Player",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 263,
+      "field": "CMGn",
+      "name": "Player Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 264,
+      "field": "CMGg",
+      "name": "Goals",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 265,
+      "field": "CMOp",
+      "name": "Player",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 266,
+      "field": "CMOn",
+      "name": "Player Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 267,
+      "field": "CMOg",
+      "name": "Goals",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 268,
+      "field": "CMCp",
+      "name": "Player",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 269,
+      "field": "CMCn",
+      "name": "Player Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 270,
+      "field": "CMCs",
+      "name": "Clean Sheets",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 271,
+      "field": "CMCd",
+      "name": "Season Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 272,
+      "field": "CHGp",
+      "name": "Player",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 273,
+      "field": "CHGn",
+      "name": "Player Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 274,
+      "field": "CHGc",
+      "name": "Competition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 275,
+      "field": "CHGg",
+      "name": "Goals",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 276,
+      "field": "CYPp",
+      "name": "Player",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 277,
+      "field": "CYPn",
+      "name": "Player Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 278,
+      "field": "CYPd",
+      "name": "Date Of Birth",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 279,
+      "field": "CYPm",
+      "name": "Match Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 280,
+      "field": "CYPo",
+      "name": "Opposition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 281,
+      "field": "CYPc",
+      "name": "Competition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 282,
+      "field": "COPp",
+      "name": "Player",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 283,
+      "field": "COPn",
+      "name": "Player Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 284,
+      "field": "COPd",
+      "name": "Date Of Birth",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 285,
+      "field": "COPm",
+      "name": "Match Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 286,
+      "field": "COPo",
+      "name": "Opposition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 287,
+      "field": "COPc",
+      "name": "Competition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 288,
+      "field": "CYSp",
+      "name": "Player",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 289,
+      "field": "CYSn",
+      "name": "Player Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 290,
+      "field": "CYSd",
+      "name": "Date Of Birth",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 291,
+      "field": "CYSm",
+      "name": "Match Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 292,
+      "field": "CYSo",
+      "name": "Opposition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 293,
+      "field": "CYSc",
+      "name": "Competition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 294,
+      "field": "COSp",
+      "name": "Player",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 295,
+      "field": "COSn",
+      "name": "Player Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 296,
+      "field": "COSd",
+      "name": "Date Of Birth",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 297,
+      "field": "COSm",
+      "name": "Match Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 298,
+      "field": "COSo",
+      "name": "Opposition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 299,
+      "field": "COSc",
+      "name": "Competition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 300,
+      "field": "CGMp",
+      "name": "Player",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 301,
+      "field": "CGMn",
+      "name": "Player Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 302,
+      "field": "CGMg",
+      "name": "Goals",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 303,
+      "field": "CGMd",
+      "name": "Match Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 304,
+      "field": "CGMo",
+      "name": "Opposition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 305,
+      "field": "CGMc",
+      "name": "Competition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 306,
+      "field": "CGLp",
+      "name": "Player",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 307,
+      "field": "CGLn",
+      "name": "Player Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 308,
+      "field": "CGLg",
+      "name": "Goals",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 309,
+      "field": "CGLd",
+      "name": "Match Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 310,
+      "field": "CGLo",
+      "name": "Opposition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 311,
+      "field": "CGLc",
+      "name": "Competition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 312,
+      "field": "CFGp",
+      "name": "Player",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 313,
+      "field": "CFGn",
+      "name": "Player Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 314,
+      "field": "CFGo",
+      "name": "Opposition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 315,
+      "field": "CFGd",
+      "name": "Match Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 316,
+      "field": "CFGm",
+      "name": "Competition",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 317,
+      "field": "CFGs",
+      "name": "Seconds",
+      "type": "integer",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 318,
+      "field": "CHFp",
+      "name": "Player",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 319,
+      "field": "CHFn",
+      "name": "Player Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 320,
+      "field": "CHFs",
+      "name": "Selling Club",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 321,
+      "field": "CHFf",
+      "name": "Fee",
+      "type": "cash",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 322,
+      "field": "CHFd",
+      "name": "Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 323,
+      "field": "CHRp",
+      "name": "Player",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 324,
+      "field": "CHRn",
+      "name": "Player Name",
+      "type": "string",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 325,
+      "field": "CHRb",
+      "name": "Buying Club",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 326,
+      "field": "CHRf",
+      "name": "Fee",
+      "type": "cash",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 327,
+      "field": "CHRd",
+      "name": "Date",
+      "type": "date",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 328,
+      "field": "CnCV",
+      "name": "No Supporter Objectives",
+      "type": "boolean",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 329,
+      "field": "Clhs",
+      "name": "Team League History",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 330,
+      "field": "CAmb",
+      "name": "Supporter Objectives",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 331,
+      "field": "Tchl",
+      "name": "Team Cup History",
+      "type": "list",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 332,
+      "field": "RP00",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 333,
+      "field": "RJ00",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 334,
+      "field": "RP01",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 335,
+      "field": "RJ01",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 336,
+      "field": "RP02",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 337,
+      "field": "RJ02",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 338,
+      "field": "RP03",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 339,
+      "field": "RJ03",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 340,
+      "field": "RP04",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 341,
+      "field": "RJ04",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 342,
+      "field": "RP05",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 343,
+      "field": "RJ05",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 344,
+      "field": "RP06",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 345,
+      "field": "RJ06",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 346,
+      "field": "RP07",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 347,
+      "field": "RJ07",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 348,
+      "field": "RP08",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 349,
+      "field": "RJ08",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 350,
+      "field": "RP09",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 351,
+      "field": "RJ09",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 352,
+      "field": "RP10",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 353,
+      "field": "RJ10",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 354,
+      "field": "RP11",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 355,
+      "field": "RJ11",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 356,
+      "field": "RP12",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 357,
+      "field": "RJ12",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 358,
+      "field": "RP13",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 359,
+      "field": "RJ13",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 360,
+      "field": "RP14",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 361,
+      "field": "RJ14",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 362,
+      "field": "RP15",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 363,
+      "field": "RJ15",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 364,
+      "field": "RP16",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 365,
+      "field": "RJ16",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 366,
+      "field": "RP17",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 367,
+      "field": "RJ17",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 368,
+      "field": "RP18",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 369,
+      "field": "RJ18",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 370,
+      "field": "RP19",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 371,
+      "field": "RJ19",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 372,
+      "field": "RP20",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 373,
+      "field": "RJ20",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 374,
+      "field": "RP21",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 375,
+      "field": "RJ21",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 376,
+      "field": "RP22",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 377,
+      "field": "RJ22",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 378,
+      "field": "RP23",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 379,
+      "field": "RJ23",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 380,
+      "field": "RP24",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 381,
+      "field": "RJ24",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 382,
+      "field": "RP25",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 383,
+      "field": "RJ25",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 384,
+      "field": "RP26",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 385,
+      "field": "RJ26",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 386,
+      "field": "RP27",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 387,
+      "field": "RJ27",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 388,
+      "field": "RP28",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 389,
+      "field": "RJ28",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 390,
+      "field": "RP29",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 391,
+      "field": "RJ29",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 392,
+      "field": "RP30",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 393,
+      "field": "RJ30",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 394,
+      "field": "RP31",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 395,
+      "field": "RJ31",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 396,
+      "field": "RP32",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 397,
+      "field": "RJ32",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 398,
+      "field": "RP33",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 399,
+      "field": "RJ33",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 400,
+      "field": "RP34",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 401,
+      "field": "RJ34",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 402,
+      "field": "RP35",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 403,
+      "field": "RJ35",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 404,
+      "field": "RP36",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 405,
+      "field": "RJ36",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 406,
+      "field": "RP37",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 407,
+      "field": "RJ37",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 408,
+      "field": "RP38",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 409,
+      "field": "RJ38",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 410,
+      "field": "RP39",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 411,
+      "field": "RJ39",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 412,
+      "field": "RP40",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 413,
+      "field": "RJ40",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 414,
+      "field": "RP41",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 415,
+      "field": "RJ41",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 416,
+      "field": "RP42",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 417,
+      "field": "RJ42",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 418,
+      "field": "RP43",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 419,
+      "field": "RJ43",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 420,
+      "field": "RP44",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 421,
+      "field": "RJ44",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 422,
+      "field": "RP45",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 423,
+      "field": "RJ45",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 424,
+      "field": "RP46",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 425,
+      "field": "RJ46",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 426,
+      "field": "RP47",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 427,
+      "field": "RJ47",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 428,
+      "field": "RP48",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 429,
+      "field": "RJ48",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 430,
+      "field": "RP64",
+      "name": "Person",
+      "type": "database_record_unique_id",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 431,
+      "field": "RJ64",
+      "name": "Expected Job",
+      "type": "enum",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    },
+    {
+      "field_index": 432,
+      "field": "Cmls",
+      "name": "Is MLS Club",
+      "type": "boolean",
+      "reason": "No mode-safe L3 getter→reader→row-offset closure with required data validation."
+    }
+  ],
+  "reader_models": {
+    "CLUB_Cccn_evidence_track": {
+      "body_file_offset": "0xe5a7a0",
+      "row_offset_candidate": 8,
+      "width": 4,
+      "event_file_offset": "0xe5a877",
+      "partition_link": "not established to substrate's event stream; do not merge"
+    },
+    "CLUB_substrate_track": {
+      "body_file_offset": "0xe5a7a0",
+      "transfer_events": 74,
+      "stable_prefix": [
+        {
+          "widths": [
+            4
+          ],
+          "row_offset_candidates": [
+            0
+          ],
+          "call_file_offset": "0xe5a81a"
+        },
+        {
+          "widths": [
+            4
+          ],
+          "row_offset_candidates": [
+            4
+          ],
+          "call_file_offset": "0xe5a843"
+        },
+        {
+          "widths": [
+            4
+          ],
+          "row_offset_candidates": [
+            8
+          ],
+          "call_file_offset": "0xe5a877"
+        },
+        {
+          "widths": [
+            4
+          ],
+          "row_offset_candidates": [
+            12
+          ],
+          "call_file_offset": "0xe5a8a0"
+        },
+        {
+          "widths": [
+            4
+          ],
+          "row_offset_candidates": [
+            16
+          ],
+          "call_file_offset": "0xe5a8cd"
+        }
+      ],
+      "first_cursor_split": "0xe5a801",
+      "first_unknown_cursor_helper": "0xe5a952",
+      "note": "The prefix [0,4,8,12,16] is a separate substrate result; not used to justify Cccn."
+    },
+    "LEAGUE_BODY_CLUB": {
+      "body_file_offset": "0x43beba0",
+      "transfer_events": 33,
+      "status": "count-loop not expanded; kept separate"
+    }
+  },
+  "row_frame": {
+    "status": "closed_with_compact_rows",
+    "walked_rows": 84259,
+    "footer_exact": true,
+    "standard_rows": 84256,
+    "compact_identity_only_rows": 3,
+    "class_partition_candidate": {
+      "rule": "ordinal 0..69704 = CLUB (ID block 5B); ordinal 69705..84258 = LEAGUE_BODY_CLUB (ID block 4B)",
+      "rows": {
+        "CLUB": 69705,
+        "LEAGUE_BODY_CLUB": 14554
+      },
+      "class_byte_or_flag_found": false,
+      "basis": "the task's accepted contiguous class split plus type_id=3 dual-RTTI/slot19 evidence in scratch/t01/inbox/t01h/output.json; no per-row class byte is claimed",
+      "CLUB_samples": [
+        {
+          "row": 0,
+          "member_offset": "0xe",
+          "row_length": 95,
+          "parsed_block_width": 5,
+          "identity_relative_offset": null,
+          "marker": 0,
+          "full_name": "Klubi i Futbollit Albpetrol Patos",
+          "short_name": "KF Albpetrol",
+          "bytes_hex": "7e 00 00 00 ff ff ff ff 7e 00 00 00 7e 00 00 00 bf 1d 00 00 00 02 00 00 00 00 21 00 00 00 4b 6c 75 62 69 20 69 20 46 75 74 62 6f 6c 6c 69 74 20 41 6c 62 70 65 74 72 6f 6c 20 50 61 74 6f 73 0c 00 00 00 4b 46 20 41 6c 62 70 65 74 72 6f 6c 00 00 00 00 00 00 00 39 00 00 00 39 00 00 00 00"
+        },
+        {
+          "row": 1,
+          "member_offset": "0x6d",
+          "row_length": 92,
+          "parsed_block_width": 5,
+          "identity_relative_offset": null,
+          "marker": 0,
+          "full_name": "Klubi i Futbollit Apolonia Fier",
+          "short_name": "KF Apolonia",
+          "bytes_hex": "7e 00 00 00 ff ff ff ff 7e 00 00 00 7e 00 00 00 c7 1d 00 00 00 02 00 00 00 00 1f 00 00 00 4b 6c 75 62 69 20 69 20 46 75 74 62 6f 6c 6c 69 74 20 41 70 6f 6c 6f 6e 69 61 20 46 69 65 72 0b 00 00 00 4b 46 20 41 70 6f 6c 6f 6e 69 61 00 00 00 01 00 00 00 3a 00 00 00 3a 00 00 00 00"
+        },
+        {
+          "row": 2,
+          "member_offset": "0xc9",
+          "row_length": 83,
+          "parsed_block_width": 5,
+          "identity_relative_offset": null,
+          "marker": 0,
+          "full_name": "Klubi Sportiv Besa Kavajë",
+          "short_name": "KS Besa",
+          "bytes_hex": "7e 00 00 00 ff ff ff ff 7e 00 00 00 7e 00 00 00 c4 1d 00 00 00 02 00 00 00 00 1a 00 00 00 4b 6c 75 62 69 20 53 70 6f 72 74 69 76 20 42 65 73 61 20 4b 61 76 61 6a c3 ab 07 00 00 00 4b 53 20 42 65 73 61 00 00 00 02 00 00 00 3b 00 00 00 3b 00 00 00 00"
+        }
+      ],
+      "LEAGUE_BODY_CLUB_samples": [
+        {
+          "row": 69705,
+          "member_offset": "0x570dd9",
+          "row_length": 73,
+          "parsed_block_width": 5,
+          "identity_relative_offset": null,
+          "marker": 12,
+          "full_name": "FC Neftenbach",
+          "short_name": "Neftenbach",
+          "bytes_hex": "ac 00 00 00 ff ff ff ff ac 00 00 00 ac 00 00 00 ff ff ff ff 00 00 00 00 00 00 0d 00 00 00 46 43 20 4e 65 66 74 65 6e 62 61 63 68 0a 00 00 00 4e 65 66 74 65 6e 62 61 63 68 00 00 00 49 10 01 00 31 45 d8 05 31 45 d8 05 0c"
+        },
+        {
+          "row": 69709,
+          "member_offset": "0x570ec7",
+          "row_length": 79,
+          "parsed_block_width": 5,
+          "identity_relative_offset": null,
+          "marker": 0,
+          "full_name": "NK Rudar Kamengrad",
+          "short_name": "Rudar (Kam)",
+          "bytes_hex": "85 00 00 00 ff ff ff ff 85 00 00 00 85 00 00 00 57 db 00 00 00 00 00 00 00 00 12 00 00 00 4e 4b 20 52 75 64 61 72 20 4b 61 6d 65 6e 67 72 61 64 0b 00 00 00 52 75 64 61 72 20 28 4b 61 6d 29 00 00 00 4d 10 01 00 0d a1 35 77 0d a1 35 77 00"
+        },
+        {
+          "row": 69710,
+          "member_offset": "0x570f16",
+          "row_length": 84,
+          "parsed_block_width": 5,
+          "identity_relative_offset": null,
+          "marker": 0,
+          "full_name": "FK Omladinac 75 Bihać",
+          "short_name": "Omladinac 75",
+          "bytes_hex": "85 00 00 00 ff ff ff ff 85 00 00 00 85 00 00 00 86 2a 00 00 00 00 00 00 00 00 16 00 00 00 46 4b 20 4f 6d 6c 61 64 69 6e 61 63 20 37 35 20 42 69 68 61 c4 87 0c 00 00 00 4f 6d 6c 61 64 69 6e 61 63 20 37 35 00 00 00 4e 10 01 00 0e a1 35 77 0e a1 35 77 00"
+        }
+      ],
+      "compact_rows_inside_LEAGUE_BODY_CLUB_segment": [
+        69706,
+        69707,
+        69708
+      ],
+      "semantic_widths_vs_byte_walker": "class field widths are 5B/4B; the framing walker consumes the adjacent +20 byte as part of a 5-byte aggregate to keep subsequent boundaries. For LEAGUE_BODY_CLUB the schema split is 4B block plus separate row+20 byte; row+25 remains unassigned pending full schema decode.",
+      "width4_candidate_successes_note": "zero refers only to retrying the entire main-class parser with the ID block changed to 4B and no class-specific adjacent-byte handling; it does not negate the accepted class-specific 4B field width"
+    },
+    "note": "Global row framing/footer is closed; the contiguous class split has no per-row class byte and is not used to merge the two readers."
+  },
+  "schema_source": {
+    "path": "evidence/fm24/reports/editor_schema/master.json",
+    "sha256": "7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda",
+    "manifest_sha256": "7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda",
+    "manifest_match": true,
+    "order_inventory": "scratch/t05/schema_inventory.json",
+    "inventory_sha256": "62b3ea4cb0a61dc279f62f06eba899a19113fa203e5bcee7044af9f4ab1529fa",
+    "inventory_counts": {
+      "top_level": 433,
+      "scalars": 386,
+      "lists": 47,
+      "list_item_fields": 239
+    }
+  },
+  "counts": {
+    "medium_or_high": 0,
+    "low": 1,
+    "unresolved_top_level_fields": 432,
+    "prior_unclosed_candidates_preserved": 3,
+    "collection_segments_closed": 0
+  },
+  "scope_note": "schema_inventory.json confirms 433 top-level fields = 386 scalars + 47 lists; 239 list item fields are separate and excluded from the scalar main sequence."
+}

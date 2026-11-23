@@ -67,7 +67,7 @@ The `both_relaxed` client result is capped at 1,000,000; server remains 4. `allo
 ## Reproduction
 
 ```text
-FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scripts/t67_comp_data_crosswalk.py --build
-FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scratch/t67/out/verify.py --check
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scripts/t67_comp_data_crosswalk.py --build
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scratch/t67/out/verify.py --check
 py -V:3.12 -I -B scripts/t01_anchors.py
 ```

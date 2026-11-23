@@ -1,0 +1,12 @@
+Warning: No project session found with id 't05b-club-openai-codex'; creating a new session with that id.
+Warning: Invalid settings file C:\Users\oak\.pi\agent\settings.json: Lock file is already being held
+已交付至 `scratch/t05/club_align/`：
+
+- `align.py`：实现带 optional 跳过、身份帧分离和样本评分的 DP；`--help`、JSON 输出可用。
+- `fixtures_result.json`：五个行闭合均通过机械复算；身份帧锚点复核通过，但**完整对齐验收 0/5 PASS**。DP 合成单元测试通过。
+- `club_fields.json`：433 字段、386 标量、47 个列表及 239 个列表子字段；保留 1 个低置信 `Cccn` 候选，432 项未解，闭合列表段为 0。
+- `REPORT.md`：记录负结果、Cccn 与两套 reader 的隔离，以及对旧结论的勘误。
+
+**验收未达标**：club 未达到 30 个 high/medium 映射。关键发现是 city 的 `Cnti` 锚点与 schema 顺序冲突，且任务给出的 u8 宽度与现有样本/reader 的 u32 证据不符；在厘清序列关系并取得完整 reader 宽度序列前，不能诚实地声称夹具对齐成功。
+
+**汇总：夹具 PASS 0/5；club 命名 1（high 0，medium 0）；列表段 0。**

@@ -44,5 +44,5 @@
 - `cursor.json` + `cursor.part*.json`：逐行位置、selector、长度、UID；根据同文件的 transfer 模板无损重建轨迹。`branches.part*.json`、`instructions.part*.json` 为分片的分支分类和字节证据。
 - `fields_club.json` + `fields_club.part*.json` + `subtables.part*.json`：字段台账、全量统计和样本、子对象边界。
 - `scratch/t24/out/verify.py`：不导入 builder 的独立复算、静态字节重读及字段抽样/列统计。
-- `scripts/t24_club_cursor.py`：builder。Python 3.12；`--help`、`--selftest` 可用。`FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I scripts/t24_club_cursor.py`。
+- `scripts/t24_club_cursor.py`：builder。Python 3.12；`--help`、`--selftest` 可用。`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I scripts/t24_club_cursor.py`。
 - builder 和 verifier `--selftest` 通过；独立全量 verifier 通过，重读 532 个指令记录；随后 `py -V:3.12 -I scripts/t01_anchors.py` **7/7** 通过。未覆盖 t19/t21/t21b 产物；未启动应用、未联网、未访问 Z:。

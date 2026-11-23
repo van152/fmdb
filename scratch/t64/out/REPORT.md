@@ -39,6 +39,6 @@ The zero result is a data counterexample to entry, not proof that the static pay
 
 ## Verification
 
-`verify.py` reopens the raw client/server `table_25` payloads and independently parses the native row envelope. The expected command environment is `py -V:3.12 -I -B` with `FM24_DB_DIR=<WORKSPACE>/scratch/data`.
+`verify.py` reopens the raw client/server `table_25` payloads and independently parses the native row envelope. The expected command environment is `py -V:3.12 -I -B` with `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`.
 
 Post-build checks completed: generated `verify.py` passed, and `scripts/t01_anchors.py` passed all 7/7 checks.

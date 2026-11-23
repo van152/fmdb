@@ -4,7 +4,7 @@
 
 ## 环境变化(重要)
 
-数据库已本地化:`FM24_DB_DIR=<WORKSPACE>/scratch/data`(环境变量已设,`scripts/fm24_dump.py` 已支持)。**不许读 Z: 盘。**
+数据库已本地化:`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`(环境变量已设,`scripts/fm24_dump.py` 已支持)。**不许读 Z: 盘。**
 
 ## 一句话目标
 
@@ -22,7 +22,7 @@
 
 ## 做法
 
-1. 先做容器层确认:文件头是否 `tad.` 外壳(4CC `tada`/`tad.` 系列,MAGIC Zstd `28 b5 2f fd`)。容器结构判断可参考 `scratch/t01/inbox/t01k/verify.py` 与 `<OLD_REPO>\scripts\modding_read_dbdat.py`(只读)。
+1. 先做容器层确认:文件头是否 `tad.` 外壳(4CC `tada`/`tad.` 系列,MAGIC Zstd `28 b5 2f fd`)。容器结构判断可参考 `scratch/t01/inbox/t01k/verify.py` 与 `D:\tmp2b\fm24\scripts\modding_read_dbdat.py`(只读)。
 2. 用 fm24_dump 的 runpy 链(`fm24_dump.py` 的 `_reader()`/`codec`)尝试 `list_tables(路径, 文件名)`;能列出就报表数/表型/行数。
 3. 列不出就报:外壳形态、Zstd 流数、可辨识的 4CC 表名(扫前 64KB + 抽样 8 个窗口)、与已知 archive 的结构差异。
 4. 对照已知基数(见 `scratch/t13e/out/baselines.json`):people_db 67.5MB 与 basic_people_db 13MB(658,011 行)是何关系?pl_hist 与 person 658,011 / t49 履历 792,149 是否对得上?

@@ -3,7 +3,7 @@
 你是受指挥官委派的子代理,负责**最难**的静态发现收尾。t47(sol,E87)对 nation 15 个 item-bearing unknown parent 完成静态发现:9 连到内嵌集合+reader(Ntxr 单独闭合 7 L3;8 落 t9 NATIONAL_TEAM_CONTAINER,由 t49 做双档 wire 验收),**6 个仍 unknown**(unknown_links=6)。本任务只做这 6 个:确认真实 owner 对象(NATION/TEAM/其它)、backing member、reader/集合;可闭合者走 cursor+三重闸门晋级,不可闭合者给出**加固过的诚实 negative**。
 
 ## 必读
-- <WORKSPACE>\AGENTS.md(硬约束;negative 原样保留;候选不写结论;L4=0)
+- D:\tmp2b\fm24-db\AGENTS.md(硬约束;negative 原样保留;候选不写结论;L4=0)
 - scratch/t47/out/discovery_nation_unknown.json(**真源**:6 个 parent 条目原样;extents 可复用;factory 表;t9_owner_fixup)
 - scratch/t47/out/REPORT.md(**方法范本**:factory→slot→PE extent→ReaderCFG;五类分支;Ntxr 三重闸门表;Ntxr 负例记法)
 - scratch/t39/out/REPORT.md(**TEAM 侧 helper 锚点**:`0x15e9830→0x44d7bf0`、全局 VA `0x141b60158` table `+0x80` vector、owner 筛选;NATION slot2 `0x1041f30→0x1041f40`)
@@ -32,11 +32,11 @@
 
 ## 边界
 - 只这 6 parent;**不碰** t47 已闭 9(Ntxr+Nntp/Nctp/Nrtp/NTRv/NWGv/NSps/Nfmp/NCro)、t28 已闭 4(Nagr/Nefr/Nnfr/Nlns)、Tchl(t34)、club 子表、zero-item schema。
-- 候选不写结论;t37/t47 negative/held/baseline 原样保留;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 候选不写结论;t37/t47 negative/held/baseline 原样保留;L4=0;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 预算内无法全闭则诚实 partial:已判定 owner+已发现链接+已闭合子集+剩余+首反例。**优先级:Nrvn(12 sites 最成熟)→Calt/TCrs(owner 判定)→Nftb→EDfx/EDsc。**
 
 ## 交付 scratch/t51/out/
 - discovery_unknown2.json(逐 parent:owner 判定+member/reader 静态链或 negative 加固)、cursor_*.json/fields_*.json(闭合者)、instructions.part*.json、branches.part*.json、verify.py、REPORT.md、DONE.md
 - scripts/t51_nation_unknown2.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;只写 scratch/t51/ 与 scripts/t51_*.py;完成跑 verify + t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;只写 scratch/t51/ 与 scripts/t51_*.py;完成跑 verify + t01_anchors.py(7/7)。

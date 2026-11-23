@@ -2,7 +2,7 @@
   "schema": "t74.frames.v1",
   "task": "t74",
   "date": "2026-11-20",
-  "workdir": "<WORKSPACE>",
+  "workdir": "D:/tmp2b/fm24-db",
   "scope": "数据侧行框:9 表 × client/server 双档。不做 exe 静态断言,不做语义猜测。",
   "payload_sha256": "见 frames.sha256.json(builder 逐档实算)",
   "identity_doctrine": {
@@ -30,7 +30,13 @@
             "layout": "ord@0 uid@4 uid@8 marker@12"
           },
           "sensitivity": "W13/f8=1 路; W12/f9=1 路; f7/f10/f12=0 路",
-          "verified": true
+          "verified": true,
+          "payload_sha256": "10b2fe7fe11e60f2e5794baa831646d113b98de6555aa8909d53ae17adf81572",
+          "row_len_range": [
+            13,
+            13
+          ],
+          "bad_identity": 0
         },
         "server": {
           "payload_len": 100,
@@ -47,7 +53,13 @@
             "layout": "ord@0 uid@4 uid@8 marker@12"
           },
           "sensitivity": "与 client 同(两档 payload 逐字节相同)",
-          "verified": true
+          "verified": true,
+          "payload_sha256": "10b2fe7fe11e60f2e5794baa831646d113b98de6555aa8909d53ae17adf81572",
+          "row_len_range": [
+            13,
+            13
+          ],
+          "bad_identity": 0
         }
       }
     },
@@ -70,7 +82,13 @@
           },
           "ordinal_check": "ordinal == 行下标,3,545/3,545;UID 对相等;marker 全 0",
           "sensitivity": "W13/f8=1 路; W12/f9=1 路; f7/f10/f12=0 路",
-          "verified": true
+          "verified": true,
+          "payload_sha256": "1be793209ed08af033536bb3855dac14bf1d953e7614a5ce246c2bf9c1d041a4",
+          "row_len_range": [
+            77,
+            77
+          ],
+          "bad_identity": 0
         },
         "server": {
           "payload_len": 272987,
@@ -87,7 +105,13 @@
             "layout": "ord@64 uid@68 uid@72 marker@76"
           },
           "sensitivity": "与 client 同(两档 payload 同长;closure 独立重算)",
-          "verified": true
+          "verified": true,
+          "payload_sha256": "1be793209ed08af033536bb3855dac14bf1d953e7614a5ce246c2bf9c1d041a4",
+          "row_len_range": [
+            77,
+            77
+          ],
+          "bad_identity": 0
         }
       }
     },
@@ -110,7 +134,13 @@
           },
           "ordinal_check": "ordinal == 行下标,48,413/48,413;UID 对相等;marker 全 0",
           "sensitivity": "定长:仅 38 使 closure 成立(37/39 各差 48,413B);identity 宽度敏感性沿用定长尾 13B 校验",
-          "verified": true
+          "verified": true,
+          "payload_sha256": "a817c6eb2a014f26e81f43833c9fd35135de6dea29437a476c55fd7d0ac17297",
+          "row_len_range": [
+            38,
+            38
+          ],
+          "bad_identity": 0
         },
         "server": {
           "payload_len": 8762775,
@@ -128,7 +158,13 @@
           },
           "ordinal_check": "ordinal == 行下标,48,413/48,413;UID 对相等;marker 全 0",
           "sensitivity": "定长:仅 181 使 closure 成立",
-          "verified": true
+          "verified": true,
+          "payload_sha256": "c107156116d3cd16b25fafc424261dcc54bef700f12587322918d1a5f6a50f62",
+          "row_len_range": [
+            181,
+            181
+          ],
+          "bad_identity": 0
         }
       }
     },
@@ -151,7 +187,12 @@
           "ordinal_check": "ordinal == 行下标 0..125,126/126;UID 对相等;marker 全 0",
           "sensitivity": "DP(W13/f8)=1 路;W12/f9=1 路;f7/f10/f12=0 路",
           "payload_sha256": "0c8fbbb7875632f780b12b3e33520abe3cf3ae73fc6830649f51aa5b17b43eb2",
-          "verified": true
+          "verified": true,
+          "row_len_range": [
+            37,
+            53
+          ],
+          "bad_identity": 0
         },
         "server": {
           "payload_len": 5248,
@@ -168,7 +209,12 @@
           },
           "sensitivity": "同 client",
           "payload_sha256": "0c8fbbb7875632f780b12b3e33520abe3cf3ae73fc6830649f51aa5b17b43eb2",
-          "verified": true
+          "verified": true,
+          "row_len_range": [
+            37,
+            53
+          ],
+          "bad_identity": 0
         }
       }
     },
@@ -196,7 +242,12 @@
           "ordinal_check": "ordinal == 行下标,1567/1567;UID 对相等;marker 全 0",
           "sensitivity": "DP(W13/f8)=1 路;W12/f9=1 路;f7/f10/f12=0 路",
           "payload_sha256": "9d73151026d706219a6c68eae485eef08a81b018c1b3170d922081334dc5c62d",
-          "verified": true
+          "verified": true,
+          "row_len_range": [
+            69,
+            195
+          ],
+          "bad_identity": 0
         },
         "server": {
           "payload_len": 149293,
@@ -224,7 +275,12 @@
           },
           "sensitivity": "DP(W13/f8)=1 路;W12/f9=1 路;f7/f10/f12=0 路",
           "payload_sha256": "bc04b791930171eef8fabf5a680b636b6223336f07f9cf170fb48b124ebcd734",
-          "verified": true
+          "verified": true,
+          "row_len_range": [
+            75,
+            201
+          ],
+          "bad_identity": 0
         }
       }
     },
@@ -233,12 +289,12 @@
       "archives": {
         "client": {
           "payload_len": 109505,
-          "header": 25,
+          "header": 14,
           "footer": 8,
           "count": 2488,
           "model": "variable",
           "row_rule": "lcrg_tail:行长 = 41 + 5k(k>=0,行长 41/46/51/56/61/71/76)",
-          "header_note": "25 = 标准 14 + 11B 扩展;count u32@8 仍为 2488",
+          "header_note": "14 = 标准头(count u32@8);上游 OVERRIDE 记 25(14+11B 扩展)不成立:H=25 时首行 35B,违反全表 (len-41)%5==0;H=14 时 2488/2488 行满足。DP 在 H=14/H=25 下均唯一,但只有 H=14 满足行长规则",
           "closure": "25 + Σrowlen + 8 == 109505;2488 行全部 (len-41)%5==0",
           "identity": {
             "width": 13,
@@ -257,11 +313,16 @@
             "76": 2
           },
           "payload_sha256": "a7f7d479d3a91a3ad08a1ad648555e11a59445b9e6dd9fda126889f6f4f10793",
-          "verified": true
+          "verified": true,
+          "row_len_range": [
+            41,
+            76
+          ],
+          "bad_identity": 0
         },
         "server": {
           "payload_len": 109505,
-          "header": 25,
+          "header": 14,
           "footer": 8,
           "count": 2488,
           "model": "variable",
@@ -274,7 +335,13 @@
           },
           "sensitivity": "同 client",
           "payload_sha256": "a7f7d479d3a91a3ad08a1ad648555e11a59445b9e6dd9fda126889f6f4f10793",
-          "verified": true
+          "verified": true,
+          "header_note": "14 = 标准头(count u32@8);上游 OVERRIDE 记 25(14+11B 扩展)不成立:H=25 时首行 35B,违反全表 (len-41)%5==0;H=14 时 2488/2488 行满足。DP 在 H=14/H=25 下均唯一,但只有 H=14 满足行长规则",
+          "row_len_range": [
+            41,
+            76
+          ],
+          "bad_identity": 0
         }
       }
     },
@@ -302,7 +369,8 @@
             156
           ],
           "payload_sha256": "aaf5f170938babd755f9e020226d3dfcb437c3cd5bdb01796f30acee18e48770",
-          "verified": true
+          "verified": true,
+          "bad_identity": 0
         },
         "server": {
           "payload_len": 43345,
@@ -319,7 +387,12 @@
           },
           "sensitivity": "同 client",
           "payload_sha256": "aaf5f170938babd755f9e020226d3dfcb437c3cd5bdb01796f30acee18e48770",
-          "verified": true
+          "verified": true,
+          "row_len_range": [
+            117,
+            156
+          ],
+          "bad_identity": 0
         }
       }
     },
@@ -357,7 +430,8 @@
           "sensitivity": "DP(W13/f8)=1 路;W12/f9=1 路;f7/f10/f12=0 路",
           "unresolved": "middle 段是嵌套 count/list 区,未能定出唯一字节文法(见 REPORT 负结果);行框与行长复算仍然精确",
           "payload_sha256": "71860a6f2e4de62ff5d1861b6e64e9fbd4544b9d2539de37ec5e811a4a198db1",
-          "verified": true
+          "verified": true,
+          "bad_identity": 0
         },
         "server": {
           "payload_len": 38280,
@@ -385,9 +459,190 @@
           ],
           "sensitivity": "DP(W13/f8)=1 路;W12/f9=1 路;f7/f10/f12=0 路",
           "payload_sha256": "b7ccbe1e9112c4887a7169306e61b7b25be74249f8fb4950982277872d6dfeab",
-          "verified": true
+          "verified": true,
+          "bad_identity": 0
+        }
+      }
+    },
+    "24": {
+      "entity": "team",
+      "archives": {
+        "server": {
+          "payload_len": 8819030,
+          "header": 14,
+          "footer": 8,
+          "count": 84507,
+          "model": "variable",
+          "row_rule": "[变长字段区][ordinal u32][UID u32][UID u32][selector 1B];行长 86..666,均值 104.358",
+          "closure": "14 + Sigma(rowlen) + 8 == 8819030,84,507 行逐行铺满到 footer(唯一 DP 路径重建)",
+          "identity": {
+            "width": 13,
+            "anchor": "row_end-13",
+            "layout": "ord@-13 uid@-9 uid@-5 selector@-1",
+            "selector_not_marker": "第 13 字节不是 0:selector 10 -> 84,256;11 -> 250;0 -> 1。故本表不能套 t0/t7/t8 的 marker==0 约束"
+          },
+          "ordinal_check": "ordinal == 行下标 0..84,506,84507/84507",
+          "uid_check": "UID 对相等 84507/84507;UID 严格递增 84,506/84,506 相邻对",
+          "sensitivity": "W13/f8=1 路;W12/f9=1 路;W14/f7=1 路;其余 (W12/f7/f8/f10/f12)、(W13/f7/f9/f10/f12)、(W14/f8/f9/f10/f12) 全 0 路。三路互不等价,取 W13/f8(与全仓其余表一致,且 13B 含 selector 语义位)",
+          "ambiguity_resolution": "约束 = UID 对相等 + 相邻行 UID 严格递增。plain(W13/f8)得 4 路;加入 UID 严格递增后唯一;W12/f9 同 1 路",
+          "rowlen_hist_distinct": 269,
+          "first_identity_at": 133,
+          "selector_crossref": "t39 REPORT 'Team selector {10,11}' 与 factory case 24 full-team arm(0xf49106, BL=11 -> NATIONAL_TEAM)方向一致;本任务只记录数据侧分布,不做 exe 断言",
+          "payload_sha256": "72371cf99753cb4d54292584427dea8bfa503af013f7873f5327de6f48c95556",
+          "verified": true,
+          "row_len_range": [
+            86,
+            666
+          ],
+          "bad_identity": 0
+        },
+        "client": {
+          "status": "absent",
+          "reason": "t66 已证 client 无 table_24 entry(双档目录 460 条中 client 侧缺失);本次 load_payload 亦取不到,按'无条目'处理,不伪造空行框"
         }
       }
     }
+  },
+  "summary": {
+    "tables_verified": [
+      "0",
+      "7",
+      "8",
+      "18",
+      "21",
+      "24",
+      "27",
+      "47",
+      "56"
+    ],
+    "archives_verified": [
+      [
+        "client",
+        0
+      ],
+      [
+        "server",
+        0
+      ],
+      [
+        "client",
+        7
+      ],
+      [
+        "server",
+        7
+      ],
+      [
+        "client",
+        8
+      ],
+      [
+        "server",
+        8
+      ],
+      [
+        "client",
+        18
+      ],
+      [
+        "server",
+        18
+      ],
+      [
+        "client",
+        21
+      ],
+      [
+        "server",
+        21
+      ],
+      [
+        "server",
+        24
+      ],
+      [
+        "client",
+        27
+      ],
+      [
+        "server",
+        27
+      ],
+      [
+        "client",
+        47
+      ],
+      [
+        "server",
+        47
+      ],
+      [
+        "client",
+        56
+      ],
+      [
+        "server",
+        56
+      ]
+    ],
+    "escalations": [],
+    "upstream_conflicts": [
+      {
+        "table": 27,
+        "upstream": "opaque middle 99B",
+        "ours": "95B middle + 13B identity = 108B",
+        "basis": "逐行闭合 334/334 且 footer 精确对齐"
+      },
+      {
+        "table": 24,
+        "upstream": "E37 82B 定长被否;均值 104.36B",
+        "ours": "变长 86..666,均值 104.358",
+        "basis": "84,507 行唯一铺法闭合"
+      },
+      {
+        "table": 47,
+        "upstream": "25+2488*44+8",
+        "ours": "14 + sum(41+5k) + 8",
+        "basis": "H=25 首行 35B 破坏 (len-41)%5==0;H=14 全 2488 行成立"
+      }
+    ],
+    "double_archive_identical_payloads": [
+      "0",
+      "8",
+      "27",
+      "47",
+      "56"
+    ],
+    "double_archive_different": [
+      {
+        "table": 7,
+        "client": 36824,
+        "server": 38280,
+        "delta_per_row": 7,
+        "rows": 208
+      },
+      {
+        "table": 18,
+        "client": 139891,
+        "server": 149293,
+        "delta_per_row": 6,
+        "rows": 1567
+      },
+      {
+        "table": 21,
+        "client": 1839716,
+        "server": 8762775,
+        "stride": [
+          38,
+          181
+        ]
+      },
+      {
+        "table": 24,
+        "client": null,
+        "server": 8819030,
+        "note": "client 无 entry"
+      }
+    ]
   }
 }

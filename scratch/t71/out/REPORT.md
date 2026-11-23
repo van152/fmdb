@@ -4,7 +4,7 @@
 
 ## 成员绑定：同一 CLUB 容器，两条读路
 
-证据来自只读 `<OLD_REPO>/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。下文地址均为 **PE file offset**；`chain.json` 记录对应 VA、原字节、分支和虚表格。Schema 和旧夹具均按 `evidence/MANIFEST.json` 核验；精确 4CC gate→helper→`movsx` 沿用 t63(E106)，未用 XML 顺序推 lane。
+证据来自只读 `D:/tmp2b/fm24/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。下文地址均为 **PE file offset**；`chain.json` 记录对应 VA、原字节、分支和虚表格。Schema 和旧夹具均按 `evidence/MANIFEST.json` 核验；精确 4CC gate→helper→`movsx` 沿用 t63(E106)，未用 XML 顺序推 lane。
 
 - **上下文自证**：`0xf0296b` 传 type `3`，`0xf02973 → 0xff9910 → 0x3ceb7d0` 的 `0x3ceb8e2` 保存到 context `+0x54`。`0xf02978/7f` 安装 vptr，其 COL/RTTI 命名为 `DATABASE_TABLE<CLUB>`；`0xf02a93` 把该 context 安装到数据库 `+0x10`。
 - **主对象**：`0xf4d4db → 0xf4d519` 对该 context 选普通 `table_` 名；`0xf4d57f → 0xf2b350` 读主表。`0xf2b583` 调 `0xf48b30`，case 3 的 `0xf49d44` 格指向 `0xf48daf`；普通和 selector 12 均调 `0xe59a40` 构造 CLUB。`0x3aad1a9` 将 `CLUB+0x100` 置空。主读器调用 `0xf2b5b1` 使用 vtable slot 19，普通 CLUB 为 `0xe5a7a0..0xe5bfca`；slot 2 为 `0xe89a00`（getter）。
@@ -50,7 +50,7 @@ Liverpool：双档 ordinal 460 / UID 676，city ordinal 1061 / UID 100047；Bern
 独立 `verify.py` 不 import builder、ReaderCFG 或 fm24_dump；独立解目录、反向 DP、逐行有界重放、重验 PE 原字节及每字段全档域。两脚本 `--help` / `--selftest`、全量 build/verify、t01 anchors **7/7** 均通过。退出码 0/1/2。
 
 ```bash
-export FM24_DB_DIR=<WORKSPACE>/scratch/data
+export FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data
 py -V:3.12 -I -B scripts/t71_club100_cnst.py --build
 py -V:3.12 -I -B scratch/t71/out/verify.py
 py -V:3.12 -I -B scripts/t01_anchors.py

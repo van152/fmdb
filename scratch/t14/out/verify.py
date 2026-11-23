@@ -16,8 +16,8 @@ from typing import Any
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-EDITOR = Path(r"<OLD_REPO>\input\editor.exe")
-FM = Path(r"<OLD_REPO>\input\fm.exe")
+EDITOR = Path(r"D:\tmp2b\fm24\input\editor.exe")
+FM = Path(r"D:\tmp2b\fm24\input\fm.exe")
 JUMP_BASE = 0xF49D38
 DEFAULT_HANDLER = 0xF49CA9
 DEFAULT_TYPES = {11,13,15,16,17,20,28,40,53,54,55}

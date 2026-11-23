@@ -4,7 +4,7 @@
 
 ## 静态扫描与裁决
 
-静态输入为只读 `<OLD_REPO>/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`；指令按 **PE file offset** 引用，JSON 附 VA 和原字节。master 与 `IDA_PROVENANCE.md` 均对照 `evidence/MANIFEST.json`；master SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`。
+静态输入为只读 `D:/tmp2b/fm24/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`；指令按 **PE file offset** 引用，JSON 附 VA 和原字节。master 与 `IDA_PROVENANCE.md` 均对照 `evidence/MANIFEST.json`；master SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`。
 
 - **沿用 t55 唯一行框/主 CFG**：slot 19 `0x103fac0..0x1040be4`（入口 VA `0x1410404c0`），992 条可达指令、109 条条件分支、0 条 extent 外边。先用冻结 CFG 裁掉两个 mode 分支的 server 边，再证 25 个缺席位置不可达。未把内存维护、I/O 失败边或 3 个 loop 内直接调用列成额外外层位置。
 - **按 case-sensitive 4CC 查 gate、按对象查 sink**：slot 2 `0x1041f30 → 0x1041f40` 本地 getter 1,894 条可达指令；`0x104334d → 0xfe3520` 基类 fallback 1,397 条。两者共 24 个命中冻结 4CC 的 `cmp` + 等值分支，其中 9 个在本轮目标集。`0x1043322` 转发给 `this+0x108` 所指对象，不追；基类有 `0xfe3560` runtime registry 和三条间接尾边，不外推其所有分派。`0xfe4b47` 的 `+0x50` 虚调用在 NATION vtable 落到 `0x1041eb0`，取 `this+0xf0`，不是未知 raw 列的通用 accessor。没有按 XML 顺序或直方图相似度配字段。
@@ -69,7 +69,7 @@
 独立 verifier 不 import builder、ReaderCFG 或 `fm24_dump`：自解 FMF 目录和成员帧，对冻结 t55 分区校验全档边界，独立重算 ordinal/UID 对照、profile 和 getter 抑制，并核对 PE 原字节、辅助 extent 可达范围和静态 gate。两脚本 `--help` / `--selftest`、build / verify 均过；`t01_anchors.py` **7/7**。未启动游戏、编辑器、IDA，未联网、未读写 Z:，未读 person/PDxx、t9、extra_9 或改动公共 schema。
 
 ```bash
-export FM24_DB_DIR=<WORKSPACE>/scratch/data
+export FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data
 py -V:3.12 -I -B scripts/t65_nation_unmapped_r2.py --build
 py -V:3.12 -I -B scratch/t65/out/verify.py --check
 py -V:3.12 -I -B scripts/t01_anchors.py

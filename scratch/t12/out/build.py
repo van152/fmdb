@@ -13,7 +13,7 @@ SCHEMA = ROOT / "scratch/t05/schema_inventory.json"
 T08_NAMING = ROOT / "scratch/t08/out/naming_result.json"
 T07_NAMING = ROOT / "scratch/t07/out/naming_result.json"
 T12_CODES = OUT / "codes_full.json"
-EXE = Path(r"<OLD_REPO>\input\editor.exe")
+EXE = Path(r"D:\tmp2b\fm24\input\editor.exe")
 UNIVERSAL = {"duni", "rdui", "NDBC", "FDBC", "dbnm"}
 SMALL_IDS = [23, 31, 35, 42, 46, 50, 51, 60, 61, 63, 64]
 

@@ -15,7 +15,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'scratch/t62/out'
-EXE = Path('<OLD_REPO>/input/editor.exe')
+EXE = Path('D:/tmp2b/fm24/input/editor.exe')
 EXE_SHA = 'b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4'
 MASTER = 'evidence/fm24/reports/editor_schema/master.json'
 IDA = 'evidence/fm24/reports/qa/IDA_PROVENANCE.md'
@@ -171,7 +171,7 @@ class Image:
 
 
 def archives():
-    sys.path.append('<OLD_REPO>/tools/python')  # Local zstandard if not installed on the standard path.
+    sys.path.append('D:/tmp2b/fm24/tools/python')  # Local zstandard if not installed on the standard path.
     import zstandard as zstd
     root = Path(os.environ.get('FM24_DB_DIR', str(ROOT / 'scratch/data')))
     ck(root.drive.upper() != 'Z:' and root.resolve().drive.upper() != 'Z:', 'Z: forbidden')

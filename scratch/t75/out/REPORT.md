@@ -4,7 +4,7 @@
 
 ## 1. Nation 优先：按 count、helper 与下一槽重放
 
-坐标来自 t55/E94，静态地址是 PE **file offset**；数据 `@` 是解压成员绝对偏移，`body_relative` 以当前 selector 后的 `legacy14` 行体为原点。只读二进制 `<OLD_REPO>/input/editor.exe` SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。交付含 VA/bytes；冻结 master 与 `IDA_PROVENANCE.md` 对 MANIFEST 核验。`0x103fae6` 是外部 mode 门：client 不消费前六项的 count，不记作 251 个空 count。
+坐标来自 t55/E94，静态地址是 PE **file offset**；数据 `@` 是解压成员绝对偏移，`body_relative` 以当前 selector 后的 `legacy14` 行体为原点。只读二进制 `D:/tmp2b/fm24/input/editor.exe` SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。交付含 VA/bytes；冻结 master 与 `IDA_PROVENANCE.md` 对 MANIFEST 核验。`0x103fae6` 是外部 mode 门：client 不消费前六项的 count，不记作 251 个空 count。
 
 | t72 上交 | NATION 对象位移 / count site | 已观察的 item 读法（LE） | Server 非空行 / item |
 |---|---|---|---:|
@@ -42,7 +42,7 @@
 ## 3. 复跑
 
 ```bash
-export FM24_DB_DIR=<WORKSPACE>/scratch/data
+export FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data
 py -V:3.12 -I -B scripts/t75_slot_xref_reverse.py --build
 py -V:3.12 -I -B scratch/t75/out/verify.py --check
 py -V:3.12 -I -B scripts/t01_anchors.py

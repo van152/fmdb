@@ -16,9 +16,9 @@
 4. 独立 verify.py + builder scripts/t65_nation_unmapped_r2.py;--help/--selftest;退出码 0/1/2。
 
 ## 边界
-- 只 nation 主行;不碰 t9/extra_9/subtables/t55 已闭 L3;不碰 person/PDxx;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 只 nation 主行;不碰 t9/extra_9/subtables/t55 已闭 L3;不碰 person/PDxx;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 
 ## 交付 scratch/t65/out/
 - projections.json、field_map_r2.json、verify.py、REPORT.md、DONE.md;scripts/t65_nation_unmapped_r2.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;完成跑 verify + scripts/t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;完成跑 verify + scripts/t01_anchors.py(7/7)。

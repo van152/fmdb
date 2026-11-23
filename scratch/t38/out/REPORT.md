@@ -182,11 +182,11 @@ predict(load_payload 取错帧) ≡ [该条目的前一成员 packed_size < data
 
 ```bash
 py -V:3.12 -I -B scripts/t38_multiframe.py --help
-FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scripts/t38_multiframe.py --selftest
-FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scripts/t38_multiframe.py --scan
-FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scripts/t38_multiframe.py --dump server 34
-FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scripts/t38_build.py --build
-FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scratch/t38/out/verify.py --selftest
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scripts/t38_multiframe.py --selftest
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scripts/t38_multiframe.py --scan
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scripts/t38_multiframe.py --dump server 34
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scripts/t38_build.py --build
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scratch/t38/out/verify.py --selftest
 py -V:3.12 -I -B scripts/t01_anchors.py
 ```
 

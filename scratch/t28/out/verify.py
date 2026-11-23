@@ -330,7 +330,7 @@ def main():
     a.add_argument('--selftest',action='store_true')
     a.add_argument('--out-dir',type=Path,default=HERE)
     a.add_argument('--editor',type=Path,default=ROOT.parent/'fm24/input/editor.exe')
-    a.add_argument('--data-dir',type=Path,default=Path('<WORKSPACE>/scratch/data'))
+    a.add_argument('--data-dir',type=Path,default=Path('D:/tmp2b/fm24-db/scratch/data'))
     x = a.parse_args()
     try:
         selftest() if x.selftest else replay(x.out_dir,x.editor,x.data_dir)

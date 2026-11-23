@@ -12,7 +12,7 @@ import sys
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-EXE = Path('<OLD_REPO>/input/editor.exe')
+EXE = Path('D:/tmp2b/fm24/input/editor.exe')
 PIN = 'b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4'
 
 
@@ -193,7 +193,7 @@ def verify_pe(x, c):
 
 
 def verify_packages(d):
-    sys.path.append('<OLD_REPO>/tools/python')
+    sys.path.append('D:/tmp2b/fm24/tools/python')
     import zstandard
     base_dir = Path(os.environ.get('FM24_DB_DIR',str(ROOT/'scratch/data')))
     need(base_dir.drive.upper() != 'Z:' and base_dir.resolve().drive.upper() != 'Z:', 'Z: forbidden')

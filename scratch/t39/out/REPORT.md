@@ -20,7 +20,7 @@
 
 ## 静态链、分支和全表 walk
 
-只读 `<OLD_REPO>/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`，与冻结 `evidence/fm24/reports/qa/IDA_PROVENANCE.md` 一致。冻结 `evidence/fm24/reports/editor_schema/master.json` SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`；两份快照均通过 `evidence/MANIFEST.json`。下文默认 PE **file offset**；对应 VA、原始指令 bytes 在 `instructions.part*.json`。
+只读 `D:/tmp2b/fm24/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`，与冻结 `evidence/fm24/reports/qa/IDA_PROVENANCE.md` 一致。冻结 `evidence/fm24/reports/editor_schema/master.json` SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`；两份快照均通过 `evidence/MANIFEST.json`。下文默认 PE **file offset**；对应 VA、原始指令 bytes 在 `instructions.part*.json`。
 
 - Factory `0xf48b30` 的 rel32 表 `0xf49d38` 第 34 格 → `0xf4949c`；`0xf494b8` / `0xf494bf` 设置 vptr VA `0x1418be628`，COL/TD 给出 `.?AVSTARTING_TEAM_CUP_HISTORY@db@@`。Loader `0xf2ba0e` 每行消费 selector 后传给 factory，case 34 不使用它；合成 selector=1 的首行仍走相同读法，不是 native 拒绝。
 - Slot 19 VA `0x14156f9d0` / offset `0x156efd0` 是 leaf thunk → 真 reader `0x43a6890..0x43a6a6f`（VA `0x144511e90..0x14451206f`，右端 exclusive）。PE `RUNTIME_FUNCTION` + `ReaderCFG` 得到 137 条可达指令 / 24 块，无 extent 外边。**Identity tail 内联**于 `0x43a69f8`，真正 12 B read 在 `0x43a6a17`（VA 见指令分片）；不是 Cdbt/Cmti 的第二 extent。
@@ -65,4 +65,4 @@ Wire 对齐：`13 + 7115 × (1 selector + 31 properties + 12 identity) + 9 = 313
 
 ## 复验与边界
 
-环境 `FM24_DB_DIR=<WORKSPACE>/scratch/data`；`py -V:3.12 -I -B` 下 builder、独立 verifier、两者的 `--help` / `--selftest` 均 PASS；`scripts/t01_anchors.py` **7/7 PASS**。Verifier 不 import builder 或 `ReaderCFG`，从原 PE 另建可达图，独立枚举并按大小选帧、执行双 mode、验证原字节和各域反例。退出码 `0/1/2` 分别为成功 / 校验失败 / 用法或致命错误。未启动游戏、编辑器或 IDA，未联网，未访问 Z:；未修改其他任务产物或全局 ledger。
+环境 `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`；`py -V:3.12 -I -B` 下 builder、独立 verifier、两者的 `--help` / `--selftest` 均 PASS；`scripts/t01_anchors.py` **7/7 PASS**。Verifier 不 import builder 或 `ReaderCFG`，从原 PE 另建可达图，独立枚举并按大小选帧、执行双 mode、验证原字节和各域反例。退出码 `0/1/2` 分别为成功 / 校验失败 / 用法或致命错误。未启动游戏、编辑器或 IDA，未联网，未访问 Z:；未修改其他任务产物或全局 ledger。

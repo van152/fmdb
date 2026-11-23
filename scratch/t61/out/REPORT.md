@@ -37,7 +37,7 @@
 独立 `verify.py` 自解两档目录，复用旧独立数据侧 replay（不 import builder、不做 PE/IDA 静态重追），逐 occurrence 重算直方图与首反例、复核枚举出处和晋级条件。`prior_first_counterexample` 保留原见证，`first_counterexample` 优先指向本轮枚举或冻结界首反例；原源台账、negative、公共 schema 与既有 L3 均未改。不读取 person 目标数据或 PDxx；不启动游戏、编辑器、IDA；不联网、不读写 Z:。
 
 ```bash
-export FM24_DB_DIR=<WORKSPACE>/scratch/data
+export FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data
 py -V:3.12 -I -B scripts/t61_enum_ref_sweep.py --build
 py -V:3.12 -I -B scratch/t61/out/verify.py --check
 py -V:3.12 -I -B scripts/t01_anchors.py

@@ -3,7 +3,7 @@
 你是受指挥官委派的子代理。t42 已交付 schema v2(7 表 51 L3,E81)。t41 Csme 变长 cursor 已接受(E82,Melf 条件 L3 + Msid held)。本任务增量升级 **v3**,并入 Csme。**只增量,不重写已接受字段**。
 
 ## 必读
-- <WORKSPACE>\AGENTS.md(硬约束;negative 原样保留)
+- D:\tmp2b\fm24-db\AGENTS.md(硬约束;negative 原样保留)
 - reports/club_nation_subtable_schema.json + .md(**v2 产物,增量基础**)
 - scratch/t42/out/consolidate_v2.py + verify.py + club_nation_subtable_schema.v1.json(v2 builder/verifier/快照,复用扩展)
 - scratch/t41/out/fields_csme.json + cursor_csme.json + REPORT.md(**t41 Csme 已接受 E82**)
@@ -24,4 +24,4 @@
 ## 交付
 - reports/club_nation_subtable_schema.json + .md(v3,8 表 52 L3)
 - scratch/t45/out/consolidate_v3.py(--help/--selftest:8 表/52 L3/16 held/4 neg/L4=0、v2 七表 verbatim、Csme 变长 closure)、verify.py(独立不 import builder)、club_nation_subtable_schema.v2.json、REPORT.md、DONE.md
-- Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;完成跑 verify + t01_anchors.py(7/7)。
+- Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;完成跑 verify + t01_anchors.py(7/7)。

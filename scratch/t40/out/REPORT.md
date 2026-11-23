@@ -29,7 +29,7 @@ Consolidated the six accepted club-subtable field ledgers into `reports/club_nat
 - `py -V:3.12 -I -B scratch/t40/out/consolidate.py --selftest` — passed: 6 tables, 44 L3, 13 held, 4 negatives, L4=0; provenance and closures complete.
 - `py -V:3.12 -I -B scratch/t40/out/consolidate.py --force` — regenerated both report files.
 - `py -V:3.12 -I -B scratch/t40/out/verify.py --selftest` — passed independently, including source hashes, field sets, VA provenance, client/server framing, and closure arithmetic.
-- `FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scripts/t01_anchors.py` — passed 7/7.
+- `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scripts/t01_anchors.py` — passed 7/7.
 
 ## Reproduction
 

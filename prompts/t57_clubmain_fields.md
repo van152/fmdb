@@ -3,7 +3,7 @@
 你是受指挥官委派的子代理,负责**最难**的批量字段映射任务。t55(E94)已把 nation table_10 的方法跑通:slot19 reader extent→可达 CFG→**按执行顺序枚举 wire 站点**(40/15 位置)→XML 对齐(15/346,46 倒置如实)→实档域批量检验→5 L3/4 held/327 unmapped。本任务把同一方法应用到 **club table_3**(433 个 club.xml 顶层字段,目前仅 9 命名;84,259 server 行)。
 
 ## 必读
-- <WORKSPACE>\AGENTS.md(硬约束;候选不写结论;negative 原样保留;L4=0)
+- D:\tmp2b\fm24-db\AGENTS.md(硬约束;候选不写结论;negative 原样保留;L4=0)
 - scratch/t55/out/field_slots.json + field_map.json + REPORT.md(**方法范本与口径**:execution_index、46 倒置不硬配、域检验+首反例、held 口径、回归要求)
 - scratch/t39/out/REPORT.md(**CLUB 锚点**:slot2 `0x1041f30?` 以 t39 实际记载为准;club 集合 helper `0x15e9830→0x44d7bf0`、全局 VA `0x141b60158`)
 - scratch/t44/out/REPORT.md + discovery_cafl_cvfl.json(**CLUB slot2 `0xe89a00` 4CC 精确分发**、club `+0x118/+0x120` vector、CLUB_LINK 具名打开器法)
@@ -21,11 +21,11 @@
 ## 边界
 - 只 club 主行(table_3);**不重做** 8 个已闭子表、CLUB_LINK、nation 侧;不碰 t44/t39 已闭结论;negative/held 原样保留。
 - 84,259 行规模:全档统计允许向量化/分块,但**不得抽样代替全档**做 L3 判定(domain 判定须全档);identity census 全量。
-- 候选不写结论;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 候选不写结论;L4=0;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 预算内无法全闭则诚实 partial:槽位普查完成度+已晋级子集+剩余+首反例。**优先级:行框闭合→CFG 普查→对齐→高值字段(坐标/容量/成立年/引用簇)→其余。**
 
 ## 交付 scratch/t57/out/
 - field_slots.json、field_map.json、instructions.part*.json、branches.part*.json、verify.py、REPORT.md、DONE.md
 - scripts/t57_clubmain_fields.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;只写 scratch/t57/ 与 scripts/t57_*.py;完成跑 verify + t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;只写 scratch/t57/ 与 scripts/t57_*.py;完成跑 verify + t01_anchors.py(7/7)。

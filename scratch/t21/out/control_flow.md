@@ -20,5 +20,5 @@ The t05 0x2000-byte scan reports 41 stream-call patterns; t01h reports 21 stream
 
 ## Reproduction
 
-Run `py -V:3.12 -I scripts/t21b_control_flow.py --help`, `--selftest`, then `FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I scripts/t21b_control_flow.py`.
+Run `py -V:3.12 -I scripts/t21b_control_flow.py --help`, `--selftest`, then `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I scripts/t21b_control_flow.py`.
 No game, editor, IDA or network access is used.

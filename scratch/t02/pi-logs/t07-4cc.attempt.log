@@ -1,0 +1,11 @@
+Warning: No project session found with id 't07-4cc-openai-codex'; creating a new session with that id.
+已完成，输出均在 `scratch/t07/out/`。自检通过：**injury 13/13、city 6/6、26 个实体覆盖，240 个槽的 `row_off/width` 未变**。表状态为 `complete_with_ref_only`；全表含 1,477 个 4CC、2,103 条候选。
+
+交付文件：
+- `4cc_table.json`
+- `naming_result.json`
+- `verify.py`
+- `REPORT.md`
+- `build.py`（生成工具）
+
+说明：按指令边界重新解码，`0xe55097` 实际是 `cmp 'Clon'`，其 getter 读 `+0x4c`；`Clat` 读 `+0x48`。报告记录了这一点，以及 4 个引用字段为何标为 `ref_only`。

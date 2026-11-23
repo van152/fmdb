@@ -1,0 +1,129 @@
+{
+ "schema": "t89.table9_grammar.v1",
+ "task": "t89b",
+ "phase": 0,
+ "status": "in_progress",
+ "generated": "2026-11-21",
+ "framing": {
+  "header": 13,
+  "trailer": 12,
+  "footer": 9,
+  "closure": "13 + sum(body_len) + 12*rows + 9 = payload",
+  "rows": 251,
+  "client_payload": 31956,
+  "server_payload": 307564,
+  "closure_verified": {
+   "client": "13+28922+12*251+9=31956 OK",
+   "server": "13+304530+12*251+9=307564 OK"
+  }
+ },
+ "reader_handlers": {
+  "read": {
+   "va": "0x14105d510"
+  },
+  "get": {
+   "va": "0x1410668f0"
+  },
+  "set": {
+   "va": "0x141063f30"
+  },
+  "write": {
+   "va": "0x1410608f0"
+  }
+ },
+ "grammar": {
+  "status": "partial",
+  "fixed_head": [],
+  "vectors": [],
+  "tail": []
+ },
+ "row0_reconciliation": {
+  "status": "pending"
+ },
+ "notes": [],
+ "phase1_verdict": "scratch/cmd/t89_phase1_verdict.json (frozen, L3)",
+ "progress": {
+  "phase2_entry_grid": "done",
+  "phase3_field_backfill": "in_progress",
+  "phase4_dual_archive": "pending"
+ },
+ "entry_grid": {
+  "derivation": "t89b_readlin.py linearizes t9_read (150 wire reads); t89b_grid.py replays the executed subset against the actual payload and validates the 251-row tiling.",
+  "header": {
+   "len": 13,
+   "hex": "03 01 74 61 64 2e f1 0d fb 00 00 00 00",
+   "fields": [
+    {
+     "off": 0,
+     "len": 1,
+     "value": "03",
+     "meaning": "magic/version byte"
+    },
+    {
+     "off": 1,
+     "len": 4,
+     "value": "74 61 64 2e",
+     "ascii": "tad."
+    },
+    {
+     "off": 5,
+     "len": 2,
+     "value": "f1 0d",
+     "meaning": "payload_version 3569 LE"
+    },
+    {
+     "off": 7,
+     "len": 2,
+     "value": "fb 00",
+     "meaning": "record_count 251 LE"
+    },
+    {
+     "off": 9,
+     "len": 4,
+     "value": "00 00 00 00"
+    }
+   ]
+  },
+  "identity_trailer": {
+   "len": 12,
+   "layout": "[ordinal u32][uid u32][uid u32][0]",
+   "note": "ordinal and both uid copies agree; uid is the row identity, monotone",
+   "tail_byte": {
+    "off": 12,
+    "len": 1,
+    "value": 0
+   }
+  },
+  "footer": {
+   "len": 9,
+   "hex": "00 00 00 00 01 ec 7a e4 04"
+  },
+  "client_body": {
+   "min": 46,
+   "max": 449,
+   "distinct": 92,
+   "sum": 28922,
+   "rows": 251
+  },
+  "server_body": {
+   "min": 371,
+   "max": 36502,
+   "distinct": 211,
+   "sum": 304530,
+   "rows": 251
+  },
+  "constant_prefix_offsets": {
+   "0": 0,
+   "1": 255,
+   "2": 255,
+   "3": 255,
+   "4": 255,
+   "note": "bytes 0..4 are 00 ff ff ff ff in ALL 251 client rows -- this is the table_9 sentinel head, not the ordinal"
+  },
+  "ordinal_lane": {
+   "offset": 12,
+   "rule": "body[12] == ordinal & 0xff",
+   "rows_ok": "251/251"
+  }
+ }
+}

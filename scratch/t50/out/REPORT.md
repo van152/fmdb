@@ -172,9 +172,9 @@ t9 与 t10 各自独立解码,却给出**完全相同的 251 条 row_id 序列**
 ```
 py -V:3.12 -I -B scripts/t50_nation_t9_profile.py --help
 py -V:3.12 -I -B scripts/t50_nation_t9_profile.py --selftest        # 合成 payload,无归档访问
-FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scripts/t50_nation_t9_profile.py --build
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scripts/t50_nation_t9_profile.py --build
 py -V:3.12 -I -B scratch/t50/out/verify.py --selftest
-FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scratch/t50/out/verify.py --check
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scratch/t50/out/verify.py --check
 py -V:3.12 -I -B scripts/t01_anchors.py                              # 7/7
 ```
 

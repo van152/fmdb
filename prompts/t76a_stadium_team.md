@@ -6,6 +6,7 @@
 
 - AGENTS.md;`prompts/t73_slot_mapper.md`(工具口径:分级/锚点回归/escalate 规则)、`prompts/t74_row_frames9.md`(行框先验表)
 - `scratch/t74/out/frames.json` + `REPORT.md`;`scripts/t73_table_slot_mapper.py`(`--table --archive --json`,可 runpy 调函数,不得改)
+- **工具边界(指挥官注)**:t73 CLI 只认 2/5/19/41;扫 21/24 时用 runpy 载入 `scripts/t73_mapper_core.py` 的 `frame_closure/canonical_frame/align` 等纯函数自行组装(不得修改 t73 文件);t74 frames.json 的行框已自证的直接拿来用,跳过重复闭合,只做槽位 profiling + 对齐
 - `evidence/fm24/reports/editor_schema/master.json`:`entities['stadium.xml']` / `entities['team.xml']` 字段清单 + `enums` + `field_codes`
 - 既有锚点:`scripts/fm24_dump.py` FIELDS(client stadium `Scti@3/Slat@17/Slon@21/rdui@25/duni@29`)——结论不得冲突;`scratch/t66/out/REPORT.md`(t24 ordinal→UID 84,507;`table_extra_24.dat` 只取 ordinal,不入本任务)
 - t21 目标基数 48,413(t59 已验)
@@ -28,4 +29,4 @@
 
 - `slots_client_21.json`、`slots_server_21.json`、`slots_server_24.json`(或 dependency_blocked)、`verify.py`、`REPORT.md`、`DONE.md`(首行 `DONE type=t76a status=complete`);辅助脚本 `scripts/t76a_*.py`。
 
-Python `py -V:3.12 -I -B`;`FM24_DB_DIR=<WORKSPACE>/scratch/data`;完成跑 `scripts/t01_anchors.py`(7/7)。
+Python `py -V:3.12 -I -B`;`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`;完成跑 `scripts/t01_anchors.py`(7/7)。

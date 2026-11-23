@@ -4,7 +4,7 @@
 
 ## 1. 引用点普查与证据边界
 
-只读 `<OLD_REPO>/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。冻结 `master.json` 与 `IDA_PROVENANCE.md` 对 MANIFEST；v8 `v3_baseline` 对其原 v3 JSON/Markdown 的 SHA。除非注明 VA，下文均为 **PE file offset**。`xref.json` 包含全部原始命中、精确 key 回放、rel32 cell 及相邻键；`chain.json` 包含 277 个见证指令的 bytes、VA、分组与逐跳解释。
+只读 `D:/tmp2b/fm24/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。冻结 `master.json` 与 `IDA_PROVENANCE.md` 对 MANIFEST；v8 `v3_baseline` 对其原 v3 JSON/Markdown 的 SHA。除非注明 VA，下文均为 **PE file offset**。`xref.json` 包含全部原始命中、精确 key 回放、rel32 cell 及相邻键；`chain.json` 包含 277 个见证指令的 bytes、VA、分组与逐跳解释。
 
 | 4CC | 全文件原始字节（正/反 ASCII、UTF-16LE/BE） | 分类 |
 |---|---|---|
@@ -53,7 +53,7 @@
 没有可分派给 EDfx/EDsc 的已证归档段，因此没有报告两档的 schedule row 数或 archive mode 差异；对照表尺寸差异不构成其差异。独立 verifier 不 import builder、`ReaderCFG` 或 `fm24_dump`；以原始 opcode 重走四个 key、独立重建 CFG、独立目录遍历与定界解压。两脚本 `--help`/`--selftest`、builder/verify 以及 anchors **7/7** 已通过。退出码 `0` 成功（含证据标记为 partial）、`1` 核验失败、`2` 用法/致命错误。未启动游戏/编辑器/IDA，未联网、未访问 Z:，未改 `reports/` 或旧任务数据。
 
 ```bash
-export FM24_DB_DIR=<WORKSPACE>/scratch/data
+export FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data
 py -V:3.12 -I -B scripts/t62_edfx_edsc.py --build
 py -V:3.12 -I -B scratch/t62/out/verify.py
 py -V:3.12 -I -B scripts/t01_anchors.py

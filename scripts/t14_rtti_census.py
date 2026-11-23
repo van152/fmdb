@@ -18,8 +18,8 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "scratch/t14/out/census.json"
-EDITOR = Path(r"<OLD_REPO>\input\editor.exe")
-FM = Path(r"<OLD_REPO>\input\fm.exe")
+EDITOR = Path(r"D:\tmp2b\fm24\input\editor.exe")
+FM = Path(r"D:\tmp2b\fm24\input\fm.exe")
 JUMP_BASE = 0xF49D38
 DEFAULT_HANDLER = 0xF49CA9
 TAIL_VA = 0x140F4A6A9

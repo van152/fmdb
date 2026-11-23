@@ -1,0 +1,1527 @@
+{
+  "task": "t144",
+  "python": "3.12",
+  "timeout_s": 120,
+  "scripts": [
+    {
+      "script": "scripts/t01_anchors.py",
+      "args": [],
+      "cmd": "py -V:3.12 -B scripts/t01_anchors.py",
+      "exit_code": 0,
+      "elapsed_s": 0.649,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "PASS A7_ledger_erratum_applied  ['PLgn', 'cnam', 'csnm', 'c3ln', 'cnti', 'ccti', 'cpcm', 'crep', 'cext']",
+        "",
+        "7/7 checks passed"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t97_extract_4cc_mem.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t97_extract_4cc_mem.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 0.4472,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "PASS CLUB get_prop yields >100 branches :: 513",
+        "PASS CLUB dispatch alias v4 detected :: ['a2', 'v129', 'v4', 'v43']",
+        "selftest: OK"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t98_table45_closure.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t98_table45_closure.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 6.355,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "  D:\\tmp2b\\fm24-db\\scratch\\t98\\out\\REPORT.md",
+        "  D:\\tmp2b\\fm24-db\\scratch\\t98\\out\\verify.py",
+        "  D:\\tmp2b\\fm24-db\\scratch\\t98\\out\\DONE.md"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t106_special_members.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t106_special_members.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 0.2907,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "  PASS  sha256 stable",
+        "  PASS  all members registered",
+        "selftest: 37/37 pass"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t108_extract_4cc_v2.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t108_extract_4cc_v2.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 0.3723,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "PASS 18 accepted L3 items checked :: 18",
+        "PASS triage row Cnti -> 0xd8 :: 0xd8",
+        "selftest: OK"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t109_big3_l3_join.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t109_big3_l3_join.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 1.6518,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "  net coverage          : 379/673 = 56.3%",
+        "  accepted-L3 crosscheck: {'agree_exact': 61, 'agree_no_accepted_offset': 2, 'agree_within_slot': 2, 'conflict_engine_not_closed': 10}",
+        "  slot offset integrity : {'compared_slots': 107, 'agree_slots': 65, 'differ_slots': 42}"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t110_master_l3_schema.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t110_master_l3_schema.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 1.3208,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "selftest PASS"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t112_fm24_reader.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t112_fm24_reader.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 0.7951,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "[PASS] live client/41 closed: None",
+        "[PASS] live server/45 500 rows: None",
+        "--- t112_fm24_reader selftest: PASS (0 failures) ---"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t115_basic_people_full.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t115_basic_people_full.py --selftest",
+      "exit_code": 1,
+      "elapsed_s": 0.3291,
+      "pass": false,
+      "timeout": false,
+      "stdout_last3": [],
+      "stderr_last3": [
+        "ERROR: argument of type 'NoneType' is not iterable"
+      ],
+      "error": null
+    },
+    {
+      "script": "scripts/t119_unicorn_last5.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t119_unicorn_last5.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 24.368,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "  server/t72 (STARTING_PAST_TRADE): status=sample_ok rows_ok=10/10 (hdr=138) closed=False diff=8684 lens=60..94 uniq=4 err=None (0.0s)",
+        "  client/t0 (AWARD): status=sample_ok rows_ok=10/10 (hdr=3545) closed=False diff=272195 lens=76..76 uniq=1 err=None (0.0s)",
+        "t119 selftest PASS: {'targets': 5, 'closed': 0, 'sample_ok': 5, 'clean': 5, 'failed': 0, 'combined_with_t96c_clean': '79/79'}"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t120_people_unicorn.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t120_people_unicorn.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 1.1086,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "t120 selftest PASS: rows_ok=1210 stats={'2': {'class': 'PLAYER', 'rows_ok': 17, 'body_len_min': 611, 'body_len_max': 673, 'unique_lens': 9}, '5': {'class': 'RETIRED_PERSON', 'rows_ok': 1193, 'body_len_min': 28, 'body_len_max': 67, 'unique_lens': 29}} err=None"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t121_master_79of79.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t121_master_79of79.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 0.9338,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "selftest PASS — 79/79, joined 56/67, L3=1104"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t122_people_l3_schema.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t122_people_l3_schema.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 0.3316,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "t122 selftest: PASS"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t123_basic_people_l3.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t123_basic_people_l3.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 12.5881,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "byte_maps=83/83/83/34/22",
+        "anchors=3 names=Harry Kane,Cristiano Ronaldo,Lionel Messi",
+        "top50=50"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t125_big3_gap_closure.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t125_big3_gap_closure.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 7.0749,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "t125 --selftest PASS",
+        "gross 512/1034 (49.5%); net 512/672 (76.2%); gaps 294 -> 160; excluded 362"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t126_player_attributes_l3.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t126_player_attributes_l3.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 1.4078,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "t126 selftest PASS: 54/54 PDxx GET==SET, 69B mapped, 5-class L3=374, cards=['Milan Mijatović', 'Lazar Carević', 'Vlado Giljen', 'Milan Jelovac', 'Bojan Zogović']"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t133_fm24_reader_v2.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t133_fm24_reader_v2.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 9.3674,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "[PASS] server/72 row0 trace {'reads': 30, 'canonical_fields': 17, 'trace_end': 94, 'parser_end': 94, 'mismatches': 0, 'status': 'exact'}",
+        "[PASS] bounded nested controls ",
+        "--- t133 selftest: PASS ---"
+      ],
+      "stderr_last3": [],
+      "error": null
+    },
+    {
+      "script": "scripts/t135_star_player_cards.py",
+      "args": [
+        "--selftest"
+      ],
+      "cmd": "py -V:3.12 -B scripts/t135_star_player_cards.py --selftest",
+      "exit_code": 0,
+      "elapsed_s": 4.8737,
+      "pass": true,
+      "timeout": false,
+      "stdout_last3": [
+        "t135 selftest PASS (4.39s): Harry Kane: OK (CA/PA 184/185) | Lionel Messi: OK (CA/PA 185/200) | Cristiano Ronaldo: OK (CA/PA 160/196)",
+        "  ptype3 probe: 6/6 cards -> 69B block at wire_pos 29, obj_offs={'-0x160': 6}"
+      ],
+      "stderr_last3": [],
+      "error": null
+    }
+  ],
+  "script_total": 18,
+  "script_pass": 17,
+  "script_fail": 1,
+  "done_catalog": {
+    "t95": {
+      "task": "t95",
+      "dir_exists": true,
+      "out_exists": false,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {},
+      "deliverable_count": 0,
+      "skipped_oversized": []
+    },
+    "t96": {
+      "task": "t96",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t96",
+        "",
+        "状态：partial（未达到验收标准，不代表全量闭合）。",
+        "",
+        "- `scripts/t96_unicorn_all_tables.py --selftest`：通过（STARTING_RECORD，消费 3918 B）。",
+        "- 交付记录：79 个 archive/table 组合；footer 闭合 2 个；`wire_traces.json` 状态为 `partial`。",
+        "- `table_9`：server 仅追踪到 5/251 行后发生 unmapped read（row 0 为 57 B）；client row 0 即 unmapped read。均未闭合至 footer，未验证 307,564 / 31,956 B 目标。",
+        "- 尚未实现字符串/动态数组长度字段与完整父调用链归因；未解决 table_10 等异常。",
+        "- 详见 `REPORT.md` 与 `table9_251_closure.json`。失败均如实保留，未生成 complete 状态。"
+      ],
+      "deliverables": {
+        "DONE.md": {
+          "bytes": 698,
+          "sha256": "49f980a1a69aabb68dece106ef43e8aa805eb0f998b518fca039b0c67d9cfe55"
+        },
+        "REPORT.md": {
+          "bytes": 8755,
+          "sha256": "521f8a58f3932a71c1edbf87745dbcea7dda1775940c669322d3f82816fe21f6"
+        },
+        "table9_251_closure.json": {
+          "bytes": 1675,
+          "sha256": "6547dc9d50a90fdc7561fa33daa4db721a5cd6194c6b9fe0159a2bc3a8ae8236"
+        },
+        "wire_traces.json": {
+          "bytes": 360820,
+          "sha256": "6f67b27ec7ce230c447d7b134c85bac136521ee1e845586188ad8c48680a4c83"
+        }
+      },
+      "deliverable_count": 4,
+      "skipped_oversized": []
+    },
+    "t97": {
+      "task": "t97",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t97",
+        "",
+        "# t97 — 全量 67 表 Hex-Rays 4CC ↔ 内存偏移抽取 + XML 1,034 分母分诊",
+        "",
+        "status: complete",
+        "outputs: scratch/t97/out",
+        "",
+        "## 摘要数字",
+        "",
+        "- tables_covered: 67/67"
+      ],
+      "deliverables": {
+        "DONE.md": {
+          "bytes": 1705,
+          "sha256": "5f2df53cec7830d7e252b8653419d3dcea86b11d2def04cc8ce6b868704b8a24"
+        },
+        "fourcc_mem_map.json": {
+          "bytes": 7505256,
+          "sha256": "b9a7dfc7148bb848d3e3ba9b1e1b1d003f1e20e72843f4859067590e060de525"
+        },
+        "REPORT.md": {
+          "bytes": 17342,
+          "sha256": "8f451ec91a5d526261782b1e24a669954ed1701d476ae1122f11adc55703ecd2"
+        },
+        "static_read_join.json": {
+          "bytes": 2244123,
+          "sha256": "b0acc949316fb53d906b99c7dcc7240a7c4e836fda239226b86947ff798ead78"
+        },
+        "xml_triage.json": {
+          "bytes": 752031,
+          "sha256": "3ac817cd5bc6d6825b99f1a6d7b062eb7169301c7858897698cded5fb0bc3c27"
+        }
+      },
+      "deliverable_count": 5,
+      "skipped_oversized": []
+    },
+    "t98": {
+      "task": "t98",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "# t98 done",
+        "",
+        "DONE type=t98",
+        "",
+        "- table_45: 84477 rows; payload 7608748 B; sha256 46799e2f79acc276cc2e349fa4724de917428e07d960d8d6059dc32b1fd58bf9",
+        "- table_48: 5210 rows; payload 446049 B; sha256 f86bf6ee0bcc253fdc5b95a396e3a2fd433ccf92e1f769dbc742cdfcf73de8a5",
+        "- physical columns: 18; observed rec_type groups: table_45=37, table_48=31",
+        "- accessor ledger: 34 mapped L3, 3 derived L2, 80 held",
+        "- footer closure: observed 8 B; verified 9-byte windows table_45=0000000001775f0100, table_48=00000000019f180000",
+        "- independent verify.py: PASS"
+      ],
+      "deliverables": {
+        "DONE.md": {
+          "bytes": 538,
+          "sha256": "86b4f9067e989feb08d26fd7f8cde8c4b6da187449b87fcd0f1fc49285228985"
+        },
+        "REPORT.md": {
+          "bytes": 10860,
+          "sha256": "b9e049c454765653cf6aa523869035d9b381fd995deb7e37d546af9194e6d54e"
+        },
+        "table45_full_schema.json": {
+          "bytes": 833526,
+          "sha256": "a55341535618e8584fcafdef109f10f4bbab9235265ae142a8eb97585bcdd828"
+        },
+        "table48_comparison.json": {
+          "bytes": 469057,
+          "sha256": "68d2977960fc9045065212f632f6c13483e1426d2071bcad3d5e612c24c7c320"
+        }
+      },
+      "deliverable_count": 4,
+      "skipped_oversized": []
+    },
+    "t99": {
+      "task": "t99",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {},
+      "deliverable_count": 0,
+      "skipped_oversized": []
+    },
+    "t100": {
+      "task": "t100",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {},
+      "deliverable_count": 0,
+      "skipped_oversized": []
+    },
+    "t101": {
+      "task": "t101",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {
+        "batch2_schemas.json": {
+          "bytes": 129629,
+          "sha256": "26d2b026e81e05b1db06f358e303cd4b23f4762be1bc9f3e8f489c67ff85f2fd"
+        }
+      },
+      "deliverable_count": 1,
+      "skipped_oversized": []
+    },
+    "t102": {
+      "task": "t102",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {},
+      "deliverable_count": 0,
+      "skipped_oversized": []
+    },
+    "t103": {
+      "task": "t103",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {},
+      "deliverable_count": 0,
+      "skipped_oversized": []
+    },
+    "t104": {
+      "task": "t104",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {},
+      "deliverable_count": 0,
+      "skipped_oversized": []
+    },
+    "t105": {
+      "task": "t105",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t105",
+        "",
+        "三大主表 + NTC 共 8 个序列化器逐行读取步骤已抽取完毕。",
+        "",
+        "- 函数: 8(`CLUB`/`COMP`/`NATION`/`NATIONAL_TEAM_CONTAINER` × server/client)",
+        "- 读取步骤: 274(定长 213 / 变长 61)",
+        "- 带版本门控的步骤: 170",
+        "- 记录 helper: 22,其中缺反编译 19",
+        "",
+        "| 序列化器 | 步骤 | 定长 | 变长 | 门控 |"
+      ],
+      "deliverables": {
+        "_selftest\\big3_serializers.json": {
+          "bytes": 65553,
+          "sha256": "c07c6e61206f39734263804d58267e86096a2c52411efe68250a3e4d6ad29d56"
+        },
+        "_selftest\\REPORT.md": {
+          "bytes": 10298,
+          "sha256": "332ae5a18db1cd599fe0dc0bcfc37252f158316f32b10aa5d95564775fb5d9cb"
+        },
+        "big3_serializers.json": {
+          "bytes": 151683,
+          "sha256": "b7f02049f04d58691042c84867d4c16f25757068d5b8a55f257fcf8177222b3d"
+        },
+        "DONE.md": {
+          "bytes": 1006,
+          "sha256": "bd197b19d66a8ed36a6e0841dadd214032a105589a4a9ae13e2bf298d34588fa"
+        },
+        "REPORT.md": {
+          "bytes": 9203,
+          "sha256": "db8bef52470d1397ddf6a61adbe320c61c340d38fc4dd3ef127bdce49afd1891"
+        }
+      },
+      "deliverable_count": 5,
+      "skipped_oversized": []
+    },
+    "t106": {
+      "task": "t106",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t106",
+        "",
+        "- 成员：13（server_db 12 + 独立 summary.dat 1）",
+        "- 字节精确闭合：13/13",
+        "- 解码载荷合计：28,432,613 B",
+        "- 记录/行合计：1,858,739",
+        "- name_table_0/1/2 行数：245,981 / 542,060 / 85,668",
+        "- name_table_extra_0/1/2 字符串数：245,981 / 542,060 / 85,668",
+        "- common_name_links 行数：12,056（sentinel 279）",
+        "- club_links 行数：9,261（常量字节位 23/47）"
+      ],
+      "deliverables": {
+        "DONE.md": {
+          "bytes": 811,
+          "sha256": "0956bb5b382b99ad9015605bcb07ae77e38cc9c9de9f2ebfcabc6e9d3c4bdbcf"
+        },
+        "REPORT.md": {
+          "bytes": 28336,
+          "sha256": "3c64809cc8e2caedb7d124376f16279e3269330f5a0f6a4374c8e44c113129fc"
+        },
+        "special_members_schema.json": {
+          "bytes": 49864,
+          "sha256": "bf4ad337d9a80d725f0b25d58de4a7a000a8cbd6530b75a4e9a03fdc3ad4a1b7"
+        }
+      },
+      "deliverable_count": 3,
+      "skipped_oversized": []
+    },
+    "t107": {
+      "task": "t107",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {
+        "helpers_index.json": {
+          "bytes": 290203,
+          "sha256": "3689e09b1ad43462b1e3a32dca834dc78fad06d3c08069b5089f24767e4caeb8"
+        }
+      },
+      "deliverable_count": 1,
+      "skipped_oversized": []
+    },
+    "t108": {
+      "task": "t108",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t108b",
+        "",
+        "# t108 — 4CC ↔ 内存偏移 v2（helper 内联 + Cnti 修复）",
+        "",
+        "status: complete",
+        "outputs: scratch/t108/out",
+        "",
+        "## 核心统计",
+        "",
+        "- tables_covered: 67/67"
+      ],
+      "deliverables": {
+        "DONE.md": {
+          "bytes": 2377,
+          "sha256": "5392d2d144a71997e1fff261ca07fe64ded9143f0bfd5b44bfc695c467c1854b"
+        },
+        "fourcc_mem_map_v2.json": {
+          "bytes": 18874021,
+          "sha256": "67cc6efa6813da05fcc9671b5fa240792ec9f07e7829d2fc67f27a91f97bfed2"
+        },
+        "REPORT.md": {
+          "bytes": 24788,
+          "sha256": "90753795b9923ae06c8d7d56b1e9dfe39d862a7ba1344fd2f4cbcd8617048467"
+        },
+        "static_read_join_v2.json": {
+          "bytes": 2838357,
+          "sha256": "e0d626bb20f44d9c7b83403cb1bb48ea6ac416b4a56c54c7f33f62a1bc69c766"
+        },
+        "xml_triage_v2.json": {
+          "bytes": 1245890,
+          "sha256": "100a3504cb1d7a03eab59fc9b91eaaee3a986423f352488a35aa81fa6e30a30f"
+        }
+      },
+      "deliverable_count": 5,
+      "skipped_oversized": []
+    },
+    "t109": {
+      "task": "t109",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t109c",
+        "",
+        "完成 `t109_big3_l3_join.py` 收尾并重生成三份 JSON。自检通过（退出码 0）；三份机读结果均 `status=complete`，分母 1,034 严格守恒（club 433 + nation 346 + comp 255）。",
+        "",
+        "- 旧覆盖：110/1,034 = 10.6%",
+        "- 新总覆盖：379/1,034 = 36.7%（105 L3 static + 274 routed）",
+        "- 净持久化覆盖：379/673 = 56.3%",
+        "- 其余：361 excluded non-DB；294 gap；accepted-L3 crosscheck 尚有 10 个静态未闭合项，逐条解释见 `REPORT.md` 与 JSON。",
+        "",
+        "交付："
+      ],
+      "deliverables": {
+        "big3_l3_join.json": {
+          "bytes": 1349097,
+          "sha256": "f28ce0f547825d44235ced6542d110f2f4a17549c3589231d9333f2c4fe582bc"
+        },
+        "coverage_summary.json": {
+          "bytes": 114659,
+          "sha256": "62cc97a89239b37f595c2bbace90d69dd57281d8c6ec0d8c195e9a1e6db6a009"
+        },
+        "DONE.md": {
+          "bytes": 809,
+          "sha256": "c984605d02b2afc2b3705d605c5b08666a00190da999a292d899e946196d172d"
+        },
+        "remaining_gaps.json": {
+          "bytes": 149058,
+          "sha256": "429f3d6c4c9acbfc68dacbddb304739da17ccfd82cfe84bf69dad8f72b79f0d6"
+        },
+        "REPORT.md": {
+          "bytes": 2463,
+          "sha256": "8ad6423acc02ed80d81388f4906ca127cbee975f5ae64648b5e66f79c81efdba"
+        }
+      },
+      "deliverable_count": 5,
+      "skipped_oversized": []
+    },
+    "t110": {
+      "task": "t110",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t110",
+        "",
+        "- Deliverables: `master_67tables_l3.json`, `coverage_milestone.json`, `REPORT.md`, `verify.py`.",
+        "- Inputs genuinely consumed: t96c wire traces and t108 fourcc memory map; source regression checked against club/nation schema.",
+        "- Ledger: 67 IDA table records; 54 records with at least one Join; 1,036 unique table-record/4CC mappings.",
+        "- Unicorn status across records: CLOSED (diff=0)=30, OK_SAMPLE (50 rows)=23, FAIL=10, NOT_IN_SERVER_CLIENT_DB=4. The 10 FAIL entries are enumerated in REPORT.md; total table rows include IDA class variants.",
+        "- Existing-L3 regression: exact=2, within_slot=27, mismatch=23. Each mismatch has a per-field explanation in `coverage_milestone.json`; these are uncovered coordinates, not zero-mismatch verification.",
+        "- Verification: `python -I -B scripts/t110_master_l3_schema.py --selftest` PASS; `python -I -B scratch/t110/out/verify.py` PASS.",
+        "- `master_67tables_l3.json` size: approximately 1.22 MiB (<15 MiB)."
+      ],
+      "deliverables": {
+        "coverage_milestone.json": {
+          "bytes": 33240,
+          "sha256": "6de7253abf60072421ad5aa88cd8f2e9db5e403d60f39dc285564fe6a0c7c513"
+        },
+        "DONE.md": {
+          "bytes": 952,
+          "sha256": "96cb7bb0aa1bf5b89dca47a3921605c99da69478d65d192270e643abf088ab9e"
+        },
+        "master_67tables_l3.json": {
+          "bytes": 1328316,
+          "sha256": "25165d545067adde9a69b320badb33588a066b6e9755048b3d8ec1f17ae3081d"
+        },
+        "REPORT.md": {
+          "bytes": 14622,
+          "sha256": "335064d5f2a8b8481c5fe9c01a9d029a7d6e02860b8cc2dc620c87427c2d6b38"
+        }
+      },
+      "deliverable_count": 4,
+      "skipped_oversized": []
+    },
+    "t111": {
+      "task": "t111",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t111",
+        "status=partial",
+        "closed=0",
+        "sample_ok=0",
+        "failed=1",
+        "total=1",
+        "clean=0/79 (t96c baseline 68/79)",
+        "last11_clean=0/11"
+      ],
+      "deliverables": {
+        "DONE.md": {
+          "bytes": 127,
+          "sha256": "b3dbbdf755fec33a2a783d010cb3115e995bc33e2f72ff2356e6064ba26a50d9"
+        },
+        "last11_traces.json": {
+          "bytes": 2765,
+          "sha256": "ced645627ed26718b12b9aa4101bb37dd174ea54fc0426bfe2102a39fff16fff"
+        },
+        "REPORT.md": {
+          "bytes": 1143,
+          "sha256": "f3afa18a2fa049162b0b07a746283d69389157b1b53517917fbc70c0bdee12aa"
+        },
+        "wire_traces_t111.json": {
+          "bytes": 15370,
+          "sha256": "df2c663f5bd20020976cb5d6c5b72b4c0dc50c3a7056aba68b596df5977fcf3b"
+        }
+      },
+      "deliverable_count": 4,
+      "skipped_oversized": []
+    },
+    "t112": {
+      "task": "t112",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t112",
+        "",
+        "- Deliverable: `scripts/t112_fm24_reader.py` — FM24 `.dat` 纯 Python（stdlib + vendored zstandard）高速只读多表解析库；`scratch/t112/out/reader_verify.json`、`REPORT.md`、本文件。",
+        "- 支持 66 张表（fixed 46 + variable 18 + empty 2；server 49 + client 17），全量解码 1,942,341 行 6.4s，**66/66 `footer_closed == true`（0 字节误差）**，0 失败；13 张跳过（诚实原因记录在 verify JSON）。",
+        "- 验收：`py -V:3.12 -I -B scripts/t112_fm24_reader.py --selftest` 退出 0（12 项 PASS）；`--verify-all` 退出 0；≥25 张表要求超额达成（66 张）。",
+        "- 输入只读消费：scratch/data/{server,client}_db.dat、scratch/t96c/out/wire_traces_master.json、scratch/t110/out/master_67tables_l3.json（1,036 条 L3 映射 → 全库 390 个命名列）、scratch/t95/funcs/*.c；未修改 reports/ 与 LEDGER.json。",
+        "- 覆盖提示书点名表：CONTINENT/INJURY/MEDIA_SOURCE/LANGUAGE/NATION★/REGION/STADIUM_CHANGE/STAGE_NAME/WEATHER/PLAYER_TYPE/CURRENCY_RECORD/AGREEMENT/CITY/STADIUM/STARTING_RECORD★(84,477 行 + 5,210 行)/COMP(client)★ 及 29~73 中除 29/32/36/71/72 外的全部子表。",
+        "- t10 NATION 加分项达成：slot19 C (1410404C0) 手写 server/client 两套程序；三个缺 .c 的元素解析器（1415CFD70/141072F60/1415CFEA0）用「全表字节记账 + identity 序号锚定」穷举实证求解（CFD70=[u8,str,str,7×u32] 含人名、72F60=14B、CFEA0=7×u32=28B），两库各 251 行 100% 闭合；DATE 线格式确证 [day-of-year u16][year u16]。",
+        "- 过程工具：scratch/t112/{solve_t10.py, trace_funcs.py, extract_prog.py, ctrees/}。"
+      ],
+      "deliverables": {
+        "DONE.md": {
+          "bytes": 1642,
+          "sha256": "43b83589556382e2189df4282f6e3f6928819b5f12ea10410f0bd82d3044ba33"
+        },
+        "reader_verify.json": {
+          "bytes": 128543,
+          "sha256": "70c7bca37bc7aedbee956b2fb36d645e5d6a892ce9c32c2b2cc21a1dc87e159b"
+        },
+        "REPORT.md": {
+          "bytes": 12641,
+          "sha256": "3b7dff6086100927ae97ca524365996ac6831cdf97ef05e5454fcc8e7ea8913e"
+        }
+      },
+      "deliverable_count": 3,
+      "skipped_oversized": []
+    },
+    "t113": {
+      "task": "t113",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "# t113 delivery status: PARTIAL",
+        "",
+        "DONE type=t113",
+        "",
+        "- `people_db.dat`: 67,502,767 compressed B; 400,443,970 decompressed B.",
+        "- `basic_people_db.dat`: 12,934,775 compressed B; 54,060,043 decompressed B; 658,011 rows validated; class histogram 166,064 / 476,158 / 4,757 / 9,839 / 1,193; row chain and footer close.",
+        "- RTTI classes/vtables and slots: 0 verified in this run.",
+        "- `people_db.dat` person_type histogram: unavailable; variable record framing not established.",
+        "- Hex-Rays function sources / 4CC coverage: none produced.",
+        ""
+      ],
+      "deliverables": {
+        "DONE.md": {
+          "bytes": 877,
+          "sha256": "c07a7881dd9dc5e8a11314deb295697ab43829eb08e886331a75e5090a72e707"
+        },
+        "people_archives_inventory.json": {
+          "bytes": 2577,
+          "sha256": "86453759fe97fefc2820565544d0f446679668107cd1a289620460a98250d5d5"
+        },
+        "people_vtables.json": {
+          "bytes": 189,
+          "sha256": "f9a8ebc4fae09e11ce4a3a67c10e2dbe4be4824dae3a2092fc14290549b00ac1"
+        },
+        "people_vtables_full.json": {
+          "bytes": 44028,
+          "sha256": "3b4278052648a478b0a4ada02c091c6148d56c5c1b186ec5ffc6c8b4700848e3"
+        },
+        "REPORT.md": {
+          "bytes": 2334,
+          "sha256": "8d4751e0d549f9f35bd705c982a0aa6cbace3310e95bd8ad5db705ea2b9476b8"
+        }
+      },
+      "deliverable_count": 5,
+      "skipped_oversized": []
+    },
+    "t114": {
+      "task": "t114",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t114",
+        "",
+        "Framing scan: 658011 rows; footer boundary exact; histogram {\"1\": 166064, \"2\": 476158, \"4\": 9839, \"3\": 4757, \"5\": 1193}. Semantic schema and UID anchors remain incomplete."
+      ],
+      "deliverables": {
+        "basic_people_schema.json": {
+          "bytes": 6945,
+          "sha256": "ac42e06ab9f43a196944ce1080b8e10927481da695926247f719c6c4d99af12f"
+        },
+        "DONE.md": {
+          "bytes": 191,
+          "sha256": "ed9be9e39e6f3b8bf8aa280ff59fd0580365f802fc36355a740aa9eea1356700"
+        },
+        "people_db_probe.json": {
+          "bytes": 1091,
+          "sha256": "ed532a37d2a9e765a3d7ebc0dc2d11f9adc33edf6e2744690e12f15a244b707f"
+        },
+        "REPORT.md": {
+          "bytes": 635,
+          "sha256": "db6895d91d1f74f895d481600db34d373d1fd02631ad2ba49b5aadc69a24dec3"
+        }
+      },
+      "deliverable_count": 4,
+      "skipped_oversized": []
+    },
+    "t115": {
+      "task": "t115",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t115",
+        "",
+        "Validated framing and anchor probe (partial semantic status): 658,011 rows; exact closure diff=0; type histogram {\"1\": 166064, \"2\": 476158, \"3\": 4757, \"4\": 9839, \"5\": 1193}; verified anchors=3."
+      ],
+      "deliverables": {
+        "basic_people_l3_schema.json": {
+          "bytes": 8273,
+          "sha256": "fd35b730a7cb82e5db9e0e98d01820d28f9c549848170bd1b6d3e1b63bad4d9d"
+        },
+        "DONE.md": {
+          "bytes": 213,
+          "sha256": "5c80b0a6352ea6f564440784728cfb9ae80770028c77d420577ea6cdc7b5c898"
+        },
+        "REPORT.md": {
+          "bytes": 1372,
+          "sha256": "308b00015fb4a636ca5b326987f453f21fc42eebcef4a1ddec09dcec8423762f"
+        }
+      },
+      "deliverable_count": 3,
+      "skipped_oversized": []
+    },
+    "t116": {
+      "task": "t116",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t116",
+        "status=complete",
+        "manifest_artifacts=1192",
+        "regressions_passed=7/7",
+        "big3_gross=379/1034 (36.7%)",
+        "big3_net=379/673 (56.3%)",
+        "t110_tables=55/67, l3_mappings=1056",
+        "t96c_done_closed=41 (brief says 42; discrepancy flagged)",
+        "basic_people_rows=658011 diff=0",
+        "ledger_candidates=E142-E150 (draft; not entered)"
+      ],
+      "deliverables": {
+        "DONE.md": {
+          "bytes": 315,
+          "sha256": "0b7000a8090336dd5e9e5bd3cbd6c2b73630f8aff5c7d863b812ff6f817ab907"
+        },
+        "ledger_candidates.json": {
+          "bytes": 8085,
+          "sha256": "bb4693407d719b3d6ace977fcc1655a4579e1ffdde13a83e534c082473ad4bb0"
+        },
+        "wave13_consolidated.json": {
+          "bytes": 263490,
+          "sha256": "1a93e392e59cf4490337ca9bf5965671f5a5198c8b1679cde78fadd669db1ad0"
+        },
+        "WAVE13_EXECUTIVE_REPORT.md": {
+          "bytes": 2987,
+          "sha256": "7c6df090b4fbc761a5ac86f5f904d6ff0b93eb80836d090065b7185c5ec8bc8d"
+        }
+      },
+      "deliverable_count": 4,
+      "skipped_oversized": []
+    },
+    "t117": {
+      "task": "t117",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "# DONE type=t117",
+        "",
+        "- Denominator conserved: 1,034 (CLUB 433, NATION 346, COMP 255).",
+        "- L3: 379/1,034 gross (36.7%); 379/673 net (56.3%).",
+        "- Upgraded gaps: 0; remaining: 294. No unsupported classifications promoted.",
+        "- `py -V:3.12 -B scripts/t117_big3_gap_closure.py --selftest`: PASS (run immediately after generation).",
+        "- See `REPORT.md` for limitations and the t105 selftest diagnosis."
+      ],
+      "deliverables": {
+        "big3_l3_v2.json": {
+          "bytes": 1517724,
+          "sha256": "5223b368b49ba2589cb1e0ab44416c52bad5506f875d542808518533d374261b"
+        },
+        "coverage_summary_v2.json": {
+          "bytes": 1938,
+          "sha256": "31ee79ae64837a91b2d417a460757cb4909301d3ceeda050143e7c10fef5e49a"
+        },
+        "DONE.md": {
+          "bytes": 390,
+          "sha256": "b17d933daae4de2b72a20eaf0a325342e2840f15bff46af7a1a7f3ed7300ccff"
+        },
+        "remaining_gaps_v2.json": {
+          "bytes": 178407,
+          "sha256": "e1a28381191e5795998752e9a6f73258af3c4c3c730158ffc5ceaddccdab7176"
+        },
+        "REPORT.md": {
+          "bytes": 1351,
+          "sha256": "7598e7a42a90dbd1433e39ed9ad8a395ae44cc6f2c9e6884c2711222b35a02a4"
+        }
+      },
+      "deliverable_count": 5,
+      "skipped_oversized": []
+    },
+    "t118": {
+      "task": "t118",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t118",
+        "",
+        "{",
+        "  \"factory_cases\": 13,",
+        "  \"fourcc_mappings\": 754,",
+        "  \"unique_fourcc\": 628,",
+        "  \"wire_steps\": 152,",
+        "  \"basic_rows\": 658011,",
+        "  \"basic_closure_diff\": 0,",
+        "  \"people_type5_rows\": 1193,"
+      ],
+      "deliverables": {
+        "DONE.md": {
+          "bytes": 390,
+          "sha256": "e636c0aa0a10b85e6b09cd38a9ad3816750a3d07c126abb84e8e7a4a3814e64a"
+        },
+        "people_4cc_mem.json": {
+          "bytes": 497580,
+          "sha256": "1315491ed6d01ef2edf51500a88020febf47b6e5a1e4b7acd05c0b3976e7b233"
+        },
+        "people_factory_map.json": {
+          "bytes": 15839,
+          "sha256": "4b660dd04f880917d0a2b1ef85a279bd96d834615e44ca5a1abeb30b5032fabd"
+        },
+        "people_wire_steps.json": {
+          "bytes": 176461,
+          "sha256": "e03397bfc9402c60703aa68e17f7b5b69b696247a11291b2ed8391611422c648"
+        },
+        "REPORT.md": {
+          "bytes": 4930,
+          "sha256": "eb83581a6dc0bf377eabaa53a48ad9a35042fa502f8f3db71fad8646d078df35"
+        }
+      },
+      "deliverable_count": 5,
+      "skipped_oversized": []
+    },
+    "t119": {
+      "task": "t119",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t119",
+        "status=complete",
+        "clean=5/5",
+        "combined=79/79"
+      ],
+      "deliverables": {
+        "DONE.md": {
+          "bytes": 60,
+          "sha256": "24d52d4300c6f2debc4f7d96b243138248e160bad16aa24cfcaab00f10013707"
+        },
+        "last5_traces.json": {
+          "bytes": 91221,
+          "sha256": "093ced5df2f4025a90add639197f7873d8e44f90c350dfc9ed998dcffae04aac"
+        },
+        "REPORT.md": {
+          "bytes": 952,
+          "sha256": "bd0b9b42d757d0ed5f83aed39ad02cd8e2580386be4a65fd2bb154015f92c6b0"
+        }
+      },
+      "deliverable_count": 3,
+      "skipped_oversized": []
+    },
+    "t120": {
+      "task": "t120",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t120",
+        "status=complete",
+        "rows_ok=3000/3000",
+        "end_offset=1216813"
+      ],
+      "deliverables": {
+        "DONE.md": {
+          "bytes": 72,
+          "sha256": "5ef9a9dbf2cd7921b7a8b65d8acc4ffdf377d43f779d2c8b7cf66ddc471fad12"
+        },
+        "people_ida_p0_index.json": {
+          "bytes": 3140,
+          "sha256": "da2fe8d40097d9315b33be8abf727c7c86e82ff708cf0df368fa4b3c9b9bb474"
+        },
+        "people_unicorn_traces.json": {
+          "bytes": 589661,
+          "sha256": "0c1dd1700f2fd738145b8f67c378fa3d9a1a00b4048018acf113f8aa039968fa"
+        },
+        "REPORT.md": {
+          "bytes": 1102,
+          "sha256": "794fe4d33a70d211999aedf8916a92b1a247303fa6493f850036bd88b609da20"
+        }
+      },
+      "deliverable_count": 4,
+      "skipped_oversized": []
+    },
+    "t121": {
+      "task": "t121",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t121",
+        "coverage=79/79 (100.0%)",
+        "closed=46",
+        "sample_ok=33",
+        "failed=0",
+        "t110=55/67 tables, 1056 L3 4CC mappings",
+        "t121=56/67 tables, 1104 L3 4CC mappings",
+        "selftest=PASS (run py -V:3.12 -B scripts/t121_master_79of79.py --selftest)"
+      ],
+      "deliverables": {
+        "DONE.md": {
+          "bytes": 234,
+          "sha256": "561fd82b2be29e47829637ac6aef2bca4186d195bad697966f2e367a79273c7a"
+        },
+        "master_79of79_l3.json": {
+          "bytes": 919873,
+          "sha256": "d59f2ec6427947b73a9294b7ed34e13c8202e0518f0b22e1a02a7e39af065c87"
+        },
+        "REPORT.md": {
+          "bytes": 7320,
+          "sha256": "8feac7eb32e0b9f0edd5f8c13365009c79a3a0832e107487696f23add91c8b0f"
+        },
+        "wire_traces_79of79.json": {
+          "bytes": 1308510,
+          "sha256": "1e1ce1264a5ebdcff3b75ea8f645f16aa3d2b26d9f6ef13c323c940d50f1834e"
+        }
+      },
+      "deliverable_count": 4,
+      "skipped_oversized": []
+    },
+    "t122": {
+      "task": "t122",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t122",
+        "",
+        "Rows walked: 3,000; type-specific joined 4CC count sum: 177.",
+        "Verified PLAYER wire chunks before byte 148: 21.",
+        "Selftest: PASS (run `py -V:3.12 -B scripts/t122_people_l3_schema.py --selftest`).",
+        "Deliverables: `scripts/t122_people_l3_schema.py`, `scratch/t122/out/people_l3_schema.json`, `scratch/t122/out/REPORT.md`, `scratch/t122/out/DONE.md`."
+      ],
+      "deliverables": {
+        "DONE.md": {
+          "bytes": 364,
+          "sha256": "24481d304afd30478015a35ed397e1a46399a01ee0f110909ab6cd354d372d01"
+        },
+        "people_l3_schema.json": {
+          "bytes": 830284,
+          "sha256": "f708ec0a4f2b73852edaa48146501bf40c1849a1aa8441aa43d81f773c53eebc"
+        },
+        "REPORT.md": {
+          "bytes": 4605,
+          "sha256": "ce8a9edea2899af0808c89441d763327933c3b57a56ac5ee90d95799f7fca736"
+        }
+      },
+      "deliverable_count": 3,
+      "skipped_oversized": []
+    },
+    "t123": {
+      "task": "t123",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t123",
+        "",
+        "- rows=658011 closure_diff=0",
+        "- type_histogram={\"1\":166064,\"2\":476158,\"3\":4757,\"4\":9839,\"5\":1193}",
+        "- byte_maps=83/83/83/34/22 (every serialized byte represented)",
+        "- name_tables=3 fixed+extra pools, all closures exact",
+        "- verified_anchors=3 (Harry Kane, Cristiano Ronaldo, Lionel Messi)",
+        "- verified_top50=50 by PCAB/CA with name-pool ID checks",
+        "- --selftest=PASS"
+      ],
+      "deliverables": {
+        "basic_people_l3_complete.json": {
+          "bytes": 219518,
+          "sha256": "00035094a610c75d611025502e4a89a73a02b572dd4a394f2175ec7146a8c334"
+        },
+        "DONE.md": {
+          "bytes": 380,
+          "sha256": "977cfc577eabbdd4ff90a7fbfc6dca456fc8fa5edd29adf1824fc4e3aad110f8"
+        },
+        "REPORT.md": {
+          "bytes": 6799,
+          "sha256": "17eeb6445dd484e8e55a5ed928338c67499e9142ed6aecc1fe81871dd6165b9d"
+        }
+      },
+      "deliverable_count": 3,
+      "skipped_oversized": []
+    },
+    "t124": {
+      "task": "t124",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {
+        "ida_index.json": {
+          "bytes": 15153,
+          "sha256": "286931369ff7fae210f598b74596d9f9f12682e760149c12ae465e9bc293b96c"
+        }
+      },
+      "deliverable_count": 1,
+      "skipped_oversized": []
+    },
+    "t125": {
+      "task": "t125",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t125",
+        "",
+        "- Gross L3: **512/1034 (49.5%)**, up from 379/1034 (36.7%).",
+        "- Net persisted L3: **512/672 (76.2%)**, up from 379/673 (56.3%).",
+        "- Gaps: **294 → 160**. New L3: **133** (94 subtable, 38 Unicorn/subobject, 1 helper). New non-DB exclusion: **1**.",
+        "- All 379 prior L3 entries and 361 prior exclusions were preserved. Denominator: club 433, nation 346, comp 255. L4 = 0.",
+        "- Build: PASS (`py -V:3.12 -B scripts/t125_big3_gap_closure.py`).",
+        "- `--selftest`: PASS (`py -V:3.12 -B scripts/t125_big3_gap_closure.py --selftest`).",
+        "",
+        "Deliverables: `scripts/t125_big3_gap_closure.py`; `big3_l3_v3.json`, `coverage_summary_v3.json`, `remaining_gaps_v3.json`, `REPORT.md`, and this file under `scratch/t125/out/`."
+      ],
+      "deliverables": {
+        "big3_l3_v3.json": {
+          "bytes": 1952806,
+          "sha256": "e996eee29f8d0515943e9a379d50eddf76bf223bef1e48151a0aeb7e93541873"
+        },
+        "coverage_summary_v3.json": {
+          "bytes": 5783,
+          "sha256": "dd9216213809fc9ef537865753dff5b4c028b77e7266cad978c91e1f5e22c20d"
+        },
+        "DONE.md": {
+          "bytes": 708,
+          "sha256": "f13787ffe47cb2fefcf3c7f138149723fda88fdd5791405d942f627d86a59518"
+        },
+        "remaining_gaps_v3.json": {
+          "bytes": 359246,
+          "sha256": "3ee8f31e26dc4ffc6cfc17df61030e22c3cd2b107d66e09da56177dc1afd8259"
+        },
+        "REPORT.md": {
+          "bytes": 5305,
+          "sha256": "bc9b83c68bc8797310269a1f21bab1d0387d9805d2e9f44d27be93500f2fcd66"
+        }
+      },
+      "deliverable_count": 5,
+      "skipped_oversized": []
+    },
+    "t126": {
+      "task": "t126",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t126",
+        "status=complete",
+        "pdxx_verified=54/54",
+        "position_bytes_0_14=15",
+        "total_l3_4ccs_5classes=374",
+        "decoded_cards=5",
+        "selftest=PASS"
+      ],
+      "deliverables": {
+        "_rows_probe.json": {
+          "bytes": 86108,
+          "sha256": "7bf31e8a874161c29264f9d79e850b92c027a33aab5218dc1acf82182a080d82"
+        },
+        "_tmp_map.json": {
+          "bytes": 4968,
+          "sha256": "0be41ee942ca0d9e123bedaa3d29c6682afca661653b0fc91620c3ec31f7d004"
+        },
+        "_walk.json": {
+          "bytes": 3051228,
+          "sha256": "a6fb1dd2bcba7bf7962d971203d9e920c542ea072374e29d246e857b1d86b27c"
+        },
+        "DONE.md": {
+          "bytes": 138,
+          "sha256": "f86887cd5e46f6e128952256096c7c032fd460f65813f92f83d08788b377fde3"
+        },
+        "people_all5_l3_master.json": {
+          "bytes": 155627,
+          "sha256": "ee2e180b9fc374702141e5b8700fc7d10908e87e8ff204f0629855f16fff518f"
+        },
+        "player_69b_attributes_l3.json": {
+          "bytes": 38386,
+          "sha256": "16ebd4ee8756b7c98dbe936dbd753df3ce054638ae685cdddd9562ea660cbb66"
+        },
+        "REPORT.md": {
+          "bytes": 5991,
+          "sha256": "c86bccdaf0f1004de60b574003661ae9481cb4d26d2ba27e73119d03578fbd32"
+        }
+      },
+      "deliverable_count": 7,
+      "skipped_oversized": []
+    },
+    "t127": {
+      "task": "t127",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {
+        "_clubnames.json": {
+          "bytes": 342,
+          "sha256": "848ff4c57f044e3777bcd028a393e6ae29a016d203d75961f6c3abf21260a0ba"
+        },
+        "_clubnames2.json": {
+          "bytes": 332,
+          "sha256": "8c67e1fa600c23ff9b6097498c9945a84bf55d09a4112958c4151982237090a6"
+        },
+        "_stars.json": {
+          "bytes": 19218,
+          "sha256": "5e69c6cf1862d9b2493ddcfbbc0237bf21c76ce7cd9625182d5781f66bc4b5b7"
+        }
+      },
+      "deliverable_count": 3,
+      "skipped_oversized": [
+        "_dt.bin",
+        "_dtchk.bin"
+      ]
+    },
+    "t128": {
+      "task": "t128",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {},
+      "deliverable_count": 0,
+      "skipped_oversized": []
+    },
+    "t129": {
+      "task": "t129",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {},
+      "deliverable_count": 0,
+      "skipped_oversized": []
+    },
+    "t130": {
+      "task": "t130",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {},
+      "deliverable_count": 0,
+      "skipped_oversized": []
+    },
+    "t131": {
+      "task": "t131",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {},
+      "deliverable_count": 0,
+      "skipped_oversized": []
+    },
+    "t132": {
+      "task": "t132",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {
+        "ida_hop2_index.json": {
+          "bytes": 4679,
+          "sha256": "6cecccb0f30675a62a5a082b75380a2e9e647a1860a5f0a18285e8756820b9ad"
+        }
+      },
+      "deliverable_count": 1,
+      "skipped_oversized": []
+    },
+    "t133": {
+      "task": "t133",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t133",
+        "",
+        "- **79/79** numeric tables `footer_closed`, all `diff=0`; **0 failed, 0 skipped**.",
+        "- **2,846,936** rows decoded, all in footer-closed tables (+904,595 vs t112).",
+        "- `--verify-all`: **9.084 s**, vendored `zstandard`; `--selftest`: **PASS** (51 checks).",
+        "- `--list` and `--dump server 24 --limit 1`: PASS.",
+        "- Offline t79 cross-check: **84,507** TEAM rows and **84,507** `extra_24` rows, six packed-date lanes checked. `extra_24` is separate from the 79 numeric tables.",
+        "",
+        "Deliverables: `scripts/t133_fm24_reader_v2.py`, `scratch/t133/out/reader_v2_verify.json`, `scratch/t133/out/REPORT.md`, `scratch/t133/out/selftest.log`, and `scratch/t133/out/team_field_map_check.json` with its offline reproducer and static evidence."
+      ],
+      "deliverables": {
+        "DONE.md": {
+          "bytes": 731,
+          "sha256": "6e9e24c11273112600d96611d5e788b947ef6e9f8adf45881424df3a10b7fd26"
+        },
+        "reader_v2_verify.json": {
+          "bytes": 265819,
+          "sha256": "2437417687fd691ef73c35a810b87f9dea62d0252485ec019a8f05360a530499"
+        },
+        "REPORT.md": {
+          "bytes": 7107,
+          "sha256": "583f2be8e88a8071657f8c0a4f871424dfdf08c4b5fb9535529e50129a6aa647"
+        },
+        "team_field_map_check.json": {
+          "bytes": 2278,
+          "sha256": "a2dadaf359805c0992d397abdac40ac91469c062620f9b7b310af62414480fb5"
+        }
+      },
+      "deliverable_count": 4,
+      "skipped_oversized": []
+    },
+    "t134": {
+      "task": "t134",
+      "dir_exists": false
+    },
+    "t135": {
+      "task": "t135",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": true,
+      "done_first10": [
+        "DONE type=t135",
+        "status=complete",
+        "verified_superstars=21",
+        "unique_uids=21",
+        "attributes_per_card=54",
+        "basic_CA_exact_match=21/21",
+        "basic_PA_exact_match=21/21",
+        "ca_pa_crosscheck_rate=1.0000/1.0000",
+        "all_54_in_0_20=21/21",
+        "identity_verified=21/21"
+      ],
+      "deliverables": {
+        "_stage1.json": {
+          "bytes": 8422,
+          "sha256": "b50a211255f475607cccc1a1b5090303b1b42aba5576999035cb2205fd11d6ee"
+        },
+        "_stage2.json": {
+          "bytes": 261349,
+          "sha256": "96d930289d366a2c69fdac99af47c3bcf143484b9d7dd35bf8d90ecb9d060e0f"
+        },
+        "DONE.md": {
+          "bytes": 310,
+          "sha256": "0cc9eefdcd84f593402df61e0bfb92777033e769cf807db2aba9fe47c15bfd56"
+        },
+        "REPORT.md": {
+          "bytes": 14857,
+          "sha256": "20f5a748cc87aa10059e9826d9f99db355ade57772c84aac6590e7fc329db5bd"
+        },
+        "star_player_cards.json": {
+          "bytes": 322598,
+          "sha256": "5b544343fa13e46370a1493954e3363e463044462f6cd20725af1af107fe771d"
+        }
+      },
+      "deliverable_count": 5,
+      "skipped_oversized": []
+    },
+    "t136": {
+      "task": "t136",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {
+        "archive_audit_v4.json": {
+          "bytes": 786723,
+          "sha256": "62c0b803b51fe5e4c9bb84e5203b2f776b779bc5c35e67eac97303ab799c9382"
+        },
+        "big3_l3_v4.json": {
+          "bytes": 1935099,
+          "sha256": "ac6a7e319cfe96197f1369d7a44e603bca5a415c83e01279276ab3e05d6fb6c5"
+        },
+        "coverage_summary_v4.json": {
+          "bytes": 19358,
+          "sha256": "084f7b41783e8a590d4e14849b5a30fa676c03cbfd1b4ef6f434469bb44c3a3c"
+        },
+        "hop_audit_v4.json": {
+          "bytes": 109892,
+          "sha256": "5204ebf6ed0c2fec06822a383bd21a27c21443a7e0063dadaadba43ec0cf887a"
+        },
+        "remaining_gaps_v4.json": {
+          "bytes": 365321,
+          "sha256": "bd1a751be57f21ec0f7e166ad8c5c8b0e0908be7b583baeb91ac209690d84148"
+        },
+        "REPORT.md": {
+          "bytes": 2046,
+          "sha256": "e39dbf702c2674bc34479f3ec0832bc3066696465ea4a6050fe2cb01af78637d"
+        }
+      },
+      "deliverable_count": 6,
+      "skipped_oversized": []
+    },
+    "t137": {
+      "task": "t137",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {},
+      "deliverable_count": 0,
+      "skipped_oversized": []
+    },
+    "t138": {
+      "task": "t138",
+      "dir_exists": true,
+      "out_exists": true,
+      "has_done": false,
+      "done_first10": [],
+      "deliverables": {
+        "ida\\index.json": {
+          "bytes": 8722,
+          "sha256": "86a896329e5d6dd110b8a56c15fba10f088285b2c834009876ce18b0250a4b25"
+        }
+      },
+      "deliverable_count": 1,
+      "skipped_oversized": []
+    },
+    "t139": {
+      "task": "t139",
+      "dir_exists": false
+    },
+    "t140": {
+      "task": "t140",
+      "dir_exists": false
+    },
+    "t141": {
+      "task": "t141",
+      "dir_exists": false
+    },
+    "t142": {
+      "task": "t142",
+      "dir_exists": false
+    },
+    "t143": {
+      "task": "t143",
+      "dir_exists": false
+    }
+  },
+  "done_count": 25,
+  "done_total": 49,
+  "protected_paths": {
+    "clean": true,
+    "exit_code": 0,
+    "output": ""
+  },
+  "protected_clean": true
+}

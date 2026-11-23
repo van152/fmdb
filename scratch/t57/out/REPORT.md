@@ -17,7 +17,7 @@
 
 ## 静态链与槽位数
 
-只读 `<OLD_REPO>/input/editor.exe` SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。冻结 master SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`；master、`IDA_PROVENANCE.md`、`db_tables_big.json` 和 `DB_TABLES_BIG.md` 对 MANIFEST 核验。下文代码地址为 **PE file offset**；VA、原始 bytes、后继见指令分片。
+只读 `D:/tmp2b/fm24/input/editor.exe` SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。冻结 master SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`；master、`IDA_PROVENANCE.md`、`db_tables_big.json` 和 `DB_TABLES_BIG.md` 对 MANIFEST 核验。下文代码地址为 **PE file offset**；VA、原始 bytes、后继见指令分片。
 
 - Factory `0xf48b30` 的 `0xf49d38` rel32 表格 case 3 (`0xf49d44`) → `0xf48daf`。`BL!=0x0c` 到 `0xf49c34`，`0xf49c3f` 调构造器 `0xe59a40`，经 `0x3aad0fd` 取 `CLUB` vptr VA `0x14187cd08`。`BL==0x0c` 先调用同一构造器再写 derived vptr VA `0x1418bfbf8`。`CLUB` slot 2 是 `0xe89a00`（不是 t39 的 NATION `0x1041f30`）；slot 19 `0xe5a7a0`（VA `0x140e5b1a0`），PE exception extent `0xe5a7a0..0xe5bfca`，**1,412 条可达指令 / 167 条条件 / 0 extent 外边**。Derived slot 19 `0x157cff0 → 0x43beba0`，后者 68 条指令，`0x43bec5b` 是到 base `0x11d0d30` 的 tail jump，不是循环。
 - `ReaderCFG` 对主、derived、限定的字符串、flush、base、tag-0 与日期 reader 生成可达图。CLUB extent 的 **41 次直接 `stream+0x28`** 分开记为 16 scalar/count（含 compact 替代 flush）、17 collection item/终止 flush、8 替代路径或现代成功路径无 pending width 的站点；**不等于 41 个外层业务字段**。共交付 407 条条件的谓词/后继；生命周期或目前不明的分支保留，不按未观测推断死边。
@@ -48,7 +48,7 @@
 - `verify.py` 独立解目录、重建 PE CFG、反向数据 DP、重放全量行/坐标/字段域及旧锚点。不 import builder、`ReaderCFG`、`fm24_dump`。`--help` / `--selftest` 双脚本通过；全量 verifier 通过；`t01_anchors.py` **7/7**。退出码 0 成功 / 1 检查失败 / 2 用法或致命错误。未启动游戏、编辑器、IDA；未联网或访问 Z:。
 
 ```text
-FM24_DB_DIR=<WORKSPACE>/scratch/data
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data
 py -V:3.12 -I -B scripts/t57_clubmain_fields.py --build
 py -V:3.12 -I -B scratch/t57/out/verify.py
 py -V:3.12 -I -B scripts/t01_anchors.py

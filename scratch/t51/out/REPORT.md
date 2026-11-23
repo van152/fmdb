@@ -4,7 +4,7 @@
 
 ## Owner 从 `this` 判定
 
-所有地址默认是 `editor.exe` PE **file offset**，VA、原 bytes、指令与直接目标均在 JSON。只读 `<OLD_REPO>/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。冻结 `master.json`（`7d57477e…`）与 `IDA_PROVENANCE.md` 对照 MANIFEST；t37 inventory `8af89c72…`、t37/t47 的原文与六条原 JSON 项逐条保留。这里的 `TEAM_CONTAINER` 是基类，不是 table type 24 的 `TEAM` 对象，也不是说所有实体只存在一份集合。
+所有地址默认是 `editor.exe` PE **file offset**，VA、原 bytes、指令与直接目标均在 JSON。只读 `D:/tmp2b/fm24/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。冻结 `master.json`（`7d57477e…`）与 `IDA_PROVENANCE.md` 对照 MANIFEST；t37 inventory `8af89c72…`、t37/t47 的原文与六条原 JSON 项逐条保留。这里的 `TEAM_CONTAINER` 是基类，不是 table type 24 的 `TEAM` 对象，也不是说所有实体只存在一份集合。
 
 - **NATION 入口**：slot 2 `0x1041f30 → 0x1041f40` 保存 `this=R12`，`0x104330f` 取 NATION `+0x108`，`0x1043322` 将它传给 `0x1065ef0`。t9 slot 2 `0x1065eb0 → 0x3d95190` 先试 `+0x170` 指向的 Nation（禁止递归转发），失败时以原 t9 `this` 进同一 `0x1065ef0`。原 `0x3d88644` 有条件地将 t9 写回 `Nation+0x108+8*[t9+0xb9]`；未主张所有档行取 index 0。`0x10685d9–e1` 用同一 `RDI` 转入 `0x11f0690` 基类 getter，`Calt`、`TCrs` 的精确 4CC 都命中。setter 路径独立互证：NATION slot 3 `0x1045300 → 0x3d61fc0` 的 `0x3d61fd8/0x3d61fe9` 将 `+0x108` 送入 `0x1063530`，再 `0x10647d7 → 0x11f4570 → 0x11cf6e0`。t47 两组候选 sites 中这两段是**输入分发**，不是 getter。
 - **TEAM 对照**：试过 t39 锚点 `0x11b0f6c → 0x15e9830 → 0x44d7bf0`，其 `0x44d7c6a/71` 取全局 `VA 0x141b60158` 所指表的 `+0x80`，后续按 Team owner 筛选；它不是这里两条 4CC 所达的对象局部 vector。当前证明的是 Nation 请求下的 owner 和基类共享机制，不从同名 schema 推导独立 TEAM/t24 集合，也不把 club 路径纳入验收。
@@ -53,6 +53,6 @@ E80：目录项数 client/server **31/77**，从 `34+entry.offset` 开始，在�
 | `context-lifecycle` | `0x11d1b88` null stream 跳过 pending transfer，后续 identity 同样不可读；`0x29c5a` null selected object 不会进入 UI 类型检查。 |
 | `dead` | `0x3eba542` 的 taken 要求紧邻 `xor eax,eax; test al,al` 的 AL 非零，矛盾；不是仅因实际未命中。 |
 
-`FM24_DB_DIR=<WORKSPACE>/scratch/data`，`py -V:3.12 -I -B`：builder、独立 verifier、两者 `--help`/`--selftest` 均通过；`t01_anchors.py` **7/7**。独立 verifier 不导入 builder、ReaderCFG 或 `fm24_dump`；独立工作队列复核 PE extent/边、按大小选帧、目标跨度、实表身份与首个错误 join。只在 t51 写入；未启动游戏、编辑器、IDA，未联网或访问 Z:。
+`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`，`py -V:3.12 -I -B`：builder、独立 verifier、两者 `--help`/`--selftest` 均通过；`t01_anchors.py` **7/7**。独立 verifier 不导入 builder、ReaderCFG 或 `fm24_dump`；独立工作队列复核 PE extent/边、按大小选帧、目标跨度、实表身份与首个错误 join。只在 t51 写入；未启动游戏、编辑器、IDA，未联网或访问 Z:。
 
 **剩余**：绑定 TCrs getter 所用扩展读路径的具体 member/mode 并区别主档 `+0x188`；Calt 等实档出现非零 count 后再试 join；Nftb 父精确显示分发与引用编码不升级；EDfx 的上游持久化来源、EDsc 的实际 UI/资源调用链仍未封闭。

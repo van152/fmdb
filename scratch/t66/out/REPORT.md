@@ -6,7 +6,7 @@
 
 集合和行界只取 t59 `REPORT.md` / `field_slots.json` / `field_map.json`。双档分别为 `13 + 894969 + 9 = 894991` 和 `13 + 1533950 + 9 = 1533972`；各 7,047 行、12 B `ordinal|UID|UID`、UID 双档逐行一致，selector 均为 0。Builder 重放 t59 冻结轨迹并核对所有槽的坐标及内容 SHA；独立 verifier 用原始 triple 反向 DP 各得一路，再借用 t59 固定槽宽和执行顺序逐项读，不以交付台账或扫描结果修补游标。每集合末端与后继槽、每母行 identity 与 footer 同时对齐。`census.json` 按档发布全部母行坐标、presence/count 位置、每个 item 的半开区间；`+0xc0` 另有每个内项的半开区间。`collections.json` 含每 lane 原值直方图、非空 ordinal、count/宽度分布及绝对界。所有 `@` 和表中区间都是**解压成员**绝对坐标。
 
-静态来源：只读 `<OLD_REPO>/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`；旧快照沿 t59 校验 MANIFEST。下文静态站点是 PE file offset，JSON 提供 VA 和原指令字节。`0xf2ba38/51` 把外部 mode 送入 COMP slot 19：`0xed0a40 → 0x3b3f0d0 → 0xeb7000`。`0xeb7394/9d/a0` 将 mode 0 直接跳到 `0xeb7a21`，**连 count / presence 都不消费**；因此 client 不是 7,047 个零 count，亦非相同路径读了 7,047 个假 presence。公共 71 B（含 selector）和后 56 B 两档逐行逐字节相同。实档 mode 1 则走扩展，`0xeb770e` 进入 `vec18` count，区别于 wrapper 把另一个 flag 清 0 的路径控制。模式是静态与数据反证，不是运行观测。t59 交换 mode 的负例原样保留并复现：
+静态来源：只读 `D:/tmp2b/fm24/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`；旧快照沿 t59 校验 MANIFEST。下文静态站点是 PE file offset，JSON 提供 VA 和原指令字节。`0xf2ba38/51` 把外部 mode 送入 COMP slot 19：`0xed0a40 → 0x3b3f0d0 → 0xeb7000`。`0xeb7394/9d/a0` 将 mode 0 直接跳到 `0xeb7a21`，**连 count / presence 都不消费**；因此 client 不是 7,047 个零 count，亦非相同路径读了 7,047 个假 presence。公共 71 B（含 selector）和后 56 B 两档逐行逐字节相同。实档 mode 1 则走扩展，`0xeb770e` 进入 `vec18` count，区别于 wrapper 把另一个 flag 清 0 的路径控制。模式是静态与数据反证，不是运行观测。t59 交换 mode 的负例原样保留并复现：
 
 ```text
 vec30: row 0 @129: invalid count 16777216
@@ -43,7 +43,7 @@ row 0 @128: identity (255, 4294901760, 131071)
 FMF 目录 31/77 项逐 entry 记录，按 `data_base + offset`、`packed_size`、下一成员界和 `size` 唯一选帧。七套物理文法都从 **同一主档行、同一 stream** 直接消费，不是另开文件；t23/t24 是引用目标，不是 COMP 子表来源。双档没有 `table_extra_25.dat`；双档确有 `table_for_old_save_25.dat`，只是独立 entry 存在，不把它分配给任何集合，也不从缺同名 sidecar 推断没有其他 client getter 来源。无新的 opener→entry→payload 正链，不发布独立成员绑定。采用 t46/t51 的独立原字节交叉验证和 t53 的主读器/后缀分层；v8 的 8 个 club 子表、`CLUB_LINK`、`nation_t9_wire` 和 t59 主行结论不变，旧负例原样附在 JSON。
 
 ```text
-FM24_DB_DIR=<WORKSPACE>/scratch/data
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data
 py -V:3.12 -I -B scripts/t66_comp_subtable_discovery.py --build
 py -V:3.12 -I -B scratch/t66/out/verify.py
 py -V:3.12 -I -B scripts/t01_anchors.py

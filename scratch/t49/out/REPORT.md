@@ -4,7 +4,7 @@
 
 ## 成员、mode 与游标
 
-静态来源：只读 `<OLD_REPO>/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。地址默认 PE file offset；分片存 VA、原 bytes、直接转移目标。冻结 `master.json` 与 `IDA_PROVENANCE.md` 对照 MANIFEST；t37 inventory `8af89c72…` 及 t37/t47 原结论未改。归档用目录 `34+entry.offset`、`packed_size`/邻接上界枚举帧，按 `entry.size` 唯一选帧；`entry.sha256` 对应压缩区，另记 payload SHA。
+静态来源：只读 `D:/tmp2b/fm24/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。地址默认 PE file offset；分片存 VA、原 bytes、直接转移目标。冻结 `master.json` 与 `IDA_PROVENANCE.md` 对照 MANIFEST；t37 inventory `8af89c72…` 及 t37/t47 原结论未改。归档用目录 `34+entry.offset`、`packed_size`/邻接上界枚举帧，按 `entry.size` 唯一选帧；`entry.sha256` 对应压缩区，另记 payload SHA。
 
 - `0xf2ba0e` 先读 selector；`0xf2ba23 → 0xf48b30`，rel32 第 9 格 `0xf49d5c → 0xf48f12 → 0x1059a30`，构造写 vptr `VA 0x1418898d8`，RTTI `.?AVNATIONAL_TEAM_CONTAINER@db@@`。slot 19 `0x105cb10..0x105f040`，PE `RUNTIME_FUNCTION` + `ReaderCFG`：2,141 条可达指令、0 extent 外 CFG 边。`0x11d0d30` 共 1,508 条、同样 0 extent 外边。
 - Loader `0xf2b670` 从 R9D 保存 mode，`0xf2ba38` 放入 caller 栈，`0xf2ba51` 调 slot 19；`0x105cb2c` 读 callee `[rsp+0x140]`。`0x105cbb1` mode 0 跳过长前缀，`0x105e695` 跳过后置扩展；`0x105eef7 → 0x105ef12 → 0x11d0fa4` 再按同一 mode 分叉。以现代版本臂复放；`[context+0x588]` 是进程上下文，本次没有运行它，也不把 payload 的版本字节当作运行观测。兼容臂不外推。
@@ -51,4 +51,4 @@
 
 ## 复验和交接
 
-`FM24_DB_DIR=<WORKSPACE>/scratch/data`；`py -V:3.12 -I -B` 运行 builder、独立 `verify.py`、各自 `--help`/`--selftest`，`t01_anchors.py` **7/7**。独立 verifier 不 import builder，分别做顺序跨度解析从真实输入重算边界／四对 mode 尝试、PE 符号与字节、字段档内画像和 ordinal join。未启动游戏、编辑器或 IDA，未联网、未访问 Z:。下一步需正向证明 Extra9 loader/sidecar reader、合法 presence 非零的 `NCro` 档以及 scoped enum 域。6 个 unknown 与 t10 已验收父项不改。
+`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`；`py -V:3.12 -I -B` 运行 builder、独立 `verify.py`、各自 `--help`/`--selftest`，`t01_anchors.py` **7/7**。独立 verifier 不 import builder，分别做顺序跨度解析从真实输入重算边界／四对 mode 尝试、PE 符号与字节、字段档内画像和 ordinal join。未启动游戏、编辑器或 IDA，未联网、未访问 Z:。下一步需正向证明 Extra9 loader/sidecar reader、合法 presence 非零的 `NCro` 档以及 scoped enum 域。6 个 unknown 与 t10 已验收父项不改。

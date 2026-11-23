@@ -1,6 +1,6 @@
 # t01-a2 任务书:fm.exe 4CC 注册块/比较式扫描
 
-> 机械扫描任务,纯 Python,只读输入,产物写 `<WORKSPACE>\scratch\t01\inbox\t01a2\`。
+> 机械扫描任务,纯 Python,只读输入,产物写 `D:\tmp2b\fm24-db\scratch\t01\inbox\t01a2\`。
 > Python 固定 `py -V:3.12 -I`。不 pip install,不启动任何程序,不 git commit。
 
 ## 背景(自包含)
@@ -13,7 +13,7 @@ FM24 编辑器(editor.exe)里已确认存在字段码体系:字段码是 4 字�
 
 ## 对象
 
-`<OLD_REPO>\input\fm.exe`(只读;先报告文件大小)
+`D:\tmp2b\fm24\input\fm.exe`(只读;先报告文件大小)
 
 ## 任务
 
@@ -23,14 +23,14 @@ FM24 编辑器(editor.exe)里已确认存在字段码体系:字段码是 4 字�
 2. 锚点自检:editor 的 comp 序列 cnam/cnsm/cl3n/cnti/ccti/cpcm/crep/cext/PLgn/dbty 在 fm.exe 的命中数与样本偏移(每码前 10 个)
 3. 密度剖面:1MB 窗口统计 imm-4CC 命中,top20 窗口;判断 fm.exe 是"散布全文件"还是"集中在若干区域"
 4. 聚类:相邻 <4096B 归簇,保留 4CC≥3 的簇;每簇记录 mov-imm vs cmp 构成比
-5. 实体匹配:读 `<WORKSPACE>\evidence\fm24\reports\editor_schema\master.json` 的 `entity_summary` codes,Jaccard top3;注意 fm.exe 可能按功能模块组织(而非按实体),如实报告
+5. 实体匹配:读 `D:\tmp2b\fm24-db\evidence\fm24\reports\editor_schema\master.json` 的 `entity_summary` codes,Jaccard top3;注意 fm.exe 可能按功能模块组织(而非按实体),如实报告
 6. 与 editor.exe 对比结论:同体系?同布局?哪些实体码在 fm.exe 缺席(重要负结果)?
 
 ## 交付(写到 inbox/t01a2/)
 
 - `fm_sweep.json`:`{meta:{exe,size,forms}, anchor_check:{...}, density_top20:[{window_off,count}], clusters:[{start,end,forms:{mov:n,cmp:n},cc_list[:50]}], entity_match:{...}, editor_compare:{...}}`
 - `REPORT.md` ≤50 行
-- 脚本放 `<WORKSPACE>\scripts\t01a2_fm_sweep.py`(可复跑,有 --help)
+- 脚本放 `D:\tmp2b\fm24-db\scripts\t01a2_fm_sweep.py`(可复跑,有 --help)
 
 ## 验收
 

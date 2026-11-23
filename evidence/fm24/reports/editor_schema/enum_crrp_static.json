@@ -1,0 +1,302 @@
+{
+  "script": "scripts/b38_crrp_probe.py",
+  "enum": "crrp",
+  "property": "repu",
+  "builder": "0x141cf5f10",
+  "builder_end": "0x141cf616e",
+  "evidence_level": "L3 (static disassembly of editor.exe; no runtime table)",
+  "recovered": {
+    "loop_cmp_va": "0x141cf5fde",
+    "loop_bound": 19,
+    "iterations": 20,
+    "loop_semantics": "counter starts at 0, is incremented after the body, and `cmp eax,N ; jge exit` tests the pre-increment value, so the body runs N+1 times",
+    "entries": 20,
+    "format_va": "0x141926a52",
+    "format_text": "[%number#1]-[%number#2]",
+    "lo_affine": {
+      "coeff": 10,
+      "offset": 1
+    },
+    "hi_affine": {
+      "coeff": 10,
+      "offset": 10
+    },
+    "lo_chain": [
+      "0x141cf6055 mov eax, dword ptr [rsp + 0x2c]",
+      "0x141cf6059 add eax, eax",
+      "0x141cf605b lea ecx, [rax + rax*4]",
+      "0x141cf605e or ecx, 1"
+    ],
+    "hi_chain": [
+      "0x141cf6055 mov eax, dword ptr [rsp + 0x2c]",
+      "0x141cf6059 add eax, eax",
+      "0x141cf605b lea ecx, [rax + rax*4]",
+      "0x141cf605e or ecx, 1",
+      "0x141cf6061 mov dword ptr [rsp + 0x34], ecx",
+      "0x141cf6065 lea eax, [rax + rax*4 + 0xa]"
+    ],
+    "emits": [
+      {
+        "call_va": "0x141cf6086",
+        "field": 1,
+        "buffer": null
+      },
+      {
+        "call_va": "0x141cf60be",
+        "field": 2,
+        "buffer": null
+      }
+    ]
+  },
+  "values": [
+    {
+      "index": 0,
+      "enum_id": 0,
+      "lo": 1,
+      "hi": 10,
+      "label_static": "1-10"
+    },
+    {
+      "index": 1,
+      "enum_id": 1,
+      "lo": 11,
+      "hi": 20,
+      "label_static": "11-20"
+    },
+    {
+      "index": 2,
+      "enum_id": 2,
+      "lo": 21,
+      "hi": 30,
+      "label_static": "21-30"
+    },
+    {
+      "index": 3,
+      "enum_id": 3,
+      "lo": 31,
+      "hi": 40,
+      "label_static": "31-40"
+    },
+    {
+      "index": 4,
+      "enum_id": 4,
+      "lo": 41,
+      "hi": 50,
+      "label_static": "41-50"
+    },
+    {
+      "index": 5,
+      "enum_id": 5,
+      "lo": 51,
+      "hi": 60,
+      "label_static": "51-60"
+    },
+    {
+      "index": 6,
+      "enum_id": 6,
+      "lo": 61,
+      "hi": 70,
+      "label_static": "61-70"
+    },
+    {
+      "index": 7,
+      "enum_id": 7,
+      "lo": 71,
+      "hi": 80,
+      "label_static": "71-80"
+    },
+    {
+      "index": 8,
+      "enum_id": 8,
+      "lo": 81,
+      "hi": 90,
+      "label_static": "81-90"
+    },
+    {
+      "index": 9,
+      "enum_id": 9,
+      "lo": 91,
+      "hi": 100,
+      "label_static": "91-100"
+    },
+    {
+      "index": 10,
+      "enum_id": 10,
+      "lo": 101,
+      "hi": 110,
+      "label_static": "101-110"
+    },
+    {
+      "index": 11,
+      "enum_id": 11,
+      "lo": 111,
+      "hi": 120,
+      "label_static": "111-120"
+    },
+    {
+      "index": 12,
+      "enum_id": 12,
+      "lo": 121,
+      "hi": 130,
+      "label_static": "121-130"
+    },
+    {
+      "index": 13,
+      "enum_id": 13,
+      "lo": 131,
+      "hi": 140,
+      "label_static": "131-140"
+    },
+    {
+      "index": 14,
+      "enum_id": 14,
+      "lo": 141,
+      "hi": 150,
+      "label_static": "141-150"
+    },
+    {
+      "index": 15,
+      "enum_id": 15,
+      "lo": 151,
+      "hi": 160,
+      "label_static": "151-160"
+    },
+    {
+      "index": 16,
+      "enum_id": 16,
+      "lo": 161,
+      "hi": 170,
+      "label_static": "161-170"
+    },
+    {
+      "index": 17,
+      "enum_id": 17,
+      "lo": 171,
+      "hi": 180,
+      "label_static": "171-180"
+    },
+    {
+      "index": 18,
+      "enum_id": 18,
+      "lo": 181,
+      "hi": 190,
+      "label_static": "181-190"
+    },
+    {
+      "index": 19,
+      "enum_id": 19,
+      "lo": 191,
+      "hi": 200,
+      "label_static": "191-200"
+    }
+  ],
+  "id_range": [
+    0,
+    19
+  ],
+  "display_value_range": [
+    1,
+    200
+  ],
+  "semantics": "enum id c (0..19) renders as the reputation-range pair [10c+1 .. 10c+10], i.e. 1-10 for id 0 up to 191-200 for id 19; the id space is 0..19, the rendered value space is 1..200",
+  "residual_risk": "the numeric member carried by a ``repu`` field is not proven to be the pair's low bound; observed 14..19 all land in bucket id 1 (11-20), which is consistent with 'low bound' but a dump containing a value >= 21 would be needed to pin the serialisation down",
+  "observed_repu": {
+    "count": 6,
+    "distinct": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "mapped": [
+      {
+        "value": 14,
+        "entry_id": 1,
+        "entry_range": "11-20",
+        "in_table": true
+      },
+      {
+        "value": 15,
+        "entry_id": 1,
+        "entry_range": "11-20",
+        "in_table": true
+      },
+      {
+        "value": 16,
+        "entry_id": 1,
+        "entry_range": "11-20",
+        "in_table": true
+      },
+      {
+        "value": 17,
+        "entry_id": 1,
+        "entry_range": "11-20",
+        "in_table": true
+      },
+      {
+        "value": 18,
+        "entry_id": 1,
+        "entry_range": "11-20",
+        "in_table": true
+      },
+      {
+        "value": 19,
+        "entry_id": 1,
+        "entry_range": "11-20",
+        "in_table": true
+      }
+    ],
+    "all_in_range": true,
+    "samples": [
+      {
+        "file": "reports\\EDITOR_DATA_ANALYSIS.md",
+        "value": 15,
+        "source": "documented-digest",
+        "reported_count": 7
+      },
+      {
+        "file": "reports\\EDITOR_DATA_ANALYSIS.md",
+        "value": 14,
+        "source": "documented-digest",
+        "reported_count": 7
+      },
+      {
+        "file": "reports\\EDITOR_DATA_ANALYSIS.md",
+        "value": 16,
+        "source": "documented-digest",
+        "reported_count": 7
+      },
+      {
+        "file": "reports\\EDITOR_DATA_ANALYSIS.md",
+        "value": 17,
+        "source": "documented-digest",
+        "reported_count": 7
+      },
+      {
+        "file": "reports\\EDITOR_DATA_ANALYSIS.md",
+        "value": 18,
+        "source": "documented-digest",
+        "reported_count": 7
+      },
+      {
+        "file": "reports\\EDITOR_DATA_ANALYSIS.md",
+        "value": 19,
+        "source": "documented-digest",
+        "reported_count": 7
+      }
+    ]
+  },
+  "self_check": {
+    "loop_bound_positive": true,
+    "format_is_range_pair": true,
+    "two_emits_fields_1_2": true,
+    "lo_offset_matches_chain": true,
+    "hi_offset_matches_chain": true,
+    "buckets_are_disjoint_and_gapless": true,
+    "observed_in_range": true
+  },
+  "status": "recovered",
+  "confidence": "high"
+}

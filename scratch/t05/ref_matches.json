@@ -1,0 +1,250 @@
+{
+ "note": "4B 槽的值域对齐目标表行数 -> 引用字段候选。confidence=ref_match 表示唯一表匹配;ref_match_low 表示多表歧义(见 rivals)。哨兵按 0xFFFFFFFF/0xFFFFFFFE/0x7FFFFFFF 计。",
+ "tables_considered": 52,
+ "results": [
+  {
+   "type_id": 2,
+   "entity": "city",
+   "archives": {
+    "server": {
+     "count": 56293,
+     "slots": [
+      {
+       "row_off": 10,
+       "width": 4,
+       "distinct": 230,
+       "sentinel_ratio": 0.0,
+       "max": 249,
+       "best": {
+        "table_id": 9,
+        "entity": "nation (name/key companion)",
+        "archive": "client",
+        "count": 251,
+        "inside_ratio": 1.0,
+        "fill_ratio": 0.992
+       },
+       "ambiguous": true,
+       "rivals": [
+        {
+         "table_id": 10,
+         "entity": "nation",
+         "archive": "client",
+         "count": 251,
+         "inside_ratio": 1.0,
+         "fill_ratio": 0.992
+        },
+        {
+         "table_id": 23,
+         "entity": "stgn",
+         "archive": "client",
+         "count": 278,
+         "inside_ratio": 1.0,
+         "fill_ratio": 0.896
+        }
+       ],
+       "confidence": "ref_match_low"
+      },
+      {
+       "row_off": 14,
+       "width": 4,
+       "distinct": 321,
+       "sentinel_ratio": 0.0,
+       "max": 333,
+       "best": {
+        "table_id": 27,
+        "entity": "weather profile",
+        "archive": "client",
+        "count": 334,
+        "inside_ratio": 1.0,
+        "fill_ratio": 0.997
+       },
+       "ambiguous": false,
+       "rivals": [],
+       "confidence": "ref_match"
+      },
+      {
+       "row_off": 21,
+       "width": 4,
+       "distinct": 60,
+       "sentinel_ratio": 0.8173,
+       "max": 112,
+       "best": {
+        "table_id": 6,
+        "entity": "injury",
+        "archive": "client",
+        "count": 115,
+        "inside_ratio": 1.0,
+        "fill_ratio": 0.974
+       },
+       "ambiguous": true,
+       "rivals": [
+        {
+         "table_id": 39,
+         "entity": "?",
+         "archive": "server",
+         "count": 117,
+         "inside_ratio": 1.0,
+         "fill_ratio": 0.957
+        },
+        {
+         "table_id": 8,
+         "entity": "language",
+         "archive": "client",
+         "count": 126,
+         "inside_ratio": 1.0,
+         "fill_ratio": 0.889
+        },
+        {
+         "table_id": 68,
+         "entity": "?",
+         "archive": "server",
+         "count": 138,
+         "inside_ratio": 1.0,
+         "fill_ratio": 0.812
+        }
+       ],
+       "confidence": "ref_match_low"
+      },
+      {
+       "row_off": 25,
+       "width": 4,
+       "distinct": 2329,
+       "sentinel_ratio": 0.0835,
+       "max": 2476,
+       "best": {
+        "table_id": 47,
+        "entity": "lcrg",
+        "archive": "client",
+        "count": 2488,
+        "inside_ratio": 1.0,
+        "fill_ratio": 0.995
+       },
+       "ambiguous": false,
+       "rivals": [],
+       "confidence": "ref_match"
+      }
+     ]
+    },
+    "client": {
+     "count": 56293,
+     "slots": [
+      {
+       "row_off": 10,
+       "width": 4,
+       "distinct": 230,
+       "sentinel_ratio": 0.0,
+       "max": 249,
+       "best": {
+        "table_id": 9,
+        "entity": "nation (name/key companion)",
+        "archive": "client",
+        "count": 251,
+        "inside_ratio": 1.0,
+        "fill_ratio": 0.992
+       },
+       "ambiguous": true,
+       "rivals": [
+        {
+         "table_id": 10,
+         "entity": "nation",
+         "archive": "client",
+         "count": 251,
+         "inside_ratio": 1.0,
+         "fill_ratio": 0.992
+        },
+        {
+         "table_id": 23,
+         "entity": "stgn",
+         "archive": "client",
+         "count": 278,
+         "inside_ratio": 1.0,
+         "fill_ratio": 0.896
+        }
+       ],
+       "confidence": "ref_match_low"
+      },
+      {
+       "row_off": 14,
+       "width": 4,
+       "distinct": 321,
+       "sentinel_ratio": 0.0,
+       "max": 333,
+       "best": {
+        "table_id": 27,
+        "entity": "weather profile",
+        "archive": "client",
+        "count": 334,
+        "inside_ratio": 1.0,
+        "fill_ratio": 0.997
+       },
+       "ambiguous": false,
+       "rivals": [],
+       "confidence": "ref_match"
+      },
+      {
+       "row_off": 21,
+       "width": 4,
+       "distinct": 60,
+       "sentinel_ratio": 0.8173,
+       "max": 112,
+       "best": {
+        "table_id": 6,
+        "entity": "injury",
+        "archive": "client",
+        "count": 115,
+        "inside_ratio": 1.0,
+        "fill_ratio": 0.974
+       },
+       "ambiguous": true,
+       "rivals": [
+        {
+         "table_id": 39,
+         "entity": "?",
+         "archive": "server",
+         "count": 117,
+         "inside_ratio": 1.0,
+         "fill_ratio": 0.957
+        },
+        {
+         "table_id": 8,
+         "entity": "language",
+         "archive": "client",
+         "count": 126,
+         "inside_ratio": 1.0,
+         "fill_ratio": 0.889
+        },
+        {
+         "table_id": 68,
+         "entity": "?",
+         "archive": "server",
+         "count": 138,
+         "inside_ratio": 1.0,
+         "fill_ratio": 0.812
+        }
+       ],
+       "confidence": "ref_match_low"
+      },
+      {
+       "row_off": 25,
+       "width": 4,
+       "distinct": 2329,
+       "sentinel_ratio": 0.0835,
+       "max": 2476,
+       "best": {
+        "table_id": 47,
+        "entity": "lcrg",
+        "archive": "client",
+        "count": 2488,
+        "inside_ratio": 1.0,
+        "fill_ratio": 0.995
+       },
+       "ambiguous": false,
+       "rivals": [],
+       "confidence": "ref_match"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

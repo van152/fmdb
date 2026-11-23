@@ -21,8 +21,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-EDITOR = Path(r"<OLD_REPO>\input\editor.exe")
-FM = Path(r"<OLD_REPO>\input\fm.exe")
+EDITOR = Path(r"D:\tmp2b\fm24\input\editor.exe")
+FM = Path(r"D:\tmp2b\fm24\input\fm.exe")
 
 
 def main() -> int:

@@ -1,0 +1,47 @@
+[PASS] t50 claims L3=0/L4=0
+[PASS] status honest partial recorded
+[PASS] t9 payload sizes 31956/307564
+[PASS] extra_9 payload sizes 83927/105228
+[PASS] t9 SHAs cross t49/E89
+[PASS] extra_9 SHAs cross t49/t51
+[PASS] client/table_9.dat tad shell + count@8==251
+[PASS] client/table_extra_9.dat tad shell + count@8==251
+[PASS] server/table_9.dat tad shell + count@8==251
+[PASS] server/table_extra_9.dat tad shell + count@8==251
+[PASS] t50 t9 client 251 rows
+[PASS] t50 t9 client rows tile contiguously from 13
+[PASS] t50 t9 client tiles to payload_len-8 (footer 8)
+[PASS] t50 t9 client ordinals 0..250
+[PASS] t50 t9 client row_id nonzero strictly increasing unique
+[PASS] t50 t9 client repeated lanes equal, marker 0
+[PASS] t50 t9 client last row_id == footer u32 82082540
+[PASS] t50 t9 client identity tail starts IDENTICAL to accepted t49 identity_at (cross-walk)
+[PASS] t50 t9 client body-start shift: t50 offset = t49 wire13 + 1 (i>=1), marker byte attribution documented
+[PASS] t50 t9 client row_id raw u32 spot at 3 rows
+[PASS] t50 t9 server 251 rows
+[PASS] t50 t9 server rows tile contiguously from 13
+[PASS] t50 t9 server tiles to payload_len-8 (footer 8)
+[PASS] t50 t9 server ordinals 0..250
+[PASS] t50 t9 server row_id nonzero strictly increasing unique
+[PASS] t50 t9 server repeated lanes equal, marker 0
+[PASS] t50 t9 server last row_id == footer u32 82082540
+[PASS] t50 t9 server identity tail starts IDENTICAL to accepted t49 identity_at (cross-walk)
+[PASS] t50 t9 server body-start shift: t50 offset = t49 wire13 + 1 (i>=1), marker byte attribution documented
+[PASS] t50 t9 server row_id raw u32 spot at 3 rows
+[PASS] t50 extra_9 client 251 blocks
+[PASS] t50 extra_9 client first block @12 (after 12B header)
+[PASS] t50 extra_9 client blocks tile contiguously
+[PASS] t50 extra_9 client block ordinals 0..250
+[PASS] t50 extra_9 server 251 blocks
+[PASS] t50 extra_9 server first block @12 (after 12B header)
+[PASS] t50 extra_9 server blocks tile contiguously
+[PASS] t50 extra_9 server block ordinals 0..250
+[PASS] extra_9 server block0 == (0, 11, "Les Fennecs") raw
+[PASS] extra_9 server raw bytes @12: ordinal0|len11|"Les Fennecs"
+[PASS] server 362 wide-tiling negative recorded (row_id=0 variant)
+[PASS] client 6-tiling negative recorded (no-increase variant)
+[PASS] builder --selftest rc0 (rc=0)
+[PASS] t50 verify.py --check PASS rc0 (rc=0)
+[PASS] t01_anchors 7/7 (rc=0)
+
+=== t50 spot: 45/45 ===

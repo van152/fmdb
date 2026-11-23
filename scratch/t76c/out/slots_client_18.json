@@ -1,0 +1,283 @@
+{
+ "archive": "client",
+ "table": 18,
+ "entity": "derby.xml",
+ "tool": "t76c_slots",
+ "schema": "t76c.slots.v1",
+ "t74_frame": {
+  "header": 14,
+  "footer": 8,
+  "count": 1567,
+  "model": "variable",
+  "row_rule": "[k × ([u32 len][UTF-8 name])][(65-4k)B 数值区][ordinal u32][UID u32][UID u32][marker 0]"
+ },
+ "payload_len": 139891,
+ "payload_sha256": "9d73151026d706219a6c68eae485eef08a81b018c1b3170d922081334dc5c62d",
+ "walk": {
+  "rows": 1567,
+  "end": 139883,
+  "footer": 8,
+  "footer_ok": true,
+  "count_ok": true,
+  "closure": "14 + sum(row_len) + 8 = 139891"
+ },
+ "identity": {
+  "rows_ok": 1567,
+  "rows": 1567,
+  "width": 13,
+  "anchor": "row_end-13",
+  "layout": "ord@-13 uid@-9 uid@-5 marker@-1"
+ },
+ "status": "closed",
+ "slots": [
+  {
+   "field": "Dfmd",
+   "offset": 0,
+   "width": 4,
+   "kind": "date",
+   "grade": "L2",
+   "why": "packed date: u16 day-of-year @0 (1..366, 1567/1567) + u16 year @2 (1872..2022, 1567/1567); schema type is `date` and Dfmd is the only date field in derby.xml",
+   "evidence": [
+    {
+     "doy": {
+      "min": 1,
+      "max": 362,
+      "le366": 1567
+     },
+     "year": {
+      "min": 1872,
+      "max": 2022
+     },
+     "sample_decoded": "1894-10-13"
+    }
+   ]
+  },
+  {
+   "field": "Dtm1",
+   "offset": 4,
+   "width": 4,
+   "kind": "u32",
+   "grade": "L2",
+   "why": "whole-u32 column, every non-null value < club(84,259) at 100% and top value 83930 sits at 0.996 of the domain; UID encoding is REFUTED (0/1,567 values fall in the club UID set)",
+   "evidence": [
+    {
+     "targets": [
+      {
+       "target": "club",
+       "N": 84259,
+       "rate": 1.0,
+       "max_over_N": 0.9961,
+       "covers_tightly": true
+      },
+      {
+       "target": "team",
+       "N": 84507,
+       "rate": 1.0,
+       "max_over_N": 0.9932,
+       "covers_tightly": true
+      }
+     ],
+     "uid_control": {
+      "club_uid_hits": 0,
+      "rows": 1567
+     }
+    }
+   ]
+  },
+  {
+   "field": "Dtm2",
+   "offset": 8,
+   "width": 4,
+   "kind": "u32",
+   "grade": "L2",
+   "why": "whole-u32 column, every non-null value < club(84,259) at 100% and top value 78419 sits at 0.931 of the domain; UID encoding is REFUTED (0/1,567 values fall in the club UID set)",
+   "evidence": [
+    {
+     "targets": [
+      {
+       "target": "club",
+       "N": 84259,
+       "rate": 1.0,
+       "max_over_N": 0.9307,
+       "covers_tightly": true
+      },
+      {
+       "target": "team",
+       "N": 84507,
+       "rate": 1.0,
+       "max_over_N": 0.928,
+       "covers_tightly": true
+      }
+     ],
+     "uid_control": {
+      "club_uid_hits": 0,
+      "rows": 1567
+     }
+    }
+   ]
+  },
+  {
+   "field": "Dfmc",
+   "offset": 12,
+   "width": 4,
+   "kind": "u32",
+   "grade": "L2",
+   "why": "competition reference, optional (null 1165/1,567); ordinal domain fits comp(7047) at 100% with top value 5933 (0.8419 of the domain)",
+   "evidence": [
+    {
+     "fit": {
+      "target": "comp",
+      "N": 7047,
+      "rate": 1.0,
+      "max_over_N": 0.8419,
+      "covers_tightly": true
+     },
+     "domain": {
+      "n": 1567,
+      "null": 1165,
+      "nonnull": 402,
+      "distinct": 153,
+      "min": 0,
+      "max": 5933,
+      "zeros": 8,
+      "all_ones": 4294967295
+     }
+    }
+   ]
+  },
+  {
+   "field": "Dfms",
+   "offset": 16,
+   "width": 4,
+   "kind": "u32",
+   "grade": "L2",
+   "why": "stadium reference, optional (null 1430/1,567); ordinal domain fits stadium(48413) at 100% with top value 41129 (0.8495 of the domain)",
+   "evidence": [
+    {
+     "fit": {
+      "target": "stadium",
+      "N": 48413,
+      "rate": 1.0,
+      "max_over_N": 0.8495,
+      "covers_tightly": true
+     },
+     "domain": {
+      "n": 1567,
+      "null": 1430,
+      "nonnull": 137,
+      "distinct": 125,
+      "min": 12,
+      "max": 41129,
+      "zeros": 0,
+      "all_ones": 4294967295
+     }
+    }
+   ]
+  },
+  {
+   "field": "Dfma",
+   "offset": 20,
+   "width": 4,
+   "kind": "u32",
+   "grade": "L2",
+   "why": "attendance, optional (null 1433/1,567): non-null values 0..82100 all <= 200,000 (134/134), the schema max for Dfma. Rejected as a reference: max 82100 is an attendance-sized number, and the ordinal-domain test against club is vacuous at this magnitude",
+   "evidence": [
+    {
+     "domain": {
+      "n": 1567,
+      "null": 1433,
+      "nonnull": 134,
+      "distinct": 89,
+      "min": 15,
+      "max": 82100,
+      "zeros": 0,
+      "all_ones": 4294967295
+     },
+     "le_200000": 134,
+     "fit_rejected": {
+      "target": "club",
+      "N": 84259,
+      "rate": 1.0,
+      "vacuous": true,
+      "note": "attendance 0..200000 cannot exceed club(84,259) unless >84k, so 'fits club' carries no information here"
+     }
+    }
+   ]
+  },
+  {
+   "field": null,
+   "offset": 24,
+   "width": 4,
+   "kind": "u32",
+   "grade": "unassigned",
+   "why": "constant 0xffffffff across 1,567/1,567 rows: a null placeholder block with no schema field bound to it",
+   "evidence": [
+    {
+     "constant": "0xffffffff",
+     "rows": 1567
+    }
+   ]
+  },
+  {
+   "field": null,
+   "offset": 28,
+   "width": 2,
+   "kind": "u8",
+   "grade": "candidate",
+   "why": "two nullable u8 counters (0..11 / 0..10, null = 0xff on the same 1,034 rows); goal-sized domain matches Dfg1/Dfg2 but the pair order is not decidable from data",
+   "evidence": [
+    {
+     "Dfg1_or_Dfg2_a": {
+      "max": 11,
+      "null": 1034
+     },
+     "b": {
+      "max": 10,
+      "null": 1034
+     },
+     "pair_null_rows": 1034
+    }
+   ]
+  },
+  {
+   "field": null,
+   "offset": 30,
+   "width": 4,
+   "kind": "u32",
+   "grade": "unassigned",
+   "why": "constant zero block (4B) between the goal counters and the reputation pair; in the server archive the same region is the 3 x u16 insert, so the client simply omits that group",
+   "evidence": [
+    {
+     "constant": 0
+    }
+   ]
+  },
+  {
+   "field": null,
+   "offset": 36,
+   "width": 2,
+   "kind": "u8",
+   "grade": "candidate",
+   "why": "two u8 in 0..200 with no nulls (54 / 62 distinct, differ on 1,384 rows): numeric domain matches Dwdr/Dntr (World/National Reputation, both 0..200) but the order inside the pair is not decidable",
+   "evidence": [
+    {
+     "b_a": {
+      "min": 0,
+      "max": 0,
+      "distinct": 1
+     },
+     "b_b": {
+      "min": 0,
+      "max": 0,
+      "distinct": 1
+     },
+     "differing_rows": 0
+    }
+   ]
+  }
+ ],
+ "unresolved": [
+  "@24",
+  "@30"
+ ]
+}

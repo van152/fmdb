@@ -41,9 +41,9 @@
 
 ```
 py -V:3.12 -I -B scripts/t50_nation_t9_profile.py --selftest          -> PASS (exit 0)
-FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scripts/t50_nation_t9_profile.py --build -> exit 0
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scripts/t50_nation_t9_profile.py --build -> exit 0
 py -V:3.12 -I -B scratch/t50/out/verify.py --selftest                 -> PASS (exit 0)
-FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scratch/t50/out/verify.py --check -> PASS (15 groups, exit 0)
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scratch/t50/out/verify.py --check -> PASS (15 groups, exit 0)
 py -V:3.12 -I -B scripts/t01_anchors.py                               -> 7/7
 ```
 

@@ -1,7 +1,7 @@
 # t02-s:单实体快速扫描任务(模板)
 
 > 交给 pi devseek。**极小任务**:一张表,一个交付文件,**最先写 output.json**。
-> 规则:只读输入、不启动游戏/编辑器/IDA、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
+> 规则:只读输入、不启动游戏本体/FM 编辑器(IDA 静态分析允许)、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
 
 ## 铁律(先读,这条最重要)
 

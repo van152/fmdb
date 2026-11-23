@@ -21,7 +21,7 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-SCHEMA_MD = pathlib.Path(r"<OLD_REPO>\reports\EDITOR_SCHEMA_FIELDS.md")
+SCHEMA_MD = pathlib.Path(r"D:\tmp2b\fm24\reports\EDITOR_SCHEMA_FIELDS.md")
 OUT = ROOT / "scratch/t05/schema_inventory.json"
 
 DB_ENTITIES = {

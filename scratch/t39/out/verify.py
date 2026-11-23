@@ -15,7 +15,7 @@ import sys
 
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[2]
-EXE=Path('<OLD_REPO>/input/editor.exe')
+EXE=Path('D:/tmp2b/fm24/input/editor.exe')
 EXE_SHA='b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4'
 MASTER='evidence/fm24/reports/editor_schema/master.json'
 PROV='evidence/fm24/reports/qa/IDA_PROVENANCE.md'
@@ -347,7 +347,7 @@ def fields_check(c,f,buf,body,maps,team,enum):
 
 
 def verify():
-    sys.path.extend([str(ROOT/'scripts'),'<OLD_REPO>/tools/python'])
+    sys.path.extend([str(ROOT/'scripts'),'D:/tmp2b/fm24/tools/python'])
     c=js(HERE/'cursor_tchl.json'); f=js(HERE/'fields_tchl.json'); req(c['table_type']==f['table_type']==34,'table scope')
     g,t,b,en=static_check(c,f);print('PASS PE CFG, native sinks, and shared parent dispatch')
     raw,fetch=db_check(c['archives']);rows=replay(raw,c['archives']['server'],g,t,b);print('PASS E66 frames, both 7,115-row mode forks, and footer')
@@ -355,7 +355,7 @@ def verify():
 
 
 def selftest():
-    sys.path.append('<OLD_REPO>/tools/python')
+    sys.path.append('D:/tmp2b/fm24/tools/python')
     import zstandard as zs
     a,b=b'stub',b'full'*60;zc=zs.ZstdCompressor();x,y=zc.compress(a),zc.compress(b)
     aa,k=single(zs,x+y);bb,m=single(zs,(x+y)[k:]);req((aa,bb,k,m)==(a,b,len(x),len(y)),'independent frame ends')

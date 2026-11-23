@@ -1,7 +1,7 @@
 # t01-g 任务书:序列化器方法论复制到 nation(t01f 方法论的第一站)
 
 > 交给 pi gpt-6-luna max。t01f(gpt-6.2-sol)已解决 comp 行偏移桥并固化方法论;你的任务是把该方法论**完整复制到 nation**,产出同形状工件。
-> 规则不变:只读输入、不启动游戏/编辑器/IDA、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
+> 规则不变:只读输入、不启动游戏本体/FM 编辑器(IDA 静态分析允许)、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
 
 ## 背景:阶段一已收口(E20)
 

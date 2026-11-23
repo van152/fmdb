@@ -107,7 +107,7 @@ no u32 column hits nation (table_10) UID domain at rate 1.0
 ## 5. 交付与复跑
 
 ```text
-FM24_DB_DIR=<WORKSPACE>/scratch/data
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data
 py -V:3.12 -I -B scripts/t73_table_slot_mapper.py --selftest
 py -V:3.12 -I -B scripts/t73_table_slot_mapper.py --table 2 --archive client --json scratch/t73/out/slots_client_2.json
 py -V:3.12 -I -B scratch/t73/out/verify.py

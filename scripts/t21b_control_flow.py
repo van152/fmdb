@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-EDITOR = Path(r"<OLD_REPO>\input\editor.exe")
+EDITOR = Path(r"D:\tmp2b\fm24\input\editor.exe")
 RTTI_CENSUS = ROOT / "scratch/t01/inbox/t01h/output.json"
 WIDTH_TRACE = ROOT / "scratch/t05/reader_widths.json"
 AUDIT = ROOT / "scratch/t21/out/audit.json"
@@ -509,7 +509,7 @@ def main() -> int:
         "- Newly promoted row-coordinate fields: 0.", "",
         "## Reproduction", "",
         "Run `py -V:3.12 -I scripts/t21b_control_flow.py --help`, `--selftest`, then "
-        "`FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I scripts/t21b_control_flow.py`.",
+        "`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I scripts/t21b_control_flow.py`.",
         "No game, editor, IDA or network access is used.", "",
     ])
     (args.output_dir / "control_flow.md").write_text("\n".join(lines), encoding="utf-8")

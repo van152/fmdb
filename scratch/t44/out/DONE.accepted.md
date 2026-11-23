@@ -11,4 +11,4 @@
 - `scratch/t44/out/verify.py`、`scratch/t44/out/REPORT.md`、`scratch/t44/out/DONE.md`。
 - `scripts/t44_cafl_cvfl.py` — builder。
 
-运行记录：Python 3.12 隔离模式 `-I -B`，`FM24_DB_DIR=<WORKSPACE>/scratch/data`。Builder 与 verifier 实跑 PASS，各自 `--help` / `--selftest` PASS，`scripts/t01_anchors.py` **7/7 PASS**。未联网、未启动游戏/编辑器/IDA、未访问 Z:。
+运行记录：Python 3.12 隔离模式 `-I -B`，`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`。Builder 与 verifier 实跑 PASS，各自 `--help` / `--selftest` PASS，`scripts/t01_anchors.py` **7/7 PASS**。未联网、未启动游戏/编辑器/IDA、未访问 Z:。

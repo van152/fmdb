@@ -1,0 +1,4992 @@
+{
+  "task": "t01-m stadium table_21 row offsets",
+  "acceptance": {
+    "met": true,
+    "L3_mapped_schema_fields": 16,
+    "L3_field_codes": [
+      "Scpy",
+      "Sscy",
+      "Secy",
+      "Scas",
+      "Sowi",
+      "Sdcy",
+      "SlIM",
+      "SwIM",
+      "Spty",
+      "Sste",
+      "Senv",
+      "Sitg",
+      "Scti",
+      "Sptc",
+      "Slat",
+      "Slon"
+    ],
+    "conditional_getter_backing_slot_associations_not_counted": [
+      "Spln",
+      "Spwd"
+    ],
+    "client_rows_checked": 48413,
+    "server_rows_checked": 48413,
+    "four_city_anchors_checked": 4,
+    "five_row_samples": 5,
+    "client_server_suffix_matches": 48413,
+    "identity_rows_checked_L1": 48413,
+    "L4": 0
+  },
+  "sources": {
+    "database": {
+      "client": {
+        "archive": "client_db.dat",
+        "path": "Z:/SteamLibrary/steamapps/common/Football Manager 2024/data/database/db/2430/2430_fm/client_db.dat",
+        "archive_bytes": 13113803,
+        "archive_sha256": "5ce7cd91da1031436a55ad47dac04bac446cb0cad807e9c9b24f4885d9b5ecc1",
+        "member": "client_db/table_21.dat",
+        "member_archive_file_offset": "0xb9b0f9",
+        "member_archive_file_offset_bytes": "28 b5 2f fd 04 60 fc d8 00 1a 12 02 5c 3c 10 10",
+        "member_packed_bytes": 765196,
+        "member_payload_bytes": 1839716,
+        "member_payload_sha256": "a817c6eb2a014f26e81f43833c9fd35135de6dea29437a476c55fd7d0ac17297",
+        "payload_header": {
+          "payload_offset": "0x0",
+          "bytes": "03 01 74 61 64 2e f1 0d 1d bd 00 00 00 00"
+        },
+        "payload_footer": {
+          "payload_offset": "0x1c125c",
+          "bytes": "00 00 00 01 7e ce 3a 77"
+        }
+      },
+      "server": {
+        "archive": "server_db.dat",
+        "path": "Z:/SteamLibrary/steamapps/common/Football Manager 2024/data/database/db/2430/2430_fm/server_db.dat",
+        "archive_bytes": 57508270,
+        "archive_sha256": "99eed00bd26582648c0d3ff51b5c8e37a35b68c296a074e8fb476d1b3ca4a662",
+        "member": "server_db/table_21.dat",
+        "member_archive_file_offset": "0xf1c968",
+        "member_archive_file_offset_bytes": "28 b5 2f fd 04 60 e4 6d 04 2e 7d 06 88 14 3c 10",
+        "member_packed_bytes": 1337686,
+        "member_payload_bytes": 8762775,
+        "member_payload_sha256": "c107156116d3cd16b25fafc424261dcc54bef700f12587322918d1a5f6a50f62",
+        "payload_header": {
+          "payload_offset": "0x0",
+          "bytes": "03 01 74 61 64 2e f1 0d 1d bd 00 00 00 00"
+        },
+        "payload_footer": {
+          "payload_offset": "0x85b58f",
+          "bytes": "00 00 00 01 7e ce 3a 77"
+        }
+      }
+    },
+    "binary": {
+      "file": "D:/tmp2b/fm24/input/editor.exe",
+      "bytes": 74807296,
+      "sha256": "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4",
+      "evidence_level": "L3 static"
+    },
+    "frozen_snapshots": {
+      "evidence/fm24/reports/dbdat_decode/DB_TABLES_BIG.md": "453c0f0be8326dcb966b15632b56194a0982dbdfa9d5e169c9fdb2a2def572e7",
+      "evidence/fm24/reports/editor_schema/master.json": "7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda"
+    },
+    "python": "3.12.10",
+    "capstone": "5.0.7",
+    "read_only": true
+  },
+  "row_codec": {
+    "client": {
+      "header_size": 14,
+      "count": 48413,
+      "stride": 38,
+      "payload_size": 1839716,
+      "size_formula": "14 + 48413*38 + 8 = 1839716",
+      "first_row_start": "0xe",
+      "last_row_start": "0x1c1236",
+      "footer_size": 8
+    },
+    "server": {
+      "header_size": 14,
+      "count": 48413,
+      "stride": 181,
+      "payload_size": 8762775,
+      "size_formula": "14 + 48413*181 + 8 = 8762775",
+      "first_row_start": "0xe",
+      "last_row_start": "0x85b4da",
+      "footer_size": 8,
+      "client_suffix_start": 143,
+      "suffix_relation": "server row[143:181] == corresponding 38-byte client row",
+      "suffix_matches": 48413
+    },
+    "identity_and_references": {
+      "client_row_sequence": {
+        "historical_label": "rdui; E20 correction: row ordinal, not native rdui",
+        "row_offset": 25,
+        "width": 4,
+        "valid_rows": 48413,
+        "reader_body_boundary": "slot-19 reader directly ends after common-tail row+24; identity suffix not claimed as this body's L3 transfer"
+      },
+      "client_duni": {
+        "row_offset": 29,
+        "width": 8,
+        "repeated_u32_rows": 48413,
+        "unique_low_u32": 48413
+      },
+      "server_row_sequence": {
+        "historical_label": "rdui in frozen L1 table; treated as ordinal here",
+        "row_offset": 168,
+        "width": 4,
+        "valid_rows": 48413
+      },
+      "server_duni": {
+        "row_offset": 172,
+        "width": 8,
+        "repeated_u32_rows": 48413
+      },
+      "Scti_city_rdui_legal_rows": 48413
+    }
+  },
+  "reader": {
+    "entry": {
+      "file": "editor.exe",
+      "file_offset": "0x1183f30",
+      "va": "0x141184930",
+      "bytes": "41 57 41 56 41 55 41 54 56 57 55 53 48 83 ec 58"
+    },
+    "first_ret": {
+      "file": "editor.exe",
+      "file_offset": "0x11844dd",
+      "va": "0x141184edd",
+      "bytes": "c3",
+      "instruction": "ret"
+    },
+    "first_ret_file_offset": "0x11844dd",
+    "census_each_scan_window_bytes": 2048,
+    "census_combined_width_instructions_77": 77,
+    "census_combined_stream_calls_76": 76,
+    "entry_window_width_instructions": 34,
+    "direct_callee_windows_width_sites": 43,
+    "t01h_scan_windows": [
+      {
+        "scan_start_file_offset": "0x1183f30",
+        "role_from_t01h": "slot19-entry",
+        "scan_bytes": 2048,
+        "static_width_count": 34,
+        "static_width_immediate_sum_not_a_row_length": 74,
+        "stream_call_count": 34,
+        "width_instructions": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1183f65",
+            "va": "0x141184965",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1183f7c",
+            "va": "0x14118497c",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1183f93",
+            "va": "0x141184993",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1183fa7",
+            "va": "0x1411849a7",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1183fbe",
+            "va": "0x1411849be",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1183fe2",
+            "va": "0x1411849e2",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1184003",
+            "va": "0x141184a03",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x118401a",
+            "va": "0x141184a1a",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x118403e",
+            "va": "0x141184a3e",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1184062",
+            "va": "0x141184a62",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1184086",
+            "va": "0x141184a86",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x11840aa",
+            "va": "0x141184aaa",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x11840ce",
+            "va": "0x141184ace",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x11840f2",
+            "va": "0x141184af2",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1184116",
+            "va": "0x141184b16",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1184176",
+            "va": "0x141184b76",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x118419a",
+            "va": "0x141184b9a",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x11841be",
+            "va": "0x141184bbe",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x11841e2",
+            "va": "0x141184be2",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1184206",
+            "va": "0x141184c06",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x118422a",
+            "va": "0x141184c2a",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x118424e",
+            "va": "0x141184c4e",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1184272",
+            "va": "0x141184c72",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1184296",
+            "va": "0x141184c96",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x11842c2",
+            "va": "0x141184cc2",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x11842e9",
+            "va": "0x141184ce9",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1184345",
+            "va": "0x141184d45",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x11843c4",
+            "va": "0x141184dc4",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x118440d",
+            "va": "0x141184e0d",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x118442e",
+            "va": "0x141184e2e",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x118444f",
+            "va": "0x141184e4f",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x118446f",
+            "va": "0x141184e6f",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x118449c",
+            "va": "0x141184e9c",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x11844b9",
+            "va": "0x141184eb9",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          }
+        ]
+      },
+      {
+        "scan_start_file_offset": "0x39dd7b0",
+        "role_from_t01h": "direct-callee",
+        "scan_bytes": 2048,
+        "static_width_count": 1,
+        "static_width_immediate_sum_not_a_row_length": 4,
+        "stream_call_count": 1,
+        "width_instructions": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x39dd7c8",
+            "va": "0x143b48dc8",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          }
+        ]
+      },
+      {
+        "scan_start_file_offset": "0x3e42e30",
+        "role_from_t01h": "direct-callee",
+        "scan_bytes": 2048,
+        "static_width_count": 1,
+        "static_width_immediate_sum_not_a_row_length": 3570678833,
+        "stream_call_count": 0,
+        "width_instructions": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x3e43111",
+            "va": "0x143fae711",
+            "bytes": "41 b8 31 3c d4 d4",
+            "instruction": "mov r8d, 0xd4d43c31"
+          }
+        ]
+      },
+      {
+        "scan_start_file_offset": "0x3e43770",
+        "role_from_t01h": "direct-callee",
+        "scan_bytes": 2048,
+        "static_width_count": 1,
+        "static_width_immediate_sum_not_a_row_length": 4096,
+        "stream_call_count": 0,
+        "width_instructions": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x3e437eb",
+            "va": "0x143faedeb",
+            "bytes": "41 b8 00 10 00 00",
+            "instruction": "mov r8d, 0x1000"
+          }
+        ]
+      },
+      {
+        "scan_start_file_offset": "0x4401010",
+        "role_from_t01h": "direct-callee",
+        "scan_bytes": 2048,
+        "static_width_count": 34,
+        "static_width_immediate_sum_not_a_row_length": 66,
+        "stream_call_count": 34,
+        "width_instructions": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x4401022",
+            "va": "0x14456c622",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x4401038",
+            "va": "0x14456c638",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x440104b",
+            "va": "0x14456c64b",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x440105e",
+            "va": "0x14456c65e",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x440107b",
+            "va": "0x14456c67b",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x440108e",
+            "va": "0x14456c68e",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x44010a1",
+            "va": "0x14456c6a1",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x44010b4",
+            "va": "0x14456c6b4",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x44010d1",
+            "va": "0x14456c6d1",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x44010e4",
+            "va": "0x14456c6e4",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x44010f7",
+            "va": "0x14456c6f7",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x440110a",
+            "va": "0x14456c70a",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x4401127",
+            "va": "0x14456c727",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x440113a",
+            "va": "0x14456c73a",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x440114d",
+            "va": "0x14456c74d",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x4401160",
+            "va": "0x14456c760",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x440117d",
+            "va": "0x14456c77d",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x4401190",
+            "va": "0x14456c790",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x44011a3",
+            "va": "0x14456c7a3",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x44011b6",
+            "va": "0x14456c7b6",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x44011d3",
+            "va": "0x14456c7d3",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x44011e6",
+            "va": "0x14456c7e6",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x44011f9",
+            "va": "0x14456c7f9",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x440120c",
+            "va": "0x14456c80c",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x4401229",
+            "va": "0x14456c829",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x440123c",
+            "va": "0x14456c83c",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x440124f",
+            "va": "0x14456c84f",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x4401262",
+            "va": "0x14456c862",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x440127b",
+            "va": "0x14456c87b",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x440128e",
+            "va": "0x14456c88e",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x44012a1",
+            "va": "0x14456c8a1",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x44012b4",
+            "va": "0x14456c8b4",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x44012d6",
+            "va": "0x14456c8d6",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x44012e9",
+            "va": "0x14456c8e9",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          }
+        ]
+      },
+      {
+        "scan_start_file_offset": "0x3e43f90",
+        "role_from_t01h": "direct-callee",
+        "scan_bytes": 2048,
+        "static_width_count": 4,
+        "static_width_immediate_sum_not_a_row_length": 4,
+        "stream_call_count": 4,
+        "width_instructions": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x3e43fa7",
+            "va": "0x143faf5a7",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x3e43fc3",
+            "va": "0x143faf5c3",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x3e43fdf",
+            "va": "0x143faf5df",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          {
+            "file": "editor.exe",
+            "file_offset": "0x3e44001",
+            "va": "0x143faf601",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          }
+        ]
+      },
+      {
+        "scan_start_file_offset": "0x35b07f0",
+        "role_from_t01h": "direct-callee",
+        "scan_bytes": 2048,
+        "static_width_count": 1,
+        "static_width_immediate_sum_not_a_row_length": 4,
+        "stream_call_count": 2,
+        "width_instructions": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x35b0822",
+            "va": "0x14371be22",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          }
+        ]
+      },
+      {
+        "scan_start_file_offset": "0x3c600f0",
+        "role_from_t01h": "direct-callee",
+        "scan_bytes": 2048,
+        "static_width_count": 1,
+        "static_width_immediate_sum_not_a_row_length": 12,
+        "stream_call_count": 1,
+        "width_instructions": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x3c6010d",
+            "va": "0x143dcb70d",
+            "bytes": "41 b8 0c 00 00 00",
+            "instruction": "mov r8d, 0xc"
+          }
+        ]
+      }
+    ],
+    "bounded_reader_width_instructions": 34,
+    "bounded_reader_direct_width_sum_bytes": 74,
+    "bounded_reader_stream_calls": 34,
+    "branch_parameter": {
+      "test": {
+        "file": "editor.exe",
+        "file_offset": "0x1183f51",
+        "va": "0x141184951",
+        "bytes": "40 84 ed",
+        "instruction": "test bpl, bpl"
+      },
+      "conditional_jump": {
+        "file": "editor.exe",
+        "file_offset": "0x1183f54",
+        "va": "0x141184954",
+        "bytes": "0f 84 5c 04 00 00",
+        "instruction": "je 0x141184db6"
+      },
+      "false_target_file_offset": "0x11843b6",
+      "interpretation": "false skips server-prefix transfer block and enters shared client/server tail"
+    },
+    "server_prefix_direct_site_count": 27,
+    "server_prefix_direct_width_sum_bytes": 53,
+    "first_37_server_prefix_direct_site_count": 15,
+    "first_37_server_prefix_direct_width_sum_bytes": 37,
+    "common_tail_direct_site_count": 7,
+    "common_tail_direct_width_sum_bytes": 21,
+    "common_client_trace": [
+      {
+        "row_offset": 0,
+        "object_offset": "0xa6",
+        "width": 2,
+        "site": {
+          "object_offset": "0xa6",
+          "destination": {
+            "file": "editor.exe",
+            "file_offset": "0x11843ba",
+            "va": "0x141184dba",
+            "bytes": "48 8d b3 a6 00 00 00",
+            "instruction": "lea rsi, [rbx + 0xa6]"
+          },
+          "width": 2,
+          "width_instruction": {
+            "file": "editor.exe",
+            "file_offset": "0x11843c4",
+            "va": "0x141184dc4",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          "stream_call": {
+            "file": "editor.exe",
+            "file_offset": "0x11843d0",
+            "va": "0x141184dd0",
+            "bytes": "ff 50 28",
+            "instruction": "call qword ptr [rax + 0x28]"
+          }
+        }
+      },
+      {
+        "row_offset": 2,
+        "object_offset": "0xa8",
+        "width": 1,
+        "site": {
+          "object_offset": "0xa8",
+          "destination": {
+            "file": "editor.exe",
+            "file_offset": "0x1184403",
+            "va": "0x141184e03",
+            "bytes": "48 8d 93 a8 00 00 00",
+            "instruction": "lea rdx, [rbx + 0xa8]"
+          },
+          "width": 1,
+          "width_instruction": {
+            "file": "editor.exe",
+            "file_offset": "0x118440d",
+            "va": "0x141184e0d",
+            "bytes": "41 b8 01 00 00 00",
+            "instruction": "mov r8d, 1"
+          },
+          "stream_call": {
+            "file": "editor.exe",
+            "file_offset": "0x1184416",
+            "va": "0x141184e16",
+            "bytes": "ff 50 28",
+            "instruction": "call qword ptr [rax + 0x28]"
+          }
+        }
+      },
+      {
+        "row_offset": 3,
+        "object_offset": "0x50",
+        "width": 4,
+        "site": {
+          "object_offset": "0x50",
+          "destination": {
+            "file": "editor.exe",
+            "file_offset": "0x1184427",
+            "va": "0x141184e27",
+            "bytes": "48 8d 53 50",
+            "instruction": "lea rdx, [rbx + 0x50]"
+          },
+          "width": 4,
+          "width_instruction": {
+            "file": "editor.exe",
+            "file_offset": "0x118442e",
+            "va": "0x141184e2e",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          "stream_call": {
+            "file": "editor.exe",
+            "file_offset": "0x1184437",
+            "va": "0x141184e37",
+            "bytes": "ff 50 28",
+            "instruction": "call qword ptr [rax + 0x28]"
+          }
+        }
+      },
+      {
+        "row_offset": 7,
+        "object_offset": "0x58",
+        "width": 4,
+        "site": {
+          "object_offset": "0x58",
+          "destination": {
+            "file": "editor.exe",
+            "file_offset": "0x1184448",
+            "va": "0x141184e48",
+            "bytes": "48 8d 53 58",
+            "instruction": "lea rdx, [rbx + 0x58]"
+          },
+          "width": 4,
+          "width_instruction": {
+            "file": "editor.exe",
+            "file_offset": "0x118444f",
+            "va": "0x141184e4f",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          "stream_call": {
+            "file": "editor.exe",
+            "file_offset": "0x1184458",
+            "va": "0x141184e58",
+            "bytes": "ff 50 28",
+            "instruction": "call qword ptr [rax + 0x28]"
+          }
+        }
+      },
+      {
+        "row_offset": 11,
+        "object_offset": "0x98",
+        "width": 2,
+        "site": {
+          "object_offset": "0x98",
+          "destination": {
+            "file": "editor.exe",
+            "file_offset": "0x1184465",
+            "va": "0x141184e65",
+            "bytes": "48 8d 93 98 00 00 00",
+            "instruction": "lea rdx, [rbx + 0x98]"
+          },
+          "width": 2,
+          "width_instruction": {
+            "file": "editor.exe",
+            "file_offset": "0x118446f",
+            "va": "0x141184e6f",
+            "bytes": "41 b8 02 00 00 00",
+            "instruction": "mov r8d, 2"
+          },
+          "stream_call": {
+            "file": "editor.exe",
+            "file_offset": "0x1184478",
+            "va": "0x141184e78",
+            "bytes": "ff 50 28",
+            "instruction": "call qword ptr [rax + 0x28]"
+          }
+        }
+      },
+      {
+        "row_offset": 13,
+        "object_offset": "0x34",
+        "width": 4,
+        "site": {
+          "reader_callsite": {
+            "file": "editor.exe",
+            "file_offset": "0x1184488",
+            "va": "0x141184e88",
+            "bytes": "e8 f3 3a c3 ff",
+            "instruction": "call 0x140db8980"
+          },
+          "object_destination": {
+            "file": "editor.exe",
+            "file_offset": "0x1184481",
+            "va": "0x141184e81",
+            "bytes": "48 8d 4b 34",
+            "instruction": "lea rcx, [rbx + 0x34]"
+          },
+          "helper_thunk": {
+            "file": "editor.exe",
+            "file_offset": "0xdb7f80",
+            "va": "0x140db8980",
+            "bytes": "e9 2b 04 d9 02",
+            "instruction": "jmp 0x143b48db0"
+          },
+          "helper_width": {
+            "file": "editor.exe",
+            "file_offset": "0x39dd7c8",
+            "va": "0x143b48dc8",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          "helper_stream_call": {
+            "file": "editor.exe",
+            "file_offset": "0x39dd7d4",
+            "va": "0x143b48dd4",
+            "bytes": "ff 57 28",
+            "instruction": "call qword ptr [rdi + 0x28]"
+          }
+        }
+      },
+      {
+        "row_offset": 17,
+        "object_offset": "0x60",
+        "width": 4,
+        "site": {
+          "object_offset": "0x60",
+          "destination": {
+            "file": "editor.exe",
+            "file_offset": "0x1184495",
+            "va": "0x141184e95",
+            "bytes": "48 8d 53 60",
+            "instruction": "lea rdx, [rbx + 0x60]"
+          },
+          "width": 4,
+          "width_instruction": {
+            "file": "editor.exe",
+            "file_offset": "0x118449c",
+            "va": "0x141184e9c",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          "stream_call": {
+            "file": "editor.exe",
+            "file_offset": "0x11844a5",
+            "va": "0x141184ea5",
+            "bytes": "ff 50 28",
+            "instruction": "call qword ptr [rax + 0x28]"
+          }
+        }
+      },
+      {
+        "row_offset": 21,
+        "object_offset": "0x64",
+        "width": 4,
+        "site": {
+          "object_offset": "0x64",
+          "destination": {
+            "file": "editor.exe",
+            "file_offset": "0x11844b2",
+            "va": "0x141184eb2",
+            "bytes": "48 8d 53 64",
+            "instruction": "lea rdx, [rbx + 0x64]"
+          },
+          "width": 4,
+          "width_instruction": {
+            "file": "editor.exe",
+            "file_offset": "0x11844b9",
+            "va": "0x141184eb9",
+            "bytes": "41 b8 04 00 00 00",
+            "instruction": "mov r8d, 4"
+          },
+          "stream_call": {
+            "file": "editor.exe",
+            "file_offset": "0x11844c2",
+            "va": "0x141184ec2",
+            "bytes": "ff 50 28",
+            "instruction": "call qword ptr [rax + 0x28]"
+          }
+        }
+      }
+    ],
+    "optional_payload_gate": {
+      "test": {
+        "file": "editor.exe",
+        "file_offset": "0x11843dd",
+        "va": "0x141184ddd",
+        "bytes": "f6 06 10",
+        "instruction": "test byte ptr [rsi], 0x10"
+      },
+      "conditional_helper_call": {
+        "file": "editor.exe",
+        "file_offset": "0x11843ef",
+        "va": "0x141184def",
+        "bytes": "e8 1c fd 68 ff",
+        "instruction": "call 0x140814b10"
+      },
+      "client_rows_with_flag_0x10": 0
+    },
+    "interpretation": "77 is t01h's combined static mov r8d,imm count over the entry plus seven direct-callee 0x800-byte scan windows, not 77 field widths in one row. The first ret is at 0x11844dd; the bounded slot-19 body has 34 width sites/34 direct stream calls (74 immediate bytes), while 43 additional immediates come from helper scan windows and may be conditional, dynamic-helper internals, or non-row candidates. The reader has a mode branch; the client/common-tail path emits 21 direct bytes plus a verified 4-byte helper, then the 12-byte identity suffix and 1-byte row tail lie outside this virtual reader body. The server direct prefix and helper/list paths are not equal to the client stride; the separate server row prefix is 143 bytes."
+  },
+  "getter_scan": {
+    "vtable_pointer": {
+      "file": "editor.exe",
+      "file_offset": "0x188d1d8",
+      "va": "0x14188dbd8",
+      "bytes": "90 cb 18 41 01 00 00 00"
+    },
+    "slot2_getter_pointer": {
+      "file": "editor.exe",
+      "file_offset": "0x188d1e8",
+      "va": "0x14188dbe8",
+      "bytes": "b0 68 18 41 01 00 00 00"
+    },
+    "slot2_entry_file_offset": "0x1185eb0",
+    "slot3_pointer": {
+      "file": "editor.exe",
+      "file_offset": "0x188d1f0",
+      "va": "0x14188dbf0",
+      "bytes": "60 9c 18 41 01 00 00 00"
+    },
+    "scan_window_file_offsets": [
+      "0x1185eb0",
+      "0x1189250"
+    ],
+    "scan_rule": "raw 81 f8..ff (all register forms) and 3d (EAX); decoded-boundary validation",
+    "raw_81_register_hits": [
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185f24",
+        "va": "0x141186924",
+        "bytes": "81 fb 76 65 6e 53",
+        "register": "ebx",
+        "imm32": "0x536e6576",
+        "ascii_be": "Snev",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185f2c",
+        "va": "0x14118692c",
+        "bytes": "81 fb 78 63 64 53",
+        "register": "ebx",
+        "imm32": "0x53646378",
+        "ascii_be": "Sdcx",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185f38",
+        "va": "0x141186938",
+        "bytes": "81 fb 73 61 6c 53",
+        "register": "ebx",
+        "imm32": "0x536c6173",
+        "ascii_be": "Slas",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185f44",
+        "va": "0x141186944",
+        "bytes": "81 fb 6b 78 6d 53",
+        "register": "ebx",
+        "imm32": "0x536d786b",
+        "ascii_be": "Smxk",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185f50",
+        "va": "0x141186950",
+        "bytes": "81 fb 6c 61 6e 53",
+        "register": "ebx",
+        "imm32": "0x536e616c",
+        "ascii_be": "Snal",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185f5c",
+        "va": "0x14118695c",
+        "bytes": "81 fb 6d 61 6e 53",
+        "register": "ebx",
+        "imm32": "0x536e616d",
+        "ascii_be": "Snam",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185f68",
+        "va": "0x141186968",
+        "bytes": "81 fb 74 61 6e 53",
+        "register": "ebx",
+        "imm32": "0x536e6174",
+        "ascii_be": "Snat",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185f74",
+        "va": "0x141186974",
+        "bytes": "81 fb 73 62 6e 53",
+        "register": "ebx",
+        "imm32": "0x536e6273",
+        "ascii_be": "Snbs",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185f91",
+        "va": "0x141186991",
+        "bytes": "81 fb 78 62 72 53",
+        "register": "ebx",
+        "imm32": "0x53726278",
+        "ascii_be": "Srbx",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185f9d",
+        "va": "0x14118699d",
+        "bytes": "81 fb 30 32 75 53",
+        "register": "ebx",
+        "imm32": "0x53753230",
+        "ascii_be": "Su20",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185fa9",
+        "va": "0x1411869a9",
+        "bytes": "81 fb 71 73 75 53",
+        "register": "ebx",
+        "imm32": "0x53757371",
+        "ascii_be": "Susq",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185fb5",
+        "va": "0x1411869b5",
+        "bytes": "81 fb 65 63 75 57",
+        "register": "ebx",
+        "imm32": "0x57756365",
+        "ascii_be": "Wuce",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185fc1",
+        "va": "0x1411869c1",
+        "bytes": "81 fb 66 63 75 57",
+        "register": "ebx",
+        "imm32": "0x57756366",
+        "ascii_be": "Wucf",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185fcd",
+        "va": "0x1411869cd",
+        "bytes": "81 fb 72 70 64 64",
+        "register": "ebx",
+        "imm32": "0x64647072",
+        "ascii_be": "ddpr",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185fd9",
+        "va": "0x1411869d9",
+        "bytes": "81 fb 64 61 74 73",
+        "register": "ebx",
+        "imm32": "0x73746164",
+        "ascii_be": "stad",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118602e",
+        "va": "0x141186a2e",
+        "bytes": "81 fb 72 61 63 53",
+        "register": "ebx",
+        "imm32": "0x53636172",
+        "ascii_be": "Scar",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118603a",
+        "va": "0x141186a3a",
+        "bytes": "81 fb 65 63 75 4e",
+        "register": "ebx",
+        "imm32": "0x4e756365",
+        "ascii_be": "Nuce",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186046",
+        "va": "0x141186a46",
+        "bytes": "81 fb 44 4c 45 44",
+        "register": "ebx",
+        "imm32": "0x44454c44",
+        "ascii_be": "DELD",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186052",
+        "va": "0x141186a52",
+        "bytes": "81 fb 2a 66 74 43",
+        "register": "ebx",
+        "imm32": "0x4374662a",
+        "ascii_be": "Ctf*",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118605a",
+        "va": "0x141186a5a",
+        "bytes": "81 fb 73 66 74 43",
+        "register": "ebx",
+        "imm32": "0x43746673",
+        "ascii_be": "Ctfs",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186086",
+        "va": "0x141186a86",
+        "bytes": "81 fb 6d 6c 70 53",
+        "register": "ebx",
+        "imm32": "0x53706c6d",
+        "ascii_be": "Splm",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186092",
+        "va": "0x141186a92",
+        "bytes": "81 fb 6b 76 6f 53",
+        "register": "ebx",
+        "imm32": "0x536f766b",
+        "ascii_be": "Sovk",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118609e",
+        "va": "0x141186a9e",
+        "bytes": "81 fb 68 74 6e 53",
+        "register": "ebx",
+        "imm32": "0x536e7468",
+        "ascii_be": "Snth",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11860aa",
+        "va": "0x141186aaa",
+        "bytes": "81 fb 77 65 6e 53",
+        "register": "ebx",
+        "imm32": "0x536e6577",
+        "ascii_be": "Snew",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11860b6",
+        "va": "0x141186ab6",
+        "bytes": "81 fb 74 66 6e 53",
+        "register": "ebx",
+        "imm32": "0x536e6674",
+        "ascii_be": "Snft",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11860fa",
+        "va": "0x141186afa",
+        "bytes": "81 fb 75 6e 65 53",
+        "register": "ebx",
+        "imm32": "0x53656e75",
+        "ascii_be": "Senu",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186106",
+        "va": "0x141186b06",
+        "bytes": "81 fb 71 74 64 53",
+        "register": "ebx",
+        "imm32": "0x53647471",
+        "ascii_be": "Sdtq",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186112",
+        "va": "0x141186b12",
+        "bytes": "81 fb 79 63 64 53",
+        "register": "ebx",
+        "imm32": "0x53646379",
+        "ascii_be": "Sdcy",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118611e",
+        "va": "0x141186b1e",
+        "bytes": "81 fb 6d 69 64 53",
+        "register": "ebx",
+        "imm32": "0x5364696d",
+        "ascii_be": "Sdim",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11861fe",
+        "va": "0x141186bfe",
+        "bytes": "81 fb 72 64 73 53",
+        "register": "ebx",
+        "imm32": "0x53736472",
+        "ascii_be": "Ssdr",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118620a",
+        "va": "0x141186c0a",
+        "bytes": "81 fb 6b 63 73 53",
+        "register": "ebx",
+        "imm32": "0x5373636b",
+        "ascii_be": "Ssck",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186216",
+        "va": "0x141186c16",
+        "bytes": "81 fb 79 62 72 53",
+        "register": "ebx",
+        "imm32": "0x53726279",
+        "ascii_be": "Srby",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186222",
+        "va": "0x141186c22",
+        "bytes": "81 fb 66 72 72 53",
+        "register": "ebx",
+        "imm32": "0x53727266",
+        "ascii_be": "Srrf",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118626b",
+        "va": "0x141186c6b",
+        "bytes": "81 fb 48 74 63 53",
+        "register": "ebx",
+        "imm32": "0x53637448",
+        "ascii_be": "SctH",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186277",
+        "va": "0x141186c77",
+        "bytes": "81 fb 62 70 63 53",
+        "register": "ebx",
+        "imm32": "0x53637062",
+        "ascii_be": "Scpb",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186283",
+        "va": "0x141186c83",
+        "bytes": "81 fb 73 61 63 53",
+        "register": "ebx",
+        "imm32": "0x53636173",
+        "ascii_be": "Scas",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118628f",
+        "va": "0x141186c8f",
+        "bytes": "81 fb 76 6f 63 53",
+        "register": "ebx",
+        "imm32": "0x53636f76",
+        "ascii_be": "Scov",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11862ef",
+        "va": "0x141186cef",
+        "bytes": "81 fb 62 74 70 53",
+        "register": "ebx",
+        "imm32": "0x53707462",
+        "ascii_be": "Sptb",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11862fb",
+        "va": "0x141186cfb",
+        "bytes": "81 fb 6b 72 70 53",
+        "register": "ebx",
+        "imm32": "0x5370726b",
+        "ascii_be": "Sprk",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186307",
+        "va": "0x141186d07",
+        "bytes": "81 fb 6e 6c 70 53",
+        "register": "ebx",
+        "imm32": "0x53706c6e",
+        "ascii_be": "Spln",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186313",
+        "va": "0x141186d13",
+        "bytes": "81 fb 72 6c 70 53",
+        "register": "ebx",
+        "imm32": "0x53706c72",
+        "ascii_be": "Splr",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186324",
+        "va": "0x141186d24",
+        "bytes": "81 fb 6b 6e 6d 53",
+        "register": "ebx",
+        "imm32": "0x536d6e6b",
+        "ascii_be": "Smnk",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186330",
+        "va": "0x141186d30",
+        "bytes": "81 fb 74 61 6c 53",
+        "register": "ebx",
+        "imm32": "0x536c6174",
+        "ascii_be": "Slat",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118633c",
+        "va": "0x141186d3c",
+        "bytes": "81 fb 6e 6f 6c 53",
+        "register": "ebx",
+        "imm32": "0x536c6f6e",
+        "ascii_be": "Slon",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186380",
+        "va": "0x141186d80",
+        "bytes": "81 fb 73 6e 75 53",
+        "register": "ebx",
+        "imm32": "0x53756e73",
+        "ascii_be": "Suns",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118638c",
+        "va": "0x141186d8c",
+        "bytes": "81 fb 31 32 75 53",
+        "register": "ebx",
+        "imm32": "0x53753231",
+        "ascii_be": "Su21",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186398",
+        "va": "0x141186d98",
+        "bytes": "81 fb 79 63 75 53",
+        "register": "ebx",
+        "imm32": "0x53756379",
+        "ascii_be": "Sucy",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11863e0",
+        "va": "0x141186de0",
+        "bytes": "81 fb 78 64 62 53",
+        "register": "ebx",
+        "imm32": "0x53626478",
+        "ascii_be": "Sbdx",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11863ec",
+        "va": "0x141186dec",
+        "bytes": "81 fb 66 63 75 4e",
+        "register": "ebx",
+        "imm32": "0x4e756366",
+        "ascii_be": "Nucf",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11863f8",
+        "va": "0x141186df8",
+        "bytes": "81 fb 69 64 4d 53",
+        "register": "ebx",
+        "imm32": "0x534d6469",
+        "ascii_be": "SMdi",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11864d0",
+        "va": "0x141186ed0",
+        "bytes": "81 fb 6d 77 6f 53",
+        "register": "ebx",
+        "imm32": "0x536f776d",
+        "ascii_be": "Sowm",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11864dc",
+        "va": "0x141186edc",
+        "bytes": "81 fb 6c 76 6f 53",
+        "register": "ebx",
+        "imm32": "0x536f766c",
+        "ascii_be": "Sovl",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11864e8",
+        "va": "0x141186ee8",
+        "bytes": "81 fb 69 77 6f 53",
+        "register": "ebx",
+        "imm32": "0x536f7769",
+        "ascii_be": "Sowi",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186508",
+        "va": "0x141186f08",
+        "bytes": "81 fb 66 74 69 53",
+        "register": "ebx",
+        "imm32": "0x53697466",
+        "ascii_be": "Sitf",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186514",
+        "va": "0x141186f14",
+        "bytes": "81 fb 76 6e 65 53",
+        "register": "ebx",
+        "imm32": "0x53656e76",
+        "ascii_be": "Senv",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186520",
+        "va": "0x141186f20",
+        "bytes": "81 fb 74 78 65 53",
+        "register": "ebx",
+        "imm32": "0x53657874",
+        "ascii_be": "Sext",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186566",
+        "va": "0x141186f66",
+        "bytes": "81 fb 64 74 73 53",
+        "register": "ebx",
+        "imm32": "0x53737464",
+        "ascii_be": "Sstd",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186572",
+        "va": "0x141186f72",
+        "bytes": "81 fb 73 64 73 53",
+        "register": "ebx",
+        "imm32": "0x53736473",
+        "ascii_be": "Ssds",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118657e",
+        "va": "0x141186f7e",
+        "bytes": "81 fb 54 66 73 53",
+        "register": "ebx",
+        "imm32": "0x53736654",
+        "ascii_be": "SsfT",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11865c2",
+        "va": "0x141186fc2",
+        "bytes": "81 fb 68 74 63 53",
+        "register": "ebx",
+        "imm32": "0x53637468",
+        "ascii_be": "Scth",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11865ce",
+        "va": "0x141186fce",
+        "bytes": "81 fb 49 74 63 53",
+        "register": "ebx",
+        "imm32": "0x53637449",
+        "ascii_be": "SctI",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11865da",
+        "va": "0x141186fda",
+        "bytes": "81 fb 57 74 63 53",
+        "register": "ebx",
+        "imm32": "0x53637457",
+        "ascii_be": "SctW",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11865eb",
+        "va": "0x141186feb",
+        "bytes": "81 fb 63 77 70 53",
+        "register": "ebx",
+        "imm32": "0x53707763",
+        "ascii_be": "Spwc",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11865f7",
+        "va": "0x141186ff7",
+        "bytes": "81 fb 63 74 70 53",
+        "register": "ebx",
+        "imm32": "0x53707463",
+        "ascii_be": "Sptc",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186603",
+        "va": "0x141187003",
+        "bytes": "81 fb 79 74 70 53",
+        "register": "ebx",
+        "imm32": "0x53707479",
+        "ascii_be": "Spty",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186655",
+        "va": "0x141187055",
+        "bytes": "81 fb 6c 78 6d 53",
+        "register": "ebx",
+        "imm32": "0x536d786c",
+        "ascii_be": "Smxl",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186661",
+        "va": "0x141187061",
+        "bytes": "81 fb 77 78 6d 53",
+        "register": "ebx",
+        "imm32": "0x536d7877",
+        "ascii_be": "Smxw",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11866c3",
+        "va": "0x1411870c3",
+        "bytes": "81 fb 72 73 75 53",
+        "register": "ebx",
+        "imm32": "0x53757372",
+        "ascii_be": "Susr",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11866cf",
+        "va": "0x1411870cf",
+        "bytes": "81 fb 4d 49 77 53",
+        "register": "ebx",
+        "imm32": "0x5377494d",
+        "ascii_be": "SwIM",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118672e",
+        "va": "0x14118712e",
+        "bytes": "81 fb 45 4c 45 44",
+        "register": "ebx",
+        "imm32": "0x44454c45",
+        "ascii_be": "DELE",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118673a",
+        "va": "0x14118713a",
+        "bytes": "81 fb 6f 63 6f 44",
+        "register": "ebx",
+        "imm32": "0x446f636f",
+        "ascii_be": "Doco",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186790",
+        "va": "0x141187190",
+        "bytes": "81 fb 69 74 6e 53",
+        "register": "ebx",
+        "imm32": "0x536e7469",
+        "ascii_be": "Snti",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118679c",
+        "va": "0x14118719c",
+        "bytes": "81 fb 79 74 6f 53",
+        "register": "ebx",
+        "imm32": "0x536f7479",
+        "ascii_be": "Soty",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11867e8",
+        "va": "0x1411871e8",
+        "bytes": "81 fb 72 74 64 53",
+        "register": "ebx",
+        "imm32": "0x53647472",
+        "ascii_be": "Sdtr",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11867f4",
+        "va": "0x1411871f4",
+        "bytes": "81 fb 79 63 65 53",
+        "register": "ebx",
+        "imm32": "0x53656379",
+        "ascii_be": "Secy",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186834",
+        "va": "0x141187234",
+        "bytes": "81 fb 6c 63 73 53",
+        "register": "ebx",
+        "imm32": "0x5373636c",
+        "ascii_be": "Sscl",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186840",
+        "va": "0x141187240",
+        "bytes": "81 fb 79 63 73 53",
+        "register": "ebx",
+        "imm32": "0x53736379",
+        "ascii_be": "Sscy",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186880",
+        "va": "0x141187280",
+        "bytes": "81 fb 63 70 63 53",
+        "register": "ebx",
+        "imm32": "0x53637063",
+        "ascii_be": "Scpc",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118688c",
+        "va": "0x14118728c",
+        "bytes": "81 fb 79 70 63 53",
+        "register": "ebx",
+        "imm32": "0x53637079",
+        "ascii_be": "Scpy",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11868cc",
+        "va": "0x1411872cc",
+        "bytes": "81 fb 6c 72 70 53",
+        "register": "ebx",
+        "imm32": "0x5370726c",
+        "ascii_be": "Sprl",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11868d8",
+        "va": "0x1411872d8",
+        "bytes": "81 fb 72 72 70 53",
+        "register": "ebx",
+        "imm32": "0x53707272",
+        "ascii_be": "Sprr",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118691c",
+        "va": "0x14118731c",
+        "bytes": "81 fb 6c 6e 6d 53",
+        "register": "ebx",
+        "imm32": "0x536d6e6c",
+        "ascii_be": "Smnl",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186928",
+        "va": "0x141187328",
+        "bytes": "81 fb 77 6e 6d 53",
+        "register": "ebx",
+        "imm32": "0x536d6e77",
+        "ascii_be": "Smnw",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118698a",
+        "va": "0x14118738a",
+        "bytes": "81 fb 74 6e 75 53",
+        "register": "ebx",
+        "imm32": "0x53756e74",
+        "ascii_be": "Sunt",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186996",
+        "va": "0x141187396",
+        "bytes": "81 fb 68 73 75 53",
+        "register": "ebx",
+        "imm32": "0x53757368",
+        "ascii_be": "Sush",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11869de",
+        "va": "0x1411873de",
+        "bytes": "81 fb 79 64 62 53",
+        "register": "ebx",
+        "imm32": "0x53626479",
+        "ascii_be": "Sbdy",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11869ea",
+        "va": "0x1411873ea",
+        "bytes": "81 fb 64 6c 62 53",
+        "register": "ebx",
+        "imm32": "0x53626c64",
+        "ascii_be": "Sbld",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186a40",
+        "va": "0x141187440",
+        "bytes": "81 fb 6e 77 6f 53",
+        "register": "ebx",
+        "imm32": "0x536f776e",
+        "ascii_be": "Sown",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186a4c",
+        "va": "0x14118744c",
+        "bytes": "81 fb 52 6c 70 53",
+        "register": "ebx",
+        "imm32": "0x53706c52",
+        "ascii_be": "SplR",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186aa2",
+        "va": "0x1411874a2",
+        "bytes": "81 fb 67 74 69 53",
+        "register": "ebx",
+        "imm32": "0x53697467",
+        "ascii_be": "Sitg",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186aae",
+        "va": "0x1411874ae",
+        "bytes": "81 fb 4d 49 6c 53",
+        "register": "ebx",
+        "imm32": "0x536c494d",
+        "ascii_be": "SlIM",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186b0d",
+        "va": "0x14118750d",
+        "bytes": "81 fb 65 74 73 53",
+        "register": "ebx",
+        "imm32": "0x53737465",
+        "ascii_be": "Sste",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186b19",
+        "va": "0x141187519",
+        "bytes": "81 fb 39 31 75 53",
+        "register": "ebx",
+        "imm32": "0x53753139",
+        "ascii_be": "Su19",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186b5d",
+        "va": "0x14118755d",
+        "bytes": "81 fb 69 74 63 53",
+        "register": "ebx",
+        "imm32": "0x53637469",
+        "ascii_be": "Scti",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186b69",
+        "va": "0x141187569",
+        "bytes": "81 fb 68 61 64 53",
+        "register": "ebx",
+        "imm32": "0x53646168",
+        "ascii_be": "Sdah",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186bb2",
+        "va": "0x1411875b2",
+        "bytes": "81 fb 64 77 70 53",
+        "register": "ebx",
+        "imm32": "0x53707764",
+        "ascii_be": "Spwd",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186bbe",
+        "va": "0x1411875be",
+        "bytes": "81 fb 64 62 72 53",
+        "register": "ebx",
+        "imm32": "0x53726264",
+        "ascii_be": "Srbd",
+        "decoded_instruction_boundary": true
+      }
+    ],
+    "raw_3d_eax_hits": [
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186e91",
+        "va": "0x141187891",
+        "bytes": "3d 6c 07 00 00",
+        "register": "eax",
+        "imm32": "0x76c",
+        "ascii_be": "\u0000\u0000\u0007l",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11871aa",
+        "va": "0x141187baa",
+        "bytes": "3d c0 58 93 00",
+        "register": "eax",
+        "imm32": "0x9358c0",
+        "ascii_be": "\u0000XÀ",
+        "decoded_instruction_boundary": false
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11874d4",
+        "va": "0x141187ed4",
+        "bytes": "3d 6c 07 00 00",
+        "register": "eax",
+        "imm32": "0x76c",
+        "ascii_be": "\u0000\u0000\u0007l",
+        "decoded_instruction_boundary": true
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11886b6",
+        "va": "0x1411890b6",
+        "bytes": "3d 64 72 9d 00",
+        "register": "eax",
+        "imm32": "0x9d7264",
+        "ascii_be": "\u0000rd",
+        "decoded_instruction_boundary": false
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1188cdb",
+        "va": "0x1411896db",
+        "bytes": "3d 93 00 48 8d",
+        "register": "eax",
+        "imm32": "0x8d480093",
+        "ascii_be": "H\u0000",
+        "decoded_instruction_boundary": false
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1188d11",
+        "va": "0x141189711",
+        "bytes": "3d 93 00 49 83",
+        "register": "eax",
+        "imm32": "0x83490093",
+        "ascii_be": "I\u0000",
+        "decoded_instruction_boundary": false
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1189155",
+        "va": "0x141189b55",
+        "bytes": "3d 4d ff 9c 00",
+        "register": "eax",
+        "imm32": "0x9cff4d",
+        "ascii_be": "\u0000ÿM",
+        "decoded_instruction_boundary": false
+      }
+    ],
+    "schema_4cc_compare_hits": [
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185f5c",
+        "va": "0x14118695c",
+        "bytes": "81 fb 6d 61 6e 53",
+        "register": "ebx",
+        "imm32": "0x536e616d",
+        "ascii_be": "Snam",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Snam",
+        "instruction": "cmp ebx, 0x536e616d"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1185f74",
+        "va": "0x141186974",
+        "bytes": "81 fb 73 62 6e 53",
+        "register": "ebx",
+        "imm32": "0x536e6273",
+        "ascii_be": "Snbs",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Snbs",
+        "instruction": "cmp ebx, 0x536e6273"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186112",
+        "va": "0x141186b12",
+        "bytes": "81 fb 79 63 64 53",
+        "register": "ebx",
+        "imm32": "0x53646379",
+        "ascii_be": "Sdcy",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sdcy",
+        "instruction": "cmp ebx, 0x53646379"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186222",
+        "va": "0x141186c22",
+        "bytes": "81 fb 66 72 72 53",
+        "register": "ebx",
+        "imm32": "0x53727266",
+        "ascii_be": "Srrf",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Srrf",
+        "instruction": "cmp ebx, 0x53727266"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186283",
+        "va": "0x141186c83",
+        "bytes": "81 fb 73 61 63 53",
+        "register": "ebx",
+        "imm32": "0x53636173",
+        "ascii_be": "Scas",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Scas",
+        "instruction": "cmp ebx, 0x53636173"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118628f",
+        "va": "0x141186c8f",
+        "bytes": "81 fb 76 6f 63 53",
+        "register": "ebx",
+        "imm32": "0x53636f76",
+        "ascii_be": "Scov",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Scov",
+        "instruction": "cmp ebx, 0x53636f76"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186307",
+        "va": "0x141186d07",
+        "bytes": "81 fb 6e 6c 70 53",
+        "register": "ebx",
+        "imm32": "0x53706c6e",
+        "ascii_be": "Spln",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Spln",
+        "instruction": "cmp ebx, 0x53706c6e"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186313",
+        "va": "0x141186d13",
+        "bytes": "81 fb 72 6c 70 53",
+        "register": "ebx",
+        "imm32": "0x53706c72",
+        "ascii_be": "Splr",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Splr",
+        "instruction": "cmp ebx, 0x53706c72"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186330",
+        "va": "0x141186d30",
+        "bytes": "81 fb 74 61 6c 53",
+        "register": "ebx",
+        "imm32": "0x536c6174",
+        "ascii_be": "Slat",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Slat",
+        "instruction": "cmp ebx, 0x536c6174"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118633c",
+        "va": "0x141186d3c",
+        "bytes": "81 fb 6e 6f 6c 53",
+        "register": "ebx",
+        "imm32": "0x536c6f6e",
+        "ascii_be": "Slon",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Slon",
+        "instruction": "cmp ebx, 0x536c6f6e"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118638c",
+        "va": "0x141186d8c",
+        "bytes": "81 fb 31 32 75 53",
+        "register": "ebx",
+        "imm32": "0x53753231",
+        "ascii_be": "Su21",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Su21",
+        "instruction": "cmp ebx, 0x53753231"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186398",
+        "va": "0x141186d98",
+        "bytes": "81 fb 79 63 75 53",
+        "register": "ebx",
+        "imm32": "0x53756379",
+        "ascii_be": "Sucy",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sucy",
+        "instruction": "cmp ebx, 0x53756379"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11863ec",
+        "va": "0x141186dec",
+        "bytes": "81 fb 66 63 75 4e",
+        "register": "ebx",
+        "imm32": "0x4e756366",
+        "ascii_be": "Nucf",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Nucf",
+        "instruction": "cmp ebx, 0x4e756366"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11864e8",
+        "va": "0x141186ee8",
+        "bytes": "81 fb 69 77 6f 53",
+        "register": "ebx",
+        "imm32": "0x536f7769",
+        "ascii_be": "Sowi",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sowi",
+        "instruction": "cmp ebx, 0x536f7769"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186514",
+        "va": "0x141186f14",
+        "bytes": "81 fb 76 6e 65 53",
+        "register": "ebx",
+        "imm32": "0x53656e76",
+        "ascii_be": "Senv",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Senv",
+        "instruction": "cmp ebx, 0x53656e76"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186520",
+        "va": "0x141186f20",
+        "bytes": "81 fb 74 78 65 53",
+        "register": "ebx",
+        "imm32": "0x53657874",
+        "ascii_be": "Sext",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sext",
+        "instruction": "cmp ebx, 0x53657874"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186572",
+        "va": "0x141186f72",
+        "bytes": "81 fb 73 64 73 53",
+        "register": "ebx",
+        "imm32": "0x53736473",
+        "ascii_be": "Ssds",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Ssds",
+        "instruction": "cmp ebx, 0x53736473"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11865f7",
+        "va": "0x141186ff7",
+        "bytes": "81 fb 63 74 70 53",
+        "register": "ebx",
+        "imm32": "0x53707463",
+        "ascii_be": "Sptc",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sptc",
+        "instruction": "cmp ebx, 0x53707463"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186603",
+        "va": "0x141187003",
+        "bytes": "81 fb 79 74 70 53",
+        "register": "ebx",
+        "imm32": "0x53707479",
+        "ascii_be": "Spty",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Spty",
+        "instruction": "cmp ebx, 0x53707479"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186655",
+        "va": "0x141187055",
+        "bytes": "81 fb 6c 78 6d 53",
+        "register": "ebx",
+        "imm32": "0x536d786c",
+        "ascii_be": "Smxl",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Smxl",
+        "instruction": "cmp ebx, 0x536d786c"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186661",
+        "va": "0x141187061",
+        "bytes": "81 fb 77 78 6d 53",
+        "register": "ebx",
+        "imm32": "0x536d7877",
+        "ascii_be": "Smxw",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Smxw",
+        "instruction": "cmp ebx, 0x536d7877"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11866cf",
+        "va": "0x1411870cf",
+        "bytes": "81 fb 4d 49 77 53",
+        "register": "ebx",
+        "imm32": "0x5377494d",
+        "ascii_be": "SwIM",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "SwIM",
+        "instruction": "cmp ebx, 0x5377494d"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118673a",
+        "va": "0x14118713a",
+        "bytes": "81 fb 6f 63 6f 44",
+        "register": "ebx",
+        "imm32": "0x446f636f",
+        "ascii_be": "Doco",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Doco",
+        "instruction": "cmp ebx, 0x446f636f"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186790",
+        "va": "0x141187190",
+        "bytes": "81 fb 69 74 6e 53",
+        "register": "ebx",
+        "imm32": "0x536e7469",
+        "ascii_be": "Snti",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Snti",
+        "instruction": "cmp ebx, 0x536e7469"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118679c",
+        "va": "0x14118719c",
+        "bytes": "81 fb 79 74 6f 53",
+        "register": "ebx",
+        "imm32": "0x536f7479",
+        "ascii_be": "Soty",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Soty",
+        "instruction": "cmp ebx, 0x536f7479"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11867e8",
+        "va": "0x1411871e8",
+        "bytes": "81 fb 72 74 64 53",
+        "register": "ebx",
+        "imm32": "0x53647472",
+        "ascii_be": "Sdtr",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sdtr",
+        "instruction": "cmp ebx, 0x53647472"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11867f4",
+        "va": "0x1411871f4",
+        "bytes": "81 fb 79 63 65 53",
+        "register": "ebx",
+        "imm32": "0x53656379",
+        "ascii_be": "Secy",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Secy",
+        "instruction": "cmp ebx, 0x53656379"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186834",
+        "va": "0x141187234",
+        "bytes": "81 fb 6c 63 73 53",
+        "register": "ebx",
+        "imm32": "0x5373636c",
+        "ascii_be": "Sscl",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sscl",
+        "instruction": "cmp ebx, 0x5373636c"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186840",
+        "va": "0x141187240",
+        "bytes": "81 fb 79 63 73 53",
+        "register": "ebx",
+        "imm32": "0x53736379",
+        "ascii_be": "Sscy",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sscy",
+        "instruction": "cmp ebx, 0x53736379"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186880",
+        "va": "0x141187280",
+        "bytes": "81 fb 63 70 63 53",
+        "register": "ebx",
+        "imm32": "0x53637063",
+        "ascii_be": "Scpc",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Scpc",
+        "instruction": "cmp ebx, 0x53637063"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118688c",
+        "va": "0x14118728c",
+        "bytes": "81 fb 79 70 63 53",
+        "register": "ebx",
+        "imm32": "0x53637079",
+        "ascii_be": "Scpy",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Scpy",
+        "instruction": "cmp ebx, 0x53637079"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11868cc",
+        "va": "0x1411872cc",
+        "bytes": "81 fb 6c 72 70 53",
+        "register": "ebx",
+        "imm32": "0x5370726c",
+        "ascii_be": "Sprl",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sprl",
+        "instruction": "cmp ebx, 0x5370726c"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11868d8",
+        "va": "0x1411872d8",
+        "bytes": "81 fb 72 72 70 53",
+        "register": "ebx",
+        "imm32": "0x53707272",
+        "ascii_be": "Sprr",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sprr",
+        "instruction": "cmp ebx, 0x53707272"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118691c",
+        "va": "0x14118731c",
+        "bytes": "81 fb 6c 6e 6d 53",
+        "register": "ebx",
+        "imm32": "0x536d6e6c",
+        "ascii_be": "Smnl",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Smnl",
+        "instruction": "cmp ebx, 0x536d6e6c"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186928",
+        "va": "0x141187328",
+        "bytes": "81 fb 77 6e 6d 53",
+        "register": "ebx",
+        "imm32": "0x536d6e77",
+        "ascii_be": "Smnw",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Smnw",
+        "instruction": "cmp ebx, 0x536d6e77"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x118698a",
+        "va": "0x14118738a",
+        "bytes": "81 fb 74 6e 75 53",
+        "register": "ebx",
+        "imm32": "0x53756e74",
+        "ascii_be": "Sunt",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sunt",
+        "instruction": "cmp ebx, 0x53756e74"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186996",
+        "va": "0x141187396",
+        "bytes": "81 fb 68 73 75 53",
+        "register": "ebx",
+        "imm32": "0x53757368",
+        "ascii_be": "Sush",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sush",
+        "instruction": "cmp ebx, 0x53757368"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x11869ea",
+        "va": "0x1411873ea",
+        "bytes": "81 fb 64 6c 62 53",
+        "register": "ebx",
+        "imm32": "0x53626c64",
+        "ascii_be": "Sbld",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sbld",
+        "instruction": "cmp ebx, 0x53626c64"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186aa2",
+        "va": "0x1411874a2",
+        "bytes": "81 fb 67 74 69 53",
+        "register": "ebx",
+        "imm32": "0x53697467",
+        "ascii_be": "Sitg",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sitg",
+        "instruction": "cmp ebx, 0x53697467"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186aae",
+        "va": "0x1411874ae",
+        "bytes": "81 fb 4d 49 6c 53",
+        "register": "ebx",
+        "imm32": "0x536c494d",
+        "ascii_be": "SlIM",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "SlIM",
+        "instruction": "cmp ebx, 0x536c494d"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186b0d",
+        "va": "0x14118750d",
+        "bytes": "81 fb 65 74 73 53",
+        "register": "ebx",
+        "imm32": "0x53737465",
+        "ascii_be": "Sste",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sste",
+        "instruction": "cmp ebx, 0x53737465"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186b19",
+        "va": "0x141187519",
+        "bytes": "81 fb 39 31 75 53",
+        "register": "ebx",
+        "imm32": "0x53753139",
+        "ascii_be": "Su19",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Su19",
+        "instruction": "cmp ebx, 0x53753139"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186b5d",
+        "va": "0x14118755d",
+        "bytes": "81 fb 69 74 63 53",
+        "register": "ebx",
+        "imm32": "0x53637469",
+        "ascii_be": "Scti",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Scti",
+        "instruction": "cmp ebx, 0x53637469"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186b69",
+        "va": "0x141187569",
+        "bytes": "81 fb 68 61 64 53",
+        "register": "ebx",
+        "imm32": "0x53646168",
+        "ascii_be": "Sdah",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Sdah",
+        "instruction": "cmp ebx, 0x53646168"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186bb2",
+        "va": "0x1411875b2",
+        "bytes": "81 fb 64 77 70 53",
+        "register": "ebx",
+        "imm32": "0x53707764",
+        "ascii_be": "Spwd",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Spwd",
+        "instruction": "cmp ebx, 0x53707764"
+      },
+      {
+        "file": "editor.exe",
+        "file_offset": "0x1186bbe",
+        "va": "0x1411875be",
+        "bytes": "81 fb 64 62 72 53",
+        "register": "ebx",
+        "imm32": "0x53726264",
+        "ascii_be": "Srbd",
+        "decoded_instruction_boundary": true,
+        "schema_4cc": "Srbd",
+        "instruction": "cmp ebx, 0x53726264"
+      }
+    ]
+  },
+  "row_offset_map": [
+    {
+      "4cc": "Scpy",
+      "schema_name": "Capacity",
+      "schema_type": "integer",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "server_prefix",
+      "object_offset": "0x6c",
+      "width": 4,
+      "client_row_offset": null,
+      "server_row_offset": 0,
+      "getter": {
+        "schema_4cc": "Scpy",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x118688c",
+          "va": "0x14118728c",
+          "bytes": "81 fb 79 70 63 53",
+          "instruction": "cmp ebx, 0x53637079"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x1186892",
+          "va": "0x141187292",
+          "bytes": "0f 85 c3 0d 00 00",
+          "instruction": "jne 0x14118805b"
+        },
+        "handler_file_offset": "0x1186898",
+        "object_offset": "0x6c",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1186898",
+            "va": "0x141187298",
+            "bytes": "8b 77 6c",
+            "instruction": "mov esi, dword ptr [rdi + 0x6c]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x6c",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x1183f5a",
+          "va": "0x14118495a",
+          "bytes": "4c 8d 7b 6c",
+          "instruction": "lea r15, [rbx + 0x6c]"
+        },
+        "width": 4,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x1183f65",
+          "va": "0x141184965",
+          "bytes": "41 b8 04 00 00 00",
+          "instruction": "mov r8d, 4"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x1183f6e",
+          "va": "0x14118496e",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0xe",
+          "bytes": "c8 2c 00 00"
+        },
+        "67": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2f6d",
+          "bytes": "bd c3 00 00"
+        },
+        "71": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x3241",
+          "bytes": "2f 21 01 00"
+        },
+        "430": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x13014",
+          "bytes": "94 3c 01 00"
+        },
+        "12048": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x21465e",
+          "bytes": "f8 24 01 00"
+        }
+      }
+    },
+    {
+      "4cc": "Sscy",
+      "schema_name": "Seating Capacity",
+      "schema_type": "integer",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "server_prefix",
+      "object_offset": "0x70",
+      "width": 4,
+      "client_row_offset": null,
+      "server_row_offset": 4,
+      "getter": {
+        "schema_4cc": "Sscy",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x1186840",
+          "va": "0x141187240",
+          "bytes": "81 fb 79 63 73 53",
+          "instruction": "cmp ebx, 0x53736379"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x1186846",
+          "va": "0x141187246",
+          "bytes": "0f 85 0f 0e 00 00",
+          "instruction": "jne 0x14118805b"
+        },
+        "handler_file_offset": "0x118684c",
+        "object_offset": "0x70",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x118684c",
+            "va": "0x14118724c",
+            "bytes": "8b 77 70",
+            "instruction": "mov esi, dword ptr [rdi + 0x70]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x70",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x1183f71",
+          "va": "0x141184971",
+          "bytes": "4c 8d 63 70",
+          "instruction": "lea r12, [rbx + 0x70]"
+        },
+        "width": 4,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x1183f7c",
+          "va": "0x14118497c",
+          "bytes": "41 b8 04 00 00 00",
+          "instruction": "mov r8d, 4"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x1183f85",
+          "va": "0x141184985",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x12",
+          "bytes": "c8 2c 00 00"
+        },
+        "67": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2f71",
+          "bytes": "bd c3 00 00"
+        },
+        "71": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x3245",
+          "bytes": "2f 21 01 00"
+        },
+        "430": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x13018",
+          "bytes": "94 3c 01 00"
+        },
+        "12048": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x214662",
+          "bytes": "ef d4 00 00"
+        }
+      }
+    },
+    {
+      "4cc": "Secy",
+      "schema_name": "Expansion Capacity",
+      "schema_type": "integer",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "server_prefix",
+      "object_offset": "0x7c",
+      "width": 4,
+      "client_row_offset": null,
+      "server_row_offset": 8,
+      "getter": {
+        "schema_4cc": "Secy",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x11867f4",
+          "va": "0x1411871f4",
+          "bytes": "81 fb 79 63 65 53",
+          "instruction": "cmp ebx, 0x53656379"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x11867fa",
+          "va": "0x1411871fa",
+          "bytes": "0f 85 5b 0e 00 00",
+          "instruction": "jne 0x14118805b"
+        },
+        "handler_file_offset": "0x1186800",
+        "object_offset": "0x7c",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1186800",
+            "va": "0x141187200",
+            "bytes": "8b 77 7c",
+            "instruction": "mov esi, dword ptr [rdi + 0x7c]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x7c",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x1183f88",
+          "va": "0x141184988",
+          "bytes": "48 8d 53 7c",
+          "instruction": "lea rdx, [rbx + 0x7c]"
+        },
+        "width": 4,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x1183f93",
+          "va": "0x141184993",
+          "bytes": "41 b8 04 00 00 00",
+          "instruction": "mov r8d, 4"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x1183f99",
+          "va": "0x141184999",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x16",
+          "bytes": "74 40 00 00"
+        },
+        "67": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2f75",
+          "bytes": "5c ef 00 00"
+        },
+        "71": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x3249",
+          "bytes": "35 74 01 00"
+        },
+        "430": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x1301c",
+          "bytes": "18 73 01 00"
+        },
+        "12048": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x214666",
+          "bytes": "36 6e 01 00"
+        }
+      }
+    },
+    {
+      "4cc": "Scas",
+      "schema_name": "Capacity For All-Seater Competitions",
+      "schema_type": "integer",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "server_prefix",
+      "object_offset": "0x78",
+      "width": 4,
+      "client_row_offset": null,
+      "server_row_offset": 12,
+      "getter": {
+        "schema_4cc": "Scas",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x1186283",
+          "va": "0x141186c83",
+          "bytes": "81 fb 73 61 63 53",
+          "instruction": "cmp ebx, 0x53636173"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x1186289",
+          "va": "0x141186c89",
+          "bytes": "0f 84 3b 0c 00 00",
+          "instruction": "je 0x1411878ca"
+        },
+        "handler_file_offset": "0x1186eca",
+        "object_offset": "0x78",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1186eca",
+            "va": "0x1411878ca",
+            "bytes": "8b 77 78",
+            "instruction": "mov esi, dword ptr [rdi + 0x78]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x78",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x1183f9c",
+          "va": "0x14118499c",
+          "bytes": "48 8d 53 78",
+          "instruction": "lea rdx, [rbx + 0x78]"
+        },
+        "width": 4,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x1183fa7",
+          "va": "0x1411849a7",
+          "bytes": "41 b8 04 00 00 00",
+          "instruction": "mov r8d, 4"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x1183fad",
+          "va": "0x1411849ad",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x1a",
+          "bytes": "c8 2c 00 00"
+        },
+        "67": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2f79",
+          "bytes": "bd c3 00 00"
+        },
+        "71": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x324d",
+          "bytes": "2f 21 01 00"
+        },
+        "430": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x13020",
+          "bytes": "94 3c 01 00"
+        },
+        "12048": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x21466a",
+          "bytes": "e0 0e 01 00"
+        }
+      }
+    },
+    {
+      "4cc": "Sowi",
+      "schema_name": "Owner",
+      "schema_type": "database_record_unique_id",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "server_prefix",
+      "object_offset": "0x80",
+      "width": 4,
+      "client_row_offset": null,
+      "server_row_offset": 16,
+      "getter": {
+        "schema_4cc": "Sowi",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x11864e8",
+          "va": "0x141186ee8",
+          "bytes": "81 fb 69 77 6f 53",
+          "instruction": "cmp ebx, 0x536f7769"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x11864ee",
+          "va": "0x141186eee",
+          "bytes": "0f 85 67 11 00 00",
+          "instruction": "jne 0x14118805b"
+        },
+        "handler_file_offset": "0x11864f4",
+        "object_offset": "0x80",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x11864f4",
+            "va": "0x141186ef4",
+            "bytes": "48 8b 8f 80 00 00 00",
+            "instruction": "mov rcx, qword ptr [rdi + 0x80]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x80",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x1183fb4",
+          "va": "0x1411849b4",
+          "bytes": "48 8d 93 80 00 00 00",
+          "instruction": "lea rdx, [rbx + 0x80]"
+        },
+        "width": 4,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x1183fbe",
+          "va": "0x1411849be",
+          "bytes": "41 b8 04 00 00 00",
+          "instruction": "mov r8d, 4"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x1183fc7",
+          "va": "0x1411849c7",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x1e",
+          "bytes": "ff ff ff ff"
+        },
+        "67": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2f7d",
+          "bytes": "cc 01 00 00"
+        },
+        "71": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x3251",
+          "bytes": "d0 01 00 00"
+        },
+        "430": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x13024",
+          "bytes": "11 05 00 00"
+        },
+        "12048": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x21466e",
+          "bytes": "6f 02 00 00"
+        }
+      }
+    },
+    {
+      "4cc": "Sdcy",
+      "schema_name": "Decay",
+      "schema_type": "integer",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "server_prefix",
+      "object_offset": "0x9a",
+      "width": 1,
+      "client_row_offset": null,
+      "server_row_offset": 20,
+      "getter": {
+        "schema_4cc": "Sdcy",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x1186112",
+          "va": "0x141186b12",
+          "bytes": "81 fb 79 63 64 53",
+          "instruction": "cmp ebx, 0x53646379"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x1186118",
+          "va": "0x141186b18",
+          "bytes": "0f 84 24 0d 00 00",
+          "instruction": "je 0x141187842"
+        },
+        "handler_file_offset": "0x1186e42",
+        "object_offset": "0x9a",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1186e42",
+            "va": "0x141187842",
+            "bytes": "0f be b7 9a 00 00 00",
+            "instruction": "movsx esi, byte ptr [rdi + 0x9a]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x9a",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x1183fd8",
+          "va": "0x1411849d8",
+          "bytes": "48 8d 93 9a 00 00 00",
+          "instruction": "lea rdx, [rbx + 0x9a]"
+        },
+        "width": 1,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x1183fe2",
+          "va": "0x1411849e2",
+          "bytes": "41 b8 01 00 00 00",
+          "instruction": "mov r8d, 1"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x1183feb",
+          "va": "0x1411849eb",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x22",
+          "bytes": "05"
+        },
+        "67": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2f81",
+          "bytes": "05"
+        },
+        "71": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x3255",
+          "bytes": "05"
+        },
+        "430": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x13028",
+          "bytes": "05"
+        },
+        "12048": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x214672",
+          "bytes": "05"
+        }
+      }
+    },
+    {
+      "4cc": "Spln",
+      "schema_name": "Pitch Length",
+      "schema_type": "short_distance",
+      "L3": "conditional getter fallback/backing-slot association; excluded from acceptance count",
+      "reader_branch_domain": "server_prefix",
+      "object_offset": "0x88",
+      "width": 2,
+      "client_row_offset": null,
+      "server_row_offset": 25,
+      "getter": {
+        "schema_4cc": "Spln",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x1186307",
+          "va": "0x141186d07",
+          "bytes": "81 fb 6e 6c 70 53",
+          "instruction": "cmp ebx, 0x53706c6e"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x118630d",
+          "va": "0x141186d0d",
+          "bytes": "0f 84 f3 0b 00 00",
+          "instruction": "je 0x141187906"
+        },
+        "handler_file_offset": "0x1186f06",
+        "object_offset": "0x88",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1186f2a",
+            "va": "0x14118792a",
+            "bytes": "0f b7 87 88 00 00 00",
+            "instruction": "movzx eax, word ptr [rdi + 0x88]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x88",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x1184010",
+          "va": "0x141184a10",
+          "bytes": "48 8d 93 88 00 00 00",
+          "instruction": "lea rdx, [rbx + 0x88]"
+        },
+        "width": 2,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x118401a",
+          "va": "0x141184a1a",
+          "bytes": "41 b8 02 00 00 00",
+          "instruction": "mov r8d, 2"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x1184023",
+          "va": "0x141184a23",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x27",
+          "bytes": "1a 04"
+        },
+        "67": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2f86",
+          "bytes": "f2 03"
+        },
+        "71": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x325a",
+          "bytes": "1a 04"
+        },
+        "430": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x1302d",
+          "bytes": "1a 04"
+        },
+        "12048": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x214677",
+          "bytes": "1a 04"
+        }
+      }
+    },
+    {
+      "4cc": "Spwd",
+      "schema_name": "Pitch Width",
+      "schema_type": "short_distance",
+      "L3": "conditional getter fallback/backing-slot association; excluded from acceptance count",
+      "reader_branch_domain": "server_prefix",
+      "object_offset": "0x8a",
+      "width": 2,
+      "client_row_offset": null,
+      "server_row_offset": 27,
+      "getter": {
+        "schema_4cc": "Spwd",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x1186bb2",
+          "va": "0x1411875b2",
+          "bytes": "81 fb 64 77 70 53",
+          "instruction": "cmp ebx, 0x53707764"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x1186bb8",
+          "va": "0x1411875b8",
+          "bytes": "0f 84 2f 0a 00 00",
+          "instruction": "je 0x141187fed"
+        },
+        "handler_file_offset": "0x11875ed",
+        "object_offset": "0x8a",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1187611",
+            "va": "0x141188011",
+            "bytes": "0f b7 87 8a 00 00 00",
+            "instruction": "movzx eax, word ptr [rdi + 0x8a]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x8a",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x1184034",
+          "va": "0x141184a34",
+          "bytes": "48 8d 93 8a 00 00 00",
+          "instruction": "lea rdx, [rbx + 0x8a]"
+        },
+        "width": 2,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x118403e",
+          "va": "0x141184a3e",
+          "bytes": "41 b8 02 00 00 00",
+          "instruction": "mov r8d, 2"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x1184047",
+          "va": "0x141184a47",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x29",
+          "bytes": "a8 02"
+        },
+        "67": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2f88",
+          "bytes": "a8 02"
+        },
+        "71": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x325c",
+          "bytes": "a8 02"
+        },
+        "430": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x1302f",
+          "bytes": "a8 02"
+        },
+        "12048": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x214679",
+          "bytes": "a8 02"
+        }
+      }
+    },
+    {
+      "4cc": "SlIM",
+      "schema_name": "Pitch Length for International Matches",
+      "schema_type": "short_distance",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "server_prefix",
+      "object_offset": "0x8c",
+      "width": 2,
+      "client_row_offset": null,
+      "server_row_offset": 29,
+      "getter": {
+        "schema_4cc": "SlIM",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x1186aae",
+          "va": "0x1411874ae",
+          "bytes": "81 fb 4d 49 6c 53",
+          "instruction": "cmp ebx, 0x536c494d"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x1186ab4",
+          "va": "0x1411874b4",
+          "bytes": "0f 85 a1 0b 00 00",
+          "instruction": "jne 0x14118805b"
+        },
+        "handler_file_offset": "0x1186aba",
+        "object_offset": "0x8c",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1186aba",
+            "va": "0x1411874ba",
+            "bytes": "0f b7 87 8c 00 00 00",
+            "instruction": "movzx eax, word ptr [rdi + 0x8c]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x8c",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x1184058",
+          "va": "0x141184a58",
+          "bytes": "48 8d 93 8c 00 00 00",
+          "instruction": "lea rdx, [rbx + 0x8c]"
+        },
+        "width": 2,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x1184062",
+          "va": "0x141184a62",
+          "bytes": "41 b8 02 00 00 00",
+          "instruction": "mov r8d, 2"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x118406b",
+          "va": "0x141184a6b",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2b",
+          "bytes": "ff ff"
+        },
+        "67": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2f8a",
+          "bytes": "ff ff"
+        },
+        "71": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x325e",
+          "bytes": "ff ff"
+        },
+        "430": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x13031",
+          "bytes": "ff ff"
+        },
+        "12048": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x21467b",
+          "bytes": "1a 04"
+        }
+      }
+    },
+    {
+      "4cc": "SwIM",
+      "schema_name": "Pitch Width for International Matches",
+      "schema_type": "short_distance",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "server_prefix",
+      "object_offset": "0x8e",
+      "width": 2,
+      "client_row_offset": null,
+      "server_row_offset": 31,
+      "getter": {
+        "schema_4cc": "SwIM",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x11866cf",
+          "va": "0x1411870cf",
+          "bytes": "81 fb 4d 49 77 53",
+          "instruction": "cmp ebx, 0x5377494d"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x11866d5",
+          "va": "0x1411870d5",
+          "bytes": "0f 85 80 0f 00 00",
+          "instruction": "jne 0x14118805b"
+        },
+        "handler_file_offset": "0x11866db",
+        "object_offset": "0x8e",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x11866db",
+            "va": "0x1411870db",
+            "bytes": "0f b7 87 8e 00 00 00",
+            "instruction": "movzx eax, word ptr [rdi + 0x8e]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x8e",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x118407c",
+          "va": "0x141184a7c",
+          "bytes": "48 8d 93 8e 00 00 00",
+          "instruction": "lea rdx, [rbx + 0x8e]"
+        },
+        "width": 2,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x1184086",
+          "va": "0x141184a86",
+          "bytes": "41 b8 02 00 00 00",
+          "instruction": "mov r8d, 2"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x118408f",
+          "va": "0x141184a8f",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2d",
+          "bytes": "ff ff"
+        },
+        "67": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2f8c",
+          "bytes": "ff ff"
+        },
+        "71": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x3260",
+          "bytes": "ff ff"
+        },
+        "430": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x13033",
+          "bytes": "ff ff"
+        },
+        "12048": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x21467d",
+          "bytes": "a8 02"
+        }
+      }
+    },
+    {
+      "4cc": "Spty",
+      "schema_name": "Pitch Type",
+      "schema_type": "enum",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "server_prefix",
+      "object_offset": "0x9d",
+      "width": 1,
+      "client_row_offset": null,
+      "server_row_offset": 33,
+      "getter": {
+        "schema_4cc": "Spty",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x1186603",
+          "va": "0x141187003",
+          "bytes": "81 fb 79 74 70 53",
+          "instruction": "cmp ebx, 0x53707479"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x1186609",
+          "va": "0x141187009",
+          "bytes": "0f 85 4c 10 00 00",
+          "instruction": "jne 0x14118805b"
+        },
+        "handler_file_offset": "0x118660f",
+        "object_offset": "0x9d",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x118660f",
+            "va": "0x14118700f",
+            "bytes": "0f b6 87 9d 00 00 00",
+            "instruction": "movzx eax, byte ptr [rdi + 0x9d]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x9d",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x11840a0",
+          "va": "0x141184aa0",
+          "bytes": "48 8d 93 9d 00 00 00",
+          "instruction": "lea rdx, [rbx + 0x9d]"
+        },
+        "width": 1,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x11840aa",
+          "va": "0x141184aaa",
+          "bytes": "41 b8 01 00 00 00",
+          "instruction": "mov r8d, 1"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x11840b3",
+          "va": "0x141184ab3",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2f",
+          "bytes": "01"
+        },
+        "67": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2f8e",
+          "bytes": "08"
+        },
+        "71": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x3262",
+          "bytes": "08"
+        },
+        "430": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x13035",
+          "bytes": "01"
+        },
+        "12048": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x21467f",
+          "bytes": "01"
+        }
+      }
+    },
+    {
+      "4cc": "Sste",
+      "schema_name": "State",
+      "schema_type": "enum",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "server_prefix",
+      "object_offset": "0x9f",
+      "width": 1,
+      "client_row_offset": null,
+      "server_row_offset": 34,
+      "getter": {
+        "schema_4cc": "Sste",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x1186b0d",
+          "va": "0x14118750d",
+          "bytes": "81 fb 65 74 73 53",
+          "instruction": "cmp ebx, 0x53737465"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x1186b13",
+          "va": "0x141187513",
+          "bytes": "0f 84 8b 0a 00 00",
+          "instruction": "je 0x141187fa4"
+        },
+        "handler_file_offset": "0x11875a4",
+        "object_offset": "0x9f",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x11875a4",
+            "va": "0x141187fa4",
+            "bytes": "0f be b7 9f 00 00 00",
+            "instruction": "movsx esi, byte ptr [rdi + 0x9f]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x9f",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x11840c4",
+          "va": "0x141184ac4",
+          "bytes": "48 8d 93 9f 00 00 00",
+          "instruction": "lea rdx, [rbx + 0x9f]"
+        },
+        "width": 1,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x11840ce",
+          "va": "0x141184ace",
+          "bytes": "41 b8 01 00 00 00",
+          "instruction": "mov r8d, 1"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x11840d7",
+          "va": "0x141184ad7",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x30",
+          "bytes": "01"
+        },
+        "67": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2f8f",
+          "bytes": "01"
+        },
+        "71": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x3263",
+          "bytes": "02"
+        },
+        "430": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x13036",
+          "bytes": "01"
+        },
+        "12048": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x214680",
+          "bytes": "01"
+        }
+      }
+    },
+    {
+      "4cc": "Senv",
+      "schema_name": "Environment",
+      "schema_type": "enum",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "server_prefix",
+      "object_offset": "0xa0",
+      "width": 1,
+      "client_row_offset": null,
+      "server_row_offset": 35,
+      "getter": {
+        "schema_4cc": "Senv",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x1186514",
+          "va": "0x141186f14",
+          "bytes": "81 fb 76 6e 65 53",
+          "instruction": "cmp ebx, 0x53656e76"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x118651a",
+          "va": "0x141186f1a",
+          "bytes": "0f 84 3b 0b 00 00",
+          "instruction": "je 0x141187a5b"
+        },
+        "handler_file_offset": "0x118705b",
+        "object_offset": "0xa0",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x118705b",
+            "va": "0x141187a5b",
+            "bytes": "0f be b7 a0 00 00 00",
+            "instruction": "movsx esi, byte ptr [rdi + 0xa0]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0xa0",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x11840e8",
+          "va": "0x141184ae8",
+          "bytes": "48 8d 93 a0 00 00 00",
+          "instruction": "lea rdx, [rbx + 0xa0]"
+        },
+        "width": 1,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x11840f2",
+          "va": "0x141184af2",
+          "bytes": "41 b8 01 00 00 00",
+          "instruction": "mov r8d, 1"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x11840fb",
+          "va": "0x141184afb",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x31",
+          "bytes": "03"
+        },
+        "67": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2f90",
+          "bytes": "04"
+        },
+        "71": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x3264",
+          "bytes": "03"
+        },
+        "430": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x13037",
+          "bytes": "04"
+        },
+        "12048": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x214681",
+          "bytes": "04"
+        }
+      }
+    },
+    {
+      "4cc": "Sitg",
+      "schema_name": "Is Training Ground",
+      "schema_type": "boolean",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "server_prefix",
+      "object_offset": "0x9b",
+      "width": 1,
+      "client_row_offset": null,
+      "server_row_offset": 36,
+      "getter": {
+        "schema_4cc": "Sitg",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x1186aa2",
+          "va": "0x1411874a2",
+          "bytes": "81 fb 67 74 69 53",
+          "instruction": "cmp ebx, 0x53697467"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x1186aa8",
+          "va": "0x1411874a8",
+          "bytes": "0f 84 b9 0a 00 00",
+          "instruction": "je 0x141187f67"
+        },
+        "handler_file_offset": "0x1187567",
+        "object_offset": "0x9b",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1187567",
+            "va": "0x141187f67",
+            "bytes": "8a 9f 9b 00 00 00",
+            "instruction": "mov bl, byte ptr [rdi + 0x9b]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x9b",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x118410c",
+          "va": "0x141184b0c",
+          "bytes": "48 8d 93 9b 00 00 00",
+          "instruction": "lea rdx, [rbx + 0x9b]"
+        },
+        "width": 1,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x1184116",
+          "va": "0x141184b16",
+          "bytes": "41 b8 01 00 00 00",
+          "instruction": "mov r8d, 1"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x118411f",
+          "va": "0x141184b1f",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x32",
+          "bytes": "40"
+        },
+        "67": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x2f91",
+          "bytes": "40"
+        },
+        "71": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x3265",
+          "bytes": "40"
+        },
+        "430": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x13038",
+          "bytes": "60"
+        },
+        "12048": {
+          "file": "server_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x214682",
+          "bytes": "40"
+        }
+      }
+    },
+    {
+      "4cc": "Scti",
+      "schema_name": "City",
+      "schema_type": "database_record_unique_id",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "common_tail",
+      "object_offset": "0x50",
+      "width": 4,
+      "client_row_offset": 3,
+      "server_row_offset": 146,
+      "getter": {
+        "schema_4cc": "Scti",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x1186b5d",
+          "va": "0x14118755d",
+          "bytes": "81 fb 69 74 63 53",
+          "instruction": "cmp ebx, 0x53637469"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x1186b63",
+          "va": "0x141187563",
+          "bytes": "0f 84 73 0a 00 00",
+          "instruction": "je 0x141187fdc"
+        },
+        "handler_file_offset": "0x11875dc",
+        "object_offset": "0x50",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x11875dc",
+            "va": "0x141187fdc",
+            "bytes": "48 8b 4f 50",
+            "instruction": "mov rcx, qword ptr [rdi + 0x50]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x50",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x1184427",
+          "va": "0x141184e27",
+          "bytes": "48 8d 53 50",
+          "instruction": "lea rdx, [rbx + 0x50]"
+        },
+        "width": 4,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x118442e",
+          "va": "0x141184e2e",
+          "bytes": "41 b8 04 00 00 00",
+          "instruction": "mov r8d, 4"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x1184437",
+          "va": "0x141184e37",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x11",
+          "bytes": "0f 04 00 00"
+        },
+        "67": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0xa03",
+          "bytes": "25 04 00 00"
+        },
+        "71": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0xa9b",
+          "bytes": "33 04 00 00"
+        },
+        "430": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x3fe5",
+          "bytes": "3c 01 00 00"
+        },
+        "12048": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x6fc71",
+          "bytes": "1c 02 00 00"
+        }
+      }
+    },
+    {
+      "4cc": "Sptc",
+      "schema_name": "Pitch Condition",
+      "schema_type": "integer",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "common_tail",
+      "object_offset": "0x98",
+      "width": 2,
+      "client_row_offset": 11,
+      "server_row_offset": 154,
+      "getter": {
+        "schema_4cc": "Sptc",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x11865f7",
+          "va": "0x141186ff7",
+          "bytes": "81 fb 63 74 70 53",
+          "instruction": "cmp ebx, 0x53707463"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x11865fd",
+          "va": "0x141186ffd",
+          "bytes": "0f 84 0a 0b 00 00",
+          "instruction": "je 0x141187b0d"
+        },
+        "handler_file_offset": "0x118710d",
+        "object_offset": "0x98",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x118710d",
+            "va": "0x141187b0d",
+            "bytes": "0f bf b7 98 00 00 00",
+            "instruction": "movsx esi, word ptr [rdi + 0x98]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x98",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x1184465",
+          "va": "0x141184e65",
+          "bytes": "48 8d 93 98 00 00 00",
+          "instruction": "lea rdx, [rbx + 0x98]"
+        },
+        "width": 2,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x118446f",
+          "va": "0x141184e6f",
+          "bytes": "41 b8 02 00 00 00",
+          "instruction": "mov r8d, 2"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x1184478",
+          "va": "0x141184e78",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x19",
+          "bytes": "c8 00"
+        },
+        "67": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0xa0b",
+          "bytes": "c8 00"
+        },
+        "71": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0xaa3",
+          "bytes": "c8 00"
+        },
+        "430": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x3fed",
+          "bytes": "c8 00"
+        },
+        "12048": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x6fc79",
+          "bytes": "c8 00"
+        }
+      }
+    },
+    {
+      "4cc": "Slat",
+      "schema_name": "Latitude",
+      "schema_type": "real",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "common_tail",
+      "object_offset": "0x60",
+      "width": 4,
+      "client_row_offset": 17,
+      "server_row_offset": 160,
+      "getter": {
+        "schema_4cc": "Slat",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x1186330",
+          "va": "0x141186d30",
+          "bytes": "81 fb 74 61 6c 53",
+          "instruction": "cmp ebx, 0x536c6174"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x1186336",
+          "va": "0x141186d36",
+          "bytes": "0f 84 38 0c 00 00",
+          "instruction": "je 0x141187974"
+        },
+        "handler_file_offset": "0x1186f74",
+        "object_offset": "0x60",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1186f74",
+            "va": "0x141187974",
+            "bytes": "f3 0f 10 77 60",
+            "instruction": "movss xmm6, dword ptr [rdi + 0x60]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x60",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x1184495",
+          "va": "0x141184e95",
+          "bytes": "48 8d 53 60",
+          "instruction": "lea rdx, [rbx + 0x60]"
+        },
+        "width": 4,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x118449c",
+          "va": "0x141184e9c",
+          "bytes": "41 b8 04 00 00 00",
+          "instruction": "mov r8d, 4"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x11844a5",
+          "va": "0x141184ea5",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x1f",
+          "bytes": "e4 f0 4a 42"
+        },
+        "67": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0xa11",
+          "bytes": "29 b9 55 42"
+        },
+        "71": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0xaa9",
+          "bytes": "2c da 55 42"
+        },
+        "430": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x3ff3",
+          "bytes": "e5 cf 21 42"
+        },
+        "12048": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x6fc7f",
+          "bytes": "0e e0 40 42"
+        }
+      }
+    },
+    {
+      "4cc": "Slon",
+      "schema_name": "Longitude",
+      "schema_type": "real",
+      "L3": "editor.exe getter + virtual reader",
+      "reader_branch_domain": "common_tail",
+      "object_offset": "0x64",
+      "width": 4,
+      "client_row_offset": 21,
+      "server_row_offset": 164,
+      "getter": {
+        "schema_4cc": "Slon",
+        "getter_compare": {
+          "file": "editor.exe",
+          "file_offset": "0x118633c",
+          "va": "0x141186d3c",
+          "bytes": "81 fb 6e 6f 6c 53",
+          "instruction": "cmp ebx, 0x536c6f6e"
+        },
+        "equality_branch": {
+          "file": "editor.exe",
+          "file_offset": "0x1186342",
+          "va": "0x141186d42",
+          "bytes": "0f 85 13 13 00 00",
+          "instruction": "jne 0x14118805b"
+        },
+        "handler_file_offset": "0x1186348",
+        "object_offset": "0x64",
+        "member_accesses": [
+          {
+            "file": "editor.exe",
+            "file_offset": "0x1186348",
+            "va": "0x141186d48",
+            "bytes": "f3 0f 10 77 64",
+            "instruction": "movss xmm6, dword ptr [rdi + 0x64]"
+          }
+        ]
+      },
+      "reader_transfer": {
+        "object_offset": "0x64",
+        "destination": {
+          "file": "editor.exe",
+          "file_offset": "0x11844b2",
+          "va": "0x141184eb2",
+          "bytes": "48 8d 53 64",
+          "instruction": "lea rdx, [rbx + 0x64]"
+        },
+        "width": 4,
+        "width_instruction": {
+          "file": "editor.exe",
+          "file_offset": "0x11844b9",
+          "va": "0x141184eb9",
+          "bytes": "41 b8 04 00 00 00",
+          "instruction": "mov r8d, 4"
+        },
+        "stream_call": {
+          "file": "editor.exe",
+          "file_offset": "0x11844c2",
+          "va": "0x141184ec2",
+          "bytes": "ff 50 28",
+          "instruction": "call qword ptr [rax + 0x28]"
+        }
+      },
+      "payload_sample_bytes": {
+        "0": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x23",
+          "bytes": "9c 4d eb bf"
+        },
+        "67": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0xa15",
+          "bytes": "46 7e 3d c0"
+        },
+        "71": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0xaad",
+          "bytes": "40 a5 12 c0"
+        },
+        "430": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x3ff7",
+          "bytes": "56 0e 6c c0"
+        },
+        "12048": {
+          "file": "client_db/table_21.dat",
+          "file_offset_domain": "decompressed member",
+          "payload_offset": "0x6fc83",
+          "bytes": "d6 fe 39 41"
+        }
+      }
+    }
+  ],
+  "old_L1_anchor_crosscheck": {
+    "snapshot": "evidence/fm24/reports/dbdat_decode/DB_TABLES_BIG.md",
+    "snapshot_sha256_manifest_verified": "453c0f0be8326dcb966b15632b56194a0982dbdfa9d5e169c9fdb2a2def572e7",
+    "anchors": [
+      {
+        "name": "Anfield",
+        "stadium_row": 67,
+        "client_Scti_rdui": 1061,
+        "table_2_city": "Liverpool",
+        "server_Scpy_candidate": 50109,
+        "expected_row_offsets": {
+          "Scti": 146,
+          "Scpy": 0
+        }
+      },
+      {
+        "name": "Old Trafford",
+        "stadium_row": 71,
+        "client_Scti_rdui": 1075,
+        "table_2_city": "Manchester",
+        "server_Scpy_candidate": 74031,
+        "negative_capacity_fact": "74031 != 74140",
+        "expected_row_offsets": {
+          "Scti": 146,
+          "Scpy": 0
+        }
+      },
+      {
+        "name": "Santiago Bernabéu",
+        "stadium_row": 430,
+        "client_Scti_rdui": 316,
+        "table_2_city": "Madrid",
+        "server_Scpy_candidate": 81044,
+        "expected_row_offsets": {
+          "Scti": 146,
+          "Scpy": 0
+        }
+      },
+      {
+        "name": "Munich Stadium",
+        "stadium_row": 12048,
+        "client_Scti_rdui": 540,
+        "table_2_city": "München",
+        "server_Scpy_candidate": 75000,
+        "server_Sscy_candidate": 54511,
+        "expected_row_offsets": {
+          "Scti": 146,
+          "Scpy": 0,
+          "Sscy": 4
+        }
+      }
+    ],
+    "claim_boundary": "L1 snapshot facts remain L1; the new getter/reader field positions are L3. Old capacity labels remain candidates, including the Old Trafford mismatch."
+  },
+  "five_row_samples": [
+    {
+      "row_index": 0,
+      "anchor": "first-row control",
+      "client_payload_row_offset": "0xe",
+      "server_payload_row_offset": "0xe",
+      "city_rdui": 1039,
+      "row_sequence": 0,
+      "duni_repeated_u32": 600,
+      "Scpy_candidate": 11464,
+      "Sscy_candidate": 11464,
+      "client_row_bytes": {
+        "file": "client_db/table_21.dat",
+        "file_offset_domain": "decompressed member",
+        "payload_offset": "0xe",
+        "bytes": "02 00 00 0f 04 00 00 ff ff ff ff c8 00 01 00 6c 07 e4 f0 4a 42 9c 4d eb bf 00 00 00 00 58 02 00 00 58 02 00 00 00"
+      },
+      "server_row_prefix_0_36": {
+        "file": "server_db/table_21.dat",
+        "file_offset_domain": "decompressed member",
+        "payload_offset": "0xe",
+        "bytes": "c8 2c 00 00 c8 2c 00 00 74 40 00 00 c8 2c 00 00 ff ff ff ff 05 73 2c 00 00 1a 04 a8 02 ff ff ff ff 01 01 03 40"
+      },
+      "field_values": {
+        "Scpy": {
+          "row_offset": 0,
+          "bytes": "c8 2c 00 00"
+        },
+        "Sscy": {
+          "row_offset": 4,
+          "bytes": "c8 2c 00 00"
+        },
+        "Secy": {
+          "row_offset": 8,
+          "bytes": "74 40 00 00"
+        },
+        "Scas": {
+          "row_offset": 12,
+          "bytes": "c8 2c 00 00"
+        },
+        "Sowi": {
+          "row_offset": 16,
+          "bytes": "ff ff ff ff"
+        },
+        "Sdcy": {
+          "row_offset": 20,
+          "bytes": "05"
+        },
+        "Spln": {
+          "row_offset": 25,
+          "bytes": "1a 04"
+        },
+        "Spwd": {
+          "row_offset": 27,
+          "bytes": "a8 02"
+        },
+        "SlIM": {
+          "row_offset": 29,
+          "bytes": "ff ff"
+        },
+        "SwIM": {
+          "row_offset": 31,
+          "bytes": "ff ff"
+        },
+        "Spty": {
+          "row_offset": 33,
+          "bytes": "01"
+        },
+        "Sste": {
+          "row_offset": 34,
+          "bytes": "01"
+        },
+        "Senv": {
+          "row_offset": 35,
+          "bytes": "03"
+        },
+        "Sitg": {
+          "row_offset": 36,
+          "bytes": "40"
+        },
+        "Scti": {
+          "row_offset": 3,
+          "bytes": "0f 04 00 00"
+        },
+        "Sptc": {
+          "row_offset": 11,
+          "bytes": "c8 00"
+        },
+        "Slat": {
+          "row_offset": 17,
+          "bytes": "e4 f0 4a 42"
+        },
+        "Slon": {
+          "row_offset": 21,
+          "bytes": "9c 4d eb bf"
+        }
+      }
+    },
+    {
+      "row_index": 67,
+      "anchor": "Anfield",
+      "client_payload_row_offset": "0xa00",
+      "server_payload_row_offset": "0x2f6d",
+      "city_rdui": 1061,
+      "row_sequence": 67,
+      "duni_repeated_u32": 676,
+      "Scpy_candidate": 50109,
+      "Sscy_candidate": 50109,
+      "client_row_bytes": {
+        "file": "client_db/table_21.dat",
+        "file_offset_domain": "decompressed member",
+        "payload_offset": "0xa00",
+        "bytes": "82 00 00 25 04 00 00 2b 00 00 00 c8 00 01 00 6c 07 29 b9 55 42 46 7e 3d c0 43 00 00 00 a4 02 00 00 a4 02 00 00 00"
+      },
+      "server_row_prefix_0_36": {
+        "file": "server_db/table_21.dat",
+        "file_offset_domain": "decompressed member",
+        "payload_offset": "0x2f6d",
+        "bytes": "bd c3 00 00 bd c3 00 00 5c ef 00 00 bd c3 00 00 cc 01 00 00 05 bd c3 00 00 f2 03 a8 02 ff ff ff ff 08 01 04 40"
+      },
+      "field_values": {
+        "Scpy": {
+          "row_offset": 0,
+          "bytes": "bd c3 00 00"
+        },
+        "Sscy": {
+          "row_offset": 4,
+          "bytes": "bd c3 00 00"
+        },
+        "Secy": {
+          "row_offset": 8,
+          "bytes": "5c ef 00 00"
+        },
+        "Scas": {
+          "row_offset": 12,
+          "bytes": "bd c3 00 00"
+        },
+        "Sowi": {
+          "row_offset": 16,
+          "bytes": "cc 01 00 00"
+        },
+        "Sdcy": {
+          "row_offset": 20,
+          "bytes": "05"
+        },
+        "Spln": {
+          "row_offset": 25,
+          "bytes": "f2 03"
+        },
+        "Spwd": {
+          "row_offset": 27,
+          "bytes": "a8 02"
+        },
+        "SlIM": {
+          "row_offset": 29,
+          "bytes": "ff ff"
+        },
+        "SwIM": {
+          "row_offset": 31,
+          "bytes": "ff ff"
+        },
+        "Spty": {
+          "row_offset": 33,
+          "bytes": "08"
+        },
+        "Sste": {
+          "row_offset": 34,
+          "bytes": "01"
+        },
+        "Senv": {
+          "row_offset": 35,
+          "bytes": "04"
+        },
+        "Sitg": {
+          "row_offset": 36,
+          "bytes": "40"
+        },
+        "Scti": {
+          "row_offset": 3,
+          "bytes": "25 04 00 00"
+        },
+        "Sptc": {
+          "row_offset": 11,
+          "bytes": "c8 00"
+        },
+        "Slat": {
+          "row_offset": 17,
+          "bytes": "29 b9 55 42"
+        },
+        "Slon": {
+          "row_offset": 21,
+          "bytes": "46 7e 3d c0"
+        }
+      }
+    },
+    {
+      "row_index": 71,
+      "anchor": "Old Trafford",
+      "client_payload_row_offset": "0xa98",
+      "server_payload_row_offset": "0x3241",
+      "city_rdui": 1075,
+      "row_sequence": 71,
+      "duni_repeated_u32": 680,
+      "Scpy_candidate": 74031,
+      "Sscy_candidate": 74031,
+      "client_row_bytes": {
+        "file": "client_db/table_21.dat",
+        "file_offset_domain": "decompressed member",
+        "payload_offset": "0xa98",
+        "bytes": "82 00 00 33 04 00 00 24 1e 00 00 c8 00 01 00 6c 07 2c da 55 42 40 a5 12 c0 47 00 00 00 a8 02 00 00 a8 02 00 00 00"
+      },
+      "server_row_prefix_0_36": {
+        "file": "server_db/table_21.dat",
+        "file_offset_domain": "decompressed member",
+        "payload_offset": "0x3241",
+        "bytes": "2f 21 01 00 2f 21 01 00 35 74 01 00 2f 21 01 00 d0 01 00 00 05 2f 21 01 00 1a 04 a8 02 ff ff ff ff 08 02 03 40"
+      },
+      "field_values": {
+        "Scpy": {
+          "row_offset": 0,
+          "bytes": "2f 21 01 00"
+        },
+        "Sscy": {
+          "row_offset": 4,
+          "bytes": "2f 21 01 00"
+        },
+        "Secy": {
+          "row_offset": 8,
+          "bytes": "35 74 01 00"
+        },
+        "Scas": {
+          "row_offset": 12,
+          "bytes": "2f 21 01 00"
+        },
+        "Sowi": {
+          "row_offset": 16,
+          "bytes": "d0 01 00 00"
+        },
+        "Sdcy": {
+          "row_offset": 20,
+          "bytes": "05"
+        },
+        "Spln": {
+          "row_offset": 25,
+          "bytes": "1a 04"
+        },
+        "Spwd": {
+          "row_offset": 27,
+          "bytes": "a8 02"
+        },
+        "SlIM": {
+          "row_offset": 29,
+          "bytes": "ff ff"
+        },
+        "SwIM": {
+          "row_offset": 31,
+          "bytes": "ff ff"
+        },
+        "Spty": {
+          "row_offset": 33,
+          "bytes": "08"
+        },
+        "Sste": {
+          "row_offset": 34,
+          "bytes": "02"
+        },
+        "Senv": {
+          "row_offset": 35,
+          "bytes": "03"
+        },
+        "Sitg": {
+          "row_offset": 36,
+          "bytes": "40"
+        },
+        "Scti": {
+          "row_offset": 3,
+          "bytes": "33 04 00 00"
+        },
+        "Sptc": {
+          "row_offset": 11,
+          "bytes": "c8 00"
+        },
+        "Slat": {
+          "row_offset": 17,
+          "bytes": "2c da 55 42"
+        },
+        "Slon": {
+          "row_offset": 21,
+          "bytes": "40 a5 12 c0"
+        }
+      }
+    },
+    {
+      "row_index": 430,
+      "anchor": "Santiago Bernabéu",
+      "client_payload_row_offset": "0x3fe2",
+      "server_payload_row_offset": "0x13014",
+      "city_rdui": 316,
+      "row_sequence": 430,
+      "duni_repeated_u32": 1056,
+      "Scpy_candidate": 81044,
+      "Sscy_candidate": 81044,
+      "client_row_bytes": {
+        "file": "client_db/table_21.dat",
+        "file_offset_domain": "decompressed member",
+        "payload_offset": "0x3fe2",
+        "bytes": "42 00 00 3c 01 00 00 56 79 00 00 c8 00 01 00 6c 07 e5 cf 21 42 56 0e 6c c0 ae 01 00 00 20 04 00 00 20 04 00 00 00"
+      },
+      "server_row_prefix_0_36": {
+        "file": "server_db/table_21.dat",
+        "file_offset_domain": "decompressed member",
+        "payload_offset": "0x13014",
+        "bytes": "94 3c 01 00 94 3c 01 00 18 73 01 00 94 3c 01 00 11 05 00 00 05 94 3c 01 00 1a 04 a8 02 ff ff ff ff 01 01 04 60"
+      },
+      "field_values": {
+        "Scpy": {
+          "row_offset": 0,
+          "bytes": "94 3c 01 00"
+        },
+        "Sscy": {
+          "row_offset": 4,
+          "bytes": "94 3c 01 00"
+        },
+        "Secy": {
+          "row_offset": 8,
+          "bytes": "18 73 01 00"
+        },
+        "Scas": {
+          "row_offset": 12,
+          "bytes": "94 3c 01 00"
+        },
+        "Sowi": {
+          "row_offset": 16,
+          "bytes": "11 05 00 00"
+        },
+        "Sdcy": {
+          "row_offset": 20,
+          "bytes": "05"
+        },
+        "Spln": {
+          "row_offset": 25,
+          "bytes": "1a 04"
+        },
+        "Spwd": {
+          "row_offset": 27,
+          "bytes": "a8 02"
+        },
+        "SlIM": {
+          "row_offset": 29,
+          "bytes": "ff ff"
+        },
+        "SwIM": {
+          "row_offset": 31,
+          "bytes": "ff ff"
+        },
+        "Spty": {
+          "row_offset": 33,
+          "bytes": "01"
+        },
+        "Sste": {
+          "row_offset": 34,
+          "bytes": "01"
+        },
+        "Senv": {
+          "row_offset": 35,
+          "bytes": "04"
+        },
+        "Sitg": {
+          "row_offset": 36,
+          "bytes": "60"
+        },
+        "Scti": {
+          "row_offset": 3,
+          "bytes": "3c 01 00 00"
+        },
+        "Sptc": {
+          "row_offset": 11,
+          "bytes": "c8 00"
+        },
+        "Slat": {
+          "row_offset": 17,
+          "bytes": "e5 cf 21 42"
+        },
+        "Slon": {
+          "row_offset": 21,
+          "bytes": "56 0e 6c c0"
+        }
+      }
+    },
+    {
+      "row_index": 12048,
+      "anchor": "Munich Stadium",
+      "client_payload_row_offset": "0x6fc6e",
+      "server_payload_row_offset": "0x21465e",
+      "city_rdui": 540,
+      "row_sequence": 12048,
+      "duni_repeated_u32": 8700726,
+      "Scpy_candidate": 75000,
+      "Sscy_candidate": 54511,
+      "client_row_bytes": {
+        "file": "client_db/table_21.dat",
+        "file_offset_domain": "decompressed member",
+        "payload_offset": "0x6fc6e",
+        "bytes": "02 00 00 1c 02 00 00 ff ff ff ff c8 00 01 00 6c 07 0e e0 40 42 d6 fe 39 41 10 2f 00 00 36 c3 84 00 36 c3 84 00 00"
+      },
+      "server_row_prefix_0_36": {
+        "file": "server_db/table_21.dat",
+        "file_offset_domain": "decompressed member",
+        "payload_offset": "0x21465e",
+        "bytes": "f8 24 01 00 ef d4 00 00 36 6e 01 00 e0 0e 01 00 6f 02 00 00 05 f8 24 01 00 1a 04 a8 02 1a 04 a8 02 01 01 04 40"
+      },
+      "field_values": {
+        "Scpy": {
+          "row_offset": 0,
+          "bytes": "f8 24 01 00"
+        },
+        "Sscy": {
+          "row_offset": 4,
+          "bytes": "ef d4 00 00"
+        },
+        "Secy": {
+          "row_offset": 8,
+          "bytes": "36 6e 01 00"
+        },
+        "Scas": {
+          "row_offset": 12,
+          "bytes": "e0 0e 01 00"
+        },
+        "Sowi": {
+          "row_offset": 16,
+          "bytes": "6f 02 00 00"
+        },
+        "Sdcy": {
+          "row_offset": 20,
+          "bytes": "05"
+        },
+        "Spln": {
+          "row_offset": 25,
+          "bytes": "1a 04"
+        },
+        "Spwd": {
+          "row_offset": 27,
+          "bytes": "a8 02"
+        },
+        "SlIM": {
+          "row_offset": 29,
+          "bytes": "1a 04"
+        },
+        "SwIM": {
+          "row_offset": 31,
+          "bytes": "a8 02"
+        },
+        "Spty": {
+          "row_offset": 33,
+          "bytes": "01"
+        },
+        "Sste": {
+          "row_offset": 34,
+          "bytes": "01"
+        },
+        "Senv": {
+          "row_offset": 35,
+          "bytes": "04"
+        },
+        "Sitg": {
+          "row_offset": 36,
+          "bytes": "40"
+        },
+        "Scti": {
+          "row_offset": 3,
+          "bytes": "1c 02 00 00"
+        },
+        "Sptc": {
+          "row_offset": 11,
+          "bytes": "c8 00"
+        },
+        "Slat": {
+          "row_offset": 17,
+          "bytes": "0e e0 40 42"
+        },
+        "Slon": {
+          "row_offset": 21,
+          "bytes": "d6 fe 39 41"
+        }
+      }
+    }
+  ],
+  "negative_controls": {
+    "client_stride_181_rejected": true,
+    "Scti_shifted_by_one_byte_rejected": true,
+    "server_suffix_start_142_rejected": true,
+    "eax_only_getter_scan_misses_Scpy": true,
+    "77_widths_are_not_bounded_reader_width_sites": true
+  },
+  "limitations": [
+    "Client offsets +25..36 (row ordinal at +25, historically mislabeled rdui by the L1 table; DUNI at +29) are revalidated against all rows as L1 structure/identity. The stadium slot-19 body returns after the coordinate transfer at client row+24, so these identity slots are not upgraded to L3.Only the first 37 bytes of the 143-byte server-only prefix receive field mappings here; later server-only fields/list payloads remain opaque. Spln/Spwd use conditional fallback getter paths and are excluded from the 16-field L3 acceptance count. The server row's full 181-byte stride and 143-byte prefix boundary are L1 framing, not a claim that 77 instruction widths sum to 181.The Old Trafford capacity value 74,031 differs from the independent 74,140 reference and remains an explicit negative; Scpy/Sscy schema names have L3 slot evidence, while their semantic capacity validation remains candidate/L2 with the old caveat.",
+    "No game/editor/IDA execution or L4 validation; all external archives are read-only and all generated files remain in this inbox directory."
+  ]
+}

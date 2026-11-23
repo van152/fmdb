@@ -51,7 +51,7 @@ def verify() -> dict:
     e20 = read(ROOT / "reports/t01f_comp_row_offsets.json")
     schema = read(ROOT / "scratch/t05/schema_inventory.json")
     fields = {x.get("code"): x for x in schema.get("entities", {}).get("comp", {}).get("fields", [])}
-    with open(r"<OLD_REPO>\input\editor.exe", "rb") as f:
+    with open(r"D:\tmp2b\fm24\input\editor.exe", "rb") as f:
         exe = f.read()
     layout = e20.get("row_codec", {}).get("cursor_layout", [])
     layout_by_step = {x.get("step"): x for x in layout}

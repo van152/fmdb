@@ -17,7 +17,7 @@
    - 只收 L1-L3;候选证据标 `grade:"cand"` 单列一节,**不许混进正式台账**。
 2. **全量回归**(一项都别漏,失败必须原文保留):
    - 六大洲 0..5(L2)、England=139 / China PR=55(comp 锚)、parent row 352;
-   - city 56,293 / nation 251 / weather 334 / language 126 / lcrg 2,488 / injury 115 / club 84,259 / comp 7,047 / award 3,545 / stgn 278 / team 84,507 / derby 1,567 基数回归(数据源 `FM24_DB_DIR=<WORKSPACE>/scratch/data`,已设);
+   - city 56,293 / nation 251 / weather 334 / language 126 / lcrg 2,488 / injury 115 / club 84,259 / comp 7,047 / award 3,545 / stgn 278 / team 84,507 / derby 1,567 基数回归(数据源 `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`,已设);
    - E51 city 坐标 100% 复现;E27 weather 334 行封口(payload 43,345B,行跨度=112+name_len);
    - t13 的 4 个 A 锚(12→award AHp1、33→club CMWE、45/48→person gols)指令复算;
    - t14 的 8 个 RTTI 交叉实体(0/2/8/18/19/23/27/56)。

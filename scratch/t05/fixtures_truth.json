@@ -1,0 +1,370 @@
+{
+ "generated_by": "scripts/t05_fixtures_truth.py",
+ "note": "所有锚点均由指挥官独立逐字节验证;对齐器必须复现这些偏移与值。",
+ "fixtures": [
+  {
+   "archive": "client",
+   "table_id": 0,
+   "name": "award",
+   "count": 3545,
+   "payload_len": 272987,
+   "stride": 77,
+   "header": 14,
+   "closure": "14 + 3545*77 + 8 = 272987",
+   "anchors": {
+    "rdui": {
+     "offset": 64,
+     "width": 4
+    },
+    "duni_lo": {
+     "offset": 68,
+     "width": 4
+    },
+    "duni_hi": {
+     "offset": 72,
+     "width": 4
+    }
+   },
+   "identity": {
+    "rdui_equals_row_index": "3545/3545",
+    "duni_repeated": "3545/3545"
+   },
+   "extra": {
+    "marker_offset": 76,
+    "marker_expect": 0
+   },
+   "samples": [
+    {
+     "row": 0,
+     "hex": "00000101ff7f0000ff7f000000000114002506a600e607ffffffffffffffffffffffff02000000c8c8ffffffff0600001e02030102000000000000012001e60700000000069001000690010000",
+     "rdui": 0,
+     "duni_lo": 102406,
+     "duni_hi": 102406,
+     "marker": 0
+    },
+    {
+     "row": 1,
+     "hex": "00000701ff7fc96eff7f0000000001140025054301e007ffffffffffffffffffffffff01000000c8c8ffffffff0600000a000301020000000000000001006c0701000000079001000790010000",
+     "rdui": 1,
+     "duni_lo": 102407,
+     "duni_hi": 102407,
+     "marker": 0
+    },
+    {
+     "row": 2,
+     "hex": "00000101ff7fc96eff7f0000000001110025055601e107ffffffffffffffffffffffff02000000aaaaffffffff06000700000301000000000000000101006c0702000000089001000890010000",
+     "rdui": 2,
+     "duni_lo": 102408,
+     "duni_hi": 102408,
+     "marker": 0
+    }
+   ],
+   "named_rows_check": []
+  },
+  {
+   "archive": "client",
+   "table_id": 2,
+   "name": "city",
+   "count": 56293,
+   "payload_len": 2420621,
+   "stride": 43,
+   "header": 14,
+   "closure": "14 + 56293*43 + 8 = 2420621",
+   "anchors": {
+    "Clat": {
+     "offset": 1,
+     "width": 4
+    },
+    "Clon": {
+     "offset": 5,
+     "width": 4
+    },
+    "Cnti": {
+     "offset": 10,
+     "width": 1
+    },
+    "rdui": {
+     "offset": 30,
+     "width": 4
+    },
+    "duni_lo": {
+     "offset": 34,
+     "width": 4
+    },
+    "duni_hi": {
+     "offset": 38,
+     "width": 4
+    }
+   },
+   "identity": {
+    "rdui_equals_row_index": "56293/56293",
+    "duni_repeated": "56293/56293"
+   },
+   "extra": {
+    "named_rows": {
+     "Liverpool": [
+      1061,
+      {
+       "rdui": 1061,
+       "Cnti": 139,
+       "duni_lo": 100047
+      }
+     ],
+     "Manchester": [
+      1075,
+      {
+       "rdui": 1075,
+       "Cnti": 139,
+       "duni_lo": 100062
+      }
+     ],
+     "Madrid": [
+      316,
+      {
+       "rdui": 316,
+       "Cnti": 170,
+       "duni_lo": 341
+      }
+     ],
+     "München": [
+      540,
+      {
+       "rdui": 540,
+       "Cnti": 145,
+       "duni_lo": 592
+      }
+     ]
+    }
+   },
+   "samples": [
+    {
+     "row": 0,
+     "hex": "00a5374c4246ea6d401183000000010000000d000806000000840300000000000000050000000500000000",
+     "Clat": 1112291237,
+     "Clon": 1080945222,
+     "Cnti": 131,
+     "rdui": 0,
+     "duni_lo": 5,
+     "duni_hi": 5
+    },
+    {
+     "row": 1,
+     "hex": "005fd64c427c614e4012830000000000000006000806000000850300000001000000060000000600000000",
+     "Clat": 1112331871,
+     "Clon": 1078878588,
+     "Cnti": 131,
+     "rdui": 1,
+     "duni_lo": 6,
+     "duni_hi": 6
+    },
+    {
+     "row": 2,
+     "hex": "00d1fb4a42dd084e400e8300000001000000830007090000008b0300000002000000070000000700000000",
+     "Clat": 1112210385,
+     "Clon": 1078855901,
+     "Cnti": 131,
+     "rdui": 2,
+     "duni_lo": 7,
+     "duni_hi": 7
+    }
+   ],
+   "named_rows_check": [
+    {
+     "label": "Liverpool",
+     "row": 1061,
+     "expected": {
+      "rdui": 1061,
+      "Cnti": 139,
+      "duni_lo": 100047
+     },
+     "actual": {
+      "rdui": 1061,
+      "Cnti": 139,
+      "duni_lo": 100047
+     },
+     "match": true
+    },
+    {
+     "label": "Manchester",
+     "row": 1075,
+     "expected": {
+      "rdui": 1075,
+      "Cnti": 139,
+      "duni_lo": 100062
+     },
+     "actual": {
+      "rdui": 1075,
+      "Cnti": 139,
+      "duni_lo": 100062
+     },
+     "match": true
+    },
+    {
+     "label": "Madrid",
+     "row": 316,
+     "expected": {
+      "rdui": 316,
+      "Cnti": 170,
+      "duni_lo": 341
+     },
+     "actual": {
+      "rdui": 316,
+      "Cnti": 170,
+      "duni_lo": 341
+     },
+     "match": true
+    },
+    {
+     "label": "München",
+     "row": 540,
+     "expected": {
+      "rdui": 540,
+      "Cnti": 145,
+      "duni_lo": 592
+     },
+     "actual": {
+      "rdui": 540,
+      "Cnti": 145,
+      "duni_lo": 592
+     },
+     "match": true
+    }
+   ]
+  },
+  {
+   "archive": "client",
+   "table_id": 21,
+   "name": "stadium",
+   "count": 48413,
+   "payload_len": 1839716,
+   "stride": 38,
+   "header": 14,
+   "closure": "14 + 48413*38 + 8 = 1839716",
+   "anchors": {
+    "Scti": {
+     "offset": 3,
+     "width": 4
+    },
+    "Slat": {
+     "offset": 17,
+     "width": 4
+    },
+    "Slon": {
+     "offset": 21,
+     "width": 4
+    },
+    "rdui": {
+     "offset": 25,
+     "width": 4
+    },
+    "duni_lo": {
+     "offset": 29,
+     "width": 4
+    },
+    "duni_hi": {
+     "offset": 33,
+     "width": 4
+    }
+   },
+   "identity": {
+    "rdui_equals_row_index": "48413/48413",
+    "duni_repeated": "48413/48413"
+   },
+   "extra": {
+    "note": "client 38B;server 181B 的前 38B 与之逐字节相同"
+   },
+   "samples": [
+    {
+     "row": 0,
+     "hex": "0200000f040000ffffffffc80001006c07e4f04a429c4debbf00000000580200005802000000",
+     "Scti": 1039,
+     "Slat": 1112207588,
+     "Slon": 3219869084,
+     "rdui": 0,
+     "duni_lo": 600,
+     "duni_hi": 600
+    },
+    {
+     "row": 1,
+     "hex": "000000a4050000ffffffff810001006c073a885542637a15c001000000590200005902000000",
+     "Scti": 1444,
+     "Slat": 1112901690,
+     "Slon": 3222633059,
+     "rdui": 1,
+     "duni_lo": 601,
+     "duni_hi": 601
+    },
+    {
+     "row": 2,
+     "hex": "0200001004000075000000c80001006c070000000000000000020000005a0200005a02000000",
+     "Scti": 1040,
+     "Slat": 0,
+     "Slon": 0,
+     "rdui": 2,
+     "duni_lo": 602,
+     "duni_hi": 602
+    }
+   ],
+   "named_rows_check": []
+  },
+  {
+   "archive": "client",
+   "table_id": 6,
+   "name": "injury",
+   "count": 115,
+   "payload_len": 1862,
+   "stride": 16,
+   "header": 14,
+   "closure": "14 + 115*16 + 8 = 1862",
+   "anchors": {
+    "rdui": {
+     "offset": 3,
+     "width": 4
+    },
+    "duni_lo": {
+     "offset": 7,
+     "width": 4
+    },
+    "duni_hi": {
+     "offset": 11,
+     "width": 4
+    }
+   },
+   "identity": {
+    "rdui_equals_row_index": "115/115",
+    "duni_repeated": "115/115"
+   },
+   "extra": {
+    "marker_offset": 15,
+    "marker_expect": 0
+   },
+   "samples": [
+    {
+     "row": 0,
+     "hex": "0c300000000000010000000100000000",
+     "rdui": 0,
+     "duni_lo": 1,
+     "duni_hi": 1,
+     "marker": 0
+    },
+    {
+     "row": 1,
+     "hex": "0c300001000000020000000200000000",
+     "rdui": 1,
+     "duni_lo": 2,
+     "duni_hi": 2,
+     "marker": 0
+    },
+    {
+     "row": 2,
+     "hex": "0c300002000000030000000300000000",
+     "rdui": 2,
+     "duni_lo": 3,
+     "duni_hi": 3,
+     "marker": 0
+    }
+   ],
+   "named_rows_check": []
+  }
+ ]
+}

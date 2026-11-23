@@ -24,5 +24,5 @@ Static instruction checks confirm recorded bytes and disassembly at cited addres
 ## Inputs and Reproduction
 
 - Local decoded payload from `FM24_DB_DIR` via `scripts/fm24_dump.py`; read-only `editor.exe`; frozen `scratch/t01/inbox/t01h/output.json` trace.
-- Run `py -V:3.12 -I scripts/t21_club_cursor.py --help`, `--selftest`, then `FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I scripts/t21_club_cursor.py`.
+- Run `py -V:3.12 -I scripts/t21_club_cursor.py --help`, `--selftest`, then `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I scripts/t21_club_cursor.py`.
 - No game, editor, IDA or network access is used.

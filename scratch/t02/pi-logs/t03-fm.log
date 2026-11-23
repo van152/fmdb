@@ -1,0 +1,10 @@
+=== attempt 1/2 Wed Nov 18 17:36:22     2026 provider=openai-codex model=gpt-6-luna ===
+Warning: No project session found with id 't03-fm-openai-codex'; creating a new session with that id.
+已交付至 `scratch/t02/field_mapper/out/`：
+
+- `field_mapper.py`
+- `fixtures_result.json`
+- `REPORT.md`
+
+复跑结果：平均吻合率 **39.74%**，达到 80% 的夹具 **2/7**；只有 count-loop 夹具通过，且仅闭合首轮前缀。两个通过项是同一 NATION type 的重复夹具。**5/7 验收线未达到**，因此 `--selfcheck` 按约定返回 **1**；未将未闭合路径标为成功。
+=== DONE(heuristic: 3 substantial files) t03-fm attempt=1 rc=0 Wed Nov 18 18:05:40     2026 ===

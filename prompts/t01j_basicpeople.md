@@ -1,7 +1,7 @@
 # t01-j 任务书:basic_people_db.dat 侦察 —— person 家族的行仓库
 
 > 交给 pi gpt-6-luna max。t01i 证明 factory type-id ≠ archive 表 ID 的天真假设:client/server 主 archive 都无 table_1,而 BASIC_PERSON(factory type 1)reader 存在。指挥官补充的独立事实:**server_db.dat 59 表 ID(0..73 缺 {1,4,11,13,14,15,16,17,20,28,40,53,54,55} 中的 11 个 null-return + {1,4,14,44})与工厂 74 项跳表几乎互补吻合** → BASIC_PERSON 行极可能在独立文件 `basic_people_db.dat`。
-> 规则不变:只读输入、不启动游戏/编辑器/IDA、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
+> 规则不变:只读输入、不启动游戏本体/FM 编辑器(IDA 静态分析允许)、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
 
 ## 已知锚点
 

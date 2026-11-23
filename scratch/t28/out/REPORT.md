@@ -4,7 +4,7 @@
 
 ## 路径、分支与坐标
 
-只读 `<OLD_REPO>/input/editor.exe`：SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`；NATION vtable `0x1418893b8`，slot 19 `file+0x103fac0 / VA 0x1410404c0`，slot 2 `file+0x1041f30`。`master.json` 与二进制来源快照均对照 `evidence/MANIFEST.json`。client table_10 member SHA-256 `7e9d740b9ee6900965d8616a136ea4bc54a0f7207f9727eac72badfb727f6c34`。
+只读 `D:/tmp2b/fm24/input/editor.exe`：SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`；NATION vtable `0x1418893b8`，slot 19 `file+0x103fac0 / VA 0x1410404c0`，slot 2 `file+0x1041f30`。`master.json` 与二进制来源快照均对照 `evidence/MANIFEST.json`。client table_10 member SHA-256 `7e9d740b9ee6900965d8616a136ea4bc54a0f7207f9727eac72badfb727f6c34`。
 
 - CFG 由 PE runtime-function 边界构建。主 reader 有 992 条可达指令、154 个基本块；另有 item、date、identity 和内存辅助函数。证据分片共 1,912 条指令、184 个条件（`wire_data` 10、`runtime_external` 105、`dead` 10、`unresolved` 59）。每个条件给出 flags producer（可追时）、两个后继及选中路径的命中数。`dead` 只标记该条件的不可行 taken 边：例如 XOR 后 `jne`，或 NULL-stream 跳过读却立即解引用 NULL（`0x39dd7bc`、`0x3d8832f`、`0x3d88373`）。未走的分支不因此判死。分片标注中 `file_offset`、`VA` 和引用键都使用十进制整数。
 - loader 在 `0xf2ba0e` 先读一字节 selector；`0xf2ba38` 独立传入 `R12B`。reader 的 `0x103fae6`、`0x10409d3` 测同一个外部栈参数，不是行内 selector。以 `arg8=0` 解释 client：由入口跳到公共前缀，D 后跳过 43B 额外标量块。仅强制走 D 后额外块的对照在 row 0 就读到假 identity：`@0x6d = (83, 21574, 17920)`，而不是 `(0,5,5)`。这不是对 `arg8!=0` 入口路径的重放，也不将该路径归到 client 或 server。

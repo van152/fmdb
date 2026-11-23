@@ -1,0 +1,9 @@
+Warning: No project session found with id 't01k-luna'; creating a new session with that id.
+已完成 t01k，按任务书的**负结果验收线**交付：目前仅确认 `Ptyp@row+1` 为固定 L3 行偏移；class-4 的 `cmp al,4` 前存在全局状态控制的 4/8B 读取，其他分支及 helper 游标也未闭合，因此未将条件偏移冒充为 ≥10 个确定字段。全量行走查、5 类样本及静态字节复验均通过。
+
+交付文件：
+- `scratch/t01/inbox/t01k/output.json`
+- `scratch/t01/inbox/t01k/REPORT.md`
+- `scratch/t01/inbox/t01k/verify.py`
+
+复验命令：`py -V:3.12 -I -B scratch/t01/inbox/t01k/verify.py --selftest` — PASS。

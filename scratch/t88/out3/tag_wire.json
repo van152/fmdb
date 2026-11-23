@@ -1,0 +1,37 @@
+{
+ "meta": {
+  "task": "t88-fix9",
+  "generated": "2026-11-22",
+  "purpose": "per-rec_type tag 序列 -> wire 偏移映射(纯数据侧, 不读 exe)",
+  "frozen_inputs": {
+   "E137": "4CC 在两 exe 中零存在; club 记录族读取 = (rec_type, tag 序号) 位置路由",
+   "recget_tagmap": "scratch/t88/out3/recget_tagmap.json (12 组静态 tag->in-memory off)",
+   "columns_E132": "u32@0=club-uid, u32@5=person-uid, u8@4=rec_type, identity uid=行自键",
+   "row_frame": "scratch/t88/out2/row_frame.json: pre 37B + [u32 len][utf8 name]@37 + tail 26B + identity 13B"
+  },
+  "wire_model": {
+   "row": "pre[0..36] (37B) | [u32 namelen][utf8 name] @37 | body (26B, 固定距行尾 39B) | identity (13B, 行尾)",
+   "rowlen": "80 + namelen",
+   "body_at": "41 + namelen",
+   "identity_at": "row_end - 13"
+  },
+  "slots": {
+   "prefix_u32": [0, 9, 13, 17, 21, 25, 29, 33],
+   "prefix_u8": [4],
+   "body_u16": [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24],
+   "identity": "u32 ordinal @+0, u32 uid @+4, u32 uid @+8, u8 @+12"
+  },
+  "grades": {
+   "L2": "数据侧自证(跨 rec_type 空/非空模式匹配 + 值域 + 交叉不矛盾)",
+   "held": "无证据或反例"
+  }
+ },
+ "status": "skeleton",
+ "per_rec_type": {},
+ "tag_to_slot": {},
+ "codes": [],
+ "open": [
+  "tag->slot 全量匹配 (ordinal + null-pattern) 见 tag_layout_*.json",
+  "117 码装配见 slots.json (本棒更新)"
+ ]
+}

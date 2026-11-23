@@ -18,7 +18,7 @@ Server 目录项 offset `24307967`，首 Zstd 帧 offset `24308001`（与 t29 `p
 
 ## PE 静态链与五类分支
 
-二进制仅只读 `<OLD_REPO>/input/editor.exe`（SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`）。`evidence/fm24/reports/qa/IDA_PROVENANCE.md` 及 `evidence/fm24/reports/editor_schema/master.json` 已比对 `evidence/MANIFEST.json`，后者 SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`。下文地址除标注 VA 外均为 **PE file offset**；对应原指令、bytes 与 VA 见 `instructions.part*.json`。
+二进制仅只读 `D:/tmp2b/fm24/input/editor.exe`（SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`）。`evidence/fm24/reports/qa/IDA_PROVENANCE.md` 及 `evidence/fm24/reports/editor_schema/master.json` 已比对 `evidence/MANIFEST.json`，后者 SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`。下文地址除标注 VA 外均为 **PE file offset**；对应原指令、bytes 与 VA 见 `instructions.part*.json`。
 
 1. Factory `0xf48b30` 通过 `0xf49d38` rel32 表第 66 项进 `0xf49b18`；`0xf49b3c → 0xf49b43` 写 vptr VA `0x141884e08`。COL `0x1885660` → TD `.?AVSTARTING_CLUB_TRANSFER_PREFERENCE@db@@`。
 2. Slot 19 VA `0x141530120` / offset `0x152f720` 是 leaf thunk；真 reader extent `0x43583b0..0x435847a`（VA `0x1444c39b0..0x1444c3a7a`，末地址 exclusive），69 条可达指令、7 块；实际 stream `vtable+0x28` 读宽依次为 `4,4,1,1,1`。成功处 `0x4358475 → 0xfae340`（leaf thunk）→ identity tail extent `0x3c600f0..0x3c6016e`（VA `0x143dcb6f0..0x143dcb76e`），43 条可达指令、11 块；`0x3c60119` 读 12 B。两个 extent 由 PE `RUNTIME_FUNCTION` 定界，以 `ReaderCFG` 建图；唯一外部 CFG 边是已追完的 tail jump。
@@ -51,4 +51,4 @@ Server 目录项 offset `24307967`，首 Zstd 帧 offset `24308001`（与 t29 `p
 
 ## 复验
 
-使用本地镜像 `FM24_DB_DIR=<WORKSPACE>/scratch/data`，`py -V:3.12 -I -B`。Builder、独立 `verify.py`、两者的 `--help` / `--selftest` 均 PASS；独立 verifier 不 import builder 或 `ReaderCFG`，从 PE 重建两段可达图，从归档复算每行路径、边计数、反例、t29 差分和实际 nation 域。退出码 0=成功、1=检查失败、2=用法或致命错误（非法参数实测 2）。`scripts/t01_anchors.py` **7/7 PASS**。没有启动游戏、编辑器或 IDA，没有联网或访问 Z:。
+使用本地镜像 `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`，`py -V:3.12 -I -B`。Builder、独立 `verify.py`、两者的 `--help` / `--selftest` 均 PASS；独立 verifier 不 import builder 或 `ReaderCFG`，从 PE 重建两段可达图，从归档复算每行路径、边计数、反例、t29 差分和实际 nation 域。退出码 0=成功、1=检查失败、2=用法或致命错误（非法参数实测 2）。`scripts/t01_anchors.py` **7/7 PASS**。没有启动游戏、编辑器或 IDA，没有联网或访问 Z:。

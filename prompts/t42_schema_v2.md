@@ -3,7 +3,7 @@
 你是受指挥官委派的子代理。t40 已交付首份 consolidated schema(44 L3,6 表), commander 接受(E79)但记两处待补。本任务升级到 **v2**,闭合缺口。**只增量,不重写已接受字段**。
 
 ## 必读
-- <WORKSPACE>\AGENTS.md(硬约束;negative 原样保留不删改)
+- D:\tmp2b\fm24-db\AGENTS.md(硬约束;negative 原样保留不删改)
 - reports/club_nation_subtable_schema.json + .md(**t40 你自己的 v1 产物,在此基础上增量**)
 - scratch/t40/out/consolidate.py + verify.py(v1 builder/verifier,复用扩展)
 - scratch/t39/out/fields_tchl.json + cursor_tchl.json + REPORT.md(**t39 Tchl 已接受 E78,7 L3+2 held**)
@@ -25,4 +25,4 @@
 ## 交付
 - reports/club_nation_subtable_schema.json + .md(v2,7 表 51 L3)
 - scratch/t42/out/consolidate_v2.py(--help/--selftest:7 表/51 L3/15 held/4 neg/L4=0、master.json SHA 在、v1 44 字段 verbatim 保留校验)、verify.py(独立不 import builder)、REPORT.md、DONE.md
-- Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;完成跑 verify + t01_anchors.py(7/7)。
+- Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;完成跑 verify + t01_anchors.py(7/7)。

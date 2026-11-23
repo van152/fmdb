@@ -13,8 +13,8 @@ def check(label, cond, detail=""):
     fails += not cond
     print(f"{'PASS' if cond else 'FAIL':4} {label} {detail}")
 
-ED = r"<OLD_REPO>\input\editor.exe"
-DB = r"<GAME_DATA>\data\database\db\2430\2430_fm"
+ED = r"D:\tmp2b\fm24\input\editor.exe"
+DB = r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm"
 
 # --- static byte checks ---
 data = open(ED, "rb").read()
@@ -52,7 +52,7 @@ expect("wnam string dest object+0x18 @0x158b98c", 0x158b98c, "4c 8d 43 18")
 expect("date compare @0x158bd0b", 0x158bd0b, "66 3b 43 38")
 
 # --- data side: independent decompress + row walk ---
-spec = importlib.util.spec_from_file_location("o", r"<OLD_REPO>\scripts\modding_read_dbdat.py")
+spec = importlib.util.spec_from_file_location("o", r"D:\tmp2b\fm24\scripts\modding_read_dbdat.py")
 old = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(old)
 zmod = old._zstd_module()

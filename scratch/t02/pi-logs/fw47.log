@@ -1,0 +1,23 @@
+=== attempt 1/4 Wed Nov 18 13:59:58     2026 ===
+Warning: No project session found with id 'fw47-devseek'; creating a new session with that id.
+=== attempt 1 rc=124, not complete Wed Nov 18 14:14:59     2026 ===
+=== attempt 2/4 Wed Nov 18 14:15:14     2026 ===
+`scratch/t02/inbox/fw47/framework.json` 已落盘,`status=complete`。
+
+**结果**
+- 头 `03 01 74 61 64 2e f1 0d`,count(u32le@+8)=2488
+- 行前有 **11 字节表级 preamble** `8b 00 00 00 7e c1 83 00 00 00 00`,行区起 `0x19`,stride **44**
+- closure 成立(两边):`14 + 11 + 2488*44 + 8 == 109505`
+- client 与 server payload **完全一致**(109505/109505 字节,sha256 `a7f7d47…f10793`)
+
+**必须记下的负结果/警告**(已写入 caveat,别当结论用)
+- stride 44 只是"长度可整除性"拟合:`(109505-22)/2488 = 44.25`,**body 不能被 count 整除**,多出的 11 字节被当成表级 preamble 吸收;frozen `db_tables_small.json` 里 table 47 的 `row_boundary` 也写的是同一套 25+2488*44+8,属同一口径。
+- 行内存在 `u32 == row_index` 的标签(行 0..501 可贪心链出),间距为 41/46/51/56(全部 ≡1 mod 5),提示候选变长公式 `row_len = 41 + 5n`;但贪心链总和 109474 ≠ 所需 109483,**该变长框架不闭合,未采纳**。只有 502/2488 行被这条链覆盖。
+- 因此逐行边界目前是 candidate 级,L1 只到"区域 + stride + closure"这一层;这不影响本任务(只做行框架),但字段层不要假设 44 列对齐。
+
+**交付物**
+- `scratch/t02/inbox/fw47/framework.json`
+- `scratch/t02/inbox/fw47/probe.py`(`--help` / `--selftest` 可用,selftest PASS,退出码 0)
+
+DONE type=47 client_stride=44 server_stride=44
+=== DONE fw47 Wed Nov 18 14:26:17     2026 ===

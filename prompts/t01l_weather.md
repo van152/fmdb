@@ -1,7 +1,7 @@
 # t01-l 任务书:weat(table_27)行偏移 —— 直线型第二站,冲刺第二实体验收线
 
 > 交给 pi gpt-6-luna max。BASIC_PERSON 因全局状态宽度选择器未闭合(t01k 负结果);census 判定 type 27 = WEATHER@db@@ 为 **straight-line**,且 client_db.dat 有 table_27 —— 这是当前最干净的 t01f 方法复制目标。
-> 规则不变:只读输入、不启动游戏/编辑器/IDA、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
+> 规则不变:只读输入、不启动游戏本体/FM 编辑器(IDA 静态分析允许)、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
 
 ## 已知锚点(直接引用)
 

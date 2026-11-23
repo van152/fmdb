@@ -30,4 +30,4 @@
 
 ## 主要来源
 
-`scratch/t14/out/census.json`、`scratch/t05/reader_widths.json`、`scratch/t12/out/codes_full.json`、`scratch/t13d/out/{t22.csv,audit.json,quick_audit.md}`、`reports/stage2_table_identity.json`、只读 `<OLD_REPO>\input\editor.exe`（SHA-256 见 `cursor_t22.json`）。
+`scratch/t14/out/census.json`、`scratch/t05/reader_widths.json`、`scratch/t12/out/codes_full.json`、`scratch/t13d/out/{t22.csv,audit.json,quick_audit.md}`、`reports/stage2_table_identity.json`、只读 `D:\tmp2b\fm24\input\editor.exe`（SHA-256 见 `cursor_t22.json`）。

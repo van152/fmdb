@@ -16,7 +16,7 @@ sys.path.insert(0,str(ROOT/'scripts'))
 OUT = ROOT / 'scratch/t30/out'
 MASTER = 'evidence/fm24/reports/editor_schema/master.json'
 PROV = 'evidence/fm24/reports/qa/IDA_PROVENANCE.md'
-EDITOR = Path('<OLD_REPO>/input/editor.exe')
+EDITOR = Path('D:/tmp2b/fm24/input/editor.exe')
 EXE_SHA = 'b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4'
 T29 = 'scratch/t29/out/profiles/table_server_37.profile.json'
 INV = 'scratch/t29/out/subtable_inventory.json'

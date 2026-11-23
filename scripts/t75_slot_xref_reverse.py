@@ -33,7 +33,8 @@ GROUPS = {
          (0x1040485, 0x1040494, 0x144bca0, 0x420c913, 0x420c933, 0x420c953, 0x420c973,
           0x420c993, 0x420c9b6, 0x420c9d2, 0x420c9ed, 0x420ca09, 0x420ca25, 0x420ca3a,
           0x420ca3f, 0x420ca57, 0x420ca68)),
-    12: ('I', '4+date4+date4', (0x10404e3, 0x10404e9, 0x1040529, 0x104053f, 0x1040554, 0x104056d, 0x104057c)),
+    12: ('I', '4+date4+date4', (0x10404e3, 0x10404e9, 0x1040529, 0x104053f, 0x1040554, 0x104056d, 0x104057c,
+                          0x1040e00, 0x3d5df6b, 0x104e4c0, 0x3d745dc, 0x3d745df, 0x3d5dfa5, 0x3d5dfa7, 0x3d5dfaa, 0x3d5dfae)),
     13: ('I', '1+4+4+1+1+1+1+1', (0x104057e, 0x1040592, 0x104e6b0, 0x3d74f70, 0x3d74f9c, 0x1072560,
         0x3daa131, 0x3daa150, 0x3daa170, 0x3daa18c, 0x3daa1a8, 0x3daa1c4, 0x3daa1e0, 0x3daa209, 0x3d74fc3)),
     23: ('b', '4+1', (0x104073b, 0x104075b, 0x105fb50, 0x3d8771f, 0x3d87742, 0x1040779, 0x104078d, 0x104078f)),
@@ -57,6 +58,7 @@ SPECIAL = {
     ('comp','m13c'): ('packed date transfer, no exact scoped getter; wben is +0x144', [0xeb71a2,0xeb7cdb,0x39dd7d4], []),
     ('comp','m1a8'): ('same literal displacement at ec18d1/ec3b86 is on context child RDI; reader destination is COMP RBX', [0xeb7633,0xec18c1,0xec18d1,0xec3b86], []),
     ('comp','mf4'): ('dbty domain violation remains; WpBn is computed, CICF is an unfrozen equality projection', [0xec152a,0xec3896,0xec2cda,0xec2ce6,0xec2cf7,0xec1ae0,0xec1ae6,0xec431e,0xec4335,0xec4341,0xec4346], ['dbty','WpBn','CICF']),
+    ('nation','slot_31'): ('t25 ordinal membership does not bind a resolver or exact frozen getter', [0x1040a6d,0x1040a80], []),
     ('nation','slot_34'): ('Npop is not in frozen field_codes', [0x1041fa8,0x1041fb4,0x1040aec], ['Npop']),
     ('nation','slot_17'): ('Ncpi already established by t22 and t55, outside the frozen schema', [0x1042144,0x1042174,0x1040633,0x3d6035d], ['Ncpi']),
 }
@@ -264,8 +266,11 @@ def refs_and_replays(raw, inv, slots):
             v,m=target_id(raw[side,tid],tid,side);targets[side,tid]=v;target_meta[f'{side}/{tid}']=m
             if str(tid) in inv['targets']:need(m['identity_sha256']==inv['targets'][str(tid)]['identity_sha256'][side],(side,tid,'external target digest'))
     for tid in ARCHIVE_TABLES: need(np.array_equal(targets['client',tid],targets['server',tid]),(tid,'paired identities'))
-    path=ROOT/old(46,'profiles/table_server_10.rows.jsonl'); b=raw['server',10]
-    for (a,e,uid),line in zip(spans['server','nation'],path.read_bytes().splitlines(),strict=True):
+    path=ROOT/old(46,'profiles/table_server_10.rows.jsonl'); b=raw['server',10]; lines=path.read_bytes()
+    profile46=j(old(46,'profiles/table_server_10.profile.json'))
+    need(h(lines)==profile46['full_rows_sha256'] and h(b)==profile46['payload']['payload_sha256'] and
+         len(spans['server','nation'])==profile46['row_closure']['count'],'t46 frozen row profile')
+    for (a,e,uid),line in zip(spans['server','nation'],lines.splitlines(),strict=True):
         x=json.loads(line);need((a+1,e-a,uid,b[a+1:e+1].hex())==(x['offset'],x['len'],x['identity']['row_id'],x['raw_hex']),('t46 legacy row',a))
     return cols,spans,targets,target_meta
 
@@ -282,6 +287,7 @@ def nation_grammar(raw, cols, spans, targets, inv, slots, master, recorded):
         recorded.update(group['gate_helper_cursor']); group['parent']=scoped(master,'nation',parent) if parent else None
         if p in (12,24,25): recorded.update((0xdb7f80,0x39dd7d4))
         if p==2:group['static_item_target_hint']='context +0x28 / shared Nation resolver; no live items, no indexed 4CC'
+        if p==12:group['static_item_key']='item +0 is used as ordered i32 node key +0x1c; two packed dates stored at node +0x20/+0x24; container key use does not prove entity identity'
         if p>=23: group['t46_positional_reject_unchanged']=t46['segments'][esc['collection']]
         names={}
         for f in t28:
@@ -313,6 +319,8 @@ def nation_grammar(raw, cols, spans, targets, inv, slots, master, recorded):
         for lk in dict.fromkeys([*data['server'][2],*names]):
             code,grade,disp,get,sink,pid=names.get(lk,(None,'held',None,[],[],None)); sf=scoped(master,'nation',code,parent) if code else None
             if code: need(sf is not None,(parent,code,'scoped exact field_codes'))
+            opaque_dest={12:{'0':0x1c,'4':0x20,'8':0x24},13:{'1':0,'5':4,'9':8,'10':9,'11':0xa,'12':0xb,'13':0xc}}
+            if p in opaque_dest:disp=opaque_dest[p].get(lk)
             rec=dict(lane=lk,code=code,grade=grade,item_object_displacement=disp,scoped_occurrence=sf,
                      getter_chain=get,reader_sites=sink,prior_id=f'{prior}/{parent}/{pid}' if code else prior,archives={})
             recorded.update([*get,*sink]); sch=sf['schema'] if sf else {}; typ=sch.get('type')
@@ -325,6 +333,8 @@ def nation_grammar(raw, cols, spans, targets, inv, slots, master, recorded):
                 if typ=='database_record_unique_id' and sch['database_table_type'] in REF:
                     tid=REF[sch['database_table_type']]; stats['reference']=joins(b,c,v,targets[side,tid]); stats['reference']['table_id']=tid
                     if p>=23: need(stats['reference']['ordinal_miss']==0,(p,code,side,'actual ordinal join'))
+                if p==12 and lk=='0':
+                    stats['untyped_join_probes']={str(t):joins(b,c,v,targets[side,t]) for t in (3,10,25)}
                 if p==4 and lk.startswith('str'):
                     lens=np.array([int.from_bytes(b[a-4:a],'little') for _,a,_ in c]); need(np.array_equal(lens,[w for _,_,w in c]),(p,lk,'prefix'))
                     stats['utf8_codepoint_lengths']=hist(np.array([len(b[a:a+w].decode('utf8')) for _,a,w in c]))
@@ -548,8 +558,9 @@ def build():
                 need(len(c)==z['rows'] and (not c or a['bytes']==z['bytes']), (name,k,side,'t72 fingerprint coverage'))
                 if len(v) and a['fixed_width']<=8:
                     need(a['distinct']==z['distinct'] and a['zero']==z['zero_count'] and a['all_ones']==z['all_ones_count'],(name,k,side,'t72 fixed fingerprint'))
-                if len(v) and (name,k) in (('club','ref_e0'),('club','raw168'),('comp','m152')):
-                    ref=10 if k=='ref_e0' else 21; probe=joins(b,c,v,targets[side,ref]); probe['table_id']=ref
+                probes={('club','ref_e0'):10,('club','raw168'):21,('comp','m152'):21,('nation','slot_31'):25}
+                if len(v) and (name,k) in probes:
+                    ref=probes[name,k]; probe=joins(b,c,v,targets[side,ref]); probe['table_id']=ref
                     a['reference_probe']=probe
                     if probe['live'] and not probe['ordinal_miss']:
                         r['queue']['fk_ordinal_minus_uid_best']=max(r['queue']['fk_ordinal_minus_uid_best'],round(1-probe['uid_hit']/probe['live'],6))
@@ -570,13 +581,25 @@ def build():
     pins=set(fp['inputs_sha256'])|{MASTER,PROV,'evidence/MANIFEST.json',*(old(72,s) for s in ('inventory.json','fingerprints.json')),
         *(old(t,'REPORT.md') for t in (28,46,47,51,55,57,59,62,63,64,65,66,71,72)),
         *(old(t,s) for t,s in ((28,'fields_nation_client.json'),(46,'grammar_diff_client_server.json'),(46,'profiles/table_server_10.rows.jsonl'),
-            (47,'fields_nation_tax.json'),(51,'fields_Nftb.json'),(55,'abc_closure.json'),(62,'chain.json'),(62,'exclusions.json'),(64,'exclusions.json'),(71,'field_map_r3.json')))}
+            (46,'profiles/table_server_10.profile.json'),(47,'fields_nation_tax.json'),(51,'fields_Nftb.json'),(55,'abc_closure.json'),
+            (62,'chain.json'),(62,'exclusions.json'),(64,'exclusions.json'),(71,'field_map_r3.json'))),
+        'scripts/t72_slot_fingerprint.py','scripts/t63_club_unmapped_r2.py','scripts/fm24_dump.py',*(old(t,'verify.py') for t in (55,57,59))}
     for t in (55,57,59):pins.update(p.relative_to(ROOT).as_posix() for g in ('instructions.part*.json','branches.part*.json') for p in (ROOT/old(t,'')).glob(g))
     vtable={}
     for name,s in slots.items():
         src=s['source']; vt={'club':lambda:src['CLUB']['vtable'],'comp':lambda:src['comp']['vtable'],'nation':lambda:src['nation_vtable_VA']}[name]()
         vtable[name]={str(k):dict(pe.data(pe.off(vt)+8*k,8),target=pe.off(S.unpack_from('<Q',pe.raw,pe.off(vt)+8*k)[0])) for k in (2,19,20)}
-    xref=dict(editor=dict(path='<OLD_REPO>/input/editor.exe',sha256=EXEH),L4=0,addressing='PE file offset; archive offsets are member-relative; body_relative uses legacy14',
+    # Explicitly revisit the known computed EDsc dispatch rather than inferring
+    # that a failed literal xref proves an absence of UI dispatch.
+    edsc=j(old(62,'chain.json'))['conclusions']['EDsc']; edcell=pe.cell(0x2a7f0,0x32)
+    need(edcell['target']==0x29389 and ((int.from_bytes(b'EDsc','big')+pe.get(0x282b9).operands[1].imm)&0xffffffff)==0x32,'EDsc normalization')
+    edroute=[0x282b9,0x282bf,0x282c2,0x282c8,0x282cf,0x282d3,0x282d6,0x29389,0x293c5,0x2a23b]
+    instructions.update(edroute)
+    t71=j(old(71,'field_map_r3.json')); excluded_codes=[{'id':r['id'],'code':r['code']} for r in t71['fields'] if r['grade']=='L3']
+    observed_codes={c['code'] for r in trials if r['table']=='club' for c in r['codes']}
+    need(len(excluded_codes)==24 and observed_codes.isdisjoint(r['code'] for r in excluded_codes),'t71 no repeat')
+    xref=dict(editor=dict(path='D:/tmp2b/fm24/input/editor.exe',sha256=EXEH),L4=0,addressing='PE file offset; archive offsets are member-relative; body_relative uses legacy14',
+              excluded_t71_4cc=excluded_codes,edsc_control=dict(prior_id='E105',code='EDsc',dispatch=edroute,rel32_cell=edcell,conclusion_verbatim=edsc),
               inputs_sha256={p:h((ROOT/p).read_bytes()) for p in sorted(pins)},target_and_payload_identity=tm,
               t72_negative_notes_verbatim=inv['negative_notes'],negative_evidence=negatives,
               bounded_scan=census,vtable=vtable,nation_escalations=groups,slots=trials,instructions=[pe.record(a) for a in sorted(instructions)])

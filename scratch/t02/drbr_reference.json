@@ -1,0 +1,144 @@
+{
+ "type_id": 18,
+ "entity": "drbr",
+ "rtti": ".?AVDERBY@db@@",
+ "status": "complete",
+ "source": "commander hand-decode (devseek fw18 只确认变长、给出 closure_ok:false,未解出公式)",
+ "row_framework": {
+  "archive": "client_db.dat(server 待核)",
+  "member": "client_db/table_18.dat",
+  "count": 1567,
+  "row_start": 14,
+  "payload_len": 139891,
+  "variable": true,
+  "row_shape": "4×(u32 len + UTF-8) + 49B tail;短名×2 + 长名×2(长名可为空)",
+  "closure": "走查 1567 行精确结束于 0x2226b,余 8B footer -> 完全封口"
+ },
+ "row_offset_map": [
+  {
+   "idx": 0,
+   "width": "var",
+   "object_off": "0x18",
+   "reader": "0x3d00966 lea r8,[rbx+0x18] / 0x3d0096f call 0x6a9510",
+   "semantic": "short name #1"
+  },
+  {
+   "idx": 1,
+   "width": "var",
+   "object_off": "0x20",
+   "reader": "0x3d00982 lea r8,[rbx+0x20]",
+   "semantic": "short name #2 (同值)"
+  },
+  {
+   "idx": 2,
+   "width": "var",
+   "object_off": "0x28",
+   "reader": "0x3d0099e lea r8,[rbx+0x28]",
+   "semantic": "long name #1 (可为空)"
+  },
+  {
+   "idx": 3,
+   "width": "var",
+   "object_off": "0x30",
+   "reader": "0x3d009ba lea r8,[rbx+0x30]",
+   "semantic": "long name #2 (同值)"
+  },
+  {
+   "idx": 4,
+   "width": "sub",
+   "object_off": "0x60",
+   "reader": "0x3d009d3 lea rcx,[rbx+0x60] / 0x3d009da call 0xc4d380",
+   "semantic": "complex sub-record / collection (bool return gates rest)"
+  },
+  {
+   "idx": 5,
+   "width": 4,
+   "object_off": "0x40",
+   "reader": "0x3d009ea lea rdx,[rbx+0x40] / 0x3d009f1 mov r8d,4",
+   "semantic": "u32 A"
+  },
+  {
+   "idx": 6,
+   "width": 4,
+   "object_off": "0x48",
+   "reader": "0x3d00a0b lea rdx,[rbx+0x48] / 0x3d00a12 mov r8d,4",
+   "semantic": "u32 B"
+  },
+  {
+   "idx": 7,
+   "width": "4x4+2x2",
+   "object_off": "0x50..",
+   "reader": "后续 4 条 mov r8d,4 + 2 条 mov r8d,2",
+   "semantic": "u32 C/D/E/F + u16 G/H"
+  },
+  {
+   "idx": 8,
+   "width": 12,
+   "object_off": null,
+   "reader": null,
+   "semantic": "identity block ordinal|ID|重复ID (1567/1567)"
+  },
+  {
+   "idx": 9,
+   "width": 1,
+   "object_off": null,
+   "reader": null,
+   "semantic": "boundary marker"
+  }
+ ],
+ "tail_layout_49B": {
+  "0..3": "u16 x2 (0x011e,0x0766)",
+  "4..7": "u32",
+  "8..11": "u32",
+  "12..15": "u32 (0xFFFFFFFF 常见)",
+  "16..19": "u32",
+  "20..23": "u32 (0xFFFFFFFF)",
+  "24..27": "u32",
+  "28..31": "u32",
+  "32..35": "u32",
+  "36..47": "12B identity",
+  "48": "marker"
+ },
+ "identity_block": {
+  "row_off": "tail+36..47",
+  "verified": "1567/1567 ordinal==row_index and ID pair equal"
+ },
+ "samples": [
+  {
+   "row": 0,
+   "strings": [
+    "Merseyside",
+    "Merseyside",
+    "",
+    ""
+   ],
+   "id": 162233
+  },
+  {
+   "row": 85,
+   "strings": [
+    "Superclásico",
+    "Superclásico",
+    "Superclásico del fútbol argentino",
+    "Superclásico del fútbol argentino"
+   ],
+   "id": 14017421
+  },
+  {
+   "row": 86,
+   "strings": [
+    "Clásico de Avellaneda",
+    "Clásico de Avellaneda",
+    "Superclásico de Avellaneda",
+    "Superclásico de Avellaneda"
+   ],
+   "id": 14017595
+  }
+ ],
+ "unclosed": [
+  "49B 尾部各 u32 的业务语义(疑似 club 引用对/comp 引用/日期)",
+  "obj+0x60 子记录(call 0xc4d380)的展开结构",
+  "短名/长名为何各出现两次(可能 client/server 双名或 translatable 对)"
+ ],
+ "note": "devseek fw18 只给出 variable=true 与 closure_ok=false,未解出公式;本次手解得到 4 字符串 + 49B 尾的完整公式"
+}

@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "scratch" / "t20" / "out"
 # FM24_DB_DIR points at the decoded data workspace; the static binary is the
 # read-only editor.exe reference used by t14/t16, not under that data directory.
-EDITOR = Path(r"<OLD_REPO>\input\editor.exe")
+EDITOR = Path(r"D:\tmp2b\fm24\input\editor.exe")
 CSV_T22 = ROOT / "scratch" / "t13d" / "out" / "t22.csv"
 AUDIT = ROOT / "scratch" / "t13d" / "out" / "audit.json"
 CENSUS = ROOT / "scratch" / "t14" / "out" / "census.json"

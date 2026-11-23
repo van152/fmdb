@@ -1,0 +1,139 @@
+{
+ "schema": "t81.rescan.v1",
+ "task": "t81",
+ "scope": "city(2) FK lanes",
+ "index": "scratch/t81/out/fk_index.json",
+ "method": "ordinal-domain test against the target's row-index range, with a UID-encoding control and an explicit sentinel column",
+ "lanes": [
+  {
+   "target": 10,
+   "target_rows": 251,
+   "available": true,
+   "rows": 56293,
+   "sentinel": 0,
+   "live": 56293,
+   "ordinal": {
+    "in_domain": 56293,
+    "rate": 1.0,
+    "min": 0,
+    "max": 249,
+    "distinct": 230,
+    "tightness": 0.9920318725099602,
+    "coverage": 0.9163346613545816
+   },
+   "uid": {
+    "domain_size": 251,
+    "hit": 19039,
+    "rate": 0.3382125663936902
+   },
+   "decision": "mapped-ordinal",
+   "mapped": true,
+   "why": "every live value is a valid row index and the maximum reaches 99.2% of the target's row count, so the domain test discriminates",
+   "field": "Cnti",
+   "offset": 10,
+   "entity": "nation",
+   "source": "city(2) client",
+   "grade_before": "unmapped (t73 §3.4)",
+   "grade_after": "L2/candidate"
+  },
+  {
+   "target": 8,
+   "target_rows": 126,
+   "available": true,
+   "rows": 56293,
+   "sentinel": 46010,
+   "live": 10283,
+   "ordinal": {
+    "in_domain": 10283,
+    "rate": 1.0,
+    "min": 0,
+    "max": 112,
+    "distinct": 60,
+    "tightness": 0.8888888888888888,
+    "coverage": 0.47619047619047616
+   },
+   "uid": {
+    "domain_size": 126,
+    "hit": 10194,
+    "rate": 0.9913449382475931
+   },
+   "decision": "mapped-ordinal",
+   "mapped": true,
+   "why": "every live value is a valid row index and the maximum reaches 88.9% of the target's row count, so the domain test discriminates",
+   "field": "Clgi",
+   "offset": 21,
+   "entity": "language",
+   "source": "city(2) client",
+   "grade_before": "unmapped (t73 §3.4)",
+   "grade_after": "L2/candidate"
+  },
+  {
+   "target": 47,
+   "target_rows": 2488,
+   "available": true,
+   "rows": 56293,
+   "sentinel": 4699,
+   "live": 51594,
+   "ordinal": {
+    "in_domain": 51594,
+    "rate": 1.0,
+    "min": 0,
+    "max": 2476,
+    "distinct": 2329,
+    "tightness": 0.9951768488745981,
+    "coverage": 0.9360932475884244
+   },
+   "uid": {
+    "domain_size": 2488,
+    "hit": 0,
+    "rate": 0.0
+   },
+   "decision": "mapped-ordinal",
+   "mapped": true,
+   "why": "every live value is a valid row index and the maximum reaches 99.5% of the target's row count, so the domain test discriminates",
+   "field": "Clri",
+   "offset": 25,
+   "entity": "local_region",
+   "source": "city(2) client",
+   "grade_before": "unmapped (t73 §3.4)",
+   "grade_after": "L2/candidate"
+  },
+  {
+   "target": 27,
+   "target_rows": 334,
+   "available": true,
+   "rows": 56293,
+   "sentinel": 0,
+   "live": 56293,
+   "ordinal": {
+    "in_domain": 56293,
+    "rate": 1.0,
+    "min": 0,
+    "max": 333,
+    "distinct": 321,
+    "tightness": 0.9970059880239521,
+    "coverage": 0.9610778443113772
+   },
+   "uid": {
+    "domain_size": 334,
+    "hit": 0,
+    "rate": 0.0
+   },
+   "decision": "mapped-ordinal",
+   "mapped": true,
+   "why": "every live value is a valid row index and the maximum reaches 99.7% of the target's row count, so the domain test discriminates",
+   "field": "Cwea",
+   "offset": 14,
+   "entity": "weather",
+   "source": "city(2) client",
+   "grade_before": "unmapped (t73 §3.4)",
+   "grade_after": "L2/candidate"
+  }
+ ],
+ "summary": {
+  "mapped-ordinal": 4,
+  "candidate-ordinal": 0,
+  "uid-encoding": 0,
+  "refuted": 0
+ }
+}

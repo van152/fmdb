@@ -4,7 +4,7 @@
 
 ## 1. 两个向量的静态证据与 wire
 
-静态来源为只读 `<OLD_REPO>/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。下文地址是 PE file offset；指令分片附 VA 和原 bytes。冻结 schema 对照 MANIFEST：`master.json` SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`，`nation.xml#nation` idx 64。t51 Nation→t9/base 的 owner 链不改。
+静态来源为只读 `D:/tmp2b/fm24/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。下文地址是 PE file offset；指令分片附 VA 和原 bytes。冻结 schema 对照 MANIFEST：`master.json` SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`，`nation.xml#nation` idx 64。t51 Nation→t9/base 的 owner 链不改。
 
 | 证据 | t9 主档 `this+0x188` | TCrs getter `[this+0xb0]+0x48` |
 |---|---|---|
@@ -60,5 +60,5 @@ Server presence **179/72**；72 个存在的向量中 **39** 个 count=0，33 �
 
 ## 4. 验收与限制
 
-- `FM24_DB_DIR=<WORKSPACE>/scratch/data`，Python `py -V:3.12 -I -B`。builder + 独立 verifier、两者 `--help` / `--selftest` 通过；`t01_anchors.py` **7/7**。独立 verifier 不导入 builder、ReaderCFG 或 `fm24_dump`，重读归档目录和真实帧、复放四份目标 span、复算 joins、原指令与 PE 工作队列、分派格和旧 SHA。
+- `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`，Python `py -V:3.12 -I -B`。builder + 独立 verifier、两者 `--help` / `--selftest` 通过；`t01_anchors.py` **7/7**。独立 verifier 不导入 builder、ReaderCFG 或 `fm24_dump`，重读归档目录和真实帧、复放四份目标 span、复算 joins、原指令与 PE 工作队列、分派格和旧 SHA。
 - t37/t47/t49/t50/t51 negative、held 和 baseline 未改；所追范围的冲突以双列与首例保留。没有开启游戏、编辑器、IDA，没有联网或访问 Z:。静态和实档重放不是 L4。未验证 t9 旧兼容版本、其它 aux typed selector、两种 vector 在未检查路径的潜在合并、完整 EDsc 资源路径。

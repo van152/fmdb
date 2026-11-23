@@ -6,7 +6,7 @@ E97 的 **399** 个 `unmapped` occurrence 全部复查，增量为 **8 L3 / 41 h
 
 只用 `scratch/t57/out/field_slots.json` 的行框：client `13+6,932,060+9 = 6,932,082`，server `13+16,595,290+9 = 16,595,312`，各 84,259 行；12 B `ordinal | UID | UID`、34 个逻辑位置。逐行顺读、两档 identity/selector 配对，所有位置坐标摘要都与 E97 一致。没有从 XML 序号或字节相似性推槽。ID `E97/club.xml#club/NNN` 中 `NNN` 仅是冻结 occurrence 的索引。
 
-静态来源为只读 `<OLD_REPO>/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。冻结 master 和旧夹具经 `evidence/MANIFEST.json` 校验。下文地址为 PE file offset；JSON 保留 VA、原始字节及指令。`CLUB` slot 19 `0xe5a7a0`（VA `0x140e5b1a0`），extent `0xe5a7a0..0xe5bfca`：1,412 条可达指令、167 条条件、41 个直接 stream 站点。扫描覆盖 E97 的主 reader 和六个有界 reader helper；台账保留 407 个条件和分支后继，不把未观察路径视为死边。
+静态来源为只读 `D:/tmp2b/fm24/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。冻结 master 和旧夹具经 `evidence/MANIFEST.json` 校验。下文地址为 PE file offset；JSON 保留 VA、原始字节及指令。`CLUB` slot 19 `0xe5a7a0`（VA `0x140e5b1a0`），extent `0xe5a7a0..0xe5bfca`：1,412 条可达指令、167 条条件、41 个直接 stream 站点。扫描覆盖 E97 的主 reader 和六个有界 reader helper；台账保留 407 个条件和分支后继，不把未观察路径视为死边。
 
 CLUB slot 2 `0xe89a00` 的本地扫描覆盖 5,894 条可达指令、18 个已解 rel32 表和 708 个条件；另扫描七个相关 getter extent（含继承分派，只做注册/路由普查）。按大小写精确的 4CC 对齐：190/399 在 CLUB 顶层有匹配入口，293/399 在八个有界 getter 中至少有一个入口，106/399 无入口证据。匹配只证明本地分派可达，不证明本类拥有被返回字段。寄存器 tail call/外部 override 未做任意展开，未处理者保留边界；已命名的 virtual 分派交叉核对 vtable 格。`projections.json` 给出每个 occurrence 的比较/bit-test/rel32 格、局部等值路径、直接 helper 边，以及可证的读取路径或首断点。字符串不按相邻值猜槽。
 
@@ -43,7 +43,7 @@ Liverpool 双档 ordinal 460 / UID 676 → city ordinal 1061 / UID 100047，短�
 独立 `verify.py` 不导入 builder、ReaderCFG、fm24_dump；重建 PE 有界分派、独立读取 FMF 目录、重放 168,518 条行和所有候选值、对照原始锚点。两个脚本 `--help` / `--selftest` 通过，退出码 0/1/2。全档 build / verify 通过，t01 anchors **7/7**。
 
 ```bash
-export FM24_DB_DIR=<WORKSPACE>/scratch/data
+export FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data
 py -V:3.12 -I -B scripts/t63_club_unmapped_r2.py --build
 py -V:3.12 -I -B scratch/t63/out/verify.py
 py -V:3.12 -I -B scripts/t01_anchors.py

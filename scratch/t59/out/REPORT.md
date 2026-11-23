@@ -23,7 +23,7 @@
 
 ## 静态链与外层普查
 
-来源：只读 `<OLD_REPO>/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。冻结 master SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`；master、`IDA_PROVENANCE.md`、DB_TABLES_BIG 两件与旧 comp 样本对 MANIFEST 核验。本文地址为 **PE file offset**；分片含 VA、原始 bytes 和后继。
+来源：只读 `D:/tmp2b/fm24/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。冻结 master SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`；master、`IDA_PROVENANCE.md`、DB_TABLES_BIG 两件与旧 comp 样本对 MANIFEST 核验。本文地址为 **PE file offset**；分片含 VA、原始 bytes 和后继。
 
 - Factory `0xf48b30` rel32 表 `0xf49d38` case 25（格 `0xf49d9c`）→ `0xf49129`，分配 `0x1b0`，`0xf49139 → 0xeb5db0` 构造 `db::COMP`，`0xeb5dd5/0xeb5ddc` 写 vptr `0x14187dcb8`。另一路 `0xf02aa7 → 0xff9910` 传 table 25，`0x3ceb8e2` 存 table type，`0xf02ab4/0xf02abb` 设置 `DATABASE_TABLE<COMP>` vptr `0x14187f6d8`；**两种对象，不合并**。表循环按 `table+0x54` 调工厂，经 `0xf2ba51` 调记录 slot 19；尚不声明已追通 archive opener 实例。
 - COMP 真 slot 19 `0x187d350 → 0xed0a40 → 0x3b3f0d0 → 0xeb7000`（主体 VA `0x140eb7a00`）；主 extent `0xeb7000..0xeb7e42` 有 837 条可达指令、114 个条件、0 extent 外边。主函数 54 个直接 `stream+0x28`，51 个对应已观测外层 scalar/标记/count，3 个为另一引用模式 `0xeb7218/0xeb72f8/0xeb7332`；并不等于业务字段数。交付 21 个有界 CFG、3,721 条指令记录（含外置佐证）、376 个条件分支。无法静态定性或未观察的边不写成死边。t01 A3 所称 slot6 含 RTTI 头，等于真实 slot 5 注册器，VA `0x140ebfa40`；A4 保留 67 cases。
@@ -58,7 +58,7 @@ t2/t3/t5/t10/t21/t25 每档目标分别 56,293 / 84,259 / 7 / 251 / 48,413 / 7,0
 - `verify.py` 独立读取目录、反向数据 DP、重建 PE CFG、重放双档和全域并复核 t01f；不 import builder、ReaderCFG 或 `fm24_dump`。两脚本 `--help` / `--selftest`、全档 build / verify、t01 anchors 7/7。退出码 0 成功、1 核验失败、2 用法或致命错误。未启动游戏/编辑器/IDA，未联网或访问 Z:。
 
 ```text
-FM24_DB_DIR=<WORKSPACE>/scratch/data
+FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data
 py -V:3.12 -I -B scripts/t59_compmain_fields.py --build
 py -V:3.12 -I -B scratch/t59/out/verify.py
 py -V:3.12 -I -B scripts/t01_anchors.py

@@ -19,7 +19,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "scratch/t16/out"
-EDITOR = Path(r"<OLD_REPO>\input\editor.exe")
+EDITOR = Path(r"D:\tmp2b\fm24\input\editor.exe")
 CENSUS = ROOT / "scratch/t14/out/census.json"
 STAGE2 = ROOT / "scratch/t14/out/stage2_map.json"
 SCHEMA = ROOT / "scratch/t05/schema_inventory.json"

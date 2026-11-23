@@ -1,7 +1,7 @@
 # t15b — 未覆盖档案清点报告
 
 **状态:ok(9/9 档案容器层全部进入)**
-生成:2026-11-18 · 只读 · 数据源 `FM24_DB_DIR=<WORKSPACE>/scratch/data`(**未读 Z: 盘**)
+生成:2026-11-18 · 只读 · 数据源 `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`(**未读 Z: 盘**)
 机读结果:`scratch/t15b/out/probe.json` · 脚本:`probe.py` / `probe2.py` / `probe3.py` / `finalize.py`
 一键重跑:`bash scratch/t15b/run_all.sh`(只读,全部产出在 `scratch/t15b/out/`)
 基线对照:`scratch/t13e/out/baselines.json`

@@ -1,7 +1,7 @@
 # t01-h 任务书:factory 跳表全普查 —— 32 实体逐一分类(直线 vs 变长)
 
 > 交给 pi gpt-6-luna max。这是 stage-2 的战术普查:t01f/t01g 已分别打通 comp(直线型)与 nation(变长型),现在要**一次性判定所有实体属于哪一类**,为后续逐实体攻坚排序。
-> 规则不变:只读输入、不启动游戏/编辑器/IDA、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
+> 规则不变:只读输入、不启动游戏本体/FM 编辑器(IDA 静态分析允许)、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
 
 ## 已知锚点(勿重复发现,直接引用)
 

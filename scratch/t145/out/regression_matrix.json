@@ -1,0 +1,335 @@
+{
+  "schema_id": "fm24.t145.final_regression",
+  "generated_utc": "2026-11-22T21:16:23Z",
+  "total_tests": 24,
+  "passed_tests": 24,
+  "failed_tests": 0,
+  "all_passed": true,
+  "total_elapsed_sec": 152.13,
+  "protected_guardrail": {
+    "git_rc": 0,
+    "protected_clean": true,
+    "dirty_lines": []
+  },
+  "tests": [
+    {
+      "name": "t01_anchors",
+      "cmd": "scripts/t01_anchors.py",
+      "description": "Baseline anchor verification",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 0.36,
+      "tail": "7/7 checks passed"
+    },
+    {
+      "name": "t106_special_members",
+      "cmd": "scripts/t106_special_members.py --selftest",
+      "description": "13/13 special members + summary.dat (28.4 MB, diff=0)",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 0.18,
+      "tail": "selftest: 37/37 pass"
+    },
+    {
+      "name": "t112_fm24_reader",
+      "cmd": "scripts/t112_fm24_reader.py --selftest",
+      "description": "Pure-Python reader v1 (66/79 tables)",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 0.53,
+      "tail": "--- t112_fm24_reader selftest: PASS (0 failures) ---"
+    },
+    {
+      "name": "t119_unicorn_last5",
+      "cmd": "scripts/t119_unicorn_last5.py --selftest",
+      "description": "Unicorn last 5 tables closure (79/79)",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 13.29,
+      "tail": "t119 selftest PASS: {'targets': 5, 'closed': 0, 'sample_ok': 5, 'clean': 5, 'failed': 0, 'combined_with_t96c_clean': '79/79'}"
+    },
+    {
+      "name": "t120_people_unicorn",
+      "cmd": "scripts/t120_people_unicorn.py --selftest",
+      "description": "Unicorn people_db 5/5 person classes (3,000/3,000)",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 0.74,
+      "tail": "t120 selftest PASS: rows_ok=1210 stats={'2': {'class': 'PLAYER', 'rows_ok': 17, 'body_len_min': 611, 'body_len_max': 673, 'unique_lens': 9},"
+    },
+    {
+      "name": "t121_master_79of79",
+      "cmd": "scripts/t121_master_79of79.py --selftest",
+      "description": "79/79 master wire trace + 1,104 L3 join",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 0.58,
+      "tail": "selftest PASS — 79/79, joined 56/67, L3=1104"
+    },
+    {
+      "name": "t122_people_l3_schema",
+      "cmd": "scripts/t122_people_l3_schema.py --selftest",
+      "description": "5-class virtual base & 177 type-specific 4CC joins",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 0.18,
+      "tail": "t122 selftest: PASS"
+    },
+    {
+      "name": "t123_basic_people_l3",
+      "cmd": "scripts/t123_basic_people_l3.py --selftest",
+      "description": "basic_people_db.dat 658,011 rows (diff=0)",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 6.08,
+      "tail": "top50=50"
+    },
+    {
+      "name": "t125_big3_gap_closure",
+      "cmd": "scripts/t125_big3_gap_closure.py --selftest",
+      "description": "Big-3 L3 v3 (76.2% net persisted)",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 4.47,
+      "tail": "gross 512/1034 (49.5%); net 512/672 (76.2%); gaps 294 -> 160; excluded 362"
+    },
+    {
+      "name": "t126_player_attributes_l3",
+      "cmd": "scripts/t126_player_attributes_l3.py --selftest",
+      "description": "54/54 PDxx GET==SET + 69B PLAYER_DATA",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 0.97,
+      "tail": "t126 selftest PASS: 54/54 PDxx GET==SET, 69B mapped, 5-class L3=374, cards=['Milan Mijatović', 'Lazar Carević', 'Vlado Giljen', 'Milan Jelov"
+    },
+    {
+      "name": "t127_pl_hist",
+      "cmd": "scripts/t127_pl_hist.py --selftest",
+      "description": "pl_hist 3-file system (4,515,803 rows, diff=0)",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 2.09,
+      "tail": "selftest: 37/37 checks passed -> PASS"
+    },
+    {
+      "name": "t128_non_pl_hist",
+      "cmd": "scripts/t128_non_pl_hist.py --selftest",
+      "description": "non_pl_hist 3-file system (3,212,443 rows, diff=0)",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 1.1,
+      "tail": "selftest: 33/33 checks passed -> PASS"
+    },
+    {
+      "name": "t130_archive_inventory",
+      "cmd": "scripts/t130_archive_inventory.py --selftest",
+      "description": "14-file SHA-256 inventory + 11/11 default-handler proof",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 1.09,
+      "tail": "--- selftest: PASS (0 failures) ---"
+    },
+    {
+      "name": "t133_fm24_reader_v2",
+      "cmd": "scripts/t133_fm24_reader_v2.py --selftest",
+      "description": "Pure-Python reader v2 (79/79 tables, 2,846,936 rows, diff=0)",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 6.56,
+      "tail": "--- t133 selftest: PASS ---"
+    },
+    {
+      "name": "t135_star_player_cards",
+      "cmd": "scripts/t135_star_player_cards.py --selftest",
+      "description": "21 world superstars live cards (21/21 CA/PA exact)",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 3.23,
+      "tail": "ptype3 probe: 6/6 cards -> 69B block at wire_pos 29, obj_offs={'-0x160': 6}"
+    },
+    {
+      "name": "t136_big3_final_closure",
+      "cmd": "scripts/t136_big3_final_closure.py --selftest",
+      "description": "Big-3 L3 v4 (85.7% net persisted) + table_extra_9",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 15.66,
+      "tail": "scratch/t136/out/: big3_l3_v4.json, coverage_summary_v4.json, remaining_gaps_v4.json, REPORT.md, DONE.md, archive_audit_v4.json, hop_audit_v"
+    },
+    {
+      "name": "t137_non_player_managers_l3",
+      "cmd": "scripts/t137_non_player_managers_l3.py --selftest",
+      "description": "NON_PLAYER 93 own 4CCs + 20/20 managers CA/PA",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 0.16,
+      "tail": "t137c --selftest PASS: L3=8 own=161 NTxx aliases=68/70 inherited=213 managers=20 CA/PA=20/20 scalar/card=[8]"
+    },
+    {
+      "name": "t137d_manager_cards_full",
+      "cmd": "scripts/t137d_manager_cards_full.py --selftest",
+      "description": "NON_PLAYER 34 L3 coaching/tactical attrs + 20/20 full cards",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 1.0,
+      "tail": "t137d selftest: 13/13 passed -> PASS"
+    },
+    {
+      "name": "t138_people_pure_py",
+      "cmd": "scripts/t138_people_pure_py.py --selftest",
+      "description": "Pure-Python 400 MB people_db.dat (658,011 rows, diff=0)",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 0.16,
+      "tail": "SELFTEST: PASS"
+    },
+    {
+      "name": "t139_fm24_db_cli",
+      "cmd": "scripts/t139_fm24_db_cli.py --selftest",
+      "description": "Unified 191.7 MB SQLite DB (1,952,416 rows, 0.041ms lookup)",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 4.21,
+      "tail": "--- t139 selftest: PASS (0 failures) ---"
+    },
+    {
+      "name": "t140_fm24_roundtrip",
+      "cmd": "scripts/t140_fm24_roundtrip.py --selftest",
+      "description": "S+ 79/79 bit-exact round-trip + editor.exe 10/10 + Kane RAM",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 41.41,
+      "tail": "--- t140 selftest: PASS (0 failures) ---"
+    },
+    {
+      "name": "t141_fm_vs_editor_diff",
+      "cmd": "scripts/t141_fm_vs_editor_diff.py --selftest",
+      "description": "491 MB fm.exe vs 74 MB editor.exe (293/293 db:: identical)",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 0.53,
+      "tail": "OK   fm.exe plaintext descriptors have MSVC headers :: 7538"
+    },
+    {
+      "name": "t142_fk_graph_audit",
+      "cmd": "scripts/t142_fk_graph_audit.py --selftest",
+      "description": "84-table FK graph (44 verified edges, 24 col_N, 764 orphans)",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 4.23,
+      "tail": "--- t142 selftest: PASS ---"
+    },
+    {
+      "name": "t143_lang_db",
+      "cmd": "scripts/t143_lang_db.py --selftest",
+      "description": "lang_db 704/704 members bit-exact (10,290,726 strings, 22 langs)",
+      "passed": true,
+      "rc": 0,
+      "elapsed_sec": 43.06,
+      "tail": "--selftest PASS: lang_db_2400 352/352 diff=0, lang_update_db 352/352 diff=0; 10,290,726 localized strings; 76 showcase joins (39 with Han te"
+    }
+  ],
+  "artifact_manifest": [
+    {
+      "path": "scratch/t106/out/special_members_schema.json",
+      "bytes": 49864,
+      "sha256": "bf4ad337d9a80d725f0b25d58de4a7a000a8cbd6530b75a4e9a03fdc3ad4a1b7"
+    },
+    {
+      "path": "scratch/t121/out/wire_traces_79of79.json",
+      "bytes": 1308510,
+      "sha256": "1e1ce1264a5ebdcff3b75ea8f645f16aa3d2b26d9f6ef13c323c940d50f1834e"
+    },
+    {
+      "path": "scratch/t123/out/basic_people_l3_schema.json",
+      "bytes": null,
+      "sha256": null,
+      "missing": true
+    },
+    {
+      "path": "scratch/t126/out/player_attributes_l3.json",
+      "bytes": null,
+      "sha256": null,
+      "missing": true
+    },
+    {
+      "path": "scratch/t127/out/pl_hist_schema.json",
+      "bytes": 50113,
+      "sha256": "995887b2e26d8932ef73457560aeb8b60135a2b1e4b806c84e2e046fdf85b32e"
+    },
+    {
+      "path": "scratch/t128/out/non_pl_hist_schema.json",
+      "bytes": 54174,
+      "sha256": "448a08d13d114bad8e9cbaf8fe54cf69f6c761b4a21c2fb21464d89da9e91999"
+    },
+    {
+      "path": "scratch/t130/out/archive_inventory.json",
+      "bytes": 12496,
+      "sha256": "1e8e0e05e79a7014a896731bc84a77045a7f453e56a81a49f6ed70f2b3206a17"
+    },
+    {
+      "path": "scratch/t133/out/reader_v2_verify.json",
+      "bytes": 265819,
+      "sha256": "2437417687fd691ef73c35a810b87f9dea62d0252485ec019a8f05360a530499"
+    },
+    {
+      "path": "scratch/t135/out/star_player_cards.json",
+      "bytes": 322598,
+      "sha256": "5b544343fa13e46370a1493954e3363e463044462f6cd20725af1af107fe771d"
+    },
+    {
+      "path": "scratch/t136/out/coverage_summary_v4.json",
+      "bytes": 19358,
+      "sha256": "084f7b41783e8a590d4e14849b5a30fa676c03cbfd1b4ef6f434469bb44c3a3c"
+    },
+    {
+      "path": "scratch/t137d/out/non_player_l3_full.json",
+      "bytes": 8636,
+      "sha256": "50e9805154d7dbd2b0b0dbfd89c496f8218a0295bbfd1cf0497ff0d702e1a247"
+    },
+    {
+      "path": "scratch/t138/out/people_pure_py_verify.json",
+      "bytes": 8768,
+      "sha256": "22cbfc03922b715a968114e0289361791c50bd8c0d1d1dd88ec78e71b9c238aa"
+    },
+    {
+      "path": "scratch/t139/out/fm24_core.sqlite",
+      "bytes": 191741952,
+      "sha256": "a5320b07cdb3463aa67e6da05104e707a5fc951afbd83500ead1adb8a127a9d3"
+    },
+    {
+      "path": "scratch/t140/out/patched_dual_verify.json",
+      "bytes": 322355,
+      "sha256": "f223b0a1fa153a5ef923f3df5dd8590eedf66d4cc6d44856f47e213404e18027"
+    },
+    {
+      "path": "scratch/t141/out/fm_vs_editor_diff.json",
+      "bytes": 1695506,
+      "sha256": "41516e6b63c4a19a4e2bcbce878c809c5e75728c3cdad88af0f10008682ec6b8"
+    },
+    {
+      "path": "scratch/t142/out/fk_graph_master.json",
+      "bytes": 586371,
+      "sha256": "2c4de853617a722a2e7b69a4f99fed4936bddd7f07bfecce5040462f118ed32e"
+    },
+    {
+      "path": "scratch/t143/out/lang_db_schema.json",
+      "bytes": 1289897,
+      "sha256": "2ebcf661474d06ceacb877bd0e0e0a8b976f8226d77bf035e5e0e8eee461d0f7"
+    }
+  ],
+  "superseded_legacy_scripts": [
+    {
+      "script": "scripts/t105_big3_serializers.py",
+      "superseded_by": "scripts/t136_big3_final_closure.py"
+    },
+    {
+      "script": "scripts/t115_basic_people_full.py",
+      "superseded_by": "scripts/t123_basic_people_l3.py"
+    },
+    {
+      "script": "scripts/t118_people_schema.py",
+      "superseded_by": "scripts/t138_people_pure_py.py"
+    }
+  ]
+}

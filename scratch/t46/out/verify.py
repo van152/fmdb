@@ -4,7 +4,7 @@
 Run with Python 3.12:
   py -V:3.12 -I -B scratch/t46/out/verify.py --help
   py -V:3.12 -I -B scratch/t46/out/verify.py --selftest
-  FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scratch/t46/out/verify.py
+  FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scratch/t46/out/verify.py
 """
 from __future__ import annotations
 

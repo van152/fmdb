@@ -2,7 +2,7 @@
 
 ## 使命
 
-FM24 `.dat` 语义解析:把 schema 字段映射到行内偏移。**只读输入,不启动游戏/编辑器/IDA,不 pip install,`py -V:3.12 -I -B`。**
+FM24 `.dat` 语义解析:把 schema 字段映射到行内偏移。**只读输入,不启动游戏本体/FM 编辑器(IDA 静态分析允许),不 pip install,`py -V:3.12 -I -B`。**
 
 ## 背景(已验收事实,别重新发现)
 
@@ -29,7 +29,7 @@ FM24 `.dat` 语义解析:把 schema 字段映射到行内偏移。**只读输入
 
 ## 硬约束
 
-- 只读:`<OLD_REPO>`、`<GAME_DRIVE>/...`、editor.exe 只读。
+- 只读:`D:/tmp2b/fm24`、`Z:/SteamLibrary/...`、editor.exe 只读。
 - 每 claim 带 file offset + 字节证据;候选不写成结论;负结果保留原文。
 - 只写 `OUTDIR/`,不改目录外任何文件。
 

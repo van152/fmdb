@@ -22,10 +22,10 @@
 
 ## 方法和纪律
 
-- 只读 `<OLD_REPO>\input\editor.exe`(SHA-256 须对照 `evidence/fm24/reports/qa/IDA_PROVENANCE.md`);本地数据 `FM24_DB_DIR=<WORKSPACE>/scratch/data`;PE 换算用 `scripts/t05_pe.py`,禁止固定 delta。
+- 只读 `D:\tmp2b\fm24\input\editor.exe`(SHA-256 须对照 `evidence/fm24/reports/qa/IDA_PROVENANCE.md`);本地数据 `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`;PE 换算用 `scripts/t05_pe.py`,禁止固定 delta。
 - 建议路径:以 `control_flow.json` 的 CFG 为底,写符号化 walker——把 stream read 建模为"消费 width 字节→产出值→值喂给后续分支条件"。对 167 个条件分支逐个归类:数据驱动(可执行)/ 运行时外部状态(不可静态判定,须标出并给数据侧反推)/ 死代码。
 - 数据侧反推允许且鼓励:84,259 行全量字节在手,分支假设可以用全表分布验证(如 nation 四段计数那样),但**假设→全量验证→晋级**三步缺一不可;候选不写成结论。
-- 不启动游戏/编辑器/IDA,不联网,不读写 Z:;只写 `scratch/t24/out/` 与 `scripts/t24_*.py`;不覆盖 t19/t21/t21b 既有产物。
+- 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:;只写 `scratch/t24/out/` 与 `scripts/t24_*.py`;不覆盖 t19/t21/t21b 既有产物。
 - 新脚本 `--help`/`--selftest`,退出码 0/1/2;单次打印 ≤400 行;大 JSON 分片(`*.partNNN.json`)。
 - 状态词:`complete_*` / `partial_*` / `negative_*`(带限定词);负结果原文保留。
 - 卡壳就把已有进度落盘 partial,不要空转。

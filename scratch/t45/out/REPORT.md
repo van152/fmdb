@@ -26,6 +26,6 @@ Validation passed:
 - `consolidate_v3.py --selftest`
 - `verify.py --help`
 - `verify.py --selftest` (independent; does not import the builder)
-- `scripts/t01_anchors.py` with `FM24_DB_DIR=<WORKSPACE>/scratch/data`: 7/7 checks
+- `scripts/t01_anchors.py` with `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`: 7/7 checks
 
 Frozen input hashes: v2 JSON `a08b013a060724bef6e0c8ea1e0c4b16e57a7438a8fa53d7ed519c6f77611ab7`; v2 Markdown `da02f1062172d0ca9ae5f44ee3061cb06962a2255c95af0b76617156bf700dbd`; E82 ledger snapshot `20fb4a99a955b800a49078ede30700221ca7a9b32fd98db49b8a2fed981af749`.

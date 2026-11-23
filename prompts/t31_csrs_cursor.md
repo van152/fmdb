@@ -3,11 +3,11 @@
 你是受指挥官委派的子代理。t27(stadium)、t30(Clhs 联赛史 46 万行)已证实 club 子表 branch-aware cursor 方法可复制。本任务复制到 **CSrs(预备队),table_type=62**。静态攻坚,晋级 L3。
 
 ## 必读
-- <WORKSPACE>\AGENTS.md(硬约束)
-- <WORKSPACE>\scratch\t27\out\replication.md(方法模板:§1 分支五分类、§2 walk 模板、§3 scout)
-- <WORKSPACE>\scratch\t30\out\REPORT.md + scripts\t30_clhs_cursor.py + scratch\t30\out\verify.py(**最新复制范例**,定长子表全表 walk+独立 verify;注意有符号 i8 sentinel、footer 末 u32 可能是 max UID 非行数、slot19 跳板→真 reader)
-- <WORKSPACE>\scratch\t29\out\profiles\table_server_62.profile.json + .rows.jsonl(**数据侧画像,直接消费不重 dump**;若 inventory 已交付一并读)
-- <WORKSPACE>\scratch\t24\out\subtables.part00*.json(CSrs 的 10 个 nested schema occurrence,idx)
+- D:\tmp2b\fm24-db\AGENTS.md(硬约束)
+- D:\tmp2b\fm24-db\scratch\t27\out\replication.md(方法模板:§1 分支五分类、§2 walk 模板、§3 scout)
+- D:\tmp2b\fm24-db\scratch\t30\out\REPORT.md + scripts\t30_clhs_cursor.py + scratch\t30\out\verify.py(**最新复制范例**,定长子表全表 walk+独立 verify;注意有符号 i8 sentinel、footer 末 u32 可能是 max UID 非行数、slot19 跳板→真 reader)
+- D:\tmp2b\fm24-db\scratch\t29\out\profiles\table_server_62.profile.json + .rows.jsonl(**数据侧画像,直接消费不重 dump**;若 inventory 已交付一并读)
+- D:\tmp2b\fm24-db\scratch\t24\out\subtables.part00*.json(CSrs 的 10 个 nested schema occurrence,idx)
 - evidence/fm24/reports/editor_schema/master.json(club.xml CSrs.list_item_fields,冻结 SHA 7d57477e 对照 MANIFEST)
 
 ## 已知锚点(t27 scout)
@@ -23,8 +23,8 @@
 
 ## 边界
 - 只 CSrs/table62;不碰已闭 Cstc/Clhs;Cafl/Cvfl 双视图另案。
-- 候选不写结论;negative/held 反例原样保留;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
-- 消费 t29 画像;若未交付自行 dump(fm24_dump.py,FM24_DB_DIR=<WORKSPACE>/scratch/data)。
+- 候选不写结论;negative/held 反例原样保留;L4=0;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
+- 消费 t29 画像;若未交付自行 dump(fm24_dump.py,FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data)。
 - 预算内无法闭合则诚实 partial+已绑定子集+剩余清单+首个反例。
 
 ## 交付 scratch/t31/out/

@@ -3,11 +3,11 @@
 你是受指挥官委派的子代理。club 子表 branch-aware cursor 方法已四次证实(t27 stadium 14 L3 / t30 Clhs 8 / t31 CSrs 10/10 全晋级)。本任务复制到 **Cmti(月供/分期),table_type=43**。静态攻坚,晋级 L3。
 
 ## 必读
-- <WORKSPACE>\AGENTS.md(硬约束)
-- <WORKSPACE>\scratch\t27\out\replication.md(方法模板)
-- <WORKSPACE>\scratch\t31\out\REPORT.md + scripts\t31_csrs_cursor.py + scratch\t31\out\verify.py(**最新范例,10/10 全晋级**;leaf thunk→真 reader+identity tail 双 extent、有符号 i8 sentinel、bool 同字节双掩码、ordinal 引用走目标表 ordinal 域、footer 末 u32 含义不妄断)
-- <WORKSPACE>\scratch\t29\out\profiles\table_server_43.profile.json + .rows.jsonl(**数据侧画像,直接消费不重 dump**;若 subtable_inventory.json 已交付一并读)
-- <WORKSPACE>\scratch\t24\out\subtables.part00*.json(Cmti 的 6 个 nested schema occurrence idx)
+- D:\tmp2b\fm24-db\AGENTS.md(硬约束)
+- D:\tmp2b\fm24-db\scratch\t27\out\replication.md(方法模板)
+- D:\tmp2b\fm24-db\scratch\t31\out\REPORT.md + scripts\t31_csrs_cursor.py + scratch\t31\out\verify.py(**最新范例,10/10 全晋级**;leaf thunk→真 reader+identity tail 双 extent、有符号 i8 sentinel、bool 同字节双掩码、ordinal 引用走目标表 ordinal 域、footer 末 u32 含义不妄断)
+- D:\tmp2b\fm24-db\scratch\t29\out\profiles\table_server_43.profile.json + .rows.jsonl(**数据侧画像,直接消费不重 dump**;若 subtable_inventory.json 已交付一并读)
+- D:\tmp2b\fm24-db\scratch\t24\out\subtables.part00*.json(Cmti 的 6 个 nested schema occurrence idx)
 - evidence/fm24/reports/editor_schema/master.json(club.xml Cmti.list_item_fields,冻结 SHA 7d57477e 对照 MANIFEST)
 
 ## 已知锚点
@@ -24,11 +24,11 @@
 
 ## 边界
 - 只 Cmti/table43;不碰已闭 Cstc/Clhs/CSrs;Cafl/Cvfl 另案。
-- 候选不写结论;negative/held 反例保留;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 候选不写结论;negative/held 反例保留;L4=0;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 消费 t29 画像;预算内无法闭合则诚实 partial+已绑定子集+剩余+首反例。
 
 ## 交付 scratch/t32/out/
 - cursor_cmti.json、fields_cmti.json(6 字段台账+grade)、instructions.part*.json、branches.part*.json、verify.py、REPORT.md、DONE.md
 - scripts/t32_cmti_cursor.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;只写 scratch/t32/ 与 scripts/t32_*.py;完成跑 verify + t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;只写 scratch/t32/ 与 scripts/t32_*.py;完成跑 verify + t01_anchors.py(7/7)。

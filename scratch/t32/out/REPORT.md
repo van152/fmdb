@@ -18,7 +18,7 @@ Server 目录项 offset `24766564`，Zstd 首帧 offset `24766598`，packed size
 
 ## 静态链及分支
 
-只读 `<OLD_REPO>/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`，对照 `evidence/fm24/reports/qa/IDA_PROVENANCE.md`。冻结 `evidence/fm24/reports/editor_schema/master.json` SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`；两份快照与 `evidence/MANIFEST.json` 一致。除明确标注外，下面的地址均为 PE **file offset**，对应 VA 与原始 bytes 见 `instructions.part*.json`。
+只读 `D:/tmp2b/fm24/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`，对照 `evidence/fm24/reports/qa/IDA_PROVENANCE.md`。冻结 `evidence/fm24/reports/editor_schema/master.json` SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`；两份快照与 `evidence/MANIFEST.json` 一致。除明确标注外，下面的地址均为 PE **file offset**，对应 VA 与原始 bytes 见 `instructions.part*.json`。
 
 1. Factory `0xf48b30`：rel32 表 `0xf49d38` 第 43 格入 `0xf49675`；`0xf496a2 → 0xf496a9` 写 vptr VA `0x141883a68`。COL `0x18859c0` → TD `.?AVSTARTING_MONTHLY_INSTALLMENT@db@@`。
 2. Slot 19 VA `0x14153d0a0` / offset `0x153c6a0` 是 leaf thunk。属性 reader `0x4370860..0x43709c6`（VA `0x1444dbe60..0x1444dbfc6`，末地址 exclusive）：118 条可达指令、26 块，6 次直接 stream `vtable+0x28`，宽度 `8,8,8,4,4,1`。成功处 `0x43709c1 → 0xfae340`（leaf thunk）→ `0x3c600f0..0x3c6016e`（VA `0x143dcb6f0..0x143dcb76e`）：43 指令、11 块，真正 12 B read 在 `0x3c60119`。两个 extent 均由 PE `RUNTIME_FUNCTION` 定界；唯一 extent 外 CFG 边是真 tail-jump，已追完。
@@ -57,4 +57,4 @@ Server 目录项 offset `24766564`，Zstd 首帧 offset `24766598`，packed size
 
 ## 复验
 
-`FM24_DB_DIR=<WORKSPACE>/scratch/data`。`py -V:3.12 -I -B scripts/t32_cmti_cursor.py`、`py -V:3.12 -I -B scratch/t32/out/verify.py` 均 PASS。独立 verifier 不 import builder 或 `ReaderCFG`，从原 PE 重建可达图，从归档复算 cursor/反例坐标/目标域/全表画像，并逐行对比 t29。两脚本 `--help` / `--selftest` 均 PASS，退出码 0 成功 / 1 检查未过 / 2 用法或致命错误。`py -V:3.12 -I -B scripts/t01_anchors.py` **7/7 PASS**。未启动游戏、编辑器、IDA，未联网或访问 Z:。
+`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`。`py -V:3.12 -I -B scripts/t32_cmti_cursor.py`、`py -V:3.12 -I -B scratch/t32/out/verify.py` 均 PASS。独立 verifier 不 import builder 或 `ReaderCFG`，从原 PE 重建可达图，从归档复算 cursor/反例坐标/目标域/全表画像，并逐行对比 t29。两脚本 `--help` / `--selftest` 均 PASS，退出码 0 成功 / 1 检查未过 / 2 用法或致命错误。`py -V:3.12 -I -B scripts/t01_anchors.py` **7/7 PASS**。未启动游戏、编辑器、IDA，未联网或访问 Z:。

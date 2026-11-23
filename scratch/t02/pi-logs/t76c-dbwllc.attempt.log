@@ -1,0 +1,42 @@
+任务完成。
+
+## 交付清单 — t76c
+
+**8/8 个 (archive, table) 双档组合全部闭合** · verify **197/197** · t01_anchors **7/7**
+
+### 产物
+
+```
+scratch/t76c/out/slots_client_18.json      slots_server_18.json
+scratch/t76c/out/slots_client_27.json      slots_server_27.json
+scratch/t76c/out/slots_client_47.json      slots_server_47.json
+scratch/t76c/out/slots_client_56.json      slots_server_56.json
+scratch/t76c/out/verify.py                 (独立校验器,不 import builder)
+scratch/t76c/out/REPORT.md                 scratch/t76c/out/DONE.md
+scripts/t76c_slots.py                      (builder,复用 t73 纯函数,未改 t73)
+```
+
+分级汇总:**L3=8 · L2=55 · candidate=20 · unassigned=15 · unmapped=12 · escalate=0**
+
+### 三条核心结论
+
+**1. 引用槽存稠密序数,不是 UID**（用无关表独立重推：stadium `Scti@3`→city 100% <56,293、顶值 56,290；city `Cwea@14`→weather 100% <334）。并据此**拒绝**了 `Dfma@20` 的空洞拟合——0..82,100 的出席人数"落在" club 序数域内纯属巧合,JSON 内标 `"vacuous": true`。
+
+**2. derby 双档 6 字节差 = schema 里恰好 3 个缺 `is_client_field` 的字段**（`D1tw/D1td/D1tl`,3×u16,**903 行全 null / 664 行全非空 / 0 行部分 null**）。纯结构对齐,不依赖值域猜测 → 新立 L2。
+
+**3. weather 95B 中段 = 3 + 4×23**。由「全中段唯一 `{0,100}` 列恰在 `3+23b+22` 且逐行一致」钉死；竞争假设 `3+4×22+4` 的组闭合率 **1519 → 583**（满分 4008），已否证并写入 verify 复算。
+
+### 两处负结果（原文保留）
+
+- **agreement**：一行**恰好只有** 13B 身份三元组，`14+6×13+8=100` 吃满 payload。6 个业务字段（`NDBC/FDBC/dbnm/AGna/AGsn/Anti`）在本表 payload 内**不存在** → `unmapped`，不伪造偏移。
+- **lcrg `Llgl`**：非空 712 值对 language(126) 只命中 **537/712** → **不是** language UID 集；对 weather(334) 却 100% 命中且顶值恰为 333。紧致但指向错表 → candidate。
+
+### 一处文法修正
+
+lcrg 条目数组起点是 **23 而非 28**，条目数是 **k+1 而非 k**（`23 + 5(k+1) + 13 = 41 + 5k`）。早先 28+5k 的读法也能"闭合"，是因为**首个条目 pct 恒为 0**（2,488/2,488）被误当填充零。
+
+### 边界说明
+
+组内顺序（`p0..p4`/`w0..w4`/`te..t7`/`Dfg1,Dfg2`/`Dwdr,Dntr`/`D1tw,D1td,D1tl`）数据侧无区分信息，只能靠 exe 写入顺序；weather `w{b}dn` 按排除法指派但值集仅 `{0,1}` 不符 0..50。这三类已在 REPORT §7 明确记为已知边界，非遗漏。
+
+顺带核查：`scratch/t73/cache/` 两个新文件经 mtime 前后对比确认**非本任务写入**（我的代码只调 `load_payload`，从不调 `reference_uids`）。

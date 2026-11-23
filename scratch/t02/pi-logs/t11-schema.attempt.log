@@ -1,0 +1,8 @@
+Warning: No project session found with id 't11-schema-openai-codex'; creating a new session with that id.
+已生成交付物于 `scratch/t11/out/`：`schema_map.json`、`naming_result.json`、`small_tables.json`、`verify.py`、`REPORT.md`，另有可复跑的 `build.py`。只写入了该输出目录。
+
+核心回归通过：非法码归零、t07 保留 45/45、injury 13/13、city 6/6、84 条 VA 指令复核通过，`Sold/Snew/Salt` 3/3，布局宽度闭合通过。
+
+**验收未通过**：命名为 129/240（要求至少 138）；没有两张通过数据侧验证的唯一解小表。type23 的唯一候选被数据侧否决；其余小表未得到完整唯一分配。另发现 type47 按 local region 字段集约束时，还有六种 injury-only 码必须拒绝，和任务书“仅 9 个违规码”的基线冲突；`Lpop` 本身则是合法码。细节与逐表数字见 `REPORT.md`。
+
+`build.py --selftest` 与 `verify.py --selftest` 通过；完整 `verify.py` 按要求以退出码 1 报出上述两项验收缺口，未将未达标结果标为 PASS。

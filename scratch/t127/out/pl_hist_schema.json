@@ -1,0 +1,2494 @@
+{
+ "generated_by": "scripts/t127_pl_hist.py",
+ "dataset": "FM24 playing-history 3-file set (index / id / dt)",
+ "container_framing": {
+  "shared_header": "03 01 74 61 64 (u16 version 0x0103 + ASCII 'tad') + 1 variant byte + u16 per-file tag",
+  "variant_bytes": {
+   "index": "0x2e '.'",
+   "id": "0x2e '.'",
+   "dt": "0x63 'c'"
+  },
+  "payload_tags": {
+   "index": 3569,
+   "id": 1,
+   "dt": 3
+  },
+  "note": "the 2-byte tag differs per file (index 0x0df1 / id 0x0001 / dt 0x0363) so it is a per-file payload kind, not a shared version stamp"
+ },
+ "files": {
+  "index": {
+   "path": "pl_hist_index.dat",
+   "size": 3081975,
+   "header": "03 01 74 61 64 2e f1 0d",
+   "variant_byte": "0x2e '.'",
+   "tag_u16": 3569,
+   "payload_size": 3081967,
+   "records": 515581,
+   "record_size": 8,
+   "compressed": true,
+   "decompressed_size": 4124652,
+   "zstd_frames": {
+    "data_frames": 1,
+    "skippable_frames": 0,
+    "frame_out_uniform": 4124652,
+    "last_frame_out": 4124652,
+    "frame_out_uniform_count": 1,
+    "skippable": []
+   }
+  },
+  "id": {
+   "path": "pl_hist_id.dat",
+   "size": 4124656,
+   "header": "03 01 74 61 64 2e 01 00",
+   "variant_byte": "0x2e '.'",
+   "tag_u16": 1,
+   "payload_size": 4124648,
+   "records": 515581,
+   "record_size": 8,
+   "compressed": false,
+   "decompressed_size": 4124648,
+   "zstd_frames": null
+  },
+  "dt": {
+   "path": "pl_hist_dt.dat",
+   "size": 56996116,
+   "header": "03 01 74 61 64 63 03 00",
+   "variant_byte": "0x63 'c'",
+   "tag_u16": 3,
+   "payload_size": 56996108,
+   "records": 4515803,
+   "record_size": 44,
+   "compressed": true,
+   "decompressed_size": 198695332,
+   "zstd_frames": {
+    "data_frames": 48510,
+    "skippable_frames": 1,
+    "frame_out_uniform": 4096,
+    "last_frame_out": 2468,
+    "frame_out_uniform_count": 48509,
+    "skippable": [
+     {
+      "magic": "0x184d2a5e",
+      "size": 582129,
+      "chunk_table": {
+       "record_size": 12,
+       "entries": 48510,
+       "layout": "u32 compressed_size, u32 decompressed_size, u32 opaque checksum",
+       "compressed_size_matches": 48510,
+       "decompressed_size_matches": 48510,
+       "entries_equal_data_frames": true,
+       "tail_bytes": 9,
+       "tail_hex": "7e bd 00 00 80 b1 ea 92 8f"
+      }
+     }
+    ]
+   }
+  }
+ },
+ "closure": {
+  "closure_diff": 0,
+  "dt_bytes": 198695332,
+  "sum_blocks_bytes": 198695332,
+  "chain": {
+   "terminator_rows": 515581,
+   "continuation_rows": 4000222,
+   "malformed_links": 0,
+   "terminators_exactly_at_block_ends": true,
+   "chain_closed": true
+  }
+ },
+ "linkage": {
+  "index_records": 515581,
+  "id_records": 515581,
+  "index_id_mutual": true,
+  "uid_strictly_increasing": true,
+  "uid_min": 3,
+  "uid_max": 2002040995,
+  "ordinal_col_is_position": true,
+  "offsets_in_bounds": true,
+  "misaligned_offsets": 0,
+  "block_contiguity_violations": 0,
+  "tail_bytes_after_last_block": 0,
+  "closure_diff": 0,
+  "rows_per_player_min": 1,
+  "rows_per_player_max": 57,
+  "rows_per_player_mean": 8.759,
+  "rows_accounted": 4515803,
+  "dt_rows_total": 4515803,
+  "rows_accounted_equals_dt": true
+ },
+ "row_layout": {
+  "stride": 44,
+  "endianness": "little",
+  "index_pair_semantics": "(first_row_offset, last_row_offset) inclusive; nrows = (last-first)//44 + 1",
+  "fields": [
+   {
+    "offset": 0,
+    "width": 2,
+    "name": "year_from",
+    "role": "verified",
+    "comment": "period start year (u16)"
+   },
+   {
+    "offset": 2,
+    "width": 2,
+    "name": "year_to",
+    "role": "verified",
+    "comment": "period end year (u16); == year_from for single-season rows"
+   },
+   {
+    "offset": 4,
+    "width": 1,
+    "name": "flags",
+    "role": "candidate",
+    "comment": "bitfield: 0x01=partial/supplementary spell (loan, mid-season move), 0x02=youth/academy row; bits >=0x04 rare (~940 rows), unresolved"
+   },
+   {
+    "offset": 5,
+    "width": 1,
+    "name": "apps",
+    "role": "verified",
+    "comment": "appearances over the period; 255 = null"
+   },
+   {
+    "offset": 6,
+    "width": 1,
+    "name": "goals",
+    "role": "verified",
+    "comment": "goals over the period; 255 = null"
+   },
+   {
+    "offset": 7,
+    "width": 4,
+    "name": "fee_gbp",
+    "role": "verified",
+    "comment": "transfer fee / value in GBP at period end; 0xFFFFFFFF = null (0xFFFFFFFE/-2, 0xFFFFFFFD/-3 also seen), 0 = explicit zero"
+   },
+   {
+    "offset": 11,
+    "width": 4,
+    "name": "club_id",
+    "role": "verified",
+    "comment": "club (or synthetic non-club team) id; 0xFFFFFFFF = null"
+   },
+   {
+    "offset": 15,
+    "width": 4,
+    "name": "club_id_dup",
+    "role": "duplicate",
+    "comment": "byte-identical copy of club_id in 100% of rows"
+   },
+   {
+    "offset": 19,
+    "width": 4,
+    "name": "comp_id",
+    "role": "verified",
+    "comment": "competition id; 0xFFFFFFFF = null"
+   },
+   {
+    "offset": 23,
+    "width": 4,
+    "name": "comp_id_dup",
+    "role": "duplicate",
+    "comment": "byte-identical copy of comp_id in 100% of rows"
+   },
+   {
+    "offset": 27,
+    "width": 1,
+    "name": "seq_in_year",
+    "role": "candidate",
+    "comment": "1..k when several rows share one start year, else 0"
+   },
+   {
+    "offset": 28,
+    "width": 2,
+    "name": "join_day",
+    "role": "verified",
+    "comment": "day-of-year (1..366); 1 with year 1900 = empty"
+   },
+   {
+    "offset": 30,
+    "width": 2,
+    "name": "join_year",
+    "role": "verified",
+    "comment": "year; 1900 = empty"
+   },
+   {
+    "offset": 32,
+    "width": 2,
+    "name": "leave_day",
+    "role": "verified",
+    "comment": "day-of-year (1..366); 1 with year 1900 = empty"
+   },
+   {
+    "offset": 34,
+    "width": 2,
+    "name": "leave_year",
+    "role": "verified",
+    "comment": "year; 1900 = empty"
+   },
+   {
+    "offset": 36,
+    "width": 2,
+    "name": "tail_a",
+    "role": "unknown",
+    "comment": "4-byte tail word; (1,1900) sentinel in 99.2% of rows"
+   },
+   {
+    "offset": 38,
+    "width": 2,
+    "name": "tail_b",
+    "role": "unknown",
+    "comment": "see tail_a"
+   },
+   {
+    "offset": 40,
+    "width": 4,
+    "name": "next_row",
+    "role": "verified",
+    "comment": "absolute offset of next row in the same career chain; 0xFFFFFFFF terminates"
+   }
+  ]
+ },
+ "field_stats": {
+  "rows": 4515803,
+  "flags_histogram": {
+   "0": 3580085,
+   "1": 254539,
+   "2": 664618,
+   "3": 15599,
+   "4": 729,
+   "5": 3,
+   "6": 20,
+   "8": 139,
+   "9": 2,
+   "10": 1,
+   "12": 19,
+   "16": 27,
+   "20": 5,
+   "24": 7,
+   "28": 3,
+   "32": 6,
+   "34": 1
+  },
+  "apps_null": 1306191,
+  "goals_null": 1307490,
+  "apps_max_live": 75,
+  "goals_max_live": 75,
+  "goals_gt_apps_live": 9497,
+  "fee_null_FFFFFFFF": 3631124,
+  "fee_FE": 24518,
+  "fee_FD": 1113,
+  "fee_zero": 823059,
+  "fee_real_rows": 35989,
+  "fee_real_min": 1,
+  "fee_real_max": 4294967291,
+  "year_from_min": 1954,
+  "year_from_max": 2025,
+  "year_span_hist_-5..10": {
+   "-5": 1174,
+   "-4": 634,
+   "-3": 1065,
+   "-2": 2195,
+   "-1": 6457,
+   "0": 3235206,
+   "1": 1108798,
+   "2": 124444,
+   "3": 18816,
+   "4": 7419,
+   "5": 3713,
+   "6": 2066,
+   "7": 1218,
+   "8": 787,
+   "9": 530,
+   "10": 1281
+  },
+  "join_null": 2201627,
+  "leave_null": 2699923,
+  "join_day_out_of_range": 0,
+  "leave_day_out_of_range": 0,
+  "tail_sentinel_rows": 4477707,
+  "tail_other_rows": 38096,
+  "club_null": 16057,
+  "comp_null": 869507,
+  "club_dup_mismatch": 0,
+  "comp_dup_mismatch": 0
+ },
+ "players": {
+  "total_players_indexed": 515581,
+  "total_career_rows": 4515803,
+  "rows_per_player": {
+   "min": 1,
+   "max": 57,
+   "mean": 8.759
+  }
+ },
+ "comp_name_hints": {
+  "11": "Premier League",
+  "12": "Championship",
+  "13": "League One",
+  "16": "Ligue 1",
+  "22": "Bundesliga",
+  "32": "Serie A",
+  "60": "Liga Portugal",
+  "67": "La Liga"
+ },
+ "comp_hints_disclaimer": "competition names are NOT decoded from a name table; they are corroborated from club-season facts in this dataset",
+ "stars": {
+  "Harry Kane": {
+   "uid": 28049320,
+   "found": true,
+   "ordinal": 138595,
+   "first_row_offset": 76162548,
+   "last_row_offset": 76163296,
+   "nrows": 18,
+   "rows": [
+    {
+     "row": 1730967,
+     "year_from": 2009,
+     "year_to": 2009,
+     "flags": 2,
+     "apps": 0,
+     "goals": 0,
+     "fee_gbp": null,
+     "club_id": 728,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": "2009-07-01",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76162592,
+     "club": "Tottenham"
+    },
+    {
+     "row": 1730968,
+     "year_from": 2010,
+     "year_to": 2010,
+     "flags": 0,
+     "apps": 0,
+     "goals": 0,
+     "fee_gbp": null,
+     "club_id": 728,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 1,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76162636,
+     "club": "Tottenham"
+    },
+    {
+     "row": 1730969,
+     "year_from": 2010,
+     "year_to": 2011,
+     "flags": 1,
+     "apps": 18,
+     "goals": 5,
+     "fee_gbp": null,
+     "club_id": 674,
+     "comp_id": 13,
+     "comp_hint": "League One",
+     "seq_in_year": 2,
+     "joined": "2011-01-07",
+     "left": "2011-05-31",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76162680,
+     "club": "Leyton Orient"
+    },
+    {
+     "row": 1730970,
+     "year_from": 2011,
+     "year_to": 2011,
+     "flags": 0,
+     "apps": 0,
+     "goals": 0,
+     "fee_gbp": null,
+     "club_id": 728,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 1,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76162724,
+     "club": "Tottenham"
+    },
+    {
+     "row": 1730971,
+     "year_from": 2011,
+     "year_to": 2012,
+     "flags": 1,
+     "apps": 22,
+     "goals": 7,
+     "fee_gbp": null,
+     "club_id": 686,
+     "comp_id": 12,
+     "comp_hint": "Championship",
+     "seq_in_year": 2,
+     "joined": "2012-01-01",
+     "left": "2012-05-10",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76162768,
+     "club": "Millwall"
+    },
+    {
+     "row": 1730972,
+     "year_from": 2012,
+     "year_to": 2012,
+     "flags": 0,
+     "apps": 1,
+     "goals": 0,
+     "fee_gbp": null,
+     "club_id": 728,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 1,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76162812,
+     "club": "Tottenham"
+    },
+    {
+     "row": 1730973,
+     "year_from": 2012,
+     "year_to": 2013,
+     "flags": 1,
+     "apps": 3,
+     "goals": 0,
+     "fee_gbp": null,
+     "club_id": 691,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 2,
+     "joined": "2012-08-31",
+     "left": "2013-02-01",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76162856,
+     "club": "Norwich"
+    },
+    {
+     "row": 1730974,
+     "year_from": 2012,
+     "year_to": 2013,
+     "flags": 1,
+     "apps": 13,
+     "goals": 2,
+     "fee_gbp": null,
+     "club_id": 673,
+     "comp_id": 12,
+     "comp_hint": "Championship",
+     "seq_in_year": 3,
+     "joined": "2013-02-21",
+     "left": "2013-05-31",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76162900,
+     "club": "Leicester"
+    },
+    {
+     "row": 1730975,
+     "year_from": 2013,
+     "year_to": 2013,
+     "flags": 0,
+     "apps": 10,
+     "goals": 3,
+     "fee_gbp": null,
+     "club_id": 728,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76162944,
+     "club": "Tottenham"
+    },
+    {
+     "row": 1730976,
+     "year_from": 2014,
+     "year_to": 2014,
+     "flags": 0,
+     "apps": 34,
+     "goals": 21,
+     "fee_gbp": null,
+     "club_id": 728,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76162988,
+     "club": "Tottenham"
+    },
+    {
+     "row": 1730977,
+     "year_from": 2015,
+     "year_to": 2015,
+     "flags": 0,
+     "apps": 38,
+     "goals": 25,
+     "fee_gbp": null,
+     "club_id": 728,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76163032,
+     "club": "Tottenham"
+    },
+    {
+     "row": 1730978,
+     "year_from": 2016,
+     "year_to": 2016,
+     "flags": 0,
+     "apps": 30,
+     "goals": 29,
+     "fee_gbp": null,
+     "club_id": 728,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76163076,
+     "club": "Tottenham"
+    },
+    {
+     "row": 1730979,
+     "year_from": 2017,
+     "year_to": 2017,
+     "flags": 0,
+     "apps": 37,
+     "goals": 30,
+     "fee_gbp": null,
+     "club_id": 728,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76163120,
+     "club": "Tottenham"
+    },
+    {
+     "row": 1730980,
+     "year_from": 2018,
+     "year_to": 2018,
+     "flags": 0,
+     "apps": 28,
+     "goals": 17,
+     "fee_gbp": null,
+     "club_id": 728,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76163164,
+     "club": "Tottenham"
+    },
+    {
+     "row": 1730981,
+     "year_from": 2019,
+     "year_to": 2019,
+     "flags": 0,
+     "apps": 29,
+     "goals": 18,
+     "fee_gbp": null,
+     "club_id": 728,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76163208,
+     "club": "Tottenham"
+    },
+    {
+     "row": 1730982,
+     "year_from": 2020,
+     "year_to": 2020,
+     "flags": 0,
+     "apps": 35,
+     "goals": 23,
+     "fee_gbp": null,
+     "club_id": 728,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76163252,
+     "club": "Tottenham"
+    },
+    {
+     "row": 1730983,
+     "year_from": 2021,
+     "year_to": 2021,
+     "flags": 0,
+     "apps": 37,
+     "goals": 17,
+     "fee_gbp": null,
+     "club_id": 728,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 76163296,
+     "club": "Tottenham"
+    },
+    {
+     "row": 1730984,
+     "year_from": 2022,
+     "year_to": 2023,
+     "flags": 0,
+     "apps": 38,
+     "goals": 30,
+     "fee_gbp": 85746464,
+     "club_id": 728,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": "2023-08-12",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 4294967295,
+     "club": "Tottenham"
+    }
+   ],
+   "name": "Harry Kane"
+  },
+  "Lionel Messi": {
+   "uid": 7458500,
+   "found": true,
+   "ordinal": 44965,
+   "first_row_offset": 32269380,
+   "last_row_offset": 32270392,
+   "nrows": 24,
+   "rows": [
+    {
+     "row": 733395,
+     "year_from": 2002,
+     "year_to": 2002,
+     "flags": 2,
+     "apps": 0,
+     "goals": 0,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": "2000-12-14",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32269424,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733396,
+     "year_from": 2003,
+     "year_to": 2003,
+     "flags": 0,
+     "apps": 10,
+     "goals": 5,
+     "fee_gbp": null,
+     "club_id": 4212171,
+     "comp_id": 67023614,
+     "comp_hint": null,
+     "seq_in_year": 1,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32269468,
+     "club": "Barcelona C"
+    },
+    {
+     "row": 733397,
+     "year_from": 2003,
+     "year_to": 2003,
+     "flags": 0,
+     "apps": 5,
+     "goals": 0,
+     "fee_gbp": null,
+     "club_id": 1668,
+     "comp_id": 71,
+     "comp_hint": null,
+     "seq_in_year": 2,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32269512,
+     "club": "Barcelona B"
+    },
+    {
+     "row": 733398,
+     "year_from": 2004,
+     "year_to": 2004,
+     "flags": 0,
+     "apps": 17,
+     "goals": 6,
+     "fee_gbp": null,
+     "club_id": 1668,
+     "comp_id": 71,
+     "comp_hint": null,
+     "seq_in_year": 1,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32269556,
+     "club": "Barcelona B"
+    },
+    {
+     "row": 733399,
+     "year_from": 2004,
+     "year_to": 2004,
+     "flags": 0,
+     "apps": 7,
+     "goals": 1,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 2,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32269600,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733400,
+     "year_from": 2005,
+     "year_to": 2005,
+     "flags": 0,
+     "apps": 17,
+     "goals": 6,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32269644,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733401,
+     "year_from": 2006,
+     "year_to": 2006,
+     "flags": 0,
+     "apps": 26,
+     "goals": 14,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32269688,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733402,
+     "year_from": 2007,
+     "year_to": 2007,
+     "flags": 0,
+     "apps": 28,
+     "goals": 10,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32269732,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733403,
+     "year_from": 2008,
+     "year_to": 2008,
+     "flags": 0,
+     "apps": 31,
+     "goals": 23,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32269776,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733404,
+     "year_from": 2009,
+     "year_to": 2009,
+     "flags": 0,
+     "apps": 35,
+     "goals": 34,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32269820,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733405,
+     "year_from": 2010,
+     "year_to": 2010,
+     "flags": 0,
+     "apps": 33,
+     "goals": 31,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32269864,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733406,
+     "year_from": 2011,
+     "year_to": 2011,
+     "flags": 0,
+     "apps": 37,
+     "goals": 50,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32269908,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733407,
+     "year_from": 2012,
+     "year_to": 2012,
+     "flags": 0,
+     "apps": 32,
+     "goals": 46,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32269952,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733408,
+     "year_from": 2013,
+     "year_to": 2013,
+     "flags": 0,
+     "apps": 31,
+     "goals": 28,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32269996,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733409,
+     "year_from": 2014,
+     "year_to": 2014,
+     "flags": 0,
+     "apps": 38,
+     "goals": 43,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32270040,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733410,
+     "year_from": 2015,
+     "year_to": 2015,
+     "flags": 0,
+     "apps": 33,
+     "goals": 26,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32270084,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733411,
+     "year_from": 2016,
+     "year_to": 2016,
+     "flags": 0,
+     "apps": 34,
+     "goals": 37,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32270128,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733412,
+     "year_from": 2017,
+     "year_to": 2017,
+     "flags": 0,
+     "apps": 36,
+     "goals": 34,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32270172,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733413,
+     "year_from": 2018,
+     "year_to": 2018,
+     "flags": 0,
+     "apps": 34,
+     "goals": 36,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32270216,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733414,
+     "year_from": 2019,
+     "year_to": 2019,
+     "flags": 0,
+     "apps": 33,
+     "goals": 25,
+     "fee_gbp": null,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32270260,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733415,
+     "year_from": 2020,
+     "year_to": 2021,
+     "flags": 0,
+     "apps": 35,
+     "goals": 30,
+     "fee_gbp": 0,
+     "club_id": 1708,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": "2021-06-30",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32270304,
+     "club": "Barcelona"
+    },
+    {
+     "row": 733416,
+     "year_from": 2021,
+     "year_to": 2021,
+     "flags": 0,
+     "apps": 26,
+     "goals": 6,
+     "fee_gbp": null,
+     "club_id": 868,
+     "comp_id": 16,
+     "comp_hint": "Ligue 1",
+     "seq_in_year": 0,
+     "joined": "2021-08-10",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32270348,
+     "club": "Paris SG"
+    },
+    {
+     "row": 733417,
+     "year_from": 2022,
+     "year_to": 2023,
+     "flags": 0,
+     "apps": 32,
+     "goals": 16,
+     "fee_gbp": 0,
+     "club_id": 868,
+     "comp_id": 16,
+     "comp_hint": "Ligue 1",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": "2023-06-30",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 32270392,
+     "club": "Paris SG"
+    },
+    {
+     "row": 733418,
+     "year_from": 2023,
+     "year_to": 2023,
+     "flags": 0,
+     "apps": 6,
+     "goals": 1,
+     "fee_gbp": null,
+     "club_id": 72052048,
+     "comp_id": 40,
+     "comp_hint": null,
+     "seq_in_year": 0,
+     "joined": "2023-07-15",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 4294967295,
+     "club": "Inter Miami"
+    }
+   ],
+   "name": "Lionel Messi"
+  },
+  "Cristiano Ronaldo": {
+   "uid": 735216,
+   "found": true,
+   "ordinal": 17247,
+   "first_row_offset": 11949872,
+   "last_row_offset": 11950972,
+   "nrows": 26,
+   "rows": [
+    {
+     "row": 271588,
+     "year_from": 2000,
+     "year_to": 2000,
+     "flags": 2,
+     "apps": 0,
+     "goals": 0,
+     "fee_gbp": null,
+     "club_id": 1489,
+     "comp_id": 60,
+     "comp_hint": "Liga Portugal",
+     "seq_in_year": 0,
+     "joined": "2000-07-01",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11949916,
+     "club": "Sporting CP"
+    },
+    {
+     "row": 271589,
+     "year_from": 2001,
+     "year_to": 2001,
+     "flags": 2,
+     "apps": 0,
+     "goals": 0,
+     "fee_gbp": null,
+     "club_id": 1489,
+     "comp_id": 60,
+     "comp_hint": "Liga Portugal",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11949960,
+     "club": "Sporting CP"
+    },
+    {
+     "row": 271590,
+     "year_from": 2002,
+     "year_to": 2002,
+     "flags": 0,
+     "apps": 2,
+     "goals": 0,
+     "fee_gbp": null,
+     "club_id": 55056835,
+     "comp_id": 55020402,
+     "comp_hint": null,
+     "seq_in_year": 1,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950004,
+     "club": "Sporting CP B"
+    },
+    {
+     "row": 271591,
+     "year_from": 2002,
+     "year_to": 2003,
+     "flags": 0,
+     "apps": 25,
+     "goals": 3,
+     "fee_gbp": 12240000,
+     "club_id": 1489,
+     "comp_id": 60,
+     "comp_hint": "Liga Portugal",
+     "seq_in_year": 2,
+     "joined": null,
+     "left": "2003-08-12",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950048,
+     "club": "Sporting CP"
+    },
+    {
+     "row": 271592,
+     "year_from": 2003,
+     "year_to": 2003,
+     "flags": 0,
+     "apps": 29,
+     "goals": 4,
+     "fee_gbp": null,
+     "club_id": 680,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": "2003-08-12",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950092,
+     "club": "Man UFC"
+    },
+    {
+     "row": 271593,
+     "year_from": 2004,
+     "year_to": 2004,
+     "flags": 0,
+     "apps": 33,
+     "goals": 5,
+     "fee_gbp": null,
+     "club_id": 680,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950136,
+     "club": "Man UFC"
+    },
+    {
+     "row": 271594,
+     "year_from": 2005,
+     "year_to": 2005,
+     "flags": 0,
+     "apps": 33,
+     "goals": 9,
+     "fee_gbp": null,
+     "club_id": 680,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950180,
+     "club": "Man UFC"
+    },
+    {
+     "row": 271595,
+     "year_from": 2006,
+     "year_to": 2006,
+     "flags": 0,
+     "apps": 34,
+     "goals": 17,
+     "fee_gbp": null,
+     "club_id": 680,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950224,
+     "club": "Man UFC"
+    },
+    {
+     "row": 271596,
+     "year_from": 2007,
+     "year_to": 2007,
+     "flags": 0,
+     "apps": 34,
+     "goals": 31,
+     "fee_gbp": null,
+     "club_id": 680,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950268,
+     "club": "Man UFC"
+    },
+    {
+     "row": 271597,
+     "year_from": 2008,
+     "year_to": 2009,
+     "flags": 0,
+     "apps": 33,
+     "goals": 18,
+     "fee_gbp": 80000000,
+     "club_id": 680,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": "2009-07-01",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950312,
+     "club": "Man UFC"
+    },
+    {
+     "row": 271598,
+     "year_from": 2009,
+     "year_to": 2009,
+     "flags": 0,
+     "apps": 29,
+     "goals": 26,
+     "fee_gbp": null,
+     "club_id": 1736,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": "2009-07-01",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950356,
+     "club": "R. Madrid"
+    },
+    {
+     "row": 271599,
+     "year_from": 2010,
+     "year_to": 2010,
+     "flags": 0,
+     "apps": 34,
+     "goals": 40,
+     "fee_gbp": null,
+     "club_id": 1736,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950400,
+     "club": "R. Madrid"
+    },
+    {
+     "row": 271600,
+     "year_from": 2011,
+     "year_to": 2011,
+     "flags": 0,
+     "apps": 38,
+     "goals": 46,
+     "fee_gbp": null,
+     "club_id": 1736,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950444,
+     "club": "R. Madrid"
+    },
+    {
+     "row": 271601,
+     "year_from": 2012,
+     "year_to": 2012,
+     "flags": 0,
+     "apps": 34,
+     "goals": 34,
+     "fee_gbp": null,
+     "club_id": 1736,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950488,
+     "club": "R. Madrid"
+    },
+    {
+     "row": 271602,
+     "year_from": 2013,
+     "year_to": 2013,
+     "flags": 0,
+     "apps": 30,
+     "goals": 31,
+     "fee_gbp": null,
+     "club_id": 1736,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950532,
+     "club": "R. Madrid"
+    },
+    {
+     "row": 271603,
+     "year_from": 2014,
+     "year_to": 2014,
+     "flags": 0,
+     "apps": 35,
+     "goals": 48,
+     "fee_gbp": null,
+     "club_id": 1736,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950576,
+     "club": "R. Madrid"
+    },
+    {
+     "row": 271604,
+     "year_from": 2015,
+     "year_to": 2015,
+     "flags": 0,
+     "apps": 36,
+     "goals": 35,
+     "fee_gbp": null,
+     "club_id": 1736,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950620,
+     "club": "R. Madrid"
+    },
+    {
+     "row": 271605,
+     "year_from": 2016,
+     "year_to": 2016,
+     "flags": 0,
+     "apps": 29,
+     "goals": 25,
+     "fee_gbp": null,
+     "club_id": 1736,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950664,
+     "club": "R. Madrid"
+    },
+    {
+     "row": 271606,
+     "year_from": 2017,
+     "year_to": 2018,
+     "flags": 0,
+     "apps": 27,
+     "goals": 26,
+     "fee_gbp": 92884600,
+     "club_id": 1736,
+     "comp_id": 67,
+     "comp_hint": "La Liga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": "2018-07-01",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950708,
+     "club": "R. Madrid"
+    },
+    {
+     "row": 271607,
+     "year_from": 2018,
+     "year_to": 2018,
+     "flags": 0,
+     "apps": 31,
+     "goals": 21,
+     "fee_gbp": null,
+     "club_id": 1139,
+     "comp_id": 32,
+     "comp_hint": "Serie A",
+     "seq_in_year": 0,
+     "joined": "2018-07-01",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950752,
+     "club": "Juventus"
+    },
+    {
+     "row": 271608,
+     "year_from": 2019,
+     "year_to": 2019,
+     "flags": 0,
+     "apps": 33,
+     "goals": 31,
+     "fee_gbp": null,
+     "club_id": 1139,
+     "comp_id": 32,
+     "comp_hint": "Serie A",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950796,
+     "club": "Juventus"
+    },
+    {
+     "row": 271609,
+     "year_from": 2020,
+     "year_to": 2020,
+     "flags": 0,
+     "apps": 33,
+     "goals": 29,
+     "fee_gbp": null,
+     "club_id": 1139,
+     "comp_id": 32,
+     "comp_hint": "Serie A",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950840,
+     "club": "Juventus"
+    },
+    {
+     "row": 271610,
+     "year_from": 2021,
+     "year_to": 2021,
+     "flags": 0,
+     "apps": 1,
+     "goals": 0,
+     "fee_gbp": 12850000,
+     "club_id": 1139,
+     "comp_id": 32,
+     "comp_hint": "Serie A",
+     "seq_in_year": 1,
+     "joined": null,
+     "left": "2021-08-31",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950884,
+     "club": "Juventus"
+    },
+    {
+     "row": 271611,
+     "year_from": 2021,
+     "year_to": 2021,
+     "flags": 0,
+     "apps": 30,
+     "goals": 18,
+     "fee_gbp": null,
+     "club_id": 680,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 2,
+     "joined": "2021-08-31",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950928,
+     "club": "Man UFC"
+    },
+    {
+     "row": 271612,
+     "year_from": 2022,
+     "year_to": 2022,
+     "flags": 0,
+     "apps": 10,
+     "goals": 1,
+     "fee_gbp": 0,
+     "club_id": 680,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 1,
+     "joined": null,
+     "left": "2022-11-22",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 11950972,
+     "club": "Man UFC"
+    },
+    {
+     "row": 271613,
+     "year_from": 2022,
+     "year_to": 2022,
+     "flags": 0,
+     "apps": 16,
+     "goals": 14,
+     "fee_gbp": null,
+     "club_id": 102862,
+     "comp_id": 7920263,
+     "comp_hint": null,
+     "seq_in_year": 2,
+     "joined": "2022-12-31",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 4294967295,
+     "club": "Al-Nassr (KSA)"
+    }
+   ],
+   "name": "Cristiano Ronaldo"
+  },
+  "Kevin De Bruyne": {
+   "uid": 18004457,
+   "found": true,
+   "ordinal": 91568,
+   "first_row_offset": 55327360,
+   "last_row_offset": 55328284,
+   "nrows": 22,
+   "rows": [
+    {
+     "row": 1257440,
+     "year_from": 2005,
+     "year_to": 2006,
+     "flags": 2,
+     "apps": 0,
+     "goals": 0,
+     "fee_gbp": 0,
+     "club_id": 168,
+     "comp_id": 1,
+     "comp_hint": null,
+     "seq_in_year": 0,
+     "joined": "1999-07-01",
+     "left": "2006-07-01",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55327404,
+     "club": "AA Gent"
+    },
+    {
+     "row": 1257441,
+     "year_from": 2006,
+     "year_to": 2006,
+     "flags": 2,
+     "apps": 0,
+     "goals": 0,
+     "fee_gbp": null,
+     "club_id": 258,
+     "comp_id": 1,
+     "comp_hint": null,
+     "seq_in_year": 0,
+     "joined": "2006-07-01",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55327448,
+     "club": "KRC Genk"
+    },
+    {
+     "row": 1257442,
+     "year_from": 2007,
+     "year_to": 2007,
+     "flags": 2,
+     "apps": 0,
+     "goals": 0,
+     "fee_gbp": null,
+     "club_id": 258,
+     "comp_id": 1,
+     "comp_hint": null,
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55327492,
+     "club": "KRC Genk"
+    },
+    {
+     "row": 1257443,
+     "year_from": 2008,
+     "year_to": 2008,
+     "flags": 0,
+     "apps": 2,
+     "goals": 0,
+     "fee_gbp": null,
+     "club_id": 258,
+     "comp_id": 1,
+     "comp_hint": null,
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55327536,
+     "club": "KRC Genk"
+    },
+    {
+     "row": 1257444,
+     "year_from": 2009,
+     "year_to": 2009,
+     "flags": 0,
+     "apps": 35,
+     "goals": 3,
+     "fee_gbp": null,
+     "club_id": 258,
+     "comp_id": 1,
+     "comp_hint": null,
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55327580,
+     "club": "KRC Genk"
+    },
+    {
+     "row": 1257445,
+     "year_from": 2010,
+     "year_to": 2010,
+     "flags": 0,
+     "apps": 32,
+     "goals": 5,
+     "fee_gbp": null,
+     "club_id": 258,
+     "comp_id": 1,
+     "comp_hint": null,
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55327624,
+     "club": "KRC Genk"
+    },
+    {
+     "row": 1257446,
+     "year_from": 2011,
+     "year_to": 2012,
+     "flags": 0,
+     "apps": 15,
+     "goals": 6,
+     "fee_gbp": 6484148,
+     "club_id": 258,
+     "comp_id": 1,
+     "comp_hint": null,
+     "seq_in_year": 1,
+     "joined": null,
+     "left": "2012-01-31",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55327668,
+     "club": "KRC Genk"
+    },
+    {
+     "row": 1257447,
+     "year_from": 2011,
+     "year_to": 2011,
+     "flags": 0,
+     "apps": 0,
+     "goals": 0,
+     "fee_gbp": null,
+     "club_id": 630,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 2,
+     "joined": "2012-01-31",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55327712,
+     "club": "Chelsea"
+    },
+    {
+     "row": 1257448,
+     "year_from": 2011,
+     "year_to": 2012,
+     "flags": 1,
+     "apps": 13,
+     "goals": 2,
+     "fee_gbp": 0,
+     "club_id": 258,
+     "comp_id": 1,
+     "comp_hint": null,
+     "seq_in_year": 3,
+     "joined": "2012-02-01",
+     "left": "2012-06-30",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55327756,
+     "club": "KRC Genk"
+    },
+    {
+     "row": 1257449,
+     "year_from": 2012,
+     "year_to": 2013,
+     "flags": 1,
+     "apps": 33,
+     "goals": 10,
+     "fee_gbp": 450000,
+     "club_id": 948,
+     "comp_id": 22,
+     "comp_hint": "Bundesliga",
+     "seq_in_year": 0,
+     "joined": "2012-08-02",
+     "left": "2013-06-30",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55327800,
+     "club": "SV Werder"
+    },
+    {
+     "row": 1257450,
+     "year_from": 2013,
+     "year_to": 2014,
+     "flags": 0,
+     "apps": 3,
+     "goals": 0,
+     "fee_gbp": 17726782,
+     "club_id": 630,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 1,
+     "joined": null,
+     "left": "2014-01-18",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55327844,
+     "club": "Chelsea"
+    },
+    {
+     "row": 1257451,
+     "year_from": 2013,
+     "year_to": 2013,
+     "flags": 0,
+     "apps": 16,
+     "goals": 3,
+     "fee_gbp": null,
+     "club_id": 961,
+     "comp_id": 22,
+     "comp_hint": "Bundesliga",
+     "seq_in_year": 2,
+     "joined": "2014-01-18",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55327888,
+     "club": "VfL Wolfsburg"
+    },
+    {
+     "row": 1257452,
+     "year_from": 2014,
+     "year_to": 2014,
+     "flags": 0,
+     "apps": 34,
+     "goals": 10,
+     "fee_gbp": null,
+     "club_id": 961,
+     "comp_id": 22,
+     "comp_hint": "Bundesliga",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55327932,
+     "club": "VfL Wolfsburg"
+    },
+    {
+     "row": 1257453,
+     "year_from": 2015,
+     "year_to": 2015,
+     "flags": 0,
+     "apps": 2,
+     "goals": 0,
+     "fee_gbp": 54406964,
+     "club_id": 961,
+     "comp_id": 22,
+     "comp_hint": "Bundesliga",
+     "seq_in_year": 1,
+     "joined": null,
+     "left": "2015-08-30",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55327976,
+     "club": "VfL Wolfsburg"
+    },
+    {
+     "row": 1257454,
+     "year_from": 2015,
+     "year_to": 2015,
+     "flags": 0,
+     "apps": 25,
+     "goals": 7,
+     "fee_gbp": null,
+     "club_id": 679,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 2,
+     "joined": "2015-08-30",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55328020,
+     "club": "Man City"
+    },
+    {
+     "row": 1257455,
+     "year_from": 2016,
+     "year_to": 2016,
+     "flags": 0,
+     "apps": 36,
+     "goals": 6,
+     "fee_gbp": null,
+     "club_id": 679,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55328064,
+     "club": "Man City"
+    },
+    {
+     "row": 1257456,
+     "year_from": 2017,
+     "year_to": 2017,
+     "flags": 0,
+     "apps": 37,
+     "goals": 8,
+     "fee_gbp": null,
+     "club_id": 679,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55328108,
+     "club": "Man City"
+    },
+    {
+     "row": 1257457,
+     "year_from": 2018,
+     "year_to": 2018,
+     "flags": 0,
+     "apps": 19,
+     "goals": 2,
+     "fee_gbp": null,
+     "club_id": 679,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55328152,
+     "club": "Man City"
+    },
+    {
+     "row": 1257458,
+     "year_from": 2019,
+     "year_to": 2019,
+     "flags": 0,
+     "apps": 35,
+     "goals": 13,
+     "fee_gbp": null,
+     "club_id": 679,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55328196,
+     "club": "Man City"
+    },
+    {
+     "row": 1257459,
+     "year_from": 2020,
+     "year_to": 2020,
+     "flags": 0,
+     "apps": 25,
+     "goals": 6,
+     "fee_gbp": null,
+     "club_id": 679,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55328240,
+     "club": "Man City"
+    },
+    {
+     "row": 1257460,
+     "year_from": 2021,
+     "year_to": 2021,
+     "flags": 0,
+     "apps": 30,
+     "goals": 15,
+     "fee_gbp": null,
+     "club_id": 679,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 55328284,
+     "club": "Man City"
+    },
+    {
+     "row": 1257461,
+     "year_from": 2022,
+     "year_to": 2022,
+     "flags": 0,
+     "apps": 32,
+     "goals": 7,
+     "fee_gbp": null,
+     "club_id": 679,
+     "comp_id": 11,
+     "comp_hint": "Premier League",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 4294967295,
+     "club": "Man City"
+    }
+   ],
+   "name": "Kevin De Bruyne"
+  },
+  "Kylian Mbappe": {
+   "uid": 85139014,
+   "found": true,
+   "ordinal": 304613,
+   "first_row_offset": 151044564,
+   "last_row_offset": 151044960,
+   "nrows": 10,
+   "rows": [
+    {
+     "row": 3432831,
+     "year_from": 2014,
+     "year_to": 2014,
+     "flags": 2,
+     "apps": 0,
+     "goals": 0,
+     "fee_gbp": null,
+     "club_id": 826,
+     "comp_id": 16,
+     "comp_hint": "Ligue 1",
+     "seq_in_year": 0,
+     "joined": "2013-07-03",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 151044608,
+     "club": "AS Monaco"
+    },
+    {
+     "row": 3432832,
+     "year_from": 2015,
+     "year_to": 2015,
+     "flags": 0,
+     "apps": 11,
+     "goals": 1,
+     "fee_gbp": null,
+     "club_id": 826,
+     "comp_id": 16,
+     "comp_hint": "Ligue 1",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 151044652,
+     "club": "AS Monaco"
+    },
+    {
+     "row": 3432833,
+     "year_from": 2016,
+     "year_to": 2016,
+     "flags": 0,
+     "apps": 29,
+     "goals": 15,
+     "fee_gbp": null,
+     "club_id": 826,
+     "comp_id": 16,
+     "comp_hint": "Ligue 1",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 151044696,
+     "club": "AS Monaco"
+    },
+    {
+     "row": 3432834,
+     "year_from": 2017,
+     "year_to": 2018,
+     "flags": 0,
+     "apps": 1,
+     "goals": 0,
+     "fee_gbp": 159230736,
+     "club_id": 826,
+     "comp_id": 16,
+     "comp_hint": "Ligue 1",
+     "seq_in_year": 1,
+     "joined": null,
+     "left": "2018-07-01",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 151044740,
+     "club": "AS Monaco"
+    },
+    {
+     "row": 3432835,
+     "year_from": 2017,
+     "year_to": 2018,
+     "flags": 1,
+     "apps": 27,
+     "goals": 13,
+     "fee_gbp": null,
+     "club_id": 868,
+     "comp_id": 16,
+     "comp_hint": "Ligue 1",
+     "seq_in_year": 2,
+     "joined": "2017-08-31",
+     "left": "2018-06-30",
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 151044784,
+     "club": "Paris SG"
+    },
+    {
+     "row": 3432836,
+     "year_from": 2018,
+     "year_to": 2018,
+     "flags": 0,
+     "apps": 29,
+     "goals": 33,
+     "fee_gbp": null,
+     "club_id": 868,
+     "comp_id": 16,
+     "comp_hint": "Ligue 1",
+     "seq_in_year": 0,
+     "joined": "2018-07-01",
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 151044828,
+     "club": "Paris SG"
+    },
+    {
+     "row": 3432837,
+     "year_from": 2019,
+     "year_to": 2019,
+     "flags": 0,
+     "apps": 20,
+     "goals": 18,
+     "fee_gbp": null,
+     "club_id": 868,
+     "comp_id": 16,
+     "comp_hint": "Ligue 1",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 151044872,
+     "club": "Paris SG"
+    },
+    {
+     "row": 3432838,
+     "year_from": 2020,
+     "year_to": 2020,
+     "flags": 0,
+     "apps": 31,
+     "goals": 27,
+     "fee_gbp": null,
+     "club_id": 868,
+     "comp_id": 16,
+     "comp_hint": "Ligue 1",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 151044916,
+     "club": "Paris SG"
+    },
+    {
+     "row": 3432839,
+     "year_from": 2021,
+     "year_to": 2021,
+     "flags": 0,
+     "apps": 35,
+     "goals": 28,
+     "fee_gbp": null,
+     "club_id": 868,
+     "comp_id": 16,
+     "comp_hint": "Ligue 1",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 151044960,
+     "club": "Paris SG"
+    },
+    {
+     "row": 3432840,
+     "year_from": 2022,
+     "year_to": 2022,
+     "flags": 0,
+     "apps": 34,
+     "goals": 29,
+     "fee_gbp": null,
+     "club_id": 868,
+     "comp_id": 16,
+     "comp_hint": "Ligue 1",
+     "seq_in_year": 0,
+     "joined": null,
+     "left": null,
+     "tail": [
+      1,
+      1900
+     ],
+     "next_row": 4294967295,
+     "club": "Paris SG"
+    }
+   ],
+   "name": "Kylian Mbappe"
+  }
+ }
+}

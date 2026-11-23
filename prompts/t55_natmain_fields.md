@@ -3,7 +3,7 @@
 你是受指挥官委派的子代理,负责**最难**的批量字段映射任务。阶段三核心:nation 346 个 schema 字段目前 **0 命名**(BASELINE);但方法基建已经成熟——t47/t49/t51/t53 已把 t10 行框(cursor + identity tail)、slot19 reader extent(`0x103fac0..0x1040be4`,992 可达指令)、mode 分叉(client 0/server 1)、identity/footer 全部闭合验收;Ntxr/t9 各 parent 的"reader 4CC 分发→对象位移→wire sink"三重闸门范式已多次复用。本任务把它推广到**主行内部**:从 t10 主 reader 的可达 CFG 出发,枚举主行 wire 的**字段槽位序列**(按读取顺序的 4CC/类型/位移),再用实档域检验批量晋级。
 
 ## 必读
-- <WORKSPACE>\AGENTS.md(硬约束;候选不写结论;negative 原样保留;L4=0)
+- D:\tmp2b\fm24-db\AGENTS.md(硬约束;候选不写结论;negative 原样保留;L4=0)
 - scratch/t47/out/cursor_nation_tax.json + REPORT.md(**t10 双档行界已闭**:server 251 行 13+422323+9、client 13+24710+9;legacy14 借位;identity (0,5,5) 起;footer 00000000|01|ec7ae404)
 - scratch/t47/out/REPORT.md 的 Ntxr 三重闸门表(**范式**:frozen 唯一 scoped occurrence→getter 4CC 精确分发→reader sink 同位移→全档域检验)
 - scratch/t49/out/REPORT.md(pers→people_db ordinal walk、side/perm 同 byte bitmask、held 口径)
@@ -22,11 +22,11 @@
 
 ## 边界
 - 只 t10 主行;不碰 t9/t25/club 侧;已闭集合(Ntxr/Nftb/TCrs/identity/footer)按已验口径引用不重做。
-- 候选不写结论;negative/held 原样保留;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 候选不写结论;negative/held 原样保留;L4=0;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 预算内无法全闭则诚实 partial:槽位普查完成度+已晋级子集+剩余+首反例。**优先级:槽位普查(1)→XML 对齐(2)→域检验(3)高值字段(引用/现金/日期/布尔簇)→其余。**
 
 ## 交付 scratch/t55/out/
 - field_slots.json(有序槽位表)、field_map.json(逐字段映射+grades)、instructions.part*.json、branches.part*.json、abc_closure.json(t46 分段解释)、verify.py、REPORT.md、DONE.md
 - scripts/t55_natmain_fields.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;只写 scratch/t55/ 与 scripts/t55_*.py;完成跑 verify + t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;只写 scratch/t55/ 与 scripts/t55_*.py;完成跑 verify + t01_anchors.py(7/7)。

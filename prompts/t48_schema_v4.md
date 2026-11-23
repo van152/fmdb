@@ -3,7 +3,7 @@
 你是受指挥官委派的子代理。t45 已交付 schema v3(8 表 52 L3,E83)。t44 Cafl/Cvfl 静态发现已接受(E84:**共用具名辅助 POD 成员 `club_links.dat`**,Cafl 26/29 L3、Cvfl 16/19 L3)。本任务增量升级 **v4**,并入 Cafl/Cvfl。**只增量,不重写已接受字段**。
 
 ## 必读
-- <WORKSPACE>\AGENTS.md(硬约束;negative 原样保留)
+- D:\tmp2b\fm24-db\AGENTS.md(硬约束;negative 原样保留)
 - reports/club_nation_subtable_schema.json + .md(**v3 产物,增量基础**)
 - scratch/t45/out/consolidate_v3.py + verify.py + club_nation_subtable_schema.v2.json(v3 builder/verifier/快照,复用扩展)
 - scratch/t44/out/fields_cafl_cvfl.json + cursor_club_links.json + discovery_cafl_cvfl.json + REPORT.md(**t44 已接受 E84**)
@@ -45,4 +45,4 @@
 ## 交付
 - reports/club_nation_subtable_schema.json + .md(v4,8 数字表 + CLUB_LINK 共享辅助源两视图)
 - scratch/t48/out/consolidate_v4.py(--help/--selftest:双口径计账、v3 八表 verbatim、CLUB_LINK POD closure、affl/ismc 派生注记、clfr runtime 排除、bool bitmask)、verify.py(独立不 import builder)、club_nation_subtable_schema.v3.json、REPORT.md、DONE.md
-- Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;完成跑 verify + t01_anchors.py(7/7)。
+- Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;完成跑 verify + t01_anchors.py(7/7)。

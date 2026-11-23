@@ -1,0 +1,15 @@
+=== attempt 1/3 Fri Nov 20 04:45:24     2026 provider=openai-codex model=gpt-6.2-sol ===
+t57 已交付。**Club `table_3` 双档各 84,259 行全量闭合，外层槽位普查完成；字段命名仍为 partial。**
+
+- 原生 identity 尾是 **12 B**。强制 13 B 且末字节为零的假设在 ordinal 69705 首次失败：`0x0c` 是下一行的 selector。双档 identity 均非零、严格递增且唯一。
+- 共 **34 个逻辑位置**：client 每行执行 14 个，server 普通行 32 个、derived 行 31 个。433 个顶层字段中对齐 18 项，记录 72 对 XML 顺序倒置，未按 XML 序号硬配。
+- **13 项 L3**，其中新增 `Cext`、`Cedp`、`Cncl`、`CIns`、`Ctsi`；另有 11 held、10 个独立成员父项跳过、399 unmapped。`Ctsi` 是训练场，不是 `Csti`。Liverpool 坐标、Bernabéu **81,044**、成立年夹具均已复验，未误报为 Club 主行直接字段。**L4=0**。
+
+独立 verifier、两脚本的 `--help` / `--selftest` 均通过；`t01_anchors.py` **7/7**。
+
+**交付清单**
+- `scratch/t57/out/field_slots.json`、`field_map.json`
+- `scratch/t57/out/instructions.part001.json`–`part009.json`、`branches.part001.json`–`part003.json`
+- `scratch/t57/out/verify.py`、`REPORT.md`、`DONE.md`
+- `scripts/t57_clubmain_fields.py`
+=== DONE t57-clubmain attempt=1 rc=0 Fri Nov 20 04:46:20     2026 ===

@@ -15,9 +15,9 @@
 5. 独立 verify.py + builder scripts/t68_club_data_crosswalk.py;--help/--selftest;退出码 0/1/2。交付 L2 交叉台账(不改 reports/)。
 
 ## 边界
-- 只 club table_3;不得修改 scratch/t57;不碰 8 子表/CLUB_LINK;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 只 club table_3;不得修改 scratch/t57;不碰 8 子表/CLUB_LINK;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 
 ## 交付 scratch/t68/out/
 - crosswalk.json、sensitivity.json、verify.py、REPORT.md、DONE.md;scripts/t68_club_data_crosswalk.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;完成跑 verify + scripts/t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;完成跑 verify + scripts/t01_anchors.py(7/7)。

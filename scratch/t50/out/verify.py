@@ -8,7 +8,7 @@ re-derived here from the payload bytes and compared against the delivered JSON.
 Run with Python 3.12:
   py -V:3.12 -I -B scratch/t50/out/verify.py --help
   py -V:3.12 -I -B scratch/t50/out/verify.py --selftest
-  FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scratch/t50/out/verify.py
+  FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scratch/t50/out/verify.py
 Exit codes: 0 all checks passed / 1 check failed / 2 usage or fatal error.
 """
 from __future__ import annotations
@@ -28,7 +28,7 @@ OUT = pathlib.Path(__file__).resolve().parent
 PROFILE = OUT / "profile_t9.json"
 DIFF = OUT / "grammar_diff_t9.json"
 DBDIR = pathlib.Path(os.environ.get("FM24_DB_DIR") or (ROOT / "scratch/data")).resolve()
-CODEC = pathlib.Path(r"<OLD_REPO>\scripts\modding_read_dbdat.py")
+CODEC = pathlib.Path(r"D:\tmp2b\fm24\scripts\modding_read_dbdat.py")
 TAD_MAGIC = bytes.fromhex("03017461642ef10d")
 IDENT = 13
 SIDES = ("client", "server")
@@ -62,7 +62,7 @@ def read_rows(path: pathlib.Path) -> list[dict[str, Any]]:
 
 
 def zstd_module():
-    sys.path.append(r"<OLD_REPO>\tools\python")
+    sys.path.append(r"D:\tmp2b\fm24\tools\python")
     import zstandard  # noqa: PLC0415
     return zstandard
 

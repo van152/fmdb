@@ -1,0 +1,34 @@
+[PASS] anchor server#34: len=313082/313082 sha=a07b2bb76fb8796b/a07b2bb76fb8796b
+[PASS] anchor client#3: len=6932082/6932082 sha=db8ea78cbb8fcc79/db8ea78cbb8fcc79
+[PASS] anchor server#73: len=45/45 sha=592528c36b85b775
+[PASS] anchor server#66: len=18094/18094 sha=3ddd47bbeec04ff6
+[PASS] anchor server#43: len=24632/24632 sha=7981267028706e70
+[PASS] select server#34: frames=1 lens=[313082] size_hits=1 first_frame=True member+0
+[PASS] member-boundary server#34: sha256(packed region) == entry.sha256
+[PASS] select client#3: frames=1 lens=[6932082] size_hits=1 first_frame=True member+0
+[PASS] member-boundary client#3: sha256(packed region) == entry.sha256
+[PASS] select server#73: frames=1 lens=[45] size_hits=1 first_frame=True member+0
+[PASS] member-boundary server#73: sha256(packed region) == entry.sha256
+[PASS] select server#66: frames=1 lens=[18094] size_hits=1 first_frame=True member+0
+[PASS] member-boundary server#66: sha256(packed region) == entry.sha256
+[PASS] select server#43: frames=1 lens=[24632] size_hits=1 first_frame=True member+0
+[PASS] member-boundary server#43: sha256(packed region) == entry.sha256
+[PASS] single-frame regression: targets=20 identical_to_legacy=20 divergent=0 explained_by_legacy_bug=0 unexplained=0
+[PASS] archive census single-frame: entries=460 nonconforming=0 multi_frame_members=0 escalated_to_next_member=0
+[PASS] E77 symptom reproduced: e77_bounded frames=[(12, True), (287410, False)]
+[PASS] E77 root cause = coordinate: delta=-25B; correct_bounded=[(313082, True)]
+[PASS] E77 unbounded 2nd frame matches size: unbounded lens=[12, 313082, 18628502]
+[PASS] negative no-match raises: size+1 -> FrameError (no fallback to first frame)
+[PASS] truncated packed_size escalates: phase1_error='truncated zstd frame at member+0 (region boundary cuts it)' -> surface=next_member_start len=313082
+[PASS] truncated last member raises: no next member to escalate to -> FrameError
+[PASS] legacy-bug predicate: entries whose predecessor packed_size < data_base are exactly the ones legacy mis-reads; count=119 predicted==observed=True
+[PASS] bounded selection unique everywhere: tables=79 bounded_path_failures=0
+[PASS] unbounded method collisions documented: unbounded_size_ambiguous_tables=4 [server#23, server#51, server#52, client#23] extra_frames_beyond_member=2483
+       E77-AMBIGUOUS server#23: bounded=1 unbounded=53 size_hits=2 same_payload=False
+       E77-AMBIGUOUS server#51: bounded=1 unbounded=21 size_hits=2 same_payload=False
+       E77-AMBIGUOUS server#52: bounded=1 unbounded=14 size_hits=2 same_payload=False
+       E77-AMBIGUOUS client#23: bounded=1 unbounded=7 size_hits=2 same_payload=False
+[PASS] client3 28 frames are later members: bounded=1 unbounded=28 size_hits=1 extra=27
+[PASS] server34 has no stub first frame: bounded=1 unbounded=3 size_hits=1
+--- t38 multiframe selftest: 32 PASS / 0 FAIL ---
+rc=0

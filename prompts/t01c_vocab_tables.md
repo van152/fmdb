@@ -1,15 +1,15 @@
 # t01-c 任务书:schema 词汇表机读化(deepseek 渠道 1)
 
-> 机械转换任务,纯 Python,只读输入,产物写 `<WORKSPACE>\scratch\t01\inbox\t01c\`。
+> 机械转换任务,纯 Python,只读输入,产物写 `D:\tmp2b\fm24-db\scratch\t01\inbox\t01c\`。
 > Python 固定 `py -V:3.12 -I`。不 pip install,不启动任何程序。
 
 ## 背景
 FM24 数据库语义解析项目需要一张"字段码词汇表":每个实体有哪些 4 字符字段码、哪些是客户端字段、每张数据库表对应哪个实体。其它并行任务(t01-a 扫描、t01-b 深挖)要用你的产物做匹配。
 
 ## 输入(全部只读)
-1. `<WORKSPACE>\evidence\fm24\reports\editor_schema\master.json`
+1. `D:\tmp2b\fm24-db\evidence\fm24\reports\editor_schema\master.json`
    - 顶层 `entities`(32 个实体定义)、`entity_summary`(每实体 field_count + codes 列表)、`field_codes`(3009 个字段码)、`enums`(304 张枚举表)、`auxiliary`
-2. `<WORKSPACE>\evidence\fm24\reports\editor_gen\PROPERTY_MAP.md`
+2. `D:\tmp2b\fm24-db\evidence\fm24\reports\editor_gen\PROPERTY_MAP.md`
    - 里面有 database_table_type ↔ entity XML 的映射行(如 table_25→comp.xml#comp),把表格转录为机读
 
 ## 任务

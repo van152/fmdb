@@ -42,9 +42,9 @@ club 是 mixed 实体(t04 只闭合过 1 个字段)——若 walk 到 club 序�
 ## 纪律
 
 - 只写 `scratch/t16/out/` + 新增 `scripts/t16_*.py`;scratch/t05..t14、reports/、docs/、evidence/ 只读。
-- 不联网、不启动游戏/编辑器/IDA。
+- 不联网、不启动游戏本体/FM 编辑器(IDA 静态分析允许)。
 - 45 分钟做不完就分批落盘标 `"status":"partial_<限定词>"`。
-- 数据侧需要 CSV 时:`FM24_DB_DIR=<WORKSPACE>/scratch/data`(已设),用 `scripts/fm24_dump.py` 本地导出。
+- 数据侧需要 CSV 时:`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`(已设),用 `scripts/fm24_dump.py` 本地导出。
 
 ## 交付(scratch/t16/out/)
 

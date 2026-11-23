@@ -27,7 +27,7 @@
 
 ## 2. COMP：静态可选边与双档实字节
 
-静态摘自 t59 已交付分片；原二进制为 `<OLD_REPO>/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。地址栏为 **PE file offset**，各条 VA 和原指令字节保留在 ledger `comp_static_predicates`；未重新打开二进制。
+静态摘自 t59 已交付分片；原二进制为 `D:/tmp2b/fm24/input/editor.exe`，SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`。地址栏为 **PE file offset**，各条 VA 和原指令字节保留在 ledger `comp_static_predicates`；未重新打开二进制。
 
 | 闸门 | 谓词及分支 | 确切出处（t59 `out/`） |
 |---|---|---|
@@ -66,7 +66,7 @@
 [SUMMARY.md](SUMMARY.md) 是三表晨报总表；[tail_ledger.json](tail_ledger.json) 逐项提供 `id/table/kind/evidence_refs/grade/承接`。L2 表示本轮交叉核验，`held` 原样保留，旧 L3 只在原作用域引用。不折叠 COMP 三条无 live 见证的开放边，不把 `+0x100` 物理文法折成业务名；这些未决事项未获后续任务号，不写成承诺。
 
 ```bash
-export FM24_DB_DIR=<WORKSPACE>/scratch/data
+export FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data
 py -V:3.12 -I -B scratch/t69/out/verify.py --help
 py -V:3.12 -I -B scratch/t69/out/verify.py --selftest
 py -V:3.12 -I -B scratch/t69/out/verify.py --check

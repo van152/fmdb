@@ -73,7 +73,7 @@ def verify() -> int:
     sys.path.insert(0, str(ROOT / "scripts"))
     import t05_pe
     from capstone import CS_ARCH_X86, CS_MODE_64, Cs
-    pe = t05_pe.PE(Path(r"<OLD_REPO>\input\editor.exe"))
+    pe = t05_pe.PE(Path(r"D:\tmp2b\fm24\input\editor.exe"))
     disasm = Cs(CS_ARCH_X86, CS_MODE_64)
     for tag, rows in rows_by_tag.items():
         for row in rows:

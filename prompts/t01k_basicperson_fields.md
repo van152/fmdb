@@ -1,7 +1,7 @@
 # t01-k 任务书:BASIC_PERSON 类变长行字段映射 —— 第二实体验收线冲刺
 
 > 交给 pi gpt-6-luna max。t01j 已解码 person 行仓库框架(658,011 行,类变长 83/34/22B,身份块+9B 尾全封口);你的任务是给 BASIC_PERSON 行做出 **≥10 个字段的行内偏移映射**,达成第二实体验收线(与 t01f comp 同级)。
-> 规则不变:只读输入、不启动游戏/编辑器/IDA、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
+> 规则不变:只读输入、不启动游戏本体/FM 编辑器(IDA 静态分析允许)、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
 
 ## 已知锚点(直接引用,勿重复)
 

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://pi.dev/schemas/settings.schema.json",
+  "retry": {
+    "enabled": true,
+    "maxRetries": 8,
+    "baseDelayMs": 3000,
+    "maxAgentDelayMs": 120000,
+    "provider": {
+      "timeoutMs": 600000,
+      "maxRetries": 5,
+      "maxRetryDelayMs": 600000
+    }
+  },
+  "httpIdleTimeoutMs": 600000,
+  "compaction": {
+    "enabled": true
+  }
+}

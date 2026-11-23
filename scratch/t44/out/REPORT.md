@@ -4,7 +4,7 @@
 
 ## 静态链：为什么 t35 扫不到
 
-只读 `<OLD_REPO>/input/editor.exe` SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`，由冻结 `IDA_PROVENANCE.md` 对照；master SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`。两者及旧 `DB_SERVER_TABLES.md` 均按 `evidence/MANIFEST.json` 核验。旧报告已经列出该具名成员，但留在 `unresolved_auxiliary`；本次以双向代码链和原始档补齐语义。以下地址为 PE **file offset**；对应 VA 和原始 bytes 在指令分片（CLUB 的 COL、TD、slot2 指针、`.dat` 与 `CLUB_LINK` 池名原字节在 discovery）。
+只读 `D:/tmp2b/fm24/input/editor.exe` SHA-256 `b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4`，由冻结 `IDA_PROVENANCE.md` 对照；master SHA-256 `7d57477e144d5359ccde64bb24b3ba7c640ef41738ed196eba8a38e792776eda`。两者及旧 `DB_SERVER_TABLES.md` 均按 `evidence/MANIFEST.json` 核验。旧报告已经列出该具名成员，但留在 `unresolved_auxiliary`；本次以双向代码链和原始档补齐语义。以下地址为 PE **file offset**；对应 VA 和原始 bytes 在指令分片（CLUB 的 COL、TD、slot2 指针、`.dat` 与 `CLUB_LINK` 池名原字节在 discovery）。
 
 - **Cafl**：`CLUB` vptr VA `0x14187cd08` 的 slot 2 → `0xe89a00`，`0xe8b4db/0xe8b4e1` 精确匹配 `Cafl`；`0xe8f13d → 0x15320b0 → 0x43637a0`，传 `R8D=0`。`0x436385d/0x4363864` 读当前 club `+0x118/+0x120`，每 8 B 一个指针。`0xe95720 → 0xe95a7c → 0xe95aa8 → 0xeaeb80 → 0x3b0e140 → 0x15261e0` 继续到同一项的字段分发。非 `serv` 特殊支路下 helper 会排序，并计入前置的 4..8/20 类型；Cafl 枚举器从该起始索引继续，而非无条件重放磁盘顺序。
 - **Cvfl**：`0xe8c1e8` 精确匹配 `Cvfl`，先比较当前 club `+0x118/+0x120`；`0xe8c217 → 0x1532260` 置 `R8B=1`，以 `0x15322f3/0x15322fa` 取同一 vector。`0x153234d/0x1532354` 仅跳过 null，分配 `0x38` B 并复制整项；`0x15323d3/0x15323e4/0x15323ed` 将临时验证结果写到 wrapper `+8`。不测 validator 返回值就追加该 wrapper（`0x15323f1 → 0x1532320` 或扩容路径）；`0xe962a0` 枚举它，经 `0x15328f0 → 0x43656a0` 调共同 getter，并对 `clfr` 单独取 wrapper byte。**反例**：合成一个非空 link 但 endpoint A=null，validator 在 `0x1528484 → 0x152866a` 写 reason=1；wrapper 生成处没有成功门槛。不据此外推最终 UI 行筛选或实机 `clfr` 频次。
@@ -53,4 +53,4 @@
 
 ## 复验及剩余
 
-`FM24_DB_DIR=<WORKSPACE>/scratch/data`、`py -V:3.12 -I -B`。Builder、独立 verifier、两者 `--help`/`--selftest`、`scripts/t01_anchors.py`（**7/7**）均通过。Verifier 不 import builder 或 `ReaderCFG`：独立按目录/区界解压，重建可达边，以 `struct` 固定布局复算全行和各字段，对照原 PE 指令及 t35 原证据 SHA。退出码 0/1/2 为成功/检查失败/用法或致命错误。未启动游戏、编辑器或 IDA，未联网，未访问 Z:。剩余为 `type=21` 的枚举解释、`yfee=-1` 的域定义、`msls` 活样本、实机 `clfr` 画像与未命名 lane；均不把静态/回放当实机观测。
+`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`、`py -V:3.12 -I -B`。Builder、独立 verifier、两者 `--help`/`--selftest`、`scripts/t01_anchors.py`（**7/7**）均通过。Verifier 不 import builder 或 `ReaderCFG`：独立按目录/区界解压，重建可达边，以 `struct` 固定布局复算全行和各字段，对照原 PE 指令及 t35 原证据 SHA。退出码 0/1/2 为成功/检查失败/用法或致命错误。未启动游戏、编辑器或 IDA，未联网，未访问 Z:。剩余为 `type=21` 的枚举解释、`yfee=-1` 的域定义、`msls` 活样本、实机 `clfr` 画像与未命名 lane；均不把静态/回放当实机观测。

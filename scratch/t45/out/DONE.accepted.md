@@ -17,7 +17,7 @@ Date: 2026-11-19
 - `consolidate_v3.py --selftest`: PASS; 8 tables, 52 L3, 16 held, 4 negatives, L4=0; all seven v2 tables unchanged.
 - `verify.py --help`: PASS.
 - `verify.py --selftest`: PASS; independently checked v2 preservation, E82 source records and hashes, variable cursor closure, Melf conditional coordinate, Msid held status, owner scope, and Markdown markers.
-- `FM24_DB_DIR=<WORKSPACE>/scratch/data py -V:3.12 -I -B scripts/t01_anchors.py`: PASS, 7/7.
+- `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I -B scripts/t01_anchors.py`: PASS, 7/7.
 - Public schema and Markdown read-back: PASS; Csme count=0 absence is not represented as a default, Msid remains held, and club-exclusive L3 remains zero.
 
 No external data, executable, game/editor, network, or Z: drive was accessed for this consolidation. No L4 claim was added.

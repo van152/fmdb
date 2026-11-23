@@ -1,0 +1,26 @@
+=== attempt 1/3 Fri Nov 20 03:27:07     2026 provider=openai-codex model=gpt-6.2-sol ===
+**t55 外层槽位普查完成，字段命名仍为 partial。** Server 枚举 40 个位置，client 执行其中 15 个；双档各 251 行闭合到 identity 和 footer。主 reader CFG 核验了 992 条可达指令。
+
+冻结 XML 有 **15/346** 项找到候选槽位，其中 **5 项通过 L3**：`Nnsi`、`Ncti`、`Nrgi`、`Ncur`、`Nndn`。台账保留 46 对顺序倒置和首反例；未通过域检验或缺少证据的项未晋级。**L4=0。**
+
+t46 的 A/B/C/D 在双档分别绑定到 `Nlns`、`Nefr`、`Nnfr`、`Nagr`。Server 的变长前置块解释了为何不能照搬 client 偏移；t46 原文及负例未改。
+
+独立 `verify.py` 通过，builder 与 verifier 的 `--help`、`--selftest` 均通过；`t01_anchors.py` **7/7**。Capital、England/China、parent 352、Ntxr 7 L3 和 TCrs 4 held 回归无冲突。
+
+**交付清单**
+
+- `scripts/t55_natmain_fields.py`
+- `scratch/t55/out/`：`field_slots.json`、`field_map.json`、`abc_closure.json`、`instructions.part001–003.json`、`branches.part001.json`、`verify.py`、`REPORT.md`、`DONE.md`
+=== DONE(heuristic: 8 json/md files) t55-natmain attempt=1 rc=0 Fri Nov 20 03:44:54     2026 ===
+**t55 外层槽位普查完成，字段命名仍为 partial。** Server 枚举 40 个位置，client 执行**t55 槽位普查完成，字段命名仍为 partial。** Slot 19 CFG 覆盖 992 条可达指令。Server 按读取顺序记录 40 个顶层消费站，client 执行其中 15 个；两档各 251 行闭合，逐行边界和 identity 与 t47 一致。站点数含 selector、集合和 identity，不等于字段数。
+
+冻结 XML 有 **15/346** 项连到槽位，**5 项通过 L3**：`Ncti`、`Nrgi`、`Ncur`、`Nnsi`、`Nndn`。其中前三项沿用既有静态绑定并补验双档实表域。`Ngct`、`Nsod` 缺 scoped enum 域，`Necf`、`Nygn` 有域冲突，均保留 held 和首反例。已对齐子集有 46 对顺序倒置，未按 XML 顺序硬配。L4=0。
+
+**t46 A/B/C/D 已解释**为 `Nlns/Nefr/Nnfr/Nagr`。四段在双档的 count 和消费字节逐行一致，绝对位置不同；t46 原文和负例未改。
+
+独立 `verify.py`、builder 及两者的 `--help` / `--selftest` 均通过；`t01_anchors.py` **7/7**。Capital、England/China、parent 352、Ntxr 7 L3、TCrs 4 held 回归均一致。
+
+**交付清单**
+- `scratch/t55/out/`：`field_slots.json`、`field_map.json`、`abc_closure.json`、`instructions.part001.json`–`instructions.part003.json`、`branches.part001.json`、`verify.py`、`REPORT.md`、`DONE.md`
+- Builder：`scripts/t55_natmain_fields.py`
+=== DONE(heuristic: 8 json/md files) t55-natmain attempt=1 rc=0 Fri Nov 20 03:45:08     2026 ===

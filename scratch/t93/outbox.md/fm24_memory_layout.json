@@ -1,0 +1,3038 @@
+{
+ "fields": [
+  {
+   "key": "c_uid",
+   "label": "UID",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "raw(0x0C)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 32
+  },
+  {
+   "key": "c_name",
+   "label": "Name",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "fm_string(0xC8)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 33
+  },
+  {
+   "key": "c_full_name",
+   "label": "Full Name",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "fm_string(0xC0)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 34
+  },
+  {
+   "key": "c_stadium",
+   "label": "Stadium",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "pointer(0xB0)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 35
+  },
+  {
+   "key": "c_index",
+   "label": "Array Index",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "raw(0x08)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 36
+  },
+  {
+   "key": "c_abbrev1",
+   "label": "Abbreviation 1",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_fm_string(\"info\", 0x00)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 37
+  },
+  {
+   "key": "c_abbrev2",
+   "label": "Abbreviation 2",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_fm_string(\"info\", 0x08)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 38
+  },
+  {
+   "key": "c_abbrev3",
+   "label": "Abbreviation 3",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_fm_string(\"info\", 0x10)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 39
+  },
+  {
+   "key": "c_year_founded",
+   "label": "Year Founded",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_raw(\"info\", 0xD8)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 40
+  },
+  {
+   "key": "c_owner_status",
+   "label": "Owner Status",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_raw(\"info\", 0xDE)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 41
+  },
+  {
+   "key": "c_season_tickets",
+   "label": "Season Tickets",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_raw(\"info\", 0xC0)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 42
+  },
+  {
+   "key": "c_social_media",
+   "label": "Social Media",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_raw(\"info\", 0xF8)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 43
+  },
+  {
+   "key": "c_training",
+   "label": "Training",
+   "entity": "Club",
+   "category": "Facilities",
+   "offset_expr": "sub_direct(\"info\", 0x120)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 48
+  },
+  {
+   "key": "c_youth_fac",
+   "label": "Youth Fac",
+   "entity": "Club",
+   "category": "Facilities",
+   "offset_expr": "sub_direct(\"info\", 0x12B)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 49
+  },
+  {
+   "key": "c_youth_improve",
+   "label": "Youth Improvement",
+   "entity": "Club",
+   "category": "Facilities",
+   "offset_expr": "sub_direct(\"info\", 0x126)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 50
+  },
+  {
+   "key": "c_youth_coach",
+   "label": "Youth Coaching",
+   "entity": "Club",
+   "category": "Facilities",
+   "offset_expr": "sub_direct(\"info\", 0x12C)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 51
+  },
+  {
+   "key": "c_youth_recruit",
+   "label": "Youth Recruitment",
+   "entity": "Club",
+   "category": "Facilities",
+   "offset_expr": "sub_direct(\"info\", 0x12D)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 52
+  },
+  {
+   "key": "c_youth_academy",
+   "label": "Youth Academy",
+   "entity": "Club",
+   "category": "Facilities",
+   "offset_expr": "sub_direct(\"info\", 0x121)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 53
+  },
+  {
+   "key": "c_sup_hardcore",
+   "label": "Hardcore %",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_direct(\"info\", 0x106)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 54
+  },
+  {
+   "key": "c_sup_core",
+   "label": "Core %",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_direct(\"info\", 0x107)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 55
+  },
+  {
+   "key": "c_sup_family",
+   "label": "Family %",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_direct(\"info\", 0x108)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 56
+  },
+  {
+   "key": "c_sup_fair_weather",
+   "label": "Fair Weather %",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_direct(\"info\", 0x109)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 57
+  },
+  {
+   "key": "c_sup_casual",
+   "label": "Casual %",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_direct(\"info\", 0x10A)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 58
+  },
+  {
+   "key": "c_sup_other",
+   "label": "Other %",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_direct(\"info\", 0x10B)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 59
+  },
+  {
+   "key": "c_sup_loyalty",
+   "label": "Loyalty",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_direct(\"info\", 0x114)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 60
+  },
+  {
+   "key": "c_sup_passion",
+   "label": "Passion",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_direct(\"info\", 0x115)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 61
+  },
+  {
+   "key": "c_sup_patience",
+   "label": "Patience",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_direct(\"info\", 0x116)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 62
+  },
+  {
+   "key": "c_sup_affluence",
+   "label": "Affluence",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_direct(\"info\", 0x117)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 63
+  },
+  {
+   "key": "c_sup_temperament",
+   "label": "Temperament",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_direct(\"info\", 0x118)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 64
+  },
+  {
+   "key": "c_sup_expectations",
+   "label": "Expectations",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_direct(\"info\", 0x119)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 65
+  },
+  {
+   "key": "c_balance",
+   "label": "Balance",
+   "entity": "Club",
+   "category": "Finance",
+   "offset_expr": "sub_raw(\"finance\", 0x14)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 66
+  },
+  {
+   "key": "c_avg_ticket",
+   "label": "Avg Ticket Price",
+   "entity": "Club",
+   "category": "Finance",
+   "offset_expr": "sub_f32(\"finance\", 0x18)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 67
+  },
+  {
+   "key": "c_avg_season_ticket",
+   "label": "Avg Season Ticket",
+   "entity": "Club",
+   "category": "Finance",
+   "offset_expr": "sub_f32(\"finance\", 0x1C)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 68
+  },
+  {
+   "key": "c_transfer_budget",
+   "label": "Transfer Budget",
+   "entity": "Club",
+   "category": "Finance",
+   "offset_expr": "sub_raw(\"finance\", 0x7CC)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 73
+  },
+  {
+   "key": "c_transfer_remaining",
+   "label": "Transfer Remaining",
+   "entity": "Club",
+   "category": "Finance",
+   "offset_expr": "sub_raw(\"budget\",  0x08)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 74
+  },
+  {
+   "key": "c_wage_budget",
+   "label": "Wage Budget",
+   "entity": "Club",
+   "category": "Finance",
+   "offset_expr": "sub_raw(\"finance\", 0x810)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 80
+  },
+  {
+   "key": "c_wage_spend",
+   "label": "Wage Spend",
+   "entity": "Club",
+   "category": "Finance",
+   "offset_expr": "sub_raw(\"finance\", 0x81C)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 84
+  },
+  {
+   "key": "c_next_transfer_min",
+   "label": "Next Min Budget",
+   "entity": "Club",
+   "category": "Finance",
+   "offset_expr": "sub_raw(\"finance\", 0x7D4)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 85
+  },
+  {
+   "key": "c_avg_attendance",
+   "label": "Avg Attendance",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_raw(\"stadium\", 0x68)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 86
+  },
+  {
+   "key": "c_min_attendance",
+   "label": "Min Attendance",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_raw(\"stadium\", 0x6C)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 87
+  },
+  {
+   "key": "c_max_attendance",
+   "label": "Max Attendance",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "sub_raw(\"stadium\", 0x70)",
+   "located": true,
+   "file": "src/fields/fm24/club.rs",
+   "line": 88
+  },
+  {
+   "key": "c_gender",
+   "label": "Gender",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/club.rs",
+   "line": 92
+  },
+  {
+   "key": "c_nickname",
+   "label": "Nickname",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/club.rs",
+   "line": 93
+  },
+  {
+   "key": "c_team_uid",
+   "label": "Team UID",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/club.rs",
+   "line": 94
+  },
+  {
+   "key": "c_stadium_entity_ptr",
+   "label": "Training Ground",
+   "entity": "Club",
+   "category": "Internal",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/club.rs",
+   "line": 95
+  },
+  {
+   "key": "c_reputation",
+   "label": "Reputation",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/club.rs",
+   "line": 96
+  },
+  {
+   "key": "c_nation",
+   "label": "Nation",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/club.rs",
+   "line": 97
+  },
+  {
+   "key": "c_stand_type_1",
+   "label": "Stand Type 1",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/club.rs",
+   "line": 98
+  },
+  {
+   "key": "c_stand_type_2",
+   "label": "Stand Type 2",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/club.rs",
+   "line": 99
+  },
+  {
+   "key": "c_stand_type_3",
+   "label": "Stand Type 3",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/club.rs",
+   "line": 100
+  },
+  {
+   "key": "c_stand_type_4",
+   "label": "Stand Type 4",
+   "entity": "Club",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/club.rs",
+   "line": 101
+  },
+  {
+   "key": "crossing",
+   "label": "Crossing",
+   "entity": "Player",
+   "category": "Technical",
+   "offset_expr": "encoded(0x0217)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 116
+  },
+  {
+   "key": "dribbling",
+   "label": "Dribbling",
+   "entity": "Player",
+   "category": "Technical",
+   "offset_expr": "encoded(0x0218)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 117
+  },
+  {
+   "key": "finishing",
+   "label": "Finishing",
+   "entity": "Player",
+   "category": "Technical",
+   "offset_expr": "encoded(0x0219)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 118
+  },
+  {
+   "key": "heading",
+   "label": "Heading",
+   "entity": "Player",
+   "category": "Technical",
+   "offset_expr": "encoded(0x021A)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 119
+  },
+  {
+   "key": "long_shots",
+   "label": "Long Shots",
+   "entity": "Player",
+   "category": "Technical",
+   "offset_expr": "encoded(0x021B)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 120
+  },
+  {
+   "key": "marking",
+   "label": "Marking",
+   "entity": "Player",
+   "category": "Technical",
+   "offset_expr": "encoded(0x021C)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 121
+  },
+  {
+   "key": "passing",
+   "label": "Passing",
+   "entity": "Player",
+   "category": "Technical",
+   "offset_expr": "encoded(0x021E)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 122
+  },
+  {
+   "key": "tackling",
+   "label": "Tackling",
+   "entity": "Player",
+   "category": "Technical",
+   "offset_expr": "encoded(0x0220)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 123
+  },
+  {
+   "key": "technique",
+   "label": "Technique",
+   "entity": "Player",
+   "category": "Technical",
+   "offset_expr": "encoded(0x022E)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 124
+  },
+  {
+   "key": "first_touch",
+   "label": "First Touch",
+   "entity": "Player",
+   "category": "Technical",
+   "offset_expr": "encoded(0x022D)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 125
+  },
+  {
+   "key": "corners",
+   "label": "Corners",
+   "entity": "Player",
+   "category": "SetPieces",
+   "offset_expr": "encoded(0x0232)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 126
+  },
+  {
+   "key": "free_kicks",
+   "label": "Free Kicks",
+   "entity": "Player",
+   "category": "SetPieces",
+   "offset_expr": "encoded(0x023A)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 127
+  },
+  {
+   "key": "long_throws",
+   "label": "Long Throws",
+   "entity": "Player",
+   "category": "SetPieces",
+   "offset_expr": "encoded(0x0235)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 128
+  },
+  {
+   "key": "penalty_taking",
+   "label": "Penalty Taking",
+   "entity": "Player",
+   "category": "SetPieces",
+   "offset_expr": "encoded(0x021F)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 129
+  },
+  {
+   "key": "aggression",
+   "label": "Aggression",
+   "entity": "Player",
+   "category": "Mental",
+   "offset_expr": "encoded(0x0244)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 130
+  },
+  {
+   "key": "anticipation",
+   "label": "Anticipation",
+   "entity": "Player",
+   "category": "Mental",
+   "offset_expr": "encoded(0x0228)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 131
+  },
+  {
+   "key": "bravery",
+   "label": "Bravery",
+   "entity": "Player",
+   "category": "Mental",
+   "offset_expr": "encoded(0x0242)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 132
+  },
+  {
+   "key": "composure",
+   "label": "Composure",
+   "entity": "Player",
+   "category": "Mental",
+   "offset_expr": "encoded(0x024B)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 133
+  },
+  {
+   "key": "concentration",
+   "label": "Concentration",
+   "entity": "Player",
+   "category": "Mental",
+   "offset_expr": "encoded(0x024C)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 134
+  },
+  {
+   "key": "decisions",
+   "label": "Decisions",
+   "entity": "Player",
+   "category": "Mental",
+   "offset_expr": "encoded(0x0229)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 135
+  },
+  {
+   "key": "flair",
+   "label": "Flair",
+   "entity": "Player",
+   "category": "Mental",
+   "offset_expr": "encoded(0x0231)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 136
+  },
+  {
+   "key": "leadership",
+   "label": "Leadership",
+   "entity": "Player",
+   "category": "Mental",
+   "offset_expr": "encoded(0x023F)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 137
+  },
+  {
+   "key": "off_the_ball",
+   "label": "Off The Ball",
+   "entity": "Player",
+   "category": "Mental",
+   "offset_expr": "encoded(0x021D)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 138
+  },
+  {
+   "key": "positioning",
+   "label": "Positioning",
+   "entity": "Player",
+   "category": "Mental",
+   "offset_expr": "encoded(0x022B)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 139
+  },
+  {
+   "key": "teamwork",
+   "label": "Teamwork",
+   "entity": "Player",
+   "category": "Mental",
+   "offset_expr": "encoded(0x0233)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 140
+  },
+  {
+   "key": "vision",
+   "label": "Vision",
+   "entity": "Player",
+   "category": "Mental",
+   "offset_expr": "encoded(0x0221)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 141
+  },
+  {
+   "key": "work_rate",
+   "label": "Work Rate",
+   "entity": "Player",
+   "category": "Mental",
+   "offset_expr": "encoded(0x0234)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 142
+  },
+  {
+   "key": "determination",
+   "label": "Determination",
+   "entity": "Player",
+   "category": "Mental",
+   "offset_expr": "encoded(0x024A)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 143
+  },
+  {
+   "key": "acceleration",
+   "label": "Acceleration",
+   "entity": "Player",
+   "category": "Physical",
+   "offset_expr": "encoded(0x0239)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 144
+  },
+  {
+   "key": "agility",
+   "label": "Agility",
+   "entity": "Player",
+   "category": "Physical",
+   "offset_expr": "encoded(0x0245)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 145
+  },
+  {
+   "key": "balance",
+   "label": "Balance",
+   "entity": "Player",
+   "category": "Physical",
+   "offset_expr": "encoded(0x0241)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 146
+  },
+  {
+   "key": "jumping_reach",
+   "label": "Jumping Reach",
+   "entity": "Player",
+   "category": "Physical",
+   "offset_expr": "encoded(0x023E)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 147
+  },
+  {
+   "key": "natural_fitness",
+   "label": "Natural Fitness",
+   "entity": "Player",
+   "category": "Physical",
+   "offset_expr": "encoded(0x0249)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 148
+  },
+  {
+   "key": "pace",
+   "label": "Pace",
+   "entity": "Player",
+   "category": "Physical",
+   "offset_expr": "encoded(0x023D)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 149
+  },
+  {
+   "key": "stamina",
+   "label": "Stamina",
+   "entity": "Player",
+   "category": "Physical",
+   "offset_expr": "encoded(0x023C)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 150
+  },
+  {
+   "key": "strength",
+   "label": "Strength",
+   "entity": "Player",
+   "category": "Physical",
+   "offset_expr": "encoded(0x023B)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 151
+  },
+  {
+   "key": "handling",
+   "label": "Handling",
+   "entity": "Player",
+   "category": "Goalkeeping",
+   "offset_expr": "encoded(0x0222)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 152
+  },
+  {
+   "key": "aerial_reach",
+   "label": "Aerial Reach",
+   "entity": "Player",
+   "category": "Goalkeeping",
+   "offset_expr": "encoded(0x0223)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 153
+  },
+  {
+   "key": "command_of_area",
+   "label": "Command of Area",
+   "entity": "Player",
+   "category": "Goalkeeping",
+   "offset_expr": "encoded(0x0224)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 154
+  },
+  {
+   "key": "communication",
+   "label": "Communication",
+   "entity": "Player",
+   "category": "Goalkeeping",
+   "offset_expr": "encoded(0x0225)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 155
+  },
+  {
+   "key": "kicking",
+   "label": "Kicking",
+   "entity": "Player",
+   "category": "Goalkeeping",
+   "offset_expr": "encoded(0x0226)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 156
+  },
+  {
+   "key": "throwing",
+   "label": "Throwing",
+   "entity": "Player",
+   "category": "Goalkeeping",
+   "offset_expr": "encoded(0x0227)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 157
+  },
+  {
+   "key": "one_on_ones",
+   "label": "One on Ones",
+   "entity": "Player",
+   "category": "Goalkeeping",
+   "offset_expr": "encoded(0x022A)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 158
+  },
+  {
+   "key": "reflexes",
+   "label": "Reflexes",
+   "entity": "Player",
+   "category": "Goalkeeping",
+   "offset_expr": "encoded(0x022C)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 159
+  },
+  {
+   "key": "eccentricity",
+   "label": "Eccentricity",
+   "entity": "Player",
+   "category": "Goalkeeping",
+   "offset_expr": "encoded(0x0236)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 160
+  },
+  {
+   "key": "rushing_out",
+   "label": "Rushing Out",
+   "entity": "Player",
+   "category": "Goalkeeping",
+   "offset_expr": "encoded(0x0237)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 161
+  },
+  {
+   "key": "punching",
+   "label": "Punching",
+   "entity": "Player",
+   "category": "Goalkeeping",
+   "offset_expr": "encoded(0x0238)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 162
+  },
+  {
+   "key": "left_foot",
+   "label": "Left Foot",
+   "entity": "Player",
+   "category": "Footedness",
+   "offset_expr": "encoded(0x022F)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 163
+  },
+  {
+   "key": "right_foot",
+   "label": "Right Foot",
+   "entity": "Player",
+   "category": "Footedness",
+   "offset_expr": "encoded(0x0230)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 164
+  },
+  {
+   "key": "consistency",
+   "label": "Consistency",
+   "entity": "Player",
+   "category": "Hidden",
+   "offset_expr": "encoded(0x0243)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 165
+  },
+  {
+   "key": "injury_proneness",
+   "label": "Injury Proneness",
+   "entity": "Player",
+   "category": "Hidden",
+   "offset_expr": "encoded(0x0247)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 166
+  },
+  {
+   "key": "important_matches",
+   "label": "Important Matches",
+   "entity": "Player",
+   "category": "Hidden",
+   "offset_expr": "encoded(0x0246)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 167
+  },
+  {
+   "key": "p_dirtiness",
+   "label": "Dirtiness",
+   "entity": "Player",
+   "category": "Hidden",
+   "offset_expr": "encoded(0x0240)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 168
+  },
+  {
+   "key": "p_versatility",
+   "label": "Versatility",
+   "entity": "Player",
+   "category": "Hidden",
+   "offset_expr": "encoded(0x0248)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 169
+  },
+  {
+   "key": "p_adaptability",
+   "label": "Adaptability",
+   "entity": "Player",
+   "category": "Personality",
+   "offset_expr": "direct(0x02F0)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 170
+  },
+  {
+   "key": "p_ambition",
+   "label": "Ambition",
+   "entity": "Player",
+   "category": "Personality",
+   "offset_expr": "direct(0x02F1)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 171
+  },
+  {
+   "key": "p_loyalty",
+   "label": "Loyalty",
+   "entity": "Player",
+   "category": "Personality",
+   "offset_expr": "direct(0x02F2)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 172
+  },
+  {
+   "key": "p_pressure",
+   "label": "Pressure",
+   "entity": "Player",
+   "category": "Personality",
+   "offset_expr": "direct(0x02F3)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 173
+  },
+  {
+   "key": "p_professionalism",
+   "label": "Professionalism",
+   "entity": "Player",
+   "category": "Personality",
+   "offset_expr": "direct(0x02F4)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 174
+  },
+  {
+   "key": "p_sportsmanship",
+   "label": "Sportsmanship",
+   "entity": "Player",
+   "category": "Personality",
+   "offset_expr": "direct(0x02F5)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 175
+  },
+  {
+   "key": "p_temperament",
+   "label": "Temperament",
+   "entity": "Player",
+   "category": "Personality",
+   "offset_expr": "direct(0x02F6)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 176
+  },
+  {
+   "key": "p_controversy",
+   "label": "Controversy",
+   "entity": "Player",
+   "category": "Personality",
+   "offset_expr": "direct(0x02F7)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 177
+  },
+  {
+   "key": "p_name",
+   "label": "Name",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "fm_string(0x02C0)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 178
+  },
+  {
+   "key": "p_name_first_sub",
+   "label": "Name First Sub",
+   "entity": "Player",
+   "category": "Internal",
+   "offset_expr": "pointer(0x02D0)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 179
+  },
+  {
+   "key": "p_name_last_sub",
+   "label": "Name Last Sub",
+   "entity": "Player",
+   "category": "Internal",
+   "offset_expr": "pointer(0x02D8)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 180
+  },
+  {
+   "key": "p_name_common_sub",
+   "label": "Name Common Sub",
+   "entity": "Player",
+   "category": "Internal",
+   "offset_expr": "pointer(0x02E0)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 183
+  },
+  {
+   "key": "p_weight",
+   "label": "Weight",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "raw(0x014C)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 185
+  },
+  {
+   "key": "p_height",
+   "label": "Height",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "raw(0x014E)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 186
+  },
+  {
+   "key": "p_dob",
+   "label": "Date of Birth",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "date(0x02BC)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 187
+  },
+  {
+   "key": "p_club_ptr",
+   "label": "Club Entity",
+   "entity": "Player",
+   "category": "Internal",
+   "offset_expr": "pointer(0x03B0)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 188
+  },
+  {
+   "key": "p_ca",
+   "label": "Current Ability",
+   "entity": "Player",
+   "category": "Ability",
+   "offset_expr": "raw(0x0200)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 189
+  },
+  {
+   "key": "p_pa",
+   "label": "Potential Ability",
+   "entity": "Player",
+   "category": "Ability",
+   "offset_expr": "raw(0x0202)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 190
+  },
+  {
+   "key": "p_home_rep",
+   "label": "Home Rep",
+   "entity": "Player",
+   "category": "Reputation",
+   "offset_expr": "raw(0x01FA)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 191
+  },
+  {
+   "key": "p_current_rep",
+   "label": "Current Rep",
+   "entity": "Player",
+   "category": "Reputation",
+   "offset_expr": "raw(0x01FC)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 192
+  },
+  {
+   "key": "p_world_rep",
+   "label": "World Rep",
+   "entity": "Player",
+   "category": "Reputation",
+   "offset_expr": "raw(0x01FE)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 193
+  },
+  {
+   "key": "pos_gk",
+   "label": "GK",
+   "entity": "Player",
+   "category": "Positions",
+   "offset_expr": "direct(0x0208)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 194
+  },
+  {
+   "key": "pos_sw",
+   "label": "SW",
+   "entity": "Player",
+   "category": "Positions",
+   "offset_expr": "direct(0x0209)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 195
+  },
+  {
+   "key": "pos_dl",
+   "label": "DL",
+   "entity": "Player",
+   "category": "Positions",
+   "offset_expr": "direct(0x020A)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 196
+  },
+  {
+   "key": "pos_dc",
+   "label": "DC",
+   "entity": "Player",
+   "category": "Positions",
+   "offset_expr": "direct(0x020B)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 197
+  },
+  {
+   "key": "pos_dr",
+   "label": "DR",
+   "entity": "Player",
+   "category": "Positions",
+   "offset_expr": "direct(0x020C)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 198
+  },
+  {
+   "key": "pos_dm",
+   "label": "DM",
+   "entity": "Player",
+   "category": "Positions",
+   "offset_expr": "direct(0x020D)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 199
+  },
+  {
+   "key": "pos_ml",
+   "label": "ML",
+   "entity": "Player",
+   "category": "Positions",
+   "offset_expr": "direct(0x020E)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 200
+  },
+  {
+   "key": "pos_mc",
+   "label": "MC",
+   "entity": "Player",
+   "category": "Positions",
+   "offset_expr": "direct(0x020F)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 201
+  },
+  {
+   "key": "pos_mr",
+   "label": "MR",
+   "entity": "Player",
+   "category": "Positions",
+   "offset_expr": "direct(0x0210)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 202
+  },
+  {
+   "key": "pos_aml",
+   "label": "AML",
+   "entity": "Player",
+   "category": "Positions",
+   "offset_expr": "direct(0x0211)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 203
+  },
+  {
+   "key": "pos_amc",
+   "label": "AMC",
+   "entity": "Player",
+   "category": "Positions",
+   "offset_expr": "direct(0x0212)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 204
+  },
+  {
+   "key": "pos_amr",
+   "label": "AMR",
+   "entity": "Player",
+   "category": "Positions",
+   "offset_expr": "direct(0x0213)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 205
+  },
+  {
+   "key": "pos_st",
+   "label": "ST",
+   "entity": "Player",
+   "category": "Positions",
+   "offset_expr": "direct(0x0214)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 206
+  },
+  {
+   "key": "pos_wbl",
+   "label": "WBL",
+   "entity": "Player",
+   "category": "Positions",
+   "offset_expr": "direct(0x0215)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 207
+  },
+  {
+   "key": "pos_wbr",
+   "label": "WBR",
+   "entity": "Player",
+   "category": "Positions",
+   "offset_expr": "direct(0x0216)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 208
+  },
+  {
+   "key": "p_uid",
+   "label": "UID",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "raw(0x0284)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 209
+  },
+  {
+   "key": "p_intl_caps",
+   "label": "International Caps",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "direct(0x03DC)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 213
+  },
+  {
+   "key": "p_u21_caps",
+   "label": "U21 Caps",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "direct(0x03DD)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 214
+  },
+  {
+   "key": "p_intl_goals",
+   "label": "International Goals",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "direct(0x03DE)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 215
+  },
+  {
+   "key": "p_u21_goals",
+   "label": "U21 Goals",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "direct(0x03DF)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 216
+  },
+  {
+   "key": "p_team_ptr",
+   "label": "Team",
+   "entity": "Player",
+   "category": "Internal",
+   "offset_expr": "pointer(0x0130)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 217
+  },
+  {
+   "key": "p_current_club",
+   "label": "Club",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "sub_fm_string(\"club\", 0xC0)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 218
+  },
+  {
+   "key": "p_nation_ptr",
+   "label": "Nation",
+   "entity": "Player",
+   "category": "Internal",
+   "offset_expr": "pointer(0x02E8)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 219
+  },
+  {
+   "key": "p_nationality",
+   "label": "Nationality",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "sub_fm_string(\"nation\", 0x18)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 220
+  },
+  {
+   "key": "p_birthplace",
+   "label": "Place of Birth",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "sub_fm_string(\"birth_city\", 0x18)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 221
+  },
+  {
+   "key": "p_contract_ptr",
+   "label": "Contract",
+   "entity": "Player",
+   "category": "Internal",
+   "offset_expr": "pointer(0x0340)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 222
+  },
+  {
+   "key": "p_contract_wage",
+   "label": "Wage (£ p/w)",
+   "entity": "Player",
+   "category": "Contract",
+   "offset_expr": "sub_raw_u32(\"contract\", 0x18)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 223
+  },
+  {
+   "key": "p_contract_expiry",
+   "label": "Contract Expiry",
+   "entity": "Player",
+   "category": "Contract",
+   "offset_expr": "sub_date(\"contract\", 0x40)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 224
+  },
+  {
+   "key": "p_squad_status",
+   "label": "Squad Status",
+   "entity": "Player",
+   "category": "Contract",
+   "offset_expr": "sub_direct(\"contract\", 0x4C)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 225
+  },
+  {
+   "key": "p_squad_number",
+   "label": "Squad Number",
+   "entity": "Player",
+   "category": "Contract",
+   "offset_expr": "sub_direct(\"contract\", 0x55)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 226
+  },
+  {
+   "key": "p_contract_signed",
+   "label": "Contract Signed",
+   "entity": "Player",
+   "category": "Contract",
+   "offset_expr": "sub_date(\"contract\", 0x3C)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 230
+  },
+  {
+   "key": "p_list_flags",
+   "label": "Listing Flags",
+   "entity": "Player",
+   "category": "Contract",
+   "offset_expr": "sub_direct(\"contract\", 0x4F)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 235
+  },
+  {
+   "key": "p_list_date",
+   "label": "Listed Since",
+   "entity": "Player",
+   "category": "Contract",
+   "offset_expr": "sub_date(\"contract\", 0x48)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 236
+  },
+  {
+   "key": "p_list_code",
+   "label": "Listing Code",
+   "entity": "Player",
+   "category": "Contract",
+   "offset_expr": "sub_direct(\"contract\", 0x50)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 237
+  },
+  {
+   "key": "p_value",
+   "label": "Market Value",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "raw_u32(0x01D0)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 241
+  },
+  {
+   "key": "p_asking_price",
+   "label": "Asking Price",
+   "entity": "Player",
+   "category": "Contract",
+   "offset_expr": "raw_u32(0x01D4)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 244
+  },
+  {
+   "key": "p_sharpness",
+   "label": "Sharpness",
+   "entity": "Player",
+   "category": "Condition",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 247
+  },
+  {
+   "key": "p_fitness",
+   "label": "Fitness",
+   "entity": "Player",
+   "category": "Condition",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 248
+  },
+  {
+   "key": "p_fatigue",
+   "label": "Fatigue",
+   "entity": "Player",
+   "category": "Condition",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 249
+  },
+  {
+   "key": "p_name2",
+   "label": "Name (secondary)",
+   "entity": "Player",
+   "category": "Internal",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 250
+  },
+  {
+   "key": "p_name2_first_sub",
+   "label": "Name2 First Sub",
+   "entity": "Player",
+   "category": "Internal",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 251
+  },
+  {
+   "key": "p_name2_last_sub",
+   "label": "Name2 Last Sub",
+   "entity": "Player",
+   "category": "Internal",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 252
+  },
+  {
+   "key": "p_weekly_wage",
+   "label": "Weekly Wage",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 254
+  },
+  {
+   "key": "p_senior_apps",
+   "label": "Snr Apps",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 255
+  },
+  {
+   "key": "p_senior_goals",
+   "label": "Snr Goals",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 256
+  },
+  {
+   "key": "p_prev_club",
+   "label": "Previous Club",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 257
+  },
+  {
+   "key": "p_transfer_date",
+   "label": "Transfer Date",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 258
+  },
+  {
+   "key": "p_contract_start",
+   "label": "Contract Start",
+   "entity": "Player",
+   "category": "Contract",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 259
+  },
+  {
+   "key": "p_join_date",
+   "label": "Join Club Date",
+   "entity": "Player",
+   "category": "Contract",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 260
+  },
+  {
+   "key": "p_debut_date",
+   "label": "Senior Debut",
+   "entity": "Player",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 261
+  },
+  {
+   "key": "p_listing_date",
+   "label": "Listing Date",
+   "entity": "Player",
+   "category": "Contract",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 262
+  },
+  {
+   "key": "p_squad_ptr",
+   "label": "Squad Record",
+   "entity": "Player",
+   "category": "Internal",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 263
+  },
+  {
+   "key": "p_contract_type",
+   "label": "Contract Type",
+   "entity": "Player",
+   "category": "Contract",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/player.rs",
+   "line": 264
+  },
+  {
+   "key": "p_morale",
+   "label": "Morale",
+   "entity": "Player",
+   "category": "Condition",
+   "offset_expr": "direct(0x025F)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 267
+  },
+  {
+   "key": "p_traits",
+   "label": "Traits (PPMs)",
+   "entity": "Player",
+   "category": "Traits",
+   "offset_expr": "raw(0x0368)",
+   "located": true,
+   "file": "src/fields/fm24/player.rs",
+   "line": 270
+  },
+  {
+   "key": "st_uid",
+   "label": "UID",
+   "entity": "Stadium",
+   "category": "General",
+   "offset_expr": "raw_u32(0x0C)",
+   "located": true,
+   "file": "src/fields/fm24/stadium.rs",
+   "line": 16
+  },
+  {
+   "key": "st_name",
+   "label": "Name",
+   "entity": "Stadium",
+   "category": "General",
+   "offset_expr": "fm_string(0x38)",
+   "located": true,
+   "file": "src/fields/fm24/stadium.rs",
+   "line": 17
+  },
+  {
+   "key": "st_name2",
+   "label": "Name 2",
+   "entity": "Stadium",
+   "category": "General",
+   "offset_expr": "fm_string(0x40)",
+   "located": true,
+   "file": "src/fields/fm24/stadium.rs",
+   "line": 18
+  },
+  {
+   "key": "st_capacity",
+   "label": "Capacity",
+   "entity": "Stadium",
+   "category": "General",
+   "offset_expr": "raw_u32(0x6C)",
+   "located": true,
+   "file": "src/fields/fm24/stadium.rs",
+   "line": 19
+  },
+  {
+   "key": "st_seated",
+   "label": "Seated",
+   "entity": "Stadium",
+   "category": "General",
+   "offset_expr": "raw_u32(0x70)",
+   "located": true,
+   "file": "src/fields/fm24/stadium.rs",
+   "line": 20
+  },
+  {
+   "key": "st_used",
+   "label": "Used",
+   "entity": "Stadium",
+   "category": "General",
+   "offset_expr": "raw_u32(0x74)",
+   "located": true,
+   "file": "src/fields/fm24/stadium.rs",
+   "line": 21
+  },
+  {
+   "key": "st_all_seater",
+   "label": "All-Seater",
+   "entity": "Stadium",
+   "category": "General",
+   "offset_expr": "raw_u32(0x78)",
+   "located": true,
+   "file": "src/fields/fm24/stadium.rs",
+   "line": 22
+  },
+  {
+   "key": "st_expansion",
+   "label": "Expansion",
+   "entity": "Stadium",
+   "category": "General",
+   "offset_expr": "raw_u32(0x7C)",
+   "located": true,
+   "file": "src/fields/fm24/stadium.rs",
+   "line": 23
+  },
+  {
+   "key": "st_club_ptr",
+   "label": "Club Owner",
+   "entity": "Stadium",
+   "category": "Internal",
+   "offset_expr": "pointer(0x80)",
+   "located": true,
+   "file": "src/fields/fm24/stadium.rs",
+   "line": 24
+  },
+  {
+   "key": "st_pitch_length",
+   "label": "Pitch Length",
+   "entity": "Stadium",
+   "category": "General",
+   "offset_expr": "raw(0x88)",
+   "located": true,
+   "file": "src/fields/fm24/stadium.rs",
+   "line": 26
+  },
+  {
+   "key": "st_pitch_width",
+   "label": "Pitch Width",
+   "entity": "Stadium",
+   "category": "General",
+   "offset_expr": "raw(0x8A)",
+   "located": true,
+   "file": "src/fields/fm24/stadium.rs",
+   "line": 27
+  },
+  {
+   "key": "st_standing",
+   "label": "Standing",
+   "entity": "Stadium",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/stadium.rs",
+   "line": 28
+  },
+  {
+   "key": "st_environment",
+   "label": "Environment",
+   "entity": "Stadium",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/stadium.rs",
+   "line": 29
+  },
+  {
+   "key": "st_condition",
+   "label": "Condition",
+   "entity": "Stadium",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/stadium.rs",
+   "line": 30
+  },
+  {
+   "key": "s_goalkeeping",
+   "label": "Goalkeeping",
+   "entity": "Staff",
+   "category": "Coaching",
+   "offset_expr": "encoded(0x033)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 41
+  },
+  {
+   "key": "s_attacking",
+   "label": "Attacking",
+   "entity": "Staff",
+   "category": "Coaching",
+   "offset_expr": "encoded(0x03A)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 42
+  },
+  {
+   "key": "s_defending",
+   "label": "Defending",
+   "entity": "Staff",
+   "category": "Coaching",
+   "offset_expr": "encoded(0x03B)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 43
+  },
+  {
+   "key": "s_fitness",
+   "label": "Fitness",
+   "entity": "Staff",
+   "category": "Coaching",
+   "offset_expr": "encoded(0x03C)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 44
+  },
+  {
+   "key": "s_possession",
+   "label": "Mental",
+   "entity": "Staff",
+   "category": "Coaching",
+   "offset_expr": "encoded(0x03D)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 45
+  },
+  {
+   "key": "s_tactical",
+   "label": "Tactical",
+   "entity": "Staff",
+   "category": "Coaching",
+   "offset_expr": "encoded(0x03F)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 46
+  },
+  {
+   "key": "s_technical",
+   "label": "Technical",
+   "entity": "Staff",
+   "category": "Coaching",
+   "offset_expr": "encoded(0x03E)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 47
+  },
+  {
+   "key": "s_set_pieces",
+   "label": "Set Pieces",
+   "entity": "Staff",
+   "category": "Coaching",
+   "offset_expr": "encoded(0x04B)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 48
+  },
+  {
+   "key": "s_youngsters",
+   "label": "Youngsters",
+   "entity": "Staff",
+   "category": "Coaching",
+   "offset_expr": "direct(0x024)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 49
+  },
+  {
+   "key": "s_authority",
+   "label": "Level of Discipline",
+   "entity": "Staff",
+   "category": "Mental",
+   "offset_expr": "direct(0x01C)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 50
+  },
+  {
+   "key": "s_determination",
+   "label": "Determination",
+   "entity": "Staff",
+   "category": "Mental",
+   "offset_expr": "encoded(0x025)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 51
+  },
+  {
+   "key": "s_motivating",
+   "label": "Motivation",
+   "entity": "Staff",
+   "category": "Mental",
+   "offset_expr": "encoded(0x037)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 52
+  },
+  {
+   "key": "s_people_mgmt",
+   "label": "People Mgmt",
+   "entity": "Staff",
+   "category": "Mental",
+   "offset_expr": "encoded(0x036)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 53
+  },
+  {
+   "key": "s_judge_ability",
+   "label": "Judge Ability",
+   "entity": "Staff",
+   "category": "Knowledge",
+   "offset_expr": "encoded(0x034)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 54
+  },
+  {
+   "key": "s_judge_potential",
+   "label": "Judge Potential",
+   "entity": "Staff",
+   "category": "Knowledge",
+   "offset_expr": "encoded(0x035)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 55
+  },
+  {
+   "key": "s_negotiating",
+   "label": "Negotiating",
+   "entity": "Staff",
+   "category": "Knowledge",
+   "offset_expr": "encoded(0x049)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 56
+  },
+  {
+   "key": "s_tactical_knowl",
+   "label": "Tactical Knowledge",
+   "entity": "Staff",
+   "category": "Knowledge",
+   "offset_expr": "encoded(0x039)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 57
+  },
+  {
+   "key": "s_physiotherapy",
+   "label": "Physiotherapy",
+   "entity": "Staff",
+   "category": "Medical",
+   "offset_expr": "encoded(0x038)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 58
+  },
+  {
+   "key": "s_ts_attacking",
+   "label": "Attacking",
+   "entity": "Staff",
+   "category": "TacticalStyle",
+   "offset_expr": "direct(0x018)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 59
+  },
+  {
+   "key": "s_def_line",
+   "label": "Defensive Line",
+   "entity": "Staff",
+   "category": "TacticalStyle",
+   "offset_expr": "direct(0x02B)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 60
+  },
+  {
+   "key": "s_directness",
+   "label": "Directness",
+   "entity": "Staff",
+   "category": "TacticalStyle",
+   "offset_expr": "direct(0x01B)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 61
+  },
+  {
+   "key": "s_flexibility",
+   "label": "Flexibility",
+   "entity": "Staff",
+   "category": "TacticalStyle",
+   "offset_expr": "direct(0x02D)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 62
+  },
+  {
+   "key": "s_tempo",
+   "label": "Tempo",
+   "entity": "Staff",
+   "category": "TacticalStyle",
+   "offset_expr": "direct(0x030)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 63
+  },
+  {
+   "key": "s_width",
+   "label": "Width",
+   "entity": "Staff",
+   "category": "TacticalStyle",
+   "offset_expr": "direct(0x031)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 64
+  },
+  {
+   "key": "s_trigger_press",
+   "label": "Trigger Press",
+   "entity": "Staff",
+   "category": "TacticalStyle",
+   "offset_expr": "direct(0x022)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 65
+  },
+  {
+   "key": "s_rotation",
+   "label": "Squad Rotation",
+   "entity": "Staff",
+   "category": "TacticalStyle",
+   "offset_expr": "direct(0x02F)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 66
+  },
+  {
+   "key": "s_hardness",
+   "label": "Train Hardness",
+   "entity": "Staff",
+   "category": "TacticalStyle",
+   "offset_expr": "direct(0x02E)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 67
+  },
+  {
+   "key": "s_dirtiness",
+   "label": "Dirtiness",
+   "entity": "Staff",
+   "category": "TacticalStyle",
+   "offset_expr": "encoded(0x040)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 68
+  },
+  {
+   "key": "s_buying_players",
+   "label": "Buying Players",
+   "entity": "Staff",
+   "category": "BoardRelations",
+   "offset_expr": "direct(0x026)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 69
+  },
+  {
+   "key": "s_mind_games",
+   "label": "Mind Games",
+   "entity": "Staff",
+   "category": "BoardRelations",
+   "offset_expr": "direct(0x027)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 70
+  },
+  {
+   "key": "s_patience",
+   "label": "Patience",
+   "entity": "Staff",
+   "category": "BoardRelations",
+   "offset_expr": "direct(0x021)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 71
+  },
+  {
+   "key": "s_adaptability",
+   "label": "Adaptability",
+   "entity": "Staff",
+   "category": "Personality",
+   "offset_expr": "direct(0x170)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 72
+  },
+  {
+   "key": "s_ambition",
+   "label": "Ambition",
+   "entity": "Staff",
+   "category": "Personality",
+   "offset_expr": "direct(0x171)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 73
+  },
+  {
+   "key": "s_loyalty",
+   "label": "Loyalty",
+   "entity": "Staff",
+   "category": "Personality",
+   "offset_expr": "direct(0x172)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 74
+  },
+  {
+   "key": "s_pressure",
+   "label": "Pressure",
+   "entity": "Staff",
+   "category": "Personality",
+   "offset_expr": "direct(0x173)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 75
+  },
+  {
+   "key": "s_professionalism",
+   "label": "Professionalism",
+   "entity": "Staff",
+   "category": "Personality",
+   "offset_expr": "direct(0x174)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 76
+  },
+  {
+   "key": "s_sportsmanship",
+   "label": "Sportsmanship",
+   "entity": "Staff",
+   "category": "Personality",
+   "offset_expr": "direct(0x175)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 77
+  },
+  {
+   "key": "s_temperament",
+   "label": "Temperament",
+   "entity": "Staff",
+   "category": "Personality",
+   "offset_expr": "direct(0x176)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 78
+  },
+  {
+   "key": "s_controversy",
+   "label": "Controversy",
+   "entity": "Staff",
+   "category": "Personality",
+   "offset_expr": "direct(0x177)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 79
+  },
+  {
+   "key": "s_name",
+   "label": "Name",
+   "entity": "Staff",
+   "category": "General",
+   "offset_expr": "fm_string(0x140)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 80
+  },
+  {
+   "key": "s_name_first_sub",
+   "label": "Name First Sub",
+   "entity": "Staff",
+   "category": "Internal",
+   "offset_expr": "pointer(0x150)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 81
+  },
+  {
+   "key": "s_name_last_sub",
+   "label": "Name Last Sub",
+   "entity": "Staff",
+   "category": "Internal",
+   "offset_expr": "pointer(0x158)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 82
+  },
+  {
+   "key": "s_ca",
+   "label": "Current Ability",
+   "entity": "Staff",
+   "category": "Ability",
+   "offset_expr": "raw_capped(0x0D6, 200)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 83
+  },
+  {
+   "key": "s_pa",
+   "label": "Potential Ability",
+   "entity": "Staff",
+   "category": "Ability",
+   "offset_expr": "raw_capped(0x0D8, 200)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 84
+  },
+  {
+   "key": "s_id",
+   "label": "Staff ID",
+   "entity": "Staff",
+   "category": "General",
+   "offset_expr": "raw(0x104)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 85
+  },
+  {
+   "key": "s_dob",
+   "label": "Date of Birth",
+   "entity": "Staff",
+   "category": "General",
+   "offset_expr": "date(0x13C)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 86
+  },
+  {
+   "key": "s_role_ptr",
+   "label": "Role Ratings",
+   "entity": "Staff",
+   "category": "General",
+   "offset_expr": "pointer(0x1F8)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 87
+  },
+  {
+   "key": "s_role_manager",
+   "label": "Manager",
+   "entity": "Staff",
+   "category": "StaffRole",
+   "offset_expr": "role_index(0)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 88
+  },
+  {
+   "key": "s_role_asst_mgr",
+   "label": "Asst Manager",
+   "entity": "Staff",
+   "category": "StaffRole",
+   "offset_expr": "role_index(1)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 89
+  },
+  {
+   "key": "s_role_coach",
+   "label": "Coach",
+   "entity": "Staff",
+   "category": "StaffRole",
+   "offset_expr": "role_index(2)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 90
+  },
+  {
+   "key": "s_role_gk_coach",
+   "label": "GK Coach",
+   "entity": "Staff",
+   "category": "StaffRole",
+   "offset_expr": "role_index(5)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 91
+  },
+  {
+   "key": "s_role_fit_coach",
+   "label": "Fitness Coach",
+   "entity": "Staff",
+   "category": "StaffRole",
+   "offset_expr": "role_index(6)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 92
+  },
+  {
+   "key": "s_role_sp_coach",
+   "label": "Set Piece Coach",
+   "entity": "Staff",
+   "category": "StaffRole",
+   "offset_expr": "role_index(7)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 93
+  },
+  {
+   "key": "s_role_scout",
+   "label": "Scout",
+   "entity": "Staff",
+   "category": "StaffRole",
+   "offset_expr": "role_index(4)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 94
+  },
+  {
+   "key": "s_role_youth_dev",
+   "label": "Head of Youth Dev",
+   "entity": "Staff",
+   "category": "StaffRole",
+   "offset_expr": "role_index(10)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 95
+  },
+  {
+   "key": "s_role_data",
+   "label": "Data Analyst",
+   "entity": "Staff",
+   "category": "StaffRole",
+   "offset_expr": "role_index(12)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 96
+  },
+  {
+   "key": "s_role_loan",
+   "label": "Loan Manager",
+   "entity": "Staff",
+   "category": "StaffRole",
+   "offset_expr": "role_index(11)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 97
+  },
+  {
+   "key": "s_role_dof",
+   "label": "Dir of Football",
+   "entity": "Staff",
+   "category": "StaffRole",
+   "offset_expr": "role_index(9)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 98
+  },
+  {
+   "key": "s_role_physio",
+   "label": "Physio",
+   "entity": "Staff",
+   "category": "StaffRole",
+   "offset_expr": "role_index(3)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 99
+  },
+  {
+   "key": "s_role_sports_sci",
+   "label": "Sports Scientist",
+   "entity": "Staff",
+   "category": "StaffRole",
+   "offset_expr": "role_index(13)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 100
+  },
+  {
+   "key": "s_role_tech_dir",
+   "label": "Technical Director",
+   "entity": "Staff",
+   "category": "StaffRole",
+   "offset_expr": "role_index(14)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 101
+  },
+  {
+   "key": "s_home_rep",
+   "label": "Home Rep",
+   "entity": "Staff",
+   "category": "Reputation",
+   "offset_expr": "raw_capped(0x0D0, 10000)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 102
+  },
+  {
+   "key": "s_current_rep",
+   "label": "Current Rep",
+   "entity": "Staff",
+   "category": "Reputation",
+   "offset_expr": "raw_capped(0x0D2, 10000)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 103
+  },
+  {
+   "key": "s_world_rep",
+   "label": "World Rep",
+   "entity": "Staff",
+   "category": "Reputation",
+   "offset_expr": "raw_capped(0x0D4, 10000)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 104
+  },
+  {
+   "key": "s_judge_staff",
+   "label": "Judge Staff",
+   "entity": "Staff",
+   "category": "Knowledge",
+   "offset_expr": "encoded(0x04A)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 109
+  },
+  {
+   "key": "s_data_analysis",
+   "label": "Data Analysis",
+   "entity": "Staff",
+   "category": "Knowledge",
+   "offset_expr": "encoded(0x044)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 110
+  },
+  {
+   "key": "s_sports_science",
+   "label": "Sports Science",
+   "entity": "Staff",
+   "category": "Medical",
+   "offset_expr": "encoded(0x047)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 111
+  },
+  {
+   "key": "s_versatility",
+   "label": "Versatility",
+   "entity": "Staff",
+   "category": "TacticalStyle",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 115
+  },
+  {
+   "key": "s_business",
+   "label": "Business",
+   "entity": "Staff",
+   "category": "BoardRelations",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 116
+  },
+  {
+   "key": "s_interference",
+   "label": "Interference",
+   "entity": "Staff",
+   "category": "BoardRelations",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 117
+  },
+  {
+   "key": "s_resources",
+   "label": "Resources",
+   "entity": "Staff",
+   "category": "BoardRelations",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 118
+  },
+  {
+   "key": "s_weekly_wage",
+   "label": "Weekly Wage",
+   "entity": "Staff",
+   "category": "Contract",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 119
+  },
+  {
+   "key": "s_contract_expiry",
+   "label": "Contract Expiry",
+   "entity": "Staff",
+   "category": "Contract",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 120
+  },
+  {
+   "key": "s_nationality",
+   "label": "Nationality",
+   "entity": "Staff",
+   "category": "General",
+   "offset_expr": "None",
+   "located": false,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 121
+  },
+  {
+   "key": "s_club",
+   "label": "Club",
+   "entity": "Staff",
+   "category": "General",
+   "offset_expr": "sub_fm_string(\"club\", 0xC0)",
+   "located": true,
+   "file": "src/fields/fm24/staff.rs",
+   "line": 122
+  }
+ ],
+ "sub_records": [
+  {
+   "id": "info",
+   "parent": "Direct",
+   "ptr_offset": "0x100",
+   "size": "0x138",
+   "file": "src/fields/fm24/club.rs",
+   "line": 20
+  },
+  {
+   "id": "finance",
+   "parent": "Direct",
+   "ptr_offset": "0x150",
+   "size": "0x820",
+   "file": "src/fields/fm24/club.rs",
+   "line": 21
+  },
+  {
+   "id": "budget",
+   "parent": "In(\"finance\")",
+   "ptr_offset": "0x48",
+   "size": "0x20",
+   "file": "src/fields/fm24/club.rs",
+   "line": 22
+  },
+  {
+   "id": "stadium",
+   "parent": "Direct",
+   "ptr_offset": "0xB0",
+   "size": "0x98",
+   "file": "src/fields/fm24/club.rs",
+   "line": 23
+  },
+  {
+   "id": "teams",
+   "parent": "Direct",
+   "ptr_offset": "0x18",
+   "size": "0x08",
+   "file": "src/fields/fm24/club.rs",
+   "line": 26
+  },
+  {
+   "id": "senior_team",
+   "parent": "In(\"teams\")",
+   "ptr_offset": "0x00",
+   "size": "0x80",
+   "file": "src/fields/fm24/club.rs",
+   "line": 27
+  },
+  {
+   "id": "home_stadium",
+   "parent": "In(\"senior_team\")",
+   "ptr_offset": "0x78",
+   "size": "0xB0",
+   "file": "src/fields/fm24/club.rs",
+   "line": 28
+  },
+  {
+   "id": "contract",
+   "parent": "Direct",
+   "ptr_offset": "0x340",
+   "size": "0x70",
+   "file": "src/fields/fm24/player.rs",
+   "line": 102
+  },
+  {
+   "id": "team",
+   "parent": "Direct",
+   "ptr_offset": "0x130",
+   "size": "0xB0",
+   "file": "src/fields/fm24/player.rs",
+   "line": 105
+  },
+  {
+   "id": "club",
+   "parent": "In(\"team\")",
+   "ptr_offset": "0x30",
+   "size": "0xD0",
+   "file": "src/fields/fm24/player.rs",
+   "line": 106
+  },
+  {
+   "id": "nation",
+   "parent": "Direct",
+   "ptr_offset": "0x2E8",
+   "size": "0x20",
+   "file": "src/fields/fm24/player.rs",
+   "line": 109
+  },
+  {
+   "id": "birth_city",
+   "parent": "Direct",
+   "ptr_offset": "0x300",
+   "size": "0x20",
+   "file": "src/fields/fm24/player.rs",
+   "line": 112
+  },
+  {
+   "id": "employment",
+   "parent": "Direct",
+   "ptr_offset": "0x1C0",
+   "size": "0x58",
+   "file": "src/fields/fm24/staff.rs",
+   "line": 35
+  },
+  {
+   "id": "team",
+   "parent": "In(\"employment\")",
+   "ptr_offset": "0x10",
+   "size": "0xB0",
+   "file": "src/fields/fm24/staff.rs",
+   "line": 36
+  },
+  {
+   "id": "club",
+   "parent": "In(\"team\")",
+   "ptr_offset": "0x30",
+   "size": "0xD0",
+   "file": "src/fields/fm24/staff.rs",
+   "line": 37
+  }
+ ],
+ "entity_counts": {
+  "Club": {
+   "total": 51,
+   "located": 41,
+   "unlocated": 10
+  },
+  "Player": {
+   "total": 130,
+   "located": 113,
+   "unlocated": 17
+  },
+  "Stadium": {
+   "total": 14,
+   "located": 11,
+   "unlocated": 3
+  },
+  "Staff": {
+   "total": 75,
+   "located": 68,
+   "unlocated": 7
+  }
+ },
+ "file_count": 5,
+ "provenance": "ext/fm-editor@ba605f4b64137dfc18940a69ecb2f523007f3ea8",
+ "schema": "t93/fm24_memory_layout/v1",
+ "domain": "live process memory (fm.exe image base 0x140000000)",
+ "domain_note": "This is LIVE PROCESS MEMORY layout, not the save-file wire format. fm-editor reads and writes the running game's heap through the OS; offsets here are object-relative and meaningless for .dat wire parsing. Do not map these offsets onto wire slots.",
+ "method": "regex parse of src/fields/fm24/*.rs plus curated facts from docs/fm24/memory-layout.md; nothing built or executed",
+ "grade_policy": "external reference only; never our L1-L4 grade",
+ "curated_facts": [
+  {
+   "id": "M01_module",
+   "statement": "FM24 has no game_plugin.dll: game logic and every entity-array RVA live in fm.exe itself (image base 0x140000000), so gp_base is the fm.exe base.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 9
+  },
+  {
+   "id": "M02_players_array",
+   "statement": "Player entity array: std::vector of object pointers at fm.exe+0x642EDD0 (data) / +0x642EDD8 (end), 83,426 entries, vtable fm.exe+0x5A4E958, pool stride 0x3E8.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 32
+  },
+  {
+   "id": "M03_staff_array",
+   "statement": "Staff entity array at fm.exe+0x642EDE8 / +0x642EDF0, 33,835 entries (human manager last), vtable fm.exe+0x5A4C2E8, stride 0x268.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 33
+  },
+  {
+   "id": "M04_clubs_array",
+   "statement": "Club entity array at fm.exe+0x642EF58 / +0x642EF60, 36,725 entries, vtable fm.exe+0x5A51F38, 0x170 spacing between objects.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 34
+  },
+  {
+   "id": "M05_array_scan_method",
+   "statement": "Arrays were found by scanning fm.exe's writable sections for (data,end) pointer pairs, then locating witness records in the heap (Guardiola by personality bytes, Kane by UID) and finding which arrays point at them.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 36
+  },
+  {
+   "id": "M06_stadium_root",
+   "statement": "The stadium array root is NOT located; stadiums are reached per club through the home_stadium sub-record, so rva_stadium_base = 0. Stadium entity stride is 0xB0.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 45
+  },
+  {
+   "id": "M07_current_date",
+   "statement": "Current game date is the static DateDayYear at fm.exe+0x631D5BC: day-of-year in the low 9 bits, FM flag bits above bit 8, then the year.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 50
+  },
+  {
+   "id": "M08_player_block_shift",
+   "statement": "Player positions+attributes keep the FM26 order shifted +0xB8: positions 0x208..0x216, attributes 0x217..0x24C.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 68
+  },
+  {
+   "id": "M09_player_identity_offsets",
+   "statement": "Individually moved player fields: home/current/world rep 0x1FA/0x1FC/0x1FE, CA/PA 0x200/0x202, height 0x14E, UID 0x284, name FmString 0x2C0, name subs 0x2D0/0x2D8, DOB 0x2BC, personality 0x2F0..0x2F7, club ptr 0x3B0.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 70
+  },
+  {
+   "id": "M10_name_split",
+   "statement": "Names: 40% of players carry a direct FmString, 59% first/last sub-records, 0.5% neither.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 73
+  },
+  {
+   "id": "M11_intl_record",
+   "statement": "International record: four u8 at 0x3DC..0x3DF = caps, U21 caps, goals, U21 goals (FM27 widens caps and goals to u16).",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 77
+  },
+  {
+   "id": "M12_player_nation_city_team",
+   "statement": "Nation pointer 0x2E8 (name FmString at nation+0x18); birth city pointer 0x300 (name at city+0x18); team pointer 0x130 with club at team+0x30.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 80
+  },
+  {
+   "id": "M13_contract_object",
+   "statement": "Contract pointer 0x340: wage i32 GBP/week at +0x18, expiry at +0x40, squad status +0x4C, squad number +0x55, contract start (FM27 signed) +0x3C, listing flags +0x4F (bit0 transfer, bit1 loan), listed date +0x48, listing code +0x50.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 86
+  },
+  {
+   "id": "M14_weight_traits_morale",
+   "statement": "Weight u16 kg at 0x14C; traits (PPMs) u64 bitmask at 0x368 with bit = PPM ID - 1; morale level u8 1..20 at 0x25F.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 92
+  },
+  {
+   "id": "M15_condition_leads",
+   "statement": "Condition leads read but unconfirmed: sharpness u16 0x1F4, jadedness i16 0x1F6, condition u16 0x1F8, looks 0x309..0x30C.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 117
+  },
+  {
+   "id": "M16_value_asking",
+   "statement": "Transfer value i32 at 0x1D0 (FM24 recalculates it daily, so read-only); asking price i32 at 0x1D4 with -1 = Unspecified.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 138
+  },
+  {
+   "id": "M17_staff_attributes",
+   "statement": "Staff attribute block (< 0x50) is the FM26 layout +8; Judging Staff Ability 0x4A, Analysing Data 0x44, Sports Science 0x47 are encoded with displayed = (raw+2)/5.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 166
+  },
+  {
+   "id": "M18_staff_identity",
+   "statement": "Staff reps 0xD0/0xD2/0xD4, CA/PA 0xD6/0xD8 (4 earlier than FM26), staff ID 0x104, name 0x140, name subs 0x150/0x158, DOB 0x13C, personality 0x170, role-ratings ptr 0x1F8.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 175
+  },
+  {
+   "id": "M19_staff_employment",
+   "statement": "Staff current club chain (read-only): staff+0x1C0 -> employment -> +0x10 team -> +0x30 club -> full name FmString +0xC0. FM26 keeps this pointer at +0x1A8.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 178
+  },
+  {
+   "id": "M20_human_manager",
+   "statement": "Human manager is the LAST staff-array entry (vtable fm.exe+0x5A6A318) with identity fields at offset+0x358 (FM26 0x350); the direct name FmString is null in both slots on FM24.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 195
+  },
+  {
+   "id": "M21_club_top",
+   "statement": "Club top level: UID 0x0C, full name 0xC0, short name 0xC8, array index 0x08.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 205
+  },
+  {
+   "id": "M22_club_info_subrecord",
+   "statement": "Club info sub-record (ptr +0x100) is the FM26 layout +8: abbreviations 0x00/0x08/0x10, season tickets 0xC0, founded 0xD8, owner status 0xDE, social 0xF8, supporter % 0x106..0x10B, supporter attributes 0x114..0x119, facilities 0x120..0x12D (training 0x120, youth 0x12B).",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 206
+  },
+  {
+   "id": "M23_club_finance",
+   "statement": "Club finance sub-record ptr +0x150: transfer budget finance+0x7CC (i32), wage budget finance+0x810, wage spend +0x81C, next-season min transfer budget +0x7D4; the budget sub-record copies (+0x04/+0x0C) go stale.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 220
+  },
+  {
+   "id": "M24_club_stadium_chain",
+   "statement": "Home stadium chain: club+0x18 -> [0] senior team -> +0x78 stadium entity; attendance figures at stadium-sub +0xB0 area and 0x68/0x6C/0x70.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 234
+  },
+  {
+   "id": "M25_stadium_fields",
+   "statement": "Stadium entity (stride 0xB0): UID 0x0C, name 0x38, alt name 0x40, capacity/seated/used/all-seater/expansion u32 0x6C/0x70/0x74/0x78/0x7C, owner club ptr 0x80, pitch length/width x10 0x88/0x8A.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 239
+  },
+  {
+   "id": "M26_medical_object",
+   "statement": "Medical pointer player+0xF8: injuries vector +0x00 of pointers to 0x38-byte entries (type ptr +0x08, name FmString at type+0x20, start +0x20, u16 durations +0x28/+0x2A); absences vector +0x18 of pointers to 0x20-byte entries (kind +0x05, start +0x10, u16 days +0x16; 0x19 ban, 0x1F holiday). Null medical pointer = no medical history (~96% of players).",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 251
+  },
+  {
+   "id": "M27_ties_clauses",
+   "statement": "Ties pointer player+0x2F8 (FM27 +0x300), 16-byte entries; clauses vector contract+0x60 (FM27 +0x68), 8-byte entries; relegation wage drop is clause type 0x0F on FM24 (0x05 on FM27).",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 275
+  },
+  {
+   "id": "M28_version_gate",
+   "statement": "Version gate is a RecordedBuild fingerprint = hash of the first 64 KB of fm.exe: FM24_STEAM 0xFB39952A20287907, FM24_EPIC 0x8FA113DB9DCD8883.",
+   "file": "docs/fm24/memory-layout.md",
+   "line": 18
+  },
+  {
+   "id": "M29_layout_consts",
+   "statement": "ReleaseLayout constants: player_struct_size 0x3E8, staff_struct_size 0x268, club_read_size 0x200, stadium_entity_stride 0xB0, human_manager_shift set by staff module.",
+   "file": "src/fields/fm24/mod.rs",
+   "line": 39
+  },
+  {
+   "id": "M30_module_addresses",
+   "statement": "ModuleAddresses for FM24_STEAM: humans 0x642EDD0/0x642EDD8, staff 0x642EDE8/0x642EDF0, clubs 0x642EF58/0x642EF60, stadium base 0, current date 0x631D5BC.",
+   "file": "src/fields/fm24/mod.rs",
+   "line": 72
+  }
+ ],
+ "memory_layout_is_not_wire": true
+}

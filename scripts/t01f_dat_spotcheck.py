@@ -8,11 +8,11 @@ import importlib.util
 import struct
 import sys
 
-spec = importlib.util.spec_from_file_location("oldread", r"<OLD_REPO>\scripts\modding_read_dbdat.py")
+spec = importlib.util.spec_from_file_location("oldread", r"D:\tmp2b\fm24\scripts\modding_read_dbdat.py")
 old = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(old)
 
-DB = r"<GAME_DATA>\data\database\db\2430\2430_fm"
+DB = r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm"
 path, data, meta = old._entries(DB, "client_db.dat")
 raw = None
 for e in meta["entries"]:

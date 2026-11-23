@@ -1,7 +1,7 @@
 # t01-i 任务书:pers 核心行(table_1 / BASIC_PERSON)行偏移 —— t01f 方法第三站
 
 > 交给 pi gpt-6-luna max。t01f(comp,直线型,18 字段)→ t01g(nation,变长型,负结果)→ t01h(全普查,mode 46/7/7/14)。现在做排序后的第一名:**type 1 = BASIC_PERSON,straight-line,reader 有 27 条宽度指令**。
-> 规则不变:只读输入、不启动游戏/编辑器/IDA、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
+> 规则不变:只读输入、不启动游戏本体/FM 编辑器(IDA 静态分析允许)、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
 
 ## 已知锚点(直接引用,勿重复)
 

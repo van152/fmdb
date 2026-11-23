@@ -15,9 +15,9 @@
 5. 独立 verify.py + builder scripts/t67_comp_data_crosswalk.py;--help/--selftest;退出码 0/1/2。交付为 L2 交叉台账(不改 reports/)。
 
 ## 边界
-- 只 comp table_25;不得修改 scratch/t59;negative/反例如实;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 只 comp table_25;不得修改 scratch/t59;negative/反例如实;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 
 ## 交付 scratch/t67/out/
 - crosswalk.json(逐断言:claim/method/evidence/grade)、sensitivity.json、verify.py、REPORT.md、DONE.md;scripts/t67_comp_data_crosswalk.py
 
-Python `py -V:3.12 -I -B`;FM24_DB_DIR=<WORKSPACE>/scratch/data;完成跑 verify + scripts/t01_anchors.py(7/7)。
+Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data;完成跑 verify + scripts/t01_anchors.py(7/7)。

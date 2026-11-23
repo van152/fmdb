@@ -433,7 +433,7 @@ def report_text(schema: dict[str, Any], json_raw: bytes, md_raw: bytes) -> str:
         "- 双档 payload 894,991 / 1,533,972 B，7,047 行各；client 定宽 127 B；identity 12 B、footer 9 B；reader slot19 837 instructions/114 branches；82 个观测位置+2 静态未触发。\n"
         "- 26 个新 4CC；7 组引用域 join 均 0 miss；factory case25 的 COMP 与 DATABASE_TABLE<COMP> vtable 分别记录，未合并。\n"
         "- 既有 club 主行、club 子表、nation 节及 tables/negative_regressions/v3_baseline/club_auxiliary_sources 全部逐值保护。ledger entry guard 扩至 E84–E99。\n"
-        "- 验收：builder/verifier 的 --help、--selftest 与独立 verify 均通过；FM24_DB_DIR=<WORKSPACE>/scratch/data 下 `scripts/t01_anchors.py` 7/7。命令输出在 `spot_*.log`。\n"
+        "- 验收：builder/verifier 的 --help、--selftest 与独立 verify 均通过；FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data 下 `scripts/t01_anchors.py` 7/7。命令输出在 `spot_*.log`。\n"
         f"- v9 JSON SHA-256 `{sha(json_raw)}` ({len(json_raw)} bytes)；v9 Markdown SHA-256 `{sha(md_raw)}` ({len(md_raw)} bytes)。\n"
     )
 

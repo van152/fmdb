@@ -25,8 +25,8 @@ import sys
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-DB = r"<GAME_DATA>\data\database\db\2430\2430_fm"
-OLD_DECODER = r"<OLD_REPO>\scripts\modding_read_dbdat.py"
+DB = r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm"
+OLD_DECODER = r"D:\tmp2b\fm24\scripts\modding_read_dbdat.py"
 
 
 def load_table(archive="client_db.dat", tid=3):

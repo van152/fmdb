@@ -1,7 +1,7 @@
 # t01-m 任务书:stad(table_21)行偏移 —— 直线型第三站,带旧库锚交叉验证
 
 > 交给 pi gpt-6-luna max。t01l 已达第二实体验收线(weat 89 字段);type 21 = STADIUM@db@@ 是下一个干净目标:**census 判定 straight-line,client_db.dat 有 table_21,且旧库已独立解码其行结构** —— 你的结果可与旧库 L1 锚逐字段交叉验证,证据等级最高。
-> 规则不变:只读输入、不启动游戏/编辑器/IDA、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
+> 规则不变:只读输入、不启动游戏本体/FM 编辑器(IDA 静态分析允许)、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
 
 ## 已知锚点(直接引用,勿重复)
 

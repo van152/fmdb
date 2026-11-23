@@ -12,7 +12,7 @@
    "level": "L3-static(文件偏移;VA 已换算)",
    "claim": "editor.exe 内 comp 实体字段码以 4CC 立即数出现(mov-imm 反序字节);4CC 字段码体系在 editor.exe 直接可检索",
    "evidence": {
-    "binary": "<OLD_REPO>/input/editor.exe (74,807,296 B)",
+    "binary": "D:/tmp2b/fm24/input/editor.exe (74,807,296 B)",
     "probe": "原始字节搜索 ASCII 4CC 及其反序",
     "hits": {
      "ccti(反序itcc)": [
@@ -990,7 +990,7 @@
      "payload 完整性: t05a 报告 58 个 census SHA-256 全匹配;table_21 的 census SHA 缺失,已记录本次计算值(如实标注,不冒充验证)"
     ],
     "errata": [
-     "【上游假阳性】<OLD_REPO> 的 client table_47 被判为 `exact fixed stride 25+2488*44+8=109505`。实测按 44B 切分 rdui==行号 仅 3/2488、重复尾 u32 仅 576/2488 —— 纯算术巧合。真解为 14+Σ(41+5k)+8=109505(2488 行,rdui/duni 均 2488/2488),见 scripts/t05_lcrg.py",
+     "【上游假阳性】D:/tmp2b/fm24 的 client table_47 被判为 `exact fixed stride 25+2488*44+8=109505`。实测按 44B 切分 rdui==行号 仅 3/2488、重复尾 u32 仅 576/2488 —— 纯算术巧合。真解为 14+Σ(41+5k)+8=109505(2488 行,rdui/duni 均 2488/2488),见 scripts/t05_lcrg.py",
      "【本仓旧结论升级】scratch/t02/lcrg_partial.json 的『第 9 行起变长、无法封口』不成立;变长可行,尾锚+行号约束即精确封口",
      "【方法学】上游 b46 把『14+N×stride+8 整除』记作 exact fixed stride 是不够的;必须加身份槽验证,否则会把 lcrg 这类变长表误判为定长"
     ],
@@ -2564,6 +2564,616 @@
     "scripts/t73_table_slot_mapper.py"
    ],
    "consequence": "generic mapper ready for wave-2 scan lanes (t76a/b/c) with documented boundaries; 4 simple tables' field slots closed at L2 with frozen-anchor L3 cross-check; alias-group negative result is repo-wide method knowledge"
+  },
+  {
+   "id": "E114",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "scope": "t75 wire-first reverse lookup: 10 t72 escalations (nation segment grammars) processed first, then 99 club/comp/nation unnamed/held outer slots adjudicated",
+    "nation_grammars": "8 segment item grammars closed byte-level (slot_4 Nftb i16 count, u8 tag + 4x len-prefixed strings + date + 4 lanes, 1 row/7 items 46-54B; slot_11 Ntxr 221 rows/1,899 items tag2 25B — matches E87 frozen 1,899; slot_12 u32 count 164 rows/27,178 items ordered-map key i32 + 2 packed dates, t3/t10/t25 ordinal 0-hit, container key NOT business ID; slot_13 19/58 loop 1+4+4+1+1+1+1+1; slot_23 Nlns i8 4+1 237/492; slot_24 Nefr 5x4+date+date 43/214; slot_25 Nnfr shares Nefr reader 20/63 all-null kept static; slot_26 Nagr 4+date+date 126/162); slot_2/slot_3 have 0 real items -> held; A/B/C/D four segments 251/251 dual-archive count+payload match",
+    "prior_lanes": "19 existing named sub-slots of A/B/C/D re-verified against live target identity (t5/8/10/19/56): lang 492/492 ordinal hits but 488 UID lookups all wrong-pointing; Nnfr/nfrc 63 all-null; Nlns/perc 17/91 raw!=reader-rewritten-100 preserved",
+    "club_comp": "99 unnamed/held slots adjudicated (club 25 / comp 40 / nation 34): club ref_e0 reproduces E106 nation resolver 26,587 live full-hit, no scoped 4CC, held; club raw168 / comp m152 are true t21 ordinal lanes (84,259 & 7,047 full hit, wrong-UID all wrong-pointing) but no resolver+4CC pairing -> cannot name Stadium, held; comp Ccre/cosr exact gates found but not in frozen index -> not promoted; slot_12/slot_13 new physical lanes profiled unnamed",
+    "boundary": "new named L3 = 0 — remaining slots lack resolver+getter pairing; coverage unchanged; t66/t71/eight subtables/CLUB_LINK/person untouched; negatives preserved verbatim (E60 Cccn, t59 falsified, t64/t62 exclusions)",
+    "verification": "builder --help/--selftest OK; verify.py --check OK: 6 main members, 99 held trials, 10 escalation records, 19 prior lanes with server domains; t01 anchors 7/7",
+    "commander_spot": "Ntxr 221 rows/1,899 items matches E87 frozen fact exactly; lang wrong-UID 488/488 consistent with t66 discipline"
+   },
+   "evidence": [
+    "scratch/t75/out/xref_reverse.json",
+    "scratch/t75/out/field_map_r3.json",
+    "scratch/t75/out/REPORT.md",
+    "scratch/t75/out/DONE.md",
+    "scratch/t75/out/verify.py",
+    "scripts/t75_slot_xref_reverse.py"
+   ],
+   "consequence": "nation segment grammar layer closed (infrastructure for future naming); all 99 unnamed slots now carry adjudication records — the un-named residue is documented as missing resolver+getter pairing, the precise target for editor-runtime (t02) if authorized"
+  },
+  {
+   "id": "E116",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L1",
+   "claim": {
+    "scope": "t78 real physical-coverage denominator for club/nation/comp 1,034 top-level XML occurrences (frozen artifacts only, no .dat read, no disassembly)",
+    "denominator": "1034 = club 433 + nation 346 + comp 255; buckets: mapped_l3 99 (club 45 incl t71 24 / nation 5 / comp 49), independent_member 11, string_name_table 0, ui_or_derived 24, held 59, unresolved_wire_slot 277, no_wire_evidence 564",
+    "physical_coverage": "110/1034 = 10.6% carried by physical members; club 239 unresolved occurrences hang on just 20 unnamed slots (selector, derived_170/178, ref_e0, name_len/short_len, raw166/16c/168, vec110/130/138, obj150_tag, base18/30/60/78/90/a8) — highest naming ROI; comp 38 on 36 slots; nation 0 unresolved but 318 no_wire_evidence (grammar closed by t75, naming needs name-pool/t02)",
+    "status": "complete — commander local build; devseek 3 attempts hit walls/empty-out (t72/t53 precedent); write_coverage/write_done were missing and completed by commander; selftest 14/14 anchors PASS (E99 49/10, t64 38, 196-38-13-5=140, mapped_l3 sum 99, t71 club-spine id/code match)",
+    "purpose": "priority basis for Wave 10/11 ordering and the targeted t02 Top-N list (user directive: get real denominator first)"
+   },
+   "evidence": [
+    "scratch/t78/out/buckets.json",
+    "scratch/t78/out/coverage.md",
+    "scratch/t78/out/DONE.md",
+    "scripts/t78_xml_denominator.py"
+   ],
+   "consequence": "coverage accounting now ledger-backed; sol/neon compute can leave the three main-row battlefields for static-rich targets (stadium/team/extra_3/name pools) with 20-slot club ROI as the top trail"
+  },
+  {
+   "id": "E115",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t74 nine-table dual-archive row frames closed + identity width self-proven (fix1 chunked delivery; delivered DONE on its own attempt 3)",
+    "frames": "17/17 (archive,table) closed, header + sum(row) + footer == payload byte-exact; 9 tables x 2 archives; zero escalate_to_sol; team(24) client entry documented absent (t66-consistent), server-only 84,507 rows variable 86..666B",
+    "identity": "13B [ordinal u32][UID u32][UID u32][tail] at row end; two independent criteria: (A) alignment self-proof — only -13 satisfies (ordinal==i AND UID-pair-equal) for EVERY row across all 17 archives, neighbours hit <=1 row; (B) footer uniqueness — W13 fixed, only footer=8 tiles, 16/17 unique-path, weather 3-path (documented); tail byte = marker 0 on 15 archives, team selector {10:84256, 11:250, 0:1} (crossref t39 Team selector, data-side only)",
+    "grammars": "agreement 13B fixed x6; award 77B fixed x3545; stadium client 38B / server 181B x48413 (server extra segment = per-row 143B field block); language [len][UTF-8 name][17B][13B id] suffix 30B rdui_suffix@17 126/126; weather [len][name][95B numeric mid][13B id]; derby k-lstr + (const-4k) numeric + 13B id, k in {2,4}, const 65 client / 71 server; lcrg 41+5k rows {41..76}; media identity-DP, server +7B per row before identity",
+    "verification": "verify.py 95/95 PASS (anchors incl lcrg rdui@-13/duni@-9 2488/2488, language suffix 126/126); sensitivity.json per (table,archive) identity-width x footer matrix; t74 fix1 discipline held (chunked writes, deliver-first)",
+    "commander_spot": "team server closure recomputed from width histogram: 84,507 rows, 14 + 8,819,008 + 8 = 8,819,030 exact; frames.json 9x2 tables zero-escalate"
+   },
+   "evidence": [
+    "scratch/t74/out/frames.json",
+    "scratch/t74/out/sensitivity.json",
+    "scratch/t74/out/REPORT.md",
+    "scratch/t74/out/DONE.md",
+    "scratch/t74/out/verify.py",
+    "scripts/t74_row_frames9.py"
+   ],
+   "consequence": "row-frame prerequisite for all scan lanes complete; variable-table identity sites ready for t81 FK index; stadium/team/extra_24 ready for t79 neon static harvest"
+  },
+  {
+   "id": "E117",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "scope": "t79 (neon xhigh, first agy-lane run) stadium/team/extra_24 static L3 harvest + CLUB+0x18 forwarding chain closed",
+    "stadium": "stadium.xml 60 occurrences: 41 L3, 4 held, 9 unhandled_no_getter, 5 classified (editor_metadata x2, computed, language_layer, forwarded, subtable_backed); client 38B/server 181B frames from t74 E115; server-only 143B field block tied to TEAM-style members; 7 internal wire slots catalogued; anchors Scti@3/Slat@17/Slon@21/rdui@25/duni@29 re-verified",
+    "team": "team.xml 25: 11 L3, 2 held, 2 unhandled, 2 computed, 6 non_wire_forwarded; t66's t24 ordinal->UID 84,507 reused; table_extra_24 82B wire layout with 3 mapped fields",
+    "club_forwarded_6": "Crep/Cdvi/Cldi/Cndi/Codi/Csti upgraded held(t63)->L3 via proven chain CLUB+0x18 -> first Team: e.g. Crep getter 0xe8be31->0xe8ea2e (**(CLUB+0x18) -> movsx [team+0xa8], default 1500 if empty), setter 0xe84049->0xe851bf->0xfc9350->0x3c951a0 clamp 1..10000; domain 84,259 clubs: 82,515 with team, 1,744 default, raw 0..9400, 0 violations; Csti 55,498 live ordinal hits 0 miss, wrong-UID control 1,833 vs 53,665 misses documented",
+    "verification": "verify.py independent 12/12 PASS; t01 anchors 7/7; builder 91,692B with --help/--selftest; xref ledger carries VA/bytes/RTTI/vtable/row-frame cross-check and preserved old negatives",
+    "provider_note": "first agy 'Gemini 4 Neon (XHigh)' lane (launch_agy.sh); delivered single-attempt in ~48min; ledger ID sequence: t79 landed before t76a/b/c acceptance, so E117 = t79 (user's planned E-mapping was indicative, append-only sequence preserved)"
+   },
+   "evidence": [
+    "scratch/t79/out/field_map.json",
+    "scratch/t79/out/xref_stad_team.json",
+    "scratch/t79/out/REPORT.md",
+    "scratch/t79/out/DONE.md",
+    "scratch/t79/out/verify.py",
+    "scripts/t79_stad_team_harvest.py"
+   ],
+   "consequence": "stadium 41 + team 11 + extra_24 3 + club 6 = 61 new L3 occurrences; club base18-forwarded held debt cleared; club main-row named-slot count 43->49 (main) + projections; stadium/team slot semantics now editor-grade"
+  },
+  {
+   "id": "E118",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t76c batch scan derby(18)/weather(27)/local_region(47)/agreement(56) — 8/8 (archive,table) slots L2 with two new structural results",
+    "structural": "(1) derby dual-archive 6-byte row difference = exactly 3 non-client schema fields D1tw/D1td/D1tl (three u16, born/die together); (2) weather 95B mid-block = 3 + 4x23 proven by discriminant — the only {0,100} column lands at 3+23b+22; competing 3+4x22+4 closure collapses 1519->583 of 4008 — rejected",
+    "slots": "derby 11 slots; weather 4 groups per block; lcrg 2 groups; agreement identity-only (6 rows, 13B fixed); t74 frames reproduced 100% both archives; 4 grammar families byte-closed",
+    "verification": "verify.py independent 197/197; t01 anchors 7/7; builder scripts/t76c_slots.py reuses t73_mapper_core pure functions (t73 untouched)",
+    "note": "t76c original session needed 3 attempts (2 wall-kills) but delivered complete on attempt 3 via its own incremental writes"
+   },
+   "evidence": [
+    "scratch/t76c/out/slots_client_18.json",
+    "scratch/t76c/out/slots_client_27.json",
+    "scratch/t76c/out/slots_client_47.json",
+    "scratch/t76c/out/slots_client_56.json",
+    "scratch/t76c/out/slots_server_18.json",
+    "scratch/t76c/out/slots_server_27.json",
+    "scratch/t76c/out/slots_server_47.json",
+    "scratch/t76c/out/slots_server_56.json",
+    "scratch/t76c/out/REPORT.md",
+    "scratch/t76c/out/verify.py",
+    "scripts/t76c_slots.py"
+   ],
+   "consequence": "derby/weather/lcrg/agreement slot semantics at L2 with frozen-anchor cross-checks; Wave 11 t83 (L3 upgrade via neon) has its fingerprint base"
+  },
+  {
+   "id": "E119",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "probe_negative",
+   "level": "L2",
+   "claim": {
+    "scope": "t80 (enum supplement dictionary) premise void — lane killed before relaunch",
+    "findings": [
+     "enums.json (289 keys) value-sets identical to master.json enums 289/289; enum_extras.json (15 keys) identical 15/15; 0 richer, 0 missing, 0 diff — snapshots fully subsumed by frozen master",
+     "DBvw (comp.xml) empty-name defect present in BOTH snapshot and master (4 values, 4 empty names) — supplement cannot repair it",
+     "t75 six unfrozen 4CC (Ccre/cosr/Npop/Ncpi/CICF): 0 occurrences across snapshots+master.json — exe-only getters with no XML enum linkage; correct closure path is L3 static getter chains (t79/t82/t83 paradigm), not enum dictionaries"
+    ],
+    "action": "t80 devseek lane killed 05:39 (attempt 2 mid-flight, 0 files); prompts/t80_fix1.md retained but not dispatched; devseek slot redirected to t84 (name tables)"
+   },
+   "evidence": [
+    "scratch/t80/probe_snapshot_premise.py",
+    "evidence/fm24/reports/editor_schema/enums.json",
+    "evidence/fm24/reports/editor_schema/enum_extras.json",
+    "evidence/fm24/reports/editor_schema/master.json"
+   ],
+   "consequence": "E116 denominator ledger unchanged; t61 67 no-source held entries remain held (dictionary adds nothing); t75 six unfrozen 4CC stay unfrozen pending L3 static lanes; task tree re-routed"
+  },
+  {
+   "id": "E120",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t76a-fix1 (fresh session) stadium(21) dual-archive slot scan — 12 client slots / 47 server slots, 0 uncovered bytes both archives",
+    "structural": [
+     "server 143B differential = server-only prefix segment; server[143:181]==client[0:38] byte-identical on 48,413/48,413 rows (commander recompute: True)",
+     "rdui@25 label ambiguity resolved: @25 is row_ordinal (== arange 48,413), @33 is rdui_raw (== duni, exe-suppressed arm); independently consistent with t79 static",
+     "new intermediate grade L2_structural for capacity family Scas<=Sscy<=Scpy<=Secy (98.70% on 5,065 non-zero rows; 66 counterexamples preserved)"
+    ],
+    "slots": "client L2/L3 28B of 38 (73.7%); server 11 L2/L2_structural + 2 L3 frozen anchors; honest downgrades: Sowi candidate (club/team domain ambiguity, t3 UID control unavailable), 5 date slots candidate (business order only 77.1%), 8 pitch slots data-undecidable, flags u16 bit-order data-undecidable",
+    "verification": "verify.py 49/49; t01 anchors 7/7; builder selftest 21/21; commander independent recompute of byte-identity + Scti domain + ordinal==arange all True"
+   },
+   "evidence": [
+    "scratch/t76a/out/slots_client_21.json",
+    "scratch/t76a/out/slots_server_21.json",
+    "scratch/t76a/out/REPORT.md",
+    "scratch/t76a/out/verify.py",
+    "scratch/t76a/out/verify.json",
+    "scratch/t76a/out/DONE.md",
+    "scripts/t76a_stadium_slots.py"
+   ],
+   "consequence": "stadium L2 base complete for t83/t79 cross-checks; t76b orphan resolved (award/language/media moved to t83); Wave 10 scan lanes now E118(t76c)+E120(t76a) with t76b formally dropped"
+  },
+  {
+   "id": "E121",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "scope": "t82 (neon xhigh) table_extra_3 remaining payload naming — dual-object closure, 35 new L3, 39 held with first counterexamples, 131 negative proofs",
+    "major": [
+     "CBW*/CBD* mystery solved: all 117 club.xml[211..327] record-family fields (incl. CBWa/CBWc/CBWd/CBWf/CBWo, CBDa/CBDc/CBDd/CBDf/CBDo) live in server_db/table_45.dat STARTING_RECORD (84,477 records) — TC_RECORD_GET@0x3ebad50 never touches CLUB+0x100/+0xb0; table type 45 self-proved via mov edx,0x2d DATABASE_TABLE ctor + RTTI .?AV?$DATABASE_TABLE@VSTARTING_RECORD@db@@ — closes the largest club unresolved cluster from E116 denominator",
+     "dual-object architecture closed byte-exact both archives (84,259 rows): CLUB+0x100 (0x130B CLUB_IN_GAME_DATA) + CLUB+0xb0 (0xB0B TEAM_CONTAINER_IN_GAME_DATA); common-tail stream SHA-256 identical client vs server; no client-only fields",
+     "35 new L3: 6 server-only scalars (Ctlv/Cmle/Cyim/Cyfb/Cytv/Crcb at +0x120..+0x12d), 5 election sub-object (Cetl/Cmtm/Cect/Cemn/Cemx; invariant elec_club==row_ordinal 11,963/11,963, elec_flag iff Cown in {3,7} 84,259/84,259), 6 supporter profile (Csly..Cspe), 10 UEFA coefficient ring (Cuf1..Cuf9/Cf10, 569 rows, [0,36] in [0,50]), TCht common-tail string, 3 server-only i32 (Catd/Cmna/Cmxa), 4 list/polymorphic L3 (Cbbl/Csoc/pcpt/CPsL with UID-pair + wrong-UID controls)",
+     "39 held preserved with first counterexamples (Csth -1 rows, 4 unscopeable enums, 4 formation out-of-domain, 10 read-only derived colors, 6 kit containers without list_item_fields schema, etc.)",
+     "sentinel discipline: +0xcc 84,259x0xffffffff vs 0 legal-0; ctor defaults (10/10000) vs persisted values separated; date4 sentinel 0x076c0001 slots listed"
+    ],
+    "club_l3_count": "43 (E111) -> 78 (E121); club.xml 211..327 record family re-routed to table_45 (was 117 of the 239 unresolved club occurrences in E116)",
+    "verification": "verify.py 9/9 (independent reload + walk rebuild), selftest PASS, t01 anchors 7/7; commander third-path recompute: payload closure 13,053,908/35,009,248 exact + 14/14 Cyfn year witnesses via t71 frozen coordinates on client payload"
+   },
+   "evidence": [
+    "scratch/t82/out/xref_extra3.json",
+    "scratch/t82/out/field_map.json",
+    "scratch/t82/out/domain_stats.json",
+    "scratch/t82/out/verify.py",
+    "scratch/t82/out/REPORT.md",
+    "scratch/t82/out/DONE.md"
+   ],
+   "consequence": "club denominator shrinks decisively; CBW*/CBD* fields now have a wire home (table_45) for a follow-up scan lane; t83 (award/language/weather/derby/media L3) cleared to launch on freed neon slot"
+  },
+  {
+   "id": "E122",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L1",
+   "claim": {
+    "scope": "t77 schema v10→v11 modular merge + repo governance (only reports/-authorized lane of this round)",
+    "merge": [
+     "E111–E120 ten acceptance packages merged purely additively; 22 existing root sections byte-identical (== compared in --verify); 10 root keys added, 0 removed; club_main_row_L3 coverage 21→43",
+     "11 new sections: club_extra_object_row(E111,24 promoted), slot_fingerprints(E112, club34/comp84/nation40), simple_tables(E113, 8/8 frames), nation_segment_grammars(E114, 10 grammars), xref_reverse_adjudication(E114, 99 slots), row_frames9(E115, 17 (archive,table) closures), xml_denominator_coverage pointer(E116, 110/1034=10.6%), stadium_team_l3(E117, 41+11+3+6), scan_tables(E118+E120: stadium 12/47 slots 0 uncovered + derby10/weather25/lcrg11/agreement9), pointer_artifacts(SHA-256 matched), plus E119 recorded as probe_negative",
+     "t76b award/language/media marked pending:t76b (moved to t83) with t74 row frames only; E121(t82) explicitly out-of-scope with note pointing to t87 patch"
+    ],
+    "governance": [
+     "split files: reports/other_tables_schema.json (13 non-main tables, 286KB) + reports/xml_denominator_coverage.json (1034 occurrences, 298KB); main schema +1.26% only (v10 was already 29.5MB; new content pointer-ized)",
+     "root `nul` (Windows reserved-name accident) deleted; README/REPO_STATUS/BASELINE incrementally synced; merge-to-main evaluation written in REPO_STATUS (no merge executed)"
+    ],
+    "verification": "--verify 63/63, --selftest 7/7, t01 anchors 7/7, baseline_coverage --check stable; commander spot: 13 tables + 3 pending:t76b markers in split file, 1034 occurrences + 110/1034 formula in denominator, pointer SHA-256 both match, provenance E111–E120 + E121 note present"
+   },
+   "evidence": [
+    "reports/club_nation_subtable_schema.json",
+    "reports/club_nation_subtable_schema.md",
+    "reports/other_tables_schema.json",
+    "reports/xml_denominator_coverage.json",
+    "scratch/t77/out/v11_diff_summary.json",
+    "scratch/t77/out/REPORT.md",
+    "scratch/t77/out/DONE.md",
+    "scratch/t77/out/verify_log.md",
+    "scripts/t77_schema_v11.py"
+   ],
+   "consequence": "public schema now carries all Wave-0/10 results; t87 (v11.1 E121 patch) cleared to run on next free devseek slot; merge-to-main decision documented for user review"
+  },
+  {
+   "id": "E123",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t84 name-table unpacking + name-slot join probe — lane died at 3 walls (0 REPORT/DONE/verify) but delivered the three science files; commander completed verification",
+    "structural": [
+     "six members pair as 3 index tables + 3 string blobs: name_table_{0,1,2} = 12B header + N x 12B fixed index rows (245,981 / 542,060 / 85,668 — closure arithmetic (bytes-12)/12 exact, commander recompute True), name_table_extra_{0,1,2} = string blobs (extra_1 holds England/Liverpool/Arsenal; extra_0 person tokens like Sabri; extra_2 mixed)",
+     "all six client payloads byte-identical to server (commander recompute True on all 3 index tables)",
+     "name_table_{0,1,2} contain NO ASCII/UTF-16 strings (commander probe) — index-only; strings live exclusively in extra_* blobs"
+    ],
+    "negative": [
+     "8 name-slot 4CCs (Cnam/Csnm/Nnam/Nsnm/N3ln/cnam/csnm/c3ln) do NOT index these pools: club names are inline length-prefixed strings inside the club main row (pool membership false for all 3 pools on first counterexample); nation names have no type-10 member in lang_update_db — all 8 stay held with NEW justification (pool-ref hypothesis refuted, not merely unfrozen)",
+     "pool semantics per joins.json: pool0 given-name-like tokens (77.86% single-token), pool1 surname-like (88.99%), pool2 compound nicknames (21.47%) — person-token pools (serves person/PDxx tables, out of this round's scope)"
+    ],
+    "verification": "commander independent: member extraction via t71 directory walker + own frame puller; 12B-row closure arithmetic exact x3; client==server identical x3; extra-blob membership probes consistent with joins.json",
+    "lane_note": "3 attempts walled (rc=124 x3) at 05:41/06:21/07:41; outbox has members_profile.json + joins.json + lang_update_check.json; REPORT/DONE/verify.py not delivered — commander verification recorded here stands in"
+   },
+   "evidence": [
+    "scratch/t84/out/members_profile.json",
+    "scratch/t84/out/joins.json",
+    "scratch/t84/out/lang_update_check.json"
+   ],
+   "consequence": "name-slot helds now carry refutation evidence instead of vacuum; person name pools mapped for future person-table lanes; 8 name 4CCs correctly re-classified as inline-string slots (position known, semantics known) — candidates for L2 upgrade in next scan pass"
+  },
+  {
+   "id": "E124",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L1",
+   "claim": {
+    "scope": "t87 schema v11→v11.1 additive patch: E121(t82) merged",
+    "merge": [
+     "new section club_extra3_l3_e121: 35 new L3 grouped (6 server-only scalars, 5 election, 6 supporter, 10 UEFA ring, 3 i32, 5 string/list-tail), 39 held counted, 131 negatives = 117 table_45 record family + 14 other non-extra_3; t71's 24 excluded",
+     "CBW*/CBD* re-route documented: club.xml[211..327] 117 fields' wire home = server_db/table_45.dat (DATABASE_TABLE<STARTING_RECORD>, type 45, 84,477 records); static witnesses live-checked against t82 REPORT 5/5",
+     "coverage: club_main_row_L3 43→78 (prior/delta keys added); club_denominator_note_E121 records 117/239 carve-out; xml_denominator_coverage.json intentionally unchanged (re-bucket deferred)",
+     "guard: 32 non-mutable root sections byte-identical (digests + raw slices + adder_guard); --build refuses re-run on patched file"
+    ],
+    "known_legacy": "t77 verifier 4 assertions superseded by v11.1 (whitelisted explicitly in t87 --verify); other t77 regressions still fail",
+    "verification": "--verify 59/59, --selftest 9/9, t01 anchors 7/7, baseline stable; commander spot: version 11.1, 37 keys, E121 section with 35-L3 groups, coverage 78/prior 43"
+   },
+   "evidence": [
+    "reports/club_nation_subtable_schema.json",
+    "reports/club_nation_subtable_schema.md",
+    "scratch/t87/out/v11_section_digests.json",
+    "scratch/t87/out/REPORT.md",
+    "scratch/t87/out/DONE.md",
+    "scripts/t87_v11_patch.py"
+   ],
+   "consequence": "public schema carries all 14 accepted packages; next high-ROI lane = t88 table_45 STARTING_RECORD 117-field slot scan (recommended by t87)"
+  },
+  {
+   "id": "E125",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t81 variable-table FK index + city FK closure + t76 cross-FK rescan + injury(6)/stage_name(23)/description(35) small tables — full brief across two lane runs",
+    "deliverables": [
+     "fk_index.json: 37 targets; variable tables t8/t27/t47 closed both archives (identity 13B + ordinal ranges); t10 client closed, t10 server honestly escalated (structure differs); t24 available for city lanes",
+     "rescan_fk_city.json: t73 tool-gap closed — Cnti mapped-ordinal 56,293/56,293 in-domain (max 249, tightness 0.992), UID encoding rejected by control (0.338)",
+     "rescan_fk_t76.json: t76 lanes' FK items re-adjudicated with the new index",
+     "slots_{client,server}_{6,23,35}.json: six (archive,table) closures — t6 115 rows, t23 278 rows x 14B, t35 35 rows; frame_self_proof with alias-group + footer-flag criterion; t23 has 1 business byte (constant 0x00) + identity only — stage-name content lives in pools (cross-confirms E123)"
+    ],
+    "verification": "commander independent recompute 12/12: closure arithmetic, ordinal==arange, UID pairs, payload lengths all True; payload SHA-256 recorded by lane",
+    "lane_note": "two runs (t81-fkvar + t81-fix2, fresh session for continuation); launcher heuristic closed both early — REPORT/DONE/verify not delivered; commander verification recorded here stands in; frozen anchors (t6 rdui@3, t23 rdui@1, t35 rdui@2) respected in identity layouts"
+   },
+   "evidence": [
+    "scratch/t81/out/fk_index.json",
+    "scratch/t81/out/rescan_fk_city.json",
+    "scratch/t81/out/rescan_fk_t76.json",
+    "scratch/t81/out2/slots_client_6.json",
+    "scratch/t81/out2/slots_server_6.json",
+    "scratch/t81/out2/slots_client_23.json",
+    "scratch/t81/out2/slots_server_23.json",
+    "scratch/t81/out2/slots_client_35.json",
+    "scratch/t81/out2/slots_server_35.json"
+   ],
+   "consequence": "t73's confessed FK tool-gap closed; city Cnti/Clgi/Clri/Cwea lanes now adjudicable; three remaining clean tables scanned; Wave-10/11 scan queue fully drained"
+  },
+  {
+   "id": "E126",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L3",
+   "claim": {
+    "scope": "t83 (neon xhigh) five tables award(0)/language(8)/weather(27)/derby(18)/media(7) L3 upgrade + t76b legacy absorbed — 188 XML fields 100% accounted, 0 byte gaps, 152 L3 / 17 held with first counterexamples",
+    "major": [
+     "award 24 L3: FKs AWci@23->t5, AWni@27->t10, AWmi@41->t25 (UID controls reject); 3 RGB555 colors, 2 packed dates, 2 bit flags (AWus/AWop sharing @49), 8 enums via jump tables; 7 held (rdui fully suppressed 3,545/3,545; enum out-of-domain with raw movsx evidence)",
+     "language 5 L3: Lnam/Linf/Ldff/Lnat (Chinese->55 China PR, English->139 England cross-validated with frozen anchors); legacy language IDs 2000005181.. for 5 post-hoc languages; 4 held",
+     "derby 18 L3 (upgrades E118): D1tw/D1td/D1tl ORDERED server-only sequence (test bpl, bpl gate at 0x3d00aae); Dtm1/Dtm2 re-adjudicated club->TEAM table_24 via fixup [db+0x98] (was t76c's data-side club fit); 4 lstr order fixed Dnam->Dsnm->Dasn->Danm; slots_client_18 typo 36 corrected",
+     "weather 90 L3 (upgrades E118): R1 wind/precip SWAP corrected — blk+2..6 is WIND (win0..win4), blk+7..11 is PRECIPITATION (pre0..pre4), quadruple static evidence (read/get/season-get/set) + normalizer 0x43e7e10 block-sum counts (76/67/468); R2 w{b}sd is 2B i16 and w{b}dn at blk+22 with 0x64 explicit NULL sentinel",
+     "media 15 L3: t74's unsolved nested grammar closed as 20-step MEDIA_SOURCE::read sequence; server +7B exactly = Mper(1)+Mscp(1)+Mdlp(4)+jor-cnt(1=0); identity-prefix 16 values solved = cnt_lnm + Mapc; Mcli 450/450 club UID hits",
+     "R5: fm24_dump award rdui@64 / language rdui_suffix@17 are row ordinals (+0x08); native rdui (+0x10) at @72/suf+25 fully suppressed — consistent with E117/E120 pattern"
+    ],
+    "e118_note": "this entry supersedes two E118 (t76c) adjudications via new static chains: wind/precip ordering and sd/dn layout — E118 evidence preserved verbatim in t76c outputs; corrections machine-readable in t83 field_map.json reconciliations R1/R2/R3",
+    "verification": "verify.py --selftest PASS (11/11 core incl. 741 instruction-byte rechecks, tamper negative-tests); builder selftest 5/5; t01 anchors 7/7; commander third-path: derby row0 'Merseyside' + language Chinese Lnat=55 / English Lnat=139 via own TOC walker — all True"
+   },
+   "evidence": [
+    "scratch/t83/out/field_map.json",
+    "scratch/t83/out/domain_stats.json",
+    "scratch/t83/out/xref_award.json",
+    "scratch/t83/out/xref_language.json",
+    "scratch/t83/out/xref_weather.json",
+    "scratch/t83/out/xref_derby.json",
+    "scratch/t83/out/xref_media.json",
+    "scratch/t83/out/verify.py",
+    "scratch/t83/out/REPORT.md",
+    "scratch/t83/out/DONE.md",
+    "scripts/t83_five_tables_l3.py"
+   ],
+   "consequence": "Wave 11 five-table block fully closed at L3; E118 slot tables remain as historical layer with corrections documented; 17 held items enumerated for any future editor-schema fixes"
+  },
+  {
+   "id": "E127",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": {
+    "scope": "t85 partial (original 3-wall run + fix1 continuation): collection fields inventory + variable-member identity census + table_9 closure — [NATION+0x108] wire-home question narrowed, item grammar honestly held",
+    "deliverables": [
+     "collection_fields.json: getter_proven_but_no_main_row_sink + [this+0x108]-pattern fields inventoried from t75 slots + t78 comp unresolved (brief task 1)",
+     "wire_candidates.json: full member identity census (both archives) + variable-table closures via 13B header + per-row body + 12B identity trailer + 9B footer framing with STRICT unique tiling: table_9 client 31,956B (13+28,922+12x251+9 — commander arithmetic True) and table_10 client 24,732B both closed; table_9 UID ladder 5..82,082,540 is its OWN uid space (not nation main-row UIDs); cross-checked against t51 frozen cursor (identity triples agree)",
+     "profile_nation.json: table_9 (NATION_T9, db+0x60 per t83 static) per-row lane domains profiled (body 46..449B mean 115.23, 92 distinct); item grammar held_no_item_grammar after two probing rounds with first counterexample row 0 preserved — no third-round guessing"
+    ],
+    "open_question": "whether table_9 is the wire home of [NATION+0x108] collection remains UNPROVEN (item grammar undetermined data-side) — escalate_to_sol for static read-chain tracing of NATION+0x108 (next neon lane candidate)",
+    "verification": "commander arithmetic recompute True; t83 static independently corroborates table_9 = NATION_T9 registered at DATABASE db+0x60 with count 251",
+    "lane_note": "original t85 run gave up after 3 walls (0 outbox, 128 work files incl. full identity census); fix1 continuation assembled from those artifacts; launcher heuristic closed it at attempt-2 wall — REPORT/DONE/verify not delivered, commander verification stands in"
+   },
+   "evidence": [
+    "scratch/t85/out2/collection_fields.json",
+    "scratch/t85/out2/wire_candidates.json",
+    "scratch/t85/out2/profile_nation.json",
+    "scratch/t85/work/ident_census.json"
+   ],
+   "consequence": "variable-member framing (13B header + 12B trailer + 9B footer) now proven for t9/t10 — complements t74's 9 non-main tables; NATION+0x108 question escalated to static lane; table_9 structural base ready for L3 upgrade"
+  },
+  {
+   "id": "E128",
+   "date": "2026-11-21",
+   "author": "commander",
+   "kind": "state_note",
+   "level": "L1",
+   "claim": {
+    "scope": "session wrap-up at commander's request — all lanes parked, artifacts preserved, resumption pointers recorded",
+    "parked_lanes": [
+     "t88-fix1: killed at attempt 3 start (11:15); out2 has row_frame.json (server table_45 variable 80..122B closed: rowlen==80+namelen, DP unique, identity 13B row_end-13, client has NO table_45) + _rows_tmp/_starts/_p_server_45.bin assets; static dispatch tables (20 JSONs in scratch/t88/) intact; REMAINING: rec_structure (+0x4c/+0x5e wire sites), 117-field slot joins, verify/REPORT — resume with prompts/t88_fix1.md (out2), brief already staged",
+     "t89-neon: killed 26 min after dispatch (11:13→11:39), scratch/t89/ empty — brief prompts/t89_nation108_neon.md ready, no work lost; task = [NATION+0x108] static read-chain + table_9 item grammar (E127 escalation)"
+    ],
+    "session_totals": {
+     "ledger": "E111–E128; accepted packages: t71 E111, t72 E112(partial), t73 E113, t75 E114, t74 E115, t78 E116, t76c E118, t80-negative E119, t76a E120, t82 E121, t77 E122, t87 E124, t84 E123, t81 E125, t83 E126, t85 E127",
+     "schema": "v11.1 (club_main_row_L3 78; 13 non-main tables + 1034-occurrence denominator split out)",
+     "key_milestones": "CBW*/CBD* 117-field family located (server table_45 STARTING_RECORD); five-table block (award/language/weather/derby/media) closed at L3 (152 fields) incl. media 20-step grammar and weather wind/precip E118 correction; t73 FK tool-gap closed (city Cnti); name-pool discovery (3 index tables + 3 person-token blobs, client==server); t9/t10 strict variable closures (13B header + 12B trailer + 9B footer framing)",
+     "lane_meta": "devseek walls at 40min produced 7 multi-attempt evolutions — recovery pattern: fresh session + deliver-first brief + isolated outbox; launcher heuristic false-DONE on stale outboxes 3 times (t81-fkvar/t81-fix1/t85-fix1) — future continuation lanes must use fresh outbox dirs"
+    },
+    "pending_user_decision": "Phase 3 t02 targeted editor authorization (Top 20-30 dead slots + 10 existing L3 live read/write regression) — awaiting explicit user approval; t86 unified read-only library/CLI afterwards"
+   },
+   "evidence": [
+    "scratch/t01/LEDGER.json (entries E111–E127)",
+    "reports/club_nation_subtable_schema.json (v11.1)",
+    "reports/other_tables_schema.json",
+    "reports/xml_denominator_coverage.json"
+   ],
+   "consequence": "repo is in a clean commit state; resumption requires only re-dispatching t88-fix1 and t89 with existing briefs"
+  },
+  {
+   "id": "E129",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": "t90(devseek,attempt3)交付验收:schema v11.2 合并件+分母 v2 重桶。合入 reports/club_nation_subtable_schema.json(37→40 根节:新增 fk_index_e125/five_tables_l3_e126/table9_closure_e127,改 5 节,32 根节逐字节不动)与 reports/xml_denominator_coverage.json(1034 守恒;unresolved 277→160=15.5%;117 条 club.xml[211..327] 连续整体移入 re_routed_table_45,grade=L2_candidate)。weather R1/R2 改值 16×2 处、旧理由 why_before_E118 全保留、结构零改动。指挥官第三路径:根节 diff 独立重算、R1/R2 四点抽查、守恒与区间复算、基线哈希比对——全吻合。",
+   "evidence": [
+    "scratch/t90/out/verify.py (35/35)",
+    "scratch/t90/out/diff_inventory.json",
+    "scratch/t90/out/denominator_v2.json",
+    "scratch/t90/out/REPORT.md",
+    "scripts/t90_schema_v112.py --verify 36/36",
+    "scripts/t90_denominator.py --verify 18/18",
+    "scripts/t01_anchors.py 7/7"
+   ],
+   "consequence": "escalate 三条裁决:C1 按 [211..327] 区间口径,纠正 CBW*/CBD* 简写(E121/E124 措辞过窄,117 项中 CB* 仅 10);C2 五表不入 1034 分母(扩容留待专报,五表侧 188 字段独立分母已存 five_table_side_denominator);C3 city Cnti 不动桶(分母内既有 Cnti 已 mapped_l3)。口径:headline 物理覆盖 110/1034=10.6% 不变,净口径 110/917=12.0% 并列存档。schema_version 定稿 11.2,candidate 原件留盘 scratch/t90/out/(gitignore 豁免,30MB 重复)。车道 meta:attempt1-2 又 rc=124 墙,attempt3 依盘上骨架 13 分钟收口——fix1 模式第三次应验。"
+  },
+  {
+   "id": "E130",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "static_analysis",
+   "level": "L3",
+   "claim": "[NATION+0x108] 容器类型=NATION_T9(table_9)类,集合字段双路分发坐实:t9 读链裁决(t89 Phase 1,指挥官亲做)。链:t9 getter nation侧 va=0x141043d0f mov rcx,[r12+0x108] → call 0x1410668f0(t9_get_impl 入口,probe 首行吻合);setter va=0x141046276 → call 0x141063f30(t9_set_impl,4CC 0x5443736e);al=false 回落主行(jmp 0x140fe3f20 / call 0x140fe2700)。t75 gate 17048862 的边界比较体=va 0x141042f2a:[rax+0x4a0]=begin、[rax+0x4a8]=end、迭代基 +0x18——T9 对象内存布局。read/write 入口 0x14105d510/0x1410608f0。",
+   "evidence": [
+    "scratch/cmd/t89_phase1_verdict.json(7 处 VA/fo/字节三件套)",
+    "scratch/t89/probe_t9_{get_impl,set_impl,read,write,ctor,base_ctor}.txt(agy 前棒遗产 1.3MB)",
+    "scratch/t83/out/REPORT.md L40-41(DATABASE 构造器 0xf026c0:+0x60=t9 NATION_T9 251,E126 L3)",
+    "scratch/t75/out/xref_reverse.json(gate 17048862)"
+   ],
+   "consequence": "E127 升级项的静态环闭合:集合字段 wire 家=table_9 由类型恒等+调用环双证。归因三重支撑:t83 E126 绑定 + t47 E87(t9 8-parent NATIONAL_TEAM_CONTAINER)+ 本调用环;探针簇 t9_* 标注系 agy 前棒遗留,其 vtable/RTTI 终封可由 t89b 文法工作中 per-code 分发与 nation escalation 槽位的对应性独立复核。遗留:条目字节网格(Phase 2)、held 回填(Phase 3)、双档对拍(Phase 4)→ t89b 车道(prompts/t89b_t9grammar.md,devseek)进行中;Phase 1 车道不再重做。"
+  },
+  {
+   "id": "E131",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": "t91(devseek,attempt2)外源对照验收:github nottatdat/fm-data(d7a7150)与我们的 FM24 解码独立收敛。①码表:18 条可恢复外源码全部命中我们码表(0 缺失),7 条标签/表域漂移如实列列不改判(FM26≠FM24),natc↔nati 命名域冲突记录;②空日期探针:0x076c0001 在 server_21 六槽位命中率 78.93..100%(基线 25-35 倍),对照常量 0x076c0002/0x076c0000 全零,非 sentinel 行 (u16 doy,u16 year) 文法通过 95-100%——为既有 date4 sentinel 口径增加槽位级维度;③文法 H1-H8:H1/H2/H3/H7 独立收敛,H6=确定差异(FM24 8B 头 vs FM26 12B,负结果原文保留)。",
+   "evidence": [
+    "scratch/t91/out/{code_coverage,nulldate_probe}.json",
+    "scratch/t91/out/hypotheses.md",
+    "scratch/t91/out/verify.py(45 项)",
+    "scratch/ext/fm-data/(只读,d7a7150)",
+    "scripts/t91_codes.py",
+    "scripts/t91_nulldate.py"
+   ],
+   "consequence": "指挥官第三路径:t71 archives+冻结 t76a 帧独立复算五槽位命中率逐一吻合至小数两位、对照常量零、文法≥95%。分级零变动(club 78/comp 49/nation 30 L3 不变);外源标签不写入 reports/。范围限制如实:field_dict.csv 不在克隆内(仅 18 条可恢复);server_21 row+37 的 108 行文法反例原样保留未解释。车道 meta:attempt1 rc=124 墙,attempt2 11 分钟收口——骨架先行模式再次应验。"
+  },
+  {
+   "id": "E132",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "static_analysis",
+   "level": "L2",
+   "claim": "table_45 rec 结构指挥官数据侧探针(t88-fix2/3/4 八次车道尝试零进展后接管):行=(club,person) 记录——u32@0=club-uid(对 club 主表 DP 扫出的 84,259 uid 全自洽集成员率 96.7%,8,368 club 实际出现),u8@4=类型字节(37 值,255=null×38,968),u32@5=person-uid(外源锚定:C罗 735216×18,agentC 报告值),u32@21/25=第二 [id][id] 双写对(6,800 distinct,实体未定),identity uid=行自键致密 0..89,974。前提否证:「84,477=84,259+218」不成立,负结果原样保留。",
+   "evidence": [
+    "scratch/cmd/t88_rec_probe.json",
+    "scratch/t88/out2/_p_server_45.bin",
+    "scratch/t88/out2/_starts.bin",
+    "scratch/t88/out2/row_frame.json",
+    "scripts/t71_club100_cnst.py archives()",
+    "scratch/ext/fm-data/docs/reports/agentC-summary-db.md(735216 锚)"
+   ],
+   "consequence": "本仓首个外源锚定 wire 列(provenance=ext/fm-data@d7a7150,分级仍按本仓 L2)。residual 交 t88-fix5 窄化车道(per-4CC (type,offset) 映射,配 t82 tagmap);lane meta:fix4 又双墙+断流,大台账上下文+跨域推断是 devseek 死穴,指挥官接管数据侧+窄化简报是当前最优解。"
+  },
+  {
+   "id": "E133",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "acceptance_partial",
+   "level": "L2",
+   "claim": "t89c(devseek,attempt3 rc=124 截断,启发式提前判 DONE)按 partial 验收,指挥官补 REPORT/verify/DONE(E88 先例)。Phase 2 条目网格实质完成:载荷头 13B 解码(u32 count@+8,两档 251,与 table_45 84,477 同构);client 闭包 13+28,922+12×251+9=31,956 精确(tiling 行走达 payload_end-9);server 真值 307,564——纠正 E127 的 307,555(9 字节误差);ordinal lane 251/251;sentinel head 00 ff ff ff ff 251/251。Phase 3 部分:t9 分发全提取(52 get cases→70 字段:16 container_direct/24 helper/12 held/18 未分类),Cnti=[T9+0xc,+0x10]。",
+   "evidence": [
+    "scratch/t89/out/{table9_grammar,_tile,_dual,field_map}.json",
+    "scratch/t89/out/verify.py(指挥官写,V1-V6 七项过)",
+    "scratch/cmd/t89_phase1_verdict.json(E130)"
+   ],
+   "consequence": "两处联动修正:schema v11.2 table9_closure_e127 的 server 307,555→307,564(v11.3 时落);E127 的 92 种长度对账成立。遗留:24 helper 路由展开、wire 偏移映射、row0 逐字节对账、server 211 种长度解释→下轮。车道 meta:发射器启发式在 rc=124 时把部分产出误判 DONE(与旧 outbox 误报相反方向的第二种误报),后续验收须核对 DONE.md 实际存在。"
+  },
+  {
+   "id": "E134",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "acceptance_partial",
+   "level": "L2",
+   "claim": "t88-fix5(devseek,attempt1 40 分钟墙截断)按 partial 验收,指挥官补 REPORT/DONE。rec_structure 5 节全 done 并与 E132 冻结三列自洽:prefix 37B=u32@0(club-uid)+u8@4(37 型,按型变化)+u32@5(person-uid)+7×u32@9..33;bulk 资产 4 件(type_layout 186K/byte_profile 137K/slot_domains 104K/recget_tagmap)+tcget2_dispatch 一级骨架(80 4CC)。117 码 dispatch 覆盖 18/117(CBW*/CBD* 全缺,rec_type/inner_tag 未解)。",
+   "evidence": [
+    "scratch/t88/out3/{rec_structure,tcget2_dispatch,type_layout,byte_profile,slot_domains,recget_tagmap}.json",
+    "scratch/cmd/t88_rec_probe.json(E132)"
+   ],
+   "consequence": "继承 E132 三列,rec 结构定稿级收敛;遗留=二级分发+117 码映射→fix6(装配棒)。车道 meta:发射器启发式再次在 rc=124 误判 DONE(连续第二次,E133 同款);40 分钟/attempt 是 devseek 实际有效预算,任务设计须 ≤1 attempt 装配量。"
+  },
+  {
+   "id": "E135",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "acceptance_partial",
+   "level": "L2",
+   "claim": "t88-fix6(devseek,attempt1 rc=124 截断,车道自写 partial DONE——纪律习得)slots.json 装配:117 码全入账,34 L3(rec_type+reader_off+exe 链,如 CHSo rt=25 [rdi+0x30] dl=25)、3 L2、80 held。**关键负结果:CBW*/CBD* 主族 4CC 字节在 exe 分发中缺席**(cmp-immediate 无此码;原 t88 台账 TC_GET2_4cc.json 印证——CBDa/CBWa 仅在 lea 组=地址引用)→ 该族走 tag 表(inner_tag)路由而非 4CC 比较。",
+   "evidence": [
+    "scratch/t88/out3/slots.json(117 码)",
+    "scratch/t88/out3/tail_{cols,prof,ref,sig}.json(尾区 4 件)",
+    "scratch/t88/TC_GET2_4cc.json(lea/cmp 分组,原账印证)",
+    "scratch/t88/out3/REPORT.md(车道写)"
+   ],
+   "consequence": "E121 的『117 族经 TC_RECORD_GET 4CC 分发』细化:34 码走 4CC/rt 链已锚,83 码(CBW*/CBD* 主族)走 tag 表路由——两机制并存。遗留:tag 表路由解析(inner_tag→字段序)、reader_off→wire_off 派生、verify.py 缺(指挥官验收时补)。fix6 为 ≤1 attempt 装配量设计首次部分成功:34 码落定=每 attempt 有效产出再验证。"
+  },
+  {
+   "id": "E136",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "correction",
+   "level": "L1",
+   "claim": "两笔更正:①fix7 零产出(40 分钟墙,无新文件)——tag 路由区 devseek 三撞墙(fix2/4/7);②**fix6 的『CBW*/CBD* 4CC 缺席』负结果与 E121 矛盾**:t82 xref_extra3.negative_proof 记录 CBDa@0x11f0ca7/CBWa@0x11f0cb6 cmp 位点→hub 0x11f2a76→0x11e8af0→TC_RECORD_GET,且 VA 0x141b60190 全局表 type 0x2d=45。指挥官复验时命中 fo/rva 换算歧义(t89_disasm 硬编码 5 节表不覆盖 0x3ebad50 区;0x1411f0ca7 窗口见序列化代码非 cmp),复验未决,挂起。",
+   "evidence": [
+    "scratch/t82/out/xref_extra3.json(negative_proof_starting_record)",
+    "scratch/t88/out3/slots.json(fix6 held 注记)",
+    "scripts/t89_disasm.py(节表局限)"
+   ],
+   "consequence": "slots.json 中 CBW 族的 held 理由(4CC 缺席)降级为存疑;真分发链以 E121 为准。下棒 fix8 必须先用真 PE 头(非硬编码节表)解 fo↔VA,再回到 0x11f0ca7 窗口找 cmp 立即数 0x61444243(CBDa LE)。fix7/fix8 的 40 分钟预算教训:该子任务需 PE 寻址基建先行。"
+  },
+  {
+   "id": "E137",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "static_analysis",
+   "level": "L2",
+   "claim": "CBW 族路由终判(指挥官全量字节扫描,真 PE 节表):CBDa/CBWa/CBWo/CHSo 四码字节串在 editor.exe(74.8MB)与 fm.exe(491MB)中均零出现(cmp 上下文与原始引用皆无)。裁决:①fix6 的 80 held 实质正确(非误报);②E121 negative_proof 中『CBDa cmp @0x11f0ca7/CBWa @0x11f0cb6』引用无法按字节复现,降级为未验证(其下 TC_RECORD_GET 0x3ebad50 等链地址属 .reloc 45MB 可执行大区,真节表见 fix8 pe_sections.json);③club 记录族字段读取机制=(rec_type, tag 序号) 位置路由,4CC 只存在于 editor schema——与 fix6 的 34 L3 tag/rt 链自洽。",
+   "evidence": [
+    "scratch/t88/out3/pe_sections.json(fix8 交付,真 PE 头)",
+    "指挥官全量扫描(两 exe 四码零命中,cmp 操作码上下文核对)",
+    "scratch/t88/TC_GET2_4cc.json(lea 组来源重审:schema 侧非 exe 侧)"
+   ],
+   "consequence": "slots.json 80 held 的路由问题转为纯数据侧任务:per-rec_type 行体 tag 序列→字段序→wire 偏移(fix5 recget_tagmap.json 的 8 组即静态映射)。E121 引用降级注记入 schema v11.3。指挥官 meta:本条由 fix8(仅交付 PE 基建)后的指挥官接棒完成——车道 40 分钟预算内 PE 解析+扫描装不下,指挥官两步做完。"
+  },
+  {
+   "id": "E138",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "static_analysis",
+   "level": "L2",
+   "claim": "table_45 结构定论(指挥官,fix9 墙后接管):全部 84,477 行同构 = pre37B + [u32 len][utf8 name] + tail 26B 定长 + identity 13B(rowlen=80+namelen 普适)——物理仅 ~14 列(8 前缀列+名+~5 尾列),**装不下 117 字段**。117 club.xml 码 = (family→rec_type, suffix→行/列) 访问器视图:family↔rt 对应从 34 L3 证实(CFG→24, CHA→13, CHS→25, CLA→26,多后缀共族一 rt)。rec_type 8 全部 3,391 行为最短行(namelen=0),pre 列实证:club_uid@0/rt@4/person_uid@5(空=ffff)/club_uid2 对@21/25。",
+   "evidence": [
+    "scratch/t88/out2/{row_frame,_starts,_p_server_45}.json",
+    "scratch/t88/out3/slots.json(34 L3 family↔rt)",
+    "scratch/t88/out3/tag_wire.json(fix9 骨架,墙截)",
+    "scratch/cmd/t88_rec_probe.json(E132)"
+   ],
+   "consequence": "E121『117 字段在 table_45』细化为『117 码=table_45 访问器视图』;fix9 车道墙截(仅骨架),指挥官接管收束结构问题。遗留(机械,非结构):suffix→列钉死(需 per-family reader_off 或值域匹配);可作下波数据侧任务。t88 链 14 次车道尝试+3 次指挥官接管,至此结构层全部收束。"
+  },
+  {
+   "id": "E139",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "acceptance",
+   "level": "L2",
+   "claim": "t92(devseek,attempt1 一次通过)schema v11.3 验收:43 根节(新增 table45_structure_e132_e138 / t9_grammar_e133 / cbw_route_e135_e137,改 5 节,35 根节未动)。E127 九字节修正落位(307,564+why_before);accessor_view_model(family_to_rec_type)在位;cbw_route 含 4CC 零存在负结果与 E121 引用降级;分母 v2 的 117 条 re_routed 加注记(1034 守恒,值不变)。指挥官第三路径:独立根节 diff+四点抽查全过。",
+   "evidence": [
+    "scratch/t92/out/{schema_v113,denominator_note,diff_inventory}.json",
+    "scratch/t92/out/verify.py(8/8)",
+    "reports/club_nation_subtable_schema.json(v11.3 定稿)",
+    "reports/xml_denominator_coverage.json(注记)"
+   ],
+   "consequence": "schema v11.3 定稿;t88 链自 E121 起的叙事链(E132 探针→E134 结构→E135 slots→E136/E137 更正→E138 访问器模型)全部合入公共 schema。车道 meta:t92 首次 attempt1 内完成(rc=124 于收尾时才到,交付已落盘)——纯机械装配+冻结输入是 devseek 最稳形态。遗留(下波):suffix→列钉死、t89c helper 24 字段展开、Phase 3 t02 授权待决。"
+  },
+  {
+   "id": "E140",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "external_corpus_discovery_plus_anchor_cross_validation",
+   "level": "L2",
+   "claim": {
+    "what": "三个社区仓克隆入 scratch/ext/(gitignored,只读):fmsave@755fe9c(MIT 纯 Python FM26/27 存档解析,唯一依赖 backports.zstd——与我方 tad.+zstd 容器同族)、fm-editor@ba605f4(GPL,FM24/26/27 内存布局,docs/fm24/memory-layout.md 为我方版本)、FMLibreEditor@fb76023(GPL,FM27 recon 20+ 篇)",
+    "cross_validation": "外部 UID 锚(fm-editor FM24 文档)在我方 table_45 wire 数据上全部命中:Harry Kane person-uid=28049320 命中且行三元收敛(名=\"Harry Kane\"、person=28049320、club=728=Tottenham,与文档逐字吻合;2023-07 Kane 尚在热刺);Ronaldo 735216 再证(32 行);Bayern 915(47 行)/Tottenham 728(54 行)/Antalyaspor 1865(24 行)club-uid 列全部成属",
+    "corroborations": "①fmsave 用 zstd 分节=压缩家族同源;②fm-editor 日期文法(doy+flag<<8,year)与 E133 的 01 00 6c 07 完全一致;③fm-editor 跨 FM24/26/27 同法布局=用户\"几乎通用\"假说三轴成立;④FMLibreEditor object-pools 文法与 E82 DATABASE_TABLE<T> 发现同构",
+    "kane_rt_hist": "255×9 + {24,11,6,4,33}×1——每人每 family 单记录,与 E138 访问器视图模型一致",
+    "discipline": "外源仓零执行;外源标签仅假设源,不升级我方 L1/L2/L3 分级;本条 L2 仅指锚测试(独立事实对照)在我方数据上完成"
+   },
+   "evidence": [
+    "scratch/cmd/t93_ext_probe.json",
+    "scratch/cmd/t93_ext_probe.py",
+    "scratch/ext/{fmsave@755fe9c,fm-editor@ba605f4,FMLibreEditor@fb76023}",
+    "prompts/t93_ext_mining.md"
+   ],
+   "consequence": "路线A(数据侧已知值锚定)武器化:名称列=球员全名已证,语义字典(fmsave models + fm-editor 布局)可直接喂 suffix→列钉死;t93 挖矿车道已派(摘录文法/字典/crosswalk,全 held 级)"
+  },
+  {
+   "id": "E141",
+   "date": "2026-11-22",
+   "author": "commander",
+   "kind": "t93_acceptance_external_dictionary",
+   "level": "L2",
+   "claim": {
+    "what": "t93 外部语料挖矿验收通过(attempt3 rc=0 完整交付 10/10;launcher rc=1 为 outbox.md 目录 quirk 造成的假阴性——DONE 判定只查文件不查目录)",
+    "deliverables": "save_grammar.json(30 条文法,全部 file:line+原文溯源;G01 存档魔数 02 01 66 6d 66 2e=\"\u0002\u0001fmf.\"——存档容器同属 fmf 家族)、field_dictionary.json(58 实体 720 字段,逐字段 file:line+ext_status[verified/unconfirmed/unstated]+语义;Player.unique_id=\"每个新档相同\"再证 uid 跨档稳定)、fm24_memory_layout.json、fm27_recon_digest.json(22 篇 102 个行锚点)、crosswalk.json(20 条全 held,0 升级)、verify.py 9/9、anchors 7/7",
+    "verification": "lane verify 9/9 PASS(含修复 G17 行号 2691、83 名 vs 69 字段派生列单列、domain 字段名、禁用模式误命中四处真问题)+ 指挥官第三路抽查(结构/溯源/嵌套 grade 三项独立确认)",
+    "consequence": "语义字典就位:58 实体命名+verified 比例已知(如 Player 53 字段中 19 verified);下一棒 t94 验收(70 伪代码在盘)+ 83 码钉列可开字典"
+   },
+   "evidence": [
+    "scratch/t93/outbox.md/",
+    "scratch/t93/outbox.md/verify.py",
+    "scratch/t93/outbox.md/summary 纪律核对段",
+    "scripts/t01_anchors.py 7/7"
+   ]
   }
  ]
 }

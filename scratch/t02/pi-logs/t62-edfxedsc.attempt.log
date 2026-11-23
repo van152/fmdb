@@ -1,0 +1,11 @@
+Warning: No project session found with id 't62-edfxedsc-openai-codex'; creating a new session with that id.
+t62 已交付（partial），提交 `bb2ff9b`，分支 `t62-edfxedsc`。
+
+- **EDsc 调用链已证实。** 4CC 虽无字面命中，但归一化后命中 rel32 格 `0x2a8b8`，跳到 `0x29389`。按选中对象分流至 COMP `0x6c120` 或 NATION `0x6bb00`，结果返回 UI。旧 negative 原样保留；没有发现 `table_10` 主行的新 wire 槽。
+- **EDfx 持久化仍未闭合。** 已追到 `fles`/`comp` 输入、日历内存桶及 NATION backlink；所追生成结果只返回 UI。没有足够证据指定 reader、writer 或 `.dat` 区段，已交付 7 条有界排除及重开条件。
+
+独立 `verify.py`、两脚本 `--help` / `--selftest` 均通过；anchors **7/7**，L4=0。未修改 `reports/`。
+
+**交付清单**
+- `scratch/t62/out/`：`xref.json`、`chain.json`、`exclusions.json`、`verify.py`、`REPORT.md`、`DONE.md`
+- `scripts/t62_edfx_edsc.py`

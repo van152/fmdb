@@ -1,0 +1,9 @@
+=== attempt 1/3 Fri Nov 20 03:01:39     2026 provider=hiyo-key2 model=gpt-6-luna ===
+**t52-fix1 已完成。** E91 守卫现要求 live ledger 中存在唯一的 `acceptance`/`L2` 条目，并校验 t50 的 L2-only 范围说明；字段归因仍拒绝引用 t50/E91，t50 的 L3 仍为 0。
+
+已重建 [v5 JSON](D:/tmp2b/fm24-db/reports/club_nation_subtable_schema.json) 和 [v5 Markdown](D:/tmp2b/fm24-db/reports/club_nation_subtable_schema.md)，并更新 `scratch/t52/out/REPORT.md`、`DONE.md`、builder、独立 verifier、spot 脚本及日志。原有 `NO WINNER` 记录保持不变；identity-tail 交叉核对另列，client/server 均为 251/251。v4 保护段验证通过。
+
+最终验证：builder、verifier、spot 的 `--help` 和 `--selftest` 均通过；build 成功；独立验证 **146** 项通过；spot 抽查 **88** 项及 **753** 条交叉行通过；`t01_anchors.py` **7/7**。所有 `spot_*.log` 均带 `t52-fix1` 标记。
+
+运行中 live ledger 曾追加 E93；我未修改 ledger，而将本次使用的账本固化为 `scratch/t52/out/ledger_snapshot.json`，并核验 E87/E89/E90/E91/E92 与 live ledger 一致。
+=== DONE t52-schemav5 attempt=1 rc=0 Fri Nov 20 03:25:05     2026 ===
