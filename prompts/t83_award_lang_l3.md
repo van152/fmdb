@@ -23,7 +23,7 @@
 
 - 只做这五张表;不碰 stadium/team(t79)、lcrg/agreement(t76c 已收)、club/nation/comp 主行
 - **防冲突**:只写 `scratch/t83/` 和 `scripts/t83_*.py`;不碰 reports/ 与 LEDGER
-- 不启动游戏/编辑器/IDA,不联网,不读写 Z:;全档验证向量化,不得抽样代替
+- 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:;全档验证向量化,不得抽样代替
 
 ## 交付 scratch/t83/out/
 

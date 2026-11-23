@@ -19,7 +19,7 @@
 
 ## 边界
 - 不重做 t49 的 8 parent、t51 的 Nrvn/Calt/Nftb、t47 的 Ntxr;不推翻已接受结论,若发现**真冲突**则 dual-list 记录+首反例,不裁决改写。
-- t37/t47/t49/t50/t51 negative/held/baseline 原样保留;候选不写结论;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- t37/t47/t49/t50/t51 negative/held/baseline 原样保留;候选不写结论;L4=0;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 预算内无法全闭则诚实 partial。**优先级:TCrs 裁决+wire > EDfx > EDsc。**
 
 ## 交付 scratch/t53/out/

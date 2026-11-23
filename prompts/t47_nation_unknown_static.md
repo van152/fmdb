@@ -44,7 +44,7 @@
 ## 边界
 - 只 nation 未知 item-bearing parent;**不碰** t28 已闭(Nagr/Nefr/Nnfr/Nlns table_10 client-tail)、Tchl(t34 共享,t39 已裂)、club 子表、zero-item schema(Nchi/Nphi/Tko*/Tkg*/AXML)。
 - t46(luna)正做 server table_10 **数据侧** profile;若未知 parent back 到 table_10,可引用其 member 但**专注静态 reader/cursor/L3**,不重复 t46 数据侧画像。
-- 候选不写结论;t37 negative/held 原样保留;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 候选不写结论;t37 negative/held 原样保留;L4=0;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 预算内无法全裂则诚实 partial:已发现链接+已闭合子集+剩余+首反例(发现任务允许 negative)。**优先裂 transfer prefs 簇 + repu values 簇 + Ntxr/Nfmp**(handoff 点名),再及其余。
 
 ## 交付 scratch/t47/out/

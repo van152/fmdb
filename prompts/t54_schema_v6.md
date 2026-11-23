@@ -23,7 +23,7 @@
 
 ## 边界
 - 只改 reports/ 两文件与 scratch/t54/、scripts/t54_*.py;**不改** scratch/t47/t49/t50/t51/t53;不改 BASELINE.md(指挥官另行)。
-- 不启动游戏/编辑器/IDA,不联网,不读写 Z:;L4=0。
+- 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:;L4=0。
 
 ## 交付 scratch/t54/out/
 - consolidate_v6.py、verify.py、spot_*.log、REPORT.md、DONE.md;reports/ 两文件升 v6(指挥官验收后提交)

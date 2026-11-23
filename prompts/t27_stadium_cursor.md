@@ -21,7 +21,7 @@
 ## 边界与纪律
 
 - 只读 `D:\tmp2b\fm24\input\editor.exe`(SHA-256 对照 IDA_PROVENANCE);本地数据 `FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`;table_22 在 **server** archive(`load_payload(codec,'server',22)`)——先确认 client/server 哪个有该表并写明。
-- 不启动游戏/编辑器/IDA,不联网,不读写 Z:;只写 `scratch/t27/out/` 与 `scripts/t27_*.py`;不覆盖 t20/t24 产物。
+- 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:;只写 `scratch/t27/out/` 与 `scripts/t27_*.py`;不覆盖 t20/t24 产物。
 - 候选不写成结论;负结果保留;未解分支如实标 partial,**不以候选名计入命名率**。
 - 新脚本 `--help`/`--selftest`,退出码 0/1/2;单次打印 ≤400 行;大 JSON 分片;状态词 `complete_*`/`partial_*`/`negative_*`。
 - 卡壳落盘 partial。

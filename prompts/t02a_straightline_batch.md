@@ -1,7 +1,7 @@
 # t02-a 任务书:straight-line 小实体批量字段映射(8 实体)
 
 > 交给 pi devseek(deepseek-v4.1-flash-free)。方法论已四场景验证,本任务是纯执行:**8 个 straight-line 实体,`--thinking max`,一次扫干净**。
-> 规则:只读输入、不启动游戏/编辑器/IDA、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
+> 规则:只读输入、不启动游戏本体/FM 编辑器(IDA 静态分析允许)、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
 
 ## 方法论(照抄,勿重新发明)
 

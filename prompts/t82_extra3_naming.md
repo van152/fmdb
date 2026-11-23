@@ -21,7 +21,7 @@
 
 - 只做 extra_3 对象;不碰 club 主行其余槽(见 t75 裁决)、8 子表、CLUB_LINK、person/PDxx、stadium/team(t79 已收)。
 - **防冲突**:只写 `scratch/t82/` 和 `scripts/t82_*.py`。
-- 不启动游戏/编辑器/IDA,不联网,不读写 Z:;全档验证向量化,不得抽样代替。
+- 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:;全档验证向量化,不得抽样代替。
 
 ## 交付 scratch/t82/out/
 

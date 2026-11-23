@@ -24,7 +24,7 @@
 
 ## 边界
 - 只 Clhs/table37;不碰 Cstc(t27 已闭)、不碰 Cafl/Cvfl(双视图歧义,另案)。
-- 候选不写结论;negative 原样保留;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 候选不写结论;negative 原样保留;L4=0;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 若 t29 画像未交付,自行 dump 画像(fm24_dump.py,FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data),但优先消费 t29 成果避免重复。
 - 预算内无法闭合则诚实 partial + 已绑定子集 + 剩余清单 + 首个反例。
 

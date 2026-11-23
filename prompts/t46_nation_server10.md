@@ -18,7 +18,7 @@
 
 ## 边界
 - 只 nation table_10 server 画像;不碰已闭 client/club 子表;不晋级 L3(reader 绑定 sol-tier);L4=0。
-- 候选不写结论;negative/held 反例保留;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 候选不写结论;negative/held 反例保留;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 只写 scratch/t46/ 与 scripts/t46_*.py;server grammar 若预算内无法确定则诚实 partial+已绑定子集+首反例。
 
 ## 交付 scratch/t46/out/

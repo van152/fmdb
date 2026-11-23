@@ -1,0 +1,220 @@
+{
+  "task": "t116-wave13-consolidation",
+  "status": "draft_not_ledgered",
+  "source_ledger": "scratch/t01/LEDGER.json (read-only; last observed E141)",
+  "entries": [
+    {
+      "id": "E142",
+      "date": "2026-11-23",
+      "author": "t116 draft",
+      "kind": "static_analysis",
+      "level": "L3",
+      "claim": "IDA/Hex-Rays vtable/function corpus is available for Wave 13; claims remain bounded to indexed extraction, not field semantics.",
+      "evidence": [
+        {
+          "path": "scratch/t95/vtable_index.json",
+          "sha256": "f6068e6bdc5eae054cc1357b54eb3e5f83c08b528381c7525c425f6eaf07e62a",
+          "present": true
+        },
+        {
+          "path": "scratch/t95/funcs/14083b5f0.c",
+          "sha256": "a3f56576dfbf08ceca14c64fd8aa33284d642404d2582b0885e2e0ba527d7792",
+          "present": true
+        },
+        {
+          "path": "scratch/t95/funcs/140e4fd70.c",
+          "sha256": "006e9ebd45e93f8658faa018ca07feac2a9c76dfe142a83abf08ff54f77c6b27",
+          "present": true
+        }
+      ],
+      "status": "partial",
+      "review_required": true
+    },
+    {
+      "id": "E143",
+      "date": "2026-11-23",
+      "author": "t116 draft",
+      "kind": "acceptance_partial",
+      "level": "L2",
+      "claim": "Wire-trace campaign covers 79 table pairs; the on-disk t96c DONE says status=partial, closed=41, sample_ok=27, failed=11. Do not promote the brief's 42/74 without reconciling the artifact discrepancy.",
+      "evidence": [
+        {
+          "path": "scratch/t96c/out/wire_traces_master.json",
+          "sha256": "8b31d4c6ac04669dcfc9455eb8c64b27e732373226d32959d3d75f49c58e57a6",
+          "present": true
+        },
+        {
+          "path": "scratch/t96c/out/table9_251_closure.json",
+          "sha256": "c90eba1a18417b2328787ca052b377c771578d4cd1c71adabf6542ece2e19f75",
+          "present": true
+        },
+        {
+          "path": "scratch/t96c/out/table10_251_closure.json",
+          "sha256": "d8d04ea372739060d25860735307d6cd69d3e0cff3cdc30b10407a7e5015e21b",
+          "present": true
+        }
+      ],
+      "status": "partial",
+      "review_required": true
+    },
+    {
+      "id": "E144",
+      "date": "2026-11-23",
+      "author": "t116 draft",
+      "kind": "static_analysis",
+      "level": "L3",
+      "claim": "4CC-to-memory offset extraction and helper cross-reference maps were generated across the reported 67-table corpus; mapping completeness varies by table.",
+      "evidence": [
+        {
+          "path": "scratch/t97/out/fourcc_mem_map.json",
+          "sha256": "b9a7dfc7148bb848d3e3ba9b1e1b1d003f1e20e72843f4859067590e060de525",
+          "present": true
+        },
+        {
+          "path": "scratch/t97/out/static_read_join.json",
+          "sha256": "b0acc949316fb53d906b99c7dcc7240a7c4e836fda239226b86947ff798ead78",
+          "present": true
+        },
+        {
+          "path": "scratch/t107/out/helpers_index.json",
+          "sha256": "3689e09b1ad43462b1e3a32dca834dc78fad06d3c08069b5089f24767e4caeb8",
+          "present": true
+        }
+      ],
+      "status": "partial",
+      "review_required": true
+    },
+    {
+      "id": "E145",
+      "date": "2026-11-23",
+      "author": "t116 draft",
+      "kind": "static_analysis",
+      "level": "L3",
+      "claim": "Serializer control-flow inventory records three main-table serializers and version gates; this is static serialization evidence, not runtime load validation.",
+      "evidence": [
+        {
+          "path": "scratch/t105/out/big3_serializers.json",
+          "sha256": "b7f02049f04d58691042c84867d4c16f25757068d5b8a55f257fcf8177222b3d",
+          "present": true
+        }
+      ],
+      "status": "partial",
+      "review_required": true
+    },
+    {
+      "id": "E146",
+      "date": "2026-11-23",
+      "author": "t116 draft",
+      "kind": "acceptance_partial",
+      "level": "L2",
+      "claim": "t108b read-join analysis and t109 coverage aggregation identify 379/1,034 gross L3 occurrences (36.7%) and 379/673 net (56.3%); retain denominator and exclusions as stated.",
+      "evidence": [
+        {
+          "path": "scratch/t108/out2/fourcc_mem_map_v2.json",
+          "sha256": "67cc6efa6813da05fcc9671b5fa240792ec9f07e7829d2fc67f27a91f97bfed2",
+          "present": true
+        },
+        {
+          "path": "scratch/t108/out2/static_read_join_v2.json",
+          "sha256": "e0d626bb20f44d9c7b83403cb1bb48ea6ac416b4a56c54c7f33f62a1bc69c766",
+          "present": true
+        },
+        {
+          "path": "scratch/t108/out2/xml_triage_v2.json",
+          "sha256": "100a3504cb1d7a03eab59fc9b91eaaee3a986423f352488a35aa81fa6e30a30f",
+          "present": true
+        },
+        {
+          "path": "scratch/t109/out/coverage_summary.json",
+          "sha256": "62cc97a89239b37f595c2bbace90d69dd57281d8c6ec0d8c195e9a1e6db6a009",
+          "present": true
+        },
+        {
+          "path": "scratch/t109/out/remaining_gaps.json",
+          "sha256": "429f3d6c4c9acbfc68dacbddb304739da17ccfd82cfe84bf69dad8f72b79f0d6",
+          "present": true
+        }
+      ],
+      "status": "partial",
+      "review_required": true
+    },
+    {
+      "id": "E147",
+      "date": "2026-11-23",
+      "author": "t116 draft",
+      "kind": "acceptance_partial",
+      "level": "L2",
+      "claim": "Master table mapping reports 55/67 joined tables and 1,056 L3 4CC mappings; regression summary records mismatch cases, so this is partial, not a clean all-table closure.",
+      "evidence": [
+        {
+          "path": "scratch/t110/out/master_67tables_l3.json",
+          "sha256": "25165d545067adde9a69b320badb33588a066b6e9755048b3d8ec1f17ae3081d",
+          "present": true
+        },
+        {
+          "path": "scratch/t110/out/coverage_milestone.json",
+          "sha256": "6de7253abf60072421ad5aa88cd8f2e9db5e403d60f39dc285564fe6a0c7c513",
+          "present": true
+        }
+      ],
+      "status": "partial",
+      "review_required": true
+    },
+    {
+      "id": "E148",
+      "date": "2026-11-23",
+      "author": "t116 draft",
+      "kind": "acceptance_partial",
+      "level": "L2",
+      "claim": "People vtable/accessor inventory is available in t113 output; semantic fields and broader person-attribute blocks remain out of scope/unresolved.",
+      "evidence": [
+        {
+          "path": "scratch/t113/out/people_vtables_full.json",
+          "sha256": "3b4278052648a478b0a4ada02c091c6148d56c5c1b186ec5ffc6c8b4700848e3",
+          "present": true
+        }
+      ],
+      "status": "partial",
+      "review_required": true
+    },
+    {
+      "id": "E149",
+      "date": "2026-11-23",
+      "author": "t116 draft",
+      "kind": "acceptance_partial",
+      "level": "L2",
+      "claim": "basic_people database framing is reported closed for 658,011 rows with diff=0 and three verified anchors; semantic coverage is partial and does not imply PDxx completion.",
+      "evidence": [
+        {
+          "path": "scratch/t115/out/basic_people_l3_schema.json",
+          "sha256": "fd35b730a7cb82e5db9e0e98d01820d28f9c549848170bd1b6d3e1b63bad4d9d",
+          "present": true
+        }
+      ],
+      "status": "partial",
+      "review_required": true
+    },
+    {
+      "id": "E150",
+      "date": "2026-11-23",
+      "author": "t116 draft",
+      "kind": "consolidation",
+      "level": "L1",
+      "claim": "Wave 13 consolidation inventory, regression matrix, and before/after summary are generated for review; candidate ledger entries remain drafts and no source LEDGER.json was changed.",
+      "evidence": [
+        {
+          "path": "scratch/t116/out/wave13_consolidated.json",
+          "sha256": null,
+          "present": false
+        },
+        {
+          "path": "scratch/t116/out/ledger_candidates.json",
+          "sha256": null,
+          "present": false
+        }
+      ],
+      "status": "partial",
+      "review_required": true
+    }
+  ]
+}

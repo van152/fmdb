@@ -15,4 +15,4 @@
 ## 交付 scratch/t69/out/
 - tail_ledger.json(逐项:id/table/kind/evidence_refs/grade/承接)、SUMMARY.md、REPORT.md、DONE.md;verify.py(--help/--selftest,退出码 0/1/2)
 
-边界:只读已交付产物+数据侧复核,不重做任何普查;不启动游戏/编辑器/IDA,不联网,不读写 Z:。Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data。
+边界:只读已交付产物+数据侧复核,不重做任何普查;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。Python `py -V:3.12 -I -B`;FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data。

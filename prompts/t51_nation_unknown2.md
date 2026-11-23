@@ -32,7 +32,7 @@
 
 ## 边界
 - 只这 6 parent;**不碰** t47 已闭 9(Ntxr+Nntp/Nctp/Nrtp/NTRv/NWGv/NSps/Nfmp/NCro)、t28 已闭 4(Nagr/Nefr/Nnfr/Nlns)、Tchl(t34)、club 子表、zero-item schema。
-- 候选不写结论;t37/t47 negative/held/baseline 原样保留;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 候选不写结论;t37/t47 negative/held/baseline 原样保留;L4=0;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 预算内无法全闭则诚实 partial:已判定 owner+已发现链接+已闭合子集+剩余+首反例。**优先级:Nrvn(12 sites 最成熟)→Calt/TCrs(owner 判定)→Nftb→EDfx/EDsc。**
 
 ## 交付 scratch/t51/out/

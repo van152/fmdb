@@ -72,6 +72,15 @@ def parse_model(path: Path) -> dict[str, dict]:
             sub = re.search(key + r"=\((.*?)\)", call, re.S)
             if sub:
                 out[name][key] = re.findall(r'"(\w+)"', sub.group(1))
+    # A status list can name a computed property or a derived column as well as a stored field
+    # (e.g. PlayerSeasonStats names 83 verified keys against 69 dataclass fields). Keep only
+    # the names that really are fields of the class, so a count never exceeds the field list.
+    for cls, data in out.items():
+        names = {f[0] for f in data["fields"]}
+        data["verified_not_a_field"] = [x for x in data["verified"] if x not in names]
+        data["unconfirmed_not_a_field"] = [x for x in data["unconfirmed"] if x not in names]
+        data["verified"] = [x for x in data["verified"] if x in names]
+        data["unconfirmed"] = [x for x in data["unconfirmed"] if x in names]
     return out
 
 
@@ -137,6 +146,10 @@ def build() -> dict:
                 "field_count": len(fields),
                 "verified_count": len(data["verified"]),
                 "unconfirmed_count": len(data["unconfirmed"]),
+                "status_names_not_a_field": {
+                    "verified": data.get("verified_not_a_field", []),
+                    "unconfirmed": data.get("unconfirmed_not_a_field", []),
+                },
                 "fields": fields,
             }
         )
@@ -148,6 +161,11 @@ def build() -> dict:
             "verified": "fmsave's own register_field_statuses(verified=...) list",
             "unconfirmed": "fmsave's own register_field_statuses(unconfirmed=...) list",
             "unstated": "field has no entry in either list",
+            "not_a_grade": (
+                "These three words are fmsave's internal bookkeeping. They are NOT our L1-L4 "
+                "grade and never enter it: a field fmsave calls 'verified' is still held on our "
+                "side, and one it calls 'unconfirmed' is not thereby rejected."
+            ),
         },
         "grade_policy": "ext_status is fmsave's internal claim; it is NOT our L1-L4 grade",
         "entity_count": len(entities),

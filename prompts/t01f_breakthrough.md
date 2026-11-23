@@ -1,7 +1,7 @@
 # t01-f 突破任务书:描述符槽布局 + .dat 行偏移之桥(杀手锏,单发)
 
 > 交给 pi gpt-6.2-sol max。额度有限:**这是一次性投入,请在本会话内尽力推进到最深处**,产物完整落盘。
-> 规则不变:只读输入、不启动游戏/编辑器/IDA、不 pip install、Python `py -V:3.12 -I`、每个 claim 带 file offset + 字节证据。
+> 规则不变:只读输入、不启动游戏本体/FM 编辑器(IDA 静态分析允许)、不 pip install、Python `py -V:3.12 -I`、每个 claim 带 file offset + 字节证据。
 
 ## 你要解决的核心问题(项目当前唯一主线缺口)
 
@@ -39,7 +39,7 @@ FM24 编辑器(editor.exe)的运行时对象与游戏数据库 .dat 行之间的
 2. **注册容器消费端**:push 进容器的 {descriptor, 4CC} 记录被谁读?找到读取者即找到 schema 驱动读写链的入口(helperA 容器指针来自全局/单例,xref 它)。
 3. **DBC 保存链**:editor 保存 FMF/DBC 时把字段值按 wire type 编码(`evidence/fm24/reports/editor_fmf/DBC_FORMAT.md`、`reports/editor_gen/replicate/codec_tables.json` 已有 420 条 XML ID↔码映射)。DBC 写入器的类型表 ↔ switch 'cont' 等标签 ↔ .dat 行编码,三者对齐即桥。
 4. **fm.exe 的 DBC 应用链**:游戏启动读 .dat + DBC 补丁行。行偏移在 fm.exe 的 schema 结构里(.sdata 46k cmp-switch)。fm 的 comp 注册块与 editor 相同但重排——fm 侧 schema 结构若带行偏移,可直接命中。
-5. **旧库伪代码**:`D:\tmp2b\fm24\reports\reverse_engineering\decompiled\` 86 份(function_14242c670.c 提到 database_table_type),`ida/editor_merge_v2.i64` 不可用但可参考 `reports/qa/IDA_PROVENANCE.md` 的既有地址。
+5. **旧库伪代码**:`D:\tmp2b\fm24\reports\reverse_engineering\decompiled\` 86 份(function_14242c670.c 提到 database_table_type),`ida/editor_merge_v2.i64` 可只读打开做静态分析;也可参考 `reports/qa/IDA_PROVENANCE.md` 的既有地址。
 
 ## 交付(写 `D:\tmp2b\fm24-db\scratch\t01\inbox\t01f\`)
 

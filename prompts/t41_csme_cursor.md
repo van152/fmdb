@@ -28,7 +28,7 @@
 
 ## 边界
 - 只 Csme/table59;不碰已闭 Cstc/Clhs/CSrs/Cmti/CNtp/Cdbt/Tchl;Cafl/Cvfl 另案。
-- 候选不写结论;negative/held 反例保留;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 候选不写结论;negative/held 反例保留;L4=0;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 消费 t33 画像;预算内无法闭合则诚实 partial+已绑定子集+剩余+首反例(变长首次,允许 partial)。
 
 ## 交付 scratch/t41/out/

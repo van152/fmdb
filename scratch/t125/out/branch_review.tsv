@@ -1,0 +1,767 @@
+club rdui gap_other_table_same_tag 16 funcs/140fe3f20.c:741
+club dAPw gap_other_table_same_tag 368 funcs/140fe3f20.c:416
+club Csxn gap_delegated_or_empty None funcs/140e8a400.c:2054
+0x140e8a400 2054 [2055, 2055]  2055:goto LABEL_730;
+0x140e834a0 2235 [2235, 2237]  2235:if ( a2 != 1131640942 ) 2236:return sub_1411F4F70(a1, (unsigned int)a2, a3); 2237:return sub_140E587E0(*(_QWORD *)(a1 + 256), a1, (unsigned int)a2, a3);
+club Cl3n gap_off_not_in_read_stream 256 funcs/140e8a400.c:985
+0x140e8a400 985 [987, 996]  987:v123 = *(__int64 **)(a1 + 256); 988:v119 = ((__int64 (*)(void))sub_14083D4F0)(); 989:v461 = 0; 990:if ( &v460 != v123 ) 991:{ 992:v124 = v123[1]; 993:if ( v124 != 0 ) 994:_InterlockedIncrement((volatile signed __int32 *)(v124 - 4)); 995:v461 = v124; 996:}
+0x140e834a0 2137 [2138, 2138]  2138:return sub_140E587E0(*(_QWORD *)(a1 + 256), a1, (unsigned int)a2, a3);
+club Ca3n gap_off_not_in_read_stream 256 funcs/140e8a400.c:4124
+0x140e8a400 4124 [4126, 4139]  4126:v118 = (__int64 *)(*(_QWORD *)(a1 + 256) + 16LL); 4127:v119 = sub_14083D4F0(a1); 4128:v461 = 0; 4129:if ( &v461 != v118 ) 4130:{ 4131:v120 = *v118; 4132:if ( *v118 != 0 ) 4133:_InterlockedIncrement((volatile signed __int32 *)(v120 - 4)); 4134:v461 = v120; 4135:} 4136:LABEL_734: 4137:v460 = v119 + 136; 4138:sub_14083DFA0(v3, &v460); 4139:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460);
+0x140e834a0 368 [368, 370]  368:if ( a2 != 1130443630 ) 369:return sub_1411F4F70(a1, (unsigned int)a2, a3); 370:return sub_140E587E0(*(_QWORD *)(a1 + 256), a1, (unsigned int)a2, a3);
+club TCnn gap_off_not_in_read_stream 176 funcs/1411f4f70.c:171
+0x1411f4f70 171 [173, 174]  173:return sub_1411D00E0(*(_QWORD *)(a1 + 176), a1, (unsigned int)a2, a3); 174:}
+0x1411f1090 867 [868, 868]  868:goto LABEL_247;
+club TCht gap_off_not_in_read_stream 176 funcs/1411f1090.c:1561
+0x1411f1090 1561 [1600, 1613]  1600:v101 = (__int64 *)(a1[22] + 152); 1601:v55 = sub_14083D4F0(v15); 1602:v148[1] = 0; 1603:if ( &v148[1] != v101 ) 1604:{ 1605:v102 = *v101; 1606:if ( *v101 != 0 ) 1607:_InterlockedIncrement((volatile signed __int32 *)(v102 - 4)); 1608:v148[1] = v102; 1609:} 1610:LABEL_329: 1611:v148[0] = v55 + 136; 1612:sub_14083DFA0(v7, v148); 1613:(*(void (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)v148[0] + 16LL))(v148[0], v148);
+0x1411f4f70 165 [166, 166]  166:return sub_1411D00E0(*(_QWORD *)(a1 + 176), a1, (unsigned int)a2, a3);
+club ttcl gap_off_not_in_read_stream 176 funcs/1411f4f70.c:135
+0x1411f4f70 135 [136, 142]  136:if ( *(_QWORD *)(a1 + 176) != 0 ) 137:{ 138:sub_140FE3B40(&v108, a3); 139:*(_DWORD *)(*(_QWORD *)(a1 + 176) + 160LL) = v108; 140:goto LABEL_35; 141:} 142:break;
+0x1411f1090 1085 [1086, 1090]  1086:sub_1411DE680(a1, &v148[1]); 1087:v148[0] = sub_141335F60(); 1088:sub_14083DFA0(v7, v148); 1089:(*(void (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)v148[0] + 16LL))(v148[0], v148); 1090:goto LABEL_68;
+club tbcl gap_off_not_in_read_stream 176 funcs/1411f4f70.c:119
+0x1411f4f70 119 [120, 126]  120:if ( *(_QWORD *)(a1 + 176) != 0 ) 121:{ 122:sub_140FE3B40(&v108, a3); 123:*(_DWORD *)(*(_QWORD *)(a1 + 176) + 168LL) = v108; 124:goto LABEL_35; 125:} 126:break;
+0x1411f1090 1014 [1016, 1021]  1016:sub_1411DE560(a1, &v148[1]); 1017:v148[0] = sub_141335F60(); 1018:sub_14083DFA0(v7, v148); 1019:(*(void (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)v148[0] + 16LL))(v148[0], v148); 1020:goto LABEL_68; 1021:}
+club Cyfn gap_off_not_in_read_stream 256 funcs/140e8a400.c:2637
+0x140e8a400 2637 [2673, 2675]  2673:v337 = *(_QWORD *)(a1 + 256); 2674:v55 = *(unsigned __int16 *)(v337 + 216); 2675:if ( *(_WORD *)(v337 + 216) == 0 )
+club Cmag gap_other_table_same_tag 44 funcs/1411c2df0.c:85
+0x140e8a400 1052 [1062, 1063]  1062:a2 = nullptr; 1063:v28 = 1131241831;
+0x140e834a0 1904 [1910, 1912]  1910:v11 = a1; 1911:v7 = 0; 1912:v12 = 1131241831;
+club Cmle gap_off_not_in_read_stream 256 funcs/140e8a400.c:1068
+0x140e8a400 1068 [1070, 1075]  1070:v172 = *(char *)(*(_QWORD *)(a1 + 256) + 289LL); 1071:v173 = ((__int64 (*)(void))sub_14083D4F0)(); 1072:LODWORD(v461) = v172; 1073:v460 = v173 + 40; 1074:sub_14083DFA0(v3, &v460); 1075:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460);
+0x140e834a0 1906 [1906, 1908]  1906:if ( a2 != 1131244645 ) 1907:return sub_1411F4F70(a1, (unsigned int)a2, a3); 1908:return sub_140E587E0(*(_QWORD *)(a1 + 256), a1, (unsigned int)a2, a3);
+club CScP gap_off_not_in_read_stream 256 funcs/140e8a400.c:3980
+0x140e8a400 3980 [3982, 3998]  3982:v296 = *(char *)(*(_QWORD *)(a1 + 256) + 295LL); 3983:v297 = sub_14083D4F0(a1); 3984:LODWORD(v461) = v296; 3985:v460 = v297 + 40; 3986:sub_14083DFA0(v3, &v460); 3987:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460); 3988:v18 = 1; 3989:if ( v3 == &qword_141B5A4A0 || *(_BYTE *)(*(_QWORD *)(v6 + 256) + 295LL) != 0 ) 3990:return v18; 3991:LABEL_976: 3992:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*v3 + 16LL))(*v3, v3); 3993:(*(void (__fastcall **)(__int64, __int64 *, __int64 *))(*(_QWORD *)qword_141B5A4A0 + 24LL))( 3994:qword_141B5A4A0, 3995:&qword_141B5A4A0, 3996:v3); 3997:return v18; 3998:}
+0x140e834a0 452 [452, 454]  452:if ( a2 != 1129538384 ) 453:return sub_1411F4F70(a1, (unsigned int)a2, a3); 454:}
+club lpRP gap_delegated_or_empty None funcs/140fe3f20.c:350
+club ipRP gap_delegated_or_empty None funcs/140fe3f20.c:589
+club hpRP gap_delegated_or_empty None funcs/140e8a400.c:2439
+0x140e8a400 2439 [2439, 2441]  2439:if ( v4 != 1752191568 ) 2440:goto LABEL_1121; 2441:}
+club apRP gap_delegated_or_empty None funcs/140e8a400.c:2342
+0x140e8a400 2342 [2342, 2344]  2342:if ( v4 != 1634751056 ) 2343:goto LABEL_1121; 2344:}
+club tpRP gap_delegated_or_empty None funcs/140fe3f20.c:599
+club lpRS gap_delegated_or_empty None funcs/140fe3f20.c:549
+club ipRS gap_delegated_or_empty None funcs/140fe3f20.c:543
+club hpRS gap_delegated_or_empty None funcs/140e8a400.c:2407
+0x140e8a400 2407 [2407, 2409]  2407:if ( v4 != 1752191571 ) 2408:{ 2409:if ( v4 != 1818588780 )
+club apRS gap_delegated_or_empty None funcs/140e8a400.c:2371
+0x140e8a400 2371 [2371, 2373]  2371:if ( v4 != 1634751059 ) 2372:{ 2373:if ( v4 != 1665222995 )
+club Cown gap_off_not_in_read_stream 256 funcs/140e8a400.c:1641
+0x140e8a400 1641 [1643, 1648]  1643:v121 = *(char *)(*(_QWORD *)(a1 + 256) + 297LL); 1644:v122 = ((__int64 (*)(void))sub_14083D4F0)(); 1645:LODWORD(v461) = v121; 1646:v460 = v122 + 40; 1647:sub_14083DFA0(v3, &v460); 1648:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460);
+0x140e834a0 2944 [2946, 2962]  2946:*(_BYTE *)(*(_QWORD *)(a1 + 256) + 297LL) = (*(__int64 (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)*a3 + 64LL))( 2947:*a3, 2948:a3); 2949:v126 = *(_QWORD *)(a1 + 256); 2950:LOBYTE(v3) = 1; 2951:if ( ((*(_BYTE *)(v126 + 297) - 3) & 0xFB) == 0 && *(_QWORD *)(v126 + 120) == 0 ) 2952:{ 2953:v127 = sub_140E5F8C0(); 2954:sub_141521AA0(v127, a1); 2955:v128 = *(_QWORD *)(a1 + 256); 2956:if ( v128 != 0 && *(_QWORD *)(v128 + 120) == 0 ) 2957:*(_QWORD *)(v128 + 120) = v127; 2958:else 2959:sub_140E58670(v127); 2960:} 2961:return (unsigned int)v3; 2962:}
+club Cebd gap_off_not_in_read_stream 256 funcs/140e882d0.c:43
+0x140e882d0 43 [44, 72]  44:v13 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 120LL); 45:if ( dword_141B5C8D0 > *(_DWORD *)(*((_QWORD *)NtCurrentTeb()->ThreadLocalStoragePointer + (unsigned int)TlsIndex) 46:+ 4LL) ) 47:{ 48:sub_141750E08(&dword_141B5C8D0); 49:if ( dword_141B5C8D0 == -1 ) 50:{ 51:sub_140DBC9B0(&qword_141B5C8A0); 52:sub_141751048(sub_140DBCA10); 53:sub_141750EA0(&dword_141B5C8D0); 54:} 55:} 56:if ( (__int64 *)*a3 == &qword_141B5C8A0 ) 57:{ 58:v16 = *((_DWORD *)a3 + 2); 59:HIWORD(v17) = v16 >> 17; 60:LOWORD(v17) = (v16 >> 8) & 0x1FF | ((_WORD)v16 << 9); 61:}
+0x140e97920 54 [55, 83]  55:v22 = *(_DWORD *)(v7 + 8); 56:if ( dword_141B5C8D0 > *(_DWORD *)(*((_QWORD *)NtCurrentTeb()->ThreadLocalStoragePointer 57:+ (unsigned int)TlsIndex) 58:+ 4LL) ) 59:{ 60:sub_141750E08(&dword_141B5C8D0); 61:if ( dword_141B5C8D0 == -1 ) 62:{ 63:sub_140DBC9B0(&qword_141B5C8A0); 64:sub_141751048(sub_140DBCA10); 65:sub_141750EA0(&dword_141B5C8D0); 66:} 67:} 68:LODWORD(v33) = (v22 << 8) & 0x1FF00 | (((unsigned __int16)v22 >> 9) + 2 * (v22 & 0xFFFF0000)); 69:v23 = &qword_141B5C8A0; 70:v32 = &qword_141B5C8A0; 71:if ( &v32 != (__int64 **)a3 ) 72:{
+club Cepr gap_off_not_in_read_stream 256 funcs/140e882d0.c:107
+0x140e882d0 107 [109, 110]  109:v9 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 120LL); 110:*(_WORD *)(v9 + 16) = (*(__int64 (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)*a3 + 64LL))(*a3, a3);
+0x140e97920 183 [185, 199]  185:v9 = *(__int16 *)(v7 + 16); 186:v10 = sub_14083D4F0(v7) + 40; 187:LODWORD(v33) = v9; 188:v32 = (__int64 *)v10; 189:if ( &v32 != (__int64 **)a3 ) 190:{ 191:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 16LL))(*a3, a3); 192:v11 = v32; 193:v12 = v33; 194:a3[1] = v33; 195:*a3 = (__int64)v11; 196:v10 = sub_14083D4F0(v12) + 8; 197:v33 = 0; 198:v32 = (__int64 *)v10; 199:}
+club Cetl gap_off_not_in_read_stream 256 funcs/140e882d0.c:87
+0x140e882d0 87 [89, 91]  89:v15 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 120LL); 90:*(_BYTE *)(v15 + 18) = (*(__int64 (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 91:}
+0x140e97920 124 [126, 141]  126:v29 = *(char *)(v7 + 18); 127:v10 = sub_14083D4F0(v7) + 40; 128:LODWORD(v33) = v29; 129:v32 = (__int64 *)v10; 130:if ( &v32 != (__int64 **)a3 ) 131:{ 132:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 16LL))(*a3, a3); 133:v30 = v32; 134:v31 = v33; 135:a3[1] = v33; 136:*a3 = (__int64)v30; 137:v10 = sub_14083D4F0(v31) + 8; 138:v33 = 0; 139:v32 = (__int64 *)v10; 140:} 141:}
+club Cmtm gap_off_not_in_read_stream 256 funcs/140e882d0.c:94
+0x140e882d0 94 [96, 97]  96:v11 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 120LL); 97:*(_BYTE *)(v11 + 19) = (*(__int64 (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)*a3 + 64LL))(*a3, a3);
+0x140e8a400 854 [855, 855]  855:return sub_140E97920(a1, (unsigned int)v4, a3);
+club Cect gap_off_not_in_read_stream 256 funcs/140e882d0.c:73
+0x140e882d0 73 [74, 76]  74:v14 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 120LL); 75:*(_BYTE *)(v14 + 20) = (*(__int64 (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 76:break;
+0x140e97920 84 [85, 100]  85:v26 = *(char *)(v7 + 20); 86:v10 = sub_14083D4F0(v7) + 40; 87:LODWORD(v33) = v26; 88:v32 = (__int64 *)v10; 89:if ( &v32 != (__int64 **)a3 ) 90:{ 91:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 16LL))(*a3, a3); 92:v27 = v32; 93:v28 = v33; 94:a3[1] = v33; 95:*a3 = (__int64)v27; 96:v10 = sub_14083D4F0(v28) + 8; 97:v33 = 0; 98:v32 = (__int64 *)v10; 99:} 100:break;
+club Cemn gap_off_not_in_read_stream 256 funcs/140e882d0.c:77
+0x140e882d0 77 [78, 80]  78:v10 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 120LL); 79:*(_BYTE *)(v10 + 21) = (*(__int64 (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 80:break;
+0x140e97920 101 [102, 117]  102:v13 = *(char *)(v7 + 21); 103:v10 = sub_14083D4F0(v7) + 40; 104:LODWORD(v33) = v13; 105:v32 = (__int64 *)v10; 106:if ( &v32 != (__int64 **)a3 ) 107:{ 108:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 16LL))(*a3, a3); 109:v14 = v32; 110:v15 = v33; 111:a3[1] = v33; 112:*a3 = (__int64)v14; 113:v10 = sub_14083D4F0(v15) + 8; 114:v33 = 0; 115:v32 = (__int64 *)v10; 116:} 117:break;
+club Cemx gap_off_not_in_read_stream 256 funcs/140e882d0.c:100
+0x140e882d0 100 [102, 104]  102:v12 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 120LL); 103:*(_BYTE *)(v12 + 22) = (*(__int64 (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 104:}
+0x140e97920 163 [165, 180]  165:v19 = *(char *)(v7 + 22); 166:v10 = sub_14083D4F0(v7) + 40; 167:LODWORD(v33) = v19; 168:v32 = (__int64 *)v10; 169:if ( &v32 != (__int64 **)a3 ) 170:{ 171:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 16LL))(*a3, a3); 172:v20 = v32; 173:v21 = v33; 174:a3[1] = v33; 175:*a3 = (__int64)v20; 176:v10 = sub_14083D4F0(v21) + 8; 177:v33 = 0; 178:v32 = (__int64 *)v10; 179:} 180:}
+club Chti gap_off_not_in_read_stream 256 funcs/140e8a400.c:1276
+0x140e8a400 1276 [1303, 1308]  1303:v293 = *(char *)(*(_QWORD *)(a1 + 256) + 298LL); 1304:v294 = ((__int64 (*)(void))sub_14083D4F0)(); 1305:LODWORD(v461) = v293; 1306:v460 = v294 + 40; 1307:sub_14083DFA0(v3, &v460); 1308:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460);
+0x140e834a0 2146 [2148, 2152]  2148:*(_BYTE *)(*(_QWORD *)(a1 + 256) + 298LL) = (*(__int64 (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)*a3 + 64LL))( 2149:*a3, 2150:a3); 2151:goto LABEL_788; 2152:}
+club Tmhm gap_other_table_same_tag 160 funcs/1411b01b0.c:463
+0x140e8a400 2556 [2558, 2559]  2558:a2 = nullptr; 2559:v28 = 1416456301;
+0x140e834a0 2632 [2634, 2636]  2634:v11 = a1; 2635:v7 = 0; 2636:v12 = 1416456301;
+club Catd gap_off_not_in_read_stream 176 funcs/1411f1090.c:1454
+0x1411f1090 1454 [1455, 1459]  1455:LODWORD(v148[1]) = *(_DWORD *)(a1[22] + 104); 1456:v148[0] = sub_14083D4F0(v15) + 40; 1457:sub_14083DFA0(v7, v148); 1458:(*(void (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)v148[0] + 16LL))(v148[0], v148); 1459:goto LABEL_68;
+club Cmna gap_off_not_in_read_stream 176 funcs/1411f1090.c:1489
+0x1411f1090 1489 [1491, 1496]  1491:LODWORD(v148[1]) = *(_DWORD *)(a1[22] + 108); 1492:v148[0] = sub_14083D4F0(v15) + 40; 1493:sub_14083DFA0(v7, v148); 1494:(*(void (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)v148[0] + 16LL))(v148[0], v148); 1495:goto LABEL_68; 1496:}
+0x1411f4f70 536 [537, 537]  537:return sub_1411D00E0(*(_QWORD *)(a1 + 176), a1, (unsigned int)a2, a3);
+club Cmxa gap_off_not_in_read_stream 176 funcs/1411f1090.c:1497
+0x1411f1090 1497 [1499, 1504]  1499:LODWORD(v148[1]) = *(_DWORD *)(a1[22] + 112); 1500:v148[0] = sub_14083D4F0(v15) + 40; 1501:sub_14083DFA0(v7, v148); 1502:(*(void (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)v148[0] + 16LL))(v148[0], v148); 1503:goto LABEL_68; 1504:}
+0x1411f4f70 536 [537, 537]  537:return sub_1411D00E0(*(_QWORD *)(a1 + 176), a1, (unsigned int)a2, a3);
+club Ctlv gap_off_not_in_read_stream 256 funcs/140e8a400.c:2096
+0x140e8a400 2096 [2098, 2103]  2098:v65 = *(char *)(*(_QWORD *)(a1 + 256) + 288LL); 2099:v66 = ((__int64 (*)(void))sub_14083D4F0)(); 2100:LODWORD(v461) = v65; 2101:v460 = v66 + 40; 2102:sub_14083DFA0(v3, &v460); 2103:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460);
+0x140e834a0 2322 [2322, 2324]  2322:if ( a2 != 1131703414 ) 2323:{ 2324:if ( a2 != 1131705193 )
+club Cytv gap_off_not_in_read_stream 256 funcs/140e8a400.c:2616
+0x140e8a400 2616 [2618, 2624]  2618:v231 = *(char *)(*(_QWORD *)(a1 + 256) + 300LL); 2619:v232 = ((__int64 (*)(void))sub_14083D4F0)(); 2620:LODWORD(v461) = v231; 2621:v460 = v232 + 40; 2622:sub_14083DFA0(v3, &v460); 2623:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460); 2624:}
+0x140e834a0 2722 [2722, 2724]  2722:if ( a2 != 1132033142 ) 2723:{ 2724:if ( a2 != 1145392197 )
+club Cyfb gap_off_not_in_read_stream 256 funcs/140e8a400.c:2308
+0x140e8a400 2308 [2310, 2315]  2310:v96 = *(char *)(*(_QWORD *)(a1 + 256) + 299LL); 2311:v97 = ((__int64 (*)(void))sub_14083D4F0)(); 2312:LODWORD(v461) = v96; 2313:v460 = v97 + 40; 2314:sub_14083DFA0(v3, &v460); 2315:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460);
+0x140e834a0 2742 [2742, 2744]  2742:if ( a2 != 1132029538 ) 2743:return sub_1411F4F70(a1, (unsigned int)a2, a3); 2744:return sub_140E587E0(*(_QWORD *)(a1 + 256), a1, (unsigned int)a2, a3);
+club Crcb gap_off_not_in_read_stream 256 funcs/140e8a400.c:1771
+0x140e8a400 1771 [1773, 1778]  1773:v137 = *(char *)(*(_QWORD *)(a1 + 256) + 301LL); 1774:v138 = ((__int64 (*)(void))sub_14083D4F0)(); 1775:LODWORD(v461) = v137; 1776:v460 = v138 + 40; 1777:sub_14083DFA0(v3, &v460); 1778:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460);
+0x140e834a0 2914 [2914, 2916]  2914:if ( a2 != 1131570018 ) 2915:{ 2916:if ( a2 != 1131570284 )
+club Cyim gap_off_not_in_read_stream 256 funcs/140e8a400.c:2639
+0x140e8a400 2639 [2665, 2670]  2665:v338 = *(char *)(*(_QWORD *)(a1 + 256) + 294LL); 2666:v339 = ((__int64 (*)(void))sub_14083D4F0)(); 2667:LODWORD(v461) = v338; 2668:v460 = v339 + 40; 2669:sub_14083DFA0(v3, &v460); 2670:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460);
+club CcfE gap_off_not_in_read_stream 256 funcs/140e834a0.c:292
+0x140e834a0 292 [294, 309]  294:if ( *(_QWORD *)(a1 + 256) != 0 ) 295:{ 296:LOBYTE(v3) = 1; 297:LOBYTE(v7) = 1; 298:if ( sub_140E65F60(a1, v7) != 0 ) 299:{ 300:LOBYTE(v59) = 1; 301:v60 = sub_140E65F60(a1, v59); 302:*(_BYTE *)(v60 + 96) = (*(__int64 (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 303:return (unsigned int)v3; 304:} 305:goto LABEL_830; 306:} 307:v57 = 1130587717; 308:goto LABEL_503; 309:}
+0x140e8a400 727 [729, 730]  729:v18 = 0; 730:if ( sub_140E65F60(a1, 0) == 0 )
+club 1scl gap_off_not_in_read_stream 280 funcs/140e8a400.c:2828
+0x140e8a400 2828 [2830, 2839]  2830:LOBYTE(a2) = -1; 2831:v364 = sub_140E75FF0(a1, a2); 2832:v18 = 1; 2833:LOBYTE(v365) = 1; 2834:sub_1411DF450(v364, (unsigned int)&v461, 0, v365, 0, 1, 0); 2835:v460 = sub_141335F60(); 2836:sub_14083DFA0(v3, &v460); 2837:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460); 2838:return v18; 2839:}
+club 1sbc gap_off_not_in_read_stream 280 funcs/140e8a400.c:2814
+0x140e8a400 2814 [2816, 2827]  2816:LOBYTE(a2) = -1; 2817:v361 = sub_140E75FF0(a1, a2); 2818:v18 = 1; 2819:LOBYTE(v362) = 1; 2820:sub_1411DF0C0(v361, (unsigned int)&v458, 0, v362, 1, 0); 2821:v363 = sub_141335F60(); 2822:LODWORD(v461) = v458; 2823:v460 = v363; 2824:sub_14083DFA0(v3, &v460); 2825:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460); 2826:return v18; 2827:}
+club 2scl gap_off_not_in_read_stream 280 funcs/140e8a400.c:2700
+0x140e8a400 2700 [2702, 2711]  2702:LOBYTE(a2) = -1; 2703:v258 = sub_140E75FF0(a1, a2); 2704:v18 = 1; 2705:LOBYTE(v259) = 1; 2706:LOBYTE(v260) = 1; 2707:sub_1411DF450(v258, (unsigned int)&v461, v259, v260, 0, 1, 0); 2708:v460 = sub_141335F60(); 2709:sub_14083DFA0(v3, &v460); 2710:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460); 2711:}
+club 2sbc gap_off_not_in_read_stream 280 funcs/140e8a400.c:2732
+0x140e8a400 2732 [2734, 2744]  2734:LOBYTE(a2) = -1; 2735:v17 = sub_140E75FF0(a1, a2); 2736:v18 = 1; 2737:LOBYTE(v19) = 1; 2738:LOBYTE(v20) = 1; 2739:sub_1411DF0C0(v17, (unsigned int)&v458, v19, v20, 1, 0); 2740:v21 = sub_141335F60(); 2741:LODWORD(v461) = v458; 2742:v460 = v21; 2743:sub_14083DFA0(v3, &v460); 2744:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460);
+club 3scl gap_off_not_in_read_stream 280 funcs/140e8a400.c:2932
+0x140e8a400 2932 [2934, 2950]  2934:LOBYTE(a2) = -1; 2935:v152 = sub_140E75FF0(a1, a2); 2936:v18 = 1; 2937:LOBYTE(v153) = 1; 2938:if ( (char)sub_1411DCD00(v152, v153, 0) >= 3 ) 2939:{ 2940:LOBYTE(v154) = -1; 2941:v155 = sub_140E75FF0(v6, v154); 2942:v18 = 1; 2943:LOBYTE(v156) = 2; 2944:LOBYTE(v157) = 1; 2945:sub_1411DF450(v155, (unsigned int)&v461, v156, v157, 0, 1, 0); 2946:v460 = sub_141335F60(); 2947:sub_14083DFA0(v3, &v460); 2948:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460); 2949:return v18; 2950:}
+club 3sbc gap_off_not_in_read_stream 280 funcs/140e8a400.c:2908
+0x140e8a400 2908 [2910, 2929]  2910:LOBYTE(a2) = -1; 2911:v367 = sub_140E75FF0(a1, a2); 2912:v18 = 1; 2913:LOBYTE(v368) = 1; 2914:if ( (char)sub_1411DCD00(v367, v368, 0) >= 3 ) 2915:{ 2916:LOBYTE(v369) = -1; 2917:v370 = sub_140E75FF0(v6, v369); 2918:v18 = 1; 2919:LOBYTE(v371) = 2; 2920:LOBYTE(v372) = 1; 2921:sub_1411DF0C0(v370, (unsigned int)&v458, v371, v372, 1, 0); 2922:v373 = sub_141335F60(); 2923:LODWORD(v461) = v458; 2924:v460 = v373; 2925:sub_14083DFA0(v3, &v460); 2926:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460); 2927:return v18;
+club ttcl gap_off_not_in_read_stream 176 funcs/1411f4f70.c:135
+0x1411f4f70 135 [136, 142]  136:if ( *(_QWORD *)(a1 + 176) != 0 ) 137:{ 138:sub_140FE3B40(&v108, a3); 139:*(_DWORD *)(*(_QWORD *)(a1 + 176) + 160LL) = v108; 140:goto LABEL_35; 141:} 142:break;
+0x1411f1090 1085 [1086, 1090]  1086:sub_1411DE680(a1, &v148[1]); 1087:v148[0] = sub_141335F60(); 1088:sub_14083DFA0(v7, v148); 1089:(*(void (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)v148[0] + 16LL))(v148[0], v148); 1090:goto LABEL_68;
+club tbcl gap_off_not_in_read_stream 176 funcs/1411f4f70.c:119
+0x1411f4f70 119 [120, 126]  120:if ( *(_QWORD *)(a1 + 176) != 0 ) 121:{ 122:sub_140FE3B40(&v108, a3); 123:*(_DWORD *)(*(_QWORD *)(a1 + 176) + 168LL) = v108; 124:goto LABEL_35; 125:} 126:break;
+0x1411f1090 1014 [1016, 1021]  1016:sub_1411DE560(a1, &v148[1]); 1017:v148[0] = sub_141335F60(); 1018:sub_14083DFA0(v7, v148); 1019:(*(void (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)v148[0] + 16LL))(v148[0], v148); 1020:goto LABEL_68; 1021:}
+club 2tcl gap_off_not_in_read_stream 280 funcs/140e8a400.c:2760
+0x140e8a400 2760 [2762, 2772]  2762:LOBYTE(a2) = -1; 2763:v252 = sub_140E75FF0(a1, a2); 2764:v18 = 1; 2765:LOBYTE(v253) = 1; 2766:LOBYTE(v254) = 3; 2767:sub_1411DF450(v252, (unsigned int)&v461, v253, v254, 0, 1, 0); 2768:v460 = sub_141335F60(); 2769:sub_14083DFA0(v3, &v460); 2770:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460); 2771:return v18; 2772:}
+club 2tbc gap_off_not_in_read_stream 280 funcs/140e8a400.c:2714
+0x140e8a400 2714 [2716, 2726]  2716:LOBYTE(a2) = -1; 2717:v185 = sub_140E75FF0(a1, a2); 2718:v18 = 1; 2719:LOBYTE(v186) = 1; 2720:LOBYTE(v187) = 3; 2721:sub_1411DF0C0(v185, (unsigned int)&v458, v186, v187, 1, 0); 2722:v188 = sub_141335F60(); 2723:LODWORD(v461) = v458; 2724:v460 = v188; 2725:sub_14083DFA0(v3, &v460); 2726:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460);
+club 3tcl gap_off_not_in_read_stream 280 funcs/140e8a400.c:2982
+0x140e8a400 2982 [2984, 2991]  2984:LOBYTE(a2) = -1; 2985:v71 = sub_140E75FF0(a1, a2); 2986:LOBYTE(v72) = 2; 2987:LOBYTE(v73) = 3; 2988:sub_1411DF450(v71, (unsigned int)&v461, v72, v73, 0, 1, 0); 2989:v460 = sub_141335F60(); 2990:sub_14083DFA0(v3, &v460); 2991:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460);
+club 3tbc gap_off_not_in_read_stream 280 funcs/140e8a400.c:2967
+0x140e8a400 2967 [2969, 2979]  2969:LOBYTE(a2) = -1; 2970:v248 = sub_140E75FF0(a1, a2); 2971:LOBYTE(v249) = 2; 2972:LOBYTE(v250) = 3; 2973:sub_1411DF0C0(v248, (unsigned int)&v458, v249, v250, 1, 0); 2974:v251 = sub_141335F60(); 2975:LODWORD(v461) = v458; 2976:v460 = v251; 2977:sub_14083DFA0(v3, &v460); 2978:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460); 2979:}
+club Ccba gap_other_table_same_tag 48 funcs/1411c3000.c:218
+0x140e8a400 809 [810, 810]  810:goto LABEL_645;
+0x140e834a0 277 [277, 279]  277:if ( a2 != 1130586721 ) 278:return sub_1411F4F70(a1, (unsigned int)a2, a3); 279:goto LABEL_419;
+club Ctbu gap_off_not_in_read_stream 44 funcs/1415360f0.c:298
+0x1415360f0 298 [321, 339]  321:LODWORD(v5) = *(_DWORD *)(a1 + 44); 322:if ( (_DWORD)v5 != -1 ) 323:{ 324:v6 = sub_14083D4F0(a1) + 40; 325:LODWORD(v44) = (_DWORD)v5; 326:v43 = (__int64 *)v6; 327:if ( &v43 != a3 ) 328:{ 329:(*(void (__fastcall **)(__int64 *, __int64 **))(**a3 + 16))(*a3, a3); 330:v38 = v43; 331:v39 = v44; 332:a3[1] = v44; 333:*a3 = v38; 334:v6 = sub_14083D4F0(v39) + 8; 335:v44 = nullptr; 336:v43 = (__int64 *)v6; 337:} 338:goto LABEL_74;
+0x140e834a0 2261 [2263, 2317]  2263:LABEL_497: 2264:if ( *(_QWORD *)(a1 + 256) != 0 ) 2265:{ 2266:LOBYTE(v7) = 1; 2267:if ( sub_140E65F60(a1, v7) != 0 ) 2268:{ 2269:if ( a2 == 1131572578 ) 2270:{ 2271:v56 = 52 * (*(__int64 (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 2272:} 2273:else 2274:{ 2275:if ( a2 != 1131700853 ) 2276:{ 2277:LABEL_741: 2278:LOBYTE(v55) = 1; 2279:v150 = sub_140E65F60(a1, v55); 2280:return sub_141536D80(v150, (unsigned int)a2, a3);
+club CMWE gap_off_not_in_read_stream 68 funcs/1415360f0.c:396
+0x1415360f0 396 [398, 418]  398:LODWORD(v5) = *(_DWORD *)(a1 + 68); 399:if ( (_DWORD)v5 != -1 ) 400:{ 401:v6 = sub_14083D4F0(a1) + 40; 402:LODWORD(v44) = (_DWORD)v5; 403:v43 = (__int64 *)v6; 404:if ( &v43 != a3 ) 405:{ 406:(*(void (__fastcall **)(__int64 *, __int64 **))(**a3 + 16))(*a3, a3); 407:v24 = v43; 408:v25 = v44; 409:a3[1] = v44; 410:*a3 = v24; 411:v6 = sub_14083D4F0(v25) + 8; 412:v44 = nullptr; 413:v43 = (__int64 *)v6; 414:} 415:goto LABEL_74;
+0x140e8a400 3927 [3927, 3929]  3927:if ( v4 != 1129142085 ) 3928:{ 3929:if ( v4 == 1129150311 )
+club Cesd gap_delegated_or_empty None funcs/140e8a400.c:615
+0x140e8a400 615 [615, 617]  615:if ( v4 != 1130722148 ) 616:goto LABEL_1121; 617:goto LABEL_645;
+0x140e834a0 2127 [2128, 2128]  2128:goto LABEL_419;
+club Ceed gap_delegated_or_empty None funcs/140e8a400.c:581
+0x140e8a400 581 [581, 583]  581:if ( v4 != 1130718564 ) 582:{ 583:if ( v4 == 1130718579 )
+0x140e834a0 1887 [1887, 1889]  1887:if ( a2 != 1130718564 ) 1888:return sub_1411F4F70(a1, (unsigned int)a2, a3); 1889:goto LABEL_419;
+club Cead gap_delegated_or_empty None funcs/140e8a400.c:645
+0x140e8a400 645 [646, 646]  646:goto LABEL_645;
+0x140e834a0 1656 [1656, 1658]  1656:if ( a2 != 1130717540 ) 1657:return sub_1411F4F70(a1, (unsigned int)a2, a3); 1658:goto LABEL_419;
+club CteA gap_delegated_or_empty None funcs/140e8a400.c:2109
+0x140e8a400 2109 [2109, 2111]  2109:if ( v4 != 1131701569 ) 2110:{ 2111:if ( v4 != 1131701802 )
+club Chsd gap_delegated_or_empty None funcs/140e8a400.c:1274
+0x140e8a400 1274 [1275, 1275]  1275:goto LABEL_645;
+club Chaf gap_delegated_or_empty None funcs/140e8a400.c:1228
+0x140e8a400 1228 [1228, 1230]  1228:if ( v4 != 1130914150 ) 1229:goto LABEL_1121; 1230:goto LABEL_645;
+club Csry gap_off_not_in_read_stream 80 funcs/1415360f0.c:277
+0x1415360f0 277 [279, 295]  279:LODWORD(v5) = *(_DWORD *)(a1 + 80); 280:v6 = sub_14083D4F0(a1) + 40; 281:LODWORD(v44) = (_DWORD)v5; 282:v43 = (__int64 *)v6; 283:if ( &v43 != a3 ) 284:{ 285:(*(void (__fastcall **)(__int64 *, __int64 **))(**a3 + 16))(*a3, a3); 286:v11 = v43; 287:v12 = v44; 288:a3[1] = v44; 289:*a3 = v11; 290:v6 = sub_14083D4F0(v12) + 8; 291:v44 = nullptr; 292:v43 = (__int64 *)v6; 293:} 294:goto LABEL_74; 295:}
+0x140e8a400 1480 [1481, 1481]  1481:goto LABEL_1118;
+club Cmtp gap_delegated_or_empty None funcs/140e8a400.c:856
+0x140e8a400 856 [857, 857]  857:goto LABEL_645;
+0x140e834a0 1945 [1946, 1946]  1946:goto LABEL_419;
+club Casp gap_delegated_or_empty None funcs/140e8a400.c:785
+0x140e8a400 785 [786, 786]  786:goto LABEL_645;
+0x140e834a0 331 [331, 333]  331:if ( a2 != 1130460016 ) 332:{ 333:if ( a2 != 1130521196 )
+club CssT gap_off_not_in_read_stream 176 funcs/140e8a400.c:1465
+0x140e8a400 1465 [1466, 1478]  1466:LOBYTE(a2) = 35; 1467:v419 = sub_1411EAA10(a1, a2, 0xFFFFFFFFLL, 0xFFFFFFFFLL); 1468:v94 = (_WORD *)v419; 1469:if ( v419 != 0 ) 1470:{ 1471:v420 = *(_DWORD *)(v419 + 16); 1472:v421 = ((__int64 (*)(void))sub_14083D4F0)(); 1473:LODWORD(v461) = v420; 1474:v460 = v421 + 40; 1475:sub_14083DFA0(v3, &v460); 1476:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460); 1477:} 1478:break;
+0x140e834a0 2804 [2805, 2808]  2805:LOBYTE(v7) = 35; 2806:v3 = (__int64 **)sub_1411EACB0(a1, v7, 0xFFFFFFFFLL, 0xFFFFFFFFLL); 2807:*((_DWORD *)v3 + 4) = (*(__int64 (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 2808:goto LABEL_788;
+club CssP gap_off_not_in_read_stream 176 funcs/140e8a400.c:1437
+0x140e8a400 1437 [1438, 1450]  1438:LOBYTE(a2) = 35; 1439:v415 = sub_1411EAA10(a1, a2, 0xFFFFFFFFLL, 0xFFFFFFFFLL); 1440:v94 = (_WORD *)v415; 1441:if ( v415 != 0 ) 1442:{ 1443:v416 = *(_DWORD *)(v415 + 20); 1444:v417 = ((__int64 (*)(void))sub_14083D4F0)(); 1445:LODWORD(v461) = v416; 1446:v460 = v417 + 40; 1447:sub_14083DFA0(v3, &v460); 1448:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460); 1449:} 1450:break;
+0x140e834a0 2792 [2793, 2796]  2793:LOBYTE(v7) = 35; 2794:v3 = (__int64 **)sub_1411EACB0(a1, v7, 0xFFFFFFFFLL, 0xFFFFFFFFLL); 2795:*((_DWORD *)v3 + 5) = (*(__int64 (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 2796:goto LABEL_788;
+club CssS gap_off_not_in_read_stream 176 funcs/140e8a400.c:1451
+0x140e8a400 1451 [1452, 1464]  1452:LOBYTE(a2) = 35; 1453:v94 = (_WORD *)sub_1411EAA10(a1, a2, 0xFFFFFFFFLL, 0xFFFFFFFFLL); 1454:if ( v94 != nullptr ) 1455:{ 1456:v418 = sub_140DBC940(); 1457:LODWORD(v461) = ((v94[4] & 0x1FF) << 8) 1458:| ((unsigned __int16)v94[4] >> 9) 1459:| ((unsigned __int16)v94[5] << 17); 1460:v460 = v418; 1461:sub_14083DFA0(v3, &v460); 1462:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460); 1463:} 1464:break;
+0x140e834a0 2797 [2798, 2803]  2798:LOBYTE(v7) = 35; 2799:v3 = (__int64 **)sub_1411EACB0(a1, v7, 0xFFFFFFFFLL, 0xFFFFFFFFLL); 2800:v58 = sub_140DBC940(); 2801:sub_140DBCA60(v58, &v200, a3); 2802:*((_DWORD *)v3 + 2) = (_DWORD)v200; 2803:goto LABEL_788;
+club CssE gap_off_not_in_read_stream 176 funcs/140e8a400.c:1410
+0x140e8a400 1410 [1411, 1423]  1411:LOBYTE(a2) = 35; 1412:v94 = (_WORD *)sub_1411EAA10(a1, a2, 0xFFFFFFFFLL, 0xFFFFFFFFLL); 1413:if ( v94 != nullptr ) 1414:{ 1415:v95 = sub_140DBC940(); 1416:LODWORD(v461) = ((v94[6] & 0x1FF) << 8) 1417:| ((unsigned __int16)v94[6] >> 9) 1418:| ((unsigned __int16)v94[7] << 17); 1419:v460 = v95; 1420:sub_14083DFA0(v3, &v460); 1421:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460); 1422:} 1423:break;
+0x140e834a0 2772 [2773, 2778]  2773:LOBYTE(v7) = 35; 2774:v3 = (__int64 **)sub_1411EACB0(a1, v7, 0xFFFFFFFFLL, 0xFFFFFFFFLL); 2775:v30 = sub_140DBC940(); 2776:sub_140DBCA60(v30, &v200, a3); 2777:*((_DWORD *)v3 + 3) = (_DWORD)v200; 2778:goto LABEL_788;
+club Csth gap_off_not_in_read_stream 256 funcs/140e834a0.c:2228
+0x140e834a0 2228 [2229, 2229]  2229:return sub_140E587E0(*(_QWORD *)(a1 + 256), a1, (unsigned int)a2, a3);
+0x140e8a400 2038 [2039, 2040]  2039:if ( (*(unsigned __int8 (__fastcall **)(__int64))(*(_QWORD *)qword_141B5EDE8 + 32LL))(qword_141B5EDE8) == 0 ) 2040:goto LABEL_1121;
+club Cbbl gap_helper_computed None funcs/140e8a400.c:787
+0x140e8a400 787 [800, 801]  800:v105 = a1; 801:LOBYTE(a3) = 7;
+0x140e834a0 333 [333, 335]  333:if ( a2 != 1130521196 ) 334:return sub_1411F4F70(a1, (unsigned int)a2, a3); 335:return sub_140E587E0(*(_QWORD *)(a1 + 256), a1, (unsigned int)a2, a3);
+club Camc gap_helper_computed None funcs/140e8a400.c:4600
+0x140e8a400 4600 [4601, 4603]  4601:v105 = a1; 4602:LOBYTE(a3) = 6; 4603:goto LABEL_899;
+0x140e834a0 341 [341, 343]  341:if ( a2 != 1130458467 ) 342:return sub_1411F4F70(a1, (unsigned int)a2, a3); 343:return sub_140E587E0(*(_QWORD *)(a1 + 256), a1, (unsigned int)a2, a3);
+club Cldi gap_helper_computed None funcs/140e8a400.c:1015
+0x140e8a400 1015 [1023, 1024]  1023:a2 = nullptr; 1024:v28 = 1416389737;
+0x140e834a0 2139 [2141, 2143]  2141:v11 = a1; 2142:v7 = 0; 2143:v12 = 1416389737;
+club Clps gap_helper_computed None funcs/140e8a400.c:1035
+0x140e8a400 1035 [1047, 1047]  1047:a2 = nullptr;
+0x140e834a0 1922 [1924, 1926]  1924:v11 = a1; 1925:v7 = 0; 1926:v12 = 1416392819;
+club Cndi gap_helper_computed None funcs/140e8a400.c:925
+0x140e8a400 925 [927, 928]  927:a2 = nullptr; 928:v28 = 1416520809;
+0x140e834a0 2003 [2005, 2007]  2005:v11 = a1; 2006:v7 = 0; 2007:v12 = 1416520809;
+club Codi gap_helper_computed None funcs/140e8a400.c:1631
+0x140e8a400 1631 [1652, 1653]  1652:a2 = nullptr; 1653:v28 = 1416586351;
+0x140e834a0 2973 [2979, 2981]  2979:v11 = a1; 2980:v7 = 0; 2981:v12 = 1416586351;
+club Cnod gap_helper_computed None funcs/140e834a0.c:2019
+0x140e834a0 2019 [2021, 2023]  2021:v11 = a1; 2022:v7 = 0; 2023:v12 = 1416523620;
+club Clpo gap_helper_computed None funcs/140e834a0.c:1914
+0x140e834a0 1914 [1916, 1919]  1916:v11 = a1; 1917:v7 = 0; 1918:v12 = 1416392815; 1919:}
+club Cuf1 gap_off_not_in_read_stream 256 funcs/140e8a400.c:2130
+0x140e8a400 2130 [2131, 2141]  2131:v46 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 72LL); 2132:v47 = 0.0; 2133:if ( v46 != 0 && *(_BYTE *)(v46 + 12) != 0 ) 2134:{ 2135:v48 = *(unsigned __int8 *)(v46 + 56); 2136:v49 = v48 - 10; 2137:if ( v48 < 0xA ) 2138:v49 = *(unsigned __int8 *)(v46 + 56); 2139:v47 = (double)*(int *)(v46 + 4 * v49 + 16) / MEMORY[0x1417A0210]; 2140:} 2141:break;
+0x140e834a0 2340 [2341, 2342]  2341:if ( *(_QWORD *)(a1 + 216) == 0 ) 2342:goto LABEL_830;
+club Cuf2 gap_off_not_in_read_stream 256 funcs/140e8a400.c:2142
+0x140e8a400 2142 [2143, 2153]  2143:v379 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 72LL); 2144:v47 = 0.0; 2145:if ( v379 != 0 && *(_BYTE *)(v379 + 12) >= 2u ) 2146:{ 2147:v380 = *(unsigned __int8 *)(v379 + 56); 2148:v381 = v380 + 1; 2149:if ( v380 >= 9 ) 2150:v381 = v380 - 9; 2151:v47 = (double)*(int *)(v379 + 4 * v381 + 16) / MEMORY[0x1417A0210]; 2152:} 2153:break;
+0x140e834a0 2367 [2368, 2369]  2368:if ( *(_QWORD *)(a1 + 216) == 0 ) 2369:goto LABEL_830;
+club Cuf3 gap_off_not_in_read_stream 256 funcs/140e8a400.c:2154
+0x140e8a400 2154 [2155, 2165]  2155:v382 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 72LL); 2156:v47 = 0.0; 2157:if ( v382 != 0 && *(_BYTE *)(v382 + 12) >= 3u ) 2158:{ 2159:v383 = *(unsigned __int8 *)(v382 + 56); 2160:v384 = v383 + 2; 2161:if ( v383 >= 8 ) 2162:v384 = v383 - 8; 2163:v47 = (double)*(int *)(v382 + 4 * v384 + 16) / MEMORY[0x1417A0210]; 2164:} 2165:break;
+0x140e834a0 2395 [2396, 2397]  2396:if ( *(_QWORD *)(a1 + 216) == 0 ) 2397:goto LABEL_830;
+club Cuf4 gap_off_not_in_read_stream 256 funcs/140e8a400.c:2166
+0x140e8a400 2166 [2167, 2177]  2167:v385 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 72LL); 2168:v47 = 0.0; 2169:if ( v385 != 0 && *(_BYTE *)(v385 + 12) >= 4u ) 2170:{ 2171:v386 = *(unsigned __int8 *)(v385 + 56); 2172:v387 = v386 + 3; 2173:if ( v386 >= 7 ) 2174:v387 = v386 - 7; 2175:v47 = (double)*(int *)(v385 + 4 * v387 + 16) / MEMORY[0x1417A0210]; 2176:} 2177:break;
+0x140e834a0 2422 [2423, 2424]  2423:if ( *(_QWORD *)(a1 + 216) == 0 ) 2424:goto LABEL_830;
+club Cuf5 gap_off_not_in_read_stream 256 funcs/140e8a400.c:2178
+0x140e8a400 2178 [2179, 2189]  2179:v388 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 72LL); 2180:v47 = 0.0; 2181:if ( v388 != 0 && *(_BYTE *)(v388 + 12) >= 5u ) 2182:{ 2183:v389 = *(unsigned __int8 *)(v388 + 56); 2184:v390 = v389 + 4; 2185:if ( v389 >= 6 ) 2186:v390 = v389 - 6; 2187:v47 = (double)*(int *)(v388 + 4 * v390 + 16) / MEMORY[0x1417A0210]; 2188:} 2189:break;
+0x140e834a0 2449 [2450, 2451]  2450:if ( *(_QWORD *)(a1 + 216) == 0 ) 2451:goto LABEL_830;
+club Cuf6 gap_off_not_in_read_stream 256 funcs/140e8a400.c:2190
+0x140e8a400 2190 [2191, 2201]  2191:v391 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 72LL); 2192:v47 = 0.0; 2193:if ( v391 != 0 && *(_BYTE *)(v391 + 12) >= 6u ) 2194:{ 2195:v392 = *(unsigned __int8 *)(v391 + 56); 2196:v393 = v392 + 5; 2197:if ( v392 >= 5 ) 2198:v393 = v392 - 5; 2199:v47 = (double)*(int *)(v391 + 4 * v393 + 16) / MEMORY[0x1417A0210]; 2200:} 2201:break;
+0x140e834a0 2476 [2477, 2478]  2477:if ( *(_QWORD *)(a1 + 216) == 0 ) 2478:goto LABEL_830;
+club Cuf7 gap_off_not_in_read_stream 256 funcs/140e8a400.c:2202
+0x140e8a400 2202 [2203, 2213]  2203:v394 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 72LL); 2204:v47 = 0.0; 2205:if ( v394 != 0 && *(_BYTE *)(v394 + 12) >= 7u ) 2206:{ 2207:v395 = *(unsigned __int8 *)(v394 + 56); 2208:v396 = v395 + 6; 2209:if ( v395 >= 4 ) 2210:v396 = v395 - 4; 2211:v47 = (double)*(int *)(v394 + 4 * v396 + 16) / MEMORY[0x1417A0210]; 2212:} 2213:break;
+0x140e834a0 2503 [2504, 2505]  2504:if ( *(_QWORD *)(a1 + 216) == 0 ) 2505:goto LABEL_830;
+club Cuf8 gap_off_not_in_read_stream 256 funcs/140e8a400.c:2214
+0x140e8a400 2214 [2215, 2225]  2215:v397 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 72LL); 2216:v47 = 0.0; 2217:if ( v397 != 0 && *(_BYTE *)(v397 + 12) >= 8u ) 2218:{ 2219:v398 = *(unsigned __int8 *)(v397 + 56); 2220:v399 = v398 + 7; 2221:if ( v398 >= 3 ) 2222:v399 = v398 - 3; 2223:v47 = (double)*(int *)(v397 + 4 * v399 + 16) / MEMORY[0x1417A0210]; 2224:} 2225:break;
+0x140e834a0 2530 [2531, 2532]  2531:if ( *(_QWORD *)(a1 + 216) == 0 ) 2532:goto LABEL_830;
+club Cuf9 gap_off_not_in_read_stream 256 funcs/140e8a400.c:2226
+0x140e8a400 2226 [2227, 2237]  2227:v400 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 72LL); 2228:v47 = 0.0; 2229:if ( v400 != 0 && *(_BYTE *)(v400 + 12) >= 9u ) 2230:{ 2231:v401 = *(unsigned __int8 *)(v400 + 56); 2232:v402 = v401 + 8; 2233:if ( v401 >= 2 ) 2234:v402 = v401 - 2; 2235:v47 = (double)*(int *)(v400 + 4 * v402 + 16) / MEMORY[0x1417A0210]; 2236:} 2237:break;
+0x140e834a0 2557 [2558, 2559]  2558:if ( *(_QWORD *)(a1 + 216) == 0 ) 2559:goto LABEL_830;
+club Cf10 gap_off_not_in_read_stream 256 funcs/140e8a400.c:1130
+0x140e8a400 1130 [1132, 1148]  1132:v192 = *(_QWORD *)(*(_QWORD *)(a1 + 256) + 72LL); 1133:v193 = 0.0; 1134:if ( v192 != 0 && *(_BYTE *)(v192 + 12) >= 0xAu ) 1135:{ 1136:a1 = -(__int64)*(unsigned __int8 *)(v192 + 56); 1137:v193 = (double)*(int *)(v192 1138:+ 4 1139:* (*(unsigned __int8 *)(v192 + 56) 1140:+ (-(__int64)(*(_BYTE *)(v192 + 56) != 0) | 9)) 1141:+ 16) 1142:/ MEMORY[0x1417A0210]; 1143:} 1144:v194 = sub_14083D4F0(a1); 1145:*(float *)&v461 = v193; 1146:v460 = v194 + 104; 1147:sub_14083DFA0(v3, &v460); 1148:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460);
+0x140e834a0 2123 [2123, 2125]  2123:if ( a2 != 1130770736 ) 2124:return sub_1411F4F70(a1, (unsigned int)a2, a3); 2125:goto LABEL_112;
+club Cpfr gap_off_not_in_read_stream 176 funcs/140e8a400.c:1678
+0x140e8a400 1678 [1679, 1682]  1679:v130 = *(_QWORD *)(a1 + 176); 1680:v55 = *(char *)(v130 + 116); 1681:if ( *(_BYTE *)(v130 + 116) == 0 ) 1682:goto LABEL_974;
+club C2pf gap_off_not_in_read_stream 176 funcs/140e8a400.c:3296
+0x140e8a400 3296 [3304, 3319]  3304:v324 = *(_QWORD *)(a1 + 176); 3305:v107 = *(char *)(v324 + 117); 3306:if ( *(_BYTE *)(v324 + 117) != 0 ) 3307:{ 3308:LABEL_948: 3309:v325 = sub_14083D4F0(a1); 3310:LODWORD(v461) = v107; 3311:v460 = v325 + 40; 3312:sub_14083DFA0(v3, &v460); 3313:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v460 + 16LL))(v460, &v460); 3314:return 1; 3315:} 3316:LABEL_974: 3317:v18 = 1; 3318:LABEL_975: 3319:if ( v3 == &qword_141B5A4A0 )
+0x1411f4f70 345 [345, 347]  345:if ( (_DWORD)a2 != 1127379046 ) 346:return sub_140FE2700(a1, (unsigned int)a2, a3); 347:return sub_1411D00E0(*(_QWORD *)(a1 + 176), a1, (unsigned int)a2, a3);
+club Cdfo gap_off_not_in_read_stream 176 funcs/140e8a400.c:521
+0x140e8a400 521 [523, 528]  523:v298 = *(_QWORD *)(a1 + 176); 524:v107 = *(char *)(v298 + 118); 525:if ( *(_BYTE *)(v298 + 118) != 0 ) 526:goto LABEL_948; 527:goto LABEL_974; 528:}
+club Cafo gap_off_not_in_read_stream 176 funcs/140e8a400.c:4511
+0x140e8a400 4511 [4513, 4515]  4513:v106 = *(_QWORD *)(a1 + 176); 4514:v107 = *(char *)(v106 + 119); 4515:if ( *(_BYTE *)(v106 + 119) != 0 )
+club Csly gap_delegated_or_empty None funcs/140e8a400.c:1583
+0x140e8a400 1583 [1583, 1585]  1583:if ( v4 != 1131637881 ) 1584:goto LABEL_1121; 1585:return sub_141520A50(*(_QWORD *)(v6 + 256) + 248LL, (unsigned int)v4, a3);
+0x140e834a0 2832 [2832, 2834]  2832:if ( a2 != 1131637881 ) 2833:return sub_1411F4F70(a1, (unsigned int)a2, a3); 2834:return sub_140E587E0(*(_QWORD *)(a1 + 256), a1, (unsigned int)a2, a3);
+club Csps gap_off_not_in_read_stream 256 funcs/140e8a400.c:1404
+0x140e8a400 1404 [1406, 1406]  1406:return sub_141520A50(*(_QWORD *)(v6 + 256) + 248LL, (unsigned int)v4, a3);
+club Cspt gap_off_not_in_read_stream 256 funcs/140e8a400.c:1405
+0x140e8a400 1405 [1406, 1406]  1406:return sub_141520A50(*(_QWORD *)(v6 + 256) + 248LL, (unsigned int)v4, a3);
+club Csaf gap_off_not_in_read_stream 256 funcs/140e834a0.c:2994
+0x140e834a0 2994 [2995, 2995]  2995:return sub_140E587E0(*(_QWORD *)(a1 + 256), a1, (unsigned int)a2, a3);
+0x140e8a400 1562 [1562, 1564]  1562:if ( v4 != 1131635046 ) 1563:goto LABEL_1121; 1564:}
+club Cste gap_off_not_in_read_stream 256 funcs/140e8a400.c:2036
+0x140e8a400 2036 [2037, 2037]  2037:return sub_141520A50(*(_QWORD *)(v6 + 256) + 248LL, (unsigned int)v4, a3);
+0x140e834a0 2227 [2229, 2229]  2229:return sub_140E587E0(*(_QWORD *)(a1 + 256), a1, (unsigned int)a2, a3);
+club Cspe gap_off_not_in_read_stream 256 funcs/140e8a400.c:1403
+0x140e8a400 1403 [1406, 1406]  1406:return sub_141520A50(*(_QWORD *)(v6 + 256) + 248LL, (unsigned int)v4, a3);
+club Ccsp gap_off_not_in_read_stream 256 funcs/140e8a400.c:491
+0x140e8a400 491 [494, 495]  494:result = sub_14151E3B0(*(_QWORD *)(a1 + 256) + 224LL, (unsigned int)v4, a3); 495:break;
+club Ccsk gap_off_not_in_read_stream 256 funcs/140e8a400.c:490
+0x140e8a400 490 [494, 495]  494:result = sub_14151E3B0(*(_QWORD *)(a1 + 256) + 224LL, (unsigned int)v4, a3); 495:break;
+club Ccsf gap_off_not_in_read_stream 256 funcs/140e8a400.c:488
+0x140e8a400 488 [494, 495]  494:result = sub_14151E3B0(*(_QWORD *)(a1 + 256) + 224LL, (unsigned int)v4, a3); 495:break;
+club Ccsr gap_off_not_in_read_stream 256 funcs/140e8a400.c:492
+0x140e8a400 492 [494, 495]  494:result = sub_14151E3B0(*(_QWORD *)(a1 + 256) + 224LL, (unsigned int)v4, a3); 495:break;
+club Ccsb gap_off_not_in_read_stream 256 funcs/140e8a400.c:487
+0x140e8a400 487 [494, 495]  494:result = sub_14151E3B0(*(_QWORD *)(a1 + 256) + 224LL, (unsigned int)v4, a3); 495:break;
+club Ccsh gap_off_not_in_read_stream 256 funcs/140e8a400.c:489
+0x140e8a400 489 [494, 495]  494:result = sub_14151E3B0(*(_QWORD *)(a1 + 256) + 224LL, (unsigned int)v4, a3); 495:break;
+club Ccsy gap_off_not_in_read_stream 256 funcs/140e8a400.c:493
+0x140e8a400 493 [494, 495]  494:result = sub_14151E3B0(*(_QWORD *)(a1 + 256) + 224LL, (unsigned int)v4, a3); 495:break;
+club Ccpc gap_delegated_or_empty None funcs/140e8a400.c:708
+0x140e8a400 708 [708, 710]  708:if ( v4 != 1130590307 ) 709:goto LABEL_1121; 710:return sub_14151EF00(*(_QWORD *)(v6 + 256) + 231LL, (unsigned int)v4, a3);
+0x140e834a0 1472 [1472, 1474]  1472:if ( a2 != 1130590307 ) 1473:{ 1474:if ( a2 != 1130590825 )
+club Ccss gap_off_not_in_read_stream 256 funcs/140e8a400.c:504
+0x140e8a400 504 [505, 505]  505:return sub_14151EF00(*(_QWORD *)(v6 + 256) + 231LL, (unsigned int)v4, a3);
+club Crkt gap_other_table_same_tag 176 funcs/141063f30.c:1452
+0x140e834a0 3044 [3044, 3046]  3044:if ( a2 != 1131572084 ) 3045:return sub_1411F4F70(a1, (unsigned int)a2, a3); 3046:return sub_140E587E0(*(_QWORD *)(a1 + 256), a1, (unsigned int)a2, a3);
+club Tko1 gap_helper_computed None funcs/1411f1090.c:287
+0x1411f1090 287 [289, 294]  289:v10 = a1; 290:a3 = nullptr; 291:LABEL_40: 292:LOBYTE(a4) = 1; 293:goto LABEL_43; 294:}
+club Tkg1 gap_helper_computed None funcs/1411f1090.c:270
+0x1411f1090 270 [271, 273]  271:v10 = a1; 272:a3 = nullptr; 273:break;
+club Tko2 gap_helper_computed None funcs/1411f1090.c:382
+0x1411f1090 382 [384, 387]  384:v10 = a1; 385:LOBYTE(a3) = 1; 386:goto LABEL_40; 387:}
+club Tkg2 gap_helper_computed None funcs/1411f1090.c:274
+0x1411f1090 274 [275, 277]  275:v10 = a1; 276:LOBYTE(a3) = 1; 277:break;
+club Tko3 gap_helper_computed None funcs/1411f1090.c:388
+0x1411f1090 388 [390, 393]  390:v10 = a1; 391:LOBYTE(a3) = 2; 392:goto LABEL_40; 393:}
+club Ccri gap_delegated_or_empty None funcs/140e8a400.c:714
+0x140e8a400 714 [714, 716]  714:if ( v4 != 1130590825 ) 715:goto LABEL_1121; 716:return 0;
+0x140e834a0 1474 [1474, 1476]  1474:if ( a2 != 1130590825 ) 1475:return sub_1411F4F70(a1, (unsigned int)a2, a3); 1476:goto LABEL_830;
+club Cmni gap_helper_computed None funcs/140e8a400.c:881
+0x140e8a400 881 [883, 884]  883:a2 = nullptr; 884:v28 = 1416457833;
+0x140e834a0 1932 [1938, 1940]  1938:v11 = a1; 1939:v7 = 0; 1940:v12 = 1416457833;
+club Tvcp gap_other_table_same_tag 144 funcs/1411b5630.c:163
+0x1411f1090 1163 [1215, 1216]  1215:v57 = a1; 1216:v58 = 1417044848;
+0x1411f4f70 1057 [1058, 1059]  1058:v19 = 1417044848; 1059:break;
+club C1sq gap_helper_computed None funcs/140e8a400.c:3048
+0x140e8a400 3048 [3056, 3057]  3056:a2 = nullptr; 3057:v28 = 1416851817;
+0x140e834a0 1382 [1384, 1388]  1384:v11 = a1; 1385:v7 = 0; 1386:v12 = 1416851817; 1387:return sub_1411F76F0(v11, v7, v12, a3); 1388:}
+club Crvc gap_helper_computed None funcs/140e8a400.c:1905
+0x140e8a400 1905 [1917, 1918]  1917:v239 = a1; 1918:LOBYTE(a3) = 5;
+0x140e834a0 3052 [3054, 3062]  3054:v10 = a1; 3055:LOBYTE(v9) = 5; 3056:LABEL_650: 3057:sub_140E879C0(&v200, v10, v9); 3058:v205 = (__int64)&v200; 3059:v206[0] = &v201; 3060:v50 = sub_140EAC3E0(&v205, a3); 3061:goto LABEL_651; 3062:}
+club Cdsp gap_helper_computed None funcs/140e8a400.c:654
+0x140e8a400 654 [672, 673]  672:v239 = a1; 673:LOBYTE(a3) = 2;
+0x140e834a0 1669 [1671, 1674]  1671:v10 = a1; 1672:LOBYTE(v9) = 2; 1673:goto LABEL_650; 1674:}
+club Cvfl gap_off_not_in_read_stream 280 funcs/140e8a400.c:2293
+0x140e8a400 2293 [2295, 2301]  2295:if ( *(_QWORD *)(a1 + 288) != *(_QWORD *)(a1 + 280) ) 2296:{ 2297:LOBYTE(a3) = 1; 2298:sub_141532C60(&v460, a1, a3); 2299:sub_140E96CA0(&v460, v3); 2300:goto LABEL_1079; 2301:}
+club CBDo gap_helper_computed None funcs/1411f4f70.c:308
+0x1411f4f70 308 [309, 310]  309:LOBYTE(a2) = 9; 310:goto LABEL_254;
+0x1411f1090 419 [420, 420]  420:goto LABEL_394;
+club CHLo gap_helper_computed None funcs/140e8a400.c:4206
+0x140e8a400 4206 [4207, 4208]  4207:v26 = 30; 4208:goto LABEL_769;
+0x140e834a0 605 [606, 608]  606:v14 = a1; 607:LOBYTE(v7) = 30; 608:goto LABEL_715;
+club CWRg gap_child_off_not_in_child_stream None funcs/141545680.c:89
+0x1411f4f70 1166 [1168, 1171] ['gams', 89] 1168:LOBYTE(a2) = 12; 1169:v7 = 1734438259; 1170:return sub_1411E9540(a1, a2, v7, v3); 1171:}
+club CLRg gap_child_off_not_in_child_stream None funcs/141545680.c:89
+0x1411f4f70 409 [410, 412] ['gams', 89] 410:LOBYTE(a2) = 13; 411:v7 = 1734438259; 412:return sub_1411E9540(a1, a2, v7, v3);
+0x1411f1090 592 [593, 593]  593:goto LABEL_394;
+club CWLg gap_child_off_not_in_child_stream None funcs/141545680.c:89
+0x1411f4f70 1146 [1148, 1151] ['gams', 89] 1148:LOBYTE(a2) = 14; 1149:v7 = 1734438259; 1150:return sub_1411E9540(a1, a2, v7, v3); 1151:}
+club CWWg gap_child_off_not_in_child_stream None funcs/141545680.c:89
+0x1411f4f70 1187 [1188, 1190] ['gams', 89] 1188:LOBYTE(a2) = 15; 1189:v7 = 1734438259; 1190:return sub_1411E9540(a1, a2, v7, v3);
+club CWSg gap_child_off_not_in_child_stream None funcs/141545680.c:89
+0x1411f4f70 1206 [1208, 1211] ['gams', 89] 1208:LOBYTE(a2) = 19; 1209:v7 = 1734438259; 1210:return sub_1411E9540(a1, a2, v7, v3); 1211:}
+club CWCg gap_child_off_not_in_child_stream None funcs/141545680.c:89
+0x1411f4f70 508 [510, 513] ['gams', 89] 510:LOBYTE(a2) = 18; 511:v7 = 1734438259; 512:return sub_1411E9540(a1, a2, v7, v3); 513:}
+club CAAa gap_helper_computed None funcs/140e8a400.c:3533
+0x140e8a400 3533 [3535, 3536]  3535:v26 = 29; 3536:v27 = 1635021925;
+0x140e834a0 867 [869, 871]  869:v14 = a1; 870:LOBYTE(v7) = 29; 871:v15 = 1635021925;
+club CAAd gap_helper_computed None funcs/140e8a400.c:3515
+0x140e8a400 3515 [3527, 3528]  3527:v26 = 29; 3528:v27 = 1937007732;
+0x140e834a0 831 [847, 849]  847:v14 = a1; 848:LOBYTE(v7) = 29; 849:v15 = 1937007732;
+club CMAp gap_helper_computed None funcs/140e8a400.c:3900
+0x140e8a400 3900 [3902, 3902]  3902:v26 = 1;
+0x140e834a0 559 [561, 563]  561:v14 = a1; 562:LOBYTE(v7) = 1; 563:v15 = 1937008996;
+club CMAn gap_helper_computed None funcs/140e8a400.c:3894
+0x140e8a400 3894 [3896, 3899]  3896:v26 = 1; 3897:v27 = 1937010285; 3898:goto LABEL_1194; 3899:}
+0x140e834a0 732 [734, 736]  734:v14 = a1; 735:LOBYTE(v7) = 1; 736:v15 = 1937010285;
+club CMAa gap_helper_computed None funcs/140e8a400.c:3888
+0x140e8a400 3888 [3890, 3893]  3890:v26 = 1; 3891:v27 = 1634758771; 3892:goto LABEL_1194; 3893:}
+0x140e834a0 724 [726, 729]  726:v14 = a1; 727:LOBYTE(v7) = 1; 728:v15 = 1634758771; 729:}
+club CMGn gap_helper_computed None funcs/140e8a400.c:3852
+0x140e8a400 3852 [3854, 3857]  3854:v26 = 2; 3855:v27 = 1937010285; 3856:goto LABEL_1194; 3857:}
+0x140e834a0 514 [516, 518]  516:v14 = a1; 517:LOBYTE(v7) = 2; 518:v15 = 1937010285;
+club CMGg gap_helper_computed None funcs/140e8a400.c:3846
+0x140e8a400 3846 [3848, 3851]  3848:v26 = 2; 3849:v27 = 1735355507; 3850:goto LABEL_1194; 3851:}
+0x140e834a0 506 [508, 511]  508:v14 = a1; 509:LOBYTE(v7) = 2; 510:v15 = 1735355507; 511:}
+club CMOp gap_helper_computed None funcs/140e8a400.c:3840
+0x140e8a400 3840 [3842, 3842]  3842:v26 = 22;
+0x140e834a0 480 [482, 484]  482:v14 = a1; 483:LOBYTE(v7) = 22; 484:v15 = 1937008996;
+club CMOn gap_helper_computed None funcs/140e8a400.c:3834
+0x140e8a400 3834 [3836, 3839]  3836:v26 = 22; 3837:v27 = 1937010285; 3838:goto LABEL_1194; 3839:}
+0x140e834a0 472 [474, 477]  474:v14 = a1; 475:LOBYTE(v7) = 22; 476:v15 = 1937010285; 477:}
+club CMOg gap_helper_computed None funcs/140e8a400.c:3828
+0x140e8a400 3828 [3830, 3833]  3830:v26 = 22; 3831:v27 = 1735355507; 3832:goto LABEL_1194; 3833:}
+0x140e834a0 499 [501, 503]  501:v14 = a1; 502:LOBYTE(v7) = 22; 503:v15 = 1735355507;
+club CMCs gap_child_off_not_in_child_stream None funcs/141545680.c:89
+0x140e834a0 553 [554, 557] ['gams', 89] 554:v14 = a1; 555:LOBYTE(v7) = 34; 556:v15 = 1734438259; 557:return sub_1411E9540(v14, v7, v15, a3);
+0x140e8a400 3880 [3881, 3883]  3881:v26 = 34; 3882:v27 = 1734438259; 3883:goto LABEL_1194;
+club CGLo gap_helper_computed None funcs/140e8a400.c:3469
+0x140e8a400 3469 [3470, 3473]  3470:v26 = 21; 3471:LABEL_769: 3472:v27 = 1869899892; 3473:goto LABEL_1194;
+0x140e834a0 774 [775, 777]  775:v14 = a1; 776:LOBYTE(v7) = 21; 777:goto LABEL_715;
+club CHFs gap_helper_computed None funcs/140e8a400.c:4173
+0x140e8a400 4173 [4174, 4175]  4174:v26 = 5; 4175:goto LABEL_769;
+0x140e834a0 818 [819, 821]  819:v14 = a1; 820:LOBYTE(v7) = 5; 821:goto LABEL_715;
+club Tchl gap_helper_computed None funcs/140e8a400.c:2549
+0x140e8a400 2549 [2551, 2553]  2551:a2 = nullptr; 2552:v28 = 1415800940; 2553:}
+0x140e834a0 2624 [2626, 2629]  2626:v11 = a1; 2627:v7 = 0; 2628:v12 = 1415800940; 2629:}
+nation duni gap_other_table_same_tag 12 funcs/140e50cd0.c:231
+nation rdui gap_other_table_same_tag 16 funcs/140fe3f20.c:741
+nation dbnm gap_off_not_in_read_stream 2944 funcs/1411f1090.c:1122
+0x1411f1090 1122 [1124, 1155]  1124:v88 = (__int64 *)(*(__int64 (__fastcall **)(__int64 *))(*a1 + 368))(a1); 1125:v90 = sub_14083D4F0(v89); 1126:v148[1] = 0; 1127:if ( &v148[1] != v88 ) 1128:{ 1129:v91 = *v88; 1130:if ( *v88 != 0 ) 1131:_InterlockedIncrement((volatile signed __int32 *)(v91 - 4)); 1132:v148[1] = v91; 1133:} 1134:v148[0] = v90 + 136; 1135:sub_14083DFA0(v7, v148); 1136:(*(void (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)v148[0] + 16LL))(v148[0], v148); 1137:v92 = *(_DWORD **)(*(__int64 (__fastcall **)(__int64 *))(*a1 + 368))(a1); 1138:if ( v92 != nullptr ) 1139:{ 1140:LOBYTE(v5) = 1; 1141:if ( *v92 != 0 )
+nation Nnam gap_off_not_in_read_stream 32 funcs/141045d50.c:1325
+0x141045d50 1325 [1327, 1424]  1327:m = (__int64)&v297; 1328:(*(void (__fastcall **)(__int64 *, __int128 *, __int64 **))(**a3 + 128))(*a3, &v297, a3); 1329:v7 = (volatile signed __int32 **)(a1 + 24); 1330:if ( a1 + 24 != (char *)&v297 ) 1331:{ 1332:v6 = v297; 1333:v8 = *v7; 1334:v9 = *v7 - 1; 1335:if ( *v7 == nullptr ) 1336:v9 = nullptr; 1337:v10 = (volatile signed __int32 *)(v297 - 4); 1338:if ( (_QWORD)v297 != 0 ) 1339:{ 1340:if ( v8 != nullptr && _InterlockedDecrement(v9) == 0 ) 1341:sub_1412EC9A0(v9, v6); 1342:*v7 = nullptr; 1343:_InterlockedIncrement(v10); 1344:v11 = v10 + 1;
+0x141042940 367 [369, 447]  369:if ( dword_141B59AA8 > *(_DWORD *)(*((_QWORD *)NtCurrentTeb()->ThreadLocalStoragePointer 370:+ (unsigned int)TlsIndex) 371:+ 4LL) ) 372:{ 373:sub_141750E08(&dword_141B59AA8); 374:if ( dword_141B59AA8 == -1 ) 375:{ 376:sub_1407E3E70(&unk_141B59A68); 377:sub_141751048(sub_1407E4B20); 378:sub_141750EA0(&dword_141B59AA8); 379:} 380:} 381:v118 = sub_1407E4490(&unk_141B59A68, 24); 382:*(_DWORD *)(v118 + 8) = 0; 383:*(_QWORD *)(v118 + 16) = v6; 384:*(_QWORD *)v118 = 0x1418C4178LL; 385:if ( dword_141ABFB88 > *(_DWORD *)(*((_QWORD *)NtCurrentTeb()->ThreadLocalStoragePointer 386:+ (unsigned int)TlsIndex)
+nation Nsnm gap_off_not_in_read_stream 32 funcs/141042940.c:585
+0x141042940 585 [587, 612]  587:v146 = (__int64 *)(a1 + 32); 588:v147 = sub_14083D4F0(a1); 589:v223 = 0; 590:if ( &v223 != v146 ) 591:{ 592:v148 = *v146; 593:if ( *v146 != 0 ) 594:_InterlockedIncrement((volatile signed __int32 *)(v148 - 4)); 595:v223 = v148; 596:} 597:v8 = v147 + 136; 598:v222 = v8; 599:v149 = v221; 600:if ( &v222 != (unsigned __int64 *)v221 ) 601:{ 602:(*(void (__fastcall **)(_QWORD, __int64 *))(*(_QWORD *)*v221 + 16LL))(*v221, v221); 603:v150 = v222; 604:v151 = v223;
+0x141045d50 814 [816, 825]  816:if ( (unsigned __int8)sub_141045D50(a1, 1413706606, a3) != 0 817:|| (v38 = *((_QWORD *)a1 + 33)) != 0 && (unsigned __int8)sub_141063F30(v38, 1413706606, a3) != 0 818:|| (unsigned __int8)sub_140FE2700(a1, 1413706606, a3) != 0 ) 819:{ 820:v39 = sub_140E78A80(); 821:sub_140FF4D40(v39, *((unsigned int *)a1 + 3), a1 + 32); 822:goto LABEL_346; 823:} 824:goto LABEL_607; 825:}
+nation TCnn gap_off_not_in_read_stream 176 funcs/1411f4f70.c:171
+0x1411f4f70 171 [173, 174]  173:return sub_1411D00E0(*(_QWORD *)(a1 + 176), a1, (unsigned int)a2, a3); 174:}
+0x1410668f0 327 [328, 347]  328:v28 = *(_QWORD *)(a1 + 176); 329:v29 = *(_DWORD **)(v28 + 144); 330:if ( v29 != nullptr && *v29 != 0 ) 331:{ 332:v30 = (_OWORD *)(v28 + 144); 333:v31 = sub_14083D4F0(v6); 334:*((_QWORD *)&v228 + 1) = 0; 335:if ( (__int128 *)((char *)&v228 + 8) != v30 ) 336:{ 337:v32 = *(_QWORD *)v30; 338:if ( *(_QWORD *)v30 != 0 ) 339:_InterlockedIncrement((volatile signed __int32 *)(v32 - 4)); 340:*((_QWORD *)&v228 + 1) = v32; 341:} 342:*(_QWORD *)&v228 = v31 + 136; 343:sub_14083DFA0(a3, &v228); 344:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 345:return 1;
+0x1411f1090 867 [868, 868]  868:goto LABEL_247;
+nation TCht gap_off_not_in_read_stream 176 funcs/1411f1090.c:1561
+0x1411f1090 1561 [1600, 1613]  1600:v101 = (__int64 *)(a1[22] + 152); 1601:v55 = sub_14083D4F0(v15); 1602:v148[1] = 0; 1603:if ( &v148[1] != v101 ) 1604:{ 1605:v102 = *v101; 1606:if ( *v101 != 0 ) 1607:_InterlockedIncrement((volatile signed __int32 *)(v102 - 4)); 1608:v148[1] = v102; 1609:} 1610:LABEL_329: 1611:v148[0] = v55 + 136; 1612:sub_14083DFA0(v7, v148); 1613:(*(void (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)v148[0] + 16LL))(v148[0], v148);
+0x1411f4f70 165 [166, 166]  166:return sub_1411D00E0(*(_QWORD *)(a1 + 176), a1, (unsigned int)a2, a3);
+nation N3ln gap_off_not_in_read_stream 40 funcs/141042940.c:1028
+0x141042940 1028 [1029, 1054]  1029:LABEL_80: 1030:v45 = (__int64 *)(a1 + 40); 1031:v46 = sub_14083D4F0(a1); 1032:v223 = 0; 1033:if ( &v223 != v45 ) 1034:{ 1035:v47 = *v45; 1036:if ( *v45 != 0 ) 1037:_InterlockedIncrement((volatile signed __int32 *)(v47 - 4)); 1038:v223 = v47; 1039:} 1040:v8 = v46 + 136; 1041:v222 = v8; 1042:v48 = v221; 1043:if ( &v222 != (unsigned __int64 *)v221 ) 1044:{ 1045:(*(void (__fastcall **)(_QWORD, __int64 *))(*(_QWORD *)*v221 + 16LL))(*v221, v221); 1046:v49 = v222;
+0x141045d50 311 [333, 366]  333:m = (__int64)&v297; 334:(*(void (__fastcall **)(__int64 *, __int128 *, __int64 **))(**a3 + 128))(*a3, &v297, a3); 335:v26 = (volatile signed __int32 **)(a1 + 40); 336:if ( a1 + 40 != (char *)&v297 ) 337:{ 338:v25 = v297; 339:v27 = *v26; 340:v28 = *v26 - 1; 341:if ( *v26 == nullptr ) 342:v28 = nullptr; 343:v29 = (volatile signed __int32 *)(v297 - 4); 344:if ( (_QWORD)v297 != 0 ) 345:{ 346:if ( v27 != nullptr && _InterlockedDecrement(v28) == 0 ) 347:sub_1412EC9A0(v28, v25); 348:*v26 = nullptr; 349:_InterlockedIncrement(v29); 350:v30 = v29 + 1;
+nation Nnty gap_off_not_in_read_stream 48 funcs/141042940.c:235
+0x141042940 235 [262, 286]  262:LABEL_87: 263:v51 = (__int64 *)(a1 + 48); 264:v52 = sub_14083D4F0(a1); 265:v223 = 0; 266:if ( &v223 != v51 ) 267:{ 268:v53 = *v51; 269:if ( *v51 != 0 ) 270:_InterlockedIncrement((volatile signed __int32 *)(v53 - 4)); 271:v223 = v53; 272:} 273:v8 = v52 + 136; 274:v222 = v8; 275:v54 = v221; 276:if ( &v222 != (unsigned __int64 *)v221 ) 277:{ 278:(*(void (__fastcall **)(_QWORD, __int64 *))(*(_QWORD *)*v221 + 16LL))(*v221, v221); 279:v55 = v222;
+0x141045d50 1833 [1834, 1868]  1834:m = (__int64)&v297; 1835:(*(void (__fastcall **)(__int64 *, __int128 *, __int64 **))(**a3 + 128))(*a3, &v297, a3); 1836:v26 = (volatile signed __int32 **)(a1 + 48); 1837:if ( a1 + 48 != (char *)&v297 ) 1838:{ 1839:v48 = v297; 1840:v49 = *v26; 1841:v50 = *v26 - 1; 1842:if ( *v26 == nullptr ) 1843:v50 = nullptr; 1844:v51 = (volatile signed __int32 *)(v297 - 4); 1845:if ( (_QWORD)v297 != 0 ) 1846:{ 1847:if ( v49 != nullptr && _InterlockedDecrement(v50) == 0 ) 1848:sub_1412EC9A0(v50, v48); 1849:*v26 = nullptr; 1850:_InterlockedIncrement(v51); 1851:v52 = v51 + 1;
+nation Nafy gap_off_not_in_read_stream 1928 funcs/141063f30.c:1739
+0x141063f30 1739 [1741, 1746]  1741:if ( (*(unsigned __int8 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 8LL))(*a3, a3) != 0 ) 1742:v5[964] = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*v4 + 64LL))(*v4, v4); 1743:else 1744:v5[964] = 0; 1745:goto LABEL_325; 1746:}
+0x1410668f0 389 [391, 395]  391:v13 = *(__int16 *)(a1 + 1928); 392:if ( *(_WORD *)(a1 + 1928) == 0 ) 393:goto LABEL_340; 394:goto LABEL_370; 395:}
+nation ttcl gap_off_not_in_read_stream 176 funcs/1411f4f70.c:135
+0x1411f4f70 135 [136, 142]  136:if ( *(_QWORD *)(a1 + 176) != 0 ) 137:{ 138:sub_140FE3B40(&v108, a3); 139:*(_DWORD *)(*(_QWORD *)(a1 + 176) + 160LL) = v108; 140:goto LABEL_35; 141:} 142:break;
+0x1411f1090 1085 [1086, 1090]  1086:sub_1411DE680(a1, &v148[1]); 1087:v148[0] = sub_141335F60(); 1088:sub_14083DFA0(v7, v148); 1089:(*(void (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)v148[0] + 16LL))(v148[0], v148); 1090:goto LABEL_68;
+nation tbcl gap_off_not_in_read_stream 176 funcs/1411f4f70.c:119
+0x1411f4f70 119 [120, 126]  120:if ( *(_QWORD *)(a1 + 176) != 0 ) 121:{ 122:sub_140FE3B40(&v108, a3); 123:*(_DWORD *)(*(_QWORD *)(a1 + 176) + 168LL) = v108; 124:goto LABEL_35; 125:} 126:break;
+0x1411f1090 1014 [1016, 1021]  1016:sub_1411DE560(a1, &v148[1]); 1017:v148[0] = sub_141335F60(); 1018:sub_14083DFA0(v7, v148); 1019:(*(void (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)v148[0] + 16LL))(v148[0], v148); 1020:goto LABEL_68; 1021:}
+nation Nrep gap_off_not_in_read_stream 24 funcs/1410668f0.c:1565
+0x1410668f0 1565 [1567, 1574]  1567:v62 = *(__int64 **)(a1 + 24); 1568:v13 = 1500; 1569:if ( v62 != *(__int64 **)(a1 + 32) ) 1570:{ 1571:v63 = *v62; 1572:if ( v63 != 0 ) 1573:v13 = *(__int16 *)(v63 + 168); 1574:}
+0x141063f30 1312 [1314, 1330]  1314:v95 = *(__int64 **)(a1 + 24); 1315:LOBYTE(j) = 1; 1316:if ( v95 != *(__int64 **)(a1 + 32) ) 1317:{ 1318:v96 = *v95; 1319:if ( *v95 != 0 ) 1320:{ 1321:DWORD2(v237) = *(__int16 *)(v96 + 168); 1322:*(_QWORD *)&v237 = sub_14083D4F0(a1) + 40; 1323:sub_141405B90((_DWORD)v5, 1099938928, (unsigned int)&v237, (_DWORD)v4, 0); 1324:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v237 + 16LL))(v237, &v237); 1325:v97 = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*v4 + 64LL))(*v4, v4); 1326:sub_140FC9D50(v96, v97, 0); 1327:} 1328:} 1329:return (unsigned int)j; 1330:}
+nation Catd gap_off_not_in_read_stream 176 funcs/1411f1090.c:1454
+0x1411f1090 1454 [1455, 1459]  1455:LODWORD(v148[1]) = *(_DWORD *)(a1[22] + 104); 1456:v148[0] = sub_14083D4F0(v15) + 40; 1457:sub_14083DFA0(v7, v148); 1458:(*(void (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)v148[0] + 16LL))(v148[0], v148); 1459:goto LABEL_68;
+nation Cmna gap_off_not_in_read_stream 176 funcs/1411f1090.c:1489
+0x1411f1090 1489 [1491, 1496]  1491:LODWORD(v148[1]) = *(_DWORD *)(a1[22] + 108); 1492:v148[0] = sub_14083D4F0(v15) + 40; 1493:sub_14083DFA0(v7, v148); 1494:(*(void (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)v148[0] + 16LL))(v148[0], v148); 1495:goto LABEL_68; 1496:}
+0x1411f4f70 536 [537, 537]  537:return sub_1411D00E0(*(_QWORD *)(a1 + 176), a1, (unsigned int)a2, a3);
+nation Cmxa gap_off_not_in_read_stream 176 funcs/1411f1090.c:1497
+0x1411f1090 1497 [1499, 1504]  1499:LODWORD(v148[1]) = *(_DWORD *)(a1[22] + 112); 1500:v148[0] = sub_14083D4F0(v15) + 40; 1501:sub_14083DFA0(v7, v148); 1502:(*(void (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)v148[0] + 16LL))(v148[0], v148); 1503:goto LABEL_68; 1504:}
+0x1411f4f70 536 [537, 537]  537:return sub_1411D00E0(*(_QWORD *)(a1 + 176), a1, (unsigned int)a2, a3);
+nation Nfap gap_off_not_in_read_stream 1955 funcs/141063f30.c:1182
+0x141063f30 1182 [1183, 1184]  1183:*(_BYTE *)(a1 + 1955) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 1184:goto LABEL_325;
+0x1410668f0 366 [368, 375]  368:v18 = *(char *)(a1 + 1955); 369:v19 = sub_14083D4F0(v6); 370:DWORD2(v228) = v18; 371:*(_QWORD *)&v228 = v19 + 40; 372:sub_14083DFA0(a3, &v228); 373:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 374:return 1; 375:}
+nation Numa gap_off_not_in_read_stream 1950 funcs/141063f30.c:257
+0x141063f30 257 [258, 259]  258:*(_BYTE *)(a1 + 1950) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 48LL))(*a3, a3); 259:goto LABEL_325;
+0x1410668f0 319 [320, 326]  320:v36 = *(_BYTE *)(a1 + 1950); 321:v37 = sub_14083D4F0(v6); 322:BYTE8(v228) = v36; 323:*(_QWORD *)&v228 = v37 + 24; 324:sub_14083DFA0(a3, &v228); 325:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 326:return 1;
+nation Nmya gap_off_not_in_read_stream 1956 funcs/141063f30.c:589
+0x141063f30 589 [591, 593]  591:*(_BYTE *)(a1 + 1956) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 592:goto LABEL_325; 593:}
+0x1410668f0 286 [288, 295]  288:v14 = *(char *)(a1 + 1956); 289:v15 = sub_14083D4F0(v6); 290:DWORD2(v228) = v14; 291:*(_QWORD *)&v228 = v15 + 40; 292:sub_14083DFA0(a3, &v228); 293:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 294:return 1; 295:}
+nation Ngim gap_off_not_in_read_stream 1949 funcs/141063f30.c:1124
+0x141063f30 1124 [1125, 1126]  1125:*(_BYTE *)(a1 + 1949) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 1126:goto LABEL_325;
+0x1410668f0 276 [278, 285]  278:v22 = *(char *)(a1 + 1949); 279:v23 = sub_14083D4F0(v6); 280:DWORD2(v228) = v22; 281:*(_QWORD *)&v228 = v23 + 40; 282:sub_14083DFA0(a3, &v228); 283:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 284:return 1; 285:}
+nation Nffm gap_off_not_in_read_stream 1951 funcs/141063f30.c:1165
+0x141063f30 1165 [1166, 1167]  1166:*(_BYTE *)(a1 + 1951) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 48LL))(*a3, a3); 1167:goto LABEL_325;
+0x1410668f0 419 [420, 426]  420:v34 = *(_BYTE *)(a1 + 1951); 421:v35 = sub_14083D4F0(v6); 422:BYTE8(v228) = v34; 423:*(_QWORD *)&v228 = v35 + 24; 424:sub_14083DFA0(a3, &v228); 425:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 426:return 1;
+nation Nfay gap_off_not_in_read_stream 1924 funcs/141063f30.c:1153
+0x141063f30 1153 [1154, 1158]  1154:if ( (*(unsigned __int8 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 8LL))(*a3, a3) != 0 ) 1155:v5[962] = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*v4 + 64LL))(*v4, v4); 1156:else 1157:v5[962] = 0; 1158:goto LABEL_325;
+0x1410668f0 400 [402, 406]  402:v13 = *(__int16 *)(a1 + 1924); 403:if ( *(_WORD *)(a1 + 1924) == 0 ) 404:goto LABEL_340; 405:goto LABEL_370; 406:}
+nation Nfrp gap_off_not_in_read_stream 562 funcs/141063f30.c:1365
+0x141063f30 1365 [1375, 1377]  1375:*(_WORD *)(a1 + 562) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 1376:LABEL_325: 1377:LOBYTE(j) = 1;
+0x1410668f0 1378 [1380, 1402]  1380:if ( (unsigned __int8)sub_140087040() == 0 || *(_WORD *)(a1 + 560) != 0 ) 1381:{ 1382:v161 = *(__int16 *)(a1 + 562); 1383:v162 = sub_14083D4F0(v91); 1384:DWORD2(v228) = v161; 1385:*(_QWORD *)&v228 = v162 + 40; 1386:sub_14083DFA0(a3, &v228); 1387:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 1388:return 1; 1389:} 1390:sub_1407C9510(&v228); 1391:LODWORD(v226[0]) = -1; 1392:v225 = (__int128 *)(sub_14083D4F0(v92) + 40); 1393:sub_140835380(&v228, 1986096245, &v225); 1394:(*(void (__fastcall **)(__int128 *, __int128 **))(*(_QWORD *)v225 + 16LL))(v225, &v225); 1395:sub_14083D9C0(&v225, 0x14193AE1ELL); 1396:sub_140835380(&v228, 1718444404, &v225); 1397:(*(void (__fastcall **)(__int128 *, __int128 **))(*(_QWORD *)v225 + 16LL))(v225, &v225);
+nation Nfdy gap_off_not_in_read_stream 1926 funcs/141063f30.c:1159
+0x141063f30 1159 [1160, 1164]  1160:if ( (*(unsigned __int8 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 8LL))(*a3, a3) != 0 ) 1161:v5[963] = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*v4 + 64LL))(*v4, v4); 1162:else 1163:v5[963] = 0; 1164:goto LABEL_325;
+0x1410668f0 407 [409, 413]  409:v13 = *(__int16 *)(a1 + 1926); 410:if ( *(_WORD *)(a1 + 1926) == 0 ) 411:goto LABEL_340; 412:goto LABEL_370; 413:}
+nation Neu1 gap_off_not_in_read_stream 1056 funcs/1410668f0.c:1176
+0x1410668f0 1176 [1177, 1182]  1177:v41 = *(int **)(a1 + 1056); 1178:if ( *(int **)(a1 + 1064) == v41 ) 1179:v42 = 0; 1180:else 1181:v42 = *v41; 1182:goto LABEL_368;
+0x141063f30 1198 [1199, 1203]  1199:v43 = a1 + 1056; 1200:LODWORD(v237) = (*(float (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 96LL))(*a3, a3); 1201:v44 = v43; 1202:v45 = 0; 1203:goto LABEL_324;
+nation Neu2 gap_off_not_in_read_stream 1056 funcs/141063f30.c:1204
+0x141063f30 1204 [1205, 1208]  1205:v105 = a1 + 1056; 1206:LODWORD(v237) = (*(float (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 96LL))(*a3, a3); 1207:v45 = 1; 1208:goto LABEL_323;
+0x1410668f0 1183 [1184, 1189]  1184:v98 = *(_QWORD *)(a1 + 1056); 1185:v6 = *(_QWORD *)(a1 + 1064) - v98; 1186:v42 = 0; 1187:if ( v6 >= 5 ) 1188:v42 = *(_DWORD *)(v98 + 4); 1189:goto LABEL_368;
+nation Neu3 gap_off_not_in_read_stream 1056 funcs/141063f30.c:1209
+0x141063f30 1209 [1210, 1213]  1210:v105 = a1 + 1056; 1211:LODWORD(v237) = (*(float (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 96LL))(*a3, a3); 1212:v45 = 2; 1213:goto LABEL_323;
+0x1410668f0 1190 [1191, 1196]  1191:v99 = *(_QWORD *)(a1 + 1056); 1192:v6 = *(_QWORD *)(a1 + 1064) - v99; 1193:v42 = 0; 1194:if ( v6 >= 9 ) 1195:v42 = *(_DWORD *)(v99 + 8); 1196:goto LABEL_368;
+nation Neu4 gap_off_not_in_read_stream 1056 funcs/141063f30.c:1214
+0x141063f30 1214 [1215, 1218]  1215:v105 = a1 + 1056; 1216:LODWORD(v237) = (*(float (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 96LL))(*a3, a3); 1217:v45 = 3; 1218:goto LABEL_323;
+0x1410668f0 1197 [1198, 1203]  1198:v100 = *(_QWORD *)(a1 + 1056); 1199:v6 = *(_QWORD *)(a1 + 1064) - v100; 1200:v42 = 0; 1201:if ( v6 >= 0xD ) 1202:v42 = *(_DWORD *)(v100 + 12); 1203:goto LABEL_368;
+nation Neu5 gap_off_not_in_read_stream 1056 funcs/141063f30.c:1219
+0x141063f30 1219 [1220, 1223]  1220:v105 = a1 + 1056; 1221:LODWORD(v237) = (*(float (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 96LL))(*a3, a3); 1222:v45 = 4; 1223:goto LABEL_323;
+0x1410668f0 1204 [1205, 1210]  1205:v101 = *(_QWORD *)(a1 + 1056); 1206:v6 = *(_QWORD *)(a1 + 1064) - v101; 1207:v42 = 0; 1208:if ( v6 >= 0x11 ) 1209:v42 = *(_DWORD *)(v101 + 16); 1210:goto LABEL_368;
+nation Neu6 gap_off_not_in_read_stream 1056 funcs/141063f30.c:1224
+0x141063f30 1224 [1225, 1228]  1225:v105 = a1 + 1056; 1226:LODWORD(v237) = (*(float (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 96LL))(*a3, a3); 1227:v45 = 5; 1228:goto LABEL_323;
+0x1410668f0 1211 [1212, 1217]  1212:v102 = *(_QWORD *)(a1 + 1056); 1213:v6 = *(_QWORD *)(a1 + 1064) - v102; 1214:v42 = 0; 1215:if ( v6 >= 0x15 ) 1216:v42 = *(_DWORD *)(v102 + 20); 1217:goto LABEL_368;
+nation Neu7 gap_off_not_in_read_stream 1056 funcs/141063f30.c:1229
+0x141063f30 1229 [1230, 1233]  1230:v105 = a1 + 1056; 1231:LODWORD(v237) = (*(float (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 96LL))(*a3, a3); 1232:v45 = 6; 1233:goto LABEL_323;
+0x1410668f0 1218 [1219, 1224]  1219:v103 = *(_QWORD *)(a1 + 1056); 1220:v6 = *(_QWORD *)(a1 + 1064) - v103; 1221:v42 = 0; 1222:if ( v6 >= 0x19 ) 1223:v42 = *(_DWORD *)(v103 + 24); 1224:goto LABEL_368;
+nation Neu8 gap_off_not_in_read_stream 1056 funcs/141063f30.c:1234
+0x141063f30 1234 [1235, 1238]  1235:v105 = a1 + 1056; 1236:LODWORD(v237) = (*(float (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 96LL))(*a3, a3); 1237:v45 = 7; 1238:goto LABEL_323;
+0x1410668f0 1225 [1226, 1231]  1226:v104 = *(_QWORD *)(a1 + 1056); 1227:v6 = *(_QWORD *)(a1 + 1064) - v104; 1228:v42 = 0; 1229:if ( v6 >= 0x1D ) 1230:v42 = *(_DWORD *)(v104 + 28); 1231:goto LABEL_368;
+nation Neu9 gap_off_not_in_read_stream 1056 funcs/141063f30.c:1239
+0x141063f30 1239 [1240, 1243]  1240:v105 = a1 + 1056; 1241:LODWORD(v237) = (*(float (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 96LL))(*a3, a3); 1242:v45 = 8; 1243:goto LABEL_323;
+0x1410668f0 1232 [1233, 1238]  1233:v105 = *(_QWORD *)(a1 + 1056); 1234:v6 = *(_QWORD *)(a1 + 1064) - v105; 1235:v42 = 0; 1236:if ( v6 >= 0x21 ) 1237:v42 = *(_DWORD *)(v105 + 32); 1238:goto LABEL_368;
+nation Ne10 gap_off_not_in_read_stream 1056 funcs/141063f30.c:1245
+0x141063f30 1245 [1247, 1250]  1247:v105 = a1 + 1056; 1248:LODWORD(v237) = (*(float (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 96LL))(*a3, a3); 1249:v45 = 9; 1250:}
+0x1410668f0 1107 [1108, 1113]  1108:v140 = *(_QWORD *)(a1 + 1056); 1109:v6 = *(_QWORD *)(a1 + 1064) - v140; 1110:v42 = 0; 1111:if ( v6 >= 0x25 ) 1112:v42 = *(_DWORD *)(v140 + 36); 1113:break;
+nation Ne11 gap_off_not_in_read_stream 1056 funcs/141063f30.c:1253
+0x141063f30 1253 [1255, 1257]  1255:v105 = a1 + 1056; 1256:LODWORD(v237) = (*(float (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 96LL))(*a3, a3); 1257:v45 = 10;
+0x1410668f0 1114 [1115, 1120]  1115:v69 = *(_QWORD *)(a1 + 1056); 1116:v6 = *(_QWORD *)(a1 + 1064) - v69; 1117:v42 = 0; 1118:if ( v6 >= 0x29 ) 1119:v42 = *(_DWORD *)(v69 + 40); 1120:break;
+nation Nagr gap_off_not_in_read_stream 192 funcs/141045d50.c:394
+0x141045d50 394 [414, 759]  414:v301 = (__int128 *)a1; 415:v302 = (char **)a1; 416:*(_QWORD *)&v297 = &v301; 417:*((_QWORD *)&v297 + 1) = &v302; 418:v40 = (*(__int64 (__fastcall **)(__int64 *, __int64 **))(**a3 + 8))(*a3, a3); 419:v41 = *a3; 420:v42 = **a3; 421:if ( v40 == 10 ) 422:{ 423:LODWORD(m) = 0; 424:v43 = (__int64 *)(*(__int64 (__fastcall **)(__int64 *, __int64 **, _QWORD))(v42 + 176))(v41, a3, 0); 425:v44 = *v43; 426:v45 = v43[1]; 427:if ( *v43 == v45 ) 428:return (unsigned int)m; 429:m = (__int64)&v297 + 8; 430:v46 = *v43; 431:while ( *(_DWORD *)v46 != 1819504496 )
+0x141042940 1139 [1140, 1143]  1140:v222 = (unsigned __int64)v6; 1141:v218 = &v222; 1142:sub_14104FF00(&v218, v221); 1143:goto LABEL_223;
+nation NYRt gap_off_not_in_read_stream 1932 funcs/141063f30.c:1729
+0x141063f30 1729 [1731, 1738]  1731:DWORD2(v237) = *(__int16 *)(a1 + 1932); 1732:*(_QWORD *)&v237 = sub_14083D4F0(a1) + 40; 1733:j = (__int64)&v237; 1734:sub_141405B90((_DWORD)v5, 1099982729, (unsigned int)&v237, (_DWORD)v4, 0); 1735:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v237 + 16LL))(v237, &v237); 1736:v5[966] = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*v4 + 64LL))(*v4, v4); 1737:goto LABEL_325; 1738:}
+0x1410668f0 379 [381, 388]  381:v20 = *(__int16 *)(a1 + 1932); 382:v21 = sub_14083D4F0(v6); 383:DWORD2(v228) = v20; 384:*(_QWORD *)&v228 = v21 + 40; 385:sub_14083DFA0(a3, &v228); 386:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 387:return 1; 388:}
+nation Natt gap_off_not_in_read_stream 1961 funcs/141063f30.c:1749
+0x141063f30 1749 [1751, 1753]  1751:*(_BYTE *)(a1 + 1961) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 1752:goto LABEL_325; 1753:}
+0x1410668f0 672 [674, 681]  674:v60 = *(char *)(a1 + 1961); 675:v61 = sub_14083D4F0(v6); 676:DWORD2(v228) = v60; 677:*(_QWORD *)&v228 = v61 + 40; 678:sub_14083DFA0(a3, &v228); 679:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 680:return 1; 681:}
+nation Ndep gap_off_not_in_read_stream 1962 funcs/141063f30.c:1176
+0x141063f30 1176 [1177, 1178]  1177:*(_BYTE *)(a1 + 1962) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 1178:goto LABEL_325;
+0x1410668f0 1134 [1136, 1143]  1136:v112 = *(char *)(a1 + 1962); 1137:v113 = sub_14083D4F0(v6); 1138:DWORD2(v228) = v112; 1139:*(_QWORD *)&v228 = v113 + 40; 1140:sub_14083DFA0(a3, &v228); 1141:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 1142:return 1; 1143:}
+nation Ndir gap_off_not_in_read_stream 1963 funcs/141063f30.c:1179
+0x141063f30 1179 [1180, 1181]  1180:*(_BYTE *)(a1 + 1963) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 1181:goto LABEL_325;
+0x1410668f0 1099 [1100, 1106]  1100:v138 = *(char *)(a1 + 1963); 1101:v139 = sub_14083D4F0(v6); 1102:DWORD2(v228) = v138; 1103:*(_QWORD *)&v228 = v139 + 40; 1104:sub_14083DFA0(a3, &v228); 1105:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 1106:return 1;
+nation Nflm gap_off_not_in_read_stream 1964 funcs/141063f30.c:1135
+0x141063f30 1135 [1136, 1137]  1136:*(_BYTE *)(a1 + 1964) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 1137:goto LABEL_325;
+0x1410668f0 1266 [1268, 1275]  1268:v64 = *(char *)(a1 + 1964); 1269:v65 = sub_14083D4F0(v6); 1270:DWORD2(v228) = v64; 1271:*(_QWORD *)&v228 = v65 + 40; 1272:sub_14083DFA0(a3, &v228); 1273:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 1274:return 1; 1275:}
+nation Nflx gap_off_not_in_read_stream 1965 funcs/141063f30.c:1138
+0x141063f30 1138 [1139, 1140]  1139:*(_BYTE *)(a1 + 1965) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 1140:goto LABEL_325;
+0x1410668f0 1245 [1247, 1254]  1247:v157 = *(char *)(a1 + 1965); 1248:v158 = sub_14083D4F0(v6); 1249:DWORD2(v228) = v157; 1250:*(_QWORD *)&v228 = v158 + 40; 1251:sub_14083DFA0(a3, &v228); 1252:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 1253:return 1; 1254:}
+nation Nfrl gap_off_not_in_read_stream 1966 funcs/141063f30.c:1121
+0x141063f30 1121 [1122, 1123]  1122:*(_BYTE *)(a1 + 1966) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 1123:goto LABEL_325;
+0x1410668f0 1368 [1370, 1377]  1370:v159 = *(char *)(a1 + 1966); 1371:v160 = sub_14083D4F0(v6); 1372:DWORD2(v228) = v159; 1373:*(_QWORD *)&v228 = v160 + 40; 1374:sub_14083DFA0(a3, &v228); 1375:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 1376:return 1; 1377:}
+nation Nmar gap_off_not_in_read_stream 1967 funcs/141063f30.c:584
+0x141063f30 584 [586, 588]  586:*(_BYTE *)(a1 + 1967) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 587:goto LABEL_325; 588:}
+0x1410668f0 1310 [1312, 1319]  1312:v82 = *(char *)(a1 + 1967); 1313:v83 = sub_14083D4F0(v6); 1314:DWORD2(v228) = v82; 1315:*(_QWORD *)&v228 = v83 + 40; 1316:sub_14083DFA0(a3, &v228); 1317:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 1318:return 1; 1319:}
+nation Noff gap_off_not_in_read_stream 1968 funcs/141063f30.c:851
+0x141063f30 851 [852, 853]  852:*(_BYTE *)(a1 + 1968) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 853:goto LABEL_325;
+0x1410668f0 1494 [1496, 1501]  1496:v39 = *(char *)(a1 + 1968); 1497:v40 = sub_14083D4F0(v6); 1498:DWORD2(v228) = v39; 1499:*(_QWORD *)&v228 = v40 + 40; 1500:sub_14083DFA0(a3, &v228); 1501:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228);
+nation Nprs gap_off_not_in_read_stream 1969 funcs/141063f30.c:854
+0x141063f30 854 [855, 856]  855:*(_BYTE *)(a1 + 1969) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 856:goto LABEL_325;
+0x1410668f0 1550 [1552, 1559]  1552:v124 = *(char *)(a1 + 1969); 1553:v125 = sub_14083D4F0(v6); 1554:DWORD2(v228) = v124; 1555:*(_QWORD *)&v228 = v125 + 40; 1556:sub_14083DFA0(a3, &v228); 1557:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 1558:return 1; 1559:}
+nation Nstb gap_off_not_in_read_stream 1970 funcs/141063f30.c:273
+0x141063f30 273 [274, 275]  274:*(_BYTE *)(a1 + 1970) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 275:goto LABEL_325;
+0x1410668f0 1676 [1678, 1685]  1678:v84 = *(char *)(a1 + 1970); 1679:v85 = sub_14083D4F0(v6); 1680:DWORD2(v228) = v84; 1681:*(_QWORD *)&v228 = v85 + 40; 1682:sub_14083DFA0(a3, &v228); 1683:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 1684:return 1; 1685:}
+nation Ntpo gap_off_not_in_read_stream 1971 funcs/141063f30.c:276
+0x141063f30 276 [277, 278]  277:*(_BYTE *)(a1 + 1971) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 278:goto LABEL_325;
+0x1410668f0 1708 [1709, 1715]  1709:v118 = *(char *)(a1 + 1971); 1710:v119 = sub_14083D4F0(v6); 1711:DWORD2(v228) = v118; 1712:*(_QWORD *)&v228 = v119 + 40; 1713:sub_14083DFA0(a3, &v228); 1714:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 1715:return 1;
+nation Nupm gap_off_not_in_read_stream 1972 funcs/141063f30.c:260
+0x141063f30 260 [261, 262]  261:*(_BYTE *)(a1 + 1972) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 262:goto LABEL_325;
+0x1410668f0 1716 [1717, 1723]  1717:v58 = *(char *)(a1 + 1972); 1718:v59 = sub_14083D4F0(v6); 1719:DWORD2(v228) = v58; 1720:*(_QWORD *)&v228 = v59 + 40; 1721:sub_14083DFA0(a3, &v228); 1722:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 1723:return 1;
+nation Nfpa gap_off_not_in_read_stream 1957 funcs/141063f30.c:1118
+0x141063f30 1118 [1119, 1120]  1119:*(_BYTE *)(a1 + 1957) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 1120:goto LABEL_325;
+0x1410668f0 435 [436, 442]  436:v10 = *(char *)(a1 + 1957); 437:v11 = sub_14083D4F0(v6); 438:DWORD2(v228) = v10; 439:*(_QWORD *)&v228 = v11 + 40; 440:sub_14083DFA0(a3, &v228); 441:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 442:return 1;
+nation Nfml gap_off_not_in_read_stream 1958 funcs/141063f30.c:1141
+0x141063f30 1141 [1142, 1143]  1142:*(_BYTE *)(a1 + 1958) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 1143:goto LABEL_325;
+0x1410668f0 427 [428, 434]  428:v26 = *(char *)(a1 + 1958); 429:v27 = sub_14083D4F0(v6); 430:DWORD2(v228) = v26; 431:*(_QWORD *)&v228 = v27 + 40; 432:sub_14083DFA0(a3, &v228); 433:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 434:return 1;
+nation Nwid gap_off_not_in_read_stream 1973 funcs/141063f30.c:263
+0x141063f30 263 [264, 265]  264:*(_BYTE *)(a1 + 1973) = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 64LL))(*a3, a3); 265:goto LABEL_325;
+0x1410668f0 1798 [1800, 1807]  1800:v148 = *(char *)(a1 + 1973); 1801:v149 = sub_14083D4F0(v6); 1802:DWORD2(v228) = v148; 1803:*(_QWORD *)&v228 = v149 + 40; 1804:sub_14083DFA0(a3, &v228); 1805:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 1806:return 1; 1807:}
+nation Nprf gap_off_not_in_read_stream 176 funcs/1410668f0.c:1530
+0x1410668f0 1530 [1532, 1539]  1532:v86 = *(char *)(*(_QWORD *)(a1 + 176) + 116LL); 1533:v87 = sub_14083D4F0(v6); 1534:DWORD2(v228) = v86; 1535:*(_QWORD *)&v228 = v87 + 40; 1536:sub_14083DFA0(a3, &v228); 1537:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 1538:return 1; 1539:}
+nation Nspf gap_off_not_in_read_stream 176 funcs/1410668f0.c:1666
+0x1410668f0 1666 [1668, 1675]  1668:v153 = *(char *)(*(_QWORD *)(a1 + 176) + 117LL); 1669:v154 = sub_14083D4F0(v6); 1670:DWORD2(v228) = v153; 1671:*(_QWORD *)&v228 = v154 + 40; 1672:sub_14083DFA0(a3, &v228); 1673:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 1674:return 1; 1675:}
+nation Ndfm gap_off_not_in_read_stream 176 funcs/1410668f0.c:1144
+0x1410668f0 1144 [1146, 1151]  1146:v56 = *(char *)(*(_QWORD *)(a1 + 176) + 118LL); 1147:v57 = sub_14083D4F0(v6); 1148:DWORD2(v228) = v56; 1149:*(_QWORD *)&v228 = v57 + 40; 1150:sub_14083DFA0(a3, &v228); 1151:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228);
+nation Nafm gap_off_not_in_read_stream 176 funcs/1410668f0.c:662
+0x1410668f0 662 [664, 671]  664:v122 = *(char *)(*(_QWORD *)(a1 + 176) + 119LL); 665:v123 = sub_14083D4F0(v6); 666:DWORD2(v228) = v122; 667:*(_QWORD *)&v228 = v123 + 40; 668:sub_14083DFA0(a3, &v228); 669:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v228 + 16LL))(v228, &v228); 670:return 1; 671:}
+0x1411f4f70 572 [572, 574]  572:if ( (_DWORD)a2 != 1315006061 ) 573:return sub_140FE2700(a1, (unsigned int)a2, a3); 574:return sub_1411D00E0(*(_QWORD *)(a1 + 176), a1, (unsigned int)a2, a3);
+nation Nmni gap_off_not_in_read_stream 1150 funcs/1410668f0.c:1504
+0x1410668f0 1504 [1518, 1523]  1518:if ( (*(_BYTE *)(a1 + 1150) & 2) == 0 || (unsigned __int8)sub_1400015E0() == 0 ) 1519:{ 1520:v106 = a1; 1521:v107 = 1416457833; 1522:return sub_1411F4BD0(v106, 0, v107, a3); 1523:}
+0x141063f30 1367 [1369, 1369]  1369:if ( (*(_BYTE *)(a1 + 1150) & 2) != 0 && (unsigned __int8)sub_1400015E0() != 0 )
+nation Tcap gap_off_not_in_read_stream 24 funcs/1411f1090.c:1392
+0x1411f1090 1392 [1394, 1397]  1394:v57 = a1; 1395:v58 = 1415799152; 1396:return sub_1411F4BD0(v57, 0, v58, v7); 1397:}
+0x1411f4f70 1031 [1032, 1033]  1032:v19 = 1415799152; 1033:break;
+nation Tvcp gap_other_table_same_tag 144 funcs/1411b5630.c:163
+0x1411f1090 1163 [1215, 1216]  1215:v57 = a1; 1216:v58 = 1417044848;
+0x1411f4f70 1057 [1058, 1059]  1058:v19 = 1417044848; 1059:break;
+nation Nchi gap_off_not_in_read_stream 1150 funcs/1410668f0.c:1132
+0x1410668f0 1132 [1154, 1169]  1154:if ( (*(_BYTE *)(a1 + 1150) & 2) == 0 || (unsigned __int8)sub_1400015E0() == 0 ) 1155:{ 1156:v106 = a1; 1157:v107 = 1415800937; 1158:return sub_1411F4BD0(v106, 0, v107, a3); 1159:} 1160:LABEL_340: 1161:v9 = 1; 1162:if ( a3 != &qword_141B5A4A0 ) 1163:{ 1164:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 16LL))(*a3, a3); 1165:(*(void (__fastcall **)(__int64, __int64 *, __int64 *))(*(_QWORD *)qword_141B5A4A0 + 24LL))( 1166:qword_141B5A4A0, 1167:&qword_141B5A4A0, 1168:a3); 1169:}
+0x141063f30 1294 [1296, 1303]  1296:if ( (*(_BYTE *)(a1 + 1150) & 2) == 0 || (unsigned __int8)sub_1400015E0() == 0 ) 1297:{ 1298:a1 = (__int64)v5; 1299:v104 = 1415800937; 1300:return sub_1411F76F0(a1, 0, v104, v4); 1301:} 1302:LABEL_669: 1303:LODWORD(j) = 0;
+nation Nphi gap_off_not_in_read_stream 1150 funcs/1410668f0.c:1528
+0x1410668f0 1528 [1542, 1547]  1542:if ( (*(_BYTE *)(a1 + 1150) & 2) == 0 || (unsigned __int8)sub_1400015E0() == 0 ) 1543:{ 1544:v106 = a1; 1545:v107 = 1416652905; 1546:return sub_1411F4BD0(v106, 0, v107, a3); 1547:}
+0x141063f30 1310 [1333, 1338]  1333:if ( (*(_BYTE *)(a1 + 1150) & 2) == 0 || (unsigned __int8)sub_1400015E0() == 0 ) 1334:{ 1335:a1 = (__int64)v5; 1336:v104 = 1416652905; 1337:return sub_1411F76F0(a1, 0, v104, v4); 1338:}
+nation Tko1 gap_helper_computed None funcs/1411f1090.c:287
+0x1411f1090 287 [289, 294]  289:v10 = a1; 290:a3 = nullptr; 291:LABEL_40: 292:LOBYTE(a4) = 1; 293:goto LABEL_43; 294:}
+nation Tkg1 gap_helper_computed None funcs/1411f1090.c:270
+0x1411f1090 270 [271, 273]  271:v10 = a1; 272:a3 = nullptr; 273:break;
+nation Tko2 gap_helper_computed None funcs/1411f1090.c:382
+0x1411f1090 382 [384, 387]  384:v10 = a1; 385:LOBYTE(a3) = 1; 386:goto LABEL_40; 387:}
+nation Tkg2 gap_helper_computed None funcs/1411f1090.c:274
+0x1411f1090 274 [275, 277]  275:v10 = a1; 276:LOBYTE(a3) = 1; 277:break;
+nation Tko3 gap_helper_computed None funcs/1411f1090.c:388
+0x1411f1090 388 [390, 393]  390:v10 = a1; 391:LOBYTE(a3) = 2; 392:goto LABEL_40; 393:}
+nation CBDo gap_helper_computed None funcs/1411f4f70.c:308
+0x1411f4f70 308 [309, 310]  309:LOBYTE(a2) = 9; 310:goto LABEL_254;
+0x1411f1090 419 [420, 420]  420:goto LABEL_394;
+nation CWRg gap_child_off_not_in_child_stream None funcs/141545680.c:89
+0x1411f4f70 1166 [1168, 1171] ['gams', 89] 1168:LOBYTE(a2) = 12; 1169:v7 = 1734438259; 1170:return sub_1411E9540(a1, a2, v7, v3); 1171:}
+nation CLRg gap_child_off_not_in_child_stream None funcs/141545680.c:89
+0x1411f4f70 409 [410, 412] ['gams', 89] 410:LOBYTE(a2) = 13; 411:v7 = 1734438259; 412:return sub_1411E9540(a1, a2, v7, v3);
+0x1411f1090 592 [593, 593]  593:goto LABEL_394;
+nation CWLg gap_child_off_not_in_child_stream None funcs/141545680.c:89
+0x1411f4f70 1146 [1148, 1151] ['gams', 89] 1148:LOBYTE(a2) = 14; 1149:v7 = 1734438259; 1150:return sub_1411E9540(a1, a2, v7, v3); 1151:}
+nation CWWg gap_child_off_not_in_child_stream None funcs/141545680.c:89
+0x1411f4f70 1187 [1188, 1190] ['gams', 89] 1188:LOBYTE(a2) = 15; 1189:v7 = 1734438259; 1190:return sub_1411E9540(a1, a2, v7, v3);
+nation CWSg gap_child_off_not_in_child_stream None funcs/141545680.c:89
+0x1411f4f70 1206 [1208, 1211] ['gams', 89] 1208:LOBYTE(a2) = 19; 1209:v7 = 1734438259; 1210:return sub_1411E9540(a1, a2, v7, v3); 1211:}
+nation CWCg gap_child_off_not_in_child_stream None funcs/141545680.c:89
+0x1411f4f70 508 [510, 513] ['gams', 89] 510:LOBYTE(a2) = 18; 511:v7 = 1734438259; 512:return sub_1411E9540(a1, a2, v7, v3); 513:}
+nation CMAp gap_helper_computed None funcs/140e8a400.c:3900
+nation CMAn gap_helper_computed None funcs/140e8a400.c:3894
+nation CMAa gap_helper_computed None funcs/140e8a400.c:3888
+nation CMGn gap_helper_computed None funcs/140e8a400.c:3852
+nation CMGg gap_helper_computed None funcs/140e8a400.c:3846
+nation CMCs gap_child_off_not_in_child_stream None funcs/141545680.c:89
+nation CGLo gap_helper_computed None funcs/140e8a400.c:3469
+nation CHFs gap_helper_computed None funcs/140e8a400.c:4173
+nation NGpe gap_helper_computed None funcs/1411ea620.c:123
+0x1411ea620 123 [125, 125]  125:v14 = v8 + 8;
+0x1411eaaa0 71 [73, 74]  73:sub_140FE7960((__int64)v13, a3, 0); 74:*(_QWORD *)(v5 + 16) = v13[0];
+nation NMEp gap_helper_computed None funcs/141063f30.c:2026
+0x141063f30 2026 [2027, 2030]  2027:LOBYTE(a2) = 31; 2028:LABEL_101: 2029:v6 = 1937008996; 2030:break;
+0x1410668f0 531 [533, 533]  533:goto LABEL_524;
+nation NMEn gap_helper_computed None funcs/141063f30.c:2022
+0x141063f30 2022 [2023, 2025]  2023:LOBYTE(a2) = 31; 2024:v6 = 1937010285; 2025:break;
+0x1410668f0 530 [533, 533]  533:goto LABEL_524;
+nation NMEs gap_helper_computed None funcs/141063f30.c:2031
+0x141063f30 2031 [2032, 2034]  2032:LOBYTE(a2) = 31; 2033:v6 = 1952801133; 2034:break;
+0x1410668f0 532 [533, 533]  533:goto LABEL_524;
+nation NMEb gap_helper_computed None funcs/141063f30.c:2010
+0x141063f30 2010 [2011, 2013]  2011:LOBYTE(a2) = 31; 2012:v6 = 1869899892; 2013:break;
+0x1410668f0 527 [533, 533]  533:goto LABEL_524;
+nation NMEf gap_helper_computed None funcs/141063f30.c:2018
+0x141063f30 2018 [2019, 2021]  2019:LOBYTE(a2) = 31; 2020:v6 = 1667330920; 2021:break;
+0x1410668f0 529 [533, 533]  533:goto LABEL_524;
+nation NMEd gap_helper_computed None funcs/141063f30.c:2014
+0x141063f30 2014 [2015, 2017]  2015:LOBYTE(a2) = 31; 2016:v6 = 1937007732; 2017:break;
+0x1410668f0 528 [533, 533]  533:goto LABEL_524;
+nation NHPp gap_helper_computed None funcs/1410668f0.c:484
+0x1410668f0 484 [486, 487]  486:LABEL_524: 487:JUMPOUT(0x144026350LL);
+0x141063f30 1444 [1445, 1446]  1445:LOBYTE(a2) = 33; 1446:goto LABEL_101;
+nation NHRp gap_helper_computed None funcs/141063f30.c:1402
+0x141063f30 1402 [1403, 1404]  1403:LOBYTE(a2) = 32; 1404:goto LABEL_101;
+0x1410668f0 508 [510, 510]  510:goto LABEL_524;
+nation nhrl gap_off_not_in_read_stream 264 funcs/141042940.c:534
+0x141042940 534 [536, 556]  536:v38 = *(_QWORD *)(a1 + 264); 537:v39 = *(_QWORD *)(v38 + 1192); 538:v40 = *(_QWORD *)(v38 + 1184); 539:v41 = sub_14083D4F0(a1); 540:LOBYTE(v223) = v39 != v40; 541:v8 = v41 + 24; 542:v222 = v8; 543:v42 = v221; 544:if ( &v222 != (unsigned __int64 *)v221 ) 545:{ 546:(*(void (__fastcall **)(_QWORD, __int64 *))(*(_QWORD *)*v221 + 16LL))(*v221, v221); 547:v43 = v222; 548:v44 = v223; 549:v221[1] = v223; 550:*v42 = v43; 551:v8 = sub_14083D4F0(v44) + 8; 552:v223 = 0; 553:v222 = v8;
+nation Nnfr gap_helper_computed None funcs/141042940.c:448
+0x141042940 448 [450, 451]  450:v222 = a1; 451:LOBYTE(v223) = 1;
+0x141045d50 1828 [1829, 1832]  1829:*(_QWORD *)&v297 = a1; 1830:*((_QWORD *)&v297 + 1) = a1; 1831:LOBYTE(v298) = 1; 1832:goto LABEL_92;
+nation Nctp gap_off_not_in_read_stream 264 funcs/141063f30.c:1754
+0x141063f30 1754 [1756, 2005]  1756:v242 = (_QWORD *)a1; 1757:v243[0] = a1; 1758:v240 = (__int128 *)&v242; 1759:v241 = (char *)v243; 1760:v35 = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 8LL))(*a3, a3); 1761:v36 = *v4; 1762:v37 = *(_QWORD *)*v4; 1763:if ( v35 == 10 ) 1764:{ 1765:LODWORD(j) = 0; 1766:v38 = (__int64 *)(*(__int64 (__fastcall **)(__int64, __int64 *, _QWORD))(v37 + 176))(v36, v4, 0); 1767:v39 = *v38; 1768:v40 = v38[1]; 1769:if ( *v38 != v40 ) 1770:{ 1771:v41 = *v38; 1772:while ( *(_DWORD *)v41 != 1819504496 ) 1773:{
+0x1410668f0 359 [361, 365]  361:*(_QWORD *)&v228 = a1; 362:v225 = &v228; 363:sub_141079AE0(&v225, a3); 364:return 1; 365:}
+nation Nrtp gap_off_not_in_read_stream 288 funcs/141063f30.c:857
+0x141063f30 857 [858, 1053]  858:v242 = (_QWORD *)a1; 859:v243[0] = a1; 860:v240 = (__int128 *)&v242; 861:v241 = (char *)v243; 862:v21 = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 8LL))(*a3, a3); 863:v22 = *v4; 864:v23 = *(_QWORD *)*v4; 865:if ( v21 == 10 ) 866:{ 867:LODWORD(j) = 0; 868:v24 = (__int64 *)(*(__int64 (__fastcall **)(__int64, __int64 *, _QWORD))(v23 + 176))(v22, v4, 0); 869:v25 = *v24; 870:v26 = v24[1]; 871:if ( *v24 != v26 ) 872:{ 873:v27 = *v24; 874:while ( *(_DWORD *)v27 != 1819504496 ) 875:{
+0x1410668f0 300 [302, 306]  302:*(_QWORD *)&v228 = a1; 303:v225 = &v228; 304:sub_141079DD0(&v225, a3); 305:return 1; 306:}
+nation Nlns gap_off_not_in_read_stream 72 funcs/141042940.c:365
+0x141042940 365 [454, 525]  454:sub_1407C9510(&v222); 455:v4 = (unsigned __int8)((unsigned int)(v6[20] - v6[18]) >> 4); 456:v139 = v222; 457:if ( (__int64)(v224 - v222) >> 3 >= (unsigned __int64)v4 ) 458:{ 459:if ( (unsigned __int8)((unsigned int)(v6[20] - v6[18]) >> 4) == 0 ) 460:{ 461:LABEL_200: 462:sub_14083DB80(&v218, &v222); 463:v163 = v221; 464:v153 = *v221; 465:if ( &v218 != (unsigned __int64 **)v221 ) 466:{ 467:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v153 + 16LL))(v153, v221); 468:v164 = v218; 469:v165 = v219; 470:v163[1] = v219; 471:*v163 = (__int64)v164;
+0x141045d50 1323 [1427, 1713]  1427:v303 = a1; 1428:v304 = a1; 1429:v301 = (__int128 *)&v303; 1430:v302 = &v304; 1431:v31 = (*(__int64 (__fastcall **)(__int64 *, __int64 **))(**a3 + 8))(*a3, a3); 1432:v32 = *a3; 1433:v33 = **a3; 1434:if ( v31 == 10 ) 1435:{ 1436:LODWORD(m) = 0; 1437:v34 = (__int64 *)(*(__int64 (__fastcall **)(__int64 *, __int64 **, _QWORD))(v33 + 176))(v32, a3, 0); 1438:v35 = *v34; 1439:v36 = v34[1]; 1440:if ( *v34 == v36 ) 1441:return (unsigned int)m; 1442:m = (__int64)&v302; 1443:v37 = *v34; 1444:while ( *(_DWORD *)v37 != 1819504496 )
+nation NWGv gap_helper_computed None funcs/1410668f0.c:654
+0x1410668f0 654 [656, 657]  656:v38 = a1; 657:v7 = 0;
+0x141063f30 1288 [1290, 1293]  1290:v103 = a1; 1291:a3 = nullptr; 1292:goto LABEL_295; 1293:}
+nation NCro gap_off_not_in_read_stream 159 funcs/141063f30.c:1454
+0x141063f30 1454 [1456, 1720]  1456:v240 = (__int128 *)a1; 1457:v241 = (char *)a1; 1458:*(_QWORD *)&v237 = &v240; 1459:*((_QWORD *)&v237 + 1) = &v241; 1460:v28 = (*(__int64 (__fastcall **)(__int64, __int64 *))(*(_QWORD *)*a3 + 8LL))(*a3, a3); 1461:v29 = *v4; 1462:v30 = *(_QWORD *)*v4; 1463:if ( v28 == 10 ) 1464:{ 1465:LODWORD(j) = 0; 1466:v31 = (__int64 *)(*(__int64 (__fastcall **)(__int64, __int64 *, _QWORD))(v30 + 176))(v29, v4, 0); 1467:v32 = *v31; 1468:v33 = v31[1]; 1469:if ( *v31 == v33 ) 1470:return (unsigned int)j; 1471:v34 = *v31; 1472:while ( *(_DWORD *)v34 != 1819504496 ) 1473:{
+0x1410668f0 467 [468, 471]  468:*(_QWORD *)&v228 = a1; 469:v225 = &v228; 470:sub_141079500(&v225, a3); 471:return 1;
+nation Ntxr gap_off_not_in_read_stream 96 funcs/141042940.c:633
+0x141042940 633 [635, 709]  635:sub_1407C9510(&v222); 636:v16 = *((_QWORD *)v6 + 12); 637:v17 = *((_QWORD *)v6 + 13); 638:v18 = 0xAAAAAAAAAAAAAAABuLL * ((v17 - v16) >> 3); 639:v19 = v222; 640:v20 = (__int64)(v224 - v222) >> 3; 641:if ( v20 >= v18 ) 642:{ 643:if ( v17 == v16 ) 644:{ 645:LABEL_196: 646:sub_14083DB80(&v218, &v222); 647:v160 = v221; 648:v153 = *v221; 649:if ( &v218 != (unsigned __int64 **)v221 ) 650:{ 651:(*(void (__fastcall **)(__int64, __int64 *))(*(_QWORD *)v153 + 16LL))(v153, v221); 652:v161 = v218;
+0x141045d50 831 [833, 1062]  833:v303 = a1; 834:v304 = a1; 835:v301 = (__int128 *)&v303; 836:v302 = &v304; 837:v12 = (*(__int64 (__fastcall **)(__int64 *, __int64 **))(**a3 + 8))(*a3, a3); 838:v13 = *a3; 839:v14 = **a3; 840:if ( v12 == 10 ) 841:{ 842:LODWORD(m) = 0; 843:v15 = (__int64 *)(*(__int64 (__fastcall **)(__int64 *, __int64 **, _QWORD))(v14 + 176))(v13, a3, 0); 844:v16 = *v15; 845:v17 = v15[1]; 846:if ( *v15 == v17 ) 847:return (unsigned int)m; 848:m = (__int64)&v302; 849:v18 = *v15; 850:while ( *(_DWORD *)v18 != 1819504496 )
+nation Tchl gap_helper_computed None funcs/1410668f0.c:1734
+0x1410668f0 1734 [1794, 1795]  1794:v106 = a1; 1795:v107 = 1415800940;
+0x141063f30 1351 [1353, 1353]  1353:v104 = 1415800940;
+comp rdui gap_other_table_same_tag 16 funcs/140fe3f20.c:741
+comp dbnm gap_other_table_same_tag 2944 funcs/1411f1090.c:1122
+comp dAPw gap_other_table_same_tag 368 funcs/140fe3f20.c:416
+comp cbcl gap_off_not_in_read_stream 292 funcs/140ecb5c0.c:1362
+0x140ecb5c0 1362 [1363, 1366]  1363:sub_140FE3B40(&v66, a3); 1364:*(_DWORD *)(a1 + 292) = (_DWORD)v66; 1365:LOBYTE(v3) = 1; 1366:break;
+0x140ec0a60 3703 [3705, 3711]  3705:v189 = sub_141335F60(); 3706:DWORD2(v442) = *(_DWORD *)(v5 + 292); 3707:*(_QWORD *)&v442 = v189; 3708:sub_14083DFA0(a3, &v442); 3709:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v442 + 16LL))(v442, &v442); 3710:goto LABEL_5; 3711:}
+comp ctcl gap_off_not_in_read_stream 296 funcs/140ecb5c0.c:1528
+0x140ecb5c0 1528 [1530, 1534]  1530:sub_140FE3B40(&v66, a3); 1531:*(_DWORD *)(a1 + 296) = (_DWORD)v66; 1532:LOBYTE(v3) = 1; 1533:return (unsigned int)v3; 1534:}
+0x140ec0a60 3499 [3501, 3507]  3501:v203 = sub_141335F60(); 3502:DWORD2(v442) = *(_DWORD *)(v5 + 296); 3503:*(_QWORD *)&v442 = v203; 3504:sub_14083DFA0(a3, &v442); 3505:(*(void (__fastcall **)(_QWORD, __int128 *))(*(_QWORD *)v442 + 16LL))(v442, &v442); 3506:goto LABEL_5; 3507:}
+comp IsAC gap_delegated_or_empty None funcs/140ec0a60.c:2722
+0x140ec0a60 2722 [2723, 2723]  2723:goto LABEL_5;
+comp nytc gap_delegated_or_empty None funcs/140ec0a60.c:4394
+0x140ec0a60 4394 [4395, 4395]  4395:goto LABEL_223;
+comp CTMS gap_delegated_or_empty None funcs/140ec0a60.c:1282
+0x140ec0a60 1282 [1282, 1284]  1282:if ( v10 != 1129598291 ) 1283:return sub_140FE3F20((_DWORD *)v5, v10, a3); 1284:goto LABEL_337;
+comp Pchd gap_delegated_or_empty None funcs/140ec0a60.c:3026
+0x140ec0a60 3026 [3026, 3028]  3026:if ( v10 != 1348692068 ) 3027:return sub_140FE3F20((_DWORD *)v5, v10, a3); 3028:}
+0x140ecb5c0 902 [902, 904]  902:if ( (_DWORD)a2 != 1348692068 ) 903:goto LABEL_444; 904:}
+comp ssCi gap_delegated_or_empty None funcs/140ec0a60.c:4200
+0x140ec0a60 4200 [4201, 4201]  4201:goto LABEL_1107;
+0x140ecb5c0 1243 [1244, 1244]  1244:goto LABEL_455;
+comp syCi gap_delegated_or_empty None funcs/140ec0a60.c:4043
+0x140ec0a60 4043 [4043, 4045]  4043:if ( v10 != 1937326953 ) 4044:return sub_140FE3F20((_DWORD *)v5, v10, a3); 4045:goto LABEL_520;
+0x140ec0a60 4188 [4189, 4189]  4189:goto LABEL_1107;
+comp sfMi gap_delegated_or_empty None funcs/140ec0a60.c:4245
+0x140ec0a60 4245 [4246, 4246]  4246:goto LABEL_1107;
+0x140ecb5c0 1264 [1265, 1265]  1265:goto LABEL_455;
+comp ssMi gap_delegated_or_empty None funcs/140ec0a60.c:4191
+0x140ec0a60 4191 [4193, 4194]  4193:goto LABEL_1107; 4194:}
+0x140ecb5c0 1234 [1236, 1237]  1236:goto LABEL_455; 1237:}
+comp syMi gap_delegated_or_empty None funcs/140ec0a60.c:4183
+0x140ec0a60 4183 [4184, 4184]  4184:goto LABEL_1107;
+0x140ecb5c0 1226 [1227, 1227]  1227:goto LABEL_455;
+comp sfSi gap_delegated_or_empty None funcs/140ec0a60.c:4203
+0x140ec0a60 4203 [4205, 4206]  4205:goto LABEL_1107; 4206:}
+0x140ecb5c0 1246 [1248, 1249]  1248:goto LABEL_455; 1249:}
+comp sySx gap_delegated_or_empty None funcs/140ec0a60.c:4091
+0x140ec0a60 4091 [4091, 4093]  4091:if ( v10 != 1937331064 ) 4092:{ 4093:if ( v10 != 1952605036 )
+0x140ec0a60 4179 [4180, 4180]  4180:goto LABEL_1110;
+comp CNTM gap_delegated_or_empty None funcs/140ec0a60.c:1117
+0x140ec0a60 1117 [1117, 1119]  1117:if ( v10 != 1129206861 ) 1118:return sub_140FE3F20((_DWORD *)v5, v10, a3); 1119:break;
+comp OTMS gap_delegated_or_empty None funcs/140ec0a60.c:2896
+0x140ec0a60 2896 [2896, 2898]  2896:if ( v10 != 1330924883 ) 2897:{ 2898:if ( v10 == 1347184494 )
+comp NSOD gap_helper_computed None funcs/140ec0a60.c:2881
+0x140ec0a60 2881 [2882, 2887]  2882:LABEL_502: 2883:v423 = v10 == 1314082628; 2884:LOBYTE(v3) = 1; 2885:v77 = v5; 2886:LOBYTE(v13) = 1; 2887:goto LABEL_503;
+comp rgts gap_helper_computed None funcs/140ec0a60.c:4451
+0x140ec0a60 4451 [4517, 4518]  4517:v424 = 0; 4518:v422 = 1;
+0x140ecb5c0 1094 [1096, 1101]  1096:v66 = (volatile signed __int32 *)a1; 1097:sub_141561880((unsigned int)v67, a1, 0, 0, 1, 0); 1098:LABEL_373: 1099:v68 = 0; 1100:goto LABEL_414; 1101:}
+comp RsL0 gap_helper_computed None funcs/140ec0a60.c:3314
+0x140ec0a60 3314 [3315, 3317]  3315:v37 = v5; 3316:v13 = 0; 3317:goto LABEL_742;
+comp RsL0 gap_helper_computed None funcs/140ec0a60.c:3314
+0x140ec0a60 3314 [3315, 3317]  3315:v37 = v5; 3316:v13 = 0; 3317:goto LABEL_742;
+comp RsL2 gap_helper_computed None funcs/140ec0a60.c:3324
+0x140ec0a60 3324 [3325, 3327]  3325:v37 = v5; 3326:LOBYTE(v13) = 2; 3327:goto LABEL_742;
+comp RsL3 gap_helper_computed None funcs/140ec0a60.c:3328
+0x140ec0a60 3328 [3329, 3331]  3329:v37 = v5; 3330:LOBYTE(v13) = 3; 3331:goto LABEL_742;
+comp RsL4 gap_helper_computed None funcs/140ec0a60.c:3332
+0x140ec0a60 3332 [3333, 3335]  3333:v37 = v5; 3334:LOBYTE(v13) = 4; 3335:goto LABEL_742;
+comp RsL5 gap_helper_computed None funcs/140ec0a60.c:3336
+0x140ec0a60 3336 [3337, 3339]  3337:v37 = v5; 3338:LOBYTE(v13) = 5; 3339:goto LABEL_742;
+comp CWRc gap_helper_computed None funcs/140ec0a60.c:1440
+0x140ec0a60 1440 [1441, 1443]  1441:v21 = v5; 1442:LOBYTE(v11) = 12; 1443:goto LABEL_820;
+0x140ecb5c0 495 [496, 497]  496:LOBYTE(a2) = 12; 497:goto LABEL_473;
+comp CWRg gap_child_off_not_in_child_stream None funcs/1415446a0.c:337
+0x140ec0a60 1463 [1464, 1467] ['gams', 337] 1464:v21 = v5; 1465:LOBYTE(v11) = 12; 1466:v22 = 1734438259; 1467:return sub_143CA2E60(v21, v11, v22, a3);
+0x140ecb5c0 516 [517, 519] ['gams', 89] 517:LOBYTE(a2) = 12; 518:v12 = 1734438259; 519:return sub_140ECDFE0(a1, a2, v12, v4);
+comp CLRc gap_helper_computed None funcs/140ec0a60.c:693
+0x140ec0a60 693 [694, 696]  694:v21 = v5; 695:LOBYTE(v11) = 13; 696:goto LABEL_820;
+0x140ecb5c0 345 [346, 347]  346:LOBYTE(a2) = 13; 347:goto LABEL_473;
+comp CLRg gap_child_off_not_in_child_stream None funcs/1415446a0.c:337
+0x140ec0a60 702 [703, 706] ['gams', 337] 703:v21 = v5; 704:LOBYTE(v11) = 13; 705:v22 = 1734438259; 706:return sub_143CA2E60(v21, v11, v22, a3);
+0x140ecb5c0 352 [353, 355] ['gams', 89] 353:LOBYTE(a2) = 13; 354:v12 = 1734438259; 355:return sub_140ECDFE0(a1, a2, v12, v4);
+comp CWLc gap_helper_computed None funcs/140ec0a60.c:1165
+0x140ec0a60 1165 [1166, 1168]  1166:v21 = v5; 1167:LOBYTE(v11) = 14; 1168:goto LABEL_820;
+0x140ecb5c0 473 [474, 475]  474:LOBYTE(a2) = 14; 475:goto LABEL_473;
+comp CWLg gap_child_off_not_in_child_stream None funcs/1415446a0.c:337
+0x140ec0a60 1188 [1189, 1192] ['gams', 337] 1189:v21 = v5; 1190:LOBYTE(v11) = 14; 1191:v22 = 1734438259; 1192:return sub_143CA2E60(v21, v11, v22, a3);
+0x140ecb5c0 480 [481, 483] ['gams', 89] 481:LOBYTE(a2) = 14; 482:v12 = 1734438259; 483:return sub_140ECDFE0(a1, a2, v12, v4);
+comp CWWc gap_helper_computed None funcs/140ec0a60.c:1414
+0x140ec0a60 1414 [1415, 1417]  1415:v21 = v5; 1416:LOBYTE(v11) = 15; 1417:goto LABEL_820;
+0x140ecb5c0 700 [701, 702]  701:LOBYTE(a2) = 15; 702:goto LABEL_473;
+comp CWWg gap_child_off_not_in_child_stream None funcs/1415446a0.c:337
+0x140ec0a60 1423 [1424, 1427] ['gams', 337] 1424:v21 = v5; 1425:LOBYTE(v11) = 15; 1426:v22 = 1734438259; 1427:return sub_143CA2E60(v21, v11, v22, a3);
+0x140ecb5c0 707 [708, 710] ['gams', 89] 708:LOBYTE(a2) = 15; 709:v12 = 1734438259; 710:return sub_140ECDFE0(a1, a2, v12, v4);
+comp CWSc gap_helper_computed None funcs/140ec0a60.c:1476
+0x140ec0a60 1476 [1477, 1479]  1477:v21 = v5; 1478:LOBYTE(v11) = 19; 1479:goto LABEL_820;
+0x140ecb5c0 527 [528, 529]  528:LOBYTE(a2) = 19; 529:goto LABEL_473;
+comp CWSg gap_child_off_not_in_child_stream None funcs/1415446a0.c:337
+0x140ec0a60 1485 [1486, 1489] ['gams', 337] 1486:v21 = v5; 1487:LOBYTE(v11) = 19; 1488:v22 = 1734438259; 1489:return sub_143CA2E60(v21, v11, v22, a3);
+0x140ecb5c0 534 [535, 537] ['gams', 89] 535:LOBYTE(a2) = 19; 536:v12 = 1734438259; 537:return sub_140ECDFE0(a1, a2, v12, v4);
+comp CWCg gap_child_off_not_in_child_stream None funcs/1415446a0.c:337
+0x140ec0a60 1152 [1153, 1156] ['gams', 337] 1153:v21 = v5; 1154:LOBYTE(v11) = 18; 1155:v22 = 1734438259; 1156:return sub_143CA2E60(v21, v11, v22, a3);
+0x140ecb5c0 462 [463, 465] ['gams', 89] 463:LOBYTE(a2) = 18; 464:v12 = 1734438259; 465:return sub_140ECDFE0(a1, a2, v12, v4);
+comp CAAc gap_helper_computed None funcs/140ec0a60.c:919
+0x140ec0a60 919 [921, 924]  921:v21 = v5; 922:LOBYTE(v11) = 29; 923:goto LABEL_820; 924:}
+0x140ecb5c0 190 [191, 194]  191:LOBYTE(a2) = 29; 192:LABEL_473: 193:v12 = 1952801133; 194:break;
+comp CAAa gap_helper_computed None funcs/140ec0a60.c:966
+0x140ec0a60 966 [968, 970]  968:v21 = v5; 969:LOBYTE(v11) = 29; 970:v22 = 1635021925;
+0x140ecb5c0 186 [187, 189]  187:LOBYTE(a2) = 29; 188:v12 = 1635021925; 189:break;
+comp CAAd gap_helper_computed None funcs/140ec0a60.c:925
+0x140ec0a60 925 [927, 929]  927:v21 = v5; 928:LOBYTE(v11) = 29; 929:v22 = 1937007732;
+0x140ecb5c0 234 [236, 237]  236:LOBYTE(a2) = 29; 237:v12 = 1937007732;
+comp HCAa gap_helper_computed None funcs/140ec0a60.c:2363
+0x140ec0a60 2363 [2364, 2367]  2364:v21 = v5; 2365:LOBYTE(v11) = 36; 2366:v22 = 1635021925; 2367:break;
+0x140ecb5c0 739 [741, 743]  741:LOBYTE(a2) = 36; 742:v12 = 1635021925; 743:}
+comp HCAd gap_helper_computed None funcs/140ec0a60.c:2368
+0x140ec0a60 2368 [2369, 2372]  2369:v21 = v5; 2370:LOBYTE(v11) = 36; 2371:v22 = 1937007732; 2372:break;
+0x140ecb5c0 746 [748, 749]  748:LOBYTE(a2) = 36; 749:v12 = 1937007732;
+comp LCAa gap_helper_computed None funcs/140ec0a60.c:2731
+0x140ec0a60 2731 [2733, 2736]  2733:v21 = v5; 2734:LOBYTE(v11) = 37; 2735:v22 = 1635021925; 2736:}
+0x140ecb5c0 816 [818, 819]  818:LOBYTE(a2) = 37; 819:v12 = 1635021925;
+comp LCAd gap_helper_computed None funcs/140ec0a60.c:2739
+0x140ec0a60 2739 [2741, 2743]  2741:v21 = v5; 2742:LOBYTE(v11) = 37; 2743:v22 = 1937007732;
+0x140ecb5c0 779 [793, 794]  793:LOBYTE(a2) = 37; 794:v12 = 1937007732;
+comp CMAp gap_helper_computed None funcs/140ec0a60.c:678
+0x140ec0a60 678 [680, 682]  680:v21 = v5; 681:LOBYTE(v11) = 1; 682:v22 = 1937008996;
+0x140ecb5c0 374 [375, 377]  375:LOBYTE(a2) = 1; 376:v12 = 1937008996; 377:break;
+comp CMAn gap_helper_computed None funcs/140ec0a60.c:756
+0x140ec0a60 756 [758, 760]  758:v21 = v5; 759:LOBYTE(v11) = 1; 760:v22 = 1937010285;
+0x140ecb5c0 370 [371, 373]  371:LOBYTE(a2) = 1; 372:v12 = 1937010285; 373:break;
+comp CMAa gap_helper_computed None funcs/140ec0a60.c:748
+0x140ec0a60 748 [750, 753]  750:v21 = v5; 751:LOBYTE(v11) = 1; 752:v22 = 1634758771; 753:}
+0x140ecb5c0 366 [367, 369]  367:LOBYTE(a2) = 1; 368:v12 = 1634758771; 369:break;
+comp CMGn gap_helper_computed None funcs/140ec0a60.c:629
+0x140ec0a60 629 [631, 633]  631:v21 = v5; 632:LOBYTE(v11) = 2; 633:v22 = 1937010285;
+0x140ecb5c0 417 [418, 420]  418:LOBYTE(a2) = 2; 419:v12 = 1937010285; 420:break;
+comp CMGg gap_helper_computed None funcs/140ec0a60.c:621
+0x140ec0a60 621 [623, 626]  623:v21 = v5; 624:LOBYTE(v11) = 2; 625:v22 = 1735355507; 626:}
+0x140ecb5c0 413 [414, 416]  414:LOBYTE(a2) = 2; 415:v12 = 1735355507; 416:break;
+comp CMCc gap_helper_computed None funcs/140ec0a60.c:640
+0x140ec0a60 640 [641, 643]  641:v21 = v5; 642:LOBYTE(v11) = 34; 643:goto LABEL_820;
+0x140ecb5c0 388 [389, 390]  389:LOBYTE(a2) = 34; 390:goto LABEL_473;
+comp CMCs gap_child_off_not_in_child_stream None funcs/1415446a0.c:337
+0x140ec0a60 672 [673, 676] ['gams', 337] 673:v21 = v5; 674:LOBYTE(v11) = 34; 675:v22 = 1734438259; 676:return sub_143CA2E60(v21, v11, v22, a3);
+0x140ecb5c0 403 [404, 406] ['gams', 89] 404:LOBYTE(a2) = 34; 405:v12 = 1734438259; 406:return sub_140ECDFE0(a1, a2, v12, v4);
+comp CHGt gap_helper_computed None funcs/140ec0a60.c:609
+0x140ec0a60 609 [610, 612]  610:v21 = v5; 611:LOBYTE(v11) = 20; 612:goto LABEL_820;
+0x140ecb5c0 279 [280, 281]  280:LOBYTE(a2) = 20; 281:goto LABEL_473;
+comp CFGc gap_helper_computed None funcs/140ec0a60.c:769
+0x140ec0a60 769 [770, 772]  770:v21 = v5; 771:LOBYTE(v11) = 24; 772:goto LABEL_820;
+0x140ecb5c0 82 [83, 84]  83:LOBYTE(a2) = 24; 84:goto LABEL_473;

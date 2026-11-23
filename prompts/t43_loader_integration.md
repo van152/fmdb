@@ -28,7 +28,7 @@
 ## 边界
 - 只改 scripts/fm24_dump.py 的 load_payload + 写 scratch/t43/;不碰其它 scripts/任务产物。
 - data_base=34 结构含义仍候选(未 L3 exe 确认),集成是操作性修复,不写结构结论;L4=0。
-- 不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 回归任一不绿→诚实 partial + 首反例,不强行宣布完成。
 
 ## 交付 scratch/t43/out/

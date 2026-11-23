@@ -24,7 +24,7 @@
 ## 边界
 
 - 只做 CLUB+0x100 链与上述 24 个 held 字段;不重做 club 主行其余 350 unmapped、8 子表、CLUB_LINK、`+0x150` tag0(t63 已闭)、nation/comp、person/PDxx。
-- 不启动游戏/编辑器/IDA,不联网,不读写 Z:;只读外部数据。
+- 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:;只读外部数据。
 - 全档统计可向量化,L3 判定不得抽样代替全档。
 
 ## 交付 scratch/t71/out/

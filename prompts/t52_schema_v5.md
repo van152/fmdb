@@ -26,7 +26,7 @@
 
 ## 边界
 - 只改 reports/club_nation_subtable_schema.json/.md(schema v5)与 scratch/t52/、scripts/t52_*.py;**不改** scratch/t47/t49/t51/t50 任何文件;不改 BASELINE.md(另行)。
-- 不启动游戏/编辑器/IDA,不联网,不读写 Z:;L4=0。
+- 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:;L4=0。
 - 若 t49/t50 尚未交付对应部分,按指挥官 dispatch 附言的实际清单合并,缺项如实记 pending,不虚构。
 
 ## 交付 scratch/t52/out/

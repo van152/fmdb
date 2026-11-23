@@ -2,8 +2,27 @@ __pycache__/
 *.pyc
 *.i64
 *.idb
+*.id0
+*.id1
+*.id2
+*.nam
+*.til
 *.tmp
 scratch/**/*.json.tmp
+
+# 二进制数据库、大缓存与可复算派生数据
+*.dat
+*.bin
+*.pkl
+*.npy
+*.npz
+*.sqlite
+scratch/**/*.pkl
+scratch/**/*.npy
+scratch/**/*.npz
+scratch/**/*.bin
+scratch/**/*.sqlite
+scratch/**/cache/
 
 # Windows reserved device names accidentally created by shell redirects
 nul
@@ -14,15 +33,22 @@ aux
 # Z: 游戏库本地镜像(司令部一次性拷贝,大数据不入库)
 scratch/data/
 
-# 子代理派生大缓存(pkl/npy 中间产物,可由脚本复算,不入仓)
-scratch/**/*.pkl
-scratch/**/*.npy
+# pi 会话与运行日志(不入公开库)
+scratch/pi-logs/
+scratch/pi-sessions/
+scratch/pi-sessions-backup/
+scratch/cmd/pi-logs/
+scratch/*/pi-logs/
+scratch/*/pi-sessions/
+*.jsonl
 
-# 重度生成数据(探针输出可复算;cup-prize 为外部编辑器 XML,非本使命产物)
+# 重度生成数据与临时副本(可由脚本重生成)
 scratch/t05/people/
 scratch/t05/team_comp/
 scratch/cup-prize-0362/
-# 解码载荷复算产物(t71 起),可由脚本重生成,不入仓
-scratch/**/*.bin
 scratch/t90/out/schema_v112.json
+scratch/t108/out2/
+scratch/t126/out/_walk.json
+scratch/t142/out/stage3_edges.json
+scratch/t142/out/allcand.json
 scratch/ext/

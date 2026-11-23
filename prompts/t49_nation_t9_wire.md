@@ -39,7 +39,7 @@
 ## 边界
 - 只 t9 这 8 parent;不碰 Ntxr(t47 已闭)、不碰 t28 已闭 4 parent(Nagr/Nefr/Nnfr/Nlns)、不碰 Tchl(t34)。
 - 6 unknown(Nftb/EDfx/EDsc/Nrvn/Calt/TCrs)另案,本任务不强行晋级。
-- 候选不写结论;t37/t47 negative/held/baseline 原样保留;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 候选不写结论;t37/t47 negative/held/baseline 原样保留;L4=0;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 预算内无法全闭则诚实 partial+已闭子集+剩余+首反例。**优先级:transfer 三件(Nntp/Nctp/Nrtp)+repu 三件(NTRv/NWGv/NSps)先闭(固定/i32 array 最简),再 Nfmp/NCro。**
 
 ## 交付 scratch/t49/out/

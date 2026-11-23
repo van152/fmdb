@@ -31,7 +31,7 @@
 ## 纪律(防超时)
 - **每完成一表立即落盘 + 追加进度到 scratch/t33/out/PROGRESS.md**;卡壳就标 partial 跳过做下一表。
 - 7 表做不完就交已完成的,**全部完成或窗口将尽时写 DONE.md**(一句话:完成 N/7 表 + 各 count/stride + 新连接候选)。即使 partial 也写 DONE.md(让 launcher 正确识别交付,避免 t26 式 gave up 误判)。
-- 只写 scratch/t33/out/ 与 scripts/t33_*.py;不覆盖 t29/t29b 产物;候选不写结论;negative 保留;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 只写 scratch/t33/out/ 与 scripts/t33_*.py;不覆盖 t29/t29b 产物;候选不写结论;negative 保留;L4=0;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 新脚本 --help/--selftest,退出码 0/1/2;大 JSON 分片;单次打印 ≤400 行。
 - 派生大缓存(pkl/npy)勿放 out/(已 .gitignore 排除 scratch/**/*.pkl|npy)。
 

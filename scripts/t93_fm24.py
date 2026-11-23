@@ -5,7 +5,7 @@ literals plus the entity-array addresses from src/fields/fm24/*.rs and mod.rs.
 
 Usage:
   py -V:3.12 -I -B scripts/t93_fm24.py --selftest
-  py -V:3.12 -I -B scripts/t93_fm24.py --out scratch/t93/outbox.md/fm24_fields.json
+  py -V:3.12 -I -B scripts/t93_fm24.py --out scratch/t93/outbox.md/fm24_memory_layout.json
 """
 
 from __future__ import annotations

@@ -16,7 +16,7 @@
 5. 全档域检验过闸 L3;否则 held/unmapped 原样+首反例;独立 verify.py + builder scripts/t64_comp_unmapped_r2.py;--help/--selftest;退出码 0/1/2。
 
 ## 边界
-- 只 comp 主行;不碰 t59 已闭 L3(818 倒置口径不变);不碰 comp 派生集合(那是 t66 的活,若 t66 已交付可引用其结论);不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 只 comp 主行;不碰 t59 已闭 L3(818 倒置口径不变);不碰 comp 派生集合(那是 t66 的活,若 t66 已交付可引用其结论);不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 
 ## 交付 scratch/t64/out/
 - helpers.json、field_map_r2.json、exclusions.json、verify.py、REPORT.md、DONE.md;scripts/t64_comp_unmapped_r2.py

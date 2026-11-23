@@ -1,0 +1,13 @@
+server/t0  AWARD                          OK_SAMPLE rows= 3545/3545   diff=   163691 fields= 47 (   2.1s) 
+server/t3  CLUB                           FAIL      rows=   20/84259  diff= 15927552 fields= 30 (   2.4s) row 20 flag=0x1 s19=0x140e5b1a0 consumed=203176 err=Unhandled CPU exception (UC_ERR_EXCEPTION) rip=0x141d19401 un=[{'kind': 'stream_vcall', 'vt_off': '0x700', 'caller': '0x140e5b357'}]
+server/t32 STARTING_FUTURE_TRANSFER       CLOSED    rows=  315/315    diff=        0 fields= 18 (   2.7s) 
+server/t36 STARTING_MANAGER_HOF_RECORD    OK_SAMPLE rows=  200/6535   diff=   545509 fields= 16 (   3.0s) 
+server/t41 CURRENCY_RECORD                CLOSED    rows=  173/173    diff=        0 fields= 14 (   3.8s) 
+server/t45 STARTING_RECORD                OK_SAMPLE rows=  200/84477  diff=  7589645 fields= 18 (   4.5s) 
+server/t48 STARTING_RECORD                CLOSED    rows= 5210/5210   diff=        0 fields= 18 (   8.0s) 
+server/t71 STARTING_PAST_TRANSFER         OK_SAMPLE rows=   50/616665 diff= 57475694 fields= 28 (   9.3s) 
+server/t72 STARTING_PAST_TRADE            FAIL      rows=    2/138    diff=     9203 fields= 24 (   9.4s) row 2 flag=0x0 s19=0x14153f260 consumed=114 err=Invalid memory read (UC_ERR_READ_UNMAPPED) rip=0x140f83d3d un=[{'kind': 'stream_vcall', 'vt_off': '0x700', 'caller': '0x1441e824d'}]
+client/t0  AWARD                          OK_SAMPLE rows= 3545/3545   diff=   163691 fields= 47 (  11.6s) 
+client/t3  CLUB                           OK_SAMPLE rows=  200/84259  diff=   506194 fields= 10 (  12.2s) 
+
+DONE t111 in 12.2s: closed=3 sample_ok=6 fail=2 / 11

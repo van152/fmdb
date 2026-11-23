@@ -25,7 +25,7 @@
 ## 边界
 - **只数据侧**:不读 exe/IDA、不追静态 reader、不命名语义字段、不做 target ordinal join、不晋级 L3。
 - 不碰 t49 产物(scratch/t49/)、不碰 t37/t47 baseline。候选不写结论;negative 原样保留;L4=0。
-- 不启动游戏/编辑器/IDA,不联网,不读写 Z:。变长无法闭合则诚实 partial。
+- 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。变长无法闭合则诚实 partial。
 - 只写 scratch/t50/ 与 scripts/t50_*.py。
 
 ## 交付 scratch/t50/out/

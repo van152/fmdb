@@ -14,7 +14,7 @@
 1. **枚举集提取**:对每个 held occurrence 的 XML 路径,提取 scoped `enum_ref` 的值集(含数值与字符串对);无 enum_ref 或引用不存在的 → 记 no_enum_source,保持 held。
 2. **域批量检验**:按各表既有坐标(t55/t57/t59 field_map 的 slot/lane/legacy_body_offset 等)全档取值(client/server 各自全部行),直方图 vs 枚举集;越界=首反例(行号+绝对 offset+原始字节)。引用字段类 held 若属枚举问题同样处理。
 3. **晋级口径**:全部档位值 ∈ 枚举集 且 4CC/getter 链为既有 L3 同级证据(不重做静态链,引用 t55/t57/t59 的 getter 记录)→ L3;否则 held(记录枚举集+实际值域+首反例)。**Club/comp/nation 三侧分开计数**,不混层。
-4. **边界**:不改 scratch/t55/t57/t59;不碰已闭 L3;不碰 person/PDxx;不启动游戏/编辑器/IDA,不联网,不读写 Z:。bit 投影类(如 cext)不在本任务(已 L3)。
+4. **边界**:不改 scratch/t55/t57/t59;不碰已闭 L3;不碰 person/PDxx;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。bit 投影类(如 cext)不在本任务(已 L3)。
 5. 独立 verify.py(不 import worker/builder)+ builder scripts/t61_enum_ref_sweep.py;--help/--selftest;退出码 0/1/2。
 
 ## 交付 scratch/t61/out/

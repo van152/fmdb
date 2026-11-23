@@ -23,7 +23,7 @@
 
 ## 边界
 - 只 CSrs/table62;不碰已闭 Cstc/Clhs;Cafl/Cvfl 双视图另案。
-- 候选不写结论;negative/held 反例原样保留;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 候选不写结论;negative/held 反例原样保留;L4=0;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 消费 t29 画像;若未交付自行 dump(fm24_dump.py,FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data)。
 - 预算内无法闭合则诚实 partial+已绑定子集+剩余清单+首个反例。
 

@@ -25,7 +25,7 @@
 
 1. 只做 [NATION+0x108]/table_9 及直接关联字段;不碰 club/comp 主行、t45(t88-fix2 车道在做)、五表(t83 已收)
 2. 只写 `scratch/t89/out/` 和 `scripts/t89_*.py`(**不修改 scratch/t89/ 探针文件**);不碰 reports/、LEDGER
-3. 不启动游戏/编辑器/IDA,不联网,不读写 Z:(editor.exe 只读);数据侧验证向量化
+3. 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:(editor.exe 只读);数据侧验证向量化
 4. **铁律**:`>20KB` 不进会话(13 件探针全是大文件,只能 grep);print ≤30 行/次;单次写 ≤120 行;负结果原样保留;候选不写成结论
 5. 自检:发现整读大文件/上下文暴涨→立即停,换程序化;两轮定不出→`escalate` 并写 `DONE status=partial`,不静默放弃
 6. `py -V:3.12 -I -B`;`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`;zstd vendored `D:/tmp2b/fm24/tools/python`

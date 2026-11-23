@@ -21,7 +21,7 @@
 ## 边界
 
 - 只做 stadium/team/extra_24/CLUB+0x18 六字段;不碰三主表其余 unmapped(已见底)、person/PDxx、t76 各车道目标表(award 等)。
-- 不启动游戏/编辑器/IDA,不联网,不读写 Z:;全档验证向量化。
+- 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:;全档验证向量化。
 - **防冲突**:只写 `scratch/t79/` 和 `scripts/t79_*.py`。
 
 ## 交付 scratch/t79/out/

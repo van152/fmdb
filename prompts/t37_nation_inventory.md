@@ -21,7 +21,7 @@
 - 只读 scratch/data/ + 仓内证据 + 只读 editor.exe(VA 对照用 scripts/t05_pe.py);只写 scratch/t37/out/ 与 scripts/t37_*.py;不覆盖 t24/t28/t29/t33 产物。
 - 候选不写结论;无独立证据不赋列名;负结果/反例保留;匹配不到如实 unknown。
 - 卡壳写 partial 再做下一个;新脚本 --help/--selftest,退出码 0/1/2;单次打印 ≤400 行;大 JSON 分片;状态词 complete_*/partial_*/negative_*。
-- 不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 
 ## 交付 scratch/t37/out/
 - nation_subtable_inventory.json(每父码发现+画像+候选+confidence+blockers,可分片)

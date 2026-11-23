@@ -27,7 +27,7 @@
 
 ## 边界
 - 只 Cafl/Cvfl;不碰已闭 club 子表;发现其它 unknown parent 另案。
-- 候选不写结论;t35 negative/held 原样保留;L4=0;不启动游戏/编辑器/IDA,不联网,不读写 Z:。
+- 候选不写结论;t35 negative/held 原样保留;L4=0;不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,不读写 Z:。
 - 预算内无法发现/闭合则诚实 partial+已绑定子集+剩余+首反例(发现任务允许 negative)。
 
 ## 交付 scratch/t44/out/

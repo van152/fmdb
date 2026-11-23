@@ -32,7 +32,7 @@
 2. `>20KB` 不进会话;print ≤30 行/次;单次写 ≤120 行;**每小节完成立即落盘**(防 mid-stream 死亡丢工)
 3. 时间不够→已落盘小节保留 + `DONE status=partial` 列明剩余,**不静默放弃**
 4. 负结果原样保留;候选不写成结论;两轮定不出→escalate 注记
-5. 不启动游戏/编辑器/IDA,不联网,Z: 只读(editor.exe 只读,SHA b82ebe8e...)
+5. 不启动游戏本体/FM 编辑器(IDA 静态分析允许),不联网,Z: 只读(editor.exe 只读,SHA b82ebe8e...)
 6. `py -V:3.12 -I -B`;`FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data`;zstd vendored `D:/tmp2b/fm24/tools/python`
 
 ## 交付 scratch/t89/out/

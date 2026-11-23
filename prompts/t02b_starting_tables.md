@@ -1,7 +1,7 @@
 # t02-b 任务书:33 个 STARTING_* 无名直线型实体 —— 项目最大空白区
 
 > 交给 pi devseek(deepseek-v4.1-flash-free)。这批表**从未被解析过**:它们在 server_db.dat 里真实存在、驱动游戏开局逻辑,但不在 editor 的 property_map 里(editor 不可编辑),所以历史工作全部跳过了它们。
-> 规则:只读输入、不启动游戏/编辑器/IDA、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
+> 规则:只读输入、不启动游戏本体/FM 编辑器(IDA 静态分析允许)、不 pip install、Python `py -V:3.12 -I -B`、每个 claim 带 file offset + 字节证据。
 
 ## 先读方法论(照抄,勿重新发明)
 
