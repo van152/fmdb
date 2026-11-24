@@ -7,6 +7,10 @@ scratch/t16/out. Exit codes: 0 checks passed, 1 acceptance check failed,
 2 usage or fatal input/dependency error.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -19,7 +23,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "scratch/t16/out"
-EDITOR = Path(r"D:\tmp2b\fm24\input\editor.exe")
+EDITOR = Path(str(_cfg.EDITOR_EXE))
 CENSUS = ROOT / "scratch/t14/out/census.json"
 STAGE2 = ROOT / "scratch/t14/out/stage2_map.json"
 SCHEMA = ROOT / "scratch/t05/schema_inventory.json"

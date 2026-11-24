@@ -13,6 +13,10 @@ Exit 0 = all pass; 1 = any check failed (prints which).
 Run: py -V:3.12 -I scripts/t01_anchors.py [--json]
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -21,8 +25,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-EDITOR = Path(r"D:\tmp2b\fm24\input\editor.exe")
-FM = Path(r"D:\tmp2b\fm24\input\fm.exe")
+EDITOR = Path(str(_cfg.EDITOR_EXE))
+FM = Path(str(_cfg.FM_EXE))
 
 
 def main() -> int:

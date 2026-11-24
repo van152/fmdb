@@ -12,6 +12,10 @@
 退出码: 0 完成 / 1 检查未过 / 2 用法或致命错误
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import json
 import pathlib
@@ -97,7 +101,7 @@ def run() -> int:
             fn = f"{arc}_db.dat"
             import os
             dbdir = pathlib.Path(os.environ.get("FM24_DB_DIR")
-                                or r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm")
+                                or str(_cfg.GAME_DB_DIR))
             ents = codec["list_tables"](dbdir / fn, fn)
             ids = sorted({int(e["table_id"]) for e in ents if isinstance(e.get("table_id"), int)})
             res["client_archive"] = {"file": fn, "tables_listed": len(ids),

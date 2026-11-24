@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Read-only FM24 2400/2430 localization decoder and t133 UID join."""
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 from collections import Counter, defaultdict
@@ -12,14 +16,14 @@ import struct
 import sys
 
 sys.dont_write_bytecode = True
-sys.path.insert(0, r"D:\tmp2b\fm24\tools\python")
+sys.path.insert(0, str(_cfg.VENDOR_DIR))
 import zstandard as zstd
 import t133_fm24_reader_v2 as core
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'scratch/t143/out'
 SOURCES = (
-    ('lang_db_2400', Path(r'D:\tmp2b\fm24\input\lang_db_2400.dat'), 'lang_db', 0x0def),
+    ('lang_db_2400', Path(str(_cfg.LANG_DB_DAT)), 'lang_db', 0x0def),
     ('lang_update_db', ROOT / 'scratch/data/lang_update_db.dat', 'lang_update_db', 0x0df1),
 )
 MAGIC = bytes.fromhex('03 01 74 61 64 2e')

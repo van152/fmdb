@@ -6,6 +6,10 @@ Writes only scratch/t14/out/census.json. Exit codes: 0 success, 1 checks fail,
 2 usage/fatal error. Run with: py -V:3.12 -I scripts/t14_rtti_census.py
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -18,8 +22,8 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "scratch/t14/out/census.json"
-EDITOR = Path(r"D:\tmp2b\fm24\input\editor.exe")
-FM = Path(r"D:\tmp2b\fm24\input\fm.exe")
+EDITOR = Path(str(_cfg.EDITOR_EXE))
+FM = Path(str(_cfg.FM_EXE))
 JUMP_BASE = 0xF49D38
 DEFAULT_HANDLER = 0xF49CA9
 TAIL_VA = 0x140F4A6A9
@@ -374,7 +378,7 @@ def main() -> int:
                "method":{"jump_base":hx(JUMP_BASE),"rel32":"handler = jump_base + signed_i32(table_base + 4*type)",
                          "default_handler":hx(DEFAULT_HANDLER),"bfs_depth_limit":4,
                          "rtti":"vtable[-1] COL VA; COL+0x0 sig; COL+0xC TD RVA; COL+0x10 CHD RVA; TD+16 decorated class",
-                         "editor":"D:\\tmp2b\\fm24\\input\\editor.exe","fm":"D:\\tmp2b\\fm24\\input\\fm.exe",
+                         "editor":str(_cfg.EDITOR_EXE),"fm":str(_cfg.FM_EXE),
                          "fm_td_names_found":len(fm_names) if fm_names is not None else None},
                "summary":{"types":len(rows),"dedicated":len(dedicated),"default":len(defaults),
                           "named":sum(bool(x.get("vtables")) for x in rows if x["status"]=="dedicated"),

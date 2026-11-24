@@ -6,6 +6,10 @@
 退出码:0 全部闭合 / 1 有 (archive,table) 未闭合 / 2 用法或致命错误。
 """
 import pathlib, runpy, struct, hashlib, os
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 READER_VERIFY = ROOT / "scratch/t01/inbox/t01k/verify.py"
@@ -14,7 +18,7 @@ MAGIC = bytes.fromhex("28b52ffd")
 
 def db_dir() -> pathlib.Path:
     return pathlib.Path(os.environ.get("FM24_DB_DIR")
-                        or r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm")
+                        or str(_cfg.GAME_DB_DIR))
 
 
 def codec():

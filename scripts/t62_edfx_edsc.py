@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Build t62: bounded static EDfx/EDsc dispatcher, source/sink and exclusion audit."""
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 from bisect import bisect_right
@@ -15,7 +19,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'scratch/t62/out'
-EXE = Path('D:/tmp2b/fm24/input/editor.exe')
+EXE = Path(str(_cfg.EDITOR_EXE))
 EXE_SHA = 'b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4'
 MASTER = 'evidence/fm24/reports/editor_schema/master.json'
 IDA = 'evidence/fm24/reports/qa/IDA_PROVENANCE.md'
@@ -171,7 +175,7 @@ class Image:
 
 
 def archives():
-    sys.path.append('D:/tmp2b/fm24/tools/python')  # Local zstandard if not installed on the standard path.
+    sys.path.append(str(_cfg.VENDOR_DIR))  # Local zstandard if not installed on the standard path.
     import zstandard as zstd
     root = Path(os.environ.get('FM24_DB_DIR', str(ROOT / 'scratch/data')))
     ck(root.drive.upper() != 'Z:' and root.resolve().drive.upper() != 'Z:', 'Z: forbidden')

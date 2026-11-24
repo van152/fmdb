@@ -9,6 +9,10 @@ Usage:
 Exit codes: 0 ok, 1 error/timeout, 2 bad usage.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -19,7 +23,7 @@ import threading
 import time
 from pathlib import Path
 
-ROOT = Path(r"D:\tmp2b\fm24-db")
+ROOT = Path(str(_cfg.ROOT))
 ZCODE_DIR = Path(os.environ.get("LOCALAPPDATA", r"C:\Users\oak\AppData\Local")) / "Programs/ZCode/resources"
 ZCODE_CJS = ZCODE_DIR / "glm/zcode.cjs"
 BUILTIN_CFG = ZCODE_DIR / "config/provider/zcode-builtin.json"

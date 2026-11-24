@@ -1,5 +1,9 @@
 """t96: batch Unicorn wire tracing of indexed FM24 database tables."""
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 import argparse, importlib.util, json, struct, sys, traceback
 from collections import Counter
 from pathlib import Path
@@ -83,7 +87,7 @@ def run(pe,out):
  return len(records),len(closed),complete
 
 def main():
- ap=argparse.ArgumentParser(description=__doc__); ap.add_argument("--pe",type=Path,default=Path(r"D:\tmp2b\fm24\input\editor.exe")); ap.add_argument("--outdir",type=Path,default=OUT); ap.add_argument("--selftest",action="store_true"); a=ap.parse_args()
+ ap=argparse.ArgumentParser(description=__doc__); ap.add_argument("--pe",type=Path,default=Path(str(_cfg.EDITOR_EXE))); ap.add_argument("--outdir",type=Path,default=OUT); ap.add_argument("--selftest",action="store_true"); a=ap.parse_args()
  try:
   if a.selftest:
    m=load_module(); e=m.EditorEmulator(a.pe); d=m.load_table_payload("server",45); v=struct.unpack_from("<H",d,6)[0]; r=e.trace_read(0x141544130,d[13:-9],version=v); print(f"selftest ok={r['ok']} consumed={r['bytes_consumed']}"); return 0 if r["ok"] and r["bytes_consumed"] else 1

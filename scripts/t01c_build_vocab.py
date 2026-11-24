@@ -47,6 +47,10 @@ Transcription policy (documented in REPORT.md):
 """
 
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -55,7 +59,7 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-REPO = Path(r"D:\tmp2b\fm24-db")
+REPO = Path(str(_cfg.ROOT))
 DEFAULT_MASTER = REPO / "evidence/fm24/reports/editor_schema/master.json"
 DEFAULT_PMAP = REPO / "evidence/fm24/reports/editor_gen/PROPERTY_MAP.md"
 DEFAULT_OUT = REPO / "scratch/t01/inbox/t01c"

@@ -4,13 +4,17 @@
 Usage: py -V:3.12 -I -B scripts/t88f5_bytescan.py [--selftest] [--disp 5d]
 """
 import argparse
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 import os
 import re
 import sys
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-EXE = "D:/tmp2b/fm24/input/editor.exe"
+EXE = str(_cfg.EDITOR_EXE)
 BO = 0x140000a00
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)

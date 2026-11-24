@@ -10,12 +10,16 @@ Usage:
 Exit codes: 0 ok, 1 partial/misses, 2 bad usage.
 """
 import argparse
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 import json
 import sys
 import traceback
 from pathlib import Path
 
-IDA_LIB = r'C:\Program Files\IDA Professional 9.4\idalib\python'
+IDA_LIB = str(_cfg.IDA_LIB_DIR)
 CENSUS = 'scratch/t14/out/census.json'
 
 
@@ -36,7 +40,7 @@ def load_targets(census_path):
 def main():
     ap = argparse.ArgumentParser(description='Decompile t14 census table handlers via idalib.')
     ap.add_argument('--census', default=CENSUS)
-    ap.add_argument('--pe', default=r'D:/tmp2b/fm24/input/editor.exe')
+    ap.add_argument('--pe', default=str(_cfg.EDITOR_EXE))
     ap.add_argument('--out', default='scratch/t94/out')
     ap.add_argument('--limit', type=int, default=0, help='only first N targets (debug)')
     ap.add_argument('--selftest', action='store_true',

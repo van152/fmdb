@@ -25,6 +25,10 @@ Usage:
     py -V:3.12 -B scripts/t127_pl_hist.py --uid 28049320
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import datetime
@@ -35,7 +39,7 @@ import sys
 from pathlib import Path
 
 sys.dont_write_bytecode = True
-ZSTD_PATH = r"D:\tmp2b\fm24\tools\python"
+ZSTD_PATH = str(_cfg.VENDOR_DIR)
 if ZSTD_PATH not in sys.path:
     sys.path.insert(0, ZSTD_PATH)
 import zstandard as zstd  # noqa: E402

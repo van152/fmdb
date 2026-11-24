@@ -17,6 +17,10 @@
   py -V:3.12 -I -B scripts/fm24_dump.py --selftest
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import csv
@@ -28,12 +32,12 @@ import struct
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-UPSTREAM = pathlib.Path(r"D:\tmp2b\fm24")
+UPSTREAM = pathlib.Path(str(_cfg.LEGACY_DIR))
 # 本地镜像优先(scratch/data,由司令部一次性拷贝),未设置则回落 Z: 游戏库。
 # 用法: FM24_DB_DIR=D:/tmp2b/fm24-db/scratch/data py -V:3.12 -I ...
 DB_DIR = pathlib.Path(
     os.environ.get("FM24_DB_DIR")
-    or r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm"
+    or str(_cfg.GAME_DB_DIR)
 )
 MAGIC = bytes.fromhex("28b52ffd")
 READER_VERIFY = ROOT / "scratch/t01/inbox/t01k/verify.py"

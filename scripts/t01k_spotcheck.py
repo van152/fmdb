@@ -2,11 +2,15 @@
 Run from fm24-db root: py -V:3.12 -I scripts/t01k_spotcheck.py
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 import importlib.util
 import struct
 import sys
 
-ED = r"D:\tmp2b\fm24\input\editor.exe"
+ED = str(_cfg.EDITOR_EXE)
 fails = 0
 data = open(ED, "rb").read()
 
@@ -49,11 +53,11 @@ expect("Pdob getter cmp edx,'Pdob' @0xe506a5", 0xe506a5, "81 fa 62 6f 64 50")
 expect("Pdob getter movzx word [rdi+0x5a] @0xe51158", 0xe51158, "0f b7 7f 5a")
 
 # payload sample: class-4 row @0x13b29
-spec = importlib.util.spec_from_file_location("o", r"D:\tmp2b\fm24\scripts\modding_read_dbdat.py")
+spec = importlib.util.spec_from_file_location("o", str(_cfg.OLD_DBDAT_READER))
 old = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(old)
 zmod = old._zstd_module()
-raw_file = open(r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm\basic_people_db.dat", "rb").read()
+raw_file = open(_cfg.GAME_DB_DIR / "basic_people_db.dat", "rb").read()
 payload = old._stream_decompress(raw_file[8:], 256 * 1024 * 1024)
 sample = payload[0x13b29:0x13b37].hex()
 good = sample == "1104af0000002103000064006c07"

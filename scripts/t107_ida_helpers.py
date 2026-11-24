@@ -9,6 +9,10 @@ Usage:
 Exit codes: 0 ok, 1 partial misses, 2 bad usage/fatal.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -20,9 +24,9 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-IDA_LIB = r"C:\Program Files\IDA Professional 9.4\idalib\python"
+IDA_LIB = str(_cfg.IDA_LIB_DIR)
 WORK_I64 = ROOT / "scratch/t95/editor_work.i64"
-DEFAULT_PE = Path(r"D:\tmp2b\fm24\input\editor.exe")
+DEFAULT_PE = Path(str(_cfg.EDITOR_EXE))
 FUNCS_DIR = ROOT / "scratch/t95/funcs"
 OUT_DIR = ROOT / "scratch/t107/out"
 

@@ -38,6 +38,10 @@ Unknown / not-yet-mapped conditional branches raise BranchError carrying the row
 wire offset — the walk stops honestly instead of guessing.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import io
@@ -49,7 +53,7 @@ from heapq import nlargest
 from pathlib import Path
 from struct import unpack_from, error as struct_error
 
-sys.path.insert(0, r"D:\tmp2b\fm24\tools\python")
+sys.path.insert(0, str(_cfg.VENDOR_DIR))
 import zstandard  # vendored, zero-install
 
 ROOT = Path(__file__).resolve().parents[1]

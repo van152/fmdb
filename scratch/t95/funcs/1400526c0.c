@@ -1,6 +1,0 @@
-// THUNK ALIAS -> sub_141D193F0 (jmp:0x1400526c0->0x141d193f0)
-void __noreturn sub_141D193F0()
-{
-  sub_141758420(0x1419062DBLL);
-  JUMPOUT(0x141D19400LL);
-}

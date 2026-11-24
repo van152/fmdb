@@ -1,5 +1,0 @@
-- **名称 vs 当前 UI 可见性**：Ncpi 这个 getter 在通过校验分支后取 `[NATION+0xe8]` 的 city 引用并调用 `0x140fe76a0`，因此它产出的是“由城市引用派生出的名称”，而不是控制当前 UI 是否显示的开关；那个 unknown virtual bool 只是取值前的早期短路判断，函数体内没有任何 UI 标志位或 visibility 读写。所以：Ncpi = 派生的名称/属性视图，其“有无值”取决于数据状态，与当前 UI 是否显示无因果绑定；把它当作可见性开关属于过度解读。
-
-- **门控能解释 vs 不能解释**：`cmp dword [NATION+0xc],0x307` 的 775 硬编码正好对应 shipped 资源里 `dependency duni not_equals=775`，因此它**能**解释以色列（row149、city ordinal FFFFFFFF、无有效首都）为何走 fallback 拿通用名 "Capital City" 而不是真实城市名，也解释了该 commented record 为何只对 775 失效。它**不能**解释：为何用硬编码而非数据驱动判断、unknown virtual bool 的真实语义、FFFFFFFF 是否就是门控的意图来源、以及是否为临时 hack/是否随版本变化——这些都不能从该比较指令推出。
-
-- **别名 vs 独立磁盘字段**：Ncac 打包 helper `0x143e34390` 与 NcpR `0x141043292+` 的 type+ID 公式完全一致、变体转换相同，仅 NcpR 少了 775 过滤，说明二者编码同一底层引用 ⇒ Ncac 是 NcpR 的别名/带门控变体，而非独立磁盘字段；Ncpi 也只是通过另一 helper 读同一 `+0xe8` 槽的派生视图。结论：磁盘上只有一份 city 引用，Ncpi / Ncac / NcpR 是三个访问路径（名称派生、受限读取、无过滤读取），不能据此认定三份独立存储字段。

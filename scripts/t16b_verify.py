@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Independent checks for t16b G1 inheritance and sampled naming bridges."""
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 import argparse, json, sys
 from pathlib import Path
 
@@ -73,7 +77,7 @@ def verify() -> int:
     sys.path.insert(0, str(ROOT / "scripts"))
     import t05_pe
     from capstone import CS_ARCH_X86, CS_MODE_64, Cs
-    pe = t05_pe.PE(Path(r"D:\tmp2b\fm24\input\editor.exe"))
+    pe = t05_pe.PE(Path(str(_cfg.EDITOR_EXE)))
     disasm = Cs(CS_ARCH_X86, CS_MODE_64)
     for tag, rows in rows_by_tag.items():
         for row in rows:

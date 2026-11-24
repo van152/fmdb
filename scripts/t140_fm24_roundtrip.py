@@ -35,6 +35,10 @@ Read-only inputs: scratch/data/*, scripts/t112,t119,t120,t133,t96*.py.
 Writes only: scripts/t140_fm24_roundtrip.py, scratch/t140/out/*.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import hashlib
@@ -51,7 +55,7 @@ sys.dont_write_bytecode = True
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 # The repository's designated vendor dir for zstandard (never find_library()).
-sys.path.insert(0, r"D:\tmp2b\fm24\tools\python")
+sys.path.insert(0, str(_cfg.VENDOR_DIR))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import zstandard  # noqa: E402  (vendored 0.25.0 / libzstd)

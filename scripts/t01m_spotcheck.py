@@ -2,6 +2,10 @@
 Run from fm24-db root: py -V:3.12 -I scripts/t01m_spotcheck.py
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 import importlib.util
 import struct
 import sys
@@ -12,7 +16,7 @@ def check(label, cond, detail=""):
     fails += not cond
     print(f"{'PASS' if cond else 'FAIL':4} {label} {detail}")
 
-data = open(r"D:\tmp2b\fm24\input\editor.exe", "rb").read()
+data = open(str(_cfg.EDITOR_EXE), "rb").read()
 def expect(label, off, hexstr):
     e = bytes.fromhex(hexstr.replace(" ", ""))
     got = data[off:off + len(e)]
@@ -46,10 +50,10 @@ expect("helper dest obj+0x34 @0x1184481", 0x1184481, "48 8d 4b 34")
 expect("helper call @0x1184488", 0x1184488, "e8 f3 3a c3 ff")
 
 # --- data side ---
-spec = importlib.util.spec_from_file_location("o", r"D:\tmp2b\fm24\scripts\modding_read_dbdat.py")
+spec = importlib.util.spec_from_file_location("o", str(_cfg.OLD_DBDAT_READER))
 old = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(old)
-DB = r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm"
+DB = str(_cfg.GAME_DB_DIR)
 
 def get_table(arch, tid):
     path, d, meta = old._entries(DB, arch)

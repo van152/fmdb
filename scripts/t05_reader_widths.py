@@ -16,6 +16,10 @@
     py -V:3.12 -I -B scripts/t05_reader_widths.py --type 6   # 单实体详表
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -23,7 +27,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-EXE = Path(r"D:\tmp2b\fm24\input\editor.exe")
+EXE = Path(str(_cfg.EDITOR_EXE))
 CENSUS = ROOT / "scratch/t01/inbox/t01h/output.json"
 COVERAGE = ROOT / "scratch/t05/COVERAGE.json"
 OUT = ROOT / "scratch/t05/reader_widths.json"

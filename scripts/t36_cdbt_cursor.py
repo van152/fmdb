@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Build the offline FM24 Cdbt/table 33 cursor and scoped field ledger."""
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 from collections import Counter
@@ -15,7 +19,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'scripts'))
 OUT = ROOT/'scratch/t36/out'
-EXE = Path('D:/tmp2b/fm24/input/editor.exe')
+EXE = Path(str(_cfg.EDITOR_EXE))
 EXE_SHA = 'b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4'
 MASTER = 'evidence/fm24/reports/editor_schema/master.json'
 PROV = 'evidence/fm24/reports/qa/IDA_PROVENANCE.md'

@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """t65: bounded second-pass Nation table_10 main-row projection census."""
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 from collections import Counter, deque
@@ -347,7 +351,7 @@ def static(sl, fm):
     aux.update((0xfe354b,0xfe3560,0xfe3562,0xfe4b47,0xfe4b71,0x1041eb0,0x1042790,0x10427a4,0x10427bf,0x10427d6,0x104284c))
     aux.update(y for x in tri for y in (*x['item_path'],x['item_gate'],x['count_cursor']))
     aux.update((0x39dd7c8,0x3daa128,0x3daa144,0x3daa167,0x3daa183,0x3daa19f,0x3daa1bb,0x3daa1d7,0x3daa1fd))
-    return dict(editor=dict(path='D:/tmp2b/fm24/input/editor.exe',sha256=EXEH),main_cfg='t55/E94: 992 instructions, 109 conditional branches',
+    return dict(editor=dict(path=str(_cfg.EDITOR_EXE),sha256=EXEH),main_cfg='t55/E94: 992 instructions, 109 conditional branches',
                 regions=region,vslots=vslots,exact_frozen_gates=gates,unmapped_gate_trials=claims,shift_mask_inventory=bitops,
                 helper_transfer_sites=transfers,collection_gate_helper_cursor=tri,server_only_static=outer,
                 mode_edges=list(mode_edges.values()),base_fallback_boundary={'linked_pointer_call':0x1043322,'followed':False,'base_tail':0x104334d,

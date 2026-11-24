@@ -7,13 +7,17 @@ r"""t132_ida_hop2 — Decompile:
 Strictly uses scratch/t95/editor_work.i64 (never modifies editor_merge_v2.i64).
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import json
 import sys
 import time
 from pathlib import Path
 
-sys.path.insert(0, r"C:\Program Files\IDA Professional 9.4\idalib\python")
+sys.path.insert(0, str(_cfg.IDA_LIB_DIR))
 
 ROOT = Path(__file__).resolve().parents[1]
 WORK_I64 = ROOT / "scratch/t95/editor_work.i64"

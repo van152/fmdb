@@ -1,5 +1,7 @@
 # 覆盖率基线(2026-11-18 快照)
 
+> 本文件是冻结基线 + 历史增量记录。当前 schema 版本、分支与回归命令见 `docs/REPO_STATUS.md`（2026-11-24 更新）。
+
 来源:对旧库机读证据的聚合分析(`server_tables_census.json` + `db_tables_big.json` + `editor_schema/master.json`;聚合脚本已移植为 `scripts/baseline_coverage.py`)。这是估算不是指标:50 张 unknown 表的分母未知,真实语义覆盖率可能更低。
 
 ## 分层现状

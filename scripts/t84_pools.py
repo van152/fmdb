@@ -17,6 +17,10 @@
   py -V:3.12 -I -B scripts/t84_pools.py --build scratch/t84/out/members_profile.json
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import hashlib
@@ -29,7 +33,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DB_DIR = pathlib.Path(
     os.environ.get("FM24_DB_DIR")
-    or r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm"
+    or str(_cfg.GAME_DB_DIR)
 )
 MAGIC = bytes.fromhex("28b52ffd")
 TAD = bytes.fromhex("03017461642ef10d")  # b"\x03\x01tad.\xf1\x0d"

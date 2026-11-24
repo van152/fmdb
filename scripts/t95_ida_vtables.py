@@ -17,6 +17,10 @@ Usage:
 Exit codes: 0 ok, 1 partial misses, 2 bad usage/fatal.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -29,9 +33,9 @@ import traceback
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-IDA_LIB = r"C:\Program Files\IDA Professional 9.4\idalib\python"
-SRC_I64 = Path(r"D:\tmp2b\fm24\ida\editor_merge_v2.i64")
-DEFAULT_PE = Path(r"D:\tmp2b\fm24\input\editor.exe")
+IDA_LIB = str(_cfg.IDA_LIB_DIR)
+SRC_I64 = Path(str(_cfg.IDA_DB))
+DEFAULT_PE = Path(str(_cfg.EDITOR_EXE))
 CENSUS = ROOT / "scratch/t14/out/census.json"
 DEFAULT_OUT = ROOT / "scratch/t95"
 
@@ -70,7 +74,7 @@ EXTRA_VTABLES = [
 
 
 def load_pe_vtable_reader(pe_path: Path):
-    sys.path.insert(0, r"D:\tmp2b\tools\python")
+    sys.path.insert(0, str(_cfg.LEGACY_TOOLS_DIR))
     import pefile  # noqa: E402
 
     pe = pefile.PE(str(pe_path), fast_load=True)

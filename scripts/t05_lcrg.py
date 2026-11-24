@@ -19,6 +19,10 @@
   py -V:3.12 -I -B scripts/t05_lcrg.py --json     # 输出机读结论
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import collections
@@ -30,9 +34,9 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CLIENT_DB = pathlib.Path(
-    r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm\client_db.dat"
+    _cfg.GAME_DB_DIR / "client_db.dat"
 )
-READER = pathlib.Path(r"D:\tmp2b\fm24\scripts\modding_read_dbdat.py")
+READER = pathlib.Path(str(_cfg.OLD_DBDAT_READER))
 MAGIC = bytes.fromhex("28b52ffd")
 
 TABLE_ID = 47

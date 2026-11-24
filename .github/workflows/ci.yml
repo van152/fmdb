@@ -1,0 +1,22 @@
+name: repo-hygiene
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  hygiene:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile all scripts
+        run: python -m compileall -q scripts
+      - name: Path and pointer hygiene
+        run: python scripts/check_repo.py
+      - name: Current schema selftest (no external data needed)
+        run: python scripts/t92_schema_v113.py --selftest

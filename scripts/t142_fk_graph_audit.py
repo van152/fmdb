@@ -43,6 +43,10 @@ CLI (exit 0 ok / 1 audit failure / 2 usage):
   py -V:3.12 -B scripts/t142_fk_graph_audit.py --columns server 45
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import hashlib
@@ -57,7 +61,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
-VENDOR = Path(r"D:\tmp2b\fm24\tools\python")
+VENDOR = Path(str(_cfg.VENDOR_DIR))
 if VENDOR.is_dir():
     sys.path.insert(0, str(VENDOR))
 sys.path.insert(0, str(SCRIPTS))

@@ -46,6 +46,10 @@ scratch/t126/out/player_69b_attributes_l3.json.
 Writes ONLY: scripts/t139_fm24_db_cli.py (this file) and scratch/t139/out/.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import io
@@ -63,7 +67,7 @@ SCRIPTS = ROOT / "scripts"
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 # Vendored zstandard (same site-packages the other tNN scripts use).
-ZSTD_SITE = Path(r"D:\tmp2b\fm24\tools\python")
+ZSTD_SITE = Path(str(_cfg.VENDOR_DIR))
 if ZSTD_SITE.is_dir() and str(ZSTD_SITE) not in sys.path:
     sys.path.insert(0, str(ZSTD_SITE))
 

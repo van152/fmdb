@@ -3,12 +3,16 @@
 Uses only read-only input files; never opens or writes the source IDA database.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 import argparse, collections, hashlib, importlib.util, json, struct, sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'scratch/t113/out'
 DATA=ROOT/'scratch/data'
-OLD=Path(r'D:\tmp2b\fm24\scripts\modding_read_dbdat.py')
+OLD=Path(str(_cfg.OLD_DBDAT_READER))
 
 def helper():
     spec=importlib.util.spec_from_file_location('t113_old_reader',OLD)

@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Symbolically replay the ordinary FM24 nation client reader (read-only)."""
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 from collections import Counter, defaultdict
@@ -13,7 +17,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'scratch/t28/out'
 EDITOR = ROOT.parent / 'fm24/input/editor.exe'
-DATA = Path('D:/tmp2b/fm24-db/scratch/data')
+DATA = Path(str(_cfg.DATA_DIR))
 MASTER = 'evidence/fm24/reports/editor_schema/master.json'
 PROV = 'evidence/fm24/reports/qa/IDA_PROVENANCE.md'
 BASE = ROOT / 'scratch/t25/out'

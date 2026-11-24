@@ -10,6 +10,10 @@ Generates in --outdir (default: scratch/t83/out):
 Exit codes: 0 success, 1 check/selftest failed, 2 usage or fatal error.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import bisect
@@ -26,13 +30,13 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.append(r"D:\tmp2b\fm24\tools\python")
+sys.path.append(str(_cfg.VENDOR_DIR))
 
 import numpy as np
 import zstandard as zstd
 from capstone import CS_ARCH_X86, CS_MODE_64, Cs
 
-EXE_PATH = Path(r"D:\tmp2b\fm24\input\editor.exe")
+EXE_PATH = Path(str(_cfg.EDITOR_EXE))
 EXPECTED_EXE_SHA256 = "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4"
 DB_DIR = Path(os.environ.get("FM24_DB_DIR", str(ROOT / "scratch/data")))
 MANIFEST_PATH = ROOT / "evidence/MANIFEST.json"

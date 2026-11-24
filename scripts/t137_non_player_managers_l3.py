@@ -6,6 +6,10 @@ Usage:
   py -V:3.12 -B scripts/t137_non_player_managers_l3.py --uid 123456
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -27,7 +31,7 @@ SET_INDEX_C = OUT_DIR / "ida/140dc4e30.c"
 NT_DISPATCH_C = OUT_DIR / "ida/140dca530.c"
 T108_JSON = ROOT / "scratch/t108/out/fourcc_mem_map_v2.json"
 
-sys.path.insert(0, r"D:\tmp2b\fm24\tools\python")
+sys.path.insert(0, str(_cfg.VENDOR_DIR))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 BASIC_WIDTH = {1: 83, 2: 83, 3: 83, 4: 34, 5: 22}

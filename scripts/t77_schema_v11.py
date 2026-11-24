@@ -14,8 +14,11 @@ Exit codes: 0 pass / 1 check failed / 2 usage or fatal.
   reports/xml_denominator_coverage.json         (1,034-occurrence denominator ledger)
 and scratch/t77/out/v11_diff_summary.json.
 
---verify re-reads every accepted input from disk, re-derives the section counts and
-checks them against the pinned ledger claims. It never writes reports/.
+--verify is a HISTORICAL verifier for the frozen v11 artifacts (commit 213657a).
+It materialises those four files into scratch/t77/frozen/ if absent, re-reads every
+accepted input from disk, re-derives the section counts and checks them against the
+pinned v11 ledger claims. It never writes reports/ and never validates the current
+v11.3 published schema (that is covered by t92_schema_v113.py --selftest).
 """
 from __future__ import annotations
 

@@ -20,6 +20,10 @@ Usage
 Exit codes 0 ok / 1 check failed / 2 usage or fatal
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import collections
@@ -116,7 +120,7 @@ _ZSTD: Any = None
 def load_zstd() -> Any:
     configured = os.environ.get("FM24_ZSTD_DLL")
     cands = [pathlib.Path(configured)] if configured else []
-    cands += [pathlib.Path(r"C:\Program Files\Git\mingw64\bin\libzstd.dll")]
+    cands += [pathlib.Path(str(_cfg.MINGW_ZSTD_DLL))]
     dll = next((p for p in cands if p.is_file()), None)
     if dll is None:
         raise T33Error("libzstd.dll not found; set FM24_ZSTD_DLL")

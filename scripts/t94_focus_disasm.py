@@ -4,6 +4,10 @@ Static-only: parses .pdata (DATA_DIRECTORY[3]) of the target PE to give exact
 function bounds for a VA. Never launches anything.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import bisect
 import struct
@@ -11,7 +15,7 @@ from pathlib import Path
 
 import pefile
 
-DEFAULT_PE = Path(r'D:/tmp2b/fm24/input/editor.exe')
+DEFAULT_PE = Path(str(_cfg.EDITOR_EXE))
 
 
 def _load_pe(pe_path: Path):

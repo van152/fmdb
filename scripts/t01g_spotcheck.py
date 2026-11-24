@@ -4,12 +4,16 @@ Static side: editor.exe raw bytes. Data side: client_db.dat table_10 payload via
 Run from fm24-db root: py -V:3.12 -I scripts/t01g_spotcheck.py
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 import importlib.util
 import json
 import struct
 import sys
 
-ED = r"D:\tmp2b\fm24\input\editor.exe"
+ED = str(_cfg.EDITOR_EXE)
 VA_DELTA = 0xA00
 fails = 0
 
@@ -102,10 +106,10 @@ if codes:
     print(f"{'PASS' if good else 'FAIL':4} 7 mapped codes present in window (missing: {miss})")
 
 # --- .dat side: table_10 payload ---
-spec = importlib.util.spec_from_file_location("oldread", r"D:\tmp2b\fm24\scripts\modding_read_dbdat.py")
+spec = importlib.util.spec_from_file_location("oldread", str(_cfg.OLD_DBDAT_READER))
 old = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(old)
-DB = r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm"
+DB = str(_cfg.GAME_DB_DIR)
 raw = None
 for arch in ("client_db.dat", "server_db.dat"):
     path, d, meta = old._entries(DB, arch)

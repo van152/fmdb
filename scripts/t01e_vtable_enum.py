@@ -22,15 +22,19 @@ Method:
 Outputs: scratch/t01/t01e_vtables.json (+ stdout summary).
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import json
 import struct
 from pathlib import Path
 
-EXE = Path(r"D:\tmp2b\fm24\input\editor.exe")
-SWEEP = Path(r"D:\tmp2b\fm24-db\scratch\t01\t01a_editor_sweep.json")
-MASTER = Path(r"D:\tmp2b\fm24-db\evidence\fm24\reports\editor_schema\master.json")
-OUT = Path(r"D:\tmp2b\fm24-db\scratch\t01\t01e_vtables.json")
+EXE = Path(str(_cfg.EDITOR_EXE))
+SWEEP = Path(str(_cfg.SCRATCH_DIR / "t01/t01a_editor_sweep.json"))
+MASTER = Path(str(_cfg.MASTER_SCHEMA_JSON))
+OUT = Path(str(_cfg.SCRATCH_DIR / "t01/t01e_vtables.json"))
 
 LO, HI = 0x1758600, 0x1A7D000          # .debug raw region (E11)
 A0, A1 = 0x140001000, 0x150000000      # VA window for table entries

@@ -1,0 +1,6 @@
+# Runtime dependencies for the pure-Python readers and the SQLite CLI.
+# The repository also vendors zstandard under FM24_VENDOR_DIR; either source works.
+zstandard>=0.25,<1
+
+# Optional: the Unicorn-based verifiers (t119/t120/t140/t141) need the vendored
+# Unicorn build from the legacy toolchain. Not needed for the pure-Python path.

@@ -7,13 +7,17 @@
   py -V:3.12 -I -B scripts/t89_pe.py --selftest
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import pathlib
 import struct
 import sys
 
-EXE = pathlib.Path("D:/tmp2b/fm24/input/editor.exe")
+EXE = pathlib.Path(str(_cfg.EDITOR_EXE))
 IMAGE_BASE = 0x140000000
 
 

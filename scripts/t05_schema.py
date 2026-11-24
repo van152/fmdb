@@ -13,6 +13,10 @@
   py -V:3.12 -I -B scripts/t05_schema.py --entity club
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -21,7 +25,7 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-SCHEMA_MD = pathlib.Path(r"D:\tmp2b\fm24\reports\EDITOR_SCHEMA_FIELDS.md")
+SCHEMA_MD = pathlib.Path(str(_cfg.EDITOR_SCHEMA_FIELDS_MD))
 OUT = ROOT / "scratch/t05/schema_inventory.json"
 
 DB_ENTITIES = {

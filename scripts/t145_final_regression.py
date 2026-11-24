@@ -6,8 +6,9 @@ manifests of key deliverables, verifies reports/ and scratch/t01/LEDGER.json are
 and emits scratch/t145/out/{regression_matrix.json, ledger_candidates_v2.json, DONE.md}.
 
 Usage:
-    py -V:3.12 -B scripts/t145_final_regression.py
-    py -V:3.12 -B scripts/t145_final_regression.py --selftest
+    py -V:3.12 -B scripts/t145_final_regression.py            # real rerun
+    py -V:3.12 -B scripts/t145_final_regression.py --selftest # same real rerun
+    py -V:3.12 -B scripts/t145_final_regression.py --cached   # read last matrix only
 """
 from __future__ import annotations
 
@@ -54,8 +55,8 @@ TESTS = [
 KEY_ARTIFACTS = [
     "scratch/t106/out/special_members_schema.json",
     "scratch/t121/out/wire_traces_79of79.json",
-    "scratch/t123/out/basic_people_l3_schema.json",
-    "scratch/t126/out/player_attributes_l3.json",
+    "scratch/t123/out/basic_people_l3_complete.json",
+    "scratch/t126/out/player_69b_attributes_l3.json",
     "scratch/t127/out/pl_hist_schema.json",
     "scratch/t128/out/non_pl_hist_schema.json",
     "scratch/t130/out/archive_inventory.json",
@@ -80,19 +81,67 @@ def sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
-def check_protected_clean() -> dict:
+def protected_snapshot() -> dict[str, str]:
+    """Hash every protected file so pre-existing edits are not blamed on tests."""
+    files = sorted((ROOT / "reports").rglob("*.*")) + [ROOT / "scratch/t01/LEDGER.json"]
+    return {str(p.relative_to(ROOT)): sha256_file(p) for p in files if p.is_file()}
+
+
+def check_protected_clean(before: dict[str, str] | None = None) -> dict:
     p = subprocess.run(
         ["git", "status", "--short", "reports/", "scratch/t01/LEDGER.json"],
         cwd=str(ROOT),
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
     )
     dirty = [ln for ln in p.stdout.splitlines() if ln.strip()]
-    return {"git_rc": p.returncode, "protected_clean": (p.returncode == 0 and len(dirty) == 0), "dirty_lines": dirty}
+    if before is None:
+        clean = p.returncode == 0 and not dirty
+    else:
+        clean = p.returncode == 0 and protected_snapshot() == before
+    return {
+        "git_rc": p.returncode,
+        "protected_clean": clean,
+        "dirty_lines": dirty,
+        "mode": "snapshot" if before is not None else "git_status",
+    }
+
+
+def check_current_schema() -> dict:
+    """Guard the *published* v11.3 schema and its SHA-256 pointers."""
+    schema = ROOT / "reports" / "club_nation_subtable_schema.json"
+    checks = []
+    try:
+        doc = json.loads(schema.read_text(encoding="utf-8"))
+        checks.append({
+            "name": "published_schema_v11_3",
+            "passed": doc.get("schema_version") == "11.3"
+            and doc.get("generated_by") == "t92"
+            and len(doc.get("coverage", {})) > 20,
+            "detail": f"version={doc.get('schema_version')} generator={doc.get('generated_by')}",
+        })
+        for key in ("other_tables_schema", "xml_denominator_coverage"):
+            ptr = doc.get("pointer_artifacts", {}).get(key, {})
+            target = ROOT / ptr.get("path", "")
+            actual = sha256_file(target) if target.is_file() else None
+            checks.append({
+                "name": f"pointer_sha256_{key}",
+                "passed": bool(ptr.get("sha256")) and actual == ptr["sha256"],
+                "detail": f"{ptr.get('path')} expected={str(ptr.get('sha256'))[:12]} actual={str(actual)[:12]}",
+            })
+    except Exception as exc:  # noqa: BLE001 - a broken schema must fail the suite
+        checks.append({"name": "schema_readable", "passed": False, "detail": repr(exc)})
+    return {
+        "checks": checks,
+        "all_passed": all(c["passed"] for c in checks),
+    }
 
 
 def run_all() -> dict:
     OUT.mkdir(parents=True, exist_ok=True)
+    before_protected = protected_snapshot()
     results = []
     t0_all = time.perf_counter()
     for name, args, desc in TESTS:
@@ -102,6 +151,8 @@ def run_all() -> dict:
             cwd=str(ROOT),
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             timeout=180,
         )
         dt = round(time.perf_counter() - t0, 2)
@@ -130,15 +181,22 @@ def run_all() -> dict:
         else:
             manifests.append({"path": rel, "bytes": None, "sha256": None, "missing": True})
 
-    prot = check_protected_clean()
+    prot = check_protected_clean(before_protected)
+    schema_guard = check_current_schema()
+    artifacts_ok = all(not m.get("missing") for m in manifests)
     passed = sum(1 for r in results if r["passed"])
+    all_ok = (passed == len(results) and prot["protected_clean"]
+              and artifacts_ok and schema_guard["all_passed"])
     report = {
         "schema_id": "fm24.t145.final_regression",
         "generated_utc": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "total_tests": len(results),
         "passed_tests": passed,
         "failed_tests": len(results) - passed,
-        "all_passed": passed == len(results),
+        "all_passed": all_ok,
+        "tests_all_passed": passed == len(results),
+        "artifacts_ok": artifacts_ok,
+        "schema_guard": schema_guard,
         "total_elapsed_sec": round(time.perf_counter() - t0_all, 2),
         "protected_guardrail": prot,
         "tests": results,
@@ -178,6 +236,9 @@ def run_all() -> dict:
             "passed": passed,
             "total": len(results),
             "protected_clean": prot["protected_clean"],
+            "artifacts_ok": artifacts_ok,
+            "schema_guard_ok": schema_guard["all_passed"],
+            "all_passed": all_ok,
         },
     }
     (OUT / "ledger_candidates_v2.json").write_text(json.dumps(ledger_v2, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -187,27 +248,36 @@ def run_all() -> dict:
             "DONE type=t145",
             f"regression={passed}/{len(results)} PASS",
             f"protected_clean={prot['protected_clean']}",
+            f"artifacts_ok={artifacts_ok}",
+            f"schema_guard_ok={schema_guard['all_passed']}",
             f"artifacts_pinned={sum(1 for m in manifests if not m.get('missing'))}/{len(manifests)}",
             f"elapsed_sec={report['total_elapsed_sec']}",
         ]) + "\n",
         encoding="utf-8",
     )
-    print(f"\nt145 summary: {passed}/{len(results)} PASS | protected_clean={prot['protected_clean']} | {report['total_elapsed_sec']}s")
+    print(f"\nt145 summary: {passed}/{len(results)} PASS | artifacts_ok={artifacts_ok} | "
+          f"schema_guard_ok={schema_guard['all_passed']} | protected_clean={prot['protected_clean']} | "
+          f"{report['total_elapsed_sec']}s")
     return report
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--selftest", action="store_true")
+    ap = argparse.ArgumentParser(description="FM24 final regression suite")
+    ap.add_argument("--selftest", action="store_true",
+                    help="real rerun of all core tests (same as default)")
+    ap.add_argument("--cached", action="store_true",
+                    help="fast read-only summary of the last regression_matrix.json")
     args = ap.parse_args()
-    if args.selftest:
+    if args.cached:
         reg = json.loads((OUT / "regression_matrix.json").read_text(encoding="utf-8"))
-        prot = check_protected_clean()
-        ok = reg["all_passed"] and prot["protected_clean"]
-        print(f"t145 --selftest: {'PASS' if ok else 'FAIL'} ({reg['passed_tests']}/{reg['total_tests']}, protected_clean={prot['protected_clean']})")
+        ok = reg.get("all_passed", False)
+        print(f"t145 --cached: {'PASS' if ok else 'FAIL'} "
+              f"({reg.get('passed_tests')}/{reg.get('total_tests')}, "
+              f"generated={reg.get('generated_utc')}, cached only; "
+              "protected check skipped — use --selftest for a real run)")
         return 0 if ok else 1
     rep = run_all()
-    return 0 if (rep["all_passed"] and rep["protected_guardrail"]["protected_clean"]) else 1
+    return 0 if rep["all_passed"] else 1
 
 
 if __name__ == "__main__":

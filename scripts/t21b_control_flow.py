@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Audit reachable CFG stream calls for the two club RTTI readers."""
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import importlib.util
@@ -11,7 +15,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-EDITOR = Path(r"D:\tmp2b\fm24\input\editor.exe")
+EDITOR = Path(str(_cfg.EDITOR_EXE))
 RTTI_CENSUS = ROOT / "scratch/t01/inbox/t01h/output.json"
 WIDTH_TRACE = ROOT / "scratch/t05/reader_widths.json"
 AUDIT = ROOT / "scratch/t21/out/audit.json"

@@ -16,6 +16,10 @@ Usage:
   py -V:3.12 -B scripts/t141_fm_vs_editor_diff.py
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import bisect
@@ -39,8 +43,8 @@ except Exception as exc:  # pragma: no cover
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "scratch/t141/out"
 
-FM_EXE = Path(r"D:\tmp2b\fm24\input\fm.exe")
-EDITOR_EXE = Path(r"D:\tmp2b\fm24\input\editor.exe")
+FM_EXE = Path(str(_cfg.FM_EXE))
+EDITOR_EXE = Path(str(_cfg.EDITOR_EXE))
 
 T95_VTABLE = ROOT / "scratch/t95/vtable_index.json"
 T113_PEOPLE = ROOT / "scratch/t113/out/people_vtables_full.json"

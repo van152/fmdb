@@ -6,6 +6,10 @@ wire map separate from semantic observations so a false direct name join cannot
 be mistaken for a proven L3 field.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import datetime as _dt
@@ -19,7 +23,7 @@ from typing import Any, Iterable
 ROOT = Path(__file__).resolve().parents[1]
 OUTDIR = ROOT / "scratch" / "t123" / "out"
 BASIC_PATH = ROOT / "scratch" / "data" / "basic_people_db.dat"
-ZSTD_SITE = Path(r"D:\tmp2b\fm24\tools\python")
+ZSTD_SITE = Path(str(_cfg.VENDOR_DIR))
 NAME_DIR = ROOT / "scratch" / "t106" / "out"
 
 WIDTHS = {1: 83, 2: 83, 3: 83, 4: 34, 5: 22}

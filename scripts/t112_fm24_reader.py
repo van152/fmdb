@@ -27,6 +27,10 @@ CLI（退出码 0 成功 / 1 校验失败 / 2 用法或致命错误）:
 scratch/t110/out/master_67tables_l3.json。不修改 reports/ 与 LEDGER.json。
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -42,7 +46,7 @@ TRACE_JSON = ROOT / "scratch/t96c/out/wire_traces_master.json"
 L3_JSON = ROOT / "scratch/t110/out/master_67tables_l3.json"
 DEFAULT_OUT = ROOT / "scratch/t112/out"
 
-UPSTREAM_ZSTD = pathlib.Path(r"D:\tmp2b\fm24\tools\python")
+UPSTREAM_ZSTD = pathlib.Path(str(_cfg.VENDOR_DIR))
 
 DAT_MAGIC = b"\x03\x01tad."
 FMF_MAGIC = bytes.fromhex("0201666d662e080000")

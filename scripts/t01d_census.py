@@ -21,6 +21,10 @@
 """
 
 import argparse
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 import json
 import mmap
 import os
@@ -30,10 +34,10 @@ import struct
 import sys
 import time
 
-EDITOR_EXE = r"D:\tmp2b\fm24\input\editor.exe"
-VOCAB = r"D:\tmp2b\fm24-db\scratch\t01\inbox\t01c\vocab.json"
-MASTER = r"D:\tmp2b\fm24-db\evidence\fm24\reports\editor_schema\master.json"
-OUT_DIR = r"D:\tmp2b\fm24-db\scratch\t01\inbox\t01d"
+EDITOR_EXE = str(_cfg.EDITOR_EXE)
+VOCAB = str(_cfg.SCRATCH_DIR / "t01/inbox/t01c/vocab.json")
+MASTER = str(_cfg.MASTER_SCHEMA_JSON)
+OUT_DIR = str(_cfg.SCRATCH_DIR / "t01/inbox/t01d")
 OUT_JSON = os.path.join(OUT_DIR, "census.json")
 
 WINDOW = 0x100000     # 密度窗口 1MB

@@ -32,6 +32,10 @@
   py -V:3.12 -I -B scripts/t38_multiframe.py --scan
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import hashlib
@@ -43,7 +47,7 @@ import struct
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-UPSTREAM = pathlib.Path(r"D:\tmp2b\fm24")
+UPSTREAM = pathlib.Path(str(_cfg.LEGACY_DIR))
 ZSTD_DIR = UPSTREAM / "tools/python"
 READER_VERIFY = ROOT / "scratch/t01/inbox/t01k/verify.py"
 MAGIC = bytes.fromhex("28b52ffd")

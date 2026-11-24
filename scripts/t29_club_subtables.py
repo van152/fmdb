@@ -5,6 +5,10 @@ Reads only repository evidence and FM24_DB_DIR (constrained to scratch/data).
 Writes only scratch/t29/out. Candidate column names are never promoted.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import collections
@@ -183,7 +187,7 @@ def parse_fmf_directory(blob: bytes, label: str) -> tuple[int, dict[str, dict[st
 def load_zstd() -> Any:
     configured = os.environ.get("FM24_ZSTD_DLL")
     candidates = [pathlib.Path(configured)] if configured else []
-    candidates += [pathlib.Path(r"C:\Program Files\Git\mingw64\bin\libzstd.dll")]
+    candidates += [pathlib.Path(str(_cfg.MINGW_ZSTD_DLL))]
     dll = next((p for p in candidates if p.is_file()), None)
     if dll is None:
         raise T29Error("libzstd.dll not found; set FM24_ZSTD_DLL")

@@ -11,6 +11,10 @@ Usage:
 Exit codes: 0 ok, 1 partial, 2 fatal.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -22,9 +26,9 @@ import traceback
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-IDA_LIB = r"C:\Program Files\IDA Professional 9.4\idalib\python"
+IDA_LIB = str(_cfg.IDA_LIB_DIR)
 WORK_I64 = ROOT / "scratch/t95/editor_work.i64"
-DEFAULT_PE = Path(r"D:\tmp2b\fm24\input\editor.exe")
+DEFAULT_PE = Path(str(_cfg.EDITOR_EXE))
 OUT_DIR = ROOT / "scratch/t113/out"
 FUNCS_DIR = OUT_DIR / "funcs"
 
@@ -53,7 +57,7 @@ TRIVIAL_STUBS = {
 
 
 def scan_db_person_vtables(pe_path: Path) -> list[dict]:
-    sys.path.insert(0, r"D:\tmp2b\tools\python")
+    sys.path.insert(0, str(_cfg.LEGACY_TOOLS_DIR))
     import pefile  # noqa: E402
 
     pe = pefile.PE(str(pe_path), fast_load=True)

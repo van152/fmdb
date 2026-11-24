@@ -13,6 +13,10 @@ Usage:
 Exit: 0 ok / 1 check failed / 2 usage or fatal.
 """
 import argparse
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 import hashlib
 import json
 import os
@@ -25,7 +29,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-EXE = os.environ.get("FM24_EDITOR_EXE", r"D:/tmp2b/fm24/input/editor.exe")
+EXE = os.environ.get("FM24_EDITOR_EXE", str(_cfg.EDITOR_EXE))
 OUT3 = os.path.join(ROOT, "scratch", "t88", "out3")
 BASE = 0x140000000
 EXE_SHA_PREFIX = "b82ebe8e"

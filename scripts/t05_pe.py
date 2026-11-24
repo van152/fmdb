@@ -9,12 +9,16 @@ editor.exe 的段布局非标准(section 名是误导的, 代码在 .rdata/.relo
 否则会落到乱码区(这是 t05_reader_widths 先前 thunk 跟进失败的原因)。
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 from pathlib import Path
 
 import pefile
 
-EXE = Path(r"D:\tmp2b\fm24\input\editor.exe")
+EXE = Path(str(_cfg.EDITOR_EXE))
 
 
 class PE:

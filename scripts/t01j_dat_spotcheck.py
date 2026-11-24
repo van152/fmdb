@@ -4,11 +4,15 @@ Fully independent decompression + row-chain walk (does not reuse t01j's verify.p
 Run from fm24-db root: py -V:3.12 -I scripts/t01j_dat_spotcheck.py
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 import struct
 import sys
 
-BP = r"Z:\SteamLibrary\steamapps\common\Football Manager 2024\data\database\db\2430\2430_fm\basic_people_db.dat"
-ED = r"D:\tmp2b\fm24\input\editor.exe"
+BP = _cfg.GAME_DB_DIR / "basic_people_db.dat"
+ED = str(_cfg.EDITOR_EXE)
 fails = 0
 
 def check(label, cond, detail=""):
@@ -19,7 +23,7 @@ def check(label, cond, detail=""):
 # --- decompress independently via old repo zstd helper ---
 spec = None
 import importlib.util
-spec = importlib.util.spec_from_file_location("o", r"D:\tmp2b\fm24\scripts\modding_read_dbdat.py")
+spec = importlib.util.spec_from_file_location("o", str(_cfg.OLD_DBDAT_READER))
 old = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(old)
 zmod = old._zstd_module()

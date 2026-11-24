@@ -22,6 +22,10 @@ Run with Python 3.12:
 Exit codes: 0 success / 1 check failed / 2 usage or fatal error.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import collections
@@ -38,7 +42,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUTDIR = ROOT / "scratch/t50/out"
 PROFILE_DIR = OUTDIR / "profiles"
 DBDIR = pathlib.Path(os.environ.get("FM24_DB_DIR") or (ROOT / "scratch/data")).resolve()
-CODEC = pathlib.Path(r"D:\tmp2b\fm24\scripts\modding_read_dbdat.py")
+CODEC = pathlib.Path(str(_cfg.OLD_DBDAT_READER))
 
 TAD_MAGIC = bytes.fromhex("03017461642ef10d")
 MEMBERS = ("table_9.dat", "table_extra_9.dat")
@@ -212,7 +216,7 @@ def _reload_payload(zstd, lay: dict[str, Any], blob: bytes, name: str) -> bytes:
 
 
 def _zstd():
-    sys.path.append(r"D:\tmp2b\fm24\tools\python")
+    sys.path.append(str(_cfg.VENDOR_DIR))
     import zstandard  # noqa: PLC0415
     return zstandard
 

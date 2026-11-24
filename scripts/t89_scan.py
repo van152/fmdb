@@ -11,13 +11,17 @@
 不改任何输入;不联网;只读 D:/tmp2b/fm24/input/editor.exe。
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import pathlib
 import struct
 import sys
 
-EXE = pathlib.Path("D:/tmp2b/fm24/input/editor.exe")
+EXE = pathlib.Path(str(_cfg.EDITOR_EXE))
 SHA256 = "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4"
 IMAGE_BASE = 0x140000000
 

@@ -171,11 +171,11 @@ flowchart LR
 
 | 领域 | 核心脚本 | 一句话功能说明 |
 |---|---|---|
-| **世界库纯 Python 读取器** | [scripts/t133_fm24_reader_v2.py](file:///D:/tmp2b/fm24-db/scripts/t133_fm24_reader_v2.py) | 零外部逆向依赖，9 秒内零误差读穿 `server_db` / `client_db` 全部 79 张编号表（284.7 万行） |
-| **400 MB 人物库纯 Python 解码器** | [scripts/t138_people_pure_py.py](file:///D:/tmp2b/fm24-db/scripts/t138_people_pure_py.py) | 16.8 秒纯 Python 零误差读穿 `people_db.dat` 全部 658,011 名球员、教练与裁判 |
-| **S+ 级双向修改回写引擎** | [scripts/t140_fm24_roundtrip.py](file:///D:/tmp2b/fm24-db/scripts/t140_fm24_roundtrip.py) | 79/79 表位级无损重编码 + 跨表修改重打包 `.dat` + 官方 `editor.exe` 真机指令回读验收 |
-| **SQLite 数据库生成与查询 CLI** | [scripts/t139_fm24_db_cli.py](file:///D:/tmp2b/fm24-db/scripts/t139_fm24_db_cli.py) | 一键构建 191.7 MB 索引化 SQLite 数仓，支持 0.04 毫秒级实体与球星查询 |
-| **球星与名帅全属性卡片提取** | [scripts/t135_star_player_cards.py](file:///D:/tmp2b/fm24-db/scripts/t135_star_player_cards.py)<br/>[scripts/t137d_manager_cards_full.py](file:///D:/tmp2b/fm24-db/scripts/t137d_manager_cards_full.py) | 直读原盘导出 21 位世界顶级球星（54 项属性）与 Top-20 世界名帅（34 项执教属性）完整面板 |
-| **生涯历史与 22 国语言库解码** | [scripts/t127_pl_hist.py](file:///D:/tmp2b/fm24-db/scripts/t127_pl_hist.py) · [scripts/t128_non_pl_hist.py](file:///D:/tmp2b/fm24-db/scripts/t128_non_pl_hist.py)<br/>[scripts/t143_lang_db.py](file:///D:/tmp2b/fm24-db/scripts/t143_lang_db.py) | 解码 772.8 万条球员/教练生涯履历链表，以及 22 种语言 1,029 万条本地化词条 |
-| **全库外键图谱与双 exe 同源证明** | [scripts/t142_fk_graph_audit.py](file:///D:/tmp2b/fm24-db/scripts/t142_fk_graph_audit.py)<br/>[scripts/t141_fm_vs_editor_diff.py](file:///D:/tmp2b/fm24-db/scripts/t141_fm_vs_editor_diff.py) | 84 表 438 万行外键关系图谱（含 764 处官方悬空引用检出）与 `fm.exe` ≡ `editor.exe` 同源证明 |
-| **24 / 24 终极自动化回归套件** | [scripts/t145_final_regression.py](file:///D:/tmp2b/fm24-db/scripts/t145_final_regression.py) | 一键运行全部 24 个核心里程碑脚本的 `--selftest` 自检（24/24 全绿 PASS） |
+| **世界库纯 Python 读取器** | [scripts/t133_fm24_reader_v2.py](scripts/t133_fm24_reader_v2.py) | 零外部逆向依赖，9 秒内零误差读穿 `server_db` / `client_db` 全部 79 张编号表（284.7 万行） |
+| **400 MB 人物库纯 Python 解码器** | [scripts/t138_people_pure_py.py](scripts/t138_people_pure_py.py) | 16.8 秒纯 Python 零误差读穿 `people_db.dat` 全部 658,011 名球员、教练与裁判 |
+| **S+ 级双向修改回写引擎** | [scripts/t140_fm24_roundtrip.py](scripts/t140_fm24_roundtrip.py) | 79/79 表位级无损重编码 + 跨表修改重打包 `.dat` + 官方 `editor.exe` 真机指令回读验收 |
+| **SQLite 数据库生成与查询 CLI** | [scripts/t139_fm24_db_cli.py](scripts/t139_fm24_db_cli.py) | 一键构建 191.7 MB 索引化 SQLite 数仓，支持 0.04 毫秒级实体与球星查询 |
+| **球星与名帅全属性卡片提取** | [scripts/t135_star_player_cards.py](scripts/t135_star_player_cards.py)<br/>[scripts/t137d_manager_cards_full.py](scripts/t137d_manager_cards_full.py) | 直读原盘导出 21 位世界顶级球星（54 项属性）与 Top-20 世界名帅（34 项执教属性）完整面板 |
+| **生涯历史与 22 国语言库解码** | [scripts/t127_pl_hist.py](scripts/t127_pl_hist.py) · [scripts/t128_non_pl_hist.py](scripts/t128_non_pl_hist.py)<br/>[scripts/t143_lang_db.py](scripts/t143_lang_db.py) | 解码 772.8 万条球员/教练生涯履历链表，以及 22 种语言 1,029 万条本地化词条 |
+| **全库外键图谱与双 exe 同源证明** | [scripts/t142_fk_graph_audit.py](scripts/t142_fk_graph_audit.py)<br/>[scripts/t141_fm_vs_editor_diff.py](scripts/t141_fm_vs_editor_diff.py) | 84 表 438 万行外键关系图谱（含 764 处官方悬空引用检出）与 `fm.exe` ≡ `editor.exe` 同源证明 |
+| **24 / 24 终极自动化回归套件** | [scripts/t145_final_regression.py](scripts/t145_final_regression.py) | 一键运行全部 24 个核心里程碑脚本的 `--selftest` 自检（24/24 全绿 PASS） |

@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Rebuild t22's server-row cursor and field ledger from frozen workspace evidence."""
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import csv
@@ -15,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "scratch" / "t20" / "out"
 # FM24_DB_DIR points at the decoded data workspace; the static binary is the
 # read-only editor.exe reference used by t14/t16, not under that data directory.
-EDITOR = Path(r"D:\tmp2b\fm24\input\editor.exe")
+EDITOR = Path(str(_cfg.EDITOR_EXE))
 CSV_T22 = ROOT / "scratch" / "t13d" / "out" / "t22.csv"
 AUDIT = ROOT / "scratch" / "t13d" / "out" / "audit.json"
 CENSUS = ROOT / "scratch" / "t14" / "out" / "census.json"

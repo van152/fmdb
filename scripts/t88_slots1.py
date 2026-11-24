@@ -4,7 +4,11 @@
  usage: t88_slots1.py [--selftest]
 """
 import sys,json,struct,capstone
-EXE='D:/tmp2b/fm24/input/editor.exe'
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
+EXE=str(_cfg.EDITOR_EXE)
 BASE=0x140000000
 def s4(v):
     b=v.to_bytes(4,'big')

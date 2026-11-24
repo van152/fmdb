@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """t44: static CLUB_LINK route, named-member cursor, and scoped field profiles."""
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 import argparse
 import calendar
 from collections import Counter
@@ -13,8 +17,8 @@ import sys
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'scratch/t44/out'
-EXE=Path('D:/tmp2b/fm24/input/editor.exe')
-OLD=Path('D:/tmp2b/fm24')
+EXE=Path(str(_cfg.EDITOR_EXE))
+OLD=Path(str(_cfg.LEGACY_DIR))
 EXE_HASH='b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4'
 PAY_HASH='8933328064b13a9d8dc153dd5b455970a7c28ada1e24f4ecc9df35735f42f3d2'
 PACK_HASH='894f1efb9caf18482402198ed19294d04725a583ca262a6a01b2ed95c2222fe0'

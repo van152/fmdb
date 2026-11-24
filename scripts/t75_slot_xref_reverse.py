@@ -1,5 +1,9 @@
 """t75 wire-first backtrace of t72 slots, with full nation item replay (0/1/2)."""
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 from collections import Counter, defaultdict
@@ -598,7 +602,7 @@ def build():
     t71=j(old(71,'field_map_r3.json')); excluded_codes=[{'id':r['id'],'code':r['code']} for r in t71['fields'] if r['grade']=='L3']
     observed_codes={c['code'] for r in trials if r['table']=='club' for c in r['codes']}
     need(len(excluded_codes)==24 and observed_codes.isdisjoint(r['code'] for r in excluded_codes),'t71 no repeat')
-    xref=dict(editor=dict(path='D:/tmp2b/fm24/input/editor.exe',sha256=EXEH),L4=0,addressing='PE file offset; archive offsets are member-relative; body_relative uses legacy14',
+    xref=dict(editor=dict(path=str(_cfg.EDITOR_EXE),sha256=EXEH),L4=0,addressing='PE file offset; archive offsets are member-relative; body_relative uses legacy14',
               excluded_t71_4cc=excluded_codes,edsc_control=dict(prior_id='E105',code='EDsc',dispatch=edroute,rel32_cell=edcell,conclusion_verbatim=edsc),
               inputs_sha256={p:h((ROOT/p).read_bytes()) for p in sorted(pins)},target_and_payload_identity=tm,
               t72_negative_notes_verbatim=inv['negative_notes'],negative_evidence=negatives,

@@ -9,6 +9,10 @@ L4 = 0 (never launches game/editor/IDA, never touches Z:, no network).
 Exit codes: 0 = pass, 1 = verification/check failed, 2 = CLI usage or fatal error.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import hashlib
@@ -22,7 +26,7 @@ from typing import Any
 
 import numpy as np
 
-TOOLS_PY = r"D:\tmp2b\fm24\tools\python"
+TOOLS_PY = str(_cfg.VENDOR_DIR)
 if TOOLS_PY not in sys.path:
     sys.path.insert(0, TOOLS_PY)
 
@@ -30,8 +34,8 @@ import capstone  # type: ignore
 import pefile  # type: ignore
 import zstandard as zstd  # type: ignore
 
-ROOT = Path(r"D:\tmp2b\fm24-db")
-DEFAULT_EXE = Path(r"D:\tmp2b\fm24\input\editor.exe")
+ROOT = Path(str(_cfg.ROOT))
+DEFAULT_EXE = Path(str(_cfg.EDITOR_EXE))
 DEFAULT_DATA = Path(os.environ.get("FM24_DB_DIR", str(ROOT / "scratch/data")))
 DEFAULT_OUT = ROOT / "scratch/t82/out"
 

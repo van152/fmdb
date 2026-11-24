@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Audit club row framing and independently recheck RTTI reader evidence."""
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import hashlib
@@ -13,7 +17,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-EDITOR = Path(r"D:\tmp2b\fm24\input\editor.exe")
+EDITOR = Path(str(_cfg.EDITOR_EXE))
 RTTI_CENSUS = ROOT / "scratch/t01/inbox/t01h/output.json"
 OUT = ROOT / "scratch/t21/out"
 EXPECTED_ROWS = 84259

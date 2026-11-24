@@ -17,6 +17,10 @@ clusters / entity_match / editor_compare。
 """
 
 import argparse
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 import json
 import mmap
 import os
@@ -26,10 +30,10 @@ import struct
 import sys
 import time
 
-FM_EXE = r"D:\tmp2b\fm24\input\fm.exe"
-EDITOR_EXE = r"D:\tmp2b\fm24\input\editor.exe"
-MASTER = r"D:\tmp2b\fm24-db\evidence\fm24\reports\editor_schema\master.json"
-OUT_DIR = r"D:\tmp2b\fm24-db\scratch\t01\inbox\t01a2"
+FM_EXE = str(_cfg.FM_EXE)
+EDITOR_EXE = str(_cfg.EDITOR_EXE)
+MASTER = str(_cfg.MASTER_SCHEMA_JSON)
+OUT_DIR = str(_cfg.SCRATCH_DIR / "t01/inbox/t01a2")
 
 WINDOW = 1 << 20      # 密度剖面窗口: 1MB
 CLUSTER_GAP = 4096    # 相邻 <4096B 归簇

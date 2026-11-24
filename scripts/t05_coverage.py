@@ -15,6 +15,10 @@
   py -V:3.12 -I -B scripts/t05_coverage.py --json
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -23,7 +27,7 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-UPSTREAM = pathlib.Path(r"D:\tmp2b\fm24")
+UPSTREAM = pathlib.Path(str(_cfg.LEGACY_DIR))
 SCHEMA_MD = UPSTREAM / "reports" / "EDITOR_SCHEMA_FIELDS.md"
 
 CLIENT_IDS = [0, 2, 3, 5, 6, 7, 8, 9, 10, 18, 19, 21, 22, 23, 25, 27, 35, 41, 47, 56]

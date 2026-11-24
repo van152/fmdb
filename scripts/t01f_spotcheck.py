@@ -4,9 +4,13 @@ Read-only. Each check: file offset -> expected bytes (and computed jump targets 
 Run: py -V:3.12 -I scripts/t01f_spotcheck.py
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 import struct, sys
 
-ED = r"D:\tmp2b\fm24\input\editor.exe"
+ED = str(_cfg.EDITOR_EXE)
 VA_DELTA = 0xA00          # .rdata/.debug-ish: VA = fileoff + 0xA00 (+0x140000000)
 RELOC_DELTA = 0x16B600    # .reloc
 

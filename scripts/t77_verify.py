@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import copy
 import json
+import subprocess
 from typing import Any
 
 import t77_build as BL
@@ -17,7 +18,38 @@ def _sec_count(rows: list[dict[str, Any]], grade: str) -> int:
     return sum(1 for r in rows if r["grade"] == grade)
 
 
+FROZEN_DIR = C.ROOT / "scratch" / "t77" / "frozen"
+FROZEN_COMMIT = "213657a"  # the t77 fold commit; all four artifacts match its SHAs
+FROZEN_MAP = {
+    "schema": "reports/club_nation_subtable_schema.json",
+    "markdown": "reports/club_nation_subtable_schema.md",
+    "other": "reports/other_tables_schema.json",
+    "denominator": "reports/xml_denominator_coverage.json",
+}
+
+
+def frozen_v11_inputs() -> dict[str, Any]:
+    """Materialise the frozen v11 artifacts from git; never touch reports/."""
+    FROZEN_DIR.mkdir(parents=True, exist_ok=True)
+    out = {}
+    for key, rel in FROZEN_MAP.items():
+        target = FROZEN_DIR / rel.rsplit("/", 1)[-1]
+        if not target.is_file():
+            proc = subprocess.run(
+                ["git", "show", f"{FROZEN_COMMIT}:{rel}"],
+                cwd=str(C.ROOT), capture_output=True,
+            )
+            if proc.returncode != 0:
+                raise RuntimeError(f"cannot restore frozen v11 input {rel}: "
+                                   f"{proc.stderr.decode('utf-8', 'replace')[:200]}")
+            target.write_bytes(proc.stdout)
+        out[key] = target
+    return out
+
+
 def verify(rep) -> int:
+    frozen = frozen_v11_inputs()
+
     # ---- 1. baseline identity + accepted inputs (all re-hashed from disk)
     base, _ = BL.load_baseline()
     rep.check("v10 baseline pinned", base["schema_version"] == 10,
@@ -162,12 +194,13 @@ def verify(rep) -> int:
                          "unresolved_wire_slot", "no_wire_evidence")})
 
     # ---- 4. the published files must match a fresh rebuild
-    if not C.PUBLIC_JSON.exists():
-        rep.check("published v11 exists", False, str(C.PUBLIC_JSON))
+    pub_path = frozen["schema"]
+    if not pub_path.exists():
+        rep.check("frozen v11 schema exists", False, str(pub_path))
         fails = rep.failures()
         print(f"\nverify: {len(rep.rows) - len(fails)}/{len(rep.rows)} checks passed")
         return 1
-    pub = json.loads(C.PUBLIC_JSON.read_bytes())
+    pub = json.loads(pub_path.read_bytes())
     rep.check("published schema_version is 11", pub["schema_version"] == 11,
               pub["schema_version"])
     rep.check("published generated_by is t77", pub["generated_by"] == "t77",
@@ -224,8 +257,8 @@ def verify(rep) -> int:
               "t87 owns it")
 
     # split files: on-disk SHA-256 must match the pointer in the main schema
-    for key, path in (("other_tables_schema", C.OTHER_JSON),
-                      ("xml_denominator_coverage", C.DENOM_JSON)):
+    for key, path in (("other_tables_schema", frozen["other"]),
+                      ("xml_denominator_coverage", frozen["denominator"])):
         rep.check(f"split file exists: {path.name}", path.exists(), C.rel(path))
         if not path.exists():
             continue
@@ -233,7 +266,7 @@ def verify(rep) -> int:
         rep.check(f"split file SHA-256 matches pointer: {path.name}",
                   C.sha(raw) == pub["pointer_artifacts"][key]["sha256"],
                   f"{len(raw):,} B")
-    other = json.loads(C.OTHER_JSON.read_bytes())
+    other = json.loads(frozen["other"].read_bytes())
     rep.check("other_tables_schema has 13 tables",
               other["table_count"] == 13 == len(other["tables"]),
               other["table_order"])
@@ -241,14 +274,14 @@ def verify(rep) -> int:
               all(other["tables"][str(t)]["slots_status"].startswith("pending:t76b")
                   for t in (0, 7, 8)),
               [other["tables"][str(t)]["slots_status"] for t in (0, 7, 8)])
-    denom_doc = json.loads(C.DENOM_JSON.read_bytes())
+    denom_doc = json.loads(frozen["denominator"].read_bytes())
     rep.check("denominator file carries all 1,034 occurrences",
               len(denom_doc["occurrences"]) == 1034, len(denom_doc["occurrences"]))
     rep.check("denominator file buckets sum to 1,034",
               sum(denom_doc["totals"].values()) == 1034, denom_doc["totals"])
 
     # markdown: v10 bytes are a strict prefix of the published file
-    md = C.PUBLIC_MD.read_bytes()
+    md = frozen["markdown"].read_bytes()
     base_md = BL.BASE_SNAPSHOT_MD.read_bytes()
     rep.check("markdown keeps v10 bytes as a strict prefix", md.startswith(base_md),
               f"{len(base_md):,} B prefix of {len(md):,} B")

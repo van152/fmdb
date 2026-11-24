@@ -5,6 +5,10 @@ No binary is executed. Offsets are local to a proved receiver, not table-indepen
 keys. The t108 index is a dispatch locator, not an authority on widths/persistence.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 from collections import Counter, defaultdict, deque
@@ -34,7 +38,7 @@ T48 = 'scratch/t98/out/table48_comparison.json'
 T71 = 'scratch/t71/out/field_map_r3.json'
 T82 = 'scratch/t82/out/field_map.json'
 T79 = 'scratch/t79/out/field_map.json'
-EDITOR = Path('D:/tmp2b/fm24/input/editor.exe')
+EDITOR = Path(str(_cfg.EDITOR_EXE))
 ENTITIES = {'club': 433, 'nation': 346, 'comp': 255}
 OWN = {'club': (3,), 'nation': (9, 10), 'comp': (25,)}
 DIRECT = 'L3_unicorn_or_subobject_closed'

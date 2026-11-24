@@ -13,6 +13,10 @@ Usage:
 Exit codes: 0 ok, 1 emulation incomplete/error, 2 bad usage.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -21,7 +25,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_PE = Path(r"D:\tmp2b\fm24\input\editor.exe")
+DEFAULT_PE = Path(str(_cfg.EDITOR_EXE))
 
 # Memory map constants (disjoint from editor.exe 0x140000000..0x145000000)
 STACK_BASE = 0x0000_0001_0000_0000
@@ -48,7 +52,7 @@ def align_up(x: int, a: int = 0x1000) -> int:
 
 class EditorEmulator:
     def __init__(self, pe_path: Path = DEFAULT_PE):
-        sys.path.insert(0, r"D:\tmp2b\tools\python")
+        sys.path.insert(0, str(_cfg.LEGACY_TOOLS_DIR))
         import pefile  # noqa: E402
         from unicorn import Uc, UC_ARCH_X86, UC_MODE_64  # noqa: E402
         from unicorn.x86_const import (  # noqa: E402

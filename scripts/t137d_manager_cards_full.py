@@ -13,6 +13,10 @@ Usage:
     py -V:3.12 -B scripts/t137d_manager_cards_full.py --selftest # run full verification assertions
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -23,7 +27,7 @@ sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-ZSTD_PATH = r"D:\tmp2b\fm24\tools\python"
+ZSTD_PATH = str(_cfg.VENDOR_DIR)
 if ZSTD_PATH not in sys.path:
     sys.path.insert(0, ZSTD_PATH)
 

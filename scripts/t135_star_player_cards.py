@@ -15,6 +15,10 @@ Usage:
   py -V:3.12 -B scripts/t135_star_player_cards.py --uid 28049320
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import json
@@ -31,7 +35,7 @@ BASIC_DAT = ROOT / "scratch/data/basic_people_db.dat"
 PEOPLE_DAT = ROOT / "scratch/data/people_db.dat"
 T126_MAP = ROOT / "scratch/t126/out/player_69b_attributes_l3.json"
 
-sys.path.insert(0, r"D:\tmp2b\fm24\tools\python")
+sys.path.insert(0, str(_cfg.VENDOR_DIR))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 # ---------------------------------------------------------------- basic_people_db.dat framing (t115)

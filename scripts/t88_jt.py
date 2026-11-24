@@ -4,7 +4,11 @@
 usage: t88_jt.py
 """
 import sys,json,struct
-EXE='D:/tmp2b/fm24/input/editor.exe'
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
+EXE=str(_cfg.EDITOR_EXE)
 JBE1=b'\x76'; JA1=b'\x77'; JBE2=b'\x0f\x86'; JA2=b'\x0f\x87'
 def s4(v):
     b=v.to_bytes(4,'big')

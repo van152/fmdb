@@ -8,6 +8,10 @@ Outputs into --outdir (default: scratch/t79/out):
 Exit codes: 0 success, 1 check failed, 2 usage/fatal error.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import hashlib
@@ -23,7 +27,7 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.append(r"D:\tmp2b\fm24\tools\python")
+sys.path.append(str(_cfg.VENDOR_DIR))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import numpy as np
@@ -34,7 +38,7 @@ from capstone.x86 import X86_OP_IMM
 from t05_pe import PE
 from t21b_control_flow import ReaderCFG
 
-EXE_PATH = Path(r"D:\tmp2b\fm24\input\editor.exe")
+EXE_PATH = Path(str(_cfg.EDITOR_EXE))
 EXPECTED_EXE_SHA256 = "b82ebe8e032f20171e813c02f53084dc0ac2c43bc8346beb742418efaadadab4"
 DB_DIR = Path(os.environ.get("FM24_DB_DIR", str(ROOT / "scratch/data")))
 MANIFEST_PATH = ROOT / "evidence/MANIFEST.json"

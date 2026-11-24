@@ -14,6 +14,10 @@ server_db.dat and client_db.dat and proving none of table_<id>.dat exists.
 Writes ONLY scripts/t130_archive_inventory.py and scratch/t130/out/.
 """
 from __future__ import annotations
+import sys as _cfg_sys
+from pathlib import Path as _cfg_pathlib
+_cfg_sys.path.insert(0, str(_cfg_pathlib(__file__).resolve().parent))
+import fm24_config as _cfg
 
 import argparse
 import hashlib
@@ -25,15 +29,15 @@ import time
 from datetime import datetime, timezone
 
 # ------------------------------------------------------------------ python path
-sys.path.insert(0, r"D:\tmp2b\fm24\tools\python")      # vendored zstandard
-sys.path.insert(0, r"D:\tmp2b\fm24-db\scripts")        # t112_fm24_reader
+sys.path.insert(0, str(_cfg.VENDOR_DIR))      # vendored zstandard
+sys.path.insert(0, str(_cfg.SCRIPTS_DIR))        # t112_fm24_reader
 
 import t112_fm24_reader as R  # noqa: E402  (reuse _DirectoryReader / archive_layout)
 
 # ------------------------------------------------------------------ constants
-ROOT = pathlib.Path(r"D:\tmp2b\fm24-db")
+ROOT = pathlib.Path(str(_cfg.ROOT))
 DB_DIR = ROOT / "scratch/data"
-INPUT_DIR = pathlib.Path(r"D:\tmp2b\fm24\input")
+INPUT_DIR = pathlib.Path(str(_cfg.INPUT_DIR))
 OUT_DIR = ROOT / "scratch/t130/out"
 
 FMF6 = bytes.fromhex("0201666d662e")      # FMF signature (first 6 bytes)
